@@ -25,6 +25,7 @@ from organism_v6.experienced_event_goal_replay_layout import GoalReplayLayout
 
 ROOT = Path(policy.ROOT)
 TREE = Path(__file__).resolve().parents[1]
+RUN_MODULE = 'gpu.orch_route_parent_campaign_run'
 DEVICES = {arm: (index, guardian.DEVICES[index]) for index, arm in enumerate(policy.ARMS)}
 require = policy.require
 read = native.source.read
@@ -138,6 +139,7 @@ def identity_for(root, arm, cycle, phase, initial):
 
 
 def parent_request(root, arm, cycle, payload, check):
+    started = time.time()
     payload = policy.parent_payload(payload)
     number = spend(root, 'PARENT_' + arm, policy.CAPS['parent_calls_per_lane'],
                    dict(cycle=cycle, kind=payload['kind']))
@@ -151,6 +153,10 @@ def parent_request(root, arm, cycle, payload, check):
         require(time.time() < cutoff, 'parent_timeout_no_substitute')
         time.sleep(1)
     response = read(response_path)
+    if getattr(policy, 'RECORD_PARENT_WAIT', False):
+        write(root / 'parent_queue' / (name + '.WAIT.json'), dict(arm=arm, cycle=cycle,
+            started_unix=started, finished_unix=time.time(), elapsed_seconds=time.time() - started,
+            response_sha256=sha(response_path), provider_error=bool(response.get('result', {}).get('error'))))
     require(response['id'] == name and response['request_sha256'] == digest(request), 'parent_binding')
     require(not response['result'].get('error'), 'parent_provider_failed_no_substitute')
     return response['result']
@@ -219,14 +225,14 @@ def stage(root, arm, cycle, phase):
             require(collection['input_adapter'] == identity.document(), 'same_collecting_child')
             if os.environ.get('ROUTE_PARENT_REPROJECT') == '1' and arm != 'FROZEN':
                 collection = repaired_collection(root, arm, cycle, output, identity, collection)
-            if arm == 'FROZEN' or not collection['reflections']:
+            if arm in ('FROZEN', 'NO_LORA') or not collection['reflections']:
                 write(output / 'DOSE_EXPOSURE.json', dict(planned_presentations=policy.presentations_for_cycle(cycle),
                     actual_updates=0, actual_new_target_presentations=0, actual_legacy_target_presentations=0,
                     admitted_reflections=len(collection['reflections']), arm=arm, cycle=cycle,
-                    unchanged_child=True, reason='FROZEN' if arm == 'FROZEN' else 'NO_VALID_REFLECTIONS'))
+                    unchanged_child=True, reason=arm if arm in ('FROZEN', 'NO_LORA') else 'NO_VALID_REFLECTIONS'))
                 complete(dict(output_adapter=identity.document(), updates=0, fits=0,
                               planned_presentations=policy.presentations_for_cycle(cycle), actual_new_target_presentations=0,
-                              reason='FROZEN' if arm == 'FROZEN' else 'NO_VALID_REFLECTIONS'), native.process_identity())
+                              reason=arm if arm in ('FROZEN', 'NO_LORA') else 'NO_VALID_REFLECTIONS'), native.process_identity())
                 return
         loaded = native.load_stage(binding, model_dir=guardian.MODEL, device='cuda:0', gpu_uuid=uuid,
             context=native.StageContext(private_guidance=(policy.GUIDANCE,) if parented else ()),
@@ -256,7 +262,7 @@ def stage(root, arm, cycle, phase):
 
         cohort = read(root / 'COHORT.json')
         if phase == 'source':
-            require(arm == 'FROZEN' and cycle == 0, 'single_initial_source_lane')
+            require(arm == getattr(policy, 'SOURCE_ARM', 'FROZEN') and cycle == 0, 'single_initial_source_lane')
             collections, store = [], {}
             for group in cohort['train'] + cohort['held']:
                 for world in group:
@@ -335,9 +341,10 @@ def stage(root, arm, cycle, phase):
                         capture = dict(run_id=root.name, arm=arm, cycle=cycle, actor=identity.document(),
                             origin='ACTUAL_CHILD_OUTPUT', complete=True, admitted=True, error=None,
                             student_prefix=prefix, response=response)
-                        unused, encoded = native.encode_child_captures([capture], [digest(capture)], binding,
-                            loaded.engine.tokenizer, private_guidance=tuple(private),
-                            max_context=policy.CAPS['context'], max_supervised_tokens=513)
+                        if arm != 'NO_LORA':
+                            unused, encoded = native.encode_child_captures([capture], [digest(capture)], binding,
+                                loaded.engine.tokenizer, private_guidance=tuple(private),
+                                max_context=policy.CAPS['context'], max_supervised_tokens=513)
                         item = dict(capture=capture, sha256=digest(capture), private=private,
                                     episode_sha256=digest(record), outcome=record['correct'])
                         reflections.append(item)
@@ -346,6 +353,8 @@ def stage(root, arm, cycle, phase):
                         reflection.update(admitted=False, error=str(error))
                     write(output / f'REFLECTION_{ordinal:02d}.json', reflection)
             loaded.verify_unchanged()
+            if hasattr(policy, 'record_thinking_metrics'):
+                policy.record_thinking_metrics(output, episodes, loaded.engine.tokenizer)
             behavior = [dict(task=record['task'], reads=record['reads'], routes=record['routes'],
                 first_action=record['captures'][0]['command'], terminal_reason=record['terminal_reason'],
                 actor_calls=record['actor_calls'], parent_turns=len(record['parent_messages']),
@@ -487,7 +496,7 @@ def lane(root, arm, resume=False):
             return
         require(time.time() < deadline - 360, 'dispatch_cutoff')
         admit(root, index, output / f'{cycle}_{phase}_ADMISSION.json', deadline)
-        command = [guardian.PYTHON, '-B', '-m', 'gpu.orch_route_parent_campaign_run',
+        command = [guardian.PYTHON, '-B', '-m', RUN_MODULE,
                    '--phase', phase, '--arm', arm, '--cycle', str(cycle)]
         with (output / f'{cycle}_{phase}.log').open('x') as log:
             child = subprocess.Popen(command, cwd=TREE, env=dict(os.environ, CUDA_VISIBLE_DEVICES=uuid,
@@ -500,23 +509,26 @@ def lane(root, arm, resume=False):
         require(code == 0, 'stage_failed:' + phase)
 
     try:
-        if arm == 'FROZEN':
+        source_arm = getattr(policy, 'SOURCE_ARM', 'FROZEN')
+        baseline_first = getattr(policy, 'BASELINE_FIRST', False)
+        if arm == source_arm:
             execute('source', 0)
         else:
             cohort = read(root / 'COHORT.json')
             for world in cohort['train'][0]:
                 while not (root / 'source_capture' / (world['master'] + '.json')).exists():
-                    require(not (root / 'FROZEN_GUARD/FAILED.json').exists(), 'source_failed')
+                    require(not (root / f'{source_arm}_GUARD/FAILED.json').exists(), 'source_failed')
                     require(time.time() < deadline - 360, 'source_deadline')
                     time.sleep(1)
-            execute('experience', 1)
+            if not baseline_first:
+                execute('experience', 1)
         while not (root / 'SOURCE.json').exists():
-            require(not (root / 'FROZEN_GUARD/FAILED.json').exists(), 'source_failed')
+            require(not (root / f'{source_arm}_GUARD/FAILED.json').exists(), 'source_failed')
             require(time.time() < deadline - 360, 'source_deadline')
             time.sleep(2)
         execute('readout', 0)
         for cycle in range(1, policy.CAPS['cycles'] + 1):
-            if arm == 'FROZEN' or cycle != 1:
+            if baseline_first or arm == source_arm or cycle != 1:
                 execute('experience', cycle)
             execute('sleep', cycle)
             execute('readout', cycle)

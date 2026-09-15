@@ -1,5 +1,71 @@
 # MATH-PIPELINE-L2 — automatic manufacturing-line handoff
 
+## 2026-09-15T05:08Z — R102 launched; first native responses verified
+
+05:10:56Z latest: BOTH actual Astra parents COMPLETE, both node transcript
+manifests all_verified. CREATIVE completion05:09:56.771922Z, HTTP-envelope wall
+66.440080s,2478output/1586provider-reported reasoning tokens, one attempt/no
+retry. Its COMPLETE SHA4ac2d2b98279b082b5827f7bbe9ae247a60e1f3d70a9f10ae012e77654bc7c38.
+R102 parent counts2COMPLETE/0pending/14undispatched. MICRO now has4CALL files
+and246actual observed updates; CREATIVE has3CALL files (reflection begun,
+not inferred complete). Neither saved sleep COMPLETE yet. Separate ready-to-stage
+inventory is `R102_STAGE_PATHS.txt` with `R102_STAGE_HASHES.sha256`; no git mutation.
+
+05:10Z follow-up: MICRO C1 parent actual model `openai/openai/gpt-6-astra`
+COMPLETE05:08:14.176639Z, node transcript all-file hash verification
+05:08:43.799723Z. One HTTP attempt, no retry;2164parent output tokens including
+1733provider-reported reasoning tokens (not child thinking). First actual child
+reflection230tokens COMPLETE05:08:57.378832Z; source masks and LOSSES now exist.
+CREATIVE C1 provider invoked05:08:50.331841Z, completion not yet node-verified
+at05:09:57Z. Counts at that observation:2/16R102 parents dispatched,
+1verified COMPLETE/1pending;14undispatched, not a renewed allowance.
+MICRO partial cycle: original generation13.585612s, parent HTTP-envelope wall
+54.247185s, queue-to-reflection98.706039s, first reflection10.329418s;
+isolated optimizer duration unknown, sleep/readout not COMPLETE. CREATIVE
+original generation13.898954s; queue/provider still partial. Pure provider
+compute unknown for both; no timing estimates labelled observations.
+Compact source-bound receipt: `R102_FIRST_NATIVE_RECEIPT.json`; every parent raw
+transcript remains on node with `PARENT_NODE_RECEIPTS` verified manifest.
+
+R102 receipt: eight sequential cycles of2TRAIN+2ownreflection+8HELD,
+48terminal retention;144native/8parents per treatment, additive288/16,
+aggregate1920native/28parents without resetting historical1632/12. No batching,
+new C0 or math triples; shared route controls descriptive, no matched style claim.
+Original11:39:15.272750Z native deadline/11:42:15.272750Z hard end and24GPUh
+remain unchanged. No L2 into L1, no foundation upgrade or in-flight mutation.
+
+Own CPU gate:48tests PASS (`R102_CPU_TESTS.log`), provenance and Builder receipt
+published before dispatch. Main need not duplicate tests or acknowledge again.
+MICRO5 READY1c2d3ddb4d29a144e057dac0aa20507012ca3936fc512c043cf23568843bc784;
+CREATIVE7 READY4b76fdddcbf976967e1456f6d1771dd5c21847e611b2d600bd6c943233cb4fce.
+Guardians493246/493247 started05:05:20Z. Fresh strict admission produced native
+PIDs494282/494281 at05:05:45.448585Z/05:05:45.446190Z. Both actual LOADED receipts
+verify initial FULL12354524c434be91deaeae74f411091bc70b4e38c003fd4f800aea797cc770c8
+and base a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992 on
+physical5 UUIDc1650c7f-ac26-f1a0-2ab8-c7354a6f27c9 and physical7 UUIDf0405a96-813d-7ac7-d641-3ec31d103037.
+
+First native ETA is now ACTUAL: MICRO first response05:07:03.651352Z,
+CREATIVE05:07:03.934416Z;178 emitted tokens each. Second responses105tokens
+at05:07:08.340030Z/05:07:08.749659Z. Four responses, no observed native failure;
+neither treatment sleep/test is yet reported COMPLETE. C1 parent requests queued;
+broker3538561 active;16prospective R102 parent plans total. Strong invocation/
+response counts will be reported from verified node transcript receipts, not
+inferred from requested provider. Next stage is actual parent-guided reflections
+and writes, then8parent-free held calls per lane (old readouts had56total).
+
+Prior control safe phase is COMPLETE/released: OFF C1 saved1480updates and
+56/56test+AFTER, strict physical5 release04:57:08.258285Z. FROZEN final C3test
+56/56+AFTER, strict physical7 release04:54:32.660820Z; original C3sleep FAILED
+teacher-sentence exclusion, not relabelled success. Release is R100 redundancy,
+not outcome-based. Existing physical4 paired GUIDED C1 now COMPLETE1194updates
+at05:07:46.615810Z; its unchanged56call readout has REQUEST and remains uncompleted.
+
+All remote raw/receipts remain under
+`/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1`, treatments
+`campaign_03_r102_micro5` and `campaign_04_r102_creative7`; node-only CALLs and
+parent transcripts. Repo readiness/protocol/budget names start R102 in the
+owned analysis directory. Separate R102 stage inventory follows; no git mutation.
+
 ## 2026-09-15T04:51Z — Rohin100/101, actual writes, disk/provider repair
 
 No newmathtriples; canonical sharedbaseline is Main/Pasteur route0/1/2.

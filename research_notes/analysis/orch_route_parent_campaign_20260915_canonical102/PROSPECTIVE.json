@@ -1,0 +1,86 @@
+{
+  "registered_utc": "2026-09-15T05:05:41.837510+00:00",
+  "schema": "CANONICAL102_PROSPECTIVE",
+  "root": "/tmp/orch_route_parent_campaign_20260915_canonical102",
+  "initial_child": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f",
+  "caps": {
+    "seconds": 14400,
+    "source_calls": 256,
+    "child_calls_per_lane": 800,
+    "parent_calls_per_lane": 128,
+    "updates_per_sleep": 112,
+    "cycles": 8,
+    "worlds": 1,
+    "context": 8192,
+    "generation": 512,
+    "parent_tokens": 192
+  },
+  "campaign_deadline_unix": 1789501022.75119,
+  "arms": [
+    "GUIDED",
+    "UNPARENTED",
+    "NO_LORA"
+  ],
+  "cell": {
+    "style": "training-wheels",
+    "horizon": "short",
+    "tone": "supportive-positive",
+    "provider": "openai/openai/gpt-6-astra"
+  },
+  "new_max_native_calls": 2656,
+  "new_max_parent_attempts": 256,
+  "max_parent_output_tokens_per_attempt": 4096,
+  "max_parent_timeout_seconds": 120,
+  "retries": 0,
+  "max_updates_per_learning_lane": 812,
+  "max_updates_all_lanes": 1624,
+  "cycles": 8,
+  "train_episodes_per_sleep": 2,
+  "episode_execution": "STRICT_SEQUENTIAL_UNBATCHED",
+  "readout_goals_per_checkpoint": 2,
+  "paired_world_denominator": 1,
+  "presentations": [
+    4,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16
+  ],
+  "no_lora": "RAW_FROZEN_QWEN_NO_ADAPTER_NO_SLEEP_UPDATES_SAME_PARENT_CURRICULUM",
+  "control_boundary": "NEW_NOT_RETROACTIVE_FROZEN",
+  "first_source_arm": "GUIDED",
+  "independent_lane_launch": true,
+  "prior_lives_ledgers_deadlines_unchanged": true,
+  "primary_metrics": [
+    "prompt_tokens",
+    "generated_tokens_including_eos",
+    "distinct_route_sequences",
+    "rejected_action_attempts",
+    "repeated_action_strings",
+    "adjacent_repeated_actions",
+    "coherence_proxies",
+    "generation_wall_seconds",
+    "parent_wait_seconds"
+  ],
+  "metrics_interpretation": "DESCRIPTIVE_OPERATIONAL_PROXIES_NOT_LATENT_REASONING_QUALITY",
+  "outcomes": "ANCILLARY_NOT_SCHEDULING_CRITERION",
+  "teacher_transcript_quarantine": "NO_ONGOING_L1_INGESTION",
+  "source_test_hashes": {
+    "gpu/orch_route_parent_campaign_run.py": "a2fabc4074b3023b71962be2cd95eb67798ba3f3a095f32f201bfe58078124ee",
+    "gpu/orch_route_parent_campaign_canonical.py": "68669b19476df8e7c05c71aee29a5df60262651d53db27e26c6f8e285c429c50",
+    "gpu/orch_route_parent_campaign_canonical_parent.py": "ea4e65738e523c3e0c3a5ad95c63ee37af9408f9cc833bdf8d5d7c97fd94c441",
+    "gpu/orch_route_parent_campaign_mirror.py": "61e88f8c3c7179600c41db5f10243ea7fbe4a912243d30b41003e466291dec35",
+    "organism_v6/orch_route_parent_campaign_canonical.py": "62098443bff269aa8807e7dd02438ca92cbfe787ba878f0a926d1caf2c005fa2",
+    "tests/test_orch_route_parent_campaign_canonical.py": "a2b4a5d46a00d090310cc8f0d543a2da62a4ffae777e79a5c8bdbc08d0f231ac"
+  },
+  "cpu_tests": "48 unittest tests PASS; includes9 canonical tests",
+  "source_status": "LOCAL_CPU_PASS_NATIVE_PREPARATION_NEXT",
+  "release_status": {
+    "0": "OWN_OLD_GUIDED_GUARD_COMPLETE_NATIVE_RECEIPT_1789448484.1013737",
+    "1": "POINCARE_FILLER_DO_NOT_RECLAIM",
+    "2": "POINCARE_FILLER_DO_NOT_RECLAIM"
+  }
+}
