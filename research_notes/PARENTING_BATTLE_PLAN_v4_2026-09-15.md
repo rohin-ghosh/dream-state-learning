@@ -46,6 +46,15 @@ document research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md (v2, corrected 
 yours it is quoted; where it is a standing rule of ours it is marked [standing rule]; where it came from the
 assistant thread you endorsed in message 108 it is marked [endorsed reply]. Message 110 wins over that thread.
 
+**Addendum (message 116, ~10:42 UTC).** Rohin: "have all the level-0 nodes learn together — don't have the Fable and
+Astra nodes learn on different sleeps; have all of them parallelised." So the frozen-base parenting branches on node 5
+(Fable's four and Astra's four) share ONE child — one LoRA, one optimizer — whose sleeps consolidate the pooled
+experience of all eight branches at synchronised boundaries, with the same rehearsal and capability anchor; DEV and
+FINAL readouts are of the shared child; per-branch parenting effects are read from transcripts, triples and
+in-context changes. This replaces the per-branch LoRA of §3 for the base branches; the side-by-side label becomes
+"parenting systems on a shared learner". If the shared-optimizer plumbing is not ready at launch, branches start
+per-branch and switch to the shared child at the first common boundary — launch is not delayed for it.
+
 ## 0. Mission, in your words
 
 "Throw everything at the base model … get all of the capability into behaviour … a really curious, perceptive,
