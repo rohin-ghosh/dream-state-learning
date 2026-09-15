@@ -81,7 +81,7 @@ python3 - "$SW/prompts" "$CYC" "$COURIER_REPO" "$TS" <<'PY'
 import json, sys, os, hashlib, re, glob
 prompts, cyc, repo, ts = sys.argv[1:5]
 sys.path.insert(0, repo + '/tools/courier/swarm')
-from make_prompts import apply_head_update, fixed_parent_template, render, verify_binding
+from make_prompts import apply_head_update, fixed_parent_template, render, verify_binding, with_lane_caps
 raw = json.load(open(cyc + '/reply.json'))
 text = raw.get('result') if isinstance(raw, dict) else raw
 m = re.search(r'\{.*\}', text, flags=re.S); out = json.loads(m.group(0))
@@ -94,6 +94,7 @@ for name, upd in out.get('branches', {}).items():
     if not os.path.exists(fp): continue
     cur = json.load(open(fp))['fields']
     new = apply_head_update(cur, upd, template)
+    new['NEXT_GUIDANCE'] = with_lane_caps(new.get('NEXT_GUIDANCE', ''), new['GAME'])  # broker word caps, kept every cycle
     bad = any(tok in new['FOCUS'] for tok in ('%', 'D&R', 'ratio', 'score', 'accuracy')) or re.search(r'\d', new['FOCUS'])
     if bad: new['FOCUS'] = cur['FOCUS']  # FOCUS never carries a measure or a number
     prompt = render(new, template); assert verify_binding(prompt, template), name
