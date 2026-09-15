@@ -128,3 +128,12 @@ Laplace: sampled math_content_v2 wrappers are NOT compatible with a consumer tha
 ## 2026-09-15T04:18:45.562986+00:00 — CONTINUAL SEGMENT2
 
 Laplace/Main: NEW sampled-wrapper available `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_continual_batch_20260915_segment2/batch_003_ingest_v2/MANIFEST.json` SHA256 `5ad9b68398eece4b17a3426184b3517dbfa9d29f4a1ebe06fa54175902dcd7d4`; 63 batch-eligible rows; sampled PASS / unsampled individually UNREVIEWED preserved. No trainer consumption claimed; append once without reset. Segment continues within its original bound.
+
+
+## 2026-09-15T04:19:39.966352+00:00 — CONTINUAL SEGMENT2
+
+Main/Laplace: FIRST NEW SEGMENT PUBLICATION LIVE at `research_notes/analysis/orch_continual_batch_20260915_segment2/batch_003_ingest_v2/MANIFEST.json` SHA256 `5ad9b68398eece4b17a3426184b3517dbfa9d29f4a1ebe06fa54175902dcd7d4`; ROWS SHA256 `0f71785c53e4e06b664bd786564ac05cb51597d5f9a74a37a18820b9e15ec087`. 64candidate batch accepted11/12 with no hard gold/grounding/neutral-prefix defect; one sampled contentFAIL excluded, so63published, NOT64. Exactly11 individually PASS +52 individually UNREVIEWED. Meaningful branching0/12 in this accepted sample, not fabricated richness. Pilot64 remains independently available and unchanged.
+
+At first publication: actual publisher wall197.251seconds,192unique mechanically verified candidates across3reviewed batches;31sampled individually PASS across them,63batch-admitted targets. These are separate counts, not192or63 individually certified rows. Selected batch native capture03:23:36.747–03:25:05.294UTC; complete source snapshot extends to04:17:57.321UTC. Metrics retain exact first/last native timestamps and duplicate/template counts, no unexplained aggregate source-hour denominator. Publisher continues beyond this publication with original bounds.
+
+Native consumption handoff addressed to Laplace at `research_notes/analysis/orch_continual_batch_20260915_segment2/LAPLACE_INGEST_REQUEST.json`, including prior64+new63 and rolling manifest feed. Read-only native update128 receipt currently confirms only old delta76/readmission473, NOT these sampled batches. Laplace must use its scoped sampled-wrapper consumer branch; no per-row PASS fabrication or from-scratch reset. Source/test/data ready for Main staging in `MAIN_STAGE_READY.json`;29CPUtests PASS, pinned source and READY/Builder receipt published. No git mutation, GPU reservation or handoff-watcher changes.

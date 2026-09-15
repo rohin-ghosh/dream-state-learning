@@ -29,6 +29,9 @@ for index in INDICES:
  paths=sorted(path for path in directory.glob('CALL_*.json') if path.stem[5:].isdigit())
  rows=[json.loads(path.read_text()) for path in paths]
  for path in paths[:8]:capture(path)
+ for path in paths[:8]:
+  row=json.loads(path.read_text())
+  if row.get('episode_receipt'):capture(directory/row['episode_receipt'])
  entry=dict(index=index,calls=len(rows),failed_calls=len(list(directory.glob('CALL_*_FAILED.json'))),
   progress=json.loads((directory/'PROGRESS.json').read_text()) if (directory/'PROGRESS.json').exists() else None,
   complete=(directory/'RESULT.json').exists(),failed=(directory/'FAILED.json').exists())
@@ -49,6 +52,11 @@ for index in INDICES:
   entry['content_tokens']=sum(len(row['response']['token_ids'])-int(row['response']['terminal']) for row in rows)
   entry['oracle_correct_calls']=sum(row.get('outcome',{}).get('correct',False) for row in rows) if ORIGINAL else None
   entry['phase_versions']=sorted({row.get('phase_version','MISSING') for row in rows})
+ if not ORIGINAL:
+  episodes=[json.loads(path.read_text()) for path in directory.glob('EPISODE_*.json')]
+  entry['completed_episodes']=len(episodes)
+  entry['verifier_correct_episodes']=sum(row['correct'] for row in episodes)
+  entry['distinct_raw_texts']=len({row['response']['raw'] for row in rows})
  if ORIGINAL:
   checkpoint_path=root/f'CHECKPOINT_{index}.json'
   if checkpoint_path.exists():
@@ -80,6 +88,8 @@ def snapshot(output):
     for name, wrapper, root, indices, original, ledger in [
         ('node1', 'gpu/a40r_ssh.sh', REVISED, list(range(8)), ORIGINAL, ORIGINAL),
         ('node3', 'gpu/ovx2_ssh.sh', '/localhome/local-rohing/orch_rich_hot_node3_20260915_route_v2',
+         [3, 4, 5], None, '/localhome/local-rohing/orch_rich_hot_node3_20260915_attempt1'),
+        ('node3_batch02', 'gpu/ovx2_ssh.sh', '/localhome/local-rohing/orch_rich_hot_node3_20260915_route_v2_batch02',
          [3, 4, 5], None, '/localhome/local-rohing/orch_rich_hot_node3_20260915_attempt1'),
     ]:
         config = dict(ROOT=root, INDICES=indices, ORIGINAL=original, LEDGER=ledger)
