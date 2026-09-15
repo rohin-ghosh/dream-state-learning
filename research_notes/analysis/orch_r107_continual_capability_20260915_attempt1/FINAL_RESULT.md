@@ -48,8 +48,8 @@ Fixed32 suite SHA256:
 
 The native runner contained a private host literal. It remains immutable on-node;
 the repository candidate replaces it with hashed identity. The sanitized source
-is NOT the exact native execution source. SANITIZATION.md and the sanitized
-publication manifest preserve that distinction; no native rerun is implied.
+is NOT the exact native execution source. FINAL_CANDIDATE.md and
+STAGE_READY_FINAL.json preserve that distinction; no native rerun is implied.
 The earlier REPORT.md is an initial launch snapshot, superseded for results by
 this file. Reducer process-disclosure repair derives boundaries from receipts
 rather than assuming an earlier run's retained cells.
