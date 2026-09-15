@@ -768,3 +768,11 @@ Raw:
 > yes its kidna like a manufacutring line, we sorta get level 1 done but now that we have neough data to have osmehtign owrking we get next stages kcikstarted on taht,    dont time box my order I want it to be setn now , we need thigns run now lol i cant aime what is goign on for 40 fuckign minguts over and over all fuckgin day long i told you gusy to do one thing
 
 Reading (Fable): RULED — orders are executed immediately, not queued behind a watcher deadline; the watcher sends Rohin's operational orders straight into the orchestrator's Main view as marked notices when the notebook is too slow. Pipeline picture: level 1 need not be finished for level 2 to start; each stage kick-starts the next as soon as enough data exists.
+
+## Message 94 — (typed, ~03:25 UTC 09-15) reporting preference: high-level — what is happening for the level-1 MVP, and what already exists right now that can be tested at level 2; with many agents everything should run at once
+
+Raw:
+
+> we have tons of agents wokrign we shoud lbe able tod do this all at once i want better reporting fomr y u on hgih level shit, i wanna know what is happengin for our mvp for level one and what arelady exists rn that can be tested level 2
+
+Reading (Fable): a standing reporting format — every report answers two questions at the orchestration level: (1) where is the level-1 MVP (the flywheel input) and what is running toward it; (2) what exists now that the next level can be tested on. Parallelism is assumed.
