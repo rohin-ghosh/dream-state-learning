@@ -79,8 +79,8 @@ def render(fields, template):
 
 LANE_CAP_NOTE = {
     90: ("Lane contract: the broker discards unread any reply whose guidance exceeds ninety words, so keep each "
-         "turn to one intervention well under that; tag must be ADD, STOP or SHIFT; intervention_class may contain "
-         "only letters, digits, spaces, hyphens and underscores."),
+         "turn to one intervention of at most sixty words; tag must be ADD, STOP or SHIFT; intervention_class may "
+         "contain only letters, digits, spaces, hyphens and underscores."),
     200: ("Lane contract: the broker discards unread any reply whose guidance exceeds two hundred words, so keep "
           "each turn well under that; tag must be ADD, STOP or SHIFT; intervention_class may contain only letters, "
           "digits, spaces, hyphens and underscores; no code, backticks or function definitions in guidance."),
@@ -99,6 +99,7 @@ def with_lane_caps(guidance, game):
     guidance = guidance or ''
     if note in guidance:
         return guidance
+    guidance = guidance.split('Lane contract:')[0].rstrip()  # replace any earlier wording of the note
     room = 1024 - len(note.encode()) - 2
     head = guidance.encode()[:max(room, 0)].decode('utf-8', 'ignore').rstrip()
     return (head + '\n\n' if head else '') + note
