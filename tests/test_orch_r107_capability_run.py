@@ -100,9 +100,13 @@ def test_native_workflow_reserves_calls_and_preserves_readonly_pair(tmp_path, mo
         disable_adapters = False
         lora_A = {}
         lora_B = {}
+        trainable = False
 
         def parameters(self):
-            return [SimpleNamespace(requires_grad=False)]
+            return [SimpleNamespace(requires_grad=self.trainable)]
+
+        def requires_grad_(self, value):
+            self.trainable = value
 
         def modules(self):
             return [self]
@@ -114,6 +118,7 @@ def test_native_workflow_reserves_calls_and_preserves_readonly_pair(tmp_path, mo
                 yield
             finally:
                 self.disable_adapters = False
+                self.trainable = True
 
     class Engine:
         def __init__(self, options, tokenizer, check):

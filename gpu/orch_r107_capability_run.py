@@ -1,7 +1,7 @@
 """Read-only paired adapter activation diagnostic; native evidence stays on node."""
 
 import argparse
-from contextlib import nullcontext
+from contextlib import contextmanager, nullcontext
 import hashlib
 import json
 import os
@@ -59,6 +59,35 @@ def assert_condition(model, condition):
     assert states and all(state is (condition == 'LORA_OFF') for state in states)
 
 
+@contextmanager
+def readonly_condition(model, condition):
+    assert_readonly(model)
+    try:
+        with model.disable_adapter() if condition == 'LORA_OFF' else nullcontext():
+            assert_readonly(model)
+            assert_condition(model, condition)
+            yield
+    finally:
+        model.requires_grad_(False)
+
+
+def retained_calls(plan, tasks):
+    retained = {}
+    for item in plan.get('retained_calls', []):
+        assert sha(item['path']) == item['sha256']
+        record = read(item['path'])
+        task = tasks[record['position']]
+        assert record['status'] == 'COMPLETE' and 'response' in record
+        assert record['task_id'] == task['id'] and record['family'] == task['family']
+        assert record['max_new_tokens'] == plan['max_new_tokens']
+        from organism_v6 import orch_r107_capability as policy
+        assert record['messages'] == policy.messages(task)
+        key = (record['position'], record['condition'])
+        assert record['condition'] in plan['conditions'] and key not in retained
+        retained[key] = item
+    return retained
+
+
 def run(root):
     from organism_v6 import orch_r107_capability as policy
 
@@ -76,6 +105,8 @@ def run(root):
     tasks = policy.tasks()
     assert len(tasks) == plan['task_count'] and policy.digest(tasks) == plan['suite_sha256']
     assert len({task['id'] for task in tasks}) == len(tasks)
+    retained = retained_calls(plan, tasks)
+    assert plan.get('new_call_cap', plan['call_cap']) + len(retained) == plan['call_cap']
     identity = bridge.AdapterIdentity.from_document(plan['adapter']).verify()
     assert identity.base_sha256 == BASE_SHA
     output = root / 'readout'
@@ -104,8 +135,10 @@ def run(root):
         for position, task in enumerate(tasks):
             messages = policy.messages(task)
             for condition in ordered_conditions(position):
+                if (position, condition) in retained:
+                    continue
                 check('reserve')
-                assert len(calls) < plan['call_cap']
+                assert len(calls) < plan.get('new_call_cap', plan['call_cap'])
                 record = dict(position=position, task_id=task['id'], family=task['family'],
                     condition=condition, messages=messages, started_unix=time.time(),
                     status='RESERVED', max_new_tokens=plan['max_new_tokens'],
@@ -115,10 +148,7 @@ def run(root):
                 storage.atomic_json(path, record)
                 calls.append(record)
                 try:
-                    context = engine.model.disable_adapter() if condition == 'LORA_OFF' else nullcontext()
-                    with context:
-                        assert_readonly(engine.model)
-                        assert_condition(engine.model, condition)
+                    with readonly_condition(engine.model, condition):
                         record['response'] = engine.generate(messages, max_new_tokens=plan['max_new_tokens'])
                     record.update(status='COMPLETE', outcome=policy.score(task, record['response']['raw']))
                 except BaseException as error:
@@ -139,6 +169,7 @@ def run(root):
             parent_present=False, training_updates=0, finished_unix=time.time()))
         storage.atomic_json(output / 'COMPLETE.json', dict(status='COMPLETE',
             calls=len(calls), task_count=len(tasks), suite_sha256=plan['suite_sha256'],
+            retained_calls=list(retained.values()), total_completed_cells=len(calls) + len(retained),
             process=process, parent_present=False, training_updates=0,
             scope='SYNTHETIC_CAPABILITY_DIAGNOSTIC_NOT_BROAD_BENCHMARK',
             finished_unix=time.time()))

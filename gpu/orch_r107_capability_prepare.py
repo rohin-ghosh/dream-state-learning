@@ -14,7 +14,8 @@ def prepare(root, prior=None):
     assert os.environ.get('CUDA_VISIBLE_DEVICES') == ''
     assert not (root / 'PLAN.json').exists()
     source = Path(__file__).resolve().parents[1]
-    checkpoint_root = (prior or root) / 'checkpoint'
+    checkpoint_root = (Path(run.read(prior / 'PLAN.json')['adapter']['path']).parent
+                       if prior else root / 'checkpoint')
     checkpoint = run.read(checkpoint_root / 'COMPLETE.json')
     assert checkpoint['status'] == 'COMPLETE' and checkpoint['updates'] == 6208
     adapter = dict(checkpoint['output_adapter'], path=str(checkpoint_root / 'adapter'))
@@ -46,17 +47,34 @@ def prepare(root, prior=None):
     if prior is not None:
         previous = run.read(prior / 'PLAN.json')
         failure = run.read(prior / 'readout/FAILED.json')
-        assert failure['error_type'] == 'AssertionError' and failure['calls'] == 1
-        captures = list((prior / 'readout').glob('CALL_*.json'))
-        assert len(captures) == 1 and 'response' not in run.read(captures[0])
+        assert failure['error_type'] == 'AssertionError' and failure['calls'] > 0
+        captures = sorted((prior / 'readout').glob('CALL_*.json'))
+        assert len(captures) == failure['calls']
+        retained = list(previous.get('retained_calls', []))
+        failed = []
+        for path in captures:
+            record = run.read(path)
+            if record['status'] == 'COMPLETE':
+                assert 'response' in record
+                retained.append(dict(path=str(path), sha256=run.sha(path)))
+            else:
+                assert record['status'] == 'FAILED' and 'response' not in record
+                failed.append(path)
+        assert len(failed) == 1
         assert previous['adapter']['state_sha256'] == adapter['state_sha256']
         assert previous['suite_sha256'] == plan['suite_sha256']
         for key in ('native_deadline_unix', 'hard_deadline_unix', 'lease_end_unix'):
             plan[key] = previous[key]
+        prior_reserved = previous.get('prior_reserved_calls', 0) + len(captures)
+        new_calls = 64 - len(retained)
         plan.update(prior_root=str(prior), prior_plan_sha256=run.sha(prior / 'PLAN.json'),
             prior_failure_sha256=run.sha(prior / 'readout/FAILED.json'),
-            prior_reserved_calls=1, prior_completed_calls=0, aggregate_reserved_cap=65,
-            repair='BOOLEAN_STATE_ON_ACTUAL_LORA_LAYERS_NOT_METHOD_ATTRIBUTES')
+            prior_native_log_sha256=run.sha(prior / 'native.log'),
+            prior_reserved_calls=prior_reserved, prior_completed_calls=len(retained),
+            new_call_cap=new_calls, aggregate_reserved_cap=prior_reserved + new_calls,
+            retained_calls=retained, repair='ACTUAL_LORA_LAYER_STATE_AND_READONLY_CONTEXT_RESTORATION')
+        assert new_calls > 0
+        run.retained_calls(plan, tasks)
     run.validate_plan(plan, source, started)
     run.storage.atomic_json(root / 'PLAN.json', plan)
     run.storage.atomic_json(root / 'SUITE_SEALED.json', dict(tasks=tasks, parent_access=False, train_ingestion=False))
