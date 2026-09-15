@@ -1,0 +1,67 @@
+{
+  "canonical_1_2_not_reclaimed": true,
+  "compact_status": {
+    "bytes": 34346,
+    "path": "research_notes/analysis/orch_rich_hot_node3_20260915_exhaustion_next2304/STATUS_052520.json",
+    "sha256": "d31882d2d5a58fdc10f5620acc5d8661e03dde9915a5df5d6ce14a9623bf22b2"
+  },
+  "git_mutations": false,
+  "ready_manifest": "research_notes/analysis/orch_rich_hot_node3_20260915_exhaustion_next2304/STAGE_READY.json",
+  "slot4_launch_utc": "2026-09-15T05:22:47.432059+00:00",
+  "slot4_ready_utc": "2026-09-15T05:23:26.864477+00:00",
+  "source_and_tests": [
+    {
+      "bytes": 1905,
+      "path": "organism_v6/orch_rich_hot_node3_exhaustion_next.py",
+      "sha256": "8633e60c992f772452fd663109064f75f92a9e5996967d3aaba7a92f0cc14fae"
+    },
+    {
+      "bytes": 14032,
+      "path": "gpu/orch_rich_hot_node3_exhaustion_next_run.py",
+      "sha256": "a5e454670f9c9f9b6f7d252273ffa94b930614d5dbc6cc0fd8efeaa79e86ae85"
+    },
+    {
+      "bytes": 1840,
+      "path": "tests/test_orch_rich_hot_node3_exhaustion_next.py",
+      "sha256": "e4106308ac8bfaa3205f7b0f8fa940e9b67172fea6d187ec1ee9666bf47a2084"
+    }
+  ],
+  "summary": {
+    "node1": {
+      "calls": 920,
+      "failed_calls": 0,
+      "observed_utc": "2026-09-15T05:25:18.340015+00:00",
+      "oracle_correct_by_stage": {
+        "own_second_pass": 195,
+        "source": 667
+      },
+      "qualified_per_hour": null,
+      "raw_calls_per_hour_since_first_phase_call": 1430.0925818232822,
+      "repetition_flagged_calls": 673,
+      "repetition_measure": "EXACT_REPEATED_SUBSTANTIVE_LINES_NOT_SEMANTIC_VALIDATION",
+      "self_reported_at_least_two": 867,
+      "self_reported_rejections": 48,
+      "semantic_branching_status": "UNREVIEWED_IN_CURRENT_PHASE_RECEIPTS",
+      "semantic_verified_branch_rate": null,
+      "stage_counts": {
+        "own_second_pass": 205,
+        "source": 715
+      }
+    },
+    "node3": {
+      "calls": 119,
+      "completed_episodes": 30,
+      "failed_calls": 0,
+      "observed_utc": "2026-09-15T05:25:19.565190+00:00",
+      "qualified_per_hour": null,
+      "raw_calls_per_hour_since_first_phase_call": 752.3887718042388,
+      "repetition_flagged_calls": 3,
+      "repetition_measure": "EXACT_REPEATED_SUBSTANTIVE_LINES_NOT_SEMANTIC_VALIDATION",
+      "self_reported_at_least_two": 30,
+      "self_reported_rejections": 1,
+      "semantic_branching_status": "UNREVIEWED_IN_CURRENT_PHASE_RECEIPTS",
+      "semantic_verified_branch_rate": null,
+      "verifier_correct_episodes": 10
+    }
+  }
+}

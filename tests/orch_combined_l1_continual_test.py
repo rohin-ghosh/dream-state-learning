@@ -204,12 +204,36 @@ def test_optimizer_and_rng_resume_matches_uninterrupted_cpu():
     assert torch.equal(parameter, expected)
 
 
+def require_delta76_fixtures(root):
+    paths = (root / 'INBOX/math_final_review_delta76_20260915/BOUND_PACKET.json',
+        root / 'PACKET/ADMITTED_ROWS.json',
+        root / 'INBOX/math_final_review_delta76_20260915/ROWS.json')
+    missing = [str(path.relative_to(root)) for path in paths if not path.is_file()]
+    if missing:
+        pytest.skip('immutable experiment fixtures not in source-only checkout: ' + ', '.join(missing))
+    return paths[0]
+
+
+@pytest.mark.parametrize('available', range(8))
+def test_delta76_fixture_availability_requires_all_inputs(tmp_path, available):
+    paths = ('INBOX/math_final_review_delta76_20260915/BOUND_PACKET.json',
+        'PACKET/ADMITTED_ROWS.json', 'INBOX/math_final_review_delta76_20260915/ROWS.json')
+    for index, name in enumerate(paths):
+        if available & (1 << index):
+            path = tmp_path / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text('{}')
+    if available == 7:
+        assert require_delta76_fixtures(tmp_path) == tmp_path / paths[0]
+    else:
+        with pytest.raises(pytest.skip.Exception, match='immutable experiment fixtures'):
+            require_delta76_fixtures(tmp_path)
+
+
 def test_real_main_delta76_is_exactly_once_and_preserves_rows():
     repository = Path(__file__).resolve().parents[1]
     root = repository / 'research_notes/analysis/orch_combined_l1_continual_20260915_attempt1'
-    path = root / 'INBOX/math_final_review_delta76_20260915/BOUND_PACKET.json'
-    if not path.exists():
-        pytest.skip('immutable experiment packet not in source-only checkout')
+    path = require_delta76_fixtures(root)
     original = json.loads((root / 'PACKET/ADMITTED_ROWS.json').read_text())
     material = json.loads(path.read_text())
     state = append(policy.initial_state(original, 'initial'), material)

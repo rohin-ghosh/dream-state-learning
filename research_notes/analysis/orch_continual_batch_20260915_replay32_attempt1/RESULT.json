@@ -1,0 +1,594 @@
+{
+  "admitted_rows": 0,
+  "branch_measurements": [
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "direct_rate_comparison",
+            "considered_line_ids": [
+              6,
+              9,
+              12
+            ],
+            "description": "Compute each walker's miles by dividing the common collection amount by the applicable per-mile rate, then subtract.",
+            "pursued_line_ids": [
+              7,
+              10,
+              13
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          },
+          {
+            "approach_id": "changed_rates_or_additional_factors",
+            "considered_line_ids": [
+              15
+            ],
+            "description": "Consider whether changing rates or unspecified additional factors should affect the calculation.",
+            "pursued_line_ids": [],
+            "rejected": true,
+            "rejection_line_ids": [
+              15
+            ],
+            "rejection_reason": "the problem only provided the rates and the total collected"
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 2,
+        "semantic_distinct_approaches_pursued": 1
+      },
+      "has_meaningful_branch": true,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "4983970fc71d15a6ebcf5b3ae74b1f6641afbaca79e8bf95626698bf0003f497"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "net_rate",
+            "considered_line_ids": [
+              7,
+              11,
+              14,
+              17
+            ],
+            "description": "Convert drain and hose times to volume rates, subtract to get net outflow, and apply it for three hours.",
+            "pursued_line_ids": [
+              8,
+              9,
+              12,
+              15,
+              18,
+              19,
+              20
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          },
+          {
+            "approach_id": "hose_faster_counterfactual",
+            "considered_line_ids": [
+              22
+            ],
+            "description": "Consider the opposite rate ordering in which inflow exceeds outflow.",
+            "pursued_line_ids": [],
+            "rejected": true,
+            "rejection_line_ids": [
+              22
+            ],
+            "rejection_reason": "the hose is slower"
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 2,
+        "semantic_distinct_approaches_pursued": 1
+      },
+      "has_meaningful_branch": true,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "c251bef10ed0098f134eedbd072522ac2c0e93f6b68b96e26947d31128ad8543"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "total_cans_difference",
+            "considered_line_ids": [
+              9,
+              12,
+              15
+            ],
+            "description": "Compute total packed cans and loaded cans separately, then subtract.",
+            "pursued_line_ids": [
+              10,
+              13,
+              16
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          },
+          {
+            "approach_id": "empty_unloaded_cartons",
+            "considered_line_ids": [
+              18
+            ],
+            "description": "Consider whether the ten unloaded cartons could contain no cans.",
+            "pursued_line_ids": [],
+            "rejected": true,
+            "rejection_line_ids": [
+              18
+            ],
+            "rejection_reason": "each carton is supposed to contain 20 cans"
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 2,
+        "semantic_distinct_approaches_pursued": 1
+      },
+      "has_meaningful_branch": true,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "8d7a97935d773ba33929541b943e0306c7c441fe08796892839dc054cc59a2c7"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "linear_equation",
+            "considered_line_ids": [
+              3,
+              5,
+              7,
+              10
+            ],
+            "description": "Represent Dave Winfield's total by a variable, translate the comparison into a linear equation, and solve it.",
+            "pursued_line_ids": [
+              8,
+              11,
+              12,
+              13,
+              14
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 1,
+        "semantic_distinct_approaches_pursued": 1
+      },
+      "has_meaningful_branch": false,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "2b8e0e70b625721492a61776aa85736dbd3e5c796314ed7082c38049f9d870fb"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "revenue_minus_total_cost",
+            "considered_line_ids": [
+              3,
+              8,
+              11,
+              14,
+              17,
+              20
+            ],
+            "description": "Compute sales revenue, parts cost, fixed monthly expenses, and subtract all costs from revenue.",
+            "pursued_line_ids": [
+              9,
+              12,
+              15,
+              18,
+              21
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          },
+          {
+            "approach_id": "fixed_markup_interpretation",
+            "considered_line_ids": [
+              23
+            ],
+            "description": "Consider interpreting the selling price as parts cost plus a fixed markup.",
+            "pursued_line_ids": [],
+            "rejected": true,
+            "rejection_line_ids": [
+              23
+            ],
+            "rejection_reason": "the problem explicitly states the selling price is 1.4 times the cost of parts"
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 2,
+        "semantic_distinct_approaches_pursued": 1
+      },
+      "has_meaningful_branch": true,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "de5a14044e0d7ca84a79e31e181f3e5d47daa811c4828149b06092f76b8c3ce4"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "forty_percent_more_and_double_sum",
+            "considered_line_ids": [
+              7,
+              10,
+              13,
+              16
+            ],
+            "description": "Compute the first payment, interpret two-fifths more as adding 40%, double the first two payments for the third, and add everything to the initial balance.",
+            "pursued_line_ids": [
+              8,
+              11,
+              14,
+              17
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          },
+          {
+            "approach_id": "undoubled_third_payment",
+            "considered_line_ids": [
+              19
+            ],
+            "description": "Treat the third payment as merely the sum of the first two payments and calculate the resulting total.",
+            "pursued_line_ids": [
+              20,
+              21
+            ],
+            "rejected": true,
+            "rejection_line_ids": [
+              23
+            ],
+            "rejection_reason": "the third client pays twice the combined amount"
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 2,
+        "semantic_distinct_approaches_pursued": 2
+      },
+      "has_meaningful_branch": true,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "7294a7ad6dad666d5eaef708a38ee8c414c6651b7eeeb3f90d4e885f366669b4"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "sum_then_halve_and_subtract",
+            "considered_line_ids": [
+              5,
+              6,
+              8,
+              9,
+              11,
+              12
+            ],
+            "description": "Add both balloon colors, calculate half as the amount shared, then subtract it from the total.",
+            "pursued_line_ids": [
+              5,
+              6,
+              8,
+              9,
+              11,
+              12
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 1,
+        "semantic_distinct_approaches_pursued": 1
+      },
+      "has_meaningful_branch": false,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "9dcf31ee29f819fc4b3bf05350bca7b442f7b3f8f70696ae28d8440638c6977f"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "calculate_donation_then_subtract",
+            "considered_line_ids": [
+              5,
+              6,
+              8,
+              9
+            ],
+            "description": "Calculate one quarter of the initial cars and subtract the donated amount.",
+            "pursued_line_ids": [
+              5,
+              6,
+              8,
+              9
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          },
+          {
+            "approach_id": "hypothetical_one_third_donation",
+            "considered_line_ids": [
+              13
+            ],
+            "description": "Evaluate a counterfactual donation of one third of the cars.",
+            "pursued_line_ids": [
+              13
+            ],
+            "rejected": true,
+            "rejection_line_ids": [
+              13
+            ],
+            "rejection_reason": "which is not possible since he can't donate a fraction of a car. Therefore, the correct fraction is 1/4."
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 2,
+        "semantic_distinct_approaches_pursued": 2
+      },
+      "has_meaningful_branch": true,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "42cdd5e55b19b470a69de16eb68dbb4e134f0a25d177bb0e56846c4fe8488674"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "derive_each_age_then_sum",
+            "considered_line_ids": [
+              6,
+              7,
+              9,
+              10,
+              12,
+              13,
+              14
+            ],
+            "description": "Use the successive age multipliers to derive the sister's and Henry's ages, then sum all three siblings.",
+            "pursued_line_ids": [
+              6,
+              7,
+              9,
+              10,
+              12,
+              13,
+              14
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 1,
+        "semantic_distinct_approaches_pursued": 1
+      },
+      "has_meaningful_branch": false,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "35e9e7562746468e9822fc42eff6e99bbef689686e60d3a9c8892ded44fd013a"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "reconstruct_removed_and_initial_total",
+            "considered_line_ids": [
+              6,
+              8,
+              10
+            ],
+            "description": "Find the basket amount, add it to the eaten amount, and add all removed bananas to those left on the tree.",
+            "pursued_line_ids": [
+              6,
+              8,
+              10
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          },
+          {
+            "approach_id": "hypothetical_140_eaten",
+            "considered_line_ids": [
+              12
+            ],
+            "description": "Evaluate a counterfactual in which Raj ate 140 bananas.",
+            "pursued_line_ids": [
+              12
+            ],
+            "rejected": true,
+            "rejection_line_ids": [
+              12
+            ],
+            "rejection_reason": "This alternative is rejected because the problem clearly states Raj ate 70 bananas, not 140."
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 2,
+        "semantic_distinct_approaches_pursued": 2
+      },
+      "has_meaningful_branch": true,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "1d30c906da7614a3257d0a97e5d1f07ac5f88720fbd0c9ccf61fc20534d317a9"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "subtract_then_divide_among_five",
+            "considered_line_ids": [
+              6,
+              7,
+              9,
+              10,
+              12,
+              13
+            ],
+            "description": "Subtract the father's apples, count Jack plus four friends, and divide the remainder among five people.",
+            "pursued_line_ids": [
+              6,
+              7,
+              9,
+              10,
+              12,
+              13
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          },
+          {
+            "approach_id": "keep_all_apples",
+            "considered_line_ids": [
+              17
+            ],
+            "description": "Consider Jack keeping all 55 apples instead of following the stated giving and sharing plan.",
+            "pursued_line_ids": [
+              17
+            ],
+            "rejected": true,
+            "rejection_line_ids": [
+              17
+            ],
+            "rejection_reason": "this does not align with the problem statement that he wants to share the remaining apples equally. Therefore, this alternative is rejected."
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 2,
+        "semantic_distinct_approaches_pursued": 2
+      },
+      "has_meaningful_branch": true,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "2004de92d1cf201537506227263b060ddacb9a8e282af2c5d7fe9a4838ca44e8"
+    },
+    {
+      "branch_metrics": {
+        "approaches": [
+          {
+            "approach_id": "per_wall_usage_then_remaining",
+            "considered_line_ids": [
+              6,
+              7,
+              9,
+              10,
+              12,
+              13,
+              15,
+              16
+            ],
+            "description": "Find paint per wall, calculate use for three painted walls plus the ceiling, and subtract from the purchased total.",
+            "pursued_line_ids": [
+              6,
+              7,
+              9,
+              10,
+              12,
+              13,
+              15,
+              16
+            ],
+            "rejected": false,
+            "rejection_line_ids": [],
+            "rejection_reason": ""
+          },
+          {
+            "approach_id": "original_four_wall_plan",
+            "considered_line_ids": [
+              18,
+              19,
+              20
+            ],
+            "description": "Evaluate the superseded plan of painting all four walls and not painting ceiling flowers.",
+            "pursued_line_ids": [
+              18,
+              19,
+              20
+            ],
+            "rejected": true,
+            "rejection_line_ids": [
+              18,
+              22
+            ],
+            "rejection_reason": "Since she decided to tile one wall and paint the ceiling"
+          }
+        ],
+        "measurement_status": "MEASURED",
+        "repetition_failure": false,
+        "repetition_line_ids": [],
+        "repetition_reason": "",
+        "semantic_distinct_approaches_considered": 2,
+        "semantic_distinct_approaches_pursued": 2
+      },
+      "has_meaningful_branch": true,
+      "semantic_novelty": "APPLIED_REASONING",
+      "target_sha256": "f4a0f612f769b191efcc60c1e93a96f91d77d1bebe98db8300a4089442147e9d"
+    }
+  ],
+  "decision": {
+    "accepted": false,
+    "arm": "ROHIN101_FULL256_MATH32_V1",
+    "exported_rows": 30,
+    "fatal_grounding_or_gold": true,
+    "population": 32,
+    "sample_pass": 10,
+    "sample_size": 12
+  },
+  "fit_executed": false,
+  "held_readout_executed": false,
+  "native_root": "/localhome/local-rohing/orch_continual_batch_replay32_20260915_attempt1",
+  "reported_provider_components": {
+    "cached_input_tokens": 10112,
+    "input_tokens": 37764,
+    "output_tokens": 7894,
+    "reasoning_output_tokens": 1385
+  },
+  "sampled_pass": 10,
+  "source_state_sha256": "93a036b93e2d41d2715230aaf2f2fa5382f4cbe404c743fd36dc37aba7f7c0d8",
+  "transfer": {
+    "files": 22,
+    "inventory_sha256": "8ee01d3866fa8ab5e685c60884b4bcca464008618dd60057006febe2d6fe888c",
+    "verified": true
+  }
+}

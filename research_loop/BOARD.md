@@ -1,5 +1,17 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Branching update — 2026-09-15 05:30 UTC
+
+Separate FULL256 STEERED/ORIGINAL_RICH pilot: author sample9/12meaningful
+branches and9/12rejected-approach rows;21approaches considered/17pursued,
+0repetitionfailures. NOT unhintedexhaustion (diagnostic0/4 unchanged), not a
+causal transfer gain. All12goldvalid;2grounding errors inside counterfactuals
+vetoed batch,10PASS/0admitted/no own-outputfit. Preserve failure and exact
+reasons in replay32_attempt1/REJECTION_SUMMARY_0528.json.20unsampled unknown.
+Node3 4 backfill actuallyready05:23:26; A1004 readout resident05:28.
+Native-fixture regression repaired without runtime changes:66PASS/4SKIP.
+
+
 ## A1004 parenting continuation — 2026-09-15 05:27 UTC
 
 Keep4as parenting. After preserved GUIDEDC2 parent timeout/zero writes and

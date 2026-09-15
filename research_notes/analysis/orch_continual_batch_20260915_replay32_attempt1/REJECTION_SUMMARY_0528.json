@@ -1,0 +1,95 @@
+{
+  "schema": "ORCH_CONTINUAL_BATCH_REPLAY32_REJECTION_RECEIPT_V1",
+  "observed_utc": "2026-09-15T05:28:26.624407+00:00",
+  "arm": "ROHIN101_FULL256_MATH32_V1",
+  "source_class": "CHECKPOINT_DERIVED_NOT_IMPROVED",
+  "source_prompt_state": "FULL256 STEERED/ORIGINAL_RICH; NOT EXHAUSTION_ONLY",
+  "source_state_sha256": "93a036b93e2d41d2715230aaf2f2fa5382f4cbe404c743fd36dc37aba7f7c0d8",
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "decision": {
+    "accepted": false,
+    "population": 32,
+    "sampled_pass": 10,
+    "sampled_fail": 2,
+    "sampled_gold_valid": 12,
+    "fatal_grounding_or_gold": true,
+    "fatal_kind": "GROUNDING_AND_NEUTRAL_PREFIX_COMPATIBILITY",
+    "admitted_rows": 0,
+    "unsampled_individual_status": "20 UNKNOWN/UNREVIEWED",
+    "manifest": null,
+    "compile_handoff": null,
+    "fit_executed": false,
+    "salvage_or_review_retry": false,
+    "exported_rows_30_interpretation": "Potential rows before veto, NOT exported or admitted"
+  },
+  "semantic_sample_totals": {
+    "denominator": 12,
+    "distinct_approaches_considered": 21,
+    "distinct_approaches_pursued": 17,
+    "meaningful_branch_rows": 9,
+    "repetition_failure_rows": 0,
+    "novelty_counts": {
+      "APPLIED_REASONING": 12
+    },
+    "measurement": "Author semantic sample only; not mechanical/self-reported, not all32, not causal exhaustion comparison"
+  },
+  "failing_rows": [
+    {
+      "target_sha256": "42cdd5e55b19b470a69de16eb68dbb4e134f0a25d177bb0e56846c4fe8488674",
+      "status": "FAIL",
+      "gold_status": "VALID",
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "reason": "The main calculation and final answer are correct, but the rejected branch contains a false exact equality: 20/3 is not exactly 6.67.",
+      "prefix_reason": "The main solution follows from the prefix, but line 13 asserts the inexact equality 20 × 1/3 = 6.67; the rejection does not retract that arithmetic claim.",
+      "evidence_line_ids": [
+        6,
+        9,
+        13
+      ]
+    },
+    {
+      "target_sha256": "1d30c906da7614a3257d0a97e5d1f07ac5f88720fbd0c9ccf61fc20534d317a9",
+      "status": "FAIL",
+      "gold_status": "VALID",
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "reason": "The main route correctly produces 310, but the target also endorses a wrong total in its rejected counterfactual branch.",
+      "prefix_reason": "The main solution is supported, but line 12's counterfactual total omits the 140 eaten bananas: under that premise the initial total would be 100 + 140 + 280 = 520, not 380.",
+      "evidence_line_ids": [
+        6,
+        8,
+        10,
+        12
+      ]
+    }
+  ],
+  "failure_interpretation": "Both concern arithmetic assertions inside explicitly rejected counterfactuals. Preserve reviewer verdicts; neither is a wrong original FINAL or gold. Considering/rejecting an approach is not itself a failure.",
+  "native_root": "/localhome/local-rohing/orch_continual_batch_replay32_20260915_attempt1",
+  "native_receipts": {
+    "SAMPLED_REVIEWS.json": "be247d7d0fc8680c2f05945bb44b4d1e8c21225e08d9e2fd0dd598131852d466",
+    "BATCH_DECISION.json": "beee88fa55c203a522eb0a1b7a67007836dc6c6a29774e7d43cf141231ef467d",
+    "RESULT_REDUCTION.json": "54f1c6b1f09f84f06462ef9b28aa679722a86be06b0995d364eab9fb409fba79"
+  },
+  "local_result_sha256": "54f1c6b1f09f84f06462ef9b28aa679722a86be06b0995d364eab9fb409fba79",
+  "reported_provider_components": {
+    "cached_input_tokens": 10112,
+    "input_tokens": 37764,
+    "output_tokens": 7894,
+    "reasoning_output_tokens": 1385
+  },
+  "provider_component_caveat": "Cached input and reasoning output are reported components, not additional totals.",
+  "shared_review_slots": [
+    87,
+    88
+  ],
+  "original_deadline_utc": "2026-09-15T06:10:32.518Z",
+  "controller_wall_seconds": 95.73187303543091,
+  "selected32_native_source_window": {
+    "first_capture_unix": 1789446392.1175647,
+    "last_capture_unix": 1789447411.0286453,
+    "generated_content_tokens": 7483,
+    "rate_denominator": "Native capture interval only, not controller wall time"
+  },
+  "raw_storage": "NATIVE_ONLY"
+}

@@ -90,6 +90,11 @@ def normalize_native_call(call, task, registration, provenance):
 def compile_bound_batch(request, tokenizer):
     root = request['native_evidence_root']
     registration = read_bound(request['registration'], root)
+    admission = policy
+    if registration.get('arm') == 'ROHIN101_FULL256_MATH32_V1':
+        from organism_v6 import orch_continual_batch_replay32 as admission
+        policy.require(registration['source_state_sha256'] == admission.STATE and registration['batch_size'] == 32,
+                       'separate_FULL256_32_arm_only')
     policy.require(registration['native_root'] in registration['allowlisted_generation_roots'],
                    'registered_source_root_required')
     registry = read_bound(request['source_registry'], root)
@@ -113,14 +118,14 @@ def compile_bound_batch(request, tokenizer):
     candidates = read_bound(request['candidates'], root)
     reviews = read_bound(request['reviews'], root)
     sample = read_bound(request['sample'], root)
-    selected = policy.sample(candidates)
+    selected = admission.sample(candidates)
     policy.require(sample['semantic_results_seen'] is False and
                    sample['candidates_sha256'] == request['candidates']['sha256'] and
                    sample['registration_sha256'] == request['registration']['sha256'] and
                    sample['sample_target_sha256s'] == [row['target_sha256'] for row in selected],
                    'prospective_sample_binding')
     policy.validate_review(selected, dict(reviews=reviews))
-    decision, exported = policy.adjudicate(candidates, reviews)
+    decision, exported = admission.adjudicate(candidates, reviews)
     policy.require(decision['accepted'], 'batch_author_admission_required')
     checked, skipped = {}, []
     for row in candidates:
@@ -163,7 +168,8 @@ def compile_bound_batch(request, tokenizer):
 
 def handoff(compiled, registration, native_rows_path, native_rows_sha256):
     scope = registration.get('fit_scope', 'CURRENT_MIXED_CONTINUAL_APPEND')
-    policy.require(scope in ('CURRENT_MIXED_CONTINUAL_APPEND', 'ISOLATED_PAIRED_WINDOW'), 'explicit_fit_scope')
+    policy.require(scope in ('CURRENT_MIXED_CONTINUAL_APPEND', 'ISOLATED_PAIRED_WINDOW',
+                            'PENDING_LAPLACE_ISOLATED_PAIRED_WINDOW'), 'explicit_fit_scope')
     if scope == 'ISOLATED_PAIRED_WINDOW':
         policy.require(registration.get('paired_window_id') and registration.get('paired_initial_state_sha256') and
                        registration.get('control') == 'MATCHED_MASKED_TARGET', 'prospective_paired_window_binding_required')
@@ -172,6 +178,7 @@ def handoff(compiled, registration, native_rows_path, native_rows_sha256):
         source_lineage=registration['lineage'], compiled_rows=compiled, fit_scope=scope,
         paired_window_id=registration.get('paired_window_id'), source_split='TRAIN',
         raw_storage='NATIVE_ONLY', held_readout_outputs_compiled=False, teacher_exemplars_compiled=False,
+        training_application_allowed=scope != 'PENDING_LAPLACE_ISOLATED_PAIRED_WINDOW',
         parenting_experiences_compiled=False, paired_fit_executed=False, held_readout_executed=False,
         claim_scope='NO_ISOLATED_OWN_OUTPUT_CLAIM_WITHOUT_LAPLACE_PAIRED_FIT_AND_RICHNESS_FIRST_HELD_READOUT',
         preserve_adapter_optimizer_rng_cursor=True, unsampled_individual_semantics='UNREVIEWED_UNKNOWN')
