@@ -1978,3 +1978,9 @@ Rohin: richness is not narration. A picture is a thousand words, but the words a
 - **IDEA — context management as a meta pass.** Under meaningful context pressure the model reflects on its context (not a refresh), distils what is valuable into a few tokens, chooses what to keep, expands back; the model decides how much; learned later (level 3 / lineage). Prototype as a prompt-driven meta pass now; the same operation is what the sleep compiler's replay does across episodes.
 - **IDEA — compiler = additive replay with a learning goal.** The last compile step replays the memories and ADDS (connections, what-abouts, a chosen learning goal that shapes the sequence); it removes nothing. **Projection withdrawn:** lowering plasticity is the down-projection — small directions are lost by not being learned, so no explicit projection step is needed.
 - Rohin will send his own context-management notes; fold them in when they arrive.
+
+### 2026-09-15 03:4x — Rohin, message 95: the parenting campaign as a DATA-GATHERING campaign
+
+- RULED: we do not know how to parent, so we parent everything and gather data on parenting itself. Axes: style (micromanaging / training-wheels / creative), horizon (short / long), tone (harsh-critical — "cursing at the agent" — vs supportive-positive), strength (gpt-6-astra / Sonnet / smaller). Every parenting transcript is kept as data: it becomes lineage material so a later model can be a parent (Fable/Astra remain stronger parents; the model-parent is still tried). Ongoing campaign: add learnings, retire weak level-1 arms.
+- RULED: terse rows are kept in the corpus — "better than nothing, it doesn't hurt" — combined with the rich rows into one level-1 fit.
+- Fable position: the tone axis is the cheapest genuinely new experiment tonight (same parent model, same content, opposite register) and the one most likely to surprise; measure it on the learner-centric readout, not on politeness.
