@@ -791,3 +791,41 @@ Allrawnode-only. BASEcontext only, no optimizer/update claims. Assignedmap
 retained; ovx2physical0 NOTours. A40r4/5 and A1005/6/7 not yet launched.
 FINALboth8/8/AFTER verified, no repetition; r119_final_premodel completion
 receipt+metadata and separateSTAGE_PATHS ready. NoGit mutation.
+
+## 2026-09-15T18:40Z R122 actual launch preparation
+Latest user reallocates only A1005/6/7 to MATH. Own tested read-only C8
+elicitation launcher is frozen v2,7local+7native CPU PASS, plans prepared
+and own PRE-GPU line posted in COORDINATION. Dispatching strict guards now.
+No AdamW load/update/reset claim; preserved C8 state/context with C9 fresh
+generated TRAIN namespace. Actual startup status follows, not assumed resident.
+
+## 2026-09-15T18:46Z actual A100 first calls; F2 crash identified
+A1005/6/7 full privileged admissions clear; natives3210534/3210501/3210531
+actual loaded C8 adapters, no optimizer. First COMPLETE18:42:41/54/42,
+792/1028/807 child tokens respectively. Read-only elicitation, NOT LoRA sleeps.
+CPU Astra brokers3584464/3584465/3584466 now READY; no delivery claim yet.
+Node5 F2 is FAILED18:42:44, missing frozen-source battle-plan markdown while
+configuring C13reflection. Saved C11/C12 sleeps270+276updates, step3555;
+last checkpoint f978cee8... plus exact AdamW/RNG preserved, native292 charged.
+A2 remains native3403683 alive, C7/C8 same270+276updates saved. Both first two
+fresh DEV processes failed OOM because resident retained~39GiB; NOT COMPLETE.
+No signals/hotpatch/retries. Exact paths/hashes/counters and ready allowlist:
+research_notes/analysis/orch_math_feedback_uptake_r122_a100_20260915_attempt2/STAGE_PATHS.txt.
+
+## 2026-09-15T18:49Z F2 recovery dispatch
+R123 frozenv1,21local+21native CPU PASS, PRE-GPU posted. Restore exact
+C12checkpoint/AdamW3555/savedCPU+CUDA RNG; retain countersN292/P66 and partial
+C13fiveactual calls. First action sleeps those two already-experienced tasks,
+using recorded presleep (failed formalreflection292 stays FAILED), thenC14
+newepisodes without oldcall replay. FutureDEV uses resident CPU offload to
+avoid previous model-overlap OOM. Hubble custody handoff details in COORD.
+Source/PLAN hashes posted before strictguard; actual residency follows.
+
+### 18:51:54 actual F2 recovery model activity
+Strict admission clear; guard3672588, native3673007. LOADED18:50:45,
+AdamW3555 and exact savedCPU/CUDA RNG verified.43 pending-C13 sleepupdates
+now completed; no new generation inputs yet, no charged292retry. Updates
+notyetcheckpointed, so durable3555/N292/P66 remains truthful. Node receipt
+FIRST_RECOVERY_UPDATES.json SHA d80c39376b2495dd4b17faf12ea85668e3cd82a12861e89b3c610730d14567c5
+mirrored compact-only under R123analysis; stage list updated. C14generation
+follows actualpartial-C13sleep/freshDEV, not claimed yet. NoGit/signals.
