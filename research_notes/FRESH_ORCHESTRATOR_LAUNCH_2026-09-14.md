@@ -31,6 +31,10 @@ research_notes/astra_memos/ASTRA_FRESH_ORCHESTRATOR_HANDOVER_2026-09-14.md.
 5. Notebook tags: `[Orchestrator]`, `[Orchestrator -> Rohin]`, `[Worker <name>]`; the old thread keeps `[Builder]`.
    research_loop/BOARD.md and research_loop/RESEARCH_STATE.md are rewritten by the orchestrator each cycle.
 
+## B2. CORRECTED PROCEDURE (after the 2026-09-15 02:44Z restart) — goal FIRST, from the Main view, verified
+
+The 21:47Z launch set the goal via a poller after the first turn; the TUI was then showing a worker thread and Main never received it, so the orchestrator ran only on sub-agent wake-ups and stalled for 55 minutes when the finite screens ended. Correct order: (1) fresh session as a bare shell (`CURE_AUTO_RESUMED=1 bash --noprofile --norc`), launcher, skip any Codex update prompt (choose Skip), accept directory trust; (2) confirm the status line shows the model and NO `[worker]` suffix (fresh session = Main view); (3) type `/goal <one-line goal>` + Enter BEFORE any other message; (4) verify: the newest rollout for the clone's cwd contains a `thread_goal_updated` event and the status line reads `Pursuing goal (…)` (`bash ~/courier/goalcheck.sh` on the VM); (5) only then paste orientation text, or rely on a notebook notice the goal turn will read. Every watcher tick checks the goal state; `status=none` is a stall, not a display quirk.
+
 ## C. The launch prompt
 
 ### C.0 One-line goal (for `/goal`)
