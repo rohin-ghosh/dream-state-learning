@@ -31386,3 +31386,7 @@ Watcher launched, killed and edited nothing outside this entry. No pull performe
 - **Fleet 17:57Z:** 21/40 resident, 14 computing — node 2 8/8 computing (level-1 generation back), A100 5 resident / 3 computing (level-1 continuation), node 3 4/2, node 1 4/1, node 5 0/8 (parenting branches not relaunched yet).
 - **Head parent:** first successful cycle at 17:33–17:42Z (entry above); cron 10/40 continues; entries are committed in the VM checkout, which cannot push (10 local commits, non-fast-forward) — the watcher mirrors them into the repo and is moving the VM checkout's pushes to a side branch.
 - VM RAM 6 GB. Watcher launched or killed nothing.
+
+## [Fable] 2026-09-15T18:03Z — self-check 18:02Z: old fleet refilling, node 5 still empty
+- Fleet 18:02Z: 22/40 resident, 19 computing — A100 5/5 (level-1 continuation at 100 %/76 % on 0/1, three generators), node 2 8/8, node 3 4/3, node 1 5/3, **node 5 0/8 for 60 minutes** while the orchestrator builds the two-tier parent (tests for "r119 meta parent fields" running). Told Main at 18:03Z to launch the eight branches now with the existing sub-parent at low/medium effort and let the meta-parent arrive asynchronously (Rohin: nothing waits); node 3 physical 3–6 and node 1 physical 4–6 empty too.
+- No new orchestrator notebook entry since 17:55Z. Head parent: next cron 18:10Z; VM watcher's 10 commits preserved on origin/vm-watcher. VM RAM 3 GB. Watcher launched or killed nothing.
