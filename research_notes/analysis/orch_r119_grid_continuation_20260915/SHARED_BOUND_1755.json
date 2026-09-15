@@ -1,0 +1,72 @@
+{
+  "branches": {
+    "A4": {
+      "broker_ready": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_continuation_r119/BROKER_READY.json",
+        "sha256": "9a0ee24bc325fcfdc635343719246ad42e211bfaee7230509c768be163b6bc80"
+      },
+      "owner": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_continuation_r119/OWNER.json",
+        "sha256": "4445d4acc52db7413e10f2cbc42260c97e9319759c32bd3914018d83c99df7d3"
+      },
+      "plan": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_continuation_r119/PLAN.json",
+        "sha256": "430cf601144b6a33aa8b910b9eeb344861fb49549dc1d34df1fa0c2a4efad85c"
+      },
+      "preflight_argv": [
+        "env",
+        "CUDA_VISIBLE_DEVICES=",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "PYTHONPATH=/localhome/local-rohing/orch_r118_grid_shared_source_20260915_attempt2",
+        "ORCH_R119_LEASE_CLOCK=/localhome/local-rohing/orch_r119_lease_continuation_20260915/CLOCK.json",
+        "ORCH_R119_LEASE_CLOCK_SHA256=a1aa51349c1784ec9f78e6411912576be43b55942c5fcdf1858ca391fd81c510",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "/localhome/local-rohing/orch_r119_grid_shared_source_20260915_v1/gpu/orch_r119_grid_shared_continue.py",
+        "validate",
+        "--plan",
+        "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_continuation_r119/PLAN.json",
+        "--sha256",
+        "430cf601144b6a33aa8b910b9eeb344861fb49549dc1d34df1fa0c2a4efad85c"
+      ],
+      "preflight_exit_code": 0,
+      "standalone_GPU_dispatch": false
+    },
+    "F4": {
+      "owner": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_continuation_r119/OWNER.json",
+        "sha256": "39b4b4f0affd5a813239d575782d46e43f6373087c2a5e773bdcc09629c077b3"
+      },
+      "plan": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_continuation_r119/PLAN.json",
+        "sha256": "37ce8fd14ad7a4e985ffad5362d85e7bec15667a25170d8b855c82b6aeedc52e"
+      },
+      "preflight_argv": [
+        "env",
+        "CUDA_VISIBLE_DEVICES=",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "PYTHONPATH=/localhome/local-rohing/orch_r118_grid_shared_source_20260915_attempt2",
+        "ORCH_R119_LEASE_CLOCK=/localhome/local-rohing/orch_r119_lease_continuation_20260915/CLOCK.json",
+        "ORCH_R119_LEASE_CLOCK_SHA256=a1aa51349c1784ec9f78e6411912576be43b55942c5fcdf1858ca391fd81c510",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "/localhome/local-rohing/orch_r119_grid_shared_source_20260915_v1/gpu/orch_r119_grid_shared_continue.py",
+        "validate",
+        "--plan",
+        "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_continuation_r119/PLAN.json",
+        "--sha256",
+        "37ce8fd14ad7a4e985ffad5362d85e7bec15667a25170d8b855c82b6aeedc52e"
+      ],
+      "preflight_exit_code": 0,
+      "standalone_GPU_dispatch": false
+    }
+  },
+  "campaign": {
+    "path": "/localhome/local-rohing/orch_r119_main_lease_campaign_20260915_1750/CAMPAIGN.json",
+    "sha256": "8715b24d2cbb667a8ef22a5324b0d77481910a3646cae4e376873afefc3148b9"
+  },
+  "custody": "ACTUAL_GUARD_CREATES_COMPLETED_FINAL_CUSTODIAN_AFTER_NATIVE_IDENTITY_NO_EVALUATOR",
+  "owner_pins_unchanged_after_bind": true,
+  "premodel_preflight_note": "Use exact owner PYTHONPATH and script argv, NOT python -m with namespace-only staging root; mistaken module-form preflight failed AttributeError, corrected exact-owner preflights both passed.",
+  "schema": "R119_GRID_BOUND_SHARED_OWNERS_V1"
+}
