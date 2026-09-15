@@ -1,0 +1,991 @@
+{
+  "arguments": {
+    "bundle": "/tmp/astra_portable_37ec_20260914_attempt1",
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "freeze": "/tmp/orch_code_channel_20260915_attempt1/source/research_notes/analysis/orch_code_channel_20260915_attempt1/FREEZE.json",
+    "output": "/tmp/orch_code_channel_20260915_attempt1/prepare",
+    "phase": "prepare",
+    "arm": null,
+    "deadline": null
+  },
+  "started_unix": 1789435610.7655334,
+  "pid": 259226,
+  "freeze_sha256": "44e4064d2dbfe8f434ec7b56785a582e5244fe569bf418c563ab66930829af2d",
+  "driver_sha256": "a6038d54c7e7ccbfc45f3eb7db47924d8f7876277af3fe349db78d009ef792c3",
+  "policy_sha256": "f23d691490ce33107cce6b998b758519acd56e66d1e07e235282df9c5c05e00e",
+  "fits": 0,
+  "status": "PREPARED_NO_MODEL",
+  "model_calls": 0,
+  "base_verification": {
+    "verified": true,
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "expected_base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992"
+  },
+  "token_counts": [
+    {
+      "arm": "LEGACY",
+      "position": 0,
+      "prompt_tokens": 303
+    },
+    {
+      "arm": "LEGACY",
+      "position": 1,
+      "prompt_tokens": 407
+    },
+    {
+      "arm": "LEGACY",
+      "position": 2,
+      "prompt_tokens": 292
+    },
+    {
+      "arm": "LEGACY",
+      "position": 3,
+      "prompt_tokens": 441
+    },
+    {
+      "arm": "LEGACY",
+      "position": 4,
+      "prompt_tokens": 300
+    },
+    {
+      "arm": "LEGACY",
+      "position": 5,
+      "prompt_tokens": 450
+    },
+    {
+      "arm": "LEGACY",
+      "position": 6,
+      "prompt_tokens": 298
+    },
+    {
+      "arm": "LEGACY",
+      "position": 7,
+      "prompt_tokens": 466
+    },
+    {
+      "arm": "LEGACY",
+      "position": 8,
+      "prompt_tokens": 293
+    },
+    {
+      "arm": "LEGACY",
+      "position": 9,
+      "prompt_tokens": 338
+    },
+    {
+      "arm": "LEGACY",
+      "position": 10,
+      "prompt_tokens": 287
+    },
+    {
+      "arm": "LEGACY",
+      "position": 11,
+      "prompt_tokens": 370
+    },
+    {
+      "arm": "LEGACY",
+      "position": 12,
+      "prompt_tokens": 289
+    },
+    {
+      "arm": "LEGACY",
+      "position": 13,
+      "prompt_tokens": 325
+    },
+    {
+      "arm": "LEGACY",
+      "position": 14,
+      "prompt_tokens": 290
+    },
+    {
+      "arm": "LEGACY",
+      "position": 15,
+      "prompt_tokens": 333
+    },
+    {
+      "arm": "LEGACY",
+      "position": 16,
+      "prompt_tokens": 325
+    },
+    {
+      "arm": "LEGACY",
+      "position": 17,
+      "prompt_tokens": 307
+    },
+    {
+      "arm": "LEGACY",
+      "position": 18,
+      "prompt_tokens": 356
+    },
+    {
+      "arm": "LEGACY",
+      "position": 19,
+      "prompt_tokens": 304
+    },
+    {
+      "arm": "LEGACY",
+      "position": 20,
+      "prompt_tokens": 302
+    },
+    {
+      "arm": "LEGACY",
+      "position": 21,
+      "prompt_tokens": 339
+    },
+    {
+      "arm": "LEGACY",
+      "position": 22,
+      "prompt_tokens": 343
+    },
+    {
+      "arm": "LEGACY",
+      "position": 23,
+      "prompt_tokens": 315
+    },
+    {
+      "arm": "LEGACY",
+      "position": 24,
+      "prompt_tokens": 330
+    },
+    {
+      "arm": "LEGACY",
+      "position": 25,
+      "prompt_tokens": 364
+    },
+    {
+      "arm": "LEGACY",
+      "position": 26,
+      "prompt_tokens": 351
+    },
+    {
+      "arm": "LEGACY",
+      "position": 27,
+      "prompt_tokens": 376
+    },
+    {
+      "arm": "LEGACY",
+      "position": 28,
+      "prompt_tokens": 279
+    },
+    {
+      "arm": "LEGACY",
+      "position": 29,
+      "prompt_tokens": 377
+    },
+    {
+      "arm": "LEGACY",
+      "position": 30,
+      "prompt_tokens": 307
+    },
+    {
+      "arm": "LEGACY",
+      "position": 31,
+      "prompt_tokens": 304
+    },
+    {
+      "arm": "LEGACY",
+      "position": 32,
+      "prompt_tokens": 291
+    },
+    {
+      "arm": "LEGACY",
+      "position": 33,
+      "prompt_tokens": 502
+    },
+    {
+      "arm": "LEGACY",
+      "position": 34,
+      "prompt_tokens": 294
+    },
+    {
+      "arm": "LEGACY",
+      "position": 35,
+      "prompt_tokens": 383
+    },
+    {
+      "arm": "LEGACY",
+      "position": 36,
+      "prompt_tokens": 290
+    },
+    {
+      "arm": "LEGACY",
+      "position": 37,
+      "prompt_tokens": 375
+    },
+    {
+      "arm": "LEGACY",
+      "position": 38,
+      "prompt_tokens": 340
+    },
+    {
+      "arm": "LEGACY",
+      "position": 39,
+      "prompt_tokens": 345
+    },
+    {
+      "arm": "LEGACY",
+      "position": 40,
+      "prompt_tokens": 294
+    },
+    {
+      "arm": "LEGACY",
+      "position": 41,
+      "prompt_tokens": 345
+    },
+    {
+      "arm": "LEGACY",
+      "position": 42,
+      "prompt_tokens": 295
+    },
+    {
+      "arm": "LEGACY",
+      "position": 43,
+      "prompt_tokens": 478
+    },
+    {
+      "arm": "LEGACY",
+      "position": 44,
+      "prompt_tokens": 289
+    },
+    {
+      "arm": "LEGACY",
+      "position": 45,
+      "prompt_tokens": 333
+    },
+    {
+      "arm": "LEGACY",
+      "position": 46,
+      "prompt_tokens": 295
+    },
+    {
+      "arm": "LEGACY",
+      "position": 47,
+      "prompt_tokens": 367
+    },
+    {
+      "arm": "LEGACY",
+      "position": 48,
+      "prompt_tokens": 299
+    },
+    {
+      "arm": "LEGACY",
+      "position": 49,
+      "prompt_tokens": 343
+    },
+    {
+      "arm": "LEGACY",
+      "position": 50,
+      "prompt_tokens": 297
+    },
+    {
+      "arm": "LEGACY",
+      "position": 51,
+      "prompt_tokens": 346
+    },
+    {
+      "arm": "LEGACY",
+      "position": 52,
+      "prompt_tokens": 317
+    },
+    {
+      "arm": "LEGACY",
+      "position": 53,
+      "prompt_tokens": 530
+    },
+    {
+      "arm": "LEGACY",
+      "position": 54,
+      "prompt_tokens": 307
+    },
+    {
+      "arm": "LEGACY",
+      "position": 55,
+      "prompt_tokens": 458
+    },
+    {
+      "arm": "LEGACY",
+      "position": 56,
+      "prompt_tokens": 307
+    },
+    {
+      "arm": "LEGACY",
+      "position": 57,
+      "prompt_tokens": 341
+    },
+    {
+      "arm": "LEGACY",
+      "position": 58,
+      "prompt_tokens": 312
+    },
+    {
+      "arm": "LEGACY",
+      "position": 59,
+      "prompt_tokens": 348
+    },
+    {
+      "arm": "LEGACY",
+      "position": 60,
+      "prompt_tokens": 314
+    },
+    {
+      "arm": "LEGACY",
+      "position": 61,
+      "prompt_tokens": 316
+    },
+    {
+      "arm": "LEGACY",
+      "position": 62,
+      "prompt_tokens": 292
+    },
+    {
+      "arm": "LEGACY",
+      "position": 63,
+      "prompt_tokens": 286
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 0,
+      "prompt_tokens": 406
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 1,
+      "prompt_tokens": 510
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 2,
+      "prompt_tokens": 395
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 3,
+      "prompt_tokens": 544
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 4,
+      "prompt_tokens": 403
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 5,
+      "prompt_tokens": 553
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 6,
+      "prompt_tokens": 401
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 7,
+      "prompt_tokens": 569
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 8,
+      "prompt_tokens": 396
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 9,
+      "prompt_tokens": 441
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 10,
+      "prompt_tokens": 390
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 11,
+      "prompt_tokens": 473
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 12,
+      "prompt_tokens": 392
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 13,
+      "prompt_tokens": 428
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 14,
+      "prompt_tokens": 393
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 15,
+      "prompt_tokens": 436
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 16,
+      "prompt_tokens": 428
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 17,
+      "prompt_tokens": 410
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 18,
+      "prompt_tokens": 459
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 19,
+      "prompt_tokens": 407
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 20,
+      "prompt_tokens": 405
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 21,
+      "prompt_tokens": 442
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 22,
+      "prompt_tokens": 446
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 23,
+      "prompt_tokens": 418
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 24,
+      "prompt_tokens": 433
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 25,
+      "prompt_tokens": 467
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 26,
+      "prompt_tokens": 454
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 27,
+      "prompt_tokens": 479
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 28,
+      "prompt_tokens": 382
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 29,
+      "prompt_tokens": 480
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 30,
+      "prompt_tokens": 410
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 31,
+      "prompt_tokens": 407
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 32,
+      "prompt_tokens": 394
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 33,
+      "prompt_tokens": 605
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 34,
+      "prompt_tokens": 397
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 35,
+      "prompt_tokens": 486
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 36,
+      "prompt_tokens": 393
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 37,
+      "prompt_tokens": 478
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 38,
+      "prompt_tokens": 443
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 39,
+      "prompt_tokens": 448
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 40,
+      "prompt_tokens": 397
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 41,
+      "prompt_tokens": 448
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 42,
+      "prompt_tokens": 398
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 43,
+      "prompt_tokens": 581
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 44,
+      "prompt_tokens": 392
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 45,
+      "prompt_tokens": 436
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 46,
+      "prompt_tokens": 398
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 47,
+      "prompt_tokens": 470
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 48,
+      "prompt_tokens": 402
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 49,
+      "prompt_tokens": 446
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 50,
+      "prompt_tokens": 400
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 51,
+      "prompt_tokens": 449
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 52,
+      "prompt_tokens": 420
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 53,
+      "prompt_tokens": 633
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 54,
+      "prompt_tokens": 410
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 55,
+      "prompt_tokens": 561
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 56,
+      "prompt_tokens": 410
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 57,
+      "prompt_tokens": 444
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 58,
+      "prompt_tokens": 415
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 59,
+      "prompt_tokens": 451
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 60,
+      "prompt_tokens": 417
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 61,
+      "prompt_tokens": 419
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 62,
+      "prompt_tokens": 395
+    },
+    {
+      "arm": "SEPARATED",
+      "position": 63,
+      "prompt_tokens": 389
+    },
+    {
+      "arm": "TERSE",
+      "position": 0,
+      "prompt_tokens": 257
+    },
+    {
+      "arm": "TERSE",
+      "position": 1,
+      "prompt_tokens": 361
+    },
+    {
+      "arm": "TERSE",
+      "position": 2,
+      "prompt_tokens": 246
+    },
+    {
+      "arm": "TERSE",
+      "position": 3,
+      "prompt_tokens": 395
+    },
+    {
+      "arm": "TERSE",
+      "position": 4,
+      "prompt_tokens": 254
+    },
+    {
+      "arm": "TERSE",
+      "position": 5,
+      "prompt_tokens": 404
+    },
+    {
+      "arm": "TERSE",
+      "position": 6,
+      "prompt_tokens": 252
+    },
+    {
+      "arm": "TERSE",
+      "position": 7,
+      "prompt_tokens": 420
+    },
+    {
+      "arm": "TERSE",
+      "position": 8,
+      "prompt_tokens": 247
+    },
+    {
+      "arm": "TERSE",
+      "position": 9,
+      "prompt_tokens": 292
+    },
+    {
+      "arm": "TERSE",
+      "position": 10,
+      "prompt_tokens": 241
+    },
+    {
+      "arm": "TERSE",
+      "position": 11,
+      "prompt_tokens": 324
+    },
+    {
+      "arm": "TERSE",
+      "position": 12,
+      "prompt_tokens": 243
+    },
+    {
+      "arm": "TERSE",
+      "position": 13,
+      "prompt_tokens": 279
+    },
+    {
+      "arm": "TERSE",
+      "position": 14,
+      "prompt_tokens": 244
+    },
+    {
+      "arm": "TERSE",
+      "position": 15,
+      "prompt_tokens": 287
+    },
+    {
+      "arm": "TERSE",
+      "position": 16,
+      "prompt_tokens": 279
+    },
+    {
+      "arm": "TERSE",
+      "position": 17,
+      "prompt_tokens": 261
+    },
+    {
+      "arm": "TERSE",
+      "position": 18,
+      "prompt_tokens": 310
+    },
+    {
+      "arm": "TERSE",
+      "position": 19,
+      "prompt_tokens": 258
+    },
+    {
+      "arm": "TERSE",
+      "position": 20,
+      "prompt_tokens": 256
+    },
+    {
+      "arm": "TERSE",
+      "position": 21,
+      "prompt_tokens": 293
+    },
+    {
+      "arm": "TERSE",
+      "position": 22,
+      "prompt_tokens": 297
+    },
+    {
+      "arm": "TERSE",
+      "position": 23,
+      "prompt_tokens": 269
+    },
+    {
+      "arm": "TERSE",
+      "position": 24,
+      "prompt_tokens": 284
+    },
+    {
+      "arm": "TERSE",
+      "position": 25,
+      "prompt_tokens": 318
+    },
+    {
+      "arm": "TERSE",
+      "position": 26,
+      "prompt_tokens": 305
+    },
+    {
+      "arm": "TERSE",
+      "position": 27,
+      "prompt_tokens": 330
+    },
+    {
+      "arm": "TERSE",
+      "position": 28,
+      "prompt_tokens": 233
+    },
+    {
+      "arm": "TERSE",
+      "position": 29,
+      "prompt_tokens": 331
+    },
+    {
+      "arm": "TERSE",
+      "position": 30,
+      "prompt_tokens": 261
+    },
+    {
+      "arm": "TERSE",
+      "position": 31,
+      "prompt_tokens": 258
+    },
+    {
+      "arm": "TERSE",
+      "position": 32,
+      "prompt_tokens": 245
+    },
+    {
+      "arm": "TERSE",
+      "position": 33,
+      "prompt_tokens": 456
+    },
+    {
+      "arm": "TERSE",
+      "position": 34,
+      "prompt_tokens": 248
+    },
+    {
+      "arm": "TERSE",
+      "position": 35,
+      "prompt_tokens": 337
+    },
+    {
+      "arm": "TERSE",
+      "position": 36,
+      "prompt_tokens": 244
+    },
+    {
+      "arm": "TERSE",
+      "position": 37,
+      "prompt_tokens": 329
+    },
+    {
+      "arm": "TERSE",
+      "position": 38,
+      "prompt_tokens": 294
+    },
+    {
+      "arm": "TERSE",
+      "position": 39,
+      "prompt_tokens": 299
+    },
+    {
+      "arm": "TERSE",
+      "position": 40,
+      "prompt_tokens": 248
+    },
+    {
+      "arm": "TERSE",
+      "position": 41,
+      "prompt_tokens": 299
+    },
+    {
+      "arm": "TERSE",
+      "position": 42,
+      "prompt_tokens": 249
+    },
+    {
+      "arm": "TERSE",
+      "position": 43,
+      "prompt_tokens": 432
+    },
+    {
+      "arm": "TERSE",
+      "position": 44,
+      "prompt_tokens": 243
+    },
+    {
+      "arm": "TERSE",
+      "position": 45,
+      "prompt_tokens": 287
+    },
+    {
+      "arm": "TERSE",
+      "position": 46,
+      "prompt_tokens": 249
+    },
+    {
+      "arm": "TERSE",
+      "position": 47,
+      "prompt_tokens": 321
+    },
+    {
+      "arm": "TERSE",
+      "position": 48,
+      "prompt_tokens": 253
+    },
+    {
+      "arm": "TERSE",
+      "position": 49,
+      "prompt_tokens": 297
+    },
+    {
+      "arm": "TERSE",
+      "position": 50,
+      "prompt_tokens": 251
+    },
+    {
+      "arm": "TERSE",
+      "position": 51,
+      "prompt_tokens": 300
+    },
+    {
+      "arm": "TERSE",
+      "position": 52,
+      "prompt_tokens": 271
+    },
+    {
+      "arm": "TERSE",
+      "position": 53,
+      "prompt_tokens": 484
+    },
+    {
+      "arm": "TERSE",
+      "position": 54,
+      "prompt_tokens": 261
+    },
+    {
+      "arm": "TERSE",
+      "position": 55,
+      "prompt_tokens": 412
+    },
+    {
+      "arm": "TERSE",
+      "position": 56,
+      "prompt_tokens": 261
+    },
+    {
+      "arm": "TERSE",
+      "position": 57,
+      "prompt_tokens": 295
+    },
+    {
+      "arm": "TERSE",
+      "position": 58,
+      "prompt_tokens": 266
+    },
+    {
+      "arm": "TERSE",
+      "position": 59,
+      "prompt_tokens": 302
+    },
+    {
+      "arm": "TERSE",
+      "position": 60,
+      "prompt_tokens": 268
+    },
+    {
+      "arm": "TERSE",
+      "position": 61,
+      "prompt_tokens": 270
+    },
+    {
+      "arm": "TERSE",
+      "position": 62,
+      "prompt_tokens": 246
+    },
+    {
+      "arm": "TERSE",
+      "position": 63,
+      "prompt_tokens": 240
+    }
+  ],
+  "tokenizer": {
+    "eos": 151645,
+    "pad": 151643,
+    "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f"
+  }
+}

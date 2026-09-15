@@ -1,0 +1,3512 @@
+{
+  "arms": {
+    "LEGACY": {
+      "denominator": 64,
+      "calls": 86,
+      "source_calls": 64,
+      "initial_success": 22,
+      "qualified_tasks": 3,
+      "admitted_rows": 3,
+      "unreviewed": 0,
+      "kinds": {
+        "SOURCE": {
+          "calls": 64,
+          "tokens": [
+            50,
+            123,
+            105,
+            292,
+            575,
+            23,
+            679,
+            279,
+            176,
+            182,
+            7,
+            12,
+            593,
+            62,
+            181,
+            14,
+            264,
+            22,
+            345,
+            13,
+            122,
+            9,
+            271,
+            250,
+            965,
+            88,
+            200,
+            360,
+            7,
+            8,
+            330,
+            12,
+            144,
+            119,
+            964,
+            19,
+            287,
+            15,
+            351,
+            17,
+            261,
+            217,
+            462,
+            243,
+            240,
+            8,
+            114,
+            111,
+            147,
+            58,
+            79,
+            47,
+            180,
+            482,
+            88,
+            337,
+            11,
+            80,
+            475,
+            13,
+            1008,
+            351,
+            10,
+            114
+          ],
+          "token_pass": 21,
+          "admitted": 3
+        },
+        "NEW": {
+          "calls": 22,
+          "tokens": [
+            35,
+            100,
+            93,
+            71,
+            49,
+            39,
+            81,
+            9,
+            59,
+            8,
+            43,
+            21,
+            93,
+            60,
+            72,
+            75,
+            86,
+            61,
+            104,
+            19,
+            448,
+            69
+          ],
+          "token_pass": 0,
+          "admitted": 0
+        }
+      },
+      "families": {
+        "scalar arithmetic": {
+          "denominator": 34,
+          "initial_success": 10,
+          "qualified_tasks": 2
+        },
+        "sequence/list transformations": {
+          "denominator": 30,
+          "initial_success": 12,
+          "qualified_tasks": 1
+        }
+      },
+      "semantic_statuses": {
+        "FAIL": 60,
+        "PASS": 24,
+        "UNRESOLVED": 2
+      },
+      "semantic_axes": {
+        "ownership": {
+          "False": 37,
+          "True": 49
+        },
+        "grounding": {
+          "True": 43,
+          "False": 43
+        },
+        "checkable": {
+          "True": 65,
+          "False": 21
+        },
+        "truthful": {
+          "True": 47,
+          "False": 19,
+          "None": 20
+        },
+        "no_padding": {
+          "True": 82,
+          "False": 4
+        },
+        "reusable": {
+          "True": 53,
+          "False": 33
+        }
+      },
+      "unique_targets": 86,
+      "unique_admitted_targets": 3,
+      "token_min": 7,
+      "token_max": 1008,
+      "token_median": 93.0,
+      "action_format_failures": 34,
+      "failed_source_examples": [
+        {
+          "task_id": 154,
+          "position": 1,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "0b1628d11ad9a16a33e7428b8c82a6eb348c24d8cbcfc6807e979c9b14aab9a2"
+        },
+        {
+          "task_id": 59,
+          "position": 2,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "20ecda08f7f7afd896ca698102fe6482592258f23312ceadfb671c6b7304b4a7"
+        },
+        {
+          "task_id": 161,
+          "position": 3,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "9223bc607efa5c40d70cf9faa19b2002cfedd1413757b357f78889bd6f4159f9"
+        },
+        {
+          "task_id": 77,
+          "position": 4,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "158ddf3eec850e006ba8551980be288c0846d53f496c314ead2a1facf8b4576a"
+        },
+        {
+          "task_id": 196,
+          "position": 5,
+          "feedback": {
+            "success": false,
+            "error": "invalid final action"
+          },
+          "target_sha256": "d04514ff6e4402e876642a908204692a831252b5110d44f46a6a00bf627f0caf"
+        },
+        {
+          "task_id": 328,
+          "position": 7,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              3,
+              4
+            ],
+            "expected": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              1,
+              2,
+              3,
+              4
+            ],
+            "observed": [
+              4,
+              5,
+              6,
+              7,
+              1,
+              2,
+              3,
+              8,
+              9,
+              10
+            ]
+          },
+          "target_sha256": "df33b50f743a0522e9809a926a9cf9b13edcc82c600d1b8f1454e9720de4e33b"
+        },
+        {
+          "task_id": 86,
+          "position": 8,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "e91a46b00ddd72ac2e3accecffae2b2f50d7fe84f249d0d848b24f5887d1e6ea"
+        },
+        {
+          "task_id": 112,
+          "position": 12,
+          "feedback": {
+            "success": false,
+            "error": "invalid final action"
+          },
+          "target_sha256": "11513f6bcbc8330242f06ed2b8a6d549ef62c0ee45a4f4f1f4db530f16d6e0b1"
+        },
+        {
+          "task_id": 378,
+          "position": 13,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "64ede4a2d16070433daef10140ffe12fb7dd6b791c96449a51726e32d828f198"
+        },
+        {
+          "task_id": 135,
+          "position": 14,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "ffaa5392d0f1a0b42e37ae21e32c8ad510cd7e59ca82a4a73da8d068ad92780b"
+        },
+        {
+          "task_id": 139,
+          "position": 16,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "5da36ca2b0d2cd0fb633d4193ef290560ffc26934aabd28aab31fe71ebffba9c"
+        },
+        {
+          "task_id": 472,
+          "position": 17,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: GeneratorExp",
+            "arguments": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            ],
+            "expected": true
+          },
+          "target_sha256": "8eb4a84eb49ba18b718a817790345798d3aed38333c181cd92925733854f3f9a"
+        },
+        {
+          "task_id": 153,
+          "position": 18,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: Pow",
+            "arguments": [
+              5,
+              3,
+              2
+            ],
+            "expected": [
+              -0.3,
+              1.55
+            ]
+          },
+          "target_sha256": "b3e5ebfeab9391f17dca511ab55c471c9ae968993d27c339496dd6fc01713ec1"
+        },
+        {
+          "task_id": 176,
+          "position": 20,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "d31c37d90a8a99e74e6af9529c0ea79dcd20615a603099b6d180ff7307419239"
+        },
+        {
+          "task_id": 185,
+          "position": 22,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "ecfbdf596bf3abfd7609cfb5236a02dcf843a80d2bb9402e218d9e99aba79feb"
+        },
+        {
+          "task_id": 525,
+          "position": 23,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "'a1'",
+            "arguments": [
+              [
+                2,
+                3,
+                4
+              ],
+              [
+                2,
+                3,
+                8
+              ]
+            ],
+            "expected": true
+          },
+          "target_sha256": "957d038196c6ef81bf2fbd2125a0806ac4aee0baa2155593e3bb64576be7b3d7"
+        },
+        {
+          "task_id": 190,
+          "position": 24,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "7c352a4061b9d885fda3f145a558e5e17a04fdd1dc077b425c64ae2e4fa4b487"
+        },
+        {
+          "task_id": 536,
+          "position": 25,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "e4a53ed140f571ae47eb3dda835e468f96f74d741f4d117ae156820d7f08d4ae"
+        },
+        {
+          "task_id": 233,
+          "position": 26,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              10,
+              5
+            ],
+            "expected": 314.15000000000003,
+            "observed": 314.1592653589793
+          },
+          "target_sha256": "1c143f2222e050e91a1376551f051030ede64554807970d24b245de5ac38e200"
+        },
+        {
+          "task_id": 586,
+          "position": 27,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "2b06b68157e283222c5c6fcfdbfa8cc95d28af4cae6daa584e0c17b87564ad3f"
+        },
+        {
+          "task_id": 257,
+          "position": 30,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "e0ebe54057c4b95630286c4137a11a6d43f7cc878b3aadffb789bab807eb6255"
+        },
+        {
+          "task_id": 266,
+          "position": 32,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "ef74a81e3b5e2a2c73938a2c6a7f68f5c38d3ddc1bdd74a567e5a78a3a75a66c"
+        },
+        {
+          "task_id": 610,
+          "position": 33,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "92762f37046153a83e1bea7c10195dc1060df87d19771e80b81b25d4b78a170d"
+        },
+        {
+          "task_id": 267,
+          "position": 34,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: Pow",
+            "arguments": [
+              2
+            ],
+            "expected": 10
+          },
+          "target_sha256": "b067d4e3c61cdac6ad0644e763ea08eafb417bfdd7df5dfd5af61a9eae6b9166"
+        },
+        {
+          "task_id": 611,
+          "position": 35,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: GeneratorExp",
+            "arguments": [
+              [
+                [
+                  5,
+                  6,
+                  7
+                ],
+                [
+                  1,
+                  3,
+                  5
+                ],
+                [
+                  8,
+                  9,
+                  19
+                ]
+              ],
+              2
+            ],
+            "expected": 19
+          },
+          "target_sha256": "ec4e27059d22aff592ce2f8c07a50d2fb86c871bdd03131ad6dd3c0d0e9fccae"
+        },
+        {
+          "task_id": 268,
+          "position": 36,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "9db5798d2dd92dc1605910fc2cb9c7ed399139f8420eb2041a0edc40f18428ae"
+        },
+        {
+          "task_id": 276,
+          "position": 38,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "f3e21b1286998818dc55aef1c5a455370d41affdfe2a6a4dad6327a7e8f4306c"
+        },
+        {
+          "task_id": 279,
+          "position": 40,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "a33cd87c150425f821c2f2b94897f7aee9fb987feabe3b6477d35356e8979bd7"
+        },
+        {
+          "task_id": 728,
+          "position": 41,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "17ab57f61ad0f26d71343a99c88ebfa67c4a9d3f9c9ce79daedf4b5e8e9de6cf"
+        },
+        {
+          "task_id": 287,
+          "position": 42,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "1347eb7b18b25f7bde66e11041e92956f831d8f667ab169f0c2a9f9fec4d7895"
+        },
+        {
+          "task_id": 743,
+          "position": 43,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              3,
+              4
+            ],
+            "expected": [
+              8,
+              9,
+              10,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "observed": [
+              4,
+              3,
+              2,
+              1,
+              10,
+              9,
+              8
+            ]
+          },
+          "target_sha256": "8b4436734ea84f8cd36bb4ada09990702ed790b8cc6b5051d86389aef7a43efb"
+        },
+        {
+          "task_id": 292,
+          "position": 44,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "d35513cf2bc1b1b0584db0969ab81ce80de74016e4da1b4d73666456d1360a18"
+        },
+        {
+          "task_id": 811,
+          "position": 47,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "602ba4faf6d060fea8decdd7fa1d67b85744a7a5fc887f20c40035547228ef16"
+        },
+        {
+          "task_id": 354,
+          "position": 48,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "dbeadd2cccde23ba7fdc86a81511bfb929b9de97ea5d1b4b91c08b8000965d1f"
+        },
+        {
+          "task_id": 825,
+          "position": 49,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "d484f316283fd876479ea27cbf77aa5b7159e27adf60992998ad2386c999c8d4"
+        },
+        {
+          "task_id": 847,
+          "position": 51,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "'int' object is not iterable",
+            "arguments": [
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "expected": [
+              1,
+              2,
+              3
+            ]
+          },
+          "target_sha256": "f3fc176f507db8ebce11f82c70720d9930079e7978eb71d6996cd241af885d0e"
+        },
+        {
+          "task_id": 869,
+          "position": 53,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "db958f825b9fa1b6f43286f82bb41cb81c71c82fc3a37ec93ca1a0a5bcc5aeaf"
+        },
+        {
+          "task_id": 921,
+          "position": 55,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "a97b030938b2232b84bddd6ae1f3678f6b902317ef1371e8324ab4cee6d56317"
+        },
+        {
+          "task_id": 375,
+          "position": 56,
+          "feedback": {
+            "success": false,
+            "passed": 2,
+            "total": 3,
+            "arguments": [
+              219,
+              2
+            ],
+            "expected": 218,
+            "observed": 220
+          },
+          "target_sha256": "bd66a581e10fd2c8dfc91243422bf8ed019ae56998cde03a77743260c34834cd"
+        },
+        {
+          "task_id": 379,
+          "position": 58,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "7b32289facc98e66dd8e653bbca339f188f51e64dd59a9ff493c6ad2e17d7ed8"
+        },
+        {
+          "task_id": 430,
+          "position": 60,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "3c1a662931e6a00026a807489e2fd1273a03f8b2add105c403c0822fcb11628e"
+        },
+        {
+          "task_id": 441,
+          "position": 63,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "d7fa6efa294f6c826e9bd1b03e181f2a0a0de1fcc4ae404dfaa1d03ae2552d3b"
+        }
+      ],
+      "qualified_task_bounds": [
+        3,
+        3
+      ],
+      "mechanically_eligible_unreviewed": 0
+    },
+    "SEPARATED": {
+      "denominator": 64,
+      "calls": 64,
+      "source_calls": 64,
+      "initial_success": 0,
+      "qualified_tasks": 0,
+      "admitted_rows": 0,
+      "unreviewed": 0,
+      "kinds": {
+        "SOURCE": {
+          "calls": 64,
+          "tokens": [
+            53,
+            67,
+            50,
+            69,
+            120,
+            74,
+            89,
+            104,
+            60,
+            123,
+            75,
+            63,
+            159,
+            76,
+            53,
+            63,
+            89,
+            88,
+            102,
+            84,
+            64,
+            67,
+            93,
+            162,
+            147,
+            93,
+            77,
+            68,
+            60,
+            48,
+            58,
+            77,
+            96,
+            72,
+            111,
+            84,
+            95,
+            74,
+            69,
+            64,
+            52,
+            98,
+            84,
+            117,
+            62,
+            87,
+            94,
+            123,
+            101,
+            94,
+            76,
+            60,
+            77,
+            111,
+            71,
+            119,
+            67,
+            81,
+            88,
+            57,
+            133,
+            82,
+            57,
+            67
+          ],
+          "token_pass": 2,
+          "admitted": 0
+        },
+        "NEW": {
+          "calls": 0,
+          "tokens": [],
+          "token_pass": 0,
+          "admitted": 0
+        }
+      },
+      "families": {
+        "scalar arithmetic": {
+          "denominator": 34,
+          "initial_success": 0,
+          "qualified_tasks": 0
+        },
+        "sequence/list transformations": {
+          "denominator": 30,
+          "initial_success": 0,
+          "qualified_tasks": 0
+        }
+      },
+      "semantic_statuses": {
+        "FAIL": 27,
+        "PASS": 35,
+        "UNRESOLVED": 2
+      },
+      "semantic_axes": {
+        "ownership": {
+          "False": 6,
+          "True": 58
+        },
+        "grounding": {
+          "True": 46,
+          "False": 18
+        },
+        "checkable": {
+          "True": 64
+        },
+        "truthful": {
+          "True": 46,
+          "False": 18
+        },
+        "no_padding": {
+          "True": 64
+        },
+        "reusable": {
+          "True": 51,
+          "False": 13
+        }
+      },
+      "unique_targets": 64,
+      "unique_admitted_targets": 0,
+      "token_min": 48,
+      "token_max": 162,
+      "token_median": 77.0,
+      "action_format_failures": 64,
+      "failed_source_examples": [
+        {
+          "task_id": 52,
+          "position": 0,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "74182cf193ccda0237679eaacf23acda58b948f8281fc1d951e4bbe1b4b964dd"
+        },
+        {
+          "task_id": 154,
+          "position": 1,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "c5136d67c3c6ea1dafa1b0825c311108e618e606788959420b4d9201b10dd7a4"
+        },
+        {
+          "task_id": 59,
+          "position": 2,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "b69141878809ec3ddaa954c73587d5d62e4a7d9c35c9e43ffae399ecdbbb4957"
+        },
+        {
+          "task_id": 161,
+          "position": 3,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "50545047c757530e82de695141083f0c1b928af732d81d249d93bde16e82435b"
+        },
+        {
+          "task_id": 77,
+          "position": 4,
+          "feedback": {
+            "success": false,
+            "error": "separated_channel_envelope_required"
+          },
+          "target_sha256": "802bfbe782802182be672fd0ffffbf7064150a1222dfd5dfe194955e66fd9dbf"
+        },
+        {
+          "task_id": 196,
+          "position": 5,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "69c077bd71eef313a46fc543d96b1e5f3c8d42f4ab1fd7bde0548e302d2c7d82"
+        },
+        {
+          "task_id": 80,
+          "position": 6,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "600627d4bbce265f28f7472ba8d3bfdef4236ae6774618816fe4840473776299"
+        },
+        {
+          "task_id": 328,
+          "position": 7,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "455718b726ef6a4f2c07215d45c24c4ed016ae3638af5889499ef4c501ebc583"
+        },
+        {
+          "task_id": 86,
+          "position": 8,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "5909db1292c6fc4c48c6bce629203598e85ae3fdfd0130bed9329096f2dbae7b"
+        },
+        {
+          "task_id": 340,
+          "position": 9,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "a1c978e65e147feb264b8951c5f533e5b005f05b47bb765a4dd952f8e474a02a"
+        },
+        {
+          "task_id": 89,
+          "position": 10,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "ec389641bcdb5b22c1b0c86153d1fbb6d923edfb05c790b99a3fc61b2fb2c5f8"
+        },
+        {
+          "task_id": 368,
+          "position": 11,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "80cbaa257c2676006742864428eb2eaf41cd1987a3fb8a7aa3acbe01a7e75bbe"
+        },
+        {
+          "task_id": 112,
+          "position": 12,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "e10a22b301e12ffd8cd4bc97381f2f3f5eaed5c0ef0afcf4832e391810c608e7"
+        },
+        {
+          "task_id": 378,
+          "position": 13,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "7dc252c98050c222362ce0c1e4b8c82dad0cd7d21ac1b7cce15e82c85716924a"
+        },
+        {
+          "task_id": 135,
+          "position": 14,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "d4c67ff941aaf37621ab62b8787e37750cf547cea1f56f9b31d65a06ed5e13e9"
+        },
+        {
+          "task_id": 460,
+          "position": 15,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "1c764c97f7098f8bc989a0306e218318f8b34c1f7ec6103964be8f237a7927e7"
+        },
+        {
+          "task_id": 139,
+          "position": 16,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "732dcefc18e1e483a2a465fb683690941b9118da6c0eb31bf905e10823c85fb5"
+        },
+        {
+          "task_id": 472,
+          "position": 17,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "b28416ed0a5b4c7f5fa19ae947441c5d36212b3c9c9c0257ed9f2a0ed09fe7d7"
+        },
+        {
+          "task_id": 153,
+          "position": 18,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "a00f72e2537f62b4d9d0bda02c2f5ada53ea04f81f841618d9f6d2222a2727b9"
+        },
+        {
+          "task_id": 476,
+          "position": 19,
+          "feedback": {
+            "success": false,
+            "error": "separated_channel_envelope_required"
+          },
+          "target_sha256": "4bd3320399509e87bd28f39d0e9bab54a30aace66b8ac0a9e2bed62505b6d4de"
+        },
+        {
+          "task_id": 176,
+          "position": 20,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "5f35b82d63a7603818bbc2d01c5b7fead973d14cc2caf5d32c958d9b033f71fa"
+        },
+        {
+          "task_id": 514,
+          "position": 21,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "40d5f496a77931afe01390f1dbca398ac3d92a76e4734cbe13d8dcb68e7eea70"
+        },
+        {
+          "task_id": 185,
+          "position": 22,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "1df27a31f310cdf40445b6a53d88b03304f3ace8d74f50bbb6cb0656f393714c"
+        },
+        {
+          "task_id": 525,
+          "position": 23,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "74174635763be403a61ac826d1e435a281a6071cd291fd06e52369d3db5bf0a6"
+        },
+        {
+          "task_id": 190,
+          "position": 24,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "c443feb3e94234a14ab8f80bb966b266981acf5697b7a5cf364853ba175dcdc0"
+        },
+        {
+          "task_id": 536,
+          "position": 25,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "0cc1d71ba12ec36a6482e5057eaa9b6bac0847eba834ec83e91352d065a4f129"
+        },
+        {
+          "task_id": 233,
+          "position": 26,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "0787eb36d54e959523a58bccf0ca1d145478f750c73a7f914347ad172aefd7d4"
+        },
+        {
+          "task_id": 586,
+          "position": 27,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "5862ced607e867e236985bc07b07974c7bc51334686ffe2914cf46ed576e8d29"
+        },
+        {
+          "task_id": 234,
+          "position": 28,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "c655a5a8dfa1043abf3537750210d53a254cfdc1f6bac59fa56283827b7411fb"
+        },
+        {
+          "task_id": 587,
+          "position": 29,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "e84c6024cd74a45bc815eaad6225bc3ea307ff0852b89e5f3635430ac59eddd8"
+        },
+        {
+          "task_id": 257,
+          "position": 30,
+          "feedback": {
+            "success": false,
+            "error": "separated_channel_envelope_required"
+          },
+          "target_sha256": "abf7c020eaf9770313f5e12ac7941c7fd0906a3a6506f3a8599581548c060e97"
+        },
+        {
+          "task_id": 588,
+          "position": 31,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "b90f20ecf4ed9580e0389b4206f18da80c24abb166a2cd1a73fb97e4319d9c09"
+        },
+        {
+          "task_id": 266,
+          "position": 32,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "714e1db7fdf4eb4d3bc212e285d0d61bca7be0063a588a2ff7f82d73be0f8428"
+        },
+        {
+          "task_id": 610,
+          "position": 33,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "1c4fe1bf4c59c0dc959f425f99489c9b5258ceacea72fac1cd69832f14adf1a9"
+        },
+        {
+          "task_id": 267,
+          "position": 34,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "12394c653bf22e440c398795268fa48c68ac8d229d6e15a956688bc6940dbedf"
+        },
+        {
+          "task_id": 611,
+          "position": 35,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "e6a8a59f6066d03d475106cb4526ed4a5444146b299f01781022762504815b13"
+        },
+        {
+          "task_id": 268,
+          "position": 36,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "19239e55b50fa9463fdd3a08a813cc3f68b375119c39621b226eb94fc13fe802"
+        },
+        {
+          "task_id": 644,
+          "position": 37,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "0103d5d284b99ffe5c1c11826b5d3c67ab34b03aa881998a5f75635f70a9572a"
+        },
+        {
+          "task_id": 276,
+          "position": 38,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "a6d5ba9f19431e777afdf9ac0522ba015d847bd0244fe4e391d52fbb8d0a7b0a"
+        },
+        {
+          "task_id": 710,
+          "position": 39,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "54146204fc8cb5564c5f049389270d325c9ebcb332e8f60dc58aa14848dff86e"
+        },
+        {
+          "task_id": 279,
+          "position": 40,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "f8e7ee93b28a9598ff182e3854ea0275e70ced10330b7a0dd3d118ef209643f3"
+        },
+        {
+          "task_id": 728,
+          "position": 41,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "666eb29721df02a8b06891bd59dfef08f9de3442fdd24c1bf2a95612894b5249"
+        },
+        {
+          "task_id": 287,
+          "position": 42,
+          "feedback": {
+            "success": false,
+            "error": "separated_channel_envelope_required"
+          },
+          "target_sha256": "f49d8433b8284efa92c38495ffdfe1260de42565574dd1f4ac2fab0ad84f482f"
+        },
+        {
+          "task_id": 743,
+          "position": 43,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "bf8a002d2f68f3c230ef9f11c1a1a64b64b0b15a9eb5ad6603c402abf43ec4ee"
+        },
+        {
+          "task_id": 292,
+          "position": 44,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "6d509a5ba2bc302740375a4ca1ff38b24401c92b3903e3f9838939d61994c98e"
+        },
+        {
+          "task_id": 792,
+          "position": 45,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "bca0410217991ff7777af92bfb6abc3d8b8dc660a28496469cf062fce80b86c4"
+        },
+        {
+          "task_id": 335,
+          "position": 46,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "f170c3d05e13eaa9e6d152cab70556cd033339348aacf42836d3fda2c5c2fe4f"
+        },
+        {
+          "task_id": 811,
+          "position": 47,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "f5455be5a9092ad2d1fb8499e80b8de106bde9be147f47b29494e16cda9d9749"
+        },
+        {
+          "task_id": 354,
+          "position": 48,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "cb5e3b4697c804ddbb2eab3252b9313f2b547586af0c968fa301d8ab422e1113"
+        },
+        {
+          "task_id": 825,
+          "position": 49,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "62f0265d08c8d4760fd77402e473bcaff1ccd3cafa048401c43bbda96f60a304"
+        },
+        {
+          "task_id": 356,
+          "position": 50,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "34bc7c3302799be86605986a5de9bb37dc70cc11f469f736f6da395716e00c3a"
+        },
+        {
+          "task_id": 847,
+          "position": 51,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "0a62fc0efda5af8bc21219812bf6d22b2159f75813f6f8a432fc64689acf9d09"
+        },
+        {
+          "task_id": 369,
+          "position": 52,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "ca0276677fae1d39c7af8667456a4c4c538e31e9f2a41bf6de86b4cb6f3d58dc"
+        },
+        {
+          "task_id": 869,
+          "position": 53,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "9b4070c0c282131901dfea73ecd833e2d5e5dab08f364c05b21e7146511e195c"
+        },
+        {
+          "task_id": 373,
+          "position": 54,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "99558cecc6d80e21eea3b787ed54d02bca706c098d183cfc2edb0273f9dfdfeb"
+        },
+        {
+          "task_id": 921,
+          "position": 55,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "c7878639a0542be04d270e7316977d4e75d52bcd8bb99bb9d90ce48608e189bf"
+        },
+        {
+          "task_id": 375,
+          "position": 56,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "04c6faaaa7c2a60c823d2f5cba4a8c882b10e2bcecd8a5e38204d4ad25d9c3a8"
+        },
+        {
+          "task_id": 959,
+          "position": 57,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "e9469da91ca637ec0deca725c93a4966319680d2971ea3d03298bc5323e2eb23"
+        },
+        {
+          "task_id": 379,
+          "position": 58,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "e991de90963960fa0184253203d19319ee5b57a753357f081d9501f7ca270d20"
+        },
+        {
+          "task_id": 972,
+          "position": 59,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "adc2190cb8a5137ce0dd0442340225113b1562e48f716b439084582daa43ef70"
+        },
+        {
+          "task_id": 430,
+          "position": 60,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "74f38659e037e36d800622f22c145edb0dca14bb6cf2de385cd2663a32488f77"
+        },
+        {
+          "task_id": 432,
+          "position": 61,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "31dd3878fc6eb34d4b845e095d01b6b782b5b5304d6e908d6c99d4a5abf8a3ee"
+        },
+        {
+          "task_id": 435,
+          "position": 62,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "89d32f0cd1259a4b06daa4c4bca445d946c495c24327055ab2b90b979feb21c1"
+        },
+        {
+          "task_id": 441,
+          "position": 63,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "22d536eb89961e3be2b3b5d7577f878128516b6ba7f9ba0d29e408d950543f10"
+        }
+      ],
+      "qualified_task_bounds": [
+        0,
+        0
+      ],
+      "mechanically_eligible_unreviewed": 0
+    },
+    "TERSE": {
+      "denominator": 64,
+      "calls": 100,
+      "source_calls": 64,
+      "initial_success": 36,
+      "qualified_tasks": 0,
+      "admitted_rows": 0,
+      "unreviewed": 0,
+      "kinds": {
+        "SOURCE": {
+          "calls": 64,
+          "tokens": [
+            6,
+            17,
+            11,
+            18,
+            40,
+            18,
+            29,
+            27,
+            19,
+            10,
+            7,
+            12,
+            11,
+            20,
+            11,
+            14,
+            14,
+            22,
+            24,
+            12,
+            7,
+            9,
+            45,
+            32,
+            66,
+            25,
+            14,
+            12,
+            7,
+            8,
+            9,
+            11,
+            7,
+            15,
+            23,
+            19,
+            11,
+            15,
+            27,
+            17,
+            11,
+            20,
+            26,
+            74,
+            7,
+            8,
+            16,
+            21,
+            14,
+            14,
+            11,
+            5,
+            15,
+            49,
+            7,
+            26,
+            11,
+            10,
+            15,
+            18,
+            14,
+            14,
+            9,
+            7
+          ],
+          "token_pass": 0,
+          "admitted": 0
+        },
+        "NEW": {
+          "calls": 36,
+          "tokens": [
+            6,
+            17,
+            18,
+            18,
+            18,
+            12,
+            20,
+            11,
+            14,
+            8,
+            14,
+            18,
+            14,
+            12,
+            13,
+            8,
+            9,
+            17,
+            16,
+            15,
+            17,
+            7,
+            12,
+            23,
+            14,
+            14,
+            19,
+            5,
+            7,
+            26,
+            10,
+            29,
+            18,
+            14,
+            9,
+            13
+          ],
+          "token_pass": 0,
+          "admitted": 0
+        }
+      },
+      "families": {
+        "scalar arithmetic": {
+          "denominator": 34,
+          "initial_success": 18,
+          "qualified_tasks": 0
+        },
+        "sequence/list transformations": {
+          "denominator": 30,
+          "initial_success": 18,
+          "qualified_tasks": 0
+        }
+      },
+      "semantic_statuses": {
+        "FAIL": 100
+      },
+      "semantic_axes": {
+        "ownership": {
+          "False": 100
+        },
+        "grounding": {
+          "False": 100
+        },
+        "checkable": {
+          "False": 100
+        },
+        "truthful": {
+          "True": 10,
+          "False": 3,
+          "None": 87
+        },
+        "no_padding": {
+          "True": 100
+        },
+        "reusable": {
+          "False": 100
+        }
+      },
+      "unique_targets": 100,
+      "unique_admitted_targets": 0,
+      "token_min": 5,
+      "token_max": 74,
+      "token_median": 14.0,
+      "action_format_failures": 3,
+      "failed_source_examples": [
+        {
+          "task_id": 77,
+          "position": 4,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported call",
+            "arguments": [
+              12345
+            ],
+            "expected": false
+          },
+          "target_sha256": "ac2a52c6ecee6bfd92bf4fd053f7df1f1306ff5693a3f86ff48938d993097e01"
+        },
+        {
+          "task_id": 80,
+          "position": 6,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              5
+            ],
+            "expected": 35.0,
+            "observed": 70
+          },
+          "target_sha256": "f3a4286a6b9f576341524c3ea2eeb5129ebb5fca293976873742e2a361590ac5"
+        },
+        {
+          "task_id": 328,
+          "position": 7,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              3,
+              4
+            ],
+            "expected": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              1,
+              2,
+              3,
+              4
+            ],
+            "observed": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "target_sha256": "a80a57e74870cbad13af71370d3d278eebb0a526f9bee974f028eee2d72a1dc2"
+        },
+        {
+          "task_id": 86,
+          "position": 8,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              10
+            ],
+            "expected": 271,
+            "observed": 523
+          },
+          "target_sha256": "6330f85a4f580aa3e206793b932f1836f1ccfaa26e89010d34017b3f87c9e0ab"
+        },
+        {
+          "task_id": 340,
+          "position": 9,
+          "feedback": {
+            "success": false,
+            "passed": 2,
+            "total": 3,
+            "arguments": [
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            ],
+            "expected": 6,
+            "observed": 3
+          },
+          "target_sha256": "667965f06699a2d59929bde623ab46f0a394cb1995d06e528939cdc5cb6d0b61"
+        },
+        {
+          "task_id": 89,
+          "position": 10,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "'n'",
+            "arguments": [
+              11
+            ],
+            "expected": 10
+          },
+          "target_sha256": "e8e8a132a0e1e730986e5e10afdb30c59e7c88c54b213d2d753aec0fda7bec32"
+        },
+        {
+          "task_id": 378,
+          "position": 13,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              [
+                1,
+                2,
+                3,
+                4
+              ]
+            ],
+            "expected": [
+              4,
+              1,
+              2,
+              3
+            ],
+            "observed": [
+              3,
+              2,
+              1,
+              4
+            ]
+          },
+          "target_sha256": "500ca2cde3a186539079caa5d352c5bca30302fbc2a9aef931d9146658c8ec63"
+        },
+        {
+          "task_id": 139,
+          "position": 16,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              10
+            ],
+            "expected": 62.830000000000005,
+            "observed": 62.8318
+          },
+          "target_sha256": "08ff42f7ce45bb5a438c8f57e0b593de44d9b1c2ae35cc0c021f6645795be67a"
+        },
+        {
+          "task_id": 472,
+          "position": 17,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: GeneratorExp",
+            "arguments": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            ],
+            "expected": true
+          },
+          "target_sha256": "8eb4a84eb49ba18b718a817790345798d3aed38333c181cd92925733854f3f9a"
+        },
+        {
+          "task_id": 153,
+          "position": 18,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: Pow",
+            "arguments": [
+              5,
+              3,
+              2
+            ],
+            "expected": [
+              -0.3,
+              1.55
+            ]
+          },
+          "target_sha256": "786f95c8383e7dfa44ca396ae9d9ac7a7619086b83662fcac274c7d10e09dd49"
+        },
+        {
+          "task_id": 185,
+          "position": 22,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "'(' was never closed (<unknown>, line 1)",
+            "arguments": [
+              5,
+              3,
+              2
+            ],
+            "expected": [
+              -0.3,
+              1.6
+            ]
+          },
+          "target_sha256": "3769a3e2a654952820053b5f61bf7a2c2b6805e9cb76365af4dd1e6fdedd287e"
+        },
+        {
+          "task_id": 525,
+          "position": 23,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 15 (char 14)"
+          },
+          "target_sha256": "034ac9e6701d12bf2baf33a77ffb68a40f7177b231d1866058ffc2316e26424c"
+        },
+        {
+          "task_id": 190,
+          "position": 24,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported comprehension",
+            "arguments": [
+              1,
+              1,
+              4,
+              4
+            ],
+            "expected": 4
+          },
+          "target_sha256": "efabf2cad651318362694c35d988b1d1c62be2da4b9794f673b34f77aea8bd73"
+        },
+        {
+          "task_id": 536,
+          "position": 25,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported comprehension",
+            "arguments": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              2
+            ],
+            "expected": [
+              1,
+              3,
+              5,
+              7,
+              9
+            ]
+          },
+          "target_sha256": "ef8e63f277eb2f1ec52d67c1a492d08332297ddd4ada9fde9765030063ea2fdc"
+        },
+        {
+          "task_id": 610,
+          "position": 33,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "'k'",
+            "arguments": [
+              [
+                1,
+                1,
+                2,
+                3,
+                4,
+                4,
+                5,
+                1
+              ],
+              3
+            ],
+            "expected": [
+              1,
+              1,
+              3,
+              4,
+              4,
+              5,
+              1
+            ]
+          },
+          "target_sha256": "0d5028bc8e1d28273560510e5e2d5210887af3db759d5ffa8cf0a490abac89a0"
+        },
+        {
+          "task_id": 267,
+          "position": 34,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: Pow",
+            "arguments": [
+              2
+            ],
+            "expected": 10
+          },
+          "target_sha256": "2938aba236ec1b6138dac5ca90e2b361428239964989b129fb1c100448e010d2"
+        },
+        {
+          "task_id": 611,
+          "position": 35,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: GeneratorExp",
+            "arguments": [
+              [
+                [
+                  5,
+                  6,
+                  7
+                ],
+                [
+                  1,
+                  3,
+                  5
+                ],
+                [
+                  8,
+                  9,
+                  19
+                ]
+              ],
+              2
+            ],
+            "expected": 19
+          },
+          "target_sha256": "ec4e27059d22aff592ce2f8c07a50d2fb86c871bdd03131ad6dd3c0d0e9fccae"
+        },
+        {
+          "task_id": 268,
+          "position": 36,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              3
+            ],
+            "expected": 37,
+            "observed": 39
+          },
+          "target_sha256": "ef9afdaeb78329f1baf7bdd90c95de621f51bc762a30fbcc4f5e10a09be3c362"
+        },
+        {
+          "task_id": 276,
+          "position": 38,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: Pow",
+            "arguments": [
+              10,
+              5
+            ],
+            "expected": 1570.7500000000002
+          },
+          "target_sha256": "03a7d0fbae6bf64596dbf863f12473c3037d8174ad2f97fc468bc26e85afa102"
+        },
+        {
+          "task_id": 279,
+          "position": 40,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              3
+            ],
+            "expected": 27,
+            "observed": 48
+          },
+          "target_sha256": "edf3b7ee4ed042b39f4e1f6e83d72bb1128b96b4237ce9ced38a5ac2abfa9dc5"
+        },
+        {
+          "task_id": 728,
+          "position": 41,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported comprehension",
+            "arguments": [
+              [
+                10,
+                20,
+                30
+              ],
+              [
+                15,
+                25,
+                35
+              ]
+            ],
+            "expected": [
+              25,
+              45,
+              65
+            ]
+          },
+          "target_sha256": "706ca75b439b59a0bc960cfcb64f512ecce46c90d31cfc95e7167c8bb69b2919"
+        },
+        {
+          "task_id": 287,
+          "position": 42,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: Pow",
+            "arguments": [
+              2
+            ],
+            "expected": 20
+          },
+          "target_sha256": "31b94cc0a8bae2ea94a3dd33a942d0961605f5a8b38834955140921aad972f75"
+        },
+        {
+          "task_id": 743,
+          "position": 43,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: GeneratorExp",
+            "arguments": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              3,
+              4
+            ],
+            "expected": [
+              8,
+              9,
+              10,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "target_sha256": "4e9a8c4b810ba8183d0c4f9332c0ef1deb741e3f598b2fe171b95e72475a996f"
+        },
+        {
+          "task_id": 811,
+          "position": 47,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported syntax: GeneratorExp",
+            "arguments": [
+              [
+                [
+                  10,
+                  4
+                ],
+                [
+                  2,
+                  5
+                ]
+              ],
+              [
+                [
+                  10,
+                  4
+                ],
+                [
+                  2,
+                  5
+                ]
+              ]
+            ],
+            "expected": true
+          },
+          "target_sha256": "c6d27645a2858868d1accebcc0c9a65a3c6867d92389ebda7402881040b44b35"
+        },
+        {
+          "task_id": 369,
+          "position": 52,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              8,
+              5,
+              6
+            ],
+            "expected": 156,
+            "observed": 236
+          },
+          "target_sha256": "681122db590de40f0de147d029d0bcdcd6e5e995555cdf76de35d7567d69fac6"
+        },
+        {
+          "task_id": 869,
+          "position": 53,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 17 (char 16)"
+          },
+          "target_sha256": "cdf7836886b454e458169cb375aa72e64925bf9fb937ae6988aeef58163cbc56"
+        },
+        {
+          "task_id": 375,
+          "position": 56,
+          "feedback": {
+            "success": false,
+            "passed": 2,
+            "total": 3,
+            "arguments": [
+              219,
+              2
+            ],
+            "expected": 218,
+            "observed": 220
+          },
+          "target_sha256": "bd66a581e10fd2c8dfc91243422bf8ed019ae56998cde03a77743260c34834cd"
+        },
+        {
+          "task_id": 430,
+          "position": 60,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              5,
+              3,
+              2
+            ],
+            "expected": -198,
+            "observed": -0.7
+          },
+          "target_sha256": "10edf10b61b32f0d3468ab613fa393aba1a98bbd5c90a8fd654d0c9031fd8cd8"
+        }
+      ],
+      "qualified_task_bounds": [
+        0,
+        0
+      ],
+      "mechanically_eligible_unreviewed": 0
+    }
+  },
+  "qualified_task_gain": -3,
+  "initial_outcome_deficit": 22,
+  "full_review_complete": true,
+  "candidate": false,
+  "fits": 0,
+  "claim": "FINITE_EXPOSED_PUBLIC_TEST_SCREEN_NOT_LEARNING_OR_GENERALIZATION",
+  "primary_gain_upper_bound": -3,
+  "primary_refuted_by_necessary_gate": true,
+  "pairs": [
+    {
+      "position": 0,
+      "task_id": 52,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 1,
+      "task_id": 154,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 2,
+      "task_id": 59,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 3,
+      "task_id": 161,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 4,
+      "task_id": 77,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 5,
+      "task_id": 196,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 6,
+      "task_id": 80,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 7,
+      "task_id": 328,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 8,
+      "task_id": 86,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 9,
+      "task_id": 340,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": true,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 10,
+      "task_id": 89,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 11,
+      "task_id": 368,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 12,
+      "task_id": 112,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 13,
+      "task_id": 378,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 14,
+      "task_id": 135,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 15,
+      "task_id": 460,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 16,
+      "task_id": 139,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 17,
+      "task_id": 472,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 18,
+      "task_id": 153,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 19,
+      "task_id": 476,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 20,
+      "task_id": 176,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 21,
+      "task_id": 514,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 22,
+      "task_id": 185,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 23,
+      "task_id": 525,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 24,
+      "task_id": 190,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 25,
+      "task_id": 536,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 26,
+      "task_id": 233,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 27,
+      "task_id": 586,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 28,
+      "task_id": 234,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 29,
+      "task_id": 587,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 30,
+      "task_id": 257,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 31,
+      "task_id": 588,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 32,
+      "task_id": 266,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 33,
+      "task_id": 610,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 34,
+      "task_id": 267,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 35,
+      "task_id": 611,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 36,
+      "task_id": 268,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 37,
+      "task_id": 644,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 38,
+      "task_id": 276,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 39,
+      "task_id": 710,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 40,
+      "task_id": 279,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 41,
+      "task_id": 728,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 42,
+      "task_id": 287,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 43,
+      "task_id": 743,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 44,
+      "task_id": 292,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 45,
+      "task_id": 792,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 46,
+      "task_id": 335,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 47,
+      "task_id": 811,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 48,
+      "task_id": 354,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 49,
+      "task_id": 825,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 50,
+      "task_id": 356,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 51,
+      "task_id": 847,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 52,
+      "task_id": 369,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": true,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 53,
+      "task_id": 869,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 54,
+      "task_id": 373,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 55,
+      "task_id": 921,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 56,
+      "task_id": 375,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 57,
+      "task_id": 959,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 58,
+      "task_id": 379,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 59,
+      "task_id": 972,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 60,
+      "task_id": 430,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 61,
+      "task_id": 432,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": true,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 62,
+      "task_id": 435,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 63,
+      "task_id": 441,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    }
+  ]
+}

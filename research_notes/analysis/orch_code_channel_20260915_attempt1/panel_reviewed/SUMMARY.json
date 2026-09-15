@@ -1,0 +1,1796 @@
+{
+  "arms": {
+    "LEGACY": {
+      "denominator": 64,
+      "calls": 10,
+      "source_calls": 8,
+      "initial_success": 2,
+      "qualified_tasks": 0,
+      "admitted_rows": 0,
+      "unreviewed": 0,
+      "kinds": {
+        "SOURCE": {
+          "calls": 8,
+          "tokens": [
+            50,
+            123,
+            105,
+            292,
+            575,
+            23,
+            679,
+            279
+          ],
+          "token_pass": 2,
+          "admitted": 0
+        },
+        "NEW": {
+          "calls": 2,
+          "tokens": [
+            35,
+            100
+          ],
+          "token_pass": 0,
+          "admitted": 0
+        }
+      },
+      "families": {
+        "scalar arithmetic": {
+          "denominator": 34,
+          "initial_success": 2,
+          "qualified_tasks": 0
+        },
+        "sequence/list transformations": {
+          "denominator": 30,
+          "initial_success": 0,
+          "qualified_tasks": 0
+        }
+      },
+      "semantic_statuses": {
+        "FAIL": 7,
+        "PASS": 2,
+        "UNRESOLVED": 1
+      },
+      "semantic_axes": {
+        "ownership": {
+          "False": 4,
+          "True": 6
+        },
+        "grounding": {
+          "True": 7,
+          "False": 3
+        },
+        "checkable": {
+          "True": 9,
+          "False": 1
+        },
+        "truthful": {
+          "True": 7,
+          "False": 3
+        },
+        "no_padding": {
+          "True": 8,
+          "False": 2
+        },
+        "reusable": {
+          "True": 7,
+          "False": 3
+        }
+      },
+      "unique_targets": 10,
+      "unique_admitted_targets": 0,
+      "token_min": 23,
+      "token_max": 679,
+      "token_median": 114.0,
+      "action_format_failures": 6,
+      "failed_source_examples": [
+        {
+          "task_id": 154,
+          "position": 1,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "0b1628d11ad9a16a33e7428b8c82a6eb348c24d8cbcfc6807e979c9b14aab9a2"
+        },
+        {
+          "task_id": 59,
+          "position": 2,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "20ecda08f7f7afd896ca698102fe6482592258f23312ceadfb671c6b7304b4a7"
+        },
+        {
+          "task_id": 161,
+          "position": 3,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "9223bc607efa5c40d70cf9faa19b2002cfedd1413757b357f78889bd6f4159f9"
+        },
+        {
+          "task_id": 77,
+          "position": 4,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "158ddf3eec850e006ba8551980be288c0846d53f496c314ead2a1facf8b4576a"
+        },
+        {
+          "task_id": 196,
+          "position": 5,
+          "feedback": {
+            "success": false,
+            "error": "invalid final action"
+          },
+          "target_sha256": "d04514ff6e4402e876642a908204692a831252b5110d44f46a6a00bf627f0caf"
+        },
+        {
+          "task_id": 328,
+          "position": 7,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              3,
+              4
+            ],
+            "expected": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              1,
+              2,
+              3,
+              4
+            ],
+            "observed": [
+              4,
+              5,
+              6,
+              7,
+              1,
+              2,
+              3,
+              8,
+              9,
+              10
+            ]
+          },
+          "target_sha256": "df33b50f743a0522e9809a926a9cf9b13edcc82c600d1b8f1454e9720de4e33b"
+        }
+      ]
+    },
+    "SEPARATED": {
+      "denominator": 64,
+      "calls": 8,
+      "source_calls": 8,
+      "initial_success": 0,
+      "qualified_tasks": 0,
+      "admitted_rows": 0,
+      "unreviewed": 0,
+      "kinds": {
+        "SOURCE": {
+          "calls": 8,
+          "tokens": [
+            53,
+            67,
+            50,
+            69,
+            120,
+            74,
+            89,
+            104
+          ],
+          "token_pass": 0,
+          "admitted": 0
+        },
+        "NEW": {
+          "calls": 0,
+          "tokens": [],
+          "token_pass": 0,
+          "admitted": 0
+        }
+      },
+      "families": {
+        "scalar arithmetic": {
+          "denominator": 34,
+          "initial_success": 0,
+          "qualified_tasks": 0
+        },
+        "sequence/list transformations": {
+          "denominator": 30,
+          "initial_success": 0,
+          "qualified_tasks": 0
+        }
+      },
+      "semantic_statuses": {
+        "FAIL": 3,
+        "PASS": 5
+      },
+      "semantic_axes": {
+        "ownership": {
+          "False": 1,
+          "True": 7
+        },
+        "grounding": {
+          "True": 6,
+          "False": 2
+        },
+        "checkable": {
+          "True": 8
+        },
+        "truthful": {
+          "True": 6,
+          "False": 2
+        },
+        "no_padding": {
+          "True": 8
+        },
+        "reusable": {
+          "True": 6,
+          "False": 2
+        }
+      },
+      "unique_targets": 8,
+      "unique_admitted_targets": 0,
+      "token_min": 50,
+      "token_max": 120,
+      "token_median": 71.5,
+      "action_format_failures": 8,
+      "failed_source_examples": [
+        {
+          "task_id": 52,
+          "position": 0,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "74182cf193ccda0237679eaacf23acda58b948f8281fc1d951e4bbe1b4b964dd"
+        },
+        {
+          "task_id": 154,
+          "position": 1,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "c5136d67c3c6ea1dafa1b0825c311108e618e606788959420b4d9201b10dd7a4"
+        },
+        {
+          "task_id": 59,
+          "position": 2,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "b69141878809ec3ddaa954c73587d5d62e4a7d9c35c9e43ffae399ecdbbb4957"
+        },
+        {
+          "task_id": 161,
+          "position": 3,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "50545047c757530e82de695141083f0c1b928af732d81d249d93bde16e82435b"
+        },
+        {
+          "task_id": 77,
+          "position": 4,
+          "feedback": {
+            "success": false,
+            "error": "separated_channel_envelope_required"
+          },
+          "target_sha256": "802bfbe782802182be672fd0ffffbf7064150a1222dfd5dfe194955e66fd9dbf"
+        },
+        {
+          "task_id": 196,
+          "position": 5,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "69c077bd71eef313a46fc543d96b1e5f3c8d42f4ab1fd7bde0548e302d2c7d82"
+        },
+        {
+          "task_id": 80,
+          "position": 6,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "600627d4bbce265f28f7472ba8d3bfdef4236ae6774618816fe4840473776299"
+        },
+        {
+          "task_id": 328,
+          "position": 7,
+          "feedback": {
+            "success": false,
+            "error": "Expecting value: line 1 column 1 (char 0)"
+          },
+          "target_sha256": "455718b726ef6a4f2c07215d45c24c4ed016ae3638af5889499ef4c501ebc583"
+        }
+      ]
+    },
+    "TERSE": {
+      "denominator": 64,
+      "calls": 13,
+      "source_calls": 8,
+      "initial_success": 5,
+      "qualified_tasks": 0,
+      "admitted_rows": 0,
+      "unreviewed": 0,
+      "kinds": {
+        "SOURCE": {
+          "calls": 8,
+          "tokens": [
+            6,
+            17,
+            11,
+            18,
+            40,
+            18,
+            29,
+            27
+          ],
+          "token_pass": 0,
+          "admitted": 0
+        },
+        "NEW": {
+          "calls": 5,
+          "tokens": [
+            6,
+            17,
+            18,
+            18,
+            18
+          ],
+          "token_pass": 0,
+          "admitted": 0
+        }
+      },
+      "families": {
+        "scalar arithmetic": {
+          "denominator": 34,
+          "initial_success": 2,
+          "qualified_tasks": 0
+        },
+        "sequence/list transformations": {
+          "denominator": 30,
+          "initial_success": 3,
+          "qualified_tasks": 0
+        }
+      },
+      "semantic_statuses": {
+        "FAIL": 13
+      },
+      "semantic_axes": {
+        "ownership": {
+          "False": 13
+        },
+        "grounding": {
+          "False": 13
+        },
+        "checkable": {
+          "False": 13
+        },
+        "truthful": {
+          "True": 10,
+          "False": 3
+        },
+        "no_padding": {
+          "True": 13
+        },
+        "reusable": {
+          "False": 13
+        }
+      },
+      "unique_targets": 13,
+      "unique_admitted_targets": 0,
+      "token_min": 6,
+      "token_max": 40,
+      "token_median": 18,
+      "action_format_failures": 0,
+      "failed_source_examples": [
+        {
+          "task_id": 77,
+          "position": 4,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "error": "unsupported call",
+            "arguments": [
+              12345
+            ],
+            "expected": false
+          },
+          "target_sha256": "ac2a52c6ecee6bfd92bf4fd053f7df1f1306ff5693a3f86ff48938d993097e01"
+        },
+        {
+          "task_id": 80,
+          "position": 6,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              5
+            ],
+            "expected": 35.0,
+            "observed": 70
+          },
+          "target_sha256": "f3a4286a6b9f576341524c3ea2eeb5129ebb5fca293976873742e2a361590ac5"
+        },
+        {
+          "task_id": 328,
+          "position": 7,
+          "feedback": {
+            "success": false,
+            "passed": 0,
+            "total": 3,
+            "arguments": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              3,
+              4
+            ],
+            "expected": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              1,
+              2,
+              3,
+              4
+            ],
+            "observed": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "target_sha256": "a80a57e74870cbad13af71370d3d278eebb0a526f9bee974f028eee2d72a1dc2"
+        }
+      ]
+    }
+  },
+  "qualified_task_gain": 0,
+  "initial_outcome_deficit": 2,
+  "full_review_complete": false,
+  "candidate": false,
+  "fits": 0,
+  "claim": "FINITE_EXPOSED_PUBLIC_TEST_SCREEN_NOT_LEARNING_OR_GENERALIZATION",
+  "pairs": [
+    {
+      "position": 0,
+      "task_id": 52,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 1,
+      "task_id": 154,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 2,
+      "task_id": 59,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 3,
+      "task_id": 161,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 4,
+      "task_id": 77,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 5,
+      "task_id": 196,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 6,
+      "task_id": 80,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": true,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 7,
+      "task_id": 328,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": false,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 8,
+      "task_id": 86,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 9,
+      "task_id": 340,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 10,
+      "task_id": 89,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 11,
+      "task_id": 368,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 12,
+      "task_id": 112,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 13,
+      "task_id": 378,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 14,
+      "task_id": 135,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 15,
+      "task_id": 460,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 16,
+      "task_id": 139,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 17,
+      "task_id": 472,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 18,
+      "task_id": 153,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 19,
+      "task_id": 476,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 20,
+      "task_id": 176,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 21,
+      "task_id": 514,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 22,
+      "task_id": 185,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 23,
+      "task_id": 525,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 24,
+      "task_id": 190,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 25,
+      "task_id": 536,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 26,
+      "task_id": 233,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 27,
+      "task_id": 586,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 28,
+      "task_id": 234,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 29,
+      "task_id": 587,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 30,
+      "task_id": 257,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 31,
+      "task_id": 588,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 32,
+      "task_id": 266,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 33,
+      "task_id": 610,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 34,
+      "task_id": 267,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 35,
+      "task_id": 611,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 36,
+      "task_id": 268,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 37,
+      "task_id": 644,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 38,
+      "task_id": 276,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 39,
+      "task_id": 710,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 40,
+      "task_id": 279,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 41,
+      "task_id": 728,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 42,
+      "task_id": 287,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 43,
+      "task_id": 743,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 44,
+      "task_id": 292,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 45,
+      "task_id": 792,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 46,
+      "task_id": 335,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 47,
+      "task_id": 811,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 48,
+      "task_id": 354,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 49,
+      "task_id": 825,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 50,
+      "task_id": 356,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 51,
+      "task_id": 847,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 52,
+      "task_id": 369,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 53,
+      "task_id": 869,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 54,
+      "task_id": 373,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 55,
+      "task_id": 921,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 56,
+      "task_id": 375,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 57,
+      "task_id": 959,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 58,
+      "task_id": 379,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 59,
+      "task_id": 972,
+      "family": "sequence/list transformations",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 60,
+      "task_id": 430,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 61,
+      "task_id": 432,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 62,
+      "task_id": 435,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    },
+    {
+      "position": 63,
+      "task_id": 441,
+      "family": "scalar arithmetic",
+      "LEGACY": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "SEPARATED": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      },
+      "TERSE": {
+        "initial_success": null,
+        "qualified": false,
+        "unreviewed": 0
+      }
+    }
+  ]
+}
