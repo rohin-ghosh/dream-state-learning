@@ -127,3 +127,22 @@ No current operational blocker. Keep ownership A1004–7/node3 6–7 through
 terminal fits/readouts. Same frozen batch5aac9c13; no extra baseline, scope
 change or retirement. Next report operational failure or own terminal reducer;
 no scientific survival claim or SEQ request from this progress milestone.
+
+2026-09-15T00:46:00Z — Native fit-to-readout milestone, fresh host clocks
+00:45:59.498074A100 /00:46:00.739233node3. A1005OFF7801dose4,
+6FULL7802dose4,7OFF7802dose4 TRAIN COMPLETE5760updates each; fresh AFTER
+PIDs221584/222341/222153 with606/512/554saved native calls. No AFTER terminal
+summary or held-audit receipt yet, so old W0/W8/audit retention is PENDING,
+not PASS. A1004FULL7801dose4 PID168001 still trains5470/5760updates;
+node3 6FULL7801dose16 PID104214 at3213/23040 and7OFF PID104207 at3250/23040.
+All observed active losses finite; no train/after FAILED receipts. All six
+chain done flags false. No lane released: actual native processes and matching
+/proc CUDA_VISIBLE_DEVICES UUIDs occupy every owned GPU, confirmed against
+fresh all-GPU UUID/utilization/compute tables. This is occupied ownership
+evidence, not an idle-admission clearance or a fleet-wide /proc clearance.
+Evidence STATUS_20260915_0046.json in owned attempt1 analysis directory.
+Retain original cohort/doses/pairing and unique completed baseline; no rerun.
+No rich-L2 task or packet admission taken here. Existing watcher alive;
+terminal scientific comparison awaits all readouts and own reducer. Main
+should not schedule another cell on these lanes until explicit terminal
+release and fresh ownership clearance. No promoted premise or learned claim.

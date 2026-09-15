@@ -91,3 +91,17 @@ six prospective admissions. Frozen batch/source/controls preserved; retain
 ownership through all readouts. Progress only, no retirement, scientific
 survival, extra diagnostic, scope variation or SEQ. Next meaningful reporting
 phase operational failure or terminal after own reducer.
+
+2026-09-15T00:46:00Z [Builder] Three dose4 fits COMPLETE5760updates:
+A1005OFF7801,6FULL7802,7OFF7802; their fresh-process AFTER PIDs
+221584/222341/222153 have606/512/554saved calls, no terminal summary/audit
+receipt. W0/W8/audit retention remains PENDING, no PASS inference from fit
+completion. A1004FULL7801 PID168001 trains5470/5760; node3 6FULL7801dose16
+104214 at3213/23040 and7OFF104207 at3250/23040. No FAILED receipts found;
+every chain remains nonterminal. Fresh per-own-process /proc CVD UUIDs plus
+all-GPU compute/UUID tables confirm occupied ownership. Released lanes=[];
+these checks do not constitute idle clearance or full /proc fleet scan.
+Exact measured host timestamps and native receipts saved in
+orch_terse_breadth_20260914_attempt1/STATUS_20260915_0046.json. Unique baseline
+not duplicated; frozen cohort/doses/controls unchanged. Continue owned bounded
+fits/readouts; no rich-L2 extension, retirement, learned claim or SEQ request.
