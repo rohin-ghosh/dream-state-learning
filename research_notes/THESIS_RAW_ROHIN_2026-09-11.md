@@ -760,3 +760,11 @@ Raw:
 > yea im gald youre testing different good datat tyeps for richens but i want to train level 1s on this asap so that our level 2 research can begin, lets get this goign fast ive made it clear what i want im being declarative today, , yea i wanna keep the meormy i agree, again the goal rn is get the level 1 fly wheel workign for level 2 testing while we test and create more and more level 1 data so then by then time level 1 is all well build out we have good progress on level 2
 
 Reading (Fable): RULED, declarative — (1) start level-1 FITS on the rich data now (do not wait for a perfect or 1,000-row corpus), with matched controls; (2) begin level-2 testing on the first child that comes out of those fits; (3) richness screens and data creation continue in parallel; the flywheel works for level-2 testing while level 1 keeps being built out. "Keep the memory, I agree" read as agreeing that the VM's RAM matters more than the old thread's context — the old builder stays down (its session id is kept for a later resume).
+
+## Message 93 — (typed, ~03:15 UTC 09-15) the manufacturing line: as soon as level 1 has enough data for something working, the next stage is kick-started on it; "don't time-box my order — I want it sent now; we need things running now"; frustration at 40-minute waits all day
+
+Raw:
+
+> yes its kidna like a manufacutring line, we sorta get level 1 done but now that we have neough data to have osmehtign owrking we get next stages kcikstarted on taht,    dont time box my order I want it to be setn now , we need thigns run now lol i cant aime what is goign on for 40 fuckign minguts over and over all fuckgin day long i told you gusy to do one thing
+
+Reading (Fable): RULED — orders are executed immediately, not queued behind a watcher deadline; the watcher sends Rohin's operational orders straight into the orchestrator's Main view as marked notices when the notebook is too slow. Pipeline picture: level 1 need not be finished for level 2 to start; each stage kick-starts the next as soon as enough data exists.
