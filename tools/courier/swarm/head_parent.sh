@@ -14,7 +14,8 @@ source "$HERE/../courier_lib.sh"
 SW="$COURIER_HOME/swarm"; mkdir -p "$SW/cycles" "$SW/prompts"
 COURIER_LOG="$SW/head_parent.log"; PIDFILE="$SW/head_parent.pid"
 CAP_S="${HEAD_PARENT_CAP_S:-1200}"; BUDGET_USD="${HEAD_PARENT_BUDGET_USD:-4}"
-PRINC="$COURIER_REPO/research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md"
+PRINC="$SW/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md"; export MAKE_PROMPTS_PLAN="$SW/PARENTING_BATTLE_PLAN_v4_2026-09-15.md"
+[ -r "$PRINC" ] && [ -r "$MAKE_PROMPTS_PLAN" ] || { echo "$(date -u +%FT%TZ) missing plan/principles copies in $SW" >> "$SW/head_parent.log"; exit 0; }
 BRANCHES="$SW/branches.json"; STATE="$SW/head_state.json"
 
 if pid_alive "$PIDFILE"; then log "head parent already running"; exit 0; fi
@@ -83,7 +84,7 @@ from make_prompts import fixed_parent_template, render, verify_binding
 raw = json.load(open(cyc + '/reply.json'))
 text = raw.get('result') if isinstance(raw, dict) else raw
 m = re.search(r'\{.*\}', text, flags=re.S); out = json.loads(m.group(0))
-template = fixed_parent_template(__import__('pathlib').Path(repo + '/research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md'))
+template = fixed_parent_template()
 changed = []
 for name, upd in out.get('branches', {}).items():
     if name in out.get('unchanged', []): continue

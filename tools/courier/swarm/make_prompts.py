@@ -18,7 +18,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
-PLAN = REPO / 'research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md'
+import os
+PLAN = Path(os.environ.get('MAKE_PROMPTS_PLAN', str(REPO / 'research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md')))
 
 DEFAULT_FIELDS = {
     'F1': {
