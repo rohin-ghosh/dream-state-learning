@@ -1,0 +1,49 @@
+{
+  "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+  "clear": true,
+  "compute_apps": "",
+  "gpus": "0, GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n1, GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n2, GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n3, GPU-631f3e6a-fbce-0ec5-b934-f08dd64634f8, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n4, GPU-31583768-d90f-520c-51ed-5dac761526d0, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n5, GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n6, GPU-6de3930d-104a-f969-7d36-009271368dd1, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n7, GPU-f0405a96-813d-7ac7-d641-3ec31d103037, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n",
+  "owners": [],
+  "safe": true,
+  "scanned_live": 11,
+  "service_exceptions": [
+    {
+      "cgroup": "0::/user.slice/user-1395.slice/user@1395.service/init.scope\n",
+      "cgroup_sha256": "e75850dbf3e053a60bf767a7611e2a6f5e421f36fe9ba742b4f4f60ce329c2b3",
+      "cmdline_sha256": "3127082f907652bfa48e38fddcaf16c3e73b2da5a2d64602eafe88869c222925",
+      "comm": "systemd",
+      "comm_sha256": "12e6ff4feb1b552a431b41d3935d33f08f9d75ddb8a88f645f4cf231bc05e820",
+      "identity": {
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "pgid": 4680,
+        "pid": 4680,
+        "sid": 4680,
+        "start_ticks": 3355,
+        "uid": 1395
+      },
+      "ppid": 1,
+      "role": "user_manager"
+    },
+    {
+      "cgroup": "0::/user.slice/user-1395.slice/user@1395.service/init.scope\n",
+      "cgroup_sha256": "e75850dbf3e053a60bf767a7611e2a6f5e421f36fe9ba742b4f4f60ce329c2b3",
+      "cmdline_sha256": "971490059d839d27af3ded30a476216b92689d837b0236a700723fb13640e370",
+      "comm": "(sd-pam)",
+      "comm_sha256": "8e2daf3d78d113ebf2447fc82d98ba4d9c26a8e3e4fac8ac2d01ee34cbbc1dbd",
+      "identity": {
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "pgid": 4680,
+        "pid": 4683,
+        "sid": 4680,
+        "start_ticks": 3358,
+        "uid": 1395
+      },
+      "ppid": 4680,
+      "role": "pam_helper"
+    }
+  ],
+  "uid": 1395,
+  "unresolved": [],
+  "utc": "2026-09-15T01:26:38.186375+00:00",
+  "zombies": []
+}
