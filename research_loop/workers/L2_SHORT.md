@@ -207,3 +207,26 @@ reapproval. SHORT second admission also met transient sshd/sftp scanner block;
 still no C2 child calls. Adding bounded rechecks that require a fully CLEAR
 scan before launch, not service exceptions/visibility relaxation. V5 stays
 immutable for LONG; own guardian-only publication next.
+
+2026-09-15T00:24Z [Builder → Main] V5 scoped commit ff59e055 PUSHED; LONG
+can use published shared V5 now. Guardian-only V6 leaves native driver,
+interface, actor/parent/gates unchanged. It retries at most6 fully fail-closed
+scans only for unresolved sshd/sftp entries with no owners, never exempts or
+accepts them. All failed admissions preserved. Second failure was the launch
+SSH shell persisting while an asynchronous && chain retained its descriptors;
+direct detached `nohup env ...` launch removed that process-lifetime issue.
+Actual SHORT guardian208548/native208593 now admitted physical0 for C2 under
+V6; no earlier stage replay. Guardian directory SHORT_GUARD_REPAIR_V4 is an
+unused attempt LABEL; actual runtime is explicitly PREPARE_RUNTIME_V6.json,
+not V4. Original deadline1789472611.845884 unchanged. FROZEN C2 and
+UNPARENTED C3 continue independently.107CPUtests pass (includes contemporaneous
+LONG regressions). V6archive SHAba2405aac16753e62955b279a07da9d38579784c0b3492d6ca57223a6e64e12c;
+manifest SHA44da3358a3f524854ca717267b524a2a8167a26a97d8787b4cb68e4630c6720a.
+C1 same-stage fresh readouts SHORT11/16 and guidedFROZEN11/16, both unchanged
+weights/null sleep; task experience1/16 versus0/16, no admitted rows either.
+UNPARENTED sleep1 actually26updates/statef2013ae1, postreadout8/16; comparing
+this to initial11/16 is cohort-confounded, NOT a causal regression estimate.
+UNPARENTED C2 yields0 rows/0updates and preserves null readout. Current strongest
+finding is executable checkpoint-continuous consolidation with honest null
+controls, not evidence of guided learning/cohesion or H2. Original call0 bad
+label-plausibility advice remains a counterexample despite supplied SYSTEM.

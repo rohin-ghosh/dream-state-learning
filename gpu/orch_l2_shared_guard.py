@@ -17,6 +17,16 @@ PYTHON = '/localhome/local-rohing/v2/venv/bin/python'
 LEASE_END = 1790463900
 
 
+def transient_transport_scan(result):
+    try:
+        report = json.loads(result.stdout)
+    except (TypeError, ValueError):
+        return False
+    unresolved = report.get('unresolved', [])
+    return (result.returncode != 0 and not report.get('owners') and bool(unresolved)
+            and all(item.get('comm') in ('sshd', 'sftp-server') for item in unresolved))
+
+
 def sequence(root, arm, source_only=False, resume=False, suffix=''):
     run.source.require(root == run.ROOT and arm in ('SHORT', 'FROZEN', 'UNPARENTED'), 'SHORT_guard_never_owns_LONG')
     deadline = float((root / 'DEADLINE').read_text())
@@ -26,7 +36,7 @@ def sequence(root, arm, source_only=False, resume=False, suffix=''):
     run.source.require(publication['prepare_sha256'] == run.bridge.file_sha256(root / manifest_name)
                        and publication['cpu_tests_passed'], 'own_cpu_provenance_gate')
     index, uuid = run.DEVICES[arm]
-    run.source.require(not suffix or suffix in ('_REPAIR_V4', '_REPAIR_V5'), 'exact_repair_suffix_required')
+    run.source.require(not suffix or suffix in ('_REPAIR_V4', '_REPAIR_V5', '_REPAIR_V6'), 'exact_repair_suffix_required')
     guardian = root / (('SOURCE_GUARD' if source_only else arm + '_GUARD') + suffix)
     guardian.mkdir(exist_ok=False)
     child = None
@@ -56,9 +66,16 @@ def sequence(root, arm, source_only=False, resume=False, suffix=''):
             return
         inventory = existing.query('index,name,uuid', 'gpu')
         run.source.require(any(row[0] == str(index) and 'A100' in row[1] and row[2] == uuid for row in inventory), 'physical_uuid_drift')
-        with (root / 'service_exceptions.json').open() as exceptions:
-            result = subprocess.run(['python3', str(root / 'scanner.py'), str(index), uuid],
-                stdin=exceptions, capture_output=True, text=True, timeout=40)
+        for scan_attempt in range(6):
+            run.source.require(time.time() < deadline, 'admission_deadline')
+            with (root / 'service_exceptions.json').open() as exceptions:
+                result = subprocess.run(['python3', str(root / 'scanner.py'), str(index), uuid],
+                    stdin=exceptions, capture_output=True, text=True, timeout=40)
+            run.write(guardian / f'{cycle}_{phase}_ADMISSION_{scan_attempt}.json', dict(code=result.returncode,
+                      stdout=result.stdout, stderr=result.stderr, inventory=inventory))
+            if not transient_transport_scan(result) or scan_attempt == 5:
+                break
+            time.sleep(2)
         run.write(guardian / f'{cycle}_{phase}_ADMISSION.json', dict(code=result.returncode,
                   stdout=result.stdout, stderr=result.stderr, inventory=inventory))
         run.source.require(result.returncode == 0, 'fail_closed_physical_admission')
