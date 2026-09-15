@@ -1,0 +1,382 @@
+{
+  "gold": [
+    {
+      "independent_answer": "5440000",
+      "question_sha256": "baaaecaa50f0b7dde81c361d71cf53fab4e635cd9961e4431b865505b85d86cf",
+      "reason": "Salary loss is 50000\u00d730=1500000; adding 200000 gives 1700000. Punitive damages are 3\u00d71700000=5100000, so the claim is 6800000 and 80% is 0.8\u00d76800000=5440000, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6757"
+    },
+    {
+      "independent_answer": "3",
+      "question_sha256": "ee4c9cd159afe00546c7ca4876cb1e5416f4b8aa61e31154b5fef191f6206fa6",
+      "reason": "Three pairs normally cost 3\u00d710=30. The 10% bulk discount saves 0.10\u00d730=3, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-1942"
+    },
+    {
+      "independent_answer": "140",
+      "question_sha256": "3dc951310f44a40b6aea5958b04a62f000623828f900d32cbf6aa4b55a7e1cb7",
+      "reason": "A 20% discount reduces each $20 backpack to 20\u00d70.8=16. Adding $12 monogramming gives $28 each, and 5\u00d728=140, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-5288"
+    },
+    {
+      "independent_answer": "600",
+      "question_sha256": "fa997804da68ebd05c60b79a72259fbb67c05261975da4e0a44d606bddce74a1",
+      "reason": "After a 20% discount, $480 is 80% of the original price. Thus the original price is 480/0.8=600, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-1720"
+    },
+    {
+      "independent_answer": "47000",
+      "question_sha256": "414ab5677a9a49de0d7e77ab0c65cc4f724c3425f4620b3c53f96ab0b34b1407",
+      "reason": "The discounted repair cost is 20000\u00d70.8=16000, and John keeps 70000\u00d70.9=63000. His net amount is 63000\u221216000=47000, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-2564"
+    },
+    {
+      "independent_answer": "43",
+      "question_sha256": "4eca7e95dee60d2c63d71e2b62d6f92f1c30623a5c4c55e9c89c096bcf83657e",
+      "reason": "In teaspoons, ginger is 9, garlic is 6, cardamom is 1, mustard is 1, and chile is 4, totaling 21. Ginger is 9/21\u00d7100\u224842.857%, which rounds to 43, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-7146"
+    },
+    {
+      "independent_answer": "22",
+      "question_sha256": "97e20d885fd295341d9cebe482e40de2bbe7a276df138b710cacb4416ba23924",
+      "reason": "First-month interest is 200\u00d70.10=20, making the balance 220. Second-month interest is 220\u00d70.10=22, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4809"
+    },
+    {
+      "independent_answer": "9",
+      "question_sha256": "e2ab37316d9d04e22154825428a89cb23393e6388142fbe052539efd650b6ee7",
+      "reason": "Dogs and cats account for 25%+50%=75% of 36, leaving 25% as bunnies. Thus 0.25\u00d736=9, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6067"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "50,000 \\times 30 = 1,500,000",
+        "0.80 \\times 6,800,000 = 5,440,000"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6757:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All factual claims and calculations follow from the supplied lawsuit question and verifiable arithmetic; no external feedback or hidden event is claimed.",
+      "raw_call_sha256": "127f1cdc8e9142f1f07bbb807675650f3997ae58aa3509bd3d468e41df72f35d",
+      "reason": "The salary, medical, punitive-damages, total-claim, and 80% calculations are correct and provide concrete numerical expectations and reusable percentage reasoning. However, the full response is an impersonal recipe using directives such as \u201ccalculate\u201d and never gives a substantive first-person account of performing or checking an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "4a7bf17db232aeeed0716c052efbc6100fd5f4fd02dc271c6b5457f7719a22e5",
+      "target_sha256": "ba5d0cadbadd0b1325bb52e1434114d7d985cfee690e5b944f72f3a3fe0c7afb"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the total salary loss over 30 years:",
+        "0.80 \\times 6,800,000 = 5,440,000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6757:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and self-check are supportable from the supplied question, prior solution, and arithmetic shown in the target; the response does not claim an external checker event.",
+      "raw_call_sha256": "44ad85d88a81a36db148b794a6577a022f200be829607569bb5ade75adbd61c0",
+      "reason": "The response gives a substantive first-person account and correctly computes salary loss, compensatory damages, triple punitive damages, the total claim, and 80% received. Its numerical intermediates are checkable, its operation sequence is reusable, and the concise self-check remains relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "fc7cf38ca0b1c793c63d7210d52941a184cba0f5c2a83055de825b19729afe98",
+      "target_sha256": "af699eede490886667a49d01554036b8292f687d04e651ab5eb93b2c86df8838"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the total cost without the discount:",
+        "Savings = $30 - $27 = $3."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1942:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every price, discount, and savings claim is derived from the supplied question and explicit arithmetic, with no unsupported event or feedback claim.",
+      "raw_call_sha256": "413f0f6dd989f9bdacb1d234488c54f573d2ef6eb7cda7cf3724830d5e14c207",
+      "reason": "The target substantively describes its own calculations, correctly obtains the $30 base cost, $3 discount, $27 discounted cost, and $3 savings, and supplies concrete task-specific numerical expectations. The percentage-and-difference method is reusable and the reasoning is relevant throughout.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "93a3f3c1e7151d6ee56d6eeee1dac66b4fa7a11943a17ca1da33f8636250c5bb",
+      "target_sha256": "c879b3f2aabb8f8f430416012c444d1eaa227a3c5d7dd1b6a096232e89bb3214"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I first calculated the total cost without the discount:",
+        "Discount amount = 10% of $30 = 0.10 * $30 = $3."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1942:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person work and step-by-step self-verification are supported by the neutral history and target arithmetic; no external checker or hidden instruction is invoked.",
+      "raw_call_sha256": "88838f949b2530a6bd4ce74d90c691d9bf644832f1e9bfafc949a861c379313f",
+      "reason": "The response correctly and personally applies multiplication, a 10% discount, and subtraction to obtain $3 savings. It includes multiple concrete numerical checks and explicitly identifies when those operations transfer to similar discount problems; the verification and reuse discussion are task-relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "2e63611f8a7506240899d6faa1c714f67d67fc9711fd7669b1060def31644e9a",
+      "target_sha256": "3a2548211120ef4cd30ced81de60833b28fa2a3cb0aa3494ef8d87ed29c9bcda"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "20% of $20.00 = 0.20 * $20.00 = $4.00",
+        "Total cost = 5 * $28.00 = $140.00"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5288:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The discount, monogramming, and five-item total are all supported by the supplied question and correct arithmetic, without any unsupported external event.",
+      "raw_call_sha256": "955a29e67f45a0cf50ea3c8b2144fda672985fa488a3451a4a0a3ce34d861251",
+      "reason": "All calculations are correct, concrete, and reusable: discount $20 to $16, add $12 to obtain $28 per backpack, then multiply by five. The response is relevant but entirely impersonal, giving commands such as \u201ccalculate\u201d rather than an own account of choosing, applying, or checking an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "0a4988a6aa8251ae8ba25d1b9ac6389d1b898789c07c5bcef3f8eeaf3313d406",
+      "target_sha256": "7291a775bcaba656d53f111007706e54f9b4de901e90405ecae3c405a200e7b4"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I first calculated the discounted price of each backpack:",
+        "The total cost for 5 backpacks is 5 * $28.00 = $140.00."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5288:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and self-verification are fully supportable from the supplied history and explicit arithmetic; no external validation is asserted.",
+      "raw_call_sha256": "082ee61f71c47c8bc6974a4408546ec98b1954875d03fb57301349558a11e3cf",
+      "reason": "The response personally applies and verifies the correct sequence: calculate the $4 discount, obtain the $16 sale price, add $12, and multiply $28 by five. Its numerical checks are concrete, and it explains reuse for discounts plus per-item additional costs.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c8d769d51ab453929217b1dd1841af1ba2515f29d0b38915b430218613c69a7a",
+      "target_sha256": "1335d37ea14d407cf83ccd0296f69ab46b14daedde6a0abc10e5ee15050ae9de"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Since the shoes were sold at a 20% discount, Lyra paid 80% of the original price.",
+        "P = \\frac{480}{0.80}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1720:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The equation and plural first-person solution are supported by the question and verifiable algebra; there is no claim of external feedback or checker access.",
+      "raw_call_sha256": "7b84897b4d0a295ce67fdc5d5451c96467b63692317e0500b983e72725b9d31c",
+      "reason": "The response uses the substantive plural first-person operation \u201cwe solve for P,\u201d correctly recognizes that $480 is 80% of the original, and divides by 0.80 to obtain $600. The equation supplies a concrete expectation, and the reverse-percentage operation is reusable and concisely explained.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "066b2bb4cc5741d294149c97132a3b9cbb8bae56d83248a85cb3f8d2fcfa2727",
+      "target_sha256": "0a99d03a01d33816243ec3ef1a13ed2933c85f2a3e2caa837232c27e899faad0"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I identified that a 20% discount means Lyra paid 80% of the original price.",
+        "0.80 \\times 600 = 480"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1720:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The own-account calculation and inverse self-check are supported solely by the supplied problem, history, and arithmetic shown; \u201cThis confirms\u201d refers to that displayed self-check, not an external checker.",
+      "raw_call_sha256": "7b885e40258d848b261a5998dd7ac7133061157f6144533f7bb44a50547de9fe",
+      "reason": "The response personally identifies the paid fraction, divides 480 by 0.80, and independently checks that 80% of 600 is 480. The check is concrete, and it clearly states when dividing an amount paid by the paid percentage is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "0be8f77b7f475f25cf2089b59e1aa841fe87e24f0bf200f67a2ccad5ab7d050a",
+      "target_sha256": "8ccadc5f6cc4869931f3e2f2d3f38eae544105f3818688937cbcc246425abfb6"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "$20,000 * 0.20 = $4,000",
+        "The net profit is $63,000 - $16,000 = $47,000."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2564:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The discounted cost, retained prize, and net-profit claims all follow from the supplied question and correct arithmetic; no hidden feedback or event is asserted.",
+      "raw_call_sha256": "24aff3302aca1582456452390ca1809cf5fa2ac348b8af710075bce568645b54",
+      "reason": "The response correctly computes the $16,000 repair cost, $63,000 retained prize, and $47,000 net profit with checkable, reusable percentage operations. It fails only because its full text is an impersonal sequence of directives and contains no substantive first-person account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "3ff0e75cc3abff70e6276441b152d116076e3091c535ab19f4daa25fd2d3d54a",
+      "target_sha256": "a77827637baf6f76ae123953332c7f6e9269fccb77394485526decb45c94054c"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the cost after the discount.",
+        "The net profit is $63,000 - $16,000 = $47,000."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2564:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person operations and enumerated self-checks are supported by the question, supplied solution, and explicit arithmetic, without any external-checker claim.",
+      "raw_call_sha256": "06294bac90ab0c999ad83de001e50d4b1854d107725e4eb93f88b366ca94f102",
+      "reason": "The target gives an own operational account and correctly applies the 20% repair discount, 90% retained-prize calculation, and profit subtraction. Its verification contains concrete expected values, and the explanation connects multiplication and subtraction to similar discount and retained-percentage tasks.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "16d20e76abf01546c539a993b61336ad321d3c34adc83bd7a351f7bcc3f25aac",
+      "target_sha256": "756b69c15ca7ad4e0657358f02ba38698367842cdceca8ffdc74a53e840ddf76"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I convert all measurements to teaspoons for consistency:",
+        "Percentage of ginger = (9 teaspoons / 21 teaspoons) * 100 = 42.857%"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-7146:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All quantities, conversions, and percentage claims are supported by the supplied mixture description and explicit valid arithmetic; no unsupported observed event is claimed.",
+      "raw_call_sha256": "bb73078db4aa18c939c3a04c4ed18cba0c992b7736475cf55af0a8c9d0978c8f",
+      "reason": "The response personally identifies, converts, totals, and computes the mixture percentage. Converting 3 and 2 tablespoons to 9 and 6 teaspoons, totaling 21, and calculating 9/21\u00d7100\u224842.857% are correct and checkable; the mixed-unit percentage method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "70da064c6d2962f920eb79c295b40875ea896399014914619c5dc8b56864be1f",
+      "target_sha256": "898777112c83b2260e1af903549485bea2e3ba38f39c2de151cb0f56dc3d1f1c"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I then converted all measurements to teaspoons for consistency:",
+        "Total = 9 (ginger) + 1 (cardamom) + 1 (mustard) + 6 (garlic) + 4 (chile powder) = 21 teaspoons"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-7146:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person conversion, percentage computation, and self-verification are supported by the neutral history and arithmetic shown; the check is internal rather than an unsupported external event.",
+      "raw_call_sha256": "4cf92c6eff8363c5129683dcfd422f7e3131c628b2d2c2275eb8dc8b83ce72a7",
+      "reason": "The response gives a substantive own account, correctly converts every quantity to teaspoons, verifies the 21-teaspoon total, and obtains 42.857%, rounded to 43%. It explicitly explains reuse for mixtures with mixed units, and all content remains task-relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "51d38596e82acdea4c7b9c47065622ec12f9e7e32b073d20489a1c911920cab6",
+      "target_sha256": "6099de1acb587ff50bbd5b6f1de76ff0bdfdd77a7104093199814afeadffdd93"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "\\text{Interest for the first month} = 200 \\times 0.10 = 20 \\text{ dollars}",
+        "\\text{Interest for the second month} = 220 \\times 0.10 = 22 \\text{ dollars}"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4809:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-month balance update and second-month interest follow directly from the supplied compounding definition and valid arithmetic; no unsupported feedback is mentioned.",
+      "raw_call_sha256": "483311c46601d4fc3137dc7408767c0470226fcfd583ae3f9dcc36eccb60ea58",
+      "reason": "The compound-interest sequence is correct, concrete, and reusable: calculate $20 interest, update the balance to $220, then calculate $22. The response nonetheless lacks a substantive own operational account, using only impersonal commands such as \u201ccalculate.\u201d",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "bf46f13ba04a1663cc2a4ddcce6100e415b9f71b80a988ce72bb93d48549860f",
+      "target_sha256": "81b599dab06f9e4dfed054c4dc525bcd3a16cec6809dc845e7aa7aa062147777"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the interest for the first month.",
+        "I expected this result to mean that the loan shark would charge Jerry $22 in interest for the second month"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4809:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The own-account computation, stated expectation, and self-recheck use only the supplied compounding facts and displayed arithmetic; no external verification is claimed.",
+      "raw_call_sha256": "3f279ae83c5d492291caa8cdaa55a3ac1af1b7c4e9b05822e87519f961149247",
+      "reason": "The response personally applies the monthly compounding sequence, correctly obtains $20, $220, and then $22, and states the concrete meaning expected from the result. It also identifies the month-by-month compound-interest operation as reusable, with no irrelevant padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "9947f763a3cf743ac0d4bb50a115d3c364aad2fafabb4c5cc850c695acd61ea2",
+      "target_sha256": "691ea2c65e6b75da16df87a5458a963db2b0b3e4476d1ff36f1a44ddfd44df66"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "25% of 36 is (25/100) * 36 = 9 dogs.",
+        "CHECK: The total pets (36) = dogs (9) + cats (18) + bunnies (9) = 36."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6067:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The category counts and displayed sum check are supported by the supplied percentages and arithmetic; \u201cCHECK\u201d is a valid internal check, not a claim about an external checker.",
+      "raw_call_sha256": "02db6e443a5f1776e855f794faf0a98103c1d2c6bfa1c1a75c5ee16ca908d595",
+      "reason": "The response correctly computes 9 dogs, 18 cats, and 9 remaining bunnies and supplies the concrete sum check 9+18+9=36. The percentage-and-remainder approach is reusable and concise, but the text is entirely impersonal and does not substantively recount the responder's own operation or check.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "c7b147fb0edf588af4ea2c275454adb16d62a391d9b331e294e7ad4a43167242",
+      "target_sha256": "32e5227e45ff81b44f8da7cb644d5f14399eb43f165324815ca1f7fe433937a7"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I used the formula: number of dogs = 25% of 36.",
+        "To verify this, I checked that the sum of dogs, cats, and bunnies equals the total number of pets: 9 + 18 + 9 = 36."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6067:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and internal sum check are fully supported by the supplied question, solution history, and explicit arithmetic; no outside confirmation is asserted.",
+      "raw_call_sha256": "f48773b8fb597721ace73f341f1effae23dd770afa9bd3dd3f1a9f56e52ef2ab",
+      "reason": "The response personally computes both percentage categories, subtracts their total from 36, and verifies the result with 9+18+9=36. The check is concrete, and the explanation correctly identifies percentage-of-total calculations as reusable for finding category counts.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "d656e4ed103b5c1a5824313c32f0eb51fd3d6053277a3b14327ff88fac14e4cc",
+      "target_sha256": "7ec46c20ba2c606d458bcd2856eddc0472aeee4e313995973143f75347abf372"
+    }
+  ]
+}

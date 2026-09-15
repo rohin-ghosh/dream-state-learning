@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/orch_l2_long_20260914_attempt1/source_v6/gpu/orch_l2_shared_run.py", line 513, in <module>
+    main()
+  File "/tmp/orch_l2_long_20260914_attempt1/source_v6/gpu/orch_l2_shared_run.py", line 509, in main
+    run(options)
+  File "/tmp/orch_l2_long_20260914_attempt1/source_v6/gpu/orch_l2_shared_run.py", line 270, in run
+    resumed_records = continuation_records(root, arm, cycle, output, identity, frozen['train'][cycle - 1]) if resuming else []
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/orch_l2_long_20260914_attempt1/source_v6/gpu/orch_l2_shared_run.py", line 162, in continuation_records
+    source.require(any(path.is_file() and bridge.file_sha256(path) == request['runtime_manifest_sha256']
+  File "/tmp/orch_l2_long_20260914_attempt1/source_v6/gpu/astra_experienced_event_microloop.py", line 32, in require
+    raise ValueError(message)
+ValueError: original_runtime_manifest_missing

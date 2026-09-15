@@ -207,3 +207,125 @@ reapproval. SHORT second admission also met transient sshd/sftp scanner block;
 still no C2 child calls. Adding bounded rechecks that require a fully CLEAR
 scan before launch, not service exceptions/visibility relaxation. V5 stays
 immutable for LONG; own guardian-only publication next.
+
+2026-09-15T00:24Z [Builder → Main] V5 scoped commit ff59e055 PUSHED; LONG
+can use published shared V5 now. Guardian-only V6 leaves native driver,
+interface, actor/parent/gates unchanged. It retries at most6 fully fail-closed
+scans only for unresolved sshd/sftp entries with no owners, never exempts or
+accepts them. All failed admissions preserved. Second failure was the launch
+SSH shell persisting while an asynchronous && chain retained its descriptors;
+direct detached `nohup env ...` launch removed that process-lifetime issue.
+Actual SHORT guardian208548/native208593 now admitted physical0 for C2 under
+V6; no earlier stage replay. Guardian directory SHORT_GUARD_REPAIR_V4 is an
+unused attempt LABEL; actual runtime is explicitly PREPARE_RUNTIME_V6.json,
+not V4. Original deadline1789472611.845884 unchanged. FROZEN C2 and
+UNPARENTED C3 continue independently.107CPUtests pass (includes contemporaneous
+LONG regressions). V6archive SHAba2405aac16753e62955b279a07da9d38579784c0b3492d6ca57223a6e64e12c;
+manifest SHA44da3358a3f524854ca717267b524a2a8167a26a97d8787b4cb68e4630c6720a.
+C1 same-stage fresh readouts SHORT11/16 and guidedFROZEN11/16, both unchanged
+weights/null sleep; task experience1/16 versus0/16, no admitted rows either.
+UNPARENTED sleep1 actually26updates/statef2013ae1, postreadout8/16; comparing
+this to initial11/16 is cohort-confounded, NOT a causal regression estimate.
+UNPARENTED C2 yields0 rows/0updates and preserves null readout. Current strongest
+finding is executable checkpoint-continuous consolidation with honest null
+controls, not evidence of guided learning/cohesion or H2. Original call0 bad
+label-plausibility advice remains a counterexample despite supplied SYSTEM.
+
+2026-09-15T00:41Z [Builder → Main] UNPARENTED LIFETIME COMPLETE; A100physical3
+verified0MiB and available for Main reallocation. No new run on that device.
+Guardian terminal00:33:50UTC.48experience tasks across3cycles: successes5/4/3,
+admitted rows1/0/0, actual updates26/0/0, readouts11/8/11/11 of16 each.
+All W0/W8/audit retained16/16.686 learner reservations<1600, contiguous ledger.
+Actual mounted checkpoint chain verified: initiale226→sleep1f201→collector2,
+collector3 and all post-sleep readoutsf201; basea236 unchanged. Null sleeps
+retain exact child and emit readouts; no smoothing/padding/reclassification.
+Terminal archive UNPARENTED_TERMINAL_V4.tar.gz
+SHAdfde7272c24cf3ce1ed2fc54ddd86bd19f230c33f86cc792dbad71af42919cc2;
+companion SUMMARY binds all cycle receipts and observed continuity. Main
+already integrated V6 via70cf6d42; no worker-side merge/force was used.
+SHORT C2 now12/16 episodes, guidedFROZEN C2 15/16, both real native processes
+active. Parent broker serial with one actual evaluator at~2.6GiB MemAvailable;
+no new below1.5GiB. LONG owner independently confirms native continuation past
+four old episodes, unchanged originalfiles/ledger prefixes and zero-cost
+delivery of saved0002. Its66768c8a preserves native proof; no physical1 launch
+or hook duplication by SHORT.
+Evidence/report: research_notes/analysis/orch_l2_shared_20260914_runtime_repair.md.
+PROGRESS_NATIVE_REPAIR_V6.tar.gz SHA94ce0c25bb987615e644b62438bcd3cfa3e883abb1e9f934bae0dad054bb5d87
+preserves completed native cases/masks/losses/failures. C1 provider archive
+SHA4e495a9e2fb3cc1ef902189eb5fa69e708245402a418e33829fdc92bb614a2fe
+binds489 original prompt/response/stdout/invocation/accounting files. FROZEN
+distillation0033 malformed JSON stays failed; UNPARENTED four historical
+unresolved candidate reviews stay unresolved, no retrospective admission.
+Strongest scientific statement remains no demonstrated guided learning gain:
+C1 SHORT/guidedFROZEN both zero rows, same-stage readout11/16 each, training
+opposite-goal pairs both-correct0/8. SHORT C2 first actual161-token response
+attributes EVENT contents before a real READ; saved verbatim, not repaired.
+Finish original SHORT/FROZEN three-sleep batches; no scale from verbosity or
+cohort-confounded8→11 with unchanged weights. ADJACENT remains deferred.
+
+2026-09-15T00:50:18Z [Builder → Main] NEXT MATCHED STAGE COMPLETE, no restart.
+C2 SHORT and genuinely guidedFROZEN each11/16held, W0/W8/audit16/16 each;
+same-task raw traces identical16/16, opposite-goal both-correct4/8worlds,
+53actualREADs/22routes/80childcalls each. Both mounte226/basea236, no update.
+C2experience SHORT6/16 versus FROZEN4/16, each54childcalls/28spokenparents,
+both0rows/0updates and0/8both-goal worlds. C3 original processes active at
+00:50:47: SHORTguard208548/native229112; FROZENguard172172/native226952.
+UNPARENTED remains terminal1/0/0rows,26/0/0updates; held11/8/11/11 of16.
+LONG C1 actual2rows/28updates outputad2d1065; C1held not complete in snapshot,
+no physical1 action by SHORT. No scientific gain from null treatment or slopes.
+Archive C2_MATCHED_RECEIPTS_0050.tar.gz remotely+locally equal SHA
+d0e2bea3b54be2d487cbdd3ccf4e8931eb398134c72626d54720a49be7103ac3.
+STATUS_GENERATOR_DESIGN_002.json binds exact completed receipts/observedhashes;
+001 preserved. Summary checks cohort/task pairing/counts/mounts/parentabsence.
+Report: research_notes/analysis/orch_l2_shared_20260915_matched_status_and_generator_handoff.md.
+Main00:47 STATE→BOARD/d0ae017b now assigns releasedphysical3 to Erdos RICH-L2;
+SHORT offers design only, no competing launch/newscope/currentprotocol change.
+INTENSITY16 SHA52197d8d spans6tasks; TWO-PASS9 SHAe2a04f30 spans3ofthosesame6,
+not25independenttasks. Both source37ec, not routee226: declare pilotseed/transfer
+honestly, preserve releasedneutralhistory ratherthan inferenceprompt, use fixed
+FULL/newlabel-OFF bootstrap+legacy then same-start guided/frozen/unparented,
+actualpreviouschild/ownnewrows/nullreadouts. Bootstrap alone notL2; no1000wait.
+Recommend finish originalC3 plus separately allocated pilot; no new calls here.
+
+2026-09-15T00:57Z [Builder → Main] Reporting correction: guidedFROZEN is matched
+CONTROL, not deterministicfirstportREFERENCE. Actual savedcohort/source replay
+now derives first-CURRENT-listed-port goal8/16,pair0/8 for every heldstage0–3
+and TRAINcycle1–3; no assumptions, model/providercalls0, fits0, worldregenfalse.
+Exact per-world transitions/receipts in FIRSTPORT_FIXED_REFERENCE_20260915.json
+SHA5bbbbeeb19ea98046caf415268e5f6a642fe534417f50e832689aebfefc1685a.
+Original genericfirstport helper misread embedded post-receipt CURRENT task;
+CPU assertionfailure preserved, no result from that attempt. Report-only own
+callback reads latestactualpublictask, fourCPUregressionspass; no native/helper
+modification or deployment. Existing report now labelsFROZENcontrol correctly.
+C3 SHORT7/16,FROZEN11/16 recorded; originalguardianscontinue, neither released.
+LONG2rows28updates firstGUIDEDactualtreatment, no causalclaim before ownheld.
+Newpilot original37ec keeps source/recipient lineage honest; no e226 rewrite.
+
+2026-09-15T01:12Z [Builder → Main] ORIGINAL OWNED THREE-CYCLE LIFETIME TERMINAL.
+SHORTguard ended01:09:18UTC; FROZEN01:05:39UTC; no restarts/extensions/newsource.
+SHORT experience1/6/2 of16, rows0/0/0,updates0/0/0,666learnerreservations.
+GuidedFROZEN experience0/4/4 of16,rows0/0/0,updates0/0/0,677reservations.
+UNPARENTED prior terminal5/4/3,rows1/0/0,updates26/0/0,686reservations.
+Held goals initial/C1/C2/C3 SHORT=FROZEN11/11/11/15 of16; pairs5/4/4/7 of8.
+UNPARENTED held11/8/11/11,pairs5/2/4/3. Every owned W0/W8/audit16/16.
+Deterministic first-CURRENT-listed-port REFERENCE actually8/16goals,0/8pairs
+EVERYstage; GUIDED-FROZEN is CONTROL. RawSHORT/FROZENtraces16/16identical at
+every stage; unchangede226 means11→15 is cohortvariation, not guidedlearning.
+LONGnewreadonly C1held8/16,W0/W8/audit16/16 after2rows28updates; descriptive
+-3goals vsC1guidedFROZEN, no causalclaim/firstport-policy-equivalence/gain.
+LONGC2experience2/16,0rows0updates; its fulltrajectory remainsLONGowned.
+Ownproviderreservations SHORT184/600 (includesUNPsemantic),FROZEN184/600;
+92logicalrequests each are not an extra184modelcalls. Source448shared once.
+Originaldeadline1789472611.845884 unchanged; allledgerscontiguous/capschecked.
+TerminalsummarySHA6120ee1f4810385cbd29eddbf445dba0212590a3a668fd9accd8e0c635b945e1;
+nativearchivee18ee9d5102d8950921151ed546eac4ea583730b0385989223c4cc23c47a6278
+remotely/localverified.1451providerfiles archive
+8589ab50b04877ba2d6d4caf322d83067c19e3280856ebb02e7d94bcfea3f146.
+FROZENdistillC1/C3failedraws preserved, no retries/substitution. Short3distills
+andFROZENC2distill intact. Previousfailures/nulls/targetprefixes untouched.
+After counts/chain/terminalchecks, actualguardian/nativePIDsabsent, UUIDchecked
+A100physical0/2 each0MiB at01:10:47: RELEASED TO MAIN, no new cell/kill action.
+Physical3 remainsErdos;1remainsLONG. Serialparentbroker stays forLONG.
+Report research_notes/analysis/orch_l2_shared_20260915_original_terminal.md.
+BoundedSHORTrecipe null; retirethisrun atdeclaredscale, notdevelopmentalthesis.
+Nextcompute separatelyallocated37ecpilot; no e226recipient/sourceconflation.

@@ -1,0 +1,377 @@
+{
+  "gold": [
+    {
+      "independent_answer": "4",
+      "question_sha256": "0c09b3a10e14f5a9e2ce34544c4aced777a4856ed01cbfd9c2c4e8aa73922f7d",
+      "reason": "Combined use is 800 + 400 = 1200 ml/hour. The available 4.8 L is 4800 ml, and 4800 / 1200 = 4 hours, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4983"
+    },
+    {
+      "independent_answer": "6",
+      "question_sha256": "aa45d7a6705f5f87c1d2705564dd9811bab9c15dd21ad62cee5a7d357ae1c66c",
+      "reason": "\u201cRestore ... to 43 degrees F\u201d identifies 43\u00b0F as the pre-outage temperature. The outage adds 8 \u00d7 3 = 24\u00b0F, and cooling that increase at 4\u00b0F/hour takes 24 / 4 = 6 hours, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-7467"
+    },
+    {
+      "independent_answer": "15",
+      "question_sha256": "a87634831e79d340d8e162fd07716ae3ccf481d8a0bac0275358818a85e1bb6d",
+      "reason": "The pot contains 6 \u00d7 128 = 768 ounces. Serving 5 bowls/minute at 10 ounces/bowl is 50 ounces/minute, so the time is 768 / 50 = 15.36 minutes, which rounds to 15, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-1010"
+    },
+    {
+      "independent_answer": "34",
+      "question_sha256": "a6e449fac12fb28f5235533203f9f1900c24d529b27a291247d3b398a8e121e6",
+      "reason": "The furniture yields 18 \u00d7 6 + 6 \u00d7 9 + 4 \u00d7 2 = 108 + 54 + 8 = 170 sticks. At 5 sticks/hour, 170 / 5 = 34 hours, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6352"
+    },
+    {
+      "independent_answer": "324",
+      "question_sha256": "a1b1a0db2c1db44d009317ece0b464ade0558cd6217be51b547111feaef16c0c",
+      "reason": "Shirley does 2 \u00d7 36 = 72 questions, and Kiana does (36 + 72) / 2 = 54. Their first-hour total is 36 + 72 + 54 = 162; repeating those respective amounts for another hour gives 2 \u00d7 162 = 324, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-457"
+    },
+    {
+      "independent_answer": "76",
+      "question_sha256": "95049a187d3189a290a307e80296f2d4f4779640a046aac0f99671b4258a24e0",
+      "reason": "Apartment 1 costs 800 + 260 + 31 \u00d7 20 \u00d7 0.58 = 1419.60 dollars. Apartment 2 costs 900 + 200 + 21 \u00d7 20 \u00d7 0.58 = 1343.60 dollars. The difference is 1419.60 \u2212 1343.60 = 76 dollars, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-1202"
+    },
+    {
+      "independent_answer": "30",
+      "question_sha256": "fd1eca21e99c8dcd63cd2bed520bcf38d381fbf4c33d35094d396a259eb9950f",
+      "reason": "Their simultaneous rates add to 75 + 10 = 85 pounds/minute. Loading 2550 pounds therefore takes 2550 / 85 = 30 minutes, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6623"
+    },
+    {
+      "independent_answer": "2",
+      "question_sha256": "993a7c2690b9aff29514bf58187799d140236eca4440e9920f7f12f31bc716a1",
+      "reason": "Tiffany's speed is 6 / 3 = 2 blocks/minute, while Moses's is 12 / 8 = 1.5 blocks/minute. The higher speed is 2, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-3873"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the total water consumption per hour for both Violet and her dog:",
+        "Number of hours = 4800 ml / 1200 ml per hour = 4 hours.",
+        "4 hours * 1200 ml/hour = 4800 ml"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4983:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every claim follows from the question and shown arithmetic: 4.8 L is converted to 4800 ml, the two hourly needs are added, and the result is self-checked by multiplication. No external event is claimed.",
+      "raw_call_sha256": "c8804e4c8a9fa70c5b93edf4e4346dc4a1fc207f304d04ffe1247a9ab257d6bb",
+      "reason": "The response gives a substantive first-person calculation, correctly converts liters to milliliters, adds the two consumption rates, divides available water by the combined rate, and supplies the concrete inverse check 4 \u00d7 1200 = 4800. The reasoning is relevant and the rate-aggregation method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4d029ecb1c5d1bd77ec52f22f6df082520187090525152cbb50d3eb77ad8ff23",
+      "target_sha256": "530ee707f4f5836d094f7792e986354a2ac9046caa8d5224f68b4f1c1a290ab6"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated the total water consumption per hour for both Violet and her dog:",
+        "Number of hours = 4800 ml / 1200 ml per hour = 4 hours.",
+        "4 hours * 1200 ml/hour = 4800 ml"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4983:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's factual and mathematical claims are supported by the question, the supplied solved response, and explicit correct arithmetic. Its verification is a self-check, not a claim of external checker access.",
+      "raw_call_sha256": "8d05fc621389173042dacb16c07d7c814229a59edc80ae5091bc35625bc2235c",
+      "reason": "The record correctly adds 800 and 400 to obtain 1200 ml/hour, divides 4800 by 1200 to obtain 4 hours, and checks the result by multiplication. It gives an own operational account and explicitly identifies the reusable combined-rate-then-division method without irrelevant filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1df04665c012ae966d2520b9cffa9b8c5f7a3c025abd6d8b7f787a7790324867",
+      "target_sha256": "6e1aa60ac019cd14b9e9ae79ae5062ad0c6be4e2bf0fbe4c67dc7f8a49e5936b"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "We need to find the time \\( t \\) it takes for the air conditioner to lower the temperature back to 43 degrees F:",
+        "Since the initial temperature \\( T \\) is not specified, we can express the time in terms of the temperature increase:",
+        "\\[ t = \\frac{24 - 19}{4} = \\frac{5}{4} = 1.25 \\, \\text{hours} \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-7467:rich",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix supports a 24\u00b0F outage increase and restoration to the original 43\u00b0F, hence 24 / 4 = 6 hours. It does not support replacing T with 24 in (T \u2212 19) / 4 or the resulting claim of 1.25 hours.",
+      "raw_call_sha256": "52c65d4fbd8a7b39dcd62aed5d64edd4e1d63c3a6997cb78f17f11600b184a8e",
+      "reason": "The response correctly computes the 24\u00b0F rise and provides a concrete numerical intermediate, but its final substitution is invalid: from t = (T \u2212 19) / 4 it jumps to (24 \u2212 19) / 4 without justification. \u201cRestore ... to 43\u201d indicates that cooling must reverse the full 24\u00b0F rise, which takes 6 hours. The plural first-person phrase \u201cwe can express\u201d describes an applied operation, and the valid rate-times-duration step remains reusable, but the false material algebra forces FAIL.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "a00cddf9d592ea08c9b4026803c82084ced7170eb209d21e97729f516a341435",
+      "target_sha256": "283aa795a18c79fad02588369d1ad9e4159dd0c6e31b26b4e678f6b7d2372e47"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "6 gallons * 128 ounces/gallon = 768 ounces.",
+        "76.8 bowls / 5 bowls/minute = 15.36 minutes.",
+        "Rounding 15.36 to the nearest minute gives 15 minutes."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1010:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All quantities come from the question, and the conversions, rate division, and rounding are explicitly verifiable. No hidden feedback or external event is asserted.",
+      "raw_call_sha256": "115f6e52db553fc1ea22b264a7f5ab25626a4032c3aa128c25018877d46fc3f9",
+      "reason": "The response substantively recounts converting 6 gallons to 768 ounces, converting that to 76.8 bowl-equivalents, and dividing by 5 bowls/minute to get 15.36 minutes. These correct intermediates are concrete expectations tied to their roles, the nearest-minute rounding is correct, and the conversion/rate procedure is reusable and concise.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "06cfe0fef4da22d94100db558652f634bab2950ef973f2ff1f654d2799f66dde",
+      "target_sha256": "08a9552412ae480c0e19302369b6290dec2f52f7bdb272d7bfdd33bd14e0d5c1"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first converted the total amount of soup from gallons to ounces:",
+        "\\[ \\frac{76.8 \\text{ bowls}}{5 \\text{ bowls/minute}} = 15.36 \\text{ minutes} \\]",
+        "15 minutes means Erin would serve 75 bowls"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1010:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target is supported by the question and solved prefix, and its 75-bowl rounding check is independently verifiable arithmetic rather than an unsupported external observation.",
+      "raw_call_sha256": "7f6046edad7f2a186a1b4dbb0d166b84343966b233393167dbf2338b0dcbd343",
+      "reason": "The response correctly carries out 6 \u00d7 128 = 768 ounces, 768 / 10 = 76.8 bowl-equivalents, and 76.8 / 5 = 15.36 minutes. Its check that 15 minutes serves 75 bowls and leaves only 1.8 bowl-equivalents concretely supports rounding down. It gives a substantive first-person account and a relevant reusable conversion-and-rate method.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5c01766037ccc8244393232831304807a9c2f08d085a9911e5537d2876ef1021",
+      "target_sha256": "6fdf9f30c4dd7453354343a4f65d82038f11eaccdb4e50530d8ded567cbc4c24"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "From chairs: \\(18 \\times 6 = 108\\) sticks",
+        "\\(108 + 54 + 8 = 170\\) sticks",
+        "\\(170 \\div 5 = 34\\) hours"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6352:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every furniture yield, the sum of 170 sticks, and division by the stated five-stick hourly requirement are supported by the question and correct shown arithmetic. No external event is invoked.",
+      "raw_call_sha256": "fc196686a5cba774ebb6c53d3b2926179891bea0c244e27c457c2bc46530d97c",
+      "reason": "The first-person response correctly multiplies each furniture count by its yield, sums 108 + 54 + 8 = 170, and divides by 5 to obtain 34 hours. The numerical intermediates are checkable expectations, and the weighted-total-then-rate-division procedure is specific, reusable, and presented without filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "b44da629dd219e7f867a9a14e01a8080f3b561ac72d7083a918af807a8b8b752",
+      "target_sha256": "acc83fbc19889e869ee597060afcd25ac553a77fad92a2a68d3a9f2b2be6fe0b"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated the total sticks of wood from each type of furniture:",
+        "\\[108 + 54 + 8 = 170\\] sticks",
+        "\\[34 \\times 5 = 170\\] sticks"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6352:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The question and supplied solution support all quantities and operations. The statement that 34 \u00d7 5 equals 170 is an explicit self-check, not unsupported checker feedback.",
+      "raw_call_sha256": "523dd1c003caaebf7ce6b8cfe1e56c41e55fe4baa8df3bc04ed5e477dc8fcb9d",
+      "reason": "The target provides a substantive own account, correctly computes each wood contribution and the 170-stick total, divides by 5 to get 34 hours, and checks the answer with 34 \u00d7 5 = 170. It explicitly states a grounded reusable aggregation-and-division method and contains no material padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "03bb024fecfffd3409fe5714726329ad8ae07dc231ebf20e86f6fdb22223b46a",
+      "target_sha256": "b9e6b2ce0c9c1a45c58e929626f1160e8b674b20d9a21d13cfcfdf6ec8d61d3b"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Shirley completed twice as many as Fiona, so Shirley completed \\(36 \\times 2 = 72\\) questions.",
+        "Kiana completed \\(\\frac{36 + 72}{2} = 54\\) questions.",
+        "Total in two hours = \\(162 \\times 2 = 324\\)."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-457:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All relationships come directly from the question, and each multiplication, average-like half-sum, total, and second-hour duplication is explicitly correct. There is no claim of hidden guidance or external checking.",
+      "raw_call_sha256": "554b63df42e151601779d103f73abe0c8211196a98c7d8657b61edbd4bc3fcaa",
+      "reason": "The response correctly derives Shirley's 72 and Kiana's 54, totals 162 for one hour, and doubles that total because each repeats her respective count in the following hour. The first-person operational account includes concrete numerical expectations and a reusable proportional-total-over-periods method, with no irrelevant content.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "a1fda251a9602029eea15f51cbe766c84d0ac3c529a8a9505c4a52a6d8630d57",
+      "target_sha256": "3f0e89ff14745e888a2571bb1ed5262d47baac6b58c97688434be72ab051d6fb"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I multiplied the one-hour total by 2 to find the total for two hours:",
+        "Total in two hours = \\(162 \\times 2 = 324\\).",
+        "To check the result, I verified each step:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-457:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's quantities and interpretation are supported by the question and solved prefix. Its verification merely recalculates explicit arithmetic and does not assert access to an outside checker.",
+      "raw_call_sha256": "b262ec2b973887f3a693969b51e916fb47efe659406f8cad4e2da832236bc490",
+      "reason": "The response correctly calculates 72 for Shirley, 54 for Kiana, 162 for one hour, and 324 for two hours. It gives a substantive first-person account, explicitly verifies each numerical stage, and identifies the proportional-relations-and-period-total method as reusable. The verification is relevant rather than padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e183921d2804a1c7beaa357bceac1d6411ed1d8c02a02dd814107a2e9c8d16de",
+      "target_sha256": "269b6667333fed8952ffffbc4d408357137c79bbe69b4f09132ca0b3acb83f06"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Now, let's calculate the driving cost for each apartment.",
+        "\\[ 800 + 260 + 359.6 = 1419.6 \\text{ dollars} \\]",
+        "\\[ 1419.6 - 1343.6 = 76 \\text{ dollars} \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1202:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The plural first-person calculations use only the supplied rents, utilities, daily miles, workdays, and mileage cost. All arithmetic and rounding claims are directly verifiable, with no unsupported external feedback.",
+      "raw_call_sha256": "e5e8b920e2f10a4a383608cb29fe572ce0b9c877e1946ae68669102843d1ff47",
+      "reason": "The response substantively uses \u201clet's\u201d and \u201cwe\u201d to calculate each monthly driving cost, adds fixed and variable costs, and obtains the correct 76-dollar difference. The intermediate totals are concrete numerical expectations, and its fixed-plus-variable comparison procedure is reusable and relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "41545cc172e7cb4abbb33f17d7a7b9dd9baff638b09215d2f8f492857bc43119",
+      "target_sha256": "5eec7aa12456e40db614f62f867b455b807a761e9d712ca46d0ba66dae4c5881"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated the driving cost for each apartment:",
+        "Difference: 1419.6 - 1343.6 = 76 dollars",
+        "which matches the exact answer checker."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-1202:new_record",
+      "neutral_prefix_compatible": false,
+      "no_padding": false,
+      "prefix_reason": "The arithmetic is supportable from the prefix, but the prefix contains no event in which an \u201cexact answer checker\u201d was accessed or returned a result. The target's claim that its answer \u201cmatches the exact answer checker\u201d is therefore unsupported.",
+      "raw_call_sha256": "a62fefd271807cea892423da0ed8895b6758ae9fdcfc2fecf2cf7f169bc852dc",
+      "reason": "The first-person cost calculations and 76-dollar result are correct, checkable, and reusable. However, \u201cmatches the exact answer checker\u201d invents an external observed event absent from the neutral prefix. That unsupported material claim defeats groundedness and prefix compatibility, and the invented checker clause is padding rather than mathematical reasoning.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "141969d193dd8d9e8addde14ff1f0c131c0db86509d8c400658f3f603c7b4f69",
+      "target_sha256": "4583d11474eb848efe71a5d4ff0555a303855029948ef8c825fc02b23bae8bea"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the combined rate, I add their rates:",
+        "75 pounds/minute + 10 pounds/minute = 85 pounds/minute",
+        "30 minutes * 85 pounds/minute = 2550 pounds"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6623:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the two simultaneous rates and total weight supplied by the question. Its multiplication check is explicit valid arithmetic and does not claim an outside event.",
+      "raw_call_sha256": "426456332d38addcb3055e9066c4fe5353909663ccb933fc4796709342b49ff0",
+      "reason": "The response gives a substantive first-person calculation, correctly adds simultaneous work rates to obtain 85 pounds/minute, divides 2550 by 85 to obtain 30 minutes, and checks 30 \u00d7 85 = 2550. The combined-rate method is specifically reusable and the explanation is concise and relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e589abe685817d7ba2eeb414a823af74ef4a470b541a3752fbe9bb94a0a8e359",
+      "target_sha256": "d1aaa8176675436f608a5814101c4a69e77246c4e86f1e4cc489d0f1aeb8e8d6"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the combined rate, I added their individual rates:",
+        "2550 pounds \u00f7 85 pounds/minute = 30 minutes",
+        "85 pounds/minute * 30 minutes = 2550 pounds"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6623:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All target claims follow from the supplied rates, total weight, solved response, and valid arithmetic. The stated confirmation is an internal multiplication check, not unsupported external feedback.",
+      "raw_call_sha256": "06b616a04126dd4a7b0f774940fca3b0d5d4e04d465ec900648de63dd3f11919",
+      "reason": "The response correctly and personally recounts adding the two concurrent rates, dividing the workload by 85 pounds/minute, and checking the result by multiplying 85 \u00d7 30. It explicitly explains when the combined-rate method is reusable and contains no irrelevant filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "13bc48bc6ac3ca383291c8d1f79a40ebe9cbcf6dda6ac6383312ccfe460e6d22",
+      "target_sha256": "04aff824876cf50edf4794c802b09e033e0666fc0ddd8f60291603d47a61e75d"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the speed of each runner, I need to calculate the blocks per minute for both.",
+        "Speed = blocks / time = 6 blocks / 3 minutes = 2 blocks per minute.",
+        "Speed = blocks / time = 12 blocks / 8 minutes = 1.5 blocks per minute."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3873:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The two distance-over-time calculations and their comparison use only the question's supplied data and valid arithmetic. No external observation or hidden checker is claimed.",
+      "raw_call_sha256": "e1f04b804f12d311cca6e03416dfd63a7040731cc923cbfed4162ccd5b7e11b7",
+      "reason": "Beyond stating the goal, the response applies the speed formula to each runner, producing the concrete and correct expectations 2 and 1.5 blocks/minute, then compares them. This is a substantive first-person operational account and a reusable distance-divided-by-time procedure without padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5b18e118d77b108ba58f599262c3e1b7fb58a8d24a82de0ed3948c755a76426b",
+      "target_sha256": "cbbc5d3b9d7b51f48525e7cc26af304e17a78673c9aa6bfb46ea38a44818c83a"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the speed, I used the formula for speed: speed = distance / time.",
+        "Speed = 6 blocks / 3 minutes = 2 blocks per minute.",
+        "Speed = 12 blocks / 8 minutes = 1.5 blocks per minute."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3873:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The question and supplied solution support the distance, time, speed formula, and comparison. Saying the target recalculated the displayed arithmetic is a supportable self-check, not an unsupported external-checker event.",
+      "raw_call_sha256": "fed393593f23380641dfcb645b64d2c9d035bb10bdcdcbfc916e2ee5bc277bba",
+      "reason": "The target substantively recounts applying distance divided by time to both runners, gives the correct numerical speeds 2 and 1.5, and compares them. Those intermediates are concrete checkable expectations; the response also explicitly identifies the speed formula's reusable role and remains relevant throughout.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "544482ebd6a37b90822db310abd7c48790bf5799c7ad387074fc24e859a4b633",
+      "target_sha256": "bc65a39dc856cf98d010e0242e096db36fcb02662513d97a9b64fd436bb17666"
+    }
+  ]
+}

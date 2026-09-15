@@ -1,0 +1,317 @@
+[
+  {
+    "gold": "20",
+    "question": "On their way driving to Los Angeles, Benjamin and James see lots of billboard ads. Curious, Benjamin starts to count how many they see. In the first hour once he starts counting he counts 17 billboards. In the second hour once he starts counting he sees 20 billboards. In the third hour he sees 23 billboards. James asks Benjamin the average number of billboards they've seen per hour. What should Benjamin tell him?",
+    "question_sha256": "fe6d29c341f951d6e5e743b8cae0ca8264c61efd74b80719b6da0360bf243c7c",
+    "responses": [
+      {
+        "key": "gsm8k-train-1879:rich",
+        "raw_call_sha256": "2c898b2d04e411dd4ece43016381da94979f2a363ba4d80de4efcc1b79fdf363",
+        "student_prefix": [
+          {
+            "content": "On their way driving to Los Angeles, Benjamin and James see lots of billboard ads. Curious, Benjamin starts to count how many they see. In the first hour once he starts counting he counts 17 billboards. In the second hour once he starts counting he sees 20 billboards. In the third hour he sees 23 billboards. James asks Benjamin the average number of billboards they've seen per hour. What should Benjamin tell him?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e02ebfbe6618d65aacad0328660eebf621bbfcaa3ea6452d7a2313f6fa502a30",
+        "target": "To find the average number of billboards seen per hour, I need to add up the total number of billboards seen and then divide by the number of hours.\n\nIn the first hour, Benjamin sees 17 billboards.\nIn the second hour, he sees 20 billboards.\nIn the third hour, he sees 23 billboards.\n\nTotal billboards seen = 17 + 20 + 23 = 60 billboards.\n\nThe total number of hours is 3.\n\nAverage number of billboards per hour = Total billboards / Number of hours\n= 60 / 3\n= 20 billboards per hour.\n\nFINAL: 20",
+        "target_sha256": "68dbf9f1a8f85557aeaea01ede1ef4e9c2f5b01475370f06df8283e4c62dd583"
+      },
+      {
+        "key": "gsm8k-train-1879:new_record",
+        "raw_call_sha256": "d4db0c7b4e2915c578b4a7451d1bd9a508e5cfd00cf38a4aad6898eb88215ba3",
+        "student_prefix": [
+          {
+            "content": "On their way driving to Los Angeles, Benjamin and James see lots of billboard ads. Curious, Benjamin starts to count how many they see. In the first hour once he starts counting he counts 17 billboards. In the second hour once he starts counting he sees 20 billboards. In the third hour he sees 23 billboards. James asks Benjamin the average number of billboards they've seen per hour. What should Benjamin tell him?",
+            "role": "user"
+          },
+          {
+            "content": "To find the average number of billboards seen per hour, I need to add up the total number of billboards seen and then divide by the number of hours.\n\nIn the first hour, Benjamin sees 17 billboards.\nIn the second hour, he sees 20 billboards.\nIn the third hour, he sees 23 billboards.\n\nTotal billboards seen = 17 + 20 + 23 = 60 billboards.\n\nThe total number of hours is 3.\n\nAverage number of billboards per hour = Total billboards / Number of hours\n= 60 / 3\n= 20 billboards per hour.\n\nFINAL: 20",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c81143081f75c096549f5f88959ac56609a04299deb1cfe9e5ac72357c3ce660",
+        "target": "Given the problem, I identified the quantities and the unknown as follows:\n- Benjamin counts 17 billboards in the first hour.\n- He counts 20 billboards in the second hour.\n- He counts 23 billboards in the third hour.\n- The unknown is the average number of billboards seen per hour.\n\nTo find the average, I needed to sum the total number of billboards seen and then divide by the number of hours. This is a straightforward arithmetic operation:\n1. Sum the billboards: \\(17 + 20 + 23 = 60\\).\n2. Divide the total by the number of hours: \\(60 \\div 3 = 20\\).\n\nI expected the result to be the average number of billboards seen per hour, which is 20. To check this, I can recount the steps:\n- Verify the sum: \\(17 + 20 + 23 = 60\\).\n- Verify the division: \\(60 \\div 3 = 20\\).\n\nBoth steps confirm the result. The operation I would reuse is the same arithmetic operation of summing and dividing, as it directly addresses the problem of finding an average from a set of discrete values.\n\nFINAL: 20",
+        "target_sha256": "4851b7faa5cfd481941beede974a194dc9ed765b0dcb3e8c1f995460983be22a"
+      }
+    ],
+    "task_id": "gsm8k-train-1879"
+  },
+  {
+    "gold": "30",
+    "question": "Marcos has to get across a 5 mile lake in his speedboat in 10 minutes so he can make it to work on time. How fast does he need to go in miles per hour to make it?",
+    "question_sha256": "5e175f65df186c400477c002089e4a61669c130f3d4c134611592d7703144fd9",
+    "responses": [
+      {
+        "key": "gsm8k-train-735:rich",
+        "raw_call_sha256": "7077d7741a88f616dd7b624d012ff3694d6a76804a1f00cbb2907b4e0f0fee42",
+        "student_prefix": [
+          {
+            "content": "Marcos has to get across a 5 mile lake in his speedboat in 10 minutes so he can make it to work on time. How fast does he need to go in miles per hour to make it?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "36f507bc16aca1f3388ce8edade6f30296684e8c2998b8e26717aaf94e855907",
+        "target": "Given:\n- Distance to travel: 5 miles\n- Time to travel: 10 minutes\n\nFirst, convert the time from minutes to hours since speed is in miles per hour:\n10 minutes = 10/60 hours = 1/6 hours\n\nNext, use the formula for speed: speed = distance / time\nspeed = 5 miles / (1/6 hours) = 5 * 6 = 30 miles per hour\n\nSo, Marcos needs to travel at 30 miles per hour to make it on time.\n\nFINAL: 30",
+        "target_sha256": "8d0a25bc08a7a53fb825e93ee93ad67a1990c7835a0ae7739a6c161e87fdf2ca"
+      },
+      {
+        "key": "gsm8k-train-735:new_record",
+        "raw_call_sha256": "ddaa1421b30a680c0be85d631bdf8dc0dbefecdac6d26a2e97773c11ff66d9e1",
+        "student_prefix": [
+          {
+            "content": "Marcos has to get across a 5 mile lake in his speedboat in 10 minutes so he can make it to work on time. How fast does he need to go in miles per hour to make it?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Distance to travel: 5 miles\n- Time to travel: 10 minutes\n\nFirst, convert the time from minutes to hours since speed is in miles per hour:\n10 minutes = 10/60 hours = 1/6 hours\n\nNext, use the formula for speed: speed = distance / time\nspeed = 5 miles / (1/6 hours) = 5 * 6 = 30 miles per hour\n\nSo, Marcos needs to travel at 30 miles per hour to make it on time.\n\nFINAL: 30",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "dad171c56b811791eb4859769eae1b606f82f07e29c70e6b15ad2083e85e22c0",
+        "target": "Given the problem, I identified the key quantities: the distance Marcos needs to travel is 5 miles, and the time he has is 10 minutes. The unknown I needed to find was the speed in miles per hour he needs to travel to make it on time.\n\nFirst, I recognized that the speed formula, speed = distance / time, would be the appropriate operation to use. However, the time was given in minutes, not hours, so I needed to convert 10 minutes to hours. I knew that 1 hour is 60 minutes, so 10 minutes is 10/60 hours, which simplifies to 1/6 hours.\n\nNext, I applied the speed formula:\n\\[ \\text{Speed} = \\frac{\\text{Distance}}{\\text{Time}} = \\frac{5 \\text{ miles}}{\\frac{1}{6} \\text{ hours}} = 5 \\times 6 = 30 \\text{ miles per hour} \\]\n\nTo verify this result, I considered the units and the context of the problem. If Marcos travels at 30 miles per hour, he would cover 5 miles in 10 minutes, which matches the requirement of the problem.\n\nThe operation I would reuse is the speed formula, speed = distance / time, whenever I need to calculate speed given distance and time, especially when the time is in minutes and needs to be converted to hours.\n\nFINAL: 30",
+        "target_sha256": "823099e0d5940ca95b34150f62e3dcf110c9df8a0e2142d57f7361589c007624"
+      }
+    ],
+    "task_id": "gsm8k-train-735"
+  },
+  {
+    "gold": "360",
+    "question": "Lilly and Fiona are cleaning a room. Between them, it takes 8 hours to clean the room. A quarter of the time spent cleaning was by Lilly and Fiona was responsible for the rest of the cleaning. How long, in minutes, was Fiona cleaning?",
+    "question_sha256": "9e4d1e4829ad4937d00ee7fc6188b6055451e42c011f020650c4edd08ef3eb4c",
+    "responses": [
+      {
+        "key": "gsm8k-train-5808:rich",
+        "raw_call_sha256": "df4ae228fd4420f1b335173dd167f3edc1126878912dfe962d310294df4f1ad1",
+        "student_prefix": [
+          {
+            "content": "Lilly and Fiona are cleaning a room. Between them, it takes 8 hours to clean the room. A quarter of the time spent cleaning was by Lilly and Fiona was responsible for the rest of the cleaning. How long, in minutes, was Fiona cleaning?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "6335144f13bc821283806f340e3bc72d6c58001d1835491c035efcb80252e302",
+        "target": "Given that the total time to clean the room is 8 hours, and a quarter of this time was spent by Lilly, the remaining three-quarters was spent by Fiona.\n\nFirst, calculate the time Lilly spent cleaning:\n\\[ \\text{Time Lilly spent} = \\frac{1}{4} \\times 8 \\text{ hours} = 2 \\text{ hours} \\]\n\nSince the total time is 8 hours and Lilly spent 2 hours, Fiona must have spent:\n\\[ \\text{Time Fiona spent} = 8 \\text{ hours} - 2 \\text{ hours} = 6 \\text{ hours} \\]\n\nConvert Fiona's cleaning time from hours to minutes:\n\\[ 6 \\text{ hours} \\times 60 \\text{ minutes/hour} = 360 \\text{ minutes} \\]\n\nFINAL: 360",
+        "target_sha256": "db3c8d5a9c435ae0b4dcc99c359a422542905f5a1435275bf14f4507b8f751cc"
+      },
+      {
+        "key": "gsm8k-train-5808:new_record",
+        "raw_call_sha256": "25f35ed5ee3ce52306888ad09a29ccb53b2730fadf53d06f6c46458cfb49bb3b",
+        "student_prefix": [
+          {
+            "content": "Lilly and Fiona are cleaning a room. Between them, it takes 8 hours to clean the room. A quarter of the time spent cleaning was by Lilly and Fiona was responsible for the rest of the cleaning. How long, in minutes, was Fiona cleaning?",
+            "role": "user"
+          },
+          {
+            "content": "Given that the total time to clean the room is 8 hours, and a quarter of this time was spent by Lilly, the remaining three-quarters was spent by Fiona.\n\nFirst, calculate the time Lilly spent cleaning:\n\\[ \\text{Time Lilly spent} = \\frac{1}{4} \\times 8 \\text{ hours} = 2 \\text{ hours} \\]\n\nSince the total time is 8 hours and Lilly spent 2 hours, Fiona must have spent:\n\\[ \\text{Time Fiona spent} = 8 \\text{ hours} - 2 \\text{ hours} = 6 \\text{ hours} \\]\n\nConvert Fiona's cleaning time from hours to minutes:\n\\[ 6 \\text{ hours} \\times 60 \\text{ minutes/hour} = 360 \\text{ minutes} \\]\n\nFINAL: 360",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "07ebfc4df51e637036e507cde14f91964039d61315ba8188e4eadf99e985c736",
+        "target": "Given that the total time to clean the room is 8 hours, and a quarter of this time was spent by Lilly, I first calculated the time Lilly spent cleaning:\n\\[ \\text{Time Lilly spent} = \\frac{1}{4} \\times 8 \\text{ hours} = 2 \\text{ hours} \\]\n\nFrom this, I deduced that the remaining time was spent by Fiona:\n\\[ \\text{Time Fiona spent} = 8 \\text{ hours} - 2 \\text{ hours} = 6 \\text{ hours} \\]\n\nTo convert Fiona's cleaning time into minutes, I used the conversion factor:\n\\[ 6 \\text{ hours} \\times 60 \\text{ minutes/hour} = 360 \\text{ minutes} \\]\n\nI checked this result by ensuring that the total time accounted for by both Lilly and Fiona added up to the original 8 hours:\n\\[ 2 \\text{ hours} + 6 \\text{ hours} = 8 \\text{ hours} \\]\n\nThis confirms that my calculations are correct. The operation I would reuse is the conversion of hours to minutes, as it directly applies to similar problems involving time conversions.\n\nFINAL: 360",
+        "target_sha256": "c867d504f2d27e5a8094ba600c61d9a0494809992cc161c84166851b4223b207"
+      }
+    ],
+    "task_id": "gsm8k-train-5808"
+  },
+  {
+    "gold": "66",
+    "question": "In Zeoland the fine for speeding is $16 for each mile per hour the driver is traveling over the posted speed limit. In Zeoland, Jed was fined $256 for speeding on a road with a posted speed limit of 50 mph. Jed was fined for traveling at what speed in miles per hour?",
+    "question_sha256": "b0dd2eb2d353feb15e65faa0a0cedc3511c518de3b3d9e1b3cc22c07b2eed939",
+    "responses": [
+      {
+        "key": "gsm8k-train-4854:rich",
+        "raw_call_sha256": "1cfed8a9bf7d2f9c7ce58b7df61c24d8fd2358c2bdc6f53412065b5049525589",
+        "student_prefix": [
+          {
+            "content": "In Zeoland the fine for speeding is $16 for each mile per hour the driver is traveling over the posted speed limit. In Zeoland, Jed was fined $256 for speeding on a road with a posted speed limit of 50 mph. Jed was fined for traveling at what speed in miles per hour?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "be0efce176e295cd90a1fc95bfe20cfe0da40026f7a4da86bca43599537ebe2c",
+        "target": "Given:\n- Fine per mph over the limit: $16\n- Total fine: $256\n- Posted speed limit: 50 mph\n\nTo find:\n- Speed at which Jed was traveling\n\nFirst, calculate how many mph over the limit Jed was traveling:\n\\[ \\text{mph over limit} = \\frac{\\text{Total fine}}{\\text{Fine per mph}} = \\frac{256}{16} = 16 \\text{ mph} \\]\n\nNext, add the mph over the limit to the posted speed limit to find Jed's speed:\n\\[ \\text{Jed's speed} = \\text{Posted speed limit} + \\text{mph over limit} = 50 + 16 = 66 \\text{ mph} \\]\n\nCHECK: The fine calculation should match the total fine:\n\\[ 16 \\text{ mph over} \\times 16 \\text{ (fine per mph)} = 256 \\text{ (total fine)} \\]\n\nThis matches the given total fine.\n\nFINAL: 66",
+        "target_sha256": "39dd184c111ffd810aea0dab78eb139226825f2779e53413c28c55a2f0166ced"
+      },
+      {
+        "key": "gsm8k-train-4854:new_record",
+        "raw_call_sha256": "8064843a80e854ba61608a6e3b6c8cef6be2beae72697fd8346c1a83b0c66127",
+        "student_prefix": [
+          {
+            "content": "In Zeoland the fine for speeding is $16 for each mile per hour the driver is traveling over the posted speed limit. In Zeoland, Jed was fined $256 for speeding on a road with a posted speed limit of 50 mph. Jed was fined for traveling at what speed in miles per hour?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Fine per mph over the limit: $16\n- Total fine: $256\n- Posted speed limit: 50 mph\n\nTo find:\n- Speed at which Jed was traveling\n\nFirst, calculate how many mph over the limit Jed was traveling:\n\\[ \\text{mph over limit} = \\frac{\\text{Total fine}}{\\text{Fine per mph}} = \\frac{256}{16} = 16 \\text{ mph} \\]\n\nNext, add the mph over the limit to the posted speed limit to find Jed's speed:\n\\[ \\text{Jed's speed} = \\text{Posted speed limit} + \\text{mph over limit} = 50 + 16 = 66 \\text{ mph} \\]\n\nCHECK: The fine calculation should match the total fine:\n\\[ 16 \\text{ mph over} \\times 16 \\text{ (fine per mph)} = 256 \\text{ (total fine)} \\]\n\nThis matches the given total fine.\n\nFINAL: 66",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "dbfa08590c1248c8c3db5b1af92803fae3b9c9708350dab9a8b64e17a0663449",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Fine per mph over the limit: $16\n- Total fine: $256\n- Posted speed limit: 50 mph\n- Unknown: Speed at which Jed was traveling\n\nTo find Jed's speed, I first calculated how many mph over the limit he was traveling. I used the formula:\n\\[ \\text{mph over limit} = \\frac{\\text{Total fine}}{\\text{Fine per mph}} \\]\nSubstituting the given values:\n\\[ \\text{mph over limit} = \\frac{256}{16} = 16 \\text{ mph} \\]\n\nNext, I added the mph over the limit to the posted speed limit to find Jed's speed:\n\\[ \\text{Jed's speed} = \\text{Posted speed limit} + \\text{mph over limit} = 50 + 16 = 66 \\text{ mph} \\]\n\nTo check the result, I verified the total fine calculation:\n\\[ 16 \\text{ mph over} \\times 16 \\text{ (fine per mph)} = 256 \\text{ (total fine)} \\]\nThis matched the given total fine, confirming the solution.\n\nThe operations I used are reusable when solving similar problems involving proportional relationships and can be applied whenever a fine is based on a rate per unit of the quantity in question.\n\nFINAL: 66",
+        "target_sha256": "51cc8397e1ec7ff7abf56b86fe6097b85dc9bb5c5c87068fa27f826b2dd69231"
+      }
+    ],
+    "task_id": "gsm8k-train-4854"
+  },
+  {
+    "gold": "3",
+    "question": "You walk twice as fast as Mr. Harris, and Mr. Harris took 2 hours to walk to the store. If your destination is 3 times further away than the store Mr. Harris walked to, how many hours will it take you to get there?",
+    "question_sha256": "221b5deb96d40c07f1b4998216d05e464922b8d5e6b856cef7f44821149da818",
+    "responses": [
+      {
+        "key": "gsm8k-train-3605:rich",
+        "raw_call_sha256": "2ab05c5503d8d1ef52c1e77eee1aadc8772004fb9f4ce9069af5d34c3e33b1a0",
+        "student_prefix": [
+          {
+            "content": "You walk twice as fast as Mr. Harris, and Mr. Harris took 2 hours to walk to the store. If your destination is 3 times further away than the store Mr. Harris walked to, how many hours will it take you to get there?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "6a0886c08fe02233c1c622d8a42fdbe75c03d68bf44352b5a80834364fa4951e",
+        "target": "Given that I walk twice as fast as Mr. Harris, and it took him 2 hours to walk to the store, we can determine the time it will take me to walk to a destination that is 3 times further away.\n\nFirst, let's find out how long it would take me to walk to the store. Since I walk twice as fast, it would take me half the time Mr. Harris took. So, it would take me \\(2 \\div 2 = 1\\) hour to walk to the store.\n\nNow, if my destination is 3 times further away than the store, it would take me 3 times longer to walk there at the same speed. Therefore, it would take me \\(1 \\times 3 = 3\\) hours to walk to the destination.\n\nFINAL: 3",
+        "target_sha256": "686b69c495abd3ca614b5d67c03fa45287f3eaa39c611c119c5c4485edf2b378"
+      },
+      {
+        "key": "gsm8k-train-3605:new_record",
+        "raw_call_sha256": "56d8b18426a38055814e9d05e5b23ecd2246a1cc830a23e61529c30076cb2e61",
+        "student_prefix": [
+          {
+            "content": "You walk twice as fast as Mr. Harris, and Mr. Harris took 2 hours to walk to the store. If your destination is 3 times further away than the store Mr. Harris walked to, how many hours will it take you to get there?",
+            "role": "user"
+          },
+          {
+            "content": "Given that I walk twice as fast as Mr. Harris, and it took him 2 hours to walk to the store, we can determine the time it will take me to walk to a destination that is 3 times further away.\n\nFirst, let's find out how long it would take me to walk to the store. Since I walk twice as fast, it would take me half the time Mr. Harris took. So, it would take me \\(2 \\div 2 = 1\\) hour to walk to the store.\n\nNow, if my destination is 3 times further away than the store, it would take me 3 times longer to walk there at the same speed. Therefore, it would take me \\(1 \\times 3 = 3\\) hours to walk to the destination.\n\nFINAL: 3",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3d0e5131ffb90dc46633fca444be052461587cff824cb0515c616f5fd58de7a8",
+        "target": "Given that I walk twice as fast as Mr. Harris, and Mr. Harris took 2 hours to walk to the store, I first determined the time it would take me to walk to the store. Since I walk twice as fast, it would take me half the time Mr. Harris took, which is \\(2 \\div 2 = 1\\) hour. \n\nNext, I identified that my destination is 3 times further away than the store Mr. Harris walked to. Therefore, it would take me 3 times longer to walk to this destination at the same speed. This means it would take me \\(1 \\times 3 = 3\\) hours to walk to the destination.\n\nTo verify this, I considered the relationship between speed, distance, and time. If I walk twice as fast as Mr. Harris, and the distance to the destination is 3 times the distance to the store, the time it takes me to walk to the destination is directly proportional to the distance and inversely proportional to my speed. Since my speed is twice Mr. Harris's, the time it takes me is \\(\\frac{3}{2}\\) times the time it would take Mr. Harris to walk a distance 3 times the store's distance. Given that Mr. Harris took 2 hours to walk to the store, the time it would take him to walk a distance 3 times the store's distance is \\(2 \\times 3 = 6\\) hours. Since I walk twice as fast, it would take me \\(\\frac{6}{2} = 3\\) hours.\n\nThe final answer is based on the direct calculation and the proportional relationship between speed, distance, and time. The concrete check is the proportional relationship I used to determine the time it would take me to walk to the destination.\n\nFINAL: 3",
+        "target_sha256": "6526c1c08e47de8b3fff9d3e885b923112c2e742fbfa501cf849c71b946d6641"
+      }
+    ],
+    "task_id": "gsm8k-train-3605"
+  },
+  {
+    "gold": "55",
+    "question": "Three cats sat on a fence, meowing at the moon.  The first cat meowed 3 times per minute.  The second cat meowed twice as frequently as the first cat.  And the third cat meowed at one-third the frequency of the second cat.  What is the combined total number of meows the three cats make in 5 minutes?",
+    "question_sha256": "bfd70b6d8b099b4ec8c63b84cc48a931266b084c21e18a06a28a87029eadaa6d",
+    "responses": [
+      {
+        "key": "gsm8k-train-127:rich",
+        "raw_call_sha256": "85527d335f3bb18f950f33cb5bda4fea3f5a1c2c08d84f2349493e85b0bb857b",
+        "student_prefix": [
+          {
+            "content": "Three cats sat on a fence, meowing at the moon.  The first cat meowed 3 times per minute.  The second cat meowed twice as frequently as the first cat.  And the third cat meowed at one-third the frequency of the second cat.  What is the combined total number of meows the three cats make in 5 minutes?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "83cb9f3d1ee0edaae72fdab12aa1baa51af5fd07cae9865be5770dabdd80d1a9",
+        "target": "First, let's identify the given quantities and the unknown:\n- The first cat meows 3 times per minute.\n- The second cat meows twice as frequently as the first cat, so it meows 2 * 3 = 6 times per minute.\n- The third cat meows at one-third the frequency of the second cat, so it meows 6 / 3 = 2 times per minute.\n- We need to find the combined total number of meows in 5 minutes.\n\nNow, let's calculate the number of meows each cat makes in 5 minutes:\n- The first cat meows 3 times per minute, so in 5 minutes, it meows 3 * 5 = 15 times.\n- The second cat meows 6 times per minute, so in 5 minutes, it meows 6 * 5 = 30 times.\n- The third cat meows 2 times per minute, so in 5 minutes, it meows 2 * 5 = 10 times.\n\nAdding these together gives the total number of meows:\n15 (first cat) + 30 (second cat) + 10 (third cat) = 55 meows.\n\nFINAL: 55",
+        "target_sha256": "692265f502e1f8b1e52113ac8b2155ec545a8a15a5f0e29d776b4b320d247996"
+      },
+      {
+        "key": "gsm8k-train-127:new_record",
+        "raw_call_sha256": "6cd64b9a13c8358dbc1c7a23feafe9b5cd4007fb03bb40b4631b259f024be088",
+        "student_prefix": [
+          {
+            "content": "Three cats sat on a fence, meowing at the moon.  The first cat meowed 3 times per minute.  The second cat meowed twice as frequently as the first cat.  And the third cat meowed at one-third the frequency of the second cat.  What is the combined total number of meows the three cats make in 5 minutes?",
+            "role": "user"
+          },
+          {
+            "content": "First, let's identify the given quantities and the unknown:\n- The first cat meows 3 times per minute.\n- The second cat meows twice as frequently as the first cat, so it meows 2 * 3 = 6 times per minute.\n- The third cat meows at one-third the frequency of the second cat, so it meows 6 / 3 = 2 times per minute.\n- We need to find the combined total number of meows in 5 minutes.\n\nNow, let's calculate the number of meows each cat makes in 5 minutes:\n- The first cat meows 3 times per minute, so in 5 minutes, it meows 3 * 5 = 15 times.\n- The second cat meows 6 times per minute, so in 5 minutes, it meows 6 * 5 = 30 times.\n- The third cat meows 2 times per minute, so in 5 minutes, it meows 2 * 5 = 10 times.\n\nAdding these together gives the total number of meows:\n15 (first cat) + 30 (second cat) + 10 (third cat) = 55 meows.\n\nFINAL: 55",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "efc442f1256642a488fdfb579159d0877d83481daae92fa08830b28cb398c353",
+        "target": "Given the problem, I identified the three cats and their meowing frequencies:\n- The first cat meowed 3 times per minute.\n- The second cat meowed twice as frequently as the first, which is 6 times per minute.\n- The third cat meowed at one-third the frequency of the second, which is 2 times per minute.\n\nI needed to find the combined total number of meows the three cats make in 5 minutes. To solve this, I broke it down into calculating the meows per cat over 5 minutes and then summing them up.\n\nFor the first cat:\n- Meows per minute: 3\n- Meows in 5 minutes: 3 * 5 = 15\n\nFor the second cat:\n- Meows per minute: 6\n- Meows in 5 minutes: 6 * 5 = 30\n\nFor the third cat:\n- Meows per minute: 2\n- Meows in 5 minutes: 2 * 5 = 10\n\nAdding these together:\n- Total meows: 15 (first cat) + 30 (second cat) + 10 (third cat) = 55\n\nTo check the result, I verified that the calculation was done correctly by ensuring each step followed logically from the given frequencies and time period. The operations used were straightforward multiplication and addition, which are reliable and reusable for similar problems involving rates and time.\n\nI would reuse this operation whenever I need to calculate the total output of a system given its rate and the time period, as long as the rate is constant.\n\nFINAL: 55",
+        "target_sha256": "4bfe6d9e8e0e8b7e183e1460db6c6fada8eabb791d60eca4a83486a85f6eaaf3"
+      }
+    ],
+    "task_id": "gsm8k-train-127"
+  },
+  {
+    "gold": "24",
+    "question": "Robi Ney wants to fill a 120-liter tub. He is amused by letting the water run for 1 minute, then closing the water supply for 1 minute, and so on alternating opening and closing the water supply. But the cap at the bottom of the tub is not very airtight and lets 1 liter of water escape per minute. The flow rate of the tap is 12 liters per minute. How long does it take to fill the tub in minutes?",
+    "question_sha256": "d170253b726cad0dfe8401c968dddab057a3321c90fdc0ed7f14254dc39adb7c",
+    "responses": [
+      {
+        "key": "gsm8k-train-708:rich",
+        "raw_call_sha256": "a07ba58834a611dfcd52e5ad8849c2a7d64b7add9af60108d4deca620e88a96f",
+        "student_prefix": [
+          {
+            "content": "Robi Ney wants to fill a 120-liter tub. He is amused by letting the water run for 1 minute, then closing the water supply for 1 minute, and so on alternating opening and closing the water supply. But the cap at the bottom of the tub is not very airtight and lets 1 liter of water escape per minute. The flow rate of the tap is 12 liters per minute. How long does it take to fill the tub in minutes?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "fdf1fa3c2bff19179ddf63e45b4ddfe54034a4638f45be20cb146bb97f294e3e",
+        "target": "Given:\n- Total volume to fill: 120 liters\n- Tap flow rate: 12 liters per minute\n- Cap leak rate: 1 liter per minute\n- Alternating 1 minute on, 1 minute off\n\nEach 2-minute cycle:\n- Water added: 12 liters (1 minute on) - 1 liter (1 minute off) = 11 liters\n\nTo find the number of full 2-minute cycles needed:\n- 120 liters / 11 liters per cycle = 10.909 cycles\n\nSince we can't have a fraction of a cycle, we need 11 full cycles to ensure the tub is filled.\n\n11 cycles * 2 minutes per cycle = 22 minutes\n\nAfter 22 minutes, 11 cycles add 121 liters, but we only need 120 liters. The tub will be filled in the next minute with the tap on, as the leak will not affect the final minute.\n\nFinal time: 22 + 1 = 23 minutes\n\nFINAL: 23",
+        "target_sha256": "43236dc5c584a6ebbe39c645e14a35f4583cc570aa2d579c7ce2ca29b6522001"
+      }
+    ],
+    "task_id": "gsm8k-train-708"
+  },
+  {
+    "gold": "50",
+    "question": "A superhero can use superhuman speed to run 10 miles in 4 minutes. The supervillain has an Evil-Mobile that drives 100 miles per hour. How many miles farther can the superhero run in an hour than the supervillain can drive?",
+    "question_sha256": "cac69010c5e3ff8641b60ee0c59fb56a518b04e188bf53a3303bad3aacd2a9cc",
+    "responses": [
+      {
+        "key": "gsm8k-train-7311:rich",
+        "raw_call_sha256": "adf788ac8e664bc30f120e54a01a7c5139d7a9eccd7dbeba2428f43322a9d957",
+        "student_prefix": [
+          {
+            "content": "A superhero can use superhuman speed to run 10 miles in 4 minutes. The supervillain has an Evil-Mobile that drives 100 miles per hour. How many miles farther can the superhero run in an hour than the supervillain can drive?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3f0b3f84d439e769e7b4042782f084a05d9284a928a70b08ef8abab575b704eb",
+        "target": "First, let's identify the given quantities:\n- The superhero runs 10 miles in 4 minutes.\n- The supervillain's Evil-Mobile drives at 100 miles per hour.\n\nWe need to find out how many miles farther the superhero can run in an hour compared to the supervillain driving for an hour.\n\nFirst, calculate the superhero's speed in miles per hour:\n- In 4 minutes, the superhero runs 10 miles.\n- There are 60 minutes in an hour, so the superhero's speed is \\( \\frac{10 \\text{ miles}}{4 \\text{ minutes}} \\times 60 \\text{ minutes} = 150 \\text{ miles per hour} \\).\n\nNext, compare the superhero's speed to the supervillain's speed:\n- The superhero runs 150 miles per hour.\n- The supervillain drives 100 miles per hour.\n\nNow, find the difference in distance covered in one hour:\n- The superhero runs 150 miles in an hour.\n- The supervillain drives 100 miles in an hour.\n- The difference is \\( 150 \\text{ miles} - 100 \\text{ miles} = 50 \\text{ miles} \\).\n\nFINAL: 50",
+        "target_sha256": "01351372439f913c1354aa078d7ddd3260b57c9cabe49b5e33f584a38b32cade"
+      },
+      {
+        "key": "gsm8k-train-7311:new_record",
+        "raw_call_sha256": "fb3f0413e905040d9ebf00fba04d0de884e7853d79a14153df6bbafc1ed08d5b",
+        "student_prefix": [
+          {
+            "content": "A superhero can use superhuman speed to run 10 miles in 4 minutes. The supervillain has an Evil-Mobile that drives 100 miles per hour. How many miles farther can the superhero run in an hour than the supervillain can drive?",
+            "role": "user"
+          },
+          {
+            "content": "First, let's identify the given quantities:\n- The superhero runs 10 miles in 4 minutes.\n- The supervillain's Evil-Mobile drives at 100 miles per hour.\n\nWe need to find out how many miles farther the superhero can run in an hour compared to the supervillain driving for an hour.\n\nFirst, calculate the superhero's speed in miles per hour:\n- In 4 minutes, the superhero runs 10 miles.\n- There are 60 minutes in an hour, so the superhero's speed is \\( \\frac{10 \\text{ miles}}{4 \\text{ minutes}} \\times 60 \\text{ minutes} = 150 \\text{ miles per hour} \\).\n\nNext, compare the superhero's speed to the supervillain's speed:\n- The superhero runs 150 miles per hour.\n- The supervillain drives 100 miles per hour.\n\nNow, find the difference in distance covered in one hour:\n- The superhero runs 150 miles in an hour.\n- The supervillain drives 100 miles in an hour.\n- The difference is \\( 150 \\text{ miles} - 100 \\text{ miles} = 50 \\text{ miles} \\).\n\nFINAL: 50",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1fcd55fd808ce8de69f2e34c83a41ce559b2da1be32cf476add5e3913fa4e99b",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- The superhero runs 10 miles in 4 minutes.\n- The supervillain drives 100 miles per hour.\n- The unknown is how many more miles the superhero can run in an hour compared to the supervillain.\n\nFirst, I converted the superhero's speed from miles per 4 minutes to miles per hour. Since there are 60 minutes in an hour, I calculated:\n\\[ \\text{Superhero's speed} = \\frac{10 \\text{ miles}}{4 \\text{ minutes}} \\times 60 \\text{ minutes} = 150 \\text{ miles per hour} \\]\n\nNext, I compared the superhero's speed to the supervillain's speed:\n- Superhero: 150 miles per hour\n- Supervillain: 100 miles per hour\n\nThe difference in distance covered in one hour is:\n\\[ 150 \\text{ miles} - 100 \\text{ miles} = 50 \\text{ miles} \\]\n\nTo verify this, I considered the units and the logical consistency of the operations. The superhero's speed was correctly converted from miles per 4 minutes to miles per hour, and the difference was straightforward subtraction.\n\nThe operations used here are straightforward unit conversions and arithmetic, which are reliable and reusable in similar problems involving speed and time.\n\nFINAL: 50",
+        "target_sha256": "190f82345d074784d88a90ed39e145d1bdc973873ba6c7559547f5deb5bacddc"
+      }
+    ],
+    "task_id": "gsm8k-train-7311"
+  }
+]

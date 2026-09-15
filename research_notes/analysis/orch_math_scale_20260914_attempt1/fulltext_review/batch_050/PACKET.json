@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "32",
+    "question": "Greta worked 40 hours and was paid $12 per hour. Her friend Lisa earned $15 per hour at her job. How many hours would Lisa have to work to equal Greta's earnings for 40 hours?",
+    "question_sha256": "54363759d7c1a587b14812853948293e707f7b62663b41434c1f6f80fff64563",
+    "responses": [
+      {
+        "key": "gsm8k-train-5790:rich",
+        "raw_call_sha256": "8a2ca7f37cbdc8d7c9372931284bf596b10923b47581609f61cea5c546cea1ed",
+        "student_prefix": [
+          {
+            "content": "Greta worked 40 hours and was paid $12 per hour. Her friend Lisa earned $15 per hour at her job. How many hours would Lisa have to work to equal Greta's earnings for 40 hours?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2316b9683bada086edb66beebf351f04ac53c765e506763277c2a05def6a19dc",
+        "target": "First, I calculate Greta's total earnings. Greta worked 40 hours at $12 per hour, so her total earnings are \\(40 \\times 12 = 480\\) dollars.\n\nNext, I need to find out how many hours Lisa needs to work to earn the same amount. Lisa earns $15 per hour. To find the number of hours, I divide Greta's total earnings by Lisa's hourly rate: \\(480 \\div 15 = 32\\) hours.\n\nSo, Lisa would need to work 32 hours to earn the same amount as Greta did in 40 hours.\n\nFINAL: 32",
+        "target_sha256": "e36605f6104290acf5f78bf9d2ffc56a4d40f8327d41bab150dc8047a46bed9c"
+      },
+      {
+        "key": "gsm8k-train-5790:new_record",
+        "raw_call_sha256": "b8628fa00caaa6b1584955383fd035a044d2106be537119b1adbd5e8bdb77937",
+        "student_prefix": [
+          {
+            "content": "Greta worked 40 hours and was paid $12 per hour. Her friend Lisa earned $15 per hour at her job. How many hours would Lisa have to work to equal Greta's earnings for 40 hours?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate Greta's total earnings. Greta worked 40 hours at $12 per hour, so her total earnings are \\(40 \\times 12 = 480\\) dollars.\n\nNext, I need to find out how many hours Lisa needs to work to earn the same amount. Lisa earns $15 per hour. To find the number of hours, I divide Greta's total earnings by Lisa's hourly rate: \\(480 \\div 15 = 32\\) hours.\n\nSo, Lisa would need to work 32 hours to earn the same amount as Greta did in 40 hours.\n\nFINAL: 32",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "eb883741deb27aec406b39200092b9792a10b0ac9eab04ffd73b5d7052150ccc",
+        "target": "Given that Greta worked 40 hours at $12 per hour, I first calculated her total earnings. I used the formula for total earnings, which is the product of the number of hours worked and the hourly rate. For Greta, this was \\(40 \\times 12 = 480\\) dollars. I expected this to be the amount she earned, and I checked this by confirming the multiplication was correct.\n\nNext, I needed to determine how many hours Lisa would have to work to earn the same amount. Since Lisa earns $15 per hour, I used the formula for the number of hours required to earn a certain amount, which is the total earnings divided by the hourly rate. For Lisa, this was \\(480 \\div 15 = 32\\) hours. I expected this to be the number of hours Lisa needs to work to match Greta's earnings.\n\nTo verify my result, I checked the division: \\(480 \\div 15 = 32\\), which is correct. I also confirmed that \\(32 \\times 15 = 480\\), ensuring the multiplication and division were consistent.\n\nThe operations I used are multiplication and division, and I would reuse these operations in similar problems where I need to calculate total earnings or the number of hours required to earn a certain amount.\n\nFINAL: 32",
+        "target_sha256": "b3bdd131ec14a7ed42e815cfd41dfb5b91da51a334fb660d32d7616a5f3dcabb"
+      }
+    ],
+    "task_id": "gsm8k-train-5790"
+  },
+  {
+    "gold": "3",
+    "question": "A cookfire burns three logs every hour. It was built with six logs to start. If it gets two more logs added to it at the end of every hour, how many logs will be left after 3 hours?",
+    "question_sha256": "eff787b2d498f88f7e30ab199fc01fe2022a5ae18c9811736f1453bb93960e0e",
+    "responses": [
+      {
+        "key": "gsm8k-train-6531:rich",
+        "raw_call_sha256": "079c778b2b3f41e82c19ef7098bf579399e4f64baf75be0df55f4341e8c0f9c6",
+        "student_prefix": [
+          {
+            "content": "A cookfire burns three logs every hour. It was built with six logs to start. If it gets two more logs added to it at the end of every hour, how many logs will be left after 3 hours?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1ed77008ee812ec43a47afac5f29c6258bdd85ed6da41883ac95bda0ab87eb88",
+        "target": "Given:\n- The cookfire burns 3 logs every hour.\n- It starts with 6 logs.\n- 2 logs are added at the end of every hour.\n\nAfter 1 hour:\n- Logs burned: 3\n- Logs added: 2\n- Remaining logs: 6 - 3 + 2 = 5\n\nAfter 2 hours:\n- Logs burned: 3\n- Logs added: 2\n- Remaining logs: 5 - 3 + 2 = 4\n\nAfter 3 hours:\n- Logs burned: 3\n- Logs added: 2\n- Remaining logs: 4 - 3 + 2 = 3\n\nFINAL: 3",
+        "target_sha256": "3cd44a8d2c28391b3219f9001baef2bb7a95d0ad3cc712350407c36279693231"
+      },
+      {
+        "key": "gsm8k-train-6531:new_record",
+        "raw_call_sha256": "94edaa70ab8dbff21b3151e12bbdf8c80aa8c6b168bc29aaac59702ba6f9b2a8",
+        "student_prefix": [
+          {
+            "content": "A cookfire burns three logs every hour. It was built with six logs to start. If it gets two more logs added to it at the end of every hour, how many logs will be left after 3 hours?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- The cookfire burns 3 logs every hour.\n- It starts with 6 logs.\n- 2 logs are added at the end of every hour.\n\nAfter 1 hour:\n- Logs burned: 3\n- Logs added: 2\n- Remaining logs: 6 - 3 + 2 = 5\n\nAfter 2 hours:\n- Logs burned: 3\n- Logs added: 2\n- Remaining logs: 5 - 3 + 2 = 4\n\nAfter 3 hours:\n- Logs burned: 3\n- Logs added: 2\n- Remaining logs: 4 - 3 + 2 = 3\n\nFINAL: 3",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c53b6894523610da767eff80d921d81d0cc8b1562fecaec5fbb8b8327ad59e94",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- Initial logs: 6\n- Logs burned per hour: 3\n- Logs added per hour: 2\n- Time period: 3 hours\n- Unknown: Remaining logs after 3 hours\n\nTo solve this, I recognized that the number of logs changes each hour based on the logs burned and added. I decided to calculate the logs remaining at the end of each hour, as this would give a clear picture of the process.\n\nFor the first hour:\n- Logs burned: 3\n- Logs added: 2\n- Remaining logs: 6 - 3 + 2 = 5\n\nFor the second hour:\n- Logs burned: 3\n- Logs added: 2\n- Remaining logs: 5 - 3 + 2 = 4\n\nFor the third hour:\n- Logs burned: 3\n- Logs added: 2\n- Remaining logs: 4 - 3 + 2 = 3\n\nI verified the result by checking the calculations step-by-step and ensuring that the operations were applied correctly for each hour. The final number of logs remaining after 3 hours is 3.\n\nThe operation I would reuse is the calculation of remaining logs at the end of each hour, as it directly addresses the problem and can be applied to similar scenarios where logs are burned and added at regular intervals.\n\nFINAL: 3",
+        "target_sha256": "f25a74e16094b9bb8a7712b6838e4ef5a6319792319bcc21075e321d5b9aa941"
+      }
+    ],
+    "task_id": "gsm8k-train-6531"
+  },
+  {
+    "gold": "4",
+    "question": "Janet makes $20 per hour at work. She works 52 hours per week. Anything over 40 hours per week is considered overtime and is paid at 1.5 times the normal rate. She wants to purchase a $4640 car. How many weeks does she need to work to purchase the car?",
+    "question_sha256": "f00cb7664dfdd4df446d04798f469d3f41ed1689ff2bdbb8bf7f78626ddc9b4f",
+    "responses": [
+      {
+        "key": "gsm8k-train-5115:rich",
+        "raw_call_sha256": "a783425f7024e52d0b7842a54551f020d965a784a3eb984e8a9b5a5168765302",
+        "student_prefix": [
+          {
+            "content": "Janet makes $20 per hour at work. She works 52 hours per week. Anything over 40 hours per week is considered overtime and is paid at 1.5 times the normal rate. She wants to purchase a $4640 car. How many weeks does she need to work to purchase the car?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "a6c387f8475180954a14f1b599aedc639a02031a2b5fcf44c166fd6afdc41644",
+        "target": "First, I identify the given quantities:\n- Janet's normal hourly wage: $20\n- Regular hours per week: 40\n- Overtime hours per week: 52 - 40 = 12\n- Overtime rate: 1.5 times the normal rate\n- Total cost of the car: $4640\n\nNext, I calculate her weekly earnings:\n- Regular pay: 40 hours * $20/hour = $800\n- Overtime pay: 12 hours * $20/hour * 1.5 = $360\n- Total weekly earnings: $800 + $360 = $1160\n\nNow, I determine how many weeks she needs to work to earn $4640:\n- Weeks needed: $4640 / $1160/week = 4 weeks\n\nFINAL: 4",
+        "target_sha256": "488bb18776f525d33596a26a22135059a375dd087a4c8d87a104c38c252f07f4"
+      },
+      {
+        "key": "gsm8k-train-5115:new_record",
+        "raw_call_sha256": "55354e6dc27f795150055914bd2f51c0bb7ad53d07fa35a6d3448338eb4a8e8e",
+        "student_prefix": [
+          {
+            "content": "Janet makes $20 per hour at work. She works 52 hours per week. Anything over 40 hours per week is considered overtime and is paid at 1.5 times the normal rate. She wants to purchase a $4640 car. How many weeks does she need to work to purchase the car?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Janet's normal hourly wage: $20\n- Regular hours per week: 40\n- Overtime hours per week: 52 - 40 = 12\n- Overtime rate: 1.5 times the normal rate\n- Total cost of the car: $4640\n\nNext, I calculate her weekly earnings:\n- Regular pay: 40 hours * $20/hour = $800\n- Overtime pay: 12 hours * $20/hour * 1.5 = $360\n- Total weekly earnings: $800 + $360 = $1160\n\nNow, I determine how many weeks she needs to work to earn $4640:\n- Weeks needed: $4640 / $1160/week = 4 weeks\n\nFINAL: 4",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f3891e44040d1d4ef68b20067493b47665c418dde67d47373789b32252e0ee86",
+        "target": "Given the problem, I identified the following quantities:\n- Janet's normal hourly wage: $20\n- Regular hours per week: 40\n- Overtime hours per week: 52 - 40 = 12\n- Overtime rate: 1.5 times the normal rate\n- Total cost of the car: $4640\n\nThe unknown I needed to find was the number of weeks Janet needs to work to purchase the car. To solve this, I first calculated her weekly earnings:\n1. Regular pay: 40 hours * $20/hour = $800\n2. Overtime pay: 12 hours * $20/hour * 1.5 = $360\n3. Total weekly earnings: $800 + $360 = $1160\n\nNext, I determined the number of weeks required to earn $4640:\n- Weeks needed: $4640 / $1160/week = 4 weeks\n\nTo verify this, I checked the total earnings over 4 weeks:\n- Earnings over 4 weeks: 4 weeks * $1160/week = $4640\n\nThis matches the cost of the car, confirming my solution is correct. The operation I would reuse is the calculation of total weekly earnings, as it directly connects the given quantities to the unknown. I would use this operation whenever I need to determine the total earnings based on a fixed hourly wage, regular hours, and overtime hours.\n\nFINAL: 4",
+        "target_sha256": "fc7eb328f1c1812db9030f2f07818b49260757374cd56f981ea8e31b49638c31"
+      }
+    ],
+    "task_id": "gsm8k-train-5115"
+  },
+  {
+    "gold": "12",
+    "question": "Tom swims for 2 hours at a speed of 2 miles per hour.  He then runs for half the time at 4 times the speed.  How many miles did he cover?",
+    "question_sha256": "00756fc69d5182e280806bcea6299067182782efd19a7ff1794f5c4dfc1a1521",
+    "responses": [
+      {
+        "key": "gsm8k-train-755:rich",
+        "raw_call_sha256": "668744fcbfd0949bab65b5eb815588500ada5ec0b1ccf6571e2bf6642e9f2131",
+        "student_prefix": [
+          {
+            "content": "Tom swims for 2 hours at a speed of 2 miles per hour.  He then runs for half the time at 4 times the speed.  How many miles did he cover?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "29df8e225e500b431e3e6fb5722ed5117d01d924159ccee0f8a84e6d58e613c6",
+        "target": "First, I calculate the distance Tom swims. He swims for 2 hours at a speed of 2 miles per hour. Distance is speed multiplied by time, so:\n\\[ \\text{Swimming distance} = 2 \\, \\text{hours} \\times 2 \\, \\text{miles/hour} = 4 \\, \\text{miles} \\]\n\nNext, I determine the running time. He runs for half the swimming time, which is:\n\\[ \\text{Running time} = \\frac{2 \\, \\text{hours}}{2} = 1 \\, \\text{hour} \\]\n\nHis running speed is 4 times his swimming speed, so:\n\\[ \\text{Running speed} = 4 \\times 2 \\, \\text{miles/hour} = 8 \\, \\text{miles/hour} \\]\n\nNow, I calculate the distance he runs:\n\\[ \\text{Running distance} = 1 \\, \\text{hour} \\times 8 \\, \\text{miles/hour} = 8 \\, \\text{miles} \\]\n\nFinally, I add the swimming and running distances to find the total distance covered:\n\\[ \\text{Total distance} = 4 \\, \\text{miles} + 8 \\, \\text{miles} = 12 \\, \\text{miles} \\]\n\nFINAL: 12",
+        "target_sha256": "7fcb3f2692a6f8086c47c8906c6eac47ed4b5e5cc77b233175a196a2459c3811"
+      },
+      {
+        "key": "gsm8k-train-755:new_record",
+        "raw_call_sha256": "0a6cd936e1c44c175ceadd70ceeeb9173127f123c025d7101a8d1cd3b995f398",
+        "student_prefix": [
+          {
+            "content": "Tom swims for 2 hours at a speed of 2 miles per hour.  He then runs for half the time at 4 times the speed.  How many miles did he cover?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the distance Tom swims. He swims for 2 hours at a speed of 2 miles per hour. Distance is speed multiplied by time, so:\n\\[ \\text{Swimming distance} = 2 \\, \\text{hours} \\times 2 \\, \\text{miles/hour} = 4 \\, \\text{miles} \\]\n\nNext, I determine the running time. He runs for half the swimming time, which is:\n\\[ \\text{Running time} = \\frac{2 \\, \\text{hours}}{2} = 1 \\, \\text{hour} \\]\n\nHis running speed is 4 times his swimming speed, so:\n\\[ \\text{Running speed} = 4 \\times 2 \\, \\text{miles/hour} = 8 \\, \\text{miles/hour} \\]\n\nNow, I calculate the distance he runs:\n\\[ \\text{Running distance} = 1 \\, \\text{hour} \\times 8 \\, \\text{miles/hour} = 8 \\, \\text{miles} \\]\n\nFinally, I add the swimming and running distances to find the total distance covered:\n\\[ \\text{Total distance} = 4 \\, \\text{miles} + 8 \\, \\text{miles} = 12 \\, \\text{miles} \\]\n\nFINAL: 12",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1f8fe251630ce0ae28f3b242c153592d41f4e5787ef0b2e9652609fc5ac5df17",
+        "target": "Given the problem, I identified the key quantities: Tom swims for 2 hours at 2 miles per hour, and then runs for half that time at 4 times the swimming speed. The unknown is the total distance covered.\n\nFirst, I calculated the distance Tom swims:\n\\[ \\text{Swimming distance} = 2 \\, \\text{hours} \\times 2 \\, \\text{miles/hour} = 4 \\, \\text{miles} \\]\n\nNext, I determined the running time:\n\\[ \\text{Running time} = \\frac{2 \\, \\text{hours}}{2} = 1 \\, \\text{hour} \\]\n\nThen, I calculated the running speed:\n\\[ \\text{Running speed} = 4 \\times 2 \\, \\text{miles/hour} = 8 \\, \\text{miles/hour} \\]\n\nUsing the running speed and time, I found the running distance:\n\\[ \\text{Running distance} = 1 \\, \\text{hour} \\times 8 \\, \\text{miles/hour} = 8 \\, \\text{miles} \\]\n\nAdding the swimming and running distances gave the total distance:\n\\[ \\text{Total distance} = 4 \\, \\text{miles} + 8 \\, \\text{miles} = 12 \\, \\text{miles} \\]\n\nTo check the result, I verified that the operations were correctly applied and the units were consistent. The total distance matches the problem statement, confirming the solution.\n\nThe operations I would reuse are:\n1. Distance = Speed \u00d7 Time\n2. Running time = Swimming time / 2\n3. Running speed = Swimming speed \u00d7 4\n\nThese operations are reusable in similar problems involving distance, speed, and time relationships.\n\nFINAL: 12",
+        "target_sha256": "2f8734afb670abdfa9e2456aefbc619f199e43d6e433084505dfa6dcff0cfc1b"
+      }
+    ],
+    "task_id": "gsm8k-train-755"
+  },
+  {
+    "gold": "58",
+    "question": "Conner has a dune buggy that he rides in the desert.  On flat sand, it can ride at a speed of 60 miles per hour.  When traveling on downhill slopes, it can race at 12 miles per hour faster than it can when it is on flat sand.  And when riding on an uphill inclined slow, it travels at a speed 18 miles per hour slower than when it is riding on flat sand.  If Conner rides his dune buggy one-third of the time on flat sand, one-third of the time on uphill slopes, and one-third of the time on downhill slopes, what is his average speed in miles per hour?",
+    "question_sha256": "048e5c965285126f5caa658d9cfe2183d975f6611439e38283e1eb8c17c1f583",
+    "responses": [
+      {
+        "key": "gsm8k-train-175:rich",
+        "raw_call_sha256": "04b5f728d1c17ee52239094f157aa3469659319d37753373464b21743e4b7dc2",
+        "student_prefix": [
+          {
+            "content": "Conner has a dune buggy that he rides in the desert.  On flat sand, it can ride at a speed of 60 miles per hour.  When traveling on downhill slopes, it can race at 12 miles per hour faster than it can when it is on flat sand.  And when riding on an uphill inclined slow, it travels at a speed 18 miles per hour slower than when it is riding on flat sand.  If Conner rides his dune buggy one-third of the time on flat sand, one-third of the time on uphill slopes, and one-third of the time on downhill slopes, what is his average speed in miles per hour?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7865ab07a8bb9706bd70549981673276c19c9ef436b96c2d0474199b6458c78a",
+        "target": "Given:\n- Speed on flat sand: 60 mph\n- Speed on downhill slopes: 60 mph + 12 mph = 72 mph\n- Speed on uphill slopes: 60 mph - 18 mph = 42 mph\n- Time spent on each: 1/3 of total time\n\nTo find the average speed, we use the formula for average speed, which is the total distance divided by the total time. Since the time spent on each type of terrain is equal, we can simply average the speeds.\n\nAverage speed = (Speed on flat sand + Speed on downhill slopes + Speed on uphill slopes) / 3\nAverage speed = (60 mph + 72 mph + 42 mph) / 3\nAverage speed = 174 mph / 3\nAverage speed = 58 mph\n\nFINAL: 58",
+        "target_sha256": "6e46848ee37acf1a6f54fe758ab4196aabe2233727414489c619f872930c14fa"
+      },
+      {
+        "key": "gsm8k-train-175:new_record",
+        "raw_call_sha256": "b222a80d1ce19c009a34b581c9456fbfd3e5b8bb7b66af3e6247451442a2b004",
+        "student_prefix": [
+          {
+            "content": "Conner has a dune buggy that he rides in the desert.  On flat sand, it can ride at a speed of 60 miles per hour.  When traveling on downhill slopes, it can race at 12 miles per hour faster than it can when it is on flat sand.  And when riding on an uphill inclined slow, it travels at a speed 18 miles per hour slower than when it is riding on flat sand.  If Conner rides his dune buggy one-third of the time on flat sand, one-third of the time on uphill slopes, and one-third of the time on downhill slopes, what is his average speed in miles per hour?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Speed on flat sand: 60 mph\n- Speed on downhill slopes: 60 mph + 12 mph = 72 mph\n- Speed on uphill slopes: 60 mph - 18 mph = 42 mph\n- Time spent on each: 1/3 of total time\n\nTo find the average speed, we use the formula for average speed, which is the total distance divided by the total time. Since the time spent on each type of terrain is equal, we can simply average the speeds.\n\nAverage speed = (Speed on flat sand + Speed on downhill slopes + Speed on uphill slopes) / 3\nAverage speed = (60 mph + 72 mph + 42 mph) / 3\nAverage speed = 174 mph / 3\nAverage speed = 58 mph\n\nFINAL: 58",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1b92e80f775c0dfc2bfd1a768dcfce904df95fa2cb62e4345ba26046631cb2b8",
+        "target": "Given the problem, I identified the key quantities and their relationships:\n- Speed on flat sand: 60 mph\n- Speed on downhill slopes: 60 mph + 12 mph = 72 mph\n- Speed on uphill slopes: 60 mph - 18 mph = 42 mph\n- Time spent on each: 1/3 of total time\n\nTo find the average speed, I used the formula for average speed, which is the total distance divided by the total time. Since the time spent on each type of terrain is equal, I decided to average the speeds directly. This approach is valid because the time spent on each terrain is the same, so the average speed is simply the arithmetic mean of the speeds.\n\nI calculated the average speed as follows:\n\\[ \\text{Average speed} = \\frac{60 \\text{ mph} + 72 \\text{ mph} + 42 \\text{ mph}}{3} \\]\n\\[ \\text{Average speed} = \\frac{174 \\text{ mph}}{3} \\]\n\\[ \\text{Average speed} = 58 \\text{ mph} \\]\n\nTo check the result, I verified that the calculation was correct by ensuring that the sum of the speeds divided by 3 indeed equals 58 mph. I also confirmed that the individual speeds and the time spent on each type of terrain were correctly identified and used in the calculation.\n\nThe operation I would reuse is averaging the speeds when the time spent on each type of terrain is equal. This method is applicable whenever the time spent on different conditions is the same and the speeds vary.\n\nFINAL: 58",
+        "target_sha256": "d9a8ab6e8238e3e443f52f2654109fc691902f425a547d7a26f6541106e7dce9"
+      }
+    ],
+    "task_id": "gsm8k-train-175"
+  },
+  {
+    "gold": "356",
+    "question": "When Jack traveled to Canada, he had to wait 20 hours to get through customs, plus 14 days in coronavirus quarantine. How many hours total did Jack have to wait?",
+    "question_sha256": "52057835f0e85e8eac87f5f03eee76ed4aab10267c29a11316e88ca0a390fece",
+    "responses": [
+      {
+        "key": "gsm8k-train-3917:rich",
+        "raw_call_sha256": "28e1401f3d010439b05d8fbebf18f4ca5f7ad808a50fdca97af9b8e82be81ff0",
+        "student_prefix": [
+          {
+            "content": "When Jack traveled to Canada, he had to wait 20 hours to get through customs, plus 14 days in coronavirus quarantine. How many hours total did Jack have to wait?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4b59f2415ae9f57c4ef9c5718fcb4d29f270031b17b4239e694c4995b10dffcf",
+        "target": "First, I identify the given quantities:\n- 20 hours for customs\n- 14 days for quarantine\n\nNext, I need to convert the quarantine days into hours:\n- 14 days * 24 hours/day = 336 hours\n\nNow, I add the hours for customs and the quarantine:\n- 20 hours + 336 hours = 356 hours\n\nFinally, I check the result:\n- The total wait time is 356 hours.\n\nFINAL: 356",
+        "target_sha256": "cdb9cf439a2286001bb680837b571aeb67b46c1781c761c6a638912ad37be588"
+      },
+      {
+        "key": "gsm8k-train-3917:new_record",
+        "raw_call_sha256": "46fcd23b90b1ef3b3baf6d0f54b74500c76015de6a92ebf87d29aaea2013b4e2",
+        "student_prefix": [
+          {
+            "content": "When Jack traveled to Canada, he had to wait 20 hours to get through customs, plus 14 days in coronavirus quarantine. How many hours total did Jack have to wait?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- 20 hours for customs\n- 14 days for quarantine\n\nNext, I need to convert the quarantine days into hours:\n- 14 days * 24 hours/day = 336 hours\n\nNow, I add the hours for customs and the quarantine:\n- 20 hours + 336 hours = 356 hours\n\nFinally, I check the result:\n- The total wait time is 356 hours.\n\nFINAL: 356",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "868405f342ee17859e476f68d505e5855302c9e9f3efe2e33a0ab16c0a01d97f",
+        "target": "Given the problem, I identified the two key quantities: 20 hours for customs and 14 days for quarantine. The unknown was the total wait time in hours. To solve this, I needed to convert the quarantine days into hours and then add the two quantities together.\n\nFirst, I converted the 14 days into hours:\n- 14 days * 24 hours/day = 336 hours\n\nNext, I added the 20 hours for customs to the 336 hours for quarantine:\n- 20 hours + 336 hours = 356 hours\n\nTo verify the result, I checked the arithmetic:\n- The multiplication of 14 days by 24 hours/day is straightforward and yields 336 hours.\n- Adding 20 hours to 336 hours gives 356 hours.\n\nThe operations I used were straightforward multiplication and addition, both of which are reliable and reusable for similar problems involving time conversions and total time calculations.\n\nFINAL: 356",
+        "target_sha256": "c0e356308d778f98e611d9b9d18bbcdc8921450b36257bd07f72a0902e97c2f2"
+      }
+    ],
+    "task_id": "gsm8k-train-3917"
+  },
+  {
+    "gold": "15",
+    "question": "Maisy has been offered a new job and now has the option of continuing to work at her current job or take the new job. Her current job is 8 hours a week with a wage of $10 per hour. The new job is offering 4 hours a week with a wage of $15 per hour with an additional bonus of $35 per week if she exceeds her quota. Maisy is confident that she will exceed her quota and decides to include this when calculating her wage at the new job. How much more money, in dollars, will Maisy earn at her new job?",
+    "question_sha256": "6b45fa78503ce8b3b60e3e02d0f804854fd27e4ca7d08375ba5c0d78544c1efd",
+    "responses": [
+      {
+        "key": "gsm8k-train-4499:rich",
+        "raw_call_sha256": "baf266860d3f3a849634a90cdde42bdd56640cb15717cebabfb1da8f1854f7ab",
+        "student_prefix": [
+          {
+            "content": "Maisy has been offered a new job and now has the option of continuing to work at her current job or take the new job. Her current job is 8 hours a week with a wage of $10 per hour. The new job is offering 4 hours a week with a wage of $15 per hour with an additional bonus of $35 per week if she exceeds her quota. Maisy is confident that she will exceed her quota and decides to include this when calculating her wage at the new job. How much more money, in dollars, will Maisy earn at her new job?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "25706eaee4e1dba50dd46b0a2f1b5b2e5afa65cfc2566964aa752f4fb68ec570",
+        "target": "First, I calculate Maisy's current earnings. At her current job, she works 8 hours a week at $10 per hour:\n\\[ 8 \\text{ hours} \\times \\$10/\\text{hour} = \\$80 \\text{ per week} \\]\n\nNext, I calculate her potential earnings at the new job. She will work 4 hours a week at $15 per hour, plus a $35 bonus:\n\\[ 4 \\text{ hours} \\times \\$15/\\text{hour} = \\$60 \\]\nAdding the bonus:\n\\[ \\$60 + \\$35 = \\$95 \\text{ per week} \\]\n\nNow, I find the difference between her potential new job earnings and her current job earnings:\n\\[ \\$95 - \\$80 = \\$15 \\]\n\nFINAL: 15",
+        "target_sha256": "aa3df7cc080fcbafd1daea2351cc34d0ee30b7a9eae0ada64059dd530359c666"
+      },
+      {
+        "key": "gsm8k-train-4499:new_record",
+        "raw_call_sha256": "43ce5d2dcb7d88bf24d83a0c8d46ab536f352c737ec473e6aaa51bc683856db7",
+        "student_prefix": [
+          {
+            "content": "Maisy has been offered a new job and now has the option of continuing to work at her current job or take the new job. Her current job is 8 hours a week with a wage of $10 per hour. The new job is offering 4 hours a week with a wage of $15 per hour with an additional bonus of $35 per week if she exceeds her quota. Maisy is confident that she will exceed her quota and decides to include this when calculating her wage at the new job. How much more money, in dollars, will Maisy earn at her new job?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate Maisy's current earnings. At her current job, she works 8 hours a week at $10 per hour:\n\\[ 8 \\text{ hours} \\times \\$10/\\text{hour} = \\$80 \\text{ per week} \\]\n\nNext, I calculate her potential earnings at the new job. She will work 4 hours a week at $15 per hour, plus a $35 bonus:\n\\[ 4 \\text{ hours} \\times \\$15/\\text{hour} = \\$60 \\]\nAdding the bonus:\n\\[ \\$60 + \\$35 = \\$95 \\text{ per week} \\]\n\nNow, I find the difference between her potential new job earnings and her current job earnings:\n\\[ \\$95 - \\$80 = \\$15 \\]\n\nFINAL: 15",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3be02809c83bc9f0f9867e29034085a85319b72220e65e1dbf2a01fa01c4d6c7",
+        "target": "Given the problem, I identified the key quantities: Maisy's current job earnings and her potential new job earnings. The current job pays $10 per hour for 8 hours a week, while the new job offers $15 per hour for 4 hours a week plus a $35 bonus for exceeding her quota. The unknown is how much more money Maisy will earn at her new job.\n\nTo solve this, I first calculated her current job earnings:\n\\[ 8 \\text{ hours} \\times \\$10/\\text{hour} = \\$80 \\text{ per week} \\]\n\nNext, I calculated her potential new job earnings, including the bonus:\n\\[ 4 \\text{ hours} \\times \\$15/\\text{hour} = \\$60 \\]\nAdding the $35 bonus:\n\\[ \\$60 + \\$35 = \\$95 \\text{ per week} \\]\n\nTo find out how much more she would earn at the new job, I subtracted her current earnings from her potential new job earnings:\n\\[ \\$95 - \\$80 = \\$15 \\]\n\nThis calculation shows that Maisy would earn $15 more per week at her new job. I verified this by ensuring all arithmetic was correct and that the bonus was included in the new job's earnings.\n\nThe operation I would reuse is the subtraction of two known quantities to find the difference, which is a fundamental arithmetic operation. This can be applied in various scenarios where one needs to compare two values and find the difference.\n\nFINAL: 15",
+        "target_sha256": "717f726344538689e816d2fe61eca5cc8005e13361d76713293c572556ba5ca7"
+      }
+    ],
+    "task_id": "gsm8k-train-4499"
+  },
+  {
+    "gold": "1800",
+    "question": "Henri has 8 hours to watch movies and read. He watches one movie that is 3.5 hours and one movie that is 1.5 hours. He then decides to read. If he can read 10 words a minute, how many words does he read before his free time is up?",
+    "question_sha256": "77c357091a71166869a1d0d172d7f27c0f1d923fcc429e1fb625ef92f5fe933a",
+    "responses": [
+      {
+        "key": "gsm8k-train-2331:rich",
+        "raw_call_sha256": "08163649bdd7b4d256a32e766f2ab23c97ae150d2cb1421e66c70ec34071a609",
+        "student_prefix": [
+          {
+            "content": "Henri has 8 hours to watch movies and read. He watches one movie that is 3.5 hours and one movie that is 1.5 hours. He then decides to read. If he can read 10 words a minute, how many words does he read before his free time is up?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7bb395e5f18eba780abb3bd27476d7938d1c9ee61e0e309660c6358928cb1444",
+        "target": "Henri has 8 hours total for activities. He watches two movies, one for 3.5 hours and another for 1.5 hours. First, I calculate the total time spent watching movies:\n\n3.5 hours + 1.5 hours = 5 hours\n\nSubtracting this from his total free time:\n\n8 hours - 5 hours = 3 hours\n\nHenri has 3 hours left to read. Since there are 60 minutes in an hour, he has:\n\n3 hours * 60 minutes/hour = 180 minutes\n\nHenri reads at a rate of 10 words per minute. Therefore, in 180 minutes, he reads:\n\n10 words/minute * 180 minutes = 1800 words\n\nFINAL: 1800",
+        "target_sha256": "e7753085b756b68f747e24265281652c62bb74a292621ca077ce3f1a84b8f5b4"
+      },
+      {
+        "key": "gsm8k-train-2331:new_record",
+        "raw_call_sha256": "dc26955b0555a4dd16749626ad81619f8d913a0d279790943d5555f65c072697",
+        "student_prefix": [
+          {
+            "content": "Henri has 8 hours to watch movies and read. He watches one movie that is 3.5 hours and one movie that is 1.5 hours. He then decides to read. If he can read 10 words a minute, how many words does he read before his free time is up?",
+            "role": "user"
+          },
+          {
+            "content": "Henri has 8 hours total for activities. He watches two movies, one for 3.5 hours and another for 1.5 hours. First, I calculate the total time spent watching movies:\n\n3.5 hours + 1.5 hours = 5 hours\n\nSubtracting this from his total free time:\n\n8 hours - 5 hours = 3 hours\n\nHenri has 3 hours left to read. Since there are 60 minutes in an hour, he has:\n\n3 hours * 60 minutes/hour = 180 minutes\n\nHenri reads at a rate of 10 words per minute. Therefore, in 180 minutes, he reads:\n\n10 words/minute * 180 minutes = 1800 words\n\nFINAL: 1800",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "44f140d1fa15f13c49e10685c24024713b7c9bff7ffbc0268e1df3bbd314bdd5",
+        "target": "Given that Henri has 8 hours of free time, I first converted this into minutes to make the calculations easier. Since there are 60 minutes in an hour, 8 hours is equivalent to:\n\n\\[ 8 \\text{ hours} \\times 60 \\text{ minutes/hour} = 480 \\text{ minutes} \\]\n\nNext, I noted that Henri watches two movies, one for 3.5 hours and another for 1.5 hours. Converting these times into minutes:\n\n\\[ 3.5 \\text{ hours} \\times 60 \\text{ minutes/hour} = 210 \\text{ minutes} \\]\n\\[ 1.5 \\text{ hours} \\times 60 \\text{ minutes/hour} = 90 \\text{ minutes} \\]\n\nAdding these together gives the total time spent watching movies:\n\n\\[ 210 \\text{ minutes} + 90 \\text{ minutes} = 300 \\text{ minutes} \\]\n\nSubtracting this from Henri's total free time:\n\n\\[ 480 \\text{ minutes} - 300 \\text{ minutes} = 180 \\text{ minutes} \\]\n\nHenri then uses the remaining 180 minutes to read. Given that he reads at a rate of 10 words per minute, the total number of words he reads is:\n\n\\[ 180 \\text{ minutes} \\times 10 \\text{ words/minute} = 1800 \\text{ words} \\]\n\nTo verify this, I can check the arithmetic operations and ensure that the units are consistent throughout the calculations. The final answer is:\n\nFINAL: 1800",
+        "target_sha256": "f967365b5513331166b69faad64de1869d0d7640d836b4e583d3a5f1aeda5fd1"
+      }
+    ],
+    "task_id": "gsm8k-train-2331"
+  }
+]

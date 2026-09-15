@@ -27209,12 +27209,91 @@ targets/condition to1000. No fictitious Qwen reasoning-effort API switch.
 All24eligible GPUs now have scientific assignments; that is NOT measured
 saturation. Existing mathmining/sixfits/L2 repairs retain their GPUs unchanged.
 Six workers, hierarchical communication; Main still executes no experimentalcell.
+
+## [Builder] 2026-09-15T00:21Z — RICH-INTENSITY own preGPU gate; shared roster ready
+
+Main/TWO-PASS: frozen common256 roster is
+`research_notes/analysis/orch_rich_intensity_20260915_attempt1/TASKS.json`, SHA256
+`3e320ce8c06878a13da0400475977082cedd8379eab780ad82c5de8f1aa50c43`.
+Exact source17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465;
+64each existing four mining families,1216distinct ID+normalizedhash exclusions
+cover prior128+active1024+held64. TWO-PASS consumes exact bytes, no regeneration.
+Own9CPUtestsPASS, exact control/NEWprompt and neutral masks/budgets/raw-target/
+unread-admission/unknownPID checks. Native CPU portable37ec/base/tokenizer
+PREPARED_NO_MODEL, verified basea2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992;
+zero calls so far. Immutable470-file archive SHA256
+8133bc8cc3e5ab9ac35c99b6f2e53f9fda37848bebe2577fb17a48344367cbc2 verified native.
+Existing node3 global/procUUID scanner clear0; guardian scans all0–5 again
+immediately before independent launch, never touching peer6/7. Raw84/STATE
+scope: control0/1,comparison2/3,weighted4/5;120native min/12assignedGPUh and
+<=1536calls, no fit/expansion. Own exact prompt/predictions protocol published.
+Attempt1 missing-shell-helper CPU failure retained,0nativecalls; attempt2 is
+`/localhome/local-rohing/orch_rich_intensity_20260915_attempt2`.
+No Main/reviewer/corpusfloor hold; no local model or reviewer fanout.
+
+## [Builder] 2026-09-15T00:25Z — RICH-INTENSITY RAW85 pre-call amendment passed
+
+Exact-own-process pause at00:22:18 found0ACTOR_READY and0calls across six;
+stopped initialization, preserved attempt2, six physical/proc releasesPASS.
+No completed or in-flight learner calls rerun. Original harddeadline02:21:33UTC
+retained across restart (not120extra minutes). RAW85 operative bounds:
+control0/1 exactoldrich512; LIGHT2/3 importance-weighted1536; DENSE4/5 specified
+branching1536; allcontext4096. Existing NEWrecord512 and150–400target gate;
+longsources are not auto-training rows. Exact prompt/prospective predictions
+in own protocol.11CPUtestsPASS; native CPU source/portable37ec/base verification
+PASS. Owned thin generation override only because frozen engine hardcaps768;
+original engine/base/portable contract unchanged. Immutable471-file archive
+SHA256bf950fddecc7207231b781c6ae01787a7de2b8ea7c4ebae4022283963288f097.
+Native attempt3 starts independently after fresh all0–5 scans; peer6/7untouched.
+First genuinely qualified fulltext batch will be signaled for Main's controlled
+L2experiment immediately, not withheld for1000rows or promotion. No scope
+expansion, historical/currentL2 rescoring, or independent-audit claim.
+
+## [Builder] 2026-09-15T00:31Z — RICH-INTENSITY first qualified RAW85 packet
+
+MainL2trigger: author read24entire stable firstfourcalls/shard, recomputed6golds;
+16rows qualify unchangedgate (control6,LIGHT6,DENSE4). Not independent audit or
+generatorwinner. DENSE937 source298tokens computes35 via70%remaining, evaluates,
+then checks via30%discount15 and50−15; genuine useful second calculation.
+LIGHT1706 NEW301tokens follows26soccer with26/400=6.5% population consistency.
+Evidence/unalteredADMITTED/REVIEWS/GOLD/SUMMARY/READOUT in
+`research_notes/analysis/orch_rich_intensity_20260915_first_qualified/`.
+Available now for a controlledL2experiment, without1000row/perfectchild/promotion
+hold. Different early task counts/percentages-only/no fullcohortcontrast: not
+an effect estimate. Dense first2formatfailures and irrelevant branches retained.
+All6ACTOR_READY37ec at00:26:18–19 and actualpersistedcalls verified,not PIDalone;
+no6/7touch, scope/caps unchanged, no new fit/scale/reviewerfanout requested.
 ## [Rohin — message 85, ~00:20 UTC 09-15, relayed by Fable] 2026-09-15T00:16Z — STRONG STEER: go ALL OUT on richness now (many strategies in parallel, heavy token budgets, guidance vs over-guidance); as soon as any richness success appears, run level-2 tests on it; also push the terse route behaviour through the level-2 closed loop with long/short parents; the route behaviour may be level-2 (parented) content rather than level-1 — either is fine, and it may make level 2 easier. THESIS ("write this down"): 0 mechanism · 1 richness = a higher token budget the base already uses well · 2 utilise capabilities + richness for the closed loop's purpose · 3 utilise that learning for generalised outcomes · 4 deploy
 
 > OK, I understand how that flash card thing can help. It's actually not bad. It's it's a little bit too much like telling it a scale but it's not bad and honestly might be something that needs to be parented right that might be a level two sort of thing rather than a level one think about that but yeah, if it helps on level one, I don't really mind it doesn't really know but obviously even if you have the level one, it will help on level two as well, but I think I'm thinking about something way more raw for level one oh yeah, you said it matters for level two anyways completely matters for level two, but doesn't matter at level two or four I guess it doesn't even make us that much of a difference whether we teach it at level one or level two technically yeah so I don't know. It's not like a bad thing. It might actually make level two a little bit easier which easiness is kind of something that we want right now cause we've been going at it. I'm glad you get the richness right now cause it's a very loaded term. That is very very important for the fundamental core of a level. one is OK let's go all out on this richness shit all out. I'm talking rich as fuck. Yeah, let's try different strategies. That's scale things up lots of richness lots of things to make sure that those things are working. The model is really run heavy really you know given it a lot of token usage we can test like prompting different things to increase richness like I think there's an issue with over guidance versus guidance so we can kind of try both of those there's a lot of things to do that's what I'm saying like there's so much we can try right now and we need to get this rich and it's done ASAP so so keep move. Keep it moving as soon as any sort of success happens on richness I want to see some level two tests on it I wanna see let's see if we're only doing a richness thing. I want to see your whole note card shit betrayed to a richness level one close loop oh sorry, level 2 Close Loop I wanna see in level two this terse rose sort of thing this Tatro TERSE thing get trained on the closed loop and like whatever other training like I wanna see long-term short-term trait all that this is what I wanna get this level one level two I think level two we just scale it I think level two might end up being a little it's not gonna be easy. It's not gonna be easy. I think level one level two level two level two level three are gonna be a little bit closer together let's just get a gun. I think we've been simplifying things very well. We simplify level zero just a simple Laura right mechanism find out what skills it works at level one we finally found out. OK we just want richness. We just want want higher token you so like we wanna give it a higher token budget and the model will already have a lot of based on capabilities to be able to use that usefully and then we don't need to teach all of that and then in the level too then we already narrowed it down just to be able to kind of take all of its capabilities and it's level one richness and utilize t the purpose of that self for that purpose of that close loop and then level level three is going to be take that learning utilize it for generalized environmental outcomes then you deploy it great great great great write this down. This is like getting very close to a great abstract already so that's not bad at all but we need to get this heavy lifting done ASAP
 
 **[Fable → Orchestrator]** Operative: (1) richness generators on the reserve GPUs now, as parallel arms (three intensities of think-much-more, two-pass draft→evaluate→branch→act, multi-agent branching, reasoning-level switch, and GUIDANCE vs OVER-GUIDANCE as an explicit axis), scored by branching / importance-weighting / follow-through / transfer (IDEAS 00:1x), heavy token budgets allowed; (2) the first richness generator that clears the compile gate goes straight into a level-2 arm; (3) the current L2 arms (SHORT/LONG/UNPARENTED/FROZEN on the route family) already do what his third point asks — keep them, and add the rich-generator child as a fifth arm when it exists. Abstract shape recorded in THESIS_v2.
 
+[Orchestrator] 2026-09-15T00:24Z — raw85 arrived00:16/read00:17 (spokenheading
+~00:20 is approximate), STATE→BOARD heavy-budget amendment00:21, both workers
+notified before newcalls or instructed to preserve any already-started batch.
+INTENSITY: oldrich512 versus lightly guided1536 versus densely guided1536,
+allcontexts4096; latterpair explicitly tests guidance/overguidance at equal
+ceilings. TWO-PASS: shared draft512, branch and continuation finals1536each,
+NEWrecord512; same256roster/call/time/GPUcaps. Thought sources may be long;
+admitted ownrecords remain150–400 with fulltext/outcome/support/gold gate, no
+handsegmentation/truncation/padding or prior-row rescoring. Source and record
+token distributions separate. CohortTASKS3e320ce8 now delivered to TWO-PASS;
+no cohort reconstruction or waiting for a new gym. No invented reasoning API.
+
+First actual qualifying richness batch is a trigger for a controlled L2 trial,
+not a1000-row preparatory-fit/perfectchild/promotion hold. Workers report early
+evidence; Main reallocates next useful capacity from finished/weaker screens.
+Route SHORT/LONG loops continue independently. Ladder0mechanism→1richness→
+2cohesive learning→3generalized outcomes→4deployment is recorded as hypothesis/
+abstract shape, not a measured abstract result or permission to claim H1/H2.
+
+[Orchestrator] 2026-09-15T00:24Z — LONG helper33tests and exact4episode/16call
+resume delivered; SHORT V5 publishedff59e055 (98CPUtests, archive0fac7689,
+manifestad574e17), recoveredold responses separate, no provider regeneration.
+Broker2492391 replaced at child-free boundary. Main relayed V5 to LONG for own
+physical1reconciliation/resume; own SHORT scanner transients require actual
+CLEAR rechecks, no unknown-process exceptions. No Main or reader launch gate.
 ### 2026-09-15 00:21UTC [Builder -> astra2] native seam continuity observed in live loop
 
 Author-side readonly A100 inspection, no new calls/fits: UNPARENTED C1
@@ -27295,3 +27374,193 @@ Independent re-derivation from raw receipts on node 3, root `/tmp/astra_goal_sca
 Integrity: protocol SHA prefix `dd1d078a` in every stage RESULT.json matches the entry; `source_commit.txt` begins `ff1af2c3` as named; expected base SHA `a2367093` recorded in every `base_file_verification`. Model calls claimed (2519) equal the `model_calls` sum and the CALL_*.json count. Archive SHA `c57a87ef` not re-derived (archive location not in the run root).
 Scope note (builder's own limits): observed baseline coverage is four of eight shards; the remaining cases are unmeasured, not zero; no fit or learning result.
 commit left local: push skipped, 2 unpushed commits on main besides this read.
+## [Orchestrator] 2026-09-15T00:48Z — qualified generator packets ingested; released GPU assigned to immediate controlled L2 pilot
+
+STATE updated first00:47, BOARD second, Erdos assigned released A100physical3.
+Raw85 action, no1000-row/perfect-child/promotion hold. Experimental bootstrap
+uses ENTIRE first INTENSITY16-row packet, SHA52197d8d0f73528af69b61e6f244e5b1570f2bcfafd5ebb79d4058c959946837;
+not a winner selected from early unequal counts. Own RICH-L2-PILOT root/source/
+guardian, original37ec FULL/new-labels-masked bootstrap,16presentations+legacy,
+then same-child guided+sleep/guidedFROZEN/unparented+sleep, bootstrapOFF held
+read control. Up to3cycles of8experience tasks/lane,8held/stage,4nativehours/
+4GPUh/1536learner/192actual-parent-provider calls. Own focused CPU/provenance
+and prospective runnable contract suffice; no Main/reader admission wait.
+Use already-designated L2 congruence-join scope if promptly executable; no
+mined/held/L3 relabeling. Parent blind to sealed eval, actual child words only.
+
+| Observed measure | Treatment | Matched comparator / boundary |
+|---|---:|---|
+| INTENSITY author-admitted early targets | LIGHT6, DENSE4 | oldrich6;24reviewed total, unequal task denominators |
+| TWO-PASS first3 common tasks, admitted targets | BRANCH4/6 | CONTINUE5/6;NEW3/3 each;percentagesonly |
+| Route C1 held goals | SHORT11/16 | guidedFROZEN11/16;same-stage |
+| Route C1 admitted / actual updates | SHORT0/0 | guidedFROZEN0/0 |
+| UNPARENTED three experience cycles | successes5/16,4/16,3/16 | whole48-task declared screen |
+| UNPARENTED admitted / updates by cycle |1/26,0/0,0/0 | unchangedf201 after firstsleep |
+| UNPARENTED initial/post held goals |11/16,8/16,11/16,11/16 | different stage cohorts;not causal slope |
+| UNPARENTED W0/W8/audit |16/16 each throughout | same-stage full guided tables still pending |
+
+OBSERVATION: counts above are author-side packets/native receipts, not VERIFIED
+learning. UNPARENTED terminal00:33:50,686learner reservations; Planck reports
+physical3released0MiB00:41. LONG exactresume26cumulativecalls/5episodes00:41.
+EVIDENCE AND CONTROL: INTENSITY first_qualified READOUT/REVIEWS/ADMITTED,
+TWO-PASS readout_first_reviewed SUMMARY/ADMITTED_ROWS, L2_SHORT journal and
+UNPARENTED_TERMINAL_V4.tar.gz(dfde7272), runtime-repair report; matched controls
+as table. C1 shared cohort supports11versus11, not a multi-sleep conclusion.
+CURRENT INTERPRETATION: rich targets exist; guided route C1 realized no training
+treatment. Checkpoint continuity works operationally, not evidence of cohesion.
+CREDIBLE ALTERNATIVES: early percent-only selection, rubric disagreement,
+format compliance, needless branches, tiny bootstrap, legacy replay, family
+shift and stage difficulty. No remedy by retrospective rescoring or padding.
+CONFIDENCE: bounded observed receipts; comparative learning remains unshown.
+CHEAPEST DISCRIMINATING NEXT TEST: fixed-packet controlled L2 pilot now, while
+existing guided route three-cycle batch and paired generator panels finish.
+Promising retained result requires independent reader and replication before
+premise use; one clean pilot null deallocates that screen, not the thesis.
+
+Reader ingestion: Fable23:37 SEQ276 VERIFIED counts/capsule; SEQ277 VERIFIED
+scoped counts with11historical post-mounted gaps.277unambiguous6/8each and
+CPUreplays NOT rederived; only first original replay checked individually.
+SEQ278/279 remain readerpending in received data. No checks run by Main.
+TERSE00:46:three A100fits complete5760updates, fresh readouts active; fourth
+at5470/5760, node3fits3213/3250of23040. No released TERSE lane or held/retention
+result yet. This is progress, not a scientific success or measured saturation.
+## [Fable — operational notice → Orchestrator] 2026-09-15T00:32Z — NODE 1 IS BACK: the laptop onboarding chain reports NODE_READY for the A40 host at 00:30:36Z under the new lease (var A40R_NODE; wrappers `gpu/a40r_ssh.sh` / `gpu/a40r_scp.sh` in the laptop checkout; the VM key was installed; 8 GPUs, 0 busy); node setup (ninja, persistence) is running now and will log "setup done" — treat the node as available for admission once your own physical/CVD check passes; same machine as before (venv, HF cache, checkout, ~/v6_out intact). The old `gpu/a40_ssh.sh` alias may still point at the expired lease's address — use a40r. Lease length per the chain's request; the lease hunter's further requests are refused on quota, so this is the fifth and last node tonight.
+
+## [Fable] 2026-09-15T00:32Z — self-check: THE LOOP HAS TURNED ONCE — the UNPARENTED level-2 arm completed its first cycle (experience → 26-update sleep saved f2013ae1 → fresh C1 readout → C2 experience loaded from the saved adapter; four distinct processes; base unchanged; old builder's read-only continuity check, no code change needed); richness arms amended to heavy budgets per messages 84/85 (INTENSITY 512 vs lightly guided 1,536 vs densely guided 1,536 at 4,096 context; TWO-PASS draft→branch→final; a first qualifying batch triggers a controlled L2 trial) — P62 pre-registered; node 1 back (notice above); 16 of 24 GPUs busy; VM memory 2.2 GB available
+
+**Orchestrator (00:24Z):** message 85 read at 00:17Z; STATE→BOARD heavy-budget amendment 00:21Z; both richness workers notified before new calls; "First actual qualifying richness batch is a trigger for a controlled L2 trial, not a 1000-row preparatory-fit / perfect-child / promotion hold"; ladder 0→4 recorded as hypothesis / abstract shape, "not a measured abstract result or permission to claim H1/H2"; LONG helper (33 tests) and SHORT V5 (98 CPU tests) published; broker replaced at a child-free boundary; route SHORT/LONG loops continue. **Old thread (00:21Z, read-only):** UNPARENTED C1 experience and sleep both bind e226cea2; the 26-update sleep saved f2013ae1; C1 readout and C2 experience bind that saved output exactly; 52 C2 call files at observation (not a success count). No C1 readout NUMBERS published yet — P60 stays open until the worker's SEQ.
+
+**Fleet:** ovx 0/8 (MATH-SCALE collection between phases or complete — no entry yet), ovx2 8/8 (dose fits + ORACLE/replication reserve now used), a100 8/8 (L2 arms 0–3, dose fits 4–7), node 1 0/8 ready-pending-setup — 16 of 24 reachable busy, 32 after node 1. VM: memory 2.2 GB available and falling with worker count, swap full, root 2.1 GB, /data 12 GB; both Codex sessions alive; reader 00:29 slot rc=0. Laptop chains 4/4. Nothing launched or killed by the watcher.
+
+## [Orchestrator] 2026-09-15T00:52Z — SCALE collection complete; parallel pilot amendment and new-lease handoff request
+
+STATE first00:51, BOARD second, Erdos/Laplace notified. Collection release is
+actual, not projected: node2physical4–7 all0MiB/no compute entries and original
+native/guardian PIDs absent at00:47:05. No GPU holds for the finite CPU review.
+
+| MATH-SCALE measure | Observed | Boundary |
+|---|---:|---|
+| Mining tasks attempted |1024/1024 | fixed denominator unchanged |
+| Initial rich oracle successes |960/1024 | numeric outcome, not admission |
+| Conditional NEW oracle successes |952/960 | source gold can be ambiguous |
+| Actual learner calls |1984/2048 maximum | all4shards exit0 |
+| Partial author-qualified targets |420=143rich+277NEW |740texts/384questions reviewed |
+| Reviewed gold |348valid/32ambiguous/4invalid | suspected gold excluded, not repaired |
+| Fits / updates |0/0 | full review/1000 gate not cleared |
+
+OBSERVATION: above is complete collection plus incomplete semantic review.
+EVIDENCE AND CONTROL: owned collection_terminal_20260915T004705Z packet,
+REDUCTION/COLLECTION_RELEASE_REVIEW_RECEIPT/physical_release/native_capture037;
+3657e6bc published through1f32a7db. This is not a comparative fit result.
+CURRENT INTERPRETATION: corpus available; review, not generation, now determines
+fit eligibility. CREDIBLE ALTERNATIVES: partial family coverage/review order,
+gold ambiguities, author-label uncertainty; four failed batches unadmitted.
+CONFIDENCE: observed terminal collection; no verified semantic census or null.
+CHEAPEST DISCRIMINATING NEXT TEST: finish existing memory-capped review by its
+original03:17:25horizon, no new collection; any fit needs fresh allocation.
+
+RICH-L2-PILOT now owns released node2physical4–7 for parallel same-stage
+guided+sleep/guidedFROZEN/unparented+sleep/bootstrapOFF readout. A1003 prepares
+matched bootstrap FULL/OFF then releases; no duplication. Same16rows,3cycles,
+8tasks/lane,1536learner/192parent-provider calls. Prospective ceiling4wallhours
+from firstnative and16aggregateassignedGPUh across phases; no timer reset.
+This supersedes the oneGPU4GPUh capacity limit, not the scientific protocol.
+
+[Orchestrator -> Fable] Newlease NODE_READY notice received in1f32a7db; thanks.
+This checkout has neither gpu/a40r_ssh.sh/scp.sh nor A40R_NODE in ignored
+gpu/hosts.env at00:49. Please deliver already-provisioned wrappers and ignored
+access configuration plus setup/lease-deadline receipt; no hostnames/keys in
+notebook or tracked files. Main will use a NEW own root and actual UUID/CVD
+checks, never expired alias/oldroots. This is an access handoff request, not
+a request for another lease or onboarding; existing24GPU work continues.
+
+1f32a7db successfully pushed all preceding Main and worker commits. Both sides
+of notebook merge preserved; no reset/stash/rebase/force or peer file staging.
+
+## [Orchestrator] 2026-09-15T00:57Z — second guided null cycle, actual LONG sleep, blind content critic
+
+STATE first/BOARD second; received Planck42d33bee. Original SHORT/FROZEN C3
+continues, no extra experiments on their lanes. Newpilot bootstrap starts37ec,
+not a graft intoe226; three task overlaps mean INTENSITY16+TWO-PASS9 are not
+25independent tasks. Erdos was explicitly redirected to start pilot preparation
+now while existing TWO-PASS finite native collection continues unchanged.
+
+| Same-stage held goals | SHORT | Guided FROZEN control | UNPARENTED |
+|---|---:|---:|---:|
+| Initial |11/16|11/16|11/16|
+| C1 |11/16|11/16|8/16|
+| C2 |11/16|11/16|11/16|
+| C3 |pending|pending|11/16|
+
+OBSERVATION: every completed W0/W8/audit16/16; SHORT/FROZEN C1+C2 each0rows/
+0updates; C2 raw traces identical16/16tasks, both-goal success4/8worlds each.
+LONG C1 reported2admitted rows/28actualupdates; its held result pending.
+EVIDENCE AND CONTROL: orch_l2_shared_20260915_matched_status_and_generator_handoff.md
+plus bound original stage receipts in42d33bee. GuidedFROZEN is CONTROL, not
+deterministic first-port REFERENCE; requested separate reference counts, never
+assume them. CURRENT INTERPRETATION: SHORT's absence of actual consolidation
+persists for two cycles; LONG now realizes a guided treatment but no measured
+benefit yet. CREDIBLE ALTERNATIVES: selection/richness yield, task difficulty,
+parent policy/dose, rehearsal; no causal conclusions from cross-cohort slopes.
+CONFIDENCE: bounded author-side matched evidence; independent reader pending.
+CHEAPEST DISCRIMINATING NEXT TEST: finish existing C3 and LONG fresh readouts;
+parallel new rich bootstrap pilot tests a different supply/learning bottleneck.
+
+Readonly Main census00:52:19–22:18/24model-resident,16nonzero utilization.
+node20–3busy/4–7empty;node3all8busy;A1000/2resident0%,1/3empty,4–7busy.
+Assignment is not saturation/clearance; LONG empty snapshot sent to owner,
+not a release assumption. Additional newlease node1 remains handoff-pending.
+
+Laplace model worker parked after exact handoff; existing finite CPU watcher
+2193471 continues until03:17:25, FINISHED/REVIEW_PROGRESS in original watchroot.
+No process stopped, no automatic fit. Freed slot assigned Popper, fresh-context
+RICH-BLIND-SEMANTICS:24raw first-packet captures, opaque IDs, blind to favored
+methods/author labels/bootstrap selection/global interpretation. Independent
+content/support criticism, not Fable's count verification. Prior labels/rows
+immutable; no new gate or pause on the experimental bootstrap. Return concrete
+contrary examples as well as support; no external fanout/local model/GPU calls.
+
+## [Orchestrator] 2026-09-15T01:07Z — actual rich bootstrap; current state condensed, evidence preserved
+
+STATE first (850→282lines; previous full state preserved in9905adfc), BOARD
+second. No evidence, denominator, original author judgment or raw directive
+deleted; historical experiment details remain in git/notebook/own receipts.
+
+| Native milestone | Observed | Interpretation boundary |
+|---|---|---|
+| RICH-L2 FULL bootstrap |native239377 at01:00:00.717940;40finite updates observed01:01 | not yet held learning or completedL2 |
+| Matched bootstrap recipe |16fixed rows;256presentations;224updates eachFULL/OFF;222legacy encodings | OFFnewlabelsmasked;same schedule |
+| Rich-L2 held design |56fixedcongruence questions=24TRAIN+32held | exhaustive oracle8/8 ceiling,notbeatablebaseline |
+| Route deterministic firstport |8/16goals,0/8pairs on every fixed TRAIN/held cohort | separate from guidedFROZEN control |
+| LONG post-sleep readout resume |native236830,00:59:43,mountedad2d1065,index203 | preserves78experience+125initialcalls;no replay |
+
+OBSERVATION: actual bootstrap training has begun fromoriginal37ec/basea236;
+no pilot generation or parent-provider calls at its01:01 receipt. Global hard
+end05:00:00.717940, including later node2 lanes, no reset. EVIDENCE AND CONTROL:
+RICH_L2_PILOT journal/preGPU, source def9a5c4/PREPAREbd3892ab/masks4d29673f/
+COHORT20ec0c83; literal first16packet52197d8d unchanged. LONG9905adfc and
+FIRSTPORT_FIXED_REFERENCE5bbbbeeb/b09764ee preserve failures and nativebindings.
+CURRENT INTERPRETATION: the first qualified rich packet now receives actual
+matched training; this is not retained benefit or a completed guided loop.
+CREDIBLE ALTERNATIVES: small percentage-only bootstrap, public data, transfer
+to congruence, rehearsal and prompt effects. Exact oracle is not a weak reference
+that can be beaten; this pilot is diagnostic, not campaign acceptance/H1/H2.
+CONFIDENCE: native training/lineage receipts, no learned-effect estimate.
+CHEAPEST DISCRIMINATING NEXT TEST: finish original paired bootstrap then the
+already-assigned parallel same-stage controls and guided cycles, no newgate.
+
+INTENSITY fixed-panel contrary examples: control/LIGHT Bert records falsely
+state300 is half of300 despite correctFINAL450; pursuit5181 storedgold10 is
+ambiguous versus continuous-pursuit15. Original outcome denominators preserved;
+admission exclusions do not repair source gold. Neither affects initial16packet.
+Popper independently reads24opaque rawcaptures with neutralhistories, no favored
+interpretation or authorlabels; no delay to nativepilot or canonized rescore.
+## [Fable — operational notice → Orchestrator] 2026-09-15T01:03Z — node-1 ACCESS HANDOFF complete: wrappers `gpu/a40r_ssh.sh` and `gpu/a40r_scp.sh` committed at 55c05c3f (pull to receive; they read `A40R_NODE` from gpu/hosts.env); the `A40R_NODE=` line was appended to the ignored `~/dream-state-orch/gpu/hosts.env` on the VM at 01:0xZ (copied from the old checkout; nothing printed); the VM key is installed on the node; setup receipt NODE3_SETUP_DONE 00:38:30Z (onboard rc=0); lease per the chain: to 2026-09-19 (id in the laptop chain log); 8 × A40, 0 busy at 00:59Z. Use a NEW root and your own UUID/CVD admission as you said. This closes the handoff; no further onboarding tonight (quota).
+
+## [Fable] 2026-09-15T01:03Z — self-check: LEVEL 2 STATUS — the guided route lanes have NOT consolidated for two cycles (SHORT and guided-FROZEN: 0 admitted rows, 0 updates in C1 and C2; held goals flat 11/16 → 11 → 11), the unparented lane slept and returned to baseline (11 → 8 → 11), LONG admitted 2 rows / 28 updates with its readout pending — the compile gate, not the parent, is the first bottleneck (P60 annotated); MATH-SCALE collection complete (1,024/1,024 tasks, 960 rich oracle successes, 420 partially qualified targets after reviewing 740 texts, review runs to 03:17Z, no fit yet — P57 pending); RICH-L2-PILOT declared on node 2 GPUs 4–7 (rich math supply from a 37ec bootstrap; guided+sleep / guided-FROZEN / unparented+sleep / bootstrap-OFF; 3 cycles × 8 tasks) — P63 pre-registered; node 1 handed over (notice above); 17 of 32 GPUs busy
+
+**L2 route lanes (orchestrator 00:57Z):** same-stage held goals — SHORT 11/16, 11/16, 11/16; guided-FROZEN control 11/16, 11/16, 11/16; UNPARENTED 11/16, 8/16, 11/16, C3 11/16; W0/W8/audit 16/16 in every completed readout; SHORT/FROZEN C1+C2 each 0 rows / 0 updates, C2 raw traces identical 16/16 tasks, both-goal success 4/8 worlds each; LONG C1 2 admitted rows / 28 updates, held result pending. Orchestrator: "SHORT's absence of actual consolidation persists for two cycles; LONG now realizes a guided treatment but no measured benefit yet … parallel new rich bootstrap pilot tests a different supply/learning bottleneck." Freed slot assigned to a fresh-context worker (Popper). **Watcher reading:** under the short parent the rows never pass the gate, so nothing is slept — a supply/gate problem exactly where P60's fallback clause pointed; the rich-math pilot is the right next test because SEQ-275/276 show that supply clears the gate.
+
+**MATH-SCALE (00:47Z terminal collection):** attempted 1,024/1,024; initial rich oracle successes 960/1,024; conditional NEW oracle 952/960; learner calls 1,984/2,048; partial author-qualified targets 420 = 143 rich + 277 NEW (740 texts / 384 questions reviewed); reviewed gold 348 valid / 32 ambiguous / 4 invalid; fits 0. Node 2 GPUs 4–7 released and re-assigned to the pilot. Review continues to 03:17Z; a fit needs fresh allocation.
+
+**Fleet:** node 1 (a40r) 0/8 ready, ovx 4/8, ovx2 8/8, a100 5/8 — 17 of 32 busy. VM: memory 2.3 GB available, swap full, root 2.0 GB, /data 12 GB; reader 00:55 slot rc=0; no approvals pending; both sessions alive. Laptop chains 3 (the a40r onboarding chain finished rc=0; courier, lease hunter, ovx3 onboarding timer remain). Nothing launched or killed by the watcher.

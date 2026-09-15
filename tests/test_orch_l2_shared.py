@@ -2,15 +2,29 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from types import SimpleNamespace
 
 from organism_v6 import orch_l2_shared as shared
 from organism_v6 import orch_l2_guided as guided
 from organism_v6 import orch_full_rich as rich
 from organism_v6.experienced_event_goal_replay_layout import GoalReplayLayout
 from gpu import orch_l2_shared_run as run
+from gpu import orch_l2_shared_guard as guard
 
 
 class SharedTests(unittest.TestCase):
+    def test_only_transient_transport_scans_are_retryable(self):
+        result = SimpleNamespace(returncode=1, stdout=json.dumps(dict(owners=[],
+            unresolved=[dict(comm='sshd'), dict(comm='sftp-server')])))
+        self.assertTrue(guard.transient_transport_scan(result))
+        for report in (dict(owners=[1], unresolved=[dict(comm='sshd')]),
+                       dict(owners=[], unresolved=[dict(comm='python')]),
+                       dict(owners=[], unresolved=[])):
+            result.stdout = json.dumps(report)
+            self.assertFalse(guard.transient_transport_scan(result))
+        result.stdout = 'not json'
+        self.assertFalse(guard.transient_transport_scan(result))
+
     def setUp(self):
         self.cohort = shared.cohort([])
         self.world = self.cohort['train'][0][0]

@@ -1,0 +1,396 @@
+{
+  "gold": [
+    {
+      "independent_answer": "160",
+      "question_sha256": "da974d9282e2d4d7a54f3ba490e84582c87e50e3ebeecac536aee5a6651208aa",
+      "reason": "The subsidized employee costs 22 - 6 = 16 dollars per hour, which is 4 dollars per hour cheaper than 20 dollars per hour. Over 40 hours, the savings are 4 \u00d7 40 = 160 dollars.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6397"
+    },
+    {
+      "independent_answer": "underdetermined",
+      "question_sha256": "5b8a1e1b353b90511059a81d0247a5c54e0d6e70425e3598a3167fdc9ce7b1d0",
+      "reason": "Housesitting earns 15 \u00d7 10 = 150 dollars. Dog walking is paid at 22 dollars per hour, but the question gives three dogs rather than the number of dog-walking hours. The gold 216 assumes one hour per dog, which is not stated.",
+      "status": "AMBIGUOUS",
+      "task_id": "gsm8k-train-1977"
+    },
+    {
+      "independent_answer": "567",
+      "question_sha256": "bb949d2f6df0004a8ad590d83f58fe0f64416860c0ffb7c2c4616fce6206df2b",
+      "reason": "Mowing earns 6 \u00d7 63 = 378 dollars, weed pulling earns 11 \u00d7 9 = 99 dollars, and mulching earns 9 \u00d7 10 = 90 dollars. Their sum is 378 + 99 + 90 = 567.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-990"
+    },
+    {
+      "independent_answer": "700",
+      "question_sha256": "d5bdc882e9b37aa267eb6d311e3902edac5fff2f26239e83d4193bbce2beb149",
+      "reason": "The father's hole is 4 \u00d7 400 = 1600 feet deep. Michael's target depth is 2 \u00d7 1600 - 400 = 2800 feet, requiring 2800 \u00f7 4 = 700 hours at the same rate.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-1885"
+    },
+    {
+      "independent_answer": "350",
+      "question_sha256": "481a11f8f17baa3d974d840ba4d9a7251b040ee2461d11081bf7602bc407606a",
+      "reason": "John descends 10 \u00d7 5 = 50 feet, so his new elevation is 400 - 50 = 350 feet.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-3716"
+    },
+    {
+      "independent_answer": "2",
+      "question_sha256": "f6ac7af8444f6c6d2f694351d277e017f95d9c7f41ec5bc165cd6be1f258bde7",
+      "reason": "The files total 80 + 90 + 70 = 240 megabits. At 2 megabits per minute they take 240 \u00f7 2 = 120 minutes, and 120 \u00f7 60 = 2 hours.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-5981"
+    },
+    {
+      "independent_answer": "5",
+      "question_sha256": "bfd8953fc5f32d178906d74abe0ee381c1a39253947bab032b0d165babb92783",
+      "reason": "Two dozen is 24 eggs, so their combined rate is 24 + 10 = 34 eggs per hour. Decorating 170 eggs therefore takes 170 \u00f7 34 = 5 hours.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6069"
+    },
+    {
+      "independent_answer": "approximately 48",
+      "question_sha256": "de79846d174929ea6bbc88ca836f0289c7b717fd8e8c4fea8daa36004451d27b",
+      "reason": "Using one hour as the estimate for each mitten gives 2 + 3 + 6 + 2 \u00d7 1 + 2 \u00d7 1.5 = 16 hours per set and 16 \u00d7 3 = 48 hours. However, the mitten time is only stated as 'about an hour,' so an exact total of 48 is not unambiguously determined.",
+      "status": "AMBIGUOUS",
+      "task_id": "gsm8k-train-4864"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "let's calculate the weekly cost for each employee",
+        "800 \\text{ dollars/week} - 640 \\text{ dollars/week} = 160 \\text{ dollars/week}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6397:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the stated rates, subsidy, and hours; its plural operational account and arithmetic are directly verifiable without any claimed external event.",
+      "raw_call_sha256": "f4bdccba3f1dcc1a52d660940cf8c63d21ef23e46324e753c12e283a518faa86",
+      "reason": "It applies the subsidy to obtain 16 dollars per hour, computes weekly costs of 800 and 640 dollars, and subtracts them to obtain 160. The 'let's calculate' and 'we find' language supplies a substantive first-person operational account.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "036aadf6f040e7f2455f174736c212dabc9d963bb931e14b614c352fb6adcfa3",
+      "target_sha256": "26456d342e9cb90e9890222fb499fbc497107b38cd1c4ee4fd557277add3cd39"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the weekly cost for each employee",
+        "(22 - 6) \\text{ dollars/hour} \\times 40 \\text{ hours/week}",
+        "800 \\text{ dollars/week} - 640 \\text{ dollars/week} = 160 \\text{ dollars/week}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6397:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The problem and prior neutral solution support every quantity. The statement that the writer rechecked the displayed arithmetic is a self-check, not an unsupported external-checker claim.",
+      "raw_call_sha256": "b94c7edb161c67364593fa995fdf91869d003a578f9da9de26789bd5d7744a1a",
+      "reason": "The response gives a first-person account of subtracting the subsidy, multiplying each net rate by 40 hours, and comparing the two weekly costs. It also identifies when the weekly-cost operation applies and includes concrete numerical checks.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3367471fb7b05f73fc70fe162becc28fc785220e66899960b18a160041058b30",
+      "target_sha256": "f2ae7b78539df66857729afe49641b726154142c4b9a077cf0df8331068597c6"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I'll assume he walks each dog for 1 hour",
+        "22 \\, \\text{dollars/hour} \\times 3 \\, \\text{dogs} \\times 1 \\, \\text{hour/dog} = 66 \\, \\text{dollars}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-1977:rich",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix does not state one hour of walking per dog. Transparently labeling that value an assumption does not make the resulting 66-dollar dog-walking income or 216-dollar total entailed by the supplied facts.",
+      "raw_call_sha256": "256e699c0f9b55c73414c3d3e6876e5533c815c626305564ed1cd4c54d44301d",
+      "reason": "The housesitting calculation 15 \u00d7 10 = 150 is valid, and the target gives a substantive first-person assumption and concrete arithmetic. However, its dog-walking calculation invents one hour per dog, so the material operation and final total are not grounded.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "1da579691cfe29b29abf81ce2bac47dfbd03c97fa8f11626e3d6fcb2177c41d5",
+      "target_sha256": "aa361ad669c7d3518ff2f3aa84b4f86f8bc4df64cedd1242162efb7181b94140"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "assuming each dog walk is for 1 hour",
+        "I calculated the earnings from dog walking",
+        "150 \\, \\text{dollars} + 66 \\, \\text{dollars} = 216 \\, \\text{dollars}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-1977:new_record",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "Neither the original question nor the earlier assistant answer establishes a one-hour duration per dog; the earlier answer itself calls it an assumption. Thus the target's 216-dollar conclusion is not supportable from the neutral history.",
+      "raw_call_sha256": "72d21d20da1094d1fabbf4f8fc805988a91819d36e10f2019f3b64e48509ac05",
+      "reason": "The response provides an own operational account and checkable calculations, but it treats an unstated one-hour-per-dog assumption as the basis for 66 dollars of dog-walking income. That makes the material computation ungrounded despite correct arithmetic conditional on the assumption.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "fb40d94b44a7167ac68243118eb7e33a1e9a22947756b1edf6cf05f48c501d83",
+      "target_sha256": "26696d841643012cff69f2677b8e1109e63863a43cd3767adf3dd128edd1329e"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculate the earnings for each task",
+        "63 hours * $6/hour = $378",
+        "$378 + $99 + $90 = $567"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-990:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All rates and hours come from the question, and each displayed multiplication and the final sum are independently verifiable. No external event or feedback is claimed.",
+      "raw_call_sha256": "3c8e103994d1a000e4d396854b31d121242ef22f7da89a922aa2d54f4b33d8e1",
+      "reason": "The response personally applies rate-times-hours to all three jobs, obtains 378, 99, and 90 dollars, and checks their sum as 567. Those task-specific operations are reusable for aggregating earnings.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f604740dba9075911a29fe8447301a6ae4d832ff97f5e6934feee5cb148e7fde",
+      "target_sha256": "6569a82a3df407f64be085d77120f03ef65fa1ef9461f712d770949b9dc2b6d6"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the earnings for each task separately",
+        "$6 * 63 = $378",
+        "$378 + $99 + $90 = $567"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-990:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The neutral history supplies the rates and hours, while the target visibly derives and self-checks the earnings. Its checking statement does not invoke an external checker.",
+      "raw_call_sha256": "c080480c9e9004b1e4e5cda8aac69ea07a3b15dfeffbd9b36d656613b834ca4c",
+      "reason": "It gives a substantive first-person calculation of each rate-times-hours product and then adds the three earnings. The displayed intermediates make the expected roles and total checkable, and the reuse explanation is specific to rate-and-quantity totals.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "494e54539b794200b90e717428ea43e480d79e25667f858f836c9dffed5a188d",
+      "target_sha256": "06741b075a25f9f090895ffa4e36f89fe7cdcdc5ba8f58b37055c2b4cb75a885"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculate the depth of Michael's hole",
+        "4 \\text{ feet/hour} \\times 400 \\text{ hours} = 1600 \\text{ feet}",
+        "\\frac{2800 \\text{ feet}}{4 \\text{ feet/hour}} = 700 \\text{ hours}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1885:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the stated rate, time, same-rate condition, and depth relationship. Every calculation is explicit and no hidden guidance or external observation is asserted.",
+      "raw_call_sha256": "49c58b44ed6c519ddfb3035e5ad90141eaeec86a60840a919d37a1b4e3025070",
+      "reason": "The response personally computes the father's depth as 1600 feet, Michael's target as 2800 feet, and the required time as 700 hours. These intermediates are concrete expectations and demonstrate reusable rate-distance-time operations.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "dbc8a2fd084a5eca178b18eece7035403e5e621992872c852b23834b575b944a",
+      "target_sha256": "eb8e45408d284494f793c7965fb647be5a053b6dedd46d66d004b00b24e22a3f"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "which I used to calculate the depth of his hole",
+        "2 \\times 1600 \\text{ feet} = 3200 \\text{ feet}",
+        "\\frac{2800 \\text{ feet}}{4 \\text{ feet/hour}} = 700 \\text{ hours}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1885:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All facts and relationships are present in the question and prior neutral solution. The target's step-by-step check is a supportable self-check of displayed arithmetic, not a claim about outside feedback.",
+      "raw_call_sha256": "8a1ccb8bc1826e46ad4266a129b9493363611d56798ae3c71d5c34a694b4eb7e",
+      "reason": "The response supplies an own account of converting rate and time to depth, applying the twice-minus-400 relationship, and dividing by Michael's rate. Its numerical stages and task-specific rate/depth reuse explanation are correct and checkable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e38d908b844a3c5f3044ae48b79cde1076982c29387a223c4fb5ac18e919f264",
+      "target_sha256": "b0d5b507a752643e1ca64c10912e9749d63b928410c776dda2201d68df3cb563"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the total descent, multiply the rate by the time",
+        "10 feet/minute * 5 minutes = 50 feet",
+        "400 feet - 50 feet = 350 feet"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3716:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The arithmetic and facts are fully supported by the question, with no external-event claim. Prefix compatibility is unaffected by the separate absence of a first-person operational account.",
+      "raw_call_sha256": "1574eb4945539cba8bd44fa3431c7b90502fa921fb6515972fbd3f16b2343a6f",
+      "reason": "The rate-times-time calculation and subtraction are correct and provide concrete, reusable expectations. However, the response is entirely impersonal, using instructions such as 'multiply' and 'Subtract' rather than giving an own account of choosing or applying the operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "53a31df826046a108c59de89b1018bb2b388b66f14857ca696baa3b5872a3043",
+      "target_sha256": "6c294a6c0d550d3b3539f3686cf60dbb60d182c39bba02a174d6ac5fd398bd03"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the total descent",
+        "10 \\, \\text{feet/minute} \\times 5 \\, \\text{minutes} = 50 \\, \\text{feet}",
+        "400 \\, \\text{feet} - 50 \\, \\text{feet} = 350 \\, \\text{feet}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3716:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target derives all quantities from the supplied starting elevation, rate, and time. Its verification is a self-check of the shown products and difference, with no unsupported checker event.",
+      "raw_call_sha256": "ea88a524ed7022d0d71049925e3634f2021bff0c0311bd35635917cf76e4b0aa",
+      "reason": "It gives a substantive first-person account of multiplying descent rate by time and subtracting the result from starting elevation. Both the 50-foot descent and 350-foot final elevation are concrete checks, and the stated method is reusable for constant-rate descent.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e7086ceb1543878af6bc5607418bbb54dec753b1a3e4fa68c946aba81da308fd",
+      "target_sha256": "1dd479512e04c5b4bde66fab8480f3a0c6958927f70d0902982696e1c9a5cc5b"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculate the total size of the files",
+        "80 + 90 + 70 = 240 megabits",
+        "120 minutes / 60 minutes per hour = 2 hours"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5981:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The file sizes, speed, and requested unit all come from the question, and the target's sum, rate division, and unit conversion are explicitly verifiable.",
+      "raw_call_sha256": "213af252a9c83df9b461ce778a7352deecb6f98162a90fe96dd40258a0ac7008",
+      "reason": "The response personally sums the files to 240 megabits, divides by 2 megabits per minute to obtain 120 minutes, and converts that to 2 hours. The numerical stages are checkable and illustrate a reusable size-over-speed calculation plus unit conversion.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "dbe5385a634b19e75e8a6391f26e6e6694761919b9b5ba2218547d929f1c3de6",
+      "target_sha256": "9c079dbc820561e5edee68d7bd1a652ea1cbce3c9ef93dc91be2e53b063389a6"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the total size of the files",
+        "240 megabits / 2 megabits per minute = 120 minutes",
+        "120 minutes / 60 minutes per hour = 2 hours"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5981:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every input is supplied in the neutral history, and the target's confirmation refers to its own visibly correct calculations rather than an unsupported external result.",
+      "raw_call_sha256": "14629a2ff295c1bf88893e46c6e05fbf9b20597e11663778e63ecca60e103a3b",
+      "reason": "It provides an own account of summing sizes, dividing size by download rate, and converting minutes to hours. The 240-megabit, 120-minute, and 2-hour expectations are concrete, and the response explicitly identifies when the operations can be reused.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "10dff429b493529a9fb1ff6e54629d55bc7ed1f9c9322b5c9453f2164907a788",
+      "target_sha256": "3335e2bb49665f51bc4601f8ce0c1229cc57623fb4b6091b22be7324250a1c79"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculate their combined rate",
+        "Combined rate: 24 + 10 = 34 eggs/hour",
+        "5 * 34 = 170 eggs, which matches the total needed"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6069:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The dozen conversion, both rates, and total are supplied or valid arithmetic consequences of the question. The inverse multiplication check is shown directly and claims no outside feedback.",
+      "raw_call_sha256": "507bd6cfe2acc97ede7feca0786cbd53ca2e128fd15c6bc1b23ed60bb3774380",
+      "reason": "The response personally converts two dozen to 24, combines rates to get 34 eggs per hour, divides 170 by 34, and independently checks that 5 \u00d7 34 = 170. This is a correct reusable combined-work-rate method.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f264ac164d4cf4b488df42908e6d599b2decbc1735a1e8ee9b8e506c5b922e33",
+      "target_sha256": "c3044d3b6fe53ea2da79a5475f0a003e6e2ff252965e4700c9962b7d365819e9"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I needed to first determine their combined rate",
+        "24 \\text{ eggs/hour} + 10 \\text{ eggs/hour} = 34 \\text{ eggs/hour}",
+        "34 \\text{ eggs/hour} \\times 5 \\text{ hours} = 170 \\text{ eggs}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6069:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The neutral history supplies all task facts, and the target's claim of confirmation is backed by its explicit inverse calculation rather than any hidden checker.",
+      "raw_call_sha256": "8d4f10f0cc9dbbd16f86a2b1ec880ee842b6b1703989b24d0f69b4a3fb31838d",
+      "reason": "It gives a first-person operational account of adding compatible work rates and dividing total work by the combined rate. The inverse check 34 \u00d7 5 = 170 is concrete, and the response explains that combining rates applies when multiple workers act together.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "0105beb76ed48089e24ade3ffec7fdf9cd185c7201df566f256728b1e091d309",
+      "target_sha256": "56ea8624f0ae77d32537fb3051a7bc56fe4e8b4349cf12b28326ea35dba72cf2"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Each mitten takes her about an hour to knit",
+        "Mittens (2): 1 hour each, so 2 hours total",
+        "16 hours/set * 3 sets = 48 hours"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-4864:rich",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The question supplies only an approximate mitten duration, but the target silently converts it into an exact one hour per mitten and an exact 48-hour total. That exact claim is not fully supportable from the neutral prefix.",
+      "raw_call_sha256": "36fb70e9613594aea30692f3b0ce04c67183979259d5d6869cda483119139c78",
+      "reason": "The response gives a substantive first-person calculation and a checkable estimate: using one hour per mitten yields 16 hours per outfit and 48 hours for three. It fails grounding because it drops the word 'about' and presents that estimate as an exact total.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "3859bfaac316a290cb5a2bd7895fa5b798b74e154eec69d8358080fc5acf232d",
+      "target_sha256": "cd4af1fb79cba3d66a82a7255ddbb61834f4ae64e52db5e0a65a25445da29c7d"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Mittens (2): 1 hour each, so 2 hours total",
+        "I summed the individual times",
+        "16 hours/set * 3 sets = 48 hours"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-4864:new_record",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "Although the earlier assistant message also used one hour exactly, it cannot cure the original question's approximate 'about an hour' fact. The current target's exact 48-hour assertion therefore is not entailed by the neutral history.",
+      "raw_call_sha256": "0bf657775f953191688d00ccfc69362556c2670e3160f36bf3ae7e55e0b8d95b",
+      "reason": "It supplies a first-person account, concrete arithmetic, and a reusable method of totaling one set and multiplying by the number of sets. However, it treats the approximate mitten duration as exactly one hour and consequently states 48 hours exactly, so the material conclusion is not fully grounded.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "1ce5425afa1e556f8462b2279a43c329e1be232b29f0f7a09ddee9e4a49257b4",
+      "target_sha256": "3439ece674fa54f7019a2ae0fbf9d41f90f2f4daa52af30a9155a7384f680a5b"
+    }
+  ]
+}

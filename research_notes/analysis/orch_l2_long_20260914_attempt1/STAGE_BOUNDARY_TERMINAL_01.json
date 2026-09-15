@@ -1,0 +1,98 @@
+{
+  "assigned_gpu_hours": 0.33069377654128607,
+  "elapsed_seconds": 974.286600112915,
+  "error": {
+    "message": "physical1_admission_not_clear",
+    "type": "RuntimeError"
+  },
+  "finished_unix": 1789433016.8946242,
+  "stages": [
+    {
+      "command": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-m",
+        "gpu.orch_l2_shared_run",
+        "--root",
+        "/tmp/orch_l2_shared_20260914_attempt1",
+        "--arm",
+        "LONG",
+        "--cycle",
+        "1",
+        "--phase",
+        "experience",
+        "--resume-experience"
+      ],
+      "completion_sha256": "846b0bee93c71aeb12882a6890fa4457401783a711142b6d0bba571c84da9d1d",
+      "cycle": 1,
+      "elapsed_seconds": 643.893280506134,
+      "exit_code": 0,
+      "gpu_uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b",
+      "phase": "experience",
+      "process": {
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "pgid": 212275,
+        "pid": 212275,
+        "start_ticks": "15319604"
+      },
+      "started_unix": 1789432042.8577294
+    },
+    {
+      "command": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-m",
+        "gpu.orch_l2_shared_run",
+        "--root",
+        "/tmp/orch_l2_shared_20260914_attempt1",
+        "--arm",
+        "LONG",
+        "--cycle",
+        "0",
+        "--phase",
+        "readout"
+      ],
+      "completion_sha256": "518d40505ffb904cbf9943e038f1516e3da83ddc6c6e8fa82484c2a640eaa066",
+      "cycle": 0,
+      "elapsed_seconds": 213.05160403251648,
+      "exit_code": 0,
+      "gpu_uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b",
+      "phase": "readout",
+      "process": {
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "pgid": 220215,
+        "pid": 220215,
+        "start_ticks": "15384020"
+      },
+      "started_unix": 1789432687.009318
+    },
+    {
+      "command": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-m",
+        "gpu.orch_l2_shared_run",
+        "--root",
+        "/tmp/orch_l2_shared_20260914_attempt1",
+        "--arm",
+        "LONG",
+        "--cycle",
+        "1",
+        "--phase",
+        "sleep"
+      ],
+      "completion_sha256": "aef48ad4c54d8abf29cd9356f4777c730e6811439cad78d384a9e8836b9ddd89",
+      "cycle": 1,
+      "elapsed_seconds": 116.33338332176208,
+      "exit_code": 0,
+      "gpu_uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b",
+      "phase": "sleep",
+      "process": {
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "pgid": 222428,
+        "pid": 222428,
+        "start_ticks": "15405351"
+      },
+      "started_unix": 1789432900.321709
+    }
+  ],
+  "status": "FAILED",
+  "unknown_process_signals": 0
+}

@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "30",
+    "question": "Nate got lost looking for his car in the airport parking lot. He had to walk through every row in Section G and Section H to find it. Section G has 15 rows that each hold 10 cars. Section H has 20 rows that each hold 9 cars. If Nate can walk past 11 cars per minute, how many minutes did he spend searching the parking lot?",
+    "question_sha256": "4a074d14b2d01143a39fa0c3c0a35f6038a4a0745b4cb3b5edec00e82910dd45",
+    "responses": [
+      {
+        "key": "gsm8k-train-254:rich",
+        "raw_call_sha256": "33805d0fa36efafde91167be9478d8508f506a21d87801add2d8cd6e43f7a2fe",
+        "student_prefix": [
+          {
+            "content": "Nate got lost looking for his car in the airport parking lot. He had to walk through every row in Section G and Section H to find it. Section G has 15 rows that each hold 10 cars. Section H has 20 rows that each hold 9 cars. If Nate can walk past 11 cars per minute, how many minutes did he spend searching the parking lot?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "5ea11561f3690605186dc2f2628baa588768a00e9d6a6b599d9cfc9353128a98",
+        "target": "First, I calculate the total number of cars in Section G. There are 15 rows with 10 cars each, so 15 * 10 = 150 cars. Next, I calculate the total number of cars in Section H. There are 20 rows with 9 cars each, so 20 * 9 = 180 cars. Adding these together, the total number of cars in both sections is 150 + 180 = 330 cars. Since Nate walks past 11 cars per minute, the time he spends walking past all the cars is 330 / 11 = 30 minutes. \n\nFINAL: 30",
+        "target_sha256": "eb50e6b4662bd6838594c6130ba732093dc92f4ddba6ae2d7bf649db813bfc0a"
+      },
+      {
+        "key": "gsm8k-train-254:new_record",
+        "raw_call_sha256": "15bae97b327d9e4eb000337d773ee32097643f9947dda2007ccb061ff9484c5f",
+        "student_prefix": [
+          {
+            "content": "Nate got lost looking for his car in the airport parking lot. He had to walk through every row in Section G and Section H to find it. Section G has 15 rows that each hold 10 cars. Section H has 20 rows that each hold 9 cars. If Nate can walk past 11 cars per minute, how many minutes did he spend searching the parking lot?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the total number of cars in Section G. There are 15 rows with 10 cars each, so 15 * 10 = 150 cars. Next, I calculate the total number of cars in Section H. There are 20 rows with 9 cars each, so 20 * 9 = 180 cars. Adding these together, the total number of cars in both sections is 150 + 180 = 330 cars. Since Nate walks past 11 cars per minute, the time he spends walking past all the cars is 330 / 11 = 30 minutes. \n\nFINAL: 30",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4f12edaa09aa76f84d724ff760d9850198724e91611cfae5bca83ed9cdf145a4",
+        "target": "Given the problem, I identified the key quantities: the number of rows and cars per row in Sections G and H, and the rate at which Nate can walk past cars. The unknown was the total time Nate spent searching the parking lot.\n\nFirst, I calculated the total number of cars in Section G. Section G has 15 rows with 10 cars each, so I multiplied 15 by 10, which gave me 150 cars. This was a straightforward multiplication based on the given information.\n\nNext, I calculated the total number of cars in Section H. Section H has 20 rows with 9 cars each, so I multiplied 20 by 9, which resulted in 180 cars. Again, this was a simple multiplication.\n\nAdding these two totals together, I found the overall number of cars Nate had to walk past: 150 cars in Section G plus 180 cars in Section H, which sums to 330 cars. This step involved adding the two previous results.\n\nKnowing that Nate can walk past 11 cars per minute, I then divided the total number of cars (330) by the rate (11 cars per minute) to find the total time spent searching. This division, 330 / 11, gave me 30 minutes. I expected this result to mean the total time Nate spent walking through the parking lot, as it directly relates to the number of cars and his walking rate.\n\nTo check this result, I considered that if Nate walks past 11 cars per minute and there are 330 cars in total, the time should be 330 / 11 = 30 minutes. This check aligns with the problem statement and confirms the calculation.\n\nThe operation I would reuse is the calculation of total cars by multiplying the number of rows by the number of cars per row, and then dividing the total number of cars by the rate of walking past cars to find the time spent. This operation is reusable in similar problems involving linear search rates and fixed quantities.\n\nFINAL: 30",
+        "target_sha256": "ca5d4edd857752f6bf00785cd879d578cab3676e74f04b34b6750400c97531c8"
+      }
+    ],
+    "task_id": "gsm8k-train-254"
+  },
+  {
+    "gold": "120",
+    "question": "Jack makes his own cold brew coffee.  He makes it in batches of 1.5 gallons.  He drinks 96 ounces of coffee every 2 days.  It takes 20 hours to make coffee.  How long does he spend making coffee over 24 days?",
+    "question_sha256": "95092211cd8e3d77aae61f74f850f662dba3758bdea9ee64ece89caf27b9c410",
+    "responses": [
+      {
+        "key": "gsm8k-train-2546:rich",
+        "raw_call_sha256": "fff42c794be781ae430b7d802e3e70ffb73626508491cd8465a7e3a624794b36",
+        "student_prefix": [
+          {
+            "content": "Jack makes his own cold brew coffee.  He makes it in batches of 1.5 gallons.  He drinks 96 ounces of coffee every 2 days.  It takes 20 hours to make coffee.  How long does he spend making coffee over 24 days?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ba8d2c4be05690b36103b5e14d4497c779692284dbdbd6b2354bc86e4a6dcf6b",
+        "target": "First, I identify the given quantities:\n- Batch size: 1.5 gallons\n- Consumption: 96 ounces every 2 days\n- Preparation time: 20 hours per batch\n- Time period: 24 days\n\nNext, I determine the unknown: how long Jack spends making coffee over 24 days.\n\nTo solve this, I need to find out how many batches Jack needs to make in 24 days and then multiply that by the preparation time.\n\n1. Convert the batch size to ounces: 1.5 gallons = 1.5 * 128 ounces = 192 ounces\n2. Calculate daily consumption: 96 ounces / 2 days = 48 ounces per day\n3. Calculate total consumption over 24 days: 48 ounces/day * 24 days = 1152 ounces\n4. Calculate the number of batches needed: 1152 ounces / 192 ounces/batch = 6 batches\n5. Calculate total preparation time: 6 batches * 20 hours/batch = 120 hours\n\nSo, Jack spends 120 hours making coffee over 24 days.\n\nFINAL: 120",
+        "target_sha256": "72a0085d03cb9a9d9e239062fb8f885b4059f55cf57a4c4ff87b2972f8f3cb27"
+      },
+      {
+        "key": "gsm8k-train-2546:new_record",
+        "raw_call_sha256": "7b1b9c6a25d814adf11c75cd912106634de6071c87b98356a5c1cf1f4c814558",
+        "student_prefix": [
+          {
+            "content": "Jack makes his own cold brew coffee.  He makes it in batches of 1.5 gallons.  He drinks 96 ounces of coffee every 2 days.  It takes 20 hours to make coffee.  How long does he spend making coffee over 24 days?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Batch size: 1.5 gallons\n- Consumption: 96 ounces every 2 days\n- Preparation time: 20 hours per batch\n- Time period: 24 days\n\nNext, I determine the unknown: how long Jack spends making coffee over 24 days.\n\nTo solve this, I need to find out how many batches Jack needs to make in 24 days and then multiply that by the preparation time.\n\n1. Convert the batch size to ounces: 1.5 gallons = 1.5 * 128 ounces = 192 ounces\n2. Calculate daily consumption: 96 ounces / 2 days = 48 ounces per day\n3. Calculate total consumption over 24 days: 48 ounces/day * 24 days = 1152 ounces\n4. Calculate the number of batches needed: 1152 ounces / 192 ounces/batch = 6 batches\n5. Calculate total preparation time: 6 batches * 20 hours/batch = 120 hours\n\nSo, Jack spends 120 hours making coffee over 24 days.\n\nFINAL: 120",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "b6646be7c5147377942f1dc228ef26d3cff93087e0d1e36895005f45fcf75d67",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Batch size: 1.5 gallons\n- Consumption: 96 ounces every 2 days\n- Preparation time: 20 hours per batch\n- Time period: 24 days\n\nThe unknown is the total time Jack spends making coffee over 24 days.\n\nTo solve this, I first converted the batch size to ounces:\n1.5 gallons = 1.5 * 128 ounces = 192 ounces\n\nNext, I calculated the daily consumption:\n96 ounces / 2 days = 48 ounces per day\n\nThen, I determined the total consumption over 24 days:\n48 ounces/day * 24 days = 1152 ounces\n\nUsing the batch size in ounces, I calculated the number of batches needed:\n1152 ounces / 192 ounces/batch = 6 batches\n\nFinally, I calculated the total preparation time:\n6 batches * 20 hours/batch = 120 hours\n\nTo check the result, I verified that the total consumption (1152 ounces) divided by the daily consumption (48 ounces/day) equals 24 days, and that the number of batches (6) multiplied by the preparation time per batch (20 hours) equals 120 hours.\n\nThe operations I used are:\n1. Conversion from gallons to ounces\n2. Calculation of daily consumption\n3. Calculation of total consumption over 24 days\n4. Calculation of the number of batches needed\n5. Calculation of total preparation time\n\nI would reuse these operations in similar problems involving batch production, consumption rates, and time calculations.\n\nFINAL: 120",
+        "target_sha256": "19f0f8f8ecb3c25759660e8c9cc3fb6f9168195261cc96e85c6d01d6060d987d"
+      }
+    ],
+    "task_id": "gsm8k-train-2546"
+  },
+  {
+    "gold": "10",
+    "question": "A hot dog stand sells 10 hot dogs every hour, each one selling for $2.  How many hours does the stand need to run to make $200 in sales?",
+    "question_sha256": "0cdc42fbd5e17400e44ba8be03a8a148a1da7e300e5d6a4f42fb3e6c49957436",
+    "responses": [
+      {
+        "key": "gsm8k-train-1099:rich",
+        "raw_call_sha256": "8119fb0883770d6fb7344ac537d31ef9bfd2e284ae0ce3e5448b409e5a229d40",
+        "student_prefix": [
+          {
+            "content": "A hot dog stand sells 10 hot dogs every hour, each one selling for $2.  How many hours does the stand need to run to make $200 in sales?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d72c6d5eb88f9727f1d083073ef3a0f75e186a3522c2ad39f3742a8a0495ee8d",
+        "target": "Given:\n- The stand sells 10 hot dogs every hour.\n- Each hot dog sells for $2.\n- The goal is to make $200 in sales.\n\nTo find the number of hours needed, first calculate the revenue per hour:\n- Revenue per hour = 10 hot dogs/hour * $2/hot dog = $20/hour.\n\nNow, to find the number of hours needed to make $200:\n- Total hours needed = $200 / $20/hour = 10 hours.\n\nFINAL: 10",
+        "target_sha256": "40abac90caccf56e0305912c0192c9bc0d1c982e828e18d884868fbb67819f0d"
+      },
+      {
+        "key": "gsm8k-train-1099:new_record",
+        "raw_call_sha256": "a8258738eb3c84b69773e1acf4484a359d24d4bd46757024c36ee2125eff5f7a",
+        "student_prefix": [
+          {
+            "content": "A hot dog stand sells 10 hot dogs every hour, each one selling for $2.  How many hours does the stand need to run to make $200 in sales?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- The stand sells 10 hot dogs every hour.\n- Each hot dog sells for $2.\n- The goal is to make $200 in sales.\n\nTo find the number of hours needed, first calculate the revenue per hour:\n- Revenue per hour = 10 hot dogs/hour * $2/hot dog = $20/hour.\n\nNow, to find the number of hours needed to make $200:\n- Total hours needed = $200 / $20/hour = 10 hours.\n\nFINAL: 10",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "64364f2954906cab098525fc6c038c9e55a19e4196448cc98139e301d2a748fe",
+        "target": "Given the problem, I identified the key quantities: the stand sells 10 hot dogs every hour, each for $2, and the goal is to make $200 in sales. The unknown I needed to find was the number of hours the stand needs to run to achieve this goal.\n\nFirst, I calculated the revenue per hour. I knew that each hot dog sells for $2 and the stand sells 10 hot dogs every hour. Therefore, the revenue per hour is:\n\\[ 10 \\text{ hot dogs/hour} \\times \\$2/\\text{hot dog} = \\$20/\\text{hour} \\]\n\nNext, I needed to determine how many hours are required to make $200. I used the formula:\n\\[ \\text{Number of hours} = \\frac{\\text{Total sales goal}}{\\text{Revenue per hour}} = \\frac{\\$200}{\\$20/\\text{hour}} = 10 \\text{ hours} \\]\n\nTo verify this result, I checked if running the stand for 10 hours would indeed yield $200 in sales. If the stand sells 10 hot dogs every hour and each hot dog is sold for $2, then in 10 hours, the total sales would be:\n\\[ 10 \\text{ hours} \\times 10 \\text{ hot dogs/hour} \\times \\$2/\\text{hot dog} = \\$200 \\]\n\nThis matches the goal of $200 in sales, confirming my calculation.\n\nThe operation I would reuse is the calculation of revenue per hour and the division to find the number of hours needed to reach a specific sales goal. This can be applied to similar problems where the rate of sales and the total sales goal are known.\n\nFINAL: 10",
+        "target_sha256": "573c942e4ccb6e84e769aee99a75196ffd8ef3d83d88a73560de405271fb6829"
+      }
+    ],
+    "task_id": "gsm8k-train-1099"
+  },
+  {
+    "gold": "32",
+    "question": "Ellis is going to take a road trip with her family. First, she needs to figure out how many bottles of water she should bring for everyone. There will be four people total: Ellis, her mother, her sister, and her aunt. They will be on the road to their destination for 8 hours and drive 8 hours to return home. Every hour each person will want to drink 1/2 a bottle of water. How many water bottles will Ellis' family need total?",
+    "question_sha256": "ade1f7adf9b7e63231534f180054d1637e3938dd34df0d4416cce1ef8e5fb5f0",
+    "responses": [
+      {
+        "key": "gsm8k-train-6024:rich",
+        "raw_call_sha256": "f8300e397f3c70daf18ca343aef6e0edbc4d166691f64daf0d8ecaf2ec708ec2",
+        "student_prefix": [
+          {
+            "content": "Ellis is going to take a road trip with her family. First, she needs to figure out how many bottles of water she should bring for everyone. There will be four people total: Ellis, her mother, her sister, and her aunt. They will be on the road to their destination for 8 hours and drive 8 hours to return home. Every hour each person will want to drink 1/2 a bottle of water. How many water bottles will Ellis' family need total?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "52074c210d688ef3f5bcb8ca6b1b3e69e1579427946ab93a081ae05fbe98fc59",
+        "target": "To solve this, I'll break it down step by step:\n\n1. **Total travel time**: 8 hours to the destination + 8 hours back home = 16 hours.\n2. **Water consumption per person per hour**: 1/2 a bottle.\n3. **Total people**: 4 (Ellis, her mother, her sister, and her aunt).\n4. **Water needed per person for the entire trip**: 16 hours * 1/2 bottle/hour = 8 bottles.\n5. **Total water needed for all family members**: 8 bottles/person * 4 people = 32 bottles.\n\nSo, Ellis' family will need 32 water bottles total.\n\nFINAL: 32",
+        "target_sha256": "be2daf4e364634e7002c451cd32408ac912fe032dc534bdc3762f0cc4db3dcf1"
+      },
+      {
+        "key": "gsm8k-train-6024:new_record",
+        "raw_call_sha256": "10f00e067052606b2e420ed3cf333f85e2dd3c0853dd3619f67b500d250184e7",
+        "student_prefix": [
+          {
+            "content": "Ellis is going to take a road trip with her family. First, she needs to figure out how many bottles of water she should bring for everyone. There will be four people total: Ellis, her mother, her sister, and her aunt. They will be on the road to their destination for 8 hours and drive 8 hours to return home. Every hour each person will want to drink 1/2 a bottle of water. How many water bottles will Ellis' family need total?",
+            "role": "user"
+          },
+          {
+            "content": "To solve this, I'll break it down step by step:\n\n1. **Total travel time**: 8 hours to the destination + 8 hours back home = 16 hours.\n2. **Water consumption per person per hour**: 1/2 a bottle.\n3. **Total people**: 4 (Ellis, her mother, her sister, and her aunt).\n4. **Water needed per person for the entire trip**: 16 hours * 1/2 bottle/hour = 8 bottles.\n5. **Total water needed for all family members**: 8 bottles/person * 4 people = 32 bottles.\n\nSo, Ellis' family will need 32 water bottles total.\n\nFINAL: 32",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e7a79fd9e2c0dca709b1d145168f4762c434ea84fdd4626534bc58f392d31903",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Total travel time: 16 hours (8 hours to the destination + 8 hours back home).\n- Water consumption per person per hour: 1/2 a bottle.\n- Total number of people: 4 (Ellis, her mother, her sister, and her aunt).\n\nTo find the total number of water bottles needed, I first calculated the water consumption for one person over the entire trip:\n\\[ \\text{Water per person} = 16 \\text{ hours} \\times \\frac{1}{2} \\text{ bottle/hour} = 8 \\text{ bottles} \\]\n\nNext, I multiplied this by the total number of people to find the total number of bottles needed:\n\\[ \\text{Total bottles} = 8 \\text{ bottles/person} \\times 4 \\text{ people} = 32 \\text{ bottles} \\]\n\nTo verify this, I considered the problem's constraints and the logical steps I followed. Each step was based on the given data and straightforward multiplication, ensuring the result was consistent with the problem statement.\n\nThe operations I used were:\n1. Calculate the total travel time.\n2. Determine the water consumption per person per hour.\n3. Multiply the total travel time by the water consumption per hour to get the water needed per person.\n4. Multiply the water needed per person by the total number of people to get the total number of bottles.\n\nThese operations are reusable in similar problems involving time, rate, and quantity. The result, 32 bottles, directly answers the question and aligns with the problem's requirements.\n\nFINAL: 32",
+        "target_sha256": "e436b8fdd3173a36e8dd6a7b63b53bfa9f479b72575bcbc7fe19bd23e7498f2e"
+      }
+    ],
+    "task_id": "gsm8k-train-6024"
+  },
+  {
+    "gold": "12",
+    "question": "A clerk can process 25 forms per hour. If 2400 forms must be processed in an 8-hour day, how many clerks must you hire for that day?",
+    "question_sha256": "ea61e08b35b368e60a4530f1845551dc3f8145a258db7d79e12ad14b07ec60a0",
+    "responses": [
+      {
+        "key": "gsm8k-train-1426:rich",
+        "raw_call_sha256": "877e036f439378afaf81921a01e1214039a0d949e38a72910a538bffa1bbd1e7",
+        "student_prefix": [
+          {
+            "content": "A clerk can process 25 forms per hour. If 2400 forms must be processed in an 8-hour day, how many clerks must you hire for that day?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "785044b0a23f53146ab1c432fd2d5fa758268ecc8eef521e9b1db2fa6501bb59",
+        "target": "Given:\n- A clerk can process 25 forms per hour.\n- 2400 forms must be processed in an 8-hour day.\n\nFirst, calculate how many forms one clerk can process in an 8-hour day:\n\\[ 25 \\text{ forms/hour} \\times 8 \\text{ hours} = 200 \\text{ forms/day} \\]\n\nNext, determine how many clerks are needed to process 2400 forms:\n\\[ \\frac{2400 \\text{ forms}}{200 \\text{ forms/clerk}} = 12 \\text{ clerks} \\]\n\nSo, you need to hire 12 clerks for that day.\n\nFINAL: 12",
+        "target_sha256": "de5df76d3d904afe912f14ba647612d0c45547b54002d737eee0ceef68d8c1ed"
+      },
+      {
+        "key": "gsm8k-train-1426:new_record",
+        "raw_call_sha256": "dc893f4507dc89ee810fdf6ff8d9cdc3982685ca54b923367600796d9f31c37b",
+        "student_prefix": [
+          {
+            "content": "A clerk can process 25 forms per hour. If 2400 forms must be processed in an 8-hour day, how many clerks must you hire for that day?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- A clerk can process 25 forms per hour.\n- 2400 forms must be processed in an 8-hour day.\n\nFirst, calculate how many forms one clerk can process in an 8-hour day:\n\\[ 25 \\text{ forms/hour} \\times 8 \\text{ hours} = 200 \\text{ forms/day} \\]\n\nNext, determine how many clerks are needed to process 2400 forms:\n\\[ \\frac{2400 \\text{ forms}}{200 \\text{ forms/clerk}} = 12 \\text{ clerks} \\]\n\nSo, you need to hire 12 clerks for that day.\n\nFINAL: 12",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ad7aab0c83b005eaa13f6bc8ef0e75ba9c74b50f3d73b3c354850a5abc1c2ed9",
+        "target": "Given the problem, I identified the key quantities: a clerk can process 25 forms per hour, and 2400 forms must be processed in an 8-hour day. The unknown I needed to find was the number of clerks required.\n\nFirst, I calculated the number of forms one clerk can process in an 8-hour day:\n\\[ 25 \\text{ forms/hour} \\times 8 \\text{ hours} = 200 \\text{ forms/day} \\]\n\nNext, I determined how many clerks are needed to process 2400 forms:\n\\[ \\frac{2400 \\text{ forms}}{200 \\text{ forms/clerk}} = 12 \\text{ clerks} \\]\n\nTo verify this, I checked if 12 clerks, each processing 200 forms per day, would indeed process 2400 forms:\n\\[ 12 \\text{ clerks} \\times 200 \\text{ forms/clerk} = 2400 \\text{ forms} \\]\n\nThis calculation matched the required number of forms, confirming my solution.\n\nThe operation I would reuse is the calculation of the number of forms one clerk can process in a day, and then using that to determine the number of clerks needed. This is a reusable operation because it can be applied to similar problems where the processing rate and total forms to be processed are given.\n\nFINAL: 12",
+        "target_sha256": "814330e404e35a184a37fbe1857225304c8f674b73d5b3ae5bc600b7761c2778"
+      }
+    ],
+    "task_id": "gsm8k-train-1426"
+  },
+  {
+    "gold": "20",
+    "question": "When Jason plays the video game, Duty for Ashes, his mission to slay the dragon hoard requires that he fire his weapon on average every 15 seconds.   And each time he fires his weapon, his power-fire setting allows him to shoot a flame for 5 seconds.  On average, how many seconds per minute does Jason shoot flames at the dragon hoard?",
+    "question_sha256": "2c2cbb6f060ca901a369148c7d9d51d271d914aab3f54bd12f062c1c7b021edd",
+    "responses": [
+      {
+        "key": "gsm8k-train-4225:rich",
+        "raw_call_sha256": "6e0aac777902eea7c5ec1047154887035b8eef55fc17d52aa507ba136c059226",
+        "student_prefix": [
+          {
+            "content": "When Jason plays the video game, Duty for Ashes, his mission to slay the dragon hoard requires that he fire his weapon on average every 15 seconds.   And each time he fires his weapon, his power-fire setting allows him to shoot a flame for 5 seconds.  On average, how many seconds per minute does Jason shoot flames at the dragon hoard?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "510ddc14719483b65a2b545874f316318eab00213024e09caea3cc05ec12f181",
+        "target": "Given that Jason fires his weapon every 15 seconds, we can determine how many times he fires in a minute. Since there are 60 seconds in a minute, we divide 60 by 15 to find the number of times he fires:\n\\[ \\frac{60}{15} = 4 \\]\nSo, Jason fires his weapon 4 times per minute.\n\nEach time he fires, the flame lasts for 5 seconds. Therefore, to find the total time he shoots flames per minute, we multiply the number of times he fires by the duration of each flame:\n\\[ 4 \\times 5 = 20 \\]\nSo, Jason shoots flames for 20 seconds per minute.\n\nFINAL: 20",
+        "target_sha256": "3ad04e05844e6b1458ea9718dbed6fe083c05f427746928d3e2ea62f846a0e0b"
+      },
+      {
+        "key": "gsm8k-train-4225:new_record",
+        "raw_call_sha256": "979e5112ce20654936062d1842e81dee091e1c828e130de3fe2f115ce30ce2a1",
+        "student_prefix": [
+          {
+            "content": "When Jason plays the video game, Duty for Ashes, his mission to slay the dragon hoard requires that he fire his weapon on average every 15 seconds.   And each time he fires his weapon, his power-fire setting allows him to shoot a flame for 5 seconds.  On average, how many seconds per minute does Jason shoot flames at the dragon hoard?",
+            "role": "user"
+          },
+          {
+            "content": "Given that Jason fires his weapon every 15 seconds, we can determine how many times he fires in a minute. Since there are 60 seconds in a minute, we divide 60 by 15 to find the number of times he fires:\n\\[ \\frac{60}{15} = 4 \\]\nSo, Jason fires his weapon 4 times per minute.\n\nEach time he fires, the flame lasts for 5 seconds. Therefore, to find the total time he shoots flames per minute, we multiply the number of times he fires by the duration of each flame:\n\\[ 4 \\times 5 = 20 \\]\nSo, Jason shoots flames for 20 seconds per minute.\n\nFINAL: 20",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c7a46a32a414f5bbab376f75f7122decd256724e095499a13cac8e5eef2a5260",
+        "target": "Given that Jason fires his weapon every 15 seconds, I first noted that there are 60 seconds in a minute. To find out how many times he fires in a minute, I divided 60 by 15:\n\\[ \\frac{60}{15} = 4 \\]\nThis calculation showed that Jason fires his weapon 4 times per minute. Next, I knew that each time he fires, the flame lasts for 5 seconds. To determine the total time he shoots flames per minute, I multiplied the number of times he fires by the duration of each flame:\n\\[ 4 \\times 5 = 20 \\]\nThis calculation indicated that Jason shoots flames for 20 seconds per minute. To verify this, I considered that if he fires 4 times in 60 seconds and each firing lasts 5 seconds, the total flame duration should indeed be 20 seconds. This matches the problem statement and the logical steps I followed.\n\nThe operation I would reuse is the calculation of the total flame duration per minute, which involves multiplying the number of firings per minute by the duration of each flame. This operation is reusable in similar problems where the frequency of an action and the duration of each action are given.\n\nFINAL: 20",
+        "target_sha256": "7004a205cd3bb87b20a2cd7e1eb510d808d2a6c556664b825510736a4bfcf356"
+      }
+    ],
+    "task_id": "gsm8k-train-4225"
+  },
+  {
+    "gold": "80",
+    "question": "Abigail has a report due tomorrow which needs to be 1000 words in length. Abigail can type 300 words in half an hour. If she has already written 200 words, how many more minutes will it take her to finish the report?",
+    "question_sha256": "aa1f571a0fe367fec2c11ed2e704a68ba314a60fb77225420d907ea637dddee6",
+    "responses": [
+      {
+        "key": "gsm8k-train-6236:rich",
+        "raw_call_sha256": "27e0779c1ea81105bdaf3386a742922fe309046606ef79f364883d6d2cebbef2",
+        "student_prefix": [
+          {
+            "content": "Abigail has a report due tomorrow which needs to be 1000 words in length. Abigail can type 300 words in half an hour. If she has already written 200 words, how many more minutes will it take her to finish the report?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "203c4824d753675347767fb9cdc6caa2d24c864a7dee35a1a86833e5f4be8d88",
+        "target": "Given:\n- Abigail needs to write 1000 words in total.\n- She has already written 200 words.\n- She can type 300 words in half an hour (30 minutes).\n\nFirst, calculate the remaining words she needs to write:\n1000 words - 200 words = 800 words\n\nNext, determine how many minutes it takes her to type 800 words:\n- 300 words take 30 minutes.\n- Therefore, 1 word takes 30 / 300 = 0.1 minutes.\n- So, 800 words will take 800 * 0.1 = 80 minutes.\n\nThus, it will take her 80 more minutes to finish the report.\n\nFINAL: 80",
+        "target_sha256": "637b8aec08d234522bdbb06a426b7e4062cffd23b9148c62c1c12b1f2447d4f8"
+      },
+      {
+        "key": "gsm8k-train-6236:new_record",
+        "raw_call_sha256": "047b1fa3f8640421b0268ae4008864dbfb28c5df84a72dc22cd4627e86fd1c59",
+        "student_prefix": [
+          {
+            "content": "Abigail has a report due tomorrow which needs to be 1000 words in length. Abigail can type 300 words in half an hour. If she has already written 200 words, how many more minutes will it take her to finish the report?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Abigail needs to write 1000 words in total.\n- She has already written 200 words.\n- She can type 300 words in half an hour (30 minutes).\n\nFirst, calculate the remaining words she needs to write:\n1000 words - 200 words = 800 words\n\nNext, determine how many minutes it takes her to type 800 words:\n- 300 words take 30 minutes.\n- Therefore, 1 word takes 30 / 300 = 0.1 minutes.\n- So, 800 words will take 800 * 0.1 = 80 minutes.\n\nThus, it will take her 80 more minutes to finish the report.\n\nFINAL: 80",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d0ed2182a86cf5ba9b2f3ccab373924cf1cd9bb86cad80c763bcaac738715f03",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- Abigail needs to write 1000 words in total.\n- She has already written 200 words.\n- She can type 300 words in half an hour (30 minutes).\n\nThe unknown is how many more minutes it will take her to finish the report.\n\nTo solve this, I first calculated the remaining words she needs to write:\n1000 words - 200 words = 800 words\n\nNext, I determined her typing rate:\n- 300 words in 30 minutes means she types 300 / 30 = 10 words per minute.\n\nThen, I calculated the time needed to type the remaining 800 words:\n800 words / 10 words per minute = 80 minutes\n\nI checked this by confirming that 80 minutes at a rate of 10 words per minute equals 800 words:\n80 minutes * 10 words per minute = 800 words\n\nThis matches the remaining words needed, confirming my solution.\n\nThe operation I would reuse is calculating the time needed based on a given rate and quantity. This can be applied to any similar problem where a rate and quantity are known, and the time needed to achieve a certain amount is required.\n\nFINAL: 80",
+        "target_sha256": "ee9f3d014c900e73891adce6d97689ed3a85b1fc259c9905fa29d71c19c068fb"
+      }
+    ],
+    "task_id": "gsm8k-train-6236"
+  },
+  {
+    "gold": "3",
+    "question": "A swarm of ants discovered a pile of sugar that spilled from a dropped bag. They begin to harvest it and carry it off to their anthill. Every hour, the ants remove 4 ounces of sugar. The bag of sugar held 24 ounces before it was dropped. After three hours, how many more hours will the ants need to harvest the remaining sugar?",
+    "question_sha256": "176cda1319d824418e2c01f2f26bfadad8343ec8469c692b09d6dce4a47fe380",
+    "responses": [
+      {
+        "key": "gsm8k-train-4766:rich",
+        "raw_call_sha256": "be437aaccf609682829cb78fa3efb023350a71486ff5913867ba61a018285299",
+        "student_prefix": [
+          {
+            "content": "A swarm of ants discovered a pile of sugar that spilled from a dropped bag. They begin to harvest it and carry it off to their anthill. Every hour, the ants remove 4 ounces of sugar. The bag of sugar held 24 ounces before it was dropped. After three hours, how many more hours will the ants need to harvest the remaining sugar?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "46354a66b3e52a89b98e2d3171cb7d24ebaeccd8dac9a5338c964e05de5ee78b",
+        "target": "Given:\n- The ants remove 4 ounces of sugar every hour.\n- The bag originally held 24 ounces of sugar.\n- After 3 hours, we need to find how many more hours the ants will need to harvest the remaining sugar.\n\nFirst, calculate the total amount of sugar removed in 3 hours:\n\\[ 4 \\, \\text{ounces/hour} \\times 3 \\, \\text{hours} = 12 \\, \\text{ounces} \\]\n\nNext, determine the remaining sugar after 3 hours:\n\\[ 24 \\, \\text{ounces} - 12 \\, \\text{ounces} = 12 \\, \\text{ounces} \\]\n\nNow, calculate how many more hours are needed to remove the remaining 12 ounces:\n\\[ \\frac{12 \\, \\text{ounces}}{4 \\, \\text{ounces/hour}} = 3 \\, \\text{hours} \\]\n\nFINAL: 3",
+        "target_sha256": "da1c5d4b755bf05b85fb42aa18113763d606c684ab40433f0ec29f0548227ef9"
+      },
+      {
+        "key": "gsm8k-train-4766:new_record",
+        "raw_call_sha256": "e5a45bcfa48b7cae0843873a41ba7323d07b5b77a7ae484c2e77a756d7298f4e",
+        "student_prefix": [
+          {
+            "content": "A swarm of ants discovered a pile of sugar that spilled from a dropped bag. They begin to harvest it and carry it off to their anthill. Every hour, the ants remove 4 ounces of sugar. The bag of sugar held 24 ounces before it was dropped. After three hours, how many more hours will the ants need to harvest the remaining sugar?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- The ants remove 4 ounces of sugar every hour.\n- The bag originally held 24 ounces of sugar.\n- After 3 hours, we need to find how many more hours the ants will need to harvest the remaining sugar.\n\nFirst, calculate the total amount of sugar removed in 3 hours:\n\\[ 4 \\, \\text{ounces/hour} \\times 3 \\, \\text{hours} = 12 \\, \\text{ounces} \\]\n\nNext, determine the remaining sugar after 3 hours:\n\\[ 24 \\, \\text{ounces} - 12 \\, \\text{ounces} = 12 \\, \\text{ounces} \\]\n\nNow, calculate how many more hours are needed to remove the remaining 12 ounces:\n\\[ \\frac{12 \\, \\text{ounces}}{4 \\, \\text{ounces/hour}} = 3 \\, \\text{hours} \\]\n\nFINAL: 3",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1bb8bb952081354f4cee7172799a12ca955779b4e0bd70f1c118ef0e11df3525",
+        "target": "Given the problem, I identified the key quantities: the ants remove 4 ounces of sugar every hour, and the bag originally held 24 ounces of sugar. The unknown is how many more hours the ants will need to harvest the remaining sugar after 3 hours.\n\nFirst, I calculated the amount of sugar removed in the first 3 hours:\n\\[ 4 \\, \\text{ounces/hour} \\times 3 \\, \\text{hours} = 12 \\, \\text{ounces} \\]\n\nNext, I determined the remaining sugar:\n\\[ 24 \\, \\text{ounces} - 12 \\, \\text{ounces} = 12 \\, \\text{ounces} \\]\n\nThen, I calculated the number of additional hours needed to remove the remaining 12 ounces:\n\\[ \\frac{12 \\, \\text{ounces}}{4 \\, \\text{ounces/hour}} = 3 \\, \\text{hours} \\]\n\nTo verify, I checked that the total sugar removed after 6 hours (3 initial hours plus 3 more hours) equals the original amount:\n\\[ 4 \\, \\text{ounces/hour} \\times 6 \\, \\text{hours} = 24 \\, \\text{ounces} \\]\n\nThis matches the original amount of sugar in the bag, confirming the solution is correct.\n\nThe operation I would reuse is the calculation of time needed to remove a given amount of sugar at a constant rate. This can be applied to similar problems where a constant rate of removal or production is involved.\n\nFINAL: 3",
+        "target_sha256": "7a5ef66adc63dd98c50166c7e8df431261920a21debe8b5f1dc82b34b5999437"
+      }
+    ],
+    "task_id": "gsm8k-train-4766"
+  }
+]

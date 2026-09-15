@@ -1,0 +1,316 @@
+{
+  "recorded_utc": "2026-09-15T00:46:00.989683+00:00",
+  "receipts": [
+    {
+      "utc": "2026-09-15T00:45:59.498074+00:00",
+      "root": "/tmp/orch_terse_breadth_20260914_attempt2",
+      "lanes": [
+        {
+          "lane": 0,
+          "done": false,
+          "stages": {
+            "train": {
+              "exists": true,
+              "REQUEST": {
+                "pid": 168001,
+                "started_utc": "2026-09-14T23:22:24.144883+00:00",
+                "updates": 0,
+                "model_calls": 0
+              },
+              "last_loss": {
+                "update": 5470,
+                "row_indexes": [
+                  93,
+                  185,
+                  2508,
+                  2509
+                ],
+                "reference_labels": 74,
+                "active_labels": 74,
+                "loss_scale": 1.0,
+                "mean_loss": 2.512458013370633e-05,
+                "loss": 2.512458013370633e-05,
+                "fit_elapsed_seconds": 4963.7507555409975
+              },
+              "process_exists": true,
+              "cmdline": "/localhome/local-rohing/v2/venv/bin/python -B -m gpu.orch_terse_breadth_run --root /tmp/orch_terse_breadth_20260914_attempt2 --phase train --lane 0 --model-dir /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28 --output /tmp/orch_terse_breadth_20260914_attempt2/train0 --deadline 1789514483 ",
+              "cuda_visible_devices": [
+                "CUDA_VISIBLE_DEVICES=GPU-31583768-d90f-520c-51ed-5dac761526d0"
+              ]
+            },
+            "after": {
+              "exists": false,
+              "calls": 0,
+              "summary_complete": false,
+              "audit_receipt_exists": false
+            }
+          }
+        },
+        {
+          "lane": 1,
+          "done": false,
+          "stages": {
+            "train": {
+              "exists": true,
+              "REQUEST": {
+                "pid": 166693,
+                "started_utc": "2026-09-14T23:12:28.561550+00:00",
+                "updates": 0,
+                "model_calls": 0
+              },
+              "RESULT": {
+                "status": "COMPLETE",
+                "pid": 166693,
+                "started_utc": "2026-09-14T23:12:28.561550+00:00",
+                "updates": 5760,
+                "model_calls": 0,
+                "wall_seconds": 5228.442533969879
+              },
+              "last_loss": {
+                "update": 5760,
+                "row_indexes": [
+                  127,
+                  147,
+                  3088,
+                  3089
+                ],
+                "reference_labels": 82,
+                "active_labels": 61,
+                "loss_scale": 0.7439024390243902,
+                "mean_loss": 5.075054104963783e-06,
+                "loss": 3.775345248868689e-06,
+                "fit_elapsed_seconds": 5147.527119576989
+              },
+              "process_exists": false
+            },
+            "after": {
+              "exists": true,
+              "REQUEST": {
+                "pid": 221584,
+                "started_utc": "2026-09-15T00:39:54.216550+00:00",
+                "updates": 0,
+                "model_calls": 0
+              },
+              "calls": 606,
+              "summary_complete": false,
+              "audit_receipt_exists": false,
+              "process_exists": true,
+              "cmdline": "/localhome/local-rohing/v2/venv/bin/python -B -m gpu.orch_terse_breadth_run --root /tmp/orch_terse_breadth_20260914_attempt2 --phase after --lane 1 --model-dir /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28 --output /tmp/orch_terse_breadth_20260914_attempt2/after1 --deadline 1789439933 ",
+              "cuda_visible_devices": [
+                "CUDA_VISIBLE_DEVICES=GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9"
+              ]
+            }
+          }
+        },
+        {
+          "lane": 2,
+          "done": false,
+          "stages": {
+            "train": {
+              "exists": true,
+              "REQUEST": {
+                "pid": 166707,
+                "started_utc": "2026-09-14T23:12:28.586952+00:00",
+                "updates": 0,
+                "model_calls": 0
+              },
+              "RESULT": {
+                "status": "COMPLETE",
+                "pid": 166707,
+                "started_utc": "2026-09-14T23:12:28.586952+00:00",
+                "updates": 5760,
+                "model_calls": 0,
+                "wall_seconds": 5283.152992725372
+              },
+              "last_loss": {
+                "update": 5760,
+                "row_indexes": [
+                  127,
+                  147,
+                  3088,
+                  3089
+                ],
+                "reference_labels": 82,
+                "active_labels": 82,
+                "loss_scale": 1.0,
+                "mean_loss": 1.348144269286422e-05,
+                "loss": 1.348144269286422e-05,
+                "fit_elapsed_seconds": 5202.1759444169875
+              },
+              "process_exists": false
+            },
+            "after": {
+              "exists": true,
+              "REQUEST": {
+                "pid": 222341,
+                "started_utc": "2026-09-15T00:40:48.963169+00:00",
+                "updates": 0,
+                "model_calls": 0
+              },
+              "calls": 512,
+              "summary_complete": false,
+              "audit_receipt_exists": false,
+              "process_exists": true,
+              "cmdline": "/localhome/local-rohing/v2/venv/bin/python -B -m gpu.orch_terse_breadth_run --root /tmp/orch_terse_breadth_20260914_attempt2 --phase after --lane 2 --model-dir /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28 --output /tmp/orch_terse_breadth_20260914_attempt2/after2 --deadline 1789439988 ",
+              "cuda_visible_devices": [
+                "CUDA_VISIBLE_DEVICES=GPU-6de3930d-104a-f969-7d36-009271368dd1"
+              ]
+            }
+          }
+        },
+        {
+          "lane": 3,
+          "done": false,
+          "stages": {
+            "train": {
+              "exists": true,
+              "REQUEST": {
+                "pid": 166700,
+                "started_utc": "2026-09-14T23:12:28.577105+00:00",
+                "updates": 0,
+                "model_calls": 0
+              },
+              "RESULT": {
+                "status": "COMPLETE",
+                "pid": 166700,
+                "started_utc": "2026-09-14T23:12:28.577105+00:00",
+                "updates": 5760,
+                "model_calls": 0,
+                "wall_seconds": 5246.854394197464
+              },
+              "last_loss": {
+                "update": 5760,
+                "row_indexes": [
+                  127,
+                  147,
+                  3088,
+                  3089
+                ],
+                "reference_labels": 82,
+                "active_labels": 61,
+                "loss_scale": 0.7439024390243902,
+                "mean_loss": 5.31150999449892e-06,
+                "loss": 3.95124516217038e-06,
+                "fit_elapsed_seconds": 5165.631319330016
+              },
+              "process_exists": false
+            },
+            "after": {
+              "exists": true,
+              "REQUEST": {
+                "pid": 222153,
+                "started_utc": "2026-09-15T00:40:23.251283+00:00",
+                "updates": 0,
+                "model_calls": 0
+              },
+              "calls": 554,
+              "summary_complete": false,
+              "audit_receipt_exists": false,
+              "process_exists": true,
+              "cmdline": "/localhome/local-rohing/v2/venv/bin/python -B -m gpu.orch_terse_breadth_run --root /tmp/orch_terse_breadth_20260914_attempt2 --phase after --lane 3 --model-dir /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28 --output /tmp/orch_terse_breadth_20260914_attempt2/after3 --deadline 1789439962 ",
+              "cuda_visible_devices": [
+                "CUDA_VISIBLE_DEVICES=GPU-f0405a96-813d-7ac7-d641-3ec31d103037"
+              ]
+            }
+          }
+        }
+      ],
+      "all_gpu_uuid_utilization": "0, GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6, 8497 MiB, 46 %\n1, GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b, 0 MiB, 0 %\n2, GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296, 15771 MiB, 46 %\n3, GPU-631f3e6a-fbce-0ec5-b934-f08dd64634f8, 0 MiB, 0 %\n4, GPU-31583768-d90f-520c-51ed-5dac761526d0, 54955 MiB, 99 %\n5, GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9, 15853 MiB, 45 %\n6, GPU-6de3930d-104a-f969-7d36-009271368dd1, 15759 MiB, 45 %\n7, GPU-f0405a96-813d-7ac7-d641-3ec31d103037, 15759 MiB, 58 %\n",
+      "all_gpu_compute": "GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6, 225774, 9392 MiB\nGPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296, 223441, 15762 MiB\nGPU-31583768-d90f-520c-51ed-5dac761526d0, 168001, 54946 MiB\nGPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9, 221584, 15844 MiB\nGPU-6de3930d-104a-f969-7d36-009271368dd1, 222341, 15750 MiB\nGPU-f0405a96-813d-7ac7-d641-3ec31d103037, 222153, 15750 MiB\n",
+      "host": "a100"
+    },
+    {
+      "utc": "2026-09-15T00:46:00.739233+00:00",
+      "root": "/tmp/orch_terse_breadth_20260914_attempt1",
+      "lanes": [
+        {
+          "lane": 4,
+          "done": false,
+          "stages": {
+            "train": {
+              "exists": true,
+              "REQUEST": {
+                "pid": 104214,
+                "started_utc": "2026-09-14T23:04:31.732605+00:00",
+                "updates": 0,
+                "model_calls": 0
+              },
+              "last_loss": {
+                "update": 3213,
+                "row_indexes": [
+                  12,
+                  142,
+                  874,
+                  875
+                ],
+                "reference_labels": 82,
+                "active_labels": 82,
+                "loss_scale": 1.0,
+                "mean_loss": 1.447487829864258e-05,
+                "loss": 1.447487829864258e-05,
+                "fit_elapsed_seconds": 6035.912326035992
+              },
+              "process_exists": true,
+              "cmdline": "/localhome/local-rohing/v2/venv/bin/python -B -m gpu.orch_terse_breadth_run --root /tmp/orch_terse_breadth_20260914_attempt1 --phase train --lane 4 --model-dir /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28 --output /tmp/orch_terse_breadth_20260914_attempt1/train4 --deadline 1789513411 ",
+              "cuda_visible_devices": [
+                "CUDA_VISIBLE_DEVICES=GPU-1a83d900-1e95-c7b4-9b12-8117399697f8"
+              ]
+            },
+            "after": {
+              "exists": false,
+              "calls": 0,
+              "summary_complete": false,
+              "audit_receipt_exists": false
+            }
+          }
+        },
+        {
+          "lane": 5,
+          "done": false,
+          "stages": {
+            "train": {
+              "exists": true,
+              "REQUEST": {
+                "pid": 104207,
+                "started_utc": "2026-09-14T23:04:31.717387+00:00",
+                "updates": 0,
+                "model_calls": 0
+              },
+              "last_loss": {
+                "update": 3250,
+                "row_indexes": [
+                  49,
+                  179,
+                  948,
+                  949
+                ],
+                "reference_labels": 71,
+                "active_labels": 51,
+                "loss_scale": 0.7183098591549296,
+                "mean_loss": 4.3591764551820233e-05,
+                "loss": 3.131239645881578e-05,
+                "fit_elapsed_seconds": 6035.964226441982
+              },
+              "process_exists": true,
+              "cmdline": "/localhome/local-rohing/v2/venv/bin/python -B -m gpu.orch_terse_breadth_run --root /tmp/orch_terse_breadth_20260914_attempt1 --phase train --lane 5 --model-dir /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28 --output /tmp/orch_terse_breadth_20260914_attempt1/train5 --deadline 1789513411 ",
+              "cuda_visible_devices": [
+                "CUDA_VISIBLE_DEVICES=GPU-319224de-e668-1822-d80b-4b24d15968ae"
+              ]
+            },
+            "after": {
+              "exists": false,
+              "calls": 0,
+              "summary_complete": false,
+              "audit_receipt_exists": false
+            }
+          }
+        }
+      ],
+      "all_gpu_uuid_utilization": "0, GPU-0ee6f753-c61e-e18a-8aea-acccd3042939, 15644 MiB, 92 %\n1, GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821, 15470 MiB, 91 %\n2, GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1, 15720 MiB, 90 %\n3, GPU-e1277146-04f2-c38f-d1ae-1a98132f907e, 15636 MiB, 90 %\n4, GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4, 15574 MiB, 90 %\n5, GPU-bc211959-642d-664b-3581-42a0dbe434e9, 15868 MiB, 88 %\n6, GPU-1a83d900-1e95-c7b4-9b12-8117399697f8, 27034 MiB, 100 %\n7, GPU-319224de-e668-1822-d80b-4b24d15968ae, 27034 MiB, 100 %\n",
+      "all_gpu_compute": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939, 113732, 15634 MiB\nGPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821, 113733, 15460 MiB\nGPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1, 113734, 15710 MiB\nGPU-e1277146-04f2-c38f-d1ae-1a98132f907e, 113735, 15626 MiB\nGPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4, 113736, 15564 MiB\nGPU-bc211959-642d-664b-3581-42a0dbe434e9, 113737, 15858 MiB\nGPU-1a83d900-1e95-c7b4-9b12-8117399697f8, 104214, 27024 MiB\nGPU-319224de-e668-1822-d80b-4b24d15968ae, 104207, 27024 MiB\n",
+      "host": "node3"
+    }
+  ],
+  "released_lanes": [],
+  "release_note": "All six native chains nonterminal; no lane released. Per-process CVD and all-GPU compute observations are not an idle admission clearance."
+}

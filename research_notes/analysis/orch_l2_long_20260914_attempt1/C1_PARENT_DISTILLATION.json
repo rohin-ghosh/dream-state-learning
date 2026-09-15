@@ -1,0 +1,156 @@
+{
+  "backend_errors": 1,
+  "causal_comparison": "NOT_COMPUTED_REQUIRES_SHARED_CONTROL_RECEIPTS",
+  "child_questions": 0,
+  "continuation_provenance": {
+    "additional_provider_calls_for_recovery": 0,
+    "original_backend_failure_preserved": true,
+    "original_receipts": "/tmp/orch_l2_shared_20260914_attempt1/LONG/cycle1/experience/CONTINUATION_V5/PRESERVED.json",
+    "recovered_responses_are_original_provider_bytes": true,
+    "restored_callback_times_are_cpu_not_provider_latency": true,
+    "restored_episode_count": 4
+  },
+  "cycle": 1,
+  "elapsed_parent_seconds": 80.03045177459717,
+  "evaluator_decisions": 4,
+  "exposed_parent_tokens": 1642,
+  "exposures": 18,
+  "messages": 4,
+  "own_training_metrics": [
+    {
+      "episodes": 1,
+      "generated_tokens": 512,
+      "successful_episodes": 0
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 552,
+      "successful_episodes": 1
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 721,
+      "successful_episodes": 1
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 386,
+      "successful_episodes": 0
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 642,
+      "successful_episodes": 1
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 831,
+      "successful_episodes": 1
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 918,
+      "successful_episodes": 0
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 845,
+      "successful_episodes": 0
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 737,
+      "successful_episodes": 1
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 742,
+      "successful_episodes": 0
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 614,
+      "successful_episodes": 0
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 597,
+      "successful_episodes": 0
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 559,
+      "successful_episodes": 0
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 613,
+      "successful_episodes": 0
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 280,
+      "successful_episodes": 1
+    },
+    {
+      "episodes": 1,
+      "generated_tokens": 442,
+      "successful_episodes": 0
+    }
+  ],
+  "parent_distillations": [
+    "Episode 1, turn 0: no prior child question. Nudged the child toward budgeting its 4 reads/2 routes within 6 turns and reading only evidence-relevant events before routing, plus invited a self/learning question for next turn.",
+    "Child conflates 'port mentioned in any event' with 'port valid at current node,' causing invalid routes. Also tends to over-read near-duplicate events before acting. Nudged toward checking PORTS-for-CURRENT-node before routing and acting sooner.",
+    "Turn 0: no child question yet. Sent standard invitation for the child to pose a PARENT QUESTION about itself/system/learning ahead of its READ/ROUTE action. Training so far: 8 episodes, 4 successful, 0 qualified rows \u2014 no updates yet since nothing qualified for supervised learning.",
+    "Child's failures cluster around two habits: (1) treating any event's port as usable even when its AT-node isn't CURRENT, and (2) re-reading already-shown events without new info, burning turns. Nudged child toward AT-node/CURRENT matching and port-list verification as a general check, not a specific route hint."
+  ],
+  "parent_message_tokens": 378,
+  "recovery_accounting": {
+    "cached_provider_calls": 0,
+    "cached_request_count": 2,
+    "cached_request_seconds": 0.004834890365600586,
+    "elapsed_parent_seconds_includes_original_requests": true,
+    "original_backend_errors": 1,
+    "original_decisions": [
+      {
+        "backend_receipt": null,
+        "child_question": "",
+        "created_unix": 1789430398.4807932,
+        "cycle": 1,
+        "decision": "speak",
+        "distillation": "Episode 1, turn 0: no prior child question. Nudged the child toward budgeting its 4 reads/2 routes within 6 turns and reading only evidence-relevant events before routing, plus invited a self/learning question for next turn.",
+        "elapsed_seconds": 12.014339923858643,
+        "episode_index": 0,
+        "evaluator_called": true,
+        "event": "parent_decision",
+        "message": "Before you read or route: you have 4 memory reads and 2 routes, but only 6 turns total, so plan which events are actually worth reading rather than reading all four just because you can. A good habit is to read an event only if its label plausibly connects CURRENT to GOAL or to a port, and to route as soon as you have real evidence, not just a guess. PARENT QUESTION: ask me anything about yourself, your training, or how learning works, and I'll answer next turn.",
+        "message_tokens": 108,
+        "reason": "First turn of episode; no child question yet, so I initiate with a reusable evidence-budgeting habit and invite a self/system/learning question per instructions, without giving any route-specific answer.",
+        "request_sha256": "9880c729567e87b8160043a2610c0c1144cc0abd00929072f91327b84a711790",
+        "turn": 0
+      },
+      {
+        "child_question": "",
+        "created_unix": 1789430542.8307498,
+        "cycle": 1,
+        "decision": "backend_error",
+        "elapsed_seconds": 18.00314497947693,
+        "episode_index": 4,
+        "evaluator_called": true,
+        "event": "parent_decision",
+        "message": "",
+        "message_tokens": 0,
+        "reason": "RuntimeError",
+        "request_sha256": "536b52354f68c11e93274bea14fea7c6a350efaa0e2974572cd078a4ceff7949",
+        "turn": 0
+      }
+    ],
+    "original_request_seconds": 30.01748490333557,
+    "scope": "operator_cost_receipts_not_parent_context"
+  },
+  "reflection_calls": 0,
+  "schema": "ORCH_L2_LONG_PARENT_V1",
+  "scope": "training_only_not_test_result",
+  "sleep_training_metrics": [],
+  "stance": "sparse_cross_episode_sleep_history"
+}

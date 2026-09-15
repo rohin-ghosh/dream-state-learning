@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "74",
+    "question": "John took a test with 80 questions.  For the first 40 questions, she got 90% right.  For the next 40 questions, she gets 95% right.  How many total questions does she get right?",
+    "question_sha256": "ece6acbf908b0fc9a04dc971211eb0f6c6d49617a755cbfa8356cd48d6e9f7b7",
+    "responses": [
+      {
+        "key": "gsm8k-train-3321:rich",
+        "raw_call_sha256": "8894c4b802a46f6e8a8fec9624cc6bfc39f11d6aaa3a19eb5449d35aa0faf1a2",
+        "student_prefix": [
+          {
+            "content": "John took a test with 80 questions.  For the first 40 questions, she got 90% right.  For the next 40 questions, she gets 95% right.  How many total questions does she get right?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2ad26d00dd1fc9e9a311082bb2b2a12c97feb0300742c488c2d8fe38bb3df29c",
+        "target": "First, I calculate the number of questions John got right in the first 40 questions. She got 90% right, so:\n\\[ 40 \\times 0.90 = 36 \\]\nNext, I calculate the number of questions she got right in the next 40 questions. She got 95% right, so:\n\\[ 40 \\times 0.95 = 38 \\]\nTo find the total number of questions she got right, I add the two results together:\n\\[ 36 + 38 = 74 \\]\nSo, John got 74 questions right in total.\n\nFINAL: 74",
+        "target_sha256": "831b48de3e40ddbf1e94897831a03a8aab2bf438c42cef1960b536143856b1dc"
+      },
+      {
+        "key": "gsm8k-train-3321:new_record",
+        "raw_call_sha256": "d6b0e53406ea2dd094e6543a7348adae835679622c0333106aa2b0c5d71906c6",
+        "student_prefix": [
+          {
+            "content": "John took a test with 80 questions.  For the first 40 questions, she got 90% right.  For the next 40 questions, she gets 95% right.  How many total questions does she get right?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the number of questions John got right in the first 40 questions. She got 90% right, so:\n\\[ 40 \\times 0.90 = 36 \\]\nNext, I calculate the number of questions she got right in the next 40 questions. She got 95% right, so:\n\\[ 40 \\times 0.95 = 38 \\]\nTo find the total number of questions she got right, I add the two results together:\n\\[ 36 + 38 = 74 \\]\nSo, John got 74 questions right in total.\n\nFINAL: 74",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7ae5e68e5f0c2988969e227076275cfb320f55e98f3784b4d49efc4ad8d9ebec",
+        "target": "Given the problem, I identified the following quantities:\n- Total questions: 80\n- Questions in the first half: 40\n- Questions in the second half: 40\n- Correct percentage in the first half: 90%\n- Correct percentage in the second half: 95%\n\nThe unknown I needed to find was the total number of questions John got right.\n\nTo solve this, I first calculated the number of correct answers in the first half:\n\\[ 40 \\times 0.90 = 36 \\]\nThis means John got 36 questions right in the first half.\n\nNext, I calculated the number of correct answers in the second half:\n\\[ 40 \\times 0.95 = 38 \\]\nThis means John got 38 questions right in the second half.\n\nTo find the total number of questions John got right, I added the results from the two halves:\n\\[ 36 + 38 = 74 \\]\n\nI checked this result by ensuring that the sum of the correct answers from both halves equals the total number of questions minus the number of questions John got wrong. Since the total number of questions is 80, and the sum of correct answers is 74, the number of questions John got wrong is:\n\\[ 80 - 74 = 6 \\]\nThis check confirms that the calculation is correct because the sum of correct and incorrect answers equals the total number of questions.\n\nThe operation I would reuse is the multiplication of the number of questions by the correct percentage to find the number of correct answers, and then summing these results. This operation is reusable whenever I need to calculate the number of correct answers based on a given percentage.\n\nFINAL: 74",
+        "target_sha256": "2c0415abfcb969868dbcf50edfc735a329878391e52b3bd9d3774c3e1ac4eff8"
+      }
+    ],
+    "task_id": "gsm8k-train-3321"
+  },
+  {
+    "gold": "520",
+    "question": "Tara has been planning to buy a laptop which costs $1000. A computer shop accepts payment in installments of $65 per month provided that a 20% down payment is made. If Tara wants to pay an additional $20 for the down payment, how much will her balance be after paying for 4 months?",
+    "question_sha256": "45c2cea6fffeb0ecef38e244e894085e07a2cda5d4d03f6700a44c791a2cb122",
+    "responses": [
+      {
+        "key": "gsm8k-train-66:rich",
+        "raw_call_sha256": "036fcd5ab1a0688c30586980fea8fe0044977c19e5cccbcb357dcdb756fa8748",
+        "student_prefix": [
+          {
+            "content": "Tara has been planning to buy a laptop which costs $1000. A computer shop accepts payment in installments of $65 per month provided that a 20% down payment is made. If Tara wants to pay an additional $20 for the down payment, how much will her balance be after paying for 4 months?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "652aeb126caf2d07076ad7df746fd1c18df6ec61f9dd4e4845b84b66ea12fec1",
+        "target": "First, I identify the given quantities:\n- Total cost of the laptop: $1000\n- Monthly installment: $65\n- Down payment required: 20% of $1000\n- Additional down payment: $20\n- Number of months to pay: 4\n\nThe down payment Tara needs to make is 20% of $1000, which is:\n\\[ 0.20 \\times 1000 = 200 \\]\n\nSince Tara wants to pay an additional $20 for the down payment, her total down payment will be:\n\\[ 200 + 20 = 220 \\]\n\nThe remaining balance after the down payment is:\n\\[ 1000 - 220 = 780 \\]\n\nTara will pay $65 per month for 4 months, so the total amount paid in installments over 4 months is:\n\\[ 65 \\times 4 = 260 \\]\n\nSubtracting the total installment payments from the remaining balance gives:\n\\[ 780 - 260 = 520 \\]\n\nFINAL: 520",
+        "target_sha256": "3ca5bc16047026fed8d96d0a0b63b8c4c93f20b554ab531fbfdacd0308f8fef2"
+      },
+      {
+        "key": "gsm8k-train-66:new_record",
+        "raw_call_sha256": "e19613509fb4957507e4fbf8de09c67fea618ec7dda51c2d3a65521cdee0646a",
+        "student_prefix": [
+          {
+            "content": "Tara has been planning to buy a laptop which costs $1000. A computer shop accepts payment in installments of $65 per month provided that a 20% down payment is made. If Tara wants to pay an additional $20 for the down payment, how much will her balance be after paying for 4 months?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Total cost of the laptop: $1000\n- Monthly installment: $65\n- Down payment required: 20% of $1000\n- Additional down payment: $20\n- Number of months to pay: 4\n\nThe down payment Tara needs to make is 20% of $1000, which is:\n\\[ 0.20 \\times 1000 = 200 \\]\n\nSince Tara wants to pay an additional $20 for the down payment, her total down payment will be:\n\\[ 200 + 20 = 220 \\]\n\nThe remaining balance after the down payment is:\n\\[ 1000 - 220 = 780 \\]\n\nTara will pay $65 per month for 4 months, so the total amount paid in installments over 4 months is:\n\\[ 65 \\times 4 = 260 \\]\n\nSubtracting the total installment payments from the remaining balance gives:\n\\[ 780 - 260 = 520 \\]\n\nFINAL: 520",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "6e8e0c5eec080899817297f23a60e6f7595f3e1b833e6885d3bb17aac865f639",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Total cost of the laptop: $1000\n- Monthly installment: $65\n- Down payment required: 20% of $1000\n- Additional down payment: $20\n- Number of months to pay: 4\n\nI first calculated the required down payment:\n\\[ 0.20 \\times 1000 = 200 \\]\nAdding the additional $20, the total down payment is:\n\\[ 200 + 20 = 220 \\]\n\nSubtracting the down payment from the total cost, the remaining balance is:\n\\[ 1000 - 220 = 780 \\]\n\nNext, I calculated the total amount paid in installments over 4 months:\n\\[ 65 \\times 4 = 260 \\]\n\nSubtracting the total installment payments from the remaining balance gives:\n\\[ 780 - 260 = 520 \\]\n\nTo verify, I checked that the total amount paid (down payment + installments) equals the total cost:\n\\[ 220 + 260 = 480 \\]\nAnd the remaining balance is:\n\\[ 1000 - 480 = 520 \\]\n\nThe operations I used are straightforward arithmetic, and the result matches the problem statement. I would reuse this method whenever a similar problem involving a down payment and installment payments needs to be solved.\n\nFINAL: 520",
+        "target_sha256": "f348ea09e4439e5a442ccb15dca4ad315be2d6ebce1591f708f06249bad04d42"
+      }
+    ],
+    "task_id": "gsm8k-train-66"
+  },
+  {
+    "gold": "680",
+    "question": "An apple tree produced 200 apples in a particular season. The tree made 20% fewer fruits the following season, but the tree fruits production in the second season doubled during the third season. Calculate the total number of fruits the apple tree grew in the three seasons.",
+    "question_sha256": "a49e8f0deecc2cf71903b7f14d954d344ab5dc63d7e3cefa9c6ec9933e6bab0e",
+    "responses": [
+      {
+        "key": "gsm8k-train-5384:rich",
+        "raw_call_sha256": "43d0d880c947a8c74ac512d128f4a1e62207167f1d9f6360c22d13c5353e927b",
+        "student_prefix": [
+          {
+            "content": "An apple tree produced 200 apples in a particular season. The tree made 20% fewer fruits the following season, but the tree fruits production in the second season doubled during the third season. Calculate the total number of fruits the apple tree grew in the three seasons.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "719584cd1e9b475ce14e7b8a834bdf0798d349e1298a5e445034e9490270da24",
+        "target": "In the first season, the apple tree produced 200 apples. \n\nFor the second season, the tree produced 20% fewer fruits. To find this, I calculate 20% of 200, which is 0.20 * 200 = 40. So, the tree produced 200 - 40 = 160 apples in the second season.\n\nIn the third season, the tree's production doubled from the second season. Therefore, the tree produced 160 * 2 = 320 apples in the third season.\n\nTo find the total number of fruits over the three seasons, I add the numbers together: 200 (first season) + 160 (second season) + 320 (third season) = 680 apples.\n\nFINAL: 680",
+        "target_sha256": "51f33a16fd238f9b949bb5bc884a26bedb0c3e6002817c7f651b22e2ca3d2805"
+      },
+      {
+        "key": "gsm8k-train-5384:new_record",
+        "raw_call_sha256": "b8b64f443f7fe1056734d33144aa518f56d4611c768c218dfe7fa73207594429",
+        "student_prefix": [
+          {
+            "content": "An apple tree produced 200 apples in a particular season. The tree made 20% fewer fruits the following season, but the tree fruits production in the second season doubled during the third season. Calculate the total number of fruits the apple tree grew in the three seasons.",
+            "role": "user"
+          },
+          {
+            "content": "In the first season, the apple tree produced 200 apples. \n\nFor the second season, the tree produced 20% fewer fruits. To find this, I calculate 20% of 200, which is 0.20 * 200 = 40. So, the tree produced 200 - 40 = 160 apples in the second season.\n\nIn the third season, the tree's production doubled from the second season. Therefore, the tree produced 160 * 2 = 320 apples in the third season.\n\nTo find the total number of fruits over the three seasons, I add the numbers together: 200 (first season) + 160 (second season) + 320 (third season) = 680 apples.\n\nFINAL: 680",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "6170f2278eeba627942437b781a1c7a4aa9a7fae00eade529791a7d6fe6a38a4",
+        "target": "Given that an apple tree produced 200 apples in the first season, I started by noting the production for the subsequent seasons based on the provided conditions. The second season's production was 20% fewer than the first season. To calculate this, I first determined 20% of 200, which is 0.20 * 200 = 40. Subtracting this from the initial production, I found the second season's production to be 200 - 40 = 160 apples. \n\nFor the third season, the production doubled from the second season. Doubling 160 apples gave me 160 * 2 = 320 apples. To find the total production over the three seasons, I summed the production of each season: 200 (first season) + 160 (second season) + 320 (third season) = 680 apples.\n\nTo verify the result, I checked the calculations step by step, ensuring that the arithmetic was correct and that the conditions of the problem were met. The first season's production was correctly identified as 200 apples, the second season's production as 160 apples (20% fewer than the first), and the third season's production as 320 apples (double the second season). The sum of these values is indeed 680 apples.\n\nThe operation I would reuse is the calculation of percentage reduction and doubling, as these are straightforward and reliable methods for solving similar problems involving proportional changes. I would apply this operation whenever I need to calculate a reduction or increase based on a percentage or a factor.\n\nFINAL: 680",
+        "target_sha256": "f339f34ffbef6fa01760bc3ea378cec7f5cfb6889430ea9717f1f2a293037e87"
+      }
+    ],
+    "task_id": "gsm8k-train-5384"
+  },
+  {
+    "gold": "1900",
+    "question": "Judson, Camilo, and Kenny decided to contribute money to paint their house. Judson contributed $500, Kenny contributed 20% more money than Judson, and Camilo contributed $200 more than Kenny. How much was the cost of painting the house?",
+    "question_sha256": "201079402c572d29016f8c9243b39bcca802e9a343a4a5ee0c9326a9baaddd38",
+    "responses": [
+      {
+        "key": "gsm8k-train-3984:rich",
+        "raw_call_sha256": "c0ad4da38bf0c5d7f00d43a3b8a9fcb50f532e0fe26bfa17c6013f06a58b6617",
+        "student_prefix": [
+          {
+            "content": "Judson, Camilo, and Kenny decided to contribute money to paint their house. Judson contributed $500, Kenny contributed 20% more money than Judson, and Camilo contributed $200 more than Kenny. How much was the cost of painting the house?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7eb0eb524281bce21d4e4f31ee22e3cce17ac05a8c9ce6ec36355d3ba6b39416",
+        "target": "First, I identify the given quantities:\n- Judson contributed $500.\n- Kenny contributed 20% more than Judson.\n- Camilo contributed $200 more than Kenny.\n\nNext, I calculate how much Kenny contributed:\n- 20% of $500 is \\(0.20 \\times 500 = 100\\).\n- Therefore, Kenny contributed \\(500 + 100 = 600\\).\n\nThen, I calculate how much Camilo contributed:\n- Camilo contributed \\(600 + 200 = 800\\).\n\nNow, I sum up the contributions to find the total cost of painting the house:\n- Judson: $500\n- Kenny: $600\n- Camilo: $800\n- Total: \\(500 + 600 + 800 = 1900\\).\n\nFINAL: 1900",
+        "target_sha256": "6b188394bd2bbed729c313f1abc879be856680a85e1dff0d05f43c0d9d418a6c"
+      },
+      {
+        "key": "gsm8k-train-3984:new_record",
+        "raw_call_sha256": "033d9fb72318adae9b03f22f4d6b4b426da829fe06a8b2218b858926f14517f2",
+        "student_prefix": [
+          {
+            "content": "Judson, Camilo, and Kenny decided to contribute money to paint their house. Judson contributed $500, Kenny contributed 20% more money than Judson, and Camilo contributed $200 more than Kenny. How much was the cost of painting the house?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Judson contributed $500.\n- Kenny contributed 20% more than Judson.\n- Camilo contributed $200 more than Kenny.\n\nNext, I calculate how much Kenny contributed:\n- 20% of $500 is \\(0.20 \\times 500 = 100\\).\n- Therefore, Kenny contributed \\(500 + 100 = 600\\).\n\nThen, I calculate how much Camilo contributed:\n- Camilo contributed \\(600 + 200 = 800\\).\n\nNow, I sum up the contributions to find the total cost of painting the house:\n- Judson: $500\n- Kenny: $600\n- Camilo: $800\n- Total: \\(500 + 600 + 800 = 1900\\).\n\nFINAL: 1900",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7c67b4000576866604f3107b559c6d9398f27f0364bda0f5ff05d033100e1f0b",
+        "target": "Given the problem, I first identified the contributions from Judson, Kenny, and Camilo. The quantities provided were:\n- Judson contributed $500.\n- Kenny contributed 20% more than Judson.\n- Camilo contributed $200 more than Kenny.\n\nTo find the total cost of painting the house, I needed to calculate the individual contributions and then sum them up. The operations I chose were:\n1. Calculate Kenny's contribution by adding 20% of Judson's contribution to Judson's contribution.\n2. Calculate Camilo's contribution by adding $200 to Kenny's contribution.\n3. Sum the contributions of Judson, Kenny, and Camilo to get the total cost.\n\nFirst, I calculated Kenny's contribution:\n\\[ \\text{Kenny's contribution} = 500 + (0.20 \\times 500) = 500 + 100 = 600 \\]\n\nNext, I calculated Camilo's contribution:\n\\[ \\text{Camilo's contribution} = 600 + 200 = 800 \\]\n\nThen, I summed the contributions:\n\\[ \\text{Total cost} = 500 + 600 + 800 = 1900 \\]\n\nTo verify the result, I checked each step:\n- Judson's contribution is $500.\n- Kenny's contribution is $600.\n- Camilo's contribution is $800.\n- The sum of these contributions is $1900.\n\nThe operations I used are reusable in similar problems involving percentage increases and fixed amount additions. I would apply the same steps to any similar problem where I need to calculate the total after percentage increases and fixed amount additions.\n\nFINAL: 1900",
+        "target_sha256": "2254af89d771bde4b969cecb72984e32713d492cdfee1968a5212f78537fea57"
+      }
+    ],
+    "task_id": "gsm8k-train-3984"
+  },
+  {
+    "gold": "22",
+    "question": "In the park, the first rose bush has 12 red flowers.  The second rose bush has 18 pink flowers.  The third rose bush has 20 yellow flowers.  The fourth rose bush has 8 orange flowers.  For her vase, Lorelei picks 50% of the red roses, 50% pink roses, 25% of the yellow roses, and 25% orange roses. How many roses are in her vase?",
+    "question_sha256": "7ae3e47196cc62afca545d2ff8c97b160b15e3f1a4c910db3484aaa58392454b",
+    "responses": [
+      {
+        "key": "gsm8k-train-6009:rich",
+        "raw_call_sha256": "fdceabaab434966ca530dca30321fe0cb821d19f87a3b1de9581b059bd1d6315",
+        "student_prefix": [
+          {
+            "content": "In the park, the first rose bush has 12 red flowers.  The second rose bush has 18 pink flowers.  The third rose bush has 20 yellow flowers.  The fourth rose bush has 8 orange flowers.  For her vase, Lorelei picks 50% of the red roses, 50% pink roses, 25% of the yellow roses, and 25% orange roses. How many roses are in her vase?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "95af93b999936abc945371e4daea59b2a68f843bb07b1f95832c4efe594ff571",
+        "target": "First, I identify the quantities given:\n- 12 red flowers\n- 18 pink flowers\n- 20 yellow flowers\n- 8 orange flowers\n\nThe unknown is the total number of roses in Lorelei's vase.\n\nNext, I calculate the number of each type of flower Lorelei picks:\n- Red roses: 50% of 12 = 0.5 * 12 = 6\n- Pink roses: 50% of 18 = 0.5 * 18 = 9\n- Yellow roses: 25% of 20 = 0.25 * 20 = 5\n- Orange roses: 25% of 8 = 0.25 * 8 = 2\n\nNow, I sum the picked roses:\n6 (red) + 9 (pink) + 5 (yellow) + 2 (orange) = 22\n\nFINAL: 22",
+        "target_sha256": "f5b5fca4ed4e936e145a603396758e23fbaabfe998f179f3dacd5344332e12c0"
+      },
+      {
+        "key": "gsm8k-train-6009:new_record",
+        "raw_call_sha256": "338d25839f689d70bd56e3276fa7febb70a0b1937d722e244af8afde5e03fba2",
+        "student_prefix": [
+          {
+            "content": "In the park, the first rose bush has 12 red flowers.  The second rose bush has 18 pink flowers.  The third rose bush has 20 yellow flowers.  The fourth rose bush has 8 orange flowers.  For her vase, Lorelei picks 50% of the red roses, 50% pink roses, 25% of the yellow roses, and 25% orange roses. How many roses are in her vase?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the quantities given:\n- 12 red flowers\n- 18 pink flowers\n- 20 yellow flowers\n- 8 orange flowers\n\nThe unknown is the total number of roses in Lorelei's vase.\n\nNext, I calculate the number of each type of flower Lorelei picks:\n- Red roses: 50% of 12 = 0.5 * 12 = 6\n- Pink roses: 50% of 18 = 0.5 * 18 = 9\n- Yellow roses: 25% of 20 = 0.25 * 20 = 5\n- Orange roses: 25% of 8 = 0.25 * 8 = 2\n\nNow, I sum the picked roses:\n6 (red) + 9 (pink) + 5 (yellow) + 2 (orange) = 22\n\nFINAL: 22",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "924d8f8ff7737c61069a8dc8e3d72dfb3f2a69c340819d2fd771c89ae7023f6a",
+        "target": "Given the problem, I first identified the quantities of each type of rose:\n- 12 red flowers\n- 18 pink flowers\n- 20 yellow flowers\n- 8 orange flowers\n\nThe unknown was the total number of roses Lorelei picked for her vase. To find this, I needed to calculate 50% of the red roses, 50% of the pink roses, 25% of the yellow roses, and 25% of the orange roses.\n\nFor the red roses:\n- 50% of 12 = 0.5 * 12 = 6\n\nFor the pink roses:\n- 50% of 18 = 0.5 * 18 = 9\n\nFor the yellow roses:\n- 25% of 20 = 0.25 * 20 = 5\n\nFor the orange roses:\n- 25% of 8 = 0.25 * 8 = 2\n\nNext, I summed these quantities to find the total number of roses in the vase:\n- 6 (red) + 9 (pink) + 5 (yellow) + 2 (orange) = 22\n\nTo check the result, I verified that each calculation was done correctly and that the sum of the individual results matched the total number of roses picked. The operations used were straightforward percentage calculations and addition.\n\nThe operations I would reuse are the percentage calculations and addition, as they are directly applicable to similar problems involving proportional selections and totals.\n\nFINAL: 22",
+        "target_sha256": "1a06a4d69e93d191c996e0e5c7cd6ac0ba3c7317680c1689f1164f7027718c91"
+      }
+    ],
+    "task_id": "gsm8k-train-6009"
+  },
+  {
+    "gold": "114",
+    "question": "The ratio of boys to girls at the dance was 3:4. There were 60 girls at the dance. The teachers were 20% of the number of boys. How many people were at the dance?",
+    "question_sha256": "8bd589b54589e5d26da7d052e14146c2505e68390dfca0f6210b67ab8ecb5220",
+    "responses": [
+      {
+        "key": "gsm8k-train-5385:rich",
+        "raw_call_sha256": "46436e0ae01e3abfcfa8056abdf14e56172f5fa575a6688791394914a2c5c421",
+        "student_prefix": [
+          {
+            "content": "The ratio of boys to girls at the dance was 3:4. There were 60 girls at the dance. The teachers were 20% of the number of boys. How many people were at the dance?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4ca006ca490fc282c2148cc851afbaf6b91206c8e4f10e8016d8c19438e881a3",
+        "target": "Given:\n- The ratio of boys to girls is 3:4.\n- There are 60 girls at the dance.\n- Teachers are 20% of the number of boys.\n\nFirst, find the number of boys:\n- Since the ratio is 3:4, for every 4 girls, there are 3 boys.\n- If 60 girls are present, we can set up the proportion: \\( \\frac{3}{4} = \\frac{x}{60} \\).\n- Solving for \\( x \\) (number of boys): \\( x = \\frac{3 \\times 60}{4} = 45 \\).\n\nNext, find the number of teachers:\n- Teachers are 20% of the number of boys.\n- \\( 20\\% \\) of 45 boys is \\( 0.20 \\times 45 = 9 \\) teachers.\n\nNow, calculate the total number of people at the dance:\n- Total = number of boys + number of girls + number of teachers.\n- Total = 45 + 60 + 9 = 114.\n\nFINAL: 114",
+        "target_sha256": "112202e2c44a0169d63c433ebc4a5547a45a6f741993db4ab413179b5f21bc2c"
+      },
+      {
+        "key": "gsm8k-train-5385:new_record",
+        "raw_call_sha256": "b4155de0937630236e3698c56d662d7acf056f614c41d3de479211134ad90aee",
+        "student_prefix": [
+          {
+            "content": "The ratio of boys to girls at the dance was 3:4. There were 60 girls at the dance. The teachers were 20% of the number of boys. How many people were at the dance?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- The ratio of boys to girls is 3:4.\n- There are 60 girls at the dance.\n- Teachers are 20% of the number of boys.\n\nFirst, find the number of boys:\n- Since the ratio is 3:4, for every 4 girls, there are 3 boys.\n- If 60 girls are present, we can set up the proportion: \\( \\frac{3}{4} = \\frac{x}{60} \\).\n- Solving for \\( x \\) (number of boys): \\( x = \\frac{3 \\times 60}{4} = 45 \\).\n\nNext, find the number of teachers:\n- Teachers are 20% of the number of boys.\n- \\( 20\\% \\) of 45 boys is \\( 0.20 \\times 45 = 9 \\) teachers.\n\nNow, calculate the total number of people at the dance:\n- Total = number of boys + number of girls + number of teachers.\n- Total = 45 + 60 + 9 = 114.\n\nFINAL: 114",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e96ccbbe9185839f29f049f9aa8745fd33247d42182b89c9d69551e2e61228bb",
+        "target": "Given the ratio of boys to girls at the dance was 3:4, and there were 60 girls, I first identified the number of boys. Using the ratio, I set up the proportion \\(\\frac{3}{4} = \\frac{x}{60}\\), where \\(x\\) is the number of boys. Solving for \\(x\\), I found \\(x = \\frac{3 \\times 60}{4} = 45\\). This means there were 45 boys at the dance. Next, I calculated the number of teachers, who were 20% of the number of boys. This was \\(0.20 \\times 45 = 9\\) teachers. Adding the number of boys, girls, and teachers together, I got the total number of people at the dance: \\(45 + 60 + 9 = 114\\). To verify, I checked that the ratio of boys to girls was indeed 3:4, and the total number of people matched the sum of the individual groups. The operations I used were setting up and solving a proportion, calculating a percentage, and summing the quantities. I would reuse these operations in similar problems involving ratios and percentages. \n\nFINAL: 114",
+        "target_sha256": "62db256103035ae15da9b8c0030ea937dc4235a4e9a7494797f52381fb92f0e9"
+      }
+    ],
+    "task_id": "gsm8k-train-5385"
+  },
+  {
+    "gold": "6",
+    "question": "Peter has 20 books. He has read 40% of them. His brother has read 10% of them. How many more of these books has Peter read than his brother?",
+    "question_sha256": "8392bb0c03ae30688b71bb5aef841164008e35db232b4e2d87367aca0eb81400",
+    "responses": [
+      {
+        "key": "gsm8k-train-6905:rich",
+        "raw_call_sha256": "3ef75122f3b25355d3dbb9439378725018815ac0acf013f4460cdb32e8c1b32c",
+        "student_prefix": [
+          {
+            "content": "Peter has 20 books. He has read 40% of them. His brother has read 10% of them. How many more of these books has Peter read than his brother?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c66a93f58eaf70592a424fe724cc0370dc0a86dc22c4277f56228155b3018fa2",
+        "target": "First, I identify the given quantities:\n- Peter has 20 books.\n- Peter has read 40% of them.\n- His brother has read 10% of them.\n\nNext, I calculate how many books each has read:\n- Peter has read 40% of 20 books: \\( 20 \\times 0.40 = 8 \\) books.\n- His brother has read 10% of 20 books: \\( 20 \\times 0.10 = 2 \\) books.\n\nNow, I find the difference in the number of books read:\n- Difference: \\( 8 - 2 = 6 \\) books.\n\nSo, Peter has read 6 more books than his brother.\n\nFINAL: 6",
+        "target_sha256": "6a78db41123f895d5b11ab2d95579b0667f174ab86e367b12d16f68bbdafc9e5"
+      },
+      {
+        "key": "gsm8k-train-6905:new_record",
+        "raw_call_sha256": "48956abda0f549f8c595f0e50eb0cd112e57e5a39109c88cae75493dac41bfaa",
+        "student_prefix": [
+          {
+            "content": "Peter has 20 books. He has read 40% of them. His brother has read 10% of them. How many more of these books has Peter read than his brother?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Peter has 20 books.\n- Peter has read 40% of them.\n- His brother has read 10% of them.\n\nNext, I calculate how many books each has read:\n- Peter has read 40% of 20 books: \\( 20 \\times 0.40 = 8 \\) books.\n- His brother has read 10% of 20 books: \\( 20 \\times 0.10 = 2 \\) books.\n\nNow, I find the difference in the number of books read:\n- Difference: \\( 8 - 2 = 6 \\) books.\n\nSo, Peter has read 6 more books than his brother.\n\nFINAL: 6",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e6300e18f82911a2a598da5eabfeb3e634200902387acecbb04369af423d2d27",
+        "target": "Given that Peter has 20 books and he has read 40% of them, I first calculated the number of books Peter has read. I used the formula: number of books read = total books \u00d7 percentage read. For Peter, this was \\(20 \\times 0.40 = 8\\) books. I then did the same for his brother, who has read 10% of the 20 books: \\(20 \\times 0.10 = 2\\) books. To find out how many more books Peter has read than his brother, I subtracted the number of books his brother has read from the number Peter has read: \\(8 - 2 = 6\\). This calculation directly answered the question of how many more books Peter has read compared to his brother.\n\nI checked the result by ensuring that the operations were correctly applied and that the subtraction was accurate. The final answer, 6, was the difference in the number of books read by Peter and his brother.\n\nFINAL: 6",
+        "target_sha256": "3058e7868558c9fe68347ae224752154947e47edcfff80c5f45cf41a28ec5496"
+      }
+    ],
+    "task_id": "gsm8k-train-6905"
+  },
+  {
+    "gold": "10",
+    "question": "Ethyl bought Lucy two new dolls for her doll collection.  This increased the doll collection by 25%.  After the addition of the two new dolls, how many dolls are in Lucy's collection?",
+    "question_sha256": "d160a9c590f2e048b1bb961ea72102169bbd6c6ad50891f1230ebab97148bfc6",
+    "responses": [
+      {
+        "key": "gsm8k-train-2844:rich",
+        "raw_call_sha256": "4be8c11b8c3039fa5c93bd2c34f2e2092764beb219dbc27014cdf2fded441f03",
+        "student_prefix": [
+          {
+            "content": "Ethyl bought Lucy two new dolls for her doll collection.  This increased the doll collection by 25%.  After the addition of the two new dolls, how many dolls are in Lucy's collection?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7b8b28a6107df277d1ae494d1e6bb8456951fba6efe49a6d36635a57e19daa63",
+        "target": "Let's denote the original number of dolls in Lucy's collection as \\( x \\). The problem states that adding 2 new dolls increased the collection by 25%. This means that 2 dolls represent a 25% increase over the original number of dolls.\n\nWe can express this relationship with the equation:\n\\[ 2 = 0.25x \\]\n\nTo find \\( x \\), we solve for \\( x \\) by dividing both sides of the equation by 0.25:\n\\[ x = \\frac{2}{0.25} = 8 \\]\n\nSo, the original number of dolls in Lucy's collection was 8. After adding the 2 new dolls, the total number of dolls in Lucy's collection is:\n\\[ 8 + 2 = 10 \\]\n\nFINAL: 10",
+        "target_sha256": "18c8c273fe6f3df8b60c01828cc939b2c4d7789d0b84bfa7ddf45bf3af950a63"
+      },
+      {
+        "key": "gsm8k-train-2844:new_record",
+        "raw_call_sha256": "10173b21fd738592c801776c59f3ab65ca7f84de818adf6e147fd729643192d8",
+        "student_prefix": [
+          {
+            "content": "Ethyl bought Lucy two new dolls for her doll collection.  This increased the doll collection by 25%.  After the addition of the two new dolls, how many dolls are in Lucy's collection?",
+            "role": "user"
+          },
+          {
+            "content": "Let's denote the original number of dolls in Lucy's collection as \\( x \\). The problem states that adding 2 new dolls increased the collection by 25%. This means that 2 dolls represent a 25% increase over the original number of dolls.\n\nWe can express this relationship with the equation:\n\\[ 2 = 0.25x \\]\n\nTo find \\( x \\), we solve for \\( x \\) by dividing both sides of the equation by 0.25:\n\\[ x = \\frac{2}{0.25} = 8 \\]\n\nSo, the original number of dolls in Lucy's collection was 8. After adding the 2 new dolls, the total number of dolls in Lucy's collection is:\n\\[ 8 + 2 = 10 \\]\n\nFINAL: 10",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "073b1dbc0c7b8d1a12219a10fd81f7894026188aeee2b56cb029f1ed50e8c48f",
+        "target": "Given that Ethyl bought Lucy two new dolls, which increased her doll collection by 25%, I needed to determine the total number of dolls in Lucy's collection after the addition. The key quantities here are the number of new dolls (2) and the percentage increase (25%).\n\nFirst, I recognized that a 25% increase in the original number of dolls \\( x \\) can be represented by the equation:\n\\[ 2 = 0.25x \\]\n\nTo find \\( x \\), I solved for \\( x \\) by dividing both sides of the equation by 0.25:\n\\[ x = \\frac{2}{0.25} = 8 \\]\n\nThis calculation showed that the original number of dolls in Lucy's collection was 8. After adding the 2 new dolls, the total number of dolls in Lucy's collection is:\n\\[ 8 + 2 = 10 \\]\n\nTo verify this, I considered that a 25% increase on 8 dolls should indeed be 2 dolls, which matches the given information. The total number of dolls is now 10, and this satisfies the condition of a 25% increase from the original 8 dolls.\n\nThe operation I would reuse is the calculation of the original number of dolls from the given percentage increase and the number of new dolls added. This can be applied to similar problems where a percentage increase is given and the original quantity needs to be determined.\n\nFINAL: 10",
+        "target_sha256": "4110d24f66d75105554d030b09868473ba5586acd5d426f5d2ee79cf2371b3cf"
+      }
+    ],
+    "task_id": "gsm8k-train-2844"
+  }
+]

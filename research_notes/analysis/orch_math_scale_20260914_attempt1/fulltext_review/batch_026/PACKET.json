@@ -1,0 +1,317 @@
+[
+  {
+    "gold": "1400",
+    "question": "The distance between Arizona and New York is around 2,000 miles by plane. The distance between the 2 different US states increases by 40% if someone decides to drive instead of flying. Missouri is midway between Arizona and New York. How far away is Missouri from New York if someone decides to go by car?",
+    "question_sha256": "d80e6aea0fb94f2d58b5827aa256f370da6f8eaae61d75f50cf5fa8bfcb44126",
+    "responses": [
+      {
+        "key": "gsm8k-train-4710:rich",
+        "raw_call_sha256": "58ac4ae4eebc7a8d6a8f59269052c2be0fb50a35d9848e504759ddd775184af6",
+        "student_prefix": [
+          {
+            "content": "The distance between Arizona and New York is around 2,000 miles by plane. The distance between the 2 different US states increases by 40% if someone decides to drive instead of flying. Missouri is midway between Arizona and New York. How far away is Missouri from New York if someone decides to go by car?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7bab5ae827a0d29108a378fb9bbb932e4d61bcead2e0845196e5c64c3386b647",
+        "target": "Given:\n- Distance by plane between Arizona and New York: 2,000 miles.\n- Driving distance is 40% more than flying.\n\nFirst, calculate the driving distance:\n\\[ \\text{Driving distance} = 2,000 \\text{ miles} \\times 1.40 = 2,800 \\text{ miles} \\]\n\nSince Missouri is midway between Arizona and New York, it splits the driving distance equally:\n\\[ \\text{Distance from Missouri to New York by car} = \\frac{2,800 \\text{ miles}}{2} = 1,400 \\text{ miles} \\]\n\nFINAL: 1400",
+        "target_sha256": "13639b10229048446e4433c89166d7564d527f1daa6d5c2c8e9aeac0ac597f35"
+      },
+      {
+        "key": "gsm8k-train-4710:new_record",
+        "raw_call_sha256": "110108648cc408a9d2835eac0ad09593f9a59671016572428e15e1cf43f3e1f7",
+        "student_prefix": [
+          {
+            "content": "The distance between Arizona and New York is around 2,000 miles by plane. The distance between the 2 different US states increases by 40% if someone decides to drive instead of flying. Missouri is midway between Arizona and New York. How far away is Missouri from New York if someone decides to go by car?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Distance by plane between Arizona and New York: 2,000 miles.\n- Driving distance is 40% more than flying.\n\nFirst, calculate the driving distance:\n\\[ \\text{Driving distance} = 2,000 \\text{ miles} \\times 1.40 = 2,800 \\text{ miles} \\]\n\nSince Missouri is midway between Arizona and New York, it splits the driving distance equally:\n\\[ \\text{Distance from Missouri to New York by car} = \\frac{2,800 \\text{ miles}}{2} = 1,400 \\text{ miles} \\]\n\nFINAL: 1400",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3df9a006a2ad224cff5d6c9af625c8a978b1aabc15fe6f0e9fedbc4355ffb076",
+        "target": "Given the problem, I identified the key quantities: the flying distance between Arizona and New York is 2,000 miles, and the driving distance is 40% more. Missouri is midway between Arizona and New York. To find the driving distance from Missouri to New York, I first calculated the driving distance by increasing the flying distance by 40%. The operation I used was:\n\\[ \\text{Driving distance} = 2,000 \\text{ miles} \\times 1.40 = 2,800 \\text{ miles} \\]\nSince Missouri is midway, I then divided the driving distance by 2:\n\\[ \\text{Distance from Missouri to New York by car} = \\frac{2,800 \\text{ miles}}{2} = 1,400 \\text{ miles} \\]\nTo check this result, I considered that the distance from Missouri to New York should be half of the total driving distance, which is indeed 1,400 miles. This matches the problem's conditions.\n\nThe operation I would reuse is the calculation of the midpoint distance from the total driving distance, as it directly applies to similar problems involving midpoints and proportional distances. I would use this operation whenever I need to find the distance from a midpoint to an endpoint given the total distance and the proportional increase.\n\nFINAL: 1400",
+        "target_sha256": "5119ab7ae3b08b3a08fbed2b257a525b8cb1226fd417a5323bcb98dd6c72f98c"
+      }
+    ],
+    "task_id": "gsm8k-train-4710"
+  },
+  {
+    "gold": "1750",
+    "question": "Mark is injured so decides to spend more time reading.  He used to read 2 hours a day but increased that by 150%.  Before he read 100 pages a day.  How many pages does he read a week now?",
+    "question_sha256": "a94dbc951dd82486f7beacacf15c020d5106ad7767767e559dcae6f61d78a90f",
+    "responses": [
+      {
+        "key": "gsm8k-train-6705:rich",
+        "raw_call_sha256": "285f915cd644e616a0a2d40c11d469453852444cb05fa8c92ecb7e830f62d029",
+        "student_prefix": [
+          {
+            "content": "Mark is injured so decides to spend more time reading.  He used to read 2 hours a day but increased that by 150%.  Before he read 100 pages a day.  How many pages does he read a week now?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2a08fadb51d3c736f6545f32d2c03a7188dad2e5c13ee43f468e705cf28665d3",
+        "target": "First, I identify the given quantities:\n- Mark used to read 2 hours a day.\n- He increased his reading time by 150%.\n- Before, he read 100 pages a day.\n\nTo find the new reading time, I calculate the increase:\n- 150% of 2 hours is \\(2 \\times 1.5 = 3\\) hours.\n- So, his new reading time is \\(2 + 3 = 5\\) hours a day.\n\nNext, I need to find out how many pages he reads in a day now. Since the number of pages read per hour is not given, I assume the reading speed remains the same. Therefore, if he used to read 100 pages in 2 hours, his reading speed is \\(100 \\div 2 = 50\\) pages per hour.\n\nNow, I calculate the new daily reading:\n- At 50 pages per hour, in 5 hours, he reads \\(50 \\times 5 = 250\\) pages a day.\n\nFinally, to find out how many pages he reads in a week:\n- There are 7 days in a week, so \\(250 \\times 7 = 1750\\) pages a week.\n\nFINAL: 1750",
+        "target_sha256": "ad2ff9de76c524f0423815b5432a5461e9924e9fc23b1e6408f52747c0e496d8"
+      },
+      {
+        "key": "gsm8k-train-6705:new_record",
+        "raw_call_sha256": "9200236b13537172d4aa2c5ed461779f83f7ef9d36bc0233b0a1b7ebe2f1b0a6",
+        "student_prefix": [
+          {
+            "content": "Mark is injured so decides to spend more time reading.  He used to read 2 hours a day but increased that by 150%.  Before he read 100 pages a day.  How many pages does he read a week now?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Mark used to read 2 hours a day.\n- He increased his reading time by 150%.\n- Before, he read 100 pages a day.\n\nTo find the new reading time, I calculate the increase:\n- 150% of 2 hours is \\(2 \\times 1.5 = 3\\) hours.\n- So, his new reading time is \\(2 + 3 = 5\\) hours a day.\n\nNext, I need to find out how many pages he reads in a day now. Since the number of pages read per hour is not given, I assume the reading speed remains the same. Therefore, if he used to read 100 pages in 2 hours, his reading speed is \\(100 \\div 2 = 50\\) pages per hour.\n\nNow, I calculate the new daily reading:\n- At 50 pages per hour, in 5 hours, he reads \\(50 \\times 5 = 250\\) pages a day.\n\nFinally, to find out how many pages he reads in a week:\n- There are 7 days in a week, so \\(250 \\times 7 = 1750\\) pages a week.\n\nFINAL: 1750",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "49f3dfe969a7ea35e73725a0c5cc00089026bc8454335981266ab90b0a079199",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Mark used to read 2 hours a day.\n- He increased his reading time by 150%.\n- Before, he read 100 pages a day.\n- The unknown is how many pages he reads a week now.\n\nFirst, I calculated the new reading time:\n- 150% of 2 hours is \\(2 \\times 1.5 = 3\\) hours.\n- So, his new reading time is \\(2 + 3 = 5\\) hours a day.\n\nNext, I determined his reading speed:\n- He used to read 100 pages in 2 hours, so his reading speed is \\(100 \\div 2 = 50\\) pages per hour.\n\nThen, I calculated his new daily reading:\n- At 50 pages per hour, in 5 hours, he reads \\(50 \\times 5 = 250\\) pages a day.\n\nFinally, I calculated his weekly reading:\n- There are 7 days in a week, so \\(250 \\times 7 = 1750\\) pages a week.\n\nTo check the result, I verified each step:\n- The increase in reading time was correctly calculated as 150% of 2 hours.\n- The reading speed was correctly determined as 50 pages per hour.\n- The new daily reading was correctly calculated as 250 pages.\n- The weekly reading was correctly calculated as 1750 pages.\n\nThe operations used are reusable for similar problems involving percentage increases and calculating weekly totals based on daily rates. I would reuse these operations whenever I need to calculate new rates after a percentage increase and then find the total over a week.\n\nFINAL: 1750",
+        "target_sha256": "63cdc01b201cb886f7b80191642b77e406d2fce883108730e4135c880b3507a5"
+      }
+    ],
+    "task_id": "gsm8k-train-6705"
+  },
+  {
+    "gold": "3",
+    "question": "James injured his ankle and decides to slowly start working back up to his previous running goals and then surpass them.  Before the injury, he was able to run 100 miles per week.  He wants to get up to 20% more than that total in 280 days and each week he will increase miles walked in the week by the same amount.  How many miles does he need to add per week?",
+    "question_sha256": "c3c55acee072229e03d66423fab30703a03fb4369fdc6ef96aa7824a097d92ee",
+    "responses": [
+      {
+        "key": "gsm8k-train-6555:rich",
+        "raw_call_sha256": "b72efe2443536f8148e61a2e496bbcf140aa033cda2c3694c422d528665b3baa",
+        "student_prefix": [
+          {
+            "content": "James injured his ankle and decides to slowly start working back up to his previous running goals and then surpass them.  Before the injury, he was able to run 100 miles per week.  He wants to get up to 20% more than that total in 280 days and each week he will increase miles walked in the week by the same amount.  How many miles does he need to add per week?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "073e22878f942596ec380e804e187fdfc2f44879066ec14ce56a311b3aaf0ff5",
+        "target": "Before the injury, James ran 100 miles per week. He wants to run 20% more than that, which is 100 * 1.20 = 120 miles per week. He has 280 days to reach this goal, which is 280 / 7 = 40 weeks.\n\nTo find out how many miles he needs to add per week, we need to calculate the total increase in miles and then divide by the number of weeks. The total increase needed is 120 - 100 = 20 miles.\n\nSince he increases the miles each week by the same amount, we divide the total increase by the number of weeks: 20 / 40 = 0.5 miles per week.\n\nSo, James needs to add 0.5 miles per week.\n\nFINAL: 0.5",
+        "target_sha256": "3762ac657926c328dcbd06c20f891c7c23e71aae2fd5bd3ec31b195210fcacb2"
+      }
+    ],
+    "task_id": "gsm8k-train-6555"
+  },
+  {
+    "gold": "1350",
+    "question": "Rhett has been late on two of his monthly rent payments, but his landlord does not charge late fees and so he will be able to pay their total cost with 3/5 of his next month's salary after taxes. If he is currently paid $5000 per month and has to pay 10% tax, calculate his rent expense per month?",
+    "question_sha256": "ec1098df800b0d7121d527d70a1e83e7c5d9fda709eec1c24e0eddd1094c2aae",
+    "responses": [
+      {
+        "key": "gsm8k-train-2107:rich",
+        "raw_call_sha256": "b97fd036bc78a12db0105beb51d90343d49c619e74c9ea4cbd6fe7f892886225",
+        "student_prefix": [
+          {
+            "content": "Rhett has been late on two of his monthly rent payments, but his landlord does not charge late fees and so he will be able to pay their total cost with 3/5 of his next month's salary after taxes. If he is currently paid $5000 per month and has to pay 10% tax, calculate his rent expense per month?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "40bba11f03d649738ff407a620527a4a5d92b4089d7702f99d1de428b69d79b1",
+        "target": "Given:\n- Rhett's monthly salary before tax: $5000\n- Tax rate: 10%\n- Amount to pay for two late rent payments: 3/5 of his next month's salary after taxes\n\nFirst, calculate Rhett's salary after taxes:\n\\[ \\text{Salary after taxes} = 5000 - (5000 \\times 0.10) = 5000 - 500 = 4500 \\]\n\nNext, calculate the amount to pay for the two late rent payments:\n\\[ \\text{Amount for two late rent payments} = \\frac{3}{5} \\times 4500 = \\frac{3 \\times 4500}{5} = \\frac{13500}{5} = 2700 \\]\n\nSince this amount covers two months of rent, the rent expense per month is:\n\\[ \\text{Rent expense per month} = \\frac{2700}{2} = 1350 \\]\n\nFINAL: 1350",
+        "target_sha256": "0b1d2b6bc44b5526dcb1440febe1fd545547a1e3fc4ab18383d49680aa87f2e6"
+      },
+      {
+        "key": "gsm8k-train-2107:new_record",
+        "raw_call_sha256": "44d2773e1af4819bb83424d2a79d1842fa98c6249051db1c0b660ce67a9f18aa",
+        "student_prefix": [
+          {
+            "content": "Rhett has been late on two of his monthly rent payments, but his landlord does not charge late fees and so he will be able to pay their total cost with 3/5 of his next month's salary after taxes. If he is currently paid $5000 per month and has to pay 10% tax, calculate his rent expense per month?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Rhett's monthly salary before tax: $5000\n- Tax rate: 10%\n- Amount to pay for two late rent payments: 3/5 of his next month's salary after taxes\n\nFirst, calculate Rhett's salary after taxes:\n\\[ \\text{Salary after taxes} = 5000 - (5000 \\times 0.10) = 5000 - 500 = 4500 \\]\n\nNext, calculate the amount to pay for the two late rent payments:\n\\[ \\text{Amount for two late rent payments} = \\frac{3}{5} \\times 4500 = \\frac{3 \\times 4500}{5} = \\frac{13500}{5} = 2700 \\]\n\nSince this amount covers two months of rent, the rent expense per month is:\n\\[ \\text{Rent expense per month} = \\frac{2700}{2} = 1350 \\]\n\nFINAL: 1350",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e10213804d58e2ccaecb45868f1be10c824605fafbdda1e18e37596c61e2a019",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- Monthly salary before tax: $5000\n- Tax rate: 10%\n- Amount to pay for two late rent payments: 3/5 of the next month's salary after taxes\n\nFirst, I calculated the salary after taxes:\n\\[ \\text{Salary after taxes} = 5000 - (5000 \\times 0.10) = 5000 - 500 = 4500 \\]\n\nNext, I determined the amount to pay for the two late rent payments:\n\\[ \\text{Amount for two late rent payments} = \\frac{3}{5} \\times 4500 = \\frac{3 \\times 4500}{5} = \\frac{13500}{5} = 2700 \\]\n\nSince this amount covers two months of rent, I calculated the rent expense per month:\n\\[ \\text{Rent expense per month} = \\frac{2700}{2} = 1350 \\]\n\nTo verify the result, I checked if the rent expense per month, when multiplied by 2, equals the total amount to pay for the two late rent payments:\n\\[ 1350 \\times 2 = 2700 \\]\n\nThis matches the given amount, confirming the solution is correct.\n\nFINAL: 1350",
+        "target_sha256": "45fc368e9b553322ce0fb7d9edbed4e47eec134dfb5e6a18cefa12104440dcd1"
+      }
+    ],
+    "task_id": "gsm8k-train-2107"
+  },
+  {
+    "gold": "150",
+    "question": "Xander read 20% of his 500-page book in one hour.  The next night he read another 20% of the book.  On the third night, he read 30% of his book.  How many pages does he have left to read?",
+    "question_sha256": "6d34fde505d1cdb6de46be8a1921a77384f70891e47fb30a8845c029bfffaa92",
+    "responses": [
+      {
+        "key": "gsm8k-train-5966:rich",
+        "raw_call_sha256": "4378b30cac32cbb0aea1b7eabd5f1ff2d68df8015a4ad3ed9f0a15ac061baed3",
+        "student_prefix": [
+          {
+            "content": "Xander read 20% of his 500-page book in one hour.  The next night he read another 20% of the book.  On the third night, he read 30% of his book.  How many pages does he have left to read?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "9985bd96f008a7b8af2894d4c8e15ffcc29a9f24399aedd7938ba0f5f265a1a5",
+        "target": "First, I calculate how many pages Xander read each night. \n\nOn the first night, he read 20% of 500 pages:\n20% of 500 = 0.20 * 500 = 100 pages\n\nOn the second night, he read another 20% of the book:\n20% of 500 = 0.20 * 500 = 100 pages\n\nOn the third night, he read 30% of the book:\n30% of 500 = 0.30 * 500 = 150 pages\n\nNow, I add up the pages he has read over the three nights:\n100 + 100 + 150 = 350 pages\n\nTo find out how many pages he has left to read, I subtract the total pages read from the total pages in the book:\n500 - 350 = 150 pages\n\nFINAL: 150",
+        "target_sha256": "ba74abc378923d97150ab5b19c085993e2a77bd54bc899307d01e60d2949c40d"
+      },
+      {
+        "key": "gsm8k-train-5966:new_record",
+        "raw_call_sha256": "ebc947ae33800a61db9f0670bf6eb85f6bab9351d26ebef496756ba82451b669",
+        "student_prefix": [
+          {
+            "content": "Xander read 20% of his 500-page book in one hour.  The next night he read another 20% of the book.  On the third night, he read 30% of his book.  How many pages does he have left to read?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate how many pages Xander read each night. \n\nOn the first night, he read 20% of 500 pages:\n20% of 500 = 0.20 * 500 = 100 pages\n\nOn the second night, he read another 20% of the book:\n20% of 500 = 0.20 * 500 = 100 pages\n\nOn the third night, he read 30% of the book:\n30% of 500 = 0.30 * 500 = 150 pages\n\nNow, I add up the pages he has read over the three nights:\n100 + 100 + 150 = 350 pages\n\nTo find out how many pages he has left to read, I subtract the total pages read from the total pages in the book:\n500 - 350 = 150 pages\n\nFINAL: 150",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "610ac039548935f876ac7b4aa07580406fad2f738c4d46dab9462db6378190da",
+        "target": "Given that Xander read 20% of his 500-page book in one hour, then another 20% the next night, and 30% on the third night, I needed to determine how many pages he had left to read. The first step was to calculate the number of pages read each night.\n\nFor the first night, I calculated 20% of 500 pages:\n\\[ 0.20 \\times 500 = 100 \\text{ pages} \\]\n\nFor the second night, the calculation was the same:\n\\[ 0.20 \\times 500 = 100 \\text{ pages} \\]\n\nFor the third night, I calculated 30% of 500 pages:\n\\[ 0.30 \\times 500 = 150 \\text{ pages} \\]\n\nAdding these together gave the total number of pages read:\n\\[ 100 + 100 + 150 = 350 \\text{ pages} \\]\n\nTo find out how many pages were left, I subtracted the total pages read from the total number of pages in the book:\n\\[ 500 - 350 = 150 \\text{ pages} \\]\n\nThis calculation directly addressed the unknown quantity of pages left to read. The operation I used was straightforward subtraction, and the result matched the problem statement exactly.\n\nThe final answer is the number of pages left to read, which is 150. I can verify this by rechecking the calculations and ensuring the total pages read (350) is correct and subtracted from the total (500) to get 150.\n\nFINAL: 150",
+        "target_sha256": "42e5eced5eec1242aafca644d93ed1fa8d981ab0f8f4374917090a693eba5c06"
+      }
+    ],
+    "task_id": "gsm8k-train-5966"
+  },
+  {
+    "gold": "36",
+    "question": "In a class of 300 students, the number of smoking teens is 40% of the class. In a year, 70% of the smoking students are hospitalized from smoking-related complications. Calculate the total number of smoking students from the class who have not been hospitalized from smoking-related complications.",
+    "question_sha256": "376a6a5dbc25b7901cedc6b4005f8431f49b8f0d0acaf671cf46ed4bbddb6ca5",
+    "responses": [
+      {
+        "key": "gsm8k-train-1587:rich",
+        "raw_call_sha256": "6ed26d3c3978d4acb45d17467b636628ba176f5656188a2e95d11aa0c40f5e3d",
+        "student_prefix": [
+          {
+            "content": "In a class of 300 students, the number of smoking teens is 40% of the class. In a year, 70% of the smoking students are hospitalized from smoking-related complications. Calculate the total number of smoking students from the class who have not been hospitalized from smoking-related complications.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e4c8e124f1b03a30b461c096b014310d436d5747559bb214e52b8d20a6bc5612",
+        "target": "Given:\n- Total number of students = 300\n- Percentage of smoking students = 40%\n- Percentage of smoking students hospitalized = 70%\n\nFirst, calculate the number of smoking students:\n\\[ \\text{Number of smoking students} = 300 \\times \\frac{40}{100} = 120 \\]\n\nNext, calculate the number of smoking students hospitalized:\n\\[ \\text{Number of hospitalized smoking students} = 120 \\times \\frac{70}{100} = 84 \\]\n\nNow, calculate the number of smoking students who have not been hospitalized:\n\\[ \\text{Number of non-hospitalized smoking students} = 120 - 84 = 36 \\]\n\nFINAL: 36",
+        "target_sha256": "f35b4e27789edc9d1b119ac5a6190f46f848f95309419473f9f60ca5c61c377b"
+      },
+      {
+        "key": "gsm8k-train-1587:new_record",
+        "raw_call_sha256": "361e03d7be769a2b2cdb1700d4edc6993a580e94afb5d81e8b3630cfa2464951",
+        "student_prefix": [
+          {
+            "content": "In a class of 300 students, the number of smoking teens is 40% of the class. In a year, 70% of the smoking students are hospitalized from smoking-related complications. Calculate the total number of smoking students from the class who have not been hospitalized from smoking-related complications.",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Total number of students = 300\n- Percentage of smoking students = 40%\n- Percentage of smoking students hospitalized = 70%\n\nFirst, calculate the number of smoking students:\n\\[ \\text{Number of smoking students} = 300 \\times \\frac{40}{100} = 120 \\]\n\nNext, calculate the number of smoking students hospitalized:\n\\[ \\text{Number of hospitalized smoking students} = 120 \\times \\frac{70}{100} = 84 \\]\n\nNow, calculate the number of smoking students who have not been hospitalized:\n\\[ \\text{Number of non-hospitalized smoking students} = 120 - 84 = 36 \\]\n\nFINAL: 36",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "19f996f9b1baec79f459545c7296fb69ccfd2ed928166d4972f127efa83d7727",
+        "target": "Given the problem, I identified the following quantities:\n- Total number of students: 300\n- Percentage of smoking students: 40%\n- Percentage of smoking students hospitalized: 70%\n\nThe unknown I needed to find was the number of smoking students who have not been hospitalized from smoking-related complications.\n\nFirst, I calculated the number of smoking students:\n\\[ \\text{Number of smoking students} = 300 \\times \\frac{40}{100} = 120 \\]\n\nNext, I calculated the number of smoking students who were hospitalized:\n\\[ \\text{Number of hospitalized smoking students} = 120 \\times \\frac{70}{100} = 84 \\]\n\nThen, I found the number of smoking students who have not been hospitalized:\n\\[ \\text{Number of non-hospitalized smoking students} = 120 - 84 = 36 \\]\n\nTo verify this result, I checked the operations:\n- The total number of students is 300.\n- 40% of 300 is indeed 120, which is the number of smoking students.\n- 70% of 120 is 84, which is the number of hospitalized smoking students.\n- Subtracting 84 from 120 gives 36, which is the number of non-hospitalized smoking students.\n\nThe operations used here are straightforward percentage calculations and subtraction, which are reliable and reusable for similar problems involving proportions and differences.\n\nFINAL: 36",
+        "target_sha256": "e754ce3aa6a6bf02724bf6556ac3a7d6c75b9b2311702ace0fb66f89fbe594ca"
+      }
+    ],
+    "task_id": "gsm8k-train-1587"
+  },
+  {
+    "gold": "29",
+    "question": "Carson is refilling his tires. Each tire can hold 500 cubic inches of air. Two of the tires are completely flat and empty. One tire is 40% full and the last tire is 70% full. If Carson injects 50 cubic inches of air with each pump, how many pumps will it take him to fill all the tires?",
+    "question_sha256": "dba6d200958890d490ef6ab2dae57fb6ea99854fdc0c2e80c24541fd7e68e087",
+    "responses": [
+      {
+        "key": "gsm8k-train-1817:rich",
+        "raw_call_sha256": "302ba696df437d38cdb39c5c2360f9960f1ce7cbed5e547ac9ec7a61a22366ce",
+        "student_prefix": [
+          {
+            "content": "Carson is refilling his tires. Each tire can hold 500 cubic inches of air. Two of the tires are completely flat and empty. One tire is 40% full and the last tire is 70% full. If Carson injects 50 cubic inches of air with each pump, how many pumps will it take him to fill all the tires?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f3b4628f3f1d76171071ece5e9108bd4956f7d1833963ca8db0b4c30552b0e73",
+        "target": "Given:\n- Each tire can hold 500 cubic inches of air.\n- Two tires are completely empty.\n- One tire is 40% full.\n- One tire is 70% full.\n- Each pump adds 50 cubic inches of air.\n\nFirst, calculate the air needed for the empty tires:\n- 2 empty tires need 500 cubic inches each, so \\(2 \\times 500 = 1000\\) cubic inches.\n\nNext, calculate the air needed for the partially filled tires:\n- The 40% full tire needs \\(500 - (500 \\times 0.4) = 500 - 200 = 300\\) cubic inches.\n- The 70% full tire needs \\(500 - (500 \\times 0.7) = 500 - 350 = 150\\) cubic inches.\n\nTotal air needed:\n- \\(1000 + 300 + 150 = 1450\\) cubic inches.\n\nSince each pump adds 50 cubic inches:\n- Number of pumps needed = \\(1450 / 50 = 29\\).\n\nFINAL: 29",
+        "target_sha256": "1a4fad7c17611c2d558d2fe89bd6e8c6742d0b858a31ad61580a2aa8ac4622b1"
+      },
+      {
+        "key": "gsm8k-train-1817:new_record",
+        "raw_call_sha256": "e9ea0bf8db44912c94048b849fd3361e5b4f5451066f028c11decf5f681e0943",
+        "student_prefix": [
+          {
+            "content": "Carson is refilling his tires. Each tire can hold 500 cubic inches of air. Two of the tires are completely flat and empty. One tire is 40% full and the last tire is 70% full. If Carson injects 50 cubic inches of air with each pump, how many pumps will it take him to fill all the tires?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Each tire can hold 500 cubic inches of air.\n- Two tires are completely empty.\n- One tire is 40% full.\n- One tire is 70% full.\n- Each pump adds 50 cubic inches of air.\n\nFirst, calculate the air needed for the empty tires:\n- 2 empty tires need 500 cubic inches each, so \\(2 \\times 500 = 1000\\) cubic inches.\n\nNext, calculate the air needed for the partially filled tires:\n- The 40% full tire needs \\(500 - (500 \\times 0.4) = 500 - 200 = 300\\) cubic inches.\n- The 70% full tire needs \\(500 - (500 \\times 0.7) = 500 - 350 = 150\\) cubic inches.\n\nTotal air needed:\n- \\(1000 + 300 + 150 = 1450\\) cubic inches.\n\nSince each pump adds 50 cubic inches:\n- Number of pumps needed = \\(1450 / 50 = 29\\).\n\nFINAL: 29",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "72762f3c2f7bacedf56dd06260a8ff82a7e1481a8440e7b69422a2a99f5b7931",
+        "target": "Given the problem, I identified the following quantities:\n- Each tire can hold 500 cubic inches of air.\n- Two tires are completely empty.\n- One tire is 40% full.\n- One tire is 70% full.\n- Each pump adds 50 cubic inches of air.\n\nThe unknown I needed to find was the total number of pumps required to fill all the tires.\n\nFirst, I calculated the air needed for the two empty tires:\n- Since each tire holds 500 cubic inches, two empty tires need \\(2 \\times 500 = 1000\\) cubic inches.\n\nNext, I calculated the air needed for the partially filled tires:\n- The 40% full tire needs \\(500 - (500 \\times 0.4) = 500 - 200 = 300\\) cubic inches.\n- The 70% full tire needs \\(500 - (500 \\times 0.7) = 500 - 350 = 150\\) cubic inches.\n\nAdding these together, the total air needed is:\n- \\(1000 + 300 + 150 = 1450\\) cubic inches.\n\nSince each pump adds 50 cubic inches, the number of pumps required is:\n- \\(1450 / 50 = 29\\).\n\nTo verify, I checked the calculation by ensuring the total air added equals the total air needed:\n- \\(29 \\times 50 = 1450\\) cubic inches, which matches the total air needed.\n\nThe operation I would reuse is the calculation of the total air needed and the number of pumps required, as it directly connects the given quantities to the unknown and ensures the result is accurate.\n\nFINAL: 29",
+        "target_sha256": "2b3d9c9ae3a68709e92b2a0bac384d2f22943a8eeeab050797675911c1db961a"
+      }
+    ],
+    "task_id": "gsm8k-train-1817"
+  },
+  {
+    "gold": "8",
+    "question": "Haley is getting ready to watch a comet fly over her house. She spends two hours shopping for a telescope, half an hour getting everything set up in the backyard, three times the setup time making snacks, and 20 minutes watching the comet. What percentage of the total time she spent on all those activities was spent watching the comet, rounded to the nearest percent?",
+    "question_sha256": "0214666c9d329be333965a274d35d43db40b658b755d66d8ca7e6160b54ffe18",
+    "responses": [
+      {
+        "key": "gsm8k-train-3520:rich",
+        "raw_call_sha256": "20068b5c09d82e02032d851789165f038070a5a3c9c3b1cb26b9e72703f88e63",
+        "student_prefix": [
+          {
+            "content": "Haley is getting ready to watch a comet fly over her house. She spends two hours shopping for a telescope, half an hour getting everything set up in the backyard, three times the setup time making snacks, and 20 minutes watching the comet. What percentage of the total time she spent on all those activities was spent watching the comet, rounded to the nearest percent?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "66016c81bca813ce499a3f84f7a32ac5a0d7cd7b8dec9c532eb4b4584ca433a4",
+        "target": "First, let's identify the given quantities:\n- Time spent shopping for a telescope: 2 hours\n- Time spent setting up: 0.5 hours\n- Time spent making snacks: 3 times the setup time, which is 3 * 0.5 = 1.5 hours\n- Time spent watching the comet: 20 minutes, which is 20/60 = 1/3 hours\n\nNow, let's calculate the total time spent on all activities:\nTotal time = 2 + 0.5 + 1.5 + 1/3\n           = 4 + 1/3\n           = 4.3333 hours (when 1/3 is converted to a decimal)\n\nNext, we need to find what percentage of the total time was spent watching the comet:\nPercentage = (Time spent watching the comet / Total time) * 100\n           = (1/3 / 4.3333) * 100\n           = (0.3333 / 4.3333) * 100\n           = 0.0769 * 100\n           = 7.69%\n\nRounded to the nearest percent, the answer is 8%.\n\nFINAL: 8",
+        "target_sha256": "874a8c199720145a8da7054d1aef0d7dc214db00b241d87236b3a9ca6cdb1cdd"
+      },
+      {
+        "key": "gsm8k-train-3520:new_record",
+        "raw_call_sha256": "62d9659f5a9fa63eca20eb92f0285762e7dccee4d441600b48b1dc67d8db21af",
+        "student_prefix": [
+          {
+            "content": "Haley is getting ready to watch a comet fly over her house. She spends two hours shopping for a telescope, half an hour getting everything set up in the backyard, three times the setup time making snacks, and 20 minutes watching the comet. What percentage of the total time she spent on all those activities was spent watching the comet, rounded to the nearest percent?",
+            "role": "user"
+          },
+          {
+            "content": "First, let's identify the given quantities:\n- Time spent shopping for a telescope: 2 hours\n- Time spent setting up: 0.5 hours\n- Time spent making snacks: 3 times the setup time, which is 3 * 0.5 = 1.5 hours\n- Time spent watching the comet: 20 minutes, which is 20/60 = 1/3 hours\n\nNow, let's calculate the total time spent on all activities:\nTotal time = 2 + 0.5 + 1.5 + 1/3\n           = 4 + 1/3\n           = 4.3333 hours (when 1/3 is converted to a decimal)\n\nNext, we need to find what percentage of the total time was spent watching the comet:\nPercentage = (Time spent watching the comet / Total time) * 100\n           = (1/3 / 4.3333) * 100\n           = (0.3333 / 4.3333) * 100\n           = 0.0769 * 100\n           = 7.69%\n\nRounded to the nearest percent, the answer is 8%.\n\nFINAL: 8",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "39132b00f28956928d68571fde177c1a66a98c35041779632c74f11c3dc053f4",
+        "target": "Given the problem, I identified the following quantities:\n- Time spent shopping for a telescope: 2 hours\n- Time spent setting up: 0.5 hours\n- Time spent making snacks: 3 times the setup time, which is 3 * 0.5 = 1.5 hours\n- Time spent watching the comet: 20 minutes, which is 20/60 = 1/3 hours\n\nThe unknown I needed to find was the percentage of the total time spent watching the comet. To solve this, I first calculated the total time spent on all activities:\nTotal time = 2 + 0.5 + 1.5 + 1/3\n           = 4 + 1/3\n           = 4.3333 hours\n\nNext, I calculated the percentage of the total time spent watching the comet:\nPercentage = (Time spent watching the comet / Total time) * 100\n           = (1/3 / 4.3333) * 100\n           = (0.3333 / 4.3333) * 100\n           = 0.0769 * 100\n           = 7.69%\n\nRounding 7.69% to the nearest percent, I got 8%.\n\nTo check the result, I verified that the total time calculation was correct and that the percentage calculation was done accurately. I also ensured that the rounding was done correctly.\n\nThe operation I would reuse is converting minutes to hours and calculating percentages. This is useful in problems where time is given in different units and needs to be converted to a common unit for calculations.\n\nFINAL: 8",
+        "target_sha256": "98dd380f9c87cfcea6824460132820dbd209689fbef8223b1c2179cb2e353792"
+      }
+    ],
+    "task_id": "gsm8k-train-3520"
+  }
+]

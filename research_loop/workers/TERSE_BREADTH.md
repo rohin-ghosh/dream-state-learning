@@ -127,3 +127,42 @@ No current operational blocker. Keep ownership A1004–7/node3 6–7 through
 terminal fits/readouts. Same frozen batch5aac9c13; no extra baseline, scope
 change or retirement. Next report operational failure or own terminal reducer;
 no scientific survival claim or SEQ request from this progress milestone.
+
+2026-09-15T00:46:00Z — Native fit-to-readout milestone, fresh host clocks
+00:45:59.498074A100 /00:46:00.739233node3. A1005OFF7801dose4,
+6FULL7802dose4,7OFF7802dose4 TRAIN COMPLETE5760updates each; fresh AFTER
+PIDs221584/222341/222153 with606/512/554saved native calls. No AFTER terminal
+summary or held-audit receipt yet, so old W0/W8/audit retention is PENDING,
+not PASS. A1004FULL7801dose4 PID168001 still trains5470/5760updates;
+node3 6FULL7801dose16 PID104214 at3213/23040 and7OFF PID104207 at3250/23040.
+All observed active losses finite; no train/after FAILED receipts. All six
+chain done flags false. No lane released: actual native processes and matching
+/proc CUDA_VISIBLE_DEVICES UUIDs occupy every owned GPU, confirmed against
+fresh all-GPU UUID/utilization/compute tables. This is occupied ownership
+evidence, not an idle-admission clearance or a fleet-wide /proc clearance.
+Evidence STATUS_20260915_0046.json in owned attempt1 analysis directory.
+Retain original cohort/doses/pairing and unique completed baseline; no rerun.
+No rich-L2 task or packet admission taken here. Existing watcher alive;
+terminal scientific comparison awaits all readouts and own reducer. Main
+should not schedule another cell on these lanes until explicit terminal
+release and fresh ownership clearance. No promoted premise or learned claim.
+
+2026-09-15T01:17:23Z — A100 FOUR LANES RELEASED; partial batch result.
+Both dose4 pairs terminal:7801FULL61/64pairs125/128goals vsOFF8/64,51/128;
+7802FULL61/64,125/128 vsOFF7/64,55/128. Baseline8/64; first-port0/64.
+FULL W0/W8=16/16 each; audit7801=16/16,7802=15/16; original/fresh4/4each.
+OFF W0/W8/audit16/16 each, original/fresh2/4each. Both FULL cover31/32worlds:
+same SHARD-7-BLOCK-0-PROBE-A has zero pairs, so BOTH CONJUNCTIONS FAIL.
+Strong finite aggregate contrast at128 and two seeds, not gate survival,
+independent cohort, rich rows, or learning loop. Dose16pair remains running:
+node3lane4/5 updates4207/4252 of23040 at01:17:04; retain ownership there.
+Own partial reducer checks schedule/reference/cohort/state/fresh process and
+recomputes full gates; four CPU testsPASS. Full A100 archive SHA461f291aac31
+preserved locally, exact evidence/interpretation in PARTIAL_A100_REPORT.md.
+Release A1004–7 only: all four chain train/after exits0, no native/guardian
+PIDs; unchanged full/proc scannerclear=true all4 at01:16:57.542710UTC,
+owners=[]/unresolved=[] and all-GPU compute/UUID tables preserved. Failed
+SSH-observer scan attempts retained; successful scan ran after initiating
+SSH closed, no exemption/kill. Next owner must fresh-check at launch.
+Unique baseline not rerun. No new GPU task, node3retirement, full-batch
+terminal claim or SEQ request. Existing watcher preserves all three pairs.

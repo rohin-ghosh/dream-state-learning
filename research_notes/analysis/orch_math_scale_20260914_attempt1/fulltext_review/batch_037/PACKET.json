@@ -1,0 +1,317 @@
+[
+  {
+    "gold": "16",
+    "question": "Hadassah took six hours to paint 12 paintings. What would be the total time she's taken to finish all the paintings if she paints 20 more paintings?",
+    "question_sha256": "b1a7d5d48132ee2f04de28fb4e1cc6a8ffe2580bcf63086b92e8951ce9cd5026",
+    "responses": [
+      {
+        "key": "gsm8k-train-2988:rich",
+        "raw_call_sha256": "5325c0d82371a553b04369f7ba8ac93d36bd9f0fc7cc42ebf203a1c081b7fa1b",
+        "student_prefix": [
+          {
+            "content": "Hadassah took six hours to paint 12 paintings. What would be the total time she's taken to finish all the paintings if she paints 20 more paintings?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4d77ea38475499865528474879f9cb0ce32fde78ea866d5173d3d4f4fc55c258",
+        "target": "First, I identify the given quantities:\n- Hadassah took 6 hours to paint 12 paintings.\n- She needs to paint 20 more paintings.\n\nTo find the time it takes to paint one painting, I divide the total time by the number of paintings:\n6 hours / 12 paintings = 0.5 hours per painting.\n\nNext, I calculate the time for 20 more paintings:\n20 paintings * 0.5 hours per painting = 10 hours.\n\nNow, I add the time for the initial 12 paintings to the time for the additional 20 paintings:\n6 hours + 10 hours = 16 hours.\n\nFINAL: 16",
+        "target_sha256": "ef2d1e861d352855332ab13569b0cf93dac676886fbdd406ae6d52bfdc62ed4a"
+      },
+      {
+        "key": "gsm8k-train-2988:new_record",
+        "raw_call_sha256": "5ca2d370a38893522bd96f7e267ae0c36213c19e6da8b27ee175a7ca1842f7a8",
+        "student_prefix": [
+          {
+            "content": "Hadassah took six hours to paint 12 paintings. What would be the total time she's taken to finish all the paintings if she paints 20 more paintings?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Hadassah took 6 hours to paint 12 paintings.\n- She needs to paint 20 more paintings.\n\nTo find the time it takes to paint one painting, I divide the total time by the number of paintings:\n6 hours / 12 paintings = 0.5 hours per painting.\n\nNext, I calculate the time for 20 more paintings:\n20 paintings * 0.5 hours per painting = 10 hours.\n\nNow, I add the time for the initial 12 paintings to the time for the additional 20 paintings:\n6 hours + 10 hours = 16 hours.\n\nFINAL: 16",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1ebaa11662c1f480fd6a331fbf047ebe398d4bb0585023687b6d5568b05e2a5d",
+        "target": "Given the problem, I identified the key quantities: Hadassah took 6 hours to paint 12 paintings, and she needs to paint 20 more paintings. The unknown is the total time she will take to finish all the paintings.\n\nFirst, I recognized that the rate of painting is constant, so I calculated the time it takes to paint one painting. I used the formula:\n\\[ \\text{Time per painting} = \\frac{\\text{Total time}}{\\text{Total paintings}} = \\frac{6 \\text{ hours}}{12 \\text{ paintings}} = 0.5 \\text{ hours per painting} \\]\n\nNext, I calculated the time for the additional 20 paintings:\n\\[ \\text{Time for 20 paintings} = 20 \\text{ paintings} \\times 0.5 \\text{ hours per painting} = 10 \\text{ hours} \\]\n\nThen, I added the time for the initial 12 paintings to the time for the additional 20 paintings to get the total time:\n\\[ \\text{Total time} = 6 \\text{ hours} + 10 \\text{ hours} = 16 \\text{ hours} \\]\n\nTo verify the result, I checked the calculation by ensuring the rate of painting (0.5 hours per painting) was consistent throughout and that the total time accounted for all paintings. The operations used were straightforward arithmetic, and the result logically followed from the given data.\n\nThe operations I would reuse are the calculation of the time per painting and the addition of times for different sets of paintings, as these are general methods for solving similar problems involving constant rates and cumulative totals.\n\nFINAL: 16",
+        "target_sha256": "ebfaa1acd3ecf23c4179d46837f055caf8afa3480c14f73b61cf2f9545a0ec33"
+      }
+    ],
+    "task_id": "gsm8k-train-2988"
+  },
+  {
+    "gold": "75",
+    "question": "Walter works 5 days a week in a fast-food chain and earns $5 per hour. Since he is a working student, he can only work 4 hours a day and allocates 3/4 of his weekly earning for his schooling. How much does he allocate for school?",
+    "question_sha256": "c5f23ef409a544617fbcfe88de210e10f9a0521e0d8c88ab01300265caca2192",
+    "responses": [
+      {
+        "key": "gsm8k-train-3530:rich",
+        "raw_call_sha256": "30b56a97534d3bf3cb9474f73b6ea7dbdee035cc9a26e0b57d775e6871c3b36b",
+        "student_prefix": [
+          {
+            "content": "Walter works 5 days a week in a fast-food chain and earns $5 per hour. Since he is a working student, he can only work 4 hours a day and allocates 3/4 of his weekly earning for his schooling. How much does he allocate for school?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "40fbc4cd7d58d43383f1e008a07c1ac1fcaa6125c490d9f6a5948951e55eda64",
+        "target": "First, I identify the given quantities:\n- Walter works 5 days a week.\n- He earns $5 per hour.\n- He works 4 hours a day.\n- He allocates 3/4 of his weekly earnings for schooling.\n\nNext, I calculate his daily earnings:\n- Daily earnings = $5/hour * 4 hours = $20.\n\nThen, I calculate his weekly earnings:\n- Weekly earnings = $20/day * 5 days = $100.\n\nNow, I calculate the amount he allocates for school:\n- Allocation for school = 3/4 * $100 = $75.\n\nFINAL: 75",
+        "target_sha256": "f7246604c17a9754ce962e3b8c0b96a66870be7c8e899253e2ea1c02651c2181"
+      },
+      {
+        "key": "gsm8k-train-3530:new_record",
+        "raw_call_sha256": "2cade56d8107d8c9f0d4344ed831b295f2e5ec6ff2c1504dc7228d2a04d1b55d",
+        "student_prefix": [
+          {
+            "content": "Walter works 5 days a week in a fast-food chain and earns $5 per hour. Since he is a working student, he can only work 4 hours a day and allocates 3/4 of his weekly earning for his schooling. How much does he allocate for school?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Walter works 5 days a week.\n- He earns $5 per hour.\n- He works 4 hours a day.\n- He allocates 3/4 of his weekly earnings for schooling.\n\nNext, I calculate his daily earnings:\n- Daily earnings = $5/hour * 4 hours = $20.\n\nThen, I calculate his weekly earnings:\n- Weekly earnings = $20/day * 5 days = $100.\n\nNow, I calculate the amount he allocates for school:\n- Allocation for school = 3/4 * $100 = $75.\n\nFINAL: 75",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "b288c188fb9f61d20b60fb47f569fcfeb8bc44c0a267e504e5bacf2fb230e3e8",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Walter works 5 days a week.\n- He earns $5 per hour.\n- He works 4 hours a day.\n- He allocates 3/4 of his weekly earnings for schooling.\n\nTo find out how much he allocates for school, I first calculated his daily earnings:\n- Daily earnings = $5/hour * 4 hours = $20.\n\nNext, I calculated his weekly earnings:\n- Weekly earnings = $20/day * 5 days = $100.\n\nThen, I determined the amount allocated for school:\n- Allocation for school = 3/4 * $100 = $75.\n\nTo verify this, I checked the calculation step-by-step:\n1. Daily earnings: $20 (5 * 4)\n2. Weekly earnings: $100 (20 * 5)\n3. Allocation for school: $75 (100 * 3/4)\n\nThe result of $75 matches the problem's requirement to find the amount allocated for schooling.\n\nThe operation I would reuse is the calculation of the weekly earnings and the allocation for school, as it directly connects the given quantities to the unknown. This operation can be applied to similar problems involving weekly earnings and allocations.\n\nFINAL: 75",
+        "target_sha256": "90490a84ea8d850a27fd8bf0f2d8b5f5e78b1f7b9ebf7dfcf8df8a41d10cbf53"
+      }
+    ],
+    "task_id": "gsm8k-train-3530"
+  },
+  {
+    "gold": "36",
+    "question": "Jamie is in a walking group with 4 other ladies.  The ladies all walk 3 miles together.  On top of that, Jamie walks an additional 2 miles per day for 6 days while her friend Sue walks half that amount in 6 days.  If they walk this same route 6 days a week, how many miles do the ladies walk in total?",
+    "question_sha256": "4831b5ac7da780bdc008fe3fa67efe039a4d9092cda516300ee0dedfe903a317",
+    "responses": [
+      {
+        "key": "gsm8k-train-3001:rich",
+        "raw_call_sha256": "c3eed74b46e78240c9ae7217efc1c10c1b1a3b061345ff672e18e9af0f6e451a",
+        "student_prefix": [
+          {
+            "content": "Jamie is in a walking group with 4 other ladies.  The ladies all walk 3 miles together.  On top of that, Jamie walks an additional 2 miles per day for 6 days while her friend Sue walks half that amount in 6 days.  If they walk this same route 6 days a week, how many miles do the ladies walk in total?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e46394fbfc209ca879cbd6db28546f396b473636f9b49ecf97734a84bf5a5f9c",
+        "target": "First, let's identify the given quantities and the unknown we need to find. The group consists of 5 ladies, and they all walk 3 miles together each day. Jamie walks an additional 2 miles per day for 6 days, and Sue walks half that amount, which is 1 mile per day for 6 days. We need to find the total miles walked by the group in 6 days.\n\nEach lady walks 3 miles together with the group each day. For 6 days, that's 3 miles/day * 6 days = 18 miles per lady. Since there are 5 ladies, the total for the group walking together is 18 miles/lady * 5 ladies = 90 miles.\n\nJamie walks an additional 2 miles per day for 6 days, so Jamie walks 2 miles/day * 6 days = 12 miles extra. Sue walks half of Jamie's extra distance, which is 1 mile/day * 6 days = 6 miles extra.\n\nAdding Jamie's and Sue's extra miles to the group's total, we get 90 miles (group) + 12 miles (Jamie) + 6 miles (Sue) = 108 miles.\n\nFINAL: 108",
+        "target_sha256": "8e1366cf503f0c6811b0a515bd74ff2e7e8e41aa4a7c9f16ce2799e119503920"
+      }
+    ],
+    "task_id": "gsm8k-train-3001"
+  },
+  {
+    "gold": "4",
+    "question": "John reads his bible every day.  He reads for 2 hours a day and reads at a rate of 50 pages an hour.  If the bible is 2800 pages long how many weeks will it take him to read it all?",
+    "question_sha256": "0b0725c0b79427c5554a14a8118b5169684fcd34f78135d713276a049dee6304",
+    "responses": [
+      {
+        "key": "gsm8k-train-3974:rich",
+        "raw_call_sha256": "bde551bdfd439f14e45c0ecf8c5346b6bf5ad45bf6e83ed0b7eb2b8a17373040",
+        "student_prefix": [
+          {
+            "content": "John reads his bible every day.  He reads for 2 hours a day and reads at a rate of 50 pages an hour.  If the bible is 2800 pages long how many weeks will it take him to read it all?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "63462d469e420042c70dfe0e4200dbf15baa78a0e1aafd436b03be6fd998dba4",
+        "target": "Given:\n- John reads 2 hours a day.\n- He reads at a rate of 50 pages per hour.\n- The Bible is 2800 pages long.\n\nFirst, calculate the number of pages John reads per day:\n\\[ 2 \\text{ hours/day} \\times 50 \\text{ pages/hour} = 100 \\text{ pages/day} \\]\n\nNext, determine how many days it will take him to read the entire Bible:\n\\[ \\frac{2800 \\text{ pages}}{100 \\text{ pages/day}} = 28 \\text{ days} \\]\n\nFinally, convert the days into weeks:\n\\[ \\frac{28 \\text{ days}}{7 \\text{ days/week}} = 4 \\text{ weeks} \\]\n\nFINAL: 4",
+        "target_sha256": "f9bea82e7db1aff656a560867af47a2593cba862bf3d7aa7dfc59df0dd7d0c89"
+      },
+      {
+        "key": "gsm8k-train-3974:new_record",
+        "raw_call_sha256": "2340c197039ee9912ab5a812abcf681e2cf0fac0fa20caf49780a46391f837b6",
+        "student_prefix": [
+          {
+            "content": "John reads his bible every day.  He reads for 2 hours a day and reads at a rate of 50 pages an hour.  If the bible is 2800 pages long how many weeks will it take him to read it all?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- John reads 2 hours a day.\n- He reads at a rate of 50 pages per hour.\n- The Bible is 2800 pages long.\n\nFirst, calculate the number of pages John reads per day:\n\\[ 2 \\text{ hours/day} \\times 50 \\text{ pages/hour} = 100 \\text{ pages/day} \\]\n\nNext, determine how many days it will take him to read the entire Bible:\n\\[ \\frac{2800 \\text{ pages}}{100 \\text{ pages/day}} = 28 \\text{ days} \\]\n\nFinally, convert the days into weeks:\n\\[ \\frac{28 \\text{ days}}{7 \\text{ days/week}} = 4 \\text{ weeks} \\]\n\nFINAL: 4",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "8fe3f79b774e0065a46d3306ccd59f75ebd01910423237dec9c2bcb5e6d4d9ed",
+        "target": "Given the problem, I identified the following quantities:\n- John reads 2 hours a day.\n- He reads at a rate of 50 pages per hour.\n- The Bible is 2800 pages long.\n\nThe unknown I needed to find was the number of weeks it would take John to read the entire Bible.\n\nTo solve this, I first calculated the number of pages John reads per day:\n\\[ 2 \\text{ hours/day} \\times 50 \\text{ pages/hour} = 100 \\text{ pages/day} \\]\n\nNext, I determined how many days it would take him to read the entire Bible:\n\\[ \\frac{2800 \\text{ pages}}{100 \\text{ pages/day}} = 28 \\text{ days} \\]\n\nThen, I converted the days into weeks:\n\\[ \\frac{28 \\text{ days}}{7 \\text{ days/week}} = 4 \\text{ weeks} \\]\n\nTo check the result, I verified that 4 weeks at 2 hours a day and 50 pages per hour would indeed cover the 2800 pages:\n\\[ 4 \\text{ weeks} \\times 7 \\text{ days/week} \\times 2 \\text{ hours/day} \\times 50 \\text{ pages/hour} = 2800 \\text{ pages} \\]\n\nThe operations I used were straightforward multiplication and division, and the result matched the problem statement.\n\nI would reuse this method whenever I need to calculate the time required to complete a task given a consistent rate of work and a total amount to be completed.\n\nFINAL: 4",
+        "target_sha256": "7e157aeb6bf2911b3c83c73d1d9989abcf4483c8919fc6f822ccf8ac57f3b8b5"
+      }
+    ],
+    "task_id": "gsm8k-train-3974"
+  },
+  {
+    "gold": "50",
+    "question": "Mira jogs every morning. She jogs 5 miles per hour. If she jogs for 2 hours every morning, how many miles can she jog for five days?",
+    "question_sha256": "b7150ea2fea567df995db7b021f3ced6a338509c1b578d16587e2bfc286479a4",
+    "responses": [
+      {
+        "key": "gsm8k-train-221:rich",
+        "raw_call_sha256": "67eea7a9419ff0d6cab903d68da40f9f0c19b5ce65a453716ba063b6b47965a0",
+        "student_prefix": [
+          {
+            "content": "Mira jogs every morning. She jogs 5 miles per hour. If she jogs for 2 hours every morning, how many miles can she jog for five days?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "bfd36beaf5324e7a6d1f509a09ac63dec2bcc8fbe5d4a42da3c8b2eaa3d22f5c",
+        "target": "Given: Mira jogs at 5 miles per hour and jogs for 2 hours each morning. We need to find out how many miles she can jog over five days.\n\nFirst, calculate the distance Mira jogs in one day:\n\\[ \\text{Distance per day} = \\text{Speed} \\times \\text{Time} = 5 \\, \\text{miles/hour} \\times 2 \\, \\text{hours} = 10 \\, \\text{miles} \\]\n\nNext, calculate the total distance for five days:\n\\[ \\text{Total distance} = \\text{Distance per day} \\times \\text{Number of days} = 10 \\, \\text{miles/day} \\times 5 \\, \\text{days} = 50 \\, \\text{miles} \\]\n\nSo, Mira can jog 50 miles in five days.\n\nFINAL: 50",
+        "target_sha256": "225c21bd41f029255c0d9587694dea4f44d8e1f46c935c45752d8c2afe969362"
+      },
+      {
+        "key": "gsm8k-train-221:new_record",
+        "raw_call_sha256": "76538591c3a99f957628a56b44b28a0e81cc12a9cf810277343333070ce9f5cd",
+        "student_prefix": [
+          {
+            "content": "Mira jogs every morning. She jogs 5 miles per hour. If she jogs for 2 hours every morning, how many miles can she jog for five days?",
+            "role": "user"
+          },
+          {
+            "content": "Given: Mira jogs at 5 miles per hour and jogs for 2 hours each morning. We need to find out how many miles she can jog over five days.\n\nFirst, calculate the distance Mira jogs in one day:\n\\[ \\text{Distance per day} = \\text{Speed} \\times \\text{Time} = 5 \\, \\text{miles/hour} \\times 2 \\, \\text{hours} = 10 \\, \\text{miles} \\]\n\nNext, calculate the total distance for five days:\n\\[ \\text{Total distance} = \\text{Distance per day} \\times \\text{Number of days} = 10 \\, \\text{miles/day} \\times 5 \\, \\text{days} = 50 \\, \\text{miles} \\]\n\nSo, Mira can jog 50 miles in five days.\n\nFINAL: 50",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7b809836ac30d7d20542f7252358eef4e10c33ecd9c4cab29729a6c4a0681fd3",
+        "target": "Given that Mira jogs at a speed of 5 miles per hour and jogs for 2 hours every morning, I needed to determine the total distance she can jog over five days. The key quantities are her speed, the time she jogs each day, and the number of days she jogs.\n\nFirst, I calculated the distance Mira jogs in one day:\n\\[ \\text{Distance per day} = \\text{Speed} \\times \\text{Time} = 5 \\, \\text{miles/hour} \\times 2 \\, \\text{hours} = 10 \\, \\text{miles} \\]\n\nNext, I multiplied the daily distance by the number of days to find the total distance over five days:\n\\[ \\text{Total distance} = \\text{Distance per day} \\times \\text{Number of days} = 10 \\, \\text{miles/day} \\times 5 \\, \\text{days} = 50 \\, \\text{miles} \\]\n\nTo verify this, I considered the units and the logical consistency of the operations. The units of miles per hour and hours per day correctly combine to give miles per day, and multiplying by the number of days gives the total miles jogged. The result, 50 miles, is a whole number and logically fits the context of the problem.\n\nThe operation I would reuse is the multiplication of speed and time to find distance, and then multiplying the daily distance by the number of days. This operation is reusable for similar problems involving constant speed and time intervals.\n\nFINAL: 50",
+        "target_sha256": "9d7454c3122caac95ebe0e5efc7ab86e6830dfc540db1c9b0808ee4ca8017336"
+      }
+    ],
+    "task_id": "gsm8k-train-221"
+  },
+  {
+    "gold": "220",
+    "question": "Tas and his friends put up a t-shirt for sale. They ended up selling 200 t-shirts in 25 minutes. Half of the shirts were black and cost $30, while the other half were white and cost $25. How much money did they make per minute during the sale?",
+    "question_sha256": "fb9fabd81fc591fcadb20724cd142499b51d58c3b04132df7ae6e20588c7d73b",
+    "responses": [
+      {
+        "key": "gsm8k-train-5829:rich",
+        "raw_call_sha256": "379b26b452a802795f8ec9f5b2cf330aed793aed3e7763f2510f6a21053f9df4",
+        "student_prefix": [
+          {
+            "content": "Tas and his friends put up a t-shirt for sale. They ended up selling 200 t-shirts in 25 minutes. Half of the shirts were black and cost $30, while the other half were white and cost $25. How much money did they make per minute during the sale?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "529a52d387014523bd30eac60aa1d92559c7ffe7fe0248e2e1a23ea106bf3028",
+        "target": "Given:\n- Total t-shirts sold: 200\n- Time taken: 25 minutes\n- Half of the shirts (100) were black and cost $30 each\n- The other half (100) were white and cost $25 each\n\nFirst, calculate the total revenue from black t-shirts:\n100 black t-shirts * $30 = $3000\n\nNext, calculate the total revenue from white t-shirts:\n100 white t-shirts * $25 = $2500\n\nAdd the revenues to find the total revenue:\n$3000 + $2500 = $5500\n\nNow, to find the money made per minute, divide the total revenue by the time in minutes:\n$5500 / 25 minutes = $220 per minute\n\nFINAL: 220",
+        "target_sha256": "c962f0a298ef80fc803ff9fb03476065297ddd672a8cafcee0971ae65f1b1657"
+      },
+      {
+        "key": "gsm8k-train-5829:new_record",
+        "raw_call_sha256": "2ede562d561f446cb122ca7022dadfe46b417ce05edbf98ab4c632414a4d3e73",
+        "student_prefix": [
+          {
+            "content": "Tas and his friends put up a t-shirt for sale. They ended up selling 200 t-shirts in 25 minutes. Half of the shirts were black and cost $30, while the other half were white and cost $25. How much money did they make per minute during the sale?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Total t-shirts sold: 200\n- Time taken: 25 minutes\n- Half of the shirts (100) were black and cost $30 each\n- The other half (100) were white and cost $25 each\n\nFirst, calculate the total revenue from black t-shirts:\n100 black t-shirts * $30 = $3000\n\nNext, calculate the total revenue from white t-shirts:\n100 white t-shirts * $25 = $2500\n\nAdd the revenues to find the total revenue:\n$3000 + $2500 = $5500\n\nNow, to find the money made per minute, divide the total revenue by the time in minutes:\n$5500 / 25 minutes = $220 per minute\n\nFINAL: 220",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "30e9ea6c62905f2cb6289704eca3aaff1f605551f73ba18f312358cf96eae260",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Total t-shirts sold: 200\n- Time taken: 25 minutes\n- Half of the shirts (100) were black and cost $30 each\n- The other half (100) were white and cost $25 each\n\nThe unknown is the money made per minute during the sale. To find this, I first calculated the total revenue from the black t-shirts and then from the white t-shirts. This was done by multiplying the number of each type of t-shirt by their respective prices:\n- Revenue from black t-shirts: 100 * $30 = $3000\n- Revenue from white t-shirts: 100 * $25 = $2500\n\nAdding these revenues together gave the total revenue:\n- Total revenue: $3000 + $2500 = $5500\n\nTo find the money made per minute, I divided the total revenue by the time taken:\n- Money made per minute: $5500 / 25 minutes = $220 per minute\n\nTo check this result, I would multiply the money made per minute by the time taken to ensure it matches the total revenue:\n- $220 * 25 = $5500\n\nThis confirms that the calculation is correct. The operation I would reuse is the division of total revenue by time to find the rate of money made per minute, as it directly addresses the unknown and is a straightforward method for solving similar problems.\n\nFINAL: 220",
+        "target_sha256": "30e4eb4edf5ab48fc8401a008faa0d11d4f248a4862488d153da8b9b08b6a1d5"
+      }
+    ],
+    "task_id": "gsm8k-train-5829"
+  },
+  {
+    "gold": "8",
+    "question": "Kevin has a shoebox filled with toads.  Every day, Kevin feeds each toad 3 worms.  It takes Kevin 15 minutes to find each worm.  If it takes Kevin 6 hours to find enough worms to feed all of his toads, how many toads does Kevin have in his shoebox?",
+    "question_sha256": "0e65c21ae11682eb646526b7314a34f0d51fff4bdefee2420c3358e6c422c54f",
+    "responses": [
+      {
+        "key": "gsm8k-train-2268:rich",
+        "raw_call_sha256": "e4e7b4acc91ec4c5d3a78311e74449f71a195aee019b7eb7c4e8b5694e77ba48",
+        "student_prefix": [
+          {
+            "content": "Kevin has a shoebox filled with toads.  Every day, Kevin feeds each toad 3 worms.  It takes Kevin 15 minutes to find each worm.  If it takes Kevin 6 hours to find enough worms to feed all of his toads, how many toads does Kevin have in his shoebox?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "8bec9c3431a35854d2575fae5de894d7beb9df7d3ae277fdb1823929c0872d98",
+        "target": "First, let's identify the given quantities and the unknown:\n- Kevin spends 15 minutes to find each worm.\n- It takes Kevin 6 hours to find enough worms to feed all his toads.\n- Each toad eats 3 worms per day.\n\nFirst, convert 6 hours into minutes:\n6 hours * 60 minutes/hour = 360 minutes\n\nNext, determine how many worms Kevin can find in 360 minutes:\n360 minutes / 15 minutes per worm = 24 worms\n\nNow, since each toad eats 3 worms, we can find the number of toads by dividing the total number of worms by the number of worms each toad eats:\n24 worms / 3 worms per toad = 8 toads\n\nFINAL: 8",
+        "target_sha256": "879c40d3ed2c1961e71284d060bff77e24902683de64449cb56d052ef851ac37"
+      },
+      {
+        "key": "gsm8k-train-2268:new_record",
+        "raw_call_sha256": "29ca5f279dc58463441d505104daa3ff4e61ee2cefbcfb6c79951fd44edccffd",
+        "student_prefix": [
+          {
+            "content": "Kevin has a shoebox filled with toads.  Every day, Kevin feeds each toad 3 worms.  It takes Kevin 15 minutes to find each worm.  If it takes Kevin 6 hours to find enough worms to feed all of his toads, how many toads does Kevin have in his shoebox?",
+            "role": "user"
+          },
+          {
+            "content": "First, let's identify the given quantities and the unknown:\n- Kevin spends 15 minutes to find each worm.\n- It takes Kevin 6 hours to find enough worms to feed all his toads.\n- Each toad eats 3 worms per day.\n\nFirst, convert 6 hours into minutes:\n6 hours * 60 minutes/hour = 360 minutes\n\nNext, determine how many worms Kevin can find in 360 minutes:\n360 minutes / 15 minutes per worm = 24 worms\n\nNow, since each toad eats 3 worms, we can find the number of toads by dividing the total number of worms by the number of worms each toad eats:\n24 worms / 3 worms per toad = 8 toads\n\nFINAL: 8",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3a5c380143deb9172674e031e2f0ad3233ed3943db24245aa405682a1d98eaf6",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Kevin spends 15 minutes to find each worm.\n- It takes Kevin 6 hours to find enough worms to feed all his toads.\n- Each toad eats 3 worms per day.\n\nThe unknown is the number of toads in Kevin's shoebox.\n\nTo solve this, I first converted the total time Kevin spends into minutes:\n6 hours * 60 minutes/hour = 360 minutes\n\nNext, I calculated how many worms Kevin can find in 360 minutes:\n360 minutes / 15 minutes per worm = 24 worms\n\nThen, I determined the number of toads by dividing the total number of worms by the number of worms each toad eats:\n24 worms / 3 worms per toad = 8 toads\n\nTo check the result, I considered that if each of the 8 toads eats 3 worms per day, the total number of worms needed is:\n8 toads * 3 worms/toad = 24 worms\n\nThis matches the number of worms Kevin found, confirming the solution is correct.\n\nThe operation I would reuse is converting hours to minutes and then dividing the total time by the time it takes to find one worm to determine the total number of worms found. I would also reuse the operation of dividing the total number of worms by the number of worms each toad eats to find the number of toads.\n\nFINAL: 8",
+        "target_sha256": "f038f0879d94407b76301f660abd9cac2440688e764f0fdea4c4e32b1587c6e8"
+      }
+    ],
+    "task_id": "gsm8k-train-2268"
+  },
+  {
+    "gold": "6",
+    "question": "Jonathan enjoys walking and running for exercise, and he has three different exercise routines.  On Mondays, he walks at 2 miles per hour.  On Wednesdays, he walks at 3 miles per hour.  And on Fridays, he runs at 6 miles per hour.  On each exercise day, he travels 6 miles.  What is the combined total time, in hours, he spends exercising in a week?",
+    "question_sha256": "4b37a48bdc7ab6dedefb02d4675844ec64e261b6cabc66e543149abfa3bd37cd",
+    "responses": [
+      {
+        "key": "gsm8k-train-5789:rich",
+        "raw_call_sha256": "9e5e3c44d03bc1a36c0956c471817515f9ab078820dfafc9c45ca5c832793df7",
+        "student_prefix": [
+          {
+            "content": "Jonathan enjoys walking and running for exercise, and he has three different exercise routines.  On Mondays, he walks at 2 miles per hour.  On Wednesdays, he walks at 3 miles per hour.  And on Fridays, he runs at 6 miles per hour.  On each exercise day, he travels 6 miles.  What is the combined total time, in hours, he spends exercising in a week?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "980c8464770996b7c3b4b791f73aaab82f9b1dc4bd99f2cdcb75939f478dbf77",
+        "target": "On Mondays, Jonathan walks 6 miles at 2 miles per hour. The time taken is 6 miles / 2 mph = 3 hours.\nOn Wednesdays, he walks 6 miles at 3 miles per hour. The time taken is 6 miles / 3 mph = 2 hours.\nOn Fridays, he runs 6 miles at 6 miles per hour. The time taken is 6 miles / 6 mph = 1 hour.\nThe total time spent exercising in a week is 3 hours + 2 hours + 1 hour = 6 hours.\nFINAL: 6",
+        "target_sha256": "7be4634dfa26dfa8e1024b2b8138f07d90a2b70e5d658746d32ab70b75f40dd3"
+      },
+      {
+        "key": "gsm8k-train-5789:new_record",
+        "raw_call_sha256": "736be95c3a79c98f9343ead3aa6a8b2a593d70db18c1d805bdbb0f204b9a8c54",
+        "student_prefix": [
+          {
+            "content": "Jonathan enjoys walking and running for exercise, and he has three different exercise routines.  On Mondays, he walks at 2 miles per hour.  On Wednesdays, he walks at 3 miles per hour.  And on Fridays, he runs at 6 miles per hour.  On each exercise day, he travels 6 miles.  What is the combined total time, in hours, he spends exercising in a week?",
+            "role": "user"
+          },
+          {
+            "content": "On Mondays, Jonathan walks 6 miles at 2 miles per hour. The time taken is 6 miles / 2 mph = 3 hours.\nOn Wednesdays, he walks 6 miles at 3 miles per hour. The time taken is 6 miles / 3 mph = 2 hours.\nOn Fridays, he runs 6 miles at 6 miles per hour. The time taken is 6 miles / 6 mph = 1 hour.\nThe total time spent exercising in a week is 3 hours + 2 hours + 1 hour = 6 hours.\nFINAL: 6",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "22336d6a26716d313f3149379638c7161eee47a65ecc0468d84367c1326a1142",
+        "target": "Given the problem, I identified the key quantities: Jonathan's exercise speeds and distances. On Mondays, he walks 6 miles at 2 miles per hour; on Wednesdays, he walks 6 miles at 3 miles per hour; and on Fridays, he runs 6 miles at 6 miles per hour. The unknown is the total time spent exercising in a week.\n\nTo find the time spent on each day, I used the formula: time = distance / speed. For Monday, the time is 6 miles / 2 mph = 3 hours. For Wednesday, the time is 6 miles / 3 mph = 2 hours. For Friday, the time is 6 miles / 6 mph = 1 hour. Summing these times gives the total time spent exercising in a week: 3 hours + 2 hours + 1 hour = 6 hours.\n\nI checked this result by ensuring that all given distances and speeds were correctly applied and that the arithmetic was accurate. The total time of 6 hours matches the sum of the individual times calculated.\n\nThe operation I would reuse is the formula for calculating time, as it directly connects the given distances and speeds to the unknown total time. I would use this operation whenever I need to calculate the time taken for a given distance at a specific speed.\n\nFINAL: 6",
+        "target_sha256": "5d4dbb47c333dbd4d5797043d302b78f2c9f92ed46ed89354635f248ef626e3e"
+      }
+    ],
+    "task_id": "gsm8k-train-5789"
+  }
+]

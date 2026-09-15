@@ -1,0 +1,317 @@
+[
+  {
+    "gold": "4",
+    "question": "Erik's dog can run 24 miles per hour. It is chasing a rabbit that can run 15 miles per hour. The rabbit has a head start of .6 miles. How many minutes does it take for the dog to catch up to the rabbit?",
+    "question_sha256": "aa5c2aab758e2fe2c205b7491ae51e29c869f2a2deb0b0f9bb33b3a4a29855c3",
+    "responses": [
+      {
+        "key": "gsm8k-train-4873:rich",
+        "raw_call_sha256": "0f2cd2837400634db7c429d811f88744bcc23f29c4b9b786e98b2dd964809a0c",
+        "student_prefix": [
+          {
+            "content": "Erik's dog can run 24 miles per hour. It is chasing a rabbit that can run 15 miles per hour. The rabbit has a head start of .6 miles. How many minutes does it take for the dog to catch up to the rabbit?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "07253f6ee42362e1b91b5cc8c7bbe3b0887fe233520b98b12b6219292d2f55b9",
+        "target": "Given:\n- Dog's speed: 24 miles per hour\n- Rabbit's speed: 15 miles per hour\n- Rabbit's head start: 0.6 miles\n\nTo find:\n- Time in minutes for the dog to catch up to the rabbit\n\nFirst, calculate the relative speed of the dog compared to the rabbit:\nRelative speed = Dog's speed - Rabbit's speed\nRelative speed = 24 mph - 15 mph = 9 mph\n\nNext, determine the time it takes for the dog to cover the 0.6-mile head start at the relative speed:\nTime (in hours) = Distance / Relative speed\nTime = 0.6 miles / 9 mph = 0.0667 hours\n\nConvert the time from hours to minutes:\nTime (in minutes) = 0.0667 hours * 60 minutes/hour = 4 minutes\n\nFINAL: 4",
+        "target_sha256": "8173e1a9a00518ec45d7bab33fa889c44e8137be1d8c474cdf3b7a54677b639b"
+      },
+      {
+        "key": "gsm8k-train-4873:new_record",
+        "raw_call_sha256": "33c84e590587d54d19f57c369f1a47e9167074ff7b617fb1503ee54797360d77",
+        "student_prefix": [
+          {
+            "content": "Erik's dog can run 24 miles per hour. It is chasing a rabbit that can run 15 miles per hour. The rabbit has a head start of .6 miles. How many minutes does it take for the dog to catch up to the rabbit?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Dog's speed: 24 miles per hour\n- Rabbit's speed: 15 miles per hour\n- Rabbit's head start: 0.6 miles\n\nTo find:\n- Time in minutes for the dog to catch up to the rabbit\n\nFirst, calculate the relative speed of the dog compared to the rabbit:\nRelative speed = Dog's speed - Rabbit's speed\nRelative speed = 24 mph - 15 mph = 9 mph\n\nNext, determine the time it takes for the dog to cover the 0.6-mile head start at the relative speed:\nTime (in hours) = Distance / Relative speed\nTime = 0.6 miles / 9 mph = 0.0667 hours\n\nConvert the time from hours to minutes:\nTime (in minutes) = 0.0667 hours * 60 minutes/hour = 4 minutes\n\nFINAL: 4",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "133840541e50468c7b6e7e4f0d98043703e3fcf11118094a0b01cded15e4f9a7",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Dog's speed: 24 miles per hour\n- Rabbit's speed: 15 miles per hour\n- Rabbit's head start: 0.6 miles\n- Unknown: Time in minutes for the dog to catch up to the rabbit\n\nTo solve this, I first calculated the relative speed of the dog compared to the rabbit:\nRelative speed = Dog's speed - Rabbit's speed = 24 mph - 15 mph = 9 mph\n\nNext, I determined the time it takes for the dog to cover the 0.6-mile head start at the relative speed:\nTime (in hours) = Distance / Relative speed = 0.6 miles / 9 mph = 0.0667 hours\n\nTo convert this time into minutes, I used the conversion factor:\nTime (in minutes) = 0.0667 hours * 60 minutes/hour = 4 minutes\n\nTo verify the result, I checked if the dog could indeed cover the 0.6-mile head start in 4 minutes:\n- Dog's speed in miles per minute = 24 miles/hour / 60 minutes/hour = 0.4 miles/minute\n- Distance covered by the dog in 4 minutes = 0.4 miles/minute * 4 minutes = 1.6 miles\n- Distance covered by the rabbit in 4 minutes = 15 miles/hour / 60 minutes/hour * 4 minutes = 1 mile\n- Difference in distance covered = 1.6 miles - 1 mile = 0.6 miles, which matches the rabbit's head start\n\nThe operations I used are reusable in similar problems involving relative speeds and distances. I would reuse the method of calculating relative speed and then determining the time to cover a given distance at that speed, converting the time to the desired units.\n\nFINAL: 4",
+        "target_sha256": "0b3f4992c9ad0e6ed98421971235c0af4ce99a58321298444717935ccf8c498e"
+      }
+    ],
+    "task_id": "gsm8k-train-4873"
+  },
+  {
+    "gold": "2",
+    "question": "Bobby needed to make some trips with his truck and had only 12 gallons of gasoline. He drives to a supermarket 5 miles away and then drives back home. Then he headed to his farm which was 6 miles away. Two miles into the journey, he turned around and drove back home to retrieve some farming tools he forgot to take earlier and drove down to the farm. If he now has exactly 2 gallons of gasoline left, at what rate in miles per gallon has his truck been consuming gasoline?",
+    "question_sha256": "8fa312d77976a3f01dab0432f5acecb18cdf8015120cabd3adf71191f6f6621b",
+    "responses": [
+      {
+        "key": "gsm8k-train-338:rich",
+        "raw_call_sha256": "4ec9dccb2046e457f1323a8fbbb64b7275fb920bf1e2e5f9b4b93514a52a2545",
+        "student_prefix": [
+          {
+            "content": "Bobby needed to make some trips with his truck and had only 12 gallons of gasoline. He drives to a supermarket 5 miles away and then drives back home. Then he headed to his farm which was 6 miles away. Two miles into the journey, he turned around and drove back home to retrieve some farming tools he forgot to take earlier and drove down to the farm. If he now has exactly 2 gallons of gasoline left, at what rate in miles per gallon has his truck been consuming gasoline?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "75bc47dc2e380f89812aaed2cf27840347167f191cfeb34fb08b7db68591fe56",
+        "target": "Bobby started with 12 gallons of gasoline and ended with 2 gallons, meaning he used 12 - 2 = 10 gallons. Let's break down his trips to calculate the total distance driven.\n\n1. **Round trip to the supermarket:** 5 miles to the supermarket and 5 miles back home, totaling 10 miles.\n2. **Trip to the farm:** 6 miles one way, but he turned around after 2 miles, so 2 miles back home, and then 6 miles to the farm, totaling 2 + 6 + 6 = 14 miles.\n\nAdding these distances: 10 miles (supermarket) + 14 miles (farm) = 24 miles.\n\nSince he used 10 gallons of gasoline for 24 miles, the rate of consumption is 24 miles / 10 gallons = 2.4 miles per gallon.\n\nFINAL: 2.4",
+        "target_sha256": "614a52ba4a61e0629136d234d23f84b4f46103ed7c4e64a6baeff2de7305898d"
+      }
+    ],
+    "task_id": "gsm8k-train-338"
+  },
+  {
+    "gold": "105",
+    "question": "A reporter is paid by the word and per article. She earns $.1 per word. She earns $60 per article. She has to finish three stories in the next 4 hours. She averages 10 words a minute. How much can she expect to earn per hour if she writes the entire time?",
+    "question_sha256": "77df2250558ae7f9fef3504b464158a756828a2a8a1a01caeb2b823897ad5b52",
+    "responses": [
+      {
+        "key": "gsm8k-train-4631:rich",
+        "raw_call_sha256": "f1dfd25669d0b1d200685aecd33e6a22895eb1915392cbd0667085342cb6422f",
+        "student_prefix": [
+          {
+            "content": "A reporter is paid by the word and per article. She earns $.1 per word. She earns $60 per article. She has to finish three stories in the next 4 hours. She averages 10 words a minute. How much can she expect to earn per hour if she writes the entire time?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "69add44818f1fe36223d400b9458df6b7106ba57e26148f81502f86236ee1379",
+        "target": "Given:\n- Earnings per word: $0.1\n- Earnings per article: $60\n- She has to finish 3 stories in 4 hours\n- She averages 10 words per minute\n\nFirst, calculate the total time available in minutes:\n4 hours * 60 minutes/hour = 240 minutes\n\nNext, calculate the total words she can write in 240 minutes:\n240 minutes * 10 words/minute = 2400 words\n\nNow, calculate her earnings from writing words:\n2400 words * $0.1/word = $240\n\nCalculate her earnings from articles:\n3 articles * $60/article = $180\n\nTotal earnings:\n$240 (from words) + $180 (from articles) = $420\n\nCalculate her earnings per hour:\n$420 total / 4 hours = $105/hour\n\nFINAL: 105",
+        "target_sha256": "780ff537571214e25f305481755bb0a183f1e833652b9927bf568b21a3d8e873"
+      },
+      {
+        "key": "gsm8k-train-4631:new_record",
+        "raw_call_sha256": "86d487c4372b615a0dcd7b61b6f89989768be4b76cabcea46939f73236d4bd6a",
+        "student_prefix": [
+          {
+            "content": "A reporter is paid by the word and per article. She earns $.1 per word. She earns $60 per article. She has to finish three stories in the next 4 hours. She averages 10 words a minute. How much can she expect to earn per hour if she writes the entire time?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Earnings per word: $0.1\n- Earnings per article: $60\n- She has to finish 3 stories in 4 hours\n- She averages 10 words per minute\n\nFirst, calculate the total time available in minutes:\n4 hours * 60 minutes/hour = 240 minutes\n\nNext, calculate the total words she can write in 240 minutes:\n240 minutes * 10 words/minute = 2400 words\n\nNow, calculate her earnings from writing words:\n2400 words * $0.1/word = $240\n\nCalculate her earnings from articles:\n3 articles * $60/article = $180\n\nTotal earnings:\n$240 (from words) + $180 (from articles) = $420\n\nCalculate her earnings per hour:\n$420 total / 4 hours = $105/hour\n\nFINAL: 105",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2faf7be39653d5e21d6ed038afd6ee715bdb3120fb54141361436b7a47f2b7af",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Earnings per word: $0.1\n- Earnings per article: $60\n- Time available: 4 hours\n- Writing speed: 10 words per minute\n- Number of stories to write: 3\n\nI needed to determine her expected earnings per hour.\n\nFirst, I converted the total available time into minutes:\n4 hours * 60 minutes/hour = 240 minutes\n\nNext, I calculated the total number of words she could write in 240 minutes:\n240 minutes * 10 words/minute = 2400 words\n\nThen, I calculated her earnings from writing words:\n2400 words * $0.1/word = $240\n\nI also calculated her earnings from writing articles:\n3 articles * $60/article = $180\n\nAdding these together gave her total earnings:\n$240 (from words) + $180 (from articles) = $420\n\nTo find her earnings per hour, I divided the total earnings by the total hours available:\n$420 / 4 hours = $105/hour\n\nTo check this result, I verified that the calculations were consistent with the given data and that the operations were correctly applied. The final answer matches the problem's requirements.\n\nFINAL: 105",
+        "target_sha256": "f1c8da39d1feb5373c4da00bbefcda7748829a4b594d64e2f136110a0f3997bd"
+      }
+    ],
+    "task_id": "gsm8k-train-4631"
+  },
+  {
+    "gold": "3",
+    "question": "Janet starts driving across a lake in a speedboat going 30 miles per hour. Her sister follows in a sailboat that has a speed of 12 miles per hour. If the lake is 60 miles wide, how long does Janet have to wait on the other side for her sister to catch up?",
+    "question_sha256": "c8b93ea7e6b2138d8f2a1a117ab86a2dbe4ee6851ac6a8144492221947bc14b3",
+    "responses": [
+      {
+        "key": "gsm8k-train-4488:rich",
+        "raw_call_sha256": "1a963a56ace010aff8bd088e1b5de5f46e95abd2c894d0b1108129cdb687994a",
+        "student_prefix": [
+          {
+            "content": "Janet starts driving across a lake in a speedboat going 30 miles per hour. Her sister follows in a sailboat that has a speed of 12 miles per hour. If the lake is 60 miles wide, how long does Janet have to wait on the other side for her sister to catch up?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4a88ee2597b5874f55354631872f61916a4891668251625cfefdc171891ae802",
+        "target": "Given:\n- Janet's speed: 30 miles per hour\n- Sister's speed: 12 miles per hour\n- Lake width: 60 miles\n\nFirst, calculate the time it takes for Janet to cross the lake:\n\\[ \\text{Time for Janet} = \\frac{\\text{Distance}}{\\text{Speed}} = \\frac{60 \\text{ miles}}{30 \\text{ miles/hour}} = 2 \\text{ hours} \\]\n\nNext, calculate the time it takes for Janet's sister to cross the lake:\n\\[ \\text{Time for sister} = \\frac{\\text{Distance}}{\\text{Speed}} = \\frac{60 \\text{ miles}}{12 \\text{ miles/hour}} = 5 \\text{ hours} \\]\n\nThe difference in time between Janet and her sister is:\n\\[ \\text{Time difference} = \\text{Time for sister} - \\text{Time for Janet} = 5 \\text{ hours} - 2 \\text{ hours} = 3 \\text{ hours} \\]\n\nSo, Janet has to wait 3 hours for her sister to catch up.\n\nFINAL: 3",
+        "target_sha256": "5a3edcfa5f41dc80566e8e61a17427373036c7d5928b6ba656c34194f27b7ec2"
+      },
+      {
+        "key": "gsm8k-train-4488:new_record",
+        "raw_call_sha256": "d98d218c154161d6dd630bad96c70199fa4d95682fde6da92a7bb9910b64e9c1",
+        "student_prefix": [
+          {
+            "content": "Janet starts driving across a lake in a speedboat going 30 miles per hour. Her sister follows in a sailboat that has a speed of 12 miles per hour. If the lake is 60 miles wide, how long does Janet have to wait on the other side for her sister to catch up?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Janet's speed: 30 miles per hour\n- Sister's speed: 12 miles per hour\n- Lake width: 60 miles\n\nFirst, calculate the time it takes for Janet to cross the lake:\n\\[ \\text{Time for Janet} = \\frac{\\text{Distance}}{\\text{Speed}} = \\frac{60 \\text{ miles}}{30 \\text{ miles/hour}} = 2 \\text{ hours} \\]\n\nNext, calculate the time it takes for Janet's sister to cross the lake:\n\\[ \\text{Time for sister} = \\frac{\\text{Distance}}{\\text{Speed}} = \\frac{60 \\text{ miles}}{12 \\text{ miles/hour}} = 5 \\text{ hours} \\]\n\nThe difference in time between Janet and her sister is:\n\\[ \\text{Time difference} = \\text{Time for sister} - \\text{Time for Janet} = 5 \\text{ hours} - 2 \\text{ hours} = 3 \\text{ hours} \\]\n\nSo, Janet has to wait 3 hours for her sister to catch up.\n\nFINAL: 3",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2fd5dfca3ae15c6560900409b518901529d9fceb0ea395755290669c57670fcf",
+        "target": "Given the problem, I identified the key quantities: Janet's speed (30 miles per hour), her sister's speed (12 miles per hour), and the lake's width (60 miles). The unknown I needed to find was the time Janet would have to wait for her sister to catch up after she had crossed the lake.\n\nFirst, I calculated the time it would take for Janet to cross the lake:\n\\[ \\text{Time for Janet} = \\frac{60 \\text{ miles}}{30 \\text{ miles/hour}} = 2 \\text{ hours} \\]\n\nNext, I calculated the time it would take for Janet's sister to cross the lake:\n\\[ \\text{Time for sister} = \\frac{60 \\text{ miles}}{12 \\text{ miles/hour}} = 5 \\text{ hours} \\]\n\nTo find out how long Janet would have to wait, I subtracted the time it took Janet to cross the lake from the time it took her sister:\n\\[ \\text{Time Janet waits} = 5 \\text{ hours} - 2 \\text{ hours} = 3 \\text{ hours} \\]\n\nTo verify this result, I considered the relative speeds and distances. Janet's sister is traveling at a slower speed, so she would take longer to cross the lake. The difference in their travel times is exactly the waiting time Janet would have to endure.\n\nThe operations I used are straightforward division and subtraction, which are reliable for solving such problems. I would reuse these operations whenever I need to calculate the time difference based on different speeds and distances.\n\nFINAL: 3",
+        "target_sha256": "d5188fc840afcfb575361ee19df55b01c161aa44e85dd0ccb657bc06553dbc68"
+      }
+    ],
+    "task_id": "gsm8k-train-4488"
+  },
+  {
+    "gold": "2",
+    "question": "Karen is paddling her canoe up a river against the current. On a still pond, Karen can paddle 10 miles per hour. The river flows in the opposite direction at 4 miles per hour. If the river is 12 miles long, how many hours will it take Karen to paddle up it?",
+    "question_sha256": "60e0b0279d590fa1e47a5f7726453f5bcd8c8dec3e8cc36ce920802f6d13d722",
+    "responses": [
+      {
+        "key": "gsm8k-train-5662:rich",
+        "raw_call_sha256": "7f77615208faaea0351739e07f66e0b72d5e45414bf6e8dcc46372f6fefb0443",
+        "student_prefix": [
+          {
+            "content": "Karen is paddling her canoe up a river against the current. On a still pond, Karen can paddle 10 miles per hour. The river flows in the opposite direction at 4 miles per hour. If the river is 12 miles long, how many hours will it take Karen to paddle up it?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "344f2badb15e53a4b30992f648bd2d380379132379454e9f02827b0516aef5a6",
+        "target": "Given:\n- Karen's paddling speed on a still pond: 10 miles per hour\n- River current speed: 4 miles per hour\n- Distance of the river: 12 miles\n\nTo find:\n- Time it takes for Karen to paddle up the river\n\nActual operations:\n1. Calculate Karen's effective paddling speed against the current: \\(10 - 4 = 6\\) miles per hour\n2. Use the formula for time: \\(\\text{Time} = \\frac{\\text{Distance}}{\\text{Speed}}\\)\n3. Substitute the values: \\(\\text{Time} = \\frac{12}{6} = 2\\) hours\n\nChecking the result:\n- Karen's effective speed is 6 miles per hour\n- The distance is 12 miles\n- Time = 12 miles / 6 miles per hour = 2 hours\n\nFINAL: 2",
+        "target_sha256": "a2a8a018e492bb10c78776d8444e9bfa9e6333fe619168f3326394a43dd86d75"
+      },
+      {
+        "key": "gsm8k-train-5662:new_record",
+        "raw_call_sha256": "ac24e73912cee9f2d4f30aff832ecffcd71d12005ca0829dc4375b9dad05cc68",
+        "student_prefix": [
+          {
+            "content": "Karen is paddling her canoe up a river against the current. On a still pond, Karen can paddle 10 miles per hour. The river flows in the opposite direction at 4 miles per hour. If the river is 12 miles long, how many hours will it take Karen to paddle up it?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Karen's paddling speed on a still pond: 10 miles per hour\n- River current speed: 4 miles per hour\n- Distance of the river: 12 miles\n\nTo find:\n- Time it takes for Karen to paddle up the river\n\nActual operations:\n1. Calculate Karen's effective paddling speed against the current: \\(10 - 4 = 6\\) miles per hour\n2. Use the formula for time: \\(\\text{Time} = \\frac{\\text{Distance}}{\\text{Speed}}\\)\n3. Substitute the values: \\(\\text{Time} = \\frac{12}{6} = 2\\) hours\n\nChecking the result:\n- Karen's effective speed is 6 miles per hour\n- The distance is 12 miles\n- Time = 12 miles / 6 miles per hour = 2 hours\n\nFINAL: 2",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1eedb0c3c3a4c08d5f6414b6f77b50f8c75cdde8897aaa29fb2246811b69cf18",
+        "target": "Given the problem, I identified the key quantities: Karen's paddling speed on a still pond (10 miles per hour), the river's current speed (4 miles per hour), and the river's length (12 miles). The unknown I needed to find was the time it would take Karen to paddle up the river against the current.\n\nFirst, I recognized that Karen's effective paddling speed against the current would be her still-water speed minus the river's current speed. This calculation was straightforward: \\(10 - 4 = 6\\) miles per hour. This step was necessary because the current of the river would slow Karen down, and I needed to account for this reduction in speed.\n\nNext, I used the formula for time, which is distance divided by speed. Substituting the known values, I calculated the time as \\( \\frac{12 \\text{ miles}}{6 \\text{ miles per hour}} = 2 \\text{ hours} \\). This calculation provided the time it would take Karen to paddle up the river.\n\nTo check the result, I considered the physical scenario: if Karen paddles at 6 miles per hour and the river is 12 miles long, it logically follows that it would take her 2 hours to cover the distance. This check aligns with the problem statement and confirms the solution.\n\nThe operation I would reuse is the calculation of effective speed by subtracting the current speed from the still-water speed, and then using the distance-speed-time relationship to find the time. This method is applicable whenever a vessel's speed is affected by a current or wind.\n\nFINAL: 2",
+        "target_sha256": "47fba4b163c0318bf9552d0c77363d976e9cb892a0716f12ca5ec5d9993ec04d"
+      }
+    ],
+    "task_id": "gsm8k-train-5662"
+  },
+  {
+    "gold": "28000",
+    "question": "A retail store wants to hire 50 new phone reps to assist with the increased call volume that they will experience over the holiday.  Each phone rep will work 8 hours a day and will be paid $14.00 an hour.  After 5 days, how much will the company pay all 50 new employees?",
+    "question_sha256": "ab0511079b09c752114142c4772076b27ef39680442bcc37fdb4a9a2f506c7a7",
+    "responses": [
+      {
+        "key": "gsm8k-train-3086:rich",
+        "raw_call_sha256": "2ae1ab0610b7a9a9555ebfb674ea40468a83be761e21184867ac6e80e0957a2f",
+        "student_prefix": [
+          {
+            "content": "A retail store wants to hire 50 new phone reps to assist with the increased call volume that they will experience over the holiday.  Each phone rep will work 8 hours a day and will be paid $14.00 an hour.  After 5 days, how much will the company pay all 50 new employees?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "502f64fdc5c5d9d1d05b8f2c2ef37aed9e190f3f5321873fb348c286cb19e631",
+        "target": "Given:\n- Number of new phone reps: 50\n- Hours worked per day by each rep: 8\n- Daily wage per rep: $14.00\n- Number of days: 5\n\nTo find the total payment, we need to calculate the daily wage for all reps, then multiply by the number of days.\n\n1. Calculate the daily wage for one rep: \\(8 \\text{ hours} \\times \\$14.00 = \\$112.00\\)\n2. Calculate the total daily wage for all reps: \\(50 \\text{ reps} \\times \\$112.00 = \\$5600.00\\)\n3. Calculate the total payment for 5 days: \\(\\$5600.00 \\times 5 = \\$28000.00\\)\n\nFINAL: 28000",
+        "target_sha256": "cf72a139134d3b6683edcdb82b9e9d29e3c7e97863d7fea80f760caef3df6d63"
+      },
+      {
+        "key": "gsm8k-train-3086:new_record",
+        "raw_call_sha256": "1c3695ee9c1084dd60798f77288f6ffb073239f931a45f8d8e7cdc27e9044f15",
+        "student_prefix": [
+          {
+            "content": "A retail store wants to hire 50 new phone reps to assist with the increased call volume that they will experience over the holiday.  Each phone rep will work 8 hours a day and will be paid $14.00 an hour.  After 5 days, how much will the company pay all 50 new employees?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Number of new phone reps: 50\n- Hours worked per day by each rep: 8\n- Daily wage per rep: $14.00\n- Number of days: 5\n\nTo find the total payment, we need to calculate the daily wage for all reps, then multiply by the number of days.\n\n1. Calculate the daily wage for one rep: \\(8 \\text{ hours} \\times \\$14.00 = \\$112.00\\)\n2. Calculate the total daily wage for all reps: \\(50 \\text{ reps} \\times \\$112.00 = \\$5600.00\\)\n3. Calculate the total payment for 5 days: \\(\\$5600.00 \\times 5 = \\$28000.00\\)\n\nFINAL: 28000",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "9eef7dae608ad04e09849697522a2b9884c4d28828121ffc08c1ffac45769816",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Number of new phone reps: 50\n- Hours worked per day by each rep: 8\n- Daily wage per rep: $14.00\n- Number of days: 5\n- Unknown: Total payment for all reps over 5 days\n\nTo solve this, I first calculated the daily wage for one rep:\n\\[ 8 \\text{ hours} \\times \\$14.00 = \\$112.00 \\]\nThis step was necessary to find out how much one rep earns in a single day.\n\nNext, I calculated the total daily wage for all 50 reps:\n\\[ 50 \\text{ reps} \\times \\$112.00 = \\$5600.00 \\]\nThis step allowed me to determine the combined daily wage for all the new phone reps.\n\nThen, I calculated the total payment for 5 days:\n\\[ \\$5600.00 \\times 5 = \\$28000.00 \\]\nThis final step gave me the total amount the company will pay all 50 new employees over the 5-day period.\n\nTo check the result, I verified that the operations were correctly applied and that the units and numbers matched the problem statement. The calculations were straightforward and directly related to the given data.\n\nThe operations I used are reusable in similar problems involving wage calculations over a period. I would reuse the steps of calculating daily wage per rep, then the total daily wage for all reps, and finally the total payment over the given number of days.\n\nFINAL: 28000",
+        "target_sha256": "dcdc0a6643068d0214c022996cd0de2cf87cb9d2d781c00085e08c954940e5b8"
+      }
+    ],
+    "task_id": "gsm8k-train-3086"
+  },
+  {
+    "gold": "10",
+    "question": "The sewers in Middleton can handle 240,000 gallons of run-off. Each hour of rain produces 1000 gallons of runoff. How many days of rain can the sewers handle before they overflow?",
+    "question_sha256": "040c266d5b6a111710d8bca48a6f3ca78f2dd8e2f626e5e8f19df52c67afbf03",
+    "responses": [
+      {
+        "key": "gsm8k-train-1751:rich",
+        "raw_call_sha256": "fdc65e4d55d50185f8ef1fa155c43f07fc4e531986d1dcf34582424a5802a995",
+        "student_prefix": [
+          {
+            "content": "The sewers in Middleton can handle 240,000 gallons of run-off. Each hour of rain produces 1000 gallons of runoff. How many days of rain can the sewers handle before they overflow?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "acc5b48250297fd183709c9edd51fa37180b8f54983eb6d542e73602dd6ffa14",
+        "target": "Given:\n- Sewers capacity: 240,000 gallons\n- Runoff per hour of rain: 1000 gallons\n\nTo find:\n- Number of days of rain the sewers can handle\n\nFirst, calculate the number of hours of rain the sewers can handle:\n\\[ \\text{Hours of rain} = \\frac{\\text{Sewers capacity}}{\\text{Runoff per hour}} = \\frac{240,000 \\text{ gallons}}{1000 \\text{ gallons/hour}} = 240 \\text{ hours} \\]\n\nNext, convert hours to days:\n\\[ \\text{Days of rain} = \\frac{\\text{Hours of rain}}{24 \\text{ hours/day}} = \\frac{240 \\text{ hours}}{24 \\text{ hours/day}} = 10 \\text{ days} \\]\n\nSo, the sewers can handle 10 days of rain before they overflow.\n\nFINAL: 10",
+        "target_sha256": "0e9840db62eedd8ddf8f76418a49460399d9bca692df489fee8fa5bbacf2b98e"
+      },
+      {
+        "key": "gsm8k-train-1751:new_record",
+        "raw_call_sha256": "fe279ae174b127bbfaaebff96bba3c767606c30e743bb2190c2226cea5733fbb",
+        "student_prefix": [
+          {
+            "content": "The sewers in Middleton can handle 240,000 gallons of run-off. Each hour of rain produces 1000 gallons of runoff. How many days of rain can the sewers handle before they overflow?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Sewers capacity: 240,000 gallons\n- Runoff per hour of rain: 1000 gallons\n\nTo find:\n- Number of days of rain the sewers can handle\n\nFirst, calculate the number of hours of rain the sewers can handle:\n\\[ \\text{Hours of rain} = \\frac{\\text{Sewers capacity}}{\\text{Runoff per hour}} = \\frac{240,000 \\text{ gallons}}{1000 \\text{ gallons/hour}} = 240 \\text{ hours} \\]\n\nNext, convert hours to days:\n\\[ \\text{Days of rain} = \\frac{\\text{Hours of rain}}{24 \\text{ hours/day}} = \\frac{240 \\text{ hours}}{24 \\text{ hours/day}} = 10 \\text{ days} \\]\n\nSo, the sewers can handle 10 days of rain before they overflow.\n\nFINAL: 10",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "81cbc9fee0dac57e159fa6c62e888c6062cbf2a805dceb26f568c16e233849d2",
+        "target": "Given the problem, I identified the key quantities: the sewers' capacity (240,000 gallons) and the runoff produced per hour of rain (1,000 gallons). The unknown I needed to find was the number of days of rain the sewers could handle before overflowing.\n\nTo solve this, I first calculated the total number of hours of rain the sewers could handle by dividing the sewers' capacity by the runoff per hour:\n\\[ \\text{Hours of rain} = \\frac{240,000 \\text{ gallons}}{1,000 \\text{ gallons/hour}} = 240 \\text{ hours} \\]\n\nNext, I converted the hours of rain into days by dividing by the number of hours in a day (24 hours):\n\\[ \\text{Days of rain} = \\frac{240 \\text{ hours}}{24 \\text{ hours/day}} = 10 \\text{ days} \\]\n\nTo check the result, I reasoned that if the sewers can handle 240,000 gallons and each day of rain produces 24,000 gallons (1,000 gallons/hour * 24 hours/day), then 10 days of rain would produce 240,000 gallons, which matches the sewers' capacity.\n\nThe operation I would reuse is the conversion from hours to days, as it is a straightforward and reliable method for handling similar problems involving time units. I would apply this operation whenever I need to convert a total time in hours to days for a given context.\n\nFINAL: 10",
+        "target_sha256": "38a99c6fe5707c83df40abcab62a76c7f5ff9a895c991b2b71cc370b61d7ae23"
+      }
+    ],
+    "task_id": "gsm8k-train-1751"
+  },
+  {
+    "gold": "18",
+    "question": "A truck driver\u2019s heavy semi truck can go 3 miles per gallon of gas. The truck driver needs to put gas in his truck at one gas station, but wants to put the minimum amount he needs to get him to a much cheaper gas station 90 miles away. He already has 12 gallons of gas in his tank. How many more gallons does the truck driver need to put in his semi to make it to the cheaper gas station?",
+    "question_sha256": "30314f07e441c26b8a575cf82cebfa82f146d852b7d889a24c626f44eb7f321b",
+    "responses": [
+      {
+        "key": "gsm8k-train-3624:rich",
+        "raw_call_sha256": "0e9d7c6d661911210ea4e107ed0ff92b3535904251fdace2345e4d43fa3a7838",
+        "student_prefix": [
+          {
+            "content": "A truck driver\u2019s heavy semi truck can go 3 miles per gallon of gas. The truck driver needs to put gas in his truck at one gas station, but wants to put the minimum amount he needs to get him to a much cheaper gas station 90 miles away. He already has 12 gallons of gas in his tank. How many more gallons does the truck driver need to put in his semi to make it to the cheaper gas station?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c2489012b7ae91c0c28dc0409ff8384bef1765495db088202890044437f677ff",
+        "target": "The truck can go 3 miles per gallon, and the driver needs to travel 90 miles. First, calculate the total gallons needed for the trip: 90 miles / 3 miles per gallon = 30 gallons. The driver already has 12 gallons, so subtract that from the total needed: 30 gallons - 12 gallons = 18 gallons. \n\nThe truck driver needs to put 18 more gallons in his semi to make it to the cheaper gas station.\n\nFINAL: 18",
+        "target_sha256": "f560283920d5ea78ba0134af4062ead38ab0f5ad29e45d2e6a5cec912c2ebce2"
+      },
+      {
+        "key": "gsm8k-train-3624:new_record",
+        "raw_call_sha256": "6ee100c68c2a6b0aaaf5ee5b29664d82b3331384fa8dfed319a819ebf7599d6d",
+        "student_prefix": [
+          {
+            "content": "A truck driver\u2019s heavy semi truck can go 3 miles per gallon of gas. The truck driver needs to put gas in his truck at one gas station, but wants to put the minimum amount he needs to get him to a much cheaper gas station 90 miles away. He already has 12 gallons of gas in his tank. How many more gallons does the truck driver need to put in his semi to make it to the cheaper gas station?",
+            "role": "user"
+          },
+          {
+            "content": "The truck can go 3 miles per gallon, and the driver needs to travel 90 miles. First, calculate the total gallons needed for the trip: 90 miles / 3 miles per gallon = 30 gallons. The driver already has 12 gallons, so subtract that from the total needed: 30 gallons - 12 gallons = 18 gallons. \n\nThe truck driver needs to put 18 more gallons in his semi to make it to the cheaper gas station.\n\nFINAL: 18",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "b9598898acbc755ea2e430c7ff0b291db5740b9872846d746e43fbe996c83755",
+        "target": "Given the problem, I identified the key quantities: the truck's fuel efficiency (3 miles per gallon), the distance to the cheaper gas station (90 miles), and the current amount of gas in the tank (12 gallons). The unknown was how many more gallons of gas the truck driver needed to reach the cheaper gas station.\n\nFirst, I calculated the total gallons required for the trip by dividing the distance by the fuel efficiency: 90 miles / 3 miles per gallon = 30 gallons. This step was necessary to determine the total fuel needed for the journey.\n\nNext, I subtracted the current amount of gas in the tank from the total gallons required: 30 gallons - 12 gallons = 18 gallons. This subtraction was to find out how much more gas was needed to complete the trip.\n\nTo verify the result, I considered the total trip in terms of the remaining distance and the fuel efficiency: 18 gallons * 3 miles per gallon = 54 miles. Adding this to the 36 miles already covered (12 gallons * 3 miles per gallon) gives 90 miles, which matches the distance to the cheaper gas station.\n\nThe operations I used were straightforward: division to find the total gallons needed, subtraction to find the additional gallons required, and multiplication to verify the result. These operations are reusable in similar problems involving distance, fuel efficiency, and current fuel levels.\n\nFINAL: 18",
+        "target_sha256": "727c6322d518b680c6b2760910f241dc41d45bb26462efef83c4305885a01941"
+      }
+    ],
+    "task_id": "gsm8k-train-3624"
+  }
+]

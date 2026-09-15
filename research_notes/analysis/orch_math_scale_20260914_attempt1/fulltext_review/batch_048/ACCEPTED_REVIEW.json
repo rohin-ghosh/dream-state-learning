@@ -1,0 +1,353 @@
+{
+  "gold": {
+    "gsm8k-train-1177": {
+      "independent_answer": "640",
+      "question_sha256": "5ffab4cb4af5f730771b0dc59319dada9852f0187d2601c174376fc979fe5ec5",
+      "reason": "Weekly rental time is 8 \u00d7 4 = 32 hours, and 32 \u00d7 $20 = $640. This equals the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-2249": {
+      "independent_answer": "1800",
+      "question_sha256": "aee0234ff0607b0631ca8a941165a04d2ca196439097d1f046a0fef113ddb53f",
+      "reason": "The sales-rate difference is 6 - 4 = 2 packs per hour. Over 15 hours that is 30 extra packs, and 30 \u00d7 $60 = $1800, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3737": {
+      "independent_answer": "8",
+      "question_sha256": "1c2279926ae6984072abae969095ef3bab3b3b89373550eca87d4b6ca68f898b",
+      "reason": "The barrels require 4 \u00d7 7 = 28 gallons. At 3.5 gallons per minute, the time is 28 \u00f7 3.5 = 8 minutes, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3942": {
+      "independent_answer": "underdetermined",
+      "question_sha256": "b46fbd6027fa9e32e6bbe76063f2298c64f1b6f20ef5d481b29be863180cb8d7",
+      "reason": "Weekly earnings are 48 \u00d7 $30 = $1440. If a month contains w paid workweeks, the remaining money is 1440w - (1440w/3) - 500 - 1000 = 960w - 1500. The gold 2340 assumes exactly four weeks per month, which the question does not specify.",
+      "status": "AMBIGUOUS"
+    },
+    "gsm8k-train-462": {
+      "independent_answer": "2250",
+      "question_sha256": "3ce4ad6229065182f3b83a001066c851ce9fb917fdd1526537a4020f4be7e8be",
+      "reason": "Roberto's rate is 4200 \u00f7 60 = 70 skips per minute, so he makes 70 \u00d7 15 = 1050 skips. Valerie makes 80 \u00d7 15 = 1200. Their total is 1050 + 1200 = 2250, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4798": {
+      "independent_answer": "28980",
+      "question_sha256": "9890855c4a3412a8bb59316a8d6bbbfdaca8abb90908d839aab5b2c2bf2917bc",
+      "reason": "The workers remove 4 \u00d7 2880 = 11520 gallons and add 7 \u00d7 1500 = 10500 gallons. Thus 30000 - 11520 + 10500 = 28980 gallons, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5445": {
+      "independent_answer": "2",
+      "question_sha256": "26c32872fa971aabfc242b4ada8d93768023db70cbd6b4bb69c60caeb91a2956",
+      "reason": "The distances total 15 + 6 + 2 + 4 + 11 = 38 miles. At 19 miles per gallon, 38 \u00f7 19 = 2 gallons, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-964": {
+      "independent_answer": "4",
+      "question_sha256": "9e3311545b2ad739eb3353e0e4281656c0136934362ff021e7e5e05daba5fe6f",
+      "reason": "Kevin's rate is 64 \u00f7 8 = 8 wings per minute. To beat that whole-wing-per-minute record Alan must reach at least 9 wings per minute, which is 9 - 5 = 4 more. This equals the gold.",
+      "status": "VALID"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-1177:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the daily earnings by multiplying the rental rate by the number of hours rented per day",
+        "20 \\, \\text{dollars/hour} \\times 8 \\, \\text{hours/day} = 160 \\, \\text{dollars/day}",
+        "160 \\, \\text{dollars/day} \\times 4 \\, \\text{days/week} = 640 \\, \\text{dollars/week}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the supplied rental facts and explicitly shown arithmetic. Its verification is a self-check, not a claim about an external checker.",
+      "raw_call_sha256": "e113e5f487172962a5a3a0aaa72d1e37bd034ad75e206f4fa362fad527a83ba2",
+      "reason": "The response gives a first-person account of multiplying rate by daily hours and then by weekly days. Both calculations are correct, the $160 and $640 expectations are concrete, and the rate-duration method is explicitly identified as reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "d54e2a7c327c4f009c3176be0ba21687d168b0b6da0c99f9665a35b5748b7734",
+      "target_sha256": "ad8a4b5f39637ab14f83584dc75b37f28130de5224d5627a1a02de32bb8e6a4b"
+    },
+    "gsm8k-train-1177:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Daily earnings = $20/hour * 8 hours/day = $160/day",
+        "Weekly earnings = $160/day * 4 days/week = $640/week"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual and numerical claim follows from the question and shown arithmetic; no external event or hidden feedback is claimed.",
+      "raw_call_sha256": "50bf62f6a3522a99e646391c4154e6362c9ef27adf1ae75f59d4a5eb12cb447c",
+      "reason": "The rate-times-hours and daily-times-days calculations are correct and provide concrete, reusable intermediates. However, the response is entirely impersonal and contains no substantive own account of applying or checking an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "37a99867da79e1a8d3ec742c25a516d5df660aeb56e8b3cc61acd89b414c258b",
+      "target_sha256": "cf6573e114cef01698eee0676e4142e4792669f0c5d383f97282ecbb84c37f01"
+    },
+    "gsm8k-train-2249:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the total number of packs sold in a day during each season",
+        "High season: 6 * 15 * 60 = 5400",
+        "Difference: 5400 - 3600 = 1800"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All facts occur in the neutral history, and the displayed arithmetic checks are internally performed and verifiable without any external checker.",
+      "raw_call_sha256": "e737a205006d17a4ac8ff0763f32ec390518c4a5a1105ec339eeea63113d43d1",
+      "reason": "The response gives an own account of computing both seasons' sales and revenue, then subtracting. Its explicit arithmetic check confirms 5400, 3600, and 1800, and the stated method is reusable for fixed-period revenue comparisons.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "bd2746d7fa6fc55b87935086b2b6a9e295ad01fcc2494975c258d95202680168",
+      "target_sha256": "fc140aa2417a7d9107b6083ec6f6004df9fee9cb6f18daad7af61f1049702585"
+    },
+    "gsm8k-train-2249:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "6 packs/hour * 15 hours = 90 packs",
+        "High season revenue: 90 packs * $60/pack = $5400",
+        "$5400 - $3600 = $1800"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the supplied rates, duration, and price, and each numerical deduction is explicitly valid. It claims no outside feedback.",
+      "raw_call_sha256": "0bb8fbd920ee32aec4edc1c171a1c524d3733a8086517fdc9ecca0fb1f3b42ac",
+      "reason": "The daily pack counts and revenues are correct and provide concrete expectations plus a reusable rate-times-time comparison. The response only issues impersonal calculation steps, however, and never gives a substantive first-person account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "0130f5ee9d148fbf620d65f2f6b523a789dbeb811e19d11eda52151010760c4c",
+      "target_sha256": "8438c58a550dabd52605bdb5ec28b513c188cfa9c25e077bcf5ca6536b3b7302"
+    },
+    "gsm8k-train-3737:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the total volume needed to fill all barrels",
+        "\\frac{28 \\text{ gallons}}{3.5 \\text{ gallons/minute}} = 8 \\text{ minutes}",
+        "3.5 \\text{ gallons/minute} \\times 8 \\text{ minutes} = 28 \\text{ gallons}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All quantities are supplied in the neutral history, and the target's inverse check is explicitly shown valid arithmetic rather than hidden checker feedback.",
+      "raw_call_sha256": "a6f7e7b53d2f5e44bf62d9825630b2654fe6027f041206fa96206614eabebc24",
+      "reason": "The response correctly computes total capacity, divides by flow rate, and verifies the result by multiplying 3.5 by 8 to recover 28 gallons. It gives an own operational account and explains reuse of the volume-over-flow formula.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "dd66faf30070ff2b8ca3ec136873308c829ff35d4594f256bbc0e11546741dc8",
+      "target_sha256": "2b01525b2f0719ec0a5b840e259d912dfe241639fc123c728769c83a5219df9a"
+    },
+    "gsm8k-train-3737:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Total volume needed = 4 barrels * 7 gallons/barrel = 28 gallons.",
+        "we use the formula:",
+        "\\frac{28 \\text{ gallons}}{3.5 \\text{ gallons/minute}} = 8 \\text{ minutes}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The capacities and flow rate are supplied, and both the volume multiplication and time division are valid explicit reasoning. No unsupported observation is asserted.",
+      "raw_call_sha256": "685c92f2202a6557d32e2abf255a5fec4c5e78b43a86ecdddc37c66813b62297",
+      "reason": "The plural first-person statement applies the time-equals-volume-over-rate formula. The target correctly computes 28 gallons and 8 minutes, giving checkable intermediates and a reusable filling-rate operation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "2e989873ad7c087e8befec02a157708555e113f00f1047eaec940c799c91512d",
+      "target_sha256": "929ea34bd0ae06d9c006550e22041e94cc6dc40dfaffc5a777ca106b740d8670"
+    },
+    "gsm8k-train-3942:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Weeks in a month: 4",
+        "I calculated the firefighter's weekly earnings",
+        "To verify, I checked that the operations were correctly applied and the result logically follows the problem statement."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The four-week assumption and all derived figures appear in the supplied assistant history, so the target does not rely on hidden feedback or an unmentioned external event. This source compatibility does not establish that the assumption is mathematically warranted.",
+      "raw_call_sha256": "1269074648733fd2ae13f4193efe40c8ae20cde9cdaf4be9dd5b90f3ae55a769",
+      "reason": "The response substantively recounts the calculation and gives checkable figures, but the four-week premise remains an unwarranted assumption rather than a fact established by the original problem. Its purported verification merely says the operations were correct and the result followed, without performing a concrete check, making that sentence generic padding.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "18b6aafbed7893f1445231193c10618ee0cff7329ad8e049bb7f615524dd6462",
+      "target_sha256": "c4c21acc1fee2ad50341ea275706eac6f5bf93ae0741e39387863e610030361c"
+    },
+    "gsm8k-train-3942:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Since there are typically 4 weeks in a month",
+        "his monthly earnings are $1440 * 4 = $5760",
+        "$5760 - $3420 = $2340"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The question does not state that the relevant month has exactly four workweeks. The target introduces that approximation and treats the resulting $2340 as determined, so that claim is not supportable from this prefix alone.",
+      "raw_call_sha256": "d54ac154aa1b571b49d90c54ff8778d3675f840be00ad17d4119c9b105327e16",
+      "reason": "The first-person arithmetic is internally correct conditional on four weeks per month and contains concrete net-income calculations. It nevertheless treats the unsupported four-week approximation as a fact, so its monthly result is not grounded in the question.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "8dc57080f76d972d31d2576242556d1ba7281cea81136a499592bfd885aea0f6",
+      "target_sha256": "1caec8da89dacaec60798001a9b7f8ebe83e5575d65a25ce585f6b36120cf0a8"
+    },
+    "gsm8k-train-462:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I converted Roberto's hourly rate to a per-minute rate.",
+        "Roberto skips 4,200 / 60 = 70 times a minute.",
+        "Total: 1,050 + 1,200 = 2,250"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every target claim follows from supplied rates and duration or from displayed arithmetic. The checking language describes the target's own explicit recalculations.",
+      "raw_call_sha256": "d969dbd40a23f2db2cac3066a9f897cfdf3731be590a9f6d812b0ac73d73fa99",
+      "reason": "The response explicitly recounts the rate conversion, duration multiplications, and addition. Its three-item arithmetic check is concrete and correct, and it explains reuse for matching rates to a duration.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "df5066bef1f74a78ff11e04edeeb44731746a271768cfd686b964f2a17f5797f",
+      "target_sha256": "c84e38466dbe1012787d2f57f5dc98d7dd93ec76ff14d579475f7cfc182c3435"
+    },
+    "gsm8k-train-462:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I identify the given quantities",
+        "Roberto skips 4,200 / 60 = 70 times a minute.",
+        "Total skips = Roberto's skips + Valerie's skips = 1,050 + 1,200 = 2,250."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The rates, duration, conversion, multiplication, and sum are all supported by the question and explicit arithmetic, with no external-event claim.",
+      "raw_call_sha256": "f7017b29ab1dd285ce8ab9ae1edd7ef409dbdc0359dfd848172e6699280cdcc4",
+      "reason": "The response gives a first-person operational account, converts 4200 per hour to 70 per minute, computes 1050 and 1200 skips, and correctly sums them to 2250. The conversion and aggregation are concrete and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "2203f35c23ac99a2a9763c8e9b94671938a030b9f3817cb292c7044d0a8f4d73",
+      "target_sha256": "b4760ea183c5a9a300cb451101c1dc2a8030b9aef418afd9d28372c6b52979ac"
+    },
+    "gsm8k-train-4798:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the amount removed, I calculated 4 * 2,880 = 11,520 gallons.",
+        "I found 30,000 - 11,520 = 18,480 gallons remaining.",
+        "To verify, I checked that the operations were correctly applied and the result matched the problem statement."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The quantities and correct flow calculations all appear in the question or supplied solution. The verification is framed as a self-check, not an unsupported external event.",
+      "raw_call_sha256": "0df23ca43019d7388ec2eb68d6fe4b8902c7a5ddcac5d151e22252c2b0f8bae4",
+      "reason": "The first-person inventory calculation is correct and its numerical stages are checkable and reusable. However, the verification sentence merely asserts that the operations were correct and matched the statement without showing a check, and the result is then repeated before the FINAL line; this is generic padding.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "8cb56141c2f236287abb18424974ef7652a459e787e64a1c84468add14711958",
+      "target_sha256": "97b65129624186b385f63a29912022bb3d88a05ba1c1a9471879b7280bec80aa"
+    },
+    "gsm8k-train-4798:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "4 * 2,880 = 11,520 gallons were removed",
+        "30,000 - 11,520 = 18,480 gallons",
+        "18,480 + 10,500 = 28,980 gallons"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The initial volume, rates, and durations come from the question, and every multiplication, subtraction, and addition is explicitly correct. No external event is invoked.",
+      "raw_call_sha256": "fe8a3b1faf40132d7d9a8adb25da1437170e4d69d8191a57496da8aa54e395de",
+      "reason": "The response correctly removes 11520 gallons, obtains 18480 remaining, adds 10500, and reaches 28980. These are concrete, reusable inventory-flow operations, but the response is entirely impersonal and supplies no own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "664a12ab66c4a98596dcaf28d6a0d14e4019bdd048cfae98610a8cd7647ad545",
+      "target_sha256": "e262a691aa5bcf451655b5a5383b9b4c2c663e73dea48d7d722e00a4d7ce69ed"
+    },
+    "gsm8k-train-5445:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated the gallons of gas as follows",
+        "\\frac{38 \\text{ miles}}{19 \\text{ miles/gallon}} = 2 \\text{ gallons}",
+        "if she had started with 2 gallons and her car gets 19 miles per gallon, then she could indeed drive 38 miles"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All facts are present in the question or earlier solution, and the inverse multiplication check is explicit self-verification rather than unsupported checker feedback.",
+      "raw_call_sha256": "02ea39b65ee86daf617893f4b902dc50ceac1981a377cb4fc109489fea3f0732",
+      "reason": "The response correctly applies distance divided by miles per gallon and independently checks that 2 gallons at 19 miles per gallon covers 38 miles. It explains when the fuel-efficiency operation can be reused and remains substantive.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7fb9265752853f799bb76f370289cff8c4bf03009fc2fd30c25ca9c26eb2fbfc",
+      "target_sha256": "4dd032e256eedfd87d2f2e520414de62b9aef0fedf628c674caf13133c43bb1e"
+    },
+    "gsm8k-train-5445:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate the total distance Kennedy drove.",
+        "15 + 6 + 2 + 4 + 11 = 38 miles",
+        "38 miles \u00f7 19 miles/gallon = 2 gallons"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The distances and fuel efficiency come directly from the question, and the addition and division are explicitly verifiable. No outside event is claimed.",
+      "raw_call_sha256": "e64df1604242ae164c6f5d3a6799c90ec655b2eaf795b7458cb7c4dbc78a8651",
+      "reason": "The response gives its own operational account, correctly totals 38 miles and divides by 19 miles per gallon to obtain 2 gallons. Those intermediates provide a concrete expectation and a reusable distance-over-efficiency operation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "024f3928482eec14aadacc92ed26aae782015722b1a6ea9fcd36f73f6e3f09f7",
+      "target_sha256": "4148ced7f8fc8429b1ddcffdb40bf3611ae2bff7e1fa7ee8cd70d607aeee1218"
+    },
+    "gsm8k-train-964:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we need to determine how many more wings per minute Alan must eat",
+        "\\frac{64 \\text{ wings}}{8 \\text{ minutes}} = 8 \\text{ wings per minute}",
+        "Alan must eat 3 more wings per minute to beat Kevin's record."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "Although 64 \u00f7 8 = 8 is supportable, the claim that adding 3 to Alan's rate of 5 beats the record is contradicted by the facts: it only reaches 8 wings per minute and ties Kevin.",
+      "raw_call_sha256": "23a10bbef34aca1102360fddab71fcdbee8b5424d47401c935ae3792eac2b8e1",
+      "reason": "The response correctly computes Kevin's 8-wings-per-minute rate, which supplies a concrete check and reusable rate calculation. But 8 - 5 = 3 only lets Alan tie Kevin; beating him at a whole-wing-per-minute rate requires 9 - 5 = 4. The sole first-person phrase states the goal rather than recounting an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "5b2af6df59d1c80637634ab4c4d41de0419be655cad45bda37e343ab65096c05",
+      "target_sha256": "959c14a656f34fb6c3690e842becdd506be86757c347f9ede6f33212c073b80b"
+    }
+  }
+}

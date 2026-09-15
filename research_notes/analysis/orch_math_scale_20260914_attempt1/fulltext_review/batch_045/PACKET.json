@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "600",
+    "question": "A dog barks 30 times per minute.  If 2 dogs bark 30 times per minute, how many times will they have barked after 10 minutes?",
+    "question_sha256": "409daa3731a9dedf3e660ee36dd5252e6f37c10a47420f93d52aaa82725fa9c2",
+    "responses": [
+      {
+        "key": "gsm8k-train-1466:rich",
+        "raw_call_sha256": "4bd9ef6af3aca315b32e1287150086d7fc18d9f018201cb85cadc810e86d178d",
+        "student_prefix": [
+          {
+            "content": "A dog barks 30 times per minute.  If 2 dogs bark 30 times per minute, how many times will they have barked after 10 minutes?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "934d1125987d23d4a4cb50965b0b272bc2f824c3239ff25d445a61b8ec76ecbe",
+        "target": "Given:\n- 1 dog barks 30 times per minute.\n- 2 dogs barking at the same rate.\n- We need to find the total barks after 10 minutes.\n\nOperations:\n1. Calculate the barks per minute for 2 dogs: \\(30 \\times 2 = 60\\) barks per minute.\n2. Calculate the total barks in 10 minutes: \\(60 \\times 10 = 600\\) barks.\n\nSo, 2 dogs will have barked 600 times after 10 minutes.\n\nFINAL: 600",
+        "target_sha256": "2f5cee917a7232fd21dcac205dcc82202c4d4a833e3a2d47addcc836a2ebf404"
+      },
+      {
+        "key": "gsm8k-train-1466:new_record",
+        "raw_call_sha256": "785bf0f9fc78ab341f469930ff3cf875ded382a78229e6e7f591adaaf34ba9de",
+        "student_prefix": [
+          {
+            "content": "A dog barks 30 times per minute.  If 2 dogs bark 30 times per minute, how many times will they have barked after 10 minutes?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- 1 dog barks 30 times per minute.\n- 2 dogs barking at the same rate.\n- We need to find the total barks after 10 minutes.\n\nOperations:\n1. Calculate the barks per minute for 2 dogs: \\(30 \\times 2 = 60\\) barks per minute.\n2. Calculate the total barks in 10 minutes: \\(60 \\times 10 = 600\\) barks.\n\nSo, 2 dogs will have barked 600 times after 10 minutes.\n\nFINAL: 600",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c6ac999c86102f6046fcd9ad8d6157e833e6fc6c316807d94b825edda563d2aa",
+        "target": "Given the problem, I identified the key quantities: the barking rate of a single dog (30 times per minute), the number of dogs (2), and the time period (10 minutes). The unknown was the total number of barks after 10 minutes.\n\nFirst, I recognized that the barking rate of 2 dogs would be double that of a single dog. Therefore, 2 dogs would bark 60 times per minute (30 times per minute for each dog, multiplied by 2). This step was based on the assumption that the barking rate is additive for multiple dogs.\n\nNext, I calculated the total barks over 10 minutes by multiplying the barking rate of 2 dogs (60 barks per minute) by the time period (10 minutes). This operation was chosen because it directly scales the barking rate to the total time, ensuring an accurate count of barks.\n\nThe calculation was: \\(60 \\text{ barks/minute} \\times 10 \\text{ minutes} = 600 \\text{ barks}\\).\n\nTo check the result, I considered the logic: if 2 dogs bark 60 times per minute, over 10 minutes, they would indeed bark 600 times. This check aligns with the problem statement and confirms the result.\n\nThe operation I would reuse is the multiplication of the barking rate (adjusted for the number of dogs) by the time period, as it directly and accurately calculates the total barks.\n\nFINAL: 600",
+        "target_sha256": "ca3dd8d712e01d5421d5f14dfc50d2ee8ff693583b1bb819d6819cc1c32bf15f"
+      }
+    ],
+    "task_id": "gsm8k-train-1466"
+  },
+  {
+    "gold": "8000",
+    "question": "John has to hire a lawyer.  He pays $1000 upfront.  He then gets charged $100 per hour.  The lawyer has to work 50 hours in court time.  It takes 2 times that long in prep time.  His brother pays half the fee.  How much did John pay?",
+    "question_sha256": "cab4f1eb00b36446699fbb1777ac58c822a54d86f4fd7ad527675d77f18b37b2",
+    "responses": [
+      {
+        "key": "gsm8k-train-4054:rich",
+        "raw_call_sha256": "bb01000b30daee4217a0b6d245d15bc2707b04e4f45617bb15587e38beb7aa35",
+        "student_prefix": [
+          {
+            "content": "John has to hire a lawyer.  He pays $1000 upfront.  He then gets charged $100 per hour.  The lawyer has to work 50 hours in court time.  It takes 2 times that long in prep time.  His brother pays half the fee.  How much did John pay?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "72591d78f5c13fff010650a851de8798ab40b3c3ce5a76742690682be791affd",
+        "target": "First, I identify the given quantities:\n- Upfront payment: $1000\n- Hourly rate: $100 per hour\n- Court time: 50 hours\n- Prep time: 2 * 50 hours = 100 hours\n- Total hours: 50 + 100 = 150 hours\n- John's brother pays half the fee\n\nNow, I calculate the total cost:\n- Cost for court time: 50 hours * $100/hour = $5000\n- Cost for prep time: 100 hours * $100/hour = $10000\n- Total cost: $1000 (upfront) + $5000 (court) + $10000 (prep) = $16000\n\nSince John's brother pays half the fee:\n- John's share: $16000 / 2 = $8000\n\nFINAL: 8000",
+        "target_sha256": "d4cf0e0f08bf18219226cfe62dd3af5d19a04e49a4f3338f2ac97d01b9208829"
+      },
+      {
+        "key": "gsm8k-train-4054:new_record",
+        "raw_call_sha256": "422808466e575097fe9c397cdca95c34dca9eed2400eab053b73657c38d941af",
+        "student_prefix": [
+          {
+            "content": "John has to hire a lawyer.  He pays $1000 upfront.  He then gets charged $100 per hour.  The lawyer has to work 50 hours in court time.  It takes 2 times that long in prep time.  His brother pays half the fee.  How much did John pay?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Upfront payment: $1000\n- Hourly rate: $100 per hour\n- Court time: 50 hours\n- Prep time: 2 * 50 hours = 100 hours\n- Total hours: 50 + 100 = 150 hours\n- John's brother pays half the fee\n\nNow, I calculate the total cost:\n- Cost for court time: 50 hours * $100/hour = $5000\n- Cost for prep time: 100 hours * $100/hour = $10000\n- Total cost: $1000 (upfront) + $5000 (court) + $10000 (prep) = $16000\n\nSince John's brother pays half the fee:\n- John's share: $16000 / 2 = $8000\n\nFINAL: 8000",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f1176af49a514deeab586da7381fb41d0016e021774fddb5dc613d223f3a236b",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Upfront payment: $1000\n- Hourly rate: $100 per hour\n- Court time: 50 hours\n- Prep time: 2 * 50 hours = 100 hours\n- Total hours: 50 + 100 = 150 hours\n- John's brother pays half the fee\n\nTo find the total cost, I first calculated the cost for court time and prep time:\n- Court time cost: 50 hours * $100/hour = $5000\n- Prep time cost: 100 hours * $100/hour = $10000\n- Total cost: $1000 (upfront) + $5000 (court) + $10000 (prep) = $16000\n\nSince John's brother pays half the fee, I calculated John's share:\n- John's share: $16000 / 2 = $8000\n\nTo verify the result, I checked the total cost calculation and the division by two. The total cost calculation was straightforward and the division by two was simple, ensuring the result was accurate.\n\nThe operations I used were straightforward arithmetic: multiplication to find the cost for hours worked and division to find John's share. These operations are reusable in similar problems involving fixed and variable costs.\n\nFINAL: 8000",
+        "target_sha256": "2d6345b9e4f956f539f0b8b68396fc57879c3300d3c5204ceb3f13b45a856f63"
+      }
+    ],
+    "task_id": "gsm8k-train-4054"
+  },
+  {
+    "gold": "73",
+    "question": "There are 3 workers producing chairs in a furniture factory. Each of them produces 4 chairs an hour. As a group, they produce an additional chair every 6 hours. In total, how many chairs have been produced after 6 hours?",
+    "question_sha256": "1983255cda814c6d72f7b8a3a202f69a2b1589795ee879cc25b679db4c0654cb",
+    "responses": [
+      {
+        "key": "gsm8k-train-2459:rich",
+        "raw_call_sha256": "928c444785ab26d33235a854ca2bd10b76490ffeb26a9ecfcb170bc654502171",
+        "student_prefix": [
+          {
+            "content": "There are 3 workers producing chairs in a furniture factory. Each of them produces 4 chairs an hour. As a group, they produce an additional chair every 6 hours. In total, how many chairs have been produced after 6 hours?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3172d40d4d515c8dfb03b596d4e9ed326eec8d58bb2504ce4ed221112c61c462",
+        "target": "Given:\n- 3 workers\n- Each worker produces 4 chairs per hour\n- Additional group production: 1 chair every 6 hours\n\nStep 1: Calculate individual production in 6 hours.\nEach worker produces 4 chairs/hour, so in 6 hours, one worker produces \\(4 \\times 6 = 24\\) chairs.\nFor 3 workers, the total is \\(24 \\times 3 = 72\\) chairs.\n\nStep 2: Add the additional group production.\nThe group produces an additional chair every 6 hours, so after 6 hours, they produce 1 more chair.\n\nStep 3: Calculate the total production.\nTotal chairs = Individual production + Additional group production\nTotal chairs = 72 + 1 = 73\n\nFINAL: 73",
+        "target_sha256": "f34bd393fb7ae8ef9891b02540b10131d1528f3be9ac580de3015accf29dc6fc"
+      },
+      {
+        "key": "gsm8k-train-2459:new_record",
+        "raw_call_sha256": "bf7cb6cbe9367da1cc8ce96c9d39b05130b1db360d0a6a2f62042ed1158ea63a",
+        "student_prefix": [
+          {
+            "content": "There are 3 workers producing chairs in a furniture factory. Each of them produces 4 chairs an hour. As a group, they produce an additional chair every 6 hours. In total, how many chairs have been produced after 6 hours?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- 3 workers\n- Each worker produces 4 chairs per hour\n- Additional group production: 1 chair every 6 hours\n\nStep 1: Calculate individual production in 6 hours.\nEach worker produces 4 chairs/hour, so in 6 hours, one worker produces \\(4 \\times 6 = 24\\) chairs.\nFor 3 workers, the total is \\(24 \\times 3 = 72\\) chairs.\n\nStep 2: Add the additional group production.\nThe group produces an additional chair every 6 hours, so after 6 hours, they produce 1 more chair.\n\nStep 3: Calculate the total production.\nTotal chairs = Individual production + Additional group production\nTotal chairs = 72 + 1 = 73\n\nFINAL: 73",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "355bd44e6665508399a1227cf0ae3b6890ebe2d0214d5a149d21b49c1966786b",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- 3 workers\n- Each worker produces 4 chairs per hour\n- The group produces an additional chair every 6 hours\n- The unknown is the total number of chairs produced after 6 hours\n\nTo solve this, I first calculated the individual production of chairs by each worker over 6 hours. Since each worker produces 4 chairs per hour, in 6 hours, one worker would produce \\(4 \\times 6 = 24\\) chairs. For 3 workers, the total individual production would be \\(24 \\times 3 = 72\\) chairs.\n\nNext, I considered the additional group production. The problem states that the group produces an additional chair every 6 hours. Therefore, after 6 hours, the group would have produced 1 additional chair.\n\nAdding the individual production and the additional group production together, the total number of chairs produced after 6 hours would be \\(72 + 1 = 73\\).\n\nTo verify this, I checked the operations:\n1. Each worker produces 4 chairs per hour, so in 6 hours, one worker produces \\(4 \\times 6 = 24\\) chairs.\n2. For 3 workers, the total individual production is \\(24 \\times 3 = 72\\) chairs.\n3. The group produces an additional chair every 6 hours, so after 6 hours, the group produces 1 additional chair.\n4. Therefore, the total number of chairs produced is \\(72 + 1 = 73\\).\n\nThe operations used are straightforward multiplication and addition, and the result is consistent with the problem statement.\n\nFINAL: 73",
+        "target_sha256": "919b30fa83b4d845b44b7aebe89aa39f977209bb53c554a126afda9e1189af7b"
+      }
+    ],
+    "task_id": "gsm8k-train-2459"
+  },
+  {
+    "gold": "248",
+    "question": "Julie started her own landscaping business. She charges $4 an hour for mowing lawns and $8 for pulling weeds. In September she mowed lawns for 25 hours and pulled weeds for 3 hours. If she worked the same number of hours in October, how much money did she earn in September and October?",
+    "question_sha256": "4cd6b49909cddd281f89da9753f7d1fec1da8071b6bd68b1002d2a711ffcf896",
+    "responses": [
+      {
+        "key": "gsm8k-train-5811:rich",
+        "raw_call_sha256": "fce3fe04f6ec6b1be3ac869cc9e40a9394d30d86e081fb0bd052b9429cf48895",
+        "student_prefix": [
+          {
+            "content": "Julie started her own landscaping business. She charges $4 an hour for mowing lawns and $8 for pulling weeds. In September she mowed lawns for 25 hours and pulled weeds for 3 hours. If she worked the same number of hours in October, how much money did she earn in September and October?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "36f9d45decf7543cbdad935ad444976838eaeee2073ac75548301d43ee1571f1",
+        "target": "In September, Julie mowed lawns for 25 hours at $4 per hour and pulled weeds for 3 hours at $8 per hour. First, calculate her earnings from mowing lawns: 25 hours * $4/hour = $100. Then, calculate her earnings from pulling weeds: 3 hours * $8/hour = $24. So, her total earnings in September are $100 + $24 = $124. If she worked the same number of hours in October, her earnings would be the same, $124. Therefore, her total earnings for both months are $124 (September) + $124 (October) = $248. \n\nFINAL: 248",
+        "target_sha256": "b69ce39860d94b9312f44d4e7fa87c00b8c91a6519d858e755eb900ffa342464"
+      },
+      {
+        "key": "gsm8k-train-5811:new_record",
+        "raw_call_sha256": "13015ffe69cf0e493d8c78a64e309d44198dbc9388956ecc6189df7e646ffef7",
+        "student_prefix": [
+          {
+            "content": "Julie started her own landscaping business. She charges $4 an hour for mowing lawns and $8 for pulling weeds. In September she mowed lawns for 25 hours and pulled weeds for 3 hours. If she worked the same number of hours in October, how much money did she earn in September and October?",
+            "role": "user"
+          },
+          {
+            "content": "In September, Julie mowed lawns for 25 hours at $4 per hour and pulled weeds for 3 hours at $8 per hour. First, calculate her earnings from mowing lawns: 25 hours * $4/hour = $100. Then, calculate her earnings from pulling weeds: 3 hours * $8/hour = $24. So, her total earnings in September are $100 + $24 = $124. If she worked the same number of hours in October, her earnings would be the same, $124. Therefore, her total earnings for both months are $124 (September) + $124 (October) = $248. \n\nFINAL: 248",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "b10a10786ee59e6beaa1f3264e3ff236f60ea87813a50f904ea8edd2a9511f61",
+        "target": "Given the problem, I identified the following quantities and their relationships:\n- Julie charges $4 per hour for mowing lawns.\n- Julie charges $8 per hour for pulling weeds.\n- In September, she mowed lawns for 25 hours and pulled weeds for 3 hours.\n- She worked the same number of hours in October.\n\nTo find out how much money Julie earned in September and October, I first calculated her earnings for September. I used the formula:\n\\[ \\text{Earnings} = (\\text{Hours mowed} \\times \\text{Rate for mowing}) + (\\text{Hours weeded} \\times \\text{Rate for weeding}) \\]\n\nFor September:\n\\[ \\text{Earnings in September} = (25 \\times 4) + (3 \\times 8) = 100 + 24 = 124 \\]\n\nSince she worked the same number of hours in October, her earnings in October would also be $124. Therefore, her total earnings for both months would be:\n\\[ \\text{Total earnings} = \\text{Earnings in September} + \\text{Earnings in October} = 124 + 124 = 248 \\]\n\nTo check the result, I verified that the calculations were correct and that the total hours worked in both months matched the given information. The operations used were straightforward arithmetic, and the result was consistent with the problem statement.\n\nThe operation I would reuse is the formula for calculating earnings based on hours worked and hourly rates, as it directly applies to similar problems involving different rates and hours.\n\nFINAL: 248",
+        "target_sha256": "269abf47ad9a8e7aaa0fc61de15f9506bf1e2396015010c36bfef0334dde64a9"
+      }
+    ],
+    "task_id": "gsm8k-train-5811"
+  },
+  {
+    "gold": "600",
+    "question": "Ayla has a customer care job whose primary role is to hear complaints from customers and advise them on the best way to solve their problems. She talks with each customer for a limited amount of time, and each phone call is charged five cents per minute. If each call lasts 1 hour, what's the phone bill at the end of the month if she manages to talk to 50 customers a week?",
+    "question_sha256": "147fc65a01e25d3d094caff6efa236ad42f95c84b73589cb526220d4141adbc6",
+    "responses": [
+      {
+        "key": "gsm8k-train-270:rich",
+        "raw_call_sha256": "c36e439ad7e6afc51bf24ded64370eef19f4fb60fe3459c5fe6a571417f19dfa",
+        "student_prefix": [
+          {
+            "content": "Ayla has a customer care job whose primary role is to hear complaints from customers and advise them on the best way to solve their problems. She talks with each customer for a limited amount of time, and each phone call is charged five cents per minute. If each call lasts 1 hour, what's the phone bill at the end of the month if she manages to talk to 50 customers a week?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "19d0d3e37e388142e60bd16cba00e242bc10bde501686edfa7d8991ae25fbed6",
+        "target": "Given:\n- Each call lasts 1 hour.\n- Each minute of a call costs 5 cents.\n- Ayla talks to 50 customers a week.\n- There are 4 weeks in a month.\n\nFirst, calculate the cost per call:\n1 hour = 60 minutes\n60 minutes * $0.05/minute = $3 per call\n\nNext, calculate the number of calls in a month:\n50 calls/week * 4 weeks/month = 200 calls/month\n\nNow, calculate the total monthly cost:\n200 calls * $3/call = $600\n\nFINAL: 600",
+        "target_sha256": "6ad1750ff9cbbc829b7e2c818460bf04119ffe5168c348596f5268ff5185e301"
+      },
+      {
+        "key": "gsm8k-train-270:new_record",
+        "raw_call_sha256": "480f8c1f70585f54bb1a2951dfd414fd7d3a9ba54111416ef42938ceda11430c",
+        "student_prefix": [
+          {
+            "content": "Ayla has a customer care job whose primary role is to hear complaints from customers and advise them on the best way to solve their problems. She talks with each customer for a limited amount of time, and each phone call is charged five cents per minute. If each call lasts 1 hour, what's the phone bill at the end of the month if she manages to talk to 50 customers a week?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Each call lasts 1 hour.\n- Each minute of a call costs 5 cents.\n- Ayla talks to 50 customers a week.\n- There are 4 weeks in a month.\n\nFirst, calculate the cost per call:\n1 hour = 60 minutes\n60 minutes * $0.05/minute = $3 per call\n\nNext, calculate the number of calls in a month:\n50 calls/week * 4 weeks/month = 200 calls/month\n\nNow, calculate the total monthly cost:\n200 calls * $3/call = $600\n\nFINAL: 600",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ff6a2c11db22098e495f7cbdf0c9aa90cd7d2817be46135d209dcaa1d8ece510",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Each call lasts 1 hour (60 minutes).\n- Each minute costs 5 cents.\n- Ayla talks to 50 customers a week.\n- There are 4 weeks in a month.\n\nThe unknown is the total phone bill at the end of the month.\n\nTo solve this, I first calculated the cost per call:\n1. Convert the call duration to minutes: 1 hour = 60 minutes.\n2. Calculate the cost per call: 60 minutes * $0.05/minute = $3 per call.\n\nNext, I determined the number of calls in a month:\n3. Calculate the weekly calls: 50 calls/week.\n4. Calculate the monthly calls: 50 calls/week * 4 weeks/month = 200 calls/month.\n\nThen, I calculated the total monthly cost:\n5. Calculate the total cost: 200 calls * $3/call = $600.\n\nTo verify the result, I checked the operations:\n- Each call cost $3.\n- There were 200 calls in a month.\n- The total cost was $600.\n\nThe operations are reusable when similar problems involving fixed costs per unit and a total number of units need to be calculated. The operations can be generalized to:\n- Cost per unit * Total number of units = Total cost.\n\nThe final answer is:\nFINAL: 600",
+        "target_sha256": "dad0c6f8f49e0d62441f3e6447c3f8642c4832af0ea0a64f69b78df159b9b2d9"
+      }
+    ],
+    "task_id": "gsm8k-train-270"
+  },
+  {
+    "gold": "1280",
+    "question": "Dale owns 4 sports cars. The red one can travel at twice the speed of the green one, but the green one can travel at 8 times the speed of the blue one.  The yellow one is broken and cannot move at all.  If the blue one can travel at a speed of 80 miles per hour, at what speed, in miles per hour, can the red car travel?",
+    "question_sha256": "0007cda10676cf2c82acdb3b860ed6b8fee4958284d419c9527b4d8396ab868d",
+    "responses": [
+      {
+        "key": "gsm8k-train-566:rich",
+        "raw_call_sha256": "835cbbf5f4bd1a41d8914ef5e41304ff4353b1ea0847a9cc33e55556e550dd25",
+        "student_prefix": [
+          {
+            "content": "Dale owns 4 sports cars. The red one can travel at twice the speed of the green one, but the green one can travel at 8 times the speed of the blue one.  The yellow one is broken and cannot move at all.  If the blue one can travel at a speed of 80 miles per hour, at what speed, in miles per hour, can the red car travel?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f27d01ee98ddbb1e7fbb5567939e79e43fb983cac2f3316639f5ee46eda943c5",
+        "target": "Given:\n- Blue car speed = 80 mph\n- Green car speed = 8 * Blue car speed\n- Red car speed = 2 * Green car speed\n\nFirst, calculate the speed of the green car:\nGreen car speed = 8 * 80 mph = 640 mph\n\nNext, calculate the speed of the red car:\nRed car speed = 2 * 640 mph = 1280 mph\n\nFINAL: 1280",
+        "target_sha256": "fa4dfdc62317ec9c714f554d03003ae997ac99c38b26490d4994ae05d3c40d42"
+      },
+      {
+        "key": "gsm8k-train-566:new_record",
+        "raw_call_sha256": "b0cfa2e717fe1f955ed9db0b47666a9194f639e908d7d1fa4a4fe35e81a16000",
+        "student_prefix": [
+          {
+            "content": "Dale owns 4 sports cars. The red one can travel at twice the speed of the green one, but the green one can travel at 8 times the speed of the blue one.  The yellow one is broken and cannot move at all.  If the blue one can travel at a speed of 80 miles per hour, at what speed, in miles per hour, can the red car travel?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Blue car speed = 80 mph\n- Green car speed = 8 * Blue car speed\n- Red car speed = 2 * Green car speed\n\nFirst, calculate the speed of the green car:\nGreen car speed = 8 * 80 mph = 640 mph\n\nNext, calculate the speed of the red car:\nRed car speed = 2 * 640 mph = 1280 mph\n\nFINAL: 1280",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1355ebc93dda384cf90b8edaf5bef87a0716de6e36a0778feba01a1c368a9b83",
+        "target": "Given the problem, I identified the key quantities and relationships:\n- Blue car speed: 80 mph\n- Green car speed: 8 times the blue car speed\n- Red car speed: 2 times the green car speed\n- Yellow car is broken and does not move\n\nTo find the speed of the red car, I first calculated the speed of the green car:\n\\[ \\text{Green car speed} = 8 \\times 80 \\text{ mph} = 640 \\text{ mph} \\]\n\nNext, I used the green car's speed to find the red car's speed:\n\\[ \\text{Red car speed} = 2 \\times 640 \\text{ mph} = 1280 \\text{ mph} \\]\n\nTo verify this result, I checked the relationships step-by-step:\n1. The green car's speed is correctly 8 times the blue car's speed: \\( 80 \\text{ mph} \\times 8 = 640 \\text{ mph} \\).\n2. The red car's speed is correctly 2 times the green car's speed: \\( 640 \\text{ mph} \\times 2 = 1280 \\text{ mph} \\).\n\nSince all the relationships hold true, the speed of the red car is 1280 mph.\n\nFINAL: 1280",
+        "target_sha256": "4c2b55272e12fbf8ee8ed9e7689987be3e43800206aa3fe69a4611abdd77e756"
+      }
+    ],
+    "task_id": "gsm8k-train-566"
+  },
+  {
+    "gold": "60",
+    "question": "Marcus spends 20 minutes giving his dog a bath and half as long blow-drying her. Then he takes her for a walk along a 3-mile trail. If Marcus walks at 6 miles per hour, how much time does he spend with his dog total?",
+    "question_sha256": "44c20598b4c39026b7030d4b0e5988c2bf1e0cdffe48fc3b61eff84d08c4c4e9",
+    "responses": [
+      {
+        "key": "gsm8k-train-2695:rich",
+        "raw_call_sha256": "bc83c8ab1d7934bca6b7d1411cb44a15d3e5609baf63c117f4aa49a9fb470496",
+        "student_prefix": [
+          {
+            "content": "Marcus spends 20 minutes giving his dog a bath and half as long blow-drying her. Then he takes her for a walk along a 3-mile trail. If Marcus walks at 6 miles per hour, how much time does he spend with his dog total?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7a2641cfb05829b1366d70bfe5859415f203515c66982ae052a44ebd337ac673",
+        "target": "First, I identify the given quantities:\n- Bath time: 20 minutes\n- Blow-dry time: half of bath time, so 10 minutes\n- Walk distance: 3 miles\n- Walk speed: 6 miles per hour\n\nNext, I calculate the walk time:\n- Time = Distance / Speed = 3 miles / 6 miles per hour = 0.5 hours = 30 minutes\n\nNow, I sum up all the times:\n- Bath time: 20 minutes\n- Blow-dry time: 10 minutes\n- Walk time: 30 minutes\n- Total time: 20 + 10 + 30 = 60 minutes\n\nFINAL: 60",
+        "target_sha256": "9ee99c1c671e66653f488f3326e2bbcfa9945f7953aacb3abe45d8ea36d3f47b"
+      },
+      {
+        "key": "gsm8k-train-2695:new_record",
+        "raw_call_sha256": "02d10e672f1ec297c217514b8e2effeef658f03e918e1ba1115ba12a67f6a8d6",
+        "student_prefix": [
+          {
+            "content": "Marcus spends 20 minutes giving his dog a bath and half as long blow-drying her. Then he takes her for a walk along a 3-mile trail. If Marcus walks at 6 miles per hour, how much time does he spend with his dog total?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Bath time: 20 minutes\n- Blow-dry time: half of bath time, so 10 minutes\n- Walk distance: 3 miles\n- Walk speed: 6 miles per hour\n\nNext, I calculate the walk time:\n- Time = Distance / Speed = 3 miles / 6 miles per hour = 0.5 hours = 30 minutes\n\nNow, I sum up all the times:\n- Bath time: 20 minutes\n- Blow-dry time: 10 minutes\n- Walk time: 30 minutes\n- Total time: 20 + 10 + 30 = 60 minutes\n\nFINAL: 60",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f72ce06ce30d5340a0c7c1e718d873c3bf62f0aa6f2e61e5bcc1ca7b87bafdfb",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Bath time: 20 minutes\n- Blow-dry time: half of bath time, which is 10 minutes\n- Walk distance: 3 miles\n- Walk speed: 6 miles per hour\n\nThe unknown is the total time Marcus spends with his dog. To find this, I needed to calculate the time spent on each activity and then sum them up.\n\nFirst, I calculated the time spent blow-drying the dog:\n\\[ \\text{Blow-dry time} = \\frac{20 \\text{ minutes}}{2} = 10 \\text{ minutes} \\]\n\nNext, I calculated the time spent walking the dog:\n\\[ \\text{Walk time} = \\frac{3 \\text{ miles}}{6 \\text{ miles per hour}} = 0.5 \\text{ hours} = 30 \\text{ minutes} \\]\n\nNow, I summed up all the times:\n\\[ \\text{Total time} = 20 \\text{ minutes} + 10 \\text{ minutes} + 30 \\text{ minutes} = 60 \\text{ minutes} \\]\n\nTo check the result, I verified that the sum of the individual times (20 minutes for bathing, 10 minutes for blow-drying, and 30 minutes for walking) indeed equals 60 minutes. This confirms the calculation is correct.\n\nThe operations I used are straightforward arithmetic, and I can reuse this method whenever I need to calculate the total time spent on multiple activities with known durations.\n\nFINAL: 60",
+        "target_sha256": "91c8c0a81ab4867abb16365b0c5cbd9476a11b1cf41ba2fda7f7dd39fc080780"
+      }
+    ],
+    "task_id": "gsm8k-train-2695"
+  },
+  {
+    "gold": "135",
+    "question": "The white rabbit can hop 15 meters in one minute. The brown rabbit hops 12 meters per minute. What is the total distance the two rabbits will hop in 5 minutes?",
+    "question_sha256": "715bb34fd56f8412c3037b7568dba519631aa3e8c236f7f1b71af30440b8e04a",
+    "responses": [
+      {
+        "key": "gsm8k-train-2947:rich",
+        "raw_call_sha256": "41c79bde2b88b26fe73802dee3e6752b663c83bfb0cc213b02ef28dbe717ac34",
+        "student_prefix": [
+          {
+            "content": "The white rabbit can hop 15 meters in one minute. The brown rabbit hops 12 meters per minute. What is the total distance the two rabbits will hop in 5 minutes?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "35a7ef85374d53a92757e5384d5c34b4e242ca18524e1d67700e12182440c976",
+        "target": "The white rabbit hops 15 meters per minute. The brown rabbit hops 12 meters per minute. To find the total distance both will hop in 5 minutes, I first calculate the distance each rabbit hops in 5 minutes.\n\nFor the white rabbit:\n15 meters/minute * 5 minutes = 75 meters\n\nFor the brown rabbit:\n12 meters/minute * 5 minutes = 60 meters\n\nNow, I add the distances together:\n75 meters + 60 meters = 135 meters\n\nThe total distance the two rabbits will hop in 5 minutes is 135 meters.\n\nFINAL: 135",
+        "target_sha256": "96ddf5ad2ffff1418128ad14230b8aaaa0ccccf6337d1b475ac27505c977d9b3"
+      },
+      {
+        "key": "gsm8k-train-2947:new_record",
+        "raw_call_sha256": "138d0a8ccd73baa4912f9819068b6ae5708c8e2e93168b84dddf6e46b0fc0d29",
+        "student_prefix": [
+          {
+            "content": "The white rabbit can hop 15 meters in one minute. The brown rabbit hops 12 meters per minute. What is the total distance the two rabbits will hop in 5 minutes?",
+            "role": "user"
+          },
+          {
+            "content": "The white rabbit hops 15 meters per minute. The brown rabbit hops 12 meters per minute. To find the total distance both will hop in 5 minutes, I first calculate the distance each rabbit hops in 5 minutes.\n\nFor the white rabbit:\n15 meters/minute * 5 minutes = 75 meters\n\nFor the brown rabbit:\n12 meters/minute * 5 minutes = 60 meters\n\nNow, I add the distances together:\n75 meters + 60 meters = 135 meters\n\nThe total distance the two rabbits will hop in 5 minutes is 135 meters.\n\nFINAL: 135",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "47345fea846cbf6c37ac938cea533f185314b83c4754174a3398422dda0a5783",
+        "target": "Given the problem, I identified the key quantities: the hopping rates of the white and brown rabbits, and the time period over which they hop. The white rabbit hops 15 meters per minute, and the brown rabbit hops 12 meters per minute. The time period is 5 minutes. The unknown is the total distance both rabbits will hop in that time.\n\nTo find the total distance, I first calculated the distance each rabbit hops individually over the 5-minute period. For the white rabbit, I used the operation: distance = rate * time. Substituting the given values, I got 15 meters/minute * 5 minutes = 75 meters. For the brown rabbit, I used the same operation: 12 meters/minute * 5 minutes = 60 meters.\n\nNext, I added these two distances together to get the total distance: 75 meters + 60 meters = 135 meters. This result makes sense because it represents the sum of the distances each rabbit hops, which should equal the total distance hopped by both.\n\nTo check the result, I can retrace the steps and ensure the arithmetic is correct. I can also verify that the units are consistent (meters per minute * minutes = meters) and that the logic of adding the distances is sound.\n\nThe operation I would reuse is the distance = rate * time, as it is a fundamental and reliable method for calculating distance given a rate and time. I would use this operation whenever I need to calculate distance based on a constant rate over a given time period.\n\nFINAL: 135",
+        "target_sha256": "0b5328d46b018100324ad2292a621a6e6dd7a778e9816078c03f53c09663c8d9"
+      }
+    ],
+    "task_id": "gsm8k-train-2947"
+  }
+]

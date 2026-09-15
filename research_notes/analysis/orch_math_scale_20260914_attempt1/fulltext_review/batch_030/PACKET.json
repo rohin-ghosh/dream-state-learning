@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "1360",
+    "question": "A store gives a 10% discount for the amount of the sell that was over $1000.  John buys 7 items that each cost $200.  What does his order cost after the discount?",
+    "question_sha256": "1e4318b5a7bce3d5756e8766a5d9e9ca5e46b6f40dc05a6b4bae8a8b8a2b90c7",
+    "responses": [
+      {
+        "key": "gsm8k-train-2993:rich",
+        "raw_call_sha256": "f2ac78b2fd8204cbfafa3086a4ccb3c8f585b989b5f105b5fdfd4bf81aaff234",
+        "student_prefix": [
+          {
+            "content": "A store gives a 10% discount for the amount of the sell that was over $1000.  John buys 7 items that each cost $200.  What does his order cost after the discount?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f2ca214ac8c29cdc1107ec05a9fff9a388c680365a434cb6fa58c11f047454b9",
+        "target": "First, I calculate the total cost of the 7 items: 7 items * $200/item = $1400. The discount applies only to the amount over $1000, so I subtract $1000 from the total: $1400 - $1000 = $400. The discount is 10% of $400, which is 0.10 * $400 = $40. I subtract the discount from the total before the discount: $1400 - $40 = $1360. \n\nFINAL: 1360",
+        "target_sha256": "efc4ddb6a75455152ce53a947b21bacc25904378a63027601b4b6205018518cf"
+      },
+      {
+        "key": "gsm8k-train-2993:new_record",
+        "raw_call_sha256": "dd5423e033c2231df5a43e883895fd4a165ac9874de2b2bc393b9642ec7d7a73",
+        "student_prefix": [
+          {
+            "content": "A store gives a 10% discount for the amount of the sell that was over $1000.  John buys 7 items that each cost $200.  What does his order cost after the discount?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the total cost of the 7 items: 7 items * $200/item = $1400. The discount applies only to the amount over $1000, so I subtract $1000 from the total: $1400 - $1000 = $400. The discount is 10% of $400, which is 0.10 * $400 = $40. I subtract the discount from the total before the discount: $1400 - $40 = $1360. \n\nFINAL: 1360",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0176f7d5a5fa4fe115d05bef14885e101cc990b0313118615b67f2a4952af97e",
+        "target": "Given that the store offers a 10% discount on the amount over $1000, and John buys 7 items each costing $200, I first calculated the total cost of the items. The total cost is 7 * $200 = $1400. Next, I determined the amount over $1000, which is $1400 - $1000 = $400. Applying the 10% discount to this amount, I calculated the discount as 0.10 * $400 = $40. Subtracting this discount from the total cost, I found the final cost to be $1400 - $40 = $1360. To verify, I checked that the discount was correctly applied to the amount over $1000, and the final cost matched the problem statement. The operations I used are straightforward arithmetic and can be reused in similar problems involving tiered discounts. FINAL: 1360",
+        "target_sha256": "d71e5cdbcf1065aabc3d156fe60309fa9226cb7d4fc66e7e452fe8584d90a592"
+      }
+    ],
+    "task_id": "gsm8k-train-2993"
+  },
+  {
+    "gold": "2050",
+    "question": "John gets his pool cleaned every 3 days.  It cost $150 each time and he gives the guy a 10% tip each time he comes to clean.  Then twice a month he needs to use $200 of chemicals.  How much does his pool cost a month?",
+    "question_sha256": "9406647fef33b2d759560106ebb348e009bc1a6d67824d9a542c6db81a2ca6aa",
+    "responses": [
+      {
+        "key": "gsm8k-train-1153:rich",
+        "raw_call_sha256": "e63e912c8b708d43bd630307d019a4b761bd4a3a7c1a5cb57e37842dbefd53f7",
+        "student_prefix": [
+          {
+            "content": "John gets his pool cleaned every 3 days.  It cost $150 each time and he gives the guy a 10% tip each time he comes to clean.  Then twice a month he needs to use $200 of chemicals.  How much does his pool cost a month?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "736d141877409890f84545c9bbdedd4b5074f2b13ecd73dda926103fea5acb92",
+        "target": "Given:\n- Pool cleaning every 3 days\n- Cost per cleaning: $150\n- Tip: 10% of $150\n- Chemicals cost: $200 twice a month\n\nFirst, calculate the tip per cleaning:\n\\[ \\text{Tip} = 10\\% \\times 150 = 0.10 \\times 150 = 15 \\]\n\nSo, the total cost per cleaning including tip:\n\\[ 150 + 15 = 165 \\]\n\nNext, determine how many times the pool is cleaned in a month. Assuming a month has 30 days:\n\\[ \\frac{30}{3} = 10 \\text{ cleanings per month} \\]\n\nCalculate the total cost for cleanings in a month:\n\\[ 10 \\times 165 = 1650 \\]\n\nAdd the cost of chemicals:\n\\[ 1650 + 2 \\times 200 = 1650 + 400 = 2050 \\]\n\nFINAL: 2050",
+        "target_sha256": "918e0c33e8a84d28ca2a89b966fa8e7036692d3278d1bb1ffa78b002b281294d"
+      },
+      {
+        "key": "gsm8k-train-1153:new_record",
+        "raw_call_sha256": "e6ffb4654d9411ec524ef078d379dd2d2cdf4c4b1d5ec913f12a3165347947e6",
+        "student_prefix": [
+          {
+            "content": "John gets his pool cleaned every 3 days.  It cost $150 each time and he gives the guy a 10% tip each time he comes to clean.  Then twice a month he needs to use $200 of chemicals.  How much does his pool cost a month?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Pool cleaning every 3 days\n- Cost per cleaning: $150\n- Tip: 10% of $150\n- Chemicals cost: $200 twice a month\n\nFirst, calculate the tip per cleaning:\n\\[ \\text{Tip} = 10\\% \\times 150 = 0.10 \\times 150 = 15 \\]\n\nSo, the total cost per cleaning including tip:\n\\[ 150 + 15 = 165 \\]\n\nNext, determine how many times the pool is cleaned in a month. Assuming a month has 30 days:\n\\[ \\frac{30}{3} = 10 \\text{ cleanings per month} \\]\n\nCalculate the total cost for cleanings in a month:\n\\[ 10 \\times 165 = 1650 \\]\n\nAdd the cost of chemicals:\n\\[ 1650 + 2 \\times 200 = 1650 + 400 = 2050 \\]\n\nFINAL: 2050",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2bdcffe63b9c57e2e1dd803ca0f02aaad21f447d09fdd486cb080c733a7784f6",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Pool cleaning every 3 days\n- Cost per cleaning: $150\n- Tip: 10% of $150\n- Chemicals cost: $200 twice a month\n\nI needed to calculate the total monthly cost for pool maintenance. First, I calculated the tip per cleaning:\n\\[ \\text{Tip} = 10\\% \\times 150 = 0.10 \\times 150 = 15 \\]\nSo, the total cost per cleaning including tip:\n\\[ 150 + 15 = 165 \\]\n\nNext, I determined the number of cleanings in a month. Assuming a month has 30 days:\n\\[ \\frac{30}{3} = 10 \\text{ cleanings per month} \\]\n\nThen, I calculated the total cost for cleanings in a month:\n\\[ 10 \\times 165 = 1650 \\]\n\nI added the cost of chemicals:\n\\[ 1650 + 2 \\times 200 = 1650 + 400 = 2050 \\]\n\nTo verify, I checked the arithmetic and ensured all steps were correctly applied. The final calculation was straightforward and consistent with the given data.\n\nThe operations I used were:\n1. Calculate the tip per cleaning.\n2. Determine the total cost per cleaning including tip.\n3. Calculate the number of cleanings in a month.\n4. Calculate the total cost for cleanings in a month.\n5. Add the cost of chemicals.\n\nI would reuse these operations in similar problems involving regular maintenance costs with periodic additional expenses.\n\nFINAL: 2050",
+        "target_sha256": "e3924a448c909bbbd0b718bb7ead9ec7a4f872a43af5a6addb4ab16e34ea72d6"
+      }
+    ],
+    "task_id": "gsm8k-train-1153"
+  },
+  {
+    "gold": "1320",
+    "question": "In a national park, the number of redwoods is 20% more than the number of pines. If there are 600 pines in the national park, calculate the total number of pines and redwoods that are there.",
+    "question_sha256": "da5630ddad01ea5cd0ede0e01880967a5fab1b7dc1d098b1ebc35130196d7bc9",
+    "responses": [
+      {
+        "key": "gsm8k-train-1659:rich",
+        "raw_call_sha256": "97de03e6d58bc7da838b24d4cc3796fbe63252436331f3a5165d69d7b6917eb7",
+        "student_prefix": [
+          {
+            "content": "In a national park, the number of redwoods is 20% more than the number of pines. If there are 600 pines in the national park, calculate the total number of pines and redwoods that are there.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f2ec9cb81dbb2c0c22e518c521601c1e27886dbd020e32b4f85a071f00739f26",
+        "target": "Given that there are 600 pines, and the number of redwoods is 20% more than the number of pines, we can calculate the number of redwoods as follows:\n\n1. First, find 20% of 600:\n   \\[\n   20\\% \\text{ of } 600 = \\frac{20}{100} \\times 600 = 120\n   \\]\n\n2. Add this to the original number of pines to get the number of redwoods:\n   \\[\n   600 + 120 = 720\n   \\]\n\n3. Now, add the number of pines and redwoods to get the total:\n   \\[\n   600 + 720 = 1320\n   \\]\n\nFINAL: 1320",
+        "target_sha256": "85b1073b57a0030fc836370ba40f8747b60ac7efa0e99a635cc770060d238f27"
+      },
+      {
+        "key": "gsm8k-train-1659:new_record",
+        "raw_call_sha256": "5b2298f5db2eea064d44bca08955058c1c56bc99c01253c878644114960864fd",
+        "student_prefix": [
+          {
+            "content": "In a national park, the number of redwoods is 20% more than the number of pines. If there are 600 pines in the national park, calculate the total number of pines and redwoods that are there.",
+            "role": "user"
+          },
+          {
+            "content": "Given that there are 600 pines, and the number of redwoods is 20% more than the number of pines, we can calculate the number of redwoods as follows:\n\n1. First, find 20% of 600:\n   \\[\n   20\\% \\text{ of } 600 = \\frac{20}{100} \\times 600 = 120\n   \\]\n\n2. Add this to the original number of pines to get the number of redwoods:\n   \\[\n   600 + 120 = 720\n   \\]\n\n3. Now, add the number of pines and redwoods to get the total:\n   \\[\n   600 + 720 = 1320\n   \\]\n\nFINAL: 1320",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1dff5890c7d523ec9c6f9ee1a782ca827024c8a4ba597841e314928bf8581a19",
+        "target": "Given that there are 600 pines in the national park, and the number of redwoods is 20% more than the number of pines, I first identified the key quantities: the number of pines (600) and the percentage increase (20%). To find the number of redwoods, I calculated 20% of 600, which is 120. Adding this to the original 600 pines gave me 720 redwoods. To find the total number of pines and redwoods, I added 600 and 720, resulting in 1320. I verified this by ensuring that 720 is indeed 20% more than 600, and that the sum of 600 and 720 equals 1320. The operations I used were straightforward percentage calculation and addition, which are reliable and reusable for similar problems.\n\nThe operations I would reuse are the percentage calculation and addition, as they are fundamental and can be applied to other similar problems involving percentage increases and totals. For example, if I were given a different number of pines and a different percentage increase, I could use the same steps to find the number of redwoods and the total number of trees.\n\nFINAL: 1320",
+        "target_sha256": "1330f07b281ba69732c59a1ba55b6051c35c7dee320c829366d3207ffd95ffb0"
+      }
+    ],
+    "task_id": "gsm8k-train-1659"
+  },
+  {
+    "gold": "60",
+    "question": "James hurts himself and decides to go to his primary care doctor.  His primary care doctor charges $300 for the visit and James's insurance covers 80%.  What is James's out-of-pocket cost?",
+    "question_sha256": "938200fca716e69488f89c5f3bf7e634d2139d1198214c48daeedd2cef33a7ec",
+    "responses": [
+      {
+        "key": "gsm8k-train-5821:rich",
+        "raw_call_sha256": "503520e0b99ce464aa703e6ff42316204b1759a8571ee7e002275b06686d5d5d",
+        "student_prefix": [
+          {
+            "content": "James hurts himself and decides to go to his primary care doctor.  His primary care doctor charges $300 for the visit and James's insurance covers 80%.  What is James's out-of-pocket cost?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "df6ce8eadf8666a51bb70af187961173149e2d707f8eea021e7d6de15fd93399",
+        "target": "Given:\n- Doctor's visit cost: $300\n- Insurance coverage: 80%\n\nTo find James's out-of-pocket cost, we need to calculate the portion of the cost that is not covered by insurance. \n\n1. Calculate the amount covered by insurance: \\(300 \\times 0.80 = 240\\)\n2. Subtract the insurance-covered amount from the total cost to find James's out-of-pocket cost: \\(300 - 240 = 60\\)\n\nSo, James's out-of-pocket cost is $60.\n\nFINAL: 60",
+        "target_sha256": "2570dab3aef7d23f5e108f5fbe8bb0f85aaf091aff53c9a341c226836d98365e"
+      },
+      {
+        "key": "gsm8k-train-5821:new_record",
+        "raw_call_sha256": "a786b98d67e6a165fd00786d0d819a8a152245ed39be6eaceefed51a8b63e038",
+        "student_prefix": [
+          {
+            "content": "James hurts himself and decides to go to his primary care doctor.  His primary care doctor charges $300 for the visit and James's insurance covers 80%.  What is James's out-of-pocket cost?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Doctor's visit cost: $300\n- Insurance coverage: 80%\n\nTo find James's out-of-pocket cost, we need to calculate the portion of the cost that is not covered by insurance. \n\n1. Calculate the amount covered by insurance: \\(300 \\times 0.80 = 240\\)\n2. Subtract the insurance-covered amount from the total cost to find James's out-of-pocket cost: \\(300 - 240 = 60\\)\n\nSo, James's out-of-pocket cost is $60.\n\nFINAL: 60",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "a285044974d841c9ff706f287a18f8739703ad3f09bc7ddddfa348724f5ddc34",
+        "target": "Given the problem, I identified the key quantities: the total cost of the doctor's visit ($300) and the insurance coverage percentage (80%). The unknown was James's out-of-pocket cost. To find this, I needed to calculate the portion of the cost that the insurance does not cover.\n\nFirst, I calculated the amount covered by insurance:\n\\[ \\text{Insurance coverage} = 300 \\times 0.80 = 240 \\]\n\nNext, I subtracted the insurance-covered amount from the total cost to find the out-of-pocket cost:\n\\[ \\text{Out-of-pocket cost} = 300 - 240 = 60 \\]\n\nTo verify this, I checked that the out-of-pocket cost plus the insurance-covered amount equals the total cost:\n\\[ 240 + 60 = 300 \\]\n\nThis check confirms the result is correct. The operation I would reuse is the calculation of the out-of-pocket cost by subtracting the insurance-covered amount from the total cost. This operation is useful whenever you need to determine the portion of a cost that is not covered by insurance.\n\nFINAL: 60",
+        "target_sha256": "c65915e2f6c30d146fb8caf77c4558d6d00f87f8196e6a55c2477bd2513c7745"
+      }
+    ],
+    "task_id": "gsm8k-train-5821"
+  },
+  {
+    "gold": "11",
+    "question": "Terez has 44 cows on his farm.  50 percent of the cows are female, and 50 percent of the females are pregnant.  How many pregnant female cows does Terez have?",
+    "question_sha256": "6f39bceb6d4ac03613cb9a7bfdd85f5e5dc11f61d1870f4d9bf57f2e07140643",
+    "responses": [
+      {
+        "key": "gsm8k-train-339:rich",
+        "raw_call_sha256": "9317154af7d00bb6c265c76aa51430ee1b882f20f57b2beafb878717ca4991a5",
+        "student_prefix": [
+          {
+            "content": "Terez has 44 cows on his farm.  50 percent of the cows are female, and 50 percent of the females are pregnant.  How many pregnant female cows does Terez have?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7ea924fee76c8cfc3dc54ee409dc974b1b33d1d756452b5766112254770c3e34",
+        "target": "First, I identify the given quantities:\n- Total number of cows: 44\n- Percentage of cows that are female: 50%\n- Percentage of female cows that are pregnant: 50%\n\nNext, I calculate the number of female cows:\n- Number of female cows = 50% of 44 = 0.50 * 44 = 22\n\nThen, I calculate the number of pregnant female cows:\n- Number of pregnant female cows = 50% of 22 = 0.50 * 22 = 11\n\nFinally, I check the result:\n- The problem asks for the number of pregnant female cows, and the calculation shows 11.\n\nFINAL: 11",
+        "target_sha256": "807e194b00075a242734dcc5c1309173ac2564dbe9ed7d0a10e26e41530ad259"
+      },
+      {
+        "key": "gsm8k-train-339:new_record",
+        "raw_call_sha256": "44df8ba82ce93ba01ae51b7043193633b6028dc41e1290fffa29e1863d2749cd",
+        "student_prefix": [
+          {
+            "content": "Terez has 44 cows on his farm.  50 percent of the cows are female, and 50 percent of the females are pregnant.  How many pregnant female cows does Terez have?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Total number of cows: 44\n- Percentage of cows that are female: 50%\n- Percentage of female cows that are pregnant: 50%\n\nNext, I calculate the number of female cows:\n- Number of female cows = 50% of 44 = 0.50 * 44 = 22\n\nThen, I calculate the number of pregnant female cows:\n- Number of pregnant female cows = 50% of 22 = 0.50 * 22 = 11\n\nFinally, I check the result:\n- The problem asks for the number of pregnant female cows, and the calculation shows 11.\n\nFINAL: 11",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "abeac416f0561ea2fa47032ebb80875ab6dbe8c386b19ec241898783a6da5522",
+        "target": "Given the problem, I started by identifying the key quantities:\n- Total number of cows: 44\n- Percentage of cows that are female: 50%\n- Percentage of female cows that are pregnant: 50%\n\nI first calculated the number of female cows:\n- Number of female cows = 50% of 44 = 0.50 * 44 = 22\n\nNext, I determined the number of pregnant female cows:\n- Number of pregnant female cows = 50% of 22 = 0.50 * 22 = 11\n\nTo verify the result, I checked the calculation by ensuring that the operations were correctly applied and the percentages were accurately converted to decimals. The final number, 11, represents the number of pregnant female cows.\n\nThe operations I used are straightforward percentage calculations, which I would reuse in similar problems involving percentages and subgroups. The key is to identify the total quantity, the percentage of the total that belongs to a subgroup, and then the percentage of that subgroup that meets a specific condition.\n\nFINAL: 11",
+        "target_sha256": "4eb74f8c3ac06fa27157360edf3a276caa6c3ff37892364578a3b2637fdf6543"
+      }
+    ],
+    "task_id": "gsm8k-train-339"
+  },
+  {
+    "gold": "57",
+    "question": "A bag of pistachios has 80 pistachios in it.  95 percent have shells, and 75 percent of those have shells that are opened.  How many pistachios in the bag have shells and have an opened shell?",
+    "question_sha256": "91d9154a479694725a1615e0be67a7b2ff9b9bcc59a34a432eead46961d5cc0d",
+    "responses": [
+      {
+        "key": "gsm8k-train-1234:rich",
+        "raw_call_sha256": "4e54b4e7f0ad3e29cc0151316590b287b0b4107b1a90ce3dd2e51207436c4217",
+        "student_prefix": [
+          {
+            "content": "A bag of pistachios has 80 pistachios in it.  95 percent have shells, and 75 percent of those have shells that are opened.  How many pistachios in the bag have shells and have an opened shell?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "afa027e0503a01b06e3a94c07a677649b0f9e63797edb955933a6db916dca661",
+        "target": "Given:\n- Total pistachios: 80\n- Percentage with shells: 95%\n- Percentage of shelled pistachios with opened shells: 75%\n\nFirst, calculate the number of pistachios with shells:\n80 * 0.95 = 76 pistachios\n\nNext, calculate the number of these shelled pistachios that have opened shells:\n76 * 0.75 = 57 pistachios\n\nSo, 57 pistachios have shells and have an opened shell.\n\nFINAL: 57",
+        "target_sha256": "38cdf07f1a4f87e0da46e9ceffe03e3c6453a3c4b826ba8c937d32db286b4284"
+      },
+      {
+        "key": "gsm8k-train-1234:new_record",
+        "raw_call_sha256": "ba1943b37633632d144540723e67b13c184cc223100066f62a8059a694af84bc",
+        "student_prefix": [
+          {
+            "content": "A bag of pistachios has 80 pistachios in it.  95 percent have shells, and 75 percent of those have shells that are opened.  How many pistachios in the bag have shells and have an opened shell?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Total pistachios: 80\n- Percentage with shells: 95%\n- Percentage of shelled pistachios with opened shells: 75%\n\nFirst, calculate the number of pistachios with shells:\n80 * 0.95 = 76 pistachios\n\nNext, calculate the number of these shelled pistachios that have opened shells:\n76 * 0.75 = 57 pistachios\n\nSo, 57 pistachios have shells and have an opened shell.\n\nFINAL: 57",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "173990ac94c5a85843e76ceacac12bfb9f49317e27cacce4e43e8f05146e347c",
+        "target": "Given the problem, I identified the following quantities:\n- Total pistachios: 80\n- Percentage with shells: 95%\n- Percentage of those with shells that are opened: 75%\n\nThe unknown I needed to find was the number of pistachios that have shells and have an opened shell.\n\nTo solve this, I first calculated the number of pistachios with shells:\n\\[ 80 \\times 0.95 = 76 \\]\nThis calculation was based on the given percentage of pistachios with shells. I expected this result to mean that 76 out of the 80 pistachios have shells.\n\nNext, I calculated the number of these shelled pistachios that have opened shells:\n\\[ 76 \\times 0.75 = 57 \\]\nThis calculation was based on the given percentage of shelled pistachios that have opened shells. I expected this result to mean that 57 out of the 76 shelled pistachios have opened shells.\n\nTo verify the result, I checked the operations and the logic:\n- 95% of 80 is indeed 76.\n- 75% of 76 is indeed 57.\n\nThe operations are consistent and the result is correct. I can reuse this method whenever I need to find a percentage of a percentage of a given quantity.\n\nFINAL: 57",
+        "target_sha256": "7cf773f7c3fe0b9e69cb3340ff4fab8b358ed80b45a9c0bfdffc80711de7aa78"
+      }
+    ],
+    "task_id": "gsm8k-train-1234"
+  },
+  {
+    "gold": "34",
+    "question": "John decides to take up illustration.  He draws and colors 10 pictures.  It takes him 2 hours to draw each picture and 30% less time to color each picture.  How long does he spend on all the pictures?",
+    "question_sha256": "62afd3d49d8aa966d3dee5bc404d23ff1416bfeca440326a8d87dfa65fb9b4e0",
+    "responses": [
+      {
+        "key": "gsm8k-train-4215:rich",
+        "raw_call_sha256": "2e8bf8ca09d926dfa217f9602c9a17db29d3d1890f7ffe810c847dc4b49c713a",
+        "student_prefix": [
+          {
+            "content": "John decides to take up illustration.  He draws and colors 10 pictures.  It takes him 2 hours to draw each picture and 30% less time to color each picture.  How long does he spend on all the pictures?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "6c56487998bb524e7a0d271baa251e566d95e85030d3b76084384e528b1929d9",
+        "target": "Given:\n- John draws 10 pictures.\n- It takes him 2 hours to draw each picture.\n- Coloring each picture takes 30% less time than drawing.\n\nFirst, calculate the time spent coloring each picture:\n- 30% less than 2 hours is \\(2 \\times 0.30 = 0.6\\) hours.\n- So, coloring each picture takes \\(2 - 0.6 = 1.4\\) hours.\n\nNext, calculate the total time spent drawing all pictures:\n- Drawing 10 pictures at 2 hours each: \\(10 \\times 2 = 20\\) hours.\n\nThen, calculate the total time spent coloring all pictures:\n- Coloring 10 pictures at 1.4 hours each: \\(10 \\times 1.4 = 14\\) hours.\n\nFinally, add the total drawing and coloring times:\n- Total time: \\(20 + 14 = 34\\) hours.\n\nFINAL: 34",
+        "target_sha256": "e1e7381fb2485b080638e9b41ab6cd7d7b2c73c664cde271f25d9d699dfca88c"
+      },
+      {
+        "key": "gsm8k-train-4215:new_record",
+        "raw_call_sha256": "38276cbde388f88308773bf3b859311bea7a6fbc6a53123ce3731b641612827d",
+        "student_prefix": [
+          {
+            "content": "John decides to take up illustration.  He draws and colors 10 pictures.  It takes him 2 hours to draw each picture and 30% less time to color each picture.  How long does he spend on all the pictures?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- John draws 10 pictures.\n- It takes him 2 hours to draw each picture.\n- Coloring each picture takes 30% less time than drawing.\n\nFirst, calculate the time spent coloring each picture:\n- 30% less than 2 hours is \\(2 \\times 0.30 = 0.6\\) hours.\n- So, coloring each picture takes \\(2 - 0.6 = 1.4\\) hours.\n\nNext, calculate the total time spent drawing all pictures:\n- Drawing 10 pictures at 2 hours each: \\(10 \\times 2 = 20\\) hours.\n\nThen, calculate the total time spent coloring all pictures:\n- Coloring 10 pictures at 1.4 hours each: \\(10 \\times 1.4 = 14\\) hours.\n\nFinally, add the total drawing and coloring times:\n- Total time: \\(20 + 14 = 34\\) hours.\n\nFINAL: 34",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "48de051951e4321c1641997c97d010bfa5c25d866b702e7c0ebf170f7cc52348",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- John draws 10 pictures.\n- Drawing each picture takes 2 hours.\n- Coloring each picture takes 30% less time than drawing.\n\nFrom these, I needed to find the total time spent on all pictures. I broke down the problem into two main operations:\n1. Calculate the time spent coloring each picture.\n2. Sum the total time spent drawing and coloring all pictures.\n\nFirst, I calculated the time spent coloring each picture:\n- Drawing time per picture: 2 hours.\n- Coloring time per picture: 2 hours - (30% of 2 hours) = 2 hours - 0.6 hours = 1.4 hours.\n\nNext, I calculated the total time spent drawing all pictures:\n- Drawing 10 pictures: 10 pictures * 2 hours/picture = 20 hours.\n\nThen, I calculated the total time spent coloring all pictures:\n- Coloring 10 pictures: 10 pictures * 1.4 hours/picture = 14 hours.\n\nFinally, I summed the total drawing and coloring times:\n- Total time: 20 hours (drawing) + 14 hours (coloring) = 34 hours.\n\nTo verify the result, I checked the arithmetic:\n- Drawing: 10 * 2 = 20.\n- Coloring: 10 * 1.4 = 14.\n- Sum: 20 + 14 = 34.\n\nThe result matches the problem statement, confirming the solution is correct.\n\nFINAL: 34",
+        "target_sha256": "3ff61664b8dedf28bfd104c109978739d9bbd8c1d74a8dc18e9dffec78fd57df"
+      }
+    ],
+    "task_id": "gsm8k-train-4215"
+  },
+  {
+    "gold": "576",
+    "question": "The Jacksonville Walmart normally gets 120 customer complaints per day. That number increases by 1/3rd when they're short-staffed and this increases by another 20% when the self-checkout is broken. If the store was short-staffed and the self-checkout was broken for 3 days, how many complaints does the store get?",
+    "question_sha256": "804982cf6d031143bc5652cc0dc7eb648cadd59f0086a0fc063149aa7f7e6127",
+    "responses": [
+      {
+        "key": "gsm8k-train-6621:rich",
+        "raw_call_sha256": "e4792a67bf507d992cd4731fce9c33b566d7a9be06f14e1f1b314fff9ba092c0",
+        "student_prefix": [
+          {
+            "content": "The Jacksonville Walmart normally gets 120 customer complaints per day. That number increases by 1/3rd when they're short-staffed and this increases by another 20% when the self-checkout is broken. If the store was short-staffed and the self-checkout was broken for 3 days, how many complaints does the store get?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4057ed95b0ca1bda6e71f8edda027b62bcc1906c91f9cabcdf2684bcc312033f",
+        "target": "Given:\n- Normal complaints per day: 120\n- Increase when short-staffed: 1/3 of 120 = 40\n- Total complaints when short-staffed: 120 + 40 = 160\n- Further increase when self-checkout is broken: 20% of 160 = 32\n- Total complaints when short-staffed and self-checkout broken: 160 + 32 = 192\n\nFor 3 days:\n- Total complaints = 192 * 3 = 576\n\nFINAL: 576",
+        "target_sha256": "ecb555e0d928c214e7e0cc841306304d9aeb034a76dd27ab78043829627f5c99"
+      },
+      {
+        "key": "gsm8k-train-6621:new_record",
+        "raw_call_sha256": "dc4ef9a1f95942f756690ac94089f980388a7aef6af137bf74b86347a37a3d87",
+        "student_prefix": [
+          {
+            "content": "The Jacksonville Walmart normally gets 120 customer complaints per day. That number increases by 1/3rd when they're short-staffed and this increases by another 20% when the self-checkout is broken. If the store was short-staffed and the self-checkout was broken for 3 days, how many complaints does the store get?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Normal complaints per day: 120\n- Increase when short-staffed: 1/3 of 120 = 40\n- Total complaints when short-staffed: 120 + 40 = 160\n- Further increase when self-checkout is broken: 20% of 160 = 32\n- Total complaints when short-staffed and self-checkout broken: 160 + 32 = 192\n\nFor 3 days:\n- Total complaints = 192 * 3 = 576\n\nFINAL: 576",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "02876270b957f023d712e3c3dabc3cba498d660b44c3fbaac9ad4fd844726f0c",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- Normal complaints per day: 120\n- Increase when short-staffed: 1/3 of 120 = 40\n- Total complaints when short-staffed: 120 + 40 = 160\n- Further increase when self-checkout is broken: 20% of 160 = 32\n- Total complaints when short-staffed and self-checkout broken: 160 + 32 = 192\n- Number of days the store was short-staffed and self-checkout broken: 3\n\nTo find the total number of complaints over these 3 days, I used the operation of multiplication:\n- Total complaints over 3 days = 192 * 3\n\nI expected this operation to give the total number of complaints accumulated over the 3 days when the store was in the specified conditions. To check the result, I would recount the steps and verify the arithmetic.\n\nPerforming the multiplication:\n- 192 * 3 = 576\n\nThe result, 576, matches the expected total based on the given conditions. The operations used are straightforward and can be reused in similar problems involving sequential percentage increases and multiplicative scaling.\n\nFINAL: 576",
+        "target_sha256": "53839ad4f7fdb5f610b98acbd2a3610ea2358aef201647462e1e2691a7384c5e"
+      }
+    ],
+    "task_id": "gsm8k-train-6621"
+  }
+]

@@ -1,0 +1,377 @@
+{
+  "gold": [
+    {
+      "independent_answer": "16",
+      "question_sha256": "b1a7d5d48132ee2f04de28fb4e1cc6a8ffe2580bcf63086b92e8951ce9cd5026",
+      "reason": "The rate is 12/6 = 2 paintings per hour, so 20 more paintings take 20/2 = 10 hours. Including the original 6 hours gives 6 + 10 = 16.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-2988"
+    },
+    {
+      "independent_answer": "75",
+      "question_sha256": "c5f23ef409a544617fbcfe88de210e10f9a0521e0d8c88ab01300265caca2192",
+      "reason": "Walter earns 5 \u00d7 4 = $20 per day and 20 \u00d7 5 = $100 per week. Three-fourths of $100 is $75.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-3530"
+    },
+    {
+      "independent_answer": "36 or 108",
+      "question_sha256": "4831b5ac7da780bdc008fe3fa67efe039a4d9092cda516300ee0dedfe903a317",
+      "reason": "If the shared 3-mile route is counted once per day, the total is 3 \u00d7 6 + 2 \u00d7 6 + (2 \u00d7 6)/2 = 36. If \u201cmiles the ladies walk in total\u201d means aggregate person-miles, the five ladies contribute 5 \u00d7 3 \u00d7 6 = 90 baseline miles, yielding 90 + 12 + 6 = 108. The wording does not unambiguously select either convention.",
+      "status": "AMBIGUOUS",
+      "task_id": "gsm8k-train-3001"
+    },
+    {
+      "independent_answer": "4",
+      "question_sha256": "0b0725c0b79427c5554a14a8118b5169684fcd34f78135d713276a049dee6304",
+      "reason": "John reads 2 \u00d7 50 = 100 pages per day. Reading 2800 pages therefore takes 2800/100 = 28 days, or 28/7 = 4 weeks.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-3974"
+    },
+    {
+      "independent_answer": "50",
+      "question_sha256": "b7150ea2fea567df995db7b021f3ced6a338509c1b578d16587e2bfc286479a4",
+      "reason": "Mira covers 5 \u00d7 2 = 10 miles each morning, so over five days she covers 10 \u00d7 5 = 50 miles.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-221"
+    },
+    {
+      "independent_answer": "220",
+      "question_sha256": "fb9fabd81fc591fcadb20724cd142499b51d58c3b04132df7ae6e20588c7d73b",
+      "reason": "Each half contains 100 shirts. Revenue is 100 \u00d7 30 + 100 \u00d7 25 = $5500, and $5500/25 = $220 per minute.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-5829"
+    },
+    {
+      "independent_answer": "8",
+      "question_sha256": "0e65c21ae11682eb646526b7314a34f0d51fff4bdefee2420c3358e6c422c54f",
+      "reason": "Six hours is 360 minutes, allowing Kevin to find 360/15 = 24 worms. At 3 worms per toad, he has 24/3 = 8 toads.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-2268"
+    },
+    {
+      "independent_answer": "6",
+      "question_sha256": "4b37a48bdc7ab6dedefb02d4675844ec64e261b6cabc66e543149abfa3bd37cd",
+      "reason": "The three exercise times are 6/2 = 3 hours, 6/3 = 2 hours, and 6/6 = 1 hour. Their sum is 3 + 2 + 1 = 6 hours.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-5789"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I divide the total time by the number of paintings",
+        "6 hours / 12 paintings = 0.5 hours per painting.",
+        "6 hours + 10 hours = 16 hours."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2988:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the supplied quantities and its own verifiable constant-rate arithmetic; it claims no external feedback or checker event.",
+      "raw_call_sha256": "5325c0d82371a553b04369f7ba8ac93d36bd9f0fc7cc42ebf203a1c081b7fa1b",
+      "reason": "The response personally describes dividing to obtain 0.5 hour per painting, computes 10 additional hours, and adds the original 6 hours. These correct, role-labeled intermediates are checkable and provide a reusable constant-rate method without padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4d77ea38475499865528474879f9cb0ce32fde78ea866d5173d3d4f4fc55c258",
+      "target_sha256": "ef2d1e861d352855332ab13569b0cf93dac676886fbdd406ae6d52bfdc62ed4a"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated the time it takes to paint one painting.",
+        "20 \\text{ paintings} \\times 0.5 \\text{ hours per painting} = 10 \\text{ hours}",
+        "The operations I would reuse are the calculation of the time per painting and the addition of times"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2988:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Its first-person calculations and consistency check are supported by the supplied problem and visible arithmetic, with no claim of an external event.",
+      "raw_call_sha256": "5ca2d370a38893522bd96f7e267ae0c36213c19e6da8b27ee175a7ca1842f7a8",
+      "reason": "The response correctly derives 0.5 hour per painting, 10 hours for the additional paintings, and 16 total hours. It gives a meaningful rate-consistency check and explicitly identifies when the rate-and-addition operations are reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1ebaa11662c1f480fd6a331fbf047ebe398d4bb0585023687b6d5568b05e2a5d",
+      "target_sha256": "ebfaa1acd3ecf23c4179d46837f055caf8afa3480c14f73b61cf2f9545a0ec33"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculate his daily earnings",
+        "Daily earnings = $5/hour * 4 hours = $20.",
+        "Allocation for school = 3/4 * $100 = $75."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3530:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All factual claims come from the question, and the target supports its conclusion with explicit arithmetic rather than external feedback.",
+      "raw_call_sha256": "30b56a97534d3bf3cb9474f73b6ea7dbdee035cc9a26e0b57d775e6871c3b36b",
+      "reason": "The response gives a substantive first-person calculation: $20 daily, $100 weekly, then three-fourths as $75. The labeled intermediates are concrete checks and the earnings-to-allocation sequence is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "40fbc4cd7d58d43383f1e008a07c1ac1fcaa6125c490d9f6a5948951e55eda64",
+      "target_sha256": "f7246604c17a9754ce962e3b8c0b96a66870be7c8e899253e2ea1c02651c2181"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated his daily earnings",
+        "Weekly earnings: $100 (20 * 5)",
+        "Allocation for school: $75 (100 * 3/4)"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3530:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The stated step-by-step verification is performed within the target using supplied quantities; \u201cmatches the problem's requirement\u201d does not assert an outside checker result.",
+      "raw_call_sha256": "2cade56d8107d8c9f0d4344ed831b295f2e5ec6ff2c1504dc7228d2a04d1b55d",
+      "reason": "The complete response correctly computes daily and weekly earnings and applies the 3/4 allocation. Its numbered recomputation supplies concrete expectations, and it explains that the method applies to analogous earnings-and-allocation problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "b288c188fb9f61d20b60fb47f569fcfeb8bc44c0a267e504e5bacf2fb230e3e8",
+      "target_sha256": "90490a84ea8d850a27fd8bf0f2d8b5f5e78b1f7b9ebf7dfcf8df8a41d10cbf53"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we get 90 miles (group) + 12 miles (Jamie) + 6 miles (Sue) = 108 miles.",
+        "3 miles/day * 6 days = 18 miles per lady.",
+        "18 miles/lady * 5 ladies = 90 miles."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3001:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The aggregate person-mile interpretation and every calculation are explicitly visible and use only the neutral question; no hidden guidance or external validation is claimed.",
+      "raw_call_sha256": "c3eed74b46e78240c9ae7217efc1c10c1b1a3b061345ff672e18e9af0f6e451a",
+      "reason": "Under the supportable aggregate-person-miles reading, the response correctly computes 90 shared-route person-miles plus 12 for Jamie and 6 for Sue. \u201cwe get\u201d is a plural first-person account of applying the final addition. The numeric intermediates are checkable and demonstrate how to aggregate individual distances.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e46394fbfc209ca879cbd6db28546f396b473636f9b49ecf97734a84bf5a5f9c",
+      "target_sha256": "8e1366cf503f0c6811b0a515bd74ff2e7e8e41aa4a7c9f16ce2799e119503920"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "2 \\text{ hours/day} \\times 50 \\text{ pages/hour} = 100 \\text{ pages/day}",
+        "\\frac{2800 \\text{ pages}}{100 \\text{ pages/day}} = 28 \\text{ days}",
+        "\\frac{28 \\text{ days}}{7 \\text{ days/week}} = 4 \\text{ weeks}"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3974:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The response uses only question facts and transparent unit-preserving arithmetic, with no unsupported external event.",
+      "raw_call_sha256": "bde551bdfd439f14e45c0ecf8c5346b6bf5ad45bf6e83ed0b7eb2b8a17373040",
+      "reason": "The arithmetic is correct and provides concrete intermediates plus a reusable rate-to-duration conversion. However, the full response consists of impersonal directives such as \u201ccalculate\u201d and \u201cdetermine\u201d and never gives a substantive first-person account of applying or checking an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "63462d469e420042c70dfe0e4200dbf15baa78a0e1aafd436b03be6fd998dba4",
+      "target_sha256": "f9bea82e7db1aff656a560867af47a2593cba862bf3d7aa7dfc59df0dd7d0c89"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the number of pages John reads per day",
+        "4 \\text{ weeks} \\times 7 \\text{ days/week} \\times 2 \\text{ hours/day} \\times 50 \\text{ pages/hour} = 2800 \\text{ pages}",
+        "I would reuse this method whenever I need to calculate the time required"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3974:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The inverse check is explicitly performed in the target from supplied values. Its statement that the result matched the problem is supportable as consistency with those constraints, not an external checker claim.",
+      "raw_call_sha256": "2340c197039ee9912ab5a812abcf681e2cf0fac0fa20caf49780a46391f837b6",
+      "reason": "The response personally derives 100 pages per day, 28 days, and 4 weeks. It independently verifies that four weeks produces exactly 2800 pages and explains reuse for fixed-rate completion-time problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "8fe3f79b774e0065a46d3306ccd59f75ebd01910423237dec9c2bcb5e6d4d9ed",
+      "target_sha256": "7e157aeb6bf2911b3c83c73d1d9989abcf4483c8919fc6f822ccf8ac57f3b8b5"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "We need to find out how many miles she can jog over five days.",
+        "5 \\, \\text{miles/hour} \\times 2 \\, \\text{hours} = 10 \\, \\text{miles}",
+        "10 \\, \\text{miles/day} \\times 5 \\, \\text{days} = 50 \\, \\text{miles}"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-221:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All calculations follow directly from the neutral question and are shown in the target; there is no claim of outside validation.",
+      "raw_call_sha256": "67eea7a9419ff0d6cab903d68da40f9f0c19b5ce65a453716ba063b6b47965a0",
+      "reason": "The response correctly multiplies speed by daily time and then by five days, yielding checkable intermediates and a reusable distance calculation. Its only first-person phrase is the excluded goal statement \u201cWe need to find out\u201d; the operations themselves are presented impersonally.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "bfd36beaf5324e7a6d1f509a09ac63dec2bcc8fbe5d4a42da3c8b2eaa3d22f5c",
+      "target_sha256": "225c21bd41f029255c0d9587694dea4f44d8e1f46c935c45752d8c2afe969362"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated the distance Mira jogs in one day",
+        "10 \\, \\text{miles/day} \\times 5 \\, \\text{days} = 50 \\, \\text{miles}",
+        "The units of miles per hour and hours per day correctly combine to give miles per day"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-221:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The unit check is an internal, explicitly reasoned verification based only on the question and target arithmetic, not an unsupported observed event.",
+      "raw_call_sha256": "76538591c3a99f957628a56b44b28a0e81cc12a9cf810277343333070ce9f5cd",
+      "reason": "The response personally applies speed \u00d7 time to obtain 10 miles per day and multiplies by five to obtain 50. It checks the unit cancellation and explains when the two-stage multiplication is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7b809836ac30d7d20542f7252358eef4e10c33ecd9c4cab29729a6c4a0681fd3",
+      "target_sha256": "9d7454c3122caac95ebe0e5efc7ab86e6830dfc540db1c9b0808ee4ca8017336"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "100 black t-shirts * $30 = $3000",
+        "$3000 + $2500 = $5500",
+        "$5500 / 25 minutes = $220 per minute"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5829:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the shirt counts, prices, and duration given in the neutral question and makes no external-feedback claim.",
+      "raw_call_sha256": "379b26b452a802795f8ec9f5b2cf330aed793aed3e7763f2510f6a21053f9df4",
+      "reason": "The revenue arithmetic and division by time are correct, checkable, and reusable for computing a monetary rate. The target nevertheless has no first-person operational account; \u201ccalculate,\u201d \u201cadd,\u201d and \u201cdivide\u201d are impersonal instructions.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "529a52d387014523bd30eac60aa1d92559c7ffe7fe0248e2e1a23ea106bf3028",
+      "target_sha256": "c962f0a298ef80fc803ff9fb03476065297ddd672a8cafcee0971ae65f1b1657"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the total revenue from the black t-shirts",
+        "Money made per minute: $5500 / 25 minutes = $220 per minute",
+        "$220 * 25 = $5500"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5829:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The confirmation is a self-contained inverse multiplication shown in the target and requires no hidden checker or feedback.",
+      "raw_call_sha256": "2ede562d561f446cb122ca7022dadfe46b417ce05edbf98ab4c632414a4d3e73",
+      "reason": "The response personally computes the two revenues, their $5500 sum, and the $220-per-minute rate. Multiplying $220 by 25 supplies a concrete inverse check, and the explanation identifies division by elapsed time as reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "30e9ea6c62905f2cb6289704eca3aaff1f605551f73ba18f312358cf96eae260",
+      "target_sha256": "30e4eb4edf5ab48fc8401a008faa0d11d4f248a4862488d153da8b9b08b6a1d5"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we can find the number of toads by dividing the total number of worms by the number of worms each toad eats",
+        "360 minutes / 15 minutes per worm = 24 worms",
+        "24 worms / 3 worms per toad = 8 toads"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2268:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The conversion and divisions are fully supported by the neutral question and explicit arithmetic; no external event is invoked.",
+      "raw_call_sha256": "e4e7b4acc91ec4c5d3a78311e74449f71a195aee019b7eb7c4e8b5694e77ba48",
+      "reason": "The plural first-person statement substantively identifies division by worms per toad as the chosen operation. The response correctly converts six hours to 360 minutes, finds 24 worms, and derives 8 toads, with checkable and reusable unit-rate steps.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "8bec9c3431a35854d2575fae5de894d7beb9df7d3ae277fdb1823929c0872d98",
+      "target_sha256": "879c40d3ed2c1961e71284d060bff77e24902683de64449cb56d052ef851ac37"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first converted the total time Kevin spends into minutes",
+        "8 toads * 3 worms/toad = 24 worms",
+        "This matches the number of worms Kevin found"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2268:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "\u201cThis matches\u201d refers to the explicitly shown internal multiplication yielding 24 worms, so it is supported self-checking rather than a claimed external result.",
+      "raw_call_sha256": "29ca5f279dc58463441d505104daa3ff4e61ee2cefbcfb6c79951fd44edccffd",
+      "reason": "The response personally performs the hour conversion and both divisions correctly. Its multiplication of 8 toads by 3 worms gives the expected 24 worms as a concrete inverse check, and it explains reuse of both unit conversions and per-item division.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3a5c380143deb9172674e031e2f0ad3233ed3943db24245aa405682a1d98eaf6",
+      "target_sha256": "f038f0879d94407b76301f660abd9cac2440688e764f0fdea4c4e32b1587c6e8"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "The time taken is 6 miles / 2 mph = 3 hours.",
+        "The time taken is 6 miles / 3 mph = 2 hours.",
+        "The total time spent exercising in a week is 3 hours + 2 hours + 1 hour = 6 hours."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5789:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every distance, speed, and computation is supplied by or verifiable from the neutral question, and no hidden guidance or external check is claimed.",
+      "raw_call_sha256": "9e5e3c44d03bc1a36c0956c471817515f9ab078820dfafc9c45ca5c832793df7",
+      "reason": "The three distance/speed calculations and their sum are correct, concrete, and reusable. However, the entire response is an impersonal description of Jonathan's times and contains no first-person account of choosing, applying, or checking an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "980c8464770996b7c3b4b791f73aaab82f9b1dc4bd99f2cdcb75939f478dbf77",
+      "target_sha256": "7be4634dfa26dfa8e1024b2b8138f07d90a2b70e5d658746d32ab70b75f40dd3"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I used the formula: time = distance / speed.",
+        "For Monday, the time is 6 miles / 2 mph = 3 hours.",
+        "I checked this result by ensuring that all given distances and speeds were correctly applied"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5789:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The stated check concerns the visible use of the supplied distances, speeds, and arithmetic; it does not claim an external checker or feedback event.",
+      "raw_call_sha256": "736be95c3a79c98f9343ead3aa6a8b2a593d70db18c1d805bdbb0f204b9a8c54",
+      "reason": "The response personally applies time = distance/speed to obtain 3, 2, and 1 hours and sums them to 6. These values provide concrete checks, and the response explains that the formula is reusable whenever distance and speed determine time.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "22336d6a26716d313f3149379638c7161eee47a65ecc0468d84367c1326a1142",
+      "target_sha256": "5d4dbb47c333dbd4d5797043d302b78f2c9f92ed46ed89354635f248ef626e3e"
+    }
+  ]
+}
