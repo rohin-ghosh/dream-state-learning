@@ -1,0 +1,131 @@
+{
+  "assigned_physical_index": 1,
+  "continuation": {
+    "child_calls": 16,
+    "completed_episodes": 4,
+    "decisions_consumed": 2,
+    "original_start": {
+      "assigned_physical_index": 1,
+      "deadline_unix": 1789472611.845884,
+      "gpu_uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b",
+      "lease_cutoff_unix": 1790294400.0,
+      "max_gpu_hours": 12,
+      "shared_binding": {
+        "cohort_sha256": "a1746f1c49339da60e9508d82496a257438614af64657fab261f38283c653844",
+        "initial": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+            ],
+            [
+              "adapter_model.safetensors",
+              "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+            ]
+          ],
+          "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+          "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+        },
+        "prepare_sha256": "83ebe041508a265ff06824072c603ece22d3881df908d4a6ab822afffd724c2d",
+        "recipe": {
+          "batch_size": 4,
+          "cumulative_new_rows": false,
+          "gradient_clip": null,
+          "learning_rate": 3e-05,
+          "legacy_sizes": [
+            128,
+            20,
+            62,
+            12
+          ],
+          "optimizer": "AdamW",
+          "optimizer_kwargs": {
+            "amsgrad": false,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "foreach": false,
+            "fused": false,
+            "weight_decay": 0.01
+          },
+          "seed": 8203,
+          "trajectory_presentations": 4,
+          "zero_yield": "NO_UPDATE_PRESERVE_PREVIOUS_CHILD_AND_FRESH_READOUT"
+        },
+        "source_policy": "SINGLE_SHARED_SOURCE_CURRENT_TRAIN_RECEIPTS_ONLY",
+        "source_sha256": "6f5f8811c28bc3ccee94232d628a246f70b604e7ea70be746e3e09536553627d"
+      },
+      "started_unix": 1789430325.300947
+    },
+    "original_terminal_sha256": "19e8d19d99c18e2f13b763610d1772ab978274cf066b10958fd8271e129fe6e3",
+    "predecessor_directory": "run_resume_v5",
+    "predecessor_terminal_sha256": "1368f09efc9ee8b4bb6f19256825be73a107b424715d104b40095cdaf9b70f52",
+    "prior_gpu_hours": 0.06033870213561588,
+    "provider_calls": 0,
+    "resume_state_sha256": "daf92dd20bff3b425a6f8c42e49d9f7cd9261680de22838c502d2321a1908423"
+  },
+  "deadline_unix": 1789472611.845884,
+  "gpu_uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b",
+  "lease_cutoff_unix": 1790294400.0,
+  "max_gpu_hours": 12,
+  "shared_binding": {
+    "cohort_sha256": "a1746f1c49339da60e9508d82496a257438614af64657fab261f38283c653844",
+    "initial": {
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "files": [
+        [
+          "README.md",
+          "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+        ],
+        [
+          "adapter_config.json",
+          "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+        ],
+        [
+          "adapter_model.safetensors",
+          "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+        ]
+      ],
+      "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+      "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+    },
+    "prepare_sha256": "83ebe041508a265ff06824072c603ece22d3881df908d4a6ab822afffd724c2d",
+    "recipe": {
+      "batch_size": 4,
+      "cumulative_new_rows": false,
+      "gradient_clip": null,
+      "learning_rate": 3e-05,
+      "legacy_sizes": [
+        128,
+        20,
+        62,
+        12
+      ],
+      "optimizer": "AdamW",
+      "optimizer_kwargs": {
+        "amsgrad": false,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "foreach": false,
+        "fused": false,
+        "weight_decay": 0.01
+      },
+      "seed": 8203,
+      "trajectory_presentations": 4,
+      "zero_yield": "NO_UPDATE_PRESERVE_PREVIOUS_CHILD_AND_FRESH_READOUT"
+    },
+    "source_policy": "SINGLE_SHARED_SOURCE_CURRENT_TRAIN_RECEIPTS_ONLY",
+    "source_sha256": "6f5f8811c28bc3ccee94232d628a246f70b604e7ea70be746e3e09536553627d"
+  },
+  "started_unix": 1789432042.6080246
+}

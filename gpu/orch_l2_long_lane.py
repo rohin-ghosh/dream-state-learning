@@ -40,7 +40,7 @@ def scan(index, uuid):
             raise ValueError('shared_scanner_binding_changed')
     scan_root = ROOT / 'scans'
     scan_root.mkdir(exist_ok=True)
-    for attempt in range(5):
+    for attempt in range(10):
         with (SHARED_ROOT / 'service_exceptions.json').open() as exceptions:
             result = subprocess.run(['python3', str(SHARED_ROOT / 'scanner.py'), str(index), uuid],
                 stdin=exceptions, capture_output=True, text=True, timeout=45,
@@ -53,7 +53,7 @@ def scan(index, uuid):
         write(scan_root / f'{time.time_ns()}_{attempt}.json', report)
         if report['safe'] or report['owners'] or not report['unresolved']:
             return report
-        if any(item.get('comm') != 'sshd' for item in report['unresolved']):
+        if any(item.get('comm') not in ('sshd', 'sftp-server') for item in report['unresolved']):
             return report
         time.sleep(2)
     return report
@@ -158,6 +158,63 @@ def published_manifest(root, publication):
     return root / name
 
 
+def reconcile_completed_stages(root, shared_root, publication):
+    predecessor = publication['stage_predecessor_directory']
+    if not re.fullmatch(r'run_resume_v5(?:_0[2-9])?|run_stages_[0-9]{2}', predecessor):
+        raise ValueError('own_stage_predecessor_required')
+    path = root / predecessor / 'TERMINAL.json'
+    if file_hash(path) != publication['stage_predecessor_terminal_sha256']:
+        raise ValueError('bound_stage_terminal_required')
+    terminal = json.loads(path.read_text())
+    state_path = root / 'RESUME_STATE_001.json'
+    if file_hash(state_path) != publication['resume_state_sha256']:
+        raise ValueError('published_resume_state_required')
+    state = json.loads(state_path.read_text())
+    original = json.loads((root / 'run/START.json').read_text())
+    if (original != state['original_start'] or original['gpu_uuid'] != GPU_UUID
+            or terminal['status'] != 'FAILED'
+            or terminal['error']['message'] != 'physical1_admission_not_clear'
+            or not 0 <= terminal['assigned_gpu_hours'] < HOURS):
+        raise ValueError('original_allocation_and_admission_stop_required')
+    expected = publication['completed_stage_receipts']
+    count = len(expected)
+    names = [f'cycle{cycle}/{phase}' for cycle, phase in PHASES[:count]]
+    if not 0 < count < len(PHASES) or set(expected) != set(names):
+        raise ValueError('contiguous_completed_stage_prefix_required')
+    identity = json.loads((shared_root / 'INITIAL.json').read_text())
+    for name, (cycle, phase) in zip(names, PHASES):
+        receipt_path = shared_root / 'LONG' / name / 'COMPLETE.json'
+        receipt = json.loads(receipt_path.read_text())
+        if (file_hash(receipt_path) != expected[name] or receipt['status'] != 'COMPLETE'
+                or receipt['arm'] != 'LONG' or receipt['cycle'] != cycle or receipt['phase'] != phase
+                or receipt['input_adapter'] != identity):
+            raise ValueError('completed_stage_lineage_or_receipt_drift')
+        if phase == 'sleep':
+            output = receipt['output_adapter']
+            if output['base_sha256'] != identity['base_sha256']:
+                raise ValueError('completed_sleep_changed_base')
+            identity = output
+    previous_start = json.loads((root / predecessor / 'START.json').read_text())
+    inherited = previous_start.get('continuation') or {}
+    skipped = inherited.get('completed_stage_count', 0)
+    stages = terminal['stages']
+    if (len(stages) + skipped != count
+            or previous_start['deadline_unix'] > original['deadline_unix']):
+        raise ValueError('guardian_completed_prefix_drift')
+    for stage, (cycle, phase) in zip(stages, PHASES[skipped:count]):
+        if (stage['cycle'] != cycle or stage['phase'] != phase or stage['exit_code'] != 0
+                or stage['gpu_uuid'] != GPU_UUID
+                or stage['completion_sha256'] != expected[f'cycle{cycle}/{phase}']):
+            raise ValueError('successful_guardian_stage_required')
+    cycle, phase = PHASES[count]
+    if (shared_root / 'LONG' / f'cycle{cycle}' / phase).exists():
+        raise ValueError('next_stage_already_started_no_replay')
+    return dict(original_start=original, prior_gpu_hours=terminal['assigned_gpu_hours'],
+        predecessor_directory=predecessor, predecessor_terminal_sha256=file_hash(path),
+        completed_stage_count=count, completed_stage_receipts=expected,
+        next_stage=[cycle, phase], next_input_adapter=identity, provider_calls=0)
+
+
 def allocation_deadline(started, shared_deadline, continuation=None):
     deadline = min(started + HOURS * 3600, shared_deadline, LEASE_CUTOFF)
     if continuation:
@@ -187,7 +244,7 @@ def stop_owned(child, identity):
         child.wait(timeout=10)
 
 
-def run_lane(root, shared_root, source_root, *, resume_experience=False):
+def run_lane(root, shared_root, source_root, *, resume_experience=False, resume_stages=False):
     from gpu import orch_l2_shared_run as shared_driver
 
     if root != ROOT or root.is_symlink() or shared_root != SHARED_ROOT:
@@ -209,11 +266,18 @@ def run_lane(root, shared_root, source_root, *, resume_experience=False):
     if publication['native_manifest_sha256'] != file_hash(native_manifest):
         raise ValueError('published_long_native_manifest_drift')
     started = time.time()
-    continuation = reconcile_resume(root, shared_root, publication) if resume_experience else None
+    if resume_experience and resume_stages:
+        raise ValueError('single_resume_boundary_required')
+    continuation = (reconcile_completed_stages(root, shared_root, publication) if resume_stages else
+                    reconcile_resume(root, shared_root, publication) if resume_experience else None)
     deadline = allocation_deadline(started, float((shared_root / 'DEADLINE').read_text()), continuation)
     if deadline <= started + 60:
         raise ValueError('no_time_remaining_in_shared_allocation')
     run_name = publication.get('resume_run_directory', 'run_resume_v5') if resume_experience else 'run'
+    if resume_stages:
+        run_name = publication['stage_run_directory']
+        if not re.fullmatch(r'run_stages_[0-9]{2}', run_name):
+            raise ValueError('own_stage_run_directory_required')
     if resume_experience and not re.fullmatch(r'run_resume_v5(?:_0[2-9])?', run_name):
         raise ValueError('own_resume_directory_required')
     run = root / run_name
@@ -232,7 +296,8 @@ def run_lane(root, shared_root, source_root, *, resume_experience=False):
     signal.signal(signal.SIGTERM, handle_signal)
     signal.signal(signal.SIGINT, handle_signal)
     try:
-        for cycle, phase in PHASES:
+        phases = PHASES[continuation['completed_stage_count']:] if resume_stages else PHASES
+        for cycle, phase in phases:
             admission = scan(GPU_INDEX, GPU_UUID)
             write(run / f'C{cycle}_{phase}_ADMISSION.json', admission)
             if not admission['safe']:
@@ -294,9 +359,12 @@ def main():
     parser.add_argument('--root', type=Path, default=ROOT)
     parser.add_argument('--shared-root', type=Path, default=SHARED_ROOT)
     parser.add_argument('--source-root', type=Path, required=True)
-    parser.add_argument('--resume-experience', action='store_true')
+    boundary = parser.add_mutually_exclusive_group()
+    boundary.add_argument('--resume-experience', action='store_true')
+    boundary.add_argument('--resume-stages', action='store_true')
     options = parser.parse_args()
-    run_lane(options.root, options.shared_root, options.source_root, resume_experience=options.resume_experience)
+    run_lane(options.root, options.shared_root, options.source_root,
+             resume_experience=options.resume_experience, resume_stages=options.resume_stages)
 
 
 if __name__ == '__main__':

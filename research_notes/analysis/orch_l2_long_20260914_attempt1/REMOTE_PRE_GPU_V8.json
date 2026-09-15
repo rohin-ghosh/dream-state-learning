@@ -1,0 +1,128 @@
+{
+  "actual_next_adapter_verified": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "files": [
+      [
+        "README.md",
+        "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+      ],
+      [
+        "adapter_config.json",
+        "22b26347edfb502de981c9a291205cfae19ff5e0801e62d2162da18024d0750c"
+      ],
+      [
+        "adapter_model.safetensors",
+        "7165ddb385dce01ea1d96b957a122856ee6262ff618e9a5ee9574df0223b05de"
+      ]
+    ],
+    "path": "/tmp/orch_l2_shared_20260914_attempt1/LONG/cycle1/sleep/adapter",
+    "state_sha256": "ad2d1065a97b88b183c001baf48117886d16ab66fe8f305158d7adfc00882cec"
+  },
+  "continuation": {
+    "completed_stage_count": 3,
+    "completed_stage_receipts": {
+      "cycle0/readout": "518d40505ffb904cbf9943e038f1516e3da83ddc6c6e8fa82484c2a640eaa066",
+      "cycle1/experience": "846b0bee93c71aeb12882a6890fa4457401783a711142b6d0bba571c84da9d1d",
+      "cycle1/sleep": "aef48ad4c54d8abf29cd9356f4777c730e6811439cad78d384a9e8836b9ddd89"
+    },
+    "next_input_adapter": {
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "files": [
+        [
+          "README.md",
+          "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+        ],
+        [
+          "adapter_config.json",
+          "22b26347edfb502de981c9a291205cfae19ff5e0801e62d2162da18024d0750c"
+        ],
+        [
+          "adapter_model.safetensors",
+          "7165ddb385dce01ea1d96b957a122856ee6262ff618e9a5ee9574df0223b05de"
+        ]
+      ],
+      "path": "/tmp/orch_l2_shared_20260914_attempt1/LONG/cycle1/sleep/adapter",
+      "state_sha256": "ad2d1065a97b88b183c001baf48117886d16ab66fe8f305158d7adfc00882cec"
+    },
+    "next_stage": [
+      1,
+      "readout"
+    ],
+    "original_start": {
+      "assigned_physical_index": 1,
+      "deadline_unix": 1789472611.845884,
+      "gpu_uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b",
+      "lease_cutoff_unix": 1790294400.0,
+      "max_gpu_hours": 12,
+      "shared_binding": {
+        "cohort_sha256": "a1746f1c49339da60e9508d82496a257438614af64657fab261f38283c653844",
+        "initial": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+            ],
+            [
+              "adapter_model.safetensors",
+              "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+            ]
+          ],
+          "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+          "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+        },
+        "prepare_sha256": "83ebe041508a265ff06824072c603ece22d3881df908d4a6ab822afffd724c2d",
+        "recipe": {
+          "batch_size": 4,
+          "cumulative_new_rows": false,
+          "gradient_clip": null,
+          "learning_rate": 3e-05,
+          "legacy_sizes": [
+            128,
+            20,
+            62,
+            12
+          ],
+          "optimizer": "AdamW",
+          "optimizer_kwargs": {
+            "amsgrad": false,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "foreach": false,
+            "fused": false,
+            "weight_decay": 0.01
+          },
+          "seed": 8203,
+          "trajectory_presentations": 4,
+          "zero_yield": "NO_UPDATE_PRESERVE_PREVIOUS_CHILD_AND_FRESH_READOUT"
+        },
+        "source_policy": "SINGLE_SHARED_SOURCE_CURRENT_TRAIN_RECEIPTS_ONLY",
+        "source_sha256": "6f5f8811c28bc3ccee94232d628a246f70b604e7ea70be746e3e09536553627d"
+      },
+      "started_unix": 1789430325.300947
+    },
+    "predecessor_directory": "run_resume_v5_02",
+    "predecessor_terminal_sha256": "e8104e1cccb8b670ce5ea797e04de73abedca1b368383b2588ddb03cfa195e43",
+    "prior_gpu_hours": 0.33069377654128607,
+    "provider_calls": 0
+  },
+  "deadline": 1789472611.845884,
+  "files_verified": 540,
+  "model_calls": 0,
+  "predecessor_processes": [
+    [
+      "273420dc-cd6c-4760-a264-0027d2f6aede",
+      222428,
+      15405351
+    ]
+  ],
+  "provider_calls": 0,
+  "status": "PASS"
+}

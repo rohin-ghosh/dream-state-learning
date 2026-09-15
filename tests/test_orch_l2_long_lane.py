@@ -184,6 +184,98 @@ class LongResumeReconciliationTests(unittest.TestCase):
             lane.reconcile_resume(self.root, self.shared, self.publication)
 
 
+class LongStageBoundaryTests(unittest.TestCase):
+    def setUp(self):
+        LongResumeReconciliationTests.setUp(self)
+        evidence = Path(__file__).resolve().parents[1] / 'research_notes/analysis/orch_l2_long_20260914_attempt1'
+        predecessor = self.root / 'run_resume_v5_02'
+        predecessor.mkdir()
+        for source, target in (('STAGE_BOUNDARY_TERMINAL_01.json', 'TERMINAL.json'),
+                               ('STAGE_BOUNDARY_START_01.json', 'START.json')):
+            (predecessor / target).write_bytes((evidence / source).read_bytes())
+        receipts = {}
+        for cycle, phase, name in ((1, 'experience', 'C1_EXPERIENCE_COMPLETE.json'),
+                                   (0, 'readout', 'C0_READOUT_COMPLETE.json'),
+                                   (1, 'sleep', 'C1_SLEEP_COMPLETE.json')):
+            path = self.shared / 'LONG' / f'cycle{cycle}' / phase / 'COMPLETE.json'
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes((evidence / name).read_bytes())
+            receipts[f'cycle{cycle}/{phase}'] = lane.file_hash(path)
+        lane.write(self.shared / 'INITIAL.json', self.state['original_start']['shared_binding']['initial'])
+        self.publication.update(stage_predecessor_directory=predecessor.name,
+            stage_predecessor_terminal_sha256=lane.file_hash(predecessor / 'TERMINAL.json'),
+            completed_stage_receipts=receipts, stage_run_directory='run_stages_01')
+
+    def test_actual_completed_prefix_resumes_only_readout1(self):
+        result = lane.reconcile_completed_stages(self.root, self.shared, self.publication)
+        self.assertEqual(result['completed_stage_count'], 3)
+        self.assertEqual(result['next_stage'], [1, 'readout'])
+        self.assertEqual(result['next_input_adapter']['state_sha256'],
+                         'ad2d1065a97b88b183c001baf48117886d16ab66fe8f305158d7adfc00882cec')
+        self.assertEqual(result['prior_gpu_hours'], 0.33069377654128607)
+        self.assertEqual(result['provider_calls'], 0)
+        self.assertEqual(lane.PHASES[result['completed_stage_count']:][0], (1, 'readout'))
+
+    def test_changed_receipt_or_skipped_hole_refused(self):
+        publication = deepcopy(self.publication)
+        del publication['completed_stage_receipts']['cycle0/readout']
+        with self.assertRaisesRegex(ValueError, 'contiguous_completed'):
+            lane.reconcile_completed_stages(self.root, self.shared, publication)
+        path = self.shared / 'LONG/cycle1/sleep/COMPLETE.json'
+        path.write_bytes(path.read_bytes() + b'\n')
+        with self.assertRaisesRegex(ValueError, 'lineage_or_receipt_drift'):
+            lane.reconcile_completed_stages(self.root, self.shared, self.publication)
+
+    def test_partial_next_stage_cannot_be_replayed(self):
+        (self.shared / 'LONG/cycle1/readout').mkdir()
+        with self.assertRaisesRegex(ValueError, 'already_started_no_replay'):
+            lane.reconcile_completed_stages(self.root, self.shared, self.publication)
+
+
+class LongScannerRetryTests(unittest.TestCase):
+    def report(self, unresolved=(), owners=()):
+        return dict(gpus=f'1, {lane.GPU_UUID}, NVIDIA A100, unused, unused, 0',
+                    clear=not (unresolved or owners), owners=list(owners), unresolved=list(unresolved))
+
+    def run_scan(self, reports):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            shared = root / 'shared'
+            shared.mkdir()
+            (shared / 'scanner.py').write_text('unchanged scanner')
+            (shared / 'service_exceptions.json').write_text('{}')
+            lane.write(root / 'PUBLICATION.json', dict(shared_scanner_files={
+                name: lane.file_hash(shared / name) for name in ('scanner.py', 'service_exceptions.json')}))
+            results = [lane.subprocess.CompletedProcess([], 0 if report['clear'] else 1,
+                       stdout=json.dumps(report)) for report in reports]
+            with patch.object(lane, 'ROOT', root), patch.object(lane, 'SHARED_ROOT', shared), \
+                    patch.object(lane.subprocess, 'run', side_effect=results) as run, \
+                    patch.object(lane.time, 'sleep'):
+                result = lane.scan(1, lane.GPU_UUID)
+            return result, run.call_count
+
+    def test_transient_sftp_waits_for_fully_clear_scan(self):
+        blocked = self.report([dict(comm='sshd'), dict(comm='sftp-server')])
+        result, calls = self.run_scan([blocked, self.report()])
+        self.assertTrue(result['safe'])
+        self.assertEqual(calls, 2)
+        self.assertFalse(blocked['clear'])
+        self.assertEqual(len(blocked['unresolved']), 2)
+
+    def test_persistent_transient_never_gets_an_exemption(self):
+        blocked = self.report([dict(comm='sftp-server')])
+        result, calls = self.run_scan([blocked] * 10)
+        self.assertFalse(result['safe'])
+        self.assertEqual(calls, 10)
+        self.assertEqual(result['unresolved'], blocked['unresolved'])
+
+    def test_unknown_process_or_owner_is_not_retried(self):
+        for report in (self.report([dict(comm='python')]), self.report(owners=[dict(pid=123)])):
+            result, calls = self.run_scan([report])
+            self.assertFalse(result['safe'])
+            self.assertEqual(calls, 1)
+
+
 class LongHookTests(unittest.TestCase):
     class Tokenizer:
         def encode(self, text, add_special_tokens=False):
