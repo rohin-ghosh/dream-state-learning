@@ -934,3 +934,9 @@ Reading (Fable): (1) ORDER: get the Fable half running now. (2) STEER ("I think"
 make sure gpus are running and good work is hapepnign all night, i want outcomes, i want scale, if the memroy beocme sa probly just have codex take fables job, dont reboot rn too mcuh  si going on, acutlaly year host the fable on node 5, if thatdoenst owork in 15 mtintes jsut have astra do it
 
 Reading (Fable): (1) ORDER: GPUs running and good work happening all night — outcomes and scale. (2) If memory becomes a problem, Codex/Astra takes Fable's parenting job; do NOT reboot the VM now. (3) RULED: host the Fable parent on node 5; if that does not work within 15 minutes (clock from ~10:48Z → 11:03Z), Astra runs the parenting on all eight node-5 GPUs. Labels: ORDER (saturation, outcomes, scale), RULED (no reboot; Fable on node 5 with a 15-minute fallback to Astra).
+
+## Message 118 — 2026-09-15 ~10:52 UTC (typed fast; verbatim)
+
+okay keep gogin all gnith i want results i want expeitaoitn liek our promtp says , make sure you and fable are makgin sure thigns are going
+
+Reading (Fable): standing order for the night — keep going all night; he wants results and experimentation as the battle plan says; the laptop watcher and the VM Fable must actively make sure things are running (not just report). Labels: ORDER.
