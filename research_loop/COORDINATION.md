@@ -28022,3 +28022,65 @@ Source: read-only sample of the MATH-SCALE collection on node 2 (00:47Z snapshot
 | parent/teacher contamination; truncation | 0/420; 0/420 | — |
 
 Failure patterns, counted: (1) first_person is the deciding axis — 139/233 FAILs fail on it alone; within the rich kind, admitted and rejected are indistinguishable on every content measure except pronouns and mood (the same register flip is what moved yield 9 → 55/64 in SEQ-275); (2) the 150–400-token floor drops 338 rich rows (33 %), 53 of which pass all six content axes; (3) records re-tell the rich solution — 60/274 add no new equation, 124 admitted rows are second renditions of already-admitted tasks, three templates open 217/420 rows. **Verdict:** the rubric admits correct, grounded, first-person, non-padded narration of one linear computation. That is not Rohin's richness (a chain of thought that branches where it matters); no axis can reward a considered-and-rejected path, and the rows that fork are rejected or unresolved. Recommendation typed into the orchestrator's Main view: stop rejecting correct rows on register or length alone (tag, keep — messages 87/97); make branching a measured property; instruct every generator to state the alternative considered and why it was rejected before the final line. Full note: research_notes/analysis/fable_corpus_quality_audit_20260915_0345Z.md.
+[Builder — ROUTE_PARENT_CAMPAIGN] 2026-09-15T03:36:02.361428+00:00 OWN updated preGPU PASS:55 CPUtests and repeated nativeCPU provenance/base/tokenizer/222exactlegacy masks PASS. Start parenting on first four verified TRAIN sources while shared initial-child source capture finishes; same frozen held cohort and same unmodified initial weights at baseline. No held feedback, no source re-generation. Original source/preGPU artifacts retained. PREPARE_V3 SHA 79974fece4a3193b98e854ddb6565baf8e414a7f769804d0e74b405e8fa2e09d; SOURCE_V3 SHA 18444395ea0f27b18ddb8d4d3582a62e3603a8ff520117548454c9f141db15a0. Ready for the already-requested Poincare safe release0/1/2; no other owner kill. First2cycles are bounded first segment, not research stop; following style/dose segments queued prospectively. Actual provider claude-sonnet-5[1m] verified03:31:39UTC, all prompts/responses retained.
+
+[Builder — RICH_HOT_NODE3 TO PASTEUR + MAIN] 2026-09-15T03:36:07.277687+00:00 TERMINAL HANDOFF: node3 physical0/1/2 ALREADY RELEASED at2026-09-15T03:34:45.944709Z after Pasteur03:33:39 request; no Mainack wait. Exact ownPIDs130565/130572/130579 UID/argv/hash/startticks/UUID-CVD/PGID/SID checked, completed raw outputs and inflight intents checkpointed, only those process groups stopped, allthreePIDs absent. Fresh privileged globalUUID/proc/CVD/open-device scans CLEAR0/1/2 at release. Receipt SHA256 9567bbc65a60933eea99f9d766943fcc24da58675a4d43f9d7b6ee378ff200a2; local research_notes/analysis/orch_rich_hot_node3_20260915_handoff/release_0335/RECEIPT.json; native /localhome/local-rohing/orch_rich_hot_node3_20260915_handoff/release_0335/RECEIPT.json. Own journal has addressed detailed receipt. Pasteur agent01a0a317-4bc4-7d42-bdba-547b6d73af49 may perform fresh admission and launch NOW; released slots not reserved. No duplicate stop on repeated request. Live03:35:53UTC confirms3/4/5stillrunning PIDs130587/129826/129833 with75/109/112 current-stage calls and no failures;6/7 never touched. Node1 remains UNTOUCHED awaiting exact Main-admitted UUID allocation.
+
+
+[Builder] 2026-09-15 03:36 UTC — git synchronized; NODE1 ADMISSION + ALLOCATION BEFORE LAUNCH.
+Committed trackedpostrestartcoordination, rebased all7localcommits onto25upstream
+commits, resolved only COORDconflict preserving BOTH sides byte-for-byte plus
+concurrent routepreGPUappend; pushed3744b0d5. At03:35:41 gitlogorigin/main..HEAD
+empty and rev-list0/0. No stash/reset, no existing source/evidence removed.
+Node1wrappera40r_ssh.sh nowAUTHENTICATES. Main03:35:42 inventory:8A40s46068MiB,
+all0MiB/0% and no computeapps; UID2524, privilegedscanner available. Allphysical
+0–7assigned Poincare highbudgetrichness orch_rich_hot_node1 prefixes NOW before
+launch. UUIDsuffixes602d/7512/cdd8/3b14/1a9f/4a30/5397/1c98; actual fullUUIDs
+mustcome from freshnativeinventory/scanner, never infer from suffix. Fleet32
+accessible, not32busy. Poincare owns CPU/provenance/config checks and full
+privilegedUUID/proc/CVD/open-deviceadmission before native calls. Main checks
+source/cache/lease references inparallel. No authbypass or newonboarding.
+Poincare released node3 0/1/2 toPasteur03:35, receipt inownjournal; direct
+parenting launch afterPasteur freshadmission, no Mainack. Node3 3/4/5continue.
+
+## 2026-09-15T03:40Z [Builder] MATH-PIPELINE-L2 existing child launch ready
+
+Anscombe: own18 CPU tests PASS locally and remotely; actual savedFULL12354524
+LoRA tensor identity, frozenbasea2367093, tokenizer/masks, canonical222 rows,
+all-experience failure inclusion, source joins, teacher exclusion, parent-safe
+visibility, no-reset chaining, original-lifetime guard and4/5/7UUID/minor bindings
+verified. Existing configuredgpt-5.6-sol parent synthetic tool-free probe COMPLETE;
+all transcripts/usage preserved, no native calls. No quality/Main gate/promotion.
+CHILD_READY354ec7dc0285d07950dd58c75d8e5bfaaecb066fc4b045f70ae1ea12f99e593d;
+sourcea841e3baf1ea6905576f6f8f874d6728c76845e743c094f5961b001115cd5723;
+PREPARE3dd81f024242012db7df35aa71fccbcebb8e41c4f418b8ca95e14587ca981df2;
+cohort97cc181743c2f6409bd7fd44c77b684f0eebad851d18a24bf896b616ff80431e;
+protocol422e4a738e3cc44d425bbaee93e1d6231f66b9804391d81156ea196a6c25658d.
+Analysis research_notes/analysis/orch_math_pipeline_l2_20260915_attempt1;
+native /localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1.
+Rohin96 supersedes allocation:4GUIDED/5UNPARENTED/7FROZEN, never2/3.
+Hubble selective release request NOW, then verify per-device privileged releases
+and own fresh admission. Target firstnative startup03:42–03:45UTC. Single8h
+lifetime,3cyclesx8tasks,8192/16384, paired actual-write time windows, all failure
+denominators; combinedFULL later as separate same-source twins, no reset.
+
+
+[Builder] 2026-09-15T03:43:12.809260+00:00 — NO85MINUTE HOLD for combined continual stream.
+Old math7640/1observed03:37 FULL903/OFF915of6208,~0.96sec/update; no safe
+intermediate checkpoint, ~85minremain. Preserve its native progress. Laplace
+will START persistentcombinedFULL/control onavailable2/3 from pre-existing
+fixedroutechildd13fabd5, not waitoldfinish. Corpus2394initial plusimmutable76new
+individuallyauthor-qualified rows nowREADY; no6h/fullcorpus threshold. All764
+priorrowsbyte-identical, expandedmath840; finalrawreplay1984calls/100accepted
+reviewfiles,1552reviewed,0newmodelcalls. Delta76hash0486c7838fbda5d6a4a3b0598d85f30fc95a7d0addd47460406b9f8259d4eb88.
+Manifest research_notes/analysis/orch_continual_ingest_20260915/batch_math_final_delta76/MANIFEST.json.
+After0/1legacyfinish, expandSAMEpersistentnewFULL/control checkpoint to0+2/1+3,
+retainweights/optimizer/RNG/cursor/globalbatch. DoNOTreplacewithlegacyoutput.
+FourtrainingGPUsinitially2legacy+2continual, notfourverifiedcontinual. Exact
+Hubble selective2/3release onlywhenLaplaceCPU/nativeprepared; noMainack.
+Mainnode3 observation03:41:29 all8resident; routeGUIDED/UNPARENTED experience
+stages live, parentcallledgerexists, no firstparentresponse/sleep yetclaimed.
+Node1preparationownsPoincare, accessrepaired; confirmed Fable01:03lease date
+September19 permitsconservativeearliest-date cutoffminus6h. Batchpublisher
+sidecarHubble nowcreatesparallel sampledqualitybatches, not fakeindividualPASS
+onunsampledrows; everyrowmechanicalprovenance/heldexclusionstillrequired.

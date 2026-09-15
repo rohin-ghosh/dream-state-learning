@@ -1,5 +1,50 @@
 # Research state — Orchestrator
 
+## Current floor and native evidence — September 15, 2026, 03:43 UTC
+
+This supersedes all older allocation/status summaries below. Git was rebased
+with BOTH notebook sides preserved and pushed3744b0d5; origin/main..HEAD was
+empty03:35:41. Latest new receipts are published in subsequent commits.
+
+- Rohin96 floor:12richness +4training +atleast4parenting, allremainingA/C.
+  Allocation: node2all8+node3 3/4/5+A1006 permanentrichness; A1000–3training;
+  A1004/5/7mathparenting; node3 0/1/2routeparenting; existingnode3 6/7 finish
+  safely then backfill. Node1all8 additionalrichness, source/preGPU preparation.
+- Node1 access is REPAIRED. Main03:35:42 verified8A40s46068MiB, allidle,
+  privilegedscanner available, Qwen7Bcachepresent. Assigned Poincare BEFORE
+  launch. Fable01:03handoff confirmsnewlease toSeptember19. No node1native
+  calls verified yet; authentication is no longer the blocker.
+- Route campaign actually started source generation03:37:57 from fixed saved
+  routechildd13fabd5. At03:41:29 allnode3GPUs resident; GUIDED/UNPARENTED
+  experience stages launched and parent-call ledger exists. Native parent
+  model probe isclaude-sonnet-5[1m], not an assumedCodexmodel. All transcripts
+  retained; first parented-response/sleep evidence still to verify. No gain
+  claimed. Source/parent/control stages are distinct in the ledger.
+- Hubble verifies all6A100fillgenerators running03:35:10,176responses total:
+  147onpermanent6andfill4/5/7,29on2/3. Selective exact-owned checkpoint release
+  interfaces prevent clobbering4/5/7 beforemathreadiness or2/3 beforetraining.
+  Repeated-cohort output is not novel qualified supply. Math campaign remains
+  preparation pending its own native first-response evidence.
+- Math764legacyfit03:37:03 FULL903/OFF915updates of6208, ~0.96sec/update;
+  ~85minutes remain, uncertain. No intermediate save support. Preserve it;
+  DO NOT let it delaynewcombinedcontinualtraining. Laplace starts persistent
+  FULL/control on2/3 from already-saved fixed routechildd13fabd5 NOW, then
+  checkpoint-expands to0+2/1+3 afterlegacyfinish. No reset on batch arrivals or
+  replacement with legacy output.4allocatedtraining initiallymeans2legacy +
+  2continual, not4verifiedcontinual. Combined2394initialcorpus is frozen;
+  new76-row admitted packet is ready, exactprior764rowsunchanged,840total.
+  Mainreplayedall1984nativecalls and100acceptedreviewfiles:1552reviewedrows.
+  The old1000threshold flag is historical, not a launch gate underRohin92–96.
+- Main's terminal16-row bootstrap readout: FULL25/32 versusOFF30/32 and
+  original37ec30/32; all96untruncated, fourFULLmissingFINAL. No retained
+  benefit shown. Further tiny16vs26 L1diagnostics retired; requested fixed
+  existing-child parenting proceeds as a predeclared lineage, not a winner.
+  Held results never enter parent prompts/replay. H1/H2 remain unproven.
+
+Next: actual continual updates/checkpoints, existingmathparenting firstcall,
+node1 eightnativegenerators, and first newhighbudget sampled-review batch.
+Thousandsqualified/hour is a target, not measured throughput or a claim.
+
 ## Current execution — September 15, 2026, 03:24 UTC
 
 ACTIVE / INCOMPLETE. This section supersedes the historical synthesis below.

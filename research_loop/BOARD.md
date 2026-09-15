@@ -2,6 +2,24 @@
 
 ## FLOOR OVERRIDE — Rohin96, allocated 2026-09-15 03:32 UTC
 
+03:43UTC training transition: math764 onA1000/1 cannot checkpoint before its
+legacy loop finishes (~85minutes remaining measured03:37). It MUST NOT hold
+the new continual stream. Laplace starts persistent FULL/control on2/3 from
+the already-saved fixed-lane0 route child d13fabd5, initialcombined2394 plus
+versioned76-row addition (840total qualified math). No score-selected child.
+After old0/1 save/release, expand the SAME new evolving FULL/control checkpoint
+to0+2/1+3 ranks, retaining weights/optimizer/RNG/cursor/globalbatch. Never replace
+the running new lineage with the old math output. Initial4trainingGPUs are
+2legacy+2continual, explicitly NOT4continual until the migration actually runs.
+
+03:36UTC correction: node1 SSH repaired and Main inventory verifies8A40s,
+all0MiB/no compute entries, sudo scanner available. ALL node1physical0–7 now
+assigned Poincare high-budget richness under new orch_rich_hot_node1 prefixes,
+BEFORE launch; fresh full process/CVD admission and CPU/provenance still due.
+Accessible fleet32; no longer authentication-blocked. Generation while other
+campaign slots prepare remains the backfill policy. Source/cache readiness and
+lease deadline must be verified before native start, not assumed from inventory.
+
 This supersedes all lower tables. Accessible fleet is24GPUs, with8additional
 node1 GPUs still authentication-blocked, not32 verified. Floor on accessible
 capacity:12rich creation +4continual training +6parenting (above4floor), with
