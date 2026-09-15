@@ -922,3 +922,15 @@ Reading (Fable): (1) Forwarded review of v3: "substantially better … ready for
 ## Message 115 — 2026-09-15 ~10:35 UTC (forwarded without comment: the assistant's final review of PARENTING_BATTLE_PLAN_v4 — "V4 is ready for an exploratory run … my review of the supplied plan is complete"; verbatim in research_notes/forwarded/GPT_PERSISTENCE_METACOGNITION_2026-09-15.md §5)
 
 Reading (Fable): Rohin gated the Fable half on his audit (message 112) and has forwarded the audit's completion; Fable reads this as his GO, with the review's three pre-launch verifications as launch preconditions: (1) open-turn investigations can actually execute (environment access + response), so enacted, not merely proposed, initiative is measured; (2) evaluation experiences — DEV/FINAL readouts and their open turns — never enter the sleep training buffer; (3) [REFLECTION] changes the lane's actual generation budget through the broker. Read the focused probe beside the capability panel. The morning result he would most want: a child notices something without a nudge, pursues it through an actual interaction, uses the observation to change its next move, shows the same initiative after sleep with fresh context, and still focuses when asked. Labels: GO (interpreted; Rohin may override), PRECONDITIONS (three), MORNING TARGET.
+
+## Message 116 — 2026-09-15 ~10:42 UTC (typed fast; verbatim)
+
+get fable running, and loweky were having all the level 0 nodes learn togehr right? dont have the fable and asta ndoes learn on differnt sleeps have all them parallzied i think
+
+Reading (Fable): (1) ORDER: get the Fable half running now. (2) STEER ("I think"): all the level-0 (frozen-base) parenting nodes learn TOGETHER — the Fable and Astra branches should not learn on separate sleeps; parallelise them into one shared learner: one child/LoRA/optimizer whose synchronised sleeps consolidate the pooled experience of all branches; per-branch parenting effects then live in the transcripts and in-context changes, the learning in the pooled child. Consequence: the Fable-vs-Astra side-by-side becomes "parenting systems on a shared learner". Labels: ORDER (launch), STEER (shared child, synchronised sleeps).
+
+## Message 117 — 2026-09-15 ~10:47 UTC (typed fast; verbatim)
+
+make sure gpus are running and good work is hapepnign all night, i want outcomes, i want scale, if the memroy beocme sa probly just have codex take fables job, dont reboot rn too mcuh  si going on, acutlaly year host the fable on node 5, if thatdoenst owork in 15 mtintes jsut have astra do it
+
+Reading (Fable): (1) ORDER: GPUs running and good work happening all night — outcomes and scale. (2) If memory becomes a problem, Codex/Astra takes Fable's parenting job; do NOT reboot the VM now. (3) RULED: host the Fable parent on node 5; if that does not work within 15 minutes (clock from ~10:48Z → 11:03Z), Astra runs the parenting on all eight node-5 GPUs. Labels: ORDER (saturation, outcomes, scale), RULED (no reboot; Fable on node 5 with a 15-minute fallback to Astra).

@@ -107,6 +107,10 @@ open(repo + '/research_loop/PARENTING_EXCHANGE.md', 'a').write(hdr + body + '\n'
 open(repo + '/research_loop/COORDINATION.md', 'a').write(hdr.replace('head parent', 'head parent, mirrored from PARENTING_EXCHANGE') + body[:1500] + '\n')
 print('applied', len(changed), 'field changes')
 PY
+# 3b. sync the rewritten prompt files to node 5, where the Fable brokers run (message 117: Fable hosted on node 5)
+source "$COURIER_REPO/gpu/hosts.env" 2>/dev/null; if [ -n "${OVX3_NODE:-}" ]; then
+  rsync -a "$SW/prompts/" "$OVX3_NODE":~/courier_swarm/prompts/ 2>/dev/null && log "prompts synced to node 5" || log "prompt sync to node 5 FAILED"
+fi
 # 4. publish the exchange entry (this checkout only; never Astra's clone)
 cd "$COURIER_REPO" || exit 0
 if [ -d .git/rebase-merge ] || [ -d .git/rebase-apply ] || [ -f .git/MERGE_HEAD ]; then log "git busy; entry left uncommitted"; exit 0; fi
