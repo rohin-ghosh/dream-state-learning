@@ -100,7 +100,7 @@ for name, upd in out.get('branches', {}).items():
     open(f'{prompts}/{name}.md', 'wb').write(prompt.encode())
     json.dump({'schema': 'ORCH_R114_HEAD_FIELDS_V1', 'prompt_sha256': hashlib.sha256(prompt.encode()).hexdigest(), 'fields': new},
               open(fp, 'w'), indent=1, sort_keys=True)
-    changed.append(f"{name}: STYLE='{new['STYLE']}' REFLECTION={new['REFLECTION']['mode']}/{new['REFLECTION']['max_new_tokens']} FOCUS='{new['FOCUS']}'")
+    changed.append(f"{name}: STYLE='{new['STYLE']}' REFLECTION={new['REFLECTION']['mode']}/{new['REFLECTION']['max_new_tokens']} FOCUS='{new['FOCUS']}' NEXT_GUIDANCE='{new.get('NEXT_GUIDANCE','')[:120]}'")
 entry = out.get('exchange_entry', '').strip()
 hdr = f"\n\n## [Fable-VM swarm — head parent] {ts[:4]}-{ts[4:6]}-{ts[6:8]}T{ts[9:11]}:{ts[11:13]}Z\n"
 body = entry + ("\n\nField changes: " + "; ".join(changed) if changed else "\n\nField changes: none") + f"\n\nDigest cycle: ~/courier/swarm/cycles/{ts} (VM-local; no raw transcripts in git)."
