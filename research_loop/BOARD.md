@@ -1,5 +1,16 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## R107 capability V3 missing-cell continuation — September 15, 2026
+
+Same node3physical3; actual PEFT context-exit trainability restoration repaired
+by restoring frozen flags in finally.124CPUtests plus native PEFT ON/OFF/OFF/ON
+readonly smokePASS. Preserve3completedresponses and2pre-inference failures;
+V3 runs only61missingcells, aggregate66reservations/64actualgenerations.
+CODE01pair crosses processes and is disclosed. Original suite/checkpoint/caps/
+deadlines unchanged. READY5125a4704fe0785d7c5cf893f7e6a3489e460c72f6b80daa9cb5db053c6e98b2;
+PLANc798845270a380615d2406bb880656d990b0d6eb1114b5f6a01918bdf683356a;
+sourceedf48967. Root originaldiagnostic/repair_v3. Fresh admission then launch.
+
 ## R107 capability repair-v2 allocation — September 15, 2026
 
 Same node3physical3, same MATH764 FULL state/suite, original hard/native
