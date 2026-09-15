@@ -1,0 +1,43 @@
+{
+  "schema": "RICH_HOT_NODE2_EXACT_STAGE_RECEIPT_V1",
+  "verified_utc": "2026-09-15T05:28:08Z",
+  "publication_owner": "Main; worker performs no git mutation",
+  "ready_to_stage": true,
+  "runtime_files": [
+    {
+      "path": "gpu/orch_rich_hot_node2_checkpoint99.py",
+      "sha256": "d957d26ed197785a9ddf865479220e9161878ded3748e5d1263780f6310e713c",
+      "matches_frozen_native_source": true
+    },
+    {
+      "path": "gpu/orch_rich_hot_node2_checkpoint_guard.py",
+      "sha256": "f89b78748258d47570bc520fd09c77a4cd30f00c2cbdb85e1f5524bcfc748944",
+      "matches_frozen_native_source": true
+    },
+    {
+      "path": "organism_v6/orch_rich_hot_node2_checkpoint99.py",
+      "sha256": "3d36e0a325e97489bb5e802fbf9e3681daaee23434c727cb58b408a97c13fc15",
+      "matches_frozen_native_source": true
+    }
+  ],
+  "test_file": {
+    "path": "tests/test_orch_rich_hot_node2_checkpoint99.py",
+    "sha256": "7cbcf399d3b7d51baa4a6e1c2781645ff9d9036d757ab38b08a8f207fcaa58f3",
+    "test_count": 4,
+    "frozen_native_test_sha256": "b6b529e525bcf51dd1efdcf2c42d89dac0c334a31ff34e0c7157a77a6a1f5921",
+    "frozen_native_test_count": 3,
+    "difference": "Post-launch CPU-only regression additionally checks durable reservation source/checkpoint/budget bindings and cap enforcement. Not the test bytes used for initial native preparation; old test remains preserved. Runtime files unchanged."
+  },
+  "checkpoint99_native_source_root": "/localhome/local-rohing/orch_rich_hot_node2_checkpoint99_20260915_attempt1/source",
+  "checkpoint99_source_archive_sha256": "ec20697317bd1c227e0ee1a0e31f045b6ef48134815382b6c5e697bfd3194638",
+  "checkpoint99_prepare_sha256": "4a60d6619c1ccfd0cbfb8d60ffd62f319a9271bfdebeb42ac2f6c14f9012b2f9",
+  "current_v3_source_archive_sha256": "f71ab1fcad22792e70d79b732937bf9cc004f80cbcaec01be799f119dd4d7d13",
+  "current_v3_prepare_sha256": "0c7c9d351b0357bc48a492d26ac2301edda9c53f21ed0e3e356ab15dd92bfd57",
+  "compact_provenance": [
+    "research_notes/analysis/orch_rich_hot_node2_20260915_attempt1/checkpoint99_prep/SELECTED_FULL_HANDOFF.json",
+    "research_notes/analysis/orch_rich_hot_node2_20260915_attempt1/checkpoint99_prep/SOURCE_CHECKPOINT_VERIFIED.json",
+    "research_notes/analysis/orch_rich_hot_node2_20260915_attempt1/exhaustion_v3/NATIVE_PREPARE_SUMMARY.json",
+    "research_notes/analysis/orch_rich_hot_node2_20260915_attempt1/exhaustion_v3/BOUNDARY_AND_CALL_AUDIT.json"
+  ],
+  "storage": "No raw pulls, archives or CALL forests on VM; existing artifacts preserved."
+}
