@@ -1,6 +1,9 @@
 import json
+import os
 from pathlib import Path
 import tempfile
+import threading
+import time
 import unittest
 from unittest.mock import Mock, patch
 
@@ -118,6 +121,68 @@ class GuardTests(unittest.TestCase):
                             dict(allocation, declared_utc='not a date')):
                 with self.assertRaises(ValueError):
                     guard.validate_allocation(changed, self.config(), dict(plan_sha256='a' * 64))
+
+    def test_launch_publication_is_atomic_and_non_replacing(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'LAUNCH.json'
+            receipt = dict(pid=42, complete=True)
+            link = guard.os.link
+            seen = []
+
+            def inspect(temporary, destination):
+                self.assertFalse(destination.exists())
+                self.assertEqual(json.loads(temporary.read_text()), receipt)
+                seen.append(True)
+                return link(temporary, destination)
+
+            with patch.object(guard.os, 'link', side_effect=inspect):
+                guard.publish_launch(path, receipt)
+            self.assertEqual(seen, [True])
+            self.assertEqual(json.loads(path.read_text()), receipt)
+            with self.assertRaises(FileExistsError):
+                guard.publish_launch(path, dict(pid=99))
+            self.assertEqual(json.loads(path.read_text()), receipt)
+
+    def test_native_waits_for_startup_signal(self):
+        stream = Mock()
+        stream.fileno.return_value = 42
+        with patch.object(guard.time, 'time', return_value=100), \
+                patch.object(guard.select, 'select', return_value=([stream], [], [])) as select, \
+                patch.object(guard.os, 'read', return_value=b'LAUNCH_READY\n'):
+            guard.await_startup(dict(hard_end_unix=200), stream)
+        select.assert_called_once_with([stream], [], [], 10.0)
+        for payload, ready in ((b'', True), (b'partial', True), (b'LAUNCH_READY\n', False)):
+            with self.subTest(payload=payload, ready=ready), \
+                    patch.object(guard.time, 'time', return_value=100), \
+                    patch.object(guard.select, 'select', return_value=([stream] if ready else [], [], [])), \
+                    patch.object(guard.os, 'read', return_value=payload), \
+                    self.assertRaisesRegex(ValueError, 'supervisor_startup_barrier'):
+                guard.await_startup(dict(hard_end_unix=200), stream)
+
+    def test_child_before_receipt_real_pipe_barrier(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'LAUNCH.json'
+            read_fd, write_fd = os.pipe()
+            observed = []
+            entered = threading.Event()
+
+            def child():
+                with os.fdopen(read_fd) as stream:
+                    entered.set()
+                    guard.await_startup(dict(hard_end_unix=time.time() + 60), stream)
+                    observed.append(json.loads(path.read_text()))
+
+            thread = threading.Thread(target=child)
+            thread.start()
+            self.assertTrue(entered.wait(timeout=1))
+            self.assertFalse(path.exists())
+            self.assertEqual(observed, [])
+            guard.publish_launch(path, dict(pid=42, complete=True))
+            os.write(write_fd, b'LAUNCH_READY\n')
+            os.close(write_fd)
+            thread.join(timeout=2)
+            self.assertFalse(thread.is_alive())
+            self.assertEqual(observed, [dict(pid=42, complete=True)])
 
 
 if __name__ == '__main__':

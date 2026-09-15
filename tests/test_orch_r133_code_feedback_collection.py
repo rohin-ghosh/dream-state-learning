@@ -319,16 +319,95 @@ class FrozenLoaderTests(unittest.TestCase):
     def model(self):
         module = types.SimpleNamespace(lora_A=True, lora_B=True, disable_adapters=False)
         parameter = types.SimpleNamespace(requires_grad=False)
+        parameter.requires_grad_ = unittest.mock.Mock(side_effect=lambda enabled: setattr(parameter, 'requires_grad', enabled))
 
         @contextmanager
         def disable():
+            previous_disabled = module.disable_adapters
+            module.disable_adapters = True
+            try:
+                yield
+            finally:
+                module.disable_adapters = previous_disabled
+                if not previous_disabled:
+                    parameter.requires_grad = True
+
+        return types.SimpleNamespace(parameters=lambda: [parameter], modules=lambda: [module], disable_adapter=disable), module, parameter
+
+    def test_PEFT_exit_trainability_reproduction_and_repeated_states(self):
+        model, module, parameter = self.model()
+        weight_storage = object()
+        parameter.data = weight_storage
+        with model.disable_adapter():
+            self.assertFalse(parameter.requires_grad)
+        self.assertTrue(parameter.requires_grad)
+        parameter.requires_grad = False
+        for state in ('FULL_FIXED18404',) * 3 + ('BASE_NO_LORA',) * 3 + ('FULL_FIXED18404', 'BASE_NO_LORA'):
+            with self.subTest(state=state):
+                with arm.readonly_model(model, state):
+                    self.assertFalse(parameter.requires_grad)
+                    self.assertIs(parameter.data, weight_storage)
+                    self.assertEqual(module.disable_adapters, state == 'BASE_NO_LORA')
+                self.assertFalse(parameter.requires_grad)
+                self.assertFalse(module.disable_adapters)
+                self.assertIs(parameter.data, weight_storage)
+        self.assertEqual(parameter.requires_grad_.call_args_list, [unittest.mock.call(False)] * 4)
+
+    def test_body_trainability_drift_rejected_and_flags_restored(self):
+        for state in arm.MODELS:
+            model, module, parameter = self.model()
+            with self.subTest(state=state), self.assertRaisesRegex(ValueError, 'weights_became_trainable'):
+                with arm.readonly_model(model, state):
+                    parameter.requires_grad = True
+            self.assertFalse(parameter.requires_grad)
+            self.assertFalse(module.disable_adapters)
+
+    def test_context_exit_exception_restores_frozen_flags(self):
+        model, module, parameter = self.model()
+
+        @contextmanager
+        def failed_exit():
             module.disable_adapters = True
             try:
                 yield
             finally:
                 module.disable_adapters = False
+                parameter.requires_grad = True
+                raise RuntimeError('PEFT_context_exit_failed')
 
-        return types.SimpleNamespace(parameters=lambda: [parameter], modules=lambda: [module], disable_adapter=disable), module, parameter
+        model.disable_adapter = failed_exit
+        with self.assertRaisesRegex(RuntimeError, 'PEFT_context_exit_failed'):
+            with arm.readonly_model(model, 'BASE_NO_LORA'):
+                pass
+        self.assertFalse(parameter.requires_grad)
+        self.assertFalse(module.disable_adapters)
+
+    def test_adapter_enable_state_drift_rejected_after_exit(self):
+        model, module, parameter = self.model()
+
+        @contextmanager
+        def bad_exit():
+            module.disable_adapters = True
+            try:
+                yield
+            finally:
+                parameter.requires_grad = True
+
+        model.disable_adapter = bad_exit
+        with self.assertRaisesRegex(ValueError, 'adapter_enable_state_not_restored'):
+            with arm.readonly_model(model, 'BASE_NO_LORA'):
+                pass
+        self.assertFalse(parameter.requires_grad)
+        self.assertTrue(module.disable_adapters)
+
+    def test_already_disabled_entry_state_preserved(self):
+        model, module, parameter = self.model()
+        module.disable_adapters = True
+        with arm.readonly_model(model, 'BASE_NO_LORA'):
+            self.assertTrue(module.disable_adapters)
+        self.assertTrue(module.disable_adapters)
+        self.assertFalse(parameter.requires_grad)
+        parameter.requires_grad_.assert_not_called()
 
     def test_true_base_adapter_disabled_and_restored_even_on_failure(self):
         model, module, parameter = self.model()

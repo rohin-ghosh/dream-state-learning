@@ -339,15 +339,29 @@ def run_episodes(root, tasks, generate, check=lambda label: None):
 @contextmanager
 def readonly_model(model, state):
     require(state in MODELS, 'known_model_state')
-    require(not any(parameter.requires_grad for parameter in model.parameters()), 'all_weights_frozen')
-    with model.disable_adapter() if state == 'BASE_NO_LORA' else nullcontext():
-        modules = [module for module in model.modules() if hasattr(module, 'lora_A') and hasattr(module, 'lora_B')]
-        require(bool(modules) and all(module.disable_adapters is (state == 'BASE_NO_LORA') for module in modules),
-                'actual_adapter_disable_state_required')
-        try:
-            yield
-        finally:
+    parameters = tuple(model.parameters())
+    frozen_flags = tuple(parameter.requires_grad for parameter in parameters)
+    require(not any(frozen_flags), 'all_weights_frozen')
+    modules = tuple(module for module in model.modules() if hasattr(module, 'lora_A') and hasattr(module, 'lora_B'))
+    require(bool(modules), 'actual_adapter_disable_state_required')
+    previous_disabled = tuple(module.disable_adapters for module in modules)
+    try:
+        with model.disable_adapter() if state == 'BASE_NO_LORA' else nullcontext():
+            require(all(module.disable_adapters is (state == 'BASE_NO_LORA') for module in modules),
+                    'actual_adapter_disable_state_required')
             require(not any(parameter.requires_grad for parameter in model.parameters()), 'weights_became_trainable')
+            try:
+                yield
+            finally:
+                require(not any(parameter.requires_grad for parameter in model.parameters()), 'weights_became_trainable')
+    finally:
+        for parameter, frozen in zip(parameters, frozen_flags):
+            if parameter.requires_grad is not frozen:
+                parameter.requires_grad_(frozen)
+        require(tuple(parameter.requires_grad for parameter in model.parameters()) == frozen_flags,
+                'frozen_flags_not_restored')
+        require(tuple(module.disable_adapters for module in modules) == previous_disabled,
+                'adapter_enable_state_not_restored')
 
 
 def validate_authorization(root, authorization, now, *, expected_gpu_uuid):

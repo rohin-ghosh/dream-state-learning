@@ -1,0 +1,101 @@
+{
+  "calls": [
+    {
+      "model": "BASE_NO_LORA",
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/episodes/R133_PUBLIC_TRAIN_1f25617e7510337c_34f8d7d33ec376580eb525168dbb551ce4b0433f472108c3a1df5f296b6ec3f0/BASE_NO_LORA/draft.CALL.json",
+      "reserved_call": 4,
+      "sha256": "378e25b19b8e9f73884416bb756f8fda84b5fbb3fa3fddb79ed92e59eea1bea7",
+      "stage": "draft",
+      "terminal": true,
+      "tokens": 25,
+      "truncated": false
+    },
+    {
+      "model": "FULL_FIXED18404",
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/episodes/R133_PUBLIC_TRAIN_1f25617e7510337c_34f8d7d33ec376580eb525168dbb551ce4b0433f472108c3a1df5f296b6ec3f0/FULL_FIXED18404/draft.CALL.json",
+      "reserved_call": 1,
+      "sha256": "da55a3a9fab34f6f34f691c5fa397cca79860cde964144c4adfb55a086c4463b",
+      "stage": "draft",
+      "terminal": true,
+      "tokens": 26,
+      "truncated": false
+    },
+    {
+      "model": "FULL_FIXED18404",
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/episodes/R133_PUBLIC_TRAIN_1f25617e7510337c_34f8d7d33ec376580eb525168dbb551ce4b0433f472108c3a1df5f296b6ec3f0/FULL_FIXED18404/interpreter_feedback.CALL.json",
+      "reserved_call": 2,
+      "sha256": "7f93ef853ef1e10e51b33e13c3693d65818f1cb81fb09ac729d1b05d4f35d4de",
+      "stage": "interpreter_feedback",
+      "terminal": true,
+      "tokens": 26,
+      "truncated": false
+    },
+    {
+      "model": "FULL_FIXED18404",
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/episodes/R133_PUBLIC_TRAIN_1f25617e7510337c_34f8d7d33ec376580eb525168dbb551ce4b0433f472108c3a1df5f296b6ec3f0/FULL_FIXED18404/neutral_review.CALL.json",
+      "reserved_call": 3,
+      "sha256": "4547a0b01a5e5b0636619af9aaebfbd9b434105e886f5af755729890b6d6a855",
+      "stage": "neutral_review",
+      "terminal": true,
+      "tokens": 26,
+      "truncated": false
+    }
+  ],
+  "completed_call_count": 4,
+  "failed_intents": 1,
+  "intents": 5,
+  "no_retry": true,
+  "no_training_admission": true,
+  "observed_unix": 1789509832.4101996,
+  "physical": 7,
+  "receipts": {
+    "ADMISSION.json": {
+      "blocking_reasons": [],
+      "clear": true,
+      "device_minor": 7,
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/ADMISSION.json",
+      "scanner_euid": 0,
+      "sha256": "2d9aee239c22edbca2df8e800439dad029cc304d4892958097ea423cec9cbb78"
+    },
+    "EXIT.json": {
+      "exit_code": 1,
+      "finished_unix": 1789509586.4999783,
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/EXIT.json",
+      "sha256": "8c9a0c3c2848d7f3726f870ccec590f7dec92f4d2fead3ae802d652dbca09231"
+    },
+    "LAUNCH.json": {
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/LAUNCH.json",
+      "pid": 1141900,
+      "sha256": "5eb7f47a7bf0b60b385191de6718d4faa9684809a4c0870f0a3a3e7b4e7ad8cf",
+      "started_unix": 1789509527.7744763
+    },
+    "LOADED.json": {
+      "optimizer_count": 0,
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/LOADED.json",
+      "sha256": "cbf1f8e05ae6378c54c7d599c01e6084d5786df16b2a0cfbca4a8a2a2d04e3fc"
+    },
+    "NATIVE_START.json": {
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/NATIVE_START.json",
+      "sha256": "988c7a50a3785b320cf9643a66531ee0bfc18c820c591c9135eae3c8bce71a9c",
+      "started_unix": 1789509528.1769419
+    },
+    "NATIVE_TERMINAL.json": {
+      "error": "ValueError: all_weights_frozen",
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/NATIVE_TERMINAL.json",
+      "sha256": "b6fdb6c036a326cd9cfc62b48940102b4e725f3d93bf8bdee71e708265e56f86",
+      "status": "FAILED_NO_RETRY"
+    },
+    "SUPERVISOR_FAILED.json": {
+      "error": "native_complete_no_retry",
+      "error_type": "ValueError",
+      "finished_unix": 1789509586.5008237,
+      "path": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1/run1/SUPERVISOR_FAILED.json",
+      "sha256": "6aa98de72728bd96abf389c54da26f5597eaa8a6e8c560cef13160194e9a6028",
+      "status": "FAILED"
+    }
+  },
+  "root": "/localhome/local-rohing/orch_r133_code_feedback_20260915_attempt1",
+  "schema": "R133_FAILED_COLLECTION_COMPACT_V1",
+  "unchanged_weight_completion_proof": false,
+  "wrapper": "ovx3"
+}

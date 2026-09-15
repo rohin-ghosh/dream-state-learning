@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import select
 import socket
 import signal
 import subprocess
@@ -88,6 +89,24 @@ def validate_native_entry(config_path, config):
             and report['clear'] and report['scanner_euid'] == 0
             and not report['blocking_reasons'] and report['host_sha256'] == config['host_sha256']
             and report['device_minor'] == config['physical'], 'launch_admission_binding')
+
+
+def publish_launch(path, receipt):
+    temporary = path.with_name(path.name + '.pending')
+    with temporary.open('x') as stream:
+        json.dump(receipt, stream, sort_keys=True, indent=2, allow_nan=False)
+        stream.write('\n')
+        stream.flush()
+        os.fsync(stream.fileno())
+    os.link(temporary, path)
+    temporary.unlink()
+
+
+def await_startup(config, stream):
+    remaining = min(10.0, config['hard_end_unix'] - time.time() - 10)
+    require(remaining > 0, 'startup_deadline')
+    ready, _, _ = select.select([stream], [], [], remaining)
+    require(bool(ready) and os.read(stream.fileno(), 64) == b'LAUNCH_READY\n', 'supervisor_startup_barrier')
 
 
 def reap_owned_child(process):
@@ -184,14 +203,16 @@ def supervise(config_path):
             '--config', str(config_path)]
         with (output / 'NATIVE.log').open('x') as stream:
             process = subprocess.Popen(command, cwd=config['source_root'],
-                env=dict(environment, CUDA_VISIBLE_DEVICES=GPU_UUID), stdin=subprocess.DEVNULL,
+                env=dict(environment, CUDA_VISIBLE_DEVICES=GPU_UUID), stdin=subprocess.PIPE,
                 stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
-            write(output / 'LAUNCH.json', dict(pid=process.pid, started_unix=time.time(),
+            publish_launch(output / 'LAUNCH.json', dict(pid=process.pid, started_unix=time.time(),
                 command_sha256=hashlib.sha256(json.dumps(command).encode()).hexdigest(),
                 parent_start_ticks=Path('/proc', str(process.pid), 'stat').read_text().split(') ', 1)[1].split()[19],
                 guard_sha256=sha(config_path), admission_sha256=sha(output / 'ADMISSION.json'),
                 admission_verified_unix=admission_verified,
                 hard_end_unix=config['hard_end_unix'], no_retry=True))
+            process.stdin.write(b'LAUNCH_READY\n')
+            process.stdin.close()
             exit_code = process.wait()
         write(output / 'EXIT.json', dict(exit_code=exit_code, finished_unix=time.time(), no_retry=True))
         terminal = read(output / 'NATIVE_TERMINAL.json')
@@ -214,6 +235,7 @@ if __name__ == '__main__':
         print(json.dumps(scan(arguments.config), sort_keys=True))
     elif arguments.action == 'native':
         native_config, native_authorization = validate(arguments.config)
+        await_startup(native_config, sys.stdin)
         validate_native_entry(arguments.config, native_config)
         collection.collect(Path(native_config['output_root']), native_authorization,
                            expected_gpu_uuid=GPU_UUID)

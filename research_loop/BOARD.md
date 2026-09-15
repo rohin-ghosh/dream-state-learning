@@ -1,5 +1,9 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-15T22:10:46Z **R136 allocated, not yet loaded:**fresh16tasks/excludesR133;73local+73nativeCPUtestsPASS;ovx3physical7/23:30UTCwall/96newcalls. **R132 matched19428:**no scored gain—ON22/32 capability and0/8code in both arms, unchanged frompreC4. Source-present held16/16 is not source-free retention.
+
+- [Builder Main] 2026-09-15T22:07Z **R133 failed after4calls:**all_weights_frozen;5chargedintents preserved, no retry/admission/completion proof. Future-only flag/startup repairs underway. **R132 C4 adopted in BOTH arms:**matched19421target FULL287active tokens/CONTROL0; both committed19428. Matched behavior readouts pending; adoption is not learning.
+
 - [Builder Main] 2026-09-15T21:57Z **R133 allocated ovx3physical7:**96 fresh public code calls, actual feedback vs neutral review, FULL18404 vs base;65local+65nativeCPUtestsPASS, fresh admission still required,23:00UTCwall. **R132:**FULL3newtargetpresentations/521tokens; CONTROL boundary pending. **R135:**a40r0/2 context overflows confirmed; CPU recovery preparation, no restart yet. No learning/saturation claim.
 
 - [Builder Main] 2026-09-15T21:41Z **R130 complete, no demonstrated learning:**96calls independently recounted; both-correct pairs SEED2/16, GUIDED3/16, UNPARENTED0/16; all contrast intervals include zero. Supplied-evidence diagnostic only. **F1 current latest-six:**1COMPLETE+5SILENT, all Fable-served; substituted application unproven, no safeguard rerouting.143CPUtestsPASS. Compact result/status receipts linked in COORDINATION.
