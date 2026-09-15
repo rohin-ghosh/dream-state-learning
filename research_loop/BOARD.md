@@ -1,5 +1,15 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Node1 premise-preserving generation — prospective allocation
+
+Replace only physical3 at its next durably complete task boundary. Preserve
+unhinted exhaustion slots0/1, all old outputs, shared24576call cap and original
+deadline. New arm demands distinct worked methods without changing givens;
+self-reported method counts remain unverified until semantic review. No new
+GPU or call budget. CPU15local/9native passed; native provenance bound.
+
+[Main BOARD allocation] PREMISE_PRESERVING_EXHAUSTION node1 physical3 uuid=GPU-4d0f10af-119f-10bb-a28f-f7b7703a3b14 root=/localhome/local-rohing/orch_rich_hot_node1_20260915_premise_v1 source_sha256=8460ad8b99a7c87580c7017b0eca472f2a7df4f9f66a1c7d80f56f760688cb58 protocol_sha256=628e664d807b41c357263a10da6f85cc859d624af83f278b568f2defc102efb3 lifetime_sha256=9113c01763313945437e786880970478a5177d85679d617c3428e284b92476d2 shared_call_cap=24576 output_cap=16384 context=32768 hard_end=2026-09-15T15:45:10.822773Z
+
 ## Feed-gap repair allocation — 2026-09-15 06:02 UTC
 
 Old publisher scans retired original37ec source:42leftovers, lastcapture04:48:31;
