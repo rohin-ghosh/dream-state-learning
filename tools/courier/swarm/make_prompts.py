@@ -5,7 +5,8 @@ Contract (from the broker): tools/courier/swarm/prompts/<branch>.md must be EXAC
 extracted from PARENTING_BATTLE_PLAN_v4 (the '> You are the parent of a young model.' block) with the four fields
 [GAME], [STYLE], [NUDGING], [FOCUS] substituted; <branch>.fields.json carries schema ORCH_R114_HEAD_FIELDS_V1 with
 prompt_sha256 = sha256 of the .md bytes and fields incl. REFLECTION {mode, max_new_tokens}. The head parent may
-change only STYLE, FOCUS, REFLECTION; GAME and NUDGING are fixed for the life.
+change only STYLE, FOCUS, REFLECTION and optional NEXT_GUIDANCE; GAME and NUDGING
+are fixed for the life. NEXT_GUIDANCE is metadata, not a change to the v4 template.
 
 Usage: python3 tools/courier/swarm/make_prompts.py [--fields prompts/current_fields.json] [--out prompts/]
 Re-running with an edited fields file rewrites the .md and .fields.json for every branch listed.
@@ -65,12 +66,28 @@ def fixed_parent_template(plan_path=PLAN):
 
 
 def render(fields, template):
-    assert set(fields) == {'GAME', 'STYLE', 'NUDGING', 'FOCUS', 'REFLECTION'}, 'field keys'
+    required = {'GAME', 'STYLE', 'NUDGING', 'FOCUS', 'REFLECTION'}
+    assert required <= set(fields) <= required | {'NEXT_GUIDANCE'}, 'field keys'
+    guidance = fields.get('NEXT_GUIDANCE', '')
+    assert isinstance(guidance, str) and len(guidance.encode()) <= 1024, 'next guidance bounds'
     for key in ('GAME', 'STYLE', 'NUDGING', 'FOCUS'):
         assert isinstance(fields[key], str) and '[' not in fields[key], key
     r = fields['REFLECTION']
     assert r['mode'] in ('short', 'long') and 1 <= int(r['max_new_tokens']) <= 8192, 'reflection bounds'
     return re.sub(r'\[(GAME|STYLE|NUDGING|FOCUS)\]', lambda m: fields[m.group(1)], template)
+
+
+def apply_head_update(current, update, template):
+    allowed = {'STYLE', 'FOCUS', 'REFLECTION', 'NEXT_GUIDANCE'}
+    assert set(update) <= allowed, 'head may not change fixed fields'
+    result = dict(current)
+    result.update(update)
+    reflection = result['REFLECTION']
+    assert set(reflection) == {'mode', 'max_new_tokens'}, 'reflection fields'
+    assert type(reflection['max_new_tokens']) is int, 'integer reflection budget'
+    render(result, template)
+    assert all(result[key] == current[key] for key in ('GAME', 'NUDGING')), 'fixed life fields'
+    return result
 
 
 def verify_binding(prompt_text, template):

@@ -59,7 +59,7 @@ python3 - "$SW/prompts" "$CYC" "$COURIER_REPO/research_loop/PARENTING_EXCHANGE.m
 import json, sys, glob, os, re
 prompts, cyc, exch = sys.argv[1:4]
 fields = {}
-for f in sorted(glob.glob(prompts + '/F*.fields.json')):
+for f in sorted(glob.glob(prompts + '/[FA][1-4].fields.json')):
     name = os.path.basename(f).split('.')[0]; fields[name] = json.load(open(f))['fields']
 astra = []
 if os.path.exists(exch):
@@ -75,14 +75,13 @@ log "head parent call (cap ${CAP_S}s, budget ${BUDGET_USD} USD) -> $CYC"
     --tools "" --no-session-persistence --max-turns 1 --max-budget-usd "$BUDGET_USD" \
     --system-prompt-file "$CYC/system.md" < "$CYC/user.json" ) > "$CYC/reply.json" 2> "$CYC/reply.err"
 rc=$?; [ $rc -eq 0 ] || { log "head parent call failed rc=$rc ($(head -c 200 "$CYC/reply.err" | tr '\n' ' '))"; exit 3; }
-cp "$CYC/state_candidate.json" "$STATE"
 
 # 3. validate + apply fields (STYLE/FOCUS/REFLECTION only), write exchange entries
 python3 - "$SW/prompts" "$CYC" "$COURIER_REPO" "$TS" <<'PY'
 import json, sys, os, hashlib, re, glob
 prompts, cyc, repo, ts = sys.argv[1:5]
 sys.path.insert(0, repo + '/tools/courier/swarm')
-from make_prompts import fixed_parent_template, render, verify_binding
+from make_prompts import apply_head_update, fixed_parent_template, render, verify_binding
 raw = json.load(open(cyc + '/reply.json'))
 text = raw.get('result') if isinstance(raw, dict) else raw
 m = re.search(r'\{.*\}', text, flags=re.S); out = json.loads(m.group(0))
@@ -90,11 +89,11 @@ template = fixed_parent_template()
 changed = []
 for name, upd in out.get('branches', {}).items():
     if name in out.get('unchanged', []): continue
+    if not re.fullmatch(r'[FA][1-4]', name): continue
     fp = f'{prompts}/{name}.fields.json'
     if not os.path.exists(fp): continue
     cur = json.load(open(fp))['fields']
-    new = dict(cur); new['STYLE'] = str(upd['STYLE']); new['FOCUS'] = str(upd['FOCUS'])
-    r = upd['REFLECTION']; new['REFLECTION'] = {'mode': r['mode'], 'max_new_tokens': int(r['max_new_tokens'])}
+    new = apply_head_update(cur, upd, template)
     bad = any(tok in new['FOCUS'] for tok in ('%', 'D&R', 'ratio', 'score', 'accuracy')) or re.search(r'\d', new['FOCUS'])
     if bad: new['FOCUS'] = cur['FOCUS']  # FOCUS never carries a measure or a number
     prompt = render(new, template); assert verify_binding(prompt, template), name
@@ -109,11 +108,14 @@ open(repo + '/research_loop/PARENTING_EXCHANGE.md', 'a').write(hdr + body + '\n'
 open(repo + '/research_loop/COORDINATION.md', 'a').write(hdr.replace('head parent', 'head parent, mirrored from PARENTING_EXCHANGE') + body[:1500] + '\n')
 print('applied', len(changed), 'field changes')
 PY
+rc=$?; [ $rc -eq 0 ] || { log "head fields rejected; prior cycle marker retained"; exit 3; }
+cp "$CYC/state_candidate.json" "$STATE"
 # 3b. sync the rewritten prompt files to node 5, where the Fable brokers run (message 117: Fable hosted on node 5)
 source "$COURIER_REPO/gpu/hosts.env" 2>/dev/null; if [ -n "${OVX3_NODE:-}" ]; then
   rsync -a "$SW/prompts/" "$OVX3_NODE":~/courier_swarm/prompts/ 2>/dev/null && log "prompts synced to node 5" || log "prompt sync to node 5 FAILED"
 fi
 # 4. publish the exchange entry (this checkout only; never Astra's clone)
+[ "${HEAD_PARENT_PUBLISH:-1}" = "1" ] || { log "field changes complete; publication delegated to orchestrator"; exit 0; }
 cd "$COURIER_REPO" || exit 0
 if [ -d .git/rebase-merge ] || [ -d .git/rebase-apply ] || [ -f .git/MERGE_HEAD ]; then log "git busy; entry left uncommitted"; exit 0; fi
 git commit -q -o research_loop/PARENTING_EXCHANGE.md research_loop/COORDINATION.md -m "Fable-VM head parent $TS: exchange entry + field changes" && \
