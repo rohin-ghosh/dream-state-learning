@@ -1,0 +1,922 @@
+{
+  "actual_inference_cells": 64,
+  "adapter_files_verified": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "files": [
+      [
+        "README.md",
+        "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+      ],
+      [
+        "adapter_config.json",
+        "5fdecac3a95464812573d05554032d9301a3a46bd4d26628a67ac4220d72e3f0"
+      ],
+      [
+        "adapter_model.safetensors",
+        "5b82d88db7f022b0b9bfdde7bf6927fcd393ed80317a7796a0615272f152ca2b"
+      ]
+    ],
+    "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/checkpoint/adapter",
+    "state_sha256": "a970d311de6a3a77881f95fa1b042069d708c6bf814306980f8fe36467c8e792"
+  },
+  "after_sha256": "7c5a1fb6a82c874bebff8f245b0a53474a2f12e743f25555f1231eebfb7af73c",
+  "aggregate_reserved_cap": 66,
+  "all_cells_recorded": true,
+  "all_pairs_complete": true,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "checkpoint_sha256": "a970d311de6a3a77881f95fa1b042069d708c6bf814306980f8fe36467c8e792",
+  "claim_boundary": "Fixed synthetic32 diagnostic only; no broad capability, semantic thinking, training or causal-generalization proof.",
+  "complete_sha256": "678a20f78c51ad5e1e41c5d9147b073d6c64076e5b18ca17ae74e522bc9b7c08",
+  "expected_cells": 64,
+  "families": {
+    "code": {
+      "arms": {
+        "OFF": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 156,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 164,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 954,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 2,
+            "invalid_json": 2,
+            "unsafe_or_invalid_expression": 2,
+            "wrong_answer": 2
+          },
+          "passed": 2,
+          "recorded": 8
+        },
+        "ON": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 133,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 141,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 954,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "invalid_expression_schema": 2,
+            "invalid_json": 5,
+            "unsafe_or_invalid_expression": 1
+          },
+          "passed": 0,
+          "recorded": 8
+        }
+      },
+      "pairs": {
+        "complete": 8,
+        "counts": {
+          "OFF_only": 2,
+          "ON_only": 0,
+          "both_fail": 6,
+          "both_pass": 0,
+          "incomplete_pair": 0
+        },
+        "denominator": 8
+      }
+    },
+    "concise_instruction": {
+      "arms": {
+        "OFF": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 18,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 26,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 381,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 7,
+            "exact_constraint_failure": 1
+          },
+          "passed": 7,
+          "recorded": 8
+        },
+        "ON": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 17,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 25,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 381,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 7,
+            "exact_constraint_failure": 1
+          },
+          "passed": 7,
+          "recorded": 8
+        }
+      },
+      "pairs": {
+        "complete": 8,
+        "counts": {
+          "OFF_only": 0,
+          "ON_only": 0,
+          "both_fail": 1,
+          "both_pass": 7,
+          "incomplete_pair": 0
+        },
+        "denominator": 8
+      }
+    },
+    "math": {
+      "arms": {
+        "OFF": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 26,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 34,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 433,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 7,
+            "wrong_answer": 1
+          },
+          "passed": 7,
+          "recorded": 8
+        },
+        "ON": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 20,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 28,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 433,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 7,
+            "wrong_answer": 1
+          },
+          "passed": 7,
+          "recorded": 8
+        }
+      },
+      "pairs": {
+        "complete": 8,
+        "counts": {
+          "OFF_only": 0,
+          "ON_only": 0,
+          "both_fail": 1,
+          "both_pass": 7,
+          "incomplete_pair": 0
+        },
+        "denominator": 8
+      }
+    },
+    "toolcall": {
+      "arms": {
+        "OFF": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 149,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 157,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 1136,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 8
+          },
+          "passed": 8,
+          "recorded": 8
+        },
+        "ON": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 149,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 157,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 1136,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 8
+          },
+          "passed": 8,
+          "recorded": 8
+        }
+      },
+      "pairs": {
+        "complete": 8,
+        "counts": {
+          "OFF_only": 0,
+          "ON_only": 0,
+          "both_fail": 0,
+          "both_pass": 8,
+          "incomplete_pair": 0
+        },
+        "denominator": 8
+      }
+    }
+  },
+  "loaded_sha256": "987e2f40a3233e3a7ed18da3a5b1cb6c28b534b26b9eb8fc5bdea3d41d5f81ad",
+  "max_new_tokens": 512,
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "native_calls": 0,
+  "overall": {
+    "arms": {
+      "OFF": {
+        "all_responses_complete": true,
+        "completion_counts": {
+          "complete": 32,
+          "execution_error": 0,
+          "incomplete": 0,
+          "missing": 0,
+          "truncated": 0
+        },
+        "denominator": 32,
+        "generation_metrics": {
+          "content_tokens": {
+            "known_count": 32,
+            "known_sum": 349,
+            "unknown_count": 0
+          },
+          "generated_tokens": {
+            "known_count": 32,
+            "known_sum": 381,
+            "unknown_count": 0
+          },
+          "prompt_tokens": {
+            "known_count": 32,
+            "known_sum": 2904,
+            "unknown_count": 0
+          }
+        },
+        "outcome_categories": {
+          "correct": 24,
+          "exact_constraint_failure": 1,
+          "invalid_json": 2,
+          "unsafe_or_invalid_expression": 2,
+          "wrong_answer": 3
+        },
+        "passed": 24,
+        "recorded": 32
+      },
+      "ON": {
+        "all_responses_complete": true,
+        "completion_counts": {
+          "complete": 32,
+          "execution_error": 0,
+          "incomplete": 0,
+          "missing": 0,
+          "truncated": 0
+        },
+        "denominator": 32,
+        "generation_metrics": {
+          "content_tokens": {
+            "known_count": 32,
+            "known_sum": 319,
+            "unknown_count": 0
+          },
+          "generated_tokens": {
+            "known_count": 32,
+            "known_sum": 351,
+            "unknown_count": 0
+          },
+          "prompt_tokens": {
+            "known_count": 32,
+            "known_sum": 2904,
+            "unknown_count": 0
+          }
+        },
+        "outcome_categories": {
+          "correct": 22,
+          "exact_constraint_failure": 1,
+          "invalid_expression_schema": 2,
+          "invalid_json": 5,
+          "unsafe_or_invalid_expression": 1,
+          "wrong_answer": 1
+        },
+        "passed": 22,
+        "recorded": 32
+      }
+    },
+    "pairs": {
+      "complete": 32,
+      "counts": {
+        "OFF_only": 2,
+        "ON_only": 0,
+        "both_fail": 8,
+        "both_pass": 22,
+        "incomplete_pair": 0
+      },
+      "denominator": 32
+    }
+  },
+  "parent_calls": 0,
+  "plan_sha256": "c798845270a380615d2406bb880656d990b0d6eb1114b5f6a01918bdf683356a",
+  "process_boundary_disclosure": "Three cells retained from V2; CODE01 ON/OFF pair crosses fresh processes.",
+  "raw_text_included": false,
+  "recorded_cells": 64,
+  "reducer_sha256": "cc3c8f90ae6b54068ad6830ef558f68068ce29f0ffe8342755c66f345679a4f5",
+  "schema": "ORCH_R107_CAPABILITY_V1",
+  "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+  "source_receipts": [
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_000.json",
+      "sha256": "ffc7168ddcc1e275eb5a59f8d8df94361f8acf628e7516de7237e40b18dee525"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_001.json",
+      "sha256": "d303116865da2cba3340c0cdd80c7b588f460ce859938bb5a479bf9ee1858fe3"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_002.json",
+      "sha256": "16d40dcd9d916965c3db7d973d5e073d5095cf061d7e26ca9280118ef9a7e325"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_003.json",
+      "sha256": "c89201acd46297193345ae30bd04640f4bca849947d82543a203e5c6c6a7c049"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_004.json",
+      "sha256": "e44c5d3b4cc65abf2c5cc9db687e05c82f2c901d4c61ce97d6bd982dddf391cd"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_005.json",
+      "sha256": "f0b876974ae00a055ed8249c7f8174edec49b67d6c3fe47fa5cb5e2156ac6bc7"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_006.json",
+      "sha256": "c95242a2338923e3386e44da41e95f30e067f5d3f8e9d65c06d1dd885166fdfe"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_007.json",
+      "sha256": "47f5f2bb15c8f8e918850fa707f867a294f9daaf1a474aff110ebdde61eb70d3"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_008.json",
+      "sha256": "beb90da8b653868ccd7410d6551349f2a4e6629bce677b2ec042eb09833d82a1"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_009.json",
+      "sha256": "1cf25e1bcd7111cf9ec1c21fd83873bd722dde2d505750159f0db74a5d08b46b"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_010.json",
+      "sha256": "0d73ff781d2d08e97ab420ab2a26642ef5cc28ef436de207fea2bd1ac9c5b242"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_011.json",
+      "sha256": "2f820600b7a7dbddcbe4205d50eb052a47a8c33f9995b3080672b9a070169679"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_012.json",
+      "sha256": "c6a9160f65b285da00d05a1c96d900e64c71393ea9e2e9f20d9b3ae5340d6097"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_013.json",
+      "sha256": "676eb48c457b80d6200565d6c6ff76ac51d93f40d3a20645e6d4e700b1af2cc6"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_014.json",
+      "sha256": "975968f14d38c92fbd2318c5a42fa106e7b75417ab7ef206b1328a5b3dc0f2a8"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_015.json",
+      "sha256": "9da94940a8d27e56eadde404bb52226e6bdd32f6a2c35e9f84b641ae836244d0"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_016.json",
+      "sha256": "e443fa4d45e115c223f3ab1a35ed94da95714644d58e01f388b463b57322f69d"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_017.json",
+      "sha256": "34fec97e6df2332cf6054ba8da6c84f9286e916107deb949817fd3936b159143"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_018.json",
+      "sha256": "4aaac193b37730bbe86d7bc37d8170888b1386125fa06b6d861e502e30f60096"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_019.json",
+      "sha256": "c43405b8e0978cc39e32479753def20fb812b275105bad682152ea5e52f62265"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_020.json",
+      "sha256": "3a0e7675db8add34e322346e0792512ae50287e6fa439cca3240966fc92e5215"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_021.json",
+      "sha256": "7b1dd837e7aa9136a5de6cd920c59705c211f921b87bfb2b61436c828d9a88dd"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_022.json",
+      "sha256": "8426883e8758a0266d6d521dfad4de80adbd1486a0fac6b20bab25c60899f127"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_023.json",
+      "sha256": "e2e575574bf09e06f3574f2fa95da468db1634551d1baf985c5b6b9b796b19c1"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_024.json",
+      "sha256": "1b5f7dd17d94cc70babf24c4686fe5e9e60cbf54c0e1ef749f0614882e79a785"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_025.json",
+      "sha256": "d47da6ed5a2f1007802f4005bd703f9f4db75912fd8389c41205f6682d5cf060"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_026.json",
+      "sha256": "d43ed818d6fad3ed7a096585cb24e3a6dbd223c48c9d91b037416f15f558dd30"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_027.json",
+      "sha256": "5290ce43fb06025894e00f6d7fdd08d5a56d44f510f1954cba63605e3f09ed51"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_028.json",
+      "sha256": "614e874f41e1839313e68a80f9d09c61c5b37ff89fc84fb820e0b5a39de8226c"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_029.json",
+      "sha256": "0fa88daea6f5ff1f757c5247a8e71a81c24ca4b5d4d339d80d5ced019a0d40ef"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_030.json",
+      "sha256": "5c102cd57ff6d1d99bc1595454ffe14ce455e84d5c1546f6db8b250f35bbeded"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_031.json",
+      "sha256": "5802771515a006339252f2ac34f5cb4abead557424c60165cdf87078b09464c2"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_032.json",
+      "sha256": "e256e7c9251c979357f8f33ba19bfd6370835f3b6d24b911cf40fc76796788db"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_033.json",
+      "sha256": "56f5cbb729ae049910565690c14ae7258f4f4095dcc023c33db5b7a5c541cfe9"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_034.json",
+      "sha256": "4a41f28e023c5d4a398e267b041195b122504977484a16055efddfe3daa4311f"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_035.json",
+      "sha256": "53b48c741fd63a6bd9813951532a866668373de57216527bad00e8fea45b9202"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_036.json",
+      "sha256": "ef4c4ef3017b65bd51f9f3d76ac0ff3459f621b696e52ed42c5a42958b961b09"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_037.json",
+      "sha256": "a891e7c9d696b17c95488b0aafe562d6bfdfdaf7a5bb5c981f00164ae5f051a3"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_038.json",
+      "sha256": "bc7a2aa9473bb8981923f33bf41a2ca6293f02dffc5c9712067ffb6a6f39a813"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_039.json",
+      "sha256": "e5b5194efdd3e5dff542ac8686b6e26752261ae37cd5a4dde8a08b2c0b8fd936"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_040.json",
+      "sha256": "7721b895a93f8fe80bd38b3e2145dce435efdc17dbc6e09d7310aaad7154e0f7"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_041.json",
+      "sha256": "2dd3e9b9671bbab171d9af089f861526f56d43420df1dc4e200b3b9daedb71da"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_042.json",
+      "sha256": "9904922d9355865f58f8b65a78251225a219f90daf5b80fe1f5f302171b61631"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_043.json",
+      "sha256": "759a536306f441a23d7e5c776aa85d629f000ddeefa1da56d584b57c4b3926e1"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_044.json",
+      "sha256": "fe07c5ee18c6256672be5dbca78b46be2c0fe0d7be994f43187dbdfbc69d7655"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_045.json",
+      "sha256": "ebb38b2e6b42ac9ac23bd122e559018473d95607943bf6d7d7edfac4aa3d0f0b"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_046.json",
+      "sha256": "549cc8a9ecc5d7285e99f6e3e338150f0bf9beb9aa1849f40ccbb547b3618aa6"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_047.json",
+      "sha256": "b404ede88ac16f2ec788f1bfe86240d33829432de367ccb15a38d66b54f215d4"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_048.json",
+      "sha256": "208f530893cc33aa4c8b3d52545630eb0cc892f89641e82e871dab88687fdfc4"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_049.json",
+      "sha256": "b7f8ab6f80d2c43f8f88cf325a473ae028c2c1fff24c0b36cb5de206cbd66374"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_050.json",
+      "sha256": "265346b390b0dad59c12f771930e2edf7431dd50fcbd39b76d7dcc30cb22d11a"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_051.json",
+      "sha256": "e0d08d0edaf4b4c7dbfc6dbf142924b2d7ccaae91520f7d967d759893a76e422"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_052.json",
+      "sha256": "dc9c6744ba48a0aa237624612c9d52b5908e9b7cca8181dc6592df8da26789c2"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_053.json",
+      "sha256": "c340483edfcf2bf680e36e0439e211615de1d9f23de08836bc3fbbb27bc1dbb1"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_054.json",
+      "sha256": "add063ddd1dd5dbc0db80dfb1f66fe19b5466addbe6f981627b2c55932c55755"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_055.json",
+      "sha256": "4be630ed1519dfa6579cb327dbadd379f08e1568234bd54e334ea246d3e42595"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_056.json",
+      "sha256": "939732ebbfdc05a54d281fd68657f5dbbd47562103e59439f137006a764d7efa"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_057.json",
+      "sha256": "55f7d763bc27be2619bb0760d8b22cff66f71e3eca1bbd2313aa1ef68097ba8e"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_058.json",
+      "sha256": "e77b5bcbb0e7194e6bf64932375335347f1fef019347a588ecb0a8c88e4c5986"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_059.json",
+      "sha256": "2e6ac4c5cfc4e290742ad7d49089f796c8a89d24501a306f0436cd4ec6b01deb"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v3/readout/CALL_060.json",
+      "sha256": "7319c8a803fe02770fcf686f3a4bb7609fc040c688511602bfff2d7515834d55"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v2/readout/CALL_000.json",
+      "sha256": "aef706bbd69bc9da1983a6f7febe735ecf980a90d5ab579e1cde4cddf2b2d63b"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v2/readout/CALL_001.json",
+      "sha256": "eec163c7369770478e5884653beb04fd2ac006e391b64469145fcdeef464181a"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_capability_math764_full_20260915/repair_v2/readout/CALL_002.json",
+      "sha256": "eb84f9ebf5af370cab47d5295b229deb5200e14b48fdc0acbe2b53afe24d989d"
+    }
+  ],
+  "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+  "task_pairs": [
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_00"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_01"
+    },
+    {
+      "category": "OFF_only",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_02"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_03"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_04"
+    },
+    {
+      "category": "OFF_only",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_05"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_06"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_07"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_00"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_01"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_02"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_03"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_04"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_05"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_06"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_07"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_00"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_01"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_02"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_03"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_04"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_05"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_06"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_07"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_00"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_01"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_02"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_03"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_04"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_05"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_06"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_07"
+    }
+  ],
+  "thinking_metrics": null
+}
