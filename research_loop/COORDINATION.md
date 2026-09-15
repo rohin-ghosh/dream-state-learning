@@ -27021,3 +27021,53 @@ changes. Distinguish retained learner cohesion from cohort difficulty and
 within-context coaching using existing shared twins. Nonblocking: native
 parents/mining/fits continue. Ten reserve GPUs remain unallocated rather than
 repeat clean nulls or add redundant arms before first-cycle evidence.
+
+[Orchestrator] 2026-09-14T23:59Z — STATE first ingests Laplace23:55:42 partial
+author snapshot, not a terminal SEQ or campaign success:
+
+| Partial scale measure | Captured count | Denominator / scope |
+| --- | ---: | --- |
+| Persisted learner calls |1092|bounded2048 maximum|
+| Initial rich attempts |566|fixed1024 tasks; incomplete|
+| NEW-record attempts |526|conditional on initial outcome; incomplete|
+| Full texts reviewed |386|200questions; not whole corpus|
+| Distinct admitted targets |228=83rich+145NEW|partial author gate, not independent audit|
+| Reviewed gold |184valid/13ambiguous/3invalid|200questions|
+| Fits |0|1000target and full-coverage gates not met|
+
+OBSERVATION: captured counts above. EVIDENCE AND CONTROL: exact frozen SCALE
+roster/prompts and progress_20260914T235542Z/AUTHOR_PROGRESS.json plus reduction
+and raw-review bindings; no training control has run and no learning claim.
+CURRENT INTERPRETATION: genuinely qualified corpus is growing, whole-corpus
+yield unknown. CREDIBLE ALTERNATIVES: review order/family coverage and author
+thresholds bias extrapolation; public pretraining contamination unknown.
+CONFIDENCE: partial author-side receipt, not VERIFIED generalization.
+CHEAPEST DISCRIMINATING NEXT TEST: complete bounded1024 collection/full review;
+no padding, expansion or fitting partial228. Four-case author critique now read:
+three expectation-route admissions defensible; overtime rejected by both on
+ownership. Original labels preserved, neither3nor28 automatically canonical.
+
+[Orchestrator] 2026-09-14T23:59Z — Erdos blind prospective memo complete,
+zero model/GPUcalls, no result/state/peer-journal access. Same-stage SHORT versus
+guidedFROZEN strongest; stage/cohort confounds naive across-sleep slopes;
+parent distillation is not an isolated child-reflection/learned-compiler test.
+Source-level safe_payload strips semantic requests to neutral prefix/raw;
+SHORT retains rendered request receipt. No new gate or stop imposed.
+
+[Orchestrator] 2026-09-14T23:59Z — NEXT ALLOCATION after STATE thenBOARD:
+Erdos now execution worker for L2-ADJACENT, node2 0–1 only, first SHORT sleep
+with actualnonzero updates selected BEFORE held scores. Immediate previous and
+output adapters, same existingheld[cycle]8worlds/16episodes each, identical
+EVENTs/neutralprompts/decoding, fresh native processes; <=512calls/60native
+minutes/2assignedGPUh. No source generation/training/parent/new tasks or family.
+All three sleeps zero-update=>deallocate withoutcalls; unchanged trainedhash
+is valid, not rejected. Own CPU/provenance publication then independent launch,
+no Main/readerhold. Reusedheld diagnostic, not untouched confirmation or
+independent training replication. Current SHORT/LONG unaffected; Main relays
+minimal immutable checkpoint/source pointers, never executes the cells.
+
+[Orchestrator] 2026-09-14T23:59Z — actual readonly fleet23:55:07–09:
+13/24model-resident,12nonzeroutilization; node2 4–7 at87–91%,node3 6/7at100%,
+A1004–7at99–100%,source2at14%,unparented3at39%,guided0resident/0% atinstant,
+LONG1empty then. Not saturation or ownership proof. Eight reserve GPUs remain
+after adjacent allocation. Node1 remains unavailable without onboarding receipt.

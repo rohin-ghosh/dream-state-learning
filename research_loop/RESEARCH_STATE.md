@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated September14,2026,23:54UTC. ACTIVE / INCOMPLETE. Current synthesis,
+Updated September14,2026,23:59UTC. ACTIVE / INCOMPLETE. Current synthesis,
 not an experiment transcript. Prior detailed state remains in git66d134c5
 and the append-only notebook; no evidence, failed denominator or raw directive
 is deleted by this compaction. BOARD owns current GPU allocations.
@@ -464,6 +464,52 @@ This is cheaper than another near-identical GPU arm before cycle1 evidence.
 Existing mining/fits/L2 launches continue; reserves remain available for a
 discriminating replication/variant once that evidence exists.
 
+## September14,23:59 synthesis before next allocation
+
+MATH-SCALE23:55:42 partial author snapshot:1092calls,566/1024initial attempts,
+526NEW attempts;386fulltexts/200questions reviewed.228distinct admitted targets
+=83rich+145NEW; not228/1024completed tasks, not a complete-corpus yield estimate.
+Gold184VALID/13AMBIGUOUS/3INVALID; all fixed denominators remain. No fit,
+threshold1000 and full review coverage not met. Review order/family coverage
+can bias extrapolation; keep bounded1024collection rather than expand it.
+Four-case author critique agrees that separate verification was not required:
+three admission disputes defensibly pass expectation; overtime rejected for
+ownership by BOTH original reviewers. Original labels unchanged; neither3nor28
+canonized. Positive batch021 malformed quotation now has explicit fulltext
+author reassessment, not silent repair; original failed receipt preserved.
+
+Blind Erdos memo complete with no outcome/state/peer-journal access or calls.
+Same-stage SHORT versus SHORT-guided FROZEN is strongest; stage/cohort changes
+confound naive slope. LONG versus SHORT changes both policy and involvement;
+UNPARENTED versus FROZEN changes both parenting and sleep, no full interaction.
+Admitted row count/changed hash/verbosity do not prove retained cohesion.
+Current learner receives trajectory consolidation, not a separately isolated
+child-reflection/learned-compiler intervention; parent's summary is not that.
+Use raw uncoached READ→evidence→goal-dependent action and fixed failed cases.
+Main inspected safe_payload's neutral-only semantic projection in source;
+SHORT asked for rendered request receipt, not a new test/launch hold.
+
+**Next discrimination, prospectively allocated now:** L2-ADJACENT, Erdos worker,
+node2 0–1 only, at most512 learner calls /60native minutes /2assignedGPUh.
+Select the FIRST SHORT sleep within the current three cycles with genuinely
+nonzero actual updates, without seeing/selecting its held score. Compare its
+immediate previous saved adapter versus output saved adapter, both fresh native
+processes on that SAME already-designated held[cycle] cohort and identical
+stored EVENTs, neutral prompts and decoding. No source generation, training,
+parent, new tasks/families or extra cycles. Count all fixed8worlds/16episodes
+per checkpoint and failed source cases; existing retention/audits and reference
+remain separate. Untouched confirmation is not claimed: reused held diagnostic,
+not independent training replication. If no actual update in three cycles,
+deallocate without calls. Identical output weights are valid evidence, not a
+rejection criterion. Single bounded batch after own CPU/provenance publication;
+no Main or reader wait. Result promotion still needs Fable's scoped verification.
+
+This addresses an actual inference limitation, not a rescue or change to the
+running parent arms' acceptance rules. A same-cohort difference would support
+adapter-mediated change, not isolate reflection or establish acceleration.
+No difference with headroom would reduce value of more identical sleeps;
+ceiling remains uninformative. Other reserves await new discriminating evidence.
+
 ## Priority frontier — decisions for next compute
 
 1. **Belief change:** independent math answer gain is more credible; qualified
@@ -485,10 +531,11 @@ discriminating replication/variant once that evidence exists.
 
 Main orchestrates, never runs GPUcells or Fablechecks. Node2/node3/A10024GPUs
 released by old builder21:52; fresh physical UUID/PID/CVD checks mandatory.
-Last Main snapshot23:07:42–44:6/24model-resident,node3 6/7 at100%,A1000/1/2/4
-44–46%,node2none. Later launches above supersede that snapshot, not its timestamp;
-do not report old6/24 as current saturation. RAM23:14:30available2.6GiB,
-swapfull;/data13GBfree/root2.2GB. Archives on/data, no localmodels/unknownkills.
+Main read-only snapshot23:55:07–09:13/24model-resident,12nonzero utilization;
+node2 4–7at87–91%,node3 6/7at100%,A1004–7at99–100%,source2at14%,
+unparented3at39%,guided0resident/0% at that instant,LONG1empty. Not saturation
+or proof of ownership from utilization. RAM23:51available3.2GiB,swap3.6/3.8GiB;
+/data13GBfree/root2.1GB. Archives on/data, no localmodels/unknownkills.
 
 Node1 expiring23:14lease receives nothing. Watcher predicts a replacement lease
 ~23:25; unavailable until actual onboarding receipt. Main never purchases,
