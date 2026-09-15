@@ -1,0 +1,570 @@
+{
+  "baseline": {
+    "checks": {
+      "audit": true,
+      "every_world": false,
+      "old_w0": true,
+      "old_w8": true,
+      "pairs": false,
+      "previous_fresh": true,
+      "taught": true
+    },
+    "conditions": {
+      "OWN_TEXT": {
+        "covered_worlds": 7,
+        "failed_worlds": [
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-A"
+        ],
+        "goal_denominator": 128,
+        "goals": 62,
+        "pair_denominator": 64,
+        "pairs": 8,
+        "world_denominator": 32
+      },
+      "UNAVAILABLE": {
+        "covered_worlds": 0,
+        "failed_worlds": [
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-B",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-A",
+          "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-B"
+        ],
+        "goal_denominator": 128,
+        "goals": 5,
+        "pair_denominator": 64,
+        "pairs": 0,
+        "world_denominator": 32
+      }
+    },
+    "engineering_target_met": false,
+    "model_calls": 1699,
+    "retention": {
+      "audit": {
+        "correct": 16,
+        "denominator": 16
+      },
+      "original": {
+        "correct": 3,
+        "denominator": 4
+      },
+      "previous_fresh": {
+        "correct": 3,
+        "denominator": 4
+      },
+      "w0": {
+        "correct": 16,
+        "denominator": 16
+      },
+      "w8": {
+        "correct": 16,
+        "denominator": 16
+      }
+    }
+  },
+  "batch_sha256": "5aac9c13737516146b7a4ed57961beb349c8198778040b36aeaa7eb3d3ea960e",
+  "claim": "AUTHOR_ONLY_SAME_COHORT_TWO_SEED_FOUR_DOSE_NOT_THREE_PAIR_TERMINAL",
+  "old266_gate": "FAIL_UNCHANGED",
+  "pairs": [
+    {
+      "comparator_win": true,
+      "conjunction_survived": false,
+      "control_state": "7ee1f6a17f130b7e530f418ddc8ba8a69529221c1d8943f5a5a9fe5c35a97097",
+      "deterministic_pairs": 0,
+      "dose": 4,
+      "full": {
+        "checks": {
+          "audit": true,
+          "every_world": false,
+          "old_w0": true,
+          "old_w8": true,
+          "pairs": true,
+          "previous_fresh": true,
+          "taught": true
+        },
+        "conditions": {
+          "OWN_TEXT": {
+            "covered_worlds": 31,
+            "failed_worlds": [
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-A"
+            ],
+            "goal_denominator": 128,
+            "goals": 125,
+            "pair_denominator": 64,
+            "pairs": 61,
+            "world_denominator": 32
+          },
+          "UNAVAILABLE": {
+            "covered_worlds": 0,
+            "failed_worlds": [
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-B"
+            ],
+            "goal_denominator": 128,
+            "goals": 23,
+            "pair_denominator": 64,
+            "pairs": 0,
+            "world_denominator": 32
+          }
+        },
+        "engineering_target_met": false,
+        "model_calls": 1728,
+        "retention": {
+          "audit": {
+            "correct": 16,
+            "denominator": 16
+          },
+          "original": {
+            "correct": 4,
+            "denominator": 4
+          },
+          "previous_fresh": {
+            "correct": 4,
+            "denominator": 4
+          },
+          "w0": {
+            "correct": 16,
+            "denominator": 16
+          },
+          "w8": {
+            "correct": 16,
+            "denominator": 16
+          }
+        }
+      },
+      "full_state": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f",
+      "loss_off": {
+        "checks": {
+          "audit": true,
+          "every_world": false,
+          "old_w0": true,
+          "old_w8": true,
+          "pairs": false,
+          "previous_fresh": false,
+          "taught": false
+        },
+        "conditions": {
+          "OWN_TEXT": {
+            "covered_worlds": 8,
+            "failed_worlds": [
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-A"
+            ],
+            "goal_denominator": 128,
+            "goals": 51,
+            "pair_denominator": 64,
+            "pairs": 8,
+            "world_denominator": 32
+          },
+          "UNAVAILABLE": {
+            "covered_worlds": 0,
+            "failed_worlds": [
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-B"
+            ],
+            "goal_denominator": 128,
+            "goals": 0,
+            "pair_denominator": 64,
+            "pairs": 0,
+            "world_denominator": 32
+          }
+        },
+        "engineering_target_met": false,
+        "model_calls": 1656,
+        "retention": {
+          "audit": {
+            "correct": 16,
+            "denominator": 16
+          },
+          "original": {
+            "correct": 2,
+            "denominator": 4
+          },
+          "previous_fresh": {
+            "correct": 2,
+            "denominator": 4
+          },
+          "w0": {
+            "correct": 16,
+            "denominator": 16
+          },
+          "w8": {
+            "correct": 16,
+            "denominator": 16
+          }
+        }
+      },
+      "paired_difference": 53,
+      "seed": 7801
+    },
+    {
+      "comparator_win": true,
+      "conjunction_survived": false,
+      "control_state": "8a99da6fbe99686bc98f8ff27210bf0661cc9b86e961096d4d9322bf4bd36dfb",
+      "deterministic_pairs": 0,
+      "dose": 4,
+      "full": {
+        "checks": {
+          "audit": true,
+          "every_world": false,
+          "old_w0": true,
+          "old_w8": true,
+          "pairs": true,
+          "previous_fresh": true,
+          "taught": true
+        },
+        "conditions": {
+          "OWN_TEXT": {
+            "covered_worlds": 31,
+            "failed_worlds": [
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-A"
+            ],
+            "goal_denominator": 128,
+            "goals": 125,
+            "pair_denominator": 64,
+            "pairs": 61,
+            "world_denominator": 32
+          },
+          "UNAVAILABLE": {
+            "covered_worlds": 3,
+            "failed_worlds": [
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-B"
+            ],
+            "goal_denominator": 128,
+            "goals": 67,
+            "pair_denominator": 64,
+            "pairs": 3,
+            "world_denominator": 32
+          }
+        },
+        "engineering_target_met": false,
+        "model_calls": 1727,
+        "retention": {
+          "audit": {
+            "correct": 15,
+            "denominator": 16
+          },
+          "original": {
+            "correct": 4,
+            "denominator": 4
+          },
+          "previous_fresh": {
+            "correct": 4,
+            "denominator": 4
+          },
+          "w0": {
+            "correct": 16,
+            "denominator": 16
+          },
+          "w8": {
+            "correct": 16,
+            "denominator": 16
+          }
+        }
+      },
+      "full_state": "0ed6d7cbca29b7391484454c6a32518cf1df9ee25eb18672094f7bcbf2d3a2c4",
+      "loss_off": {
+        "checks": {
+          "audit": true,
+          "every_world": false,
+          "old_w0": true,
+          "old_w8": true,
+          "pairs": false,
+          "previous_fresh": false,
+          "taught": false
+        },
+        "conditions": {
+          "OWN_TEXT": {
+            "covered_worlds": 7,
+            "failed_worlds": [
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-A"
+            ],
+            "goal_denominator": 128,
+            "goals": 55,
+            "pair_denominator": 64,
+            "pairs": 7,
+            "world_denominator": 32
+          },
+          "UNAVAILABLE": {
+            "covered_worlds": 0,
+            "failed_worlds": [
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-1-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-8-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-9-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-10-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-11-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-12-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-13-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-14-BLOCK-0-PROBE-B",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-A",
+              "ORCH-TERSE-BREADTH-20260914-V1-SHARD-15-BLOCK-0-PROBE-B"
+            ],
+            "goal_denominator": 128,
+            "goals": 0,
+            "pair_denominator": 64,
+            "pairs": 0,
+            "world_denominator": 32
+          }
+        },
+        "engineering_target_met": false,
+        "model_calls": 1648,
+        "retention": {
+          "audit": {
+            "correct": 16,
+            "denominator": 16
+          },
+          "original": {
+            "correct": 2,
+            "denominator": 4
+          },
+          "previous_fresh": {
+            "correct": 2,
+            "denominator": 4
+          },
+          "w0": {
+            "correct": 16,
+            "denominator": 16
+          },
+          "w8": {
+            "correct": 16,
+            "denominator": 16
+          }
+        }
+      },
+      "paired_difference": 54,
+      "seed": 7802
+    }
+  ],
+  "pending_pair": {
+    "dose": 16,
+    "lanes": [
+      4,
+      5
+    ],
+    "seed": 7801,
+    "status": "RUNNING_NOT_REDUCED"
+  },
+  "promotion": false,
+  "reader_verified": false,
+  "source_result_hashes": {
+    "after0/RESULT.json": "d6730dcf7371dffa7d3e057a4ec0c5ff0ec38db801e076c0e7e2f809900c6db5",
+    "after1/RESULT.json": "8b11360cf841bfd0a5c524bc8f8a1cc581bfac4863af4bb5e5a39951773ca214",
+    "after2/RESULT.json": "5b1bd2a5cf968137942e5e5defa61a93e93dff04b430299ddb9c13fc769cc560",
+    "after3/RESULT.json": "84db5dd4581e371aa66cb145bff103c7d17852c21b281fef5bb8cdc720b61d28",
+    "baseline0/RESULT.json": "2250e1853b211ddbb6e6b8831f83b5bc00f2120bdb65b1ee0ee81e9953a64af8",
+    "train0/RESULT.json": "8bfcd527495dc2b1865348066906dec01cbf2f59cc666b46b0fd4b358008e749",
+    "train1/RESULT.json": "17f52c9ca2e8411a86976cb85b0a8f71845a8e20bd4a5b8debcbe148c9120966",
+    "train2/RESULT.json": "edda26c5b53e3e180e416181db6c4db619f7b4a3068159114ee96256ebe7fedb",
+    "train3/RESULT.json": "c339c3722d8eaff995bcda963d482f5a454ac51c045d7ebf08047460a35b1c82"
+  },
+  "status": "PARTIAL_BATCH_A100_TERMINAL",
+  "two_seed_four_dose_conjunction_survived": false,
+  "utc": "2026-09-15T01:14:49.632152+00:00"
+}

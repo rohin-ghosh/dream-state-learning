@@ -105,3 +105,20 @@ Exact measured host timestamps and native receipts saved in
 orch_terse_breadth_20260914_attempt1/STATUS_20260915_0046.json. Unique baseline
 not duplicated; frozen cohort/doses/controls unchanged. Continue owned bounded
 fits/readouts; no rich-L2 extension, retirement, learned claim or SEQ request.
+
+2026-09-15T01:17:23Z [Builder] Partial terminal A100 comparison/release:
+seed7801dose4 FULL61/64pairs125/128goals versusOFF8/64,51/128;
+seed7802dose4 FULL61/64,125/128 versusOFF7/64,55/128. Baseline8/64,
+first-port0/64. FULL W0/W8=16/16all; audits16/16and15/16; original/fresh
+4/4all. OFF oldW0/W8/audit16/16all but original/fresh2/4all. Each FULL
+fails every-world coverage31/32 at identicalSHARD7PROBEA. GateFAIL remains
+FAIL despite large aggregate differences. Author-only partial batch, not
+promotion/independent-cohort/learning-loop claim. Native archive461f291aac31
+and own reducer/report retained; four reduction regressionsPASS.
+Release A1004–7 after all chains/native/guardians exited, evidence archive,
+and unchanged scanner all4clear at01:16:57.542710UTC. Initial unreadable
+SSH failures preserved; detached read-only scan after SSH closes adds no
+exceptions. Exact UUID/proc/allGPU receipt in A100_RELEASE_DETACHED_20260915.json;
+next owner fresh-checks. Node3dose16pair still running4207/4252updates at
+01:17:04; ownership retained through original readouts. No baseline rerun,
+extra cell, full-batch retirement or SEQ; all three pair outcomes remain due.

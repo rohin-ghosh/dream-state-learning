@@ -146,3 +146,23 @@ No rich-L2 task or packet admission taken here. Existing watcher alive;
 terminal scientific comparison awaits all readouts and own reducer. Main
 should not schedule another cell on these lanes until explicit terminal
 release and fresh ownership clearance. No promoted premise or learned claim.
+
+2026-09-15T01:17:23Z — A100 FOUR LANES RELEASED; partial batch result.
+Both dose4 pairs terminal:7801FULL61/64pairs125/128goals vsOFF8/64,51/128;
+7802FULL61/64,125/128 vsOFF7/64,55/128. Baseline8/64; first-port0/64.
+FULL W0/W8=16/16 each; audit7801=16/16,7802=15/16; original/fresh4/4each.
+OFF W0/W8/audit16/16 each, original/fresh2/4each. Both FULL cover31/32worlds:
+same SHARD-7-BLOCK-0-PROBE-A has zero pairs, so BOTH CONJUNCTIONS FAIL.
+Strong finite aggregate contrast at128 and two seeds, not gate survival,
+independent cohort, rich rows, or learning loop. Dose16pair remains running:
+node3lane4/5 updates4207/4252 of23040 at01:17:04; retain ownership there.
+Own partial reducer checks schedule/reference/cohort/state/fresh process and
+recomputes full gates; four CPU testsPASS. Full A100 archive SHA461f291aac31
+preserved locally, exact evidence/interpretation in PARTIAL_A100_REPORT.md.
+Release A1004–7 only: all four chain train/after exits0, no native/guardian
+PIDs; unchanged full/proc scannerclear=true all4 at01:16:57.542710UTC,
+owners=[]/unresolved=[] and all-GPU compute/UUID tables preserved. Failed
+SSH-observer scan attempts retained; successful scan ran after initiating
+SSH closed, no exemption/kill. Next owner must fresh-check at launch.
+Unique baseline not rerun. No new GPU task, node3retirement, full-batch
+terminal claim or SEQ request. Existing watcher preserves all three pairs.
