@@ -588,8 +588,69 @@ def real_worker(rank, rendezvous):
         torch.distributed.destroy_process_group()
 
 
+def native_class_worker(rank, rendezvous):
+    from transformers import Qwen2Config, Qwen2ForCausalLM
+    from peft import LoraConfig, get_peft_model
+    torch.set_num_threads(1)
+    torch.distributed.init_process_group('gloo',init_method='file://' + rendezvous,
+        rank=rank,world_size=8,timeout=timedelta(seconds=90))
+    try:
+        torch.manual_seed(271)
+        model = get_peft_model(Qwen2ForCausalLM(Qwen2Config(vocab_size=32,hidden_size=16,
+            intermediate_size=32,num_hidden_layers=1,num_attention_heads=2,num_key_value_heads=1,
+            max_position_embeddings=128)),LoraConfig(r=2,lora_alpha=4,target_modules=['q_proj','v_proj'],task_type='CAUSAL_LM'))
+        model.requires_grad_(False)
+        model.eval()
+        parameters = tuple(model.named_parameters())
+        base = {name:parameter.detach().clone() for name,parameter in parameters if not parallel.is_lora(name)}
+        def verify_base():
+            assert all(torch.equal(base[name],parameter) and not parameter.requires_grad
+                       for name,parameter in model.named_parameters() if name in base)
+        engine = SimpleNamespace(torch=torch,model=model,device='cpu',verify_base=verify_base)
+        lora = [parameter for name,parameter in parameters if parallel.is_lora(name)]
+        optimizer = torch.optim.AdamW(lora,lr=.02) if rank == 0 else None
+        backend = parallel.ParallelSleep(engine,optimizer,group=torch.distributed.group.WORLD,
+            encoded_new=[row(index) for index in range(3)],encoded_old=[row(index) for index in range(8)],
+            encoded_anchors=[row(index) for index in range(42)],schedule=parallel.make_schedule(3,8),source_manifest_sha256='e'*64)
+        observed = []
+        def observe(module, inputs, output):
+            observed.append(dict(input_grad=output.requires_grad,training=model.training,
+                checkpointing=model.is_gradient_checkpointing,cache=model.config.use_cache,
+                lora_grad=all(parameter.requires_grad for parameter in lora)))
+        for step in range(2):
+            hooks = []
+            def install_observer():
+                hooks.append(model.get_input_embeddings().register_forward_hook(observe))
+            backend.run(max_steps=1,check=install_observer)
+            for hook in hooks:
+                hook.remove()
+            assert not model.training and not model.is_gradient_checkpointing and model.config.use_cache
+            assert getattr(model,'_require_grads_hook',None) is None
+            assert all(name == original_name and parameter is original for (name,parameter),(original_name,original)
+                       in zip(model.named_parameters(),parameters))
+        assert len(observed) >= 4
+        assert all(item['input_grad'] and item['training'] and item['checkpointing'] and item['lora_grad'] and not item['cache'] for item in observed)
+        assert all(parameter.grad is None and not parameter.requires_grad for parameter in model.parameters())
+        assert optimizer is None if rank else all(int(value['step']) == 2 for value in optimizer.state.values())
+        reports = [None] * 8
+        torch.distributed.all_gather_object(reports,dict(rank=rank,model_class='Qwen2ForCausalLM',adapter_class=type(model).__name__,
+            checkpointing='nonreentrant',input_gradient_hook_enabled_and_removed=True,
+            forwards=len(observed),optimizer_count=int(optimizer is not None),same_parameter_objects=True,base_frozen=True))
+        if rank == 0 and os.environ.get('R116_NATIVE_CLASS_PROOF'):
+            Path(os.environ['R116_NATIVE_CLASS_PROOF']).write_text(json.dumps(dict(ranks=reports,device='cpu',
+                random_small_config_not_pretrained_weights=True,token_context_unchanged=True,native_GPU_throughput_unproven=True),indent=2)+'\n')
+    finally:
+        torch.distributed.destroy_process_group()
+
+
 @unittest.skipIf(torch is None, 'torch unavailable; run CPU Gloo on native venv')
 class RealCollectiveTests(unittest.TestCase):
+    def test_actual_Qwen2_peft_training_path_all8_frozen_loads(self):
+        self.assertEqual(os.environ.get('CUDA_VISIBLE_DEVICES'),'')
+        with tempfile.TemporaryDirectory(prefix='r116_native_class_cpu_') as folder:
+            torch.multiprocessing.start_processes(native_class_worker,args=(str(Path(folder) / 'rendezvous'),),
+                nprocs=8,start_method='spawn',join=True)
+
     def test_eight_rank_single_optimizer_continuity_and_all_rng_recovery(self):
         self.assertEqual(os.environ.get('CUDA_VISIBLE_DEVICES'), '', 'run explicitly CPU-only: CUDA_VISIBLE_DEVICES=')
         self.assertFalse(torch.cuda.is_initialized())

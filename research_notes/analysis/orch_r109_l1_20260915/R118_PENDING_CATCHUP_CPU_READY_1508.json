@@ -1,0 +1,147 @@
+{
+  "CONFIG_mutations": 0,
+  "catchup_semantics": {
+    "GO_waits_only_bootstraps": true,
+    "all8_actual_GPU_training_not_run": true,
+    "existing_submission_submit_calls": 0,
+    "new_native_calls": 0,
+    "optimizer_steps_in_resume": 0,
+    "pending_mode_does_not_collect": true,
+    "second_resume_rejected": true,
+    "unpublished_submission_submit_calls": 1
+  },
+  "created_utc": "2026-09-15T15:08:32.090228+00:00",
+  "fresh_exec_scenarios": [
+    {
+      "all8_GO_before_new_submission": true,
+      "all8_fresh_exec": true,
+      "canonical_STATE_unchanged": true,
+      "canonical_adapter_all_verified": true,
+      "native_count": 8,
+      "optimizer_count": 1,
+      "pending_catchup": false,
+      "pending_publications": 0,
+      "postcommit_recovery": false,
+      "restore_parallel_sidecar": false,
+      "startup_actions": {
+        "COLLECT_NEW_TWO_EPISODES": 8,
+        "RESUME_PENDING_PARALLEL_BOUNDARY_BEFORE_NEW_CALLS": 0
+      }
+    },
+    {
+      "all8_GO_before_new_submission": true,
+      "all8_fresh_exec": true,
+      "canonical_STATE_unchanged": true,
+      "canonical_adapter_all_verified": true,
+      "native_count": 8,
+      "optimizer_count": 1,
+      "pending_catchup": false,
+      "pending_publications": 0,
+      "postcommit_recovery": false,
+      "restore_parallel_sidecar": true,
+      "startup_actions": {
+        "COLLECT_NEW_TWO_EPISODES": 8,
+        "RESUME_PENDING_PARALLEL_BOUNDARY_BEFORE_NEW_CALLS": 0
+      }
+    },
+    {
+      "all8_GO_before_new_submission": true,
+      "all8_fresh_exec": true,
+      "canonical_STATE_unchanged": true,
+      "canonical_adapter_all_verified": true,
+      "native_count": 8,
+      "optimizer_count": 1,
+      "pending_catchup": false,
+      "pending_publications": 0,
+      "postcommit_recovery": true,
+      "restore_parallel_sidecar": false,
+      "startup_actions": {
+        "COLLECT_NEW_TWO_EPISODES": 8,
+        "RESUME_PENDING_PARALLEL_BOUNDARY_BEFORE_NEW_CALLS": 0
+      }
+    },
+    {
+      "all8_GO_before_new_submission": true,
+      "all8_fresh_exec": true,
+      "canonical_STATE_unchanged": true,
+      "canonical_adapter_all_verified": true,
+      "native_count": 8,
+      "optimizer_count": 1,
+      "pending_catchup": true,
+      "pending_publications": 1,
+      "postcommit_recovery": true,
+      "restore_parallel_sidecar": false,
+      "startup_actions": {
+        "COLLECT_NEW_TWO_EPISODES": 6,
+        "RESUME_PENDING_PARALLEL_BOUNDARY_BEFORE_NEW_CALLS": 2
+      }
+    }
+  ],
+  "live_activation": false,
+  "native_GPU_throughput_measured": false,
+  "native_root": "/localhome/local-rohing/orch_r118_fresh_exec_cpu_20260915_v4",
+  "new_rejection_cases": [
+    "one episode",
+    "unfinished episode",
+    "inflight native call",
+    "already trained flag",
+    "old generation",
+    "wrong checkpoint",
+    "unpublished but existing submission",
+    "published but missing submission",
+    "call replay flag",
+    "nonterminal row source",
+    "charge reset",
+    "old-generation capture",
+    "held DEV capture",
+    "duplicate source row"
+  ],
+  "previous_candidates_unchanged": {
+    "v2": {
+      "CPU_READY_sha256": "62b34c82fa01d5681bcc6954c57400ada0a51c0d47e447af71fd993dfa8de872",
+      "source_manifest_sha256": "b5ced7c808623a7ea8450982a82974262fae8b7609e1c4bac97857b27c02a350"
+    },
+    "v3": {
+      "CPU_READY_sha256": "548e45a2d5e5f2c82e35d0d63055be20adc3825ae35f14fd54bd388d03aaddb4",
+      "source_manifest_sha256": "8551e5ad811b722e29d9d3aba29a52075dab8d08c37bacb754cbba8bd1caa1c9"
+    }
+  },
+  "production_GPU_launches": 0,
+  "production_actor_signals": 0,
+  "production_read_only": {
+    "COMPLETE_matches_STATE": true,
+    "STATE_sha256": "5ed1cee6c9673f8087fff68a07fd7591e917a001c479a5dbcc4d625bfca5a295",
+    "checkpoint_sha256": "43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d",
+    "generation": 1,
+    "shared_anchor_token_exposures": 35885,
+    "shared_child_token_exposures": 319802,
+    "shared_optimizer_steps": 1884
+  },
+  "proof_hashes": {
+    "COORDINATOR_PROOF.json": "37fe966e9db9fe55d0319d03d8b749425679b0e70ca9e8b78c75ed7c593bb4ce",
+    "FRESH_PROOF.json": "5e3b72b918a910131940379daf568167c279db79ca65b49655ece6736c5f0b22",
+    "LAUNCH_PROOF.json": "a70a64479000f93e1cc3e715e5b5f8a423ba13ce15ecde80a33a1af25346ec99",
+    "MODEL_CLASS_PROOF.json": "a17d305e1bd63ae6a74e0a766b65b8b47b5b52306266f4c993f3d0cfee0577b9"
+  },
+  "schema": "R118_PENDING_CATCHUP_CPU_READY_V1",
+  "scope": "Third exclusive SETTLED_PENDING_CONSOLIDATION startup mode; exact two terminal current-child TRAIN episodes only",
+  "source_file_count": 1125,
+  "source_hashes": {
+    "gpu/orch_r116_shared_parallel_sleep.py": "9924fde5ecbcdda50cf4dc59db9810f94aebe7e8014ff8992674c4976f1e685b",
+    "gpu/orch_r118_parallel_consolidation.py": "c56bb57b69405877a65124b623316f9b8bd769aa8f51db6f2481ff65325c5cdb",
+    "tests/test_orch_r116_shared_parallel_sleep.py": "7cc8f69a67d3993f0a693373f135ebbb7ac1fe01f391beac00ee98d52a756904",
+    "tests/test_orch_r118_parallel_consolidation.py": "d23720d49e8cc4854cfa39c6e91f3616805c7fe217632d18f5c32a66b306b89d"
+  },
+  "source_manifest_sha256": "c66c24b62f83b9d9da7aab5e18e8120759448aa2d9234f3cc2b606b45295f2c4",
+  "status": "CPU_READY_PROSPECTIVE_NOT_ACTIVATED",
+  "tests": {
+    "local_pass": 77,
+    "local_skip": 14,
+    "local_total": 91,
+    "log_sha256": "93d6d5a2b35fb9dca8ef42006a0738cc36802c2287528d0af539d3859c6751c3",
+    "native_pass": 90,
+    "native_skip": 1,
+    "native_total": 91,
+    "skip_reason": "optional live-cohort fixture not selected"
+  }
+}

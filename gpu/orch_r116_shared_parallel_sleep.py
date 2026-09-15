@@ -389,9 +389,16 @@ class ParallelSleep:
         config = getattr(self.engine.model, 'config', None)
         cache = getattr(config, 'use_cache', None)
         checkpointing = getattr(self.engine.model, 'is_gradient_checkpointing', False)
+        input_hook = getattr(self.engine.model, '_require_grads_hook', None)
+        input_hook_added = False
         start = self.cursor
         try:
             def activate():
+                nonlocal input_hook_added
+                if self.device_type == 'cuda':
+                    require(all(callable(getattr(self.engine.model, method, None)) for method in
+                                ('gradient_checkpointing_enable', 'enable_input_require_grads',
+                                 'disable_input_require_grads')), 'native_serial_training_path_required')
                 self.engine.model.train()
                 for name, parameter in self.lora:
                     parameter.requires_grad_(True)
@@ -399,6 +406,9 @@ class ParallelSleep:
                     config.use_cache = False
                 if hasattr(self.engine.model, 'gradient_checkpointing_enable') and not checkpointing:
                     self.engine.model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant': False})
+                if hasattr(self.engine.model, 'enable_input_require_grads') and input_hook is None:
+                    self.engine.model.enable_input_require_grads()
+                    input_hook_added = True
             self._collective('activate', activate)
             while self.cursor < bound:
                 self._collective('lease_or_boundary_check', check or (lambda: None))
@@ -421,6 +431,12 @@ class ParallelSleep:
                 config.use_cache = cache
             if hasattr(self.engine.model, 'gradient_checkpointing_disable') and not checkpointing:
                 self.engine.model.gradient_checkpointing_disable()
+            if input_hook_added:
+                added_hook = getattr(self.engine.model, '_require_grads_hook', None)
+                self.engine.model.disable_input_require_grads()
+                for module in self.engine.model.modules():
+                    if added_hook is not None and module.__dict__.get('_require_grads_hook') is added_hook:
+                        delattr(module, '_require_grads_hook')
         result = self.metrics()
         result['segment_optimizer_steps'] = self.cursor - start
         return result
