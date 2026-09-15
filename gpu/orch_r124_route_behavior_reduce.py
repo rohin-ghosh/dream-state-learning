@@ -8,8 +8,18 @@ import statistics
 from gpu import orch_r124_route_behavior_probe as probe
 
 
-def load_condition(directory, prompts):
+def load_condition(directory, prompts, export):
     complete = probe.read(directory / 'COMPLETE.json')
+    condition = directory.name
+    source_condition = 'AFTER' if condition == 'AFTER_LORA_OFF' else condition
+    loaded = probe.read(directory / 'LOADED.json')
+    probe.require(complete['condition'] == loaded['condition'] == condition, 'actual_condition_binding')
+    probe.require(loaded['adapter']['state_sha256'] == export['checkpoints'][source_condition]['adapter_state_sha256']
+                  and loaded['adapter']['base_sha256'] == probe.BASE_SHA, 'actual_mounted_checkpoint')
+    probe.require(loaded['fresh_process'] and loaded['parent_free'] and loaded['context_free'],
+                  'fresh_parent_free_loaded_stage')
+    probe.require(complete['base_adapter_unchanged'] and complete['prompts_sha256'] == export['prompts_sha256'],
+                  'completed_unchanged_state_and_prompts')
     probe.require(complete['native_calls'] == 32 and complete['parent_calls'] == complete['optimizer_steps'] == 0,
                   'read_only_complete_condition')
     expected = {row['id']: row for row in prompts}
@@ -19,6 +29,7 @@ def load_condition(directory, prompts):
         probe.require(path.parent == directory / 'calls', 'own_condition_capture')
         probe.require(probe.sha(path) == reference['sha256'], 'complete_capture_hash')
         row = probe.read(path)
+        probe.require(row['condition'] == condition, 'capture_condition_binding')
         probe.require(row['id'] in expected and row['id'] not in rows, 'unique_expected_prompt')
         prompt = expected[row['id']]
         probe.require(row['messages_sha256'] == prompt['messages_sha256']
@@ -50,7 +61,22 @@ def paired_rows(conditions):
     return result
 
 
-def summarize(rows):
+def primary_pairs(before_rows, after_rows):
+    probe.require(set(before_rows) == set(after_rows), 'matched_primary_prompt_sets')
+    result = []
+    for identity in sorted(before_rows):
+        before, after = before_rows[identity], after_rows[identity]
+        probe.require(before['messages_sha256'] == after['messages_sha256'], 'same_primary_prompt')
+        result.append(dict(id=identity, style=before['style'], context=before['context'],
+            prompt_sha256=before['messages_sha256'], before=before['metrics'], after=after['metrics'],
+            output_changed=before['response']['raw'] != after['response']['raw'],
+            action_changed=before['metrics']['action'] != after['metrics']['action'],
+            generated_token_delta=after['metrics']['generated_tokens'] - before['metrics']['generated_tokens'],
+            rationale_token_delta=after['metrics']['rationale_tokens'] - before['metrics']['rationale_tokens']))
+    return result
+
+
+def summarize(rows, conditions=('before', 'after', 'after_lora_off')):
     grouped = defaultdict(list)
     for row in rows:
         grouped[row['style'], row['context']].append(row)
@@ -58,9 +84,10 @@ def summarize(rows):
     for (style, context), items in sorted(grouped.items()):
         summary = dict(style=style, context=context, count=len(items),
             outputs_changed=sum(row['output_changed'] for row in items),
-            actions_changed=sum(row['action_changed'] for row in items),
-            after_outputs_different_from_base=sum(row['after_differs_from_base'] for row in items))
-        for condition in ('before', 'after', 'after_lora_off'):
+            actions_changed=sum(row['action_changed'] for row in items))
+        if 'after_lora_off' in conditions:
+            summary['after_outputs_different_from_base'] = sum(row['after_differs_from_base'] for row in items)
+        for condition in conditions:
             summary[condition] = dict(
                 median_generated_tokens=statistics.median(row[condition]['generated_tokens'] for row in items),
                 median_rationale_tokens=statistics.median(row[condition]['rationale_tokens'] for row in items),
@@ -88,8 +115,18 @@ def reduce(plan_path, output):
                    if not (directory / condition / 'COMPLETE.json').exists()]
         if missing:
             result['branches'][branch] = dict(status='INCOMPLETE', missing_conditions=missing)
+            if all(condition not in missing for condition in ('BEFORE', 'AFTER')):
+                primary = {condition: load_condition(directory / condition, prompts, export)
+                           for condition in ('BEFORE', 'AFTER')}
+                rows = primary_pairs(primary['BEFORE'], primary['AFTER'])
+                result['branches'][branch]['within_sleep_comparison'] = dict(
+                    status='VERIFIED_BEFORE_AFTER_ONLY', checkpoints=export['checkpoints'],
+                    prompts_sha256=export['prompts_sha256'], pairs=rows,
+                    summaries=summarize(rows, conditions=('before', 'after')),
+                    base_comparison='UNVERIFIED', causal_parenting_effect='UNPROVEN')
             continue
-        conditions = {condition: load_condition(directory / condition, prompts) for condition in probe.CONDITIONS}
+        conditions = {condition: load_condition(directory / condition, prompts, export)
+                      for condition in probe.CONDITIONS}
         rows = paired_rows(conditions)
         result['branches'][branch] = dict(status='COMPLETE', checkpoints=export['checkpoints'],
             prompts_sha256=export['prompts_sha256'], summaries=summarize(rows), pairs=rows,

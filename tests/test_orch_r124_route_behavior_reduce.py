@@ -1,4 +1,6 @@
 from copy import deepcopy
+from pathlib import Path
+import tempfile
 import unittest
 
 from gpu import orch_r124_route_behavior_reduce as reduce
@@ -39,6 +41,30 @@ class ReductionTests(unittest.TestCase):
         del conditions['AFTER_LORA_OFF']
         with self.assertRaisesRegex(ValueError, 'three_actual'):
             reduce.paired_rows(conditions)
+
+    def test_mislabeled_mounted_checkpoint_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary) / 'AFTER'
+            reduce.probe.write(directory / 'COMPLETE.json', dict(condition='AFTER'))
+            reduce.probe.write(directory / 'LOADED.json', dict(condition='AFTER',
+                adapter=dict(state_sha256='wrong', base_sha256=reduce.probe.BASE_SHA)))
+            export = dict(checkpoints=dict(AFTER=dict(adapter_state_sha256='expected')))
+            with self.assertRaisesRegex(ValueError, 'actual_mounted_checkpoint'):
+                reduce.load_condition(directory, [], export)
+
+    def test_primary_pair_does_not_fabricate_a_missing_base_control(self):
+        conditions = self.conditions()
+        rows = reduce.primary_pairs(conditions['BEFORE'], conditions['AFTER'])
+        self.assertNotIn('after_lora_off', rows[0])
+        summary = reduce.summarize(rows, conditions=('before', 'after'))[0]
+        self.assertNotIn('after_outputs_different_from_base', summary)
+        self.assertNotIn('after_lora_off', summary)
+
+    def test_primary_pair_rejects_different_prompts(self):
+        conditions = self.conditions()
+        conditions['AFTER']['task']['messages_sha256'] = 'different'
+        with self.assertRaisesRegex(ValueError, 'same_primary_prompt'):
+            reduce.primary_pairs(conditions['BEFORE'], conditions['AFTER'])
 
 
 if __name__ == '__main__':

@@ -188,6 +188,13 @@ def metrics(response, tokenizer):
         semantic_coherence='UNJUDGED', retained_improvement='UNPROVEN')
 
 
+def finalize_readonly(loaded):
+    require(loaded.binding.phase == 'sealed_readout' and loaded.optimizer is None,
+            'readout_only_gradient_flag_restore')
+    loaded.engine.model.requires_grad_(False)
+    return loaded.verify_unchanged()
+
+
 def verify_plan(path):
     plan = read(path)
     require(plan['schema'] == SCHEMA and plan['wrapper'] == 'ovx' and plan['physical'] == 7,
@@ -255,7 +262,7 @@ def evaluate(plan_path, branch, condition):
                 path = output / 'calls' / f'{len(responses):03d}.json'
                 write(path, item)
                 responses.append(dict(path=str(path), sha256=sha(path), id=row['id'], metrics=item['metrics']))
-    loaded.verify_unchanged()
+    finalize_readonly(loaded)
     write(output / 'COMPLETE.json', dict(condition=condition, calls=responses, native_calls=32,
         parent_calls=0, optimizer_steps=0, prompts_sha256=export['prompts_sha256'],
         base_adapter_unchanged=True, finished_unix=time.time(), semantic_improvement='UNPROVEN'))

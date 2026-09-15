@@ -3,6 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import Mock
+from types import SimpleNamespace
 
 from gpu import orch_r124_route_behavior_probe as probe
 
@@ -108,6 +109,22 @@ class PublicProbeTests(unittest.TestCase):
         self.assertEqual(probe.BATCH, 4)
         self.assertIn('Briefly explain', probe.EXPLANATION)
         self.assertNotIn('explain', probe.MINIMAL)
+
+    def test_adapter_context_gradient_flags_restored_before_state_check(self):
+        model = Mock()
+        loaded = SimpleNamespace(binding=SimpleNamespace(phase='sealed_readout'), optimizer=None,
+            engine=SimpleNamespace(model=model), verify_unchanged=Mock())
+        loaded.verify_unchanged.side_effect = lambda: model.requires_grad_.assert_called_once_with(False)
+        probe.finalize_readonly(loaded)
+        loaded.verify_unchanged.assert_called_once_with()
+
+    def test_gradient_restore_never_applies_to_training_or_optimizer(self):
+        for phase, optimizer in [('training', None), ('sealed_readout', object())]:
+            loaded = SimpleNamespace(binding=SimpleNamespace(phase=phase), optimizer=optimizer,
+                engine=SimpleNamespace(model=Mock()), verify_unchanged=Mock())
+            with self.assertRaisesRegex(ValueError, 'readout_only'):
+                probe.finalize_readonly(loaded)
+            loaded.engine.model.requires_grad_.assert_not_called()
 
 
 if __name__ == '__main__':
