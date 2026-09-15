@@ -21,7 +21,14 @@ def wrap_row(row, batch_manifest_sha256):
             original_admitted=False, original_semantic_status=row['original_semantic_status'],
             first_person=review['first_person'] if review else None, generated_tokens=row['generated_tokens'],
             register_is_gate=False, length_is_quality_gate=False, independent_review=False,
-            semantic_branching_measured=review is not None, parenting_experience=False),
+            semantic_branching_measured=review is not None, parenting_experience=False,
+            instruction_regime=row['provenance'].get('instruction_regime', 'UNKNOWN'),
+            instruction_amount_tokens=row['provenance'].get('instruction_amount_tokens'),
+            branch_metrics=review.get('branch_metrics') if review else dict(measurement_status='UNKNOWN',
+                semantic_distinct_approaches_considered=None, semantic_distinct_approaches_pursued=None,
+                repetition_failure=None),
+            mechanical_branch_counts=row['provenance'].get('mechanical_branch_counts'),
+            self_reported_branch_counts=row['provenance'].get('self_reported_branch_counts')),
         gold_review=dict(status=review['gold_status'], independent_answer=review['independent_answer'],
                          reason=review['gold_reason']) if review else None)
 

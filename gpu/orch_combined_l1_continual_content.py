@@ -44,6 +44,9 @@ def encode_rows(rows, tokenizer):
 
 
 def validate_entry(entry, exclusions):
+    if entry['eligibility']['policy'] == 'ROHIN98_BATCH_SAMPLED_AUTHOR_REVIEW_V2':
+        from gpu.orch_combined_l1_continual_sampled import validate_entry as validate_sampled
+        return validate_sampled(entry, exclusions)
     assert sha(eligibility_policy.__file__) == POLICY_SHA
     row, eligibility = entry['row'], entry['eligibility']
     assert entry['encoding'] == 'math_content_v2'
@@ -65,6 +68,9 @@ def validate_entry(entry, exclusions):
 
 
 def append(state, packet, exclusions):
+    if packet['schema'] == 'COMBINED_CONTINUAL_SAMPLED_BATCH_V1':
+        from gpu.orch_combined_l1_continual_sampled import append as append_sampled
+        return append_sampled(state, packet, exclusions)
     assert packet['schema'] == 'COMBINED_CONTINUAL_CONTENT_BATCH_V2'
     assert packet['origin'] == 'L1_EXTERNAL_GENERATION' and packet['parenting_experience'] is False
     assert packet['policy_sha256'] == POLICY_SHA and packet['rows_sha256'] == state_policy.digest(packet['rows'])

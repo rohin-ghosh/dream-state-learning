@@ -63,7 +63,8 @@ def snapshot(output, exclusions_path, seen_path, registry_path):
         data = (SOURCE / relative).read_bytes()
         destination = raw / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_bytes(data)
+        with destination.open('xb') as stream:
+            stream.write(data)
         inventory[str(relative)] = hashlib.sha256(data).hexdigest()
         return json.loads(data) if relative.suffix == '.json' else None
 
@@ -115,6 +116,11 @@ def snapshot(output, exclusions_path, seen_path, registry_path):
                 gpu_uuid=loaded[shard]['uuid'], physical_gpu=shard, native_finished_unix=call['finished_unix'],
                 host_sha256=hashlib.sha256(socket.gethostname().encode()).hexdigest(),
                 high_budget=8192, generation_family='math', registered_source_purpose=policy.PURPOSE,
+                instruction_regime=registered.get('instruction_regime', 'UNKNOWN'),
+                instruction_amount_tokens=sum(len(tokenizer.encode(message['content'], add_special_tokens=False))
+                    for position, message in enumerate(call['messages']) if message['role'] == 'system' or
+                    (position > 1 and message['role'] == 'user')),
+                mechanical_branch_counts=None, self_reported_branch_counts=None,
                 source_registry_sha256=sha(registry_path), source_purpose='L1_EXTERNAL_GENERATION',
                 parenting_experience=False, no_parent_teacher_target=True, original_native_stage=call['stage'],
                 serialization_adapter='NODE2_MATH_NATIVE_TO_NEUTRAL_V1_ORIGINAL_RAW_PRESERVED')
@@ -141,7 +147,7 @@ def snapshot(output, exclusions_path, seen_path, registry_path):
         captured_unique_targets=len({policy.text_sha(call.get('response', {}).get('raw', '')) for _, call in captured}),
         selected_first_native_capture_unix=min((row['provenance']['native_finished_unix'] for row in selected), default=None),
         selected_last_native_capture_unix=max((row['provenance']['native_finished_unix'] for row in selected), default=None)))
-    with tarfile.open(str(output) + '.tar.gz', 'w:gz') as archive:
+    with tarfile.open(str(output) + '.tar.gz', 'x:gz') as archive:
         for path in sorted(output.rglob('*')):
             if path.is_file():
                 archive.add(path, arcname=str(path.relative_to(output)), recursive=False)

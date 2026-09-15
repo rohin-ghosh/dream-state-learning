@@ -1,5 +1,69 @@
 # MATH-PIPELINE-L2 — automatic manufacturing-line handoff
 
+## 2026-09-15T04:35Z — new pair actually returning; frozen C2 test complete
+
+New campaign_02_recovery_paired physical4/5 native422532/422533 mounted exact
+state12354524/basea2367093; firstresponses04:33:26.027560/04:33:25.659137Z,
+same rawSHAc0b87e51. At04:35:27 newC0 GUIDED24/56responses,UNPARENTED23/56,
+live; no baseline/sleep completion claim yet. Guardians422205/422206 proceed
+automatically C0→3learningcycles+freshparentfree tests, ownlane admission only.
+Original FROZEN C2experience16/16 COMPLETE+AFTER and C2test56/56 COMPLETE;
+C3next. Eight C1→C2 originalTRAIN behavior sourcejoins plus authorreview recorded;
+newpairs get separate automatic CPU-only observer428492, noextra nativecalls.
+Old learningarms TERMINAL_INTERRUPT, exactrecovery failed atupdate2 before5min;
+nohidden continuity/acceptedstate.35CPUtests PASS. Fullreceipts/status/stageinventory
+underownanalysis REPAIR_STATUS_20260915T0435.md. NoL2intoL1/noepochupgrade/noGitmutation.
+
+## 2026-09-15T04:31Z — old learning terminal; new paired replicate launch
+
+Exact recovery failed BOTH arms atupdate2 after firstloss matched; one extra
+physical reconstructionupdate each, zero generation/parent calls, no state accepted.
+WithinMain's five-minute bound; original GUIDED528/UNPARENTED1456 unsaved updates
+are TERMINAL_INTERRUPT, artifacts unchanged. No hidden continuity claim.
+New campaign_02_recovery_paired starts genuine savedFULL12354524/newoptimizers,
+explicit newreplicate underMain's instruction, same frozen cohort/style/masks.
+Fresh C0test→C1/C2/C3 learning+tests, newrealparents,272calls/arm max underoriginal
+11:39:15native/11:42:15hard deadlines. Existing FROZEN7 C2experience COMPLETE,
+C2readout next; its same-stage frozen control is noncontemporaneous, C0retention
+missing. No new frozen calls.32CPUtests PASS; remoteprovenance PASS; READYdc00f517.
+Launch physical4/5 afterfreshstrictadmission now. Parentservice3175663 alive.
+Fullprotocol/evidence inREPLICATE_PROTOCOL.md/REPLICATE_READY.json; noL2intoL1,
+no foundationupgrade, no furthercombinedcampaign auto-launch, noGit mutation.
+
+## 2026-09-15T04:28Z — FROZEN live; exact reconstruction ready
+
+Actual FROZEN C2native405398 onphysical7, fresh strict admission and LOADED
+basea2367093/state12354524 verified. All8original C2attempts alreadycaptured;
+parent/reflection stage pending, not a completed C2sleep/test claim.
+GUIDED/UNPARENTED unsaved C1states cannot silently reset. Bound zero-generation
+forensic reconstruction source884b901b,29CPUtests PASS, remote exact masks and
+528/1456logged update joins PASS; separate RECOVERY_READY files/receipt under
+own analysis root. Every replayed loss must match exactly or lane stops. No
+original final tensor hash exists; reconstruction is not proof of original
+saved identity. No newcalls/parent/repeated experiences, no lifetime reset.
+Physical4/5 fresh full admission immediately before launch; own-only shutdown.
+Main publishes; no Git mutation. L2 remains quarantined; no epoch upgrade.
+
+## 2026-09-15T04:22Z — exact failure and lane-local repair underway
+
+Campaign FAILED, not between stages:04:03:35 FROZEN C2admission saw actual
+open-device PIDs368694/368695/368696 plus transient identity drift. No waiver.
+SupervisorV2 incorrectly propagated that lane's block and stopped learning
+peers; terminal04:04:00.752302Z. Unknown blocker PIDs had exited by04:16 audit;
+do not label them another owner's job without evidence. GUIDED recorded528
+updates and4completed reflections (+1interrupted); UNPARENTED recorded1456
+updates/all8reflections+222legacy rows. Neither saved adapter/optimizer;
+no completed learning sleep or post-sleep test is claimed for either.
+FROZEN C1experience COMPLETE+AFTER and C1test COMPLETE+AFTER are real.
+Strict independent lane driver nowtested:3CPUtests, allnegative scans preserved,
+no process-owner relaxation, no peer termination on admission block.
+FROZEN C2→test→C3→test resumes without rerunning completed C1. Original
+source/cohort/lifetime remain; Main owns publication, no Git mutation.
+Learning-lane restoration requires source masks + complete logged step order
+and numerical replay verification; it is not yet established, and no reset to
+initialFULL is authorized as a hidden continuation. Epochpolicy read+bound;
+no newfoundation and L2data remains quarantined fromongoingL1.
+
 ## 2026-09-15T03:55Z — FIRST REAL PARENT PLAN + CHILD REPLAY + WRITES
 
 GUIDED real configuredgpt-5.6-sol/high parent plan completed03:53:44.604175Z;

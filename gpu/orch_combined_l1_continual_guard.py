@@ -68,6 +68,9 @@ def take_batch(root, state):
 
 def launch(root, resume=0, recover_partial=False):
     prepared = run.validate(root)
+    from organism_v6 import orch_combined_l1_dev as dev_policy
+    dev_plan = dev_policy.validate_plan(read(root / 'DEV_PLAN.json')) if (root / 'DEV_PLAN.json').exists() else None
+    dev_done = (root / 'DEV_PROGRESS.json').exists()
     assert os.environ.get('CUDA_VISIBLE_DEVICES') == '' and os.geteuid() != 0
     ready, publication = read(root / 'READY.json'), read(root / 'PUBLICATION.json')
     assert ready['prepare_sha256'] == sha(root / 'PREPARE.json') and ready['cpu_tests_passed']
@@ -187,11 +190,34 @@ def launch(root, resume=0, recover_partial=False):
             assert retirement['off_checkpoint_sha256'] == sha(root / 'OFF/checkpoints/000000128/COMMIT.json')
         state = read(root / corpus_path)
         update = resume
-        write(root / 'WINDOWS' / f'{update:09d}.json', dict(start_update=update, end_update=update + policy.CHECKPOINT_UPDATES,
+
+        def ingest(suffix=''):
+            nonlocal state, corpus_path
+            newer = take_batch(root, state)
+            if newer is not state:
+                state = newer
+                corpus_path = f'CORPORA/{state["version"]:06d}.json'
+                assert not (root / corpus_path).exists()
+                write(root / corpus_path, state)
+                receipt = root / 'INGEST_RECEIPTS' / f'{update:09d}{suffix}.json'
+                assert not receipt.exists()
+                write(receipt, dict(update=update, corpus_path=corpus_path, corpus_sha256=sha(root / corpus_path),
+                    ingested=state['ingested'], duplicates=state['duplicates'], rows=len(state['rows']),
+                    reset=False, optimizer_retained=True, time_unix=time.time()))
+
+        def next_end():
+            return dev_policy.next_window(update, dev_plan['first_boundary_update'], dev_done) if dev_plan else update + policy.CHECKPOINT_UPDATES
+
+        if dev_plan and not dev_done:
+            ingest('_DEV_REGISTERED')
+            assert len(state['rows']) == dev_plan['registered_corpus_rows']
+            assert {entry['batch_id'] for entry in state['ingested']} == set(dev_plan['registered_batch_ids'])
+            assert update < dev_plan['first_boundary_update'], 'registered_boundary_already_passed'
+        write(root / 'WINDOWS' / f'{update:09d}.json', dict(start_update=update, end_update=next_end(),
             corpus_path=corpus_path, corpus_sha256=sha(root / corpus_path), stop=False))
         spawn(topology, update)
         while True:
-            target = update + policy.CHECKPOINT_UPDATES
+            target = read(root / 'WINDOWS' / f'{update:09d}.json')['end_update']
             while True:
                 assert time.time() < lifetime['native_deadline_unix'], 'global_deadline'
                 for child, identity in children:
@@ -209,6 +235,7 @@ def launch(root, resume=0, recover_partial=False):
                 reference_tokens=full['reference_tokens'], full_supervised=full['supervised_tokens'],
                 off_supervised=off['supervised_tokens'], time_unix=time.time(), topology=topology))
             terminal = interrupted or time.time() >= lifetime['training_deadline_unix']
+            diagnostic = bool(dev_plan and not dev_done and update == dev_plan['first_boundary_update'] and not terminal)
             auxiliary = run.MATH_ROOT / 'TERMINAL.json'
             gpu6_release = HUBBLE / 'FLOOR_RELEASE_6.json'
             gpu6_ready = gpu6_release.exists() and read(gpu6_release).get('clear') is True
@@ -218,13 +245,23 @@ def launch(root, resume=0, recover_partial=False):
                 if auxiliary.exists() and all(read(auxiliary)['releases'].values()):
                     next_topology = run.TOPOLOGY
             expand = not terminal and next_topology != topology
-            if terminal or expand:
+            if terminal or expand or diagnostic:
                 write(root / 'WINDOWS' / f'{update:09d}.json', dict(stop=True,
-                    reason='terminal_readout' if terminal else 'preserved_checkpoint_topology_expansion'))
+                    reason='terminal_readout' if terminal else 'adaptive_dev_checkpoint' if diagnostic else 'preserved_checkpoint_topology_expansion'))
                 wait_children()
                 if terminal:
                     status = 'TRAINING_CHECKPOINTED'
                     break
+                if diagnostic:
+                    from gpu.orch_combined_l1_dev import launch as launch_dev
+                    evaluation = launch_dev(root, 'INTERMEDIATE', update, lifetime)
+                    dev_done = True
+                    write(root / 'DEV_PROGRESS.json', dict(update=update, evaluation=str(evaluation),
+                        adaptive_dev_not_confirmatory=True, no_score_based_training_decision=True,
+                        completed_unix=time.time()))
+                    if auxiliary.exists() and all(read(auxiliary)['releases'].values()):
+                        next_topology = run.TOPOLOGY
+                    expand = True
                 admit(sorted({index for indexes in next_topology.values() for index in indexes}), f'EXPANSION_ADMISSION_{update:09d}')
                 topology = next_topology
                 write(root / 'TOPOLOGY_EXPANSIONS' / f'{update:09d}.json', dict(update=update, topology=topology,
@@ -234,18 +271,10 @@ def launch(root, resume=0, recover_partial=False):
                 archived = root / 'STOP_WINDOWS' / resumed_window.name
                 archived.parent.mkdir(exist_ok=True)
                 os.rename(resumed_window, archived)
-            newer = take_batch(root, state)
-            if newer is not state:
-                state = newer
-                corpus_path = f'CORPORA/{state["version"]:06d}.json'
-                assert not (root / corpus_path).exists()
-                write(root / corpus_path, state)
-                write(root / 'INGEST_RECEIPTS' / f'{update:09d}.json', dict(update=update,
-                    corpus_path=corpus_path, corpus_sha256=sha(root / corpus_path),
-                    ingested=state['ingested'], duplicates=state['duplicates'], rows=len(state['rows']),
-                    reset=False, optimizer_retained=True, time_unix=time.time()))
+            if not dev_plan or dev_done:
+                ingest()
             write(root / 'WINDOWS' / f'{update:09d}.json', dict(start_update=update,
-                end_update=update + policy.CHECKPOINT_UPDATES, corpus_path=corpus_path,
+                end_update=next_end(), corpus_path=corpus_path,
                 corpus_sha256=sha(root / corpus_path), stop=False))
             if expand:
                 spawn(topology, update)
@@ -254,8 +283,12 @@ def launch(root, resume=0, recover_partial=False):
             write(root / f'TRAIN_RELEASE_{index}.json', report)
             assert report['clear']
         if not interrupted:
-            from gpu.orch_combined_l1_continual_readout import launch_readouts
-            launch_readouts(root, update, lifetime)
+            if dev_plan:
+                from gpu.orch_combined_l1_dev import launch as launch_dev
+                launch_dev(root, 'TERMINAL', update, lifetime)
+            else:
+                from gpu.orch_combined_l1_continual_readout import launch_readouts
+                launch_readouts(root, update, lifetime)
             status = 'COMPLETE'
     except BaseException as error:
         write(root / 'ABORT.json', dict(type=type(error).__name__, message=str(error), time_unix=time.time()))

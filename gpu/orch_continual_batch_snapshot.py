@@ -25,7 +25,8 @@ def sha(path):
 
 
 def write(path, value):
-    Path(path).write_text(json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + '\n')
+    with Path(path).open('x') as stream:
+        stream.write(json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + '\n')
 
 
 def snapshot(output, exclusions_path, seen_path, registry_path):
@@ -60,7 +61,8 @@ def snapshot(output, exclusions_path, seen_path, registry_path):
         policy.require(hashlib.sha256(data).hexdigest() == sha(source), 'source_snapshot_race')
         destination = raw / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_bytes(data)
+        with destination.open('xb') as stream:
+            stream.write(data)
         inventory[str(relative)] = hashlib.sha256(data).hexdigest()
         return read(destination) if relative.suffix == '.json' else None
 
@@ -136,7 +138,7 @@ def snapshot(output, exclusions_path, seen_path, registry_path):
         captured_unique_targets=len({policy.text_sha(call.get('response', {}).get('raw', '')) for _, _, call in captured}),
         selected_first_native_capture_unix=min((row['provenance']['native_finished_unix'] for row in selected), default=None),
         selected_last_native_capture_unix=max((row['provenance']['native_finished_unix'] for row in selected), default=None)))
-    with tarfile.open(str(output) + '.tar.gz', 'w:gz') as archive:
+    with tarfile.open(str(output) + '.tar.gz', 'x:gz') as archive:
         for path in sorted(output.rglob('*')):
             if path.is_file():
                 archive.add(path, arcname=str(path.relative_to(output)), recursive=False)

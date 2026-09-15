@@ -1,6 +1,182 @@
 # TOP-BUDGET RICHNESS — node2 all eight GPUs
 
+## 2026-09-15T04:40Z — Rohin100 prospective V3 allocation and own preGPU plan
+
+Implement owned node2 EXHAUSTION_V3 only, no node1/3 actions.0derivedFULL256
+and1original37ec share EXACT V3 EXHAUSTION_ONLY guidance/cohort, unhinted
+(no supplied problem-solving method).2/3 STEERED_LIGHT degree1;4/5
+STEERED_TWO_PASS degree2;6/7 STEERED_META degree3. Labels express supplied
+guidance, not achieved semantic richness. Everyrow source/base/checkpoint and
+prompt/version/caps binds before dispatch; approaches claimed via explicit
+headings are NOT audited worked-method counts. Semantic status staysUNREVIEWED;
+repetition screen reported separately, rejected alternatives never imply oracle
+FAIL. Existing numeric/code/route verifiers and known TRAIN pools unchanged.
+
+Target16384output/32768context; native frozen config reports32768support.
+Own CPU tokenizer/config/tensor/source checks required, no model/RoPE edit.
+Secondpass must reserve exact remaining context without cropping previousraw:
+effectivecap=min(16384,32768-prompttokens), explicit cap field; overflow has
+no model dispatch. No forcing length or firstperson/register gating.
+
+Rolling migration after CPU/provenance/Builder: old queue dispatch halted via
+existing STOP_AFTER_CALL control interface, existing successor generators stop
+at completed-call boundary with their AFTER check. Partially finished route/
+two-pass task stays incomplete, never replayed/rescued. For original workers
+without a stop marker, use their existing CALLS flock to block nextdispatch,
+wait each exact owned PID's reserved calls fully captured, then pidfd SIGINT
+at quiescent reservation boundary so its finally writes readonly AFTER.
+No interruption of active GPUcalls, optimizer or foreign processes. Preserve
+all old receipts including intentional KeyboardInterrupt cutoffs. New guardian
+uses per-slot verified zombie-or-exited identity plus unchanged AFTER/resolved
+reservations/fresh privileged UUID/proc/CVD CLEAR; no fullroster wait or
+unsafe debugger/inprocess mutation. Allraw stays node-local.
+
+No budgetreset: old successor reservations +V3<=65536, eachphysicalslot<=8192;
+original6144 separate, combined<=71680, inherited19:14:30.743091dispatch and
+19:19:30.743091hardend/128GPUh fixed. V3 fixed cohort order starts at0 for all
+arms, explicitly new versioned TRAIN generation not retry/old-output salvage;
+same source identities retained, no novel-task inflation or improvement claim.
+PreGPU regressions: matched0/1guidance/task identity, unhinted/steered labels,
+budget/secondpass arithmetic, lexical claims distinct semanticlabels, rejection
+not oraclefailure, aggregate remainingcaps, exact quiescent-stop identity and
+unresolved reservations block admission. Own CPU/provenance receipt follows.
+
+## 2026-09-15T04:36Z — urgent VM disk containment, no generation interruption
+
+Implemented/verified04:37:38UTC:34ownCPUtests PASS, including sentinel-rich
+outcomes/errors/terminal/controller/route metadata with no raw copied into
+status. Separate node observer source SHA
+c9575b10fdd8a77849f915799659c177332dce37f5b313099567ed824d84723d;
+`status_compact_0438_source/orch_rich_hot_node2_status.py` beneath native supply
+root. Only36,999-byte COMPACT_LIVE.json reduction returned:4893completed
+captures,7active original/derived/comparator processes,3still awaiting original
+zombie reap, no controller failure. No generator, guardian or exporter stopped
+or modified; no raw pulls or new tar/capsule/CALLforest in this followup.
+Existing raw/previous snapshots untouched. Handoff now explicitly forbids VM
+raw pulls and directs consumers to node-local manifests. No git mutation.
+
+/data verified98%used/~7GBavailable. Effective immediately no additional
+raw pulls, tarballs, capsules or CALLforests to this VM. Existing evidence
+is preserved; Main owns verified migration/cleanup. Observed outgoing Main
+rsync is NOT this worker's raw pull and will not be stopped. No own background
+raw pull observed. Node-local generators/exporters and existing budgets stay
+untouched. Repo receives code/tests and compact manifests/hashes/reductions only.
+
+Bounded non-material observer repair: replace embedded first-call outcomes,
+verifier inputs/expressions and arbitrary failure/terminal documents with
+whitelisted scalar counts/statuses plus exact native path/byte count/SHA256.
+Do not retain response/messages/tokenIDs or exception text in returned status.
+Add regression with raw sentinels nested in outcomes/errors/receipts and run
+own CPU tests before deploying ONLY a new node-local observer copy. No GPU
+launch, source mutation, cleanup or changes to frozen scientific evidence.
+
+## 2026-09-15T04:33:19Z — MAIN / LAPLACE / HUBBLE actual native handoff
+
+Rohin99 slot0 ETA is ZERO/already released: original COMPLETE512 at04:23:40;
+derived585399 first actual CODE04:26:24.097610UTC, not queued. Exact FULL256
+state93a036b9 verified in LOADED and229captured per-row bindings as of04:31:59.
+Comparator585472 first same-task/same-message CODE04:26:23.979516UTC. Both
+nontruncated oracle failures,35/24tokens; original failures never rewritten.
+Both fresh admission receipts privilegedscanner_euid0/CLEAR, exact PID+UID+
+start+boot+CVD identities reverified. No cutoff/interruption was necessary.
+
+Actual04:33:19 counters (completed captures, not unique tasks/qualified rows):
+
+|GPU|Live PID / state|Current-source captures|Trailing10min all-source captures|
+|---|---|---:|---:|
+|0|585399 derivedFULL256|268 (14CODE/13math/241ROUTE actions)|268|
+|1|585472 original37ec successor|96 (7CODE/7math/82ROUTE actions)|96|
+|2|567097 original|467|75|
+|3|NONE; original512 COMPLETE, unreaped zombie567104|512complete original|23|
+|4|567111 original|529|68|
+|5|567118 original|549|79|
+|6|567126 original|523|67|
+|7|567134 original|544|76|
+
+752captures/10minutes =4512rawcaptures/hour across stages/actions, NOT qualified
+rows/hour.7live GPUs, NOT8; GPU3 0MiB/0% at04:30. Originalguardian567070
+short-circuits any(child.poll()) on earlier live2, leaving finished3 Zs;
+successor ready_lane requires PID disappearance.2has45remaining calls at
+04:33:19 (~6min at observed7.5/min, not guaranteed). Thus3awaits natural
+reaping then fresh admission; no claim its GPU is busy or new CODE queued is
+already executed. Killing old guardian would stop other live generators:
+do NOT kill or mutate it/inject a reap. No native/captured execution failure,
+current controller585283 has0/1alive and2–7pending. Retired CPUcontroller's
+SystemExit143 is supersession, not current generator failure.
+
+Available data: derived13completed routeworlds,19/26registered goals;
+comparator6worlds,5/12goals, UNEQUAL prefixes, not a comparison. At04:31:59
+the matched prefix actually available was12identical-prompt CODE/math task
+pairs plus5same-world ROUTE pairs (own histories differ), all included without
+outcome selection. First21CODE captures by04:33:19 all fail bounded oracle;
+no semantic qualification or length/register rejection. Derived/math13 and
+comparator/math7 registered correct are training-source observations only.
+Classification remains CHECKPOINT_DERIVED_NOT_IMPROVED, no held/DEV evidence.
+
+Hubble: explicit source registration REQUESTED through own journal and
+RAW_PUBLISHER_HANDOFF.json; NOT claimed confirmed. Derived immutable publisher
+root `orch_rich_hot_node2_supply_20260915_attempt1/checkpoint99_raw`, separate
+from Floor98/37ec. At04:31:59:6derived manifests/198rows and6comparator
+manifests/73rows fully SHA/bytes/key verified. All UNREVIEWED/notadmitted;
+no parenting or teacher data. Your sampled policy remains separate.
+
+Main staging: exact file list in own analysis CHANGED_PATHS.md; new source/
+tests for checkpoint99/guard/annotation/status plus existing owned Floor98
+source, worker journal, checkpoint99_prep/status_0414Z/status_0432Z evidence.
+33ownCPUtests PASS including source-bound reservation/cap and new three-root
+observer/current failure-path regression. Observer deployed separately, no
+live source/archive edits. FIRST_MATCHED_NATIVE.tar.gz SHA335800fc8843711acc0e76c8c73042440c442d0be18439de3538c9e483c572d7;
+native PREPARE SHA matches4a60d6619c1ccfd0cbfb8d60ffd62f319a9271bfdebeb42ac2f6c14f9012b2f9.
+Immediate next: keep0/1and other originals generating; controller admits
+pending successors after natural exit/reap+fresh scans; Hubble registers
+derived source before any ingest. Original19:19:30.743091UTC hardend and all
+call caps unchanged. No Mainfiles edited this followup, no git mutation.
+
+## 2026-09-15T04:30Z — actual Rohin99 outputs; bounded monitoring repair
+
+No wait/cutoff is needed: original GPU0 naturally completed512calls at
+04:23:40.342UTC; derived PID585399/UID2524/start67476710 launched04:25:27.963.
+Its actual first CODE response finished04:26:24.098UTC, taskB000-P01/ledger_001,
+35tokens, terminal/nontruncated, bounded oracle failure (helper arity).
+ComparatorGPU1 PID585472/UID2524/start67476774 answered identical messages/task
+04:26:23.980UTC,24tokens, terminal/nontruncated, bounded oracle failure
+(unknown identifier). These are available matched native captures, not queued
+comparisons or evidence of improvement. ROUTE raw captures and episode evidence
+also exist. All failures retained; no replay/rescue or original child killed.
+
+Non-material read-only monitoring repair: existing status helper only knows
+original/Floor98 roots and obsolete WATCH_STATUS, so it omits live derived0.
+Extend only owned status helper/tests with explicit derived/control roots;
+regress three-root ownership and current-controller precedence before deployment
+to a separate observer directory. Also test existing derived reservation source
+bindings and cap without GPU/model calls. No running source, verifier, prompt,
+allocation, deadline, budget or scientific contract changes. No preGPU launch
+is part of this observer-only repair; original frozen source stays immutable.
+
 ## 2026-09-15T04:20Z — DIRECT TO LAPLACE / MAIN / HUBBLE: Rohin99 checkpoint source request
+
+**04:25 preGPU source is now VERIFIED, not merely requested.** Laplace's
+already-published immutable FULL256 handoff (created04:17:33) was first
+observed04:20; all native checkpoint files verified on A100 read-only, exact
+adapter+COMMIT copied. State93a036b93e2d41d2715230aaf2f2fa5382f4cbe404c743fd36dc37aba7f7c0d8,
+COMMITa5585d78becd34273c89b82252a29431a728e698a9d279f6a349a0a10bbfbfb9.
+CorpusV2 6aaece07e8cbf24390502efc4d2cad525187509da2001d61ffbe6af4abc75aee,
+initial lineage d13route child; not original37ec or maskedOFF or math764.
+Held scores not accessed/needed; classify CHECKPOINT_DERIVED_NOT_IMPROVED.
+31local tests and3native new tests PASS. Native CPU savedstate/frozenbase/
+identicalroster/context checks PASS. SOURCEec20697317bd1c227e0ee1a0e31f045b6ef48134815382b6c5e697bfd3194638;
+PREPARE4a60d6619c1ccfd0cbfb8d60ffd62f319a9271bfdebeb42ac2f6c14f9012b2f9.
+
+Allocation0derived,1–7unchanged37ec; comparator1 uses exactly the same odd
+task sequence and ORIGINAL_RICH prompts as derived0. Both CODE first, same
+safe existing training pools/exclusions, no outcome-based selection. Every
+derived row binds source state/base/COMMIT/update/sourcecode. Hubble must
+explicitly source-register; no automaticL1admission and no parentingdata.
+Original Floor98 CPUcontroller573172 stopped with zero native children;
+its failed/SystemExit terminal is an authorized controller handoff, not a
+generator failure. Original eight native processes were not stopped. New
+controller will resume seven frozen-source successors and derived0 at each
+natural verified lane boundary with fresh privileged scans. No budgetreset.
 
 Laplace: please provide the first already-saved **continually trained FULL**
 checkpoint now (not initial d13, not masked OFF, not pending math764): exact

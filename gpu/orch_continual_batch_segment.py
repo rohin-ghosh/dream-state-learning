@@ -111,6 +111,8 @@ def prepare():
     names = set(frozen['source_inventory']) | {
         'gpu/orch_continual_batch_segment.py', 'gpu/orch_continual_batch_handoff.py',
         'tests/test_orch_continual_batch_serialization.py', 'tests/test_orch_continual_batch_handoff.py',
+        'tests/test_orch_continual_batch_immutable.py',
+        'gpu/orch_continual_batch_runtime.py', 'tests/test_orch_continual_batch_runtime.py',
         'gpu/__init__.py', 'organism_v6/__init__.py', 'research_loop/__init__.py'}
     pinned = ROOT / 'pinned_source'
     for name in sorted(names):
@@ -158,9 +160,10 @@ def source_notices():
 
 
 def watch():
+    policy.require(publisher.RUNTIME_ROOT is not None, 'use_external_hash_bound_runtime_launcher')
     select_node2()
     prepared = read(ROOT / 'PREPARED.json')
-    policy.require(all(sha(Path(prepared['pinned_source']) / path) == digest
+    policy.require(all(sha(Path(publisher.RUNTIME_SOURCE or prepared['pinned_source']) / path) == digest
                        for path, digest in prepared['source_inventory'].items()), 'pinned_source_drift')
     policy.require(all(sha(ROOT / path) == digest for path, digest in prepared['files'].items()), 'registration_drift')
     ready = read(ROOT / 'READY.json')
@@ -179,6 +182,10 @@ def watch():
     published, totals, targets, qualified, admitted = [], {}, set(), set(), set()
     first_native, last_native, number, reserved = None, None, 0, 0
     while time.time() + 660 < deadline and reserved < 128:
+        if shutil.disk_usage(ROOT).free < 512 * 1024**2:
+            write(ROOT / 'DISK_WAIT.json', dict(observed_unix=time.time(), free_bytes=shutil.disk_usage(ROOT).free))
+            time.sleep(30)
+            continue
         source_notices()
         available = memory_available()
         if available < registration['minimum_available_memory_bytes']:

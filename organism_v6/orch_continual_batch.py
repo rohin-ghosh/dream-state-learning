@@ -115,6 +115,28 @@ def resolve_line_reviews(rows, result):
         if review.get('has_meaningful_branch') is True:
             require(all(isinstance(review.get(key), str) and review[key].strip() and review[key] in row['target']
                         for key in ('branching_alternative', 'branch_rejection_reason')), 'branch_measurement_requires_literal_evidence')
+        branch = review.get('branch_metrics')
+        if branch is not None:
+            if branch['measurement_status'] == 'UNKNOWN':
+                require(branch['semantic_distinct_approaches_considered'] is None and
+                        branch['semantic_distinct_approaches_pursued'] is None and branch['repetition_failure'] is None
+                        and not branch['approaches'], 'unknown_branch_counts_must_remain_unknown')
+            else:
+                require(branch['measurement_status'] == 'MEASURED', 'branch_measurement_status')
+                approaches = branch['approaches']
+                require(len({item['approach_id'] for item in approaches}) == len(approaches), 'duplicate_approach_identity')
+                for item in approaches:
+                    require(bool(item['considered_line_ids']), 'considered_approach_evidence_required')
+                    for key in ('considered_line_ids', 'pursued_line_ids', 'rejection_line_ids'):
+                        require(all(type(identifier) is int and identifier in lines for identifier in item[key]), 'branch_line_binding')
+                    if item['rejected']:
+                        require(item['rejection_reason'].strip() and item['rejection_line_ids'], 'rejected_approach_exact_why_required')
+                require(branch['semantic_distinct_approaches_considered'] == len(approaches) and
+                        branch['semantic_distinct_approaches_pursued'] == sum(bool(item['pursued_line_ids']) for item in approaches),
+                        'branch_count_inventory_mismatch')
+                require(all(type(identifier) is int and identifier in lines for identifier in branch['repetition_line_ids']), 'repetition_evidence_binding')
+                if branch['repetition_failure'] is True:
+                    require(branch['repetition_reason'].strip() and branch['repetition_line_ids'], 'repetition_failure_evidence_required')
         resolved.append(dict(review, evidence_spans=[lines[identifier] for identifier in identifiers],
                              evidence_serialization='IMMUTABLE_TARGET_LINE_IDS_V2'))
     return dict(reviews=resolved)

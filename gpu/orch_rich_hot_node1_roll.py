@@ -53,10 +53,14 @@ def floor():
     node1 = query('gpu/a40r_ssh.sh', [(ORIGINAL, list(range(8)), 'ACTOR_READY.json'),
         (REVISED, list(range(8)), 'ACTOR_READY.json')])
     node2 = query('gpu/ovx_ssh.sh', [('/localhome/local-rohing/orch_rich_hot_node2_20260915_attempt1',
+        list(range(8)), 'LOADED.json'),
+        ('/localhome/local-rohing/orch_rich_hot_node2_floor98_20260915_attempt1',
         list(range(8)), 'LOADED.json')])
     node3 = query('gpu/ovx2_ssh.sh', [('/localhome/local-rohing/orch_rich_hot_node3_20260915_route_v2',
         [3, 4, 5], 'ACTOR_READY.json'),
         ('/localhome/local-rohing/orch_rich_hot_node3_20260915_route_v2_batch02',
+        [3, 4, 5], 'ACTOR_READY.json'),
+        ('/localhome/local-rohing/orch_rich_hot_node3_20260915_route_v2_batch03',
         [3, 4, 5], 'ACTOR_READY.json')])
     counts = {name: len({row['index'] for row in rows if row['ready'] and not row['failed']})
               for name, rows in [('node1', node1), ('node2', node2), ('node3', node3)]}

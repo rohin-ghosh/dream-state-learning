@@ -18,7 +18,7 @@ from organism_v6 import orch_route_parent_campaign as policy
 FIRST = '/tmp/orch_route_parent_campaign_20260915_attempt1'
 
 
-def configurations(qualifications=None):
+def configurations(qualifications=None, dose4to16=False):
     configs = [dict(segment=index, root=f'/tmp/orch_route_parent_campaign_20260915_segment{index}',
         initial_state=policy.INITIAL_STATE, presentations=16,
         cell=dict(style=style, horizon=horizon, tone=tone, provider='existing_claude_cli'))
@@ -34,6 +34,8 @@ def configurations(qualifications=None):
                 and bool(receipt.get('usage')) and bool(receipt.get('envelope_sha256')),
                 'qualified_primary_receipt_required')
             config['cell']['provider'] = model
+    if dose4to16:
+        configs[1]['presentations'] = [4, 16]
     return configs
 
 
@@ -65,21 +67,25 @@ def initialize(config_path, archive, previous):
         previous_lineages_preserved=True, config=config))
 
 
-def serve(host, local, deadline, qualifications_path=None):
+def serve(host, local, deadline, qualifications_path=None, start_segment=2, dose4to16=False):
     local.mkdir(parents=True, exist_ok=False)
     archive = local.parent / 'source_continuation.tar'
     policy.require(archive.is_file(), 'tested_frozen_continuation_source_required')
     tests = local.parent / 'CPU_CONTINUATION.txt'
     policy.require(tests.is_file() and tests.read_text().rstrip().endswith('OK'), 'own_tests_required')
     qualifications = json.loads(Path(qualifications_path).read_text()) if qualifications_path else None
-    configs = configurations(qualifications)
+    policy.require(start_segment in (2, 3), 'bounded_queue_start')
+    configs = [config for config in configurations(qualifications, dose4to16)
+               if config['segment'] >= start_segment]
     runtime = local / 'source_runtime'
     runtime.mkdir()
     subprocess.run(['tar', '-xf', str(archive.resolve()), '-C', str(runtime)], check=True)
     write(local / 'QUEUE.json', dict(configs=configs, deadline_unix=deadline,
-        maximum_new_segments=3, maximum_new_gpu_hours=36, maximum_new_child_calls=7968,
-        maximum_new_parent_invocations=768, maximum_new_provider_components=1536,
-        maximum_new_updates=3072, held_selection=False,
+        maximum_new_segments=len(configs), maximum_new_gpu_hours=12 * len(configs), maximum_new_child_calls=2656 * len(configs),
+        maximum_new_parent_invocations=256 * len(configs), maximum_new_provider_components=512 * len(configs),
+        maximum_new_updates=1024 * len(configs), held_selection=False,
+        dose_interpretation='C1_4_THEN_C2_16_ADDITIONAL_PRESENTATIONS_SAME_LIFE_DIFFERENT_EXPERIENCES_NOT_CAUSAL_CURVE' if dose4to16 else 'FIXED_16',
+        scope='REMAINING_UNLAUNCHED_SEGMENTS_ONLY_NO_CUMULATIVE_BUDGET_INCREASE',
         combined_fit='QUEUED_SEPARATELY_PENDING_EXACT_PROVENANCE_NOT_HELD_SCORES',
         qualified_strengths=qualifications or {},
         provider_selection='PROSPECTIVE_FIXED_ORDER_NOT_HELD_OUTCOMES',
@@ -89,7 +95,7 @@ def serve(host, local, deadline, qualifications_path=None):
         source_sha256=file_sha256(archive), cpu_sha256=file_sha256(tests)))
     remote_archive = '/tmp/orch_route_parent_campaign_20260915_continuation_source.tar'
     subprocess.run(['scp', '-q', str(archive), host + ':' + remote_archive], check=True)
-    previous = FIRST
+    previous = FIRST if start_segment == 2 else f'/tmp/orch_route_parent_campaign_20260915_segment{start_segment - 1}'
     for config in configs:
         segment = local / f'segment{config["segment"]}'
         segment.mkdir()
@@ -140,7 +146,7 @@ def serve(host, local, deadline, qualifications_path=None):
             f'CPU {file_sha256(tests)}, nativeCPU base/tokenizer/222legacy/provenance PASS; '
             f'PREPARE {file_sha256(segment / "PREPARE.json")}; held prospectively frozen '
             f'{prepared["cohort_sha256"]}; fixed d13 route child, matched same-child twins, '
-            f'cell={config["cell"]},16presentations,2cycles/max256updates per sleep, '
+            f'cell={config["cell"]},presentations={config["presentations"]},2cycles/max256updates per sleep, '
             f'4h/12GPUh/2656childcalls/256parentinvocations max512components. '
             'Previous segment completed; next launch requires fresh privileged0/1/2admission, '
             'lease minus6h; no Mainack, no held-based branch, all transcripts preserved.')
@@ -174,12 +180,15 @@ def main():
     parser.add_argument('--archive')
     parser.add_argument('--previous')
     parser.add_argument('--qualifications')
+    parser.add_argument('--start-segment', type=int, default=2)
+    parser.add_argument('--dose4to16', action='store_true')
     args = parser.parse_args()
     if args.initialize:
         initialize(args.initialize, args.archive, args.previous)
     else:
         try:
-            serve(args.host, Path(args.local_root).resolve(), args.deadline, args.qualifications)
+            serve(args.host, Path(args.local_root).resolve(), args.deadline, args.qualifications,
+                  args.start_segment, args.dose4to16)
         except BaseException as error:
             write(Path(args.local_root) / 'FAILED.json', dict(error=str(error), time_unix=time.time()))
             raise

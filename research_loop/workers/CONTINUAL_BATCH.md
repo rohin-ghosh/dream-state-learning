@@ -137,3 +137,39 @@ Main/Laplace: FIRST NEW SEGMENT PUBLICATION LIVE at `research_notes/analysis/orc
 At first publication: actual publisher wall197.251seconds,192unique mechanically verified candidates across3reviewed batches;31sampled individually PASS across them,63batch-admitted targets. These are separate counts, not192or63 individually certified rows. Selected batch native capture03:23:36.747–03:25:05.294UTC; complete source snapshot extends to04:17:57.321UTC. Metrics retain exact first/last native timestamps and duplicate/template counts, no unexplained aggregate source-hour denominator. Publisher continues beyond this publication with original bounds.
 
 Native consumption handoff addressed to Laplace at `research_notes/analysis/orch_continual_batch_20260915_segment2/LAPLACE_INGEST_REQUEST.json`, including prior64+new63 and rolling manifest feed. Read-only native update128 receipt currently confirms only old delta76/readmission473, NOT these sampled batches. Laplace must use its scoped sampled-wrapper consumer branch; no per-row PASS fabrication or from-scratch reset. Source/test/data ready for Main staging in `MAIN_STAGE_READY.json`;29CPUtests PASS, pinned source and READY/Builder receipt published. No git mutation, GPU reservation or handoff-watcher changes.
+
+
+## 2026-09-15T04:25:58.803319+00:00 — integrity correction, SAME publisher resumed
+
+Main reports an interrupted rebase may explain transient missing worktree files and restored only missing tracked files; no worker deletion inferred. This worker performed NO restore, deletion, rebase, commit or other git mutation. The reported batch002 raw member matches RAW_INVENTORY and the preserved SOURCE_SNAPSHOT.tar.gz exactly; extracted view now matches too. Earlier PAUSED_COUNTS was a partial worktree observation while files were missing, NOT authoritative publication totals.
+
+Paused ONLY CPU publisherPID3305113 at04:22:38UTC after missing pinned code/review prompt caused repeated pre-review errors; no provider children remained. Verified restored pinned source, frozen registrations and exact review-instruction hash, then identity-bound SIGCONT at04:24:20UTC. SAME process, original06:10:32UTC deadline and32already-reserved slots preserved; no old batches retried, no quota refunded/reset, no GPU or handoff-watcher signal.
+
+Authoritative current totals: 1 accepted batch(es), 63 published rows; 3 quality-rejected batches; 13 failed batches (infrastructure/missing-file errors, NOT semantic FAIL). 36/128 reserved slots; 12 actual review intent records. Accepted63 consists11individuallyPASS+52UNREVIEWED; pilot64 unchanged and counted separately. Hash-bound manifests, source archive paths, statuses and exact counts at `research_notes/analysis/orch_continual_batch_20260915_segment2_integrity_0422/VERIFIED_COUNTS_AND_ARCHIVES.json`.
+
+[Builder — CONTINUAL_BATCH] FUTURE-ONLY non-material immutability hardening:35CPUtests PASS including duplicate archive entries, prior-file preservation, traversal/symlink rejection, exclusive snapshot JSON writes, exact extracted bytes. New source enforces xb/x archive/member/metadata creation and records ARCHIVE_BINDING.json; existing live pinned segment keeps its already-unique batch/output roots and is NOT hotpatched. Source/test hashes at FUTURE_SOURCE_INVENTORY.json and CPU_TESTS_FUTURE_ONLY.txt in the integrity root. Main may stage these exact owned files; no new provider watcher launched.
+
+
+## 2026-09-15T04:29:14.738014+00:00 — CONTINUAL SEGMENT2
+
+Laplace/Main: NEW sampled-wrapper available `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_continual_batch_20260915_segment2/batch_020_ingest_v2/MANIFEST.json` SHA256 `aaa8d6d3b81751f2999cb142b5100ae94a0c6e07917607764bd4a8a514c26dbb`; 64 batch-eligible rows; sampled PASS / unsampled individually UNREVIEWED preserved. No trainer consumption claimed; append once without reset. Segment continues within its original bound.
+
+
+## 2026-09-15T04:30:16.144045+00:00 — CONTINUAL SEGMENT2
+
+Laplace/Main: NEW sampled-wrapper available `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_continual_batch_20260915_segment2/batch_021_ingest_v2/MANIFEST.json` SHA256 `5cf664a67ac488d94fe97ad4c067caa08924e9e7267eed3716b91270dd4e004c`; 62 batch-eligible rows; sampled PASS / unsampled individually UNREVIEWED preserved. No trainer consumption claimed; append once without reset. Segment continues within its original bound.
+
+
+## 2026-09-15T04:33:31.108660+00:00 — CONTINUAL SEGMENT2
+
+Laplace/Main: NEW sampled-wrapper available `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_continual_batch_20260915_segment2/batch_024_ingest_v2/MANIFEST.json` SHA256 `bb0a666c6d5e580f4a54aee62a071eb4aea7d0ac6c9be8b6c4bd833e8b1d0a41`; 64 batch-eligible rows; sampled PASS / unsampled individually UNREVIEWED preserved. No trainer consumption claimed; append once without reset. Segment continues within its original bound.
+
+
+## 2026-09-15T04:35Z — URGENT disk policy active
+
+Paused ONLY CPU publisherPID3305113 immediately via identity-bound SIGSTOP. No additional snapshot pulls can start; existing two provider children may finish their already-reserved bounded calls.52/128slots reserved, original06:10:32UTC deadline unchanged. No evidence deleted or restored. Repo now reductions/manifests/hashes only; raw/source archives/extraction must remain on native localdisk. Previously staged outside-git mirror design is NOT launched and is superseded where it copies raw/archive payloads to VM/repo. Implementing remote snapshots plus bounded temporary review packets, with native archive SHA references and no CALL forest downloads.
+
+
+## 2026-09-15T04:37:41.172662+00:00 — CONTINUAL SEGMENT2
+
+Laplace/Main: NEW sampled-wrapper available `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_continual_batch_20260915_segment2/batch_026_ingest_v2/MANIFEST.json` SHA256 `2675a6496eab64f96ce936460d47dfeff6b245ce1e60af17867562d4443247bb`; 64 batch-eligible rows; sampled PASS / unsampled individually UNREVIEWED preserved. No trainer consumption claimed; append once without reset. Segment continues within its original bound.

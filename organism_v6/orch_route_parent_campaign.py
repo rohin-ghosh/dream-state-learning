@@ -55,8 +55,22 @@ def cohort(exclusions):
                 seen.update(identifiers)
                 worlds.append(world)
             groups[kind.lower()].append(worlds)
+    if PRESENTATIONS == [4, 16]:
+        for group in groups['train']:
+            for world in group:
+                for task in shared.tasks(world):
+                    choices = [edge for edge in world['edges'] if edge['node'] == task['node']]
+                    reaching = [first for first in choices if any(second['node'] == first['outcome']
+                        and second['outcome'] == task['goal'] for second in world['edges'])]
+                    require(len(choices) == 2 and len(reaching) == 1, 'genuine_two_way_route_choice')
     return dict(groups, initial_state=INITIAL_STATE, caps=CAPS, cell=CELL,
+                presentations_by_cycle=[presentations_for_cycle(cycle) for cycle in (1, 2)],
                 exclusions_sha256=digest(sorted(exclusions)))
+
+
+def presentations_for_cycle(cycle):
+    require(type(cycle) is int and cycle in (1, 2), 'bounded_presentation_cycle')
+    return PRESENTATIONS[cycle - 1] if isinstance(PRESENTATIONS, list) else PRESENTATIONS
 
 
 def validate_initial(receipt):
@@ -142,7 +156,8 @@ def activate(config):
     require(config['segment'] in (2, 3, 4) and config['root'] ==
             f'/tmp/orch_route_parent_campaign_20260915_segment{config["segment"]}', 'bounded_segment_root')
     require(config['initial_state'] == INITIAL_STATE, 'same_fixed_route_child_no_score_selection')
-    require(config['presentations'] == 16, 'declared_next_segment_dose')
+    require(config['presentations'] == 16 or (config['segment'] == 3
+            and config['presentations'] == [4, 16]), 'declared_next_segment_dose')
     require(set(config['cell']) == set(CELL)
             and config['cell']['style'] in ('training-wheels', 'micromanaging', 'creative')
             and config['cell']['horizon'] in ('short', 'long')
@@ -150,5 +165,5 @@ def activate(config):
             and config['cell']['provider'] in ('existing_claude_cli',
                 'claude-haiku-4-5-20251001', 'openai/openai/gpt-6-astra'), 'verified_parent_axes')
     ROOT, PREFIX = config['root'], f'ORCH-ROUTE-PARENT-20260915-SEG{config["segment"]}-'
-    PRESENTATIONS, CELL = config['presentations'], deepcopy(config['cell'])
+    PRESENTATIONS, CELL = deepcopy(config['presentations']), deepcopy(config['cell'])
     CAPS = dict(CAPS, updates_per_sleep=256)

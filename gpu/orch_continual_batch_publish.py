@@ -27,6 +27,9 @@ REVIEW_PARALLEL = 2
 SSH_SCRIPT = 'gpu/a100_ssh.sh'
 SCP_SCRIPT = 'gpu/a100_scp.sh'
 SNAPSHOT_MODULE = 'gpu.orch_continual_batch_snapshot'
+RUNTIME_ROOT = None
+RUNTIME_SOURCE = None
+BRANCH_V3 = False
 
 
 def read(path):
@@ -50,11 +53,45 @@ def command(arguments):
 
 
 def remote(command_text):
+    if RUNTIME_ROOT is not None:
+        return command(['ssh', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=15',
+                        os.environ['ORCH_CONTINUAL_BATCH_SSH_TARGET'], command_text])
     return command(['bash', SSH_SCRIPT, command_text])
 
 
 def upload(paths, destination):
+    if RUNTIME_ROOT is not None:
+        return command(['scp', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=15', *map(str, paths),
+                        os.environ['ORCH_CONTINUAL_BATCH_SSH_TARGET'] + ':' + destination])
     return command(['bash', SCP_SCRIPT, *map(str, paths), 'NODE:' + destination])
+
+
+def download(source, destination):
+    if RUNTIME_ROOT is not None:
+        return command(['scp', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=15',
+                        os.environ['ORCH_CONTINUAL_BATCH_SSH_TARGET'] + ':' + source, str(destination)])
+    return command(['bash', SCP_SCRIPT, 'NODE:' + source, str(destination)])
+
+
+def extract_snapshot_once(archive_path, destination):
+    destination = Path(destination).resolve()
+    with tarfile.open(archive_path) as archive:
+        members, targets = [], set()
+        for member in archive.getmembers():
+            relative = Path(member.name)
+            policy.require(not relative.is_absolute() and '..' not in relative.parts and member.isfile(),
+                           'unsafe_snapshot_archive')
+            target = destination / relative
+            resolved = target.resolve()
+            policy.require(destination in resolved.parents, 'snapshot_path_escape')
+            policy.require(resolved not in targets, 'duplicate_snapshot_member')
+            policy.require(not target.exists() and not target.is_symlink(), 'snapshot_member_already_exists')
+            targets.add(resolved)
+            members.append((member, target))
+        for member, target in members:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open('xb') as stream, archive.extractfile(member) as source:
+                shutil.copyfileobj(source, stream)
 
 
 def schema():
@@ -74,6 +111,19 @@ def schema():
         properties['independent_answer'] = dict(type='string',
             pattern=r'^-?(?:0|[1-9]\d*)(?:\.\d+|/[1-9]\d*)?$',
             description='Exact numeric answer only: 5, -2, 0.25, or 1/3. No units, prose, commas, spaces, plus sign or exponent. Never change an answer to match gold.')
+        review['required'] = list(properties)
+    if BRANCH_V3:
+        line_ids = dict(type='array', items=dict(type='integer', minimum=1))
+        approach = dict(approach_id=string, description=string, considered_line_ids=line_ids,
+            pursued_line_ids=line_ids, rejected=dict(type='boolean'), rejection_reason=string,
+            rejection_line_ids=line_ids)
+        branch = dict(measurement_status=dict(type='string', enum=['MEASURED', 'UNKNOWN']),
+            semantic_distinct_approaches_considered=dict(type=['integer', 'null'], minimum=0),
+            semantic_distinct_approaches_pursued=dict(type=['integer', 'null'], minimum=0),
+            approaches=dict(type='array', items=dict(type='object', properties=approach,
+                required=list(approach), additionalProperties=False)), repetition_failure=dict(type=['boolean', 'null']),
+            repetition_reason=string, repetition_line_ids=line_ids)
+        properties['branch_metrics'] = dict(type='object', properties=branch, required=list(branch), additionalProperties=False)
         review['required'] = list(properties)
     return dict(type='object', properties=dict(reviews=dict(type='array', items=review)),
                 required=['reviews'], additionalProperties=False)
@@ -133,14 +183,12 @@ def collect(number):
         f'PYTHONPATH={REMOTE}/source {PYTHON} -B -m {SNAPSHOT_MODULE} '
         f'--output {location} --exclusions {REMOTE}/EXCLUSIONS.json --seen {REMOTE}/SEEN.json --registry {REMOTE}/SOURCE_REGISTRY.json')
     (batch / 'SNAPSHOT_LOG.txt').write_text(result.stdout + result.stderr)
-    command(['bash', SCP_SCRIPT, 'NODE:' + location + '.tar.gz', str(batch / 'SOURCE_SNAPSHOT.tar.gz')])
-    with tarfile.open(batch / 'SOURCE_SNAPSHOT.tar.gz') as archive:
-        for member in archive.getmembers():
-            relative = Path(member.name)
-            policy.require(not relative.is_absolute() and '..' not in relative.parts and member.isfile(), 'unsafe_snapshot_archive')
-            destination = batch / relative
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            destination.write_bytes(archive.extractfile(member).read())
+    download(location + '.tar.gz', batch / 'SOURCE_SNAPSHOT.tar.gz')
+    extract_snapshot_once(batch / 'SOURCE_SNAPSHOT.tar.gz', batch)
+    with (batch / 'ARCHIVE_BINDING.json').open('x') as stream:
+        json.dump(dict(archive_path=str(batch / 'SOURCE_SNAPSHOT.tar.gz'),
+            archive_sha256=sha(batch / 'SOURCE_SNAPSHOT.tar.gz'), unique_batch_directory=str(batch),
+            extraction_mode='EXCLUSIVE_CREATE_NO_REFRESH_OR_OVERWRITE'), stream, indent=2)
     for name in ('EXCLUSIONS.json', 'REGISTRATION.json', 'SOURCE_REGISTRY.json'):
         shutil.copyfile(ROOT / name, batch / name)
     checks = read(batch / 'SOURCE_CHECKS.json')
@@ -192,6 +240,8 @@ def usage(directory):
 
 
 def review_group(number, group, rows):
+    policy.require(RUNTIME_ROOT is not None and ROOT.resolve().is_relative_to(Path(RUNTIME_ROOT).resolve()),
+                   'future_reviews_require_external_runtime')
     workspace = ROOT / 'review_workspace'
     directory = workspace / f'batch_{number:03d}_{group}'
     node = dict(provider='codex', allow_write=False, provider_attempts=1, provider_attempt_timeout_sec=300,
@@ -278,6 +328,7 @@ def publish(number, batch, selected):
 
 
 def watch():
+    policy.require(RUNTIME_ROOT is not None, 'future_watch_requires_external_runtime')
     prepared = read(ROOT / 'PREPARED.json')
     policy.require(all(sha(REPO / path) == digest for path, digest in prepared['source_inventory'].items()), 'publisher_source_drift')
     policy.require(all(sha(ROOT / path) == digest for path, digest in prepared['files'].items()), 'frozen_registration_drift')

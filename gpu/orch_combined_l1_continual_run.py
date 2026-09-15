@@ -59,6 +59,11 @@ def encode_corpus(rows, tokenizer, cache):
             if entry['encoding'] == 'math_content_v2':
                 from gpu.orch_combined_l1_continual_content import encode_rows as content_encode
                 cache[key] = content_encode([material], tokenizer)[0]
+                if entry['eligibility']['policy'] == 'ROHIN98_BATCH_SAMPLED_AUTHOR_REVIEW_V2':
+                    supplied = material['training_encoding']
+                    assert list(cache[key].input_ids) == supplied['input_ids']
+                    assert list(cache[key].labels) == supplied['labels']
+                    assert len(cache[key].input_ids) == supplied['sequence_length'] <= supplied['context_limit'] == 2048
             else:
                 cache[key] = encoding.encode_rows([material], tokenizer)[0]
         encoded.append(cache[key])
@@ -308,17 +313,21 @@ def train(root, arm, rank, port, resume, world_size=1, index=None):
     write(root / arm / f'RANK{rank}_FINISHED.json', dict(update=state['update'], finished_unix=time.time()))
 
 
-if __name__ == '__main__':
+def argument_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('phase', choices=('prepare', 'train', 'scan'))
     parser.add_argument('--root', type=Path, required=True)
     parser.add_argument('--arm', choices=policy.ARMS)
-    parser.add_argument('--rank', type=int, choices=(0, 1))
+    parser.add_argument('--rank', type=int, choices=(0, 1, 2))
     parser.add_argument('--port', type=int)
     parser.add_argument('--resume', type=Path)
     parser.add_argument('--world-size', type=int, choices=(1, 2, 3), default=1)
     parser.add_argument('--index', type=int, choices=tuple(DEVICES))
-    options = parser.parse_args()
+    return parser
+
+
+if __name__ == '__main__':
+    options = argument_parser().parse_args()
     if options.phase == 'prepare':
         prepare(options.root)
     elif options.phase == 'scan':

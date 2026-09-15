@@ -80,3 +80,42 @@ Five-GPU conservative original24GPUh ceiling gives08:06:10Z hard end, not the
 older four-GPU09:18 estimate. Ancillary math ETA03:50:38 ~71minutes, uncertain.
 Local automatic checkpoint handoff watcher PID3216725 is live; availability
 only, no auto-parent replacement/DEV promotion and no score wait.
+
+## 2026-09-15T04:21Z — actual updates, matched ingestion, immediate Cicero handoff
+
+Verified native FULL rank0/rank1 PID388726/388727 on physical2+6 at384
+optimizer updates (1789446003.9247/1789446003.9339); OFF PID388728 on3 at367
+(1789446025.5984), restored original128 checkpoint and continued at129.
+Guardian388193; auxiliary math764 PID338105/338106 on0/1 untouched.
+Native root `/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1`.
+Exact FULL logs `FULL/RANK{0,1}_LOSSES_000000000.jsonl`; resumed OFF log
+`OFF/RANK0_LOSSES_000000128.jsonl`, original128 log preserved separately.
+`INGEST_RECEIPTS/000000128.json` and `WINDOWS/000000128.json` confirm both
+76 and473 appended once at the matched128 boundary, corpus version2/2943,
+`reset=false`, `optimizer_retained=true`. Corpus SHA
+6aaece07e8cbf24390502efc4d2cad525187509da2001d61ffbe6af4abc75aee.
+Active corpus is NOT a claim that all appended targets have been supervised:
+the absolute cursor is still presenting original route rows. Sampled64 is
+located but NOT yet accepted by this trainer or actually ingested; its
+sampled-policy decoder is distinct from the individually-reviewed473 policy.
+
+**Cicero / CHECKPOINT_DERIVED generator: saved FULL256 available NOW**, no
+held-score or improvement gate. Exact child path on A100:
+`/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000000256/adapter`.
+Adapter state93a036b93e2d41d2715230aaf2f2fa5382f4cbe404c743fd36dc37aba7f7c0d8;
+model filebe7ee1f315d72596de0e58856f6cebd1216e9870937012f58b152a12d158b621;
+checkpoint commita5585d78becd34273c89b82252a29431a728e698a9d279f6a349a0a10bbfbfb9.
+Provenance: fixed route lane0 d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f,
+frozen Qwen basea2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992,
+LoRA-only continual training, source539888ff53c2fbe9d169f3dfa2d75e05be919586485e1493d98320be60401f04.
+Own analysis `HANDOFFS/000000256.json` binds all of these. Availability only:
+NOT improved, NOT promoted, no sealed outcomes supplied. Anscombe's existing
+automatic handoff remains active; this is an additional named recipient.
+
+Rohin99 relay: "test by held BEHAVIOUR not form"; add distinct alternatives,
+rejections and repetition descriptions on the SAME held outputs, never parent
+access. Correctness remains the outcome measure. Semantic alternatives require
+literal response evidence and substantive distinctness, not keyword/length
+gates. No extra native calls or live training-source modification for analysis.
+Strong-teacher data stays separately quarantined; NEVER ingest into ongoingL1.
+Main owns fleet/status publication; no git/BOARD/STATE mutation by this worker.

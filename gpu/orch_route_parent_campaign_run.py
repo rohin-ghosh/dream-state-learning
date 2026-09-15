@@ -40,7 +40,11 @@ class Engine(native.source.Engine):
 
 def verify(root):
     require(root == ROOT and root.resolve() == root, 'own_root_only')
-    prepared = read(root / 'PREPARE.json')
+    from gpu import orch_route_parent_campaign_wire_resume as wire
+
+    prepared = read(root / ('PREPARE_WIRE_RESUME.json' if wire.active() else 'PREPARE.json'))
+    if wire.active():
+        require(prepared['original_prepare_sha256'] == sha(root / 'PREPARE.json'), 'original_prepare_preserved')
     for name, expected in prepared['source_files'].items():
         require(sha(TREE / name) == expected, 'source_drift:' + name)
     for name, expected in prepared['inputs'].items():
@@ -181,6 +185,9 @@ def training_store(root, worlds):
 
 
 def stage(root, arm, cycle, phase):
+    from gpu import orch_route_parent_campaign_wire_resume as wire
+
+    require(not wire.active() or arm == 'FROZEN', 'wire_repair_only_failed_frozen_lane')
     prepared = verify(root)
     index, uuid = DEVICES[arm]
     require(os.environ.get('CUDA_VISIBLE_DEVICES') == uuid, 'exact_cvd')
@@ -197,6 +204,7 @@ def stage(root, arm, cycle, phase):
     write(output / 'BINDING.json', asdict(binding))
     write(output / 'REQUEST.json', dict(arm=arm, cycle=cycle, phase=phase,
         input_adapter=identity.document(), process=native.process_identity(), started_unix=time.time()))
+    resumed = wire.history(root, arm, cycle, phase, output, identity)
 
     def check(label):
         require(time.time() < deadline, 'deadline:' + label)
@@ -212,7 +220,12 @@ def stage(root, arm, cycle, phase):
             if os.environ.get('ROUTE_PARENT_REPROJECT') == '1' and arm != 'FROZEN':
                 collection = repaired_collection(root, arm, cycle, output, identity, collection)
             if arm == 'FROZEN' or not collection['reflections']:
+                write(output / 'DOSE_EXPOSURE.json', dict(planned_presentations=policy.presentations_for_cycle(cycle),
+                    actual_updates=0, actual_new_target_presentations=0, actual_legacy_target_presentations=0,
+                    admitted_reflections=len(collection['reflections']), arm=arm, cycle=cycle,
+                    unchanged_child=True, reason='FROZEN' if arm == 'FROZEN' else 'NO_VALID_REFLECTIONS'))
                 complete(dict(output_adapter=identity.document(), updates=0, fits=0,
+                              planned_presentations=policy.presentations_for_cycle(cycle), actual_new_target_presentations=0,
                               reason='FROZEN' if arm == 'FROZEN' else 'NO_VALID_REFLECTIONS'), native.process_identity())
                 return
         loaded = native.load_stage(binding, model_dir=guardian.MODEL, device='cuda:0', gpu_uuid=uuid,
@@ -282,8 +295,12 @@ def stage(root, arm, cycle, phase):
                                 f'cycle{cycle - 1}/experience').glob('EPISODE_*.json'))] + history
                         telemetry['own_training_history'] = [dict(task=item['task'], messages=item['messages'],
                             outcome=item['correct'], terminal_reason=item['terminal_reason']) for item in history]
-                    record = guided.episode(world, task, generate, store, parent=parent if parented else None,
-                                            telemetry=telemetry, rich_contract=False)
+                    ordinal = len(episodes) + 1
+                    record = wire.cached(resumed, f'EPISODE_{ordinal:02d}.json')
+                    if record is None:
+                        record = guided.episode(world, task, generate, store, parent=parent if parented else None,
+                                                telemetry=telemetry, rich_contract=False)
+                    require(record['task'] == task, 'resumed_task_order_unchanged')
                     episodes.append(record)
                     ordinal = len(episodes)
                     write(output / f'EPISODE_{ordinal:02d}.json', record)
@@ -294,7 +311,9 @@ def stage(root, arm, cycle, phase):
                     if parented:
                         payload = dict(kind='coach', turn=6, task=deepcopy(task), public_messages=deepcopy(prefix),
                                        prior_parent_messages=record['parent_messages'], learner=telemetry)
-                        advice = parent(payload)
+                        advice = wire.advice(resumed, ordinal, payload)
+                        if advice is None:
+                            advice = parent(payload)
                         write(output / f'SLEEP_COACH_{ordinal:02d}.json', advice)
                         private += [item['message'] for item in record['parent_messages'] + [advice]
                                     if item.get('speak') and item.get('message')]
@@ -303,8 +322,13 @@ def stage(root, arm, cycle, phase):
                         messages[-1]['content'] += '\nTRAINING WHEELS (not evidence, do not quote):\n' + '\n'.join(private)
                     reflection = dict(episode_sha256=digest(record), outcome=record['correct'],
                                       all_experience_in_context=True, teacher_supervised=False)
+                    saved_reflection = wire.cached(resumed, f'REFLECTION_{ordinal:02d}.json')
+                    if saved_reflection is not None and not saved_reflection.get('admitted'):
+                        write(output / f'REFLECTION_{ordinal:02d}.json', saved_reflection)
+                        continue
                     try:
-                        response = generate(messages, purpose='outcome_tagged_child_consolidation')
+                        response = saved_reflection['response'] if saved_reflection is not None else generate(
+                            messages, purpose='outcome_tagged_child_consolidation')
                         reflection['response'] = response
                         require(response['terminal'] and not response['truncated'], 'complete_reflection_required')
                         policy.target_gate(response['raw'], private)
@@ -328,6 +352,10 @@ def stage(root, arm, cycle, phase):
                 episode_sha256=digest(record)) for record in episodes]
             write(output / 'LEARNER_BEHAVIOR.json', dict(parent_free=not parented, episodes=behavior,
                 measures=['event_addresses_read', 'route_sequence', 'first_action', 'calls', 'terminal_reason'],
+                initial_choice_point_episodes=len(episodes),
+                actual_initial_route_attempts=sum(any(str(capture.get('command', '')).startswith('ROUTE ')
+                    for capture in record['captures']) for record in episodes),
+                actual_valid_initial_choices=sum(bool(record['routes']) for record in episodes),
                 cycle=cycle, input_adapter=identity.document()))
             if cycle > 1:
                 prior = root / arm / f'cycle{cycle - 1}'
@@ -363,14 +391,15 @@ def train(root, arm, cycle, output, identity, binding, loaded, collection, check
             loaded.engine.tokenizer, private_guidance=tuple(item['private']),
             max_context=policy.CAPS['context'], max_supervised_tokens=513)
         new.extend(encoded)
-    layout = GoalReplayLayout(len(new), policy.PRESENTATIONS)
+    presentations = policy.presentations_for_cycle(cycle)
+    layout = GoalReplayLayout(len(new), presentations)
     require(layout.updates <= policy.CAPS['updates_per_sleep'], 'updates_cap')
     legacy = legacy_encode(root, loaded.engine.tokenizer)
     encoded = native.assemble_replay(legacy, new, layout, legacy_reference=legacy,
                                     eos_token_id=loaded.engine.tokenizer.eos_token_id)
     write(output / 'MASKS.json', [asdict(row) for row in encoded])
     write(output / 'RECIPE.json', dict(shared_run.shared.RECIPE,
-        trajectory_presentations=policy.PRESENTATIONS, layout=layout.manifest('FULL_TARGET')))
+        trajectory_presentations=presentations, layout=layout.manifest('FULL_TARGET')))
     torch = loaded.engine.torch
     torch.manual_seed(shared_run.shared.RECIPE['seed'])
     parameters = native.development.enable_existing_adapter(loaded.engine)
@@ -404,7 +433,14 @@ def train(root, arm, cycle, output, identity, binding, loaded, collection, check
     child = bridge.AdapterIdentity(str(output / 'adapter'), native.state_hash(parameters), identity.base_sha256,
         tuple((path.name, sha(path)) for path in sorted((output / 'adapter').iterdir()) if path.is_file())).verify()
     require(native.observe_adapter(loaded.engine, child) == child, 'saved_adapter_base_verified')
+    write(output / 'DOSE_EXPOSURE.json', dict(planned_presentations=presentations,
+        actual_updates=layout.updates, actual_new_target_presentations=len(new) * presentations,
+        actual_legacy_target_presentations=12 * presentations, admitted_reflections=len(new),
+        actual_row_presentations=list(layout.presentation_counts()), arm=arm, cycle=cycle,
+        input_child=identity.document(), output_child=child.document(), same_life_continuation=cycle > 1,
+        interpretation='EXPLORATORY_ACROSS_CYCLE_NOT_CLEAN_CAUSAL_DOSE_CURVE'))
     complete(dict(output_adapter=child.document(), updates=layout.updates, fits=1,
+                  planned_presentations=presentations, actual_new_target_presentations=len(new) * presentations,
                   all_experience_episodes=collection['all_episode_count'], reflection_targets=len(new)), loaded.process)
 
 
