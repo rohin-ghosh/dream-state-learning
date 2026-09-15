@@ -1,0 +1,248 @@
+{
+  "schema": "MAIN_PARENTING_HOURLY_PARTIAL_V1",
+  "recorded_utc": "2026-09-15T10:04:46.758265+00:00",
+  "census_observed_utc": "2026-09-15T10:02:41.114125+00:00",
+  "census": [
+    {
+      "wrapper": "gpu/a40r_ssh.sh",
+      "resident": 8,
+      "computing_gt10pct": 7
+    },
+    {
+      "wrapper": "gpu/ovx_ssh.sh",
+      "resident": 7,
+      "computing_gt10pct": 3
+    },
+    {
+      "wrapper": "gpu/ovx2_ssh.sh",
+      "resident": 8,
+      "computing_gt10pct": 4
+    },
+    {
+      "wrapper": "gpu/a100_ssh.sh",
+      "resident": 7,
+      "computing_gt10pct": 0
+    },
+    {
+      "wrapper": "gpu/ovx3_ssh.sh",
+      "resident": 4,
+      "computing_gt10pct": 2
+    }
+  ],
+  "resident_total": 34,
+  "computing_total": 16,
+  "physical_capacity": 40,
+  "fable_gated_cards": 4,
+  "available_to_astra_now": 36,
+  "census_caveat": "Instantaneous memory residency/utilization; not sustained GPU-hours or semantic productivity.",
+  "source_receipts": {
+    "research_notes/analysis/orch_r109_route_20260915_attempt1/HOURLY/20260915T100201Z.json": "87a85aad13cc7092111320d81ede117661c4fe6efee8c7658e194723bd7a32fd",
+    "research_notes/analysis/orch_r109_grid_20260915_attempt1/HOURLY/ovx_20260915T100202Z.json": "7747b3cc213fae66a2a7ced5d62b4c8469187e90b49ea67ab6a64bda1be1c3d8",
+    "research_notes/analysis/orch_r109_grid_20260915_attempt1/HOURLY/ovx2_20260915T100203Z.json": "5d495018b29de271fdccce8280f7f2376a407000dd5ac923fda416ab24188cfb",
+    "research_notes/analysis/orch_r109_grid_20260915_attempt1/NODE5_6_HOURLY/ovx3_20260915T100202Z.json": "a06189b279e4f1fbb03c44f6d0bb17a99f21f07bb9dc5f189fbba3ec1e984fcc",
+    "research_notes/analysis/orch_r109_grid_20260915_attempt1/NODE5_7_HOURLY/ovx3_20260915T100201Z.json": "acdf11ed4c1ed7f8975e0718339dd79ddabab7159c71ede2e3a8912a44b2f059",
+    "research_notes/analysis/orch_r108_code_parent_r110_recovery_handoff_20260915_attempt1/COUNTS_20260915T095100Z.json": "8820239b1ea1429cca3093ab4276c80369b51728abcd4866dd0b9106970d5f6d"
+  },
+  "route": [
+    {
+      "lane": "a100_1",
+      "native": 12,
+      "parents": 3,
+      "triples": 2,
+      "train_episodes": 2,
+      "context_or_sleep_cycles": 0,
+      "optimizer_updates": 0,
+      "actual_learned_sleep_receipts": 0,
+      "observed_pids": [
+        1635018
+      ]
+    },
+    {
+      "lane": "a100_2",
+      "native": 17,
+      "parents": 16,
+      "triples": 16,
+      "train_episodes": 1,
+      "context_or_sleep_cycles": 0,
+      "optimizer_updates": 0,
+      "actual_learned_sleep_receipts": 0,
+      "observed_pids": [
+        1346570
+      ]
+    },
+    {
+      "lane": "a100_3",
+      "native": 41,
+      "parents": 4,
+      "triples": 4,
+      "train_episodes": 4,
+      "context_or_sleep_cycles": 1,
+      "optimizer_updates": 48,
+      "actual_learned_sleep_receipts": 1,
+      "observed_pids": [
+        1365986
+      ]
+    },
+    {
+      "lane": "a100_5",
+      "native": 12,
+      "parents": 3,
+      "triples": 2,
+      "train_episodes": 2,
+      "context_or_sleep_cycles": 0,
+      "optimizer_updates": 0,
+      "actual_learned_sleep_receipts": 0,
+      "observed_pids": [
+        1599629
+      ]
+    },
+    {
+      "lane": "a100_6",
+      "native": 51,
+      "parents": 8,
+      "triples": 6,
+      "train_episodes": 4,
+      "context_or_sleep_cycles": 2,
+      "optimizer_updates": 107,
+      "actual_learned_sleep_receipts": 2,
+      "observed_pids": [
+        1366187
+      ]
+    },
+    {
+      "lane": "node3_3",
+      "native": 43,
+      "parents": 14,
+      "triples": 13,
+      "train_episodes": 2,
+      "context_or_sleep_cycles": 1,
+      "optimizer_updates": 0,
+      "actual_learned_sleep_receipts": 0,
+      "observed_pids": [
+        1348501
+      ]
+    },
+    {
+      "lane": "node1_7",
+      "native": 184,
+      "parents": 9,
+      "triples": 9,
+      "train_episodes": 10,
+      "context_or_sleep_cycles": 4,
+      "optimizer_updates": 0,
+      "actual_learned_sleep_receipts": 0,
+      "observed_pids": [
+        85235
+      ]
+    }
+  ],
+  "grid": [
+    {
+      "source": "research_notes/analysis/orch_r109_grid_20260915_attempt1/HOURLY/ovx_20260915T100202Z.json",
+      "native": 129,
+      "parents": 49,
+      "triples": 48,
+      "intervention_classes": {
+        "metacognition": 3,
+        "perception": 45,
+        "reflection": 1
+      },
+      "metacognitive_context_conversations": 1,
+      "weight_learning": false
+    },
+    {
+      "source": "research_notes/analysis/orch_r109_grid_20260915_attempt1/HOURLY/ovx2_20260915T100203Z.json",
+      "native": 331,
+      "parents": 16,
+      "triples": 16,
+      "intervention_classes": {
+        "metacognition": 2,
+        "perception": 10,
+        "reflection": 4
+      },
+      "metacognitive_context_conversations": 5,
+      "weight_learning": false
+    },
+    {
+      "source": "research_notes/analysis/orch_r109_grid_20260915_attempt1/NODE5_6_HOURLY/ovx3_20260915T100202Z.json",
+      "native": 63,
+      "parents": 31,
+      "triples": 31,
+      "intervention_classes": {
+        "metacognition": 5,
+        "perception": 26
+      },
+      "metacognitive_context_conversations": 0,
+      "weight_learning": false
+    },
+    {
+      "source": "research_notes/analysis/orch_r109_grid_20260915_attempt1/NODE5_7_HOURLY/ovx3_20260915T100201Z.json",
+      "native": 214,
+      "parents": 11,
+      "triples": 11,
+      "intervention_classes": {
+        "metacognition": 1,
+        "perception": 8,
+        "reflection": 2
+      },
+      "metacognitive_context_conversations": 3,
+      "weight_learning": false
+    }
+  ],
+  "code": [
+    {
+      "arm": "a100_segment",
+      "native_complete": 10,
+      "parent_complete": 3,
+      "triples": 3,
+      "cycles_complete": 0,
+      "context_distillation_cycles": 0,
+      "missing_intervention_continuations": 1
+    },
+    {
+      "arm": "node3_episode",
+      "native_complete": 23,
+      "parent_complete": 5,
+      "triples": 5,
+      "cycles_complete": 1,
+      "context_distillation_cycles": 1,
+      "missing_intervention_continuations": 2
+    },
+    {
+      "arm": "node5_segment",
+      "native_complete": 3,
+      "parent_complete": 1,
+      "triples": 1,
+      "cycles_complete": 0,
+      "context_distillation_cycles": 0,
+      "missing_intervention_continuations": 0
+    },
+    {
+      "arm": "node5_episode",
+      "native_complete": 6,
+      "parent_complete": 1,
+      "triples": 1,
+      "cycles_complete": 0,
+      "context_distillation_cycles": 0,
+      "missing_intervention_continuations": 0
+    }
+  ],
+  "code_observation_utc": "2026-09-15T09:51:00Z",
+  "math_current_count": "NOT_REFRESHED_IN_THIS_PARTIAL_SNAPSHOT",
+  "main_learned_cycle1": {
+    "native": 8,
+    "parents": 3,
+    "triples": 3,
+    "updates": 113,
+    "completed_fresh_readout": 1
+  },
+  "semantic_changes": "UNASSESSED; no retained-gain claim",
+  "six_item_progress": {
+    "claude_broker": "Implementation/tests in progress; no Fable provider launched",
+    "missing_handling": "Existing code recovery live; new paired route/math/grid integration in progress",
+    "handover": "0\u20133 released; Fable explicitly gated R112. Astra4\u20137 continue until receiver-ready cycle boundary",
+    "replicated_parents": "New matched pair manifests/prompts being bound; old lanes not retroactively matched",
+    "measurement_bindings": "Shared Qwen14B greedy prompt ad9d7284e11c3203172942af46dacddb1fa5f800f124d2c4bb0f66eced281255; held sets/sleep0 pending per pair; judge not dispatched",
+    "exchange": "Created and live append-only; verified grid completed-cycle entries already pushed"
+  }
+}
