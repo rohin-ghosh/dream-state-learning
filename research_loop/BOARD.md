@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-15T21:57Z **R133 allocated ovx3physical7:**96 fresh public code calls, actual feedback vs neutral review, FULL18404 vs base;65local+65nativeCPUtestsPASS, fresh admission still required,23:00UTCwall. **R132:**FULL3newtargetpresentations/521tokens; CONTROL boundary pending. **R135:**a40r0/2 context overflows confirmed; CPU recovery preparation, no restart yet. No learning/saturation claim.
+
 - [Builder Main] 2026-09-15T21:41Z **R130 complete, no demonstrated learning:**96calls independently recounted; both-correct pairs SEED2/16, GUIDED3/16, UNPARENTED0/16; all contrast intervals include zero. Supplied-evidence diagnostic only. **F1 current latest-six:**1COMPLETE+5SILENT, all Fable-served; substituted application unproven, no safeguard rerouting.143CPUtestsPASS. Compact result/status receipts linked in COORDINATION.
 
 - [Builder Main] 2026-09-15T21:29Z **R132 feed25rows published:**3new verified own-math targets under unchanged gates; existing paired trainer handoff preserves state. Common adoption boundary19,300/firstupdate19,301, actual C4 selections still unverified. Main9tests PASS; no persistence/retention claim. Native/source receipts in R109L1 analysis.

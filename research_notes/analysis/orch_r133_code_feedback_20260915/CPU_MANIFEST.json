@@ -1,0 +1,58 @@
+{
+  "schema": "R133_CPU_HANDOFF_MANIFEST_V1",
+  "date_utc": "2026-09-15",
+  "status": "CPU_READY_NO_NATIVE_AUTHORIZATION",
+  "native_calls": 0,
+  "gpu_reserved": false,
+  "gpu_launched": false,
+  "tests_passed": 22,
+  "preview_status": "PREVIEW_NOT_LAUNCHABLE",
+  "production_exclusions_supplied": false,
+  "exclusion_coverage": "R119_LINEAGE_DECLARED_CODE_INVENTORIES",
+  "inventory_ref_contract": "1-16 unique non-sensitive uppercase/digit/underscore ref labels with source projection SHA256; Main verifies the projections and union; collector pins the complete hash-only exclusion document and regenerates filtered tasks",
+  "native_api": "collect(root, authorization, *, expected_gpu_uuid)",
+  "authorization_validation_api": "validate_authorization(root, authorization, now, *, expected_gpu_uuid)",
+  "host_identity": "host_sha256 = hashlib.sha256(socket.gethostname().encode('utf-8')).hexdigest(); never raw hostname",
+  "gpu_identity": "expected_gpu_uuid is mandatory and independently pinned by Main's R130 guard; authorization and CUDA_VISIBLE_DEVICES must equal it",
+  "current_preview": "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview",
+  "superseded_preview": "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview_before_main_revision",
+  "runtime_import_versions": {
+    "torch": "2.13.0+cu130",
+    "transformers": "5.5.3",
+    "peft": "0.20.0",
+    "tokenizers": "0.22.2"
+  },
+  "runtime_notes": "Actual weights/CUDA not exercised. Existing native runtime pins, full transitive repository imports, local model/tokenizer and fixed18404 adapter files required. Main supplies custody, bounded inventories, immutable adapter identity, deadlines and external watchdog.",
+  "read_boundary": "Only existing public code contracts, grammar/scorer implementation and loader source; no fixed32/held task contents, labels, raw evaluation responses, FINAL data or evaluation IDs read/copied.",
+  "shared_files_changed": false,
+  "git_operations": false,
+  "Main_owned_files_untouched": [
+    "gpu/orch_r133_code_feedback_guard.py",
+    "Main's guard tests, source pins, parent notice and publication files"
+  ],
+  "exact_write_allowlist": [
+    "gpu/orch_r133_code_feedback_collection.py",
+    "tests/test_orch_r133_code_feedback_collection.py",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/PROTOCOL.md",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/CPU_RESULTS.json",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/CPU_MANIFEST.json",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview/PLAN.json",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview/TASKS.json",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview/EXCLUSIONS.json",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview_before_main_revision/PLAN.json",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview_before_main_revision/TASKS.json",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview_before_main_revision/EXCLUSIONS.json"
+  ],
+  "sha256": {
+    "gpu/orch_r133_code_feedback_collection.py": "1b382863fe2c13addce6693e12b6f77d4ee70afaace79a945d0c57620ccb3085",
+    "tests/test_orch_r133_code_feedback_collection.py": "71e61bd82b7c411a035e1a5f90daa5ce387bfbd4c931b5832b11f76610739d8f",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/CPU_RESULTS.json": "841c9e5fa164391d2320ca4f100aa1beb3d4f58a142114208519e55c7fbd1cf7",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/PROTOCOL.md": "5b6934536b1de82001619b464d81193b15040f102dd43c36eef2409ace1118fe",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview/EXCLUSIONS.json": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview/PLAN.json": "6a3cc1cb9832deb0e7f05bb72a6733febe80f30264533a3b36b9b6fbcca8e096",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview/TASKS.json": "ea7b42a48a4d87c5e570102a2f9f41fba0a3db626e250fa7d3bf80f52e74d7a8",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview_before_main_revision/EXCLUSIONS.json": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview_before_main_revision/PLAN.json": "95fa87f7091455b1cf8706bc78fe9d08df2e6c3f8131e4bc1ae3210100e842b1",
+    "research_notes/analysis/orch_r133_code_feedback_20260915/cpu_preview_before_main_revision/TASKS.json": "ea7b42a48a4d87c5e570102a2f9f41fba0a3db626e250fa7d3bf80f52e74d7a8"
+  }
+}

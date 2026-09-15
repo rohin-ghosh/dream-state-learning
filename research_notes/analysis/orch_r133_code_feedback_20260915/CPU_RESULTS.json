@@ -1,0 +1,43 @@
+{
+  "schema": "R133_CPU_RESULTS_V1",
+  "date_utc": "2026-09-15",
+  "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python3 tests/test_orch_r133_code_feedback_collection.py -v",
+  "exit_code": 0,
+  "tests_run": 22,
+  "failures": 0,
+  "errors": 0,
+  "elapsed_seconds_reported": 3.187,
+  "native_calls": 0,
+  "gpu_reservations": 0,
+  "gpu_launches": 0,
+  "external_parent_or_provider_calls": 0,
+  "real_weights_loaded": false,
+  "production_exclusions_supplied": false,
+  "launch_ready": false,
+  "test_coverage": [
+    "fresh balanced 16-task public TRAIN generation without legacy task builder access",
+    "bounded declared inventory refs/hashes plus specification, task-ID and used-seed exclusions; no global-universe claim",
+    "independent positive and negative semantics across 48 synthetic tasks and finite probes",
+    "bounded recursive AST interpreter; no arbitrary eval, exec or compile dispatch",
+    "strict expression JSON, syntax, helper types, arity and resource bounds",
+    "actual attempted-expression output and parser/sandbox/runtime failures, not expected answers",
+    "model payload excludes labels, verification inputs, task IDs and model-state labels",
+    "fabricated or contaminated feedback rejected; neutral fork receives no receipt",
+    "formatting-only versus task-semantic, interface and unclassified recoveries",
+    "shared raw draft and call-file provenance; exact 96-call CPU mock schedules",
+    "exclusive single-use markers and fixed quota; failed calls reserved and never replayed",
+    "refusals and cap hits retained without rerouting or retry; deadline stop",
+    "CPU preview blocks native entry; source/task tampering rejected",
+    "actual native loader entry point tested with CPU doubles, empty context and fixed binding",
+    "noLoRA module state and frozen weights checked; adapter restored after failure",
+    "Main allocation, release, checkpoint, raw-UTF8 host SHA256, guard-supplied exact UUID, deadline and plan bindings fail closed",
+    "raw hostname fields rejected and hostname absent from native authorization receipt",
+    "CPU CLI rejects collect command"
+  ],
+  "environment_notes": [
+    "python alias absent; used python3",
+    "system python3 has no pytest; ran the unittest-compatible test file directly without dependency installation",
+    "initial CPU pass exposed two test-fixture issues (AST-size example and malformed context-manager double); both corrected before the reported successful run",
+    "temporary native-like episode files contain synthetic CPU responses only and were removed by TemporaryDirectory"
+  ]
+}
