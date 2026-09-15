@@ -49,7 +49,7 @@ for name, b in B.items():
         new_any = True
     state[name] = marker
 json.dump(digests, open(f'{cyc}/digests.json', 'w'))
-json.dump(state, open(state_p, 'w'))
+json.dump(state, open(f'{cyc}/state_candidate.json', 'w'))
 open(f'{cyc}/NEW_SLEEP', 'w').write('1' if new_any else '0')
 PY
 if [ "$(cat "$CYC/NEW_SLEEP")" != "1" ]; then log "no new Fable sleep/cycle since last run; no head-parent call"; exit 0; fi
@@ -68,12 +68,14 @@ if os.path.exists(exch):
 msg = {'current_fields': fields, 'digests': json.load(open(cyc + '/digests.json')), 'astra_last_two_exchange_entries': astra}
 open(cyc + '/user.json', 'w').write(json.dumps(msg)[:900000])
 PY
-SYSTEM="$(cat "$HERE/head_parent.md"; echo; echo; cat "$PRINC")"
+cat "$HERE/head_parent.md" > "$CYC/system.md"; echo >> "$CYC/system.md"; cat "$PRINC" >> "$CYC/system.md"
 log "head parent call (cap ${CAP_S}s, budget ${BUDGET_USD} USD) -> $CYC"
+# prompt via stdin and system prompt via file: the earlier argv form failed with "Argument list too long" (rc=126)
 ( cd "$COURIER_REPO" && run_with_timeout "$CAP_S" "$CLAUDE_BIN" -p --model claude-fable-5-1 --effort max --output-format json \
     --tools "" --no-session-persistence --max-turns 1 --max-budget-usd "$BUDGET_USD" \
-    --system-prompt "$SYSTEM" "$(cat "$CYC/user.json")" ) > "$CYC/reply.json" 2> "$CYC/reply.err" < /dev/null
+    --system-prompt-file "$CYC/system.md" < "$CYC/user.json" ) > "$CYC/reply.json" 2> "$CYC/reply.err"
 rc=$?; [ $rc -eq 0 ] || { log "head parent call failed rc=$rc ($(head -c 200 "$CYC/reply.err" | tr '\n' ' '))"; exit 3; }
+cp "$CYC/state_candidate.json" "$STATE"
 
 # 3. validate + apply fields (STYLE/FOCUS/REFLECTION only), write exchange entries
 python3 - "$SW/prompts" "$CYC" "$COURIER_REPO" "$TS" <<'PY'
