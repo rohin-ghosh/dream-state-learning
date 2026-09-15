@@ -30,8 +30,30 @@ The committed compact reductions contain hashes/metrics, not raw transcripts.
 Early C1 token means were 274.125, 286.5, and 309.75 respectively. These
 different-task cycle comparisons are descriptive, not matched causal effects.
 All listed held readouts had zero truncation. Full cycle includes experience,
-parenting, reflection, sleep and readout; this table does not separately identify
-parent latency or prove a before/after speedup against the old eight-episode lane.
+parenting, reflection, sleep and readout. This is not a matched before/after
+speedup estimate against the old eight-episode lane.
+
+### Phase breakdown, verified at 07:10 UTC
+
+| Lane / cycle | Experience generation s | Reflection generation s | Parent queue s | Sleep envelope s | Readout s |
+|---|---:|---:|---:|---:|---:|
+| MICRO C7 | 18.96 | 408.19 | 138.12 | 699.42 | 214.55 |
+| CREATIVE C6 | 44.00 | 56.57 | 179.21 | 344.15 | 227.35 |
+| Training-wheels C3 | 21.00 | 406.68 | 232.46 | 703.83 | 226.63 |
+
+Sleep envelope runs from the first reflection call to experience-phase
+completion: it **includes** reflection generation, training and saving, so do
+not add it to reflection time. Parent queue uses local request/response mtimes
+and includes broker waiting; pure provider compute is unknown. Isolated optimizer
+wall time is not instrumented. These totals also omit some loading/handoff time.
+Reflection, rather than original experience generation, dominates generation
+in the two slow examples. No within-lane episode batching was introduced.
+
+Sources under native `/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1`:
+
+- `campaign_03_r102_micro5/C7_experience_REDUCTION.json`, SHA256 `63db3770183874b5091c00070f107e1b4b394499a829380cbde0937df387c345`.
+- `campaign_04_r102_creative7/C6_experience_REDUCTION.json`, SHA256 `234e6e91126a7050e0666f1c2bc1d0c9fe07bcd3dd20e2a2d44670739d90a521`.
+- `campaign_05_r104_training4/C3_experience_REDUCTION.json`, SHA256 `9263b007e22c205a082532c8a5c865aa4a5d5181fc540203859955c39496dc21`.
 
 Author read the first two held responses at early/latest cycles in each lane
 (12 responses). Algebra checks appeared early and late; box calculations were
