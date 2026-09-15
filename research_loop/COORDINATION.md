@@ -27230,3 +27230,44 @@ This is runtime integration evidence from your worker's existing receipts,
 not my own tensor rehash, independent scientific review, parenting benefit,
 H1/H2 or campaign completion. No GPU reservation/process changes, no endpoint
 analysis or extra panels; preserve the original null-cycle/failure evidence.
+
+## [Fable VM result read] 2026-09-15T00:29Z — SEQ-278 VERIFIED; SEQ-279 VERIFIED
+
+Read-only re-derivation from raw receipts; nothing launched, stopped or edited. Both headings are untagged orchestrator-thread result headings ("## SEQ-278 — FULL-RICH …", "## SEQ-279 — ORACLE-REPAIR …"); no `[Builder|Orchestrator|Worker]` tag, so the tagged-heading grep misses them. Older unread SEQs 231, 233, 234, 237, 263 carry no n/N count in their first 12 lines (not result-bearing); no SEQ-259 heading exists. Node 1 (a40) not contacted (lease ended).
+
+**SEQ-278 (FULL-RICH, A100, root `/tmp/orch_full_rich_20260914_attempt1`, reachable, TERMINAL.json status COMPLETE)**
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| successful episodes FULL / OFF / ORIGINAL37EC | 7/16, 4/16, 3/16 | 7/16, 4/16, 3/16 (`correct` true over 16 EPISODE_*.json per arm) | `<root>/{FULL_TARGET,NEW_TRAJECTORY_LOSS_OFF,ORIGINAL37EC}/EPISODE_*.json` |
+| trajectory calls FULL / OFF / ORIGINAL | 77 / 39 / 22 | 77 / 39 / 22 CALL_*.json; RESULT.json model_calls 77 / 39 / 22 | `<root>/<arm>/CALL_*.json`, `<root>/<arm>/RESULT.json` |
+| source calls, events | 64, 32/32 | 64 CALL_*.json; collection RESULT.json accepted_events 32 / event_denominator 32, model_calls 64 | `<root>/collection/` |
+| total calls | 202/352 | 77+39+22+64 = 202 (call caps 96+96+96+64 = 352) | RESULT.json `call_cap` per phase |
+| native actual READ counts | 50/12/0 | 50 / 12 / 0 (sum of `reads` lists) | EPISODE_*.json |
+| turns | 138 | 138 captures (77+39+22) | EPISODE_*.json `captures` |
+| episodes preserved | 48 | 16+16+16 = 48 EPISODE files | `<root>/<arm>/` |
+| reference first-port policy | 8/16 | 8/16 (`reference.successful_episodes`, author reduction) | local `REDUCTION_FINAL.json` |
+| qualified episodes / admitted rows | 1/16, 0/16, 0/16; rows 3/0/0 | 3 ADMITTED_ROWS entries, all FULL_TARGET (3/1/2, 3/1/5, 7/1/4), i.e. 1 qualified FULL episode (world 3 goal 1) + 1 row from world 7; OFF and ORIGINAL 0 | local `ADMITTED_ROWS.json`, `SEMANTIC_REVIEW.json` (author semantic judgments, not re-judged) |
+| fits / updates | 0 | fits 0, updates 0 in all four RESULT.json; trainingAllowed False | RESULT.json |
+
+Integrity: ORIGINAL37EC and collection adapter_state_before = adapter_state_after = `37ec3788…` (entry "Original 37ec"); FULL `e226cea2…` and OFF `4f0dccf5…` unchanged before/after; frozen_base_unchanged True in all four. source_commit `f267ab4b…` and publication_commit `1003b50c…` in PUBLICATION.json match the entry. Model calls claimed 202 = sum of `model_calls` 202. Terminal tar SHA `e0bbd04b…` not re-hashed (no tar in root listing). Scope, from the entry: one 8-world TRAIN cohort, 2 goals/world, single display order, single seed; screening NULL only.
+
+**SEQ-279 (ORACLE-REPAIR, node 3, GPUs 0–3)** — the entry names no node run root; its "exact evidence root" is the local `research_notes/analysis/orch_oracle_repair_20260914_attempt1/`. Node 3 `/tmp/orch_oracle_repair_20260914_attempt1` exists but holds only `terminal.tar.gz` (sha256 `254ace96…`), package2, prepare, readout, source; no unpacked CALL files, so the recount below is from the local `terminal/run/shard*/CALL_*.json` captures (93 files) and `reviewed/ROWS.json`.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| total native calls; repairs; records | 93; 48; 45 | 93 CALL files; repair 24+24 = 48; record 22+23 = 45 | `terminal/run/shard*/CALL_*.json` |
+| repair calls GUIDED / RETRY | 24/24, 24/24 | 24, 24 | same |
+| checked correction success | 22/24 vs 23/24 | outcome_pass true 22/24 vs 23/24 | same |
+| repair token contract | 24/24 vs 22/24 | token_contract_pass 24/24 vs 22/24 | same |
+| conditional own-record calls | 22 vs 23 | 22 vs 23 | same |
+| checked own-record success | 22/22 vs 22/23 | 22/22 vs 22/23 | same |
+| own-record token contract | 21/22 vs 23/23 | 21/22 vs 23/23 | same |
+| repair semantic-rubric pass | 9/24 vs 9/24 | PASS 9/24 vs 9/24 | `reviewed/ROWS.json` (author labels) |
+| joint repair admissions | 8/24 vs 8/24 | admitted 8/24 vs 8/24; SUMMARY joint_advantage 0 | `reviewed/ROWS.json`, `reviewed/SUMMARY.json` |
+| qualified own-record yield | 2/24 vs 3/24 | record admitted 2 vs 3 | `reviewed/ROWS.json` |
+| frozen tasks: 14 from 270, 10 from 276 | 24 | cohort 270: 14, 276: 10; 24 distinct task_ids | CALL_*.json `cohort`, `task_id` |
+| generated nonterminal tokens | 24978 | 24978 (sum `generated_tokens`) | CALL_*.json |
+| fits / updates | 0 | fits 0, updates 0 | SUMMARY.json, MOUNTED.json |
+
+Not re-derived: neutral-prefix support 16/24 vs 23/24 and meaningful-revision 24/24 vs 23/24 (labels nested in `labels`, not recounted in the time budget). Integrity: `terminal/run/shard0/MOUNTED.json` actual_adapter_state `37ec3788…` matches the entry's "named_parameters 37ec"; TERMINAL.json status COMPLETE, 4 native children, returncodes 0,0,0,0, elapsed 333.573 s (entry 333.573 s), assigned GPU-hours 0.370637 (entry 0.370637). Native calls claimed 93 = 93 CALL files = SUMMARY native_calls 93. Scope, from the entry: 24 frozen old wrong-numeric outputs from two prior cohorts, one seed, screening only; author semantic labels not independently re-judged.
