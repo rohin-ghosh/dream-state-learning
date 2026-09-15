@@ -734,3 +734,65 @@ injected_parent_ids is empty. No newmodelcall, FINALread or rawtext export.
 The existing percycle diagnostic saves rawbefore separate scoring; full
 raw/token capture is not evidence of unexpressed internal reasoning or
 semantic improvement. Main owns Git and brokerhandoff publication.
+
+R126 FINAL PRE-ARM September15 19:43UTC: v1/v2 CPUcandidates preserved,
+neither armed. Final v3 adds explicit postload identity equality with actual
+predecessor AFTER, lease-reserve-safe final hash verification, and kernel
+PID/UID/start/boot comparison: argv-only drift NEVER proves actor exit.
+43localPASS4.80s;30nativePASS5.02s(ovx2)/5.94s(a40r). Nativeinterpreter
+/localhome/local-rohing/v2/venv/bin/python imports real pytest9.1.1 through
+/localhome/local-rohing/orch_r108_pytest_support_0854, not a venv installation.
+Exact harness/interpreter/args are now in each v3 CPU_TESTS receipt.
+R125 requested revalidation independently34localPASS2.53s using cached uv
+pytest environment and17node5PASS0.49s using vendored F1pytest support.
+R125_TEST_COMMANDS.md and R125_PYTEST_HARNESS_PROVENANCE.json record exact
+copyable commands; original R125 test/source/native receipts unchanged.
+
+Seven v3 preparations bind old exactplan/source/lease identities and shared
+v2-frozen64chunk cohorts (8192TRAIN/16384HELD tasks,61440native/8192parent
+prospective increments perlane). Nothing is regenerated atarm/C100. Original
+exclusions1ad93815114ebdcf88b04b679229cfdbe60715ff4526627b810a9fc04f49de88
+bind fixed32/all64anchors+knownheld metadata and600originaltask identities,
+prompt/question hashes. v2cohorts remain node-only and immutable; v3 records
+reuse exactrefs rather than overwrite preparation. Newparent prearm manifests
+identify future PLAN/PARENT_HANDOFF and newqueue, parentTTL600/nonblocking;
+no duplicate/providerprocess is started by CODE. Hubble/currentparentowner
+must use those exact futurebindings for transport after predecessor exit.
+
+Own CPU/provenance gate passed; now authorizes ONLY seven node-local CPU
+custodians to await actualnaturalC100 release then strictfreshadmission and
+samefrozenmodel reload. Not waiting for C100 to claim/stage custody; not a
+claim of successor GPU activity before boundary. Current7actors untouched.
+No node5 changes, no optimizer/sleepconversion, no Git. Main owns publication.
+
+R126 ACTUAL ARMED September15 19:42:43–46UTC, verified19:44:10–12UTC:
+ovx2_3/4/5/6 CPUcustodians3092311/3092387/3092402/3092427;
+a40r4/5/6 CPUcustodians1995625/1995641/1995673. Allseven exactidentities alive,
+allseven originalnative+guardian identities ALSO alive, zero successorGPU
+dispatches and zero newparentprocesses. Currentcompletedcycles56/55/53/55
+onovx2,52/50/57ona40r: NOT claiming C100 reached. Watchers now holdactual
+custody and automatically validate/release/export/scan/reload atnaturalC100;
+there is no remaining manual GPUlaunch or per-experiment ack gate.
+
+Native root on eachhost:
+/localhome/local-rohing/orch_r126_code_capacity_20260915_v3/{ovx2_3,ovx2_4,ovx2_5,ovx2_6,a40r_4,a40r_5,a40r_6}
+using onlythe entries allocated on thathost. Each hasactual ARMED.json,
+CPU_DISPATCH.json with exact command+PID/UID/start/boot/argv hash, frozenARM,
+PARENT_PREARM; no prospectivePLAN is mislabelled actualuntilrelease.
+Compact R126_OVX2_ARMED.json/R126_A40R_ARMED.json and *_ARMED_VERIFIED.json
+contain exactreferences and liveness evidence. Existingleasehardwalls preserved:
+ovx2 September17 18:00UTC; a40r September18 18:00UTC; TRAIN120seconds earlier.
+The maximum4096additionalcycles/61440native/8192parent remain finite ceilings,
+not an unbounded or reset budget; residentchunk rollover continues untilwall
+or that declaredcapacity, not another short100cycle life.
+
+Final frozen source d32303b47954f9fda5093f284e7bc2441d6b93e3955c8f929e4e6649d0b54149;
+test6e6983959023c7427faabc0a9457386659b84ce946f9a0aa6cff839cfa39a43e.
+v3 CPU_TESTS hashes065d6a260beaa20991796ef1f744529e9068631486cd0c7c42bf84c6f7af5204(ovx2),
+31aab436733d7281ae38985ca9e1ec1ad24e0200b1f64697f2418ff4b03e2658(a40r).
+No liveactor bytes changed; v1/v2 preparations remain untouched.
+Parenttransport rollover remains explicitly Hubble/currentparentowner's work:
+PARENT_PREARM references are available NOW, PARENT_HANDOFF+actualPLAN appear
+onlyafteractualrelease. Native never waits for provider; old pendingresponses
+are checked atnextTRAINboundary with originalTTL and dispositioncopies, not
+retried or silently overwritten. CODE has not spawned a duplicate broker.
