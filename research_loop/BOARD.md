@@ -1,5 +1,16 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] Continual terminal readout — 2026-09-15 08:47 UTC
+
+416/416 parent-free terminal calls complete. Held math behavior: FULL/NEW-LABELS-
+MASKED OFF token medians189/230.5, means227.45/258.47, one1536-token ceiling each;
+first4-per-arm author audit finds0departures-and-returns and0grounded rejections,
+60outputs/arm semantically unassessed. Secondary accuracy54/64 vs40/64; do not
+confuse masked-trained OFF with adapter-disabled OFF24/32 in capability panel.
+117extra historical physical OFF updates remain disclosed. Scoped A1002/3/6
+release clear; current L1 training COMPLETED at8932, not ongoing ingestion.
+See `research_notes/analysis/orch_r108_continual_terminal_result_20260915.md`.
+
 ## [Builder] R108 allocation / continual capability — 2026-09-15 08:28 UTC
 
 Destination14L1/18parenting, >=12parenting floor, no productive mid-run
@@ -994,3 +1005,23 @@ Raw/native root /localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1
 Hubble owns future selector: consume only future verified ANCHOR_MANIFEST.json
 and exact anchors_sha256, not capability outputs or earlier route-only registry.
 trainingAllowed=false/fit_ready=false until separate authorized selector/fit.
+
+## [Builder / Anscombe] 2026-09-15T08:41:49.163700+00:00 — R108 new BASE treatments4/5 READY and allocation
+
+Main explicitly approves node3physical4 GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4 and5 GPU-bc211959-642d-664b-3581-42a0dbe434e9; new independent BASE lineages, not a silent continuation.4=perception/metacognitive-calibration/multi-angle-reflection,long/supportive;5=persistence/curiosity/goal-metagoal/action/affective-value/reflection,short/supportive. Intervene on sourced difficulties, not by providing the answer. Actual frozen Qwen BASE a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992; noadapter/nooptimizer/no sleep-weight training. Main alone owns L1guided-learning integration. Current0/1/2/3 source/prompt/dose untouched.
+
+Exact added budget+56native/+8verified Astra parents;28/4 per lane,2cycles each with2sequentialoriginals,2childchecks,2ownreflections,8freshparent-freeheld/cycle. Aggregate2274native/66parents; no counter reset.30min/lane,max1GPUhcombined,original math24GPUh ceiling and unchanged11:39:15native/11:42:15hard upper bounds. No retries/batching/C0baseline/newcontrol; one campaign control triple only, temporal/task/state-limited descriptive comparison. Reflection-only Pasteur guard1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb preserves actualEOS/cap/repetition/rawprefix distinctions; semantic helpfulness UNKNOWN until author review.
+
+87nodeCPUtests PASS, including both full two-cycle native seams, actual missing-metadata engine contract, full source exclusions/mutually disjoint20taskcohorts, unchanged original/held prompts, reflection multi-angle additions, negative/missing behavior retention and explicit child-state/intervention/subsequent-behavior triples. No automatic semantic labels/fit claims. Newcohorts chosen before outcomes:2926priorIDs/2918priorquestionhashes;4/5mutuallydisjoint with40newselected tasks total. Entire listed prior source pools excluded, not only successes. Cached tokenizer/basefiles verified CPU, no downloads/newbase.
+
+Prior BASEgenerators4/5 RESULTstatusCOMPLETE and originalnative+guardianPIDs absent; historical strict RELEASE4/5 bound, never using0MiB alone. Fresh privileged full/proc/owner/start/UUID/CVD/minor/service admission required each new native process; bounded600s polling within original segmentdeadline; no peer signals. Private brokers use exact frozen local provider hashes and node-only verified transcript archives, bounded/tmpbuffer cleanup. Every experienced episode retains sourced traces and outcome tags; no L2toL1.
+
+Root /localhome/local-rohing/orch_math_feedback_uptake_r108_20260915_attempt1
+FAMILY_READY e96db450af09e3d8d72c690cb7c7d73088206a3b2f2e9cc210287314d72c83b9
+READY4 ffec609fd4878d3c0d52a762dfef511f44f2a971b6279930bb83c599b2bf861d
+READY5 9c77c29e94759ff19f8f25f55b3573b71c1e647c5f16e578fc0c394eb306f191
+Full source/library/cohort/provenance hashes in READY/FAMILY_READY. This dated own CPU/provenance receipt authorizes launch after fresh strict admission, no further Mainack.
+
+Main exclusion handoff: native R108_EXCLUSION_REGISTRY.json in the above root; SHA2563f37c05ac85d85139f937903dfd5eedc555524d993ee9109122ae0295b154c09,2966IDs/2958questionhashes,20inputmanifests,includesbothnew4/5TRAIN+HELD. Ancestor contract covers L1allsource/readout,L2allsource/readout,retention; later concurrent sources must be separately unioned. Raw rows never pulled toVM; compact R108_45_EXCLUSION_REGISTRY_MANIFEST.json carries path/hash/counts. Previous proposal was PLANONLY; this new receipt explicitly activates the approved addition and version boundary.
+
+[Builder] 2026-09-15T08:42:46.562476+00:00 R108_ROUTE_PARENT newfamily attempt2 exactallocation BEFOREdispatch: A100 physical2 UUIDGPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296/kernelminor1; physical3 UUIDGPU-631f3e6a-fbce-0ec5-b934-f08dd64634f8/kernelminor0; physical6 UUIDGPU-6de3930d-104a-f969-7d36-009271368dd1/kernelminor5. Styles2=perception-curiosity/supportive;3=persistence-goal-regulation/supportive;6=metacognition-reflective-value/supportive. Userreleased2/3/6 now actionable; protect0/1/4/5/7, original1/5andalloldledgers unchanged. Explicitseparate +420native/+12actualAstra maximum (140native+4parent,2cycles,2sequentialTRAINepisodes/arm;fresh4parent-freeheld/cycle); combinedold+new ceilings700native/20parent, noreset/replay/controltriples/refill. Started2026-09-15T08:41:38.054285+00:00, nativecutoff2026-09-15T10:09:38.054285+00:00, hardend2026-09-15T10:11:38.054285+00:00;90min/1.5GPUh each, existinglease6hmargin. FrozenBASE7Btensora2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992 actualCPUhash/noadapter/zeroPEFTtrainable PASS; context32768/output<=8192remaining, fullpromptassertion/input_truncatedFalse, exactreflectionhelper1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb. Own72local/67nativeCPUtests PASS includingactualminimalEngine andregressions.112sourcefiles pinned;11541excludedIDs/2800freshmetadatafiles acrossfourwrappers+repo pluspriorunion; threefreshmutuallydisjointlineages. PREPAREDsha54520398edb59857ed5588df12b4fdd2dec5965f295bca53d56f0c1903ec90ae. R108failure-groundedtypedinterventions/noanswers; everychildstate-parent-behaviortriple preserved, functional/helpfulnessUNKNOWNpendingaudit; noheldtoparent/optimizer/LoRA/L2toL1/retainedlearningclaim. Root=/localhome/local-rohing/orch_r107_route_parent_20260915_attempt2; source/tests/compactonlypublish. FreshfleetmemoryCLEAR2/3/6; fullprivilegedUUID/minor/proc/CVD CLEAR remainsmandatory ineachguard immediatelybeforelaunch. NoMainackgate. Exactsource/metadata allowlist followsSTAGE_READY; no git mutation.

@@ -1,0 +1,410 @@
+{
+  "arms": {
+    "FULL": {
+      "R106_first4": [
+        {
+          "considered_alternatives": 0,
+          "departures_returns": 0,
+          "grounded_rejections": 0,
+          "independent_of_accuracy": true,
+          "methods": 1,
+          "mid_line_checks": 0,
+          "scope": "AUTHOR_FIRST4_ONLY_NOT_WHOLE_COHORT",
+          "terminal_checks": 0
+        },
+        {
+          "considered_alternatives": 0,
+          "departures_returns": 0,
+          "grounded_rejections": 0,
+          "independent_of_accuracy": true,
+          "methods": 1,
+          "mid_line_checks": 0,
+          "scope": "AUTHOR_FIRST4_ONLY_NOT_WHOLE_COHORT",
+          "terminal_checks": 0
+        },
+        {
+          "considered_alternatives": 0,
+          "departures_returns": 0,
+          "grounded_rejections": 0,
+          "independent_of_accuracy": true,
+          "methods": 1,
+          "mid_line_checks": 0,
+          "scope": "AUTHOR_FIRST4_ONLY_NOT_WHOLE_COHORT",
+          "terminal_checks": 0
+        },
+        {
+          "considered_alternatives": 0,
+          "departures_returns": 0,
+          "grounded_rejections": 0,
+          "independent_of_accuracy": true,
+          "methods": 1,
+          "mid_line_checks": 0,
+          "scope": "AUTHOR_FIRST4_ONLY_NOT_WHOLE_COHORT",
+          "terminal_checks": 0
+        }
+      ],
+      "adapter": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "55071a8dba6da1a337307d26644c4e1d8089fa42d47bf5c3904bffe0971f7d4f"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f1770f6c9179bf26f046386b25f8e3fd8950aebc602b5b371485c9bef84cfd0"
+          ]
+        ],
+        "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000008932/adapter",
+        "state_sha256": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1"
+      },
+      "annotation_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R108_TERMINAL8932_AUTHOR_FINAL/FULL_ANNOTATIONS.json",
+      "annotation_sha256": "8911fc0660607c5b2f594d2f38d62f585c907ac0e4019556e46bd3b1298566ce",
+      "checkpoint_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000008932",
+      "checkpoint_sha256": "e4122dd6f760431fabfd106a7fdd1f6c06b52fe3a16012f0ba865eb2df88bb51",
+      "jobs": {
+        "legacy": {
+          "calls_digest": "f12363cb21c6cc9e89bc44ca95b21391189ba9fe7d7b04c79f86406de2f20d9e",
+          "complete_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/FULL/legacy/readout/COMPLETE.json",
+          "complete_sha256": "d01f6187dc691181cabbc2306f03fe410c575d1a6446ac19e95e9387ef9eddce",
+          "completed": 48,
+          "finished_unix": 1789459964.5256982,
+          "loaded_sha256": "8d2b414f49726fa5dc63db216e2f089749d078e7aace7453539bb71aa5dd4e92",
+          "result": {
+            "audit": {
+              "fault": {
+                "correct": 8,
+                "denominator": 8
+              },
+              "overall": {
+                "correct": 16,
+                "denominator": 16
+              },
+              "true": {
+                "correct": 8,
+                "denominator": 8
+              }
+            },
+            "retention": {
+              "0": {
+                "correct": 16,
+                "denominator": 16
+              },
+              "8": {
+                "correct": 16,
+                "denominator": 16
+              }
+            }
+          }
+        },
+        "math": {
+          "calls_digest": "6deea459125921882546af16d7c73ce1648c473cae1ec2cf556f6fecdd08e355",
+          "complete_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/FULL/math/readout/COMPLETE.json",
+          "complete_sha256": "d148c83476acbbe7d59426c2e2d76915f1e02d1722ce52aba95e34b45df93cc7",
+          "completed": 64,
+          "finished_unix": 1789460170.6640666,
+          "loaded_sha256": "d9be5312f18c585c3d0b88e0f68a74f8effe6a9aa00e12422eb30c8de834f733",
+          "result": {
+            "correct": 54,
+            "denominator": 64
+          }
+        },
+        "route": {
+          "calls_digest": "c8a52c4450a7d58043ac4f5286cdd8df11c0eb49c0957dbb97d767d7f744f40d",
+          "complete_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/FULL/route/readout/COMPLETE.json",
+          "complete_sha256": "8834cf3397d82c43e7493af7507bd257f1b22f1b000c6d350cf92107f041e380",
+          "completed": 96,
+          "finished_unix": 1789459634.072878,
+          "loaded_sha256": "64db6127a00c3c0f25d04a0fa8e6479ad325e1c6ab6ffa5c6ed26efe2c8b531e",
+          "result": {
+            "condition": "OWN_TEXT",
+            "correct": 15,
+            "denominator": 16,
+            "paired_correct": 7,
+            "paired_denominator": 8
+          }
+        }
+      },
+      "math": {
+        "accuracy_secondary": {
+          "completed_denominator": 64,
+          "correct": 54
+        },
+        "ceiling": 1,
+        "coherence_counts": {
+          "COHERENT": 3,
+          "MIXED": 1
+        },
+        "completed": 64,
+        "distinct_paths_considered": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "eos": 63,
+        "failed": 0,
+        "generated_tokens": {
+          "maximum": 1536,
+          "mean": 227.453125,
+          "measured": 64,
+          "median": 189.0,
+          "minimum": 74
+        },
+        "grounded_rejections": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "improvement_claim": false,
+        "mean_lexical_repetition_rate": 0.06935038310290532,
+        "native_calls": 0,
+        "parent_access": false,
+        "raw_text_included": false,
+        "readout": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/FULL/math/readout",
+        "report_order": [
+          "richness",
+          "accuracy"
+        ],
+        "reserved": 64,
+        "schema": "COMBINED_L1_RICHNESS_FIRST_COMPACT_V2",
+        "semantic_review_sample": "first4 prospective positions per arm, author full-output review; not whole-cohort estimate",
+        "semantic_reviewed": 4,
+        "semantic_unassessed": 60
+      },
+      "math_report_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R108_TERMINAL8932_AUTHOR_FINAL/FULL_MATH_REPORT.json",
+      "math_report_sha256": "dd799ccc383ded008afb71936283ec4ccde1653790087d1bb6d220fa939b948c",
+      "optimizer_sha256": "d46169507a723725ea7eac3bb3a0d94802796e68b7e93dc08451e298e5a85325",
+      "rng_sha256": {
+        "rank0.pt": "c8e980cc3793b2b7783e434c381793aad0bc191d580cf3dcf3cb48578d7a0ff3",
+        "rank1.pt": "4b58310094653a8f846ca62a60a73495ca9829b981baec3ab20ce501a256a4b9",
+        "rank2.pt": "8f60d2339b7088ea16dd0065e16594626a760416f12d2442b513fafea2cfa826"
+      }
+    },
+    "OFF": {
+      "R106_first4": [
+        {
+          "considered_alternatives": 0,
+          "departures_returns": 0,
+          "grounded_rejections": 0,
+          "independent_of_accuracy": true,
+          "methods": 1,
+          "mid_line_checks": 0,
+          "scope": "AUTHOR_FIRST4_ONLY_NOT_WHOLE_COHORT",
+          "terminal_checks": 0
+        },
+        {
+          "considered_alternatives": 0,
+          "departures_returns": 0,
+          "grounded_rejections": 0,
+          "independent_of_accuracy": true,
+          "methods": 1,
+          "mid_line_checks": 0,
+          "scope": "AUTHOR_FIRST4_ONLY_NOT_WHOLE_COHORT",
+          "terminal_checks": 0
+        },
+        {
+          "considered_alternatives": 0,
+          "departures_returns": 0,
+          "grounded_rejections": 0,
+          "independent_of_accuracy": true,
+          "methods": 1,
+          "mid_line_checks": 0,
+          "scope": "AUTHOR_FIRST4_ONLY_NOT_WHOLE_COHORT",
+          "terminal_checks": 0
+        },
+        {
+          "considered_alternatives": 0,
+          "departures_returns": 0,
+          "grounded_rejections": 0,
+          "independent_of_accuracy": true,
+          "methods": 1,
+          "mid_line_checks": 0,
+          "scope": "AUTHOR_FIRST4_ONLY_NOT_WHOLE_COHORT",
+          "terminal_checks": 0
+        }
+      ],
+      "adapter": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "1f109e3b5d90b2abcd43284af61870ba30cb59989b8a0c2607bf555ad32b7733"
+          ],
+          [
+            "adapter_model.safetensors",
+            "40f47b263637c03d9b01c022ec5ee50e225a7c16428141aa65cc2f1cdba0e8c0"
+          ]
+        ],
+        "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/checkpoints/000008932/adapter",
+        "state_sha256": "af8a8298c5e19e587bf2bb9bde6a6a7ce84ef99a77b12b4fbf5f6b44b0987643"
+      },
+      "annotation_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R108_TERMINAL8932_AUTHOR_FINAL/OFF_ANNOTATIONS.json",
+      "annotation_sha256": "ff85463ec1baaa799fe52ea6d22a275e5b87e5c917fff782fd2925379fc00c1f",
+      "checkpoint_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/checkpoints/000008932",
+      "checkpoint_sha256": "e66d91669c8784e744229b4e55beca0f6863daf9ad94afd77ded47a389839460",
+      "jobs": {
+        "legacy": {
+          "calls_digest": "cacb96b7b473e754807c99372c852c1f9c4bf5bde0f2cb4ff5f4f4c12400ee01",
+          "complete_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/OFF/legacy/readout/COMPLETE.json",
+          "complete_sha256": "9d9efe9626de15d42c601c3b847c0627d691d67cc069f7c4d68d87119547a76d",
+          "completed": 48,
+          "finished_unix": 1789460151.6835656,
+          "loaded_sha256": "ae8708477fb88a62da10de1ca4f7d5689ba2e0c0348361b7a2efbd8197326f57",
+          "result": {
+            "audit": {
+              "fault": {
+                "correct": 8,
+                "denominator": 8
+              },
+              "overall": {
+                "correct": 16,
+                "denominator": 16
+              },
+              "true": {
+                "correct": 8,
+                "denominator": 8
+              }
+            },
+            "retention": {
+              "0": {
+                "correct": 16,
+                "denominator": 16
+              },
+              "8": {
+                "correct": 16,
+                "denominator": 16
+              }
+            }
+          }
+        },
+        "math": {
+          "calls_digest": "5f31788236f16331c5c8d07fac2d72080e16bfe45336e1d198190f3d45db5536",
+          "complete_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/OFF/math/readout/COMPLETE.json",
+          "complete_sha256": "d9d31dab0665dfd01f6f58c8ece83b6fe82e2e3bc50fb9434dec8834b2ad126e",
+          "completed": 64,
+          "finished_unix": 1789460413.4303033,
+          "loaded_sha256": "25d82d451053c980fabe415976b4a821a7c85589017811bd4082ef8873d9135b",
+          "result": {
+            "correct": 40,
+            "denominator": 64
+          }
+        },
+        "route": {
+          "calls_digest": "e7afe7e108a67bebe22bd92e5914928b3b160f40effba8073003c0e9ba839df6",
+          "complete_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/OFF/route/readout/COMPLETE.json",
+          "complete_sha256": "c2ba8da80f57ce01f64bae892aaea8f800463f0f6053270b10f6651beac4c863",
+          "completed": 96,
+          "finished_unix": 1789459787.0471833,
+          "loaded_sha256": "fb1932c3c87a670a8dc5bb2c9ff44d0506b1a739f78bb389d0f05f7facbee574",
+          "result": {
+            "condition": "OWN_TEXT",
+            "correct": 16,
+            "denominator": 16,
+            "paired_correct": 8,
+            "paired_denominator": 8
+          }
+        }
+      },
+      "math": {
+        "accuracy_secondary": {
+          "completed_denominator": 64,
+          "correct": 40
+        },
+        "ceiling": 1,
+        "coherence_counts": {
+          "COHERENT": 4
+        },
+        "completed": 64,
+        "distinct_paths_considered": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "eos": 63,
+        "failed": 0,
+        "generated_tokens": {
+          "maximum": 1536,
+          "mean": 258.46875,
+          "measured": 64,
+          "median": 230.5,
+          "minimum": 74
+        },
+        "grounded_rejections": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "improvement_claim": false,
+        "mean_lexical_repetition_rate": 0.08052104078519458,
+        "native_calls": 0,
+        "parent_access": false,
+        "raw_text_included": false,
+        "readout": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/OFF/math/readout",
+        "report_order": [
+          "richness",
+          "accuracy"
+        ],
+        "reserved": 64,
+        "schema": "COMBINED_L1_RICHNESS_FIRST_COMPACT_V2",
+        "semantic_review_sample": "first4 prospective positions per arm, author full-output review; not whole-cohort estimate",
+        "semantic_reviewed": 4,
+        "semantic_unassessed": 60
+      },
+      "math_report_path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R108_TERMINAL8932_AUTHOR_FINAL/OFF_MATH_REPORT.json",
+      "math_report_sha256": "6667dae57cd2c71054b77e912915a861956013035f936f32e9f1c8545f0bfb57",
+      "optimizer_sha256": "eed8a76454d11d238a267692cf7896e2c7b59161cb718f64f70721c1f0f1a812",
+      "rng_sha256": {
+        "rank0.pt": "374f9922ceef305083f88dae284ef74d5c43ec827882b03ac00590a153944cce",
+        "rank1.pt": "2fe35fd168961ad6d0384d4ad50a21ff77751a5edcbee06e8dad20f448597502",
+        "rank2.pt": "cfea9efbc073aeee3023e33e7046c1c0642afb9a6cf12a0f688faccbfb01accd"
+      }
+    }
+  },
+  "behavior_sha256": "1b3f318d18cd33e28fde8ed2401588d8ebfd0d4a74beca726bc1f298f50964ab",
+  "checkpoint_update": 8932,
+  "completed_calls": 416,
+  "controller_release_failure_preserved": true,
+  "extra_physical_off_recovery_updates": 117,
+  "finished_unix": 1789461056.988753,
+  "native_calls": 0,
+  "nomenclature": {
+    "FULL": "Continual FULL trained child, adapter active",
+    "OFF": "Matched new-labels-masked trained child, adapter active; NOT adapter-disabled OFF"
+  },
+  "parent_access": false,
+  "readout_cap": 416,
+  "reducer_sha256": "339022ed63457017500fdbe11d43894da2f50715a125c40fad65854667408443",
+  "release": {
+    "devices": [
+      2,
+      3,
+      6
+    ],
+    "finished_unix": 1789460905.4191642,
+    "new_generation": 0,
+    "prior_release_failure_preserved": true,
+    "readouts_completed": 416,
+    "readouts_retried": 0,
+    "status": "SCOPED_RELEASE_CLEAR"
+  },
+  "release_sha256": "636b467a518ae96d2f7c995d54b269543e4e23929c25d80c0196712e02f4b859",
+  "report_order": [
+    "richness",
+    "accuracy"
+  ],
+  "schema": "R108_TERMINAL8932_FINAL_V1",
+  "source_sha256": "9516ba9e69e8c64a8fda75b3895f2a472bca4d7b0b3a0715d1fd5377441d1f35",
+  "training_ingestion": false
+}
