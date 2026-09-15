@@ -1,0 +1,479 @@
+{
+  "schema": "TEACHER_METHOD_AUDIT_REMAINING_V1",
+  "authored_utc": "2026-09-15T06:11:04.530660+00:00",
+  "source_label": "TEACHER_DISTILLATION",
+  "reviewer": "ROUTE_PARENT_CAMPAIGN_AUTHOR_CPU_SIDECAR",
+  "independent_review_verdict": false,
+  "scope_ordinals": [
+    4,
+    5,
+    6,
+    7,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "excluded_main_reviewed_ordinals": [
+    0,
+    1,
+    2,
+    3,
+    8,
+    9
+  ],
+  "source_provider": "openai/openai/gpt-6-astra",
+  "main_correction": {
+    "path": "research_notes/analysis/orch_branching_method_correction_20260915_0556.md",
+    "sha256": "3c7e238fee5e97c5e241ce7d0b1469985444fe87bb39a2e2fd907f90ebdf90bb"
+  },
+  "native_raw_root": "/localhome/local-rohing/orch_route_parent_campaign_20260915_raw_mirror/teacher_exemplar",
+  "native_inventory_sha256": "e635c8c06d6287f9782569f65ae9e6897b16849ad22d560ce1a21b4f1f257592",
+  "native_checks": {
+    "path": "research_notes/analysis/orch_route_parent_campaign_20260915_teacher_exemplar_publication/METHOD_AUDIT_REMAINING_NATIVE_CHECKS_20260915.json",
+    "sha256": "99a4fbc57cd12efe71a4bd8efe68e4b52595dddd7881c71a5dab4e991aebe714",
+    "files_verified": 60,
+    "arithmetic_fact_checks": 40,
+    "observed_route_paths": 12
+  },
+  "annotations": [
+    {
+      "ordinal": 4,
+      "domain": "math",
+      "methods": [
+        "Inverse operations on the stated linear equation",
+        "Reference-value residual adjustment"
+      ],
+      "diversity": "CLEARER_PROCEDURAL_PAIR",
+      "same_given_assessment": "Both solve the same equation; the reference value is a trial, not a replacement premise.",
+      "diversity_limit": "Elementary shared linear structure; not independent evidence or a separate model.",
+      "useful_rejection": "The reference value overshoots and is adjusted; classify as calibration, not an abandoned second method.",
+      "rejection_class": "REFERENCE_CALIBRATION_NOT_COUNTED_AS_GROUNDED_BRANCH_REJECTION",
+      "errors_detected": [],
+      "audit_note": "Both substitutions and the unique-integer argument agree with the stated equality.",
+      "full_prompt_methods_checks_limitations_read": true,
+      "same_given_grounded": true,
+      "source_hashes": {
+        "SYSTEM.txt": "d08a0c79595464d67a61150c7623e2f04be6b5903d0519e32094d926702d4865",
+        "USER.json": "7a09cf7f1c7a4b9e4ec1ba8aed341a45f80e4ea2986e12830e368400378ff1a7",
+        "REQUEST.json": "55278e2a39e3144b5f17ea1c1830394ae699c223d1a3efcc8fc004608e9c9b48",
+        "RAW_RESPONSE.json": "d89eab9048cc058d01f6a340b8cf66930606a9c95e8b47e359e65fd698198f06",
+        "TEACHER_EXEMPLAR.json": "e2c13e1b1e5286ede402e364b80dda9647600d99a0f01f2a5b42ba97b5497ee4",
+        "RECEIPT.json": "49d828661a245e012433aa059591a053d4192268504e880d42d2835b539930a7"
+      },
+      "native_check_summary": {
+        "displayed_fact_checks": 7,
+        "all_pass": true,
+        "final_answer_matches": true,
+        "full_method_semantics": "AUTHOR_READ_NOT_AUTOMATED_PROOF_CERTIFICATION"
+      }
+    },
+    {
+      "ordinal": 5,
+      "domain": "math",
+      "methods": [
+        "Count remaining boxes, then multiply",
+        "Distribute the same product over initial count minus shipped count"
+      ],
+      "diversity": "WEAK_ALGEBRAIC_REARRANGEMENT",
+      "same_given_assessment": "The distributed products are explicitly bookkeeping terms, not an assertion about actual contents of shipped boxes.",
+      "diversity_limit": "A distributive rewrite of the same expression, not a substantially different algorithm.",
+      "useful_rejection": "No losing method or rejected candidate is worked; reverse count, units and magnitude checks are useful consistency checks.",
+      "rejection_class": "CONSISTENCY_CHECKS_ONLY",
+      "errors_detected": [],
+      "audit_note": "All count, multiplication, subtraction, inverse and bounding arithmetic checked.",
+      "full_prompt_methods_checks_limitations_read": true,
+      "same_given_grounded": true,
+      "source_hashes": {
+        "SYSTEM.txt": "d08a0c79595464d67a61150c7623e2f04be6b5903d0519e32094d926702d4865",
+        "USER.json": "5517ba3ea5cf2079dad36fead70c940d543b717a0d85a150949005d25b646c97",
+        "REQUEST.json": "3b2fcec04081a135de36dc41922d7a7b7a36170168aa5924f957c77d3ce3f115",
+        "RAW_RESPONSE.json": "a0a6d043c38a8ec407a0ff86d8aae2db6202e1e266f5ab8dbb21c4451ecba51d",
+        "TEACHER_EXEMPLAR.json": "9877123c4fc700ac1ab1d34e3edccbc8aae59d7082bdde30a6df684913e5d10a",
+        "RECEIPT.json": "7e8daa06c0898a8f20076aa2f5082cefe45315577ce7c9f9f8bea03ea8623d78"
+      },
+      "native_check_summary": {
+        "displayed_fact_checks": 11,
+        "all_pass": true,
+        "final_answer_matches": true,
+        "full_method_semantics": "AUTHOR_READ_NOT_AUTOMATED_PROOF_CERTIFICATION"
+      }
+    },
+    {
+      "ordinal": 6,
+      "domain": "math",
+      "methods": [
+        "Euclidean modular inverse",
+        "Bounded search over six transformed divisibility candidates"
+      ],
+      "diversity": "CLEARER_PROCEDURAL_PAIR",
+      "same_given_assessment": "Both preserve the two remainder conditions and the original closed interval.",
+      "diversity_limit": "Two worked procedures for one small congruence instance, not population-level reasoning diversity.",
+      "useful_rejection": "Five of six transformed candidates fail integer divisibility; the retained candidate satisfies both original remainders.",
+      "rejection_class": "GROUNDED_CANDIDATE_ELIMINATION",
+      "errors_detected": [],
+      "audit_note": "The inverse identity, quotient ranges, six-candidate exhaustion and coprime-period uniqueness argument are valid; full stated-interval enumeration confirms a unique solution.",
+      "full_prompt_methods_checks_limitations_read": true,
+      "same_given_grounded": true,
+      "source_hashes": {
+        "SYSTEM.txt": "d08a0c79595464d67a61150c7623e2f04be6b5903d0519e32094d926702d4865",
+        "USER.json": "bf09c90de886d6b11a83f3f3fc4efb9c377fd16cfccacc069d6df8983f172c15",
+        "REQUEST.json": "1b8fb1fb7a5697c074b0f480b14accb837f550bf4a07414f213e5e3742e97301",
+        "RAW_RESPONSE.json": "87a4bb08350b4073ea3fed252860c4bc1ec0923b90a38a59799877a01da60a17",
+        "TEACHER_EXEMPLAR.json": "3811c4733335fb13939816befdcb6eff265c8b4552d0aad9c830eeea7c592689",
+        "RECEIPT.json": "6cc3b75a767bb3daaed73fc28d0014e79aa15319a4b62ce6eb9f78edfc91a00f"
+      },
+      "native_check_summary": {
+        "displayed_fact_checks": 13,
+        "all_pass": true,
+        "final_answer_matches": true,
+        "full_method_semantics": "AUTHOR_READ_NOT_AUTOMATED_PROOF_CERTIFICATION"
+      },
+      "bounded_search": {
+        "candidate_count": 6,
+        "rejected_by_divisibility": 5,
+        "retained_candidates": 1,
+        "full_stated_interval_enumerated": true,
+        "unique_answer": true
+      }
+    },
+    {
+      "ordinal": 7,
+      "domain": "math",
+      "methods": [
+        "Compute total production and subtract defective parts",
+        "Regroup defects into equivalent full minute-sized batches plus a residual"
+      ],
+      "diversity": "WEAK_COUNTING_REPRESENTATION_CHANGE",
+      "same_given_assessment": "The explanation explicitly treats batches as equivalent counts, not an assumption about when defects occurred.",
+      "diversity_limit": "A regrouping of the same multiplication-minus-discard calculation; weak method diversity.",
+      "useful_rejection": "No failed candidate method; conservation, alternate multiplication and units provide checks.",
+      "rejection_class": "CONSISTENCY_CHECKS_ONLY",
+      "errors_detected": [],
+      "audit_note": "All production, regrouping and reverse-count arithmetic agrees with the original rate, duration and discarded count.",
+      "full_prompt_methods_checks_limitations_read": true,
+      "same_given_grounded": true,
+      "source_hashes": {
+        "SYSTEM.txt": "d08a0c79595464d67a61150c7623e2f04be6b5903d0519e32094d926702d4865",
+        "USER.json": "f1aa10adf1240e6cef71ca8b0da0ba64e45926063e1d896f859e8ad75abb429a",
+        "REQUEST.json": "773dbe51ac81276164dd985b99f720db13ce26eb6edeeeb6f440f80e604867a2",
+        "RAW_RESPONSE.json": "537c0f3d7647bd6e595e1aa8e95a2d7e6f46afa73199d4b92ef1fa083862e248",
+        "TEACHER_EXEMPLAR.json": "3c90b55af8f1e7a932d13f7cfa968d159c54cbedf777b8255f35036ff9b8671e",
+        "RECEIPT.json": "e0143fe3c31168f50a7317e23f98acbd540eace68bd34f8837a783dfcc2e064d"
+      },
+      "native_check_summary": {
+        "displayed_fact_checks": 9,
+        "all_pass": true,
+        "final_answer_matches": true,
+        "full_method_semantics": "AUTHOR_READ_NOT_AUTOMATED_PROOF_CERTIFICATION"
+      }
+    },
+    {
+      "ordinal": 10,
+      "domain": "route",
+      "methods": [
+        "Forward expansion of both observed initial branches",
+        "Backward goal-predecessor constraints with exactly two commands"
+      ],
+      "diversity": "CLEARER_PROCEDURAL_PAIR",
+      "same_given_assessment": "Both use the same four supplied observed transitions, start, target and case-sensitive initial-port constraint.",
+      "diversity_limit": "A small two-branch graph; forward/backward was explicitly prompted. These are not independent observations, teacher models or many distinct algorithm families.",
+      "useful_rejection": "The other observed two-step path reaches the wrong goal; this is candidate-path rejection under unchanged givens, not a counterfactual premise change.",
+      "rejection_class": "GROUNDED_OBSERVED_PATH_REJECTION",
+      "errors_detected": [],
+      "audit_note": "Backward reasoning correctly restricts the goal-reaching port to its observed source; it does not transport that port to the other intermediate node.",
+      "graph_scope": "Uniqueness and failure are scoped to supplied observed transitions; unobserved transitions are not globally ruled out.",
+      "paired_goal_label": "goal0",
+      "full_prompt_methods_checks_limitations_read": true,
+      "same_given_grounded": true,
+      "source_hashes": {
+        "SYSTEM.txt": "d08a0c79595464d67a61150c7623e2f04be6b5903d0519e32094d926702d4865",
+        "USER.json": "1eba4261343da60fd787d1376739fa824be2fe983b194c5b932b0521ac9d961d",
+        "REQUEST.json": "09cc374487826c4ba9f4ed38557e7ab078a9675aba382fedd0d92cf3eda40a54",
+        "RAW_RESPONSE.json": "6f4b872dfaadd1c104f2b0e0ee09272821ac3e9cf428970a68a9f02e9a5a87ff",
+        "TEACHER_EXEMPLAR.json": "8d514f92c816c01efe522900f74bf49b7338a6f50828cff59b3912cacfc51189",
+        "RECEIPT.json": "18f6f7585396c9defe68108c420762541faa2de3dcbd47922f0b771c3ec2ae64"
+      },
+      "native_check_summary": {
+        "observed_event_count": 4,
+        "enumerated_two_step_paths": 2,
+        "goal_reaching_paths": 1,
+        "rejected_wrong_goal_paths": 1,
+        "selected_event_indexes": [
+          0,
+          2
+        ],
+        "rejected_event_indexes": [
+          1,
+          3
+        ],
+        "zero_based_event_indexes": true,
+        "case_sensitive_final_path_matches": true,
+        "opaque_identifiers_all_given": true,
+        "unobserved_transitions_not_executed": true,
+        "proof_direction_semantics": "FULL_AUTHOR_READ_FORWARD_EXPANSION_AND_BACKWARD_PREDECESSOR_CONSTRAINTS"
+      }
+    },
+    {
+      "ordinal": 11,
+      "domain": "route",
+      "methods": [
+        "Forward expansion of both observed initial branches",
+        "Backward goal-predecessor constraints with exactly two commands"
+      ],
+      "diversity": "CLEARER_PROCEDURAL_PAIR",
+      "same_given_assessment": "Both use the same four supplied observed transitions, start, target and case-sensitive initial-port constraint.",
+      "diversity_limit": "A small two-branch graph; forward/backward was explicitly prompted. These are not independent observations, teacher models or many distinct algorithm families.",
+      "useful_rejection": "The other observed two-step path reaches the wrong goal; this is candidate-path rejection under unchanged givens, not a counterfactual premise change.",
+      "rejection_class": "GROUNDED_OBSERVED_PATH_REJECTION",
+      "errors_detected": [],
+      "audit_note": "Also rejects reversed command order because the terminal-edge port is not an allowed initial port and has the wrong observed source.",
+      "graph_scope": "Uniqueness and failure are scoped to supplied observed transitions; unobserved transitions are not globally ruled out.",
+      "paired_goal_label": "goal1",
+      "full_prompt_methods_checks_limitations_read": true,
+      "same_given_grounded": true,
+      "source_hashes": {
+        "SYSTEM.txt": "d08a0c79595464d67a61150c7623e2f04be6b5903d0519e32094d926702d4865",
+        "USER.json": "922959d09be944ed4ad1360b4e9ffe4121aec783762ea93b17f8927107a1767e",
+        "REQUEST.json": "84e11167004b09530f5d39c19b91e33beb5a10922a12dae6c7d0ab0c66d3205d",
+        "RAW_RESPONSE.json": "0b072912c64f7e6b10776b94f4b727992ff635b28830be6365c23568cdb0e002",
+        "TEACHER_EXEMPLAR.json": "4558cd1f0176238aaacfb6d52dd6a5bf271f155973f8daf794fbbc78d4e4b93b",
+        "RECEIPT.json": "861791a62820efd101f1efddfafc23e5be054db033e0f246adad10c241028dbb"
+      },
+      "native_check_summary": {
+        "observed_event_count": 4,
+        "enumerated_two_step_paths": 2,
+        "goal_reaching_paths": 1,
+        "rejected_wrong_goal_paths": 1,
+        "selected_event_indexes": [
+          1,
+          3
+        ],
+        "rejected_event_indexes": [
+          0,
+          2
+        ],
+        "zero_based_event_indexes": true,
+        "case_sensitive_final_path_matches": true,
+        "opaque_identifiers_all_given": true,
+        "unobserved_transitions_not_executed": true,
+        "proof_direction_semantics": "FULL_AUTHOR_READ_FORWARD_EXPANSION_AND_BACKWARD_PREDECESSOR_CONSTRAINTS"
+      }
+    },
+    {
+      "ordinal": 12,
+      "domain": "route",
+      "methods": [
+        "Forward expansion of both observed initial branches",
+        "Backward goal-predecessor constraints with exactly two commands"
+      ],
+      "diversity": "CLEARER_PROCEDURAL_PAIR",
+      "same_given_assessment": "Both use the same four supplied observed transitions, start, target and case-sensitive initial-port constraint.",
+      "diversity_limit": "A small two-branch graph; forward/backward was explicitly prompted. These are not independent observations, teacher models or many distinct algorithm families.",
+      "useful_rejection": "The other observed two-step path reaches the wrong goal; this is candidate-path rejection under unchanged givens, not a counterfactual premise change.",
+      "rejection_class": "GROUNDED_OBSERVED_PATH_REJECTION",
+      "errors_detected": [],
+      "audit_note": "Explicitly distinguishes initial-port restrictions from the second command at the reached intermediate node.",
+      "graph_scope": "Uniqueness and failure are scoped to supplied observed transitions; unobserved transitions are not globally ruled out.",
+      "paired_goal_label": "goal0",
+      "full_prompt_methods_checks_limitations_read": true,
+      "same_given_grounded": true,
+      "source_hashes": {
+        "SYSTEM.txt": "d08a0c79595464d67a61150c7623e2f04be6b5903d0519e32094d926702d4865",
+        "USER.json": "ace22a9bffdf671c602b3b45c5e39a8f91290e61b732fa7657b2d2f7f09b0de8",
+        "REQUEST.json": "b242c85bac33d520393d2fd01f237b1abec6acd103dcd339d8428d64c80006f6",
+        "RAW_RESPONSE.json": "93c7d15aeb5ea0898090860c5cba4adc8e88c73e5ed08e03a6efb09351800c84",
+        "TEACHER_EXEMPLAR.json": "6eeaaeda1c6c865f63ee7a28b03dab60c2ba6a375ed75ef95c9849aecf715732",
+        "RECEIPT.json": "551435335675c81771b908e37ac94de35613af0871a3abbffd41def6a8046d1d"
+      },
+      "native_check_summary": {
+        "observed_event_count": 4,
+        "enumerated_two_step_paths": 2,
+        "goal_reaching_paths": 1,
+        "rejected_wrong_goal_paths": 1,
+        "selected_event_indexes": [
+          0,
+          2
+        ],
+        "rejected_event_indexes": [
+          1,
+          3
+        ],
+        "zero_based_event_indexes": true,
+        "case_sensitive_final_path_matches": true,
+        "opaque_identifiers_all_given": true,
+        "unobserved_transitions_not_executed": true,
+        "proof_direction_semantics": "FULL_AUTHOR_READ_FORWARD_EXPANSION_AND_BACKWARD_PREDECESSOR_CONSTRAINTS"
+      }
+    },
+    {
+      "ordinal": 13,
+      "domain": "route",
+      "methods": [
+        "Forward expansion of both observed initial branches",
+        "Backward goal-predecessor constraints with exactly two commands"
+      ],
+      "diversity": "CLEARER_PROCEDURAL_PAIR",
+      "same_given_assessment": "Both use the same four supplied observed transitions, start, target and case-sensitive initial-port constraint.",
+      "diversity_limit": "A small two-branch graph; forward/backward was explicitly prompted. These are not independent observations, teacher models or many distinct algorithm families.",
+      "useful_rejection": "The other observed two-step path reaches the wrong goal; this is candidate-path rejection under unchanged givens, not a counterfactual premise change.",
+      "rejection_class": "GROUNDED_OBSERVED_PATH_REJECTION",
+      "errors_detected": [],
+      "audit_note": "Forward method explicitly explores the losing branch before the successful branch; backward method independently orders the same observed edges.",
+      "graph_scope": "Uniqueness and failure are scoped to supplied observed transitions; unobserved transitions are not globally ruled out.",
+      "paired_goal_label": "goal1",
+      "full_prompt_methods_checks_limitations_read": true,
+      "same_given_grounded": true,
+      "source_hashes": {
+        "SYSTEM.txt": "d08a0c79595464d67a61150c7623e2f04be6b5903d0519e32094d926702d4865",
+        "USER.json": "972083353c265384c4061502b99dfb582fa13fe32c3c0ee65f9a45077c055363",
+        "REQUEST.json": "bcde9e9ff9e0f2057e637d12066a0b390806fb862d103ad3a8b1e38c232ceed0",
+        "RAW_RESPONSE.json": "8fdc1f9551a2662179b9dc00954eb24f945ff619bec8384629aa5b2db5e16784",
+        "TEACHER_EXEMPLAR.json": "cb8839438b0724e1feef0397c2c907a682e5a43173df40883de7e925b8311997",
+        "RECEIPT.json": "6fc5ba6d634b3f3291ef26f5322a33bd9322ef6016e1842ba490d63b0f63d76a"
+      },
+      "native_check_summary": {
+        "observed_event_count": 4,
+        "enumerated_two_step_paths": 2,
+        "goal_reaching_paths": 1,
+        "rejected_wrong_goal_paths": 1,
+        "selected_event_indexes": [
+          1,
+          3
+        ],
+        "rejected_event_indexes": [
+          0,
+          2
+        ],
+        "zero_based_event_indexes": true,
+        "case_sensitive_final_path_matches": true,
+        "opaque_identifiers_all_given": true,
+        "unobserved_transitions_not_executed": true,
+        "proof_direction_semantics": "FULL_AUTHOR_READ_FORWARD_EXPANSION_AND_BACKWARD_PREDECESSOR_CONSTRAINTS"
+      }
+    },
+    {
+      "ordinal": 14,
+      "domain": "route",
+      "methods": [
+        "Forward expansion of both observed initial branches",
+        "Backward goal-predecessor constraints with exactly two commands"
+      ],
+      "diversity": "CLEARER_PROCEDURAL_PAIR",
+      "same_given_assessment": "Both use the same four supplied observed transitions, start, target and case-sensitive initial-port constraint.",
+      "diversity_limit": "A small two-branch graph; forward/backward was explicitly prompted. These are not independent observations, teacher models or many distinct algorithm families.",
+      "useful_rejection": "The other observed two-step path reaches the wrong goal; this is candidate-path rejection under unchanged givens, not a counterfactual premise change.",
+      "rejection_class": "GROUNDED_OBSERVED_PATH_REJECTION",
+      "errors_detected": [],
+      "audit_note": "Forward branch expansion and backward incoming-edge/predecessor matching are both actually worked, not merely named.",
+      "graph_scope": "Uniqueness and failure are scoped to supplied observed transitions; unobserved transitions are not globally ruled out.",
+      "paired_goal_label": "goal0",
+      "full_prompt_methods_checks_limitations_read": true,
+      "same_given_grounded": true,
+      "source_hashes": {
+        "SYSTEM.txt": "d08a0c79595464d67a61150c7623e2f04be6b5903d0519e32094d926702d4865",
+        "USER.json": "bed0ea1bb10d80c9e79f9a0948e817a0724127d01e44d8f2615fe88f17afc767",
+        "REQUEST.json": "d5ac13c104c238f003c1c6f93bec00346dd05bfd00565ed7f0dc11b980681cca",
+        "RAW_RESPONSE.json": "0f92c0df588e0f790fe62d88248e349c51ee4b91edcf554f3a946416c3d80896",
+        "TEACHER_EXEMPLAR.json": "88a88926d8ea001c4dd4142ca1e6255cc51f6859e89a755bc7a4ef9514209acd",
+        "RECEIPT.json": "7071209eb4412a47a18da6358046a1515a313ffd99585cac36c859edca02a039"
+      },
+      "native_check_summary": {
+        "observed_event_count": 4,
+        "enumerated_two_step_paths": 2,
+        "goal_reaching_paths": 1,
+        "rejected_wrong_goal_paths": 1,
+        "selected_event_indexes": [
+          0,
+          2
+        ],
+        "rejected_event_indexes": [
+          1,
+          3
+        ],
+        "zero_based_event_indexes": true,
+        "case_sensitive_final_path_matches": true,
+        "opaque_identifiers_all_given": true,
+        "unobserved_transitions_not_executed": true,
+        "proof_direction_semantics": "FULL_AUTHOR_READ_FORWARD_EXPANSION_AND_BACKWARD_PREDECESSOR_CONSTRAINTS"
+      }
+    },
+    {
+      "ordinal": 15,
+      "domain": "route",
+      "methods": [
+        "Forward expansion of both observed initial branches",
+        "Backward goal-predecessor constraints with exactly two commands"
+      ],
+      "diversity": "CLEARER_PROCEDURAL_PAIR",
+      "same_given_assessment": "Both use the same four supplied observed transitions, start, target and case-sensitive initial-port constraint.",
+      "diversity_limit": "A small two-branch graph; forward/backward was explicitly prompted. These are not independent observations, teacher models or many distinct algorithm families.",
+      "useful_rejection": "The other observed two-step path reaches the wrong goal; this is candidate-path rejection under unchanged givens, not a counterfactual premise change.",
+      "rejection_class": "GROUNDED_OBSERVED_PATH_REJECTION",
+      "errors_detected": [],
+      "audit_note": "Rejects applying the target-reaching transition from the other intermediate node because its observed source differs.",
+      "graph_scope": "Uniqueness and failure are scoped to supplied observed transitions; unobserved transitions are not globally ruled out.",
+      "paired_goal_label": "goal1",
+      "full_prompt_methods_checks_limitations_read": true,
+      "same_given_grounded": true,
+      "source_hashes": {
+        "SYSTEM.txt": "d08a0c79595464d67a61150c7623e2f04be6b5903d0519e32094d926702d4865",
+        "USER.json": "fa6c20a989587cab0692b8e71750ae89328dfea9aef20d6d562e0055b446fd9f",
+        "REQUEST.json": "193a17612e97873af716dea2fe5b790dc2d8f92a2c756271445955c45accf642",
+        "RAW_RESPONSE.json": "7629133a13633e4b72362864ef852b8238ae0b5312ca7fd66425a6f57b6376b5",
+        "TEACHER_EXEMPLAR.json": "854874e221fede30fe536f35aa1e1a8ff6d91c068a6be26f8e94818b5087778a",
+        "RECEIPT.json": "e7d119be1f39c15c132f63ff71582e02032bfd24b964499435acf1d3ba4d1345"
+      },
+      "native_check_summary": {
+        "observed_event_count": 4,
+        "enumerated_two_step_paths": 2,
+        "goal_reaching_paths": 1,
+        "rejected_wrong_goal_paths": 1,
+        "selected_event_indexes": [
+          1,
+          3
+        ],
+        "rejected_event_indexes": [
+          0,
+          2
+        ],
+        "zero_based_event_indexes": true,
+        "case_sensitive_final_path_matches": true,
+        "opaque_identifiers_all_given": true,
+        "unobserved_transitions_not_executed": true,
+        "proof_direction_semantics": "FULL_AUTHOR_READ_FORWARD_EXPANSION_AND_BACKWARD_PREDECESSOR_CONSTRAINTS"
+      }
+    }
+  ],
+  "summary": {
+    "exemplars": 10,
+    "methods_read": 20,
+    "same_given_grounded": 10,
+    "detected_error_rows": 0,
+    "clearer_procedural_pair_rows": 8,
+    "weaker_rearrangement_rows": 2,
+    "grounded_elimination_rows": 7,
+    "route_graphs": 3,
+    "route_goal_tasks": 6,
+    "route_method_pair_families": 1,
+    "statistical_independence_claim": false,
+    "general_branching_rate_claim": false
+  },
+  "teacher_only": true,
+  "trainer_ingestion": false,
+  "fit_performed": false,
+  "learner_improvement_claim": false,
+  "no_new_calls": true,
+  "no_held_access": true,
+  "no_source_compiler_changes": true,
+  "no_raw_repo_files": true,
+  "no_git_mutation": true,
+  "publish_paths": [
+    "research_notes/analysis/orch_route_parent_campaign_20260915_teacher_exemplar_publication/METHOD_AUDIT_REMAINING_20260915.json",
+    "research_notes/analysis/orch_route_parent_campaign_20260915_teacher_exemplar_publication/METHOD_AUDIT_REMAINING_20260915.md",
+    "research_notes/analysis/orch_route_parent_campaign_20260915_teacher_exemplar_publication/METHOD_AUDIT_REMAINING_NATIVE_CHECKS_20260915.json"
+  ],
+  "companion_markdown_sha256": "1dd847ac33301dc5ae4beddf56a82ad1214bd2e169f5c23cd2759cf55f486266"
+}
