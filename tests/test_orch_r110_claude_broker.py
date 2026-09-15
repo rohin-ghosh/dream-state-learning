@@ -942,6 +942,51 @@ class ClaudeBrokerTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'lane_guidance_limit_no_cropping'):
                     broker.adapt_plan(dict(self.reply, guidance=oversized), family, 'TRAIN_1')
 
+    def test_serialization_contract_present_without_head_or_prompt_files(self):
+        for branch, family in broker.FAMILIES.items():
+            for missing_prompt in (False, True):
+                with self.subTest(branch=branch, missing_prompt=missing_prompt):
+                    prompt_root = self.root/'absent' if missing_prompt else self.prompts
+                    system, unused, binding = broker.build_system(self.request['payload'],
+                        dict(self.config, branch=branch, family=family), prompt_root, self.principles)
+                    contract = broker.output_transport_contract(family)
+                    self.assertIn('[a-zA-Z0-9 _-]+', system)
+                    self.assertIn('1 through 80 characters', system)
+                    self.assertIn('uppercase string "ADD", "STOP", or "SHIFT"', system)
+                    self.assertIn(contract + '\n\nTRAIN TRANSCRIPT:', system)
+                    self.assertEqual(binding['fallback_used'], missing_prompt)
+
+    def test_serialization_contract_follows_async_head_note(self):
+        fields = dict(self.head_fields, NEXT_GUIDANCE='Notice actual uncertainty.')
+        prompt = broker.render_parent_prompt(fields)
+        (self.prompts/'F1.md').write_text(prompt)
+        with patch.object(broker, 'head_binding', return_value=dict(
+                status='BOUND_REQUESTED_SETTINGS', fields=fields,
+                reflection_applied_by_broker=False, settings_file_sha256='a'*64)):
+            system, unused, binding = broker.build_system(self.request['payload'],
+                self.config, self.prompts, self.principles)
+        self.assertLess(system.index('ASYNCHRONOUS HEAD NEXT_GUIDANCE:'),
+            system.index(broker.output_transport_contract('route')))
+        self.assertIn('Notice actual uncertainty.', system)
+
+    def test_explicit_class_syntax_preserves_validator_not_normalization(self):
+        for label in (None, 'check-as-falsifiable', 'A_z 09', 'a'*80):
+            plan, metadata = broker.adapt_plan(dict(self.reply, intervention_class=label),
+                'math', 'TRAIN_1')
+            self.assertEqual(metadata['intervention_class'], label)
+        for label in ('check-as-falsifiable / expectation-before-compute', 'a'*81,
+                'check:now', 'révision', ''):
+            with self.subTest(label=label), self.assertRaisesRegex(ValueError, 'parent_tag_class'):
+                broker.adapt_plan(dict(self.reply, intervention_class=label), 'math', 'TRAIN_1')
+
+    def test_observed_overflow_lengths_remain_rejected(self):
+        for family, words in (('code', 203), ('code', 206), ('grid', 93)):
+            reply = dict(self.reply, guidance=' '.join(['notice']*words))
+            with self.subTest(family=family, words=words), self.assertRaisesRegex(
+                    ValueError, 'lane_guidance_limit_no_cropping'):
+                broker.adapt_plan(reply, family, 'TRAIN_1')
+            self.assertEqual(len(reply['guidance'].split()), words)
+
     def test_model_alias_not_fabricated(self):
         envelope = self.envelope()
         envelope['modelUsage'] = {'another-model': {}}

@@ -1,0 +1,50 @@
+{
+  "coordination": "Own dated Builder notes only; shared COORDINATION.md is not a whole-file staging request",
+  "f3": "REAL_TERMINAL_PRESERVED_AWAIT_OWNER_SUCCESSOR",
+  "files": [
+    {
+      "path": "gpu/orch_r110_claude_broker.py",
+      "sha256": "a6b67b6284e30f706773a0a8ead296d2f3c6dee96c40d4d0351998ccf56e6ebf"
+    },
+    {
+      "path": "tests/test_orch_r110_claude_broker.py",
+      "sha256": "32e09703d5a14b24f68719f7a319e26396877103160b64fa14ce02a1e02a1505"
+    },
+    {
+      "path": "research_notes/analysis/orch_r110_claude_broker_20260915/R124_TRANSPORT_REPAIR_FIRST_DELIVERY_1906.json",
+      "sha256": "2ac3935e0dcfa9c3328855d34531cfddf55927a606695ddd6b25fad8d28b7623"
+    },
+    {
+      "path": "research_notes/analysis/orch_r110_claude_broker_20260915/R124_TRANSPORT_REPAIR_HANDOFF_1906.md",
+      "sha256": "f622800cced2fcdc59e8fb8abcba5dd559f827e2c88ffdd8f9b58a3e2de63194"
+    }
+  ],
+  "native_helpers": [
+    {
+      "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/MIGRATE.py",
+      "sha256": "9a41e0b1923f4279034f2e12434c676194c3e23998bb389c8826e3d118dc2031"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/STATUS.py",
+      "sha256": "fbd66d1b0d71f3450f463ecd0d7c70a70b8bde0d42b6dcd712afd3d427fa65c7"
+    }
+  ],
+  "native_runtime": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1",
+  "preserved": {
+    "all_claims": true,
+    "f2_r123_terminal": true,
+    "low_effort": true,
+    "no_cropping": true,
+    "no_retry": true,
+    "per_branch_lock": true,
+    "validation": true
+  },
+  "publication_owner": "Main",
+  "schema": "R124_EXACT_STAGE_ALLOWLIST_V1",
+  "scope": "PROSPECTIVE_PARENT_TRANSPORT_ONLY",
+  "tests": {
+    "command": "python3 -m unittest discover -s tests -p test_orch_r110_claude_broker.py -q",
+    "local_passed": 99,
+    "native_passed": 99
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "native_receipt": {
+    "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/STATUS_1789499172961639118.json",
+    "sha256": "fbfb4b971650c4a6b6be6c0bd352069fd95743e293b23a12a7945e425f42a649"
+  },
+  "report": {
+    "branches": [
+      {
+        "branch": "F1",
+        "new_claims": [],
+        "new_responses": [],
+        "pid": 3825740,
+        "preserved_claims": 77,
+        "ready": {
+          "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/F1/READY.json",
+          "sha256": "fbcbf676710e90b0e54da517c339c6354459a09eff38538a6a28078daa019aed"
+        },
+        "terminal": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R121_INDEPENDENT_TERMINAL.json",
+        "terminal_exists": false
+      },
+      {
+        "branch": "F2",
+        "new_claims": [],
+        "new_responses": [],
+        "pid": 3825744,
+        "preserved_claims": 68,
+        "ready": {
+          "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/F2/READY.json",
+          "sha256": "c9f293aa83c7473fe32233e0372a9244171aa29c7d8a0b570ec857817f26b3b4"
+        },
+        "terminal": "/localhome/local-rohing/orch_math_feedback_uptake_r123_f2_recovery_20260915_attempt1/lane1/TERMINAL.json",
+        "terminal_exists": false
+      },
+      {
+        "branch": "F4",
+        "new_claims": [
+          "P0098"
+        ],
+        "new_responses": [
+          {
+            "actual_contract_present": true,
+            "actual_model": "claude-fable-5-1",
+            "binding": {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_transcripts/P0098/PROMPT_BINDING.json",
+              "sha256": "5b15a4bd944a6a3bc5d5129d9359a2833347e0f0f0fcdb9dddbdf27de21d6581"
+            },
+            "consumption_status": "UNKNOWN_NOT_INFERRED_FROM_PUBLICATION",
+            "delivery_error": null,
+            "error": null,
+            "finished_unix": 1789499167.5549552,
+            "id": "P0098",
+            "parent_metadata": "STOP",
+            "policy_hash_verified": true,
+            "policy_sha256": "56ef813a745eb862fbf020e976f9d34ba27fbae4f4b0dea444316d56caf8215e",
+            "reserved_unix": 1789499146.3883827,
+            "response": {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0098.response.json",
+              "sha256": "2a1ab81228060a65b1ff04d186c7c989c7f321399235f9259d1a7fe72aefa980"
+            },
+            "status": "COMPLETE",
+            "system": {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_transcripts/P0098/SYSTEM.txt",
+              "sha256": "ee11579ea0928d9ddd64cdd187a6dc0feba8b4ffcdee1000b3bdfa5fd2c4e5bf"
+            },
+            "timing": {
+              "cutoff_unix": 1789499714.4823906,
+              "elapsed_seconds": 21.152999591999105,
+              "provider_elapsed_seconds": 21.1325218819984,
+              "provider_started_unix": 1789499146.422435,
+              "started_unix": 1789499146.4019556
+            },
+            "transport_contract_sha256": "d7210e61c95a04c9254418ecbce059a50637857acb30585c14d6f2c880bc28cd"
+          }
+        ],
+        "pid": 3825784,
+        "preserved_claims": 97,
+        "ready": {
+          "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/F4/READY.json",
+          "sha256": "d07aef24bccc6ceee751236c5d5a9bda6ccadcc193c13f1592c0660d60ca3721"
+        },
+        "terminal": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/R119_GRID_INDEPENDENT_TERMINAL.json",
+        "terminal_exists": false
+      }
+    ],
+    "f3_status": "NOT_RESTARTED_REAL_TERMINAL_REQUIRES_OWNER_SUCCESSOR",
+    "functional_benefit": "UNASSESSED",
+    "no_credentials": true,
+    "no_cropping": true,
+    "no_retry": true,
+    "observed_utc": "2026-09-15T19:06:12.961434+00:00",
+    "schema": "R124_TRANSPORT_NEW_DELIVERY_V1",
+    "source": {
+      "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/source/gpu/orch_r110_claude_broker.py",
+      "sha256": "a6b67b6284e30f706773a0a8ead296d2f3c6dee96c40d4d0351998ccf56e6ebf"
+    },
+    "tests": {
+      "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/source/tests/test_orch_r110_claude_broker.py",
+      "sha256": "32e09703d5a14b24f68719f7a319e26396877103160b64fa14ce02a1e02a1505"
+    },
+    "tests_passed": {
+      "local": 99,
+      "native": 99
+    }
+  }
+}

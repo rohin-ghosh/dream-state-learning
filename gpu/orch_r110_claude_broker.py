@@ -364,7 +364,16 @@ def output_transport_contract(family):
         f' For this {family} lane, the guidance field must contain at most {limit} '
         'whitespace-separated words. This limit applies to guidance, not the parent-only rationale. '
         'Compose concise, complete guidance within the limit; oversized responses are rejected, '
-        'never cropped or retried.')
+        'never cropped or retried. Before submitting, count guidance words by splitting on '
+        'whitespace and shorten your draft if necessary; leave room below the hard cap. '
+        'Return exactly the four JSON keys guidance, tag, intervention_class, rationale. '
+        'The tag must be exactly the uppercase string "ADD", "STOP", or "SHIFT". '
+        'intervention_class must be JSON null or a string of 1 through 80 characters using '
+        'only ASCII letters A-Z/a-z, digits 0-9, spaces, underscores, or hyphens '
+        '(validator pattern [a-zA-Z0-9 _-]+). No slashes, punctuation, or Unicode characters '
+        'in that metadata field. This syntax is not a required behavior catalogue. '
+        'guidance and rationale must each be nonempty strings; keep parent-only explanation '
+        'in rationale, not guidance. Alternatively return the exact text [SILENT].')
     if family in ('math', 'code'):
         contract += ' The guidance field must also contain at most 16000 characters.'
     if family == 'code':
@@ -393,10 +402,11 @@ def build_system(transcript, config, prompt_root, principles_path):
     prompt = prompt_bytes.decode('utf-8')
     principles = principles_bytes.decode('utf-8')
     transport_contract = output_transport_contract(config['family'])
-    parent_policy = prompt + '\n\n' + principles + '\n\n' + transport_contract
+    parent_policy = prompt + '\n\n' + principles
     next_guidance = settings['fields'].get('NEXT_GUIDANCE', '')
     if next_guidance:
         parent_policy += '\n\nASYNCHRONOUS HEAD NEXT_GUIDANCE:\n' + next_guidance
+    parent_policy += '\n\n' + transport_contract
     system = parent_policy + '\n\nTRAIN TRANSCRIPT:\n' + json.dumps(transcript, sort_keys=True)
     require(len(system.encode()) <= PACKET_CAP, 'bounded_system_content_no_crop')
     binding = dict(schema='ORCH_R111_COMMON_PARENT_PROMPT_V1',
