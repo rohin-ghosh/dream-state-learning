@@ -47,6 +47,11 @@ class StatusTests(unittest.TestCase):
                 self.assertEqual(result['queue'], {'launched_shards': [0, 1]})
                 self.assertIsNone(result['successor_guard_failure'])
                 self.assertEqual(result['reservations']['checkpoint_derived'], 0)
+                exhaustion = Path(temporary) / 'exhaustion'
+                exhaustion.mkdir()
+                (exhaustion / 'LAUNCH_3.json').write_text('{"identity":{"pid":125}}')
+                newer = observe(original, successor, derived, control, exhaustion)
+                self.assertEqual(newer['slots']['3']['processes'][0]['generation'], 'exhaustion_v3')
                 (original / 'LAUNCH_0.json').write_text('{"identity":{"pid":124}}')
                 self.assertEqual(observe(original, successor, derived, control)['slots']['0']['status'], 'OWNERSHIP_OVERLAP')
                 (control / 'FAILED.json').write_text('{"message":"current failure"}')
@@ -65,7 +70,8 @@ class StatusTests(unittest.TestCase):
             raw = 'RAW_SENTINEL_' * 10000
             capture = dict(task_id='task', source_task_id='source', family='code', stage='final_0', finished_unix=900,
                 messages=[raw], response=dict(raw=raw, token_ids=[raw], terminal=True, truncated=False),
-                outcome=dict(category='bounded_oracle_failed', correct=False, content_tokens=35,
+                outcome=dict(category='bounded_oracle_failed', correct=False, content_tokens=35, claimed_approach_count=2,
+                             branching_semantic_annotation='UNREVIEWED', repetition_failure_screen=True,
                              expression=raw, verifier=dict(input=raw, error=raw)), error=dict(message=raw))
             path = output / 'task_final_0.json'
             path.write_text(json.dumps(capture))
@@ -85,6 +91,8 @@ class StatusTests(unittest.TestCase):
             self.assertEqual(first['artifact'], dict(native_path=str(path), bytes=path.stat().st_size,
                 sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
             self.assertEqual(first['content_tokens'], 35)
+            self.assertEqual(result['roots']['original']['0']['claimed_approach_counts'], {'2': 1})
+            self.assertEqual(result['roots']['original']['0']['repetition_failure_screen_count'], 1)
             self.assertEqual(result['roots']['original']['0']['route_goals_correct'], 1)
             self.assertEqual(result['roots']['original']['0']['route_goals_denominator'], 2)
 

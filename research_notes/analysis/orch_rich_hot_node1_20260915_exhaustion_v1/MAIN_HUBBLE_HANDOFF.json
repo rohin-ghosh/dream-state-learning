@@ -1,0 +1,37 @@
+{
+  "markdown": "# R100 exhaustion live handoff \u2014 Main and Hubble\n\nAll eight node1 and all three owned node3 slots have actual exhaustion outputs; no native failures in this snapshot.\nNode3 physical4/5 restored. Retired only the VM CPU serial observer to start naturally completed idle5 immediately; existing GPU workers stayed live.\nRaw CALL/EPISODE/rejected-evidence stays on generation nodes. This handoff contains only reductions, paths and hashes.\nNative phase names are ROHIN100_EXHAUSTION_V1 and ROHIN100_ROUTE_EXHAUSTION_V1 (the requested V3 transition).\n\n| Node | Slot | PID | Calls | Raw calls/hour, slot walltime | Self-reported >=2 | Repetition flagged |\n|---|---:|---:|---:|---:|---:|---:|\n| node1 | 0 | 54262 | 33 | 199.1 | 33 | 21 |\n| node1 | 1 | 55188 | 31 | 213.9 | 31 | 24 |\n| node1 | 2 | 56054 | 26 | 210.6 | 21 | 15 |\n| node1 | 3 | 56877 | 18 | 176.6 | 16 | 16 |\n| node1 | 4 | 57792 | 18 | 229.4 | 17 | 11 |\n| node1 | 5 | 58750 | 12 | 215.6 | 12 | 10 |\n| node1 | 6 | 59824 | 9 | 308.5 | 8 | 6 |\n| node1 | 7 | 60818 | 1 | 152.2 | 1 | 1 |\n| node3 | 3 | 261097 | 20 | 252.1 | 9 | 8 |\n| node3 | 4 | 263996 | 28 | 462.7 | 5 | 0 |\n| node3 | 5 | 265717 | 28 | 571.4 | 7 | 0 |\n\n## Interpretation\nCounts/rates are observed raw calls, not qualified output. All approach counts and rejection claims remain UNREVIEWED self-reports; no semantic verified count or qualified/hour claim.\nRepetition flags count repeated substantive lines, not independently verified semantic repetition. They are failure signals, never useful-branch credit.\nNode1 numeric correctness is split by source and own-second-pass in RESULT_TABLES.json; both calls can belong to the same task. Node3 route verifier counts are episode-level, not per-call. Same TRAIN worlds with unseen displays are not new independent worlds.\nEvery observed call meets min(16384,32768-actual encoded history). Actual second passes match their captured own source. Frozen Qwen7B/37ec, no RoPE/model changes, no training or auto-admission.\nAll inherited checkpoint capture hashes and node1 unseen-task exclusion checked. Node1 original24576 ledger/deadline unchanged. Node3 original2048 ledger retained plus previously prospectively declared720 segment; aggregate ceiling2768, same15:18:38.782722UTC hardend. No quota reset.\nNo claim of uninterrupted >=16 fleet floor: pre-roll census was already below16; peer nodes are not controlled here.\n\n## First native proof\nNode3 ONLY shard3/CALL_0001.json:395 prompt tokens,621 content tokens,16384 output cap/32768 context; self-reported2 worked approaches,1 rejection; repetition flagfalse; semantic UNREVIEWED.\nCapture SHA256 b2a0989bdcebcea66e906df3a42d0dfbcce87d2e9a005ccbcc1aeb4df673cb86.\nNative raw root: /localhome/local-rohing/orch_rich_hot_node3_20260915_exhaustion_v1.\nAll11 first native path/hash/budget/row metrics in status_final/MANIFEST.json.\n\n## Ready for Main\nSTAGE_READY.json lists exact source/test and compact evidence paths/hashes.15 CPU tests pass; native config/encoding/provenance and source-hash checks pass. No git staging, commits, reset or shared BOARD edits performed.",
+  "summary": {
+    "node1": {
+      "calls": 148,
+      "failed_calls": 0,
+      "observed_utc": "2026-09-15T04:56:39.097478+00:00",
+      "oracle_correct_by_stage": {
+        "own_second_pass": 19,
+        "source": 119
+      },
+      "qualified_per_hour": null,
+      "raw_calls_per_hour_since_first_phase_call": 892.9238209693784,
+      "repetition_flagged_calls": 104,
+      "self_reported_at_least_two": 139,
+      "self_reported_rejections": 1,
+      "semantic_status": "UNREVIEWED",
+      "stage_counts": {
+        "own_second_pass": 19,
+        "source": 129
+      }
+    },
+    "node3": {
+      "calls": 76,
+      "completed_episodes": 22,
+      "failed_calls": 0,
+      "observed_utc": "2026-09-15T04:56:39.996645+00:00",
+      "qualified_per_hour": null,
+      "raw_calls_per_hour_since_first_phase_call": 957.8726462001871,
+      "repetition_flagged_calls": 8,
+      "self_reported_at_least_two": 21,
+      "self_reported_rejections": 15,
+      "semantic_status": "UNREVIEWED",
+      "verifier_correct_episodes": 7
+    }
+  }
+}

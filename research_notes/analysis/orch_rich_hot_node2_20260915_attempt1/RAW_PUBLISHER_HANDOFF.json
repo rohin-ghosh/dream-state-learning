@@ -1,6 +1,16 @@
 {
   "schema": "ORCH_RICH_HOT_NODE2_PUBLISHER_HANDOFF_V1",
   "owner": "RICH_HOT_NODE2",
+  "storage_policy": {
+    "effective_utc": "2026-09-15T04:36:00Z",
+    "raw_storage": "NODES_LOCAL_ONLY",
+    "vm_raw_pulls_allowed": false,
+    "vm_new_tarballs_capsules_call_forests_allowed": false,
+    "repo_allowed": ["code", "tests", "manifests", "hashes", "compact_reductions", "tables", "native_paths"],
+    "existing_vm_artifacts": "Preserve; Main owns verified migration and cleanup. Legacy local paths are not instructions to pull more raw.",
+    "status_helper": "gpu/orch_rich_hot_node2_status.py COMPACT_V2; excludes embedded responses/messages/token IDs/verifier inputs/expressions/exception text.",
+    "generation": "Continue unchanged; node-local raw publishers remain active."
+  },
   "recipient": "Hubble CONTINUAL_BATCH / Main / Laplace",
   "raw_manifest_schema": "ORCH_RICH_HOT_NODE2_RAW_BATCH_V1",
   "original_native_root": "/localhome/local-rohing/orch_rich_hot_node2_20260915_attempt1",
@@ -9,6 +19,42 @@
   "floor98_native_root": "/localhome/local-rohing/orch_rich_hot_node2_floor98_20260915_attempt1",
   "floor98_batches": "/localhome/local-rohing/orch_rich_hot_node2_supply_20260915_attempt1/floor98_raw/batches/*/MANIFEST.json",
   "floor98_environment_evidence": "/localhome/local-rohing/orch_rich_hot_node2_supply_20260915_attempt1/floor98_raw/evidence/*/EVIDENCE_MANIFEST.json",
+  "checkpoint99_native_root": "/localhome/local-rohing/orch_rich_hot_node2_checkpoint99_20260915_attempt1",
+  "exhaustion_v3_native_root": "/localhome/local-rohing/orch_rich_hot_node2_exhaustion_v3_20260915_attempt1",
+  "exhaustion_v3_batches": "/localhome/local-rohing/orch_rich_hot_node2_supply_20260915_attempt1/exhaustion_v3_raw/batches/*/MANIFEST.json",
+  "exhaustion_v3_environment_evidence": "/localhome/local-rohing/orch_rich_hot_node2_supply_20260915_attempt1/exhaustion_v3_raw/evidence/*/EVIDENCE_MANIFEST.json",
+  "exhaustion_v3_registration": {
+    "status": "REQUESTED_FROM_HUBBLE_NOT_CONFIRMED",
+    "prompt_version": "ROHIN100_EXHAUSTION_V3",
+    "source_sha256": "f71ab1fcad22792e70d79b732937bf9cc004f80cbcaec01be799f119dd4d7d13",
+    "prepare_sha256": "0c7c9d351b0357bc48a492d26ac2301edda9c53f21ed0e3e356ab15dd92bfd57",
+    "mixed_source_identities": "Use per-row generator_identity;0FULL256,1–7original37ec. PREPARE.identities binds all eight, and its legacy identity field is37ec only, NOT a label for shard0.",
+    "allocation": "0/1 same unhinted EXHAUSTION_ONLY;2/3STEERED_LIGHT degree1;4/5STEERED_TWO_PASS degree2;6/7STEERED_META degree3.",
+    "max_new_tokens_target": 16384,
+    "context": 32768,
+    "second_pass": "Exact full own prior text; effective cap min(16384,32768-prompttokens), no cropping/feedback/retry.",
+    "claims": "outcome.claimed_approach_count is lexical only; semantic annotations remain separately bound, never headings-as-proof. Repetition failure screen separate from oracle result and semantic eligibility.",
+    "exposure_exception": "exhaustion_applicable=false marks original EVENT source exposures; they are not exhaustion targets.",
+    "train_source_reuse": "Same fixed TRAIN pools/order for all V3 arms, explicit prompt-version generation; no unique-task or held/improvement claim.",
+    "semantic_spotcheck": "research_notes/analysis/orch_rich_hot_node2_20260915_attempt1/exhaustion_v3/SEMANTIC_SPOTCHECK.json",
+    "trainingAllowed": false
+  },
+  "checkpoint99_batches": "/localhome/local-rohing/orch_rich_hot_node2_supply_20260915_attempt1/checkpoint99_raw/batches/*/MANIFEST.json",
+  "checkpoint99_environment_evidence": "/localhome/local-rohing/orch_rich_hot_node2_supply_20260915_attempt1/checkpoint99_raw/evidence/*/EVIDENCE_MANIFEST.json",
+  "checkpoint99_source_registration": {
+    "status": "REQUESTED_FROM_HUBBLE_NOT_CONFIRMED",
+    "classification": "CHECKPOINT_DERIVED_NOT_IMPROVED",
+    "physical_gpu": 0,
+    "checkpoint_update": 256,
+    "state_sha256": "93a036b93e2d41d2715230aaf2f2fa5382f4cbe404c743fd36dc37aba7f7c0d8",
+    "checkpoint_commit_sha256": "a5585d78becd34273c89b82252a29431a728e698a9d279f6a349a0a10bbfbfb9",
+    "source_sha256": "ec20697317bd1c227e0ee1a0e31f045b6ef48134815382b6c5e697bfd3194638",
+    "prepare_sha256": "4a60d6619c1ccfd0cbfb8d60ffd62f319a9271bfdebeb42ac2f6c14f9012b2f9",
+    "lineage": "Laplace continually trained FULL256, initial d13 route child, corpusV2 6aaece07e8cbf24390502efc4d2cad525187509da2001d61ffbe6af4abc75aee",
+    "comparator": "Original37ec physical1, identical prospective task sequence/initial prompts; route histories are each child's own.",
+    "per_capture_bindings": ["generator_identity", "generator_classification", "source_checkpoint_commit_sha256", "source_checkpoint_update", "source_code_sha256", "comparator_task_id"],
+    "trainingAllowed": false
+  },
   "publication": "Atomic directory rename after fsynced files; manifest directory name is SHA256 of exact MANIFEST.json bytes.",
   "capture_join": "Each rows[].file is relative to its immutable manifest directory; sha256 and bytes bind exact source capture. key=run:shard:task_id:stage. Do not equate reservations with completions.",
   "raw_fields": ["messages", "response.raw", "response.token_ids", "response.terminal", "response.truncated", "response.max_new_tokens", "outcome", "error", "shard", "condition", "task_id", "stage", "finished_unix"],
@@ -18,7 +64,9 @@
     "adapter_state_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
     "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992"
   },
-  "limits": {"max_new_tokens": 8192, "context": 16384, "original_batch_max_rows": 128, "floor98_batch_max_rows": 64},
+  "source_identity_applies_to": ["original_native_root", "floor98_native_root"],
+  "limits": {"max_new_tokens": 8192, "context": 16384, "original_batch_max_rows": 128, "floor98_batch_max_rows": 64, "checkpoint99_batch_max_rows": 64, "original_call_cap": 6144, "successor_aggregate_call_cap": 65536, "checkpoint99_included_call_cap": 8192, "hard_end_utc": "2026-09-15T19:19:30.743091Z"},
+  "limits_apply_to": ["original_native_root", "floor98_native_root", "checkpoint99_native_root"],
   "review_contract": {
     "owner": "Hubble's separately frozen64raw/12sample policy",
     "raw_semantic_status": "UNREVIEWED",
@@ -37,6 +85,7 @@
   "no_held_inputs": true,
   "no_semantic_review_launch_gate": true,
   "crossworker_pool_repeats": "Keep source/target hashes for deduplication. Reused training tasks are not distinct novel questions.",
-  "live_verified_snapshot": "research_notes/analysis/orch_rich_hot_node2_20260915_attempt1/LIVE_OBSERVATION_FLOOR98.json",
-  "next_action": "Hubble may consume original raw batches now; Floor98 watcher573172 starts CODE first on each naturally completed/AFTER-verified original lane following fresh privileged admission. No Floor98 GPU call has yet occurred."
+  "live_verified_snapshot": "research_notes/analysis/orch_rich_hot_node2_20260915_attempt1/exhaustion_v3/PER_SLOT_REDUCTION_0455.json",
+  "matched_and_manifest_verification": "research_notes/analysis/orch_rich_hot_node2_20260915_attempt1/status_0432Z/MATCHED_AND_PUBLISHER_V2.json",
+  "next_action": "Hubble: explicitly register V3 prompt/source identities before eligibility; keep old immutable sources separately labelled. All8 V3 processes have native admission, initial outputs exist. Controller597267 replaces retired585283 after safe boundaries. Source-specific sampling, not headings/length/register-only certification; raw stays on NODE."
 }

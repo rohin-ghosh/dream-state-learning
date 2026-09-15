@@ -1,0 +1,62 @@
+{
+  "schema": "AUTHOR_DIAGNOSTIC_SEMANTIC_SPOTCHECK_V1",
+  "observed_utc": "2026-09-15T04:52:00Z",
+  "selection": "First CODE and first MATH response of the fixed unhinted0/1 pair; descriptive post-hoc diagnostic, not a random/prevalence sample.",
+  "raw_read": "Complete responses read on node through terminal output; no new local raw copies.",
+  "admission_decision": false,
+  "raw_rows_modified": false,
+  "annotations": [
+    {
+      "shard": 0,
+      "native_path": "/localhome/local-rohing/orch_rich_hot_node2_exhaustion_v3_20260915_attempt1/shard0/B000-P01_final_0.json",
+      "sha256": "2a885a6209fb42601d65d3fd69936fda0d2b3bf783f72ec834f85b56ecd6ddc9",
+      "family": "code",
+      "claimed_approaches": 0,
+      "audited_worked_methods": 0,
+      "label": "EXHAUSTION_NOT_REALIZED",
+      "basis": "Only a final expression object; no enumerated/worked alternatives, hypotheses, comparison or choice rationale. Not a length-only judgment.",
+      "registered_outcome_unchanged": "bounded_oracle_failed"
+    },
+    {
+      "shard": 1,
+      "native_path": "/localhome/local-rohing/orch_rich_hot_node2_exhaustion_v3_20260915_attempt1/shard1/B000-P01_final_0.json",
+      "sha256": "6f0544eb10740afb37110a6dd52d702cea3d37449c6980e365ec4bed9861befa",
+      "family": "code",
+      "claimed_approaches": 0,
+      "audited_worked_methods": 0,
+      "label": "EXHAUSTION_NOT_REALIZED",
+      "basis": "Same expression-only response as derived0; no worked-method evidence. No new gold inference or rescore.",
+      "registered_outcome_unchanged": "bounded_oracle_failed"
+    },
+    {
+      "shard": 0,
+      "native_path": "/localhome/local-rohing/orch_rich_hot_node2_exhaustion_v3_20260915_attempt1/shard0/B000-P03_final_0.json",
+      "sha256": "25d72538d61dbed23e57dcb2e880c5ba0592c04829c1f982708b97a6e9ad2ee8",
+      "family": "math",
+      "claimed_approaches": 2,
+      "audited_worked_calculation_presentations": 2,
+      "audited_distinct_method_families": 1,
+      "comparison_present": true,
+      "explicit_preference_and_why_others_lose": false,
+      "label": "PARTIAL_REASSOCIATION_NOT_TWO_INDEPENDENT_METHODS",
+      "basis": "Works total-tanks then capacity, and per-truck capacity then truck count. Both are multiplication regroupings, explicitly compared as equally sound; no reason choosing one or rejecting another. Do not credit independent search or a consequential rejected branch.",
+      "registered_outcome_unchanged": "registered_correct",
+      "content_tokens": 438
+    },
+    {
+      "shard": 1,
+      "native_path": "/localhome/local-rohing/orch_rich_hot_node2_exhaustion_v3_20260915_attempt1/shard1/B000-P03_final_0.json",
+      "sha256": "5e44bcd3da41ceac9231964f29509c535c8f737914a6c7649e26b6d265b0abf3",
+      "family": "math",
+      "claimed_approaches": 2,
+      "audited_distinct_worked_methods": 1,
+      "comparison_present": false,
+      "explicit_preference_and_why_others_lose": false,
+      "label": "DUPLICATED_CALCULATION_UNDER_TWO_LABELS",
+      "basis": "The second hypothesis says summing capacities but executes the same multiplication expression, rather than independently working an additive method. No comparison or choice rationale. Lexical headings overstate distinct methods.",
+      "registered_outcome_unchanged": "registered_correct",
+      "content_tokens": 213
+    }
+  ],
+  "claim_boundary": "Instruction delivered and some worked multi-presentation reasoning observed; full exhaustion requirement not established by these samples. No improvement, admission or batch-wide semantic PASS."
+}

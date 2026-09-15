@@ -1,5 +1,74 @@
 # TOP-BUDGET RICHNESS — node2 all eight GPUs
 
+## 2026-09-15T04:54:46Z — MAIN ready-to-stage: all8 native EXHAUSTION_V3
+
+Publisher followup04:57:23UTC:8immutable V3 manifests/274published rawrows
+verified ONNODE (manifest SHA, every rawSHA and byte count). Compact
+PUBLISHER_MANIFEST_CHECK.json only returned; no rawVMpull or admission implied.
+
+40ownCPUtests+6nativeCPUtests PASS. All8actual fresh processes, privileged
+admissions and observed loadedstate/proc/CVD bindings verified; no pending
+launches or current process failures. Original inputs/model/config/RoPE unchanged.
+All old native reservations resolved and AFTER unchanged; oldqueue585283 retired
+only after its4children ended. Original4–7 quiescent SIGINT cutoffs intentionally
+record KeyboardInterrupt/FAILED, NOT taskquality failure; exact oldraw/source/
+logs/AFTER remain onNODE. Original0–3 natural completion preserved. V3guardian
+597267 (UID2524/start67608408), old sameclock/caps, no GPU interruption midcall.
+
+At04:54:46UTC actual reductions:
+
+|GPU|PID|First UTC|First tokens|Completed|Applicable|Claimed>=2|Total tokens|max tokens|Repetition screen|
+|---|---:|---|---:|---:|---:|---:|---:|---:|---:|
+|0|597413|04:49:04.043|25|33|17|8|3854|560|0|
+|1|597738|04:49:15.141|25|31|15|9|3984|613|0|
+|2|597759|04:49:14.711|21|27|11|10|4716|622|0|
+|3|598323|04:49:21.412|32|26|10|7|3582|1139|0|
+|4|600751|04:50:13.648|52|17|9|7|3930|891|0|
+|5|600846|04:50:19.046|33|20|12|10|4147|567|0|
+|6|600758|04:50:12.489|21|19|11|9|4259|816|0|
+|7|600765|04:50:13.991|25|18|10|7|3960|858|1|
+
+191captures/32432contenttokens;95exhaustion-applicable responses and96source
+EVENT exposures (not exhaustion targets). Applicable claimedheadings distribution
+0:22,1:6,2:52,3:15;67claim>=2, NOT67semantically verified methods/pass rows.
+One separate repetition screen on7, not oracle failure or automatic rejection.
+First captures allCODE,0headings/bounded-oracle-failed/nontruncated;4–7first
+capture is draft, not final. Native16,384target/32,768context per everycapture
+checked, plus actual4–7 first secondpasses preserve exact fullownprior text and
+reserve remainingcontext cap. Allraw targets/failed/rejected paths retained.
+
+Unhinted0/1 default comparison: exact V3 prompts/cohort/source identities;
+5completed CODE/math pairs byte-identical messages verified. Full ROUTE
+histories can differ after own actions; these are EXCLUDED from exact-prompt
+comparisons, never pooled as matched controlled outcomes. Matched initialworlds
+alone are not a claim of identical subsequent contexts. No improvedchild claim.
+
+First substantive unhinted math04:49:48.963derived/04:49:51.11837ec, both
+registered correct and2claimedheadings,438/213tokens. Fulltext author spotcheck:
+derived works two multiplication groupings and compares them but no distinct
+methodfamily/winner rationale;37ec relabels the same calculation. First CODE
+pair is expression-only. Therefore FULL EXHAUSTION NOT established by these
+four diagnostic rows. SEMANTIC_SPOTCHECK.json is separate hash-bound author
+annotation, not an independent sample/PASS/admission or rowrewrite. Native
+semantic labels stayUNREVIEWED; Hubble owns registration/eligibility.
+
+Compact staged evidence under ownanalysis `exhaustion_v3/`:
+PROTOCOL.md, CPU_TESTS.log, NATIVE_PREPARE_SUMMARY.json, BUILDER_RECEIPT.md,
+FIRST_NATIVE_PROOF.json, LIVE_COMPACT_0451.json, BOUNDARY_AND_CALL_AUDIT.json,
+PER_SLOT_REDUCTION_0455.json, SEMANTIC_SPOTCHECK.json. Filenames are labels;
+use each observed_utc. Native raw paths and SHA/bytes only, no VMraw or archive.
+SOURCEf71ab1fcad22792e70d79b732937bf9cc004f80cbcaec01be799f119dd4d7d13;
+PREPARE0c7c9d351b0357bc48a492d26ac2301edda9c53f21ed0e3e356ab15dd92bfd57.
+
+Newsource: gpu/orch_rich_hot_node2_exhaustion_v3.py, its _guard.py/_prepare.py,
+organism_v6/orch_rich_hot_node2_exhaustion_v3.py, correspondingtest; updated
+status helper/test, journal, publisher handoff, CHANGED_PATHS.md, single dated
+Builder append inCOORDINATION. Main owns git/publication, no mutation here.
+Hubble: register V3 mixedstate/version explicitly; node-local64row manifests
+at `orch_rich_hot_node2_supply_20260915_attempt1/exhaustion_v3_raw/batches`.
+Continue all8 generation; no wait for semantic review. Next is sampled fulltext
+quality plus strict same-prompt comparisons, not keyword success claims.
+
 ## 2026-09-15T04:40Z — Rohin100 prospective V3 allocation and own preGPU plan
 
 Implement owned node2 EXHAUSTION_V3 only, no node1/3 actions.0derivedFULL256

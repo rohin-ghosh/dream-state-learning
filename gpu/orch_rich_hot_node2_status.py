@@ -67,6 +67,9 @@ def lane(root, shard, now, window=600):
                 finished_unix=row['finished_unix'], family=row.get('family', 'math'),
                 category=outcome.get('category', 'execution_error'), content_tokens=outcome.get('content_tokens', 0),
                 correct=outcome.get('correct'), terminal=response.get('terminal'), truncated=response.get('truncated'),
+                claimed_approach_count=outcome.get('claimed_approach_count'),
+                semantic_label=outcome.get('branching_semantic_annotation', 'UNREVIEWED'),
+                repetition_failure_screen=outcome.get('repetition_failure_screen', False),
                 execution_error='error' in row, artifact=reference(path, payload)))
     recent = [row for row in rows if now - window <= row['finished_unix'] <= now]
     launch = root / f'LAUNCH_{shard}.json'
@@ -77,7 +80,8 @@ def lane(root, shard, now, window=600):
         if family not in first_by_family:
             first_by_family[family] = {name: row.get(name) for name in
                 ('task_id', 'source_task_id', 'stage', 'finished_unix', 'category', 'content_tokens', 'correct',
-                 'terminal', 'truncated', 'execution_error', 'artifact')}
+                 'terminal', 'truncated', 'claimed_approach_count', 'semantic_label', 'repetition_failure_screen',
+                 'execution_error', 'artifact')}
     route = []
     for path in (output / 'evidence').glob('B*-P*.json'):
         row = read(path)
@@ -85,6 +89,9 @@ def lane(root, shard, now, window=600):
             route.append((row['evidence']['complete_routes'], row['evidence']['route_denominator']))
     return dict(root=str(root), shard=shard, identity=process, identity_alive=identity_alive(process) if process else False,
                 completed_captures=len(rows), categories=dict(Counter(row['category'] for row in rows)),
+                claimed_approach_counts=dict(Counter(str(row['claimed_approach_count']) if row['claimed_approach_count'] is not None else 'not_measured' for row in rows)),
+                audited_semantic_labels=dict(Counter(row['semantic_label'] for row in rows)),
+                repetition_failure_screen_count=sum(bool(row['repetition_failure_screen']) for row in rows),
                 stages=dict(Counter(row['stage'] for row in rows)), families=dict(Counter(row.get('family', 'math') for row in rows)),
                 recent_window_seconds=window, recent_completed=len(recent), recent_captures_per_hour=len(recent) * 3600 / window,
                 recent_content_tokens=sum(row['content_tokens'] for row in recent),
@@ -96,11 +103,13 @@ def lane(root, shard, now, window=600):
                 failed=receipt(output / 'FAILED.json'))
 
 
-def observe(original, successor, derived=None, control=None):
+def observe(original, successor, derived=None, control=None, exhaustion=None):
     now = time.time()
     generations = [('original', original), ('successor', successor)]
     if derived is not None:
         generations.append(('checkpoint_derived', derived))
+    if exhaustion is not None:
+        generations.append(('exhaustion_v3', exhaustion))
     roots = {name: {str(shard): lane(root, shard, now) for shard in range(8)}
              for name, root in generations}
     slots = {}
@@ -127,5 +136,6 @@ if __name__ == '__main__':
     parser.add_argument('--successor', type=Path, default=Path('/localhome/local-rohing/orch_rich_hot_node2_floor98_20260915_attempt1'))
     parser.add_argument('--derived', type=Path)
     parser.add_argument('--control', type=Path)
+    parser.add_argument('--exhaustion', type=Path)
     options = parser.parse_args()
-    print(json.dumps(observe(options.original, options.successor, options.derived, options.control), indent=2))
+    print(json.dumps(observe(options.original, options.successor, options.derived, options.control, options.exhaustion), indent=2))
