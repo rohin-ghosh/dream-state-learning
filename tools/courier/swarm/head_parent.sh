@@ -36,8 +36,8 @@ B = json.load(open(branches)); state = json.load(open(state_p)) if os.path.exist
 new_any = False; digests = {}
 for name, b in B.items():
     node, root = b['node'], b['root']
-    cmd = f"""R={root}; latest=$(ls -td $R/*/cycle* $R/cycle* 2>/dev/null | head -1); echo "LATEST $latest";
-    for f in $(ls -t $latest/readout/COMPLETE.json $latest/sleep/COMPLETE.json $latest/experience/CALL_*.json $latest/open_turn/*.json $latest/presleep*/CALL_*.json $latest/*PARENT*.json $latest/*TRIPLES*.jsonl 2>/dev/null | head -14); do echo "=== $f"; head -c 3000 $f; echo; done"""
+    cmd = f"""R={root}; latest=$(ls -td $R/cycle_* $R/*/cycle_* $R/cycle* $R/*/cycle* 2>/dev/null | head -1); nread=$(ls -d $R/readout_* $R/*/readout_* 2>/dev/null | wc -l); echo "LATEST ${{latest:-none}} readouts=$nread results=$(ls $R/parent_transcripts/*/RESULT.json $R/*/parent_transcripts/*/RESULT.json 2>/dev/null | wc -l)";
+    for f in $(ls -t $R/STATUS.json $R/*/STATUS.json $R/PENDING_TRIPLE.json $R/*/PENDING_TRIPLE.json $R/readout_*/COMPLETE.json $R/*/readout_*/COMPLETE.json $R/readout_*/*MEASURE*.json $R/cycle_*/UPDATES.jsonl $R/parent_transcripts/*/RESULT.json $R/parent_transcripts/*/REQUEST.json $R/*/parent_transcripts/*/RESULT.json 2>/dev/null | head -16); do echo "=== $f"; head -c 2500 $f; echo; done"""
     try:
         out = subprocess.run(['bash', f'{repo}/gpu/{node}_ssh.sh', cmd], capture_output=True, text=True, timeout=120).stdout
     except Exception as e:
