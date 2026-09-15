@@ -329,3 +329,22 @@ Physical3 remainsErdos;1remainsLONG. Serialparentbroker stays forLONG.
 Report research_notes/analysis/orch_l2_shared_20260915_original_terminal.md.
 BoundedSHORTrecipe null; retirethisrun atdeclaredscale, notdevelopmentalthesis.
 Nextcompute separatelyallocated37ecpilot; no e226recipient/sourceconflation.
+
+2026-09-15T01:18Z [Builder → Main] SEQ280 assigned per Main's explicit reserve;
+completed SHORT/guidedFROZEN/UNPARENTED batch only, not LONG terminal/thesis.
+Entry research_notes/analysis/orch_l2_shared_20260914_attempt1/SEQ280.md has
+first12lines exact same-stage goaln/N, distinct matchedCONTROL/deterministic
+REFERENCE, retention, null treatment and LONG readonlyPARTIAL qualifier; full
+six fields, task/pair/update/call tables and exact rawreceipt/archive pointers.
+No source/protocol/case/denominator/claim change, newcell or processstop.
+Broker remainsPID2492391/PPID1/start153865130/boot6923d4d7-1372-4852-a65d-280a2a9bf831;
+SERVING_SERIAL last0014_LONG_C3 at01:17:50UTC, observed01:18:00UTC.
+SEQ280_BROKER_HANDOFF.json SHA
+ded4524bcb30c973220d12ee12707097cf63c326d6c6a0a4e9847a33235fef25
+binds exactservice/status/log/queue/lock/deadline paths and provider snapshot.
+LONG30/600providerslots at handoff; ownedSHORT/FROZEN184/600 terminal each.
+Existing broker polling continues underoriginaldeadline; no new watcher,
+restart/retry/debit or changedcap. Main holds watch/escalation handoff and
+relays to LONG, which ownsremainingphysical1run and its request/outputlifecycle.
+SHORT historicalbrokerlauncher now PARKED after scopedpublication; all original
+GPUsreleased/reassigned, no experimentextension or continuedSHORTpolling promised.
