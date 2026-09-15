@@ -27271,3 +27271,5 @@ Integrity: ORIGINAL37EC and collection adapter_state_before = adapter_state_afte
 | fits / updates | 0 | fits 0, updates 0 | SUMMARY.json, MOUNTED.json |
 
 Not re-derived: neutral-prefix support 16/24 vs 23/24 and meaningful-revision 24/24 vs 23/24 (labels nested in `labels`, not recounted in the time budget). Integrity: `terminal/run/shard0/MOUNTED.json` actual_adapter_state `37ec3788…` matches the entry's "named_parameters 37ec"; TERMINAL.json status COMPLETE, 4 native children, returncodes 0,0,0,0, elapsed 333.573 s (entry 333.573 s), assigned GPU-hours 0.370637 (entry 0.370637). Native calls claimed 93 = 93 CALL files = SUMMARY native_calls 93. Scope, from the entry: 24 frozen old wrong-numeric outputs from two prior cohorts, one seed, screening only; author semantic labels not independently re-judged.
+
+commit left local: push rejected as non-fast-forward (remote main ahead); no pull performed.
