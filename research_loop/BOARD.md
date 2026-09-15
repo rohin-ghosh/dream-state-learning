@@ -1,5 +1,20 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 10:45 UTC — R116 launch fallback in progress
+
+R116 supersedes preparation-only gating: launch existing paired implementations,
+run section9.5 verifications in parallel, and converge on ONE shared LoRA and
+optimizer at a common boundary. Current mode is PER-BRANCH FALLBACK, NOT shared.
+F1 physical0 native300642/supervisor300641 is launched; Fable brokers F1=703780,
+F2=706905,F4=707061 reported alive by owner. F3 broker/native and F2/F4 native
+are pending actual receipts. No completed Fable intervention claimed yet.
+Brokers use mutable courier prompts,1GiB memory floor,unchanged single-call lock.
+Node5 measured10:44UTC:5/8resident,1/8instantaneouslycomputing;0/4/5/6/7resident,
+1/2/3empty. Allocated is not occupied. Main owns shared-learner integration;
+per-branch elicitation-only lanes remain labelled no weight learning until switched.
+Shared-child DEV/FINAL learning readouts and branch-local parenting-system effects
+will not be presented as independent per-parent learned-weight comparisons.
+
 ## [Builder] 2026-09-15 10:36 UTC — R115 GO received, checks before dispatch
 
 Rohin's explicit audit-complete GO supersedes the R112 launch hold. Fable

@@ -321,3 +321,163 @@ parent triples. No live-source patch/provider/GPU calls; no claim existing
 parents consumed exchange text. No node5 cycle completed yet, so0entries then.
 Keep four resident lives running; next action is first node5 cycle exchange
 and bounded progress checks, not another launch or full-row semantic re-audit.
+
+## 2026-09-15 10:00 UTC — R111v2 exact F3 pair and boundary handoffs
+
+Read exact225bf00c v2 §§3/6/9 and principles through Git object, without changing
+the shared checkout. Bound copies in `orch_r108_code_parent_r111_f3_20260915_attempt1`.
+F3 explicitly has NO sleep tonight: frozen BASE/noadapter, cycle not sleep is
+its progress unit. Pairedphysical2(Fable)/6(Astra), samecode/tasks/cadence/style/
+reflection/seed/fixed8held/decoder; only parent model differs. Three child-facing
+prompts include ONE open presleep invitation, not an enumerated questionnaire.
+Initial parent-free "sleep-0" readout is required, not claimed already done.
+No outcome, panel drop or quality selection ends any branch.
+
+Currentnode54 goes Poincare and5 Anscombe at completedcycle boundaries only;
+Laplace must explicitly release6 before any code6 admission. No GPU2/provider
+call before Fable review/grace confirmation. Hubble owns Claude broker; queue
+contract requested publicly in COORD, no duplicate implementation. Exchange
+continues. A1000/node3physical4 unaffected.
+
+Old live native sources have no cooperative boundary-release signal handler.
+Before action, own new CPU-tested release watcher will observe completedcycle+
+allissuedcellssettled; acquire exactPIDfd/UID/start/boot/command/CVD custody,
+briefly stop ONLY after a candidate complete boundary, revalidate while stopped,
+and immediately resume if a new cycle raced. Termination only after complete
+cycle proof with no newer-cycle cells and all parentrequests resolved/archived,
+plus hashed native checkpoint of all existing artifacts. No SIGKILL, debugger,
+in-process source mutation or modelcall replay. Watchers run locally onnode,
+not SSH polling loops; receipts distinguish release from receiver admission.
+Tests cover partialcurrentcycle, pendingnative/parent, lateparentarchive,
+candidate race/resume, exactidentity and preservedchargecounts.
+
+## 2026-09-15T10:06:40.555973+00:00 — R112 exact F3 first artifact / CPU preparation only
+
+First artifact: `research_notes/analysis/orch_r108_code_parent_r111_f3_20260915_attempt1/FIRST_ARTIFACT.json`
+SHA256 `d9e91fb5b81faf0420fc0dd375cd862b9232510854301c987df7779469bdec6c`; readable exact full parent text and
+verbatim principles in `FIRST_ARTIFACT.md`. Exact three child prompts, fixed8held
+IDs/content and prompt hashes, common cohort hash, decoder, parent models and
+sleep-0 NOT_RUN are bound. Principles match merged SHA
+`5a6a3d28a2f0c9f99dd76873496a07468075509b4451373d90c11ce8d8b363f2`. F3 context-only BASE/noadapter, no optimizer
+or weight sleep; finest cadence completed response, never mid-generation.
+
+R112 supersedes earlier review/grace wording: explicit watcher GO is mandatory
+for Fable2 GPU AND provider calls; silence/time elapsed never authorizes them.
+GPU6 still requires Laplace explicit completed-cycle release. Existing own4/5
+remain productive until receivers ready AND own completed-cycle boundary. No
+signals, source hotpatches, new native/provider calls, budget reset or raw pull.
+
+Own23focused CPU tests PASS (0.48s). Added malformed/missing/late/SILENT
+classification and receiver-ready/full-cycle policy regression tests. This is
+CPU policy only, NOT a release watcher or native backend. Correction/clarity
+to10:00 entry: its PIDfd boundary race/identity/preservation tests described the
+planned watcher coverage, not implemented or passing watcher tests. No such
+watcher is running. Historical registry exclusions and sleep-0 legacy native
+bindings remain pending; no native readiness or utilization claimed.
+
+Read Hubble actual broker request envelope and TRAIN-public contract; parent
+responses are status/plan.message plus identity/archive receipt, not this
+policy's canonical child_text. Adapter and matched Astra transport remain to
+be bound; no duplicate broker/provider implementation. Next: shared transport
+binding and receiver-ready release implementation; never idle4/5 for that work.
+Source/tests/compact exact hashes in CPU_READINESS.json and STAGE_READY.json.
+
+## 2026-09-15T10:18:52.043760+00:00 — V3 CPU handoff frozen; V4 now supersedes prospective launch
+
+V3 e3a13940 own source, request adapter, visibility and exposure tests:47PASS
+(4.14s), exact own/shared-broker hashes unchanged before/after. FIRST_ARTIFACT_FINAL
+in `research_notes/analysis/orch_r108_code_parent_r113_f3_20260915_attempt1` binds3prompts/DEV8/FINAL8. DEV SHA
+`a6fba72f08e01a7aaf93287751181a443aadd98981802429bef731963662557b`;
+FINAL SHA `4a5a55d8f98683365400c2bc41da7a84cf2c5d89347d1b2dfecf43c72b7b89f8`.
+V3 native/provider0 and all actual readouts NOT_RUN; original4/5 untouched.
+CPU adapter accepts completed TRAIN child responses, preserves delivered checker
+text/visible feedback fields, strips only hidden fields; tested against Hubble
+R113 broker a3c22de53c48a1579f23335ab070dabe0ca0f1b38326c4b892dabd5de59065ca.
+DEV is head-only; FINAL never parent/head/exchange. Historical1564source records
+checked, not a complete native census. Native backend/reply archive/Astra dispatch
+and receiver-ready completed-cycle release mechanism remain pending. No handoff.
+
+V4 05a0b428 arrived before any new native launch: binds changed fixedparent text,
+usefulorganisation/broadpermission, mutable FOCUS/STYLE/REFLECTION, goal-free
+OPEN TURN,2focusedDEV probes, FINAL cut2026-09-15 17:00UTC (NOTSep16 06:00).
+Preparing separate V4 source/artifacts; V3 bytes/receipts preserved, not retrofitted.
+R112done gate unchanged; no newFable2GPU/provider, no6beforeexplicitrelease.
+Original4/5 run until receiverready AND owncycleend; no sourcehotpatch/signals
+or deadline/budget reset. Main owns judge/metrics and Git.
+
+## 2026-09-15T10:27:59.836500+00:00 — R114 V4 F3 CPU handoff, existing4/5 still productive
+
+Exact requested05a0b428 source bound at `research_notes/analysis/orch_r108_code_parent_r114_f3_20260915_attempt1`;64CPUtestsPASS(5.78s),
+source/dependencyhashes identical before/after. Exact3childprompts, fixedparent
+text/model/decoder, DEV8+FINAL8IDs/hashes, open/focusedprobes in FIRST_ARTIFACT.
+Parentprompt SHA `0e737b6ec32a217e7a0de98980f839d64e987812a66eab985aca540ebb230cd5`; prospectiveF3file
+SHA `f07d47c0649d682624039ff1bfc9454c9f4cc38973a7951d2128a37781a0d2de`. Immutable V2/V3 retained; no livehotpatch.
+
+V4 FINAL cut2026-09-15 17:00UTC replaces2026-09-16 06:00UTC. F3noSLEEP/noLoRA/
+optimizer0; compare elicitation-only SYSTEMS, not modelalone. Headcanchangeonly
+FOCUS/STYLE/REFLECTION atnextcycle with hashes; usefulorganisation allowed, broad
+permission notcatalogue. Quoted05parentbody has noREFLECTION placeholder despite
+itsheader: reflectionmode/cap boundmetadata only, not inventedfixedprose.
+OPEN exact: "The task is over; the environment is still here." Oneparented
+opportunity aftereachTRAINtask and oneparentfreecontext/readout-boundary open
+onfirstDEV;2fixedDEVfocused probes append "focus and give the answer". Newcalls
+countbefore dispatch: cycle0readout37/later29/FINAL8,plus2TRAINopencalls/cycle;
+nooldquotaincrease. ActualV4inference/provider/readouts0/NOT_RUN.
+
+Child-visiblechecker/environment feedback retained, including delivered outcome
+metadata; only hiddenoracle/answerkeys/readouts withheld. FINAL neverparent/head/
+exchange. DEVheadonly, doesnotgatecontinuation. Mainownsjudge: PERSISTED/ABANDONED/
+LOOPED afterobstacle; postanswerexploration descriptive. No keywordsemanticlabels
+or causalrealisationclaim. Hourlyreports distinguish completedprovider vsdelivered/
+SILENT/MISSINGlate/pending/actualtokens; noledger-slot accounting substitute.
+
+PreservedCPU_FAILURE_SHARED_PROTOCOL_DRIFT:63PASS1FAIL because sharedV4 changed
+thefixedparent after05a0b428 (extraopenturnsentence). Its observedSHA
+`6a1b78c54b28493e0932e0c5974eecd3753a712a15c2f787a769fa1ba9706cd6`
+differsfrombound `7b8bb0b233d0b6d68f0e6ca9440e188a8cbdc20434b1ef34e014baf9c2fdc07d`. Fixed ONLYownCPUfixture
+toimmutableapprovedsnapshot; no productionguard/sourceweakening. Main/Hubble
+need alignruntimecanonicalprompt before use; currentdefaultbytecompatNOTclaimed.
+
+Nativeprogress10:22:51.662UTC verified exactPID/UID/start/boot/command+CVD:
+physical4 PID58848:2cycles,35nativeCOMPLETE,13parentCOMPLETE,1MISSING,1pending,
+13087actualchildtokens;physical5 PID51670:2cycles,39nativeCOMPLETE,12parentCOMPLETE,
+1MISSING,1pending,9498tokens. Missinglate subset/provideractualturnsunverified,
+NOTzero. Optimizer0both. Oneboundedread-onlySSH, no signals/scans/newdispatch/rawpull.
+Keepbothuntilreceiverready AND owncompletedcycle; nohandoffnow. Fable2explicit
+WATCHER_RELAYED_ROHIN_DONEgate;6Laplaceexplicitrelease/freshadmissionrequired.
+
+Integration: source/prompt/render+openrequestadapterCPU-ready;native lifecycle/
+replyarchive/Astradispatch/readoutlegacybinding/reservation+releasewatcher remain
+unwired. ThisisnotGPUreadiness. MainownsGitandjudge. Exactstageallowlist follows
+in STAGE_READY.json, including compact currentstatus; no broad/rawforests.
+
+## 2026-09-15T10:34:47.796953+00:00 — R115 actual native implementation and three pre-GPU tests
+
+User auditcomplete/DONE authorizes newFable2native/provider. OwnnewR115roots
+physical2/6, frozenBASE/noLoRA/noSLEEP/λNOT_APPLIED; threeCPUtests must exercise
+realnativeinterfaces: executedOPENinspectandreturnedgymobservation; disjoint
+DEV/FINAL/attachedopen excludedfromsleep/parent; broker-boundREFLECTION drives
+actualengine max_new_tokens. LatestcanonicalV4 plus explicitopen-turnsentence
+willbe frozeninnewroot; prior05/V3/V4CPUartifacts remainimmutable. Newlife
+8192native/1000parents/100cycles and8hmax percard, actualfixedstart/end before
+launch, lease cap checked; no quota/deadline reset onold4/5. FINAL17:00Sep15
+researchonly; no outcome/quality ending. HubbleownsClaude, ownAstra adapter
+reusesexistingqualifiedAPI only. Current4/5 keepuntilreadyreceiver AND owncycleend;
+6requiresLaplaceexplicitrelease. FullprivilegedUUID/minor/proc/CVDscan mandatory.
+AllrawstayonNODE; repositoryonlysource/tests/compactprovenance. MainGit/judge.
+
+## 2026-09-15T10:49Z — R116 actual dispatch blocked, bounded admission repair
+
+Hubble actual F3 broker PID718110 uses bound CONFIG from
+`/tmp/orch_r108_code_parent_r115_freeze_1045/2/BROKER_CONFIG.json`;
+native guard327611 has no LAUNCH/requests. Full privileged scans repeatedly
+show targetGPU2 1MiB/0util/noGPUprocess, argv-only drift of non-GPU processes.
+Existing base scanner permits32MiB; stricter argv reconciliation rejects even1.
+Nonmaterial own admission-only shim will accept exactly0/1MiB (not full32),
+require0util and unchanged full UUID/minor/allUID/CVD/fd checks plus >=3stable
+kernel/executable identities. Never mask observed memory or other blockers.
+Own regression checks must retain blocking at2MiB, utilization, active compute,
+device access/CVD, unknown visibility and identityreuse. Original scanner/source,
+all failed scans, preparedattempts and deadlines remain immutable. No native
+or parent-call replay/reset; no scientific/model/visibility change. Additional
+tests parallel with already-running broker; original3interface tests10PASS.
