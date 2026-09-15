@@ -55,7 +55,9 @@ def test_readonly_and_balanced_order():
 
 
 def test_condition_checks_actual_disabled_layers():
-    model = SimpleNamespace(modules=lambda: [SimpleNamespace(disable_adapters=False)])
+    layer = SimpleNamespace(disable_adapters=False, lora_A={}, lora_B={})
+    method_only = SimpleNamespace(disable_adapters=lambda: None)
+    model = SimpleNamespace(modules=lambda: [method_only, layer])
     runner.assert_condition(model, 'LORA_ON')
     with pytest.raises(AssertionError):
         runner.assert_condition(model, 'LORA_OFF')
@@ -96,6 +98,8 @@ def test_native_workflow_reserves_calls_and_preserves_readonly_pair(tmp_path, mo
 
     class Model:
         disable_adapters = False
+        lora_A = {}
+        lora_B = {}
 
         def parameters(self):
             return [SimpleNamespace(requires_grad=False)]

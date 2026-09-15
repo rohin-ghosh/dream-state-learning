@@ -55,7 +55,7 @@ def assert_readonly(model):
 
 def assert_condition(model, condition):
     states = [module.disable_adapters for module in model.modules()
-              if hasattr(module, 'disable_adapters')]
+              if hasattr(module, 'lora_A') and hasattr(module, 'lora_B')]
     assert states and all(state is (condition == 'LORA_OFF') for state in states)
 
 

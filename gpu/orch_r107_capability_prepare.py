@@ -10,13 +10,14 @@ from gpu import orch_rich_intensity_guard as ownership
 from organism_v6 import orch_r107_capability as policy
 
 
-def prepare(root):
+def prepare(root, prior=None):
     assert os.environ.get('CUDA_VISIBLE_DEVICES') == ''
     assert not (root / 'PLAN.json').exists()
     source = Path(__file__).resolve().parents[1]
-    checkpoint = run.read(root / 'checkpoint/COMPLETE.json')
+    checkpoint_root = (prior or root) / 'checkpoint'
+    checkpoint = run.read(checkpoint_root / 'COMPLETE.json')
     assert checkpoint['status'] == 'COMPLETE' and checkpoint['updates'] == 6208
-    adapter = dict(checkpoint['output_adapter'], path=str(root / 'checkpoint/adapter'))
+    adapter = dict(checkpoint['output_adapter'], path=str(checkpoint_root / 'adapter'))
     run.bridge.AdapterIdentity.from_document(adapter).verify()
     assert adapter['state_sha256'] == 'a970d311de6a3a77881f95fa1b042069d708c6bf814306980f8fe36467c8e792'
     bundle = ownership.existing.BUNDLE
@@ -42,11 +43,25 @@ def prepare(root):
                  for path in sorted((source / folder).rglob('*.py'))},
         suite_sha256=policy.digest(tasks), gpu_uuid='GPU-e1277146-04f2-c38f-d1ae-1a98132f907e',
         physical_index=3, device_minor=3, adapter=adapter, model_dir=str(model_dir))
+    if prior is not None:
+        previous = run.read(prior / 'PLAN.json')
+        failure = run.read(prior / 'readout/FAILED.json')
+        assert failure['error_type'] == 'AssertionError' and failure['calls'] == 1
+        captures = list((prior / 'readout').glob('CALL_*.json'))
+        assert len(captures) == 1 and 'response' not in run.read(captures[0])
+        assert previous['adapter']['state_sha256'] == adapter['state_sha256']
+        assert previous['suite_sha256'] == plan['suite_sha256']
+        for key in ('native_deadline_unix', 'hard_deadline_unix', 'lease_end_unix'):
+            plan[key] = previous[key]
+        plan.update(prior_root=str(prior), prior_plan_sha256=run.sha(prior / 'PLAN.json'),
+            prior_failure_sha256=run.sha(prior / 'readout/FAILED.json'),
+            prior_reserved_calls=1, prior_completed_calls=0, aggregate_reserved_cap=65,
+            repair='BOOLEAN_STATE_ON_ACTUAL_LORA_LAYERS_NOT_METHOD_ATTRIBUTES')
     run.validate_plan(plan, source, started)
     run.storage.atomic_json(root / 'PLAN.json', plan)
     run.storage.atomic_json(root / 'SUITE_SEALED.json', dict(tasks=tasks, parent_access=False, train_ingestion=False))
     ready = dict(status='PASS', plan_sha256=run.sha(root / 'PLAN.json'),
-        suite_sha256=plan['suite_sha256'], checkpoint_receipt_sha256=run.sha(root / 'checkpoint/COMPLETE.json'),
+        suite_sha256=plan['suite_sha256'], checkpoint_receipt_sha256=run.sha(checkpoint_root / 'COMPLETE.json'),
         source_files=len(plan['sources']), encoded_prompts=len(lengths),
         max_prompt_tokens=max(lengths), parent_calls=0, native_calls=0,
         base_sha256=run.BASE_SHA, prepared_unix=started)
@@ -57,5 +72,7 @@ def prepare(root):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=Path, required=True)
+    parser.add_argument('--prior', type=Path)
     import json
-    print(json.dumps(prepare(parser.parse_args().root), sort_keys=True))
+    options = parser.parse_args()
+    print(json.dumps(prepare(options.root, options.prior), sort_keys=True))
