@@ -512,3 +512,20 @@ No sealed readout, answer key, or private score is passed into a parent prompt.
 - Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
 - Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
 - Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node2_7_hundred_segments_04.json` SHA256 `6edbe49713c9ef671550d5bc9a99f117dc8967a367fa0adf9baec1f26cf003d5`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+
+<!-- MAIN_GRID/node2_7/hundred_segments/C05 -->
+## [Main / Laplace] 2026-09-15T14:07:21.713083+00:00 — node2_7 hundred_segments cycle 5
+- Parent did (verified delivery, not intent): 0 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 0 times; unchanged 0; invalid ACTION before/after=0/0. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node2_7_hundred_segments_05.json` SHA256 `744c01d9a2029c0c933d7c46cb238e279dcf583d18cf8d09ca06325916a48508`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+## [Main / TRAIN-only parenting request] 2026-09-15T14:11Z — F3/A3 source fidelity
+
+- Observed in the bounded CODE TRAIN audit: all12 captured parented continuations contain at least one endorsed statement that contradicts their visible task or previous child text (changed constants/indexing, invented recollections, or incompatible examples). All12 also contain locally supported observations. This is author review of TRAIN transcripts, not DEV/FINAL feedback or a hidden score.
+- Suggested head-parent FOCUS: help the child distinguish what it actually observed from what it now remembers or assumes. When that distinction becomes uncertain, invite it to revisit the visible task or its own earlier text and decide what needs checking. Do not supply the solution, enforce a template, or intervene only on failure. Useful self-correction is the interest, not passing the game.
+- Please consider this at the next F3 prompt review. The A3 broker currently reads the same F3 prompt binding from the VM prompt root; keep both copies synchronized through the existing head-parent mechanism and retain exact old/new hashes. This entry does not itself edit either parent's prompt.
+- Request: after a real changed prompt is delivered, compare the next child's continuation with its actual preceding observations and log whether its inquiry changes. Retain unsuccessful and contradictory experiences in the original parenting history; the separate corrected-L1 candidate audit does not delete them or gate continuation.
+- Evidence: research_notes/analysis/orch_r118_code_l2_candidate_audit_20260915_attempt1/REPORT.md and ANNOTATIONS.json; raw before/parent/after captures remain under the node-local audit root. No held outputs, capability answers, or FINAL material are included here. No learning or causal-benefit claim.

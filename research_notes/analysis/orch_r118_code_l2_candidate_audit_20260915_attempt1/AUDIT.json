@@ -1,0 +1,1406 @@
+{
+  "annotations_reference": {
+    "path": "/localhome/local-rohing/orch_r118_code_l2_candidate_audit_20260915_attempt1/ANNOTATIONS.json",
+    "sha256": "7cbec29998d2cf0286f58fe14deee8865814c59da92d6afd836a4d5b3eeecae8"
+  },
+  "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+  "audited_pairs": 12,
+  "counts": {
+    "REJECTED": 12
+  },
+  "cpu_tests": {
+    "path": "/localhome/local-rohing/orch_r118_code_l2_candidate_audit_source_20260915_v1/CPU_TESTS.json",
+    "sha256": "0a8f37e5efec3fcef86919b60ec76cf65344e5b02d2809604be35460aea1f5e6"
+  },
+  "cuda_initialized": false,
+  "eligible_rows": 0,
+  "finished_unix": 1789480553.2253504,
+  "historical_replays": 0,
+  "ingestion_rows": 0,
+  "mask_PASS": 12,
+  "model_calls": 0,
+  "native_child_tokens": 6967,
+  "positive_support_claims": 12,
+  "provider_calls": 0,
+  "results": [
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "F3:C018_E0",
+      "lineage": {
+        "checkpoint_sha256": null,
+        "extra_references": {
+          "CONTINUATION_BINDING.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONTINUATION_BINDING.json",
+            "sha256": "b2175a3348ec8a410f75d3f31828f1074207dd76c6a1d2a35b2aaad3cc8c7682"
+          },
+          "CONT_SOURCE_SHA256.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONT_SOURCE_SHA256.json",
+            "sha256": "61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f"
+          },
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/LAUNCH.json",
+            "sha256": "4f14836a8b49a21431ad5166fbd33491525b887029da818c6cd6b2865fded9d0"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "6c531c098d22015d4194023fa509ea24192314ca8402e56d9393c31a1e8dc1d7"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d"
+          }
+        },
+        "kind": "PRE_SHARED_RECORDED_BASE_SOURCE",
+        "live_weights_rehashed": false,
+        "parent_model": "claude-fable-5-1",
+        "shared_generation": null,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "cf780b0ecc5d45232c68c25f2cf4d43d64741051def809a8a3b9e3adfc43a01d"
+        }
+      },
+      "masking": {
+        "child_tokens": 931,
+        "labels_sha256": "dbf3400645337815c4de65c7fac1f7a0ae6396a0f005791c93728744efb6f0b1",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "ee7c1202230e7cbfffff6b0db92f01d1530008a4c26b9821255fce439fb5cdb6",
+        "prompt_tokens": 444,
+        "status": "PASS",
+        "target_ids_sha256": "be3cabede1c108dd98ddaf67c8aca7d7390f84f14e7ed62b2c1fd7e4b27508ca",
+        "target_sha256": "1848445f5e9b145937614b04db0d8d96057e2931d4793245e342eda00ab50538",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Incorrect endorsed marker and changing excluded values; only initial exclusion description is supported.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "c1ac405b9acd7bc55f5cdcaa6eb786b07b990e1b3a942dd74a7bf4e857326d34",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 556,
+              "sha256": "0c635d0f0e761140a8a8fb3931c6d5944c474f40f2750a9905836cfa1d1fb106",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Incorrect endorsed marker and changing excluded values; only initial exclusion description is supported.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 339,
+              "sha256": "ad0ee77e1ab60d40e07c91348c6c93a9f2a61bf0595f05c0cb8b002b90313474",
+              "source": "child",
+              "start": 291
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 556,
+              "sha256": "0c635d0f0e761140a8a8fb3931c6d5944c474f40f2750a9905836cfa1d1fb106",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 209,
+              "sha256": "97a2d38f269d48223dadc8738d624c712968def710c3344d9087b6d297471878",
+              "source": "child",
+              "start": 169
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Incorrect endorsed marker and changing excluded values; only initial exclusion description is supported.",
+        "reviewed_whole_target": {
+          "characters": 2445,
+          "sha256": "1848445f5e9b145937614b04db0d8d96057e2931d4793245e342eda00ab50538"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C018_E0_REFLECTION.json",
+        "sha256": "c1ac405b9acd7bc55f5cdcaa6eb786b07b990e1b3a942dd74a7bf4e857326d34"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0035",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "F3:C018_E1",
+      "lineage": {
+        "checkpoint_sha256": null,
+        "extra_references": {
+          "CONTINUATION_BINDING.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONTINUATION_BINDING.json",
+            "sha256": "b2175a3348ec8a410f75d3f31828f1074207dd76c6a1d2a35b2aaad3cc8c7682"
+          },
+          "CONT_SOURCE_SHA256.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONT_SOURCE_SHA256.json",
+            "sha256": "61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f"
+          },
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/LAUNCH.json",
+            "sha256": "4f14836a8b49a21431ad5166fbd33491525b887029da818c6cd6b2865fded9d0"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "6c531c098d22015d4194023fa509ea24192314ca8402e56d9393c31a1e8dc1d7"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d"
+          }
+        },
+        "kind": "PRE_SHARED_RECORDED_BASE_SOURCE",
+        "live_weights_rehashed": false,
+        "parent_model": "claude-fable-5-1",
+        "shared_generation": null,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "cf780b0ecc5d45232c68c25f2cf4d43d64741051def809a8a3b9e3adfc43a01d"
+        }
+      },
+      "masking": {
+        "child_tokens": 539,
+        "labels_sha256": "ee364df65372c4b3b9343ff871bf3f071f533ae260703b903e1181620cafe4c6",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "181de38dea31bf00ff6be4aaf7284f2c71c465acd348f60e5a79bd2b9acf1703",
+        "prompt_tokens": 450,
+        "status": "PASS",
+        "target_ids_sha256": "912b20fd7fd6a079392c8aacfbeefb906fbe1c63188ecb9a08b1885c6e63369a",
+        "target_sha256": "8497fefb4e0750db5c32a6806cdce2f9e476eb396799aa129e244c8b4f03bfcf",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Incorrect endorsed constant and divisor16 changed to8; acknowledging no inspection does not ground the proposed correction.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "60725e1bc0bc3474e864738c2b92e870cb45aa556131096bef2ff94f8372f46e",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 533,
+              "sha256": "1d5b021d5ffedfe9a4b3769bf4ce589edd97414164ee78c431896bb2f5fd67ad",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Incorrect endorsed constant and divisor16 changed to8; acknowledging no inspection does not ground the proposed correction.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 331,
+              "sha256": "83f6edd177468323af21e2119dd1f09c6a5517bf2a1c72a9254a94afc01e387c",
+              "source": "child",
+              "start": 265
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 113,
+              "sha256": "27562a28b8ffe4331b132b3d4cd24c3261b18adc7c3ba1945106f987abecedf6",
+              "source": "before",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 555,
+              "sha256": "f9b279b2373b602bf70ee18761384db287d5f2e7801a36609868bb2c11045a4d",
+              "source": "child",
+              "start": 518
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Incorrect endorsed constant and divisor16 changed to8; acknowledging no inspection does not ground the proposed correction.",
+        "reviewed_whole_target": {
+          "characters": 2113,
+          "sha256": "8497fefb4e0750db5c32a6806cdce2f9e476eb396799aa129e244c8b4f03bfcf"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C018_E1_REFLECTION.json",
+        "sha256": "60725e1bc0bc3474e864738c2b92e870cb45aa556131096bef2ff94f8372f46e"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0036",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "F3:C019_E0",
+      "lineage": {
+        "checkpoint_sha256": null,
+        "extra_references": {
+          "CONTINUATION_BINDING.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONTINUATION_BINDING.json",
+            "sha256": "b2175a3348ec8a410f75d3f31828f1074207dd76c6a1d2a35b2aaad3cc8c7682"
+          },
+          "CONT_SOURCE_SHA256.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONT_SOURCE_SHA256.json",
+            "sha256": "61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f"
+          },
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/LAUNCH.json",
+            "sha256": "4f14836a8b49a21431ad5166fbd33491525b887029da818c6cd6b2865fded9d0"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "6c531c098d22015d4194023fa509ea24192314ca8402e56d9393c31a1e8dc1d7"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d"
+          }
+        },
+        "kind": "PRE_SHARED_RECORDED_BASE_SOURCE",
+        "live_weights_rehashed": false,
+        "parent_model": "claude-fable-5-1",
+        "shared_generation": null,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "cf780b0ecc5d45232c68c25f2cf4d43d64741051def809a8a3b9e3adfc43a01d"
+        }
+      },
+      "masking": {
+        "child_tokens": 590,
+        "labels_sha256": "a2def0588f76138688d1f7c0a29789172708a4ea9c388409a6319330443ed4d4",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "08ce7a3dd8a71e10796c93f3d9dadb123ad7311bba13b67f95006387dc0e5e0c",
+        "prompt_tokens": 418,
+        "status": "PASS",
+        "target_ids_sha256": "74b2cbbb31ae269d64d20ad586e55eb0d91a006307b7dc2dfadb833a0956b6f7",
+        "target_sha256": "38905299b6d83e78839c3fa8271b1ec33a4e41e2ac15d409c0324384848307c9",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Accurate opening clamp description, but wrong endorsed marker, clamp implementation and ungrounded example output.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "1da7fa4b7757506901d75411978913cb3349bdb18a9f060fd34d7db7a7ac1e63",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 538,
+              "sha256": "262f43c090c7c22859bf2f45a94a035b9064ee845b32402297c8309f4d317790",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Accurate opening clamp description, but wrong endorsed marker, clamp implementation and ungrounded example output.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 557,
+              "sha256": "bcfee60700fdec39c550a2250050b98c8e6fb7ed361d8cff08610fb4c874ed1c",
+              "source": "child",
+              "start": 510
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 538,
+              "sha256": "262f43c090c7c22859bf2f45a94a035b9064ee845b32402297c8309f4d317790",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 386,
+              "sha256": "d163756e4005452e171ce86c8b247ec970f0dc7d8523c097b689a8621693cdd3",
+              "source": "child",
+              "start": 317
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Accurate opening clamp description, but wrong endorsed marker, clamp implementation and ungrounded example output.",
+        "reviewed_whole_target": {
+          "characters": 2132,
+          "sha256": "38905299b6d83e78839c3fa8271b1ec33a4e41e2ac15d409c0324384848307c9"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C019_E0_REFLECTION.json",
+        "sha256": "1da7fa4b7757506901d75411978913cb3349bdb18a9f060fd34d7db7a7ac1e63"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0037",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "F3:C019_E1",
+      "lineage": {
+        "checkpoint_sha256": null,
+        "extra_references": {
+          "CONTINUATION_BINDING.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONTINUATION_BINDING.json",
+            "sha256": "b2175a3348ec8a410f75d3f31828f1074207dd76c6a1d2a35b2aaad3cc8c7682"
+          },
+          "CONT_SOURCE_SHA256.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONT_SOURCE_SHA256.json",
+            "sha256": "61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f"
+          },
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/LAUNCH.json",
+            "sha256": "4f14836a8b49a21431ad5166fbd33491525b887029da818c6cd6b2865fded9d0"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "6c531c098d22015d4194023fa509ea24192314ca8402e56d9393c31a1e8dc1d7"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d"
+          }
+        },
+        "kind": "PRE_SHARED_RECORDED_BASE_SOURCE",
+        "live_weights_rehashed": false,
+        "parent_model": "claude-fable-5-1",
+        "shared_generation": null,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "cf780b0ecc5d45232c68c25f2cf4d43d64741051def809a8a3b9e3adfc43a01d"
+        }
+      },
+      "masking": {
+        "child_tokens": 617,
+        "labels_sha256": "c41e0f2d0900cf83ff78743b91cdd25b33671ad6e57c2f7b7cc188db90f853d8",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "26c12860b7e2a6146b75f1ba1081724f97f46067ba0b295727411e1dc6e08ec6",
+        "prompt_tokens": 465,
+        "status": "PASS",
+        "target_ids_sha256": "54fe4e43fb5d84205cde32deb0eb2455955196fdf8c3404ba6fb196df921c6f9",
+        "target_sha256": "ee2068ae6c2ef6cfbdc7b06b114d2d65ef9549e00d71294972bf96ec729babff",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Recognizes alternating sums but endorses wrong constants and incompatible empty-list returns.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "06a01168e4adcd92223c7b0cd3a399d1a7e80695646a90cbc48d568ba9a431e5",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 547,
+              "sha256": "c3ddeccfc683b1d611168efedc104653371ee7d98392d7e5c001a8bc7e282c4d",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Recognizes alternating sums but endorses wrong constants and incompatible empty-list returns.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 352,
+              "sha256": "f319237cc47a3a3edfd3556d131cad673b5a891ba17cc6c03773edb43bfe61d0",
+              "source": "child",
+              "start": 287
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 547,
+              "sha256": "c3ddeccfc683b1d611168efedc104653371ee7d98392d7e5c001a8bc7e282c4d",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 229,
+              "sha256": "f2e979c67b36009cab059560eb72283cceb17e3c0bc37896ef85e362ae7b4de4",
+              "source": "child",
+              "start": 196
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Recognizes alternating sums but endorses wrong constants and incompatible empty-list returns.",
+        "reviewed_whole_target": {
+          "characters": 2231,
+          "sha256": "ee2068ae6c2ef6cfbdc7b06b114d2d65ef9549e00d71294972bf96ec729babff"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C019_E1_REFLECTION.json",
+        "sha256": "06a01168e4adcd92223c7b0cd3a399d1a7e80695646a90cbc48d568ba9a431e5"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0038",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "F3:C020_E0",
+      "lineage": {
+        "checkpoint_sha256": null,
+        "extra_references": {
+          "CONTINUATION_BINDING.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONTINUATION_BINDING.json",
+            "sha256": "b2175a3348ec8a410f75d3f31828f1074207dd76c6a1d2a35b2aaad3cc8c7682"
+          },
+          "CONT_SOURCE_SHA256.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONT_SOURCE_SHA256.json",
+            "sha256": "61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f"
+          },
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/LAUNCH.json",
+            "sha256": "4f14836a8b49a21431ad5166fbd33491525b887029da818c6cd6b2865fded9d0"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "6c531c098d22015d4194023fa509ea24192314ca8402e56d9393c31a1e8dc1d7"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d"
+          }
+        },
+        "kind": "PRE_SHARED_RECORDED_BASE_SOURCE",
+        "live_weights_rehashed": false,
+        "parent_model": "claude-fable-5-1",
+        "shared_generation": null,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "cf780b0ecc5d45232c68c25f2cf4d43d64741051def809a8a3b9e3adfc43a01d"
+        }
+      },
+      "masking": {
+        "child_tokens": 472,
+        "labels_sha256": "c35efd43156c3150997f09d4b81f9d5cb5c9fba9fa2ba8fb851f9e9d9d0249ec",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "b5346ecc24af87abc818825dbb18c28fb4183da6c08ea9c90a71ea8b58380d9c",
+        "prompt_tokens": 421,
+        "status": "PASS",
+        "target_ids_sha256": "3f53ca00db91345aa36355d6fe3dfa96bb154d673c3911161ae9c1e3e68de602",
+        "target_sha256": "761957e4b735016950d8da01ab7149b4aa7890f7adae125b288020b9a0321ae4",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Falsely corrects original divisor19 to17 and changes markers; correct size bound is partial support only.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "88d12e2c243159d4854e877d655325233b78db215f453161b2fd0cf36d067b16",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 560,
+              "sha256": "81c1315dc0f77474fd80cfcb2946bd006f6267c8139b72ce23aa9e24465f1547",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Falsely corrects original divisor19 to17 and changes markers; correct size bound is partial support only.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 293,
+              "sha256": "de50b34f625a0863e9f91c6abcd6c8b352e82fb83434efadd10b60e9343234d7",
+              "source": "child",
+              "start": 249
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 560,
+              "sha256": "81c1315dc0f77474fd80cfcb2946bd006f6267c8139b72ce23aa9e24465f1547",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 151,
+              "sha256": "2ad34f8b3418935ae574975324ac0bfbba9e884fe21afec9e1fd7518b2ad9432",
+              "source": "child",
+              "start": 88
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Falsely corrects original divisor19 to17 and changes markers; correct size bound is partial support only.",
+        "reviewed_whole_target": {
+          "characters": 1590,
+          "sha256": "761957e4b735016950d8da01ab7149b4aa7890f7adae125b288020b9a0321ae4"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C020_E0_REFLECTION.json",
+        "sha256": "88d12e2c243159d4854e877d655325233b78db215f453161b2fd0cf36d067b16"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0039",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "F3:C020_E1",
+      "lineage": {
+        "checkpoint_sha256": null,
+        "extra_references": {
+          "CONTINUATION_BINDING.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONTINUATION_BINDING.json",
+            "sha256": "b2175a3348ec8a410f75d3f31828f1074207dd76c6a1d2a35b2aaad3cc8c7682"
+          },
+          "CONT_SOURCE_SHA256.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONT_SOURCE_SHA256.json",
+            "sha256": "61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f"
+          },
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/LAUNCH.json",
+            "sha256": "4f14836a8b49a21431ad5166fbd33491525b887029da818c6cd6b2865fded9d0"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "6c531c098d22015d4194023fa509ea24192314ca8402e56d9393c31a1e8dc1d7"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d"
+          }
+        },
+        "kind": "PRE_SHARED_RECORDED_BASE_SOURCE",
+        "live_weights_rehashed": false,
+        "parent_model": "claude-fable-5-1",
+        "shared_generation": null,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "cf780b0ecc5d45232c68c25f2cf4d43d64741051def809a8a3b9e3adfc43a01d"
+        }
+      },
+      "masking": {
+        "child_tokens": 744,
+        "labels_sha256": "5fbbd01369c682a2587226b4da908cdf5d0497f5ee61abd62d970c8070aadb8c",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "9d5a788685ecbc71fcad9cfb969b5073680473f8ea67d93e5799efcf622c05d4",
+        "prompt_tokens": 455,
+        "status": "PASS",
+        "target_ids_sha256": "eb34475f470ff5af988feacb171d90bba20b66f287c87773f7708a52ba9cdd05",
+        "target_sha256": "f26d9dc84b779ba93596b4948672dca7fa9fd6912b93d1609872b716d184162e",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Correct filter description conflicts with reversed code comparison, incorrect endorsed marker and inconsistent examples.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "91ddc0df04d84cae43080615eadfe54752ae2c2b6d786c20238e959c492a5b78",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 615,
+              "sha256": "16ef3145c0f5d582a8e09d38397e7143fad5195e61ffbb4182eda1dbb612554b",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Correct filter description conflicts with reversed code comparison, incorrect endorsed marker and inconsistent examples.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 343,
+              "sha256": "69211a02edd76528302f519fbcee3f02bf404310a1d32395b65cd7ae8a00d168",
+              "source": "child",
+              "start": 286
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 615,
+              "sha256": "16ef3145c0f5d582a8e09d38397e7143fad5195e61ffbb4182eda1dbb612554b",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 623,
+              "sha256": "c9bd0305d102f7ea163d36ab1ae7ea37f37cf279472f5abe7be0c135687664dd",
+              "source": "child",
+              "start": 562
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Correct filter description conflicts with reversed code comparison, incorrect endorsed marker and inconsistent examples.",
+        "reviewed_whole_target": {
+          "characters": 2823,
+          "sha256": "f26d9dc84b779ba93596b4948672dca7fa9fd6912b93d1609872b716d184162e"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C020_E1_REFLECTION.json",
+        "sha256": "91ddc0df04d84cae43080615eadfe54752ae2c2b6d786c20238e959c492a5b78"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0040",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "F3:C021_E0",
+      "lineage": {
+        "checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+        "extra_references": {
+          "CONTINUATION_BINDING.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONTINUATION_BINDING.json",
+            "sha256": "b2175a3348ec8a410f75d3f31828f1074207dd76c6a1d2a35b2aaad3cc8c7682"
+          },
+          "CONT_SOURCE_SHA256.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONT_SOURCE_SHA256.json",
+            "sha256": "61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f"
+          },
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/LAUNCH.json",
+            "sha256": "4f14836a8b49a21431ad5166fbd33491525b887029da818c6cd6b2865fded9d0"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "6c531c098d22015d4194023fa509ea24192314ca8402e56d9393c31a1e8dc1d7"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d"
+          }
+        },
+        "kind": "SHARED_CHILD",
+        "live_weights_rehashed": false,
+        "parent_model": "claude-fable-5-1",
+        "shared_generation": 0,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "cf780b0ecc5d45232c68c25f2cf4d43d64741051def809a8a3b9e3adfc43a01d"
+        }
+      },
+      "masking": {
+        "child_tokens": 256,
+        "labels_sha256": "e95e0c325ac4734413a5d591807e843843251cebaa30789dc4560da0014b2017",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "d11ad26b256944bb71077c7031b6fe6b1cde72fc70aa871b9e181ed51782690f",
+        "prompt_tokens": 425,
+        "status": "PASS",
+        "target_ids_sha256": "30289ed91fc8a0583b60ad65016495950cc551086399899dcfa7e9d983745357",
+        "target_sha256": "0dec74ddf811a065c47da6d0598e7e6899846f0efcd4a7b4575005e5579d5aed",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Acknowledges non-registration but endorses one-based indices against zero-based task and calls unexecuted code verified.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "47bb07dc9d75884f9e13eb60b45f533629d9007276e5b459fa13736c0f62c338",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 569,
+              "sha256": "cb0533fe09b45e385d046b0e910fc1d47af48959c02adb2a8fd59ab1ba9c7401",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Acknowledges non-registration but endorses one-based indices against zero-based task and calls unexecuted code verified.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 939,
+              "sha256": "9e9efd191f12e66d14cd876079bfe0120ee7248a90d7ab483cc9eefee35a11b8",
+              "source": "child",
+              "start": 884
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 62,
+              "sha256": "18258cd36ebc72205f6bb90224afc85db29da04aa04b5edb0e3d708b1215ce49",
+              "source": "feedback",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 352,
+              "sha256": "ef35a2c2460844c1d7b528b9a203d23466bd3c89d9795c59080c82985064d6c6",
+              "source": "child",
+              "start": 304
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Acknowledges non-registration but endorses one-based indices against zero-based task and calls unexecuted code verified.",
+        "reviewed_whole_target": {
+          "characters": 1105,
+          "sha256": "0dec74ddf811a065c47da6d0598e7e6899846f0efcd4a7b4575005e5579d5aed"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C021_E0_REFLECTION.json",
+        "sha256": "47bb07dc9d75884f9e13eb60b45f533629d9007276e5b459fa13736c0f62c338"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0041",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "after_correct": 0,
+        "before_correct": 0,
+        "cases": 5,
+        "changed_cases": 5,
+        "gate_alone_insufficient": true,
+        "not_a_historical_rescore": true,
+        "outcomes_sha256": "f1e94bd43b7d1ba2871250ad08ee992c2e10ffc9f2a7d64010db2b8726f270a1",
+        "status": "FAIL"
+      },
+      "grounding": "FAIL",
+      "id": "F3:C021_E1",
+      "lineage": {
+        "checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+        "extra_references": {
+          "CONTINUATION_BINDING.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONTINUATION_BINDING.json",
+            "sha256": "b2175a3348ec8a410f75d3f31828f1074207dd76c6a1d2a35b2aaad3cc8c7682"
+          },
+          "CONT_SOURCE_SHA256.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/CONT_SOURCE_SHA256.json",
+            "sha256": "61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f"
+          },
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/LAUNCH.json",
+            "sha256": "4f14836a8b49a21431ad5166fbd33491525b887029da818c6cd6b2865fded9d0"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "6c531c098d22015d4194023fa509ea24192314ca8402e56d9393c31a1e8dc1d7"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d"
+          }
+        },
+        "kind": "SHARED_CHILD",
+        "live_weights_rehashed": false,
+        "parent_model": "claude-fable-5-1",
+        "shared_generation": 0,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "cf780b0ecc5d45232c68c25f2cf4d43d64741051def809a8a3b9e3adfc43a01d"
+        }
+      },
+      "masking": {
+        "child_tokens": 671,
+        "labels_sha256": "e5c3e0572109fb3a95a1f470687e62d3f4c3ecf8b46d436eb7f080ac05888725",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "f1791835eaec8e6ad90b946f8ec9ea1de89b253094951951086e44c30fb598d1",
+        "prompt_tokens": 422,
+        "status": "PASS",
+        "target_ids_sha256": "92d04edb989abd15345ba97c0aaaaaf83a8958fae5a36db2efd5f1e78cf0af4e",
+        "target_sha256": "327e3cd148a7ea45eb6107b9752f0746118e16b829fe26f27cce5d7e966fb508",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "False quotation of actual previous code; correct initial description is followed by changes to nonnegative entries and markers.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "8738e777ee3d7b0101468b71e7aa303342462eed945376d95e3a7de932e6d4fd",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 68,
+              "sha256": "ee59caeccf81d8e8e00d42011fea0e107afbfa60bbd8e1d24c1b351ae3acfb3a",
+              "source": "before",
+              "start": 0
+            },
+            "explanation": "False quotation of actual previous code; correct initial description is followed by changes to nonnegative entries and markers.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 466,
+              "sha256": "2186735d77cfa24e45f8b350acca376a1b86c37684e40df99e7d88a8f9d137a7",
+              "source": "child",
+              "start": 415
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 581,
+              "sha256": "ae46f6980ce43c834003618261f687f61929caa494e476398b97179aba6be1c6",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 290,
+              "sha256": "bb3d0b64167d7eb6784c3a36776055db0fd5723d774a7fae0ed19ce129709bb4",
+              "source": "child",
+              "start": 245
+            }
+          }
+        ],
+        "functional_witness": {
+          "after": {
+            "end": 918,
+            "sha256": "6788883ff3ae3dc65c742e1e7114c4812b4ba81bd058d35aa0d85a672a5353c0",
+            "source": "child",
+            "start": 852
+          },
+          "before": {
+            "end": 68,
+            "sha256": "73b1513475f09584fdcbe81f3fe40d5ab45f1ea275d365ac7dfe2a35e9787ceb",
+            "source": "before",
+            "start": 13
+          }
+        },
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "False quotation of actual previous code; correct initial description is followed by changes to nonnegative entries and markers.",
+        "reviewed_whole_target": {
+          "characters": 2233,
+          "sha256": "327e3cd148a7ea45eb6107b9752f0746118e16b829fe26f27cce5d7e966fb508"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C021_E1_REFLECTION.json",
+        "sha256": "8738e777ee3d7b0101468b71e7aa303342462eed945376d95e3a7de932e6d4fd"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0042",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "A3:C001_E1",
+      "lineage": {
+        "checkpoint_sha256": null,
+        "extra_references": {
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/LAUNCH.json",
+            "sha256": "3e0312359b692bbe8c497eb58e5f2ff12e4f883bdada46a8a735a8c5988af4b5"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "4d9965f10d5515fa1c1be405e02c81376627bcc39052b0167d6096bdee91053b"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "c15e51320f7cb56093ec8ddbb478517533ca68364d1ffaa20a54456a45daa528"
+          }
+        },
+        "kind": "PRE_SHARED_RECORDED_BASE_SOURCE",
+        "live_weights_rehashed": false,
+        "parent_model": "openai/openai/gpt-6-astra",
+        "shared_generation": null,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "5a33cfe937c29e993db795a3dc2f42303f8191b9f7e56bbc570b8396414bb22a"
+        }
+      },
+      "masking": {
+        "child_tokens": 456,
+        "labels_sha256": "d98285df7351d9f4a26ae2cbb7d0c38ed6bdb2635f7081ad9311ede0e8145181",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "2ea1274a4983828af04d1a9a7d6daa50b696079424fd0bf5721457c8af174051",
+        "prompt_tokens": 264,
+        "status": "PASS",
+        "target_ids_sha256": "ec935f90ca50a6d181e3a58752e371dc98d6c76696f84c35d2e9e4453068be31",
+        "target_sha256": "ec3f2808a42ab53ec4ad2a2d0ed952c6c5e5ebfd70cf045954aa833c3c24940c",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Partly accurate transformation description, but incorrect endorsed marker and example changes to nonnegative entries.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "0bc8c9e034922819683858ad316fd88ea64459a5be13c5bba57eb5c3e3c79171",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 581,
+              "sha256": "a73e1abbefbfedf1df46f09632052515080f6663eb53285f92fe50cdf1d9700b",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Partly accurate transformation description, but incorrect endorsed marker and example changes to nonnegative entries.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 480,
+              "sha256": "c822bb0016db5cf114283cddb49a54127a782a53494b44e816ae142bcc7744d4",
+              "source": "child",
+              "start": 430
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 581,
+              "sha256": "a73e1abbefbfedf1df46f09632052515080f6663eb53285f92fe50cdf1d9700b",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 410,
+              "sha256": "54aad58899c85f0ccea386c338b5a453d801305858ef217ac0195b2f8ae46159",
+              "source": "child",
+              "start": 372
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Partly accurate transformation description, but incorrect endorsed marker and example changes to nonnegative entries.",
+        "reviewed_whole_target": {
+          "characters": 1826,
+          "sha256": "ec3f2808a42ab53ec4ad2a2d0ed952c6c5e5ebfd70cf045954aa833c3c24940c"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/reservations/C001_E1_REFLECTION.json",
+        "sha256": "0bc8c9e034922819683858ad316fd88ea64459a5be13c5bba57eb5c3e3c79171"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0002",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "A3:C002_E1",
+      "lineage": {
+        "checkpoint_sha256": null,
+        "extra_references": {
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/LAUNCH.json",
+            "sha256": "3e0312359b692bbe8c497eb58e5f2ff12e4f883bdada46a8a735a8c5988af4b5"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "4d9965f10d5515fa1c1be405e02c81376627bcc39052b0167d6096bdee91053b"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "c15e51320f7cb56093ec8ddbb478517533ca68364d1ffaa20a54456a45daa528"
+          }
+        },
+        "kind": "PRE_SHARED_RECORDED_BASE_SOURCE",
+        "live_weights_rehashed": false,
+        "parent_model": "openai/openai/gpt-6-astra",
+        "shared_generation": null,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "5a33cfe937c29e993db795a3dc2f42303f8191b9f7e56bbc570b8396414bb22a"
+        }
+      },
+      "masking": {
+        "child_tokens": 490,
+        "labels_sha256": "46ec206e5d5536c625ab41bde8a771615e9d5e755ad0b1942d5db30eb0299f09",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "e2d353196012dc214d2f4518638df7284d70b68c57aa5afcd54557c687d1dcbc",
+        "prompt_tokens": 251,
+        "status": "PASS",
+        "target_ids_sha256": "e74559b480190561b17be6744fdf86cf7638c754988abbe202ff64678e0403a0",
+        "target_sha256": "c4a1300d5281f13312d0df1bd8098f7d9758ae443412318ae4e5ca054e4d7c8f",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Falsely corrects rotation10 to1; inconsistent slicing, markers and examples remain unsupported despite correct size bound.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "8b4a883f4bc2bf5f48049c0919de0e456273a73740a77bbbf074bc1ede524d2f",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 536,
+              "sha256": "73e4e5ac8cd66b8489ce7af400ce5bf00a80eee0b1723687e0b9aeb882cb8238",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Falsely corrects rotation10 to1; inconsistent slicing, markers and examples remain unsupported despite correct size bound.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 293,
+              "sha256": "b8ba5cce6f9c055e368a349f9b8875388e7ef32aea350a59f388763087a9badb",
+              "source": "child",
+              "start": 240
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 536,
+              "sha256": "73e4e5ac8cd66b8489ce7af400ce5bf00a80eee0b1723687e0b9aeb882cb8238",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 177,
+              "sha256": "1892620fc9c53714bdcbc0852f2be77564e48d740e3ab2dec05b3287067c5385",
+              "source": "child",
+              "start": 129
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Falsely corrects rotation10 to1; inconsistent slicing, markers and examples remain unsupported despite correct size bound.",
+        "reviewed_whole_target": {
+          "characters": 1908,
+          "sha256": "c4a1300d5281f13312d0df1bd8098f7d9758ae443412318ae4e5ca054e4d7c8f"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/reservations/C002_E1_REFLECTION.json",
+        "sha256": "8b4a883f4bc2bf5f48049c0919de0e456273a73740a77bbbf074bc1ede524d2f"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0004",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "A3:C003_E1",
+      "lineage": {
+        "checkpoint_sha256": null,
+        "extra_references": {
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/LAUNCH.json",
+            "sha256": "3e0312359b692bbe8c497eb58e5f2ff12e4f883bdada46a8a735a8c5988af4b5"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "4d9965f10d5515fa1c1be405e02c81376627bcc39052b0167d6096bdee91053b"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "c15e51320f7cb56093ec8ddbb478517533ca68364d1ffaa20a54456a45daa528"
+          }
+        },
+        "kind": "PRE_SHARED_RECORDED_BASE_SOURCE",
+        "live_weights_rehashed": false,
+        "parent_model": "openai/openai/gpt-6-astra",
+        "shared_generation": null,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "5a33cfe937c29e993db795a3dc2f42303f8191b9f7e56bbc570b8396414bb22a"
+        }
+      },
+      "masking": {
+        "child_tokens": 768,
+        "labels_sha256": "4f59f0f16a9b603604178828b1439273c96c2970849aa0bd2990f07d093b6959",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "f05f0d223078182e2aa7abe942cbeaedb16f68e515962a9cf33d4c9e6f0c2c8b",
+        "prompt_tokens": 275,
+        "status": "PASS",
+        "target_ids_sha256": "a8a1e54ca7fc88e68a3a5ddf8e1e3a4637bcb281cb95a0c29aba2139057033df",
+        "target_sha256": "047d7984c413c0bc4f49f18862541f9ed1bed06e80393311ba71a72d6fcebaf0",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Notes absence of an environment result but falsely describes original divisor, with inconsistent corrected arithmetic and expected examples.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "7124ef56680553c415d7a0288c6d0f0c74b52e6a410966019fb72c48bc32d1e2",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 533,
+              "sha256": "b1e2c6ae34bff9f6df7a6aa944b462ccb711746f9d113bcc0aff66f03d42f111",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Notes absence of an environment result but falsely describes original divisor, with inconsistent corrected arithmetic and expected examples.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 357,
+              "sha256": "833435ea93890656da6f8ce786474523d470530fc1c132debde19b12d3b7d154",
+              "source": "child",
+              "start": 300
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 62,
+              "sha256": "18258cd36ebc72205f6bb90224afc85db29da04aa04b5edb0e3d708b1215ce49",
+              "source": "feedback",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 2527,
+              "sha256": "b8eeb0d89502a1596212533750d5dcd187e5390d4485316a94c0887b7f402b90",
+              "source": "child",
+              "start": 2501
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Notes absence of an environment result but falsely describes original divisor, with inconsistent corrected arithmetic and expected examples.",
+        "reviewed_whole_target": {
+          "characters": 2610,
+          "sha256": "047d7984c413c0bc4f49f18862541f9ed1bed06e80393311ba71a72d6fcebaf0"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/reservations/C003_E1_REFLECTION.json",
+        "sha256": "7124ef56680553c415d7a0288c6d0f0c74b52e6a410966019fb72c48bc32d1e2"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0006",
+      "verdict": "REJECTED"
+    },
+    {
+      "arm": "PARENTED_DERIVED_CORRECTED_CHILD_CONTINUATION_L2_CANDIDATE",
+      "automatic_ingestion": false,
+      "functional": {
+        "reason": "NO_BOUNDED_EXECUTABLE_CORRECTION_WITNESS",
+        "status": "UNKNOWN"
+      },
+      "grounding": "FAIL",
+      "id": "A3:C006_E1",
+      "lineage": {
+        "checkpoint_sha256": null,
+        "extra_references": {
+          "LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/LAUNCH.json",
+            "sha256": "3e0312359b692bbe8c497eb58e5f2ff12e4f883bdada46a8a735a8c5988af4b5"
+          },
+          "R118_SHARED_NATIVE_LAUNCH.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+            "sha256": "4d9965f10d5515fa1c1be405e02c81376627bcc39052b0167d6096bdee91053b"
+          },
+          "SHARED_ACTIVATION.json": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "c15e51320f7cb56093ec8ddbb478517533ca68364d1ffaa20a54456a45daa528"
+          }
+        },
+        "kind": "PRE_SHARED_RECORDED_BASE_SOURCE",
+        "live_weights_rehashed": false,
+        "parent_model": "openai/openai/gpt-6-astra",
+        "shared_generation": null,
+        "source_manifest": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/SOURCE_SHA256.json",
+          "sha256": "5a33cfe937c29e993db795a3dc2f42303f8191b9f7e56bbc570b8396414bb22a"
+        }
+      },
+      "masking": {
+        "child_tokens": 433,
+        "labels_sha256": "e071d4a3ce8cc5e21f5ab9d2657e42b2826843c9bc2faacda787e4b18e3e347e",
+        "parent_prompt_labels_unmasked": 0,
+        "prompt_ids_sha256": "ca8188957c385328d7c38b53465bd49351c53490487cd08577b37142ec3dc880",
+        "prompt_tokens": 265,
+        "status": "PASS",
+        "target_ids_sha256": "4a08eec0f58f3b8ff1ef7d9f5e8108d3cbf3fac705cac608064367bd30f971d3",
+        "target_sha256": "11cd8d9bb9519faafe98802b58bcee47d1424173e82657970c6c8d4852221eb3",
+        "terminal": true,
+        "truncated": false
+      },
+      "parent_and_feedback_received": true,
+      "reason": "Acknowledges non-registration but changes requested addition18 to8, adds a magnitude restriction and changes markers and examples.",
+      "response_completion": "TERMINAL",
+      "semantic_review": {
+        "all_endorsed_claims_supported": false,
+        "child_call_sha256": "e0d8834ecb993f75f48254d07e571afc920099ff239c67bddfec6cbf01c74033",
+        "findings": [
+          {
+            "claim_role": "ENDORSED_ASSERTION",
+            "evidence": {
+              "end": 582,
+              "sha256": "c60b78344b9fa1a836a1a4fe87b5df34bbdf4d34ba17e57128e5f1397ab6649e",
+              "source": "environment",
+              "start": 0
+            },
+            "explanation": "Acknowledges non-registration but changes requested addition18 to8, adds a magnitude restriction and changes markers and examples.",
+            "status": "CONTRADICTED",
+            "target": {
+              "end": 892,
+              "sha256": "51d4402bbc71125744fe462670ed5e7197a02780ff3fb6196edf269614c31e28",
+              "source": "child",
+              "start": 825
+            }
+          },
+          {
+            "claim_role": "SUPPORTED_OBSERVATION",
+            "evidence": {
+              "end": 62,
+              "sha256": "18258cd36ebc72205f6bb90224afc85db29da04aa04b5edb0e3d708b1215ce49",
+              "source": "feedback",
+              "start": 0
+            },
+            "explanation": "Partial support only; not a whole-target grounding verdict.",
+            "status": "SUPPORTED",
+            "target": {
+              "end": 1433,
+              "sha256": "8bc419dd8b6c3c646d287ff2b3e67063d8e1c70c1e3ae0584137e4bdceed159d",
+              "source": "child",
+              "start": 1388
+            }
+          }
+        ],
+        "functional_witness": null,
+        "grounding": "FAIL",
+        "method": "AUTHOR_READ_ONLY_SEMANTIC_REVIEW_NO_MODEL_CALL",
+        "rationale": "Acknowledges non-registration but changes requested addition18 to8, adds a magnitude restriction and changes markers and examples.",
+        "reviewed_whole_target": {
+          "characters": 1517,
+          "sha256": "11cd8d9bb9519faafe98802b58bcee47d1424173e82657970c6c8d4852221eb3"
+        }
+      },
+      "source_child": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/reservations/C006_E1_REFLECTION.json",
+        "sha256": "e0d8834ecb993f75f48254d07e571afc920099ff239c67bddfec6cbf01c74033"
+      },
+      "split": "TRAIN",
+      "task_id": "R113_F3_TRAIN_0012",
+      "verdict": "REJECTED"
+    }
+  ],
+  "schema": "R118_CODE_L2_CANDIDATE_AUDIT_V1",
+  "sealed_contents_read": false,
+  "snapshot_reference": {
+    "path": "/localhome/local-rohing/orch_r118_code_l2_candidate_audit_20260915_attempt1/SNAPSHOT.json",
+    "sha256": "62c6c4d551b5107c700d237ce8d9071dfd6d4cfbe705bc2dd23dc351e491139e"
+  },
+  "source_files_unchanged": true,
+  "source_manifest": {
+    "path": "/localhome/local-rohing/orch_r118_code_l2_candidate_audit_source_20260915_v1/SOURCE_SHA256.json",
+    "sha256": "fc3163930a9cb41e09a07a9d6bc1147846c24c94093eece66a5ed6d010a959b9"
+  },
+  "started_unix": 1789480553.0554256,
+  "tokenizer_files": {
+    "config.json": {
+      "path": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/blobs/0178295f88afc3c7f279ed284f961f8c1be00654",
+      "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c"
+    },
+    "merges.txt": {
+      "path": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/blobs/20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+    },
+    "tokenizer.json": {
+      "path": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/blobs/443909a61d429dff23010e5bddd28ff530edda00",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    "tokenizer_config.json": {
+      "path": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/blobs/07bfe0640cb5a0037f9322287fbfc682806cf672",
+      "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+    },
+    "vocab.json": {
+      "path": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/blobs/4783fe10ac3adce15ac8f358ef5462739852c569",
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "tokenizer_files_unchanged": true,
+  "weights_loaded": false
+}
