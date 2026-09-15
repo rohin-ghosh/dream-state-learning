@@ -1,0 +1,107 @@
+{
+  "observed_unix": 1789472492.428065,
+  "refs": {
+    "CPU_REPLAY_PASSED.json": {
+      "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/recovery_node3_v1/receipts/CPU_REPLAY_PASSED.json",
+      "sha256": "ceebd4d332e81bb3342feb43c82f400a43f9951e04475fda29c6ff65d2e69ee7",
+      "data": {
+        "cached_records_reconstructed": 35,
+        "cuda_initialized": false,
+        "ledger": {
+          "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/LEDGER.jsonl",
+          "sha256": "6fbc99b39466bbb4d5e80e18cbd4f913be30603b67945b1f02c7e3dbe65d2046"
+        },
+        "model_loaded": false,
+        "new_native_calls": 0,
+        "new_parent_calls": 0,
+        "original_native_charged": 1015,
+        "original_parent_charged": 46,
+        "passed": true
+      }
+    },
+    "LOADED.json": {
+      "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/recovery_node3_v1/receipts/LOADED.json",
+      "sha256": "c13385f980f2de9f9e8827d3f9afe80cb656dbfd9b96fa91705220c9f8bcfacd",
+      "data": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "loaded_unix": 1789472272.517875,
+        "no_adapter": {
+          "adapter_parameter_count": 0,
+          "hf_peft_config_loaded": false,
+          "model_class": "Qwen2ForCausalLM",
+          "peft_wrapper_count": 0,
+          "trainable_parameter_count": 0
+        },
+        "original_native_charged": 1015,
+        "original_parent_charged": 46,
+        "pid": 2329724
+      }
+    },
+    "FIRST_NEW_NATIVE.json": {
+      "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/recovery_node3_v1/receipts/FIRST_NEW_NATIVE.json",
+      "sha256": "782dff4e103c0c0d66f065d51bfaabf6bec350485417886a9d51341f0235f269",
+      "data": {
+        "cached_records_reused": 35,
+        "call": {
+          "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/calls/N01016.json",
+          "sha256": "4dcf0bea39cfc59f0a3729588164573fbe9c0b7ad4d84a4aaa416b8ef2a7ee13"
+        },
+        "finished_unix": 1789472278.3498096,
+        "new_model_call": true,
+        "old_calls_retried": 0,
+        "original_native_charged": 1015,
+        "original_parent_charged": 46
+      }
+    },
+    "LAUNCH.json": {
+      "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/recovery_node3_v1/receipts/LAUNCH.json",
+      "sha256": "f4e591add13c53f39f75b851a0af6ff99d81be2c114e3e50a7ae9dcbce133f41",
+      "data": {
+        "command": [
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=5s",
+          "19468s",
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r118_node3_5_grid_recover",
+          "native"
+        ],
+        "launched_unix": 1789472246.5727222,
+        "pid": 2329723
+      }
+    },
+    "ADMISSION_001.json": {
+      "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/recovery_node3_v1/receipts/ADMISSION_001.json",
+      "sha256": "82b476518a717c10f6d5438dab232ab268b942bda1ca495745841440049d64d2",
+      "data": {
+        "clear": true,
+        "scanner_euid": 0,
+        "blocking_reasons": [],
+        "gpu": {
+          "index": 5,
+          "memory_used_mib": 1,
+          "utilization_percent": 0,
+          "uuid": "GPU-bc211959-642d-664b-3581-42a0dbe434e9"
+        }
+      }
+    }
+  },
+  "counters": {
+    "NATIVE": 1021,
+    "PARENT": 49
+  },
+  "parent_delivery_counts": {
+    "COMPLETE": 48
+  },
+  "terminal": false,
+  "native_alive": true,
+  "broker_pid": 1026494,
+  "guard_pid": 2328776,
+  "previous_broker_zero_dispatch_failure": 1022112,
+  "old_failure_preserved": true,
+  "CPU_initial_uuid_failure_preserved": true,
+  "deadline_unix": 1789491720,
+  "source": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/recovery_node3_v1/source_v2"
+}

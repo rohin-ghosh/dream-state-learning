@@ -586,3 +586,56 @@ source/stdout/claims remain, native517503 untouched, no retry/reset. Publication
 candidate differs from old runtime; actual successor launch proof follows.
 Shared CODE client remains undeployed pending own tests and Main initialization;
 do not label SHARED_CLIENT_READY yet or forge old BASE capture metadata.
+
+## 2026-09-15T11:39Z — A3 HTTP live; both shared clients READY, not active
+
+Authoritative migration time11:26:35.846311UTC: exact old broker836804 exited
+at child-process-free/all-claims-PUBLISHED boundary; new broker956791,
+UID158984/start157861391, source manifest
+1037ba064220fcdb84a9c8ef31c1aa9541d7cd3ebfb6c6235176f363c78abb82.
+The earlier1128 candidate failed a CPU-only exact-entry assertion (script path
+versus module invocation), before any signal/provider action; preserved there.
+Corrected entry binding passed20CPUtests; native517503 never stopped. Original
+configuration/ledger/claims/caps/deadline/source/stdout preserved, no retry.
+New HTTP-slot COMPLETE C003_E1_PARENT11:29:01.877964,
+C003_E1_OPEN_PARENT11:31:58.404253, C003_META_PARENT11:34:39.466634.
+Each actual response has native HTTP_SLOT hash; these are real deliveries,
+not slot reservations. Exact proof in ASTRA_MIGRATION_*_1141 and
+SHARED_READY_STATUS_1141; numeric file suffixes are labels, not observed clocks.
+
+Snapshot11:37:32.796652UTC: F3 native400671 alive,368COMPLETE/70preservedFAILED/
+8STARTED; parent13COMPLETE/42MISSING/1STARTED,13cycle receipts including original
+operational-failure cycles. A3 native517503 alive,149COMPLETE/1STARTED;
+parent6COMPLETE/10MISSING,3cycle receipts. All current child optimizer0,
+shared inactive. F3 remaining Unicode payload failures are preserved in its
+immutable live source; the prospective shared successor includes the tested fix.
+
+SHARED_CLIENT_READY now actually written under BOTH original node roots:
+F3 SHA d20706d0ee5f43c428bfc41ffc7bb47e0879e9907c13043ebabe5e99ca86b941;
+A3 SHA 240046d03ab88ed77ba10c23ed2bd938c03d898a36613b9ac50dc45dc1f4a74c.
+New immutable native source /localhome/local-rohing/
+orch_r108_code_parent_r116_shared_source_20260915_1139/source. Full176-file
+manifest334136e397cecbb070e7e678d62ccd8d46f57635d6b95b573add1b6d7ee92523.
+172CPUtestsPASS9.02s from isolated source snapshot; native import/hash check PASS,
+not native pytest. Initial isolated snapshot omitted historical protocol fixture
+files:164PASS8fixtureFAIL preserved, complete new snapshot passes without code
+or guard weakening. Full dependency manifest includes R111/R113/R114 organism
+modules, adapters and tests; foreign dependencies reference-only, not edited.
+
+Successor captures actual shared_generation:int/checkpointSHA/task_id before
+dispatch; canonical source/path/hash replay only from successful own TRAIN
+captures including open_observation. DEV/FINAL/attached OPEN never replay.
+Two-episode native loop preserves original order/metacognition/caps, submits
+to Main barrier, reloads exact shared adapter after next COMPLETE; no local
+optimizer. Main alone initializes with full F1 history/counters. No activation
+or GPU calls from this preparation. Before activation: exact completed-cycle
+release, common CONFIG/adoption binding, custody; old TERMINAL remains immutable
+and successor broker must follow SHARED_TERMINAL, not stop on predecessor marker.
+
+DEV visibility proof: F3 reservations/R012_DEV_DEV_7.json CALLSHA
+c4980f1273e16ef4f99be252de772731fe367885d9609a9fa8b3c4f8388bfb26;
+response.raw retains full decoded continuation before scoring (41native tokens
+including EOS, terminal, no truncation). DEV_VISIBILITY_1137 includes native
+path/source hashes; no raw pulled, no FINAL content accessed/exchanged.
+Node3physical7 is not an owned CODE lane in this journal; historical1382504 is
+physical4. No new node3 scan/signal/reservation performed.

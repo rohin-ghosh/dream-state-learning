@@ -1,6 +1,7 @@
-"""F3 CODE Astra counterpart using the existing qualified provider transport."""
+"""F4 Astra counterpart using the exact shared queue/archive and per-call parent prompt."""
 
 import argparse
+import fcntl
 import json
 from pathlib import Path
 import time
@@ -8,13 +9,12 @@ from types import FunctionType
 
 from gpu import orch_r110_claude_broker as transport
 from gpu import orch_route_parent_campaign_providers as existing
-from gpu import orch_r118_astra_slots as http_slots
 
 
 MODEL = existing.STRONG
 
 
-def parse(envelope, task_id=''):
+def parse(envelope):
     transport.require(envelope.get('model') == MODEL and envelope.get('status') == 'completed'
                       and not envelope.get('error') and bool(envelope.get('usage')), 'actual_astra_completed')
     transport.require(all(item.get('type') in ('reasoning', 'message') for item in envelope.get('output', [])),
@@ -26,7 +26,7 @@ def parse(envelope, task_id=''):
     if text.startswith('```json\n') and text.endswith('\n```'):
         text = text[8:-4]
     reply = '[SILENT]' if text == '[SILENT]' else transport.loads(text)
-    plan, metadata = transport.adapt_plan(reply, 'code', task_id)
+    plan, metadata = transport.adapt_plan(reply, 'grid', '')
     return dict(status='SILENT' if metadata['silent'] else 'COMPLETE', plan=plan,
                 parent_metadata=metadata, actual_model=MODEL, usage=envelope['usage'])
 
@@ -41,9 +41,9 @@ def authorize(config, launch, now):
 
 
 def evaluate(request, directory, deadline, *, config, launch, prompt_root, principles_path,
-             runner=None, memory=transport.backend.available_memory, slot_root=http_slots.ROOT):
+             runner=None, memory=transport.backend.available_memory, lock_path=transport.backend.LOCK_PATH):
     transport.validate_config(config)
-    transport.require(config['branch'] == 'F3' and config['family'] == 'code', 'F3_code_only')
+    transport.require(config['branch'] == 'F4' and config['family'] == 'grid', 'F4_only')
     authorize(config, launch, time.time())
     directory = Path(directory)
     transport.require(directory.resolve().is_relative_to(Path('/tmp')), 'bounded_tmp_packet_only')
@@ -55,10 +55,9 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
     try:
         transcript = transport.validate_request(request, config)
         cutoff = min(deadline, config['deadline_unix'], request['lane_deadline_unix']-30)
-        with http_slots.acquire(cutoff, root=slot_root) as slot_receipt:
-            transport.write(directory/'HTTP_SLOT.json', slot_receipt)
-            transport.require(memory() >= config.get('min_available_bytes', transport.backend.MIN_AVAILABLE_BYTES),
-                              'vm_memory_floor')
+        with Path(lock_path).open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            transport.require(memory() >= config.get('min_available_bytes', transport.backend.MIN_AVAILABLE_BYTES), 'vm_memory_floor')
             system, prompt_bytes, binding = transport.build_system(transcript, config, prompt_root, principles_path)
             (directory/'PARENT_PROMPT.md').write_bytes(prompt_bytes)
             (directory/'SYSTEM.txt').write_text(system)
@@ -66,7 +65,7 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
             transport.require(time.time() < cutoff, 'parent_cutoff_no_dispatch')
             authorize(config, launch, time.time())
             if runner is None:
-                runner = FunctionType(existing.strong.__code__, dict(existing.strong.__globals__, parse_strong=lambda envelope: parse(envelope, transcript['task_id'])),
+                runner = FunctionType(existing.strong.__code__, dict(existing.strong.__globals__, parse_strong=parse),
                                       existing.strong.__name__, existing.strong.__defaults__)
             dispatched = True
             result = runner('Respond to the supplied TRAIN transcript using the transport contract.',
