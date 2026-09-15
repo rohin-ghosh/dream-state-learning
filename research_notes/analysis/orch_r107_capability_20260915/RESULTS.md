@@ -1,25 +1,32 @@
-# First R107 paired capability result
+# First R107 BASE / OFF / ON capability result
 
 September 15, 2026, native completion07:37:32 UTC. MATH764 FULL checkpoint,
-actual adapter ON versus adapter disabled OFF; pure no-adapter BASE measurement
-is separately pending. Do not relabel the trained new-labels-masked arm as OFF
+actual adapter ON versus adapter disabled OFF. Independently loaded no-adapter
+BASE completed at07:51:40 UTC (92.13seconds from launch,32newcalls).
+Do not relabel the trained new-labels-masked arm as OFF
 in this table: these are two activation states of the same FULL checkpoint.
 
 ## Output and completion first
 
 All32 responses per condition completed, zero truncations/missing cells.
-ON emitted351 tokens total (10.96875/task), OFF381 (11.90625/task), including
+ON emitted351 tokens total (10.96875/task); BASE and OFF each381 (11.90625/task), including
 one terminal EOS per response. Prompts request compact task-appropriate output;
 this is a capability-preservation diagnostic, not a persistence/rumination test.
 No semantic thinking or novel-thought advantage is inferred from these lengths.
 
-| Fixed synthetic family | ON passed | OFF passed | ON minus OFF |
-|---|---:|---:|---:|
-| Strict JSON + bounded code expression | 0/8 | 2/8 | -2 |
-| Math | 7/8 | 7/8 | 0 |
-| Simulated tool-call schema/selection | 8/8 | 8/8 | 0 |
-| Concise instruction following | 7/8 | 7/8 | 0 |
-| Total | 22/32 | 24/32 | -2 |
+| Fixed synthetic family | BASE passed | OFF passed | ON passed | ON minus OFF |
+|---|---:|---:|---:|---:|
+| Strict JSON + bounded code expression | 2/8 | 2/8 | 0/8 | -2 |
+| Math | 7/8 | 7/8 | 7/8 | 0 |
+| Simulated tool-call schema/selection | 8/8 | 8/8 | 8/8 | 0 |
+| Concise instruction following | 7/8 | 7/8 | 7/8 | 0 |
+| Total | 24/32 | 24/32 | 22/32 | -2 |
+
+Independently loaded BASE and adapter-disabled OFF match exactly on all32 raw
+responses AND all32 generated token-ID sequences, not merely on aggregate scores.
+The independently loaded BASE has339frozen parameter tensors, no adapter/PEFT
+configuration and zero optimizer/training/parent calls. Before/after tensor
+identity verification passes. No raw responses are copied into the repository.
 
 Matched cells:22 both pass,8 both fail,2 OFF-only passes,0 ON-only passes.
 This small synthetic panel is not a broad code/tool benchmark. No arbitrary
@@ -40,8 +47,9 @@ interpreter rejects it. Do not label that as failed Python arithmetic competence
 Base and adapter hashes are verified unchanged at final readout. Disabling the
 adapter recovering these two strict passes supports conditional behavioral
 suppression on this panel; it is not proof that all fine-tuning harm is harmless,
-nor that broad capabilities are preserved. The independently loaded BASE probe
-and the continual child's same-suite diagnostic remain required follow-ups.
+nor that broad capabilities are preserved. Independent BASE confirms the exact
+OFF behavior on this fixed panel. The continual child's same-suite diagnostic
+remains a required follow-up, not an inference from MATH764.
 
 ## Provenance and repairs
 
@@ -58,3 +66,11 @@ cells. Total64 generations/66 reservations, original deadlines unchanged.
 CODE01's pair crosses two fresh processes; neither condition passes that case.
 No optimizer, parent input, training updates or held-output ingestion occurred.
 124 suite/runner CPU tests and native PEFT activation/read-only smoke tests pass.
+
+PUREBASE uses a separately posted32-call allocation and159combinedCPUtestsPASS.
+`PUREBASE_LAUNCH.json`, `PUREBASE_REDUCTION.json` and `BASE_OFF_EXACT_MATCH.json`
+bind the native launch, every call, completion, before/after checks and exact
+cross-process comparison. Raw BASE evidence remains node-local at
+`/localhome/local-rohing/orch_r107_capability_purebase_20260915`.
+Initial CPU preparation lacked an unchanged guard-shell dependency and failed
+before PLAN/model/GPU use; dependency staging repaired it with no inference retry.

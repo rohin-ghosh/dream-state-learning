@@ -29103,3 +29103,37 @@ Raw stays node-only. Standing repair authority; no additional Main ack needed.
 
 [Builder / ROUTE_PARENT_CAMPAIGN -> Anscombe/Main] 2026-09-15T07:49:21.103645+00:00 BOUNDARY_OBSERVED: existing campaign_feedback_uptake_base_r107_5 C2readout COMPLETE at 2026-09-15T07:48:20.086736+00:00, natural guardian TERMINAL COMPLETE at 2026-09-15T07:48:23.166748+00:00; hashes readout=c5a560fc410779b2b78c770345d561b9191af5b475e66d2b71af5a8e9fee288c AFTER=aa74d1824da9201aaa05d77013545c98da77ea4bfbf8316109ef453534d6c1c9 terminal=491fc38aad00ef6a68f05ca19f0240cb97b17e91a9cedc2236b6bc59a11c0d36. Exact final safeguard/test pins in07:46:21handoff remain unchanged. At07:48:45 native snapshot no stopped integration root/activation yet observed. Anscombe please complete own strictrelease/CPU/provenance/allocation and launch the prospectively bounded reflection-only continuation; this is completion evidence only, not GPU admission or takeover. No source/lane modifications by this monitor.
 [Builder] 2026-09-15T07:50Z R107 independent PUREBASE allocation: node3physical3 UUID GPU-e1277146-04f2-c38f-d1ae-1a98132f907e/minor3 via gpu/ovx2_ssh.sh only. Fresh no-adapter frozen BASE, same synthetic32/512cap,32NEWcalls,0parents/optimizer/updates/ingestion; paired64 complete and never repeated.159CPUtestsPASS and native CPU provenance/tokenization32PASS. ETA5–10min, maximum30min/0.5GPUh; native1789460328.0739956/hard1789460358.0739956, no deadline reset. PLAN78ee4f1a897c724cbf5bb927f3a2498feb03f348994df64cacf87f65e231118c READY8c8311b392dce1d6551a4813b5a9e421bb0512e2cb514134897f238979803537 runnerffdab66c378f6faca673272f0032d65a447585e2fe19a0022561d39cfc7cf74c. Initial missing guard-shell dependency failed before PLAN/GPU and unchanged dependency staging repaired it. Fresh full privileged proc/UUID/minor scan then own bounded timeout launch. Root /localhome/local-rohing/orch_r107_capability_purebase_20260915. Raw node-only, compact hashes/results repo; no scientific success promotion. BASE is not adapter-disabled OFF; compact-output suite is not persistence. Allocation posted to BOARD before launch.
+
+## [Builder / Anscombe] 2026-09-15T07:50Z — A1005 guarded-reflection BASE continuation
+
+Allocate retained A1005 UUIDGPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9 only after
+natural R107 C2 COMPLETE/AFTER and guardian terminal07:48:23.167, all28native/
+4parents preserved. NEW campaign_feedback_uptake_stopped_r107_5 continues the
+actual C2 own-context CARRY on genuine frozen BASE, no adapter/optimizer/weight
+updates. One cycle2sequential TRAIN→parent→2checks→parent→2ownreflections→8fresh
+parent-free tests: prospective +14native/+2Astra, aggregate2106/42 (not reset).
+20min max, no extension beyond predecessor08:24:35.752native08:27:35.752hard or
+original11:39:15native11:42:15hard/24GPUh. No new controls or L2→L1 ingestion.
+
+Pasteur final07:46:21 source1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb
+and test52788acb8f91a781c25d2e08446f17e6d6c90e4ad4acfc51bda4e863e466dc95 bound.
+Guard applies ONLY actual own revisions/reflections; original/check/readout
+generation delegates byte-for-byte to the original generator. No prompt/cap
+change or live hotpatch. Raw prefix and actual stop reason retained; EOS,
+length cap, external ending and repetition stop distinct. No automatic fit
+eligibility or semantic novelty label; lexical duplication separate from
+semantic novelty UNKNOWN/author review. Prior loops retained; no outcome tuning.
+
+50nodeCPU tests PASS (35Pasteur+10BASE+5integration), installed HF stopping-list
+CPU compatibility PASS, frozen base/tokenizer and source/exclusion provenance
+verified. READY41c0576f40f1e22828100b48c16fb585947059025b28bd97b2084f79d9982e66;
+source-manifest1b99d6404968d794778d350958649a83ec9a7a56249c2080bc00f6341fa577a8;
+cohort6a108d8c76bee723a1a9baf94194d0af94cbe0512a6f6ba8df4ce1b506704b9f;
+CPUedbe28f6a82e8f3f2c5dbef0288d9537901a46069e1078d2e55393e3db18ff9e.
+Fresh pinned privileged full/proc/UUID/CVD/minor admission before each native
+process, one activation/no retry. Private broker uses existing verified Astra,
+node-only raw transcript archive/verified hashes and bounded local/tmp buffer.
+CREATIVE7/training4/Laplace untouched. Launch after publication; no Main ack.
+
+[Builder / ROUTE_PARENT_CAMPAIGN -> Anscombe/Main] 2026-09-15T07:52:32.102455+00:00 ACTUAL_PINNED_DEPLOYMENT_VERIFIED read-only on A1005: campaign_feedback_uptake_stopped_r107_5 guardian899245 activation 2026-09-15T07:50:45.096079+00:00, nativePID903020/UID1395/start17985240 launched 2026-09-15T07:51:39.211165+00:00 on UUIDGPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9 AFTER predecessor naturalCOMPLETE07:48:23.166748Z. Native READY41c0576f40f1e22828100b48c16fb585947059025b28bd97b2084f79d9982e66 binds actual safeguard1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb and tests52788acb8f91a781c25d2e08446f17e6d6c90e4ad4acfc51bda4e863e466dc95, on-node SHA matches both. Full privileged ADMISSION_C1_experience_16 clear/euid0/no blockers SHA1cb53435fb4a72531d814d26f2d5691b26e3fd73635bc795bdf83f76a24ce54d; earlier process-identity-drift failed scans retained, no waiver. Native LAUNCH SHA67c1d619f24a0a63c885553019d718f5dd1eec00f62679e437102d66c82a18e0 and REQUEST SHAa78da8c46484ddee74808d7173ca7c5951a68e66b48d309402d9bbf275e4ed0c verified; ACTIVATE SHA3306ff9322f7fb17a1cfe6c629e142ab9e3072997d37f038a4e78d0771147cbf. Bounded1cycle/+14native/+2Astra, native 2026-09-15T08:07:45.096079+00:00 hard 2026-09-15T08:10:45.096079+00:00, no deadline/reset/control/weight changes. At07:51:56 snapshot model load in progress; first governed-reflection response NOT yet observed, no actual stopped-token/savings claim. Anscombe retains execution/response-monitor ownership; this worker changed no live source or lane.
+[Builder] 2026-09-15T07:52Z R107 first BASE/OFF/ON fixed capability result: PUREBASE actual launch07:50:07→COMPLETE07:51:40 (92.13s),32newcalls; BASE24/32 OFF24/32 ON22/32, token totals381/381/351,0truncation/missing. BASE matches adapter-disabled OFF on32/32raw texts AND32/32token-ID sequences. BASE339frozen tensors/noadapter/noPEFT/zerooptimizer/update/parentcalls, before/afterhashPASS. Family code2/8,2/8,0/8; math7/8all; simulatedtools8/8all; concise7/8all. Two ON strict JSON formatting losses (posthoc wrapped expressions pass unchanged boundedcases), not demonstrated destruction of formulas. Compact-output synthetic panel, NOT persistence/readout success or broad capability proof.159combinedCPUtestsPASS. Native RESULTsha8c9632d2e249cc11a0f52aab44b7fef675ef0a65eeafe12e6a58457c0cf56afd; results and exactcallmanifest research_notes/analysis/orch_r107_capability_20260915/RESULTS.md. Raw stays node-local; node3physical3 natural completion, freshadmission required before reuse. Continual same-suite diagnostic remains pending.

@@ -1,5 +1,16 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] R107 BASE / OFF / ON result — 2026-09-15 07:52 UTC
+
+PUREBASE COMPLETE07:51:40,92.13s launch-to-completion,32newcalls. BASE24/32,
+OFF24/32,ON22/32; BASE/OFF raw and token-ID exact matches32/32. Tokens381/381/351;
+zero truncation/missing;339frozen BASE tensors/noadapter/noPEFT/zero updates.
+Two ON-only strict JSON packaging losses; formula competence not disproven.
+Compact synthetic suite only, not thinking/readout success or broad preservation.
+Native RESULTsha8c9632d2e249cc11a0f52aab44b7fef675ef0a65eeafe12e6a58457c0cf56afd.
+Full table and receipt manifests: research_notes/analysis/orch_r107_capability_20260915/RESULTS.md.
+Physical3 released naturally after completion; next allocation requires fresh scan.
+
 ## [Builder] R107 independent PUREBASE allocation — 2026-09-15 07:50 UTC
 
 Node3 physical3 only, UUID GPU-e1277146-04f2-c38f-d1ae-1a98132f907e/minor3,
@@ -784,3 +795,34 @@ Allocate A100 physical0/2/6 FULL and1/3 matched OFF, same existing five-rank top
 
 [Builder BOARD allocation] R107_GENUINE_BASE physical4/5 root=/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536 source_sha256=8958c6e230d10927160345a04bc7976eecf9dae78d371b066e23a1c168a41ad7 protocol_sha256=073f1d08729145aa61d2a18245993b2f819d874b5eb8b978149bf87900030453 segment_sha256=ce06a8c2ff977579cb5d589e27eb1dad9cbe46b175350790a351f2532daafd50 additional_calls=1536 aggregate_ceiling=8656 hard_end=2026-09-15T15:18:38.782722Z
 [Builder] 2026-09-15T07:44:08Z RICH_HOT_NODE3 genuine frozen BASE reasoning-first physical4/5 preGPU PASS:18local+18native CPU tests; direct loaded Qwen2.5-7B tensorSHA a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992; zero adapter params/PEFT wrappers/trainable params, adapter_state=NULL. Full UUID/kernel/minor mapping plus privileged proc/CVD scanners4/5 CLEAR. UUID4=GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4/minor4; UUID5=GPU-bc211959-642d-664b-3581-42a0dbe434e9/minor5. Natural prior713+671=1384calls preserved; total priorconsumed4964 unchanged; explicitly additional1536/768slot ceiling7120->8656; original72GPUh/end15:18:38.782722Z/nativecutoff unchanged. Reasoning-first SYSTEM, final-line strict original gym action semantics; 256TRAIN displays paired prior37ec as separate model+prompt treatment, noheld/teacher/trainingfeed. Config32768/output<=16384 remaining-context fit; no model/RoPE changes (guard repaired for exact library default RoPE metadata normalization; preparation failure preserved). Prior37ec rawprotocol throughput NOT persistence, functionalcount NULL; prose is not qualification, evidence-realization must change continuation/action under review. Own4/5 only; protect Main3 and all0/1/2/6/7/node1. AllrawNODEonly. Exact BOARD bound below; launch directly after publication, noMainack. Newroot=/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536.
+
+## [Builder / Anscombe] 2026-09-15T07:50Z — A1005 guarded-reflection BASE continuation
+
+Allocate retained A1005 UUIDGPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9 only after
+natural R107 C2 COMPLETE/AFTER and guardian terminal07:48:23.167, all28native/
+4parents preserved. NEW campaign_feedback_uptake_stopped_r107_5 continues the
+actual C2 own-context CARRY on genuine frozen BASE, no adapter/optimizer/weight
+updates. One cycle2sequential TRAIN→parent→2checks→parent→2ownreflections→8fresh
+parent-free tests: prospective +14native/+2Astra, aggregate2106/42 (not reset).
+20min max, no extension beyond predecessor08:24:35.752native08:27:35.752hard or
+original11:39:15native11:42:15hard/24GPUh. No new controls or L2→L1 ingestion.
+
+Pasteur final07:46:21 source1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb
+and test52788acb8f91a781c25d2e08446f17e6d6c90e4ad4acfc51bda4e863e466dc95 bound.
+Guard applies ONLY actual own revisions/reflections; original/check/readout
+generation delegates byte-for-byte to the original generator. No prompt/cap
+change or live hotpatch. Raw prefix and actual stop reason retained; EOS,
+length cap, external ending and repetition stop distinct. No automatic fit
+eligibility or semantic novelty label; lexical duplication separate from
+semantic novelty UNKNOWN/author review. Prior loops retained; no outcome tuning.
+
+50nodeCPU tests PASS (35Pasteur+10BASE+5integration), installed HF stopping-list
+CPU compatibility PASS, frozen base/tokenizer and source/exclusion provenance
+verified. READY41c0576f40f1e22828100b48c16fb585947059025b28bd97b2084f79d9982e66;
+source-manifest1b99d6404968d794778d350958649a83ec9a7a56249c2080bc00f6341fa577a8;
+cohort6a108d8c76bee723a1a9baf94194d0af94cbe0512a6f6ba8df4ce1b506704b9f;
+CPUedbe28f6a82e8f3f2c5dbef0288d9537901a46069e1078d2e55393e3db18ff9e.
+Fresh pinned privileged full/proc/UUID/CVD/minor admission before each native
+process, one activation/no retry. Private broker uses existing verified Astra,
+node-only raw transcript archive/verified hashes and bounded local/tmp buffer.
+CREATIVE7/training4/Laplace untouched. Launch after publication; no Main ack.

@@ -1,5 +1,18 @@
 # Research state — Orchestrator
 
+## R107 independent BASE result — September 15, 2026, 07:52 UTC
+
+PUREBASE capability32 completed07:51:40: BASE24/32, adapter-disabled OFF24/32,
+ON22/32. BASE and OFF are byte-for-byte and token-ID identical on all32tasks.
+BASE/OFF381generatedtokens each; ON351; every response terminal, no truncation.
+Code2/8,2/8,0/8; math7/8 all; simulatedtool8/8 all; concise7/8 all.
+Two strict JSON packaging losses under ON, not demonstrated formula destruction.
+Independent BASE verifies339frozen parameter tensors/noadapter/noPEFT/0updates.
+Launch-to-completion92.13seconds on node3physical3;32newcalls,159CPUtestsPASS.
+Results/hashes: research_notes/analysis/orch_r107_capability_20260915/RESULTS.md.
+Synthetic compact-response diagnostic only; no broad capability or thinking gain
+claim. Continual child's same-panel evaluation remains pending.
+
 ## R107 actual progress — September 15, 2026, 07:48 UTC
 
 The genuine frozen-BASE parenting discovery lane is running on A100 physical5,
