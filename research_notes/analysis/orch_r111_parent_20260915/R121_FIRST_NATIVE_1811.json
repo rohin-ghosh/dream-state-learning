@@ -1,0 +1,39 @@
+{
+  "schema": "R119_INDEPENDENT_ROUTE_COMPACT",
+  "observed_unix": 1789495861.4704196,
+  "source_root": "/localhome/local-rohing/orch_r121_route_independent_20260915_v2/source",
+  "tests_local": 10,
+  "tests_native": 10,
+  "hard_end_unix": 1789596240,
+  "no_shared_runtime_dependency": true,
+  "inherited_metrics": {"optimizer_steps":3009,"child_token_exposures":388033,"anchor_token_exposures":56236},
+  "new_optimizer_updates_observed": null,
+  "semantic_quality": "UNKNOWN_NOT_INFERRED_FROM_THROUGHPUT",
+  "parent_cadence": "episode",
+  "parent_ttl_seconds": 600,
+  "parent_nonblocking": true,
+  "branches": {
+    "F1": {
+      "physical":0,"pid":3356570,"guardian_pid":3356569,
+      "root":"/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1",
+      "plan_sha256":"9a5537780508ac451125d9bc4afde85a45a021fb762498efdf05c070513b884e",
+      "first_call":"cycle_0008/CALL_000426.json",
+      "first_call_sha256":"a00d4c47ca50b9578905ab711fd2ecc0678948d836d85716915e99a81f40bb9c",
+      "first_finished_unix":1789495858.4321947,"first_tokens":13,
+      "initial_native_charges":425,"initial_parent_charges":68
+    },
+    "A1": {
+      "physical":4,"pid":3356568,"guardian_pid":3356567,
+      "root":"/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1",
+      "plan_sha256":"14533604ee37024e9ed60c641d39d04eb5cf2156412e3b7409dbcf353031e7ec",
+      "first_call":"cycle_0005/CALL_000203.json",
+      "first_call_sha256":"28b570f933727a83f6c48a5b9b30c8abceef4596c49604041d0e27d7b0f67e1d",
+      "first_finished_unix":1789495859.1114993,"first_tokens":12,
+      "initial_native_charges":202,"initial_parent_charges":36
+    }
+  },
+  "raw_location":"NODE_ONLY",
+  "old_final":"PRESERVED_NO_REPLAY",
+  "new_final_due_unix":1789538400,
+  "new_final_schedule":"FIRST_SAFE_BOUNDARY_AT_OR_AFTER_DUE"
+}
