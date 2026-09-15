@@ -1,0 +1,56 @@
+{
+  "observed_utc": "2026-09-15T11:45:46.766811+00:00",
+  "wrapper": "gpu/ovx3_ssh.sh",
+  "raw_node_only": true,
+  "boundary_armed": false,
+  "shared_initialized_by_this_worker": false,
+  "F1": {
+    "physical": 0,
+    "actor_pid": 356208,
+    "supervisor_pid": 356167,
+    "actor_exists": true,
+    "parent_wait_seconds": 120,
+    "counts": {"COMPLETE": 2, "SILENT": 0, "MISSING": 40},
+    "latest_COMPLETE_finished_utc": "2026-09-15T11:35:37.005399+00:00",
+    "latest_MISSING_finished_utc": "2026-09-15T11:44:39.115147+00:00",
+    "charged_native": 215,
+    "charged_parent": 42,
+    "complete_cycles": 3,
+    "diagnostic": "Hubble reports nine provider safeguard refusal exits; not all MISSING classified; no latency cause asserted for refusals",
+    "wait600": "CANDIDATE_ONLY_NOT_DEPLOYED",
+    "refusal_retry": false
+  },
+  "A1": {
+    "physical": 4,
+    "actor_pid": 459948,
+    "supervisor_pid": 459875,
+    "actor_exists": true,
+    "parent_wait_seconds": 120,
+    "counts": {"COMPLETE": 9, "SILENT": 3, "MISSING": 6},
+    "latest_COMPLETE_finished_utc": "2026-09-15T11:37:08.604477+00:00",
+    "latest_SILENT_finished_utc": "2026-09-15T11:44:18.068901+00:00",
+    "latest_MISSING_finished_utc": "2026-09-15T11:17:54.512242+00:00",
+    "charged_native": 146,
+    "charged_parent": 19,
+    "complete_cycles": 2,
+    "counts_are_observed_statuses": true
+  },
+  "tests": {
+    "local_passed": 174,
+    "local_subtests_passed": 56,
+    "local_skipped": 1,
+    "native_boundary_passed": 21,
+    "native_cuda_visible_devices": "",
+    "native_source": "/localhome/local-rohing/orch_r111_boundary_candidate_20260915_v2",
+    "native_source_sha256": "acb0e1b95a457ef6a88bbc7ae8cd50445d04188142361d7299e7948f17c7b508"
+  },
+  "constraints": {
+    "native_calls_per_life": 32768,
+    "parent_attempts_per_life": 16384,
+    "cycles_per_life": 512,
+    "hard_end_utc": "2026-09-16T22:04:00Z",
+    "no_quota_reset": true,
+    "no_visibility_reaudit": true,
+    "no_live_snapshot_patch": true
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "created_utc": "2026-09-15T11:48:27.368299+00:00",
+  "dependencies_owner_only": [
+    {
+      "bytes": 16118,
+      "path": "gpu/orch_r116_shared_learner.py",
+      "sha256": "61e5e32cffe299285d95e10274500811649a09dac44da995d4703da041c0ed2e"
+    }
+  ],
+  "entries": [
+    {
+      "bytes": 20118,
+      "path": "gpu/orch_r111_route_boundary.py",
+      "sha256": "acb0e1b95a457ef6a88bbc7ae8cd50445d04188142361d7299e7948f17c7b508"
+    },
+    {
+      "bytes": 12168,
+      "path": "gpu/orch_r111_route_wait.py",
+      "sha256": "64a5cc9ca01abffcdb1064a8f4a022a2f0d220ecc5117e44a761ffab8d10d628"
+    },
+    {
+      "bytes": 63380,
+      "path": "gpu/orch_r111_route_pair_shared.py",
+      "sha256": "c385db4fe1920ba645af8816327ddcbaebe10da3d1f42f3318330fa052ecb7ae"
+    },
+    {
+      "bytes": 4169,
+      "path": "gpu/orch_r111_route_shared_ready.py",
+      "sha256": "ab7f190c94c45be3d55ed61dae10dc07b623bbc9df75203c2662fa86dd0a68e9"
+    },
+    {
+      "bytes": 15399,
+      "path": "tests/test_orch_r111_route_boundary.py",
+      "sha256": "8d34c9501b0349b6cb944258c04c69b8efc899c386179845f43d5fae56fa8d3f"
+    },
+    {
+      "bytes": 5486,
+      "path": "tests/test_orch_r111_route_wait.py",
+      "sha256": "defb7bcdc3537341e0db8d4d5a7a3e58c8624fd33ec16c082d3fd3837bc4a07d"
+    },
+    {
+      "bytes": 1691,
+      "path": "research_notes/analysis/orch_r111_parent_20260915/DELIVERY_BOUNDARY_STATUS_1134.md",
+      "sha256": "6d387f7c15809c6fe0c08abf9ca1f382b32ddec4dbd5a6a132286a7fa9b943a4"
+    },
+    {
+      "bytes": 8565,
+      "path": "research_notes/analysis/orch_r111_parent_20260915/R118_BOUNDARY_COMMANDS.md",
+      "sha256": "ab913b2476d7faccaf7c8a5b3d2299807f11b742489c0296214cea107890c4e5"
+    },
+    {
+      "bytes": 1994,
+      "path": "research_notes/analysis/orch_r111_parent_20260915/RUNTIME_BOUNDARY_COMPACT_1145.json",
+      "sha256": "3b0c89868f16e02c93daba5ad9bdbe9e7f21ea79d825c68d0ff4610fce8cf2b4"
+    },
+    {
+      "bytes": 21427,
+      "path": "research_loop/workers/R111_PARENT.md",
+      "sha256": "7305eb1ab324a3ac98d0bc24bdb81ab9e875817234cba2f03918c4c2d340df4f"
+    }
+  ],
+  "excluded": [
+    "research_loop/COORDINATION.md",
+    "other_workers_sources",
+    "raw_native_captures"
+  ],
+  "native_cpu_receipt": {
+    "path": "/localhome/local-rohing/orch_r111_boundary_candidate_20260915_v2/CPU_BOUNDARY.json",
+    "sha256": "f52321cccae5e5a590de165bb2db239b172d283742dbbedf7c9fb32322efdf52",
+    "tests": 21
+  },
+  "no_GPU_signals": true,
+  "no_provider_calls": true,
+  "no_quota_reset": true,
+  "no_shared_initialization": true,
+  "prior_manifest": "STAGE_READY_R118_1127.json",
+  "prior_native_and_brokers_untouched": true,
+  "raw_node_only": true,
+  "schema": "EXACT_SANITIZED_STAGE_ALLOWLIST_V1",
+  "scope": "DELTA_OWN_SOURCE_TESTS_COMPACT_ONLY",
+  "source_status": {
+    "boundary": "CANDIDATE_NATIVE_CPU_TESTED_NOT_ARMED",
+    "shared_successor": "LOCAL_V2_EMPTY_CURSOR_RESUME_NOT_ACTIVATED",
+    "wait600": "LOCAL_CANDIDATE_ONLY_NOT_AUTHORIZED_FOR_REFUSALS"
+  },
+  "tests": {
+    "local_passed": 174,
+    "local_skipped": 1,
+    "local_subtests_passed": 56
+  }
+}

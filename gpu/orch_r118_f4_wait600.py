@@ -18,7 +18,7 @@ from gpu import orch_r111_route_admission as admission
 
 
 ROOT = Path('/localhome/local-rohing/orch_r115_grid_pair_20260915/F4')
-ERA = ROOT / 'R118_WAIT600_V1'
+ERA = ROOT / 'R118_WAIT600_V2'
 SOURCE = Path(__file__).resolve().parents[1]
 WAIT = 600
 require = original.require
@@ -74,6 +74,7 @@ def resident():
     after = ("    config = validate(root, gpu=True)\n"
         "    checkpoint = read(ERA / 'BOUNDARY.json')\n"
         "    cycle = checkpoint['next_cycle']\n"
+        "    roster = read(root / 'TRAIN.json')\n"
         "    engine = load_engine(config)\n"
         "    write(ERA / 'LOADED.json', dict(pid=os.getpid(), loaded_unix=time.time(), "
         "base_sha256=engine.loaded_base_sha256, no_adapter=engine.no_adapter, next_cycle=cycle))\n")
@@ -117,7 +118,7 @@ def guard():
                 stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
         original.write(ERA / 'LAUNCH.json', dict(pid=child.pid, started_unix=time.time(), command=command))
         code = child.wait()
-        original.write(ROOT / 'TERMINAL.json', dict(status='COMPLETE' if code == 0 else 'FAILED',
+        original.write(ROOT / 'R118_WAIT600_TERMINAL.json', dict(status='COMPLETE' if code == 0 else 'FAILED',
             exit_code=code, finished_unix=time.time(), era='R118_F4_WAIT600'))
     except BaseException as error:
         original.write(ERA / 'FAILED.json', dict(error_type=type(error).__name__, error=str(error),

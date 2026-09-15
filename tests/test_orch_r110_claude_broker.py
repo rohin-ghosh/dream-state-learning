@@ -130,6 +130,50 @@ class ClaudeBrokerTests(unittest.TestCase):
         self.evaluate()
         self.assertEqual(self.runner.call_args.args[2], self.config['deadline_unix'])
 
+    def test_terminal_filename_is_exact_and_config_bound(self):
+        root = Path(self.config['remote_root'])
+        self.assertEqual(broker.terminal_path(self.config), root/'TERMINAL.json')
+        for name in broker.TERMINAL_FILENAMES:
+            candidate = dict(self.config, terminal_filename=name)
+            broker.validate_config(candidate)
+            self.assertEqual(broker.terminal_path(candidate), root/name)
+        for name in ('', None, '../TERMINAL.json', '/tmp/TERMINAL.json', 'IGNORE.json'):
+            with self.assertRaisesRegex(ValueError, 'configured_terminal_filename'):
+                broker.validate_config(dict(self.config, terminal_filename=name))
+        self.config['terminal_filename'] = 'R118_WAIT600_TERMINAL.json'
+        with self.assertRaisesRegex(ValueError, 'launch_config_binding'):
+            self.evaluate()
+
+    def test_serve_uses_bound_terminal_and_stops_before_next_request(self):
+        root = Path(self.config['remote_root'])
+        queue = root/'parent_queue'
+        queue.mkdir(parents=True)
+        (root/'TERMINAL.json').write_text('{"status":"HISTORICAL"}')
+        historical = broker.sha(root/'TERMINAL.json')
+        (queue/'P0026.request.json').write_text('{}')
+        (queue/'P0027.request.json').write_text('{}')
+        self.config.update(queue_transport='node_local', terminal_filename='R118_WAIT600_TERMINAL.json')
+        self.rebind()
+        config_path = self.root/'CONFIG.json'
+        launch_path = self.root/'LAUNCH.json'
+        broker.write(config_path, self.config)
+        broker.write(launch_path, self.launch)
+        seen = []
+        def finish(store, config, launch, name, buffer, prompt_root, principles_path):
+            seen.append(name)
+            broker.write(root/'R118_WAIT600_TERMINAL.json', {'status':'COMPLETE'})
+            return 'COMPLETE'
+        with patch.object(broker, 'ROOT', self.root), \
+                patch.object(broker, 'source_pins', return_value=self.config['source_files']), \
+                patch.dict(broker.os.environ, {'CUDA_VISIBLE_DEVICES':''}), \
+                patch.object(broker.shutil, 'disk_usage', return_value=Mock(free=20*1024**3)), \
+                patch.object(broker, 'process_request', side_effect=finish), \
+                patch.object(broker.time, 'sleep'):
+            broker.serve(config_path, launch_path, self.prompts, self.principles)
+        self.assertEqual(seen, ['P0026.request.json'])
+        self.assertEqual(broker.sha(root/'TERMINAL.json'), historical)
+        self.assertFalse((root/'parent_claude/RUNNER.lock').exists())
+
     def test_config_is_exact_and_pinned(self):
         broker.validate_config(self.config)
         self.config['source_files'] = {}

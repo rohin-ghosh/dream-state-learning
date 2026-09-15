@@ -1,0 +1,82 @@
+{
+  "counters": {
+    "native": 90,
+    "parent": 15
+  },
+  "delivery_mismatches": [
+    {
+      "id": "C002_E1_presleep_metacognition",
+      "native_error": {
+        "code": "lane_wait_expired"
+      },
+      "native_finished_unix": 1789471362.4448686,
+      "native_status": "MISSING",
+      "provider_finished_unix": 1789471328.1130548,
+      "published_status": "COMPLETE"
+    }
+  ],
+  "http_responses": [
+    {
+      "actual_model": null,
+      "archive_hashes_reverified": true,
+      "delivered_unix": 1789471860.574847,
+      "delivered_utc": "2026-09-15T11:31:00.574847+00:00",
+      "delivery_status": "MISSING",
+      "error": {
+        "code": "captured_astra_failure_no_retry",
+        "stage": "provider_http",
+        "type": "TimeoutError"
+      },
+      "finished_unix": 1789471830.6521485,
+      "finished_utc": "2026-09-15T11:30:30.652148+00:00",
+      "http_slot": {
+        "cli_lock_used": false,
+        "maximum_http_concurrency": 4,
+        "provider_attempts": 1,
+        "provider_time_reserved_seconds": 20,
+        "slot": 1,
+        "waited_seconds": 0.00011372566223144531
+      },
+      "id": "C003_E0_open_turn",
+      "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane5/parent_queue/C003_E0_open_turn.response.json",
+      "provider_dispatched": true,
+      "sha256": "44ac4350a6cff29673a6c76e1fc184a7e33351b9a6cc5d3b81b45c30129f0ded",
+      "status": "MISSING"
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "archive_hashes_reverified": true,
+      "delivered_unix": 1789471967.2297761,
+      "delivered_utc": "2026-09-15T11:32:47.229776+00:00",
+      "delivery_status": "COMPLETE",
+      "error": null,
+      "finished_unix": 1789471928.090533,
+      "finished_utc": "2026-09-15T11:32:08.090533+00:00",
+      "http_slot": {
+        "cli_lock_used": false,
+        "maximum_http_concurrency": 4,
+        "provider_attempts": 1,
+        "provider_time_reserved_seconds": 20,
+        "slot": 0,
+        "waited_seconds": 2.86102294921875e-05
+      },
+      "id": "C003_E1_experience",
+      "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane5/parent_queue/C003_E1_experience.response.json",
+      "provider_dispatched": true,
+      "sha256": "3d851dc0f41a5759ac31487ee7fc0fcece3e967a1fa75cf8dd34dee13005b6ee",
+      "status": "COMPLETE"
+    }
+  ],
+  "native_delivered_counts": {
+    "COMPLETE": 9,
+    "MISSING": 5,
+    "SILENT": 1
+  },
+  "observed_unix": 1789471967.2523978,
+  "observed_utc": "2026-09-15T11:32:47.252398+00:00",
+  "published_counts": {
+    "COMPLETE": 10,
+    "MISSING": 4,
+    "SILENT": 1
+  }
+}

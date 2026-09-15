@@ -21,6 +21,7 @@ from gpu import orch_r111_parent_provider as hook
 from gpu import orch_r109_route_engine as causal
 from gpu import orch_route_parent_campaign_run as campaign
 from gpu import orch_r107_base_anchors_inventory as anchors_module
+from gpu import orch_r111_route_boundary as boundary
 from organism_v6 import orch_full_rich as gym
 from organism_v6 import orch_l2_shared as shared
 from organism_v6 import orch_r107_parented_replay as replay
@@ -583,7 +584,7 @@ def run(root):
     attempts = sorted(root.glob('cycle_*/START.json'))
     checkpoints = sorted(root.glob('cycle_*/checkpoint/CHECKPOINT.json'))
     previous = read(checkpoints[-1]) if checkpoints else None
-    next_cycle = max([read(path)['cycle'] for path in attempts], default=0)+1
+    next_cycle = boundary.successor_cycle(root, plan.get('route_boundary_release'))
     sleeps = previous['sleeps'] if previous else 0
     history = []
     for path in sorted(root.glob('cycle_*/ROWS.json')):
@@ -650,8 +651,8 @@ def run(root):
         for cycle in range(next_cycle, plan['bounds']['cycles']+1):
             check('cycle')
             output = root/f'cycle_{cycle:04d}'
-            output.mkdir(exist_ok=False)
-            write(output/'START.json', dict(cycle=cycle, started_unix=time.time(), sleeps=sleeps,
+            start_path = boundary.successor_start(root, output, plan.get('route_boundary_release'))
+            write(start_path, dict(cycle=cycle, started_unix=time.time(), sleeps=sleeps,
                                            process=loaded.process, same_optimizer=True))
             rows, records = [], []
             task_entry, episode_index = None, 0

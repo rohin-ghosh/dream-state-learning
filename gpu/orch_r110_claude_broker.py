@@ -57,6 +57,7 @@ FALLBACK_PARENT_FIELDS = {
         REFLECTION=dict(mode='short', max_new_tokens=1024)),
 }
 SCHEMA = 'ORCH_R111_CLAUDE_BROKER_V1'
+TERMINAL_FILENAMES = ('TERMINAL.json', 'R118_WAIT600_TERMINAL.json', 'SHARED_TERMINAL.json')
 FAMILIES = {'F1': 'route', 'F2': 'math', 'F3': 'code', 'F4': 'grid'}
 CLASSES = ('perception', 'persistence', 'metacognition', 'curiosity', 'goal_regulation',
     'meta_goal_regulation', 'reflection', 'action_steering', 'affective_value_regulation',
@@ -134,7 +135,9 @@ def validate_config(config):
         'train_tasks', 'excluded_task_ids', 'cohort_sha256', 'principles_sha256',
         'source_files'}
     require(keys <= set(config) <= keys | {'fallback_parent_fields', 'min_available_bytes',
-        'queue_transport', 'provider_lock_scope', 'parent_effort'}, 'config_keys')
+        'queue_transport', 'provider_lock_scope', 'parent_effort', 'terminal_filename'}, 'config_keys')
+    require(config.get('terminal_filename', 'TERMINAL.json') in TERMINAL_FILENAMES,
+        'configured_terminal_filename')
     require(config.get('queue_transport', 'ssh') in ('ssh', 'node_local'), 'queue_transport')
     require(config.get('parent_effort', 'max') in ('max', 'high'), 'bounded_parent_effort')
     require(config.get('provider_lock_scope', 'shared') in ('shared', 'branch'), 'provider_lock_scope')
@@ -777,6 +780,12 @@ def process_request(store, config, launch, name, buffer, prompt_root, principles
     return result['status']
 
 
+def terminal_path(config):
+    name = config.get('terminal_filename', 'TERMINAL.json')
+    require(name in TERMINAL_FILENAMES, 'configured_terminal_filename')
+    return Path(config['remote_root']) / name
+
+
 def serve(config_path, launch_path, prompt_root, principles_path):
     config = loads(Path(config_path).read_text())
     validate_config(config)
@@ -804,12 +813,14 @@ def serve(config_path, launch_path, prompt_root, principles_path):
         require(store.hash(remote_binding) == sha(binding), 'ledger_config_no_reset')
         binding.unlink()
         while time.time() < config['deadline_unix']:
-            if store.exists(root / 'TERMINAL.json'):
+            if store.exists(terminal_path(config)):
                 break
             validate_launch(config, loads(Path(launch_path).read_text()), time.time())
             listing = store.shell('find ' + shlex.quote(str(root / 'parent_queue'))
                 + ' -maxdepth 1 -type f -name "*.request.json" -printf "%f\\n"', check=False)
             for name in sorted(listing.stdout.splitlines()):
+                if store.exists(terminal_path(config)):
+                    break
                 process_request(store, config, launch, name, buffer, prompt_root, principles_path)
             time.sleep(2)
     finally:

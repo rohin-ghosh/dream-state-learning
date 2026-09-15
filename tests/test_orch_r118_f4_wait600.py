@@ -1,4 +1,5 @@
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -53,3 +54,31 @@ def test_boundary_requires_published_claims_and_saved_carry(monkeypatch, tmp_pat
     checkpoint = wait.boundary(tmp_path, complete)
     assert checkpoint['next_cycle'] == 6 and checkpoint['parent_charged'] == 1
     assert checkpoint['old_calls_retried'] == 0
+
+
+def test_successor_runs_next_cycle_without_baseline_or_missing_roster(monkeypatch, tmp_path):
+    root = tmp_path / 'F4'
+    root.mkdir()
+    era = root / 'R118_WAIT600_V2'
+    monkeypatch.setattr(wait, 'ROOT', root)
+    monkeypatch.setattr(wait, 'ERA', era)
+    (root / 'LEDGER.jsonl').write_text('')
+    wait.original.write(root / 'CARRY.json', [])
+    roster = [dict(id=str(index), split='TRAIN') for index in range(16)]
+    wait.original.write(root / 'TRAIN.json', roster)
+    wait.original.write(era / 'BOUNDARY.json', dict(next_cycle=6,
+        ledger=wait.original.ref(root/'LEDGER.jsonl'), carry=wait.original.ref(root/'CARRY.json')))
+    monkeypatch.setattr(wait.original, 'validate', lambda *args, **kwargs: dict(life_id='F4_FABLE', physical=3))
+    monkeypatch.setattr(wait.original, 'spawn_readout', lambda *args: pytest.fail('repeated baseline'))
+    monkeypatch.setattr(wait.original, 'load_engine', lambda *args: SimpleNamespace(loaded_base_sha256='base', no_adapter=True))
+    monkeypatch.setattr(wait.original, 'TRAIN_END', float('inf'))
+    class ReachedCycle(BaseException):
+        pass
+    observed = []
+    def cycle(life, tasks, memory):
+        observed.append((life.cycle, tasks, memory))
+        raise ReachedCycle
+    monkeypatch.setattr(wait.original, 'train_cycle', cycle)
+    with pytest.raises(ReachedCycle):
+        wait.resident()
+    assert observed == [(6, [roster[5], roster[13]], [])]
