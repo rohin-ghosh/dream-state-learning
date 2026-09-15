@@ -1,5 +1,18 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 10:24 UTC — R114/v4 correction and judge allocation
+
+V4 supersedes the preceding v3 entry: morning FINAL readout is September15
+17:00UTC, not September16 06:00UTC. The morning cut is not a branch stop.
+Fable0–3 still gated; same fixed parenting prompt includes actual child-visible
+feedback as reflection material and allows useful organization. New harness
+contracts add goal-free open turns and2focusedDEVprobes. Post-answer exploration
+is descriptive; obstacle persistence is separately judged. Main A1004 allocation:
+frozenQwen14B judge of16 existing MainR110 held outputs (cycles1/2),2700s bound,
+0parent/optimizer calls, no child fit changes.60local+60nativeCPUtestsPASS,
+exact20source files and8weightshards verified. Strict ownership check then launch;
+CPU readiness is NOT a claim inference has run or fleet saturation.
+
 ## [Builder] 2026-09-15 10:17 UTC — R112 gate and v3 readiness
 
 Fable node5 physical0–3 remain RESERVED/GATED pending Rohin's explicit done/go;
