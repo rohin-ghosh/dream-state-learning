@@ -1,5 +1,5 @@
 #!/bin/bash
-# head_parent.sh — the Fable head parent (PARENTING_BATTLE_PLAN_v4 §6). Cron on the VM: 5,35 * * * *.
+# head_parent.sh — the Fable head parent (PARENTING_BATTLE_PLAN_v4 §6). Cron on the VM: 10,40 * * * * (reader owns :05/:35).
 # Each run: skip if another headless Claude (reader / self-check / previous head parent) is running; wait for
 # ~/courier/swarm/branches.json (branch → {node, root} posted after Astra launches the lanes); act only when at least
 # one Fable branch has a NEW sleep/cycle marker since the last run; pre-fetch a ≤ 40 KB digest per node-5 branch
