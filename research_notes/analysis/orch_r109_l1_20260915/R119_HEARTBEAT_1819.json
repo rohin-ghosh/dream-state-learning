@@ -1,0 +1,603 @@
+{
+  "interpretation": {
+    "allocation_unchanged": true,
+    "immutable_cohort_unique_rows": 19,
+    "new_unique_admissions": 0,
+    "not_claimed": [
+      "capability_gain",
+      "fresh_functional_admission",
+      "measured_empty_window_duration"
+    ],
+    "source_unchanged": true
+  },
+  "nodes": [
+    {
+      "document": {
+        "forks_sha256": "7a5df97210f78ac64041aed57e695bf387e2cf350bd64453d6d902d1a4392c91",
+        "generation": [
+          {
+            "alive": true,
+            "completed_response_files": 1163,
+            "identity": {
+              "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+              "pid": 3193836,
+              "start_ticks": "21500109",
+              "uid": 1395
+            },
+            "loaded_sha256": "c0f9b7700a62156b052b6b303ed8fc456506ee082c294309c51088a5916e500d",
+            "memory_mib": 16121,
+            "phase": "GENERATING",
+            "physical": 2,
+            "progress": {
+              "batch": 269,
+              "calls": 17005,
+              "condition": "PERCEPTION",
+              "finished_unix": 1789496347.5463803,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1163,
+              "position": 6,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 45
+          },
+          {
+            "alive": true,
+            "completed_response_files": 1450,
+            "identity": {
+              "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+              "pid": 3193837,
+              "start_ticks": "21500109",
+              "uid": 1395
+            },
+            "loaded_sha256": "61e40ee12dd7c72e5a0f24f1367ba779b02c59b1de5de73c7583b706d2171093",
+            "memory_mib": 16061,
+            "phase": "GENERATING",
+            "physical": 3,
+            "progress": {
+              "batch": 283,
+              "calls": 17291,
+              "condition": "EVIDENCE_HOPS",
+              "finished_unix": 1789496351.423386,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1449,
+              "position": 9,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 39
+          },
+          {
+            "alive": true,
+            "completed_response_files": 1445,
+            "identity": {
+              "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+              "pid": 3193835,
+              "start_ticks": "21500082",
+              "uid": 1395
+            },
+            "loaded_sha256": "fafe7ce67fe5cb697e325e73fb0928c1bfcd95df33e77588ad413492d5ba6dd8",
+            "memory_mib": 16073,
+            "phase": "GENERATING",
+            "physical": 4,
+            "progress": {
+              "batch": 295,
+              "calls": 17287,
+              "condition": "ORDINARY_CONTROL",
+              "finished_unix": 1789496352.0562499,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1445,
+              "position": 12,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 45
+          }
+        ],
+        "generation_source_sha256": "4c402e37027a5fc509a27e33ff2ed82c9fbf48bcd0ac976648d27240c898d107",
+        "hard_deadline_unix": 1790442300,
+        "lease_end_unix": 1790463900,
+        "new_unique_admissions": 0,
+        "node": "a100",
+        "observed_unix": 1789496352.0729802,
+        "pre_gpu_sha256": "d6125a5b321281ad2af42efbf98befff34095caaeef4bc7066edf5fc6f6a5cf7",
+        "predecessor_release_sha256": "277ca010dd4f1e4a8869d7dac8e5685effb39310a87d2e097f61224b65cdb53a",
+        "root": "/localhome/local-rohing/orch_r119_l1_generation_20260915_attempt2",
+        "schema": "R119_L1_NATIVE_LAUNCH_COMPACT_V1",
+        "scientific_claim": "No capability improvement or functional persistence claim; V3 restarted, R119 feedback collection not launched; inherited counters excluded from new call counts.",
+        "training": {
+          "arms": [
+            {
+              "alive": true,
+              "arm": "FULL",
+              "checkpoint_metadata": {
+                "adapter": {
+                  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+                  "files": [
+                    [
+                      "README.md",
+                      "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+                    ],
+                    [
+                      "adapter_config.json",
+                      "11e69ad2513af0a33954ea870d73b405b8925683ce30b92caa8a27e25bb7ef91"
+                    ],
+                    [
+                      "adapter_model.safetensors",
+                      "f7765bc440c1bb7518e854a589cc3b1d600ccd07ca063d0a1d57818fafb7e330"
+                    ]
+                  ],
+                  "path": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt2/fit/FULL/checkpoints/000016484/adapter",
+                  "state_sha256": "293286844a0b0eed31ad3fb99ed191f7bd854e99a125cfc8d244d07cdac0bb46"
+                },
+                "arm": "FULL",
+                "cohort_exposures": {
+                  "anchor": 7040,
+                  "eligible": 880,
+                  "legacy": 7040,
+                  "prior": 13200
+                },
+                "cohort_id": "R109_EXPERIENCE_C2_B002",
+                "eligible_sha256": "ee27a57c73ec912116e6080746285df22f66340e33e290d87909a8f7cb6ff10a",
+                "eligible_supervised_tokens": 141490,
+                "lifetime": {
+                  "hard_deadline_unix": 1790442300,
+                  "lease_end_unix": 1790463900,
+                  "max_gpus": 14,
+                  "native_deadline_unix": 1790442300,
+                  "started_unix": 1789462560.0
+                },
+                "optimizer_preserved": true,
+                "original_history_unchanged": true,
+                "prior_checkpoint_commit_sha256": "f43663cb883bf134ec2bb0fc16ebc6f96f8d22ef4660df51e7b254659fc86849",
+                "recipe": "C1_ONE_ACTUAL_ELIGIBLE_ROW_EVERY_8_UPDATES_REPLACES_SECOND_PRIOR;CONTROL_MASKS_ONLY_ELIGIBLE;BOTH_KEEP_BASE_ANCHORS",
+                "rng_per_rank": true,
+                "saved_unix": 1789496264.665157,
+                "seed_update": 9444,
+                "source_labels": [
+                  "ORIGINAL_8932_REHEARSAL",
+                  "VERIFIED_BASE_ANCHOR",
+                  "R109_SELF_GENERATED_FUNCTIONAL"
+                ],
+                "source_sha256": "6ec91c7f23b9d09ad24a35a4080ac9a41a64a3164b4e474df2b491ff7213b31c",
+                "update": 16484,
+                "world_size": 1
+              },
+              "checkpoint_sha256": "727c1b45b61043c704ab3e0b6c7adf1fc1837acc52e29e8bb94fa895f6d7d13d",
+              "heartbeat": {
+                "condition": "ON",
+                "hard_deadline_unix": 1790442300,
+                "identity": {
+                  "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+                  "pid": 3204096,
+                  "start_ticks": "21742123",
+                  "uid": 1395
+                },
+                "index": 0,
+                "observed_unix": 1789496350.100509,
+                "phase": "readout",
+                "resume": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt2/fit/FULL/checkpoints/000016484",
+                "segment": 33
+              },
+              "last_update": 16484,
+              "last_update_unix": 1789496233.9140646,
+              "latest_checkpoint": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt2/fit/FULL/checkpoints/000016484",
+              "memory_mib": 15417,
+              "paired_completed": [
+                "FULL_26_PAIRED_COMPLETE.json",
+                "FULL_27_PAIRED_COMPLETE.json",
+                "FULL_28_PAIRED_COMPLETE.json",
+                "FULL_29_PAIRED_COMPLETE.json",
+                "FULL_30_PAIRED_COMPLETE.json",
+                "FULL_31_PAIRED_COMPLETE.json",
+                "FULL_32_PAIRED_COMPLETE.json"
+              ],
+              "restore": {
+                "cohort_id": "R109_EXPERIENCE_C2_B002",
+                "eligible_sha256": "ee27a57c73ec912116e6080746285df22f66340e33e290d87909a8f7cb6ff10a",
+                "global_cursor_preserved": true,
+                "observed_unix": 1789493168.9835842,
+                "optimizer_restored": true,
+                "process": [
+                  "273420dc-cd6c-4760-a264-0027d2f6aede",
+                  3190894,
+                  21426252
+                ],
+                "rng_restored": true,
+                "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+                "update": 15460,
+                "uuid": "GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6"
+              },
+              "restore_receipt_sha256": "13ec8dad16f7c0e1ae28b2b4f4f4d5bf97e84866f0d6d8c31b80e339b4ae7de5",
+              "utilization_percent": 58
+            },
+            {
+              "alive": true,
+              "arm": "CONTROL",
+              "checkpoint_metadata": {
+                "adapter": {
+                  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+                  "files": [
+                    [
+                      "README.md",
+                      "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+                    ],
+                    [
+                      "adapter_config.json",
+                      "68cc0f20af931c3c10dd6388dda3354fb21785683878f0df790354f5dd0804ef"
+                    ],
+                    [
+                      "adapter_model.safetensors",
+                      "89f6e033761460413a19e281c4f4bdbbab35cea291f3db35319861abf6fc84e0"
+                    ]
+                  ],
+                  "path": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt2/fit/CONTROL/checkpoints/000016484/adapter",
+                  "state_sha256": "b56b54b7bff3f2537d5eb186afeb865a5c72b83d5e9a1a5e549ecfca381a0422"
+                },
+                "arm": "CONTROL",
+                "cohort_exposures": {
+                  "anchor": 7040,
+                  "eligible": 880,
+                  "legacy": 7040,
+                  "prior": 13200
+                },
+                "cohort_id": "R109_EXPERIENCE_C2_B002",
+                "eligible_sha256": "ee27a57c73ec912116e6080746285df22f66340e33e290d87909a8f7cb6ff10a",
+                "eligible_supervised_tokens": 0,
+                "lifetime": {
+                  "hard_deadline_unix": 1790442300,
+                  "lease_end_unix": 1790463900,
+                  "max_gpus": 14,
+                  "native_deadline_unix": 1790442300,
+                  "started_unix": 1789462560.0
+                },
+                "optimizer_preserved": true,
+                "original_history_unchanged": true,
+                "prior_checkpoint_commit_sha256": "a9727ec57f25191945be2378c46525124e404dcfebf10209eadd9a9ad2d7411d",
+                "recipe": "C1_ONE_ACTUAL_ELIGIBLE_ROW_EVERY_8_UPDATES_REPLACES_SECOND_PRIOR;CONTROL_MASKS_ONLY_ELIGIBLE;BOTH_KEEP_BASE_ANCHORS",
+                "rng_per_rank": true,
+                "saved_unix": 1789496241.0354538,
+                "seed_update": 9444,
+                "source_labels": [
+                  "ORIGINAL_8932_REHEARSAL",
+                  "VERIFIED_BASE_ANCHOR",
+                  "R109_SELF_GENERATED_FUNCTIONAL"
+                ],
+                "source_sha256": "6ec91c7f23b9d09ad24a35a4080ac9a41a64a3164b4e474df2b491ff7213b31c",
+                "update": 16484,
+                "world_size": 1
+              },
+              "checkpoint_sha256": "e070947995eb51cd1334d17c325f9fcf473abc8d8c726c6319b2a856aecb420b",
+              "heartbeat": {
+                "condition": "ON",
+                "hard_deadline_unix": 1790442300,
+                "identity": {
+                  "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+                  "pid": 3203997,
+                  "start_ticks": "21739847",
+                  "uid": 1395
+                },
+                "index": 1,
+                "observed_unix": 1789496351.3543112,
+                "phase": "readout",
+                "resume": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt2/fit/CONTROL/checkpoints/000016484",
+                "segment": 33
+              },
+              "last_update": 16484,
+              "last_update_unix": 1789496210.8145616,
+              "latest_checkpoint": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt2/fit/CONTROL/checkpoints/000016484",
+              "memory_mib": 15417,
+              "paired_completed": [
+                "CONTROL_26_PAIRED_COMPLETE.json",
+                "CONTROL_27_PAIRED_COMPLETE.json",
+                "CONTROL_28_PAIRED_COMPLETE.json",
+                "CONTROL_29_PAIRED_COMPLETE.json",
+                "CONTROL_30_PAIRED_COMPLETE.json",
+                "CONTROL_31_PAIRED_COMPLETE.json",
+                "CONTROL_32_PAIRED_COMPLETE.json"
+              ],
+              "restore": {
+                "cohort_id": "R109_EXPERIENCE_C2_B002",
+                "eligible_sha256": "ee27a57c73ec912116e6080746285df22f66340e33e290d87909a8f7cb6ff10a",
+                "global_cursor_preserved": true,
+                "observed_unix": 1789493169.0037813,
+                "optimizer_restored": true,
+                "process": [
+                  "273420dc-cd6c-4760-a264-0027d2f6aede",
+                  3190895,
+                  21426254
+                ],
+                "rng_restored": true,
+                "state_sha256": "f25d5bf617b1989f722b9aec154a98a16f8a85b33f18228da06ce53f10af031e",
+                "update": 15460,
+                "uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b"
+              },
+              "restore_receipt_sha256": "8c6761bfd7ba0f131b9df133dc169459aaaa30f57cebd336f1e77774a46a5a7b",
+              "utilization_percent": 2
+            }
+          ],
+          "continuation_sha256": "bdba75e67cc5e850685659a92aa7038f29e04c47211b72922ca23ea919a1ec9a",
+          "root": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt2",
+          "source_sha256": "6984cb04eee54bb2bd2fb1a4fb938c571c1b613c6aa220dd0827f34bb2cdb688"
+        }
+      },
+      "receipt": "/localhome/local-rohing/orch_r119_l1_generation_20260915_attempt2/COMPACT_1789496352077070499.json",
+      "receipt_sha256": "a81e2ce30a1d1761e69e465c48c46e1d34866430b910206e761938534e6ade05"
+    },
+    {
+      "document": {
+        "forks_sha256": "621e1391285bcad9ee075106b4afab28970616b663876dc4ebeba7834e7b81e3",
+        "generation": [
+          {
+            "alive": true,
+            "completed_response_files": 1623,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 1397892,
+              "start_ticks": "72227671",
+              "uid": 2524
+            },
+            "loaded_sha256": "94a985c23d13253f83e2f8d1e8049467c02bbac62f67bf1a8bce49a0d309f01f",
+            "memory_mib": 15789,
+            "phase": "GENERATING",
+            "physical": 0,
+            "progress": {
+              "batch": 187,
+              "calls": 17458,
+              "condition": "ORDINARY_CONTROL",
+              "finished_unix": 1789496343.8080115,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1616,
+              "position": 14,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 87
+          },
+          {
+            "alive": true,
+            "completed_response_files": 1860,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 1397836,
+              "start_ticks": "72227124",
+              "uid": 2524
+            },
+            "loaded_sha256": "958d0d46fa5a31315222674a284b6a6b4f13144248b63fe0149d4417c3646e4a",
+            "memory_mib": 15821,
+            "phase": "GENERATING",
+            "physical": 1,
+            "progress": {
+              "batch": 199,
+              "calls": 17702,
+              "condition": "PERSISTENCE",
+              "finished_unix": 1789496350.299867,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1860,
+              "position": 13,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 84
+          },
+          {
+            "alive": true,
+            "completed_response_files": 1362,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 1397822,
+              "start_ticks": "72227072",
+              "uid": 2524
+            },
+            "loaded_sha256": "9e3a12c8479cf8f2145d8bd5374a27a6df3c7d47fcebc02d9020b4d71b076e4c",
+            "memory_mib": 15869,
+            "phase": "GENERATING",
+            "physical": 2,
+            "progress": {
+              "batch": 205,
+              "calls": 17204,
+              "condition": "FUNCTIONAL_METACOGNITION",
+              "finished_unix": 1789496345.2230425,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1362,
+              "position": 4,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 89
+          },
+          {
+            "alive": true,
+            "completed_response_files": 1805,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 1397835,
+              "start_ticks": "72227122",
+              "uid": 2524
+            },
+            "loaded_sha256": "d981fb71d676bc487f5dd61db58ccf1ea1a83261c71db4aa77a6ca0c32a8c2da",
+            "memory_mib": 15941,
+            "phase": "GENERATING",
+            "physical": 3,
+            "progress": {
+              "batch": 221,
+              "calls": 17640,
+              "condition": "PERCEPTION",
+              "finished_unix": 1789496345.5053422,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1798,
+              "position": 3,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 90
+          },
+          {
+            "alive": true,
+            "completed_response_files": 1306,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 1397865,
+              "start_ticks": "72227401",
+              "uid": 2524
+            },
+            "loaded_sha256": "d93b2b1560064c0b06625d26ac9106ab90ed217ce366cb28356250c88c147350",
+            "memory_mib": 15771,
+            "phase": "GENERATING",
+            "physical": 4,
+            "progress": {
+              "batch": 226,
+              "calls": 17147,
+              "condition": "EVIDENCE_HOPS",
+              "finished_unix": 1789496344.976857,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1305,
+              "position": 18,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 83
+          },
+          {
+            "alive": true,
+            "completed_response_files": 1919,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 1397891,
+              "start_ticks": "72227669",
+              "uid": 2524
+            },
+            "loaded_sha256": "8d078a41ba4eb6c9cf10a3cda0f28b3f32b7346e9a489149d6d2edb679aa1714",
+            "memory_mib": 15797,
+            "phase": "GENERATING",
+            "physical": 5,
+            "progress": {
+              "batch": 246,
+              "calls": 17761,
+              "condition": "ORDINARY_CONTROL",
+              "finished_unix": 1789496351.448697,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1919,
+              "position": 1,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 88
+          },
+          {
+            "alive": true,
+            "completed_response_files": 1258,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 1397848,
+              "start_ticks": "72227349",
+              "uid": 2524
+            },
+            "loaded_sha256": "69d7d2f3eba49eddc924f6161edf9596ba0e0b5f99f2a774343cc8e2274f107d",
+            "memory_mib": 15813,
+            "phase": "GENERATING",
+            "physical": 6,
+            "progress": {
+              "batch": 248,
+              "calls": 17100,
+              "condition": "PERSISTENCE",
+              "finished_unix": 1789496337.7909465,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1258,
+              "position": 4,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 87
+          },
+          {
+            "alive": true,
+            "completed_response_files": 1889,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 1397837,
+              "start_ticks": "72227126",
+              "uid": 2524
+            },
+            "loaded_sha256": "1c66017223782e4f7cb3cda8bf1476ff8eec034dcd2e229fbb8de227fdc6c989",
+            "memory_mib": 15841,
+            "phase": "GENERATING",
+            "physical": 7,
+            "progress": {
+              "batch": 265,
+              "calls": 17730,
+              "condition": "FUNCTIONAL_METACOGNITION",
+              "finished_unix": 1789496336.6017752,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1888,
+              "position": 19,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 90
+          }
+        ],
+        "generation_source_sha256": "4c402e37027a5fc509a27e33ff2ed82c9fbf48bcd0ac976648d27240c898d107",
+        "hard_deadline_unix": 1789958580.0,
+        "lease_end_unix": 1789980180.0,
+        "new_unique_admissions": 0,
+        "node": "ovx",
+        "observed_unix": 1789496353.1817346,
+        "pre_gpu_sha256": "06ab20977ecf2fb077646083377dbde807080c1eacf872d9317d2a0578b8dccf",
+        "predecessor_release_sha256": "78274c0cd24e1d11002093ff394417c7e6503c5be687cd785ac96cdaa0fea60f",
+        "root": "/localhome/local-rohing/orch_r119_l1_generation_20260915_attempt2",
+        "schema": "R119_L1_NATIVE_LAUNCH_COMPACT_V1",
+        "scientific_claim": "No capability improvement or functional persistence claim; V3 restarted, R119 feedback collection not launched; inherited counters excluded from new call counts."
+      },
+      "receipt": "/localhome/local-rohing/orch_r119_l1_generation_20260915_attempt2/COMPACT_1789496353181878555.json",
+      "receipt_sha256": "3f3f4b006c44aad223ad179f1f910e4ffb74271f73b8444bd8f8816e6a11f3e1"
+    },
+    {
+      "document": {
+        "forks_sha256": "7e4c676aae449ceb2ca2b30e38f454212003af996e8d7080ee80d8853c0e90c3",
+        "generation": [
+          {
+            "alive": true,
+            "completed_response_files": 1302,
+            "identity": {
+              "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              "pid": 2303324,
+              "start_ticks": "20011339",
+              "uid": 2524
+            },
+            "loaded_sha256": "71be5e94b58d0efa42e70048257f8dff9130914e389f3378ede792520d7398a5",
+            "memory_mib": 16072,
+            "phase": "GENERATING",
+            "physical": 0,
+            "progress": {
+              "batch": 303,
+              "calls": 17129,
+              "condition": "PERSISTENCE",
+              "finished_unix": 1789496339.705778,
+              "inherited_calls": 15842,
+              "new_segment_calls": 1287,
+              "position": 14,
+              "semantic_admissions": 0
+            },
+            "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed",
+            "utilization_percent": 84
+          }
+        ],
+        "generation_source_sha256": "4c402e37027a5fc509a27e33ff2ed82c9fbf48bcd0ac976648d27240c898d107",
+        "hard_deadline_unix": 1789668000.0,
+        "lease_end_unix": 1789689600.0,
+        "new_unique_admissions": 0,
+        "node": "ovx2",
+        "observed_unix": 1789496354.3477285,
+        "pre_gpu_sha256": "aae34713d7dfbfd529b38ea0838a82a4a40f367ff78f50dcee7d90896ac720c1",
+        "predecessor_release_sha256": "d97302dc0b0b3acd4deca0ce5fa6f881f92f660305c785b2015152c0c7027fe6",
+        "root": "/localhome/local-rohing/orch_r119_l1_generation_20260915_attempt2",
+        "schema": "R119_L1_NATIVE_LAUNCH_COMPACT_V1",
+        "scientific_claim": "No capability improvement or functional persistence claim; V3 restarted, R119 feedback collection not launched; inherited counters excluded from new call counts."
+      },
+      "receipt": "/localhome/local-rohing/orch_r119_l1_generation_20260915_attempt2/COMPACT_1789496354348166292.json",
+      "receipt_sha256": "5ec9869f2e9d7c2d28b1e6bb1405b8d2c7a66d7f7385a874fa649f3a4d5acf96"
+    }
+  ],
+  "schema": "R119_L1_14_SLOT_HEARTBEAT_V1"
+}
