@@ -1,0 +1,36 @@
+{
+  "schema": "R129_CONTEXT_EPOCH_PREPARATION_V1",
+  "verified_at_utc": "2026-09-15T21:01:04Z",
+  "status": "LOCAL_TESTED_NOT_LAUNCHED",
+  "source": {
+    "path": "gpu/orch_r129_a40r0_context_epoch.py",
+    "sha256": "37f70c174130edd639f4e83728c0b6a62ccd3a9764aa381a686fa912415d339a"
+  },
+  "test_source": {
+    "path": "tests/test_orch_r129_a40r0_context_epoch.py",
+    "sha256": "a9ca62765e0d0bcdf676a19f2c6a435b1e0bf43f28d8e04e71aaf35d346496d8"
+  },
+  "worker_journal": {
+    "path": "research_loop/workers/R129_A40R0_CONTEXT_EPOCH.md",
+    "sha256": "a2349d539a48749749def0c596662fd582b5e8678c3a309deab7ed0c33aaee56"
+  },
+  "main_validation": {
+    "command": "PYTHONPATH=/tmp/orch_r108_pytest_support_0854:. python3 -m pytest -q tests/test_orch_r129_a40r0_context_epoch.py tests/test_orch_r120_route_life.py",
+    "passed": 19,
+    "failed": 0,
+    "environment_note": "Initial global unittest import lacked pytest; validation used existing local pytest support, without installing dependencies"
+  },
+  "native_cpu_carry_verified": false,
+  "fresh_admission_verified": false,
+  "gpu_launched": false,
+  "provider_calls": 0,
+  "native2006_reserved_by_recovery": false,
+  "parent110_replayed": false,
+  "remaining_before_launch": [
+    "Freeze and verify exact native dependency/source seams",
+    "Tokenizer-fit proof retaining full actual child2005 reflection and delivered parent110 guidance",
+    "Dated allocation/provenance entry",
+    "Fresh exact a40r physical0 GPU/process admission"
+  ],
+  "claim_boundary": "Declared changed-context frozen-base elicitation, not identical-context continuation or LoRA learning"
+}
