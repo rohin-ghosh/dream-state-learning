@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-15T18:11Z actual27/40resident,23positiveutilization; node5 F1/A1+F3/A3+F4 computing, mathpending,A4emptysnapshotaftercompletedcalls. NOTsaturated. F4/A4 firstcompletedcalls18:06:10/14UTC. FastFableproviderfailedOAuth/requiredmanagedsettings, NOTlatency; watcherrestoreauthorizednode5login/settings, nochargedretry, childrencontinue. Independentfamilyownerslaunchremainingassignedslots; nometa/sharedbarrier. Compact STATUS_1811.md in orch_r119_fleet_continuation_20260915; journals/runplan pushed8b4d3860.
+
 ## [Builder] 2026-09-15 17:16 UTC — restore all40, lease-based walls
 
 17:00 was the REPORT cut, not a run-stop instruction. Restore committed
