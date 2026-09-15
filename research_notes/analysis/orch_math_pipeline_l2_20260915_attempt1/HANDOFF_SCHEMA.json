@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ORCH_MATH_PIPELINE_L1_FULL_HANDOFF_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "complete_receipt", "source_snapshot", "output_adapter", "source_task_ids", "source_question_hashes", "updates", "presentations", "rows"],
+  "properties": {
+    "schema": {"const": "ORCH_MATH_PIPELINE_L1_FULL_HANDOFF_V1"},
+    "complete_receipt": {"$ref": "#/$defs/file"},
+    "source_snapshot": {"$ref": "#/$defs/file"},
+    "output_adapter": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "state_sha256", "base_sha256", "files"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^/"},
+        "state_sha256": {"$ref": "#/$defs/hash"},
+        "base_sha256": {"$ref": "#/$defs/hash"},
+        "files": {"type": "array", "minItems": 2, "items": {"type": "array", "prefixItems": [{"type": "string"}, {"$ref": "#/$defs/hash"}], "minItems": 2, "maxItems": 2}}
+      }
+    },
+    "source_task_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "source_question_hashes": {"type": "array", "items": {"$ref": "#/$defs/hash"}},
+    "updates": {"type": "integer", "minimum": 1},
+    "presentations": {"const": 16},
+    "rows": {"type": "integer", "minimum": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "file": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "pattern": "^/"}, "sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

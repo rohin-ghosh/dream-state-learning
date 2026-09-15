@@ -1,5 +1,39 @@
 # MATH-PIPELINE-L2 — automatic manufacturing-line handoff
 
+## 2026-09-15T04:51Z — Rohin100/101, actual writes, disk/provider repair
+
+No newmathtriples; canonical sharedbaseline is Main/Pasteur route0/1/2.
+Newpair C0COMPLETE56/56both withAFTER; nativeC1 actualupdates466GUIDED and1344OFF
+at04:49:39, not saved yet. CurrentGUIDED reflection begun04:46:44.989829Z still
+inflight at04:49:39 underoriginal8192cap, not inferredcomplete or retried.
+OFF guardian422206 held whilecurrentnative431808 continues; boundary436575
+requires savedC1COMPLETE+AFTER+optimizer then exactlyonefreshC1test, then fresh
+strictrelease5toMain. NoOFFC2. GUIDED futurestyles parentedonly, no unmatched
+style-controlclaim. No continualL1reset/L2ingestion/foundationupgrade.
+
+Correction: FROZEN C3actuallyFAILED04:42:08.676827Z onteacher-verbatim mask, not
+liveas initially inferredfromabsentCOMPLETE. Check preserved/no waiver; failed
+postmount state12354524/basea2367093 unchanged. OriginalC1/C2tests remaincomplete.
+Single still-unattempted C3parentfreefinaltest now native456655 on7 afterfresh
+admission; source-bound failedsleepstratum, no forgedC3sleepCOMPLETE. Release7
+only afterfinaltestCOMPLETE+AFTER+strictclear. Main gets explicitrelease receipts.
+
+TIMINGS_20260915T044241.md has measuredgeneration/parentqueue/sleep/readout and
+failed/live denominators, plusFROZENC3correction. Generation8questions~112seconds,
+not2.5h; no speculative batching/in-flight mutation.42CPUtests PASS.
+
+All5actualparenttranscripts copiedfilewise to nodeparent_transcripts, eachSHA
+verified; localrawcopies deleted. Pulledsnapshot/sourcearchive/extractedsource/
+syntheticprobe andrawfirstwrite/firstnative receipts likewiseverifiednode-local
+beforeuntrackedlocalcleanup. Repoonlymanifests/reductions/source/tests. No further
+archivepulls. NODE_EVIDENCE_MANIFEST/PARENT_NODE_RECEIPTS/LOCAL_RAW_MIGRATION_MANIFEST
+preserve hashes. Newbroker3438390 usesone/tmpbuffer, nodeverify-beforecleanup.
+ConsumedPasteur exactstrongprimaryproofd94e8b97/modelopenai/openai/gpt-6-astra;
+futureactualresponseidentity strictlychecked. Already-dispatched newGUIDEDC1
+gpt-5.6-sol plan preservedaslegacyexception, notstrong/retried; brokerpauseincluded
+in177.544s serviceelapsed. Originalweakbroker3175663 stoppedidle; no parent killed.
+Main publishes; owned stage paths forthcoming, noGitmutation.
+
 ## 2026-09-15T04:35Z — new pair actually returning; frozen C2 test complete
 
 New campaign_02_recovery_paired physical4/5 native422532/422533 mounted exact
