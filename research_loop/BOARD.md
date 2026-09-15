@@ -1,5 +1,16 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Feed-gap repair allocation — 2026-09-15 06:02 UTC
+
+Old publisher scans retired original37ec source:42leftovers, lastcapture04:48:31;
+controller exited05:59:51 with96/128reserved under originaldeadline margin.
+Current-generation feed is NOT continuous despite a healthy receiver watcher.
+New CPU/provider segment allocated: Cicero native source adapter + Hubble
+publisher, currentBASE/37ec exhaustionmathTRAINonly, additional128single-attempt
+reviews/max2concurrent,08:00UTCdeadline; old128ceiling/counterspreserved.
+No GPU reallocation, teacher/L2mix, deadline reset, or dispatch yet.
+Details: `research_notes/analysis/orch_continual_feed_gap_20260915_0602.md`.
+
 ## Measured learning and fleet — 2026-09-15 05:58 UTC
 
 - Fleet05:56:34–35:32/32 compute-resident,28/32 positive instantaneous
