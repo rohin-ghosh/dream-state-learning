@@ -27455,3 +27455,39 @@ methods/author labels/bootstrap selection/global interpretation. Independent
 content/support criticism, not Fable's count verification. Prior labels/rows
 immutable; no new gate or pause on the experimental bootstrap. Return concrete
 contrary examples as well as support; no external fanout/local model/GPU calls.
+
+## [Orchestrator] 2026-09-15T01:07Z — actual rich bootstrap; current state condensed, evidence preserved
+
+STATE first (850→282lines; previous full state preserved in9905adfc), BOARD
+second. No evidence, denominator, original author judgment or raw directive
+deleted; historical experiment details remain in git/notebook/own receipts.
+
+| Native milestone | Observed | Interpretation boundary |
+|---|---|---|
+| RICH-L2 FULL bootstrap |native239377 at01:00:00.717940;40finite updates observed01:01 | not yet held learning or completedL2 |
+| Matched bootstrap recipe |16fixed rows;256presentations;224updates eachFULL/OFF;222legacy encodings | OFFnewlabelsmasked;same schedule |
+| Rich-L2 held design |56fixedcongruence questions=24TRAIN+32held | exhaustive oracle8/8 ceiling,notbeatablebaseline |
+| Route deterministic firstport |8/16goals,0/8pairs on every fixed TRAIN/held cohort | separate from guidedFROZEN control |
+| LONG post-sleep readout resume |native236830,00:59:43,mountedad2d1065,index203 | preserves78experience+125initialcalls;no replay |
+
+OBSERVATION: actual bootstrap training has begun fromoriginal37ec/basea236;
+no pilot generation or parent-provider calls at its01:01 receipt. Global hard
+end05:00:00.717940, including later node2 lanes, no reset. EVIDENCE AND CONTROL:
+RICH_L2_PILOT journal/preGPU, source def9a5c4/PREPAREbd3892ab/masks4d29673f/
+COHORT20ec0c83; literal first16packet52197d8d unchanged. LONG9905adfc and
+FIRSTPORT_FIXED_REFERENCE5bbbbeeb/b09764ee preserve failures and nativebindings.
+CURRENT INTERPRETATION: the first qualified rich packet now receives actual
+matched training; this is not retained benefit or a completed guided loop.
+CREDIBLE ALTERNATIVES: small percentage-only bootstrap, public data, transfer
+to congruence, rehearsal and prompt effects. Exact oracle is not a weak reference
+that can be beaten; this pilot is diagnostic, not campaign acceptance/H1/H2.
+CONFIDENCE: native training/lineage receipts, no learned-effect estimate.
+CHEAPEST DISCRIMINATING NEXT TEST: finish original paired bootstrap then the
+already-assigned parallel same-stage controls and guided cycles, no newgate.
+
+INTENSITY fixed-panel contrary examples: control/LIGHT Bert records falsely
+state300 is half of300 despite correctFINAL450; pursuit5181 storedgold10 is
+ambiguous versus continuous-pursuit15. Original outcome denominators preserved;
+admission exclusions do not repair source gold. Neither affects initial16packet.
+Popper independently reads24opaque rawcaptures with neutralhistories, no favored
+interpretation or authorlabels; no delay to nativepilot or canonized rescore.
