@@ -1,0 +1,503 @@
+{
+  "actual_model": "openai/openai/gpt-6-astra",
+  "actual_provider_count": 1,
+  "actual_usage": {
+    "input_tokens": 7411,
+    "output_tokens": 21036,
+    "reasoning_tokens": 10178,
+    "total_tokens": 28447
+  },
+  "answer_checks": {
+    "correct": 16,
+    "denominator": 16,
+    "ingestion_authorized": false,
+    "method_proofs": "NOT_INDEPENDENTLY_VERIFIED",
+    "scope": "FINAL_ANSWER_ONLY_TRAIN"
+  },
+  "attempted": 16,
+  "bounds": {
+    "automatic_retries": 0,
+    "credentials_changed": false,
+    "gpu_allocation": 0,
+    "hard_deadline_unix": 1789449668.331557,
+    "mainline_teacher_bytes": false,
+    "maximum_output_tokens_per_call": 8192,
+    "maximum_providers": 2,
+    "maximum_tasks_per_provider": 16,
+    "maximum_total_single_attempt_calls": 32,
+    "maximum_wall_seconds": 3600,
+    "per_call_seconds": 120,
+    "selected_maximum_calls": 16,
+    "selected_maximum_requested_output_tokens": 131072,
+    "selected_providers": [
+      "openai/openai/gpt-6-astra"
+    ],
+    "selection_basis": "actual primary response qualification plus observable single HTTP attempt; not held outcomes or asserted capability ranking",
+    "sonnet_disposition": "primary qualified, not dispatched in this strict single-HTTP-attempt pilot because CLI transport retry count is unobservable",
+    "source_label": "TEACHER_DISTILLATION",
+    "source_roster": "8 existing math TRAIN cycle1 tasks + 8 existing route TRAIN cycle0 goal tasks in fixed order",
+    "tool_access": false,
+    "trainer_ingestion": false,
+    "utc": "2026-09-15T04:21:08.331558+00:00"
+  },
+  "claims_excluded": [
+    "learner_improvement",
+    "distillation_fit_completed",
+    "semantic_method_or_proof_verification",
+    "held_performance",
+    "clean_causal_effect"
+  ],
+  "collected_on_vm": true,
+  "collection_wall_seconds": 398.697663,
+  "complete": 16,
+  "domain_counts": {
+    "math": 8,
+    "route": 8
+  },
+  "failed": 0,
+  "finished_utc": "2026-09-15T04:31:16.514166+00:00",
+  "first_response_utc": "2026-09-15T04:24:54.290521+00:00",
+  "intended": 16,
+  "mainline_teacher_bytes": false,
+  "maximum_observed_output_tokens_per_call": 2098,
+  "raw_canonical_storage": "NODE3_SHA_VERIFIED_MIRROR",
+  "records": [
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "math",
+      "envelope_sha256": "a75f06d902420b07fa91ab0db1a76ec60b459addc7ca2420962a16e3e947c772",
+      "finished_utc": "2026-09-15T04:24:54.290521+00:00",
+      "ordinal": 0,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_TRAIN_C1_E0",
+      "usage": {
+        "cost": null,
+        "input_tokens": 340,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 775,
+        "output_tokens_details": {
+          "reasoning_tokens": 379,
+          "text_tokens": null
+        },
+        "total_tokens": 1115
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "math",
+      "envelope_sha256": "a4e25925819454cc4e76f12eb9040824ad7c37c3790fb483dd291d75962fc0df",
+      "finished_utc": "2026-09-15T04:25:20.423978+00:00",
+      "ordinal": 1,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_TRAIN_C1_E1",
+      "usage": {
+        "cost": null,
+        "input_tokens": 351,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1178,
+        "output_tokens_details": {
+          "reasoning_tokens": 774,
+          "text_tokens": null
+        },
+        "total_tokens": 1529
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "math",
+      "envelope_sha256": "d0658e02aa5ec147817fb9c4d604323fad8db001d72c38dfdd55bcb34987247f",
+      "finished_utc": "2026-09-15T04:25:52.171134+00:00",
+      "ordinal": 2,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_TRAIN_C1_E2",
+      "usage": {
+        "cost": null,
+        "input_tokens": 359,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1747,
+        "output_tokens_details": {
+          "reasoning_tokens": 1011,
+          "text_tokens": null
+        },
+        "total_tokens": 2106
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "math",
+      "envelope_sha256": "639c39f786a9315767a98c38b48c17026fe1d62051b5f77cbecfa1cf0b049177",
+      "finished_utc": "2026-09-15T04:26:13.684146+00:00",
+      "ordinal": 3,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_TRAIN_C1_E3",
+      "usage": {
+        "cost": null,
+        "input_tokens": 352,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1133,
+        "output_tokens_details": {
+          "reasoning_tokens": 693,
+          "text_tokens": null
+        },
+        "total_tokens": 1485
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "math",
+      "envelope_sha256": "d89eab9048cc058d01f6a340b8cf66930606a9c95e8b47e359e65fd698198f06",
+      "finished_utc": "2026-09-15T04:26:30.705063+00:00",
+      "ordinal": 4,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_TRAIN_C1_E4",
+      "usage": {
+        "cost": null,
+        "input_tokens": 339,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 906,
+        "output_tokens_details": {
+          "reasoning_tokens": 516,
+          "text_tokens": null
+        },
+        "total_tokens": 1245
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "math",
+      "envelope_sha256": "a0a6d043c38a8ec407a0ff86d8aae2db6202e1e266f5ab8dbb21c4451ecba51d",
+      "finished_utc": "2026-09-15T04:26:50.320589+00:00",
+      "ordinal": 5,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_TRAIN_C1_E5",
+      "usage": {
+        "cost": null,
+        "input_tokens": 351,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 894,
+        "output_tokens_details": {
+          "reasoning_tokens": 464,
+          "text_tokens": null
+        },
+        "total_tokens": 1245
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "math",
+      "envelope_sha256": "87a4bb08350b4073ea3fed252860c4bc1ec0923b90a38a59799877a01da60a17",
+      "finished_utc": "2026-09-15T04:27:24.044607+00:00",
+      "ordinal": 6,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_TRAIN_C1_E6",
+      "usage": {
+        "cost": null,
+        "input_tokens": 360,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 2098,
+        "output_tokens_details": {
+          "reasoning_tokens": 1335,
+          "text_tokens": null
+        },
+        "total_tokens": 2458
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "math",
+      "envelope_sha256": "537c0f3d7647bd6e595e1aa8e95a2d7e6f46afa73199d4b92ef1fa083862e248",
+      "finished_utc": "2026-09-15T04:27:49.268148+00:00",
+      "ordinal": 7,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_TRAIN_C1_E7",
+      "usage": {
+        "cost": null,
+        "input_tokens": 352,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1196,
+        "output_tokens_details": {
+          "reasoning_tokens": 776,
+          "text_tokens": null
+        },
+        "total_tokens": 1548
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "route",
+      "envelope_sha256": "d11f8a0caea50a75451991cb5a0e21f71de12eccd1ca603f34143dfee3607433",
+      "finished_utc": "2026-09-15T04:28:12.411295+00:00",
+      "ordinal": 8,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "ORCH-ROUTE-PARENT-20260915-TRAIN-C0-W0-GOAL0",
+      "usage": {
+        "cost": null,
+        "input_tokens": 576,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1386,
+        "output_tokens_details": {
+          "reasoning_tokens": 516,
+          "text_tokens": null
+        },
+        "total_tokens": 1962
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "route",
+      "envelope_sha256": "23ddbe9ab61001a5b63d7bb646f34e3f4fb58357d925d1f08940b797112655de",
+      "finished_utc": "2026-09-15T04:28:33.634861+00:00",
+      "ordinal": 9,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "ORCH-ROUTE-PARENT-20260915-TRAIN-C0-W0-GOAL1",
+      "usage": {
+        "cost": null,
+        "input_tokens": 575,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1309,
+        "output_tokens_details": {
+          "reasoning_tokens": 475,
+          "text_tokens": null
+        },
+        "total_tokens": 1884
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "route",
+      "envelope_sha256": "6f4b872dfaadd1c104f2b0e0ee09272821ac3e9cf428970a68a9f02e9a5a87ff",
+      "finished_utc": "2026-09-15T04:28:58.670215+00:00",
+      "ordinal": 10,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "ORCH-ROUTE-PARENT-20260915-TRAIN-C0-W1-GOAL0",
+      "usage": {
+        "cost": null,
+        "input_tokens": 578,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1422,
+        "output_tokens_details": {
+          "reasoning_tokens": 516,
+          "text_tokens": null
+        },
+        "total_tokens": 2000
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "route",
+      "envelope_sha256": "0b072912c64f7e6b10776b94f4b727992ff635b28830be6365c23568cdb0e002",
+      "finished_utc": "2026-09-15T04:29:20.192479+00:00",
+      "ordinal": 11,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "ORCH-ROUTE-PARENT-20260915-TRAIN-C0-W1-GOAL1",
+      "usage": {
+        "cost": null,
+        "input_tokens": 579,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1183,
+        "output_tokens_details": {
+          "reasoning_tokens": 369,
+          "text_tokens": null
+        },
+        "total_tokens": 1762
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "route",
+      "envelope_sha256": "93c7d15aeb5ea0898090860c5cba4adc8e88c73e5ed08e03a6efb09351800c84",
+      "finished_utc": "2026-09-15T04:29:45.608274+00:00",
+      "ordinal": 12,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "ORCH-ROUTE-PARENT-20260915-TRAIN-C0-W2-GOAL0",
+      "usage": {
+        "cost": null,
+        "input_tokens": 583,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1446,
+        "output_tokens_details": {
+          "reasoning_tokens": 516,
+          "text_tokens": null
+        },
+        "total_tokens": 2029
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "route",
+      "envelope_sha256": "8fdc1f9551a2662179b9dc00954eb24f945ff619bec8384629aa5b2db5e16784",
+      "finished_utc": "2026-09-15T04:30:15.694272+00:00",
+      "ordinal": 13,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "ORCH-ROUTE-PARENT-20260915-TRAIN-C0-W2-GOAL1",
+      "usage": {
+        "cost": null,
+        "input_tokens": 583,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1698,
+        "output_tokens_details": {
+          "reasoning_tokens": 806,
+          "text_tokens": null
+        },
+        "total_tokens": 2281
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "route",
+      "envelope_sha256": "0f92c0df588e0f790fe62d88248e349c51ee4b91edcf554f3a946416c3d80896",
+      "finished_utc": "2026-09-15T04:30:40.747085+00:00",
+      "ordinal": 14,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "ORCH-ROUTE-PARENT-20260915-TRAIN-C0-W3-GOAL0",
+      "usage": {
+        "cost": null,
+        "input_tokens": 567,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1353,
+        "output_tokens_details": {
+          "reasoning_tokens": 516,
+          "text_tokens": null
+        },
+        "total_tokens": 1920
+      }
+    },
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "domain": "route",
+      "envelope_sha256": "7629133a13633e4b72362864ef852b8238ae0b5312ca7fd66425a6f57b6376b5",
+      "finished_utc": "2026-09-15T04:31:16.512731+00:00",
+      "ordinal": 15,
+      "provider_status": "completed",
+      "single_attempt": true,
+      "status": "COMPLETE",
+      "task_id": "ORCH-ROUTE-PARENT-20260915-TRAIN-C0-W3-GOAL1",
+      "usage": {
+        "cost": null,
+        "input_tokens": 566,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1312,
+        "output_tokens_details": {
+          "reasoning_tokens": 516,
+          "text_tokens": null
+        },
+        "total_tokens": 1878
+      }
+    }
+  ],
+  "reduction_utc": "2026-09-15T05:32:33.225513+00:00",
+  "source_label": "TEACHER_DISTILLATION",
+  "split": "TRAIN",
+  "started_utc": "2026-09-15T04:24:37.816503+00:00",
+  "trainer_ingestion": false
+}

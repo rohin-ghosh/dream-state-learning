@@ -1,0 +1,26 @@
+{
+  "inventory_sha256": "e635c8c06d6287f9782569f65ae9e6897b16849ad22d560ce1a21b4f1f257592",
+  "local_snapshot_hashes_match": true,
+  "no_git_mutation": true,
+  "no_gpu_changes": true,
+  "no_provider_calls_made": true,
+  "no_raw_download": true,
+  "node_verification": {
+    "bytes": 459436,
+    "deletion_performed": false,
+    "files": 156,
+    "mismatches": [],
+    "scope": "listed_snapshot_only_not_future_writes",
+    "verified": true
+  },
+  "node_verification_command": "python3 /localhome/local-rohing/orch_route_parent_campaign_20260915_raw_mirror/verify.py /localhome/local-rohing/orch_route_parent_campaign_20260915_raw_mirror/teacher_exemplar --manifest /localhome/local-rohing/orch_route_parent_campaign_20260915_raw_mirror/MIRROR_teacher_exemplar_MANIFEST.json",
+  "source_label": "TEACHER_DISTILLATION",
+  "sources_match_pre_provider_publication": true,
+  "tests": {
+    "command": "python3 -B -m unittest discover -s tests -p test_orch_route_parent_campaign_teacher_exemplar.py -v",
+    "output": "test_actual_model_and_budget_not_alias (test_orch_route_parent_campaign_teacher_exemplar.TeacherExemplarTests.test_actual_model_and_budget_not_alias) ... ok\ntest_gold_paths_and_held_rejected_from_prompts (test_orch_route_parent_campaign_teacher_exemplar.TeacherExemplarTests.test_gold_paths_and_held_rejected_from_prompts) ... ok\ntest_numeric_correctness_is_not_ingestion_permission (test_orch_route_parent_campaign_teacher_exemplar.TeacherExemplarTests.test_numeric_correctness_is_not_ingestion_permission) ... ok\ntest_route_checks_only_observed_edges (test_orch_route_parent_campaign_teacher_exemplar.TeacherExemplarTests.test_route_checks_only_observed_edges) ... ok\ntest_teacher_label_and_multiple_methods_required (test_orch_route_parent_campaign_teacher_exemplar.TeacherExemplarTests.test_teacher_label_and_multiple_methods_required) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+    "passed": 5,
+    "returncode": 0
+  },
+  "utc": "2026-09-15T05:32:33.225513+00:00"
+}
