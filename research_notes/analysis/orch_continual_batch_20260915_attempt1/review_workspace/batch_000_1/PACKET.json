@@ -1,0 +1,134 @@
+[
+  {
+    "gold": "455000",
+    "question": "A global gym decides to replace all of its cardio machines.  They have 20 gyms.  Each gym has 10 bikes, 5 treadmills, and 5 elliptical machines.  The bikes cost $700 each.  The treadmills cost 50% more than that.  The elliptical machines are twice as expensive as the treadmills.  How much does it cost to replace everything?",
+    "raw_call_sha256": "595c482536f928b1b76c62eaba9f201eea0ad5da35fc9f6b8f6c9e7953340aeb",
+    "student_prefix": [
+      {
+        "content": "A global gym decides to replace all of its cardio machines.  They have 20 gyms.  Each gym has 10 bikes, 5 treadmills, and 5 elliptical machines.  The bikes cost $700 each.  The treadmills cost 50% more than that.  The elliptical machines are twice as expensive as the treadmills.  How much does it cost to replace everything?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- 20 gyms\n- Each gym has 10 bikes, 5 treadmills, and 5 elliptical machines\n- Bikes cost $700 each\n- Treadmills cost 50% more than bikes\n- Elliptical machines cost twice as much as treadmills\n\nFirst, calculate the cost of each type of machine:\n- Bikes: $700 each\n- Treadmills: 50% more than bikes = $700 * 1.5 = $1050 each\n- Elliptical machines: Twice the cost of treadmills = $1050 * 2 = $2100 each\n\nNext, calculate the total cost for each type of machine per gym:\n- Bikes per gym: 10 bikes * $700 = $7000\n- Treadmills per gym: 5 treadmills * $1050 = $5250\n- Elliptical machines per gym: 5 elliptical machines * $2100 = $10500\n\nNow, calculate the total cost for all 20 gyms:\n- Total cost for bikes: 20 gyms * $7000 = $140000\n- Total cost for treadmills: 20 gyms * $5250 = $105000\n- Total cost for elliptical machines: 20 gyms * $10500 = $210000\n\nFinally, add up the total costs for all machines:\n- Total cost = $140000 (bikes) + $105000 (treadmills) + $210000 (elliptical machines) = $455000\n\nFINAL: 455000",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "eb132ab5a1410a4763eb5125060337c7439c95dba2973712d5ca0e398db2f002",
+    "target": "I started by identifying the given quantities and the unknown I needed to find. The given quantities were:\n- 20 gyms\n- Each gym has 10 bikes, 5 treadmills, and 5 elliptical machines\n- Bikes cost $700 each\n- Treadmills cost 50% more than bikes\n- Elliptical machines cost twice as much as treadmills\n\nThe unknown I needed to find was the total cost to replace all the cardio machines in all 20 gyms.\n\nTo solve this, I first calculated the cost of each type of machine:\n- Bikes: $700 each\n- Treadmills: 50% more than bikes = $700 * 1.5 = $1050 each\n- Elliptical machines: Twice the cost of treadmills = $1050 * 2 = $2100 each\n\nNext, I calculated the total cost for each type of machine per gym:\n- Bikes per gym: 10 bikes * $700 = $7000\n- Treadmills per gym: 5 treadmills * $1050 = $5250\n- Elliptical machines per gym: 5 elliptical machines * $2100 = $10500\n\nThen, I calculated the total cost for all 20 gyms:\n- Total cost for bikes: 20 gyms * $7000 = $140000\n- Total cost for treadmills: 20 gyms * $5250 = $105000\n- Total cost for elliptical machines: 20 gyms * $10500 = $210000\n\nFinally, I added up the total costs for all machines:\n- Total cost = $140000 (bikes) + $105000 (treadmills) + $210000 (elliptical machines) = $455000\n\nTo check the result, I verified that the calculations were done correctly and that the total cost matched the sum of the individual costs for each type of machine across all gyms. The final answer is consistent with the problem statement.\n\nFINAL: 455000",
+    "target_sha256": "281750cf5be18d517504535fbfae3e29f63726f98e3bf3871aeb5416ffabda6a"
+  },
+  {
+    "gold": "455000",
+    "question": "A global gym decides to replace all of its cardio machines.  They have 20 gyms.  Each gym has 10 bikes, 5 treadmills, and 5 elliptical machines.  The bikes cost $700 each.  The treadmills cost 50% more than that.  The elliptical machines are twice as expensive as the treadmills.  How much does it cost to replace everything?",
+    "raw_call_sha256": "d61271e09e5a1462a869c18c2d19bf3a2aa7c69f58e4007c8c3ee3b9ed6e1fe3",
+    "student_prefix": [
+      {
+        "content": "A global gym decides to replace all of its cardio machines.  They have 20 gyms.  Each gym has 10 bikes, 5 treadmills, and 5 elliptical machines.  The bikes cost $700 each.  The treadmills cost 50% more than that.  The elliptical machines are twice as expensive as the treadmills.  How much does it cost to replace everything?",
+        "role": "user"
+      },
+      {
+        "content": "First, let's calculate the cost of each type of machine:\n- Bikes cost $700 each.\n- Treadmills cost 50% more than bikes, so they cost $700 * 1.5 = $1050 each.\n- Elliptical machines are twice as expensive as treadmills, so they cost $1050 * 2 = $2100 each.\n\nNext, we calculate the total cost for each type of machine in one gym:\n- Bikes: 10 bikes * $700 = $7000.\n- Treadmills: 5 treadmills * $1050 = $5250.\n- Elliptical machines: 5 elliptical machines * $2100 = $10500.\n\nNow, we find the total cost for one gym by adding these amounts:\n$7000 + $5250 + $10500 = $22750.\n\nSince there are 20 gyms, we multiply the cost for one gym by 20:\n$22750 * 20 = $455000.\n\nThus, the total cost to replace all the cardio machines in all gyms is $455000.\n\nFINAL: 455000",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "6198bc424af124c195a85fa92f0903e189fe40f0c935a86ea809d4618a4454e9",
+    "target": "Given the problem, I identified the following quantities and their relationships:\n- Number of gyms: 20\n- Number of bikes per gym: 10\n- Cost of each bike: $700\n- Number of treadmills per gym: 5\n- Cost of each treadmill: 50% more than a bike\n- Number of elliptical machines per gym: 5\n- Cost of each elliptical machine: twice the cost of a treadmill\n\nFirst, I calculated the cost of each treadmill:\n\\[ \\text{Cost of each treadmill} = 700 \\times 1.5 = 1050 \\]\n\nNext, I calculated the cost of each elliptical machine:\n\\[ \\text{Cost of each elliptical machine} = 1050 \\times 2 = 2100 \\]\n\nThen, I calculated the total cost for one gym:\n\\[ \\text{Total cost for one gym} = (10 \\times 700) + (5 \\times 1050) + (5 \\times 2100) \\]\n\\[ = 7000 + 5250 + 10500 = 22750 \\]\n\nFinally, I calculated the total cost for all 20 gyms:\n\\[ \\text{Total cost for all gyms} = 22750 \\times 20 = 455000 \\]\n\nTo verify this result, I checked the intermediate calculations and the final multiplication. The intermediate calculations were straightforward and the final multiplication was correct. The result matched the exact-answer checker.\n\nThe operations I used were straightforward arithmetic and percentage calculations, which I would reuse in similar problems involving cost calculations and scaling up to a larger number of units.\n\nFINAL: 455000",
+    "target_sha256": "293d2bc03085f1a8e847315b6a765fc5b2a612100bb4ba68b6b67c1d2c617726"
+  },
+  {
+    "gold": "60",
+    "question": "Philip has a farm with animals. He has 20 cows, 50% more ducks. Philip also has as many pigs as one-fifth of ducks and cows in total. How many animals does Philip have on his farm?",
+    "raw_call_sha256": "d9a568e2d52f44fffcabc5339b42a0479d420b4e6f0cd991ff25ab1f2c4db6bb",
+    "student_prefix": [
+      {
+        "content": "Philip has a farm with animals. He has 20 cows, 50% more ducks. Philip also has as many pigs as one-fifth of ducks and cows in total. How many animals does Philip have on his farm?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Philip has 20 cows.\n- He has 50% more ducks than cows.\n- He has as many pigs as one-fifth of the total number of ducks and cows.\n\nFirst, calculate the number of ducks:\n- 50% more ducks than cows means \\(20 \\times 1.5 = 30\\) ducks.\n\nNext, calculate the total number of cows and ducks:\n- Total of cows and ducks = \\(20 + 30 = 50\\).\n\nNow, calculate the number of pigs:\n- Philip has as many pigs as one-fifth of the total number of cows and ducks, so \\(50 \\div 5 = 10\\) pigs.\n\nFinally, calculate the total number of animals:\n- Total animals = cows + ducks + pigs = \\(20 + 30 + 10 = 60\\).\n\nFINAL: 60",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "a7f0a43a9c4c43bccec3fe8b300948b2c0f1c970661f19c188c50d23d5dcbe83",
+    "target": "I started with the given quantities: Philip has 20 cows and 50% more ducks than cows. The problem also states that Philip has as many pigs as one-fifth of the total number of ducks and cows combined. My goal was to find the total number of animals on Philip's farm.\n\nFirst, I identified the number of ducks. Since Philip has 50% more ducks than cows, and he has 20 cows, the number of ducks is \\(20 \\times 1.5 = 30\\). This calculation is based on the fact that 50% more than 20 is \\(20 \\times 1.5\\).\n\nNext, I calculated the total number of cows and ducks: \\(20 + 30 = 50\\). This step involved adding the number of cows and ducks to find the combined total.\n\nThen, I determined the number of pigs. The problem states that Philip has as many pigs as one-fifth of the total number of ducks and cows. So, the number of pigs is \\(50 \\div 5 = 10\\). This calculation is based on the definition that one-fifth of 50 is 10.\n\nFinally, I summed up the total number of animals on the farm: \\(20 \\text{ (cows)} + 30 \\text{ (ducks)} + 10 \\text{ (pigs)} = 60\\). This step involved adding the number of cows, ducks, and pigs to find the total number of animals.\n\nTo check the result, I verified that the total number of animals (60) matches the sum of the individual groups of animals (20 cows, 30 ducks, and 10 pigs). The result is consistent with the problem statement.\n\nThe operation I would reuse is calculating the number of animals based on given percentages and fractions, as this method directly applies to similar problems involving proportional relationships among different groups.\n\nFINAL: 60",
+    "target_sha256": "d2c22fb6a249f3ce7d0b01634f37bacb7196ba76fbe062deef0d6d1fe8948120"
+  },
+  {
+    "gold": "13",
+    "question": "Fred wants to order a variety pack of sliced meats for the upcoming game.  He can order a 4 pack of fancy, sliced meat for $40.00 and add rush delivery for an additional 30%.  With rush shipping added, how much will each type of sliced meat cost?",
+    "raw_call_sha256": "315d0e06c74e5ff372bae372800b402e5aca44a227d47aa78a33f6583f9a5bf7",
+    "student_prefix": [
+      {
+        "content": "Fred wants to order a variety pack of sliced meats for the upcoming game.  He can order a 4 pack of fancy, sliced meat for $40.00 and add rush delivery for an additional 30%.  With rush shipping added, how much will each type of sliced meat cost?",
+        "role": "user"
+      },
+      {
+        "content": "First, calculate the total cost of the 4 pack of fancy, sliced meat with rush delivery added. The rush delivery fee is 30% of $40.00.\n\n\\[ \\text{Rush delivery fee} = 40.00 \\times 0.30 = 12.00 \\]\n\nSo, the total cost with rush delivery is:\n\n\\[ 40.00 + 12.00 = 52.00 \\]\n\nNext, determine the cost per type of sliced meat. Since the pack contains 4 types of sliced meat, we divide the total cost by 4.\n\n\\[ \\text{Cost per type of sliced meat} = \\frac{52.00}{4} = 13.00 \\]\n\nThus, each type of sliced meat will cost $13.00.\n\nFINAL: 13",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "7443b6193ffce0ea96549859203a20eb89ceb0810fdb5f246683f9de8940c944",
+    "target": "Given that Fred wants to order a 4-pack of fancy, sliced meat for $40.00 and add rush delivery for an additional 30%, I first needed to calculate the total cost with rush delivery. The rush delivery fee is 30% of $40.00. I calculated this as:\n\n\\[ \\text{Rush delivery fee} = 40.00 \\times 0.30 = 12.00 \\]\n\nAdding this to the original cost of the meat pack:\n\n\\[ \\text{Total cost} = 40.00 + 12.00 = 52.00 \\]\n\nNext, I needed to determine the cost per type of sliced meat. Since the pack contains 4 types of sliced meat, I divided the total cost by 4:\n\n\\[ \\text{Cost per type of sliced meat} = \\frac{52.00}{4} = 13.00 \\]\n\nTo check this, I would verify that the total cost of 4 types of sliced meat at $13.00 each, plus the rush delivery fee, equals the original total cost:\n\n\\[ 4 \\times 13.00 + 12.00 = 52.00 \\]\n\nThis confirms that the calculation is correct. The cost per type of sliced meat is $13.00.\n\nFINAL: 13",
+    "target_sha256": "f22d50309f24800315d220929143536935e8c3c7150f5eb0b885d630286dc45c"
+  },
+  {
+    "gold": "26",
+    "question": "There are 400 students in the senior class at East High School. 52% of the students play sports. Of the students that play sports, 12.5% play soccer. How many students play soccer?",
+    "raw_call_sha256": "2d3391175c631bfeaf6d1269fa510ed0694a503f5b76d9711c549170bfa73a27",
+    "student_prefix": [
+      {
+        "content": "There are 400 students in the senior class at East High School. 52% of the students play sports. Of the students that play sports, 12.5% play soccer. How many students play soccer?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Total number of students = 400\n- Percentage of students who play sports = 52%\n- Percentage of students who play soccer among those who play sports = 12.5%\n\nFirst, calculate the number of students who play sports:\n\\[ \\text{Number of students who play sports} = 400 \\times \\frac{52}{100} = 208 \\]\n\nNext, calculate the number of students who play soccer:\n\\[ \\text{Number of students who play soccer} = 208 \\times \\frac{12.5}{100} = 208 \\times 0.125 = 26 \\]\n\nFINAL: 26",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "13feaa720dd30411694ee1829c21adcc36a24a13beab0318505977add5265a32",
+    "target": "I started with the given quantities: there are 400 students in the senior class at East High School, 52% of the students play sports, and 12.5% of the students who play sports play soccer. The unknown I needed to find was the number of students who play soccer.\n\nFirst, I identified that to find the number of students who play sports, I needed to calculate 52% of 400. This is because the problem states that 52% of the students play sports. The operation I chose was multiplication:\n\\[ \\text{Number of students who play sports} = 400 \\times \\frac{52}{100} = 400 \\times 0.52 = 208 \\]\n\nNext, I needed to find out how many of these 208 students play soccer. The problem states that 12.5% of the students who play sports play soccer. Again, I used multiplication to find this:\n\\[ \\text{Number of students who play soccer} = 208 \\times \\frac{12.5}{100} = 208 \\times 0.125 = 26 \\]\n\nTo check the result, I verified that 26 is indeed 12.5% of 208:\n\\[ 208 \\times 0.125 = 26 \\]\n\nThe result makes sense because 12.5% is equivalent to 1/8, and 208 divided by 8 is 26. This confirms that my calculations are correct.\n\nThe operation I would reuse is the multiplication of a percentage of a total number to find a specific subset. This operation is useful whenever you need to find a part of a whole based on a given percentage.\n\nFINAL: 26",
+    "target_sha256": "25d6316a5e45be2d73ab3183722dcf9e07c312ce789d325016c70209eab5078d"
+  },
+  {
+    "gold": "3",
+    "question": "Wario is a field goal kicker on the high school football team.  He attempts 60 field goals throughout the season.  He misses 1/4 of the field goals.  Of the field goals missed 20 percent were wide right.  How many missed field goals went wide right?",
+    "raw_call_sha256": "e23fbddf0a78426beaa57b17824bcbdaa93761d9480fa8ce21075fc759fc5ad7",
+    "student_prefix": [
+      {
+        "content": "Wario is a field goal kicker on the high school football team.  He attempts 60 field goals throughout the season.  He misses 1/4 of the field goals.  Of the field goals missed 20 percent were wide right.  How many missed field goals went wide right?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Total field goal attempts: 60\n- Missed field goals: 1/4 of 60\n- Percentage of missed field goals that were wide right: 20%\n\nFirst, calculate the number of missed field goals:\nMissed field goals = 1/4 * 60 = 15\n\nNext, calculate the number of missed field goals that were wide right:\nWide right field goals = 20% of 15 = 0.20 * 15 = 3\n\nSo, 3 missed field goals went wide right.\n\nFINAL: 3",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "07343a63543cce34238134d57794a38b56bc06e34c794aefb293a971dc01fe37",
+    "target": "I was given the task to determine how many of Wario's missed field goals went wide right. The problem provided the following information:\n- Total field goal attempts: 60\n- Missed field goals: 1/4 of 60\n- Percentage of missed field goals that were wide right: 20%\n\nTo solve this, I first needed to calculate the number of missed field goals. I used the operation of multiplication to find 1/4 of 60:\n\\[ \\text{Missed field goals} = \\frac{1}{4} \\times 60 = 15 \\]\n\nNext, I needed to find out how many of these 15 missed field goals went wide right. I used the operation of multiplication again, this time to find 20% of 15:\n\\[ \\text{Wide right field goals} = 0.20 \\times 15 = 3 \\]\n\nTo check the result, I verified that the number of wide right field goals (3) is indeed 20% of the 15 missed field goals. This matches the given information in the problem.\n\nThe operation I would reuse is the multiplication of a percentage to find a part of a whole, as it directly applies to the problem's structure. This operation is useful whenever you need to find a portion of a given quantity based on a percentage.\n\nFINAL: 3",
+    "target_sha256": "5fd63dcde7779a9d6376f09d6014b41cd63c7bd15ed34b8e39290a32c7329a7f"
+  }
+]

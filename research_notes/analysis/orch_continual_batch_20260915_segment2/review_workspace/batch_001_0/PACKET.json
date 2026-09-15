@@ -1,0 +1,480 @@
+[
+  {
+    "gold": "50",
+    "question": "James decides to build a tin house by collecting 500 tins in a week. On the first day, he collects 50 tins. On the second day, he manages to collect 3 times that number. On the third day, he collects 50 tins fewer than the number he collected on the second day. If he collects an equal number of tins on the remaining days of the week, what's the number of tins he collected each day for the rest of the week?",
+    "raw_call_sha256": "a03ddbfabcfcfa5b3de0a46a1501a5b772f44d9cf4f84bc4698982e5f26bfe64",
+    "student_prefix": [
+      {
+        "content": "James decides to build a tin house by collecting 500 tins in a week. On the first day, he collects 50 tins. On the second day, he manages to collect 3 times that number. On the third day, he collects 50 tins fewer than the number he collected on the second day. If he collects an equal number of tins on the remaining days of the week, what's the number of tins he collected each day for the rest of the week?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "c3cd3e7283c3f4b7eb6a366af953428c4f5f90a43024df8b481640a33df01479",
+    "target_sha256": "acbfe3d82cc678cc1b5e2cf50b9b700563e62899ec717fa34ff47560b215f6e6",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "On the first day, James collects 50 tins. On the second day, he collects 3 times that number, which is \\(3 \\times 50 = 150\\) tins. On the third day, he collects 50 tins fewer than the second day, which is \\(150 - 50 = 100\\) tins.\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\n"
+      },
+      {
+        "line_id": 3,
+        "text": "So far, the total number of tins collected in the first three days is:\n"
+      },
+      {
+        "line_id": 4,
+        "text": "\\[50 + 150 + 100 = 300\\]\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "James aims to collect 500 tins in a week. Therefore, the number of tins he needs to collect in the remaining four days is:\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\\[500 - 300 = 200\\]\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\n"
+      },
+      {
+        "line_id": 9,
+        "text": "Since he collects an equal number of tins each day for the remaining four days, the number of tins he collects each day is:\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\\[\\frac{200}{4} = 50\\]\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\n"
+      },
+      {
+        "line_id": 12,
+        "text": "Thus, the number of tins he collects each day for the rest of the week is 50.\n"
+      },
+      {
+        "line_id": 13,
+        "text": "\n"
+      },
+      {
+        "line_id": 14,
+        "text": "FINAL: 50"
+      }
+    ]
+  },
+  {
+    "gold": "177",
+    "question": "There are 285 sweets in the bowl. If 49 of the sweets are red and 59 of the sweets are green, how many of the sweets are neither red nor green?",
+    "raw_call_sha256": "7bfa3ccaeb7f0c6af2e115f01897eda8ed973dbcad33367303c54fe600c7709a",
+    "student_prefix": [
+      {
+        "content": "There are 285 sweets in the bowl. If 49 of the sweets are red and 59 of the sweets are green, how many of the sweets are neither red nor green?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "4c060cb3fc6a8c88992513951e2baa6bde5ace2a242189f156b01c2cf83807bb",
+    "target_sha256": "3a5e7d333065a7e76727ad9724669c155bc86a80acefb9789d6f528d5d5b1946",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Total sweets = 285\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Red sweets = 49\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Green sweets = 59\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "To find:\n"
+      },
+      {
+        "line_id": 7,
+        "text": "- Number of sweets that are neither red nor green\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\n"
+      },
+      {
+        "line_id": 9,
+        "text": "First, calculate the total number of red and green sweets:\n"
+      },
+      {
+        "line_id": 10,
+        "text": "49 (red) + 59 (green) = 108\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\n"
+      },
+      {
+        "line_id": 12,
+        "text": "Now, subtract this number from the total number of sweets to find the number of sweets that are neither red nor green:\n"
+      },
+      {
+        "line_id": 13,
+        "text": "285 (total) - 108 (red and green) = 177\n"
+      },
+      {
+        "line_id": 14,
+        "text": "\n"
+      },
+      {
+        "line_id": 15,
+        "text": "So, 177 sweets are neither red nor green.\n"
+      },
+      {
+        "line_id": 16,
+        "text": "\n"
+      },
+      {
+        "line_id": 17,
+        "text": "FINAL: 177"
+      }
+    ]
+  },
+  {
+    "gold": "13",
+    "question": "Brody\u2019s calculator can run for 60 hours on a full battery. Brody has used three quarters of its battery up, and he is about to take a two-hour math exam that will require his calculator the whole time. How many hours of battery will Brody\u2019s calculator have left?",
+    "raw_call_sha256": "29c05a8e526b61208c650bf60b5c47f882d445bacb9776918e48b2eea45aed35",
+    "student_prefix": [
+      {
+        "content": "Brody\u2019s calculator can run for 60 hours on a full battery. Brody has used three quarters of its battery up, and he is about to take a two-hour math exam that will require his calculator the whole time. How many hours of battery will Brody\u2019s calculator have left?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "24f74358cd558f4eee8302b99f47686a4b72cb9a7679281e4e7ecb2e89d726bf",
+    "target_sha256": "63c3d09420cd2e77a1618915a6756a4f5c39d1d17f628a48b5f9141b9ef6bb26",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Total battery life: 60 hours\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Battery used: three quarters (3/4) of the total battery life\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Battery remaining: 1 - 3/4 = 1/4 of the total battery life\n"
+      },
+      {
+        "line_id": 5,
+        "text": "- Battery usage for the exam: 2 hours\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "First, calculate the battery remaining before the exam:\n"
+      },
+      {
+        "line_id": 8,
+        "text": "- Remaining battery = 1/4 * 60 hours = 15 hours\n"
+      },
+      {
+        "line_id": 9,
+        "text": "\n"
+      },
+      {
+        "line_id": 10,
+        "text": "Next, subtract the battery used during the exam:\n"
+      },
+      {
+        "line_id": 11,
+        "text": "- Remaining battery after exam = 15 hours - 2 hours = 13 hours\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "FINAL: 13"
+      }
+    ]
+  },
+  {
+    "gold": "4",
+    "question": "Hayes does 3 loads of laundry a week using a detergent pod for each load.  His detergent pods come 39 to a pack.  How many packs of detergent pods will he need to do a full year of laundry?",
+    "raw_call_sha256": "7aa49379f5db7586bc802f840f98529b6a4f9d48de3795d4c0f696cb796bd7e8",
+    "student_prefix": [
+      {
+        "content": "Hayes does 3 loads of laundry a week using a detergent pod for each load.  His detergent pods come 39 to a pack.  How many packs of detergent pods will he need to do a full year of laundry?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Hayes does 3 loads of laundry per week.\n- He uses 1 detergent pod per load.\n- There are 52 weeks in a year.\n- Each pack contains 39 detergent pods.\n\nFirst, calculate the total number of detergent pods Hayes uses in a year:\n\\[ \\text{Total pods per year} = 3 \\text{ pods/week} \\times 52 \\text{ weeks/year} = 156 \\text{ pods/year} \\]\n\nNext, determine how many packs of detergent pods Hayes needs:\n\\[ \\text{Packs needed} = \\frac{156 \\text{ pods}}{39 \\text{ pods/pack}} = 4 \\text{ packs} \\]\n\nSince the number of packs must be a whole number and 156 is exactly divisible by 39, Hayes will need 4 packs of detergent pods to do a full year of laundry.\n\nFINAL: 4",
+        "role": "assistant"
+      },
+      {
+        "content": "Reconsider your solution using the given problem. Explain any useful revision or check, then finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "32318a8b1d81bf8b3a900815fe13813df6c5b39e7620b165ea6d5d7453812783",
+    "target_sha256": "673a4037dba28dd7ded58e51579d28aa1457644a81b9b0fa95b9c2c86c5bc97a",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Hayes does 3 loads of laundry per week.\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- He uses 1 detergent pod per load.\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- There are 52 weeks in a year.\n"
+      },
+      {
+        "line_id": 5,
+        "text": "- Each pack contains 39 detergent pods.\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "First, calculate the total number of detergent pods Hayes uses in a year:\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\\[ \\text{Total pods per year} = 3 \\text{ pods/week} \\times 52 \\text{ weeks/year} = 156 \\text{ pods/year} \\]\n"
+      },
+      {
+        "line_id": 9,
+        "text": "\n"
+      },
+      {
+        "line_id": 10,
+        "text": "Next, determine how many packs of detergent pods Hayes needs:\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\\[ \\text{Packs needed} = \\frac{156 \\text{ pods}}{39 \\text{ pods/pack}} = 4 \\text{ packs} \\]\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "The calculation shows that Hayes needs exactly 4 packs of detergent pods. However, we should consider if there is any possibility of partial packs being used. Since 156 is exactly divisible by 39, there is no remainder, and thus no need for an additional partial pack.\n"
+      },
+      {
+        "line_id": 14,
+        "text": "\n"
+      },
+      {
+        "line_id": 15,
+        "text": "Therefore, the conclusion that Hayes needs 4 packs of detergent pods is correct and does not require further adjustment.\n"
+      },
+      {
+        "line_id": 16,
+        "text": "\n"
+      },
+      {
+        "line_id": 17,
+        "text": "FINAL: 4"
+      }
+    ]
+  },
+  {
+    "gold": "600",
+    "question": "There are six chairs in each row in a church. If there are 20 rows of chairs in the church, and each chair holds five people, calculate the number of people who have to sit in the chairs for the church to be full.",
+    "raw_call_sha256": "2d595ba3ffdd3b697269651b608458bd8bacac9ba004b57f3d674a8c31207790",
+    "student_prefix": [
+      {
+        "content": "There are six chairs in each row in a church. If there are 20 rows of chairs in the church, and each chair holds five people, calculate the number of people who have to sit in the chairs for the church to be full.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "b82de08e54c1c9f50336b7c72dc29f6c493eacea36466012bdf87005b8e4b331",
+    "target_sha256": "c34637c6ff88b0135175c3945985c9ac14b24cb39ba06640332f012d3c1634e4",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- 6 chairs in each row\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- 20 rows of chairs\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Each chair holds 5 people\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "To find the total number of people who can sit in the church, we need to calculate the total number of chairs first and then multiply by the number of people each chair can hold.\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\n"
+      },
+      {
+        "line_id": 8,
+        "text": "1. Calculate the total number of chairs:\n"
+      },
+      {
+        "line_id": 9,
+        "text": "   \\[\n"
+      },
+      {
+        "line_id": 10,
+        "text": "   \\text{Total chairs} = \\text{Number of chairs per row} \\times \\text{Number of rows} = 6 \\times 20 = 120\n"
+      },
+      {
+        "line_id": 11,
+        "text": "   \\]\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "2. Calculate the total number of people who can sit in the church:\n"
+      },
+      {
+        "line_id": 14,
+        "text": "   \\[\n"
+      },
+      {
+        "line_id": 15,
+        "text": "   \\text{Total people} = \\text{Total chairs} \\times \\text{People per chair} = 120 \\times 5 = 600\n"
+      },
+      {
+        "line_id": 16,
+        "text": "   \\]\n"
+      },
+      {
+        "line_id": 17,
+        "text": "\n"
+      },
+      {
+        "line_id": 18,
+        "text": "So, the number of people who have to sit in the chairs for the church to be full is 600.\n"
+      },
+      {
+        "line_id": 19,
+        "text": "\n"
+      },
+      {
+        "line_id": 20,
+        "text": "FINAL: 600"
+      }
+    ]
+  },
+  {
+    "gold": "600",
+    "question": "There are six chairs in each row in a church. If there are 20 rows of chairs in the church, and each chair holds five people, calculate the number of people who have to sit in the chairs for the church to be full.",
+    "raw_call_sha256": "b160315ed02a7335544ea0cd338b2600f8208a9bf650925c722e929377a2faca",
+    "student_prefix": [
+      {
+        "content": "There are six chairs in each row in a church. If there are 20 rows of chairs in the church, and each chair holds five people, calculate the number of people who have to sit in the chairs for the church to be full.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "b82de08e54c1c9f50336b7c72dc29f6c493eacea36466012bdf87005b8e4b331",
+    "target_sha256": "312bcc004cc785e8138c2fcaba256b34c1e710ddfc3262e3bb681cce993da5bf",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "To determine the total number of people who can sit in the church, we need to calculate the total number of chairs and then multiply by the number of people each chair can hold.\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\n"
+      },
+      {
+        "line_id": 3,
+        "text": "1. Calculate the total number of chairs:\n"
+      },
+      {
+        "line_id": 4,
+        "text": "   - There are 6 chairs in each row.\n"
+      },
+      {
+        "line_id": 5,
+        "text": "   - There are 20 rows of chairs.\n"
+      },
+      {
+        "line_id": 6,
+        "text": "   - Therefore, the total number of chairs is \\(6 \\times 20 = 120\\).\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\n"
+      },
+      {
+        "line_id": 8,
+        "text": "2. Calculate the total number of people who can sit in the church:\n"
+      },
+      {
+        "line_id": 9,
+        "text": "   - Each chair holds 5 people.\n"
+      },
+      {
+        "line_id": 10,
+        "text": "   - Therefore, the total number of people is \\(120 \\times 5 = 600\\).\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\n"
+      },
+      {
+        "line_id": 12,
+        "text": "The number of people who have to sit in the chairs for the church to be full is 600.\n"
+      },
+      {
+        "line_id": 13,
+        "text": "\n"
+      },
+      {
+        "line_id": 14,
+        "text": "FINAL: 600"
+      }
+    ]
+  }
+]

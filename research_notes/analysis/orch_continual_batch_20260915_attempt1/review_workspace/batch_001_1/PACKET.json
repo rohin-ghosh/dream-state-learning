@@ -1,0 +1,102 @@
+[
+  {
+    "gold": "270",
+    "question": "A group of hawks is called a kettle. It is breeding season for hawks. A group of ornithologists are tracking 6 kettles of hawks. Each kettle has an average of 15 pregnancies that yield 4 babies per batch.  How many babies are expected this season if approximately 25% are lost?",
+    "raw_call_sha256": "f5f189f1ca392d9ec8df615d4f96d1cfe8dfde697bc9f013134877e589d6462c",
+    "student_prefix": [
+      {
+        "content": "A group of hawks is called a kettle. It is breeding season for hawks. A group of ornithologists are tracking 6 kettles of hawks. Each kettle has an average of 15 pregnancies that yield 4 babies per batch.  How many babies are expected this season if approximately 25% are lost?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "893bdb7e8ebcacc07f28823e30f1d2322c1cb83ad3eac3831cef00a187b0d796",
+    "target": "First, let's calculate the total number of pregnancies across all kettles. There are 6 kettles, and each has an average of 15 pregnancies. Therefore, the total number of pregnancies is:\n\n\\[ 6 \\text{ kettles} \\times 15 \\text{ pregnancies per kettle} = 90 \\text{ pregnancies} \\]\n\nNext, we need to determine the total number of babies before any losses. Each pregnancy yields 4 babies, so:\n\n\\[ 90 \\text{ pregnancies} \\times 4 \\text{ babies per pregnancy} = 360 \\text{ babies} \\]\n\nNow, we need to account for the 25% loss. If 25% of the babies are lost, then 75% of the babies are expected to survive. Therefore, the number of surviving babies is:\n\n\\[ 360 \\text{ babies} \\times 0.75 = 270 \\text{ babies} \\]\n\nThus, the expected number of babies this season is 270.\n\nFINAL: 270",
+    "target_sha256": "e11146fab9cca5a833430494bbd0fc2a1495cc3512e5c96aaa455a215dc22368"
+  },
+  {
+    "gold": "38000",
+    "question": "Mike wants to buy a new car. He has chosen a red car for $35000. To be able to pay this price, he needs to loan part of the money from the bank, at a rate of 15%. How much money in total will Mike need to pay for the car, if he has to take $20000 from the bank?",
+    "raw_call_sha256": "8374762586479a4af30356a7d5ed8468f556b29dfb326965c1402468ca80c65a",
+    "student_prefix": [
+      {
+        "content": "Mike wants to buy a new car. He has chosen a red car for $35000. To be able to pay this price, he needs to loan part of the money from the bank, at a rate of 15%. How much money in total will Mike need to pay for the car, if he has to take $20000 from the bank?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- The total cost of the car is $35000.\n- Mike needs to take a loan of $20000 from the bank at a rate of 15%.\n\nFirst, calculate the interest on the loan:\n- Interest = Loan amount * Interest rate\n- Interest = $20000 * 15% = $20000 * 0.15 = $3000\n\nNow, calculate the total amount Mike needs to pay for the car:\n- Total amount = Cost of the car + Interest on the loan\n- Total amount = $35000 + $3000 = $38000\n\nFINAL: 38000",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "74b1f6ee91ca8b0f521eee2d372b4bb416a326df08d3caeca0fea508a37b0508",
+    "target": "I was given the task to determine the total amount Mike needs to pay for a car, considering he needs to take a loan from the bank. The given quantities are:\n- The total cost of the car: $35000\n- The amount Mike needs to loan from the bank: $20000\n- The interest rate on the loan: 15%\n\nThe unknown quantity is the total amount Mike needs to pay for the car. To solve this, I first calculated the interest on the loan:\n- Interest = Loan amount * Interest rate\n- Interest = $20000 * 15% = $20000 * 0.15 = $3000\n\nNext, I added the interest to the total cost of the car to find the total amount Mike needs to pay:\n- Total amount = Cost of the car + Interest on the loan\n- Total amount = $35000 + $3000 = $38000\n\nTo check the result, I verified that the total amount includes both the cost of the car and the interest on the loan. The total amount of $38000 makes sense because it covers the full cost of the car plus the additional cost due to the loan interest.\n\nThe operation I would reuse is calculating the interest on a loan and then adding it to the principal amount to find the total cost. This operation is useful in any scenario where a loan with interest is involved.\n\nFINAL: 38000",
+    "target_sha256": "aac8fa120c32d03e82c4f92bbf83ce07ad78b00d58d42fc29a24ddfd1a26413d"
+  },
+  {
+    "gold": "7200",
+    "question": "James decides to buy a living room set.  The coach cost $2500 and the sectional cost $3500 and everything else has a combined cost of $2000.  He gets a 10% discount on everything.  How much did he pay?",
+    "raw_call_sha256": "7531c406ec1c799ce4f87bcae7f9f4f5caa58d57432df5e0c5045f28a9b440ef",
+    "student_prefix": [
+      {
+        "content": "James decides to buy a living room set.  The coach cost $2500 and the sectional cost $3500 and everything else has a combined cost of $2000.  He gets a 10% discount on everything.  How much did he pay?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "47c9e883584264934ca4b5260659b223b2af09a56931843050ca320a5db5578b",
+    "target": "Given:\n- Coach cost: $2500\n- Sectional cost: $3500\n- Everything else cost: $2000\n- Total cost before discount: $2500 + $3500 + $2000 = $8000\n- Discount: 10%\n\nTo find the final cost after the discount, we calculate 10% of $8000 and subtract it from the total cost.\n\n10% of $8000 = 0.10 * $8000 = $800\n\nSo, the cost after the discount is $8000 - $800 = $7200.\n\nFINAL: 7200",
+    "target_sha256": "77f935459f81fcc2c337d462ca61030c8742406159c39d91834289fed0c84201"
+  },
+  {
+    "gold": "86",
+    "question": "A class is 40% boys. The rest are girls. Every boy in class gets an 80% on the math test. Every girl gets a 90%. What is the class average on the test?",
+    "raw_call_sha256": "53c5139c215a04304e3a8e8ee7c78e7ecb975954b02daa01f4d249b08fa6452f",
+    "student_prefix": [
+      {
+        "content": "A class is 40% boys. The rest are girls. Every boy in class gets an 80% on the math test. Every girl gets a 90%. What is the class average on the test?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "67e00626ca2a765093f227eb153acbfea8e61a1d882aa2b25791b82bf238f062",
+    "target": "Given:\n- 40% of the class are boys.\n- The rest (60%) are girls.\n- Boys score 80% on the test.\n- Girls score 90% on the test.\n\nTo find the class average, we use the weighted average formula:\n\\[ \\text{Class Average} = (\\text{Percentage of Boys} \\times \\text{Boys' Score}) + (\\text{Percentage of Girls} \\times \\text{Girls' Score}) \\]\n\nSubstituting the given values:\n\\[ \\text{Class Average} = (0.40 \\times 80) + (0.60 \\times 90) \\]\n\nCalculating each term:\n\\[ 0.40 \\times 80 = 32 \\]\n\\[ 0.60 \\times 90 = 54 \\]\n\nAdding these together:\n\\[ 32 + 54 = 86 \\]\n\nSo, the class average on the test is 86.\n\nFINAL: 86",
+    "target_sha256": "37ab4aebf3109fc331fbb86c30ba3be9d3811afb78c58f988f5cbcb60ad5ef70"
+  },
+  {
+    "gold": "225",
+    "question": "Jane brings 75% as many pieces of bread as treats to feed the live pets at the zoo. Wanda brings half as many treats as Jane and three times as many pieces of bread as treats. If Wanda brings 90 pieces of bread, what is the total number of pieces of bread and treats that Wanda and Jane brought to the zoo?",
+    "raw_call_sha256": "6650f7cb08935879c1bd3f02ca6f5fea7248a2070dc4a0bb9714357854b4a16d",
+    "student_prefix": [
+      {
+        "content": "Jane brings 75% as many pieces of bread as treats to feed the live pets at the zoo. Wanda brings half as many treats as Jane and three times as many pieces of bread as treats. If Wanda brings 90 pieces of bread, what is the total number of pieces of bread and treats that Wanda and Jane brought to the zoo?",
+        "role": "user"
+      },
+      {
+        "content": "Let's denote the number of treats Jane brings as \\( T \\). According to the problem, Jane brings 75% as many pieces of bread as treats, so the number of pieces of bread Jane brings is \\( 0.75T \\).\n\nWanda brings half as many treats as Jane, so the number of treats Wanda brings is \\( \\frac{T}{2} \\). Wanda also brings three times as many pieces of bread as treats, and we know she brings 90 pieces of bread. Therefore, we can set up the equation:\n\\[ 3 \\times \\frac{T}{2} = 90 \\]\nSolving for \\( T \\):\n\\[ \\frac{3T}{2} = 90 \\]\n\\[ 3T = 180 \\]\n\\[ T = 60 \\]\n\nSo, Jane brings 60 treats. Since Jane brings 75% as many pieces of bread as treats, the number of pieces of bread Jane brings is:\n\\[ 0.75 \\times 60 = 45 \\]\n\nWanda brings half as many treats as Jane, which is:\n\\[ \\frac{60}{2} = 30 \\]\nAnd Wanda brings 90 pieces of bread.\n\nNow, we can find the total number of pieces of bread and treats that Wanda and Jane brought to the zoo:\n\\[ \\text{Total pieces of bread} = 45 + 90 = 135 \\]\n\\[ \\text{Total treats} = 60 + 30 = 90 \\]\n\\[ \\text{Total pieces of bread and treats} = 135 + 90 = 225 \\]\n\nThus, the total number of pieces of bread and treats that Wanda and Jane brought to the zoo is 225.\n\nFINAL: 225",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "d7722f997a98f1328a3c473d2b5d44b301e63cc2ff5bba3772b431c43de442e4",
+    "target": "Given that Jane brings 75% as many pieces of bread as treats, and Wanda brings half as many treats as Jane and three times as many pieces of bread as treats, with Wanda bringing 90 pieces of bread, I need to find the total number of pieces of bread and treats that Wanda and Jane brought to the zoo.\n\nFirst, I identified the unknowns and given facts:\n- Let \\( T \\) be the number of treats Jane brings.\n- Jane brings \\( 0.75T \\) pieces of bread.\n- Wanda brings \\( \\frac{T}{2} \\) treats and 90 pieces of bread.\n- Wanda's pieces of bread are three times the number of treats she brings, so \\( 3 \\times \\frac{T}{2} = 90 \\).\n\nFrom the equation \\( 3 \\times \\frac{T}{2} = 90 \\), I solved for \\( T \\):\n\\[ \\frac{3T}{2} = 90 \\]\n\\[ 3T = 180 \\]\n\\[ T = 60 \\]\n\nSo, Jane brings 60 treats and \\( 0.75 \\times 60 = 45 \\) pieces of bread. Wanda brings \\( \\frac{60}{2} = 30 \\) treats and 90 pieces of bread.\n\nNext, I calculated the total number of pieces of bread and treats:\n- Total pieces of bread: \\( 45 + 90 = 135 \\)\n- Total treats: \\( 60 + 30 = 90 \\)\n- Total pieces of bread and treats: \\( 135 + 90 = 225 \\)\n\nTo check the result, I verified that Wanda's pieces of bread are indeed three times the number of treats she brings:\n\\[ 3 \\times 30 = 90 \\]\n\nThe operations I used are:\n1. Setting up and solving the equation for \\( T \\).\n2. Calculating the number of pieces of bread and treats for both Jane and Wanda.\n3. Summing the total number of pieces of bread and treats.\n\nI would reuse the operation of setting up and solving the equation for \\( T \\) whenever a similar problem involves a proportional relationship and a known quantity.\n\nFINAL: 225",
+    "target_sha256": "ce5b909f129584fdb6cc993d19e312cadb5daca8d5dcd717797ba154e5e6e984"
+  },
+  {
+    "gold": "13",
+    "question": "Fred wants to order a variety pack of sliced meats for the upcoming game.  He can order a 4 pack of fancy, sliced meat for $40.00 and add rush delivery for an additional 30%.  With rush shipping added, how much will each type of sliced meat cost?",
+    "raw_call_sha256": "3a6b38ec1ec553a9f3c323a4118a53c8d351f43cfceb2db85077565238d11ce3",
+    "student_prefix": [
+      {
+        "content": "Fred wants to order a variety pack of sliced meats for the upcoming game.  He can order a 4 pack of fancy, sliced meat for $40.00 and add rush delivery for an additional 30%.  With rush shipping added, how much will each type of sliced meat cost?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "319f05669fdcf4508c13d140e8dc201b311cc6cea1059bd5302191a746ff25e7",
+    "target": "First, calculate the total cost of the 4 pack of fancy, sliced meat with rush delivery added. The rush delivery fee is 30% of $40.00.\n\n\\[ \\text{Rush delivery fee} = 40.00 \\times 0.30 = 12.00 \\]\n\nSo, the total cost with rush delivery is:\n\n\\[ 40.00 + 12.00 = 52.00 \\]\n\nNext, determine the cost per type of sliced meat. Since the pack contains 4 types of sliced meat, we divide the total cost by 4.\n\n\\[ \\text{Cost per type of sliced meat} = \\frac{52.00}{4} = 13.00 \\]\n\nThus, each type of sliced meat will cost $13.00.\n\nFINAL: 13",
+    "target_sha256": "7ecae74a15f239664172e87e800977351de73b7bf1483bdfe40a456410b30f5a"
+  }
+]

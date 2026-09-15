@@ -1,0 +1,94 @@
+[
+  {
+    "gold": "770",
+    "question": "When three friends sold their video games, Ryan, the first of the three friends, received $50 more than Jason from his sales. Jason received 30% more money than Zachary from selling his video games. If Zachary sold 40 games at $5 each, calculate the total amount of money the three friends received together from the sale of the video games.",
+    "raw_call_sha256": "457d8a24b6ba6968662013cdb94d9fcb738e2e29aaf797a0b2c7dc634c390aea",
+    "student_prefix": [
+      {
+        "content": "When three friends sold their video games, Ryan, the first of the three friends, received $50 more than Jason from his sales. Jason received 30% more money than Zachary from selling his video games. If Zachary sold 40 games at $5 each, calculate the total amount of money the three friends received together from the sale of the video games.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "2aa2484c208de2e45790e9d2c0129b94b81453cef21d415a9fd930efebaffecd",
+    "target": "First, calculate how much Zachary received from selling his video games:\n\\[ \\text{Zachary's earnings} = 40 \\text{ games} \\times \\$5/\\text{game} = \\$200 \\]\n\nNext, determine how much Jason received. Jason received 30% more than Zachary:\n\\[ \\text{Jason's earnings} = \\$200 + (0.30 \\times \\$200) = \\$200 + \\$60 = \\$260 \\]\n\nNow, calculate how much Ryan received. Ryan received $50 more than Jason:\n\\[ \\text{Ryan's earnings} = \\$260 + \\$50 = \\$310 \\]\n\nFinally, sum the earnings of all three friends to find the total amount of money received:\n\\[ \\text{Total earnings} = \\$200 + \\$260 + \\$310 = \\$770 \\]\n\nThus, the total amount of money the three friends received together is:\n\\[ \\text{Total earnings} = \\$770 \\]\n\nFINAL: 770",
+    "target_sha256": "2e9fa02b5a8e981a5c4a6f2a328c3067beb211754ef860fee4552f0c934914ad"
+  },
+  {
+    "gold": "23",
+    "question": "One kilogram of tomatoes is 20% cheaper than one kilogram of cucumbers. One kilogram of cucumbers costs $5. What is the price of two kilograms of tomatoes and three kilograms of cucumbers?",
+    "raw_call_sha256": "d03870d8d127b39ebe47f184be77e81ffc02dfa785bcf56a231feb6475c6589a",
+    "student_prefix": [
+      {
+        "content": "One kilogram of tomatoes is 20% cheaper than one kilogram of cucumbers. One kilogram of cucumbers costs $5. What is the price of two kilograms of tomatoes and three kilograms of cucumbers?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- One kilogram of cucumbers costs $5.\n- One kilogram of tomatoes is 20% cheaper than one kilogram of cucumbers.\n\nFirst, calculate the price of one kilogram of tomatoes:\n- 20% of $5 is \\(0.20 \\times 5 = 1\\).\n- Therefore, one kilogram of tomatoes costs \\(5 - 1 = 4\\) dollars.\n\nNext, calculate the total cost for two kilograms of tomatoes and three kilograms of cucumbers:\n- The cost of two kilograms of tomatoes is \\(2 \\times 4 = 8\\) dollars.\n- The cost of three kilograms of cucumbers is \\(3 \\times 5 = 15\\) dollars.\n- The total cost is \\(8 + 15 = 23\\) dollars.\n\nFINAL: 23",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "58fb4471457b299ec1b6b4f665bf65bef628631da1c8e662cda04b2930d95c6c",
+    "target": "Given:\n- One kilogram of cucumbers costs $5.\n- One kilogram of tomatoes is 20% cheaper than one kilogram of cucumbers.\n\nThe unknown is:\n- The price of two kilograms of tomatoes and three kilograms of cucumbers.\n\nFirst, I identified that the price of one kilogram of tomatoes is 20% cheaper than the price of one kilogram of cucumbers. Since one kilogram of cucumbers costs $5, I calculated the price of one kilogram of tomatoes as follows:\n- 20% of $5 is \\(0.20 \\times 5 = 1\\).\n- Therefore, one kilogram of tomatoes costs \\(5 - 1 = 4\\) dollars.\n\nNext, I calculated the total cost for two kilograms of tomatoes and three kilograms of cucumbers:\n- The cost of two kilograms of tomatoes is \\(2 \\times 4 = 8\\) dollars.\n- The cost of three kilograms of cucumbers is \\(3 \\times 5 = 15\\) dollars.\n- The total cost is \\(8 + 15 = 23\\) dollars.\n\nTo check the result, I verified that the calculations were correct by ensuring that the price of tomatoes was indeed 20% cheaper than the price of cucumbers, and that the total cost was the sum of the individual costs.\n\nThe operations I used were:\n1. Calculate the price of one kilogram of tomatoes by subtracting 20% of the price of one kilogram of cucumbers from the price of one kilogram of cucumbers.\n2. Calculate the total cost by multiplying the price of one kilogram of tomatoes by the number of kilograms of tomatoes and the price of one kilogram of cucumbers by the number of kilograms of cucumbers, then summing these values.\n\nI would reuse these operations in similar problems where I need to find the price of a certain quantity of an item that is a percentage cheaper or more expensive than another item.\n\nFINAL: 23",
+    "target_sha256": "6e78edc9324427d45b973380e4cc1754402c430d5f02fa52b1564539e200762d"
+  },
+  {
+    "gold": "67500",
+    "question": "John decides to start collecting art.  He pays the same price for his first 3 pieces of art and the total price came to $45,000.  The next piece of art was 50% more expensive than those.  How much did all the art cost?",
+    "raw_call_sha256": "368db0c19b7b808bd4956cbe5a658035037bb61bff41a02ac3994482a7a7a167",
+    "student_prefix": [
+      {
+        "content": "John decides to start collecting art.  He pays the same price for his first 3 pieces of art and the total price came to $45,000.  The next piece of art was 50% more expensive than those.  How much did all the art cost?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "74cc38d1a7aa8795605e323db7bdd7cdc27ef32756a651041c2bb2d2eb02590e",
+    "target": "Given: \n- John pays the same price for his first 3 pieces of art, totaling $45,000.\n- The next piece of art is 50% more expensive than each of the first 3 pieces.\n\nFirst, find the price of one of the first 3 pieces of art:\n\\[ \\text{Price of one piece} = \\frac{45,000}{3} = 15,000 \\]\n\nNext, calculate the price of the fourth piece of art, which is 50% more expensive than one of the first 3 pieces:\n\\[ \\text{Price of the fourth piece} = 15,000 + (0.5 \\times 15,000) = 15,000 + 7,500 = 22,500 \\]\n\nNow, sum the total cost of all 4 pieces of art:\n\\[ \\text{Total cost} = 45,000 + 22,500 = 67,500 \\]\n\nFINAL: 67500",
+    "target_sha256": "b8afac381f19449646b82c85fffb31c1a0a3d0d3c32292b799460f89dba94d57"
+  },
+  {
+    "gold": "60",
+    "question": "Philip has a farm with animals. He has 20 cows, 50% more ducks. Philip also has as many pigs as one-fifth of ducks and cows in total. How many animals does Philip have on his farm?",
+    "raw_call_sha256": "da6e931577ef5bb634cfc29b1b09aa925c5430071c83b0518ea067ba5eb08c30",
+    "student_prefix": [
+      {
+        "content": "Philip has a farm with animals. He has 20 cows, 50% more ducks. Philip also has as many pigs as one-fifth of ducks and cows in total. How many animals does Philip have on his farm?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "2ef47466161d4f44852902d69547e9335ee7db3d1d1090fc10bd0754fc9c7175",
+    "target": "First, let's calculate the number of ducks Philip has. Since he has 50% more ducks than cows, and he has 20 cows, the number of ducks is:\n\\[ 20 \\times 1.5 = 30 \\text{ ducks} \\]\n\nNext, we need to find out how many pigs Philip has. The total number of ducks and cows is:\n\\[ 20 + 30 = 50 \\]\nSince Philip has as many pigs as one-fifth of the total number of ducks and cows, the number of pigs is:\n\\[ \\frac{50}{5} = 10 \\text{ pigs} \\]\n\nNow, we can find the total number of animals on Philip's farm by adding the number of cows, ducks, and pigs:\n\\[ 20 + 30 + 10 = 60 \\]\n\nThus, the total number of animals on Philip's farm is:\n\\[ 60 \\]\n\nFINAL: 60",
+    "target_sha256": "924e7d018b32ef37ef7c4f278135c934e750be61cc63dda079851fa81b21e850"
+  },
+  {
+    "gold": "770",
+    "question": "When three friends sold their video games, Ryan, the first of the three friends, received $50 more than Jason from his sales. Jason received 30% more money than Zachary from selling his video games. If Zachary sold 40 games at $5 each, calculate the total amount of money the three friends received together from the sale of the video games.",
+    "raw_call_sha256": "f3fe9d0b5e5923dd6dc2c9ff278c874b87073ddc64a7e40b83f6034cb91f033c",
+    "student_prefix": [
+      {
+        "content": "When three friends sold their video games, Ryan, the first of the three friends, received $50 more than Jason from his sales. Jason received 30% more money than Zachary from selling his video games. If Zachary sold 40 games at $5 each, calculate the total amount of money the three friends received together from the sale of the video games.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "2aa2484c208de2e45790e9d2c0129b94b81453cef21d415a9fd930efebaffecd",
+    "target": "Given:\n- Zachary sold 40 games at $5 each.\n- Jason received 30% more money than Zachary.\n- Ryan received $50 more than Jason.\n\nFirst, calculate Zachary's total earnings:\n\\[ 40 \\text{ games} \\times \\$5 \\text{ per game} = \\$200 \\]\n\nNext, calculate Jason's earnings. Jason received 30% more than Zachary:\n\\[ 30\\% \\text{ of } \\$200 = 0.30 \\times 200 = \\$60 \\]\n\\[ \\text{Jason's total} = \\$200 + \\$60 = \\$260 \\]\n\nNow, calculate Ryan's earnings. Ryan received $50 more than Jason:\n\\[ \\text{Ryan's total} = \\$260 + \\$50 = \\$310 \\]\n\nFinally, add up the total earnings of all three friends:\n\\[ \\text{Total} = \\$200 + \\$260 + \\$310 = \\$770 \\]\n\nFINAL: 770",
+    "target_sha256": "0fc558a48b26829b5e73f8fe488de31439defbfabb5e774a2d427b7ffab7a6da"
+  },
+  {
+    "gold": "10",
+    "question": "There are three times as many hogs as cats in King Henry's kingdom. If there are 75 hogs, what's 5 less than 60% of the number of cats in King Henry's kingdom?",
+    "raw_call_sha256": "8cd3f476d1f43303c65258fdbe2f2a59de7c44fb8ae212aa326391a07b4c615f",
+    "student_prefix": [
+      {
+        "content": "There are three times as many hogs as cats in King Henry's kingdom. If there are 75 hogs, what's 5 less than 60% of the number of cats in King Henry's kingdom?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "41fc98ddb3473460c918ec89cf4df4ce1f6543d7f200b168c1bf2a091430ce70",
+    "target": "Given: There are 75 hogs in King Henry's kingdom, and there are three times as many hogs as cats.\n\nFirst, find the number of cats:\n- Since there are three times as many hogs as cats, the number of cats is \\( \\frac{75}{3} = 25 \\).\n\nNext, calculate 60% of the number of cats:\n- 60% of 25 is \\( 0.60 \\times 25 = 15 \\).\n\nFinally, find 5 less than 60% of the number of cats:\n- 5 less than 15 is \\( 15 - 5 = 10 \\).\n\nFINAL: 10",
+    "target_sha256": "56af26379ef92b4bfde2afa65f4bf965354849a8aec9f3ff438cb9bb4fd52aad"
+  }
+]

@@ -1,0 +1,140 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "reviews": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "branch_rejection_reason": {
+            "type": "string"
+          },
+          "branching_alternative": {
+            "type": "string"
+          },
+          "checkable_expectation": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "evidence_spans": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "first_person": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "full_text_read": {
+            "type": "boolean"
+          },
+          "gold_reason": {
+            "type": "string"
+          },
+          "gold_status": {
+            "enum": [
+              "VALID",
+              "INVALID",
+              "AMBIGUOUS"
+            ],
+            "type": "string"
+          },
+          "grounded_operations": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "has_meaningful_branch": {
+            "type": "boolean"
+          },
+          "independent_answer": {
+            "type": "string"
+          },
+          "neutral_prefix_compatible": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "no_padding": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "prefix_reason": {
+            "type": "string"
+          },
+          "raw_call_sha256": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "reusable_content": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "semantic_novelty": {
+            "enum": [
+              "APPLIED_REASONING",
+              "RAW_RECAP",
+              "UNRESOLVED"
+            ],
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNRESOLVED"
+            ],
+            "type": "string"
+          },
+          "student_prefix_sha256": {
+            "type": "string"
+          },
+          "target_sha256": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_sha256",
+          "raw_call_sha256",
+          "student_prefix_sha256",
+          "status",
+          "reason",
+          "prefix_reason",
+          "full_text_read",
+          "evidence_spans",
+          "gold_status",
+          "independent_answer",
+          "gold_reason",
+          "has_meaningful_branch",
+          "branching_alternative",
+          "branch_rejection_reason",
+          "semantic_novelty",
+          "first_person",
+          "grounded_operations",
+          "checkable_expectation",
+          "reusable_content",
+          "no_padding",
+          "neutral_prefix_compatible"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "reviews"
+  ],
+  "type": "object"
+}

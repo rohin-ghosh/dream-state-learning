@@ -1,0 +1,556 @@
+[
+  {
+    "gold": "600",
+    "question": "There are six chairs in each row in a church. If there are 20 rows of chairs in the church, and each chair holds five people, calculate the number of people who have to sit in the chairs for the church to be full.",
+    "raw_call_sha256": "d52d2dc97d41f029910a51a4c114882135bfe01b19437527e3573eaafb4b7162",
+    "student_prefix": [
+      {
+        "content": "There are six chairs in each row in a church. If there are 20 rows of chairs in the church, and each chair holds five people, calculate the number of people who have to sit in the chairs for the church to be full.",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- 6 chairs in each row\n- 20 rows of chairs\n- Each chair holds 5 people\n\nTo find the total number of people who can sit in the church, we need to calculate the total number of chairs first and then multiply by the number of people each chair can hold.\n\n1. Calculate the total number of chairs:\n   \\[\n   \\text{Total chairs} = \\text{Number of chairs per row} \\times \\text{Number of rows} = 6 \\times 20 = 120\n   \\]\n\n2. Calculate the total number of people who can sit in the church:\n   \\[\n   \\text{Total people} = \\text{Total chairs} \\times \\text{People per chair} = 120 \\times 5 = 600\n   \\]\n\nSo, the number of people who have to sit in the chairs for the church to be full is 600.\n\nFINAL: 600",
+        "role": "assistant"
+      },
+      {
+        "content": "Reconsider your solution using the given problem. Explain any useful revision or check, then finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "d105f8327cac60d8550b44a8e13c6ccc5aff80ed13924aeec68cd0a382c488a6",
+    "target_sha256": "80a214dc6af33822860b3c9f0dcebd934ccb9a62069ff7efb1ef87c58f4b56e0",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- 6 chairs in each row\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- 20 rows of chairs\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Each chair holds 5 people\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "To find the total number of people who can sit in the church, we need to calculate the total number of chairs first and then multiply by the number of people each chair can hold.\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\n"
+      },
+      {
+        "line_id": 8,
+        "text": "1. Calculate the total number of chairs:\n"
+      },
+      {
+        "line_id": 9,
+        "text": "   \\[\n"
+      },
+      {
+        "line_id": 10,
+        "text": "   \\text{Total chairs} = \\text{Number of chairs per row} \\times \\text{Number of rows} = 6 \\times 20 = 120\n"
+      },
+      {
+        "line_id": 11,
+        "text": "   \\]\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "2. Calculate the total number of people who can sit in the church:\n"
+      },
+      {
+        "line_id": 14,
+        "text": "   \\[\n"
+      },
+      {
+        "line_id": 15,
+        "text": "   \\text{Total people} = \\text{Total chairs} \\times \\text{People per chair} = 120 \\times 5 = 600\n"
+      },
+      {
+        "line_id": 16,
+        "text": "   \\]\n"
+      },
+      {
+        "line_id": 17,
+        "text": "\n"
+      },
+      {
+        "line_id": 18,
+        "text": "The uncertainty here is whether the problem is asking for the number of people who can sit in the church or the number of people who must sit in the church for it to be full. Since the problem does not specify any constraints or conditions other than the capacity, we assume the church is full when all chairs are occupied.\n"
+      },
+      {
+        "line_id": 19,
+        "text": "\n"
+      },
+      {
+        "line_id": 20,
+        "text": "Thus, the number of people who must sit in the chairs for the church to be full is 600.\n"
+      },
+      {
+        "line_id": 21,
+        "text": "\n"
+      },
+      {
+        "line_id": 22,
+        "text": "FINAL: 600"
+      }
+    ]
+  },
+  {
+    "gold": "40",
+    "question": "Jennifer wants to go to a museum. There is one 5 miles away from her home and one 15 miles away. If Jennifer goes to both museums on two separate days, how many miles total will she travel?",
+    "raw_call_sha256": "93889462ca6b30c105cd472cfb7544ed6422e7d13da1abb040b5d1c2a1f110df",
+    "student_prefix": [
+      {
+        "content": "Jennifer wants to go to a museum. There is one 5 miles away from her home and one 15 miles away. If Jennifer goes to both museums on two separate days, how many miles total will she travel?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Distance to the first museum: 5 miles\n- Distance to the second museum: 15 miles\n- Jennifer visits each museum once\n\nTo find the total miles Jennifer will travel, we need to calculate the round trip for each museum visit and then sum them up.\n\nFor the first museum:\n- Round trip distance: 5 miles (to) + 5 miles (back) = 10 miles\n\nFor the second museum:\n- Round trip distance: 15 miles (to) + 15 miles (back) = 30 miles\n\nTotal miles traveled:\n- 10 miles (first museum) + 30 miles (second museum) = 40 miles\n\nFINAL: 40",
+        "role": "assistant"
+      },
+      {
+        "content": "Reconsider your solution using the given problem. Explain any useful revision or check, then finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "f688f59fbbe1806b50b92e998cb90d017be1c2b59a83473518d645170574dc23",
+    "target_sha256": "64ff86ba3336938424759dd575d56c7f607a602a5fdae73229cd64153eaf5253",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Distance to the first museum: 5 miles\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Distance to the second museum: 15 miles\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Jennifer visits each museum once\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "To find the total miles Jennifer will travel, we need to calculate the round trip for each museum visit and then sum them up.\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\n"
+      },
+      {
+        "line_id": 8,
+        "text": "For the first museum:\n"
+      },
+      {
+        "line_id": 9,
+        "text": "- Round trip distance: 5 miles (to) + 5 miles (back) = 10 miles\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\n"
+      },
+      {
+        "line_id": 11,
+        "text": "For the second museum:\n"
+      },
+      {
+        "line_id": 12,
+        "text": "- Round trip distance: 15 miles (to) + 15 miles (back) = 30 miles\n"
+      },
+      {
+        "line_id": 13,
+        "text": "\n"
+      },
+      {
+        "line_id": 14,
+        "text": "Total miles traveled:\n"
+      },
+      {
+        "line_id": 15,
+        "text": "- 10 miles (first museum) + 30 miles (second museum) = 40 miles\n"
+      },
+      {
+        "line_id": 16,
+        "text": "\n"
+      },
+      {
+        "line_id": 17,
+        "text": "The uncertainty here is whether Jennifer travels to the museums on the same day or on different days. Since the problem states she goes to both museums on two separate days, we do not need to consider a single day round trip. The calculation remains the same.\n"
+      },
+      {
+        "line_id": 18,
+        "text": "\n"
+      },
+      {
+        "line_id": 19,
+        "text": "FINAL: 40"
+      }
+    ]
+  },
+  {
+    "gold": "48",
+    "question": "Of the 100 soccer balls that Nova went to inflate, 40 percent had holes in them and could not inflate, while 20% of the remaining balls were overinflated and exploded. How many balls were inflated successfully and could be used?",
+    "raw_call_sha256": "bc88b89f3af72ae2619ff53d103323ec3bca92ffc02ae5aa895498376e2bc496",
+    "student_prefix": [
+      {
+        "content": "Of the 100 soccer balls that Nova went to inflate, 40 percent had holes in them and could not inflate, while 20% of the remaining balls were overinflated and exploded. How many balls were inflated successfully and could be used?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "5bad4d0d5b0bd21b021622fda79b1558d675ccee029669e7126a9a9b0cc53f33",
+    "target_sha256": "80f93428ef0ede3de63ada60e73c1a8b07d82a0b08db2d59142f893c72e933d8",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "First, calculate the number of balls with holes:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "40% of 100 balls = 0.40 * 100 = 40 balls\n"
+      },
+      {
+        "line_id": 3,
+        "text": "\n"
+      },
+      {
+        "line_id": 4,
+        "text": "So, the number of balls without holes is:\n"
+      },
+      {
+        "line_id": 5,
+        "text": "100 - 40 = 60 balls\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "Next, determine how many of these 60 balls exploded due to overinflation:\n"
+      },
+      {
+        "line_id": 8,
+        "text": "20% of 60 balls = 0.20 * 60 = 12 balls\n"
+      },
+      {
+        "line_id": 9,
+        "text": "\n"
+      },
+      {
+        "line_id": 10,
+        "text": "Therefore, the number of balls that were inflated successfully and could be used is:\n"
+      },
+      {
+        "line_id": 11,
+        "text": "60 - 12 = 48 balls\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "FINAL: 48"
+      }
+    ]
+  },
+  {
+    "gold": "60",
+    "question": "Emery and Serena go to their school library, and each borrows a copy of The life of Jack Steve's book to read for their school project. If Emery can read five times as fast as Serena, and the book takes her 20 days to read, what's the average number of days the two take to read the book?",
+    "raw_call_sha256": "1875b44e441e86404967557e8c0be9c527eb30ec4e32721b41d00e94406d4dc6",
+    "student_prefix": [
+      {
+        "content": "Emery and Serena go to their school library, and each borrows a copy of The life of Jack Steve's book to read for their school project. If Emery can read five times as fast as Serena, and the book takes her 20 days to read, what's the average number of days the two take to read the book?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Emery reads the book in 20 days.\n- Emery reads five times as fast as Serena.\n\nFirst, let's find out how long it takes Serena to read the book. Since Emery reads five times as fast, it means Serena takes five times longer to read the same book. Therefore, the time Serena takes is:\n\\[ 20 \\text{ days} \\times 5 = 100 \\text{ days} \\]\n\nNext, we need to find the average number of days both take to read the book. The average is calculated by adding the number of days each takes and then dividing by 2:\n\\[ \\text{Average} = \\frac{20 \\text{ days} + 100 \\text{ days}}{2} = \\frac{120 \\text{ days}}{2} = 60 \\text{ days} \\]\n\nSo, the average number of days the two take to read the book is 60 days.\n\nFINAL: 60",
+        "role": "assistant"
+      },
+      {
+        "content": "Reconsider your solution using the given problem. Explain any useful revision or check, then finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "bf3f2c4f21aa1e153e78b0aadac5453138ce3b53b90061db4a9926abc87aa397",
+    "target_sha256": "7426be8b341bfcd089da9b58be7ee3964bc2d0ada8d9f88f546d11d06d68d519",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Emery reads the book in 20 days.\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Emery reads five times as fast as Serena.\n"
+      },
+      {
+        "line_id": 4,
+        "text": "\n"
+      },
+      {
+        "line_id": 5,
+        "text": "First, let's find out how long it takes Serena to read the book. Since Emery reads five times as fast, it means Serena takes five times longer to read the same book. Therefore, the time Serena takes is:\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\\[ 20 \\text{ days} \\times 5 = 100 \\text{ days} \\]\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\n"
+      },
+      {
+        "line_id": 8,
+        "text": "Next, we need to find the average number of days both take to read the book. The average is calculated by adding the number of days each takes and then dividing by 2:\n"
+      },
+      {
+        "line_id": 9,
+        "text": "\\[ \\text{Average} = \\frac{20 \\text{ days} + 100 \\text{ days}}{2} = \\frac{120 \\text{ days}}{2} = 60 \\text{ days} \\]\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\n"
+      },
+      {
+        "line_id": 11,
+        "text": "The uncertainty here is whether the average is correctly calculated as the arithmetic mean of the two times. However, since the problem does not specify any other method, the arithmetic mean is the appropriate way to find the average time taken by both.\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "Thus, the average number of days the two take to read the book is 60 days.\n"
+      },
+      {
+        "line_id": 14,
+        "text": "\n"
+      },
+      {
+        "line_id": 15,
+        "text": "FINAL: 60"
+      }
+    ]
+  },
+  {
+    "gold": "28",
+    "question": "A math teacher had $100 to buy three different types of calculators. A basic calculator costs $8. A scientific calculator costs twice the price as the basic while a graphing calculator costs thrice the price as the scientific. How much change did she receive after buying those three different types of calculators?",
+    "raw_call_sha256": "68850795e3ec85609254c04b95cdb1b1710b53aeacbfeb41bf32e3ad1fdac5ef",
+    "student_prefix": [
+      {
+        "content": "A math teacher had $100 to buy three different types of calculators. A basic calculator costs $8. A scientific calculator costs twice the price as the basic while a graphing calculator costs thrice the price as the scientific. How much change did she receive after buying those three different types of calculators?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "be2c0ddb0e04e28dd0475c280bb34b9b59ac7e84a9ba72aae15c56c6612be2bc",
+    "target_sha256": "e175665590c264f6c7e1172b3afe768d4172f0b246c60174794d902c521e17c5",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Total money: $100\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Basic calculator cost: $8\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Scientific calculator cost: $8 * 2 = $16\n"
+      },
+      {
+        "line_id": 5,
+        "text": "- Graphing calculator cost: $16 * 3 = $48\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "Total cost of three calculators:\n"
+      },
+      {
+        "line_id": 8,
+        "text": "- Basic: $8\n"
+      },
+      {
+        "line_id": 9,
+        "text": "- Scientific: $16\n"
+      },
+      {
+        "line_id": 10,
+        "text": "- Graphing: $48\n"
+      },
+      {
+        "line_id": 11,
+        "text": "Total cost = $8 + $16 + $48 = $72\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "Change received = Total money - Total cost = $100 - $72 = $28\n"
+      },
+      {
+        "line_id": 14,
+        "text": "\n"
+      },
+      {
+        "line_id": 15,
+        "text": "FINAL: 28"
+      }
+    ]
+  },
+  {
+    "gold": "31840",
+    "question": "In a factory, there are 300 employees. 200 of them earn $12 per hour. Of the rest, 40 of them earn $14 per hour. All others earn $17 per hour. What is the cost to employ all these people for one 8-hour long shift?",
+    "raw_call_sha256": "53d6b006f367cadf0b539521a175843f0cbed81b915b46ac935b11d96755f41a",
+    "student_prefix": [
+      {
+        "content": "In a factory, there are 300 employees. 200 of them earn $12 per hour. Of the rest, 40 of them earn $14 per hour. All others earn $17 per hour. What is the cost to employ all these people for one 8-hour long shift?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "6b85331c5cbac6fca44b6dc9190fb13be97644cfb8cee1dd697595562549b3dc",
+    "target_sha256": "51fc455b6c834afc9e3b57f982b238c9b702e3dba52fcfb5063f2e4d667103f9",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "First, let's break down the number of employees and their respective hourly wages:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- 200 employees earn $12 per hour.\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- 40 employees earn $14 per hour.\n"
+      },
+      {
+        "line_id": 5,
+        "text": "- The remaining employees, which is 300 - 200 - 40 = 60 employees, earn $17 per hour.\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "Next, we calculate the total cost for each group of employees for an 8-hour shift:\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\n"
+      },
+      {
+        "line_id": 9,
+        "text": "1. For the 200 employees earning $12 per hour:\n"
+      },
+      {
+        "line_id": 10,
+        "text": "   - Cost per employee = $12 * 8 hours = $96\n"
+      },
+      {
+        "line_id": 11,
+        "text": "   - Total cost for 200 employees = 200 * $96 = $19,200\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "2. For the 40 employees earning $14 per hour:\n"
+      },
+      {
+        "line_id": 14,
+        "text": "   - Cost per employee = $14 * 8 hours = $112\n"
+      },
+      {
+        "line_id": 15,
+        "text": "   - Total cost for 40 employees = 40 * $112 = $4,480\n"
+      },
+      {
+        "line_id": 16,
+        "text": "\n"
+      },
+      {
+        "line_id": 17,
+        "text": "3. For the 60 employees earning $17 per hour:\n"
+      },
+      {
+        "line_id": 18,
+        "text": "   - Cost per employee = $17 * 8 hours = $136\n"
+      },
+      {
+        "line_id": 19,
+        "text": "   - Total cost for 60 employees = 60 * $136 = $8,160\n"
+      },
+      {
+        "line_id": 20,
+        "text": "\n"
+      },
+      {
+        "line_id": 21,
+        "text": "Now, we sum up the total costs for all employees:\n"
+      },
+      {
+        "line_id": 22,
+        "text": "- Total cost = $19,200 + $4,480 + $8,160 = $31,840\n"
+      },
+      {
+        "line_id": 23,
+        "text": "\n"
+      },
+      {
+        "line_id": 24,
+        "text": "The cost to employ all these people for one 8-hour long shift is $31,840.\n"
+      },
+      {
+        "line_id": 25,
+        "text": "\n"
+      },
+      {
+        "line_id": 26,
+        "text": "FINAL: 31840"
+      }
+    ]
+  }
+]

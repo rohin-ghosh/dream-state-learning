@@ -1,0 +1,416 @@
+[
+  {
+    "gold": "13",
+    "question": "Cheryl ate 7 m&m's after lunch. She ate 5 m&m's after dinner, and she gave some to her sister. If Cheryl had 25 m&m's at the beginning, how many did she give to her sister?",
+    "raw_call_sha256": "0e5d94dfb33fe93c940bfea6b206b0cb5fc07e176c55d908128e7cbd55a49e5e",
+    "student_prefix": [
+      {
+        "content": "Cheryl ate 7 m&m's after lunch. She ate 5 m&m's after dinner, and she gave some to her sister. If Cheryl had 25 m&m's at the beginning, how many did she give to her sister?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "ea6c47770ff041edddb4a538998c4c03f2e6e9c9f66f80d8b591509393453093",
+    "target_sha256": "406b2d0eb96569c1293d5b6350b3cf8f14eee8c8e3746cfe1f41f2cd580f82d7",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given: Cheryl started with 25 m&m's. She ate 7 m&m's after lunch and 5 m&m's after dinner. We need to find out how many she gave to her sister.\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\n"
+      },
+      {
+        "line_id": 3,
+        "text": "First, calculate the total m&m's Cheryl ate:\n"
+      },
+      {
+        "line_id": 4,
+        "text": "7 (after lunch) + 5 (after dinner) = 12 m&m's\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "Now, subtract the m&m's she ate from the total she started with to find out how many she gave to her sister:\n"
+      },
+      {
+        "line_id": 7,
+        "text": "25 (initial amount) - 12 (eaten) = 13 m&m's\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\n"
+      },
+      {
+        "line_id": 9,
+        "text": "So, Cheryl gave 13 m&m's to her sister.\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\n"
+      },
+      {
+        "line_id": 11,
+        "text": "FINAL: 13"
+      }
+    ]
+  },
+  {
+    "gold": "6",
+    "question": "Anne's female cat weighs 2 kilograms. Her male cat is two times heavier.  If Anne is going to carry both of them, how many kilograms is she carrying?",
+    "raw_call_sha256": "3c15473d8fac56a35d62246bdf3402530b91934f863eda87f5c7dd03d6957eb2",
+    "student_prefix": [
+      {
+        "content": "Anne's female cat weighs 2 kilograms. Her male cat is two times heavier.  If Anne is going to carry both of them, how many kilograms is she carrying?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "c6c1c02ecb9cb81daf5f772bd857a3afeeb5039401c1542856442c1deb311918",
+    "target_sha256": "b0637763e02b878416310489d3e0089c126ed22a55b499cfedcd12adc98ac790",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "First, let's establish the weight of each cat. Anne's female cat weighs 2 kilograms. The male cat is two times heavier than the female cat, so the male cat weighs \\(2 \\times 2 = 4\\) kilograms.\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\n"
+      },
+      {
+        "line_id": 3,
+        "text": "To find the total weight Anne is carrying, we add the weight of the female cat and the male cat together:\n"
+      },
+      {
+        "line_id": 4,
+        "text": "\\[2 \\text{ kg} + 4 \\text{ kg} = 6 \\text{ kg}\\]\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "Thus, Anne is carrying 6 kilograms in total.\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\n"
+      },
+      {
+        "line_id": 8,
+        "text": "FINAL: 6"
+      }
+    ]
+  },
+  {
+    "gold": "9",
+    "question": "The bakery made 95 muffins. They will be packed in boxes with 5 muffins in each box. If there are only 10 available boxes, how many boxes do they still need to pack all the muffins?",
+    "raw_call_sha256": "e259e2871b460c92427c8208dc2e5f469efc66b3d4bee67f15015ba1f5238f35",
+    "student_prefix": [
+      {
+        "content": "The bakery made 95 muffins. They will be packed in boxes with 5 muffins in each box. If there are only 10 available boxes, how many boxes do they still need to pack all the muffins?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Total muffins: 95\n- Muffins per box: 5\n- Available boxes: 10\n\nFirst, calculate the total number of boxes needed to pack all the muffins:\n\\[ \\text{Total boxes needed} = \\frac{95 \\text{ muffins}}{5 \\text{ muffins/box}} = 19 \\text{ boxes} \\]\n\nNext, determine how many more boxes are needed by subtracting the available boxes from the total boxes needed:\n\\[ \\text{Additional boxes needed} = 19 \\text{ boxes} - 10 \\text{ boxes} = 9 \\text{ boxes} \\]\n\nFINAL: 9",
+        "role": "assistant"
+      },
+      {
+        "content": "Reconsider your solution using the given problem. Explain any useful revision or check, then finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "a1742be692f16713cf199a178fcdd0ee3d008f413980bc5cf00f985c7d6a56cf",
+    "target_sha256": "8a2ad218b67fc8c037714a9e0afaecb4031fa68eacd194e841e2141d5b641c81",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Total muffins: 95\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Muffins per box: 5\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Available boxes: 10\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "First, calculate the total number of boxes needed to pack all the muffins:\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\\[ \\text{Total boxes needed} = \\frac{95 \\text{ muffins}}{5 \\text{ muffins/box}} = 19 \\text{ boxes} \\]\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\n"
+      },
+      {
+        "line_id": 9,
+        "text": "Next, determine how many more boxes are needed by subtracting the available boxes from the total boxes needed:\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\\[ \\text{Additional boxes needed} = 19 \\text{ boxes} - 10 \\text{ boxes} = 9 \\text{ boxes} \\]\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\n"
+      },
+      {
+        "line_id": 12,
+        "text": "The calculation is straightforward and there is no uncertainty or alternative interpretation. The steps are logically sound and directly lead to the conclusion.\n"
+      },
+      {
+        "line_id": 13,
+        "text": "\n"
+      },
+      {
+        "line_id": 14,
+        "text": "FINAL: 9"
+      }
+    ]
+  },
+  {
+    "gold": "10",
+    "question": "Tim used to run 3 times a week but decided to add an extra 2 days a week.  She runs 1 hour in the morning and 1 in the evening every day she runs.  How many hours a week does she run now?",
+    "raw_call_sha256": "044f19cfbfd467636a3a466b379b04e14b4595f709222b5955a967eb44e2b7a5",
+    "student_prefix": [
+      {
+        "content": "Tim used to run 3 times a week but decided to add an extra 2 days a week.  She runs 1 hour in the morning and 1 in the evening every day she runs.  How many hours a week does she run now?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "5fa5f39f05d22a4e8ac7173d8ff820e2da03ba567a5fe57417be4112ac3a4778",
+    "target_sha256": "8afb0565af1519ec91e4acf7b9fc685a35ec78a6e38cbffd4dd1111783978eaf",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Initially, Tim ran 3 times a week. Adding 2 more days means she now runs 5 days a week. Since she runs 1 hour in the morning and 1 hour in the evening each day she runs, that's 2 hours per running day.\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\n"
+      },
+      {
+        "line_id": 3,
+        "text": "To find the total hours she runs now, we multiply the number of running days by the hours per day:\n"
+      },
+      {
+        "line_id": 4,
+        "text": "\\[ 5 \\text{ days/week} \\times 2 \\text{ hours/day} = 10 \\text{ hours/week} \\]\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "Thus, the total number of hours Tim runs now is 10.\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\n"
+      },
+      {
+        "line_id": 8,
+        "text": "FINAL: 10"
+      }
+    ]
+  },
+  {
+    "gold": "45",
+    "question": "A special school has a deaf-student population 3 times its blind-student population. If there are 180 students in total, how many blind students are there?",
+    "raw_call_sha256": "98800b9cf692034e4581701a7e09f25254c233e388c26a3ef6ce9b87a83223c5",
+    "student_prefix": [
+      {
+        "content": "A special school has a deaf-student population 3 times its blind-student population. If there are 180 students in total, how many blind students are there?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "968b9f5c9f6ff58621099f9c07de9240958f91c7efbb3470727dcd65a57c92b1",
+    "target_sha256": "b2683b00cec93f7794faafcc2597925f2840827aafb7c96cbe6a0a93a0ca7f4c",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Let's denote the number of blind students as \\( B \\) and the number of deaf students as \\( D \\). According to the problem, the deaf-student population is 3 times the blind-student population, so we can write the relationship as:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\\[ D = 3B \\]\n"
+      },
+      {
+        "line_id": 3,
+        "text": "\n"
+      },
+      {
+        "line_id": 4,
+        "text": "We also know the total number of students is 180, so:\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\\[ D + B = 180 \\]\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "Substituting the first equation into the second equation, we get:\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\\[ 3B + B = 180 \\]\n"
+      },
+      {
+        "line_id": 9,
+        "text": "\\[ 4B = 180 \\]\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\\[ B = \\frac{180}{4} \\]\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\\[ B = 45 \\]\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "So, there are 45 blind students. \n"
+      },
+      {
+        "line_id": 14,
+        "text": "\n"
+      },
+      {
+        "line_id": 15,
+        "text": "Let's verify this by calculating the number of deaf students:\n"
+      },
+      {
+        "line_id": 16,
+        "text": "\\[ D = 3B = 3 \\times 45 = 135 \\]\n"
+      },
+      {
+        "line_id": 17,
+        "text": "\\[ D + B = 135 + 45 = 180 \\]\n"
+      },
+      {
+        "line_id": 18,
+        "text": "\n"
+      },
+      {
+        "line_id": 19,
+        "text": "The calculations are consistent with the total number of students. \n"
+      },
+      {
+        "line_id": 20,
+        "text": "\n"
+      },
+      {
+        "line_id": 21,
+        "text": "FINAL: 45"
+      }
+    ]
+  },
+  {
+    "gold": "315",
+    "question": "Jeff orders a Halloween costume.  He has to put in a 10% deposit and then pay the rest when he picks it up.  The costume is 40% more expensive than last year's costume, which cost $250.  How much did he pay when picking it up, in dollars?",
+    "raw_call_sha256": "6f2e43fe0dbfb82c2de03fb517856a2e2243258633da5e1eea1fb210d0243f6d",
+    "student_prefix": [
+      {
+        "content": "Jeff orders a Halloween costume.  He has to put in a 10% deposit and then pay the rest when he picks it up.  The costume is 40% more expensive than last year's costume, which cost $250.  How much did he pay when picking it up, in dollars?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "7d77ffc628e5c82c05bda1bacada66a5edf60a4dc08fe4c11349ce1ba355fcc0",
+    "target_sha256": "95cfa9b7d21378772c46612cfa54de3d1d21abcbaf897bcddde5cae4c505471e",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Last year's costume cost: $250\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- This year's costume is 40% more expensive than last year's\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Jeff has to put in a 10% deposit and then pay the rest when picking it up\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "First, calculate the cost of this year's costume:\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\\[ \\text{This year's cost} = 250 + (0.40 \\times 250) = 250 + 100 = 350 \\]\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\n"
+      },
+      {
+        "line_id": 9,
+        "text": "Next, calculate the 10% deposit:\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\\[ \\text{Deposit} = 0.10 \\times 350 = 35 \\]\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\n"
+      },
+      {
+        "line_id": 12,
+        "text": "Then, calculate the remaining amount to be paid when picking it up:\n"
+      },
+      {
+        "line_id": 13,
+        "text": "\\[ \\text{Amount to be paid} = 350 - 35 = 315 \\]\n"
+      },
+      {
+        "line_id": 14,
+        "text": "\n"
+      },
+      {
+        "line_id": 15,
+        "text": "So, Jeff paid $315 when picking it up.\n"
+      },
+      {
+        "line_id": 16,
+        "text": "\n"
+      },
+      {
+        "line_id": 17,
+        "text": "FINAL: 315"
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "family": "percentages",
+  "gold": "196",
+  "messages": [
+    {
+      "content": "Solve in your own first-person voice. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "system"
+    },
+    {
+      "content": "Anahi bought a 500 pages book to write some notes on. In the first week, she wrote on 150 pages. In the second week, she wrote on 30% of the remaining pages. While continuing writing, she accidentally spilled coffee on the book and damaged 20 percent of the empty pages she was to write on. Calculate the total number of empty pages available for her to write on now.",
+      "role": "user"
+    },
+    {
+      "content": "Given:\n- Total pages in the book: 500\n- Pages written in the first week: 150\n- Pages written in the second week: 30% of the remaining pages\n- Pages damaged by coffee spill: 20% of the empty pages\n\nStep 1: Calculate the remaining pages after the first week.\nRemaining pages after the first week = Total pages - Pages written in the first week\n= 500 - 150 = 350 pages\n\nStep 2: Calculate the pages written in the second week.\nPages written in the second week = 30% of remaining pages\n= 0.30 * 350 = 105 pages\n\nStep 3: Calculate the remaining pages after the second week.\nRemaining pages after the second week = Remaining pages after the first week - Pages written in the second week\n= 350 - 105 = 245 pages\n\nStep 4: Calculate the pages damaged by coffee spill.\nPages damaged by coffee spill = 20% of remaining pages\n= 0.20 * 245 = 49 pages\n\nStep 5: Calculate the total number of empty pages available for writing now.\nTotal empty pages available = Remaining pages after the second week - Pages damaged by coffee spill\n= 245 - 49 = 196 pages\n\nFINAL: 196",
+      "role": "assistant"
+    },
+    {
+      "content": "The final value passed the exact-answer checker. Write your own reusable record as an autobiographical account of how you solved this task, rather than instructions to another solver. Describe the evidence you actually used, the operation you chose and why, what you expected its result to mean, and the concrete check you made or can make from this problem. Explain which operation you would reuse and when. Distinguish given facts from your assumptions; do not claim observations you did not make. Retain its final answer. Solve in your own first-person voice, using as much useful reasoning as needed. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "user"
+    }
+  ],
+  "position": 23,
+  "semantic_status": "UNREVIEWED",
+  "stage": "new_record",
+  "started_unix": 1789443400.2303154,
+  "strategy": "ORIGINAL_RICH",
+  "task_id": "gsm8k-train-3303",
+  "trainingAllowed": false
+}

@@ -1,0 +1,207 @@
+[
+  {
+    "admitted": true,
+    "capture_sha256": "66600e110ea5b510c679c987bcf65e2db807aa4ae850f456e981cb7033f07662",
+    "eligible_for_semantic_review": true,
+    "generated_text_tokens": 156,
+    "raw_sha256": "64721476d553beb62bf7b3dba26065c28b13dd249f40ece516691c70e3b9079c",
+    "review": {
+      "action_last": true,
+      "capture_sha256": "66600e110ea5b510c679c987bcf65e2db807aa4ae850f456e981cb7033f07662",
+      "checkable_expectation": true,
+      "goal_connection": true,
+      "no_unsupported_claim": true,
+      "rationale": "Author whole-text PASS, qualified but weaker than WORLD7 turn4. Truthfully identifies read E_INRAU6R5EC, intermediate N_4P5CYQYVBR, port P_B76ON7N25C, goal N_CR4GMX4BXC and receipt R_WTOZPSYENP. Relates the transition to goal-directed movement and predicts the current first port reaches a goal or closer intermediate; the prior actual first read establishes the intermediate, making this broad prediction checkable and correct. Final ROUTE P_Q2GMBCUCMQ is legal and matches that first read. Transportation is a tentative description of node movement, not an invented map fact. The prose is less precise than it could be, but not a heading/length-only pass.",
+      "raw_sha256": "64721476d553beb62bf7b3dba26065c28b13dd249f40ece516691c70e3b9079c",
+      "specific_read_evidence": true,
+      "substantive_first_person": true
+    },
+    "row_id": "FULL_TARGET/3/1/2",
+    "semantic_status": "PASS",
+    "student": {
+      "loss_policy": "FINAL_ASSISTANT_ONLY_ALL_PREFIX_MASKED",
+      "messages": [
+        {
+          "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+          "role": "system"
+        },
+        {
+          "content": "ROUTE TASK\nCURRENT N_J6CZTU255B\nGOAL N_CR4GMX4BXC\nPORTS P_Q2GMBCUCMQ,P_USLXV3VQ7M\nEVENTS E_FGSOJE7XAU,E_INRAU6R5EC,E_R7XB5RBNOA,E_UOZ2JARHCZ",
+          "role": "user"
+        },
+        {
+          "content": "No stored evidence has been read yet. I intend to learn about the task details to understand the goal and available ports.\n\nREAD EVENT E_FGSOJE7XAU\n",
+          "role": "assistant"
+        },
+        {
+          "content": "MEMORY RESULT\nEVENT E_FGSOJE7XAU AT N_J6CZTU255B DID P_Q2GMBCUCMQ GOT N_4P5CYQYVBR EVIDENCE R_5TLA5DSR7C",
+          "role": "user"
+        },
+        {
+          "content": "The event E_FGSOJE7XAU at node N_J6CZTU255B involved port P_Q2GMBCUCMQ and resulted in node N_4P5CYQYVBR with evidence R_5TLA5DSR7C. The evidence suggests that the task might involve some form of transportation or movement, as it mentions a node transition. My expectation is that the next event will either confirm this pattern or provide a different context. I will now read the next event.\n\nREAD EVENT E_INRAU6R5EC\n",
+          "role": "assistant"
+        },
+        {
+          "content": "MEMORY RESULT\nEVENT E_INRAU6R5EC AT N_4P5CYQYVBR DID P_B76ON7N25C GOT N_CR4GMX4BXC EVIDENCE R_WTOZPSYENP",
+          "role": "user"
+        },
+        {
+          "content": "The event E_INRAU6R5EC at node N_4P5CYQYVBR involved port P_B76ON7N25C and resulted in the goal node N_CR4GMX4BXC with evidence R_WTOZPSYENP. This event confirms my expectation that the task involves movement or transportation, as it shows a transition from an intermediate node to the goal node. My next expectation is that the current port P_Q2GMBCUCMQ will lead to a node that is either the goal or an intermediate node that is closer to the goal. I will now route through port P_Q2GMBCUCMQ to see if it leads to the goal or an intermediate node.\n\nROUTE P_Q2GMBCUCMQ",
+          "role": "assistant"
+        }
+      ],
+      "parent_guidance_removed": true,
+      "target": "The event E_INRAU6R5EC at node N_4P5CYQYVBR involved port P_B76ON7N25C and resulted in the goal node N_CR4GMX4BXC with evidence R_WTOZPSYENP. This event confirms my expectation that the task involves movement or transportation, as it shows a transition from an intermediate node to the goal node. My next expectation is that the current port P_Q2GMBCUCMQ will lead to a node that is either the goal or an intermediate node that is closer to the goal. I will now route through port P_Q2GMBCUCMQ to see if it leads to the goal or an intermediate node.\n\nROUTE P_Q2GMBCUCMQ"
+    }
+  },
+  {
+    "admitted": true,
+    "capture_sha256": "7629376b9935323f4f41c972cfc3d3cfb94c5baaa2e7e093accb024d76a79240",
+    "eligible_for_semantic_review": true,
+    "generated_text_tokens": 157,
+    "raw_sha256": "e050f0d190ef29717f2d033e50196b86d6a5054da022f71a8ce763399c344dfe",
+    "review": {
+      "action_last": true,
+      "capture_sha256": "7629376b9935323f4f41c972cfc3d3cfb94c5baaa2e7e093accb024d76a79240",
+      "checkable_expectation": true,
+      "goal_connection": true,
+      "no_unsupported_claim": true,
+      "rationale": "Author whole-text PASS with scope-sensitive goal-relevance interpretation. Accurately summarizes actual E_UOZ2JARHCZ and receipt R_IDWXG7IG6Z, rejects the other branch as not on the current path, acknowledges the preceding expectation was not met, then states a directly checkable expectation of reaching the goal through current P_B76ON7N25C. Actual prior read E_INRAU6R5EC and the current receipt establish that final port. It does not explicitly restate that supporting goal-edge record, so its grounding is contextual and weaker than WORLD7 turn4; nevertheless the stated negative evidence, current-path distinction and final goal action are truthful. Conservative rejection of this row would reduce qualified episodes from1 to0 without changing the frozen NULL decision.",
+      "raw_sha256": "e050f0d190ef29717f2d033e50196b86d6a5054da022f71a8ce763399c344dfe",
+      "specific_read_evidence": true,
+      "substantive_first_person": true
+    },
+    "row_id": "FULL_TARGET/3/1/5",
+    "semantic_status": "PASS",
+    "student": {
+      "loss_policy": "FINAL_ASSISTANT_ONLY_ALL_PREFIX_MASKED",
+      "messages": [
+        {
+          "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+          "role": "system"
+        },
+        {
+          "content": "ROUTE TASK\nCURRENT N_J6CZTU255B\nGOAL N_CR4GMX4BXC\nPORTS P_Q2GMBCUCMQ,P_USLXV3VQ7M\nEVENTS E_FGSOJE7XAU,E_INRAU6R5EC,E_R7XB5RBNOA,E_UOZ2JARHCZ",
+          "role": "user"
+        },
+        {
+          "content": "No stored evidence has been read yet. I intend to learn about the task details to understand the goal and available ports.\n\nREAD EVENT E_FGSOJE7XAU\n",
+          "role": "assistant"
+        },
+        {
+          "content": "MEMORY RESULT\nEVENT E_FGSOJE7XAU AT N_J6CZTU255B DID P_Q2GMBCUCMQ GOT N_4P5CYQYVBR EVIDENCE R_5TLA5DSR7C",
+          "role": "user"
+        },
+        {
+          "content": "The event E_FGSOJE7XAU at node N_J6CZTU255B involved port P_Q2GMBCUCMQ and resulted in node N_4P5CYQYVBR with evidence R_5TLA5DSR7C. The evidence suggests that the task might involve some form of transportation or movement, as it mentions a node transition. My expectation is that the next event will either confirm this pattern or provide a different context. I will now read the next event.\n\nREAD EVENT E_INRAU6R5EC\n",
+          "role": "assistant"
+        },
+        {
+          "content": "MEMORY RESULT\nEVENT E_INRAU6R5EC AT N_4P5CYQYVBR DID P_B76ON7N25C GOT N_CR4GMX4BXC EVIDENCE R_WTOZPSYENP",
+          "role": "user"
+        },
+        {
+          "content": "The event E_INRAU6R5EC at node N_4P5CYQYVBR involved port P_B76ON7N25C and resulted in the goal node N_CR4GMX4BXC with evidence R_WTOZPSYENP. This event confirms my expectation that the task involves movement or transportation, as it shows a transition from an intermediate node to the goal node. My next expectation is that the current port P_Q2GMBCUCMQ will lead to a node that is either the goal or an intermediate node that is closer to the goal. I will now route through port P_Q2GMBCUCMQ to see if it leads to the goal or an intermediate node.\n\nROUTE P_Q2GMBCUCMQ",
+          "role": "assistant"
+        },
+        {
+          "content": "RECEIPT R_5TLA5DSR7C AT N_J6CZTU255B DID P_Q2GMBCUCMQ GOT N_4P5CYQYVBR\n\nROUTE TASK\nCURRENT N_4P5CYQYVBR\nGOAL N_CR4GMX4BXC\nPORTS P_B76ON7N25C\nEVENTS E_FGSOJE7XAU,E_INRAU6R5EC,E_R7XB5RBNOA,E_UOZ2JARHCZ",
+          "role": "user"
+        },
+        {
+          "content": "The route through port P_Q2GMBCUCMQ led to node N_4P5CYQYVBR, which is an intermediate node on the path to the goal. My expectation was that this route would either directly lead to the goal or an intermediate node closer to the goal. Since N_4P5CYQYVBR is an intermediate node, I will now check the remaining events to see if they provide any additional information or a direct route to the goal.\n\nREAD EVENT E_R7XB5RBNOA\n",
+          "role": "assistant"
+        },
+        {
+          "content": "MEMORY RESULT\nEVENT E_R7XB5RBNOA AT N_45LKSNXIDN DID P_PBPWAC53QQ GOT N_NWZIT72UKV EVIDENCE R_6OFFM3RX2U",
+          "role": "user"
+        },
+        {
+          "content": "The event E_R7XB5RBNOA at node N_45LKSNXIDN involved port P_PBPWAC53QQ and resulted in node N_NWZIT72UKV with evidence R_6OFFM3RX2U. This event does not seem to be relevant to the current path, as it involves a different node and port. My expectation was that the next event would provide a direct route to the goal or an intermediate node closer to the goal. Since this event does not seem to be part of the current path, I will now read the last event to see if it provides any useful information.\n\nREAD EVENT E_UOZ2JARHCZ\n",
+          "role": "assistant"
+        },
+        {
+          "content": "MEMORY RESULT\nEVENT E_UOZ2JARHCZ AT N_J6CZTU255B DID P_USLXV3VQ7M GOT N_45LKSNXIDN EVIDENCE R_IDWXG7IG6Z",
+          "role": "user"
+        },
+        {
+          "content": "The event E_UOZ2JARHCZ at node N_J6CZTU255B involved port P_USLXV3VQ7M and resulted in node N_45LKSNXIDN with evidence R_IDWXG7IG6Z. This event does not seem to be part of the current path either, as it involves a different node and port. My expectation was that the next event would provide a direct route to the goal or an intermediate node closer to the goal. Since this event does not seem to be part of the current path, I will now route through port P_B76ON7N25C to see if it leads directly to the goal.\n\nROUTE P_B76ON7N25C",
+          "role": "assistant"
+        }
+      ],
+      "parent_guidance_removed": true,
+      "target": "The event E_UOZ2JARHCZ at node N_J6CZTU255B involved port P_USLXV3VQ7M and resulted in node N_45LKSNXIDN with evidence R_IDWXG7IG6Z. This event does not seem to be part of the current path either, as it involves a different node and port. My expectation was that the next event would provide a direct route to the goal or an intermediate node closer to the goal. Since this event does not seem to be part of the current path, I will now route through port P_B76ON7N25C to see if it leads directly to the goal.\n\nROUTE P_B76ON7N25C"
+    }
+  },
+  {
+    "admitted": true,
+    "capture_sha256": "a325e5c2e50f89dbdfe0adf1435320cc935eb9040dd530532e0f607cf85dcdad",
+    "eligible_for_semantic_review": true,
+    "generated_text_tokens": 151,
+    "raw_sha256": "da64a10b5d62f1c56dc2b98a0f782f572541b1bbd6e51bf3a19a8994ebe41403",
+    "review": {
+      "action_last": true,
+      "capture_sha256": "a325e5c2e50f89dbdfe0adf1435320cc935eb9040dd530532e0f607cf85dcdad",
+      "checkable_expectation": true,
+      "goal_connection": true,
+      "no_unsupported_claim": true,
+      "rationale": "Author whole-text PASS, clearest row. Names exact read E_QZPL7PRWOV, intermediate N_DI4ZYJNWBV, goal N_YMSLUU72YH, second port P_C6YN4OH55C and receipt R_Q5SQ46K5AU. Explicitly connects that read to a path to the goal and predicts first port P_W5AV34RUCS reaches the intermediate, supported by actual E_5PCRBHDSXD. Final action is that first port and the actual receipt verifies the prediction. Exact151 generated tokens, no padding or target repair. Its subsequent final ROUTE turn is only118 tokens, so this successful episode is not qualified.",
+      "raw_sha256": "da64a10b5d62f1c56dc2b98a0f782f572541b1bbd6e51bf3a19a8994ebe41403",
+      "specific_read_evidence": true,
+      "substantive_first_person": true
+    },
+    "row_id": "FULL_TARGET/7/1/4",
+    "semantic_status": "PASS",
+    "student": {
+      "loss_policy": "FINAL_ASSISTANT_ONLY_ALL_PREFIX_MASKED",
+      "messages": [
+        {
+          "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+          "role": "system"
+        },
+        {
+          "content": "ROUTE TASK\nCURRENT N_HDROAA3ARE\nGOAL N_YMSLUU72YH\nPORTS P_W5AV34RUCS,P_ZHMZOVBDQ2\nEVENTS E_5PCRBHDSXD,E_JNCXAKRC7L,E_LTZPRCNEV2,E_QZPL7PRWOV",
+          "role": "user"
+        },
+        {
+          "content": "No stored evidence has been read yet. I intend to learn the details of the task by reading the task event. This will provide insight into the goal and the available ports.\n\nREAD EVENT E_5PCRBHDSXD",
+          "role": "assistant"
+        },
+        {
+          "content": "MEMORY RESULT\nEVENT E_5PCRBHDSXD AT N_HDROAA3ARE DID P_W5AV34RUCS GOT N_DI4ZYJNWBV EVIDENCE R_VRILKKOCDC",
+          "role": "user"
+        },
+        {
+          "content": "The event E_5PCRBHDSXD at N_HDROAA3ARE involved port P_W5AV34RUCS and resulted in location N_DI4ZYJNWBV with evidence R_VRILKKOCDC. This evidence does not directly help me understand the goal or the available ports, but it provides a starting point for the journey. My expectation is that the next event will either involve port P_W5AV34RUCS or P_ZHMZOVBDQ2, and it will likely lead to a new location. I will now read the next event.\n\nREAD EVENT E_JNCXAKRC7L",
+          "role": "assistant"
+        },
+        {
+          "content": "MEMORY RESULT\nEVENT E_JNCXAKRC7L AT N_KR4PFNVUZ6 DID P_7OTVADYM6O GOT N_QCC6VGPPWS EVIDENCE R_TQZWZRJIF7",
+          "role": "user"
+        },
+        {
+          "content": "The event E_JNCXAKRC7L at N_KR4PFNVUZ6 involved port P_7OTVADYM6O and resulted in location N_QCC6VGPPWS with evidence R_TQZWZRJIF7. This event does not directly involve either of the available ports, P_W5AV34RUCS or P_ZHMZOVBDQ2. My expectation is that the next event will either involve one of the available ports or provide a direct path to the goal. I will now read the next event.\n\nREAD EVENT E_LTZPRCNEV2",
+          "role": "assistant"
+        },
+        {
+          "content": "MEMORY RESULT\nEVENT E_LTZPRCNEV2 AT N_HDROAA3ARE DID P_ZHMZOVBDQ2 GOT N_KR4PFNVUZ6 EVIDENCE R_FEAJYP4QTS",
+          "role": "user"
+        },
+        {
+          "content": "The event E_LTZPRCNEV2 at N_HDROAA3ARE involved port P_ZHMZOVBDQ2 and resulted in location N_KR4PFNVUZ6 with evidence R_FEAJYP4QTS. This event shows that port P_ZHMZOVBDQ2 leads to N_KR4PFNVUZ6, which is the location of the previous event. My expectation is that the next event will either involve port P_W5AV34RUCS or provide a direct path to the goal. I will now read the final event.\n\nREAD EVENT E_QZPL7PRWOV",
+          "role": "assistant"
+        },
+        {
+          "content": "MEMORY RESULT\nEVENT E_QZPL7PRWOV AT N_DI4ZYJNWBV DID P_C6YN4OH55C GOT N_YMSLUU72YH EVIDENCE R_Q5SQ46K5AU",
+          "role": "user"
+        },
+        {
+          "content": "The event E_QZPL7PRWOV at N_DI4ZYJNWBV involved port P_C6YN4OH55C and resulted in location N_YMSLUU72YH with evidence R_Q5SQ46K5AU. This event shows that there is a path from N_DI4ZYJNWBV to the goal N_YMSLUU72YH. My expectation is that using port P_W5AV34RUCS will lead to N_DI4ZYJNWBV, which in turn will lead to the goal. I will now route through port P_W5AV34RUCS to check this expectation.\n\nROUTE P_W5AV34RUCS",
+          "role": "assistant"
+        }
+      ],
+      "parent_guidance_removed": true,
+      "target": "The event E_QZPL7PRWOV at N_DI4ZYJNWBV involved port P_C6YN4OH55C and resulted in location N_YMSLUU72YH with evidence R_Q5SQ46K5AU. This event shows that there is a path from N_DI4ZYJNWBV to the goal N_YMSLUU72YH. My expectation is that using port P_W5AV34RUCS will lead to N_DI4ZYJNWBV, which in turn will lead to the goal. I will now route through port P_W5AV34RUCS to check this expectation.\n\nROUTE P_W5AV34RUCS"
+    }
+  }
+]

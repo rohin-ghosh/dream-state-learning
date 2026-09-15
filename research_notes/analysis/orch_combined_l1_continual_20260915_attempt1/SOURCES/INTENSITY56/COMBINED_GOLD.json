@@ -1,0 +1,230 @@
+{
+  "gsm8k-train-4409": {
+    "status": "VALID",
+    "independent_answer": "342",
+    "reason": "15*24=360 tins; 5% of360 is18 damaged;360-18=342. Thrown-away tins are unambiguously excluded.",
+    "question_sha256": "12a4036a7db4424dbdb7109cc03d9394243eb9397d3d6d137dad3a7108c134c5",
+    "reader": "RICH-INTENSITY author, direct fulltext reading in this session; not independent audit"
+  },
+  "gsm8k-train-2624": {
+    "status": "VALID",
+    "independent_answer": "120",
+    "reason": "The discount amount40 is25% of original160; payment160-40=120. It is not a40-dollar final price.",
+    "question_sha256": "057835af292beee12799c787007bd651c7c871cb9084575e50ecbdb94706a140",
+    "reader": "RICH-INTENSITY author, direct fulltext reading in this session; not independent audit"
+  },
+  "gsm8k-train-1706": {
+    "status": "VALID",
+    "independent_answer": "26",
+    "reason": "400*.52=208 sports students;208*.125=26 soccer students. The second percentage applies to the subset, not all400.",
+    "question_sha256": "ca1d2c97c793aa28056c625eb92d3682b08689e55d86734fe9c115e94584e9aa",
+    "reader": "RICH-INTENSITY author, direct fulltext reading in this session; not independent audit"
+  },
+  "gsm8k-train-1043": {
+    "status": "VALID",
+    "independent_answer": "7200",
+    "reason": "The named costs2500+3500+2000 sum8000;10% discount leaves7200. The coach/couch spelling does not alter the numeric item price.",
+    "question_sha256": "988791cc6c41c27ec502c4f8ec4993d4bfac8b2fca1b47d1dda4dc5e64d84463",
+    "reader": "RICH-INTENSITY author, direct fulltext reading in this session; not independent audit"
+  },
+  "gsm8k-train-937": {
+    "status": "VALID",
+    "independent_answer": "35",
+    "reason": "A30% discount on50 subtracts15, leaving35; equivalent50*.70=35.",
+    "question_sha256": "3363140273555d981b82f6491393bc1e42a92d9499c138843e4023567d0bfe96",
+    "reader": "RICH-INTENSITY author, direct fulltext reading in this session; not independent audit"
+  },
+  "gsm8k-train-3654": {
+    "status": "VALID",
+    "independent_answer": "60",
+    "reason": "20 cows;50% more ducks than cows gives30; pigs are(20+30)/5=10; total60. Elliptical more-ducks comparison is to the stated cows.",
+    "question_sha256": "4694d492ab1b47833646ce4dedcc6be235af817be59ac230f8644ce5f427c466",
+    "reader": "RICH-INTENSITY author, direct fulltext reading in this session; not independent audit"
+  },
+  "gsm8k-train-1614": {
+    "status": "VALID",
+    "independent_answer": "6",
+    "reason": "Comparing equal out-and-back trips:2*5-2*2=6 hours saved. Symmetric stated route travel times are the normal interpretation of the round trip.",
+    "question_sha256": "8030442714589177ff6d472e7783758ae83808bd389e9249c75dc457d8e24c87",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-5181": {
+    "status": "AMBIGUOUS",
+    "independent_answer": "15 under continuous pursuit",
+    "reason": "Given moving speeds imply15*.5=7.5-mile lead,45-15=30mph closing,7.5/30=.25hours=15minutes, unlike stored gold10. School distance and whether Jenny has stopped are unspecified:10minutes could describe reaching a stationary Jenny7.5miles away, not the stated continuous-pursuit calculation. Keep original gold10/outcome failures, exclude suspect gold; no rescore or target repair.",
+    "question_sha256": "30e961c38dc7c49d00d4c254dbafe1fea63adb558ad20e2176974bfe6ea4dae5",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-971": {
+    "status": "VALID",
+    "independent_answer": "12",
+    "reason": "A third of30 is10 spent on junk food; another8spent leaves30-10-8=12. No uncertain quantity or currency conversion.",
+    "question_sha256": "f4e8e39f1a81fe7f1ecbdb23d15691b68b0957f6aaf6ee09afa5b08d739322cd",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-3164": {
+    "status": "VALID",
+    "independent_answer": "450",
+    "reason": "Initial stamps are half of the300 purchased, thus150; after purchase150+300=450. The 300-is-half-of-300 assertion in two NEW targets is false; it does not alter the source gold.",
+    "question_sha256": "9a788ca3bb92333adae6a971c968179a388c7d9fdc68b6a821b7d22d8e4c264e",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-5643": {
+    "status": "VALID",
+    "independent_answer": "130",
+    "reason": "Weekly vacuuming30*3=90minutes and dusting20*2=40minutes give130minutes total. Days need not be distinct for total activity time.",
+    "question_sha256": "16be8060964c956001354eff200c1207532048bb19cb6e5afd44d24619b8c1a9",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-6593": {
+    "status": "VALID",
+    "independent_answer": "420",
+    "reason": "Hypothetical passenger capacity per carriage25+10=35;4carriages/train and3trains give35*4*3=420passengers. Additional passenger capacity need not mean physical additional seats; this distinction does not change the numeric gold.",
+    "question_sha256": "c430910699f27858cb9dad15db0e7e7abbb4aa8dc741c398767cf347ee4115c6",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-3935": {
+    "status": "VALID",
+    "independent_answer": "65",
+    "reason": "Initial78; adopted30*.5+28*.25+20*.2=15+7+4=26; remaining52 plus13 new pets gives65. Monthly flows are applied to stated starting populations, the ordinary net-inventory reading; stored65 agrees.",
+    "question_sha256": "877742284f2b5eef68dd6ed46473f94178ce83699b86bdb986018fa01e6e05e4",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "fd249a14bc32b5bf9ccfdefb454781eae39d8565030edbc1c1a8cbde3bb34dac",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-4497": {
+    "status": "VALID",
+    "independent_answer": "420",
+    "reason": "30% fewer than40 is28 people. At the same stated feeding requirement per person,600/40=15 cans/person;28*15=420 (equivalently600*.70). Stored420 agrees.",
+    "question_sha256": "838728e3e1b7a2b03a7039d4beb4279037854312c368ba2768d9f7bb4e893592",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "f2c20741ea5d60f861d68dcf3dc2e9f92f233cfc556801bd05f758d6585b13ec",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-1080": {
+    "status": "VALID",
+    "independent_answer": "420",
+    "reason": "For the intended complementary men/women categories, women are100%-70%=30%.180/.30=600 students; .70*600=420 men, with420+180=600. Stored420 agrees.",
+    "question_sha256": "d28e969951f67f59c818c51ff8a1858b9af9a786031b171ee385fdb9ffa5cf4a",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "773e55882440ed33999742318c1808011879124c906eaef709008c2bceb6ef59",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-7332": {
+    "status": "VALID",
+    "independent_answer": "67500",
+    "reason": "Equal initial price45000/3=15000. The next piece is1.5*15000=22500, so all four cost45000+22500=67500. The comparison is to each equal-price initial piece, not their aggregate. Stored67500 agrees; no wire-output rescore.",
+    "question_sha256": "e8377784a84136d47f3e51fc1827237c945d2c81af225cdbb0dfed99bf006650",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "d91b99efea444a26263ae1cf316b60517330a262600067b17fdadadc3631a0ef",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-2401": {
+    "status": "VALID",
+    "independent_answer": "135",
+    "reason": "Escape1AM, noticed4AM, located two hours later6AM. First four running hours end5AM:4*25=100mi.5AM-6AM is one hour at10mph:10mi. Subsequent half-hour chase at50mph adds25mi;100+10+25=135. Ordinary continuous away-from-zoo trajectory is the narrative distance convention. Stored135 agrees; both generated timelines are wrong.",
+    "question_sha256": "aa664b7757ad7445321e93cd02270e4fae0a0df189074794768da5176a27bb65",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "9193fabe5bc28b419591cf715269449a7af968b2b66fe6624e437357a16d9c16",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-5338": {
+    "status": "VALID",
+    "independent_answer": "27",
+    "reason": "Separate work rates give4shirts/h*3h=12shirts and3pants/h*5h=15pants.12+15=27 clothing items. Stored27 agrees.",
+    "question_sha256": "6198c8bcc97f08ac9d3cc09e8ff3b373bc363b346af54c12f7d83ddbdd9fa7f4",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "bd20950ced618a9ea2f8107f1190943c42afb7ca99805e9938deab72dba74ae4",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-4691": {
+    "status": "AMBIGUOUS",
+    "independent_answer": "570 if 3x as long; 690 if 300% longer",
+    "reason": "The wording is \"three times longer than\". Common colloquial3x means24counter hours: (8+24+6)*15=570, the stored gold. Literal300% longer means8+3*8=32counter hours: (8+32+6)*15=690. No clarification chooses between these readings; conservatively unadmitted, without changing stored570 or any exact-oracle outcomes.",
+    "question_sha256": "581a3526bbc0ea13f2fa6b29a6ded81e11b2b55c52ec1d7a75c5bb5d36153bc5",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "e16581614de230438b787622371e6bdb74b80b812ec3d409a508b246fa170238",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-6580": {
+    "status": "VALID",
+    "independent_answer": "5",
+    "reason": "50h*100gal/h=5000gal. At1cent/10gal,5000/10=500cents, divided by100cents/dollar gives5 dollars. Stored5 agrees; a response's incorrect unit equation does not invalidate this unambiguous question.",
+    "question_sha256": "c02202ab744fd9da6141261a81728644375b1b1c4e14c9cd40cfb07ed2fbcdcb",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "7233c794aac31271e08ed7fa737808547e89ad8bf4eab683a8b606f8dfa97f46",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-4299": {
+    "status": "AMBIGUOUS",
+    "independent_answer": "(19/5)*t + 40 for t eggs/tray; 154 only if t=30",
+    "reason": "Tray capacity is never supplied. For t eggs/tray, Kelsey=.4t, Stephanie=.5t, Alayah=.9t+40, Willa=2t; total3.8t+40. Integral capacities20 and30 give116 and154, both compatible with the fractions; no unique numeric answer. Stored154 assumes30 and remains untouched; all responses unadmitted.",
+    "question_sha256": "cc14543725f488e3a77d45709f79dc3039faa1fec8d3381a518bdf26c74742b3",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "11f053d116a654dbe684a80eb545b9b305440d4199b8e6507886e63f18b50688",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-3341": {
+    "status": "AMBIGUOUS",
+    "independent_answer": "9500 if 2000 additional; 12000 if 2000 more than week2",
+    "reason": "Week2 unambiguously5000/2=2500. \"In the third week, 2000 more cases were recorded\" lacks an explicit comparison:2000 additional cases yields5000+2500+2000=9500 (stored gold);2000 more than week2 gives4500 then12000total. Conservative unresolved wording; no stored-gold rewrite or outcome rescore.",
+    "question_sha256": "595a975d73f8eba31db9d841743421b2bec5ca00819eaf6abed338bcc4de06bc",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "5504384ab57cddeab6d10af0e2629daf60e49383e9bcf11492f3dc4b77ad4bb5",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-3072": {
+    "status": "VALID",
+    "independent_answer": "29",
+    "reason": "Half of18 is9 lost;18-9=9 remaining. Add20 newly bought crayons:9+20=29. No rounding or hypothetical17crayons is needed. Stored29 agrees.",
+    "question_sha256": "45f5a34038da4bc5ffa4124fc1ef4eecef5cbdeee3c23311330439f836b72f49",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "7d128a075effa478a3bd576b743ae286dd8602ba2670aa62fe1fa08779e50930",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-6552": {
+    "status": "VALID",
+    "independent_answer": "18",
+    "reason": "Plum6; raspberry twice plum=12. Raspberry is one-third grape, so grape=36. Grape twice strawberry means strawberry=36/2=18. All three ratios recheck exactly; stored18 agrees.",
+    "question_sha256": "4313462c45c2767877e409d8bd6ab6828532166b66c4156c92522c3d95ce0aaa",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "1f1ef3404dd63bfb95eb0cc967e830e09b6f1ca94ea454ffe2a434098af39ea2",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-4678": {
+    "status": "VALID",
+    "independent_answer": "20000",
+    "reason": "Second showing has3*200=600ticketed attendances;200+600=800tickets across the two shows. At25each,800*25=20000 revenue, not profit or unique-person count. Stored20000 agrees.",
+    "question_sha256": "f48617cc0f6c2cc7d999cab6e0ca1e95f6bf0388a2e9188ef40eb077719a1cc6",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "283ea3ec0721fa2781ea9a1530b2f46ce3bf31c966b02d02bd0435e452906928",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-2040": {
+    "status": "AMBIGUOUS",
+    "independent_answer": "2 if each ate9; 6.5 if together ate9",
+    "reason": "Initial8+14=22slices. \"They have both eaten9slices already\" can distribute9to each person: (22-18)/2=2 (stored gold), or describe9jointly: (22-9)/2=6.5 each if shared equally. No explicit each/combined clarification; slices can be divided, so integer preference cannot establish the interpretation. Preserve stored2 and all call outcomes; no admission.",
+    "question_sha256": "aa11dac7e0fca457a7d9d5b4ed8c08ca1098ffdc1283dff795e98468661f4c51",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "d1e89a13a08c32204f973e419e3b9ceb862c95b74cdde95be93d4352b1e64df0",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-800": {
+    "status": "VALID",
+    "independent_answer": "3",
+    "reason": "3*2+2*3+2*1.5+2*1=6+6+3+2=17dollars.20-17=3change;17+3=20inverse check. No unspecified tax/tip is introduced. Stored3 agrees.",
+    "question_sha256": "e082aa06f09c2553992df0c231283a40d52628382b623f9c74928b710f3c9369",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "0458383352c0c0d9fb9a96dca7d31ab15a8b12c4aca4691de10924fa112b39c0",
+    "stored_gold_preserved": true
+  },
+  "gsm8k-train-1064": {
+    "status": "VALID",
+    "independent_answer": "1140",
+    "reason": "Monthly cost3geckos*15+2iguanas*5+4snakes*10=45+10+40=95dollars/month.12months*95=1140dollars/year; monthly rates are explicitly stated. Stored1140 agrees.",
+    "question_sha256": "e5156034b9ed1656ec16f4257bb1493b2a97d4fea2f1d9e4a5b694b57e9e576d",
+    "reader": "Current Codex author; independently recomputed arithmetic, NOT independent reviewer",
+    "packet_sha256": "3210c56c3872da34c75a61b3ab00996503876f5cbe33929e2dc754a0f4b509d2",
+    "stored_gold_preserved": true
+  }
+}

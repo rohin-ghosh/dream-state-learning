@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "family": "work_rates",
+  "gold": "125",
+  "messages": [
+    {
+      "content": "Solve in your own first-person voice. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "system"
+    },
+    {
+      "content": "For every 100 additional people that board a spaceship, its speed is halved. If the speed of the spaceship with 200 people on board is 500km per hour, what is its speed in km/hr when there are 400 people on board?",
+      "role": "user"
+    },
+    {
+      "content": "Given:\n- Speed with 200 people = 500 km/hr\n- For every 100 additional people, the speed is halved\n\nTo find:\n- Speed with 400 people on board\n\nFirst, let's identify the increase in the number of people:\n- From 200 to 400 people, there is an increase of 200 people.\n\nNext, we need to determine how many 100-person increments are in this increase:\n- 200 people / 100 people per increment = 2 increments\n\nSince the speed is halved for each 100 additional people, we need to halve the speed twice:\n- First halving: 500 km/hr / 2 = 250 km/hr\n- Second halving: 250 km/hr / 2 = 125 km/hr\n\nThus, the speed of the spaceship with 400 people on board is 125 km/hr.\n\nFINAL: 125",
+      "role": "assistant"
+    },
+    {
+      "content": "Evaluate the provisional conclusion in your preceding draft. Identify an uncertainty, alternative interpretation, or consequential step worth examining; select the one most useful to resolving this problem and follow it through. Concentrate the extra reasoning where it could change or substantively support your conclusion. Use what you find to retain or revise the final answer. Do not manufacture disagreement or branches merely to produce more text.\nFinish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "user"
+    }
+  ],
+  "position": 71,
+  "semantic_status": "UNREVIEWED",
+  "stage": "reconsider",
+  "started_unix": 1789444353.9057817,
+  "strategy": "SELF_EVALUATE",
+  "task_id": "gsm8k-train-4384",
+  "trainingAllowed": false
+}

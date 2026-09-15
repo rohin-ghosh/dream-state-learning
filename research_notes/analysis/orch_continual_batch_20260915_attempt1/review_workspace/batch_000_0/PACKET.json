@@ -1,0 +1,134 @@
+[
+  {
+    "gold": "320",
+    "question": "Nate is reading a 400-page book. He finished reading 20% of the book. How many pages does he need to read to finish the book?",
+    "raw_call_sha256": "af6f79471a248f787ce5bc32d372380ea3b5bbb332361b4eddbe278d846f1777",
+    "student_prefix": [
+      {
+        "content": "Nate is reading a 400-page book. He finished reading 20% of the book. How many pages does he need to read to finish the book?",
+        "role": "user"
+      },
+      {
+        "content": "Given: The book has 400 pages in total. Nate has read 20% of the book.\n\nFirst, calculate the number of pages Nate has already read:\n20% of 400 pages = 0.20 * 400 = 80 pages\n\nNext, to find out how many pages he still needs to read, subtract the pages he has read from the total number of pages:\n400 pages - 80 pages = 320 pages\n\nSo, Nate needs to read 320 pages to finish the book.\n\nFINAL: 320",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "0c6141c30e87e6e72777e99bd84d7ac1d8563cb41e9a995800042870f2fa3647",
+    "target": "Given: The book has 400 pages in total. Nate has read 20% of the book.\n\nThe unknown: How many pages does Nate need to read to finish the book?\n\nFirst, I identified that Nate has read 20% of the book. To find out how many pages he has read, I used the operation of calculating 20% of 400 pages:\n\\[ 0.20 \\times 400 = 80 \\text{ pages} \\]\n\nNext, to find out how many pages Nate still needs to read, I subtracted the pages he has already read from the total number of pages in the book:\n\\[ 400 - 80 = 320 \\text{ pages} \\]\n\nTo check the result, I considered that the total number of pages in the book is 400, and Nate has read 80 pages, so the remaining pages should be 320. This matches the calculation I performed.\n\nThe operation I would reuse is calculating the remaining pages by subtracting the read pages from the total pages, as this directly gives the number of pages left to read.\n\nFINAL: 320",
+    "target_sha256": "9b688b8c332aa7870a1643376b604391b661e67ee1525ba6deb3956f397220c7"
+  },
+  {
+    "gold": "86",
+    "question": "A class is 40% boys. The rest are girls. Every boy in class gets an 80% on the math test. Every girl gets a 90%. What is the class average on the test?",
+    "raw_call_sha256": "5103d1ce2909eb0bc48296538a9aeffd677734835ce613589c6de9fd0e16fcc2",
+    "student_prefix": [
+      {
+        "content": "A class is 40% boys. The rest are girls. Every boy in class gets an 80% on the math test. Every girl gets a 90%. What is the class average on the test?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- 40% of the class are boys.\n- The rest (60%) are girls.\n- Boys score 80% on the test.\n- Girls score 90% on the test.\n\nTo find the class average, we use the weighted average formula:\n\\[ \\text{Class Average} = (\\text{Percentage of Boys} \\times \\text{Boys' Score}) + (\\text{Percentage of Girls} \\times \\text{Girls' Score}) \\]\n\nSubstituting the given values:\n\\[ \\text{Class Average} = (0.40 \\times 80) + (0.60 \\times 90) \\]\n\nCalculating each term:\n\\[ 0.40 \\times 80 = 32 \\]\n\\[ 0.60 \\times 90 = 54 \\]\n\nAdding these together:\n\\[ 32 + 54 = 86 \\]\n\nSo, the class average on the test is 86.\n\nFINAL: 86",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "e51e15b80e5444fa85e1c325951a325f2797f5e754b6bdf350e41e4a95f54228",
+    "target": "I was given a problem where a class is 40% boys and the rest are girls. Every boy in the class gets an 80% on the math test, and every girl gets a 90%. The task was to find the class average on the test.\n\nFirst, I identified the given quantities:\n- 40% of the class are boys.\n- 60% of the class are girls.\n- Boys' score: 80%.\n- Girls' score: 90%.\n\nThe unknown I needed to find was the class average on the test.\n\nTo solve this, I decided to use the weighted average formula, which is a direct way to combine the scores based on their respective proportions in the class. The formula is:\n\\[ \\text{Class Average} = (\\text{Percentage of Boys} \\times \\text{Boys' Score}) + (\\text{Percentage of Girls} \\times \\text{Girls' Score}) \\]\n\nI substituted the given values into the formula:\n\\[ \\text{Class Average} = (0.40 \\times 80) + (0.60 \\times 90) \\]\n\nNext, I calculated each term:\n\\[ 0.40 \\times 80 = 32 \\]\n\\[ 0.60 \\times 90 = 54 \\]\n\nAdding these together:\n\\[ 32 + 54 = 86 \\]\n\nSo, the class average on the test is 86.\n\nTo check the result, I considered that the class average should logically be between the boys' and girls' scores, which it is (80 and 90). The calculation makes sense as it correctly weights the scores based on the proportion of boys and girls in the class.\n\nThe operation I would reuse is the weighted average formula whenever I need to find an average that takes into account the proportion of different groups contributing to the overall average.\n\nFINAL: 86",
+    "target_sha256": "b2982707651da0e515a605dce68ddbf0d3b0843836f79b378c756d0d5bf77c75"
+  },
+  {
+    "gold": "153",
+    "question": "Mr. Smith has incurred a 2% finance charge because he was not able to pay on time for his balance worth $150. If he plans to settle his balance today, how much will Mr. Smith pay?",
+    "raw_call_sha256": "f5cf95916540b3c3a6877995e35c427f0586084c8d3df891cb3f1bd0ed178480",
+    "student_prefix": [
+      {
+        "content": "Mr. Smith has incurred a 2% finance charge because he was not able to pay on time for his balance worth $150. If he plans to settle his balance today, how much will Mr. Smith pay?",
+        "role": "user"
+      },
+      {
+        "content": "First, we need to calculate the finance charge. The finance charge is 2% of the balance of $150. \n\n\\[ \\text{Finance Charge} = 150 \\times \\frac{2}{100} = 150 \\times 0.02 = 3 \\]\n\nSo, the finance charge is $3. \n\nNext, we add the finance charge to the original balance to find out the total amount Mr. Smith will pay.\n\n\\[ \\text{Total Amount} = \\text{Original Balance} + \\text{Finance Charge} = 150 + 3 = 153 \\]\n\nTherefore, Mr. Smith will pay $153.\n\nFINAL: 153",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "258f70e41575c8c1d9abc87e173215fe950e6dae7f70425b0c5f73c0601b7d0d",
+    "target": "Given that Mr. Smith has a balance of $150 and a 2% finance charge for not paying on time, I needed to determine the total amount he will pay if he settles his balance today. The key quantities are the original balance and the finance charge percentage.\n\nThe original balance is $150, and the finance charge is 2% of this balance. To find the finance charge, I used the formula for calculating a percentage of a number:\n\n\\[ \\text{Finance Charge} = \\text{Balance} \\times \\frac{\\text{Percentage}}{100} \\]\n\nSubstituting the given values:\n\n\\[ \\text{Finance Charge} = 150 \\times \\frac{2}{100} = 150 \\times 0.02 = 3 \\]\n\nSo, the finance charge is $3. To find the total amount Mr. Smith will pay, I added the finance charge to the original balance:\n\n\\[ \\text{Total Amount} = \\text{Balance} + \\text{Finance Charge} = 150 + 3 = 153 \\]\n\nTo check this result, I can recompute the finance charge and add it to the balance again. The finance charge is still 2% of $150, which is $3, and adding this to the original balance of $150 gives $153. This confirms that the total amount Mr. Smith will pay is indeed $153.\n\nThe operations I used are straightforward and reusable: calculating a percentage of a number and adding two numbers. I would reuse these operations whenever I need to calculate a finance charge or similar percentage-based charges.\n\nFINAL: 153",
+    "target_sha256": "7e3ff0a5ffa11a31ac607e6ce7605b0cb5f79b41f3a3638f70f146467f3c82c2"
+  },
+  {
+    "gold": "7200",
+    "question": "James decides to buy a living room set.  The coach cost $2500 and the sectional cost $3500 and everything else has a combined cost of $2000.  He gets a 10% discount on everything.  How much did he pay?",
+    "raw_call_sha256": "230839b00573b2a785e3f6837bc756128c2b45ab9b7e6f596433422ee8161f26",
+    "student_prefix": [
+      {
+        "content": "James decides to buy a living room set.  The coach cost $2500 and the sectional cost $3500 and everything else has a combined cost of $2000.  He gets a 10% discount on everything.  How much did he pay?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Coach cost: $2500\n- Sectional cost: $3500\n- Everything else cost: $2000\n- Total cost before discount: $2500 + $3500 + $2000 = $8000\n- Discount: 10%\n\nTo find the final cost after the discount, we calculate 10% of $8000 and subtract it from the total cost.\n\n10% of $8000 = 0.10 * $8000 = $800\n\nSo, the cost after the discount is $8000 - $800 = $7200.\n\nFINAL: 7200",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "f53f1282cd21460c14938b73dd88d2eda23cc2d99756471c6792ebedc8e6d1ba",
+    "target": "I was given the task to determine how much James paid for a living room set after a 10% discount. The quantities provided were:\n- Coach cost: $2500\n- Sectional cost: $3500\n- Everything else cost: $2000\n\nThe unknown was the total amount James paid after the discount. To solve this, I first calculated the total cost before the discount:\n\\[ \\text{Total cost before discount} = 2500 + 3500 + 2000 = 8000 \\]\n\nNext, I calculated the discount amount:\n\\[ \\text{Discount amount} = 10\\% \\text{ of } 8000 = 0.10 \\times 8000 = 800 \\]\n\nThen, I subtracted the discount amount from the total cost before the discount to find the final amount James paid:\n\\[ \\text{Total cost after discount} = 8000 - 800 = 7200 \\]\n\nTo check the result, I verified that the total cost before the discount was correctly calculated and that the discount was applied accurately. The final amount, $7200, matches the problem statement when the discount is applied.\n\nFINAL: 7200",
+    "target_sha256": "b9c319b8fb7a811d3b0df4fb9f7a7c2f50dee48ddb3ad2d9d5cd88250055ae5b"
+  },
+  {
+    "gold": "420",
+    "question": "Paddy's Confidential has 600 cans of stew required to feed 40 people. How many cans would be needed to feed 30% fewer people?",
+    "raw_call_sha256": "e7c1c835159c51ec831019007866487dcc63c93c89fc02401af7a430e3e74784",
+    "student_prefix": [
+      {
+        "content": "Paddy's Confidential has 600 cans of stew required to feed 40 people. How many cans would be needed to feed 30% fewer people?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- 600 cans of stew feed 40 people.\n\nFirst, calculate the number of people 30% fewer than 40:\n- 30% of 40 is \\(0.30 \\times 40 = 12\\).\n- So, 30% fewer people than 40 is \\(40 - 12 = 28\\).\n\nNext, determine the number of cans needed to feed 28 people. Since 600 cans feed 40 people, the number of cans per person is:\n- \\( \\frac{600}{40} = 15 \\) cans per person.\n\nNow, calculate the number of cans needed for 28 people:\n- \\( 28 \\times 15 = 420 \\) cans.\n\nFINAL: 420",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "e3b1464ad53018d80fd37bdb97af3bef378d062a8770234cd5cc18f2459c83ce",
+    "target": "Given the problem, I identified the following quantities:\n- 600 cans of stew feed 40 people.\n\nThe unknown I needed to find was the number of cans required to feed 30% fewer people. \n\nFirst, I calculated 30% fewer people than 40:\n- 30% of 40 is \\(0.30 \\times 40 = 12\\).\n- So, 30% fewer people than 40 is \\(40 - 12 = 28\\).\n\nNext, I determined the number of cans per person by dividing the total number of cans by the number of people:\n- \\( \\frac{600}{40} = 15 \\) cans per person.\n\nThen, I calculated the number of cans needed to feed 28 people:\n- \\( 28 \\times 15 = 420 \\) cans.\n\nTo check the result, I reasoned that if 600 cans feed 40 people, then 420 cans should feed 28 people, which is indeed 30% fewer people. The calculation is consistent with the problem statement.\n\nThe operation I would reuse is the calculation of the number of cans per person and then using that to find the number of cans for a different number of people. This is useful when scaling quantities based on a proportional relationship.\n\nFINAL: 420",
+    "target_sha256": "d35fd651cd432a54a64f99e50a92ed384fb14ccf2370fa694af240b6dfe588d3"
+  },
+  {
+    "gold": "270",
+    "question": "A group of hawks is called a kettle. It is breeding season for hawks. A group of ornithologists are tracking 6 kettles of hawks. Each kettle has an average of 15 pregnancies that yield 4 babies per batch.  How many babies are expected this season if approximately 25% are lost?",
+    "raw_call_sha256": "8312d1e0d6fe42d4789bce05f4cd35e9928e8ec59bff61b80266bd360eac1731",
+    "student_prefix": [
+      {
+        "content": "A group of hawks is called a kettle. It is breeding season for hawks. A group of ornithologists are tracking 6 kettles of hawks. Each kettle has an average of 15 pregnancies that yield 4 babies per batch.  How many babies are expected this season if approximately 25% are lost?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- 6 kettles of hawks\n- Each kettle has 15 pregnancies\n- Each pregnancy yields 4 babies\n- Approximately 25% of the babies are lost\n\nFirst, calculate the total number of pregnancies:\n6 kettles * 15 pregnancies per kettle = 90 pregnancies\n\nNext, calculate the total number of babies before any losses:\n90 pregnancies * 4 babies per pregnancy = 360 babies\n\nNow, calculate the number of babies lost:\n25% of 360 babies = 0.25 * 360 = 90 babies\n\nSubtract the lost babies from the total to find the expected number of babies:\n360 babies - 90 babies = 270 babies\n\nFINAL: 270",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "ef506d98c41f8ecaba052e2b0f0479661644999a5fd7b4896575ff57dcc9a14f",
+    "target": "I started with the given quantities: 6 kettles of hawks, 15 pregnancies per kettle, and 4 babies per pregnancy. The problem also mentioned that approximately 25% of the babies are lost. The unknown I needed to find was the number of babies expected this season after accounting for the losses.\n\nFirst, I calculated the total number of pregnancies:\n\\[ 6 \\text{ kettles} \\times 15 \\text{ pregnancies per kettle} = 90 \\text{ pregnancies} \\]\n\nNext, I calculated the total number of babies before any losses:\n\\[ 90 \\text{ pregnancies} \\times 4 \\text{ babies per pregnancy} = 360 \\text{ babies} \\]\n\nThen, I calculated the number of babies lost, which is 25% of the total number of babies:\n\\[ 0.25 \\times 360 \\text{ babies} = 90 \\text{ babies lost} \\]\n\nSubtracting the lost babies from the total number of babies gave me the expected number of babies:\n\\[ 360 \\text{ babies} - 90 \\text{ babies lost} = 270 \\text{ babies} \\]\n\nTo check the result, I verified that the operations were correctly applied and that the percentage loss was accurately calculated. The final answer should logically be the number of babies after accounting for the 25% loss, and the intermediate steps confirm this.\n\nThe operations I would reuse are the multiplication and subtraction, as they are directly applicable to similar problems involving totals and percentages. For example, if the number of kettles, pregnancies per kettle, or babies per pregnancy changes, I can use the same operations to find the expected number of babies.\n\nFINAL: 270",
+    "target_sha256": "d8a7d307e6fe1e784faf9cae2a77b5fde7ce09e97ed33e1b814efa7c7506fee6"
+  }
+]

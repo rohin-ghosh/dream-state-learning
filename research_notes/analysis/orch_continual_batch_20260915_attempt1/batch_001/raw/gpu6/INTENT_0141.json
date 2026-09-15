@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "family": "work_rates",
+  "gold": "8",
+  "messages": [
+    {
+      "content": "Solve in your own first-person voice. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "system"
+    },
+    {
+      "content": "A spaceship is traveling to another planet. The spaceship travels at a consistent speed its entire journey unless it is stopped for the crew\u2019s break. After launch, the spaceship traveled for 10 hours then stopped for 3 hours. It then traveled for another 10 hours then stopped for 1 hour. After this, the spaceship would take an hour\u2019s break after every 11 hours of traveling and maintained this routine until the end of its journey. If the entire journey took 3 days then how long, in hours, was the spaceship not moving?",
+      "role": "user"
+    },
+    {
+      "content": "Given:\n- The spaceship traveled for 10 hours, then stopped for 3 hours.\n- Then traveled for another 10 hours, then stopped for 1 hour.\n- After this, the spaceship would take a 1-hour break after every 11 hours of traveling.\n- The entire journey took 3 days (72 hours).\n\nFirst, calculate the initial part of the journey:\n- 10 hours of travel + 3 hours of break = 13 hours\n- 10 hours of travel + 1 hour of break = 11 hours\n\nTotal for the initial part: 13 + 11 = 24 hours\n\nThe remaining time for the journey is 72 - 24 = 48 hours.\n\nThe spaceship then follows a pattern of 11 hours of travel followed by 1 hour of break. We need to determine how many such cycles fit into the remaining 48 hours.\n\nEach cycle (11 hours of travel + 1 hour of break) = 12 hours.\nNumber of complete cycles in 48 hours: 48 / 12 = 4 cycles.\n\nEach cycle includes 1 hour of break, so for 4 cycles, the total break time is 4 hours.\n\nTotal break time: 3 (initial breaks) + 4 (additional breaks) = 7 hours.\n\nThe spaceship was not moving for 7 hours.\n\nFINAL: 7",
+      "role": "assistant"
+    },
+    {
+      "content": "Evaluate the provisional conclusion in your preceding draft. Identify an uncertainty, alternative interpretation, or consequential step worth examining; select the one most useful to resolving this problem and follow it through. Concentrate the extra reasoning where it could change or substantively support your conclusion. Use what you find to retain or revise the final answer. Do not manufacture disagreement or branches merely to produce more text.\nFinish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "user"
+    }
+  ],
+  "position": 70,
+  "semantic_status": "UNREVIEWED",
+  "stage": "reconsider",
+  "started_unix": 1789444332.8967555,
+  "strategy": "SELF_EVALUATE",
+  "task_id": "gsm8k-train-1246",
+  "trainingAllowed": false
+}

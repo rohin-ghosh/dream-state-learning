@@ -1,0 +1,552 @@
+[
+  {
+    "gold": "8000",
+    "question": "Three years ago, Rosie purchased an art piece for $4000. The same art piece will be three times as much in another three years. How much money will the art piece have increased by?",
+    "raw_call_sha256": "95f9469620ae3602c9a5c076abbbc11b7b296715a1afbd29cf3896f76001aa35",
+    "student_prefix": [
+      {
+        "content": "Three years ago, Rosie purchased an art piece for $4000. The same art piece will be three times as much in another three years. How much money will the art piece have increased by?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "3b5468df957b2516bcbc945e3fdb734aed1c3edf82ada3c51dec37a0256148c0",
+    "target_sha256": "4c43dd652ec2e63bd97cf6b754a04bac511f1625c34f3de169726adc3bcec433",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "To determine the increase in the value of the art piece, we need to follow these steps:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\n"
+      },
+      {
+        "line_id": 3,
+        "text": "1. **Determine the future value of the art piece:**\n"
+      },
+      {
+        "line_id": 4,
+        "text": "   - Three years ago, the art piece was purchased for $4000.\n"
+      },
+      {
+        "line_id": 5,
+        "text": "   - In another three years, the value of the art piece will be three times its current value.\n"
+      },
+      {
+        "line_id": 6,
+        "text": "   - The current value of the art piece is the value three years ago plus the increase over the past three years. Let's denote the current value as \\( V \\).\n"
+      },
+      {
+        "line_id": 7,
+        "text": "   - In another three years, the value will be \\( 3V \\).\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\n"
+      },
+      {
+        "line_id": 9,
+        "text": "2. **Set up the equation:**\n"
+      },
+      {
+        "line_id": 10,
+        "text": "   - The value in another three years is three times the current value.\n"
+      },
+      {
+        "line_id": 11,
+        "text": "   - Therefore, \\( 3V = 3 \\times 4000 \\).\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "3. **Solve for \\( V \\):**\n"
+      },
+      {
+        "line_id": 14,
+        "text": "   - \\( 3V = 12000 \\)\n"
+      },
+      {
+        "line_id": 15,
+        "text": "   - \\( V = \\frac{12000}{3} = 4000 \\times 3 = 12000 \\)\n"
+      },
+      {
+        "line_id": 16,
+        "text": "\n"
+      },
+      {
+        "line_id": 17,
+        "text": "4. **Calculate the increase in value:**\n"
+      },
+      {
+        "line_id": 18,
+        "text": "   - The current value \\( V \\) is $12000.\n"
+      },
+      {
+        "line_id": 19,
+        "text": "   - The original purchase price was $4000.\n"
+      },
+      {
+        "line_id": 20,
+        "text": "   - The increase in value is \\( 12000 - 4000 = 8000 \\).\n"
+      },
+      {
+        "line_id": 21,
+        "text": "\n"
+      },
+      {
+        "line_id": 22,
+        "text": "Thus, the art piece will have increased by $8000.\n"
+      },
+      {
+        "line_id": 23,
+        "text": "\n"
+      },
+      {
+        "line_id": 24,
+        "text": "FINAL: 8000"
+      }
+    ]
+  },
+  {
+    "gold": "25",
+    "question": "A rope has a length of 200 meters. Stefan cuts the rope into four equal parts, gives his mother half of the cut pieces, and subdivides the remaining pieces into two more equal parts. What's the length of each piece?",
+    "raw_call_sha256": "6c356620a62925e6b54f4015720b115749caf77128e8ea6d5f8dc93d99a2075d",
+    "student_prefix": [
+      {
+        "content": "A rope has a length of 200 meters. Stefan cuts the rope into four equal parts, gives his mother half of the cut pieces, and subdivides the remaining pieces into two more equal parts. What's the length of each piece?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "b13ab39287603cd24724144893a295d59418048554ed28fce3c40112a7ffd51d",
+    "target_sha256": "fbb21a28f22d05a11e7029aa0776ffedbfbdd71d80e3082aaa32ea4f40ecc2eb",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Total length of the rope: 200 meters\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Stefan cuts the rope into 4 equal parts\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- He gives his mother half of these pieces\n"
+      },
+      {
+        "line_id": 5,
+        "text": "- The remaining pieces are then each cut into 2 equal parts\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "First, calculate the length of each of the initial 4 equal parts:\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\\[ \\text{Length of each part} = \\frac{200 \\text{ meters}}{4} = 50 \\text{ meters} \\]\n"
+      },
+      {
+        "line_id": 9,
+        "text": "\n"
+      },
+      {
+        "line_id": 10,
+        "text": "Stefan gives his mother half of these 4 parts, so he gives her 2 parts. This leaves him with 2 parts.\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\n"
+      },
+      {
+        "line_id": 12,
+        "text": "Next, Stefan subdivides these 2 remaining parts into 2 equal parts each:\n"
+      },
+      {
+        "line_id": 13,
+        "text": "\\[ \\text{Length of each of the new parts} = \\frac{50 \\text{ meters}}{2} = 25 \\text{ meters} \\]\n"
+      },
+      {
+        "line_id": 14,
+        "text": "\n"
+      },
+      {
+        "line_id": 15,
+        "text": "Thus, the length of each piece after all the cuts is 25 meters.\n"
+      },
+      {
+        "line_id": 16,
+        "text": "\n"
+      },
+      {
+        "line_id": 17,
+        "text": "FINAL: 25"
+      }
+    ]
+  },
+  {
+    "gold": "12",
+    "question": "Karen packs peanut butter sandwiches in her daughter's lunch 2 randomly chosen days of the week. The other 3 school days, she packs a ham sandwich. She packs a piece of cake on one randomly chosen day and cookies the other four days. What is the probability, expressed as a percentage, that Karen packs a ham sandwich and cake on the same day?",
+    "raw_call_sha256": "66da2b1382c1eebfcd9e9327c8c44744652d1e17a9cd8982e387f8c4ddf60401",
+    "student_prefix": [
+      {
+        "content": "Karen packs peanut butter sandwiches in her daughter's lunch 2 randomly chosen days of the week. The other 3 school days, she packs a ham sandwich. She packs a piece of cake on one randomly chosen day and cookies the other four days. What is the probability, expressed as a percentage, that Karen packs a ham sandwich and cake on the same day?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "04632e6d3eded366f0d9fde1ca6117197fb01aaf69b452d326d58d6b1f25facd",
+    "target_sha256": "2c55d49b24716ec8a49df2bc991b2aef7db3a7c5495b5c2679d02cedc65e5c64",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Karen packs a peanut butter sandwich 2 out of 5 school days.\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- She packs a ham sandwich 3 out of 5 school days.\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- She packs a piece of cake 1 out of 5 school days.\n"
+      },
+      {
+        "line_id": 5,
+        "text": "- She packs cookies 4 out of 5 school days.\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "We need to find the probability that Karen packs a ham sandwich and a piece of cake on the same day.\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\n"
+      },
+      {
+        "line_id": 9,
+        "text": "First, let's identify the probability of packing a ham sandwich on any given day:\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\\[ P(\\text{Ham Sandwich}) = \\frac{3}{5} \\]\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\n"
+      },
+      {
+        "line_id": 12,
+        "text": "Next, the probability of packing a piece of cake on any given day:\n"
+      },
+      {
+        "line_id": 13,
+        "text": "\\[ P(\\text{Cake}) = \\frac{1}{5} \\]\n"
+      },
+      {
+        "line_id": 14,
+        "text": "\n"
+      },
+      {
+        "line_id": 15,
+        "text": "Since the events are independent, the probability of both events happening on the same day is the product of their individual probabilities:\n"
+      },
+      {
+        "line_id": 16,
+        "text": "\\[ P(\\text{Ham Sandwich and Cake}) = P(\\text{Ham Sandwich}) \\times P(\\text{Cake}) = \\frac{3}{5} \\times \\frac{1}{5} = \\frac{3}{25} \\]\n"
+      },
+      {
+        "line_id": 17,
+        "text": "\n"
+      },
+      {
+        "line_id": 18,
+        "text": "To express this probability as a percentage:\n"
+      },
+      {
+        "line_id": 19,
+        "text": "\\[ \\frac{3}{25} = 0.12 \\]\n"
+      },
+      {
+        "line_id": 20,
+        "text": "\\[ 0.12 \\times 100 = 12\\% \\]\n"
+      },
+      {
+        "line_id": 21,
+        "text": "\n"
+      },
+      {
+        "line_id": 22,
+        "text": "So, the probability that Karen packs a ham sandwich and a piece of cake on the same day is 12%.\n"
+      },
+      {
+        "line_id": 23,
+        "text": "\n"
+      },
+      {
+        "line_id": 24,
+        "text": "FINAL: 12"
+      }
+    ]
+  },
+  {
+    "gold": "10",
+    "question": "Alvin is 30 years old and Simon is 5 years away from being 1/2 the age of Alvin.  How old is Simon?",
+    "raw_call_sha256": "e52acbca1b0a22cb8a0dca3e11a0d07dea31a2d64f49301d3dbdb480309ad1f1",
+    "student_prefix": [
+      {
+        "content": "Alvin is 30 years old and Simon is 5 years away from being 1/2 the age of Alvin.  How old is Simon?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Alvin's age = 30 years\n- Simon is 5 years away from being half of Alvin's age\n\nFirst, calculate half of Alvin's age:\nHalf of Alvin's age = 30 / 2 = 15 years\n\nSince Simon is 5 years away from being 15 years old, we can set up the equation:\nSimon's age + 5 = 15\n\nNow, solve for Simon's age:\nSimon's age = 15 - 5 = 10 years\n\nCHECK: Simon is 10 years old, and in 5 years, he will be 15 years old, which is half of Alvin's current age of 30. This matches the problem statement.\n\nFINAL: 10",
+        "role": "assistant"
+      },
+      {
+        "content": "Reconsider your solution using the given problem. Explain any useful revision or check, then finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "f38a28e0203fe1ebd35e029ef694b97350b993acf3a90d0c02792fa28879931a",
+    "target_sha256": "19b509c53d171280f3aceaa098203fea5aa676c7dafeebba148a49473efd2346",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Alvin's age = 30 years\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Simon is 5 years away from being half of Alvin's age\n"
+      },
+      {
+        "line_id": 4,
+        "text": "\n"
+      },
+      {
+        "line_id": 5,
+        "text": "First, calculate half of Alvin's age:\n"
+      },
+      {
+        "line_id": 6,
+        "text": "Half of Alvin's age = 30 / 2 = 15 years\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\n"
+      },
+      {
+        "line_id": 8,
+        "text": "Since Simon is 5 years away from being 15 years old, we can set up the equation:\n"
+      },
+      {
+        "line_id": 9,
+        "text": "Simon's age + 5 = 15\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\n"
+      },
+      {
+        "line_id": 11,
+        "text": "Now, solve for Simon's age:\n"
+      },
+      {
+        "line_id": 12,
+        "text": "Simon's age = 15 - 5 = 10 years\n"
+      },
+      {
+        "line_id": 13,
+        "text": "\n"
+      },
+      {
+        "line_id": 14,
+        "text": "CHECK: Simon is 10 years old, and in 5 years, he will be 15 years old, which is half of Alvin's current age of 30. This matches the problem statement.\n"
+      },
+      {
+        "line_id": 15,
+        "text": "\n"
+      },
+      {
+        "line_id": 16,
+        "text": "However, let's consider an alternative interpretation: what if Simon is currently older than 10 years but will be 15 in 5 years? This would mean Simon is currently 10 years old, but the problem states he is \"5 years away from being 15,\" which aligns with him being 10 now.\n"
+      },
+      {
+        "line_id": 17,
+        "text": "\n"
+      },
+      {
+        "line_id": 18,
+        "text": "Given the straightforward interpretation and the problem's wording, the solution remains consistent.\n"
+      },
+      {
+        "line_id": 19,
+        "text": "\n"
+      },
+      {
+        "line_id": 20,
+        "text": "FINAL: 10"
+      }
+    ]
+  },
+  {
+    "gold": "15",
+    "question": "John buys 3 spools of wire that are 20 feet each.  It takes 4 feet to make a necklace.  How many necklaces can he make?",
+    "raw_call_sha256": "ed16d5300708c8b1775385538bd2c3e267d95309ce1b260edff120fb11ddc333",
+    "student_prefix": [
+      {
+        "content": "John buys 3 spools of wire that are 20 feet each.  It takes 4 feet to make a necklace.  How many necklaces can he make?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "8fd1a6e522dd02fa95d08847b8a19916634a4b5446ec7822dd40f74c6a5d57dd",
+    "target_sha256": "f79b038f79ad03205fc18859f28b3be146905947b1e5f028a0fd3c4fff8c3a40",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given: \n"
+      },
+      {
+        "line_id": 2,
+        "text": "- John buys 3 spools of wire.\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Each spool is 20 feet long.\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- It takes 4 feet of wire to make one necklace.\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\n"
+      },
+      {
+        "line_id": 6,
+        "text": "First, calculate the total length of wire John has:\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\\[ 3 \\text{ spools} \\times 20 \\text{ feet per spool} = 60 \\text{ feet} \\]\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\n"
+      },
+      {
+        "line_id": 9,
+        "text": "Next, determine how many necklaces can be made from 60 feet of wire:\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\\[ \\frac{60 \\text{ feet}}{4 \\text{ feet per necklace}} = 15 \\text{ necklaces} \\]\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\n"
+      },
+      {
+        "line_id": 12,
+        "text": "So, John can make 15 necklaces.\n"
+      },
+      {
+        "line_id": 13,
+        "text": "\n"
+      },
+      {
+        "line_id": 14,
+        "text": "FINAL: 15"
+      }
+    ]
+  },
+  {
+    "gold": "36",
+    "question": "Clive opens a box full of different colored balls.  \u2028The box contains 6 blue balls, 4 red balls, 3 times as many green balls as blue ones and twice as many yellow ones as red ones.  \u2028How many balls are in the box Clive opens?",
+    "raw_call_sha256": "3ae72bebeb80dd7035db814bf31a33ea259a2f782dbdeeae91bf9ddd77ab7c07",
+    "student_prefix": [
+      {
+        "content": "Clive opens a box full of different colored balls.  \u2028The box contains 6 blue balls, 4 red balls, 3 times as many green balls as blue ones and twice as many yellow ones as red ones.  \u2028How many balls are in the box Clive opens?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "20cef1ce0cc57465659645d212bd43b4486a18c6648ac5e2e365cb2763eebd0e",
+    "target_sha256": "3678b19979179664852dd1c466ced83ecdb95fccb95ef561834fb2517542d120",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "First, let's identify the quantities of each color of ball:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Blue balls: 6\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Red balls: 4\n"
+      },
+      {
+        "line_id": 5,
+        "text": "- Green balls: 3 times as many as blue balls, so \\(3 \\times 6 = 18\\)\n"
+      },
+      {
+        "line_id": 6,
+        "text": "- Yellow balls: Twice as many as red balls, so \\(2 \\times 4 = 8\\)\n"
+      },
+      {
+        "line_id": 7,
+        "text": "\n"
+      },
+      {
+        "line_id": 8,
+        "text": "Now, we sum these quantities to find the total number of balls in the box:\n"
+      },
+      {
+        "line_id": 9,
+        "text": "\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\\[6 \\text{ (blue)} + 4 \\text{ (red)} + 18 \\text{ (green)} + 8 \\text{ (yellow)} = 36\\]\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\n"
+      },
+      {
+        "line_id": 12,
+        "text": "The total number of balls in the box is 36.\n"
+      },
+      {
+        "line_id": 13,
+        "text": "\n"
+      },
+      {
+        "line_id": 14,
+        "text": "FINAL: 36"
+      }
+    ]
+  }
+]

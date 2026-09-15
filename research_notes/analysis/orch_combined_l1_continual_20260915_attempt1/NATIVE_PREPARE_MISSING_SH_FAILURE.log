@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/source/gpu/orch_combined_l1_continual_run.py", line 306, in <module>
+    prepare(options.root)
+  File "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/source/gpu/orch_combined_l1_continual_run.py", line 67, in prepare
+    common.portable.read_manifest(prior['bundle'], expected_manifest_sha256=BUNDLE_SHA)
+  File "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/source/gpu/astra_portable_actor_bundle.py", line 104, in read_manifest
+    require(manifest['source_contract'] == contract(), 'import_source_contract_drift')
+                                           ^^^^^^^^^^
+  File "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/source/gpu/astra_portable_actor_bundle.py", line 25, in contract
+    return dict(exporter_sha256=source.file_hash(__file__), helpers=collector.helpers(),
+                                                                    ^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/source/gpu/astra_goal_breadth_collection.py", line 35, in helpers
+    guard=source.file_hash(Path(__file__).with_name('astra_goal_breadth_collection_guard.sh')),
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/source/gpu/astra_experienced_event_microloop.py", line 44, in file_hash
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/source/gpu/astra_goal_breadth_collection_guard.sh'

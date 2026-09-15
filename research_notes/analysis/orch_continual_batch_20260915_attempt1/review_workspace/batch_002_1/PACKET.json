@@ -1,0 +1,86 @@
+[
+  {
+    "gold": "180",
+    "question": "Joe had 200 data points on his dataset. He then added 20% more data points to the dataset. If he reduced the data points by 1/4 of the total data points, calculate the total number of data points the dataset contains.",
+    "raw_call_sha256": "a5d180b1c320be454179c569aae4077c563d1d17c83d88f83e040c463064b271",
+    "student_prefix": [
+      {
+        "content": "Joe had 200 data points on his dataset. He then added 20% more data points to the dataset. If he reduced the data points by 1/4 of the total data points, calculate the total number of data points the dataset contains.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "410c18d89130901975f997ccf8e9e0e88ce565e4dda429d8e9410a3d4f457a3b",
+    "target": "Given:\n- Initial data points: 200\n- Additional data points added: 20% of 200\n- Reduction: 1/4 of the total data points after addition\n\nFirst, calculate the additional data points:\n20% of 200 = 0.20 * 200 = 40\n\nNow, the total data points after adding the new ones:\n200 + 40 = 240\n\nNext, calculate the reduction:\n1/4 of 240 = 240 / 4 = 60\n\nFinally, subtract the reduced data points from the total:\n240 - 60 = 180\n\nFINAL: 180",
+    "target_sha256": "aa759caa5fdbec70b66cc11bfcd947e5c03a89116b5f3bafeb5b329dd1c35a70"
+  },
+  {
+    "gold": "60000",
+    "question": "Nigella is a realtor who earns a base salary of $3,000 a month plus a 2% commission on every house she sells. One month, Nigella sells 3 houses and earns $8,000 total. House B costs three times as much as House A. House C cost twice as much as House A minus $110,000. How much did House A cost?",
+    "raw_call_sha256": "4d7e85e0e8b6b5e9d73d8d8cbb0ff0a1cf7b917a6d179f73dbccca28b9bda3e0",
+    "student_prefix": [
+      {
+        "content": "Nigella is a realtor who earns a base salary of $3,000 a month plus a 2% commission on every house she sells. One month, Nigella sells 3 houses and earns $8,000 total. House B costs three times as much as House A. House C cost twice as much as House A minus $110,000. How much did House A cost?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "4e7236c65cc7206d5e580554017101eca883ed6e277dc02e53fca4d922c58506",
+    "target": "First, let's establish the total earnings equation for Nigella. Her total earnings for the month are $8,000, which includes her base salary of $3,000 plus a 2% commission on the total value of the houses she sold. Therefore, the commission earned is $8,000 - $3,000 = $5,000.\n\nLet the cost of House A be \\( x \\). Then, the cost of House B is \\( 3x \\), and the cost of House C is \\( 2x - 110,000 \\).\n\nThe total value of the houses sold is \\( x + 3x + (2x - 110,000) = 6x - 110,000 \\). Since the commission is 2% of the total value, we can set up the equation:\n\\[ 0.02(6x - 110,000) = 5,000 \\]\n\nNow, solve for \\( x \\):\n\\[ 0.02(6x - 110,000) = 5,000 \\]\n\\[ 6x - 110,000 = \\frac{5,000}{0.02} \\]\n\\[ 6x - 110,000 = 250,000 \\]\n\\[ 6x = 360,000 \\]\n\\[ x = 60,000 \\]\n\nSo, the cost of House A is \\( \\boxed{60000} \\).\n\nFINAL: 60000",
+    "target_sha256": "a7ec83f04fbb1e501c56e0ea0f322e58038029cc139246f61e8d592e9cf1351f"
+  },
+  {
+    "gold": "12",
+    "question": "John buys 5 toys that each cost $3.  He gets a 20% discount.  How much did he pay for everything?",
+    "raw_call_sha256": "4f0095b140abbd99606d31ef0af4f6bf04265ed1c4d6fc20a61f74871f393d39",
+    "student_prefix": [
+      {
+        "content": "John buys 5 toys that each cost $3.  He gets a 20% discount.  How much did he pay for everything?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "32b0a44a9cb968d2c9fbc6d0747e497a10d4b633674f78ac05334ca904c78de2",
+    "target": "Given: John buys 5 toys, each costing $3, with a 20% discount.\n\nFirst, calculate the total cost before the discount:\n5 toys * $3/toy = $15\n\nNext, calculate the discount amount:\n20% of $15 = 0.20 * $15 = $3\n\nSubtract the discount from the total cost to find the final amount paid:\n$15 - $3 = $12\n\nFINAL: 12",
+    "target_sha256": "e17f6ace0d07e843aa6ac2d33dff55557f58275356c7caf87859595ed38f1a55"
+  },
+  {
+    "gold": "375",
+    "question": "A factory manufactures cars with 5 doors. The factory was planning to produce 200 cars but due to metal shortages, they decreased the production by 50 cars. Due to a pandemic, they also had to cut production by another 50%. How many doors will the factory produce?",
+    "raw_call_sha256": "f0c6aa14b1514d0d56bf0fa5840750be058a59d105a53c1975a49437d49a1620",
+    "student_prefix": [
+      {
+        "content": "A factory manufactures cars with 5 doors. The factory was planning to produce 200 cars but due to metal shortages, they decreased the production by 50 cars. Due to a pandemic, they also had to cut production by another 50%. How many doors will the factory produce?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "455a0d59689595588f75ecf44fb85309a68b10b0779fb3623945fe5801523827",
+    "target": "Given:\n- Each car has 5 doors.\n- Initial planned production: 200 cars.\n- Reduction due to metal shortages: 50 cars.\n- Further reduction due to pandemic: 50% of the remaining cars.\n\nFirst, calculate the production after the metal shortage:\n200 cars - 50 cars = 150 cars.\n\nNext, calculate the production after the pandemic reduction:\n150 cars * 50% = 150 cars * 0.5 = 75 cars.\n\nNow, calculate the total number of doors produced:\n75 cars * 5 doors per car = 375 doors.\n\nFINAL: 375",
+    "target_sha256": "a123fb5e1b80044b4dd8e4745058f63f3d605942b5fa135df7f6a02470837d23"
+  },
+  {
+    "gold": "225",
+    "question": "Jane brings 75% as many pieces of bread as treats to feed the live pets at the zoo. Wanda brings half as many treats as Jane and three times as many pieces of bread as treats. If Wanda brings 90 pieces of bread, what is the total number of pieces of bread and treats that Wanda and Jane brought to the zoo?",
+    "raw_call_sha256": "438e190c9b39430e2474d9975401c335ba3519e7ad6b22575ccf47dcfff70740",
+    "student_prefix": [
+      {
+        "content": "Jane brings 75% as many pieces of bread as treats to feed the live pets at the zoo. Wanda brings half as many treats as Jane and three times as many pieces of bread as treats. If Wanda brings 90 pieces of bread, what is the total number of pieces of bread and treats that Wanda and Jane brought to the zoo?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "536eeba3416aca3c2679cc8d83d4033f1778d649b7434801554d337e643604e3",
+    "target": "Given:\n- Wanda brings 90 pieces of bread.\n- Wanda brings three times as many pieces of bread as treats.\n- Wanda brings half as many treats as Jane.\n- Jane brings 75% as many pieces of bread as treats.\n\nFirst, let's find out how many treats Wanda brings. Since Wanda brings three times as many pieces of bread as treats, and she brings 90 pieces of bread, we can set up the equation:\n\\[ \\text{Number of treats Wanda brings} = \\frac{90}{3} = 30 \\]\n\nNext, we know Wanda brings half as many treats as Jane, so:\n\\[ \\text{Number of treats Jane brings} = 30 \\times 2 = 60 \\]\n\nNow, we need to find out how many pieces of bread Jane brings. Since Jane brings 75% as many pieces of bread as treats, and she brings 60 treats, we can calculate:\n\\[ \\text{Number of pieces of bread Jane brings} = 60 \\times 0.75 = 45 \\]\n\nNow, we can find the total number of pieces of bread and treats that Wanda and Jane brought to the zoo:\n\\[ \\text{Total pieces of bread} = 90 + 45 = 135 \\]\n\\[ \\text{Total treats} = 30 + 60 = 90 \\]\n\\[ \\text{Total number of pieces of bread and treats} = 135 + 90 = 225 \\]\n\nFINAL: 225",
+    "target_sha256": "efcecdd3beb69ca5d28f41a36a1f59058bd8a5516ce1d1f0baf9234e2810320b"
+  },
+  {
+    "gold": "360",
+    "question": "Tom uses 10 weight plates each weighing 30 pounds on an exercise machine.  This exercise machine uses special technology to make the weights 20% heavier on the lowering portion.  How heavy did the weights feel when being lowered?",
+    "raw_call_sha256": "171ceeea275307604eb7c7f64451fa7a0486aa21b8fb39bf4bbef1ffc2801d00",
+    "student_prefix": [
+      {
+        "content": "Tom uses 10 weight plates each weighing 30 pounds on an exercise machine.  This exercise machine uses special technology to make the weights 20% heavier on the lowering portion.  How heavy did the weights feel when being lowered?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "b402499e72b933bcb04a0215f463cae419dde2f60515e19a85779976f59ebfa2",
+    "target": "Given:\n- Tom uses 10 weight plates.\n- Each plate weighs 30 pounds.\n- The machine makes the weights 20% heavier on the lowering portion.\n\nFirst, calculate the total weight of the plates:\n\\[ 10 \\text{ plates} \\times 30 \\text{ pounds/plate} = 300 \\text{ pounds} \\]\n\nNext, determine the additional weight due to the 20% increase:\n\\[ 300 \\text{ pounds} \\times 0.20 = 60 \\text{ pounds} \\]\n\nAdd this additional weight to the original weight to find the total weight felt during the lowering portion:\n\\[ 300 \\text{ pounds} + 60 \\text{ pounds} = 360 \\text{ pounds} \\]\n\nFINAL: 360",
+    "target_sha256": "6bf2307803616b7ed2321a0f26a9d0aa08a7e7b3937c4bcd008ecee167a5c5d2"
+  }
+]

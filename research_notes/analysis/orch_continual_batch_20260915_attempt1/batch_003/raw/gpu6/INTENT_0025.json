@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "family": "percentages",
+  "gold": "86",
+  "messages": [
+    {
+      "content": "Solve in your own first-person voice. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "system"
+    },
+    {
+      "content": "A class is 40% boys. The rest are girls. Every boy in class gets an 80% on the math test. Every girl gets a 90%. What is the class average on the test?",
+      "role": "user"
+    },
+    {
+      "content": "Given:\n- 40% of the class are boys.\n- The rest (60%) are girls.\n- Boys score 80% on the test.\n- Girls score 90% on the test.\n\nTo find the class average, we use the weighted average formula:\n\\[ \\text{Class Average} = (\\text{Percentage of Boys} \\times \\text{Boys' Score}) + (\\text{Percentage of Girls} \\times \\text{Girls' Score}) \\]\n\nSubstituting the given values:\n\\[ \\text{Class Average} = (0.40 \\times 80) + (0.60 \\times 90) \\]\n\nCalculating each term:\n\\[ 0.40 \\times 80 = 32 \\]\n\\[ 0.60 \\times 90 = 54 \\]\n\nAdding these together:\n\\[ 32 + 54 = 86 \\]\n\nSo, the class average on the test is 86.\n\nFINAL: 86",
+      "role": "assistant"
+    },
+    {
+      "content": "Evaluate the provisional conclusion in your preceding draft. Identify an uncertainty, alternative interpretation, or consequential step worth examining; select the one most useful to resolving this problem and follow it through. Concentrate the extra reasoning where it could change or substantively support your conclusion. Use what you find to retain or revise the final answer. Do not manufacture disagreement or branches merely to produce more text.\nFinish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "user"
+    }
+  ],
+  "position": 12,
+  "semantic_status": "UNREVIEWED",
+  "stage": "reconsider",
+  "started_unix": 1789443081.1220133,
+  "strategy": "SELF_EVALUATE",
+  "task_id": "gsm8k-train-5145",
+  "trainingAllowed": false
+}

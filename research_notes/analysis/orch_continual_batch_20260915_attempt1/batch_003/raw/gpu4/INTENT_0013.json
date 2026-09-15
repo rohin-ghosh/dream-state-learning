@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "family": "percentages",
+  "gold": "65",
+  "messages": [
+    {
+      "content": "Solve in your own first-person voice. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "system"
+    },
+    {
+      "content": "Karen works at an animal shelter with 30 dogs, 28 cats, and 20 lizards. Every month, 50% of the dogs are adopted, 25% of the cats are adopted, and 20% of lizards are adopted. If the shelter takes in 13 new pets a month, how many pets are there after one month?",
+      "role": "user"
+    },
+    {
+      "content": "Given:\n- Initial number of dogs: 30\n- Initial number of cats: 28\n- Initial number of lizards: 20\n\nAdoption rates:\n- 50% of dogs are adopted each month\n- 25% of cats are adopted each month\n- 20% of lizards are adopted each month\n\nNew pets taken in each month: 13\n\nFirst, calculate the number of pets adopted:\n- Dogs adopted: \\(30 \\times 0.50 = 15\\)\n- Cats adopted: \\(28 \\times 0.25 = 7\\)\n- Lizards adopted: \\(20 \\times 0.20 = 4\\)\n\nNext, calculate the remaining number of each type of pet after adoptions:\n- Remaining dogs: \\(30 - 15 = 15\\)\n- Remaining cats: \\(28 - 7 = 21\\)\n- Remaining lizards: \\(20 - 4 = 16\\)\n\nAdd the new pets taken in:\n- Total new pets: 13\n\nFinally, sum the remaining pets and the new pets:\n- Total pets after one month: \\(15 + 21 + 16 + 13 = 65\\)\n\nFINAL: 65",
+      "role": "assistant"
+    },
+    {
+      "content": "The final value passed the exact-answer checker. Write your own reusable record as an autobiographical account of how you solved this task, rather than instructions to another solver. Describe the evidence you actually used, the operation you chose and why, what you expected its result to mean, and the concrete check you made or can make from this problem. Explain which operation you would reuse and when. Distinguish given facts from your assumptions; do not claim observations you did not make. Retain its final answer. Solve in your own first-person voice, using as much useful reasoning as needed. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "user"
+    }
+  ],
+  "position": 6,
+  "semantic_status": "UNREVIEWED",
+  "stage": "new_record",
+  "started_unix": 1789442975.1263645,
+  "strategy": "ORIGINAL_RICH",
+  "task_id": "gsm8k-train-3935",
+  "trainingAllowed": false
+}

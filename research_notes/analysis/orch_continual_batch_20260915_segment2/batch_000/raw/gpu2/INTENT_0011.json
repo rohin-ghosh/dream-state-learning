@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "family": "percentages",
+  "gold": "60",
+  "messages": [
+    {
+      "content": "Solve in your own first-person voice. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "system"
+    },
+    {
+      "content": "Philip has a farm with animals. He has 20 cows, 50% more ducks. Philip also has as many pigs as one-fifth of ducks and cows in total. How many animals does Philip have on his farm?",
+      "role": "user"
+    },
+    {
+      "content": "Given:\n- Philip has 20 cows.\n- He has 50% more ducks than cows.\n- He has as many pigs as one-fifth of the total number of ducks and cows.\n\nFirst, calculate the number of ducks:\n- 50% more ducks than cows means \\(20 \\times 1.5 = 30\\) ducks.\n\nNext, calculate the total number of cows and ducks:\n- Total of cows and ducks = \\(20 + 30 = 50\\).\n\nNow, calculate the number of pigs:\n- Philip has as many pigs as one-fifth of the total number of cows and ducks, so \\(50 \\div 5 = 10\\) pigs.\n\nFinally, calculate the total number of animals:\n- Total animals = cows + ducks + pigs = \\(20 + 30 + 10 = 60\\).\n\nFINAL: 60",
+      "role": "assistant"
+    },
+    {
+      "content": "The final value passed the exact-answer checker. Write your own reusable record as an autobiographical account of how you solved this task, rather than instructions to another solver. Describe the evidence you actually used, the operation you chose and why, what you expected its result to mean, and the concrete check you made or can make from this problem. Explain which operation you would reuse and when. Distinguish given facts from your assumptions; do not claim observations you did not make. Retain its final answer. Solve in your own first-person voice, using as much useful reasoning as needed. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "user"
+    }
+  ],
+  "position": 5,
+  "semantic_status": "UNREVIEWED",
+  "stage": "new_record",
+  "started_unix": 1789443247.5997062,
+  "strategy": "ORIGINAL_RICH",
+  "task_id": "gsm8k-train-3654",
+  "trainingAllowed": false
+}

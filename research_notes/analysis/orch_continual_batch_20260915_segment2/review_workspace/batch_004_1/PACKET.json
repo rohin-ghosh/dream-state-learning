@@ -1,0 +1,552 @@
+[
+  {
+    "gold": "65",
+    "question": "Andrew installed hardwood flooring in his house. His bedroom took eight wooden planks, his living room took twenty planks, and his kitchen took eleven planks. The guest bedroom took two fewer planks than Andrew\u2019s bedroom, and each of his two hallways took four planks. He accidentally ruined three planks in each bedroom by dragging furniture over them and had to replace them. He ended up with six leftover planks at the end. How many wooden planks did Andrew buy to start with?",
+    "raw_call_sha256": "537d39ccadf617a34dde6cd46cf8179d9993385ba7bdfb83451b15160c5f37dc",
+    "student_prefix": [
+      {
+        "content": "Andrew installed hardwood flooring in his house. His bedroom took eight wooden planks, his living room took twenty planks, and his kitchen took eleven planks. The guest bedroom took two fewer planks than Andrew\u2019s bedroom, and each of his two hallways took four planks. He accidentally ruined three planks in each bedroom by dragging furniture over them and had to replace them. He ended up with six leftover planks at the end. How many wooden planks did Andrew buy to start with?",
+        "role": "user"
+      },
+      {
+        "content": "Given quantities:\n- Bedroom: 8 planks\n- Living room: 20 planks\n- Kitchen: 11 planks\n- Guest bedroom: 8 - 2 = 6 planks\n- Hallway 1: 4 planks\n- Hallway 2: 4 planks\n- Ruined planks in each bedroom: 3 planks (2 bedrooms, so 3 * 2 = 6 planks)\n- Leftover planks: 6\n\nCalculations:\n1. Total planks used initially: 8 (bedroom) + 20 (living room) + 11 (kitchen) + 6 (guest bedroom) + 4 (hallway 1) + 4 (hallway 2) = 53 planks\n2. Planks ruined and replaced: 6 planks\n3. Total planks Andrew bought: 53 (initially used) + 6 (replaced) + 6 (leftover) = 65 planks\n\nFINAL: 65",
+        "role": "assistant"
+      },
+      {
+        "content": "Reconsider your solution using the given problem. Explain any useful revision or check, then finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "6ce5c0dc7140cb022662f64afa115a04b8b423aacdcc88edd298665081dda991",
+    "target_sha256": "21b295d1617ad517137f8ba1cb86634f9930213077465081c4b9753ab006965f",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given quantities:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Bedroom: 8 planks\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Living room: 20 planks\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Kitchen: 11 planks\n"
+      },
+      {
+        "line_id": 5,
+        "text": "- Guest bedroom: 8 - 2 = 6 planks\n"
+      },
+      {
+        "line_id": 6,
+        "text": "- Hallway 1: 4 planks\n"
+      },
+      {
+        "line_id": 7,
+        "text": "- Hallway 2: 4 planks\n"
+      },
+      {
+        "line_id": 8,
+        "text": "- Ruined planks in each bedroom: 3 planks (2 bedrooms, so 3 * 2 = 6 planks)\n"
+      },
+      {
+        "line_id": 9,
+        "text": "- Leftover planks: 6\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\n"
+      },
+      {
+        "line_id": 11,
+        "text": "Calculations:\n"
+      },
+      {
+        "line_id": 12,
+        "text": "1. Total planks used initially: 8 (bedroom) + 20 (living room) + 11 (kitchen) + 6 (guest bedroom) + 4 (hallway 1) + 4 (hallway 2) = 53 planks\n"
+      },
+      {
+        "line_id": 13,
+        "text": "2. Planks ruined and replaced: 6 planks\n"
+      },
+      {
+        "line_id": 14,
+        "text": "3. Total planks Andrew bought: 53 (initially used) + 6 (replaced) + 6 (leftover) = 65 planks\n"
+      },
+      {
+        "line_id": 15,
+        "text": "\n"
+      },
+      {
+        "line_id": 16,
+        "text": "The uncertainty here is whether the 6 leftover planks include the 6 planks that were replaced due to damage. If the leftover planks do not include the replaced planks, then the calculation would be:\n"
+      },
+      {
+        "line_id": 17,
+        "text": "- Total planks used initially: 53\n"
+      },
+      {
+        "line_id": 18,
+        "text": "- Planks replaced due to damage: 6\n"
+      },
+      {
+        "line_id": 19,
+        "text": "- Actual planks bought: 53 + 6 = 59\n"
+      },
+      {
+        "line_id": 20,
+        "text": "\n"
+      },
+      {
+        "line_id": 21,
+        "text": "However, since the problem states that he ended up with 6 leftover planks, it implies that these 6 are in addition to the 53 planks used, including the 6 replaced planks. Therefore, the initial calculation is correct.\n"
+      },
+      {
+        "line_id": 22,
+        "text": "\n"
+      },
+      {
+        "line_id": 23,
+        "text": "FINAL: 65"
+      }
+    ]
+  },
+  {
+    "gold": "2500",
+    "question": "Mr. Lalande inherited 20,000 euros from his old aunt Adeline. He is very happy because he will be able to afford the car of his dreams, a superb car worth 18000 \u20ac. He goes to the dealership and tries the car. He decides to take it, but instead of paying for everything right away, he chooses to pay in several installments. He pays 3,000 euros to be able to leave with the car and the seller offers to let him pay the rest in 6 monthly installments. How much does Mr. Lalande have to pay every month?",
+    "raw_call_sha256": "a0d3a89e37368d973c6661ad8bc5d601eb853e386e683befac50ff489a7c2bf9",
+    "student_prefix": [
+      {
+        "content": "Mr. Lalande inherited 20,000 euros from his old aunt Adeline. He is very happy because he will be able to afford the car of his dreams, a superb car worth 18000 \u20ac. He goes to the dealership and tries the car. He decides to take it, but instead of paying for everything right away, he chooses to pay in several installments. He pays 3,000 euros to be able to leave with the car and the seller offers to let him pay the rest in 6 monthly installments. How much does Mr. Lalande have to pay every month?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "fa0b356d282f5995f71f672298f379229d885c7289db16515408125c930a3a8f",
+    "target_sha256": "efa361479562d4da5186c2842c0c2c03b09fb68ef5c2b26a5abfe18777902653",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "First, we need to determine the total amount Mr. Lalande still owes after his initial payment. The car costs 18,000 euros, and he has already paid 3,000 euros. Therefore, the remaining amount is:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\\[ 18,000 - 3,000 = 15,000 \\text{ euros} \\]\n"
+      },
+      {
+        "line_id": 3,
+        "text": "\n"
+      },
+      {
+        "line_id": 4,
+        "text": "Next, we need to find out how much he has to pay each month if he pays the remaining 15,000 euros in 6 equal monthly installments. We do this by dividing the remaining amount by the number of installments:\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\\[ \\frac{15,000}{6} = 2,500 \\text{ euros per month} \\]\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "Thus, Mr. Lalande has to pay 2,500 euros every month.\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\n"
+      },
+      {
+        "line_id": 9,
+        "text": "FINAL: 2500"
+      }
+    ]
+  },
+  {
+    "gold": "65",
+    "question": "Andrew installed hardwood flooring in his house. His bedroom took eight wooden planks, his living room took twenty planks, and his kitchen took eleven planks. The guest bedroom took two fewer planks than Andrew\u2019s bedroom, and each of his two hallways took four planks. He accidentally ruined three planks in each bedroom by dragging furniture over them and had to replace them. He ended up with six leftover planks at the end. How many wooden planks did Andrew buy to start with?",
+    "raw_call_sha256": "a3e6a9accc3ba05fa2a98cf5761687558eba61e83c643de1bff799df01133fe5",
+    "student_prefix": [
+      {
+        "content": "Andrew installed hardwood flooring in his house. His bedroom took eight wooden planks, his living room took twenty planks, and his kitchen took eleven planks. The guest bedroom took two fewer planks than Andrew\u2019s bedroom, and each of his two hallways took four planks. He accidentally ruined three planks in each bedroom by dragging furniture over them and had to replace them. He ended up with six leftover planks at the end. How many wooden planks did Andrew buy to start with?",
+        "role": "user"
+      },
+      {
+        "content": "Given quantities:\n- Bedroom: 8 planks\n- Living room: 20 planks\n- Kitchen: 11 planks\n- Guest bedroom: 8 - 2 = 6 planks\n- Hallway 1: 4 planks\n- Hallway 2: 4 planks\n- Ruined planks in each bedroom: 3 planks (2 bedrooms, so 3 * 2 = 6 planks)\n- Leftover planks: 6\n\nCalculations:\n1. Total planks used initially: 8 (bedroom) + 20 (living room) + 11 (kitchen) + 6 (guest bedroom) + 4 (hallway 1) + 4 (hallway 2) = 53 planks\n2. Planks ruined and replaced: 6 planks\n3. Total planks Andrew bought: 53 (initially used) + 6 (replaced) + 6 (leftover) = 65 planks\n\nFINAL: 65",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable account of this solution and its checks. Finish with a separate FINAL: numeric answer.",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "a6dfcc9f071d7d0d3496732857e1d7a085b0e73e77c9caab5fb9c5b6576c84af",
+    "target_sha256": "7b9136864b497e75855178663b0b18132eede37ecf868aa0f6425fa8a490dd55",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given quantities:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Bedroom: 8 planks\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Living room: 20 planks\n"
+      },
+      {
+        "line_id": 4,
+        "text": "- Kitchen: 11 planks\n"
+      },
+      {
+        "line_id": 5,
+        "text": "- Guest bedroom: 8 - 2 = 6 planks\n"
+      },
+      {
+        "line_id": 6,
+        "text": "- Hallway 1: 4 planks\n"
+      },
+      {
+        "line_id": 7,
+        "text": "- Hallway 2: 4 planks\n"
+      },
+      {
+        "line_id": 8,
+        "text": "- Ruined planks in each bedroom: 3 planks (2 bedrooms, so 3 * 2 = 6 planks)\n"
+      },
+      {
+        "line_id": 9,
+        "text": "- Leftover planks: 6\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\n"
+      },
+      {
+        "line_id": 11,
+        "text": "Calculations:\n"
+      },
+      {
+        "line_id": 12,
+        "text": "1. Total planks used initially: 8 (bedroom) + 20 (living room) + 11 (kitchen) + 6 (guest bedroom) + 4 (hallway 1) + 4 (hallway 2) = 53 planks\n"
+      },
+      {
+        "line_id": 13,
+        "text": "2. Planks ruined and replaced: 6 planks\n"
+      },
+      {
+        "line_id": 14,
+        "text": "3. Total planks Andrew bought: 53 (initially used) + 6 (replaced) + 6 (leftover) = 65 planks\n"
+      },
+      {
+        "line_id": 15,
+        "text": "\n"
+      },
+      {
+        "line_id": 16,
+        "text": "To verify, let's break it down:\n"
+      },
+      {
+        "line_id": 17,
+        "text": "- Initial planks used: 8 + 20 + 11 + 6 + 4 + 4 = 53\n"
+      },
+      {
+        "line_id": 18,
+        "text": "- Planks ruined and replaced: 3 (bedroom 1) + 3 (bedroom 2) = 6\n"
+      },
+      {
+        "line_id": 19,
+        "text": "- Total planks bought: 53 + 6 + 6 = 65\n"
+      },
+      {
+        "line_id": 20,
+        "text": "\n"
+      },
+      {
+        "line_id": 21,
+        "text": "The calculations are consistent with the problem statement.\n"
+      },
+      {
+        "line_id": 22,
+        "text": "\n"
+      },
+      {
+        "line_id": 23,
+        "text": "FINAL: 65"
+      }
+    ]
+  },
+  {
+    "gold": "25",
+    "question": "A rope has a length of 200 meters. Stefan cuts the rope into four equal parts, gives his mother half of the cut pieces, and subdivides the remaining pieces into two more equal parts. What's the length of each piece?",
+    "raw_call_sha256": "7d6847cdc9db26bcf9f4377a572b421c40bfdfc79aaffa2435a1a4ac3c4eed70",
+    "student_prefix": [
+      {
+        "content": "A rope has a length of 200 meters. Stefan cuts the rope into four equal parts, gives his mother half of the cut pieces, and subdivides the remaining pieces into two more equal parts. What's the length of each piece?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "b13ab39287603cd24724144893a295d59418048554ed28fce3c40112a7ffd51d",
+    "target_sha256": "fe6009fd145d52a89972db2ff9daec00597fd29315882acd81aeda9d95f71b85",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "First, Stefan cuts the rope into four equal parts. Each part is:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\\[ \\frac{200 \\text{ meters}}{4} = 50 \\text{ meters} \\]\n"
+      },
+      {
+        "line_id": 3,
+        "text": "\n"
+      },
+      {
+        "line_id": 4,
+        "text": "He gives his mother half of these pieces, which means he gives her 2 pieces. The remaining pieces are:\n"
+      },
+      {
+        "line_id": 5,
+        "text": "\\[ 4 - 2 = 2 \\text{ pieces} \\]\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "Stefan then subdivides these 2 pieces into two more equal parts each. So, each of these new pieces is:\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\\[ \\frac{50 \\text{ meters}}{2} = 25 \\text{ meters} \\]\n"
+      },
+      {
+        "line_id": 9,
+        "text": "\n"
+      },
+      {
+        "line_id": 10,
+        "text": "Thus, the length of each piece after all the cuts is 25 meters.\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\n"
+      },
+      {
+        "line_id": 12,
+        "text": "FINAL: 25"
+      }
+    ]
+  },
+  {
+    "gold": "5",
+    "question": "In mid-May, the depth of a river in Moreland is measured. By mid-June, the river is 10 feet deeper than mid-May. By mid-July, the river is three times deeper than mid-June. If the river is 45 feet deep in mid-July, how many feet deep was the river in mid-May?",
+    "raw_call_sha256": "109ea9de809d2dae1d512a54a8c76048a947ec5318d88b18892983a76dc1470b",
+    "student_prefix": [
+      {
+        "content": "In mid-May, the depth of a river in Moreland is measured. By mid-June, the river is 10 feet deeper than mid-May. By mid-July, the river is three times deeper than mid-June. If the river is 45 feet deep in mid-July, how many feet deep was the river in mid-May?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "1c940e92c9ceac0d9cdaf1594ea7c7d2021de1c31f2394efe884e2978afd3b48",
+    "target_sha256": "5baf71af7db75c7ebea9252230af5ca5da7054a27f5bc7fb6628f35c618c967c",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Let's denote the depth of the river in mid-May as \\( x \\) feet.\n"
+      },
+      {
+        "line_id": 2,
+        "text": "\n"
+      },
+      {
+        "line_id": 3,
+        "text": "By mid-June, the river is 10 feet deeper than in mid-May, so the depth in mid-June is \\( x + 10 \\) feet.\n"
+      },
+      {
+        "line_id": 4,
+        "text": "\n"
+      },
+      {
+        "line_id": 5,
+        "text": "By mid-July, the river is three times deeper than in mid-June, so the depth in mid-July is \\( 3 \\times (x + 10) \\) feet.\n"
+      },
+      {
+        "line_id": 6,
+        "text": "\n"
+      },
+      {
+        "line_id": 7,
+        "text": "We know the depth in mid-July is 45 feet. Therefore, we can set up the equation:\n"
+      },
+      {
+        "line_id": 8,
+        "text": "\\[ 3 \\times (x + 10) = 45 \\]\n"
+      },
+      {
+        "line_id": 9,
+        "text": "\n"
+      },
+      {
+        "line_id": 10,
+        "text": "To find \\( x \\), we first divide both sides of the equation by 3:\n"
+      },
+      {
+        "line_id": 11,
+        "text": "\\[ x + 10 = 15 \\]\n"
+      },
+      {
+        "line_id": 12,
+        "text": "\n"
+      },
+      {
+        "line_id": 13,
+        "text": "Next, we subtract 10 from both sides:\n"
+      },
+      {
+        "line_id": 14,
+        "text": "\\[ x = 5 \\]\n"
+      },
+      {
+        "line_id": 15,
+        "text": "\n"
+      },
+      {
+        "line_id": 16,
+        "text": "So, the depth of the river in mid-May was 5 feet.\n"
+      },
+      {
+        "line_id": 17,
+        "text": "\n"
+      },
+      {
+        "line_id": 18,
+        "text": "Let's verify the solution:\n"
+      },
+      {
+        "line_id": 19,
+        "text": "- In mid-May, the river is 5 feet deep.\n"
+      },
+      {
+        "line_id": 20,
+        "text": "- By mid-June, the river is \\( 5 + 10 = 15 \\) feet deep.\n"
+      },
+      {
+        "line_id": 21,
+        "text": "- By mid-July, the river is \\( 3 \\times 15 = 45 \\) feet deep, which matches the given information.\n"
+      },
+      {
+        "line_id": 22,
+        "text": "\n"
+      },
+      {
+        "line_id": 23,
+        "text": "The solution is correct. The depth of the river in mid-May was 5 feet.\n"
+      },
+      {
+        "line_id": 24,
+        "text": "\n"
+      },
+      {
+        "line_id": 25,
+        "text": "FINAL: 5"
+      }
+    ]
+  },
+  {
+    "gold": "18",
+    "question": "On Blacks, Martha goes to the mall to buy clothes on sale. For every 2 jackets she buys, she gets 1 free jacket. For every 3 t-shirts she buys, she gets 1 free t-shirt. Martha decides to buy 4 jackets and 9 t-shirts. How many clothes will she take home?",
+    "raw_call_sha256": "44f071089674e92abf19e9c77a5f68d4d81e644466047904d1ddc78a98983965",
+    "student_prefix": [
+      {
+        "content": "On Blacks, Martha goes to the mall to buy clothes on sale. For every 2 jackets she buys, she gets 1 free jacket. For every 3 t-shirts she buys, she gets 1 free t-shirt. Martha decides to buy 4 jackets and 9 t-shirts. How many clothes will she take home?",
+        "role": "user"
+      }
+    ],
+    "student_prefix_sha256": "6c84371d7535dfe5616396660f52d804321857fd91cfd4b8c47080d6e07b5037",
+    "target_sha256": "1bd24da67a5a1f27190bb29b3db8eed8b867e598e8d2a9af6629a40b40fbb646",
+    "target_source_lines": [
+      {
+        "line_id": 1,
+        "text": "Given:\n"
+      },
+      {
+        "line_id": 2,
+        "text": "- Martha buys 4 jackets and gets 1 free jacket for every 2 jackets bought.\n"
+      },
+      {
+        "line_id": 3,
+        "text": "- Martha buys 9 t-shirts and gets 1 free t-shirt for every 3 t-shirts bought.\n"
+      },
+      {
+        "line_id": 4,
+        "text": "\n"
+      },
+      {
+        "line_id": 5,
+        "text": "For jackets:\n"
+      },
+      {
+        "line_id": 6,
+        "text": "- Martha buys 4 jackets.\n"
+      },
+      {
+        "line_id": 7,
+        "text": "- For every 2 jackets bought, she gets 1 free jacket.\n"
+      },
+      {
+        "line_id": 8,
+        "text": "- Therefore, she gets 4 / 2 = 2 free jackets.\n"
+      },
+      {
+        "line_id": 9,
+        "text": "- Total jackets = 4 (bought) + 2 (free) = 6 jackets.\n"
+      },
+      {
+        "line_id": 10,
+        "text": "\n"
+      },
+      {
+        "line_id": 11,
+        "text": "For t-shirts:\n"
+      },
+      {
+        "line_id": 12,
+        "text": "- Martha buys 9 t-shirts.\n"
+      },
+      {
+        "line_id": 13,
+        "text": "- For every 3 t-shirts bought, she gets 1 free t-shirt.\n"
+      },
+      {
+        "line_id": 14,
+        "text": "- Therefore, she gets 9 / 3 = 3 free t-shirts.\n"
+      },
+      {
+        "line_id": 15,
+        "text": "- Total t-shirts = 9 (bought) + 3 (free) = 12 t-shirts.\n"
+      },
+      {
+        "line_id": 16,
+        "text": "\n"
+      },
+      {
+        "line_id": 17,
+        "text": "Total clothes = 6 jackets + 12 t-shirts = 18 clothes.\n"
+      },
+      {
+        "line_id": 18,
+        "text": "\n"
+      },
+      {
+        "line_id": 19,
+        "text": "FINAL: 18"
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "family": "percentages",
+  "gold": "100000",
+  "messages": [
+    {
+      "content": "Solve in your own first-person voice. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "system"
+    },
+    {
+      "content": "Tommy's home is worth 25% more than he bought it for. He sells it and buys a new house that costs $500,000. If he had to take a loan for the 75% he can't pay, how much did he buy his first house for?",
+      "role": "user"
+    },
+    {
+      "content": "Given:\n- Tommy's home is now worth 25% more than what he bought it for.\n- He sells this home and buys a new one for $500,000.\n- He takes a loan for 75% of the new house's cost, meaning he pays 25% of the new house's cost.\n\nLet's denote the price Tommy bought his first house for as \\( x \\).\n\nSince the home is now worth 25% more than what he bought it for, the current value of the home is \\( 1.25x \\).\n\nHe sells this home and uses the proceeds to buy a new house for $500,000. He pays 25% of the new house's cost, which means he pays \\( 0.25 \\times 500,000 = 125,000 \\).\n\nSo, the equation for the sale price of his first home is:\n\\[ 1.25x = 125,000 \\]\n\nTo find \\( x \\), we solve the equation:\n\\[ x = \\frac{125,000}{1.25} \\]\n\\[ x = 100,000 \\]\n\nSo, Tommy bought his first house for $100,000.\n\nFINAL: 100000",
+      "role": "assistant"
+    },
+    {
+      "content": "Evaluate the provisional conclusion in your preceding draft. Identify an uncertainty, alternative interpretation, or consequential step worth examining; select the one most useful to resolving this problem and follow it through. Concentrate the extra reasoning where it could change or substantively support your conclusion. Use what you find to retain or revise the final answer. Do not manufacture disagreement or branches merely to produce more text.\nFinish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "user"
+    }
+  ],
+  "position": 42,
+  "semantic_status": "UNREVIEWED",
+  "stage": "reconsider",
+  "started_unix": 1789443717.3417528,
+  "strategy": "SELF_EVALUATE",
+  "task_id": "gsm8k-train-3022",
+  "trainingAllowed": false
+}

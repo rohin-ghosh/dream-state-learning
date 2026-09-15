@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "family": "percentages",
+  "gold": "16000",
+  "messages": [
+    {
+      "content": "Solve in your own first-person voice. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "system"
+    },
+    {
+      "content": "Three towns, Toadon, Gordonia, and Lake Bright, have 80000 people. Gordonia has 1/2 times the total population in the three cities. If the population of Toadon is 60 percent of Gordonia's population, how many people live in Lake Bright?",
+      "role": "user"
+    },
+    {
+      "content": "Given:\n- Total population of the three towns: 80,000\n- Gordonia's population is 1/2 of the total population\n- Toadon's population is 60% of Gordonia's population\n\nFirst, calculate Gordonia's population:\n\\[ \\text{Gordonia's population} = \\frac{1}{2} \\times 80,000 = 40,000 \\]\n\nNext, calculate Toadon's population:\n\\[ \\text{Toadon's population} = 0.60 \\times 40,000 = 24,000 \\]\n\nNow, find the population of Lake Bright by subtracting the populations of Toadon and Gordonia from the total population:\n\\[ \\text{Lake Bright's population} = 80,000 - 40,000 - 24,000 = 16,000 \\]\n\nFINAL: 16000",
+      "role": "assistant"
+    },
+    {
+      "content": "Evaluate the provisional conclusion in your preceding draft. Identify an uncertainty, alternative interpretation, or consequential step worth examining; select the one most useful to resolving this problem and follow it through. Concentrate the extra reasoning where it could change or substantively support your conclusion. Use what you find to retain or revise the final answer. Do not manufacture disagreement or branches merely to produce more text.\nFinish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "user"
+    }
+  ],
+  "position": 55,
+  "semantic_status": "UNREVIEWED",
+  "stage": "reconsider",
+  "started_unix": 1789443966.4671438,
+  "strategy": "SELF_EVALUATE",
+  "task_id": "gsm8k-train-4077",
+  "trainingAllowed": false
+}

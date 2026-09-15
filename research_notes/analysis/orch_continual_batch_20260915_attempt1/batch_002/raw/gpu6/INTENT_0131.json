@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "family": "work_rates",
+  "gold": "10",
+  "messages": [
+    {
+      "content": "Solve in your own first-person voice. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "system"
+    },
+    {
+      "content": "Jenny leaves her house at 8:00 with some cupcakes for her daughter's birthday party at school. She jogs to the school at 15 miles per hour. Half an hour later, her wife Anna realizes that Jenny used peanut butter frosting because she forgot one of the kids in the class had a severe peanut allergy. Jenny doesn't have her cell phone, so Anna leaves the house driving at 45 miles her hour to catch Jenny and warn her. How long does Anna spend traveling in minutes?",
+      "role": "user"
+    },
+    {
+      "content": "Given:\n- Jenny jogs at 15 miles per hour.\n- Anna drives at 45 miles per hour.\n- Jenny leaves at 8:00.\n- Anna leaves half an hour later, at 8:30.\n\nFirst, calculate how far Jenny has jogged by the time Anna leaves:\n- Jenny's speed: 15 miles per hour.\n- Time: 0.5 hours (30 minutes).\n- Distance jogged by Jenny: \\( 15 \\text{ miles/hour} \\times 0.5 \\text{ hours} = 7.5 \\text{ miles} \\).\n\nNext, determine the relative speed at which Anna is catching up to Jenny:\n- Anna's speed: 45 miles per hour.\n- Jenny's speed: 15 miles per hour.\n- Relative speed: \\( 45 \\text{ miles/hour} - 15 \\text{ miles/hour} = 30 \\text{ miles/hour} \\).\n\nNow, calculate the time it takes for Anna to catch up to Jenny:\n- Distance to catch up: 7.5 miles.\n- Relative speed: 30 miles per hour.\n- Time to catch up: \\( \\frac{7.5 \\text{ miles}}{30 \\text{ miles/hour}} = 0.25 \\text{ hours} \\).\n\nConvert the time from hours to minutes:\n- 0.25 hours \\( \\times 60 \\text{ minutes/hour} = 15 \\text{ minutes} \\).\n\nFINAL: 15",
+      "role": "assistant"
+    },
+    {
+      "content": "Evaluate the provisional conclusion in your preceding draft. Identify an uncertainty, alternative interpretation, or consequential step worth examining; select the one most useful to resolving this problem and follow it through. Concentrate the extra reasoning where it could change or substantively support your conclusion. Use what you find to retain or revise the final answer. Do not manufacture disagreement or branches merely to produce more text.\nFinish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "user"
+    }
+  ],
+  "position": 65,
+  "semantic_status": "UNREVIEWED",
+  "stage": "reconsider",
+  "started_unix": 1789444213.573902,
+  "strategy": "SELF_EVALUATE",
+  "task_id": "gsm8k-train-5181",
+  "trainingAllowed": false
+}

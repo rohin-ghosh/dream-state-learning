@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "family": "percentages",
+  "gold": "60000",
+  "messages": [
+    {
+      "content": "Solve this problem in your own voice. Think expansively where it matters: explore the considerations that could change the answer and concentrate on the most consequential uncertainty. Evaluate your provisional conclusion and pursue the most useful question or check it raises. Let the evidence determine how far each branch deserves to go. Use the available space for useful reasoning, not padding or repetition; do not invent facts or observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "system"
+    },
+    {
+      "content": "Nigella is a realtor who earns a base salary of $3,000 a month plus a 2% commission on every house she sells. One month, Nigella sells 3 houses and earns $8,000 total. House B costs three times as much as House A. House C cost twice as much as House A minus $110,000. How much did House A cost?",
+      "role": "user"
+    },
+    {
+      "content": "First, let's establish the total earnings equation for Nigella. Her total earnings for the month are $8,000, which includes her base salary of $3,000 plus a 2% commission on the total value of the houses she sold. Therefore, the commission earned is $8,000 - $3,000 = $5,000.\n\nLet the cost of House A be \\( x \\). Then, the cost of House B is \\( 3x \\), and the cost of House C is \\( 2x - 110,000 \\).\n\nThe total value of the houses sold is \\( x + 3x + (2x - 110,000) = 6x - 110,000 \\). Since the commission is 2% of the total value, we can set up the equation:\n\\[ 0.02(6x - 110,000) = 5,000 \\]\n\nNow, solve for \\( x \\):\n\\[ 0.02(6x - 110,000) = 5,000 \\]\n\\[ 6x - 110,000 = \\frac{5,000}{0.02} \\]\n\\[ 6x - 110,000 = 250,000 \\]\n\\[ 6x = 360,000 \\]\n\\[ x = 60,000 \\]\n\nSo, the cost of House A is \\( \\boxed{60000} \\).\n\nFINAL: 60000",
+      "role": "assistant"
+    },
+    {
+      "content": "The final value passed the exact-answer checker. Write your own reusable record as an autobiographical account of how you solved this task, rather than instructions to another solver. Describe the evidence you actually used, the operation you chose and why, what you expected its result to mean, and the concrete check you made or can make from this problem. Explain which operation you would reuse and when. Distinguish given facts from your assumptions; do not claim observations you did not make. Retain its final answer. Solve in your own first-person voice, using as much useful reasoning as needed. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+      "role": "user"
+    }
+  ],
+  "position": 31,
+  "semantic_status": "UNREVIEWED",
+  "stage": "new_record",
+  "started_unix": 1789443997.6091263,
+  "strategy": "LIGHT_BRANCH",
+  "task_id": "gsm8k-train-6368",
+  "trainingAllowed": false
+}
