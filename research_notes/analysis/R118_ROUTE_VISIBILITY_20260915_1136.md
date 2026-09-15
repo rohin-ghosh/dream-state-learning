@@ -63,5 +63,22 @@ rather than call every route readout rich or every route readout protocol-only.
 Visible token use is measurable; latent reasoning cannot be inferred from a bare
 command, and no semantic behaviour score is imputed where the output lacks evidence.
 
-F2/F3 readout field-level checks are assigned to their owners; this route audit
-does not claim those checks have completed.
+## F2 and F3 storage checks
+
+Subsequent owner checks verified full decoded DEV continuations, not only extracted
+final answers. These checks establish storage fidelity, not reasoning quality.
+
+- F2: `lane1/readouts/cycle_005/CALL_0145.json` under the posted math root.
+  Native capture SHA256 `e655a87ae81a4f0e477b26e823030a0b161a3f1f211906e67e8da5016d1109a7`;
+  `response.raw` contains 706 UTF-8 bytes, `response.token_ids` contains 283 tokens
+  including EOS. Independent CPU decoding of saved tokens reproduces the exact
+  stored text; no model load or new GPU call. Parent-free and excluded from sleep.
+  Receipt: `research_notes/analysis/orch_math_feedback_uptake_r118_delivery_20260915_attempt1/DEV_VISIBILITY_1136.json`.
+- F3: `reservations/R012_DEV_DEV_7.json` under the posted code F3 root.
+  Native capture SHA256 `c4980f1273e16ef4f99be252de772731fe367885d9609a9fa8b3c4f8388bfb26`;
+  `response.raw` contains 95 UTF-8 bytes, `response.token_ids` contains 41 tokens
+  including EOS. The native driver stores the full continuation before scoring;
+  no final-answer extraction replaces it. Parent-invisible and excluded from sleep.
+  Receipt: `research_notes/analysis/orch_r108_code_parent_r115_20260915_attempt1/DEV_VISIBILITY_1137.json`.
+
+Neither check read FINAL. Neither establishes access to hidden thoughts.

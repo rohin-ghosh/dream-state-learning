@@ -1211,3 +1211,5 @@ Main exclusion handoff: native R108_EXCLUSION_REGISTRY.json in the above root; S
 
 
 - [Builder] 2026-09-15T09:59:29.333561+00:00 v2 prospective node5 matchedpairs:0/4 route Poincare;1/5 math Anscombe;2/6 code Cicero;3/7 grid Laplace (first=Fable,second=Astra). Existing4/5/6 handoff atcycleend ONLY; do not launchreceiverbeforeownrelease. Hubble buildsClaudeVMbroker; Mainsharedjudge. Zero new v2 provider/GPU launches claimed.
+
+- [Builder GRID R118 node3_5 recovery allocation] 2026-09-15T11:33:17.172881+00:00: retain/recover own node3 physical5 UUID GPU-bc211959-642d-664b-3581-42a0dbe434e9 after confirmed oldnative1312675/guard1305262 exited FAILED11:21:51 (partial parent JSON). Same original R109 root/corpus/prompt/cadences/memory and 1858native/298parent lifetime caps (1015/46 alreadycharged), native16:57/hard17:02UTC, lease1789689600 unchanged. No freshlife/quota/reset/otherGPUtouch. New scoped CPUreplay+atomicbrokerrepair and fresh fullprivilegedUUID/CVD admission BEFORE recoverylaunch; no Mainackwait. Node3_6 existingresident untouched; node3_7 notowned.
