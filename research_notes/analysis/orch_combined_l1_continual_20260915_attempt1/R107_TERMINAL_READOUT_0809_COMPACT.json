@@ -1,0 +1,293 @@
+{
+  "observed_unix": 1789459726.646963,
+  "checkpoint_update": 8932,
+  "seam": {
+    "calls_remaining": 416,
+    "checkpoint_paths": {
+      "FULL": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000008932",
+      "OFF": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/checkpoints/000008932"
+    },
+    "independent_capability_calls": 0,
+    "time_unix": 1789459394.4782956,
+    "update": 8932
+  },
+  "seam_sha256": "420c500fa91c7eb794401915edb74b9b116323317bc68ce6d70731e65d274d60",
+  "allocation": {
+    "allocated_unix": 1789459394.4796903,
+    "checkpoint_sha256": {
+      "FULL": "e4122dd6f760431fabfd106a7fdd1f6c06b52fe3a16012f0ba865eb2df88bb51",
+      "OFF": "e66d91669c8784e744229b4e55beca0f6863daf9ad94afd77ded47a389839460"
+    },
+    "deadline_unix": 1789461374.4796736,
+    "devices": [
+      2,
+      3,
+      6
+    ],
+    "jobs": [
+      [
+        "FULL",
+        "math"
+      ],
+      [
+        "OFF",
+        "math"
+      ],
+      [
+        "FULL",
+        "route"
+      ],
+      [
+        "OFF",
+        "route"
+      ],
+      [
+        "FULL",
+        "legacy"
+      ],
+      [
+        "OFF",
+        "legacy"
+      ]
+    ],
+    "math0_1_untouched": true,
+    "maximum_calls": 416,
+    "own_training_suspended_at_durable_checkpoint": true,
+    "phase": "TERMINAL",
+    "queue_policy": "mathFULL,mathOFF,routeFULL,routeOFF,legacyFULL,legacyOFF; next free identical A100",
+    "update": 8932
+  },
+  "allocation_sha256": "3c8d228b9a0faf6c47a2e3f91f2d955c4239a6f26499b58a640a984c7484c7a3",
+  "checkpoints": {
+    "FULL": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000008932",
+      "commit_sha256": "e4122dd6f760431fabfd106a7fdd1f6c06b52fe3a16012f0ba865eb2df88bb51",
+      "adapter": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "55071a8dba6da1a337307d26644c4e1d8089fa42d47bf5c3904bffe0971f7d4f"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f1770f6c9179bf26f046386b25f8e3fd8950aebc602b5b371485c9bef84cfd0"
+          ]
+        ],
+        "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000008932/adapter",
+        "state_sha256": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1"
+      },
+      "optimizer_sha256": "d46169507a723725ea7eac3bb3a0d94802796e68b7e93dc08451e298e5a85325",
+      "corpus_version": 13,
+      "corpus_sha256": "ee2aa551ae71d271bc6cbf2101dcfef4a708f6d031fe4f2dbbd2c161dd09ce19",
+      "supervised_tokens": 3029182,
+      "reference_tokens": 3029182,
+      "global_presentations": 35728,
+      "presentations_since_r107": 9216,
+      "new375": {
+        "rows": 375,
+        "total": 1129,
+        "min": 3,
+        "median": 3,
+        "max": 4,
+        "distinct_presented": 375
+      },
+      "all_new3635": {
+        "rows": 3635,
+        "total": 17804,
+        "min": 3,
+        "median": 5,
+        "max": 6,
+        "distinct_presented": 3635
+      }
+    },
+    "OFF": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/checkpoints/000008932",
+      "commit_sha256": "e66d91669c8784e744229b4e55beca0f6863daf9ad94afd77ded47a389839460",
+      "adapter": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "1f109e3b5d90b2abcd43284af61870ba30cb59989b8a0c2607bf555ad32b7733"
+          ],
+          [
+            "adapter_model.safetensors",
+            "40f47b263637c03d9b01c022ec5ee50e225a7c16428141aa65cc2f1cdba0e8c0"
+          ]
+        ],
+        "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/checkpoints/000008932/adapter",
+        "state_sha256": "af8a8298c5e19e587bf2bb9bde6a6a7ce84ef99a77b12b4fbf5f6b44b0987643"
+      },
+      "optimizer_sha256": "eed8a76454d11d238a267692cf7896e2c7b59161cb718f64f70721c1f0f1a812",
+      "corpus_version": 13,
+      "corpus_sha256": "ee2aa551ae71d271bc6cbf2101dcfef4a708f6d031fe4f2dbbd2c161dd09ce19",
+      "supervised_tokens": 529195,
+      "reference_tokens": 3029182,
+      "global_presentations": 35728,
+      "presentations_since_r107": 9216,
+      "new375": {
+        "rows": 375,
+        "total": 1129,
+        "min": 3,
+        "median": 3,
+        "max": 4,
+        "distinct_presented": 375
+      },
+      "all_new3635": {
+        "rows": 3635,
+        "total": 17804,
+        "min": 3,
+        "median": 5,
+        "max": 6,
+        "distinct_presented": 3635
+      }
+    }
+  },
+  "releases": {
+    "0": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/ADMISSIONS/R107_TRAIN_RELEASE_0_012.json",
+      "sha256": "7da89a27a2f51cb6e596407bf8ace4d1f960964b1fd8501d34bd4513a38fce0a",
+      "clear": true,
+      "created_utc": "2026-09-15T08:02:12.563632+00:00",
+      "preserved_failed_scans": 12
+    },
+    "1": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/ADMISSIONS/R107_TRAIN_RELEASE_1_003.json",
+      "sha256": "044f56f272e0f31195936c353599611a4d2ffb91f99c0d21a6f0c1fdc83a1527",
+      "clear": true,
+      "created_utc": "2026-09-15T08:02:21.631827+00:00",
+      "preserved_failed_scans": 3
+    },
+    "2": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/ADMISSIONS/R107_TRAIN_RELEASE_2_006.json",
+      "sha256": "b8677c41bc7834b6284bc4663fb77e3293c0e99dd5c4abb46faca84435979459",
+      "clear": true,
+      "created_utc": "2026-09-15T08:02:38.170747+00:00",
+      "preserved_failed_scans": 6
+    },
+    "3": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/ADMISSIONS/R107_TRAIN_RELEASE_3_003.json",
+      "sha256": "2077462e327a75c37b49053ec49b27b30409d08f793989b0a76e663d1eee52ab",
+      "clear": true,
+      "created_utc": "2026-09-15T08:02:47.171197+00:00",
+      "preserved_failed_scans": 3
+    },
+    "6": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/ADMISSIONS/R107_TRAIN_RELEASE_6_010.json",
+      "sha256": "8df894d31049c2582373b824197bee9a2409a142824cb1ad3951b2c6d9fd4497",
+      "clear": true,
+      "created_utc": "2026-09-15T08:03:13.679974+00:00",
+      "preserved_failed_scans": 10
+    }
+  },
+  "jobs": [
+    {
+      "arm": "FULL",
+      "family": "math",
+      "output": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/FULL/math/readout",
+      "reserved": 26,
+      "completed": 25,
+      "failed_calls": 0,
+      "first_call_started_unix": 1789459462.6540623,
+      "pid": 943150,
+      "index": 2,
+      "started_unix": 1789459403.482666,
+      "process_present": true,
+      "loaded_unix": 1789459462.6524084,
+      "parent_present": false,
+      "status": "IN_PROGRESS"
+    },
+    {
+      "arm": "FULL",
+      "family": "route",
+      "output": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/FULL/route/readout",
+      "reserved": 96,
+      "completed": 96,
+      "failed_calls": 0,
+      "first_call_started_unix": 1789459551.3460085,
+      "pid": 948159,
+      "index": 6,
+      "started_unix": 1789459491.4659235,
+      "process_present": false,
+      "loaded_unix": 1789459551.338867,
+      "parent_present": false,
+      "status": "COMPLETE",
+      "finished_unix": 1789459634.072878,
+      "complete_sha256": "8834cf3397d82c43e7493af7507bd257f1b22f1b000c6d350cf92107f041e380"
+    },
+    {
+      "arm": "FULL",
+      "family": "legacy",
+      "output": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/FULL/legacy/readout",
+      "reserved": 0,
+      "completed": 0,
+      "failed_calls": 0,
+      "first_call_started_unix": null,
+      "status": "PENDING"
+    },
+    {
+      "arm": "OFF",
+      "family": "math",
+      "output": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/OFF/math/readout",
+      "reserved": 15,
+      "completed": 14,
+      "failed_calls": 0,
+      "first_call_started_unix": 1789459514.4062543,
+      "pid": 945570,
+      "index": 3,
+      "started_unix": 1789459449.9372754,
+      "process_present": true,
+      "loaded_unix": 1789459514.4041805,
+      "parent_present": false,
+      "status": "IN_PROGRESS"
+    },
+    {
+      "arm": "OFF",
+      "family": "route",
+      "output": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/OFF/route/readout",
+      "reserved": 42,
+      "completed": 41,
+      "failed_calls": 0,
+      "first_call_started_unix": 1789459704.6023624,
+      "pid": 955247,
+      "index": 6,
+      "started_unix": 1789459644.5483227,
+      "process_present": true,
+      "loaded_unix": 1789459704.5953453,
+      "parent_present": false,
+      "status": "IN_PROGRESS"
+    },
+    {
+      "arm": "OFF",
+      "family": "legacy",
+      "output": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/ADAPTIVE_DEV/TERMINAL_000008932/OFF/legacy/readout",
+      "reserved": 0,
+      "completed": 0,
+      "failed_calls": 0,
+      "first_call_started_unix": null,
+      "status": "PENDING"
+    }
+  ],
+  "extra_physical_off_recovery_updates": 117,
+  "new_training_after8932": false,
+  "total_reserved": 179,
+  "total_complete": 176,
+  "dispatch_failed": null,
+  "controller_failed": null,
+  "reducer_sha256": "1b4e524fa2a079c9dd32b4f0c8decdb20300b939871be441647aeffb746bc918",
+  "capability_allocation_separate": {
+    "device": 0,
+    "owner": "Cicero",
+    "same_suite": true,
+    "terminal_416_includes_capability": false
+  }
+}

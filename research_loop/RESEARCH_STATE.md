@@ -1,5 +1,22 @@
 # Research state — Orchestrator
 
+## Two new math-lane failures disclosed — September 15, 2026, 08:15 UTC
+
+Node3BASEmath1/2 each produced ONE298-token original, then failed at08:05:00/
+08:04:55 on missing input_truncated response metadata. ZERO parent calls or
+responses in these new lanes; the08:06 first-native evidence was not successful
+parenting or continuing-live-loop proof. Older A100BASE parenting and its guarded
+cycle remain genuinely complete. Anscombe owns a bounded source-contract repair:
+preserve first replies/failures, resume only unattempted calls under original
+deadlines/remaining27perlane; no cropping occurred or outcome-based retry.
+
+Continual FULL/OFF terminal8932 is saved and TRAIN released; existing416-call
+held readout now runs onA1002/3/6. FULLroute96/96completed at08:09snapshot, not
+96correct; no final accuracy/richness result claimed. A1000capability prepares
+under Cicero; A1001/5prospective BASEroute parenting under Poincare; node3extra
+0/3 still unlaunched. Future actual-causal-prefix L2 replay compiler is CPU-only,
+not a GPU launch or demonstrated learning result.
+
 ## Additional BASE parenting actually started — September 15, 2026, 08:06 UTC
 
 Node3physical1 training-wheels/supportive/long and2creative/supportive/long

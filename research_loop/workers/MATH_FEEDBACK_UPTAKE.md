@@ -141,3 +141,17 @@ SSH polling during strict admission if possible; no peer signals requested.
 Rebalance: keep1/2 launch critical path;0/3 available to Main until prospectively
 prepared expansion. A1005 naturally complete: no idle reservation by this worker;
 Main may reassign after own fresh admission. A1004 and Laplace0/1 not claimed.
+
+## 2026-09-15T08:12Z — node3 failure correction and bounded transport repair
+
+Node3 1/2 each completed exactly ONE original (298tokens), then FAILED at
+08:05:00/08:04:55 on no_silent_input_truncation. ZERO Astra requests/responses;
+earlier first-native publication is not evidence of actual parenting. The reused
+direct BASE engine omits input_truncated, although it passes its complete-input
+prefix assertion. No task cropping occurred. Current action: regression against
+actual minimal engine response shape, explicit complete-tokenization contract,
+new immutable source version; originals/failures remain untouched. Resume only
+unattempted sequence with source-bound historical first response, same deadline
+and 1spent+27remaining per lane, not a repeated model call or weight reset.
+Extra0/3 unlaunched CPU candidate invalidated; same fix plus CLI cycle1/2 bounds
+before published allocation/fresh admission. No parents or new controls added.

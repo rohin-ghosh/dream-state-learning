@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-09-15T07:57:15.128387+00:00",
+  "status": "EXACT_SUITE_BASE_PROMPT_REUSE_VERIFIED_CPU_ONLY",
+  "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "task_count": 32,
+  "prompt_hash_matches": 32,
+  "cap_per_call": 512,
+  "base_rerun_calls": 0,
+  "conditions": [
+    "LORA_ON",
+    "LORA_OFF"
+  ],
+  "condition_definition": "Same terminal FULL continual adapter mounted; OFF actually disables LoRA, not the independently trained new-labels-masked OFF child.",
+  "checkpoint_selection": "FIRST_MATCHED_TERMINAL_BOUNDARY_AT_OR_AFTER_FIXED_20260915_0800_UTC_NOT_SCORE_SELECTED",
+  "checkpoint_binding_pending": true,
+  "checkpoint_seam": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/READOUT_SEAM.json",
+  "new_calls_proposed_separate": 64,
+  "existing_continual_terminal_calls_unchanged": 416,
+  "capability_allocation_status": "NO_NEW_GPU_ALLOCATION_OR_LAUNCH_IN_THIS_RECEIPT",
+  "proposed_native_seconds": 2700,
+  "prior_math764_outcomes_not_attributed_to_continual": true,
+  "parent_access": false,
+  "training_ingestion": false,
+  "no_existing_driver_edits": true,
+  "existing_prepare_limitation": "orch_r107_capability_prepare.py binds MATH7646208/statea970; cannot be invoked unchanged for continual. New plan must bind exact continual COMMIT, adapter, prior native process, and separate allocation.",
+  "sources": [
+    {
+      "path": "research_notes/analysis/orch_r107_capability_20260915/PUREBASE_REDUCTION.json",
+      "sha256": "2e67ff0e5e65c46c423598271e71328dd76a0ee9ec92c9d7cebe2e91d2cb5a71"
+    },
+    {
+      "path": "research_notes/analysis/orch_r107_capability_20260915/BASE_OFF_EXACT_MATCH.json",
+      "sha256": "e34d79c3afc633263aedf77ad282e6a62bf86ff010c7068bedba46e7daca4dc0"
+    },
+    {
+      "path": "organism_v6/orch_r107_capability.py",
+      "sha256": "f8398dbf755c041508ee9268a46f7411c09146ccbe02b8bee254c027a85ebbc9"
+    },
+    {
+      "path": "gpu/orch_r107_capability_run.py",
+      "sha256": "4762b5a9a9a74698ff4a6bcd61ac662e294dffea42b8f4c6aa6da23a629497d2"
+    }
+  ]
+}
