@@ -987,3 +987,13 @@ push ruleins right to astra, beend oign a lot mroe talkign finalzing, i realized
 ### Fable's reading (not his words)
 
 Operational: deliver the message-121 rulings to Astra now — authorisation to interrupt the orchestrator's turn so the queued relay is read (done 01:06Z). He has been finalising the plan with his reasoning agent and wants to understand the LoRA model itself (what our rank-8 adapter is, what it can hold, how sleep writes it) — an explainer is being written to his Downloads.
+
+---
+
+## Message 123 — 2026-09-16 ~01:50 UTC (typed)
+
+can you tell me ho contintuity works, how does our baseline lop work, what ahpepnes at the start of  tant spdies what happens after the modle ansers wher eis it what intpus does it get
+
+### Fable's reading (not his words)
+
+A request to explain the child's loop mechanically, from the code: how continuity across turns, episodes and sleeps works; how the baseline (unparented) loop works; what happens at the start of an episode; what happens after the model answers; where the model runs; and what inputs it receives. Answered in the LoRA-and-loop explainer written to his Downloads.
