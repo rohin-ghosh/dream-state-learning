@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T03:21Z **F4 pre-dispatch cause reproduced: optional NEXT_GUIDANCE rejected.**14Main+14staged tests PASS; broker-only replacement allocated, unchanged child/timer. Fresh repair high-water excludes P0323 and all earlier slots.
+
 - [Builder Main] 2026-09-16T03:20Z **F1 Astra SILENT, F2 two COMPLETE, F4 pre-dispatch failure under repair; A2 advances.** Eight-lane rolling-hour publication table in R139/STATUS_0320; native uptake distinct. No retention or scientific-success claim.
 
 - [Builder Main] 2026-09-16T03:15Z **F1 actual saved-state actor running; observer path-type fix allocated (23tests PASS).** F2 two new Astra COMPLETE responses; F4 first new slot MISSING before dispatch, under repair. Historical refusals are not resent.
