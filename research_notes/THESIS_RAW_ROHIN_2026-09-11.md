@@ -7,7 +7,7 @@ Saved verbatim at Rohin's request ("I want the raw text document cause I trust m
 ## Message 1 — the thesis (pasted ~23:30 UTC). An email thread Rohin had with another assistant, followed by his own notes
 
 (No subject)
-Rohin Ghosh<rohinburman@gmail.com>
+Rohin Ghosh<[email removed]>
 
 Rohin Ghosh
 
