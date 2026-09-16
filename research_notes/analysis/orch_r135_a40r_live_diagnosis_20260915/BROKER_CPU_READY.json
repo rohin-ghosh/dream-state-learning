@@ -1,0 +1,39 @@
+{
+  "schema": "R135_CONTROLLER_BROKER_CPU_READY_V1",
+  "date_utc": "2026-09-15",
+  "observed_preflight_utc": "2026-09-15T22:31:08Z",
+  "source": "gpu/orch_r135_a40r_broker.py",
+  "source_sha256": "cc06eb372a7449c79959ad3550b4fdc34ac9fbbc8900240f1dfd1e142c120ad3",
+  "tests": "tests/test_orch_r135_a40r_broker.py",
+  "tests_sha256": "6666956a2782d539ea3f258059ec66e9f1338f5c6c899585d0cfc39feb0bf5fa",
+  "observed_adapter_tests": {"passed": 47, "exit_code": 0},
+  "main_reported_regressions": {"tests_passed": 162, "subtests_passed": 124, "reported_time_utc": "22:32", "independently_rerun_here": false},
+  "physical_slots": [0, 2],
+  "both_live_check_phases_passed": true,
+  "both_frozen_import_checks_passed": true,
+  "provider_files_and_principles_verified_per_slot": 8,
+  "both_Main_publications_present_and_verified": true,
+  "dependency_root": "/tmp/orch_r129_dependencies_2106",
+  "campaign_version": "overflow_r135_v2",
+  "minimum_parent_numbers": {"0": 113, "2": 128},
+  "maximum_parent_number": 640,
+  "P127_reconsumption_permitted": false,
+  "storage_parent": "/data/home/rohing/courier/runtime",
+  "buffers": {
+    "0": "/tmp/orch_r135_broker_a40r0_v1/buffer",
+    "2": "/tmp/orch_r135_broker_a40r2_v1/buffer"
+  },
+  "compatibility_parent_targets": {
+    "/tmp/orch_r135_broker_a40r0_v1": "/data/home/rohing/courier/runtime/r135_broker_a40r0_v1",
+    "/tmp/orch_r135_broker_a40r2_v1": "/data/home/rohing/courier/runtime/r135_broker_a40r2_v1"
+  },
+  "one_flock_per_exact_queue": true,
+  "frozen_Astra_provider_preserved": true,
+  "fallback_provider_added": false,
+  "auth_timeout_STOP_claiming_changed": false,
+  "provider_model_calls_by_this_task": 0,
+  "broker_launches_by_this_task": 0,
+  "production_storage_created_by_this_task": false,
+  "source_frozen_for_Main": true,
+  "publication_and_launch_owner": "Main"
+}

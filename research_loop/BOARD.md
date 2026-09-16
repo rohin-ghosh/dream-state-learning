@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T01:52Z **R121 narrows the paper to Level 1:** four-way skill acquisition (Level-1/original + responsive teaching, SEAL, original + Markdown), parent-free/file-free retention and capability preservation. Existing runs are exploratory components, not that comparison. No Level-2/3/deployment expansion. Scope map: `research_notes/analysis/R121_LEVEL1_SCOPE_20260916.md`. R136 has zero successful feedback corrections; R135 continuations failed again on context capacity. Node-5 provider transition is not yet verified.
+
 - [Builder Main] 2026-09-15T22:32Z **R135 queue brokers allocated:** a40r 0/2 native continuations live; 47 broker tests and both pinned live preflights PASS. Same Astra transport, no historical replay or provider fallback; delivery not yet verified. **R136 collection COMPLETE:** 96 calls, unchanged weights; preliminary zero successful feedback corrections, independent reduction pending. No retained-learning claim.
 
 - [Builder Main] 2026-09-15T22:19:17Z **R136 live21calls:**BASE12/FULL9, repeated adapter transitions pass so far; incomplete, no learned result. **R135 a40r0/2 allocated:**84local+73nativeCPUtests, whole context carries ready, first unreserved2048/2329; broker reconnection pending. Original caps/September18 18:00UTCwall retained; no LoRA learning claim.
