@@ -1,0 +1,578 @@
+{
+  "schema": "R131_HANDOFF_AUDIT_V1",
+  "audit_completed_utc": "2026-09-16T09:46:45Z",
+  "audit_completed_pdt": "2026-09-16 02:46:45 PDT",
+  "status": "PASS",
+  "verified_targets": 3,
+  "targets": [
+    {
+      "admission": {
+        "admission": {
+          "bytes": 49249,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control6/ADMISSION.json",
+          "sha256": "2e2daa6b2303ade6fab57cbacd1395c18192b5a81e4e848d473455ade785be8b"
+        },
+        "admission_verified_unix": 1789551668.1799374,
+        "allocation": {
+          "bytes": 459,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control6/ALLOCATION.json",
+          "sha256": "c4d29268a26df392c26b16c8e4bae962e530a0e1e3a997ffa67fab516804c5b2"
+        },
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "guard": {
+          "bytes": 23323,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control6/GUARD.json",
+          "sha256": "8fda2070dd25cd69b9896ce67c89503ef37b2e07bbfd2157aec9d85a90529a9a"
+        },
+        "hard_end_unix": 1789617240.0,
+        "launch": {
+          "bytes": 603,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control6/LAUNCH.json",
+          "sha256": "2c490cd97a00451021d1b6994e73f2ea3a86dea3492bcea063594a9461f0bf0d"
+        },
+        "lease": {
+          "bytes": 446,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control6/LEASE_BUDGET.json",
+          "sha256": "12e187a3237d6c167d91c4abaae9e6ef671e096d827c9ed68a662aa465d51049"
+        },
+        "lease_end_unix": 1789617840.0,
+        "physical": 2,
+        "plan": {
+          "bytes": 3276,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control6/PLAN.json",
+          "sha256": "a3d73ab01991b7e652a7a91e4bac3003153ed40c0041cd334846d8697e6de954"
+        },
+        "source_files_verified": 200,
+        "source_root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/source_v5"
+      },
+      "anchors": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checks": {
+          "encoded_ready": true,
+          "exact_artifact_hashes": true,
+          "native_targets_and_masked_prompts": true,
+          "pure_frozen_base_TRAIN": true
+        },
+        "encoded_anchors": 42,
+        "receipt_sha256": "4c62612f75d64d4902e1bdf8aade45f24f6a9003c8151f3cee0ac56fb8999abd",
+        "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+        "source_condition": "PURE_BASE",
+        "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+        "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+        "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+        "split": "TRAIN",
+        "status": "ENCODED_INVENTORY_READY",
+        "verified_artifact_count": 8
+      },
+      "checks": {
+        "LOADED_after_dispatch": true,
+        "LOADED_base": true,
+        "LOADED_matches_prior_adapter": true,
+        "LOADED_matches_prior_optimizer_steps": true,
+        "LOADED_observed": true,
+        "LOADED_resume": true,
+        "WALL_EXTENDED_observed": true,
+        "allocation_bound": true,
+        "anchors_preserved": true,
+        "clear_root_admission": true,
+        "exact_python_source_closure": true,
+        "frozen_base_plan": true,
+        "gpu_identity": true,
+        "guard_host_binding": true,
+        "guard_launch_admission_hashes": true,
+        "guard_plan_binding": true,
+        "guard_root_resume": true,
+        "guard_schema": true,
+        "lease_budget_and_reservation": true,
+        "post_load_request_extended_wall": true,
+        "source_location": true
+      },
+      "control": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control6",
+      "failed_checks": [],
+      "finished_unix": 1789551962.496729,
+      "journal": {
+        "bytes_read": 92634245,
+        "chain_verified": true,
+        "first_post_load_request": {
+          "deadline_unix": 1789617240.0,
+          "model_state_sha256": "06106865fe2a6f06da404c43990f8d14fe20fcf62a659e3ba4b1db63707c1ac1",
+          "record_index": 1646,
+          "record_sha256": "9b77b2cc5cd82d62885551d4f17ca9488fb255b781dba1ba6659d318e6d4bd80",
+          "started_unix": 1789551731.4431014
+        },
+        "head_sha256": "4fcd2d2661550e9a699d98945cb909876576458caab35dad56ba87fb725a1462",
+        "manifest": {
+          "bytes": 84,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/JOURNAL.json",
+          "sha256": "d69c72f9e6ae8be810547ef10ef0c0bc1b7d75f430e30f0e1f7aacc6c837b121"
+        },
+        "snapshot_records": 1666
+      },
+      "label": "legacy",
+      "loaded": {
+        "adapter_state_sha256": "0dd028f513d7bb203a9f4d7e1b5d467a9ebbb8142b0a130bb24effac931226a6",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "loaded_unix": 1789551712.2112403,
+        "optimizer_steps": 1380,
+        "pid": 1997802,
+        "record": {
+          "bytes": 2763,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000001644.json",
+          "sha256": "df83a28634f27cb747fb93af4ef1d2f965d338108128e46e89e25afe6e548a72"
+        },
+        "record_index": 1644,
+        "record_sha256": "bcd3ea48287abf38d7bde7aab7334d5c9ca992f35e32e460e35f97c2ddc8573e",
+        "resume": true
+      },
+      "node": "ovx3",
+      "root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+      "sampled_unix": 1789551960.3682542,
+      "status": "PASS",
+      "wall_extension": {
+        "checkpoint": {
+          "adapter_files_verified": 3,
+          "adapter_state_sha256": "0dd028f513d7bb203a9f4d7e1b5d467a9ebbb8142b0a130bb24effac931226a6",
+          "checkpoint_sha256": {
+            "adapter": "b18c2c4e44e30e52e0121ecc9ed15b27059468669ba758154f5c3448a7b39576",
+            "optimizer": "aead2aa08cc99ea9192b2211848c887f7955b9eab712c227b43abbe9c147f72a",
+            "rng": "aead2aa08cc99ea9192b2211848c887f7955b9eab712c227b43abbe9c147f72a"
+          },
+          "checks": {
+            "adapter_bundle_hash": true,
+            "base_identity": true,
+            "exact_adapter_file_hashes": true,
+            "exact_optimizer_rng_bytes": true
+          },
+          "optimizer_rng_receipt": {
+            "bytes": 161848253,
+            "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000020/optimizer_rng.pt",
+            "sha256": "aead2aa08cc99ea9192b2211848c887f7955b9eab712c227b43abbe9c147f72a"
+          },
+          "optimizer_steps": 1380,
+          "receipt": {
+            "bytes": 1127,
+            "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000020/COMMIT.json",
+            "sha256": "b51fd1e95a0fe8d70cafa91c42594dd47f8fd2ccc1bca2dd05f6498f6b1cba79"
+          }
+        },
+        "checks": {
+          "completed_saved_boundary": true,
+          "exact_authorization": true,
+          "exact_embedded_checkpoint": true,
+          "exact_prior_checkpoint": true,
+          "model_checkpoint_bound": true,
+          "new_wall_bound": true,
+          "only_deadline_changed": true,
+          "previous_wall_bound": true,
+          "strict_extension_with_margin": true
+        },
+        "completed_sleeps": 20,
+        "extended_stream_sha256": "d5a1fab462e27181749de080bddf605fe029d9d7dcc4dc9d76893a24490ea910",
+        "history_after_sha256": "c7d3bfa4b76eb178d727ab3e70ab39c6d2c193408344ff242403ea2669a1b7fa",
+        "history_before_sha256": "c7d3bfa4b76eb178d727ab3e70ab39c6d2c193408344ff242403ea2669a1b7fa",
+        "model_state_after_sha256": "06106865fe2a6f06da404c43990f8d14fe20fcf62a659e3ba4b1db63707c1ac1",
+        "model_state_before_sha256": "06106865fe2a6f06da404c43990f8d14fe20fcf62a659e3ba4b1db63707c1ac1",
+        "new_deadline_unix": 1789617240.0,
+        "previous_deadline_unix": 1789596240.0,
+        "prior_loaded_anchors_sha256": "4c62612f75d64d4902e1bdf8aade45f24f6a9003c8151f3cee0ac56fb8999abd",
+        "prior_stream_sha256": "fd78c5a50c03b8e8779ac343e00cddc309c60e01d243f680bde9afd2b84237a8",
+        "record": {
+          "bytes": 940870,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000001643.json",
+          "sha256": "193e1defed92913bb1526e65f24516b636dedd212c49dbbc5c1d4f6ff23c32ad"
+        },
+        "record_index": 1643,
+        "record_sha256": "e56bb729cb095839fffe1b01b4fbd1b38169760e75e5a46bab8a4cd897216238",
+        "rows": 60,
+        "rows_after_sha256": "ff17d5dba8dcf958d0baa9514f77f533c0465704d14f1b237fbe5633ec779c79",
+        "rows_before_sha256": "ff17d5dba8dcf958d0baa9514f77f533c0465704d14f1b237fbe5633ec779c79",
+        "sleep_receipts_after_sha256": "1fbc7e1b05d5f722c053dabb0d8045ad7d4e3e9ad951a168f248abff2b2941ac",
+        "sleep_receipts_before_sha256": "1fbc7e1b05d5f722c053dabb0d8045ad7d4e3e9ad951a168f248abff2b2941ac"
+      }
+    },
+    {
+      "admission": {
+        "admission": {
+          "bytes": 51933,
+          "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/control3/ADMISSION.json",
+          "sha256": "8e38fb1006f09974aa34f40f5cb89b2b6bdd68de8b1bf24ba71c18d8adb77a72"
+        },
+        "admission_verified_unix": 1789551617.5629954,
+        "allocation": {
+          "bytes": 458,
+          "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/control3/ALLOCATION.json",
+          "sha256": "5b843c44281b01240221770fbc46c6993dc735b2b57067a23f4742937fcf6327"
+        },
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "gpu_uuid": "GPU-67a989f7-2660-a76b-40e8-3619b9fa2987",
+        "guard": {
+          "bytes": 24442,
+          "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/control3/GUARD.json",
+          "sha256": "811e5091faf4d53bb48c2b55cbed0381418857b577dfe12cc231d3de6097bad0"
+        },
+        "hard_end_unix": 1789617240.0,
+        "launch": {
+          "bytes": 603,
+          "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/control3/LAUNCH.json",
+          "sha256": "bd799ff3ed9c8d248a164a5de897d68f6063cbb73832519a99115e5013fd6a3b"
+        },
+        "lease": {
+          "bytes": 446,
+          "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/control3/LEASE_BUDGET.json",
+          "sha256": "12e187a3237d6c167d91c4abaae9e6ef671e096d827c9ed68a662aa465d51049"
+        },
+        "lease_end_unix": 1789617840.0,
+        "physical": 6,
+        "plan": {
+          "bytes": 8170,
+          "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/control3/PLAN.json",
+          "sha256": "7f8f3541a79c2fa4c10456198e8a2671a97f65a5dd21dea542feaf5a7ae0cb5b"
+        },
+        "source_files_verified": 210,
+        "source_root": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/source2"
+      },
+      "anchors": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checks": {
+          "encoded_ready": true,
+          "exact_artifact_hashes": true,
+          "native_targets_and_masked_prompts": true,
+          "pure_frozen_base_TRAIN": true
+        },
+        "encoded_anchors": 42,
+        "receipt_sha256": "4c62612f75d64d4902e1bdf8aade45f24f6a9003c8151f3cee0ac56fb8999abd",
+        "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+        "source_condition": "PURE_BASE",
+        "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+        "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+        "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+        "split": "TRAIN",
+        "status": "ENCODED_INVENTORY_READY",
+        "verified_artifact_count": 8
+      },
+      "checks": {
+        "LOADED_after_dispatch": true,
+        "LOADED_base": true,
+        "LOADED_matches_prior_adapter": true,
+        "LOADED_matches_prior_optimizer_steps": true,
+        "LOADED_observed": true,
+        "LOADED_resume": true,
+        "WALL_EXTENDED_observed": true,
+        "allocation_bound": true,
+        "anchors_preserved": true,
+        "clear_root_admission": true,
+        "exact_python_source_closure": true,
+        "frozen_base_plan": true,
+        "gpu_identity": true,
+        "guard_host_binding": true,
+        "guard_launch_admission_hashes": true,
+        "guard_plan_binding": true,
+        "guard_root_resume": true,
+        "guard_schema": true,
+        "lease_budget_and_reservation": true,
+        "post_load_request_extended_wall": true,
+        "source_location": true
+      },
+      "control": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/control3",
+      "failed_checks": [],
+      "finished_unix": 1789551963.0148568,
+      "journal": {
+        "bytes_read": 14117826,
+        "chain_verified": true,
+        "first_post_load_request": {
+          "deadline_unix": 1789617240.0,
+          "model_state_sha256": "fd55713ff49404d29e029c7675cee2c3c764d412aa46c0e9394c70dad40584be",
+          "record_index": 499,
+          "record_sha256": "b02045637268e5fb5a371d30cae3149ccb8531b9d26eff3a8a0d72e70c6fd385",
+          "started_unix": 1789551648.6698608
+        },
+        "head_sha256": "88f0281e844a3c2285e3ee533faf80d33f2b9a882bf3b092c342dfafbfd7a7fd",
+        "manifest": {
+          "bytes": 84,
+          "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/stream/JOURNAL.json",
+          "sha256": "22cafde9fa8488cfdf6633c58dfcc833d05994e4f9563cd91bfb1817f74c853f"
+        },
+        "snapshot_records": 580
+      },
+      "label": "pilot",
+      "loaded": {
+        "adapter_state_sha256": "416a6c2fe76b7ff6c3d4f1535f88ebcc141ab41ff392fcee4c83e944efeb103d",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "loaded_unix": 1789551646.8632555,
+        "optimizer_steps": 399,
+        "pid": 1988817,
+        "record": {
+          "bytes": 2761,
+          "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/stream/records/00000000000000000497.json",
+          "sha256": "b798c41a6d942db8034bcd8ee5c5e0abb0b26ae572ad969e6a4264f6cf1cb76e"
+        },
+        "record_index": 497,
+        "record_sha256": "09cfbbe3c88f9fca0454a5947090904409c506a2ebf3fcfb5b92f5c9459c5bab",
+        "resume": true
+      },
+      "node": "ovx3",
+      "root": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1",
+      "sampled_unix": 1789551962.4978065,
+      "status": "PASS",
+      "wall_extension": {
+        "checkpoint": {
+          "adapter_files_verified": 3,
+          "adapter_state_sha256": "416a6c2fe76b7ff6c3d4f1535f88ebcc141ab41ff392fcee4c83e944efeb103d",
+          "checkpoint_sha256": {
+            "adapter": "da7caa8ebc85e845975bd49d793f869affc1f3c463f10aa334fca18642f5a1f4",
+            "optimizer": "17ecb58320c31a50ad0bc00092ea9dcaad4784b0542bff69c7fb625e7e93fffc",
+            "rng": "17ecb58320c31a50ad0bc00092ea9dcaad4784b0542bff69c7fb625e7e93fffc"
+          },
+          "checks": {
+            "adapter_bundle_hash": true,
+            "base_identity": true,
+            "exact_adapter_file_hashes": true,
+            "exact_optimizer_rng_bytes": true
+          },
+          "optimizer_rng_receipt": {
+            "bytes": 161848253,
+            "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/checkpoints/sleep_000007/optimizer_rng.pt",
+            "sha256": "17ecb58320c31a50ad0bc00092ea9dcaad4784b0542bff69c7fb625e7e93fffc"
+          },
+          "optimizer_steps": 399,
+          "receipt": {
+            "bytes": 1118,
+            "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/checkpoints/sleep_000007/COMMIT.json",
+            "sha256": "a1002936a3c91bd7fff8badbba78b2e4516039a9a3cd0b42332c95a76e62d6ac"
+          }
+        },
+        "checks": {
+          "completed_saved_boundary": true,
+          "exact_authorization": true,
+          "exact_embedded_checkpoint": true,
+          "exact_prior_checkpoint": true,
+          "model_checkpoint_bound": true,
+          "new_wall_bound": true,
+          "only_deadline_changed": true,
+          "previous_wall_bound": true,
+          "strict_extension_with_margin": true
+        },
+        "completed_sleeps": 7,
+        "extended_stream_sha256": "843b5b5bda42d0556d4a7f6d52c8f82375906aa553febfd6e224135ed8bdbf14",
+        "history_after_sha256": "3e397b8692d2ac7ecec6036fc9d36f68610f67bd21c99f178ba791957abd2856",
+        "history_before_sha256": "3e397b8692d2ac7ecec6036fc9d36f68610f67bd21c99f178ba791957abd2856",
+        "model_state_after_sha256": "fd55713ff49404d29e029c7675cee2c3c764d412aa46c0e9394c70dad40584be",
+        "model_state_before_sha256": "fd55713ff49404d29e029c7675cee2c3c764d412aa46c0e9394c70dad40584be",
+        "new_deadline_unix": 1789617240.0,
+        "previous_deadline_unix": 1789552501,
+        "prior_loaded_anchors_sha256": "4c62612f75d64d4902e1bdf8aade45f24f6a9003c8151f3cee0ac56fb8999abd",
+        "prior_stream_sha256": "913d110b9e54536c6da6432838b85394ca971018630554c5d064174af2347991",
+        "record": {
+          "bytes": 313711,
+          "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/stream/records/00000000000000000496.json",
+          "sha256": "220c9d8b70f437a1aa427cf459a6a5b01f06ea40777d621d520ba3cfb35a7a3d"
+        },
+        "record_index": 496,
+        "record_sha256": "b4b66e10904728924c3776583aaf2d48264caac78002118fa65403bcf82c10a5",
+        "rows": 21,
+        "rows_after_sha256": "e88405f55d6584b439f3c584893794f6a5c03c3f1260893d04c50940424583a7",
+        "rows_before_sha256": "e88405f55d6584b439f3c584893794f6a5c03c3f1260893d04c50940424583a7",
+        "sleep_receipts_after_sha256": "ea9c7789201b472a69d23f38f169021615629db9228cb6e49eb9459d13d8a6fb",
+        "sleep_receipts_before_sha256": "ea9c7789201b472a69d23f38f169021615629db9228cb6e49eb9459d13d8a6fb"
+      }
+    },
+    {
+      "admission": {
+        "admission": {
+          "bytes": 50935,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/ADMISSION.json",
+          "sha256": "2d28bdc9b7008bf9320af46d63b51915dd0274d0a24c0ff4dc6573bf1eda193f"
+        },
+        "admission_verified_unix": 1789551753.11935,
+        "allocation": {
+          "bytes": 436,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/ALLOCATION.json",
+          "sha256": "8b0b0b571ba2030c89bde1e50d905c4665e28d1408b3c5b02fdde4381874fbd3"
+        },
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "gpu_uuid": "GPU-5b370d4d-bdcc-21d5-cf06-e9bea52e602d",
+        "guard": {
+          "bytes": 212817,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/GUARD.json",
+          "sha256": "61fb32053f7480c87355a515f97887aa1734e7aee0e5b8488c9eb68c42c60e30"
+        },
+        "hard_end_unix": 1789754400,
+        "launch": {
+          "bytes": 600,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/LAUNCH.json",
+          "sha256": "214c40c01067ead7881682fbde8ffe4a8bbb86446c43ee06a5de38216fc36e69"
+        },
+        "lease": {
+          "bytes": 367,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/LEASE_BUDGET.json",
+          "sha256": "ca4ead20b2b772c09e4d30e271c24988f0bbcc5f625665e6b63a441fe0e112a2"
+        },
+        "lease_end_unix": 1789776000,
+        "physical": 0,
+        "plan": {
+          "bytes": 8467,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/PLAN.json",
+          "sha256": "48bad068326fb65ffec5f6ea3c49ddebb31ba5fcd9f036c28f0df2fe71c52550"
+        },
+        "source_files_verified": 1842,
+        "source_root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/source1"
+      },
+      "anchors": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checks": {
+          "encoded_ready": true,
+          "exact_artifact_hashes": true,
+          "native_targets_and_masked_prompts": true,
+          "pure_frozen_base_TRAIN": true
+        },
+        "encoded_anchors": 42,
+        "receipt_sha256": "4c62612f75d64d4902e1bdf8aade45f24f6a9003c8151f3cee0ac56fb8999abd",
+        "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+        "source_condition": "PURE_BASE",
+        "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+        "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+        "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+        "split": "TRAIN",
+        "status": "ENCODED_INVENTORY_READY",
+        "verified_artifact_count": 8
+      },
+      "checks": {
+        "LOADED_after_dispatch": true,
+        "LOADED_base": true,
+        "LOADED_matches_initial_checkpoint": true,
+        "LOADED_observed": true,
+        "allocation_bound": true,
+        "clear_root_admission": true,
+        "exact_python_source_closure": true,
+        "frozen_base_plan": true,
+        "gpu_identity": true,
+        "guard_host_binding": true,
+        "guard_launch_admission_hashes": true,
+        "guard_plan_binding": true,
+        "guard_root_resume": true,
+        "guard_schema": true,
+        "initial_readout_checkpoint_bound": true,
+        "initial_readout_complete_metadata": true,
+        "lease_budget_and_reservation": true,
+        "source_location": true
+      },
+      "control": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1",
+      "failed_checks": [],
+      "finished_unix": 1789551964.6377454,
+      "initial_checkpoint": {
+        "adapter_files_verified": 3,
+        "adapter_state_sha256": "95966e71c3ec81487d05e02d6b770c422febfc433fe367d856a6e4817f8dbe14",
+        "checkpoint_sha256": {
+          "adapter": "b8748db5fd4326bb3cd304505ccb7f9a1f29b9143e0d757db7e6acb37c8dd92a",
+          "optimizer": "aa5811768e68f1de7765f7616da244170302211f4fb7cbc235a3434037ebafa5",
+          "rng": "aa5811768e68f1de7765f7616da244170302211f4fb7cbc235a3434037ebafa5"
+        },
+        "checks": {
+          "adapter_bundle_hash": true,
+          "base_identity": true,
+          "exact_adapter_file_hashes": true,
+          "exact_optimizer_rng_bytes": true
+        },
+        "optimizer_rng_receipt": {
+          "bytes": 42213,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/checkpoints/initial/optimizer_rng.pt",
+          "sha256": "aa5811768e68f1de7765f7616da244170302211f4fb7cbc235a3434037ebafa5"
+        },
+        "optimizer_steps": 0,
+        "receipt": {
+          "bytes": 1120,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/checkpoints/initial/COMMIT.json",
+          "sha256": "7989781649936b711cd63c29c96d35bbd2004acf78a353489f2d5c9ed903a13b"
+        }
+      },
+      "initial_readout": {
+        "metadata": {
+          "adapter_state_sha256": "95966e71c3ec81487d05e02d6b770c422febfc433fe367d856a6e4817f8dbe14",
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "before_after_verified": true,
+          "calls": 64,
+          "checkpoint_commit_sha256": "7989781649936b711cd63c29c96d35bbd2004acf78a353489f2d5c9ed903a13b",
+          "checkpoint_sha256": {
+            "adapter": "b8748db5fd4326bb3cd304505ccb7f9a1f29b9143e0d757db7e6acb37c8dd92a",
+            "optimizer": "aa5811768e68f1de7765f7616da244170302211f4fb7cbc235a3434037ebafa5",
+            "rng": "aa5811768e68f1de7765f7616da244170302211f4fb7cbc235a3434037ebafa5"
+          },
+          "finished_unix": 1789551940.9739256,
+          "history_present": false,
+          "optimizer_steps": 0,
+          "parent_present": false,
+          "schema": "R125_CONTINUAL_READOUT_V1",
+          "started_unix": 1789551821.3340187,
+          "status": "COMPLETE",
+          "task_count": 32,
+          "train_ingestion": false,
+          "training_updates": 0
+        },
+        "receipt": {
+          "bytes": 24683,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/readouts/sleep_000000_r2/COMPLETE.json",
+          "sha256": "fbe4316e358c9d77760534d6853f84e7cc1c16290cc8f59961dba5d79dc3225d"
+        }
+      },
+      "journal": {
+        "bytes_read": 41285,
+        "chain_verified": true,
+        "first_post_load_request": {
+          "deadline_unix": 1789754400,
+          "model_state_sha256": "36722fd3b8a518003f819f1ed548f6ae7b6d88aa5c84492475c2b7f7ed4c17e0",
+          "record_index": 2,
+          "record_sha256": "415cb0a542231a24e85d3c4e37c2f8339c72fbcdad8d1b953db254ffb85d65c4",
+          "started_unix": 1789551945.2468228
+        },
+        "head_sha256": "415cb0a542231a24e85d3c4e37c2f8339c72fbcdad8d1b953db254ffb85d65c4",
+        "manifest": {
+          "bytes": 84,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/JOURNAL.json",
+          "sha256": "898af32f2811a17223e332c9e144032f6e311f8aa845249e66efd551ba2d21f5"
+        },
+        "snapshot_records": 3
+      },
+      "label": "kernel_child",
+      "loaded": {
+        "adapter_state_sha256": "95966e71c3ec81487d05e02d6b770c422febfc433fe367d856a6e4817f8dbe14",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "loaded_unix": 1789551811.3745193,
+        "optimizer_steps": 0,
+        "pid": 3197823,
+        "record": {
+          "bytes": 2758,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/records/00000000000000000001.json",
+          "sha256": "0db09d7557864a1c4aace6dcf055ee666398da2ad0dde27f1ae70250702dcacd"
+        },
+        "record_index": 1,
+        "record_sha256": "fc4f5e55b8ea574070b8ac4c377cee5b7e9ea089edf0d76b677aeb346ec90075",
+        "resume": false
+      },
+      "node": "a40r",
+      "root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1",
+      "sampled_unix": 1789551964.2912166,
+      "status": "PASS"
+    }
+  ],
+  "scope": {
+    "read_only_remote_verification": true,
+    "remote_wrappers": [
+      "gpu/ovx3_ssh.sh",
+      "gpu/a40r_ssh.sh"
+    ],
+    "parent_actions": false,
+    "process_or_source_changes": false,
+    "raw_history_exported": false,
+    "held_prompts_or_scores_exported": false,
+    "third_child_readout": "COMPLETE receipt completion/provenance metadata only"
+  },
+  "verification_boundary": {
+    "history_rows_and_nonwall_state": "Canonical complete state equality across WALL_EXTENDED except deadline_unix.",
+    "checkpoint_payloads": "Current adapter files and optimizer/RNG bytes hashed against exact prior saved COMMIT and embedded sleep receipt.",
+    "loaded_comparison": "LOADED adapter state and optimizer step count match prior checkpoint; frozen-base and anchor receipt identities verified.",
+    "runtime_memory": "No independent live optimizer/RNG-memory probe; restoration is supported by verified pinned source path, saved checkpoint hashes and LOADED evidence.",
+    "liveness": "Published receipt snapshot, not a guarantee of ongoing process health.",
+    "capability": "No capability outcome assessed or included."
+  }
+}
