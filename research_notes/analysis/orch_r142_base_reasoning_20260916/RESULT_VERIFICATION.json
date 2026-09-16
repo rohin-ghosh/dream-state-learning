@@ -1,0 +1,462 @@
+{
+  "admission_sha256": "1428a66aa39f2841316a92621423849098646b162ef0f31536e359d5fec2d025",
+  "audit_attribution": "Independent metric recomputation by the implementation author, not a fresh independent reviewer. Uses frozen parser/scorer/public executor; independently reconstructs prompt, measurements and paired summaries.",
+  "audit_limits": [
+    "No fresh weight-file rehash: native unchanged-weight terminal and bound loaded identity verified.",
+    "Launch command hash preserved from receipt, not independently reconstructed by this reducer.",
+    "Visible output is measured without asserting internal reasoning or faithful explanation.",
+    "Aggregate task-paired counts only; no significance or population-generalization claim."
+  ],
+  "audit_source": {
+    "r141_reducer_dependency.py": {
+      "node_backup_path": "/localhome/local-rohing/orch_r142_base_reasoning_20260916_attempt3/audit_source_author_20260916/r141_reducer_dependency.py",
+      "sha256": "1309e9b31a32d0f9750ba953a314b48631693ccdb2c2d423a298ffaf40d5d52e"
+    },
+    "reducer.py": {
+      "node_backup_path": "/localhome/local-rohing/orch_r142_base_reasoning_20260916_attempt3/audit_source_author_20260916/reducer.py",
+      "sha256": "ff79de217e38e0d4002f1ad7b6289852eb59442f09460c128e4f9c31fb0f9e61"
+    },
+    "test_reducer.py": {
+      "node_backup_path": "/localhome/local-rohing/orch_r142_base_reasoning_20260916_attempt3/audit_source_author_20260916/test_reducer.py",
+      "sha256": "fff0d207406f17f8202412b8bb4a74871a2343035d85e2094bfac346ebb907fd"
+    }
+  },
+  "audit_tests": {
+    "local": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES= PYTHONPATH=/data/home/rohing/dream-state-orch python3 -B /tmp/orch_r142_attempt3_audit_20260916/test_reducer.py -q",
+      "passed": 15,
+      "seconds": 19.409
+    },
+    "node": {
+      "command": "CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/localhome/local-rohing/orch_r142_base_reasoning_20260916_attempt1/source_r142_v1 python3 -B /localhome/local-rohing/orch_r142_base_reasoning_20260916_attempt3/audit_source_author_20260916/test_reducer.py -q",
+      "passed": 15,
+      "seconds": 7.713
+    }
+  },
+  "context_limit": 32768,
+  "exclusions_sha256": "80033d3f52b2c29c3562a977b668ab717113f27370f63c4d5b4c9bc78b0a5990",
+  "expected_guard_sha256": "1e4b1d501345e8b8421d48a9b1eb2a8cba58c4d806f097abcb6109eaa9f3abd2",
+  "four_way_benchmark": false,
+  "fresh_independent_reviewer": false,
+  "hard_end_unix": 1789537200.0,
+  "internal_reasoning_claim": false,
+  "inventory_coverage": "Main declared 134 spec / 160 ID / 5 seed hash union; bounded, including failed attempt1/2 planned cohorts.",
+  "launch_command_sha256": "1346f3970542eeeb261730ee60805da8542d1e5750e38ddbb49316c07b555cbc",
+  "launch_sha256": "0dcd7fbd1784f2fbe70b370baec23fcd6420d56d9765f3ae4f0097650c3f09e0",
+  "max_new_tokens_per_call": 2048,
+  "metadata_evidence_sha256": "683dd2d8e6d397e05883ba96138f2f48187acde46b198678109c3ac62d2918e8",
+  "model_calls": 0,
+  "model_calls_field_scope": "model_calls=0 refers to this CPU audit; the original collection completed 96 model calls.",
+  "native_started_utc": "2026-09-16T05:17:03.593607+00:00",
+  "next_reserved_unix": 1789538400,
+  "no_promotion": {
+    "canonical_score_comparison": false,
+    "fit_updates": 0,
+    "learning_claim": false,
+    "retention_claim": false,
+    "rows_admitted": 0
+  },
+  "node_compact_report_sha256": "4fa46d5a1289a24b07707416284df5cd6f9feb1011cf881de06f26e6d16938b4",
+  "observed_utc": "2026-09-16T05:25:05.489549+00:00",
+  "outcomes_withheld": false,
+  "plan_sha256": "bfc75853d179cc086a703f7d3b79645da765c70201b7d471dfef662a72202c4e",
+  "planned_calls": 96,
+  "planned_tasks": 16,
+  "raw_exported": false,
+  "recompute_command": "CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/localhome/local-rohing/orch_r142_base_reasoning_20260916_attempt1/source_r142_v1 python3 -B /localhome/local-rohing/orch_r142_base_reasoning_20260916_attempt3/audit_source_author_20260916/reducer.py",
+  "results": {
+    "arm_results": {
+      "DIRECTED_REASONING": {
+        "effective_model": "BASE_NO_LORA",
+        "feedback_vs_neutral": {
+          "complete_triplets": 16,
+          "failed_draft_pass_table": {
+            "both_fail": 6,
+            "both_pass": 2,
+            "feedback_only_pass": 2,
+            "neutral_only_pass": 0
+          },
+          "failed_draft_triplets": 10,
+          "feedback_minus_neutral_passes": 2,
+          "pass_table": {
+            "both_fail": 6,
+            "both_pass": 8,
+            "feedback_only_pass": 2,
+            "neutral_only_pass": 0
+          },
+          "planned_triplets": 16
+        },
+        "forks": {
+          "interpreter_feedback": {
+            "ast_comparable_pairs": 10,
+            "complete_pairs": 16,
+            "expression_ast_changed": 3,
+            "expression_text_changed": 4,
+            "failed_drafts": 10,
+            "failed_to_passed": 4,
+            "format_recovered": 4,
+            "invalid_format_drafts": 4,
+            "planned_pairs": 16,
+            "raw_changed": 16,
+            "recovered_with_visible_prefinal": 0,
+            "regressions": 0,
+            "safe_wrong_drafts": 4,
+            "semantic_correction": 2,
+            "visible_prefix_changed": 12,
+            "visible_prefix_comparable_pairs": 12
+          },
+          "neutral_review": {
+            "ast_comparable_pairs": 10,
+            "complete_pairs": 16,
+            "expression_ast_changed": 0,
+            "expression_text_changed": 1,
+            "failed_drafts": 10,
+            "failed_to_passed": 2,
+            "format_recovered": 4,
+            "invalid_format_drafts": 4,
+            "planned_pairs": 16,
+            "raw_changed": 16,
+            "recovered_with_visible_prefinal": 0,
+            "regressions": 0,
+            "safe_wrong_drafts": 4,
+            "semantic_correction": 0,
+            "visible_prefix_changed": 12,
+            "visible_prefix_comparable_pairs": 12
+          }
+        },
+        "incomplete_cells": [],
+        "stages": {
+          "draft": {
+            "categories": {
+              "EXECUTED": 9,
+              "INTERPRETER_ERROR": 1,
+              "PARSER_ERROR": 4,
+              "SANDBOX_ERROR": 2
+            },
+            "complete": 16,
+            "eligible_passes": 6,
+            "format_valid_complete": 12,
+            "format_valid_recorded": 12,
+            "incomplete": 0,
+            "max_output_tokens": 468,
+            "output_tokens": 4979,
+            "planned": 16,
+            "recorded": 16,
+            "safe_expression_complete": 10,
+            "strict_pass_recorded": 6,
+            "token_cap_hits": 0,
+            "visible_prefinal": {
+              "absent_complete": 0,
+              "assessable_complete": 12,
+              "characters_complete": 6987,
+              "present_complete": 12,
+              "present_recorded": 12,
+              "strict_pass_with_absent": 0,
+              "strict_pass_with_present": 6,
+              "unanchored_multiline_complete": 4,
+              "unassessable_complete": 4
+            }
+          },
+          "interpreter_feedback": {
+            "categories": {
+              "EXECUTED": 14,
+              "SANDBOX_ERROR": 2
+            },
+            "complete": 16,
+            "eligible_passes": 10,
+            "format_valid_complete": 16,
+            "format_valid_recorded": 16,
+            "incomplete": 0,
+            "max_output_tokens": 482,
+            "output_tokens": 1674,
+            "planned": 16,
+            "recorded": 16,
+            "safe_expression_complete": 14,
+            "strict_pass_recorded": 10,
+            "token_cap_hits": 0,
+            "visible_prefinal": {
+              "absent_complete": 12,
+              "assessable_complete": 16,
+              "characters_complete": 2565,
+              "present_complete": 4,
+              "present_recorded": 4,
+              "strict_pass_with_absent": 8,
+              "strict_pass_with_present": 2,
+              "unanchored_multiline_complete": 0,
+              "unassessable_complete": 0
+            }
+          },
+          "neutral_review": {
+            "categories": {
+              "EXECUTED": 13,
+              "INTERPRETER_ERROR": 1,
+              "SANDBOX_ERROR": 2
+            },
+            "complete": 16,
+            "eligible_passes": 8,
+            "format_valid_complete": 16,
+            "format_valid_recorded": 16,
+            "incomplete": 0,
+            "max_output_tokens": 40,
+            "output_tokens": 440,
+            "planned": 16,
+            "recorded": 16,
+            "safe_expression_complete": 14,
+            "strict_pass_recorded": 8,
+            "token_cap_hits": 0,
+            "visible_prefinal": {
+              "absent_complete": 16,
+              "assessable_complete": 16,
+              "characters_complete": 0,
+              "present_complete": 0,
+              "present_recorded": 0,
+              "strict_pass_with_absent": 8,
+              "strict_pass_with_present": 0,
+              "unanchored_multiline_complete": 0,
+              "unassessable_complete": 0
+            }
+          }
+        },
+        "steering": "text_requested"
+      },
+      "PERMISSION_ONLY": {
+        "effective_model": "BASE_NO_LORA",
+        "feedback_vs_neutral": {
+          "complete_triplets": 16,
+          "failed_draft_pass_table": {
+            "both_fail": 6,
+            "both_pass": 0,
+            "feedback_only_pass": 2,
+            "neutral_only_pass": 0
+          },
+          "failed_draft_triplets": 8,
+          "feedback_minus_neutral_passes": 1,
+          "pass_table": {
+            "both_fail": 6,
+            "both_pass": 7,
+            "feedback_only_pass": 2,
+            "neutral_only_pass": 1
+          },
+          "planned_triplets": 16
+        },
+        "forks": {
+          "interpreter_feedback": {
+            "ast_comparable_pairs": 8,
+            "complete_pairs": 16,
+            "expression_ast_changed": 1,
+            "expression_text_changed": 7,
+            "failed_drafts": 8,
+            "failed_to_passed": 2,
+            "format_recovered": 1,
+            "invalid_format_drafts": 1,
+            "planned_pairs": 16,
+            "raw_changed": 8,
+            "recovered_with_visible_prefinal": 0,
+            "regressions": 1,
+            "safe_wrong_drafts": 2,
+            "semantic_correction": 1,
+            "visible_prefix_changed": 0,
+            "visible_prefix_comparable_pairs": 15
+          },
+          "neutral_review": {
+            "ast_comparable_pairs": 10,
+            "complete_pairs": 16,
+            "expression_ast_changed": 0,
+            "expression_text_changed": 5,
+            "failed_drafts": 8,
+            "failed_to_passed": 0,
+            "format_recovered": 1,
+            "invalid_format_drafts": 1,
+            "planned_pairs": 16,
+            "raw_changed": 6,
+            "recovered_with_visible_prefinal": 0,
+            "regressions": 0,
+            "safe_wrong_drafts": 2,
+            "semantic_correction": 0,
+            "visible_prefix_changed": 0,
+            "visible_prefix_comparable_pairs": 15
+          }
+        },
+        "incomplete_cells": [],
+        "stages": {
+          "draft": {
+            "categories": {
+              "EXECUTED": 9,
+              "INTERPRETER_ERROR": 1,
+              "PARSER_ERROR": 1,
+              "SANDBOX_ERROR": 5
+            },
+            "complete": 16,
+            "eligible_passes": 8,
+            "format_valid_complete": 15,
+            "format_valid_recorded": 15,
+            "incomplete": 0,
+            "max_output_tokens": 62,
+            "output_tokens": 517,
+            "planned": 16,
+            "recorded": 16,
+            "safe_expression_complete": 10,
+            "strict_pass_recorded": 8,
+            "token_cap_hits": 0,
+            "visible_prefinal": {
+              "absent_complete": 15,
+              "assessable_complete": 15,
+              "characters_complete": 0,
+              "present_complete": 0,
+              "present_recorded": 0,
+              "strict_pass_with_absent": 8,
+              "strict_pass_with_present": 0,
+              "unanchored_multiline_complete": 0,
+              "unassessable_complete": 1
+            }
+          },
+          "interpreter_feedback": {
+            "categories": {
+              "EXECUTED": 10,
+              "INTERPRETER_ERROR": 1,
+              "SANDBOX_ERROR": 5
+            },
+            "complete": 16,
+            "eligible_passes": 9,
+            "format_valid_complete": 16,
+            "format_valid_recorded": 16,
+            "incomplete": 0,
+            "max_output_tokens": 71,
+            "output_tokens": 531,
+            "planned": 16,
+            "recorded": 16,
+            "safe_expression_complete": 11,
+            "strict_pass_recorded": 9,
+            "token_cap_hits": 0,
+            "visible_prefinal": {
+              "absent_complete": 16,
+              "assessable_complete": 16,
+              "characters_complete": 0,
+              "present_complete": 0,
+              "present_recorded": 0,
+              "strict_pass_with_absent": 9,
+              "strict_pass_with_present": 0,
+              "unanchored_multiline_complete": 0,
+              "unassessable_complete": 0
+            }
+          },
+          "neutral_review": {
+            "categories": {
+              "EXECUTED": 11,
+              "INTERPRETER_ERROR": 1,
+              "SANDBOX_ERROR": 4
+            },
+            "complete": 16,
+            "eligible_passes": 8,
+            "format_valid_complete": 16,
+            "format_valid_recorded": 16,
+            "incomplete": 0,
+            "max_output_tokens": 53,
+            "output_tokens": 481,
+            "planned": 16,
+            "recorded": 16,
+            "safe_expression_complete": 12,
+            "strict_pass_recorded": 8,
+            "token_cap_hits": 0,
+            "visible_prefinal": {
+              "absent_complete": 16,
+              "assessable_complete": 16,
+              "characters_complete": 0,
+              "present_complete": 0,
+              "present_recorded": 0,
+              "strict_pass_with_absent": 8,
+              "strict_pass_with_present": 0,
+              "unanchored_multiline_complete": 0,
+              "unassessable_complete": 0
+            }
+          }
+        },
+        "steering": "permission_only"
+      }
+    },
+    "joint_complete_tasks": 16,
+    "jointly_failed_complete_draft_tasks": 8,
+    "recovery_tables_on_joint_failed_drafts": {
+      "interpreter_feedback": {
+        "both_fail": 5,
+        "both_pass": 1,
+        "directed_only_pass": 1,
+        "permission_only_pass": 1
+      },
+      "neutral_review": {
+        "both_fail": 8,
+        "both_pass": 0,
+        "directed_only_pass": 0,
+        "permission_only_pass": 0
+      }
+    },
+    "task_paired_prompt_comparison": {
+      "draft": {
+        "complete_task_pairs": 16,
+        "directed_minus_permission_passes": -2,
+        "pass_table": {
+          "both_fail": 8,
+          "both_pass": 6,
+          "directed_only_pass": 0,
+          "permission_only_pass": 2
+        },
+        "planned_task_pairs": 16
+      },
+      "interpreter_feedback": {
+        "complete_task_pairs": 16,
+        "directed_minus_permission_passes": 1,
+        "pass_table": {
+          "both_fail": 5,
+          "both_pass": 8,
+          "directed_only_pass": 2,
+          "permission_only_pass": 1
+        },
+        "planned_task_pairs": 16
+      },
+      "neutral_review": {
+        "complete_task_pairs": 16,
+        "directed_minus_permission_passes": 0,
+        "pass_table": {
+          "both_fail": 8,
+          "both_pass": 8,
+          "directed_only_pass": 0,
+          "permission_only_pass": 0
+        },
+        "planned_task_pairs": 16
+      }
+    },
+    "totals": {
+      "complete_responses": 96,
+      "first_call_started_unix": 1789535877.5526822,
+      "last_call_finished_unix": 1789536151.0074763,
+      "output_tokens": 8622,
+      "planned_output_token_ceiling": 196608,
+      "recorded_calls": 96
+    }
+  },
+  "retention_claim": false,
+  "run": "/localhome/local-rohing/orch_r142_base_reasoning_20260916_attempt3/run1",
+  "run_evidence_sha256": "1950216a37d04d2102da618589cd0f0ecce1649947a842fdb0d16001e1a283d8",
+  "schema": "R142_ATTEMPT3_AUTHOR_RECOMPUTATION_V1",
+  "signals": 0,
+  "source_set_sha256": "af88a2a03b7680d8036a7d0875981fdc2d9ac5e30932ebad74b6ed8f7faf11db",
+  "status": "COMPLETE_AUTHOR_RECOMPUTED",
+  "supervisor_finished_utc": "2026-09-16T05:22:58.505169+00:00",
+  "tasks_sha256": "3f16d57e17055f6c754a7c59660f44c503c6bc2e67007e51a8a62ea4ffb5776d",
+  "terminal_sha256": {
+    "EPISODES_TERMINAL.json": "cd0e7a9b17e04b3fe7fbeddd65a03cb0d0183cdec5024262aeaa655e538d8388",
+    "EXIT.json": "4b4a1f2dc98c6937a2b804a5781caf6a40c6432acf1b6cc0865e845feaf0b1a4",
+    "NATIVE_TERMINAL.json": "1584a7e5964c2775b641f080baf7de3bec94cb39db835724281cd031d1742fdc",
+    "SUPERVISOR_COMPLETE.json": "63f7e60d2ff228992327784ab45ecf2cc68d235d41cf1fa8ade868ecf25f71c6"
+  },
+  "training_updates": 0,
+  "verification_role": "Independent recomputation by the implementation author, not a fresh independent reviewer",
+  "verified_calls": 96,
+  "verified_measurements": 96,
+  "verified_run_artifacts": 523,
+  "verified_stored_triplets": 32,
+  "visibility_caveat": "Observable output only; no inference about hidden reasoning, faithfulness, or causal mediation.",
+  "visible_text_definition": "Text preceding accepted final JSON line; nonempty after stripping whitespace. Invalid final JSON is unassessable, not absent.",
+  "weights_rehashed": false,
+  "weights_unchanged_native_terminal_verified": true
+}
