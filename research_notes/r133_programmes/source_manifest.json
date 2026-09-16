@@ -1,0 +1,170 @@
+{
+  "artifact_sha256": {
+    "brain_lecture_cards.json": "4a645e43a889c791cf23a433ffd710380cb2b053a383b453de39cb25a88dac36",
+    "parent_question_set.json": "2098e26e540ee152ea6ba6a9b52c13a8c95c86d608b01733e798215f2f9210bb"
+  },
+  "audience": "PARENT_ONLY_NO_HELD_DATA",
+  "created_utc": "2026-09-16T09:55:59.014752+00:00",
+  "dataset": {
+    "adaptation_boundary": "Conversational forms only, not validated counseling efficacy or clinical use. No human situations are transplanted to the LM.",
+    "archive_commit_binding": "Official archive URL was found in the pinned README. The archive is independently hash-pinned; it is not asserted to be versioned by the Git commit.",
+    "derived_member": {
+      "archive_path": "empatheticdialogues/train.csv",
+      "raw_local_path": "/tmp/r133-programme-sources-20260916/empathetic_train.csv",
+      "sha256": "35053a4e1ef39f6766e7706c9a3c97b8fa090cfb28d32087a8316a606ab1a7dd"
+    },
+    "license": "Creative Commons Attribution-NonCommercial 4.0 International",
+    "name": "EmpatheticDialogues",
+    "paper_authors": [
+      "Hannah Rashkin",
+      "Eric Michael Smith",
+      "Margaret Li",
+      "Y-Lan Boureau"
+    ],
+    "paper_doi": "10.18653/v1/P19-1534",
+    "paper_title": "Towards Empathetic Open-domain Conversation Models: A New Benchmark and Dataset",
+    "paper_year": 2019,
+    "receipt_ids": [
+      "D1-README",
+      "D1-LICENSE",
+      "D1-ARCHIVE",
+      "D1-PAPER"
+    ],
+    "repository": "https://github.com/facebookresearch/EmpatheticDialogues",
+    "repository_commit": "9649114c71e1af32189a3973b3598dc311297560",
+    "source_id": "D1"
+  },
+  "excluded_or_unverified_retrievals": [
+    "ESConv was retrieved but not selected: its CC BY-NC 4.0 LICENSE is accompanied by an academic-research-only README statement.",
+    "Direct PubMed Rasch/Wilson HTTP 203 pages contained no paper abstract and were rejected as evidence; successful Europe PMC author-abstract records replace them.",
+    "The UCSD Rasch PDF request failed TLS validation (HTTP 000); it is not counted as retrieved.",
+    "Scoville/Milner metadata was retrieved but its scanned primary text was not inspected, so no lecture claim relies on it."
+  ],
+  "neuroscience_primary_references": [
+    {
+      "access": "primary author abstract and metadata via Europe PMC; full paper not retrieved",
+      "authors": "Wilson MA, McNaughton BL.",
+      "doi": "10.1126/science.8036517",
+      "pmid": "8036517",
+      "publication_year": "1994",
+      "receipt": {
+        "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A8036517%20AND%20SRC%3AMED&format=json&resultType=core",
+        "http_status": 200,
+        "raw_path": "/tmp/r133-programme-sources-20260916/wilson_core.json",
+        "requested_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A8036517%20AND%20SRC%3AMED&format=json&resultType=core",
+        "retrieved_utc": "2026-09-16T09:53:10Z",
+        "sha256": "7b5ae74e2e5016476a079425bbed59cc13e157a6735b686fdd8cfd16026310d3",
+        "source_id": "N1"
+      },
+      "source_id": "N1",
+      "title": "Reactivation of hippocampal ensemble memories during sleep."
+    },
+    {
+      "access": "primary author abstract and metadata via Europe PMC; full paper not retrieved",
+      "authors": "Rasch B, Büchel C, Gais S, Born J.",
+      "doi": "10.1126/science.1138581",
+      "pmid": "17347444",
+      "publication_year": "2007",
+      "receipt": {
+        "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A17347444%20AND%20SRC%3AMED&format=json&resultType=core",
+        "http_status": 200,
+        "raw_path": "/tmp/r133-programme-sources-20260916/rasch_core.json",
+        "requested_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A17347444%20AND%20SRC%3AMED&format=json&resultType=core",
+        "retrieved_utc": "2026-09-16T09:53:42Z",
+        "sha256": "36dc80340cc0eec6862aee0b4b289480f102ff8bb6ebc25a4289815b09474c7c",
+        "source_id": "N2"
+      },
+      "source_id": "N2",
+      "title": "Odor cues during slow-wave sleep prompt declarative memory consolidation."
+    },
+    {
+      "access": "primary full HTML and author abstract inspected",
+      "authors": [
+        "Marcus E Raichle",
+        "Ann Mary MacLeod",
+        "Abraham Z Snyder",
+        "William J Powers",
+        "Debra A Gusnard",
+        "Gordon L Shulman"
+      ],
+      "doi": "10.1073/pnas.98.2.676",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "publication_date": "2001 Jan 16",
+      "receipt": {
+        "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC14647/",
+        "http_status": 200,
+        "raw_path": "/tmp/r133-programme-sources-20260916/raichle.html",
+        "requested_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC14647/",
+        "retrieved_utc": "2026-09-16T09:52:16Z",
+        "sha256": "e1fe97c2fcc6ceb977656c4738505c2059952f883bdae6fe550db6b1a59e94f0",
+        "source_id": "N3"
+      },
+      "source_id": "N3",
+      "title": "A default mode of brain function"
+    },
+    {
+      "access": "primary full HTML and author abstract inspected",
+      "authors": [
+        "Stephen M Fleming",
+        "Rimona S Weil",
+        "Zoltan Nagy",
+        "Raymond J Dolan",
+        "Geraint Rees"
+      ],
+      "doi": "10.1126/science.1191883",
+      "journal": "Science (New York, N.Y.)",
+      "publication_date": "2010 Sep 17",
+      "receipt": {
+        "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3173849/",
+        "http_status": 200,
+        "raw_path": "/tmp/r133-programme-sources-20260916/fleming.html",
+        "requested_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3173849/",
+        "retrieved_utc": "2026-09-16T09:52:16Z",
+        "sha256": "5d7f5a37ebf6e6e01fc1eb25696778901d807a1e14dd76819e6a9613bd09ac03",
+        "source_id": "N4"
+      },
+      "source_id": "N4",
+      "title": "Relating introspective accuracy to individual differences in brain structure"
+    }
+  ],
+  "raw_data_policy": "Full downloaded material remains under /tmp; repo artifacts contain only short question excerpts, marked adaptations, reference metadata, and source-backed summaries.",
+  "retrieval_receipts": [
+    {
+      "final_url": "https://raw.githubusercontent.com/facebookresearch/EmpatheticDialogues/9649114c71e1af32189a3973b3598dc311297560/README.md",
+      "http_status": 200,
+      "raw_path": "/tmp/r133-programme-sources-20260916/empathetic_README.md",
+      "requested_url": "https://raw.githubusercontent.com/facebookresearch/EmpatheticDialogues/9649114c71e1af32189a3973b3598dc311297560/README.md",
+      "retrieved_utc": "2026-09-16T09:51:35Z",
+      "sha256": "bdb4ad826512bccc956f65d3c0e7df19b7c597aa552f2cbb608cba8e69906c1b",
+      "source_id": "D1-README"
+    },
+    {
+      "final_url": "https://raw.githubusercontent.com/facebookresearch/EmpatheticDialogues/9649114c71e1af32189a3973b3598dc311297560/LICENSE",
+      "http_status": 200,
+      "raw_path": "/tmp/r133-programme-sources-20260916/empathetic_LICENSE",
+      "requested_url": "https://raw.githubusercontent.com/facebookresearch/EmpatheticDialogues/9649114c71e1af32189a3973b3598dc311297560/LICENSE",
+      "retrieved_utc": "2026-09-16T09:51:35Z",
+      "sha256": "82656a050544ab820c9aa7b61433f5181f8e80cacd042377140962a3e3eb5721",
+      "source_id": "D1-LICENSE"
+    },
+    {
+      "final_url": "https://dl.fbaipublicfiles.com/parlai/empatheticdialogues/empatheticdialogues.tar.gz",
+      "http_status": 200,
+      "raw_path": "/tmp/r133-programme-sources-20260916/empatheticdialogues.tar.gz",
+      "requested_url": "https://dl.fbaipublicfiles.com/parlai/empatheticdialogues/empatheticdialogues.tar.gz",
+      "retrieved_utc": "2026-09-16T09:52:16Z",
+      "sha256": "56f234d77b7dd1f005fd365bb17769cfe346c3c84295b69bc069c8ccb83be03d",
+      "source_id": "D1-ARCHIVE"
+    },
+    {
+      "final_url": "https://aclanthology.org/P19-1534/",
+      "http_status": 200,
+      "raw_path": "/tmp/r133-programme-sources-20260916/empathetic_paper.html",
+      "requested_url": "https://aclanthology.org/P19-1534/",
+      "retrieved_utc": "2026-09-16T09:53:42Z",
+      "sha256": "a01ace55905c9aff92e245fb5a710cae37d87b40d6e488688ae4daf655c6faea",
+      "source_id": "D1-PAPER"
+    }
+  ],
+  "schema": "R133_PUBLIC_SOURCE_MANIFEST_V1"
+}
