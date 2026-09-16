@@ -48,6 +48,13 @@ class Tokenizer:
 
 
 class EncodingAndPlanTests(unittest.TestCase):
+    def test_readout_revision_uses_new_artifacts_without_replacing_old_calls(self):
+        self.assertEqual(native.readout_name({}, 2), 'sleep_000002')
+        self.assertEqual(native.readout_name({'readout_revision': 2}, 2), 'sleep_000002_r2')
+        for revision in (0, -1, True, '2'):
+            with self.subTest(revision=revision), self.assertRaisesRegex(ValueError, 'positive_readout_revision'):
+                native.readout_name({'readout_revision': revision}, 2)
+
     def row(self):
         return dict(split='TRAIN', actor='child', prefix_loss=False, target_loss=True,
             prefix=[dict(role='system', content='s'), dict(role='user', content='p')],
@@ -61,6 +68,20 @@ class EncodingAndPlanTests(unittest.TestCase):
         self.assertEqual(encoded.labels, (-100, -100, -100, 197, 198, 2))
         self.assertEqual(encoded.target_ids, (197, 198, 2))
         self.assertEqual(row, before)
+
+    def test_genuine_generated_endoftext_is_not_a_role_injection(self):
+        class QwenTokenizer(Tokenizer):
+            pad_token_id = 0
+
+            def decode(self, tokens, **kwargs):
+                return ''.join('<|endoftext|>' if token == 0 else chr(token-100) for token in tokens)
+
+        row = dict(self.row(), token_ids=[197, 0, 198, 2], target='a<|endoftext|>b')
+        encoded = native.encode_own(row, QwenTokenizer(), 7)
+        self.assertEqual(encoded.target_ids, (197, 0, 198, 2))
+        self.assertEqual(encoded.labels[:3], (-100, -100, -100))
+        with self.assertRaisesRegex(ValueError, 'no_special_token_target_injection'):
+            native.encode_own(dict(row, token_ids=[197, 1, 198, 2]), QwenTokenizer(), 7)
 
     def test_nonterminal_target_never_gets_synthetic_eos(self):
         row = dict(self.row(), token_ids=[197, 198], terminal=False)
@@ -326,6 +347,43 @@ class NativeLoopTests(unittest.TestCase):
         Path(self.plan['root']).rmdir()
         native.run(self.plan_path)
         self.assertEqual(len(self.restore().sleep_receipts), 2)
+
+    def test_verified_preupdate_recovery_finishes_only_existing_pending_rows(self):
+        original = SyntheticChild.sleep
+
+        def fail_second(child, *args, **kwargs):
+            if child.optimizer_steps == 48:
+                raise RuntimeError('encoding failed before updates')
+            return original(child, *args, **kwargs)
+
+        with patch.object(SyntheticChild, 'sleep', fail_second):
+            with self.assertRaisesRegex(RuntimeError, 'encoding failed before updates'):
+                native.run(self.plan_path)
+        before = self.restore()
+        self.assertIsNotNone(before.pending)
+        rows = deepcopy(before.rows)
+        plan = dict(self.plan, preupdate_recovery={'explicit_test_recovery': True})
+        self.plan_path.write_text(json.dumps(plan))
+        self.stop_after_readout = 2
+
+        def reconstructed(child, stream, journal, recovery):
+            self.assertEqual(child.optimizer_steps, 48)
+            self.assertEqual(stream.rows, rows)
+            self.assertEqual(stream.pending, before.pending)
+            self.assertEqual(self.records()[-1]['kind'], 'SLEEP_REQUEST')
+            return dict(status='COMPLETE', rng_reconstruction_verified=True)
+
+        with patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)), \
+                patch('gpu.orch_r125_preupdate_recovery.recover_rng', side_effect=reconstructed) as recover:
+            with self.assertRaisesRegex(RuntimeError, 'synthetic interruption'):
+                native.run(self.plan_path, resume=True)
+        recover.assert_called_once()
+        restored = self.restore()
+        self.assertIsNone(restored.pending)
+        self.assertEqual(restored.rows, rows)
+        self.assertEqual(restored.sleep_frontier, 6)
+        self.assertEqual(len(restored.sleep_receipts), 2)
+        self.assertEqual(self.children[-1].optimizer_steps, 99)
 
     def test_pending_generation_resume_never_loads_or_redispatches(self):
         self.fail_generate = True

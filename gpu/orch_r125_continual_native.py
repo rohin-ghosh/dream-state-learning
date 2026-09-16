@@ -84,6 +84,7 @@ def validate_plan(plan):
     require(time.time() < plan['hard_end_unix'] <= plan['lease_end_unix']-120, 'within_lease_wall')
     require(plan['decoder'] == dict(temperature=0.7, top_p=0.95, repetition_penalty=1.05,
                                    no_repeat_ngram_size=16), 'posted_decoder')
+    readout_name(plan, 0)
     for key in ('root', 'model_dir', 'anchors', 'source_root'):
         require(Path(plan[key]).is_absolute(), 'absolute_path:'+key)
     require(not Path(plan['root']).resolve().is_relative_to(Path(plan['source_root']).resolve()),
@@ -101,7 +102,13 @@ def encode_own(row, tokenizer, context_limit):
     require(target and all(type(token) is int and token >= 0 for token in target), 'actual_native_target_ids')
     require(not row['terminal'] or target[-1] == tokenizer.eos_token_id, 'actual_terminal_eos')
     visible = target[:-1] if row['terminal'] else target
-    require(not set(tokenizer.all_special_ids).intersection(visible), 'no_special_token_target_injection')
+    permitted = set()
+    pad = getattr(tokenizer, 'pad_token_id', None)
+    if pad is not None and tokenizer.decode([pad], skip_special_tokens=False,
+            clean_up_tokenization_spaces=False) == '<|endoftext|>':
+        permitted.add(pad)
+    require(not (set(tokenizer.all_special_ids)-permitted).intersection(visible),
+            'no_special_token_target_injection')
     require(tokenizer.decode(visible, skip_special_tokens=False,
                 clean_up_tokenization_spaces=False) == row['target'], 'native_target_roundtrip')
     require(len(prefix)+len(target) <= context_limit, 'whole_source_no_training_trim')
@@ -114,10 +121,17 @@ def presentation_schedule(new_rows, old_rows):
         ('REHEARSAL', row) for row in old_rows]
 
 
+def readout_name(plan, cycle):
+    revision = plan.get('readout_revision', 1)
+    require(type(revision) is int and revision >= 1, 'positive_readout_revision')
+    return f'sleep_{cycle:06d}' + (f'_r{revision}' if revision > 1 else '')
+
+
 def fresh_readout(child, plan_path, checkpoint, cycle):
-    output = Path(child.plan['root'])/'readouts'/f'sleep_{cycle:06d}'
+    name = readout_name(child.plan, cycle)
+    output = Path(child.plan['root'])/'readouts'/name
     output.parent.mkdir(parents=True, exist_ok=True)
-    status_path = output.parent/f'sleep_{cycle:06d}_DISPATCH.json'
+    status_path = output.parent/f'{name}_DISPATCH.json'
     require(not output.exists() and not status_path.exists(), 'readout_no_implicit_replay')
     checkpoint_path = Path(checkpoint['adapter_path']).parent/'COMMIT.json'
     command = [sys.executable, '-B', '-m', 'gpu.orch_r125_continual_readout',
@@ -128,14 +142,14 @@ def fresh_readout(child, plan_path, checkpoint, cycle):
     state = child.offload_for_readout()
     process = None
     try:
-        with (output.parent/f'sleep_{cycle:06d}.log').open('x') as log:
+        with (output.parent/f'{name}.log').open('x') as log:
             process = subprocess.Popen(command, cwd=child.plan['source_root'],
                 stdin=subprocess.DEVNULL, stdout=log, stderr=subprocess.STDOUT,
                 start_new_session=True)
             status = process.wait(timeout=max(1, child.plan['hard_end_unix']-time.time()-15))
         require(status == 0 and (output/'COMPLETE.json').is_file(), 'fresh_readout_incomplete')
     except Exception as error:
-        write_once(output.parent/f'sleep_{cycle:06d}_FAILED.json',
+        write_once(output.parent/f'{name}_FAILED.json',
             dict(error_type=type(error).__name__, error=str(error), failed_unix=time.time(),
                  retry_allowed=False, continued_training_not_evidence_of_readout_success=True))
     finally:
@@ -346,6 +360,22 @@ class NativeChild:
             presentations=presentations, anchor_lambda=0.25, mix_kind='OBJECTIVE_WEIGHT_NOT_TOKEN_FRACTION')
 
 
+def finish_sleep(child, stream, journal, anchors, root, cycle):
+    checkpoint_path = root/'checkpoints'/f'sleep_{cycle:06d}'
+    require(not checkpoint_path.exists(), 'never_repeat_checkpointed_sleep')
+    new_rows = stream.pending_rows()
+    if stream.pending is not None:
+        require(stream.pending == 'sleep:'+digest([row['source_sha256'] for row in new_rows]),
+                'only_verified_pending_sleep_may_complete')
+    receipt = child.sleep(new_rows, stream.rows[:stream.sleep_frontier], anchors, journal.record)
+    checkpoint = child.checkpoint(checkpoint_path)
+    receipt.update(status='COMPLETE', new_row_sha256=[row['source_sha256'] for row in new_rows],
+        checkpoint_sha256=checkpoint['checkpoint_sha256'], checkpoint=checkpoint, cycle=cycle)
+    stream.pending = None
+    stream.commit_sleep(receipt, journal.record)
+    return checkpoint
+
+
 def run(plan_path, *, resume=False):
     from gpu.orch_r107_base_anchors_inventory import build_inventory
     from gpu.orch_r125_stream_journal import StreamJournal
@@ -358,16 +388,22 @@ def run(plan_path, *, resume=False):
     signal.setitimer(signal.ITIMER_REAL, plan['hard_end_unix']-time.time())
     try:
         with StreamJournal(root/'stream', create=not resume) as journal:
+            recovering = False
             if resume:
                 state = journal.latest_checkpoint()
                 stream = ContinualStream.restore(state['document'], expected_sha256=state['expected_sha256'])
-                require(stream.pending is None, 'unresolved_generation_or_sleep_requires_reconciliation')
-                require(stream.sleep_frontier == len(stream.rows), 'resume_requires_saved_RNG_sleep_boundary')
+                recovering = (isinstance(stream.pending, str) and stream.pending.startswith('sleep:')
+                    and isinstance(plan.get('preupdate_recovery'), dict))
+                require(stream.pending is None or recovering, 'unresolved_generation_or_sleep_requires_reconciliation')
+                require(recovering or stream.sleep_frontier == len(stream.rows), 'resume_requires_saved_RNG_sleep_boundary')
                 require(stream.deadline_unix == plan['hard_end_unix'], 'same_resume_wall')
                 matching = [read(path) for path in (root/'checkpoints').glob('*/COMMIT.json')
                     if digest(read(path)['checkpoint_sha256']) == stream.model_state_sha256]
                 require(len(matching) == 1, 'one_exact_model_checkpoint_for_stream')
                 child = NativeChild(plan, matching[0])
+                if recovering:
+                    from gpu.orch_r125_preupdate_recovery import recover_rng
+                    recover_rng(child, stream, journal, plan['preupdate_recovery'])
             else:
                 child = NativeChild(plan)
                 checkpoint = child.checkpoint(root/'checkpoints'/'initial')
@@ -388,9 +424,14 @@ def run(plan_path, *, resume=False):
                 base_sha256=BASE_SHA256, adapter_sha256=child.adapter_hash(), optimizer_steps=child.optimizer_steps,
                 anchors=anchor_receipt, resume=resume, loaded_unix=time.time()))
             completed_sleeps = len(stream.sleep_receipts)
-            readout_dispatch = root/'readouts'/f'sleep_{completed_sleeps:06d}_DISPATCH.json'
-            if not readout_dispatch.exists():
-                fresh_readout(child, plan_path, matching[0] if resume else checkpoint, completed_sleeps)
+            if recovering:
+                completed_sleeps += 1
+                checkpoint = finish_sleep(child, stream, journal, anchors, root, completed_sleeps)
+            for readout_cycle in range(completed_sleeps+1):
+                readout_dispatch = root/'readouts'/f'{readout_name(plan, readout_cycle)}_DISPATCH.json'
+                if not readout_dispatch.exists():
+                    directory = 'initial' if readout_cycle == 0 else f'sleep_{readout_cycle:06d}'
+                    fresh_readout(child, plan_path, read(root/'checkpoints'/directory/'COMMIT.json'), readout_cycle)
             while time.time() < plan['hard_end_unix']:
                 stream.step(child.generate, child.count_tokens, journal.record, incoming=journal.read_inbox())
                 if not stream.sleep_due:
@@ -410,16 +451,11 @@ def run(plan_path, *, resume=False):
                     journal.record('COMPACTION_SKIPPED', dict(cycle=cycle,
                         source_sha256=raw_summary.source_sha256, reason='empty_child_summary_no_invented_replacement'))
                 new_rows = stream.pending_rows()
-                old_rows = stream.rows[:stream.sleep_frontier]
                 pending = stream.checkpoint()
                 pending['state']['pending'] = 'sleep:'+digest([row['source_sha256'] for row in new_rows])
                 pending['sha256'] = digest(pending['state'])
                 journal.record('SLEEP_REQUEST', dict(cycle=cycle, resume_state=pending))
-                receipt = child.sleep(new_rows, old_rows, anchors, journal.record)
-                checkpoint = child.checkpoint(root/'checkpoints'/f'sleep_{cycle:06d}')
-                receipt.update(status='COMPLETE', new_row_sha256=[row['source_sha256'] for row in new_rows],
-                    checkpoint_sha256=checkpoint['checkpoint_sha256'], checkpoint=checkpoint, cycle=cycle)
-                stream.commit_sleep(receipt, journal.record)
+                checkpoint = finish_sleep(child, stream, journal, anchors, root, cycle)
                 completed_sleeps = cycle
                 fresh_readout(child, plan_path, checkpoint, cycle)
                 if plan['max_sleeps'] is not None and completed_sleeps >= plan['max_sleeps']:

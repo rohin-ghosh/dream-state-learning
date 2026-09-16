@@ -21,6 +21,17 @@ RAW = '<think>Raw reasoning is retained verbatim.</think>\nanswer\n'
 ADAPTER_SHA256 = 'a' * 64
 
 
+def test_bare_CUuuid_preserves_exact_bound_device(monkeypatch):
+    expected = 'GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b'
+    monkeypatch.setenv('CUDA_VISIBLE_DEVICES', expected)
+    engine = Engine(expected)
+    engine.device_uuid = expected.removeprefix('GPU-')
+    assert runner._verify_device(engine, {'gpu_uuid': expected}) == expected
+    engine.device_uuid = 'd62ba12e-ff08-9e5e-ba35-14c723f6e05c'
+    with pytest.raises(ValueError, match='CUDA_UUID_mismatch'):
+        runner._verify_device(engine, {'gpu_uuid': expected})
+
+
 class Model:
     def __init__(self):
         self.parameter = SimpleNamespace(requires_grad=False)

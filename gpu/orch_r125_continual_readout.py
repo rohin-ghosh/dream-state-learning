@@ -42,6 +42,8 @@ def _verify_device(engine, plan):
         'one_bound_GPU_environment')
     policy.require(engine.torch.cuda.device_count() == 1, 'one_visible_GPU')
     observed = str(engine.torch.cuda.get_device_properties(0).uuid)
+    if not observed.startswith('GPU-'):
+        observed = 'GPU-' + observed
     policy.require(observed == plan['gpu_uuid'], 'CUDA_UUID_mismatch')
     return observed
 
