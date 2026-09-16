@@ -15,7 +15,7 @@ from gpu import orch_math_feedback_uptake_r125_runtime_scan as scanner
 
 
 ROOT = run.ROOT/'A2'
-SERVICE = ROOT/'runtime_recovery6'
+SERVICE = ROOT/'runtime_recovery7'
 SOURCE = Path(__file__).resolve().parents[1]
 ORIGINAL_SOURCE = Path('/localhome/local-rohing/orch_math_feedback_uptake_r124_readout_source_20260915_v1')
 MODULE = 'gpu.orch_r125_a2_boundary_resume'
@@ -34,6 +34,8 @@ def continuation_plan(plan, checkpoint, counters, history, carry, cycle):
 
 def prepare():
     plan = original_validate(ROOT)
+    run.math.reuse.driver.seam.portable.verify_base_files(run.math.BUNDLE, run.math.MODEL,
+        expected_manifest_sha256=run.math.reuse.node_limits.BUNDLE_SHA)
     terminal = run.read(ROOT/'TERMINAL.json')
     counters = run.read(ROOT/'COUNTERS.json')
     committed = run.read(ROOT/'COMMITTED.json')
@@ -127,6 +129,13 @@ def guard():
     for name in ('GUARD_STARTED.json', 'LAUNCH.json'):
         identity = run.read(ROOT/'runtime_recovery5'/name)['identity']
         run.require(not Path('/proc',str(identity['pid'])).exists(), 'old_actor_or_reused_PID_still_present')
+    failed = ROOT/'runtime_recovery6'
+    run.require(run.read(failed/'GUARD_TERMINAL.json')['returncode'] == 1
+                and not (failed/'LOADED.json').exists() and not (ROOT/'cycle000053').exists(),
+                'prior_attempt_failed_before_model_or_new_cycle')
+    for name in ('GUARD_STARTED.json', 'LAUNCH.json'):
+        identity = run.read(failed/name)['identity']
+        run.require(not Path('/proc',str(identity['pid'])).exists(), 'failed_attempt_actor_absent')
     run.write(SERVICE/'GUARD_STARTED.json', dict(identity=run.math.common.process_identity(Path('/proc')/str(os.getpid())),
                                               started_unix=time.time()))
     command = ['sudo','-n','env','CUDA_VISIBLE_DEVICES=','PYTHONDONTWRITEBYTECODE=1',

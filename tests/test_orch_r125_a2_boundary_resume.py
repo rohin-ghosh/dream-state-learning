@@ -58,3 +58,8 @@ def test_startup_collision_redirect_does_not_redirect_new_cycle_evidence():
         assert write.call_args.args[0] == recovery.ROOT/'cycle000053/ROWS.json'
         recovery.relocated_write(recovery.ROOT/'TERMINAL.json', {'new':True})
         assert write.call_args.args[0] == recovery.SERVICE/'TERMINAL.json'
+
+
+def test_portable_source_contract_includes_non_python_helpers():
+    contract = recovery.run.math.reuse.driver.seam.portable.contract()
+    assert len(contract['helpers']['guard']) == 64
