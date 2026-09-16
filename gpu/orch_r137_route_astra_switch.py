@@ -155,6 +155,13 @@ def gate(store, name, boundary):
     return eligible(name, boundary, mtime, old_claim or new_claim, answered)
 
 
+def process_one(process, store, config, launch, name, directory, prompt_root, principles):
+    buffer = Path(tempfile.mkdtemp(prefix='packet_', dir=directory))
+    status = process(store, config, launch, name, buffer, prompt_root, principles)
+    buffer.rmdir()
+    return status
+
+
 def serve(directory, repository, prompt_root, principles):
     directory = Path(directory).resolve()
     require(directory.is_relative_to(RUNTIME) and os.environ.get('CUDA_VISIBLE_DEVICES') == '', 'data_CPU_controller')
@@ -201,8 +208,7 @@ def serve(directory, repository, prompt_root, principles):
             for name in sorted(names):
                 if not gate(store, name, boundary):
                     continue
-                with tempfile.TemporaryDirectory(prefix='packet_', dir=directory) as temporary:
-                    status = process(store, config, launch, name, Path(temporary), prompt_root, principles)
+                status = process_one(process, store, config, launch, name, directory, prompt_root, principles)
                 print(json.dumps(dict(request=name, status=status, requested_model=astra.MODEL,
                     observed_unix=time.time(), provider_era='R137_PROSPECTIVE_ASTRA')), flush=True)
             time.sleep(.5)

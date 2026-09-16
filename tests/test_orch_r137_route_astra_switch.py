@@ -102,6 +102,25 @@ class RouteSwitchTests(unittest.TestCase):
             self.assertFalse(observed['retry'])
             self.assertTrue((Path(temporary)/'MODEL_CHOICE.json').exists())
 
+    def test_failed_publication_preserves_local_capture_without_retry(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            def fail(store, config, launch, name, buffer, prompt_root, principles):
+                (buffer/'capture.json').write_text('{"preserved": true}')
+                raise OSError('archive_failed')
+            process = Mock(side_effect=fail)
+            with self.assertRaisesRegex(OSError, 'archive_failed'):
+                switch.process_one(process, None, {}, {}, 'name', Path(temporary), None, None)
+            process.assert_called_once()
+            captures = list(Path(temporary).glob('packet_*/capture.json'))
+            self.assertEqual(len(captures), 1)
+            self.assertEqual(captures[0].read_text(), '{"preserved": true}')
+
+    def test_success_removes_only_empty_scratch_directory(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            process = Mock(return_value='COMPLETE')
+            self.assertEqual(switch.process_one(process, None, {}, {}, 'name', Path(temporary), None, None), 'COMPLETE')
+            self.assertFalse(list(Path(temporary).iterdir()))
+
 
 if __name__ == '__main__':
     unittest.main()
