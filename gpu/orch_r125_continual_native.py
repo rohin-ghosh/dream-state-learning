@@ -72,7 +72,21 @@ def write_once(path, document):
 
 def validate_plan(plan):
     require(plan['schema'] == SCHEMA and plan['base_sha256'] == BASE_SHA256, 'frozen_native_contract')
-    require(plan['system_prompt'] == SYSTEM and plan['birth_prompt'] == BIRTH
+    startup = plan.get('startup_context')
+    if startup is None:
+        require(plan['birth_prompt'] == BIRTH, 'exact_posted_prompts')
+    else:
+        require(type(startup) is dict and set(startup) == {'version', 'path', 'sha256'}
+            and startup['version'] == 'R127_STARTUP_V1', 'exact_R127_startup_binding')
+        path = Path(startup['path'])
+        require(path.is_absolute() and path.resolve().is_relative_to(Path(plan['source_root']).resolve())
+            and not path.is_symlink() and sha(path) == startup['sha256'], 'pinned_startup_source')
+        text = path.read_text()
+        require(text == plan['birth_prompt'] and 0 < len(text.encode()) <= 16384
+            and 'Machine-side configuration' not in text, 'child_facing_startup_only')
+        import re
+        require(re.search(r'\[[A-Z][A-Z_]+\]', text) is None, 'startup_placeholders_filled')
+    require(plan['system_prompt'] == SYSTEM
             and plan['compaction_invitation'] == COMPACTION_INVITATION, 'exact_posted_prompts')
     require(plan['new_presentations'] == 16 and plan['rehearsal_presentations'] == 1
             and plan['anchor_lambda'] == 0.25, 'declared_presentation_and_anchor_schedule')

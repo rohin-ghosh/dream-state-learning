@@ -1,0 +1,70 @@
+{
+  "GPU_used": false,
+  "canary_unchanged": true,
+  "cases": [
+    {
+      "case": "positive",
+      "cgroup_removed_after_stop": true,
+      "origin": {
+        "child_generated": false,
+        "kind": "BUILDER_TEST"
+      },
+      "receipt": "/localhome/local-rohing/orch_r125_cpu_dispatcher_review_20260916T084318Z/spool/e4fc26219c1bf36e05d4625a246ce762accd832686873342953b3d83f62069e6/RESULT.json",
+      "receipt_sha256": "fede8d4d95f41716885b229ea10cf11be5861e1b5fa08882780584e58c9c7294",
+      "request_id": "e4fc26219c1bf36e05d4625a246ce762accd832686873342953b3d83f62069e6",
+      "source_sha256": "bf0a57522a6d4d4a3e3183b0e92c0468b4191b485dec344c796a54c8295c38e5",
+      "status": "COMPLETE",
+      "stderr": "",
+      "stdout": "285\n"
+    },
+    {
+      "case": "denied_path",
+      "cgroup_removed_after_stop": true,
+      "origin": {
+        "child_generated": false,
+        "kind": "BUILDER_TEST"
+      },
+      "receipt": "/localhome/local-rohing/orch_r125_cpu_dispatcher_review_20260916T084318Z/spool/ef105facea13c7d7903dbda8d90c083f396c420dffd0c913c1126a6626cdda07/RESULT.json",
+      "receipt_sha256": "18922be1b0bd1b9e2f552bdb050c7ff18defe9146a8a2e867ba4a55740070c0f",
+      "request_id": "ef105facea13c7d7903dbda8d90c083f396c420dffd0c913c1126a6626cdda07",
+      "source_sha256": "7888b1a98b19ae90c8fb49d470e5c606f12ed1a885447ce2996bbb7c2f554405",
+      "status": "COMPLETE",
+      "stderr": "",
+      "stdout": "{\"synthetic_outside_read_denied\": true, \"errno\": 2}\n"
+    }
+  ],
+  "child_generated": false,
+  "gate": {
+    "basic": {
+      "path": "/localhome/local-rohing/orch_r125_cpu_confinement_source_v9/basic.json",
+      "sha256": "faceaf1e3311a6ed8351eaee7a8c67423246bdc5ee5991bc3f656f026ec73926"
+    },
+    "files": {
+      "path": "/localhome/local-rohing/orch_r125_cpu_confinement_source_v9/files.json",
+      "sha256": "7530560dba4974599ff25bbf36b49339529d085ae8428e1c8b1c267e5a315c20"
+    },
+    "memory": {
+      "path": "/localhome/local-rohing/orch_r125_cpu_confinement_source_v9/memory.json",
+      "sha256": "41ecce209fb4745a37af367a7d5b155b32c28785c599aa92154508545e4f4ccd"
+    },
+    "output": {
+      "path": "/localhome/local-rohing/orch_r125_cpu_confinement_source_v9/output.json",
+      "sha256": "fc0dab64e37b34d35ed64aaa0783629f9ed3e7c198945ac6cfce359118c01c58"
+    },
+    "timeout": {
+      "path": "/localhome/local-rohing/orch_r125_cpu_confinement_source_v9/timeout.json",
+      "sha256": "2fc562905667169ae6304e529758b3ec836c7eedc3e724a64701d68b01ae5a3d"
+    }
+  },
+  "gate_unchanged": true,
+  "observed_utc": "2026-09-16T08:44:07.310945+00:00",
+  "schema": "R125_CPU_BUILDER_SMOKE_REVIEW_V1",
+  "source_sha256": {
+    "gpu/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gpu/orch_r125_bounded_capture.py": "b45825aad250ad0305b1f2d2c1b475690a4c6dda89045f97d5ee63da1294119d",
+    "gpu/orch_r125_cpu_confinement_probe.py": "3fd355e3a0a8b52846c8e9964b0e9de69d510eae10406388913e6e7071df0887",
+    "gpu/orch_r125_cpu_experiment.py": "68878647c29e8d2784a36167936c9cb77d26e53a9b031a48afa3fbb5b9b7db7b",
+    "organism_v6/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "organism_v6/orch_r125_experiment_request.py": "8894819b74275760038313be4b894fd2f5c92b7004aa99d2a6c2cf60cad05f93"
+  }
+}

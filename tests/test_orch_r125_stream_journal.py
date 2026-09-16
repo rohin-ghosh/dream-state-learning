@@ -14,6 +14,7 @@ from unittest.mock import patch
 from gpu.orch_r125_stream_journal import StreamJournal
 from organism_v6.orch_r124_train_history import TrainEvent, TrainHistory
 from organism_v6.orch_r125_continual_stream import ContinualStream, digest
+from organism_v6.orch_r125_plain_context import VERSION as PLAIN_CONTEXT_VERSION
 
 
 def tokens(messages):
@@ -325,6 +326,127 @@ class StreamJournalTests(unittest.TestCase):
             with self.subTest(document=document), self.assertRaises(ValueError):
                 self.journal.read_inbox()
         self.assertEqual(list((self.root / 'records').iterdir()), [])
+
+    def attributed_message(self, **changes):
+        document = dict(schema='R127_ATTRIBUTED_INBOX_V1', id='a' * 32, text='A plain observation.',
+                        split='TRAIN', actor='parent', speaker='Astra', source_receipt=None)
+        document.update(changes)
+        return document
+
+    def test_mixed_legacy_and_R127_parents_render_only_human_readable_attribution(self):
+        self.stream.set_presentation(dict(version=PLAIN_CONTEXT_VERSION,
+            system_prompt='System.', birth_prompt='Birth.'), 16384)
+        self.parent(name='0-legacy.json', text='Legacy remains unprefixed.')
+        expected = ['Legacy remains unprefixed.']
+        for index, speaker in enumerate(('Astra', 'Fable', 'Rohin'), start=1):
+            document = self.attributed_message(id=f'{index:032x}', speaker=speaker)
+            (self.journal.inbox / f'{index}-parent.json').write_text(json.dumps(document))
+            expected.append(speaker + ': ' + document['text'])
+        incoming = self.journal.read_inbox()
+        self.assertEqual([event.text for event in incoming], expected)
+        for event in incoming:
+            self.assertEqual((event.actor, event.phase, event.split), ('parent', 'experience', 'TRAIN'))
+            self.assertTrue(event.event_id.startswith('parent:inbox:'))
+        captured = []
+
+        def capture(messages, **kwargs):
+            captured.extend(deepcopy(messages))
+            return generate(messages, **kwargs)
+
+        self.step(generate_call=capture, incoming=incoming)
+        visible = '\n'.join(message['content'] for message in captured)
+        for text in expected:
+            self.assertIn(text, visible)
+        for metadata in ('R127_ATTRIBUTED_INBOX_V1', 'source_receipt', '"actor"', '"speaker"'):
+            self.assertNotIn(metadata, visible)
+        self.assertEqual(self.journal.read_inbox(), incoming)
+        self.step(incoming=incoming)
+        for event in incoming:
+            self.assertEqual(sum(item.event_id == event.event_id for item in self.stream.history.events), 1)
+        self.journal.close()
+        with StreamJournal(self.root) as reopened:
+            self.assertEqual(reopened.read_inbox(), incoming)
+
+    def test_R127_tool_source_is_preserved_but_not_rendered_or_used_as_child_target(self):
+        self.stream.set_presentation(dict(version=PLAIN_CONTEXT_VERSION,
+            system_prompt='System.', birth_prompt='Birth.'), 16384)
+        source = dict(path=str(self.root / 'private-result.json'), sha256='b' * 64)
+        document = self.attributed_message(actor='environment', speaker='Tool', source_receipt=source,
+                                          text='Tool result status: PROCESS_FAILED\nstderr: actual failure')
+        path = self.journal.inbox / 'tool.json'
+        path.write_text(json.dumps(document))
+        raw = path.read_bytes()
+        incoming = self.journal.read_inbox()
+        self.assertEqual(len(incoming), 1)
+        event = incoming[0]
+        self.assertEqual((event.actor, event.phase, event.split), ('environment', 'feedback', 'TRAIN'))
+        self.assertEqual(event.event_id, 'environment:inbox:' + document['id'])
+        self.assertEqual(event.text, 'Tool: ' + document['text'])
+        self.assertEqual(event.source_id, str(path))
+        self.assertEqual(event.source_sha256, hashlib.sha256(raw).hexdigest())
+        self.assertEqual(event.origin, 'TRAIN_COLLECTION')
+        recorded = json.loads(self.record_path(0).read_text())['document']
+        self.assertEqual(recorded['message'], document)
+        captured = []
+
+        def capture(messages, **kwargs):
+            captured.extend(deepcopy(messages))
+            return generate(messages, **kwargs)
+
+        self.step(generate_call=capture, incoming=incoming)
+        visible = '\n'.join(message['content'] for message in captured)
+        self.assertIn(event.text, visible)
+        for metadata in (source['path'], source['sha256'], 'source_receipt', document['schema'],
+                         '"actor"', '"source_id"', '"source_sha256"'):
+            self.assertNotIn(metadata, visible)
+        self.assertNotIn('success', event.text.lower())
+        self.assertTrue(all(row['actor'] == 'child' for row in self.stream.rows))
+        self.assertTrue(all(row['target'] == 'Synthetic child output.' for row in self.stream.rows))
+        self.journal.close()
+        with StreamJournal(self.root) as reopened:
+            self.assertEqual(reopened.read_inbox(), incoming)
+        self.assertEqual(path.read_bytes(), raw)
+
+    def test_R127_rejects_malformed_attribution_and_tool_sources_before_registration(self):
+        source = dict(path=str(self.root / 'result.json'), sha256='b' * 64)
+        parent = self.attributed_message()
+        tool = self.attributed_message(actor='environment', speaker='Tool', source_receipt=source)
+        variants = [dict(parent, speaker=speaker) for speaker in ('Tool', 'Unknown', '', None)]
+        variants += [dict(parent, source_receipt=source), dict(parent, actor='child'),
+                     dict(parent, schema='R127_ATTRIBUTED_INBOX_V2'), dict(parent, extra='no')]
+        variants += [{key: value for key, value in parent.items() if key != omitted}
+                     for omitted in ('schema', 'speaker', 'source_receipt')]
+        variants += [dict(tool, speaker=speaker) for speaker in ('Astra', 'Fable', 'Rohin', None)]
+        malformed_sources = [None, [], {}, {'path': source['path']}, {'sha256': source['sha256']},
+                             dict(source, extra=True), dict(source, path='relative/result.json'),
+                             dict(source, path=None), dict(source, path=12)]
+        malformed_sources += [dict(source, sha256=value)
+                              for value in ('b' * 63, 'b' * 65, 'z' * 64, 'B' * 64, None, 12)]
+        variants += [dict(tool, source_receipt=receipt) for receipt in malformed_sources]
+        path = self.journal.inbox / 'bad.json'
+        for document in variants:
+            path.write_text(json.dumps(document))
+            with self.subTest(document=document), self.assertRaises(ValueError):
+                self.journal.read_inbox()
+            self.assertEqual(list((self.root / 'records').iterdir()), [])
+            self.assertEqual(self.stream.history.events, ())
+
+    def test_legacy_and_R127_DEV_FINAL_never_register_or_enter_history(self):
+        source = dict(path=str(self.root / 'result.json'), sha256='b' * 64)
+        variants = [dict(id='legacy', text='sealed content', actor='parent'),
+                    self.attributed_message(),
+                    self.attributed_message(actor='environment', speaker='Tool', source_receipt=source)]
+        self.parent(name='0-valid.json', text='Valid TRAIN still waits for an entirely valid inbox.')
+        path = self.journal.inbox / '1-rejected.json'
+        for base in variants:
+            for split in ('DEV', 'FINAL'):
+                document = dict(base, split=split)
+                path.write_text(json.dumps(document))
+                with self.subTest(actor=document['actor'], schema=document.get('schema'), split=split), \
+                        self.assertRaises(ValueError):
+                    self.journal.read_inbox()
+                self.assertEqual(list((self.root / 'records').iterdir()), [])
+                self.assertEqual(self.stream.history.events, ())
 
     def test_inbox_symlink_fifo_and_incomplete_json_rejected_without_wait(self):
         path = self.journal.inbox / 'bad.json'

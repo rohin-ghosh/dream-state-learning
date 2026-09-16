@@ -176,6 +176,95 @@ class EncodingAndPlanTests(unittest.TestCase):
                     native.validate_plan(dict(plan, root=str(root)))
 
 
+class StartupContextPlanTests(unittest.TestCase):
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.plan = make_plan(temporary.name)
+        self.source = Path(self.plan['source_root'])
+        self.source.mkdir()
+        self.startup = self.source / 'startup.md'
+
+    def bind(self, text='You are a new pilot. Keep notes and learn from feedback.\n'):
+        self.startup.write_text(text)
+        self.plan['birth_prompt'] = text
+        self.plan['startup_context'] = dict(version='R127_STARTUP_V1', path=str(self.startup),
+                                           sha256=native.sha(self.startup))
+        return self.plan
+
+    def test_pinned_startup_accepts_exact_text_without_mutating_plan(self):
+        plan = self.bind()
+        before = deepcopy(plan)
+        self.assertIs(native.validate_plan(plan), plan)
+        self.assertEqual(plan, before)
+
+    def test_legacy_birth_stays_frozen_without_startup_binding(self):
+        for binding in ({}, {'startup_context': None}):
+            plan = dict(self.plan, **binding)
+            self.assertIs(native.validate_plan(plan), plan)
+            with self.assertRaisesRegex(ValueError, 'exact_posted_prompts'):
+                native.validate_plan(dict(plan, birth_prompt='unbound new startup'))
+
+    def test_startup_binding_requires_exact_fields_and_version(self):
+        plan = self.bind()
+        binding = plan['startup_context']
+        variants = [[], 'R127_STARTUP_V1', {}, dict(binding, version='R127_STARTUP_V2'),
+                    dict(binding, machine_configuration='must not enter binding')]
+        variants.extend({key: value for key, value in binding.items() if key != omitted}
+                        for omitted in binding)
+        for candidate in variants:
+            with self.subTest(binding=candidate), self.assertRaisesRegex(ValueError, 'exact_R127_startup_binding'):
+                native.validate_plan(dict(plan, startup_context=candidate))
+
+    def test_startup_hash_rejects_wrong_pin_and_changed_source(self):
+        plan = self.bind()
+        with self.assertRaisesRegex(ValueError, 'pinned_startup_source'):
+            native.validate_plan(dict(plan, startup_context=dict(plan['startup_context'], sha256='0' * 64)))
+        self.startup.write_text('Changed after the plan was pinned.\n')
+        with self.assertRaisesRegex(ValueError, 'pinned_startup_source'):
+            native.validate_plan(plan)
+
+    def test_startup_path_must_be_absolute_inside_source_and_not_symlink(self):
+        plan = self.bind()
+        outside = self.source.with_name(self.source.name + '-other')
+        outside.mkdir()
+        outside_file = outside / 'startup.md'
+        outside_file.write_bytes(self.startup.read_bytes())
+        alias = self.source / 'alias.md'
+        alias.symlink_to(self.startup)
+        escaped = self.source / 'escaped'
+        escaped.symlink_to(outside, target_is_directory=True)
+        for path in ('startup.md', str(outside_file), str(alias), str(escaped / 'startup.md')):
+            with self.subTest(path=path), self.assertRaisesRegex(ValueError, 'pinned_startup_source'):
+                native.validate_plan(dict(plan, startup_context=dict(plan['startup_context'], path=path)))
+
+    def test_startup_excludes_mismatch_empty_machine_configuration_and_placeholders(self):
+        plan = self.bind()
+        with self.assertRaisesRegex(ValueError, 'child_facing_startup_only'):
+            native.validate_plan(dict(plan, birth_prompt=plan['birth_prompt'] + 'extra'))
+        cases = [('', 'child_facing_startup_only'),
+                 ('Hello.\n## Machine-side configuration\nprivate paths', 'child_facing_startup_only'),
+                 ('Welcome [PILOT_NAME].', 'startup_placeholders_filled'),
+                 ('Workspace: [WORKSPACE_PATH]', 'startup_placeholders_filled')]
+        for text, reason in cases:
+            with self.subTest(text=text), self.assertRaisesRegex(ValueError, reason):
+                native.validate_plan(self.bind(text))
+
+    def test_startup_limit_counts_utf8_bytes(self):
+        for text in ('a' * 16384, 'é' * 8192):
+            with self.subTest(length=len(text)):
+                plan = self.bind(text)
+                self.assertIs(native.validate_plan(plan), plan)
+                with self.assertRaisesRegex(ValueError, 'child_facing_startup_only'):
+                    native.validate_plan(self.bind(text + 'a'))
+
+    def test_startup_does_not_relax_system_or_compaction_prompts(self):
+        plan = self.bind()
+        for field in ('system_prompt', 'compaction_invitation'):
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, 'exact_posted_prompts'):
+                native.validate_plan(dict(plan, **{field: plan[field] + ' changed'}))
+
+
 class SyntheticChild:
     def __init__(self, plan, checkpoint=None):
         self.plan = plan

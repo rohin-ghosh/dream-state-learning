@@ -203,14 +203,31 @@ class StreamJournal:
                     'history_must_extend_not_reset')
 
     def _inbox_event(self, message, path, source_sha256):
-        require(type(message) is dict and set(message) == {'id', 'text', 'split', 'actor'}, 'exact_inbox_schema')
+        attributed = type(message) is dict and message.get('schema') == 'R127_ATTRIBUTED_INBOX_V1'
+        expected = {'id', 'text', 'split', 'actor'}
+        if attributed:
+            expected |= {'schema', 'speaker', 'source_receipt'}
+        require(type(message) is dict and set(message) == expected, 'exact_inbox_schema')
         require(type(message['id']) is str and bool(message['id'].strip())
                 and type(message['text']) is str, 'inbox_id_and_text')
-        require(message['split'] == 'TRAIN' and message['actor'] == 'parent', 'TRAIN_parent_inbox_only')
+        if attributed:
+            require(message['split'] == 'TRAIN' and message['actor'] in ('parent', 'environment'), 'TRAIN_attributed_inbox_only')
+            if message['actor'] == 'parent':
+                require(message['speaker'] in ('Astra', 'Fable', 'Rohin') and message['source_receipt'] is None,
+                    'actual_parent_attribution')
+            else:
+                receipt = message['source_receipt']
+                require(message['speaker'] == 'Tool' and type(receipt) is dict and set(receipt) == {'path', 'sha256'}
+                    and type(receipt['path']) is str and Path(receipt['path']).is_absolute()
+                    and type(receipt['sha256']) is str and re.fullmatch(r'[0-9a-f]{64}', receipt['sha256']),
+                    'tool_result_provenance')
+        else:
+            require(message['split'] == 'TRAIN' and message['actor'] == 'parent', 'TRAIN_parent_inbox_only')
         require(type(path) is str and Path(path).parent == self.inbox and Path(path).name.endswith('.json'),
                 'inbox_source_path')
-        return TrainEvent(event_id='parent:inbox:' + message['id'], actor='parent', text=message['text'],
-                          split='TRAIN', phase='experience', episode_id='continual_stream', source_id=path,
+        text = message['speaker'] + ': ' + message['text'] if attributed else message['text']
+        return TrainEvent(event_id=message['actor'] + ':inbox:' + message['id'], actor=message['actor'], text=text,
+                          split='TRAIN', phase='feedback' if message['actor'] == 'environment' else 'experience', episode_id='continual_stream', source_id=path,
                           source_sha256=source_sha256, origin='TRAIN_COLLECTION')
 
     def _advance(self, state, kind, document):

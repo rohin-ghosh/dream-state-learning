@@ -1,0 +1,31 @@
+{
+  "schema": "R127_CONTINUITY_AUDIT_V1",
+  "status": "PASS",
+  "measured_unix": 1789548770.2961397,
+  "root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+  "through_record": "00000000000000001342.json",
+  "through_sha256": "abf45a5669e1b5cda84950d263621e0e504ab7b2a5d3e91e25dc54eb5748280a",
+  "counts": {
+    "records": 1343,
+    "history_extensions": 163,
+    "sleeps": 17,
+    "plain_requests": 39,
+    "assistant_messages_verified": 75,
+    "eos_followed_by_request": 49
+  },
+  "raw_events": 127,
+  "compaction_operations": 18,
+  "checkpoint_verifications": [
+    {
+      "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/initial/COMMIT.json",
+      "sha256": "fbcbb4791f84b7a21e662d25cf44de6dba791a73526c63743c07ba1ff4681324",
+      "optimizer_steps": 0
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000017/COMMIT.json",
+      "sha256": "bca661824bd93adfa0cffa22714eeb3137f050b74a374faf27475faa97c75530",
+      "optimizer_steps": 1104
+    }
+  ],
+  "scope": "Existing native implementation, not yet the fresh R127 pilot; raw history retained, visible summary is lossy; CPU tests cover task boundaries"
+}
