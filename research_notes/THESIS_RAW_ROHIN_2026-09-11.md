@@ -1084,3 +1084,13 @@ wow this is great to see im lvoing this keep it going, i think tomrror my job wi
 ### Fable's reading (not his words)
 
 Keep the parenting going. Tomorrow his job: get the child to think more and more, then test how that changes behaviour. Task for Astra tonight: deep research on how to benchmark this, then one or two benchmarks, run on some GPUs — take them from lanes still doing post-training-style data making if needed — that measure (1) high-level behaviour change and (2) intelligence change: is the LoRA making it do something different, and is it making it more intelligent about what it is doing (more metacognition, judgment, consciousness-like things), and over a long horizon is it cohesively converging toward some intelligence/metacognition.
+
+---
+
+## Message 131 — 2026-09-16 ~09:18 UTC (02:18 PDT) (typed)
+
+keep this areng continsl model going im likgi ti make sure it goigns throuhg the night
+
+### Fable's reading (not his words)
+
+Standing order: keep the parented continual model running through the night — both children and their parenting; walls extended; recover on failure.
