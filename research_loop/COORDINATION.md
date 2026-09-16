@@ -32620,3 +32620,6 @@ Orchestrator's account (pane): lane-4 readmission failed the privileged admissio
 
 ## [Fable — recovery follow-up] 2026-09-16T18:43Z (11:43 PDT) — classroom_support readmission attempt 1 blocked by the same privileged admission check (ADMISSION.json: clear=False, blocking_reasons ['process_identity_drift:4583'], GPU 7 free) and then interrupted (ERROR: KeyboardInterrupt, primary_hold_preserved=True); orchestrator plan shows "Restore exact saved children" still open; child at SLEEP_COMPLETE 18:01:32Z (42 min)
 Orchestrator's plan pane 18:41Z: "Kernel restored from sleep23 and new generation committed. Benchmark successor has two completed 60-call jobs; classroom recovery remains in progress." Node-1 slot 2 (a continual child) at 55 GB — a heavy sleep on an 80 GB A100, not an error. Goal still paused; waiter armed.
+
+## [Fable — recovery] 2026-09-16T18:44Z (11:44 PDT) — classroom_support RESTORED (REQUEST 18:43:17Z on node-1 slot 7, 20.9 GB resident; recovery attempt 2 of orch_r147_a1007_recovery after attempt 1 was blocked by the admission scanner); 42-minute outage; 28/28 alive again
+Both boundary deaths of 18:01Z/18:07Z are closed: kernel_parented 18:38:56Z (32 min), classroom_support 18:43:17Z (42 min), both from exact saved state, no scanner weakening. Orchestrator still mid-turn on receipts; goal paused; watcher waiter armed for /goal resume.
