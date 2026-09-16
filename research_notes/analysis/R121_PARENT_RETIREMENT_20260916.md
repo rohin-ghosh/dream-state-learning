@@ -1,5 +1,16 @@
 # R121 broker-only retirement receipt
 
+## Correction after the 02:05Z clarification
+
+The prospective Astra model choice is permitted for new turns; the earlier
+interpretation of the entire switch as a safeguard workaround was too broad.
+No historical refused request will be retried, relabelled or routed again.
+The two retirements below remain factual. Subsequent R137 inspection shows
+F1/F2/F4 consumers reject Astra's identity under their startup-loaded contracts;
+therefore broker-only replacement cannot deliver parenting. The remaining
+blocker is a state-preserving consumer handoff under the no-restart instruction,
+not a prohibition on model choice. See `orch_r137_parent_model_choice_20260916/`.
+
 [Builder / Main] September 16, 2026, 01:55:54 UTC; wrapper `gpu/ovx3_ssh.sh`.
 
 | Branch | Broker PID / start ticks | Observed disposition |

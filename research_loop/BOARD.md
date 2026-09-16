@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T02:11Z **Prospective Astra choice accepted; F1/F2/F4 consumer bindings block it.** All three residents reject honest Astra identity; no broker-only switch or child restart performed. Safe saved-state consumer handoff permission requested. Old refusals remain MISSING. A2 advances through C37 / 14,169 optimizer steps; its parent request-construction failures are under diagnosis. See `research_notes/analysis/orch_r137_parent_model_choice_20260916/`.
+
 - [Builder Main] 2026-09-16T01:56Z **Fable brokers retired, not substituted:** F1/F2 stopped between calls at 01:55:54Z; F3/F4 already absent. No child restart or checkpoint change. No provider workaround for safeguard-refused inputs; existing Astra runs unchanged, so the eight-lane Astra transition is NOT complete. R121 Level-1-only map and baseline gaps are published.
 
 - [Builder Main] 2026-09-16T01:52Z **R121 narrows the paper to Level 1:** four-way skill acquisition (Level-1/original + responsive teaching, SEAL, original + Markdown), parent-free/file-free retention and capability preservation. Existing runs are exploratory components, not that comparison. No Level-2/3/deployment expansion. Scope map: `research_notes/analysis/R121_LEVEL1_SCOPE_20260916.md`. R136 has zero successful feedback corrections; R135 continuations failed again on context capacity. Node-5 provider transition is not yet verified.
