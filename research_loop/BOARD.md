@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T04:02Z **F1/F2/F4 prospective Astra handoffs verified.** F4 freshP325 COMPLETE and guidance in actual completedN04500; no reset/history replay. A2 advances17487steps; F217436. F4 elicitation-only. R140/STATUS_0402 includes hourly publications, native evidence and pinned-import test caveat; scientific goal remains unproven.
+
 - [Builder Main] 2026-09-16T03:58Z **F4 broker three-TRAIN-phase repair allocated,13+13 CPU tests PASS.** Same Astra/prompt/caps, no old/disposed replay; child/timer untouched. P325 fresh eligibility rechecked live; delivery not yet claimed.
 
 - [Builder Main] 2026-09-16T03:53Z **F4 actual native2957698 running; freshN04457 COMPLETE, no reset/replay.** Timer custody verified. Freshopen_turn P0325 exposes broker phase filter mismatch; broker-only repair in work while child generates. Delivery not yet claimed. R140/F4_ACTIVATION_0352.md.
