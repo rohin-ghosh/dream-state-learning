@@ -1134,3 +1134,13 @@ oh yea also on node 1, have some one of th ocnitnal learning agents lok thorugh 
 ### Fable's reading (not his words)
 
 Add a node-1 thread if there is room: a continual child whose material is the project repository itself and all the experiment results — it reads through them (his message-125 idea of giving the child what he knows best).
+
+---
+
+## Message 136 — 2026-09-16 ~10:03 UTC (03:03 PDT) (typed)
+
+will there be a gpu left? doenst have to be on node 1, also i dont wna thte shit where astra is waitgn for que this stuff show be gettign started on impdicnton asap id say
+
+### Fable's reading (not his words)
+
+Asks whether a GPU will be left for the repo-reader child (it need not be on node 1). Orders: no waiting in queue — all the new threads should be started on implementation ASAP, in parallel.
