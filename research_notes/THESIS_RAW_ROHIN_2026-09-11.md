@@ -1203,3 +1203,12 @@ Reading (Fable): (1) document the 12:35 findings (parents crediting real steps; 
 > wiat why coudlnt the parent foce a new story it shoudvle been way more perisitne no? , hmmm looks like the only way to have contual agents to acutally not converge with parenign si to have the parets contual as well, kidna lik ehow the cidlredn who were togehr started doing there own thign, so one options is me im ocntual, the otpont optin is you have a team of thsi econugal agents that are giveent diffe3nr btirh oprmpts and work teoghetr i liek this diea wdyt
 
 Reading (Fable): (1) question — why could the parent not force a new story; it should have been far more persistent. (2) HYPOTHESIS (idea to test, not a ruling): the only way continual agents do not converge under parenting is for the parents to be continual as well, as the classroom children who were together "started doing their own thing"; two options — Rohin himself as the continual parent, or a team of continual agents with different birth prompts working together. He likes the second and asks what I think.
+
+
+## Message 145 — 2026-09-16 ~21:40 UTC (14:40 PDT), typed + forwarded email, to Fable
+
+> okay so m thinging we keep all chaings alive unelss they have degraded , if there are degraded you cna start new , lmk what ou think atbou this plan, i didnt read it yet cuz im kdina tired but lmk (No subject)
+
+Forwarded email (his reasoning agent's plan for a five-agent community pilot) saved verbatim, personal email address removed: research_notes/forwarded/GPT_COMMUNITY_PILOT_FIVE_AGENTS_2026-09-16.md
+
+Reading (Fable): (1) PROPOSED POLICY, pending his confirmation after my view: keep all children alive unless degraded; degraded slots may be used to start new children. (2) The forwarded plan: five persistent learners with distinct initial interests (Creating / Investigating / Building / Remembering / Learning strategies), own context + adapter + workspace, shared artifact space with attributed messages, no automatic relay, real execution environments, Rohin intervening lightly; watch useful propagation, independent continuation, retention; keep a one-to-one thread alongside; later compare with five isolated learners. Framing: "Can persistent learners with distinct experiences turn sparse human guidance and peer interaction into independently sustained, grounded learning?"
