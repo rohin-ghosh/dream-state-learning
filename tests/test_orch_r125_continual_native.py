@@ -322,6 +322,11 @@ class NativeLoopTests(unittest.TestCase):
         self.assertEqual(budget.actor, 'environment')
         self.assertIn('context_limit', budget.text)
 
+    def test_native_creates_missing_life_directory_before_journal(self):
+        Path(self.plan['root']).rmdir()
+        native.run(self.plan_path)
+        self.assertEqual(len(self.restore().sleep_receipts), 2)
+
     def test_pending_generation_resume_never_loads_or_redispatches(self):
         self.fail_generate = True
         with self.assertRaisesRegex(RuntimeError, 'synthetic interruption'):

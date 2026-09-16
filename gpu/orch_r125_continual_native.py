@@ -352,6 +352,8 @@ def run(plan_path, *, resume=False):
     plan = validate_plan(read(plan_path))
     root = Path(plan['root'])
     require(os.environ.get('R125_ADMISSION_PLAN_SHA256') == sha(plan_path), 'admitted_plan_environment')
+    if not resume:
+        root.mkdir(parents=True, exist_ok=True)
     old_handler = signal.signal(signal.SIGALRM, lambda signum, frame: (_ for _ in ()).throw(TimeoutError('native_wall')))
     signal.setitimer(signal.ITIMER_REAL, plan['hard_end_unix']-time.time())
     try:
