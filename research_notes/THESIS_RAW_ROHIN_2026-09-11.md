@@ -1161,3 +1161,10 @@ Make sure PERSISTENT parenting is tried (a sustained every-boundary cadence, not
 > do an auding create a document of brenchmakrs of allt he progress and samopels of chnges in outpuces prenign and magents thougths and what the agent sorta reflects on its litspenwhat it rmeebers and what ite laenred , first let me know what threads have ru and what the becnhmakrs are on, incldue this all into a intensvie document, and then gimme q uck sumamry here
 
 Reading (Fable): an audit request. Produce one intensive document covering (1) which threads have run and what the benchmarks are, (2) benchmark progress, (3) samples of how outputs changed over sleeps, (4) samples of parenting and the agents' thoughts, (5) what each agent reflects about its own life span, what it says it remembers and what it says it learned. Then a quick summary in chat. Order: tell him the threads and the benchmarks first.
+
+
+## Message 139 — 2026-09-16 ~18:55 UTC (11:55 PDT), typed, to Fable
+
+> gimm ur summary ouf the resutls agian the good the bad the itnersting the what needs to change distilled
+
+Reading (Fable): asks for the audit (message 138) distilled into four headings: the good, the bad, the interesting, what needs to change.
