@@ -3,8 +3,10 @@
 import argparse
 import inspect
 import json
+import os
 from pathlib import Path
 import shlex
+import time
 
 from gpu import orch_r137_route_astra_switch as prior
 
@@ -22,6 +24,18 @@ def validate_consumer(report):
     prior.require(report['next_cycle'] == report['expected_cycle'] and report['source_verified']
         and report['actor_command_verified'] and report['logical_life_reset'] is False,
         'live_saved_state_consumer_required')
+
+
+def saved_boundary_snapshot(previous, report):
+    previous = dict(previous)
+    previous['requests'] = [name for name in previous['requests']
+        if prior.sequence(name)[0] <= report['parent_high_water']]
+    prior.require(bool(previous['requests']), 'historical_request_boundary_required')
+    prior.require(max(prior.sequence(name)[0] for name in previous['requests']) == report['parent_high_water'],
+        'saved_reservation_high_water_required')
+    previous['observed_unix'] = report['boundary_observed_unix']
+    previous['consumer_plan'] = dict(provider=report['provider'], parent_model_substitution=None)
+    return previous
 
 
 def snapshot(store):
@@ -46,13 +60,13 @@ assert str(actor['process'][2])==fields[19] and fields[0]!='Z'
 print(json.dumps(dict(provider=plan['provider'],substitution=plan.get('parent_model_substitution'),
  mode=actor['mode'],actual_checkpoint=actor['adapter'],expected_checkpoint=checkpoint['adapter'],
  next_cycle=actor['next_cycle'],expected_cycle=boundary['next_cycle'],logical_life_reset=plan['logical_life_reset'],
+ parent_high_water=boundary['parent_high_water'],boundary_observed_unix=boundary['observed_unix'],
  source_verified=digest(stage/'handoff.py')==ready['source_sha256'],
  actor_command_verified=str(stage/'handoff.py').encode() in argv and b'resume' in argv and str(stage).encode() in argv)))
 '''
     report = json.loads(store.shell('python3 -c ' + shlex.quote(script)).stdout)
     validate_consumer(report)
-    previous['consumer_plan'] = dict(provider=report['provider'], parent_model_substitution=None)
-    return previous
+    return saved_boundary_snapshot(previous, report)
 
 
 def source_pins():
@@ -78,19 +92,40 @@ def gate(store, name, boundary):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('phase', choices=('prepare', 'serve'))
+    parser.add_argument('phase', choices=('prepare', 'serve', 'dispatch'))
     parser.add_argument('--directory', type=Path, required=True)
     parser.add_argument('--repository', type=Path, required=True)
     parser.add_argument('--prompt-root', type=Path, default=prior.transport.MUTABLE_PROMPT_ROOT)
     parser.add_argument('--principles', type=Path,
         default=prior.transport.ROOT/'research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md')
+    parser.add_argument('--published-commit')
+    parser.add_argument('--wait-until', type=float)
     arguments = parser.parse_args()
     prior.snapshot = snapshot
     prior.source_pins = source_pins
     prior.gate = gate
-    if arguments.phase == 'prepare':
-        prior.prepare(arguments.directory, arguments.repository)
-    else:
+    if arguments.phase == 'dispatch':
+        prior.require(arguments.published_commit and arguments.wait_until and
+            os.environ.get('CUDA_VISIBLE_DEVICES') == '', 'published_CPU_dispatch_required')
+        prior.require(bool(os.environ.get('NVIDIA_API_KEY')), 'existing_Astra_connection_required')
+        store = prior.transport.Store(arguments.repository)
+        while not store.exists(Path(prior.ROOT)/'R139_INDEPENDENT_ACTOR_READY.json'):
+            prior.require(time.time() < arguments.wait_until, 'consumer_wait_expired_without_provider_call')
+            time.sleep(2)
+    if arguments.phase in ('prepare', 'dispatch'):
+        source = inspect.getsource(prior.prepare)
+        prior.require(source.count('child_restart=False') == 1, 'exact_boundary_identity_receipt_site')
+        source = source.replace('child_restart=False', 'logical_life_reset=False, consumer_process_handoff=True')
+        namespace = dict(prior.prepare.__globals__)
+        exec(compile(source, __file__+':saved_boundary_receipt', 'exec'), namespace)
+        namespace['prepare'](arguments.directory, arguments.repository)
+    if arguments.phase == 'dispatch':
+        prior.transport.write(arguments.directory/'PUBLICATION.json', dict(builder_published=True,
+            boundary_sha256=prior.transport.sha(arguments.directory/'BOUNDARY.json'),
+            config_sha256=prior.transport.sha(arguments.directory/'CONFIG.json'),
+            published_commit=arguments.published_commit, authority='R121 prospective Astra; bb2f2eb9 saved-state clarification',
+            provider_fallback=False, historical_refusals_replayed=False))
+    if arguments.phase in ('serve', 'dispatch'):
         source = inspect.getsource(prior.serve)
         prior.require(source.count('child_restart=False') == 1, 'exact_logical_identity_receipt_site')
         source = source.replace('child_restart=False', 'logical_life_reset=False, consumer_process_handoff=True')

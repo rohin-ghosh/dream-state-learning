@@ -30,6 +30,15 @@ class ConsumerTests(unittest.TestCase):
         self.assertFalse(broker.prior.eligible('000117_F1_C0054.request.json', boundary, 100.75))
         self.assertFalse(broker.prior.eligible('000118_F1_C0055.request.json', boundary, 100.1))
 
+    def test_new_consumer_queued_turns_not_mistaken_for_old_history(self):
+        original = dict(requests=['000117_F1_C0054.request.json', '000118_F1_C0055.request.json'],
+            observed_unix=200)
+        report = dict(parent_high_water=117, boundary_observed_unix=100, provider=broker.prior.astra.MODEL)
+        result = broker.saved_boundary_snapshot(original, report)
+        self.assertEqual(result['requests'], ['000117_F1_C0054.request.json'])
+        self.assertEqual(result['observed_unix'], 100)
+        self.assertEqual(len(original['requests']), 2)
+
 
 if __name__ == '__main__':
     unittest.main()
