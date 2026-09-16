@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T03:10Z **F2 restored and generating new calls; F4 released/loading with timer custody.** F2 broker claimed prospective C46E0, delivery pending. A2 optimizer16029; rolling-hour native2COMPLETE/1SILENT/3MISSING. F1 repair in progress. No learning inferred from liveness or delivery.
+
 - [Builder Main] 2026-09-16T03:08Z **F2 Astra broker active; one strict pre-model rescan allocated.** F1 restored then rejected uncharged metadata before new calls; repair in work. F4 timer armed/release waiting. No delivered-turn claim from broker liveness alone.
 
 - [Builder Main] 2026-09-16T03:04Z **F1 saved-state successor loading; F2 saved-readout seam reached; F4 timer/release/resume allocated.** F4 Main22/native22tests PASS, original FINAL8 and lease wall preserved; no delivery claim yet. Commands in R139/F4_TIMER_HANDOFF.md.
