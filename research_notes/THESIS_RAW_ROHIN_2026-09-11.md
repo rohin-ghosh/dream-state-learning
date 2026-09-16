@@ -1212,3 +1212,17 @@ Reading (Fable): (1) question — why could the parent not force a new story; it
 Forwarded email (his reasoning agent's plan for a five-agent community pilot) saved verbatim, personal email address removed: research_notes/forwarded/GPT_COMMUNITY_PILOT_FIVE_AGENTS_2026-09-16.md
 
 Reading (Fable): (1) PROPOSED POLICY, pending his confirmation after my view: keep all children alive unless degraded; degraded slots may be used to start new children. (2) The forwarded plan: five persistent learners with distinct initial interests (Creating / Investigating / Building / Remembering / Learning strategies), own context + adapter + workspace, shared artifact space with attributed messages, no automatic relay, real execution environments, Rohin intervening lightly; watch useful propagation, independent continuation, retention; keep a one-to-one thread alongside; later compare with five isolated learners. Framing: "Can persistent learners with distinct experiences turn sparse human guidance and peer interaction into independently sustained, grounded learning?"
+
+
+## Message 146 — 2026-09-16 ~21:58 UTC (14:58 PDT), typed, to Fable
+
+> waht are the decisiosn?  fwaht is the sandbox
+
+Reading (Fable): asks which decisions I am putting to him, and what "the sandbox" is.
+
+
+## Message 147 — 2026-09-16 ~22:02 UTC (15:02 PDT), typed, to Fable
+
+> yes degrade them, launch the pitlot asap , gimme the spare astra, does that mean i get to finally talk to these? i like that, and yes fix the sanbox, it shoud be easy to thencically turn off the agnes and rerun them tbh weights are saved context coudl be all that jazz
+
+Reading (Fable): RULED — (1) retire the five degraded children (creative_none, raw_unparented_none, raw_unparented_reread, support_none, kernel_unparented); (2) launch the five-agent community pilot as soon as possible; (3) a sparse Astra parent per agent alongside him; (4) he wants to talk to the agents himself — yes, through the console; (5) fix the sandbox (forgiving parser, shared workspace, receipts). Observation: stopping and rerunning agents should be technically easy since weights are saved and context can be saved too — i.e. retirement must preserve the exact saved state so a retired child can be resumed later.
