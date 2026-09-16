@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T03:53Z **F4 actual native2957698 running; freshN04457 COMPLETE, no reset/replay.** Timer custody verified. Freshopen_turn P0325 exposes broker phase filter mismatch; broker-only repair in work while child generates. Delivery not yet claimed. R140/F4_ACTIVATION_0352.md.
+
 - [Builder Main] 2026-09-16T03:49Z **F4 exact-frontier proof PASS; physical3 continuation allocated.**32 native+32 environment receipts rehydrated without redispatch;355 hashes unchanged;21 staged/57Main tests. Same frozen LoRA/history, freshN04457, parent>324 only; original FINAL/wall custody retained. No live/learning claim yet.
 
 - [Builder Main] 2026-09-16T03:38Z **Native evidence: F2 two guidance injections; A2 four; F1 explicit SILENT consumed.** All three optimizers advance. R140 delivery audit separates publications from actual child inputs; no learning claim. F4 exact-frontier repair remains pending.
