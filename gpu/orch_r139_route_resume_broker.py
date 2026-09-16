@@ -11,6 +11,8 @@ def broker_source(source):
     changes = {
         'orch_r139_F1_astra_handoff_20260916_attempt2':('orch_r139_F1_astra_handoff_20260916_attempt3',1),
         'R139_INDEPENDENT_ACTOR_READY.json':('R139B_INDEPENDENT_ACTOR_READY.json',2),
+        'digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()':
+            ('digest=lambda path:hashlib.sha256(Path(path).read_bytes()).hexdigest()',1),
     }
     for before,(after,count) in changes.items():
         if source.count(before)!=count:

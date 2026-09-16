@@ -2,6 +2,8 @@ import ast
 import importlib.util
 import os
 from pathlib import Path
+import hashlib
+import tempfile
 import unittest
 
 
@@ -38,6 +40,17 @@ class BrokerTests(unittest.TestCase):
 
     def test_unknown_source_rejected(self):
         with self.assertRaises(ValueError):broker.broker_source('unknown')
+
+    def test_json_reference_string_paths_are_hashable(self):
+        source = broker.broker_source(self.source())
+        line = next(line for line in source.splitlines() if line.startswith('digest=lambda'))
+        namespace = dict(hashlib=hashlib, Path=Path)
+        exec(line, namespace)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'receipt.json'
+            path.write_bytes(b'{}')
+            self.assertEqual(namespace['digest'](str(path)), hashlib.sha256(b'{}').hexdigest())
+            self.assertEqual(namespace['digest'](path), namespace['digest'](str(path)))
 
 
 if __name__=='__main__':
