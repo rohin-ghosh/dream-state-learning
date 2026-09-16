@@ -1,0 +1,46 @@
+{
+  "schema": "R125_CPU_PROTOTYPE_VALIDATION_V1",
+  "recorded_utc": "2026-09-16T05:40:14+00:00",
+  "source_sha256": {
+    "organism_v6/orch_r124_train_history.py": "e3b189e37e9884f61406925910f4bf5b8339363da92156e85358f17db78ce712",
+    "organism_v6/orch_r125_continual_stream.py": "556c882d0a4b137da220b5f29dceab7bce15481077eb13c674d00d829191116d",
+    "tests/test_orch_r124_train_history.py": "66079a5bdaadac80a74f6fdb1dfcb351e4fffc6c4da158eb72329bba29ea2f35",
+    "tests/test_orch_r125_continual_stream.py": "b9de93c7335437802127ba0622b4fa5a60b6eeb1e2d2bde51de16bb5d8fb9b3e"
+  },
+  "command": "PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES= python3 -B -m unittest tests.test_orch_r124_train_history tests.test_orch_r125_continual_stream -q",
+  "tests_passed": 43,
+  "validation_kind": "MAIN_CPU_SYNTHETIC_CALLBACKS",
+  "gpu_launches": 0,
+  "native_model_calls": 0,
+  "optimizer_updates": 0,
+  "runtime_deployed": false,
+  "independent_review": {
+    "verdict": "PASS_CPU_PROTOTYPE_SCOPE_ONLY",
+    "agent_id": "01a0a8b6-3bc1-7120-b38a-2a0532b300be",
+    "independent_tests_passed": 43,
+    "same_four_file_hashes_verified": true,
+    "initial_findings": [
+      "Oversized-summary eviction unnecessarily dropped newer response",
+      "Later compaction hid prior explicit omission notice from inference",
+      "Second token-count call could mutate dispatched pinned prompts"
+    ],
+    "disposition": "ALL_THREE_FIXED_WITH_REGRESSIONS_AND_REVIEWED_AGAIN",
+    "native_or_scientific_claim_approval": false
+  },
+  "goal_status": "UNPROVEN",
+  "unchanged_live_handoffs": {
+    "observed_unix": 1789536605.1155725,
+    "F1": 2664733,
+    "F2": 2627464,
+    "F4": 2957698,
+    "A2": 4156720,
+    "all_exact_start_ticks_and_command_hashes_match_prior_receipts": true
+  },
+  "limitations": [
+    "No native continuous-generation driver or console",
+    "No optimizer/anchor-sampler integration",
+    "No arbitrary shell or four-GPU sandbox",
+    "No durable journal crash-reconciliation launcher",
+    "No claim about retained learning or output quality"
+  ]
+}

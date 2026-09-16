@@ -1,0 +1,319 @@
+"""TRAIN-only inference history; no tokenizer, model, scheduler or filesystem calls.
+
+Callers verify source_id/source_sha256 against actual TRAIN collection receipts.
+Pinned prompts are caller-supplied, never inferred from a draft. Raw events and
+view-operation receipts remain append-only even after compaction or eviction.
+The token counter must measure the exact rendered chat template; callers reserve
+space for additional input/output and mask the final composed prefix themselves.
+Checkpoint hashes detect corruption, not authorship: pin state_sha256 externally
+when restoring a checkpoint from outside the current trusted process.
+"""
+
+from copy import deepcopy
+from dataclasses import asdict, dataclass
+import hashlib
+import json
+import re
+from typing import Callable
+
+
+SCHEMA = 'R124_TRAIN_HISTORY_V1'
+ACTORS = frozenset(('child', 'parent', 'environment'))
+PHASES = frozenset(('episode', 'experience', 'open_turn', 'open_train',
+                    'presleep', 'reflection', 'compaction', 'feedback'))
+ASSERTION = 'CHILD_ASSERTION_NOT_VERIFIED_FACT'
+
+
+def require(condition, reason):
+    if not condition:
+        raise ValueError(reason)
+
+
+def _json(value):
+    return json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False)
+
+
+def _digest(value):
+    return hashlib.sha256(_json(value).encode()).hexdigest()
+
+
+def _hash(value):
+    return isinstance(value, str) and re.fullmatch(r'[0-9a-f]{64}', value) is not None
+
+
+def _object(pairs):
+    result = {}
+    for key, value in pairs:
+        require(key not in result, 'duplicate_JSON_key')
+        result[key] = value
+    return result
+
+
+@dataclass(frozen=True)
+class TrainEvent:
+    event_id: str
+    actor: str
+    text: str
+    split: str
+    phase: str
+    episode_id: str
+    source_id: str
+    source_sha256: str
+    origin: str
+
+    def __post_init__(self):
+        for name, value in asdict(self).items():
+            require(type(value) is str, 'event_string_field:' + name)
+            require(name == 'text' or bool(value.strip()), 'empty_event_field:' + name)
+        require(self.actor in ACTORS, 'unknown_actor')
+        require(self.split == 'TRAIN', 'TRAIN_only_event')
+        require(self.origin == 'TRAIN_COLLECTION', 'readout_origin_forbidden')
+        require(self.phase in PHASES, 'unknown_or_readout_phase')
+        require(_hash(self.source_sha256), 'source_sha256_required')
+
+    @classmethod
+    def restore(cls, document):
+        require(type(document) is dict and set(document) == set(cls.__dataclass_fields__),
+                'exact_event_fields')
+        return cls(**document)
+
+
+@dataclass(frozen=True)
+class Frontier:
+    event_count: int
+    sha256: str
+
+    def __post_init__(self):
+        require(type(self.event_count) is int and self.event_count >= 0, 'frontier_count')
+        require(_hash(self.sha256), 'frontier_sha256')
+
+    @classmethod
+    def restore(cls, document):
+        require(type(document) is dict and set(document) == {'event_count', 'sha256'},
+                'exact_frontier_fields')
+        return cls(**document)
+
+
+@dataclass(frozen=True)
+class MaskedInput:
+    """All labels mask history, including historical child and parent tokens."""
+
+    messages: list[dict[str, str]]
+    labels: tuple[int, ...]
+    token_count: int
+
+    @property
+    def target_token_ids(self):
+        return ()
+
+
+class CompactionRequired(ValueError):
+    def __init__(self, token_count, token_budget):
+        self.token_count = token_count
+        self.token_budget = token_budget
+        super().__init__(f'compaction_required:{token_count}>{token_budget}; '
+                         'no_silent_eviction_or_prompt_truncation')
+
+
+class TrainHistory:
+    def __init__(self, *, system_prompt: str, birth_prompt: str):
+        require(type(system_prompt) is str and bool(system_prompt.strip()), 'system_prompt_required')
+        require(type(birth_prompt) is str and bool(birth_prompt.strip()), 'birth_prompt_required')
+        self._system_prompt = system_prompt
+        self._birth_prompt = birth_prompt
+        self._events = []
+        self._by_id = {}
+        self._operations = []
+
+    @property
+    def events(self):
+        """Immutable raw collection events; summaries live in operation receipts."""
+        return tuple(self._events)
+
+    @property
+    def operations(self):
+        return tuple(deepcopy(self._operations))
+
+    @property
+    def visible_frontier(self):
+        """Exclusive raw-event prefix already compacted or explicitly evicted."""
+        if self._operations:
+            return Frontier.restore(self._operations[-1]['through'])
+        return self.frontier(0)
+
+    def append(self, event: TrainEvent) -> bool:
+        require(type(event) is TrainEvent, 'typed_event_required')
+        if event.event_id in self._by_id:
+            require(self._by_id[event.event_id] == event, 'conflicting_event_id')
+            return False
+        self._events.append(event)
+        self._by_id[event.event_id] = event
+        return True
+
+    def frontier(self, event_count=None) -> Frontier:
+        count = len(self._events) if event_count is None else event_count
+        require(type(count) is int and 0 <= count <= len(self._events), 'frontier_out_of_range')
+        return Frontier(count, _digest([asdict(event) for event in self._events[:count]]))
+
+    def _check_frontier(self, frontier):
+        require(type(frontier) is Frontier, 'typed_frontier_required')
+        require(frontier == self.frontier(frontier.event_count), 'frontier_hash_mismatch')
+
+    def _summary(self):
+        if self._operations and self._operations[-1]['kind'] == 'compaction':
+            return TrainEvent.restore(self._operations[-1]['summary'])
+        return None
+
+    def _record(self, kind, through, **fields):
+        operation = dict(kind=kind, at=asdict(self.frontier()),
+                         before=asdict(self.visible_frontier), through=asdict(through), **fields)
+        operation['receipt_sha256'] = _digest(operation)
+        self._operations.append(operation)
+        return deepcopy(operation)
+
+    def compact(self, summary: TrainEvent, *, through: Frontier) -> bool:
+        """Explicit child summary of an exact raw prefix; retain newer raw events.
+
+        The summary is archived separately, not counted in raw frontiers. A new
+        summary may shorten the same frontier again; a stale frontier cannot
+        move the active view backwards. Identical summary retries are no-ops.
+        """
+        require(type(summary) is TrainEvent and summary.actor == 'child', 'child_summary_required')
+        require(summary.phase in ('reflection', 'compaction') and bool(summary.text.strip()),
+                'explicit_nonempty_child_compaction')
+        self._check_frontier(through)
+        require(through.event_count > 0, 'nonempty_compaction_frontier')
+        if summary.event_id in self._by_id:
+            require(self._by_id[summary.event_id] == summary, 'conflicting_event_id')
+            prior = next((operation for operation in self._operations
+                          if operation['kind'] == 'compaction'
+                          and operation['summary']['event_id'] == summary.event_id), None)
+            require(prior is not None and prior['through'] == asdict(through),
+                    'conflicting_summary_frontier_or_raw_event_id')
+            return False
+        require(through.event_count >= self.visible_frontier.event_count, 'frontier_regression')
+        self._record('compaction', through, summary=asdict(summary), summary_status=ASSERTION)
+        self._by_id[summary.event_id] = summary
+        return True
+
+    def evict_oldest(self, through: Frontier, *, reason: str) -> dict:
+        """R125 opt-in view eviction, never raw deletion or automatic overflow handling.
+
+        Drops the active summary, if any, and visible raw events through the
+        supplied exclusive frontier. An equal frontier can drop only a summary.
+        The returned receipt and a rendered omission notice make loss explicit.
+        """
+        require(type(reason) is str and bool(reason.strip()), 'explicit_eviction_reason_required')
+        self._check_frontier(through)
+        before = self.visible_frontier
+        require(through.event_count >= before.event_count, 'frontier_regression')
+        summary = self._summary()
+        if through == before and summary is None:
+            if self._operations:
+                prior = self._operations[-1]
+                if prior['kind'] == 'eviction' and prior['through'] == asdict(through) and prior['reason'] == reason:
+                    return deepcopy(prior)
+            raise ValueError('eviction_requires_visible_events')
+        dropped = [event.event_id for event in self._events[before.event_count:through.event_count]]
+        return self._record('eviction', through, reason=reason, dropped_event_ids=dropped,
+                            dropped_summary_id=summary.event_id if summary else None)
+
+    def render(self, token_count: Callable[[list[dict[str, str]]], int],
+               token_budget: int, *, split='TRAIN') -> MaskedInput:
+        """Strict, non-mutating render. Overflow requires an explicit caller action."""
+        require(split == 'TRAIN', 'history_forbidden_in_readout')
+        require(type(token_budget) is int and token_budget >= 0, 'nonnegative_token_budget')
+        require(callable(token_count), 'token_counter_required')
+        messages = [dict(role='system', content=self._system_prompt),
+                    dict(role='user', content=self._birth_prompt)]
+        summary = self._summary()
+        if summary:
+            messages.append(self._message(summary, dict(summary_status=ASSERTION,
+                            consumed_frontier=asdict(self.visible_frontier))))
+        receipt = next((operation for operation in reversed(self._operations)
+                        if operation['kind'] == 'eviction'), None)
+        if receipt:
+            notice = dict(kind='EXPLICIT_OLDEST_HISTORY_EVICTION',
+                          omitted_frontier=receipt['through'], receipt_sha256=receipt['receipt_sha256'],
+                          reason=receipt['reason'], raw_evidence_preserved=True,
+                          historical_omission=True, later_compaction_present=bool(summary))
+            messages.append(dict(role='user', content='History omission notice (not a child assertion):\n' + _json(notice)))
+        for event in self._events[self.visible_frontier.event_count:]:
+            messages.append(self._message(event))
+        count = token_count(deepcopy(messages))
+        require(type(count) is int and count >= 0, 'invalid_token_count')
+        if count > token_budget:
+            raise CompactionRequired(count, token_budget)
+        return MaskedInput(messages=messages, labels=(-100,) * count, token_count=count)
+
+    @staticmethod
+    def _message(event, extra=None):
+        labels = dict(child='Child assertion (not a verified fact)',
+                      parent='Parent advice (not an observed fact)',
+                      environment='Recorded environment observation')
+        metadata = asdict(event)
+        metadata.pop('text')
+        metadata.update(extra or {})
+        return dict(role='assistant' if event.actor == 'child' else 'user',
+                    content=labels[event.actor] + '\n' + _json(metadata) + '\n' + event.text)
+
+    def checkpoint(self) -> dict:
+        document = dict(schema=SCHEMA, system_prompt=self._system_prompt, birth_prompt=self._birth_prompt,
+                        events=[asdict(event) for event in self._events],
+                        operations=deepcopy(self._operations), frontier=asdict(self.frontier()))
+        document['state_sha256'] = _digest(document)
+        return document
+
+    def to_json(self) -> str:
+        """Serialize for caller-owned persistence; state_sha256 hashes the payload."""
+        return _json(self.checkpoint())
+
+    @classmethod
+    def restore(cls, document: dict, *, expected_sha256=None):
+        require(type(document) is dict and set(document) == {
+            'schema', 'system_prompt', 'birth_prompt', 'events', 'operations', 'frontier', 'state_sha256'},
+            'exact_checkpoint_fields')
+        require(document['schema'] == SCHEMA, 'checkpoint_schema')
+        payload = {key: value for key, value in document.items() if key != 'state_sha256'}
+        require(_hash(document['state_sha256']) and _digest(payload) == document['state_sha256'],
+                'checkpoint_integrity')
+        if expected_sha256 is not None:
+            require(_hash(expected_sha256) and expected_sha256 == document['state_sha256'],
+                    'checkpoint_external_binding')
+        require(type(document['events']) is list and type(document['operations']) is list, 'checkpoint_lists')
+        history = cls(system_prompt=document['system_prompt'], birth_prompt=document['birth_prompt'])
+        events = [TrainEvent.restore(event) for event in document['events']]
+        position = 0
+        for operation in document['operations']:
+            require(type(operation) is dict and {'kind', 'at', 'through'} <= set(operation), 'operation_fields')
+            at = Frontier.restore(operation['at'])
+            require(position <= at.event_count <= len(events), 'operation_frontier_order')
+            for event in events[position:at.event_count]:
+                require(history.append(event), 'duplicate_checkpoint_event')
+            position = at.event_count
+            history._check_frontier(at)
+            through = Frontier.restore(operation['through'])
+            if operation['kind'] == 'compaction':
+                require('summary' in operation, 'summary_required')
+                require(history.compact(TrainEvent.restore(operation['summary']), through=through),
+                        'duplicate_compaction_receipt')
+            elif operation['kind'] == 'eviction':
+                require('reason' in operation, 'eviction_reason_required')
+                previous_count = len(history._operations)
+                history.evict_oldest(through, reason=operation['reason'])
+                require(len(history._operations) == previous_count + 1, 'duplicate_eviction_receipt')
+            else:
+                raise ValueError('unknown_history_operation')
+            require(history._operations[-1] == operation, 'operation_integrity_or_frontier')
+        for event in events[position:]:
+            require(history.append(event), 'duplicate_checkpoint_event')
+        require(history.frontier() == Frontier.restore(document['frontier']), 'checkpoint_frontier')
+        require(history.checkpoint() == document, 'checkpoint_roundtrip_integrity')
+        return history
+
+    @classmethod
+    def from_json(cls, text: str, *, expected_sha256=None):
+        def invalid_constant(value):
+            raise ValueError('nonfinite_JSON_constant:' + value)
+        document = json.loads(text, object_pairs_hook=_object, parse_constant=invalid_constant)
+        return cls.restore(document, expected_sha256=expected_sha256)
