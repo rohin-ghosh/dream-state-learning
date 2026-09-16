@@ -29,17 +29,21 @@ SYSTEM = (
     'Runtime notices and parent messages are inputs, not your own words.'
 )
 BIRTH = (
-    'Your inherited model is frozen Qwen2.5-7B-Instruct. A rank-8 LoRA adapter is the only '
-    'trainable part. During sleep, your actual generated tokens are used as targets, with '
-    'earlier input, parent messages and runtime notices masked. Ordinary competent base '
-    'examples are mixed in as anchors. Training can change your behaviour, but improvement '
-    'is not guaranteed and repeating an error can reinforce it. Your general purpose is '
-    'to turn available abilities into useful behaviours and learn from your experience. '
-    'You will see token and context costs. When context is full, oldest visible history '
-    'may be explicitly removed; raw records are preserved. Before sleep you can distill '
-    'what you want to carry forward. You currently have a text stream and a human-message '
-    'inbox, not a shell or independent GPU-experiment tools. Do not claim to have run '
-    'an experiment or observed a result that the environment did not return.'
+    'Take the intelligence in your inherited model and turn it into behaviours you actually '
+    'do, repeat those behaviours, and learn them in your LoRA. What is worth exploring and '
+    'practising is for you to discover through experience and conversation. '
+    'Your inherited model is frozen Qwen2.5-7B-Instruct. Your rank-8 LoRA is a small adapter '
+    'attached to it, and only that adapter changes during sleep. Sleep trains on your own '
+    'words, not the words people or the environment supply. Ordinary competent examples '
+    'are mixed in to help keep general abilities accessible. Repeated errors and empty '
+    'rituals can also be learned; improvement is not guaranteed. '
+    'At the end of a thought, consider what you want to think about next and continue. '
+    'When nothing else is happening, you can think about how you are thinking. Before '
+    'sleep, consider what from your experience you want to carry forward. Your context '
+    'is finite: the oldest visible passages are dropped when it fills. Short notices '
+    'tell you your token costs. People can speak to you as you go; you need not wait '
+    'for them. For now you have this conversation, not an enabled shell or experiment '
+    'tools. Distinguish your ideas and predictions from results you actually receive.'
 )
 COMPACTION_INVITATION = 'You are about to sleep. Distill from your history what you want to carry forward.'
 
@@ -75,7 +79,11 @@ def validate_plan(plan):
     require(plan['seed'] == 0 and plan['segments_per_sleep'] == 2, 'initial_native_schedule')
     require(type(plan['segment_tokens']) is int and 1 <= plan['segment_tokens'] <= 1024,
             'bounded_native_segment')
-    require(type(plan['context_limit']) is int and plan['segment_tokens'] < plan['context_limit'] <= 8192,
+    from organism_v6.orch_r125_plain_context import VERSION
+    plain = plan.get('presentation_version') == VERSION
+    require(plan.get('presentation_version') in (None, VERSION), 'known_presentation_version')
+    require(type(plan['context_limit']) is int and (16384 <= plan['context_limit'] <= 32768 if plain
+            else plan['segment_tokens'] < plan['context_limit'] <= 8192),
             'bounded_native_context')
     require(plan['max_sleeps'] is None or type(plan['max_sleeps']) is int and plan['max_sleeps'] > 0,
             'explicit_smoke_or_long_life')
@@ -180,6 +188,8 @@ class NativeChild:
             adapter_dir=checkpoint['adapter_path'] if checkpoint else None)
         self.engine = source.Engine(options, tokenizer, check=self.check)
         self.torch, self.tokenizer = self.engine.torch, tokenizer
+        require(plan['context_limit'] <= self.engine.model.config.max_position_embeddings,
+                'context_within_local_model_positions')
         self.parameters = {name: parameter for name, parameter in self.engine.model.named_parameters()
                            if native.is_lora(name)}
         require(self.parameters and all(parameter.dtype == self.torch.float32
@@ -307,7 +317,27 @@ class NativeChild:
         require(len(anchors) == 4, 'four_broad_anchor_families')
         before = self.adapter_hash()
         steps_before = self.optimizer_steps
-        schedule = presentation_schedule(new_rows, old_rows)
+        exclusions = []
+        if self.plan.get('presentation_version'):
+            from organism_v6.orch_r125_plain_context import eligible_rows
+            presentation = dict(version=self.plan['presentation_version'],
+                system_prompt=self.plan['system_prompt'], birth_prompt=self.plan['birth_prompt'])
+            new_rows, rejected_new = eligible_rows(new_rows, presentation)
+            old_rows, rejected_old = eligible_rows(old_rows, presentation)
+            exclusions = [dict(row, cohort='NEW') for row in rejected_new] + [
+                dict(row, cohort='REHEARSAL') for row in rejected_old]
+            record('TARGET_ELIGIBILITY', dict(version=presentation['version'], excluded=exclusions,
+                new_row_sha256=[row['source_sha256'] for row in new_rows],
+                rehearsal_row_sha256=[row['source_sha256'] for row in old_rows], raw_modified=False))
+        schedule = (presentation_schedule(new_rows, old_rows) if new_rows else
+                    [('REHEARSAL', row) for row in old_rows])
+        if not schedule:
+            self.engine.verify_base()
+            return dict(optimizer_steps=0, total_optimizer_steps=self.optimizer_steps,
+                before_adapter_sha256=before, after_adapter_sha256=before,
+                no_update_reason='no_eligible_child_rows', child_token_exposures=0,
+                anchor_token_exposures=0, presentations={}, excluded_rows=exclusions,
+                anchor_lambda=0.25, mix_kind='OBJECTIVE_WEIGHT_NOT_TOKEN_FRACTION')
         encoded = {row['source_sha256']:encode_own(row, self.tokenizer, self.plan['context_limit'])
                    for row in new_rows+old_rows}
         child_exposures, anchor_exposures = 0, 0
@@ -357,7 +387,8 @@ class NativeChild:
         return dict(optimizer_steps=self.optimizer_steps-steps_before, total_optimizer_steps=self.optimizer_steps,
             before_adapter_sha256=before, after_adapter_sha256=after, frozen_base_verified=True,
             child_token_exposures=child_exposures, anchor_token_exposures=anchor_exposures,
-            presentations=presentations, anchor_lambda=0.25, mix_kind='OBJECTIVE_WEIGHT_NOT_TOKEN_FRACTION')
+            presentations=presentations, excluded_rows=exclusions,
+            anchor_lambda=0.25, mix_kind='OBJECTIVE_WEIGHT_NOT_TOKEN_FRACTION')
 
 
 def finish_sleep(child, stream, journal, anchors, root, cycle):
@@ -404,6 +435,18 @@ def run(plan_path, *, resume=False):
                 if recovering:
                     from gpu.orch_r125_preupdate_recovery import recover_rng
                     recover_rng(child, stream, journal, plan['preupdate_recovery'])
+                if plan.get('presentation_version'):
+                    require(not recovering, 'presentation_not_during_recovery')
+                    presentation = dict(version=plan['presentation_version'],
+                        system_prompt=plan['system_prompt'], birth_prompt=plan['birth_prompt'])
+                    if stream.presentation != presentation or stream.context_limit != plan['context_limit']:
+                        stream.set_presentation(presentation, plan['context_limit'])
+                        journal.record('PRESENTATION', dict(state=stream.checkpoint(),
+                            plan_sha256=sha(plan_path), raw_modified=False,
+                            previous_context_limit=state['document']['state']['context_limit']))
+                else:
+                    require(stream.presentation is None and stream.context_limit == plan['context_limit'],
+                            'resume_presentation_plan_binding')
             else:
                 child = NativeChild(plan)
                 checkpoint = child.checkpoint(root/'checkpoints'/'initial')
@@ -418,6 +461,9 @@ def run(plan_path, *, resume=False):
                 stream = ContinualStream(history, context_limit=plan['context_limit'], segment_tokens=plan['segment_tokens'],
                     segments_per_sleep=2, deadline_unix=plan['hard_end_unix'],
                     model_state_sha256=digest(checkpoint['checkpoint_sha256']), allow_eviction=True)
+                if plan.get('presentation_version'):
+                    stream.set_presentation(dict(version=plan['presentation_version'],
+                        system_prompt=plan['system_prompt'], birth_prompt=plan['birth_prompt']), plan['context_limit'])
                 journal.record('COMMITTED', dict(kind='BIRTH', state=stream.checkpoint()))
             anchors, anchor_receipt = build_inventory(plan['anchors'], child.tokenizer, plan['context_limit'])
             journal.record('LOADED', dict(pid=os.getpid(), runtime=child.engine.runtime,

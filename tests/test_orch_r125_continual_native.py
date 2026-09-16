@@ -429,6 +429,26 @@ class NativeLoopTests(unittest.TestCase):
         self.assertEqual([receipt['cycle'] for receipt in stream.sleep_receipts], [1, 2])
         self.assertEqual(len(stream.rows), 7)
 
+    def test_plain_presentation_resume_preserves_life_and_fixed_readouts(self):
+        from organism_v6.orch_r125_plain_context import VERSION, has_scaffolding
+        self.stop_at_committed_sleep()
+        before = self.restore().checkpoint()['state']
+        plan = dict(self.plan, presentation_version=VERSION, context_limit=16384)
+        self.plan_path.write_text(json.dumps(plan))
+        with patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)):
+            native.run(self.plan_path, resume=True)
+        after = self.restore()
+        transitions = [record['document']['state']['state'] for record in self.records()
+                       if record['kind'] == 'PRESENTATION']
+        self.assertEqual(len(transitions), 1)
+        for field in ('history', 'rows', 'sleep_frontier', 'model_state_sha256', 'sleep_receipts'):
+            self.assertEqual(transitions[0][field], before[field])
+        self.assertEqual(after.context_limit, 16384)
+        self.assertEqual(after.rows[:3], before['rows'])
+        self.assertFalse(any(has_scaffolding(str(row['prefix'])) for row in after.rows[3:]))
+        self.assertEqual(self.children[-1].loaded_checkpoint['optimizer_steps'], 48)
+        self.assertEqual(self.readouts, [0, 1, 2])
+
     def test_resume_dispatches_missing_sleep_readout_before_new_generation(self):
         self.stop_before_readout = 1
         with self.assertRaisesRegex(RuntimeError, 'synthetic interruption'):

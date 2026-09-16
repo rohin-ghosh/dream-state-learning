@@ -48,6 +48,20 @@ class ContinualStream:
         self.sleep_frontier = 0
         self.pending = None
         self.sleep_receipts = []
+        self.presentation = None
+
+    def set_presentation(self, presentation, context_limit):
+        from organism_v6.orch_r125_plain_context import VERSION
+        require(self.pending is None and self.sleep_frontier == len(self.rows),
+                'presentation_requires_saved_sleep_boundary')
+        require(type(presentation) is dict and set(presentation) == {'version', 'system_prompt', 'birth_prompt'}
+                and presentation['version'] == VERSION
+                and all(type(value) is str and value.strip() for value in presentation.values()),
+                'exact_plain_presentation')
+        require(type(context_limit) is int and 16384 <= context_limit <= 32768,
+                'plain_context_at_least_16k')
+        self.presentation = copy.deepcopy(presentation)
+        self.context_limit = context_limit
 
     @property
     def sleep_due(self):
@@ -59,7 +73,8 @@ class ContinualStream:
     def render(self, token_count):
         while True:
             try:
-                return self.history.render(token_count, self.context_limit-self.segment_tokens)
+                return self.history.render(token_count, self.context_limit-self.segment_tokens,
+                                           presentation=self.presentation)
             except CompactionRequired:
                 if not self.allow_eviction:
                     raise
@@ -127,8 +142,10 @@ class ContinualStream:
             generation_context_tokens=actual_prompt_tokens+len(tokens),
             total_generated_tokens=sum(len(item['token_ids']) for item in self.rows),
             generation_seconds=max(0.0, finished-request['started_unix']))
+        from organism_v6.orch_r125_plain_context import cost_sentence
+        cost_text = cost_sentence(cost) if self.presentation else '[cost] '+json.dumps(cost, sort_keys=True)
         self.history.append(TrainEvent(event_id=f'cost:segment:{segment}', actor='environment', split='TRAIN',
-            text='[cost] '+json.dumps(cost, sort_keys=True), source_sha256=digest(cost), phase='feedback',
+            text=cost_text, source_sha256=digest(cost), phase='feedback',
             episode_id='continual_stream', source_id='cost:'+self.pending, origin='TRAIN_COLLECTION'))
         reserved = self.pending
         self.pending = None
@@ -148,7 +165,11 @@ class ContinualStream:
         expected = [row['source_sha256'] for row in self.rows[self.sleep_frontier:]]
         require(receipt.get('new_row_sha256') == expected, 'sleep_exact_new_child_frontier')
         require(receipt.get('status') == 'COMPLETE', 'sleep_must_complete')
-        require(type(receipt.get('optimizer_steps')) is int and receipt['optimizer_steps'] > 0,
+        require(type(receipt.get('optimizer_steps')) is int and (receipt['optimizer_steps'] > 0
+                or self.presentation is not None and receipt['optimizer_steps'] == 0
+                and receipt.get('no_update_reason') == 'no_eligible_child_rows'
+                and not receipt.get('presentations') and receipt.get('child_token_exposures') == 0
+                and receipt.get('anchor_token_exposures') == 0),
                 'sleep_actual_positive_optimizer_steps')
         references = receipt.get('checkpoint_sha256', {})
         require(set(references) == {'adapter', 'optimizer', 'rng'}, 'full_learning_state_receipt')
@@ -171,6 +192,8 @@ class ContinualStream:
             model_state_sha256=self.model_state_sha256,
             sleep_frontier=self.sleep_frontier, pending=self.pending,
             sleep_receipts=copy.deepcopy(self.sleep_receipts))
+        if self.presentation is not None:
+            state['presentation'] = copy.deepcopy(self.presentation)
         return dict(state=state, sha256=digest(state))
 
     @classmethod
@@ -193,4 +216,9 @@ class ContinualStream:
         stream.sleep_frontier = state['sleep_frontier']
         stream.pending = state['pending']
         stream.sleep_receipts = copy.deepcopy(state['sleep_receipts'])
+        if 'presentation' in state:
+            pending, frontier = stream.pending, stream.sleep_frontier
+            stream.pending, stream.sleep_frontier = None, len(stream.rows)
+            stream.set_presentation(state['presentation'], stream.context_limit)
+            stream.pending, stream.sleep_frontier = pending, frontier
         return stream

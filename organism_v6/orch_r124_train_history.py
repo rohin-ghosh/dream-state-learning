@@ -219,7 +219,7 @@ class TrainHistory:
                             dropped_summary_id=summary.event_id if summary else None)
 
     def render(self, token_count: Callable[[list[dict[str, str]]], int],
-               token_budget: int, *, split='TRAIN') -> MaskedInput:
+               token_budget: int, *, split='TRAIN', presentation=None) -> MaskedInput:
         """Strict, non-mutating render. Overflow requires an explicit caller action."""
         require(split == 'TRAIN', 'history_forbidden_in_readout')
         require(type(token_budget) is int and token_budget >= 0, 'nonnegative_token_budget')
@@ -240,6 +240,10 @@ class TrainHistory:
             messages.append(dict(role='user', content='History omission notice (not a child assertion):\n' + _json(notice)))
         for event in self._events[self.visible_frontier.event_count:]:
             messages.append(self._message(event))
+        if presentation is not None:
+            from organism_v6.orch_r125_plain_context import VERSION, replay_prefix
+            require(presentation['version'] == VERSION, 'known_presentation_version')
+            messages = replay_prefix(messages, presentation)
         count = token_count(deepcopy(messages))
         require(type(count) is int and count >= 0, 'invalid_token_count')
         if count > token_budget:

@@ -227,9 +227,9 @@ class StreamJournal:
                     'response_request_binding')
             state['response'] = deepcopy(document)
             return
-        if kind not in ('REQUEST', 'COMMITTED', 'COMPACTION', 'SLEEP_REQUEST', 'SLEEP_COMPLETE'):
+        if kind not in ('REQUEST', 'COMMITTED', 'COMPACTION', 'PRESENTATION', 'SLEEP_REQUEST', 'SLEEP_COMPLETE'):
             return
-        key = 'state' if kind in ('COMMITTED', 'COMPACTION') else 'resume_state'
+        key = 'state' if kind in ('COMMITTED', 'COMPACTION', 'PRESENTATION') else 'resume_state'
         require(key in document, 'authoritative_checkpoint_required')
         checkpoint = self._checkpoint(document[key])
         current = checkpoint['document']['state']
@@ -270,6 +270,15 @@ class StreamJournal:
             require(current['history']['events'] == previous['history']['events']
                     and len(current['history']['operations']) > len(previous['history']['operations']),
                     'compaction_only_history_operations_advance')
+        elif kind == 'PRESENTATION':
+            require(previous is not None and previous['pending'] is None and current['pending'] is None
+                    and state['request'] is None and state['sleep_request'] is None
+                    and previous['sleep_frontier'] == len(previous['rows']),
+                    'presentation_requires_saved_sleep_boundary')
+            require({key: value for key, value in previous.items() if key not in ('presentation', 'context_limit')}
+                    == {key: value for key, value in current.items() if key not in ('presentation', 'context_limit')},
+                    'unexpected_stream_state_transition')
+            require(current.get('presentation') is not None, 'plain_presentation_required')
         elif kind == 'SLEEP_REQUEST':
             require(previous is not None and previous['pending'] is None
                     and state['request'] is None and state['sleep_request'] is None,
@@ -292,7 +301,11 @@ class StreamJournal:
                     and current['sleep_receipts'] == previous['sleep_receipts'] + [receipt]
                     and receipt.get('new_row_sha256') == [row['source_sha256'] for row in rows[previous['sleep_frontier']:]]
                     and receipt.get('status') == 'COMPLETE'
-                    and type(receipt.get('optimizer_steps')) is int and receipt['optimizer_steps'] > 0,
+                    and type(receipt.get('optimizer_steps')) is int and (receipt['optimizer_steps'] > 0
+                    or current.get('presentation') is not None and receipt['optimizer_steps'] == 0
+                    and receipt.get('no_update_reason') == 'no_eligible_child_rows'
+                    and not receipt.get('presentations') and receipt.get('child_token_exposures') == 0
+                    and receipt.get('anchor_token_exposures') == 0),
                     'sleep_frontier_binding')
             references = receipt.get('checkpoint_sha256', {})
             require(type(references) is dict and set(references) == {'adapter', 'optimizer', 'rng'}
