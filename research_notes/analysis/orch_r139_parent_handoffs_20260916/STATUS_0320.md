@@ -1,5 +1,8 @@
 # Prospective Astra transitions — 2026-09-16 03:20 UTC
 
+Superseded operationally by STATUS_0325.md: F4 subsequently hit a context-limit
+crash, and A2's actual current actor is4156720 (not obsolete4007301).
+
 R121 model choice, not a refusal retry. Historical Fable replies remain Fable;
 historical MISSING/refused requests are not resent or relabelled. The current
 paper scope remains Level-1 initialization and four-way skill acquisition.

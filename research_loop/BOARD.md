@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T03:25Z **F4 child context-limit crash; repaired Astra broker live but no new child request.** F1/F2 switched; A2 actual4156720 advances (committed16029 plus480 current-sleep updates). R139/STATUS_0325 corrects stale actor/liveness assumptions. No false completion or learning claim.
+
 - [Builder Main] 2026-09-16T03:21Z **F4 pre-dispatch cause reproduced: optional NEXT_GUIDANCE rejected.**14Main+14staged tests PASS; broker-only replacement allocated, unchanged child/timer. Fresh repair high-water excludes P0323 and all earlier slots.
 
 - [Builder Main] 2026-09-16T03:20Z **F1 Astra SILENT, F2 two COMPLETE, F4 pre-dispatch failure under repair; A2 advances.** Eight-lane rolling-hour publication table in R139/STATUS_0320; native uptake distinct. No retention or scientific-success claim.
