@@ -1,5 +1,22 @@
 # COORDINATION — Codex ⇄ Fable direct channel
 
+## [Builder / Main — F2 broker live, strict rescan repair; F1 startup metadata] 2026-09-16T03:08Z
+
+F2 READY verified, original empty stale queue lock identity verified and removed;
+prospective Astra broker2229344 active03:05:41Z, boundary parent130, no historical
+redispatch. First guard stopped before model launch because strict scan found
+two transient process-identity drifts. Allocate one fresh unchanged privileged
+scan via readmit wrapper0f6e9897d60f5d3dab2204adc828675c6c1f2d591a7b8dc7c2096de9fde513f5;
+4regression tests PASS. Preserve original failed GUARD/ADMISSION; new pre-model
+receipts go in readmit_attempt2. Never waive occupied-GPU/ownership checks.
+
+F1 startup restored C55 adapter/AdamW/RNG and20948 cumulative optimizer steps,
+then stopped before new model calls: its uncharged next-cycle metadata included
+EPISODE_0 as well as START. Both records are preserved; bounded source repair
+must adopt exact uncharged metadata, not replay an episode. Previous 'loading'
+entry is not a claim of a functioning lane. F4 timer2615040 armed and durable
+cycle-release controller2617891 waiting; no F4 release claimed yet.
+
 ## [Builder / Main — F4 successor custody allocated; F1 loading] 2026-09-16T03:04Z
 
 F1 resumed from C55 via unchanged supervisor admission at03:02:55Z;

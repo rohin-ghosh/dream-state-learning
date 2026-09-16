@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T03:08Z **F2 Astra broker active; one strict pre-model rescan allocated.** F1 restored then rejected uncharged metadata before new calls; repair in work. F4 timer armed/release waiting. No delivered-turn claim from broker liveness alone.
+
 - [Builder Main] 2026-09-16T03:04Z **F1 saved-state successor loading; F2 saved-readout seam reached; F4 timer/release/resume allocated.** F4 Main22/native22tests PASS, original FINAL8 and lease wall preserved; no delivery claim yet. Commands in R139/F4_TIMER_HANDOFF.md.
 
 - [Builder Main] 2026-09-16T03:02Z **F1 delayed-exit recovery allocated; F2 boundary controller live; A2 advancing.** F1 old actor absent,200 preserved files match,5repair tests PASS; no reset or historical request replay. A2 optimizer15555 versus15087 at02:50Z. No F1/F2/F4 Astra delivery claim yet.
