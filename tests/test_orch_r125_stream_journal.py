@@ -694,5 +694,118 @@ class StreamJournalTests(unittest.TestCase):
                 reopened.record('SLEEP_REQUEST', self.sleep_request())
 
 
+class WallExtensionJournalTests(unittest.TestCase):
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name) / 'stream'
+        self.stream = ContinualStream(TrainHistory(system_prompt='System.', birth_prompt='Birth.'),
+            context_limit=4096, segment_tokens=128, segments_per_sleep=2,
+            deadline_unix=1000, model_state_sha256='f' * 64)
+        with StreamJournal(self.root, create=True) as journal:
+            for unused in range(2):
+                self.stream.step(generate, tokens, journal.record, now=lambda: 100)
+            self.stream.commit_sleep(dict(status='COMPLETE', optimizer_steps=2,
+                new_row_sha256=[row['source_sha256'] for row in self.stream.pending_rows()],
+                checkpoint_sha256=dict(adapter='a' * 64, optimizer='b' * 64, rng='c' * 64)), journal.record)
+        self.previous = self.stream.checkpoint()
+
+    def proposal(self):
+        from gpu.orch_r125_stream_journal import WALL_EXTENSION_SCHEMA
+        current = deepcopy(self.previous)
+        current['state']['deadline_unix'] = 2000
+        current['sha256'] = digest(current['state'])
+        return dict(schema='R131_WALL_EXTENDED_V1', plan_sha256='a' * 64, state=current,
+            authorization=dict(schema=WALL_EXTENSION_SCHEMA, previous_deadline_unix=1000,
+                previous_stream_sha256=self.previous['sha256'], new_deadline_unix=2000,
+                lease_end_unix=2600, safety_margin_seconds=600))
+
+    def reject(self, document):
+        before = {path.name: path.read_bytes() for path in (self.root / 'records').iterdir()}
+        with StreamJournal(self.root) as journal, self.assertRaises(ValueError):
+            journal.record('WALL_EXTENDED', document)
+        self.assertEqual(before, {path.name: path.read_bytes() for path in (self.root / 'records').iterdir()})
+        with StreamJournal(self.root) as journal:
+            self.assertEqual(journal.latest_checkpoint()['document'], self.previous)
+
+    def test_extension_is_only_deadline_change_and_reopens_with_new_requests(self):
+        proposal = self.proposal()
+        with StreamJournal(self.root) as journal:
+            journal.record('WALL_EXTENDED', proposal)
+            self.assertEqual(journal.latest_checkpoint()['document'], proposal['state'])
+        with StreamJournal(self.root) as journal:
+            stream = ContinualStream.restore(**journal.latest_checkpoint())
+            self.assertEqual(stream.deadline_unix, 2000)
+            current = stream.checkpoint()['state']
+            self.assertEqual({key: value for key, value in current.items() if key != 'deadline_unix'},
+                {key: value for key, value in self.previous['state'].items() if key != 'deadline_unix'})
+            stream.step(generate, tokens, journal.record, now=lambda: 1500)
+            self.assertEqual(journal.latest_checkpoint()['document'], stream.checkpoint())
+
+    def test_wrong_prior_wall_digest_shortening_and_lease_overrun_rejected(self):
+        changes = [dict(previous_stream_sha256='0' * 64), dict(previous_deadline_unix=999),
+            dict(new_deadline_unix=1000), dict(new_deadline_unix=999), dict(new_deadline_unix=2481),
+            dict(safety_margin_seconds=119), dict(safety_margin_seconds=True),
+            dict(new_deadline_unix=float('inf')), dict(extra='not allowed')]
+        for change in changes:
+            document = self.proposal()
+            document['authorization'].update(change)
+            with self.subTest(change=change):
+                self.reject(document)
+
+    def test_every_other_stream_field_frozen_including_model_optimizer_and_rng_hashes(self):
+        variants = []
+        for field, value in (('context_limit', 4097), ('segment_tokens', 127), ('segments_per_sleep', 3),
+                             ('allow_eviction', True), ('model_state_sha256', 'd' * 64), ('sleep_frontier', 0)):
+            document = self.proposal()
+            document['state']['state'][field] = value
+            variants.append(document)
+        for field in ('optimizer', 'rng', 'adapter'):
+            document = self.proposal()
+            document['state']['state']['sleep_receipts'][-1]['checkpoint_sha256'][field] = 'd' * 64
+            variants.append(document)
+        document = self.proposal()
+        document['state']['state']['rows'][0]['target'] = 'changed child text'
+        variants.append(document)
+        document = self.proposal()
+        document['state']['state']['history']['birth_prompt'] = 'changed birth'
+        variants.append(document)
+        document = self.proposal()
+        document['state']['state']['allow_eviction'] = 0
+        variants.append(document)
+        for index, document in enumerate(variants):
+            document['state']['sha256'] = digest(document['state']['state'])
+            with self.subTest(index=index):
+                self.reject(document)
+
+    def test_pending_generation_sleep_and_unslept_frontier_rejected(self):
+        with StreamJournal(self.root) as journal:
+            state = journal._scan()
+            for pending in ('a' * 64, 'sleep:' + 'a' * 64):
+                previous = deepcopy(self.previous)
+                previous['state']['pending'] = pending
+                previous['sha256'] = digest(previous['state'])
+                staged = deepcopy(state)
+                staged['latest'] = dict(document=previous, expected_sha256=previous['sha256'])
+                document = self.proposal()
+                document['authorization']['previous_stream_sha256'] = previous['sha256']
+                with self.subTest(pending=pending), self.assertRaisesRegex(ValueError, 'wall_extension_saved_sleep_boundary'):
+                    journal._advance(staged, 'WALL_EXTENDED', document)
+            self.stream.step(generate, tokens, journal.record, now=lambda: 100)
+            latest = journal.latest_checkpoint()
+        self.previous = latest['document']
+        self.reject(self.proposal())
+
+    def test_missing_boundary_and_duplicate_extension_rejected(self):
+        with StreamJournal(self.root) as journal:
+            state = journal._scan()
+            state['latest'] = None
+            with self.assertRaisesRegex(ValueError, 'wall_extension_saved_sleep_boundary'):
+                journal._advance(state, 'WALL_EXTENDED', self.proposal())
+            journal.record('WALL_EXTENDED', self.proposal())
+        with StreamJournal(self.root) as journal, self.assertRaisesRegex(ValueError, 'wall_extension_exact_prior_binding'):
+            journal.record('WALL_EXTENDED', self.proposal())
+
+
 if __name__ == '__main__':
     unittest.main()

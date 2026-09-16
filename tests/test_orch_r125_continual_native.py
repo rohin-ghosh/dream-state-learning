@@ -608,6 +608,157 @@ class NativeLoopTests(unittest.TestCase):
         self.assertEqual(self.records(), before)
         self.assertEqual(len(self.children), 1)
 
+    def wall_extension_plan(self, stream=None):
+        from gpu.orch_r125_stream_journal import WALL_EXTENSION_SCHEMA
+        stream = stream or self.restore()
+        authorization = dict(schema=WALL_EXTENSION_SCHEMA, previous_deadline_unix=stream.deadline_unix,
+            previous_stream_sha256=stream.checkpoint()['sha256'], new_deadline_unix=stream.deadline_unix + 120,
+            lease_end_unix=self.plan['lease_end_unix'], safety_margin_seconds=120)
+        return dict(self.plan, hard_end_unix=authorization['new_deadline_unix'],
+                    authorized_wall_extension=authorization)
+
+    def test_authorized_wall_resume_preserves_complete_saved_state_and_checkpoint_bytes(self):
+        self.stop_at_committed_sleep()
+        previous = self.restore().checkpoint()
+        old_records = self.records()
+        files = {str(path): native.sha(path) for path in (Path(self.plan['root']) / 'checkpoints').rglob('*') if path.is_file()}
+        plan = self.wall_extension_plan()
+        self.plan_path.write_text(json.dumps(plan))
+        with patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)), \
+                patch('gpu.orch_r107_base_anchors_inventory.build_inventory', side_effect=self.interrupt):
+            with self.assertRaisesRegex(RuntimeError, 'synthetic interruption'):
+                native.run(self.plan_path, resume=True)
+        records = self.records()
+        self.assertEqual(records[:-1], old_records)
+        self.assertEqual(records[-1]['kind'], 'WALL_EXTENDED')
+        self.assertEqual(records[-1]['document']['plan_sha256'], native.sha(self.plan_path))
+        self.assertEqual(records[-1]['document']['authorization'], plan['authorized_wall_extension'])
+        expected = deepcopy(previous)
+        expected['state']['deadline_unix'] = plan['hard_end_unix']
+        expected['sha256'] = digest(expected['state'])
+        self.assertEqual(self.restore().checkpoint(), expected)
+        self.assertEqual({path: native.sha(path) for path in files}, files)
+        self.assertEqual(self.children[-1].optimizer_steps, 48)
+        self.assertEqual(self.children[-1].loaded_checkpoint,
+            native.read(Path(self.plan['root']) / 'checkpoints/sleep_000001/COMMIT.json'))
+        self.assertEqual(self.children[-1].generations, 0)
+
+    def test_wall_extension_journal_failure_does_not_mutate_restored_deadline(self):
+        self.stop_at_committed_sleep()
+        before = self.restore().checkpoint()
+        records = self.records()
+        plan = self.wall_extension_plan()
+        self.plan_path.write_text(json.dumps(plan))
+        captured = []
+        prepare = native.prepare_wall_extension
+        original_record = StreamJournal.record
+
+        def remember(plan, stream, **kwargs):
+            captured.append(stream)
+            return prepare(plan, stream, **kwargs)
+
+        def reject_wall(journal, kind, document):
+            if kind == 'WALL_EXTENDED':
+                raise OSError('synthetic wall publication failure')
+            return original_record(journal, kind, document)
+
+        with patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)), \
+                patch.object(native, 'prepare_wall_extension', side_effect=remember), \
+                patch.object(StreamJournal, 'record', new=reject_wall), \
+                self.assertRaisesRegex(OSError, 'synthetic wall publication failure'):
+            native.run(self.plan_path, resume=True)
+        self.assertEqual(captured[0].checkpoint(), before)
+        self.assertEqual(self.restore().checkpoint(), before)
+        self.assertEqual(self.records(), records)
+        self.assertEqual(self.children[-1].generations, 0)
+
+    def test_wall_extension_prepare_rejects_wrong_bindings_budgets_and_configuration(self):
+        self.stop_at_committed_sleep()
+        stream = self.restore()
+        previous = stream.checkpoint()
+        plan = self.wall_extension_plan(stream)
+        authorization = plan['authorized_wall_extension']
+        variants = []
+        for changes in (dict(previous_stream_sha256='0' * 64),
+                        dict(previous_deadline_unix=stream.deadline_unix - 1),
+                        dict(new_deadline_unix=stream.deadline_unix),
+                        dict(new_deadline_unix=stream.deadline_unix - 1),
+                        dict(new_deadline_unix=plan['lease_end_unix'] - 119),
+                        dict(safety_margin_seconds=119), dict(safety_margin_seconds=True),
+                        dict(lease_end_unix=plan['lease_end_unix'] + 1),
+                        dict(previous_deadline_unix=float('nan')), dict(extra='not authorized')):
+            variant = dict(plan, authorized_wall_extension=dict(authorization, **changes))
+            if 'new_deadline_unix' in changes:
+                variant['hard_end_unix'] = changes['new_deadline_unix']
+            variants.append(variant)
+        variants += [dict(plan, segment_tokens=17), dict(plan, context_limit=4096),
+                     dict(plan, preupdate_recovery={'cannot_combine': True})]
+        for variant in variants:
+            with self.subTest(plan=variant), self.assertRaises(ValueError):
+                native.prepare_wall_extension(variant, stream, resume=True, plan_sha256='a' * 64)
+            self.assertEqual(stream.checkpoint(), previous)
+        with self.assertRaisesRegex(ValueError, 'wall_extension_resume_only'):
+            native.prepare_wall_extension(plan, stream, resume=False, plan_sha256='a' * 64)
+
+    def test_wall_extension_denies_pending_generation_sleep_and_unslept_rows(self):
+        self.stop_at_committed_sleep()
+        saved = self.restore()
+        for pending, unslept in (('a' * 64, False), ('sleep:' + 'a' * 64, False), (None, True)):
+            stream = ContinualStream.restore(saved.checkpoint(), expected_sha256=saved.checkpoint()['sha256'])
+            stream.pending = pending
+            if unslept:
+                stream.sleep_frontier -= 1
+            plan = self.wall_extension_plan(stream)
+            before = stream.checkpoint()
+            with self.subTest(pending=pending, unslept=unslept), \
+                    self.assertRaisesRegex(ValueError, 'wall_extension_saved_sleep_boundary'):
+                native.prepare_wall_extension(plan, stream, resume=True, plan_sha256='a' * 64)
+            self.assertEqual(stream.checkpoint(), before)
+
+    def test_wall_extension_requires_verified_checkpoint_before_audit_record(self):
+        self.stop_at_committed_sleep()
+        plan = self.wall_extension_plan()
+        self.plan_path.write_text(json.dumps(plan))
+        before = self.records()
+        adapter = Path(self.plan['root']) / 'checkpoints/sleep_000001/adapter/weights'
+        adapter.write_text('changed bytes')
+        with patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)), \
+                self.assertRaisesRegex(ValueError, 'adapter_file_binding'):
+            native.run(self.plan_path, resume=True)
+        self.assertEqual(self.records(), before)
+
+    def test_wall_extension_rejected_on_new_run_before_child_or_journal_creation(self):
+        from gpu.orch_r125_stream_journal import WALL_EXTENSION_SCHEMA
+        plan = dict(self.plan, authorized_wall_extension=dict(schema=WALL_EXTENSION_SCHEMA,
+            previous_deadline_unix=self.plan['hard_end_unix'] - 120, previous_stream_sha256='a' * 64,
+            new_deadline_unix=self.plan['hard_end_unix'], lease_end_unix=self.plan['lease_end_unix'],
+            safety_margin_seconds=120))
+        self.plan_path.write_text(json.dumps(plan))
+        with patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)), \
+                self.assertRaisesRegex(ValueError, 'wall_extension_resume_only'):
+            native.run(self.plan_path)
+        self.assertEqual(self.children, [])
+        self.assertFalse((Path(self.plan['root']) / 'stream').exists())
+
+    def test_wall_extension_supports_pinned_pilot_startup_and_plain_presentation(self):
+        from organism_v6.orch_r125_plain_context import VERSION
+        source = Path(self.plan['source_root'])
+        source.mkdir()
+        startup = source / 'pilot-startup.md'
+        startup.write_text('Exact pinned pilot startup.\n')
+        self.plan.update(birth_prompt=startup.read_text(), presentation_version=VERSION, context_limit=16384,
+            startup_context=dict(version='R127_STARTUP_V1', path=str(startup), sha256=native.sha(startup)))
+        self.plan_path.write_text(json.dumps(self.plan))
+        with patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)):
+            self.stop_at_committed_sleep()
+        stream = self.restore()
+        before = stream.checkpoint()
+        document = native.prepare_wall_extension(self.wall_extension_plan(stream), stream,
+                                                 resume=True, plan_sha256='a' * 64)
+        self.assertEqual(document['state']['state']['history'], before['state']['history'])
+        self.assertEqual(document['state']['state']['presentation'], before['state']['presentation'])
+        self.assertEqual(stream.checkpoint(), before)
+
     def test_resume_rejects_corrupted_adapter_before_new_journal_records(self):
         self.stop_at_committed_sleep()
         adapter = Path(self.plan['root'])/'checkpoints'/'sleep_000001'/'adapter'/'weights'

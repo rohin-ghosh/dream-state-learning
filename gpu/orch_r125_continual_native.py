@@ -1,6 +1,7 @@
 """Native TRAIN-only continuous generation, child compaction and LoRA sleep."""
 
 import argparse
+from copy import deepcopy
 import gc
 from dataclasses import replace
 import hashlib
@@ -104,6 +105,11 @@ def validate_plan(plan):
     require(type(plan['physical']) is int and 0 <= plan['physical'] < 8
             and plan['gpu_uuid'].startswith('GPU-'), 'explicit_gpu_identity')
     require(time.time() < plan['hard_end_unix'] <= plan['lease_end_unix']-120, 'within_lease_wall')
+    if plan.get('authorized_wall_extension') is not None:
+        from gpu.orch_r125_stream_journal import validate_wall_extension
+        authorization = validate_wall_extension(plan['authorized_wall_extension'])
+        require(authorization['new_deadline_unix'] == plan['hard_end_unix']
+            and authorization['lease_end_unix'] == plan['lease_end_unix'], 'wall_extension_plan_budget_binding')
     require(plan['decoder'] == dict(temperature=0.7, top_p=0.95, repetition_penalty=1.05,
                                    no_repeat_ngram_size=16), 'posted_decoder')
     readout_name(plan, 0)
@@ -421,10 +427,38 @@ def finish_sleep(child, stream, journal, anchors, root, cycle):
     return checkpoint
 
 
+def prepare_wall_extension(plan, stream, *, resume, plan_sha256):
+    """Prepare a deadline-only audit record; never mutate the supplied live state."""
+    from gpu.orch_r125_stream_journal import validate_wall_extension
+    require(resume is True, 'wall_extension_resume_only')
+    validate_plan(plan)
+    authorization = validate_wall_extension(plan.get('authorized_wall_extension'))
+    require(plan.get('preupdate_recovery') is None and stream.pending is None
+        and stream.sleep_frontier == len(stream.rows) and stream.sleep_receipts
+        and stream.sleep_receipts[-1].get('status') == 'COMPLETE', 'wall_extension_saved_sleep_boundary')
+    prior = stream.checkpoint()
+    require(prior['sha256'] == authorization['previous_stream_sha256']
+        and stream.deadline_unix == authorization['previous_deadline_unix'], 'wall_extension_exact_prior_binding')
+    expected_presentation = (dict(version=plan['presentation_version'], system_prompt=plan['system_prompt'],
+        birth_prompt=plan['birth_prompt']) if plan.get('presentation_version') else None)
+    prompts = stream.presentation or stream.history.checkpoint()
+    require(stream.segment_tokens == plan['segment_tokens']
+        and stream.segments_per_sleep == plan['segments_per_sleep'] and stream.context_limit == plan['context_limit']
+        and stream.presentation == expected_presentation
+        and prompts['system_prompt'] == plan['system_prompt'] and prompts['birth_prompt'] == plan['birth_prompt'],
+        'wall_extension_training_configuration_frozen')
+    candidate = deepcopy(prior)
+    candidate['state']['deadline_unix'] = authorization['new_deadline_unix']
+    candidate['sha256'] = digest(candidate['state'])
+    return dict(schema='R131_WALL_EXTENDED_V1', authorization=deepcopy(authorization),
+                plan_sha256=plan_sha256, state=candidate)
+
+
 def run(plan_path, *, resume=False):
     from gpu.orch_r107_base_anchors_inventory import build_inventory
     from gpu.orch_r125_stream_journal import StreamJournal
     plan = validate_plan(read(plan_path))
+    require(resume or plan.get('authorized_wall_extension') is None, 'wall_extension_resume_only')
     root = Path(plan['root'])
     require(os.environ.get('R125_ADMISSION_PLAN_SHA256') == sha(plan_path), 'admitted_plan_environment')
     if not resume:
@@ -437,15 +471,20 @@ def run(plan_path, *, resume=False):
             if resume:
                 state = journal.latest_checkpoint()
                 stream = ContinualStream.restore(state['document'], expected_sha256=state['expected_sha256'])
+                wall_extension = (prepare_wall_extension(plan, stream, resume=resume, plan_sha256=sha(plan_path))
+                    if plan.get('authorized_wall_extension') is not None else None)
                 recovering = (isinstance(stream.pending, str) and stream.pending.startswith('sleep:')
                     and isinstance(plan.get('preupdate_recovery'), dict))
                 require(stream.pending is None or recovering, 'unresolved_generation_or_sleep_requires_reconciliation')
                 require(recovering or stream.sleep_frontier == len(stream.rows), 'resume_requires_saved_RNG_sleep_boundary')
-                require(stream.deadline_unix == plan['hard_end_unix'], 'same_resume_wall')
+                require(wall_extension is not None or stream.deadline_unix == plan['hard_end_unix'], 'same_resume_wall')
                 matching = [read(path) for path in (root/'checkpoints').glob('*/COMMIT.json')
                     if digest(read(path)['checkpoint_sha256']) == stream.model_state_sha256]
                 require(len(matching) == 1, 'one_exact_model_checkpoint_for_stream')
                 child = NativeChild(plan, matching[0])
+                if wall_extension is not None:
+                    journal.record('WALL_EXTENDED', wall_extension)
+                    stream.deadline_unix = wall_extension['authorization']['new_deadline_unix']
                 if recovering:
                     from gpu.orch_r125_preupdate_recovery import recover_rng
                     recover_rng(child, stream, journal, plan['preupdate_recovery'])

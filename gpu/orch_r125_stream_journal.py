@@ -17,6 +17,7 @@ from dataclasses import asdict
 import fcntl
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -31,6 +32,7 @@ from organism_v6.orch_r125_continual_stream import ContinualStream
 
 SCHEMA = 'R125_STREAM_JOURNAL_V1'
 INBOX_LIMIT = 1024 * 1024
+WALL_EXTENSION_SCHEMA = 'R131_SAVED_STATE_WALL_EXTENSION_V1'
 _JOURNALS = weakref.WeakSet()
 
 
@@ -59,6 +61,23 @@ def _decode(raw):
     def nonfinite(value):
         raise ValueError('nonfinite_JSON:' + value)
     return json.loads(raw.decode('utf-8'), object_pairs_hook=_pairs, parse_constant=nonfinite)
+
+
+def validate_wall_extension(authorization):
+    require(type(authorization) is dict and set(authorization) == {
+        'schema', 'previous_deadline_unix', 'previous_stream_sha256', 'new_deadline_unix',
+        'lease_end_unix', 'safety_margin_seconds'}
+        and authorization['schema'] == WALL_EXTENSION_SCHEMA, 'exact_wall_extension_authorization')
+    require(type(authorization['previous_stream_sha256']) is str
+        and re.fullmatch(r'[0-9a-f]{64}', authorization['previous_stream_sha256']), 'wall_extension_prior_digest')
+    for name in ('previous_deadline_unix', 'new_deadline_unix', 'lease_end_unix', 'safety_margin_seconds'):
+        value = authorization[name]
+        require(type(value) in (int, float) and 0 <= value < float('inf') and math.isfinite(value),
+                'finite_wall_extension_budget')
+    require(authorization['safety_margin_seconds'] >= 120
+        and authorization['previous_deadline_unix'] < authorization['new_deadline_unix']
+        <= authorization['lease_end_unix'] - authorization['safety_margin_seconds'], 'wall_extension_lease_bound')
+    return authorization
 
 
 def _after_fork():
@@ -244,14 +263,30 @@ class StreamJournal:
                     'response_request_binding')
             state['response'] = deepcopy(document)
             return
-        if kind not in ('REQUEST', 'COMMITTED', 'COMPACTION', 'PRESENTATION', 'SLEEP_REQUEST', 'SLEEP_COMPLETE'):
+        if kind not in ('REQUEST', 'COMMITTED', 'COMPACTION', 'PRESENTATION', 'SLEEP_REQUEST', 'SLEEP_COMPLETE', 'WALL_EXTENDED'):
             return
-        key = 'state' if kind in ('COMMITTED', 'COMPACTION', 'PRESENTATION') else 'resume_state'
+        key = 'state' if kind in ('COMMITTED', 'COMPACTION', 'PRESENTATION', 'WALL_EXTENDED') else 'resume_state'
         require(key in document, 'authoritative_checkpoint_required')
         checkpoint = self._checkpoint(document[key])
         current = checkpoint['document']['state']
         previous = state['latest']['document']['state'] if state['latest'] else None
-        if kind == 'REQUEST':
+        if kind == 'WALL_EXTENDED':
+            require(set(document) == {'schema', 'authorization', 'plan_sha256', 'state'}
+                and document['schema'] == 'R131_WALL_EXTENDED_V1'
+                and type(document['plan_sha256']) is str and re.fullmatch(r'[0-9a-f]{64}', document['plan_sha256']),
+                'exact_wall_extension_record')
+            authorization = validate_wall_extension(document['authorization'])
+            require(previous is not None and previous['pending'] is None and current['pending'] is None
+                and state['request'] is None and state['response'] is None and state['sleep_request'] is None
+                and previous['sleep_frontier'] == len(previous['rows']) and previous['sleep_receipts']
+                and previous['sleep_receipts'][-1].get('status') == 'COMPLETE', 'wall_extension_saved_sleep_boundary')
+            require(authorization['previous_stream_sha256'] == state['latest']['expected_sha256']
+                and authorization['previous_deadline_unix'] == previous['deadline_unix']
+                and authorization['new_deadline_unix'] == current['deadline_unix'], 'wall_extension_exact_prior_binding')
+            require(_encoded({key: value for key, value in previous.items() if key != 'deadline_unix'})
+                == _encoded({key: value for key, value in current.items() if key != 'deadline_unix'}),
+                'wall_extension_only_deadline_changes')
+        elif kind == 'REQUEST':
             require(state['request'] is None and state['sleep_request'] is None, 'unresolved_request_never_bypassed')
             request = {name: value for name, value in document.items() if name != 'resume_state'}
             require(request.get('split') == 'TRAIN' and type(request.get('segment')) is int
