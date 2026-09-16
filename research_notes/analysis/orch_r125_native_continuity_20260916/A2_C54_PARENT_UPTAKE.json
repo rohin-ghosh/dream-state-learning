@@ -1,0 +1,57 @@
+{
+  "observed_utc": "2026-09-16T07:35:34.693067+00:00",
+  "parent_receipts": [
+    {
+      "source_path": "/localhome/local-rohing/orch_math_feedback_uptake_r124_readout_20260915_attempt1/A2/parent_delivered/R121_C000053_E0_experience.json",
+      "source_sha256": "53ca664af7695f56b7c0b8cd903d32182de6d33ffb4f61a6f6f23e18633b4b34",
+      "receipt": {
+        "actual_model": "openai/openai/gpt-6-astra",
+        "delivered_unix": 1789543991.33906,
+        "elapsed_seconds": 1083.5501236915588,
+        "id": "R121_C000053_E0_experience",
+        "injected_before": "episode",
+        "nonblocking": true,
+        "origin_task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_TRAIN_C53_E0",
+        "response": {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane5/parent_queue/R121_C000053_E0_experience.response.json",
+          "sha256": "b86ff19e06801321967a883d0accf12f1f7695d9aa8e90425d1b496935dd12d1"
+        },
+        "status": "SILENT"
+      }
+    },
+    {
+      "source_path": "/localhome/local-rohing/orch_math_feedback_uptake_r124_readout_20260915_attempt1/A2/parent_delivered/R121_C000053_E1_experience.json",
+      "source_sha256": "50146238567e7fbd525c4dc8730248a492f30fa296595166abfdffda5ba58320",
+      "receipt": {
+        "actual_model": "openai/openai/gpt-6-astra",
+        "delivered_unix": 1789543991.340356,
+        "elapsed_seconds": 1076.66787981987,
+        "id": "R121_C000053_E1_experience",
+        "injected_before": "episode",
+        "nonblocking": true,
+        "origin_task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_TRAIN_C53_E1",
+        "response": {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane5/parent_queue/R121_C000053_E1_experience.response.json",
+          "sha256": "688d8f90b4bc4c8282bd1c528d4f93fc085417dc416e67d0579d57469efacf6f"
+        },
+        "status": "COMPLETE"
+      },
+      "guidance_present_in_next_child_input": true,
+      "guidance_sha256": "af89af1f62ae5fae13b8b2b14c49abfff33e57f7a24cd1c5973edf0a0a3ceff9"
+    }
+  ],
+  "next_child_call": {
+    "path": "/localhome/local-rohing/orch_math_feedback_uptake_r124_readout_20260915_attempt1/A2/cycle000054/CALL_00001301.json",
+    "sha256": "e89e672d853d68d1ef8aa7a2f979327cd23b0d76df741d0b531ea279e0a26130",
+    "status": "COMPLETE",
+    "phase": "episode",
+    "checkpoint_sha256": "2735f4692b2ae34ff25fffe49495536c5a70a63b721f9b986e67bebb8a537add"
+  },
+  "readout": {
+    "finished_unix": 1789543973.0997481,
+    "outcome_never_controls_life": true,
+    "returncode": 0,
+    "status": "COMPLETE"
+  },
+  "behavior_change_not_inferred_from_delivery": true
+}

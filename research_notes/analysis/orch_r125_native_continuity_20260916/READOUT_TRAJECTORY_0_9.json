@@ -1,0 +1,1180 @@
+{
+  "schema": "R125_READOUT_TRAJECTORY_V1",
+  "observed_utc": "2026-09-16T07:35:01.986262+00:00",
+  "source_path": "/localhome/local-rohing/orch_r125_readout_analysis_20260916_v1/ALL_TRAJECTORY.json",
+  "source_sha256": "95dc2096ece6666f20659d80d093e9d7b167eec22409f296de6ddf10c6b16262",
+  "reducer_source_sha256": "b06ec0139c0e3448116f021722103560c60cf11f46dc757d4f90c212693b8983",
+  "claim_boundary": "Descriptive fixed-suite diagnostics only; not cognition, retention-success, or causal-generalization labels. Runtime properties are retained attestations, not independently verified by this CPU reducer.",
+  "definitions": {
+    "cap_hit": "Valid terminal=false, truncated=true response with exactly max_new_tokens token IDs. Retained as data, not rejected or labeled failure.",
+    "checkpoint0_comparison": "Same task and same arm at the explicit zero-step checkpoint.",
+    "exact_response_change": "Exact raw string inequality; no normalization.",
+    "fixed_task_scores": "Terminal responses only; cap-hit scores and score deltas involving cap hits are null. Counts include explicit scored/comparable denominators; other diagnostics use all outputs.",
+    "generated_tokens": "Length of retained token_ids, including terminal EOS when present.",
+    "journal_markers": "Case-sensitive literal substring occurrences in raw output only.",
+    "repeated_4gram_fraction": "(windows - unique windows) / windows; zero for fewer than four items. Token IDs include EOS; whitespace items use raw.split().",
+    "source_hashes": "SHA256 of retained receipt bytes; response/task/prompt hashes use the existing policy digest. Original node-local paths are not dereferenced."
+  },
+  "checkpoints": [
+    {
+      "directory": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000000_r2",
+      "provenance": {
+        "adapter_state_sha256": "95966e71c3ec81487d05e02d6b770c422febfc433fe367d856a6e4817f8dbe14",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_commit_sha256": "fbcbb4791f84b7a21e662d25cf44de6dba791a73526c63743c07ba1ff4681324",
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/initial/COMMIT.json",
+        "checkpoint_sha256": {
+          "adapter": "a697f6786bed1726bbcfd7dfc4e9bc263a66d71f1e99cf5a4e7f8519cf99cd45",
+          "optimizer": "aa5811768e68f1de7765f7616da244170302211f4fb7cbc235a3434037ebafa5",
+          "rng": "aa5811768e68f1de7765f7616da244170302211f4fb7cbc235a3434037ebafa5"
+        },
+        "decoder": {
+          "do_sample": false,
+          "num_beams": 1,
+          "repetition_penalty": 1.0
+        },
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "history_present": false,
+        "host_sha256": "0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d",
+        "max_new_tokens": 512,
+        "optimizer_steps": 0,
+        "output_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000000_r2",
+        "parent_present": false,
+        "pid": 275392,
+        "plan_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control3/PLAN.json",
+        "plan_sha256": "044626dbdc1ab9f35bbcb9b83b60cca5af4eb0609b1634b64a690dfff2b26f5b",
+        "ppid": 233978,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          275392,
+          7621027
+        ],
+        "raw_reasoning_preserved": true,
+        "schema": "R125_CONTINUAL_READOUT_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "train_ingestion": false,
+        "training_updates": 0
+      },
+      "source_receipt_count": 132,
+      "arms": {
+        "OFF": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        },
+        "ON": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        }
+      }
+    },
+    {
+      "directory": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000001_r2",
+      "provenance": {
+        "adapter_state_sha256": "e8b175872143060fed166498c5c00d6999441b5d8f02264e10b4c18aabf9de1e",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_commit_sha256": "bf99db3fab984ff195efe3b46fbc9c82593b214b941aec5b5c66cae54a10a920",
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000001/COMMIT.json",
+        "checkpoint_sha256": {
+          "adapter": "1ef8c6d32a60e217af137cc1bf319727ac0d803945b301fd7992d9142a1e97ed",
+          "optimizer": "5020f47b0b55b45bf9976a70e4c72e2c3e7e87cd6ea1760c73178af631caaf34",
+          "rng": "5020f47b0b55b45bf9976a70e4c72e2c3e7e87cd6ea1760c73178af631caaf34"
+        },
+        "decoder": {
+          "do_sample": false,
+          "num_beams": 1,
+          "repetition_penalty": 1.0
+        },
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "history_present": false,
+        "host_sha256": "0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d",
+        "max_new_tokens": 512,
+        "optimizer_steps": 48,
+        "output_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000001_r2",
+        "parent_present": false,
+        "pid": 292991,
+        "plan_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control3/PLAN.json",
+        "plan_sha256": "044626dbdc1ab9f35bbcb9b83b60cca5af4eb0609b1634b64a690dfff2b26f5b",
+        "ppid": 233978,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          292991,
+          7633009
+        ],
+        "raw_reasoning_preserved": true,
+        "schema": "R125_CONTINUAL_READOUT_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "train_ingestion": false,
+        "training_updates": 0
+      },
+      "source_receipt_count": 132,
+      "arms": {
+        "OFF": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        },
+        "ON": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 3,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 1
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 3,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 1
+            }
+          },
+          "fixed_task_passes": 25,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 382,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 289
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 61
+          }
+        }
+      }
+    },
+    {
+      "directory": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000002_r2",
+      "provenance": {
+        "adapter_state_sha256": "bde259bacbc4f76f0d42ce4be884cd0c8f50570e6e965c0a97ec6012de9134d2",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_commit_sha256": "029e3f8851065731202abdc572b1563393fdb49e8d4ba8a63b8f61e8d839bd0f",
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000002/COMMIT.json",
+        "checkpoint_sha256": {
+          "adapter": "4a3ab641a4a0416a110d5ad51ec8204798fcf9f8060ff48d9010a70f363a1b89",
+          "optimizer": "2bd9277701d5044001957eb21e07cfd7ce8349abc96fadfa1a38006ad9f0e12c",
+          "rng": "2bd9277701d5044001957eb21e07cfd7ce8349abc96fadfa1a38006ad9f0e12c"
+        },
+        "decoder": {
+          "do_sample": false,
+          "num_beams": 1,
+          "repetition_penalty": 1.0
+        },
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "history_present": false,
+        "host_sha256": "0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d",
+        "max_new_tokens": 512,
+        "optimizer_steps": 99,
+        "output_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000002_r2",
+        "parent_present": false,
+        "pid": 309902,
+        "plan_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control3/PLAN.json",
+        "plan_sha256": "044626dbdc1ab9f35bbcb9b83b60cca5af4eb0609b1634b64a690dfff2b26f5b",
+        "ppid": 233978,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          309902,
+          7645127
+        ],
+        "raw_reasoning_preserved": true,
+        "schema": "R125_CONTINUAL_READOUT_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "train_ingestion": false,
+        "training_updates": 0
+      },
+      "source_receipt_count": 132,
+      "arms": {
+        "OFF": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        },
+        "ON": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 4,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": -1,
+              "generated_tokens_delta": 9
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 4,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": -1,
+              "generated_tokens_delta": 9
+            }
+          },
+          "fixed_task_passes": 23,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 390,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.003367003367003367,
+            "repeated_windows": 1,
+            "windows": 297
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 66
+          }
+        }
+      }
+    },
+    {
+      "directory": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000003_r2",
+      "provenance": {
+        "adapter_state_sha256": "82a43a947d8ec749fdca252a982942e0f54b98b73721dbeafac04d1ef85975d3",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_commit_sha256": "82300a92fcfcb7eb66343f3860feea8f229db55804f3b46ba9dd7d97c35210f8",
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000003/COMMIT.json",
+        "checkpoint_sha256": {
+          "adapter": "558240752c0e891ed5853b95ac147239138a0cddd735e87f1523817a14963f00",
+          "optimizer": "9e4a7b838eb1c665cd07e78b4e17abf37940032781ebe5a84cc04a3c218adba5",
+          "rng": "9e4a7b838eb1c665cd07e78b4e17abf37940032781ebe5a84cc04a3c218adba5"
+        },
+        "decoder": {
+          "do_sample": false,
+          "num_beams": 1,
+          "repetition_penalty": 1.0
+        },
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "history_present": false,
+        "host_sha256": "0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d",
+        "max_new_tokens": 512,
+        "optimizer_steps": 153,
+        "output_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000003_r2",
+        "parent_present": false,
+        "pid": 364243,
+        "plan_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control3/PLAN.json",
+        "plan_sha256": "044626dbdc1ab9f35bbcb9b83b60cca5af4eb0609b1634b64a690dfff2b26f5b",
+        "ppid": 233978,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          364243,
+          7684328
+        ],
+        "raw_reasoning_preserved": true,
+        "schema": "R125_CONTINUAL_READOUT_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "train_ingestion": false,
+        "training_updates": 0
+      },
+      "source_receipt_count": 132,
+      "arms": {
+        "OFF": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        },
+        "ON": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 4,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 7
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 4,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 7
+            }
+          },
+          "fixed_task_passes": 25,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 388,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.003389830508474576,
+            "repeated_windows": 1,
+            "windows": 295
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 63
+          }
+        }
+      }
+    },
+    {
+      "directory": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000004_r2",
+      "provenance": {
+        "adapter_state_sha256": "f58072c1f425d6c7767017c22041ff29a6b014d5813f13c3f6bc7620649ec4c7",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_commit_sha256": "e86452832f3327880f2fc15d7b0e1d7b6fe276943fe06b11dabfde1432a9ce8f",
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000004/COMMIT.json",
+        "checkpoint_sha256": {
+          "adapter": "0cf3534357822b2bbaaa32e9de06a419897afb32a03fc59c771e165458aec71e",
+          "optimizer": "4bbf265a52b3bce703a020640cb2ad471f0b62eba152bdc90eccfb459e8ef1bf",
+          "rng": "4bbf265a52b3bce703a020640cb2ad471f0b62eba152bdc90eccfb459e8ef1bf"
+        },
+        "decoder": {
+          "do_sample": false,
+          "num_beams": 1,
+          "repetition_penalty": 1.0
+        },
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "history_present": false,
+        "host_sha256": "0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d",
+        "max_new_tokens": 512,
+        "optimizer_steps": 210,
+        "output_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000004_r2",
+        "parent_present": false,
+        "pid": 422988,
+        "plan_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control3/PLAN.json",
+        "plan_sha256": "044626dbdc1ab9f35bbcb9b83b60cca5af4eb0609b1634b64a690dfff2b26f5b",
+        "ppid": 233978,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          422988,
+          7725299
+        ],
+        "raw_reasoning_preserved": true,
+        "schema": "R125_CONTINUAL_READOUT_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "train_ingestion": false,
+        "training_updates": 0
+      },
+      "source_receipt_count": 132,
+      "arms": {
+        "OFF": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        },
+        "ON": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 2,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 2
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 2,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 2
+            }
+          },
+          "fixed_task_passes": 25,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 383,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 290
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 62
+          }
+        }
+      }
+    },
+    {
+      "directory": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000005_r2",
+      "provenance": {
+        "adapter_state_sha256": "1698c79351fd9dc1bbd5331db9e8b887934b330070aa0d88b640161dcbb37a0f",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_commit_sha256": "51be3898349411534902931edd4c5d0c723b77392ab134bba546b2bc9a7b7ac7",
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000005/COMMIT.json",
+        "checkpoint_sha256": {
+          "adapter": "0a637bd0e8b352b7f8e46925bb8f6d2b1ac56f328f1c8e2cbdee6e3bef536aec",
+          "optimizer": "c0ff8c25c3f4ed2f3ae8fa82dbd3352925ae0877a24e69404db80d67e21bb114",
+          "rng": "c0ff8c25c3f4ed2f3ae8fa82dbd3352925ae0877a24e69404db80d67e21bb114"
+        },
+        "decoder": {
+          "do_sample": false,
+          "num_beams": 1,
+          "repetition_penalty": 1.0
+        },
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "history_present": false,
+        "host_sha256": "0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d",
+        "max_new_tokens": 512,
+        "optimizer_steps": 270,
+        "output_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000005_r2",
+        "parent_present": false,
+        "pid": 487406,
+        "plan_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control3/PLAN.json",
+        "plan_sha256": "044626dbdc1ab9f35bbcb9b83b60cca5af4eb0609b1634b64a690dfff2b26f5b",
+        "ppid": 233978,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          487406,
+          7770317
+        ],
+        "raw_reasoning_preserved": true,
+        "schema": "R125_CONTINUAL_READOUT_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "train_ingestion": false,
+        "training_updates": 0
+      },
+      "source_receipt_count": 132,
+      "arms": {
+        "OFF": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        },
+        "ON": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 3,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 8
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 3,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 8
+            }
+          },
+          "fixed_task_passes": 25,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 389,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0033783783783783786,
+            "repeated_windows": 1,
+            "windows": 296
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 64
+          }
+        }
+      }
+    },
+    {
+      "directory": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000006_r2",
+      "provenance": {
+        "adapter_state_sha256": "8e6dd6a5d80c43026bd69e84fca9c817b66a6c73d1d3bf2dae5265130e60f247",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_commit_sha256": "00b8a050d350897ef152fde1b5aac47987c740fd29a0dca3b142748697232160",
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000006/COMMIT.json",
+        "checkpoint_sha256": {
+          "adapter": "8e31f5cca3a0b3e707f26157eb3d6d22546c89df8d95913125a6e572431ff878",
+          "optimizer": "3b4d798fb146283ece158f3fa131313719287152fbd61e95b830373e6e3981f2",
+          "rng": "3b4d798fb146283ece158f3fa131313719287152fbd61e95b830373e6e3981f2"
+        },
+        "decoder": {
+          "do_sample": false,
+          "num_beams": 1,
+          "repetition_penalty": 1.0
+        },
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "history_present": false,
+        "host_sha256": "0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d",
+        "max_new_tokens": 512,
+        "optimizer_steps": 323,
+        "output_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000006_r2",
+        "parent_present": false,
+        "pid": 538827,
+        "plan_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control4/PLAN.json",
+        "plan_sha256": "e14ba9a58082bdfb1afa03cd88b70026b8002cc0d9f53b1ec4520a9ec91d3ccc",
+        "ppid": 504779,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          538827,
+          7806997
+        ],
+        "raw_reasoning_preserved": true,
+        "schema": "R125_CONTINUAL_READOUT_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "train_ingestion": false,
+        "training_updates": 0
+      },
+      "source_receipt_count": 132,
+      "arms": {
+        "OFF": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        },
+        "ON": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 3,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 8
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 3,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 8
+            }
+          },
+          "fixed_task_passes": 25,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 389,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0033783783783783786,
+            "repeated_windows": 1,
+            "windows": 296
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 64
+          }
+        }
+      }
+    },
+    {
+      "directory": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000007_r2",
+      "provenance": {
+        "adapter_state_sha256": "04aea879f6aa16db0b87e296091b8c00e97c801ba0c6df9c6b1322051b7c9600",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_commit_sha256": "522bf85aaa4387d8086db3fc6369b57748288096624918c6670e65e461a3f278",
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000007/COMMIT.json",
+        "checkpoint_sha256": {
+          "adapter": "115a2dd320a2becdc8800aa1625ea38a94ba47ae5e13e3ae821e2fb22c2bc687",
+          "optimizer": "f05141443d32d6f19bd05831081e4d5187a39d5d11b66e6bc3b60792ba29ad08",
+          "rng": "f05141443d32d6f19bd05831081e4d5187a39d5d11b66e6bc3b60792ba29ad08"
+        },
+        "decoder": {
+          "do_sample": false,
+          "num_beams": 1,
+          "repetition_penalty": 1.0
+        },
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "history_present": false,
+        "host_sha256": "0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d",
+        "max_new_tokens": 512,
+        "optimizer_steps": 379,
+        "output_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000007_r2",
+        "parent_present": false,
+        "pid": 589598,
+        "plan_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control4/PLAN.json",
+        "plan_sha256": "e14ba9a58082bdfb1afa03cd88b70026b8002cc0d9f53b1ec4520a9ec91d3ccc",
+        "ppid": 504779,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          589598,
+          7841413
+        ],
+        "raw_reasoning_preserved": true,
+        "schema": "R125_CONTINUAL_READOUT_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "train_ingestion": false,
+        "training_updates": 0
+      },
+      "source_receipt_count": 132,
+      "arms": {
+        "OFF": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        },
+        "ON": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 3,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 8
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 3,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 1,
+              "generated_tokens_delta": 8
+            }
+          },
+          "fixed_task_passes": 25,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 389,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0033783783783783786,
+            "repeated_windows": 1,
+            "windows": 296
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 64
+          }
+        }
+      }
+    },
+    {
+      "directory": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000008_r2",
+      "provenance": {
+        "adapter_state_sha256": "a6335f8e4a07db11701a5ffa070cb539f63f22091f295e10619b8ad57fabf715",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_commit_sha256": "59edcfa95f5740d8208b4357f345e792bc79dd5ec8027a8437b22f2c7edfde9a",
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000008/COMMIT.json",
+        "checkpoint_sha256": {
+          "adapter": "08fe630434a2d3f20f0834288ff7cd9d9a0431581252e4dd84e32a14d548bfbf",
+          "optimizer": "8d514f5a9ce5922705f81fdbd85379bc61ae6b7dbb09f60094fc484e3ac6c958",
+          "rng": "8d514f5a9ce5922705f81fdbd85379bc61ae6b7dbb09f60094fc484e3ac6c958"
+        },
+        "decoder": {
+          "do_sample": false,
+          "num_beams": 1,
+          "repetition_penalty": 1.0
+        },
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "history_present": false,
+        "host_sha256": "0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d",
+        "max_new_tokens": 512,
+        "optimizer_steps": 438,
+        "output_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000008_r2",
+        "parent_present": false,
+        "pid": 643231,
+        "plan_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control4/PLAN.json",
+        "plan_sha256": "e14ba9a58082bdfb1afa03cd88b70026b8002cc0d9f53b1ec4520a9ec91d3ccc",
+        "ppid": 504779,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          643231,
+          7878840
+        ],
+        "raw_reasoning_preserved": true,
+        "schema": "R125_CONTINUAL_READOUT_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "train_ingestion": false,
+        "training_updates": 0
+      },
+      "source_receipt_count": 132,
+      "arms": {
+        "OFF": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        },
+        "ON": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 2,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 4
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 2,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 4
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 385,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.003424657534246575,
+            "repeated_windows": 1,
+            "windows": 292
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 62
+          }
+        }
+      }
+    },
+    {
+      "directory": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000009_r2",
+      "provenance": {
+        "adapter_state_sha256": "69ae235ff40932bb782489fd2d10bc154419ae95fb22b1c8d9740b21fb2a5bec",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_commit_sha256": "d5e737f673b089d2f37d6984a3e3e991b0b5dc9c8e35abb9cd96f25bef434046",
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000009/COMMIT.json",
+        "checkpoint_sha256": {
+          "adapter": "77a8cca2493ef89937dacb0275fa42b7743e602ffc358b6cce2b58f9fffe6ab5",
+          "optimizer": "7abf808ac16fdb1959cfc44d08229c69380fe75942866ff3d03bf40ccabfcd63",
+          "rng": "7abf808ac16fdb1959cfc44d08229c69380fe75942866ff3d03bf40ccabfcd63"
+        },
+        "decoder": {
+          "do_sample": false,
+          "num_beams": 1,
+          "repetition_penalty": 1.0
+        },
+        "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+        "history_present": false,
+        "host_sha256": "0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d",
+        "max_new_tokens": 512,
+        "optimizer_steps": 500,
+        "output_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/readouts/sleep_000009_r2",
+        "parent_present": false,
+        "pid": 708532,
+        "plan_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control4/PLAN.json",
+        "plan_sha256": "e14ba9a58082bdfb1afa03cd88b70026b8002cc0d9f53b1ec4520a9ec91d3ccc",
+        "ppid": 504779,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          708532,
+          7919633
+        ],
+        "raw_reasoning_preserved": true,
+        "schema": "R125_CONTINUAL_READOUT_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "train_ingestion": false,
+        "training_updates": 0
+      },
+      "source_receipt_count": 132,
+      "arms": {
+        "OFF": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 0,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 0
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 381,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 288
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 60
+          }
+        },
+        "ON": {
+          "cap_hit_outputs": 0,
+          "changes": {
+            "versus_OFF": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 4,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 7
+            },
+            "versus_checkpoint0": {
+              "cap_hits_delta": 0,
+              "exact_response_changes": 4,
+              "fixed_task_comparable_outputs": 32,
+              "fixed_task_passes_delta": 0,
+              "generated_tokens_delta": 7
+            }
+          },
+          "fixed_task_passes": 24,
+          "fixed_task_scored_outputs": 32,
+          "generated_tokens": 388,
+          "journal_marker_counts": {},
+          "journal_marker_output_fraction": 0.0,
+          "journal_marker_outputs": 0,
+          "outputs": 32,
+          "repeated_token_4gram": {
+            "fraction": 0.003389830508474576,
+            "repeated_windows": 1,
+            "windows": 295
+          },
+          "repeated_whitespace_4gram": {
+            "fraction": 0.0,
+            "repeated_windows": 0,
+            "windows": 64
+          }
+        }
+      }
+    }
+  ]
+}
