@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T02:45Z **A2 native Astra uptake verified02:38:58; saved-state F1→F2→F4 switch proceeds under02:35 clarification.** F1 stage2 prepared,13CPU tests/native source preflight PASS; controller authorization follows publication, no release yet. R132 matched24036 adds4608updates/arm with0score flips: capabilityON22/32 OFF24/32;code0/8vs2/8;held remains source-present, not retention. R139 F1_ALLOCATION and R138 RESULTS_24036 hold proof/scope.
+
 - [Builder Main] 2026-09-16T02:27Z **A2 repair running:** fresh slot102 published COMPLETE Astra02:24:00; native consumption pending while C39 sleeps. Committed14625 optimizer steps plus186 separately logged ongoing-sleep updates confirm advancement. Prior-hour native0 COMPLETE/8 MISSING; do not mislabel publication as uptake. F1/F2/F4 still need the requested saved-state consumer handoff. Receipt: `research_notes/analysis/orch_r137_parent_model_choice_20260916/A2_ACTIVATION_0227.md`.
 
 - [Builder Main] 2026-09-16T02:21Z **A2 broker-only compatibility repair allocated:**26 CPU tests and actual staged prompt binding PASS; only optional `NEXT_GUIDANCE` handling changes. Same Astra policy/caps and untouched child. Exact idle-broker retirement and future-only activation follow publication; delivery is not yet claimed. A2 optimizer14625 confirms advancement. F1/F2/F4 consumer handoffs remain pending.
