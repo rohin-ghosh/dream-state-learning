@@ -15,9 +15,27 @@ reserved for that study by this assignment.
 All dates above are September 16, 2026, UTC. These are **five assigned roles,
 not five currently running or child-accessible GPUs**. Fresh occupancy and
 CUDA-visible process checks are still required; no resident is preempted.
-If the 06:00 readout lasts longer, slot 2 waits for actual release rather than
-using a scheduled time as proof. The child's text stream and inbox can run
-before its experiment tools are enabled.
+The existing physical7 reservation includes same-life TRAIN resumption after
+FINAL. Neither completion of the readout nor 06:20 automatically releases it.
+Slot 2 is conditional on explicit custody release without displacing that life;
+until then only three experiment candidates are resource-clear. The child's
+text stream and inbox can run before its experiment tools are enabled.
+
+## Ownership observation — September 16, 2026, 05:53 UTC
+
+The read-only privileged probe found resident ovx3 physical2 and experiment
+candidate physical6 clear at 05:51:13 UTC, and a40r physical0/2 clear at
+05:48:43–44 UTC. These are observations, not exclusive reservations or launch
+receipts. Fresh admission is required immediately before dispatch. On a40r,
+physical0 maps to device minor3 and physical2 to minor1; isolation must bind
+the verified UUID/minor, not assume physical index equals device minor.
+
+Evidence and lease references: `RESOURCE_PROBE.md`. The resident engineering
+target is approximately 06:21 UTC; native integration/readout checks remain
+unfinished at this posting. Experiment access has no honest activation time
+until the isolation tests pass. Existing conservative walls are September16
+22:04 UTC on ovx3 and September18 18:00 UTC on a40r, subject to fresh lease
+verification; neither authorizes an extension.
 
 ## Isolation required before child-selected experiments
 
