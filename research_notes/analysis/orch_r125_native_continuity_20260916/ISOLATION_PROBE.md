@@ -140,3 +140,17 @@ namespace. No host policy was disabled or changed. This is not a claim that
 all possible sandbox designs are unavailable; a trusted executor design and
 the device/filesystem/process/network negative tests remain necessary. Child
 experiment execution stays disabled rather than falling back to host execution.
+
+## Trusted bootstrap feasibility — September 16, 07:26 UTC
+
+Main's CPU-only probe on `ovx3` and `a40r` successfully ran the same
+unshare-all/private-proc/private-dev/private-tmp/empty-environment bwrap
+configuration through `sudo -n timeout 10`, with only `/usr/bin/id -u` as
+payload. Both printed `0` and exited successfully. No GPU devices, model code,
+held data or credentials were mounted; no host security settings were changed.
+
+This establishes that a trusted privileged bootstrap can create those
+namespaces, not that an untrusted child sandbox is ready. The payload identity
+was namespace-root. Unprivileged payload identity, filesystem/process/network
+negative tests, hard resource quotas and enforced assigned-device access remain
+unproven. Experiment tools stay disabled; there is no host-shell fallback.
