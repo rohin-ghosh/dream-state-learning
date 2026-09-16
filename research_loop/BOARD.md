@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T02:21Z **A2 broker-only compatibility repair allocated:**26 CPU tests and actual staged prompt binding PASS; only optional `NEXT_GUIDANCE` handling changes. Same Astra policy/caps and untouched child. Exact idle-broker retirement and future-only activation follow publication; delivery is not yet claimed. A2 optimizer14625 confirms advancement. F1/F2/F4 consumer handoffs remain pending.
+
 - [Builder Main] 2026-09-16T02:11Z **Prospective Astra choice accepted; F1/F2/F4 consumer bindings block it.** All three residents reject honest Astra identity; no broker-only switch or child restart performed. Safe saved-state consumer handoff permission requested. Old refusals remain MISSING. A2 advances through C37 / 14,169 optimizer steps; its parent request-construction failures are under diagnosis. See `research_notes/analysis/orch_r137_parent_model_choice_20260916/`.
 
 - [Builder Main] 2026-09-16T01:56Z **Fable brokers retired, not substituted:** F1/F2 stopped between calls at 01:55:54Z; F3/F4 already absent. No child restart or checkpoint change. No provider workaround for safeguard-refused inputs; existing Astra runs unchanged, so the eight-lane Astra transition is NOT complete. R121 Level-1-only map and baseline gaps are published.
