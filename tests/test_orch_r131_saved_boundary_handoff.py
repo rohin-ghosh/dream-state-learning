@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from gpu import orch_r131_saved_boundary_handoff as handoff
 
@@ -72,6 +73,29 @@ class SavedBoundaryTests(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             handoff.write(path, {'status': 'replacement'})
         self.assertEqual(handoff.read(path), {'status': 'original'})
+
+    def test_handoff_does_not_pause_before_readout_spawn(self):
+        self.publish()
+        self.assertFalse(handoff.readout_started(self.root, 1, 2, 42))
+
+    def test_readout_must_be_in_independent_running_group(self):
+        output = self.root/'readouts/sleep_000001_r2'
+        output.mkdir(parents=True)
+        (output/'REQUEST.json').write_text(json.dumps({'pid': 43}))
+        for group, state, expected in ((42, 'R', False), (43, 'T', False),
+                                       (43, 'Z', False), (43, 'R', True)):
+            with self.subTest(group=group, state=state):
+                with patch.object(handoff, 'process_identity', return_value={'group': group, 'state': state}):
+                    self.assertEqual(handoff.readout_started(self.root, 1, 2, 42), expected)
+        with patch.object(handoff, 'process_identity', side_effect=FileNotFoundError):
+            self.assertFalse(handoff.readout_started(self.root, 1, 2, 42))
+
+    def test_completed_readout_does_not_require_live_process(self):
+        output = self.root/'readouts/sleep_000001_r2'
+        output.mkdir(parents=True)
+        (output/'REQUEST.json').write_text(json.dumps({'pid': 43}))
+        (output/'COMPLETE.json').write_text('{}')
+        self.assertTrue(handoff.readout_started(self.root, 1, 2, 42))
 
 
 if __name__ == '__main__':

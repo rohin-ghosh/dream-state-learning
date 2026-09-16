@@ -61,6 +61,22 @@ def process_identity(pid):
     return dict(start_ticks=status[19], state=status[0], group=int(status[2]))
 
 
+def readout_started(root, cycle, revision, resident_group):
+    name = f'sleep_{cycle:06d}' + (f'_r{revision}' if revision > 1 else '')
+    output = Path(root)/'readouts'/name
+    request_path = output/'REQUEST.json'
+    if not request_path.exists():
+        return False
+    request = read(request_path)
+    if (output/'COMPLETE.json').exists():
+        return True
+    try:
+        identity = process_identity(request['pid'])
+    except FileNotFoundError:
+        return False
+    return identity['group'] != resident_group and identity['state'] not in ('Z', 'T', 't')
+
+
 def handoff(old_config_path, new_source, control, builder_commit, timeout_seconds):
     old_config_path, new_source, control = map(Path, (old_config_path, new_source, control))
     require(new_source.is_absolute() and new_source.resolve() == new_source
@@ -87,6 +103,10 @@ def handoff(old_config_path, new_source, control, builder_commit, timeout_second
             if boundary is None:
                 time.sleep(2)
                 continue
+            revision = old_plan.get('readout_revision', 1)
+            if not readout_started(old_plan['root'], boundary['cycle'], revision, pid):
+                time.sleep(0.5)
+                continue
             require(process_identity(pid)['start_ticks'] == initial_identity['start_ticks'], 'no_pid_reuse')
             os.killpg(pid, signal.SIGSTOP)
             paused = True
@@ -96,7 +116,6 @@ def handoff(old_config_path, new_source, control, builder_commit, timeout_second
                 os.killpg(pid, signal.SIGCONT)
                 paused = False
                 continue
-            revision = old_plan.get('readout_revision', 1)
             name = f"sleep_{boundary['cycle']:06d}" + (f'_r{revision}' if revision > 1 else '')
             complete = Path(old_plan['root'])/'readouts'/name/'COMPLETE.json'
             while time.time() < limit and not complete.exists():
