@@ -1175,3 +1175,10 @@ Reading (Fable): asks for the audit (message 138) distilled into four headings: 
 > um this mesagne is like trunaktedign this this, put this good bad intersign need cof chagne into dowloads so i can read it porbrleyr
 
 Reading (Fable): the chat rendering truncated the distilled summary; he wants it as a file in Downloads. Delivered as ~/Downloads/dream_state_RESULTS_DISTILLED_good_bad_interesting_change_2026-09-16.md (repo copy research_notes/analysis/RESULTS_DISTILLED_2026-09-16.md).
+
+
+## Message 141 — 2026-09-16 ~19:10 UTC (12:10 PDT), typed, to Fable
+
+> tell me more about this seige they palnned this is interesting?
+
+Reading (Fable): wants the story of the unparented raw child's drift from a knight tale into a city-under-siege / urban-guerrilla scenario, in more detail.
