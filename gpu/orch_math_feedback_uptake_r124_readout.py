@@ -208,6 +208,9 @@ def restore(plan, check):
 
 
 def offloaded_readout(root, actor, plan, checkpoint, key, split='DEV'):
+    output = Path(root)/('sealed' if split == 'FINAL' else 'readouts')/key
+    if output.exists() or (Path(root)/'offloads'/(key+'.json')).exists():
+        return dict(status='EXISTING_ATTEMPT_NEVER_RETRIED')
     actor.loaded.optimizer.zero_grad(set_to_none=True)
     actor.model.to('cpu')
     for state in actor.loaded.optimizer.state.values():
