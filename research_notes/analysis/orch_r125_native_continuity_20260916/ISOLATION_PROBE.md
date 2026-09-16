@@ -122,3 +122,21 @@ These are source-level observations only: deployed source hashes and any externa
 9. **Bind evidence to exact deployed bytes and profile.** Record positive allow tests and negative deny tests, kernel/runtime/profile versions, mount/FD/environment policy, actual namespace and cgroup membership, and authorized device mapping. Claim only the boundaries exercised. Namespace creation failure, unknown device policy, broker bypass, or ambient held/credential visibility means the relevant isolation gate remains unproven.
 
 **Handoff:** both aliases have the same relevant toolchain and resource-delegation opportunity. Their principal unresolved issues are AppArmor-mediated namespace usability, unprivileged device-policy authority/evidence, and the absence of demonstrated filesystem/network/process confinement in the inspected launch sites. No isolation claim or modification to main's ongoing resident work follows from this report.
+
+## Main follow-up: actual CPU-only namespace attempt
+
+At September16 06:35:53–54 UTC, Main tested the unprivileged bwrap launch on
+both wrappers: unshare-all, private proc/dev/tmp, read-only runtime libraries,
+empty environment, and only `id -u` as the intended payload. No GPU devices,
+model code, credentials, held files or network destination were supplied.
+Both returned exit1 before the payload, with:
+
+```
+bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted
+```
+
+Thus this tested unprivileged path cannot currently establish its network
+namespace. No host policy was disabled or changed. This is not a claim that
+all possible sandbox designs are unavailable; a trusted executor design and
+the device/filesystem/process/network negative tests remain necessary. Child
+experiment execution stays disabled rather than falling back to host execution.

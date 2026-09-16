@@ -26,6 +26,19 @@ invariants. Experiment shell tools remain disabled pending real isolation.
 
 ## Readouts and operator access
 
+Current VM-side convenience commands (same `run1`, source_v3 after recovery):
+
+```
+bash gpu/orch_r125_console.sh --follow
+bash gpu/orch_r125_console.sh
+```
+
+Use separate terminals. The second command publishes each typed line; text is
+sent through stdin, never interpolated into remote shell syntax. A publication
+receipt is not proof of model uptake: messages enter at the next generation
+boundary, subject to the explicit context budget and eviction rules. During
+sleep/readout work, messages queue without interrupting it. Keep messages short.
+
 Sleep0 and every completed sleep dispatch the existing synthetic32 capability
 panel, both LoRA-ON and genuinely disabled LoRA-OFF, greedy cap512, in a fresh
 process on the same assigned GPU. The resident is temporarily CPU-offloaded;
