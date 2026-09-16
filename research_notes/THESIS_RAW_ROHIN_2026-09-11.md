@@ -1104,3 +1104,13 @@ yra so general bechnsaks for lenaing and behviaor and then our expeimren specifi
 ### Fable's reading (not his words)
 
 Benchmarks: general benchmarks for learning and behaviour, plus our experiment-specific benchmarks. Order: start a third continual child, this one inside an environment — a GPU-kernel hill-climbing environment — with its own startup prompt and parenting, so there is a raw child (no environment) and an environment-specific child to measure; on another GPU as its own parallel thread. Asks whether there are enough spare GPUs (answer: yes — node-4 GPUs 0 and 2 are empty, node-5 GPU 7 is free now that the grid FINAL reservation has passed).
+
+---
+
+## Message 133 — 2026-09-16 ~09:50 UTC (02:50 PDT) (typed)
+
+hmmm okay, gneration data hoenstly could be sueful so we can keep that,  explain wahts ogign on node 1 better, by keep aht on node 2 i mean keep 6 of htem, idk how many to give fo rbenchmakgin, node 3 is this useful? lets try soem differnt parenign on this, i want you to look thorugh some sorta therapy dataset of liek qustions an dhsit and do therapy with a contaul, and like do soem sorta of lecture on the brain, in antoher, and antoher do a cretiive wrigin seminar sorta thign, mroe theads of contintual model, test out differnt pre sleep repalys on all fot hem, fill t his gpu with mroe parenign nodes, ( not gpu i meatn fill this node with parengin threads ) ndo 4 um maybe do more lives here , whas is ndoe 5 doign veruss 4?
+
+### Fable's reading (not his words)
+
+Allocation rulings: node 2 — generation data could be useful, keep 6 of the 8 generation workers (2 freed for benchmarking; he is unsure how many benchmarking needs). Node 1 — wants a better explanation of what runs there. Node 3 — "is this useful?" → repurpose it: fill the node with continual-child parenting threads of different styles — one child gets therapy (the parent works from a therapy dataset of questions), another a lecture on the brain, another a creative-writing seminar; more threads of the continual model; test different pre-sleep replays across all of them. Node 4 — maybe more lives. Asks what node 5 is doing versus node 4 (answered in chat).
