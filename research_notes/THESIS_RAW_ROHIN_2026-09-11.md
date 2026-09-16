@@ -1094,3 +1094,13 @@ keep this areng continsl model going im likgi ti make sure it goigns throuhg the
 ### Fable's reading (not his words)
 
 Standing order: keep the parented continual model running through the night — both children and their parenting; walls extended; recover on failure.
+
+---
+
+## Message 132 — 2026-09-16 ~09:22 UTC (02:22 PDT) (typed)
+
+yra so general bechnsaks for lenaing and behviaor and then our expeimren specific benchmakrs id say, and also start another contiosu child this time have it in an enriomgent, a gpu kernal hill climbign envieomrent with a starptup promtp and parneign, that way we have a mroe raw and a more envieomrnt specigc thign to measur e, this shouthdl obv go on antoher gpu as its own parelel thread, i think we have neough spare gpu to do thigs rigth?
+
+### Fable's reading (not his words)
+
+Benchmarks: general benchmarks for learning and behaviour, plus our experiment-specific benchmarks. Order: start a third continual child, this one inside an environment — a GPU-kernel hill-climbing environment — with its own startup prompt and parenting, so there is a raw child (no environment) and an environment-specific child to measure; on another GPU as its own parallel thread. Asks whether there are enough spare GPUs (answer: yes — node-4 GPUs 0 and 2 are empty, node-5 GPU 7 is free now that the grid FINAL reservation has passed).
