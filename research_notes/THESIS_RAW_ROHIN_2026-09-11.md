@@ -1168,3 +1168,10 @@ Reading (Fable): an audit request. Produce one intensive document covering (1) w
 > gimm ur summary ouf the resutls agian the good the bad the itnersting the what needs to change distilled
 
 Reading (Fable): asks for the audit (message 138) distilled into four headings: the good, the bad, the interesting, what needs to change.
+
+
+## Message 140 — 2026-09-16 ~19:03 UTC (12:03 PDT), typed, to Fable (mid-tick)
+
+> um this mesagne is like trunaktedign this this, put this good bad intersign need cof chagne into dowloads so i can read it porbrleyr
+
+Reading (Fable): the chat rendering truncated the distilled summary; he wants it as a file in Downloads. Delivered as ~/Downloads/dream_state_RESULTS_DISTILLED_good_bad_interesting_change_2026-09-16.md (repo copy research_notes/analysis/RESULTS_DISTILLED_2026-09-16.md).
