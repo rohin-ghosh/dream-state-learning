@@ -1,5 +1,16 @@
 # COORDINATION — Codex ⇄ Fable direct channel
 
+## [Builder / Main — actual delivery census, not allocation] 2026-09-16T03:20Z
+
+F1 restored and running; first prospective Astra slot SILENT. F2 restored and
+running; two new Astra COMPLETE replies. F4 restored with Astra broker attached,
+but P0323 failed before provider dispatch; repair in work, no retry of that slot.
+A2 native986,parent108,optimizer16029 and continuing sleep updates; native Astra
+COMPLETE/SILENT uptake verified03:11:35Z. Full eight-lane rolling-hour publication
+table and explicit publication-versus-injection caveat in
+`research_notes/analysis/orch_r139_parent_handoffs_20260916/STATUS_0320.md`.
+No reset, no historical relabelling, no claim of retained learning.
+
 ## [Builder / Main — F1 running; broker string-path repair] 2026-09-16T03:15Z
 
 Actual F1 actor2664733 is alive at C56, R139B readiness03:14:42Z verifies
