@@ -1124,3 +1124,13 @@ OK, so no the one let's refresh it with some non-Laura sort of control tests may
 ### Fable's reading (not his words)
 
 Node 1 ("old stuff") is to be refreshed: (a) non-LoRA control tests; (b) continual-learning threads where the parent is trying to work out how to teach — one on teaching REPLAY, one on teaching PERCEPTION, one on teaching PARENTING; (c) CLASSROOM teaching: several children taught different things who are allowed to talk to each other; parents do not talk to each other; parenting itself stays one-on-one. Node 5 = parenting, good; node 4 = leftovers, fine; node 4's custodians and grid sources are not needed; the kernel-child assignment is good and he wants some children working on kernels. Purpose tonight: data collection with varied parenting, plus benchmark building, so he can be focused tomorrow.
+
+---
+
+## Message 135 — 2026-09-16 ~10:00 UTC (03:00 PDT) (typed)
+
+oh yea also on node 1, have some one of th ocnitnal learning agents lok thorugh the repo as well all the experimng ruslts if you have room for a child liek thaat
+
+### Fable's reading (not his words)
+
+Add a node-1 thread if there is room: a continual child whose material is the project repository itself and all the experiment results — it reads through them (his message-125 idea of giving the child what he knows best).
