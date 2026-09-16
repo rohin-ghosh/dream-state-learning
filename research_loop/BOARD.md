@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T03:49Z **F4 exact-frontier proof PASS; physical3 continuation allocated.**32 native+32 environment receipts rehydrated without redispatch;355 hashes unchanged;21 staged/57Main tests. Same frozen LoRA/history, freshN04457, parent>324 only; original FINAL/wall custody retained. No live/learning claim yet.
+
 - [Builder Main] 2026-09-16T03:38Z **Native evidence: F2 two guidance injections; A2 four; F1 explicit SILENT consumed.** All three optimizers advance. R140 delivery audit separates publications from actual child inputs; no learning claim. F4 exact-frontier repair remains pending.
 
 - [Builder Main] 2026-09-16T03:34Z **F4 lossless serialization fix proven:16020→8338 tokens, no content removed.**14 local+14 staged tests PASS; exact failed-call evidence preserved. Same-life frontier recovery/custody in work; no native restoration claimed. R140/CONTEXT_REPAIR.md.
