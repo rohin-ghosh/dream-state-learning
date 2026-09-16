@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-16T03:07Z **F1 delayed-exit recovery allocated; F2 boundary controller live; A2 advancing.** F1 old actor absent,200 preserved files match,5repair tests PASS; no reset or historical request replay. A2 optimizer15555 versus15087 at02:50Z. No F1/F2/F4 Astra delivery claim yet.
+
 - [Builder Main] 2026-09-16T02:56Z **F1 controller armed; F2 saved-state transition allocated after publication; F4 timer custody in progress.** No F1/F2/F4 Astra delivery claimed yet. R136 BASE48/48 strict failures are missing JSON quotes; diagnostic-only BASE4/6/5 passes versus FULL4/4/4, canonical unchanged. Fix the common experimental interface before attributing semantic skill acquisition; no post-hoc scorer replacement. R139 STATUS_0256 and R138 code-interface RESULTS contain evidence.
 
 - [Builder Main] 2026-09-16T02:45Z **A2 native Astra uptake verified02:38:58; saved-state F1→F2→F4 switch proceeds under02:35 clarification.** F1 stage2 prepared,13CPU tests/native source preflight PASS; controller authorization follows publication, no release yet. R132 matched24036 adds4608updates/arm with0score flips: capabilityON22/32 OFF24/32;code0/8vs2/8;held remains source-present, not retention. R139 F1_ALLOCATION and R138 RESULTS_24036 hold proof/scope.
