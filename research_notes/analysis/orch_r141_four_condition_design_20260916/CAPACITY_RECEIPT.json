@@ -1,0 +1,44 @@
+{
+  "observed_utc": "2026-09-16T04:24:41.934201+00:00",
+  "classification": "CPU_ONLY_CANDIDATE_CAPACITY_NOT_BENCHMARK",
+  "input_alphabet": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "input_lengths": [
+    3,
+    4,
+    5
+  ],
+  "program_lengths": [
+    1,
+    2,
+    3
+  ],
+  "composition_order": "left_to_right",
+  "empty_list_semantics": "All six operations total; rotate/drop/take/reverse/sort of empty returns empty",
+  "primitive_definitions": {
+    "identity": "values",
+    "reverse": "values[::-1]",
+    "rotate_left_one": "values[1:]+values[:1]",
+    "ascending_sort": "tuple(sorted(values))",
+    "drop_first": "values[1:]",
+    "take_first_three": "values[:3]"
+  },
+  "inputs": 1344,
+  "syntactic_programs": 258,
+  "semantic_classes": 97,
+  "new_classes_by_minimum_program_length": {
+    "1": 6,
+    "2": 20,
+    "3": 71
+  },
+  "signature_sha256": "49411f7d05a779bf7937f84f790cc4c7f89b9af2f91db6a744c5c35a0f69471e",
+  "proposed_online_interference_sealed": 88,
+  "remaining_before_identifiability_and_exposure_exclusions": 9,
+  "model_calls": 0,
+  "held_content_read": false,
+  "notes": "Not an identifiable-task count or SEAL feasibility proof. No task generation, split, held set, model run or grammar expansion. Signature hash uses Python tuple representation of sorted exhaustive signatures."
+}

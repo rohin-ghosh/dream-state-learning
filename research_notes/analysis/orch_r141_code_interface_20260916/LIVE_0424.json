@@ -1,0 +1,73 @@
+{
+  "status": "LIVE_PARTIAL_NOT_RESULT",
+  "observed_unix": 1789532623.3289342,
+  "root": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/run1",
+  "references": {
+    "PLAN.json": {
+      "path": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/run1/PLAN.json",
+      "sha256": "b4c15d48e86ee3005f143a589a3adf5541c8d0f5e4922f6522469bce92ce533a"
+    },
+    "TASKS.json": {
+      "path": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/run1/TASKS.json",
+      "sha256": "d234e0a345c1cd979bbd103e9b7276afe3a466be52484591a56683a89399a929"
+    },
+    "EXCLUSIONS.json": {
+      "path": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/run1/EXCLUSIONS.json",
+      "sha256": "82d0841a76b678f65986abfd995cea1a11ed299e9ec85959024f4e849677665a"
+    },
+    "ADMISSION.json": {
+      "path": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/run1/ADMISSION.json",
+      "sha256": "288cb615c4fe0aadf8dd7ef9b41cb61198db72e4cb75c96dfccc531c02c3fea9"
+    },
+    "LAUNCH.json": {
+      "path": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/run1/LAUNCH.json",
+      "sha256": "f6832f91edfba25168dabaeab6dac71646dac2fcbd5b20c83b8f728769c98e7f"
+    },
+    "NATIVE_START.json": {
+      "path": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/run1/NATIVE_START.json",
+      "sha256": "e62eb2dbff0457ff8e26f37c1f307ab8930e489fb18b20bf9e81f1e81f834b75"
+    },
+    "LOADED.json": {
+      "path": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/run1/LOADED.json",
+      "sha256": "cbf1f8e05ae6378c54c7d599c01e6084d5786df16b2a0cfbca4a8a2a2d04e3fc"
+    }
+  },
+  "completed_call_receipts": 92,
+  "completed_model_task_triplets": 30,
+  "first_call": {
+    "path": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/run1/episodes/R133_PUBLIC_TRAIN_78a50321e859c295_4cd174e7315c97e3276c192ab37c4268837efea4e6b2dea385aa116ff345a635/FULL_FIXED18404/draft.CALL.json",
+    "sha256": "eee1f81400e70cba006a6042dfab8ef88500a77d1c558f8921aebe76bab629f1",
+    "keys": [
+      "finished_unix",
+      "max_new_tokens",
+      "messages",
+      "messages_sha256",
+      "model",
+      "reserved_call",
+      "response",
+      "schema",
+      "shared_draft_call_sha256",
+      "shared_draft_text_sha256",
+      "stage",
+      "started_unix",
+      "task_id"
+    ]
+  },
+  "fit_updates": 0,
+  "external_parent_calls": 0,
+  "rows_admitted": 0,
+  "hard_end_utc": "2026-09-16T05:40:00Z",
+  "next_reserved_utc": "2026-09-16T06:00:00Z",
+  "launch": {
+    "admission_sha256": "288cb615c4fe0aadf8dd7ef9b41cb61198db72e4cb75c96dfccc531c02c3fea9",
+    "admission_verified_unix": 1789532341.4533916,
+    "command_sha256": "6cb93713e82d4589c7d2161cf0dba0e9234ab8d96f6114d11b5177b3a2738afd",
+    "guard_sha256": "87156d58a19c6bf1e436904512207e31646e4353225372d377d37d07311fa448",
+    "hard_end_unix": 1789537200.0,
+    "no_retry": true,
+    "parent_start_ticks": "6790164",
+    "pid": 3210695,
+    "started_unix": 1789532341.4545224
+  },
+  "note": "Earlier top-level completed_triplets glob omitted model directory; use episodes/*/*/COMPLETE.json. SSH command timed out at40s after launch; inspected existing actor rather than redispatching."
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "r121-four-condition-scope-v1",
+  "workspace": "../..",
+  "change_id": "chg_20260916_r121_four_condition_scope_v1",
+  "directive_file": "research_loop/changes/chg_20260916_r121_four_condition_scope_v1/human_directive.txt",
+  "context_files": [
+    "research_loop/changes/chg_20260916_r121_four_condition_scope_v1/DESIGN_CONSTRAINTS.md",
+    "AGENTS.md",
+    "research_notes/analysis/R121_LEVEL1_SCOPE_20260916.md",
+    "research_notes/ASTRA_LAUNCH_PROMPT_2026-09-12.md"
+  ],
+  "output_dir": "research_loop/changes/chg_20260916_r121_four_condition_scope_v1",
+  "state_path": "research_loop/changes/chg_20260916_r121_four_condition_scope_v1/deliberation.state.json",
+  "intake_state_path": "research_loop/changes/chg_20260916_r121_four_condition_scope_v1/intake.state.json",
+  "run_dir": ".research_loop/deliberations/chg_20260916_r121_four_condition_scope_v1",
+  "roles": {
+    "advocate": {
+      "executors": [
+        {
+          "provider": "codex",
+          "reasoning_effort": "high",
+          "timeout_sec": 1800,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1800,
+          "max_context_chars_per_file": 1000000
+        }
+      ]
+    },
+    "systems": {
+      "executors": [
+        {
+          "provider": "codex",
+          "reasoning_effort": "high",
+          "timeout_sec": 1800,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1800,
+          "max_context_chars_per_file": 1000000
+        }
+      ]
+    },
+    "benchmark": {
+      "executors": [
+        {
+          "provider": "codex",
+          "reasoning_effort": "high",
+          "timeout_sec": 1800,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1800,
+          "max_context_chars_per_file": 1000000
+        }
+      ]
+    },
+    "critique": {
+      "executors": [
+        {
+          "provider": "codex",
+          "reasoning_effort": "high",
+          "timeout_sec": 1800,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1800,
+          "max_context_chars_per_file": 1000000
+        }
+      ]
+    },
+    "consensus": {
+      "executors": [
+        {
+          "provider": "codex",
+          "reasoning_effort": "high",
+          "timeout_sec": 1800,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1800,
+          "max_context_chars_per_file": 1000000
+        }
+      ]
+    }
+  }
+}
