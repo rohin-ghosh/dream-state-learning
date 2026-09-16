@@ -1154,3 +1154,10 @@ make sure perisitnec pareing is tried, you can look thoruhg ht data when doing c
 ### Fable's reading (not his words)
 
 Make sure PERSISTENT parenting is tried (a sustained every-boundary cadence, not just three turns). The watcher's role during checks: read the data and offer parenting suggestions, but above all make sure the threads are DIVERSE (programmes, cadences, replay variants, parent styles) so tomorrow's data covers the space.
+
+
+## Message 138 — 2026-09-16 ~18:10 UTC (11:10 PDT), typed, to Fable (mid-tick)
+
+> do an auding create a document of brenchmakrs of allt he progress and samopels of chnges in outpuces prenign and magents thougths and what the agent sorta reflects on its litspenwhat it rmeebers and what ite laenred , first let me know what threads have ru and what the becnhmakrs are on, incldue this all into a intensvie document, and then gimme q uck sumamry here
+
+Reading (Fable): an audit request. Produce one intensive document covering (1) which threads have run and what the benchmarks are, (2) benchmark progress, (3) samples of how outputs changed over sleeps, (4) samples of parenting and the agents' thoughts, (5) what each agent reflects about its own life span, what it says it remembers and what it says it learned. Then a quick summary in chat. Order: tell him the threads and the benchmarks first.
