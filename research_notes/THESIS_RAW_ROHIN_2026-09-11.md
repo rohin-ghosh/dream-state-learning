@@ -1104,3 +1104,33 @@ yra so general bechnsaks for lenaing and behviaor and then our expeimren specifi
 ### Fable's reading (not his words)
 
 Benchmarks: general benchmarks for learning and behaviour, plus our experiment-specific benchmarks. Order: start a third continual child, this one inside an environment — a GPU-kernel hill-climbing environment — with its own startup prompt and parenting, so there is a raw child (no environment) and an environment-specific child to measure; on another GPU as its own parallel thread. Asks whether there are enough spare GPUs (answer: yes — node-4 GPUs 0 and 2 are empty, node-5 GPU 7 is free now that the grid FINAL reservation has passed).
+
+---
+
+## Message 133 — 2026-09-16 ~09:50 UTC (02:50 PDT) (typed)
+
+hmmm okay, gneration data hoenstly could be sueful so we can keep that,  explain wahts ogign on node 1 better, by keep aht on node 2 i mean keep 6 of htem, idk how many to give fo rbenchmakgin, node 3 is this useful? lets try soem differnt parenign on this, i want you to look thorugh some sorta therapy dataset of liek qustions an dhsit and do therapy with a contaul, and like do soem sorta of lecture on the brain, in antoher, and antoher do a cretiive wrigin seminar sorta thign, mroe theads of contintual model, test out differnt pre sleep repalys on all fot hem, fill t his gpu with mroe parenign nodes, ( not gpu i meatn fill this node with parengin threads ) ndo 4 um maybe do more lives here , whas is ndoe 5 doign veruss 4?
+
+### Fable's reading (not his words)
+
+Allocation rulings: node 2 — generation data could be useful, keep 6 of the 8 generation workers (2 freed for benchmarking; he is unsure how many benchmarking needs). Node 1 — wants a better explanation of what runs there. Node 3 — "is this useful?" → repurpose it: fill the node with continual-child parenting threads of different styles — one child gets therapy (the parent works from a therapy dataset of questions), another a lecture on the brain, another a creative-writing seminar; more threads of the continual model; test different pre-sleep replays across all of them. Node 4 — maybe more lives. Asks what node 5 is doing versus node 4 (answered in chat).
+
+---
+
+## Message 134 — 2026-09-16 ~09:55 UTC (02:55 PDT) (voice, verbatim)
+
+OK, so no the one let's refresh it with some non-Laura sort of control tests maybe and then yeah I don't know what else to put in there maybe some some like continue learning systems on where the parent is really trying to figure out how to teach replay and how to teach, and then another one on how to teach perception and then one on how to teach parenting and that notice parenting another note. Try something like that. That'll be fun if we have so much space and then not five is also parenting note OK it's good and five is good note for left over OK do we need custodians grid sources in aisle 41 OK assigned to the colonel child is good. We do want one of some of those child's working in Colonels and th yeah I want. I wanna try the one where we have. What did I say teaching replay teaching all these other things I want that that say that note was on note one right yeah no one it's called old stuff. I wanna try classroom teaching so like you have different these different systems that are starters that are taught different things but they're allowed to talk to each other. The parents don't talk to each other. The children talk to each other but during parenting it's just one01 try something like that on note one I just wanna test out different data and like see how it looks, and then we can look through the data. This is just data collection then like benchmark building so then tomorrow I can kind of be pretty focused good shit
+
+### Fable's reading (not his words)
+
+Node 1 ("old stuff") is to be refreshed: (a) non-LoRA control tests; (b) continual-learning threads where the parent is trying to work out how to teach — one on teaching REPLAY, one on teaching PERCEPTION, one on teaching PARENTING; (c) CLASSROOM teaching: several children taught different things who are allowed to talk to each other; parents do not talk to each other; parenting itself stays one-on-one. Node 5 = parenting, good; node 4 = leftovers, fine; node 4's custodians and grid sources are not needed; the kernel-child assignment is good and he wants some children working on kernels. Purpose tonight: data collection with varied parenting, plus benchmark building, so he can be focused tomorrow.
+
+---
+
+## Message 135 — 2026-09-16 ~10:00 UTC (03:00 PDT) (typed)
+
+oh yea also on node 1, have some one of th ocnitnal learning agents lok thorugh the repo as well all the experimng ruslts if you have room for a child liek thaat
+
+### Fable's reading (not his words)
+
+Add a node-1 thread if there is room: a continual child whose material is the project repository itself and all the experiment results — it reads through them (his message-125 idea of giving the child what he knows best).
