@@ -1,0 +1,332 @@
+{
+  "call_set_sha256": "91d3e199a5bd9d856e26b07224fbfa6bb3f5eb43dd397f8fec398d416ca2130c",
+  "canonical_scores_changed": false,
+  "caveat": "Finite PUBLIC TRAIN immediate revision only; no historical-prompt causal comparison or retention inference.",
+  "exclusions_sha256": "82d0841a76b678f65986abfd995cea1a11ed299e9ec85959024f4e849677665a",
+  "expected_guard_sha256": "87156d58a19c6bf1e436904512207e31646e4353225372d377d37d07311fa448",
+  "four_way_benchmark": false,
+  "hard_end_unix": 1789537200.0,
+  "independent_reducer": {
+    "author_metric_functions_used_as_oracle": false,
+    "verification_role": "Independent recomputation by the implementation author; not a fresh independent reviewer",
+    "fresh_independent_reviewer": false,
+    "node_backup_path": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/audit_source/orch_r141_independent_reduction_20260916_0420.py",
+    "node_backup_sha256": "1309e9b31a32d0f9750ba953a314b48631693ccdb2c2d423a298ffaf40d5d52e",
+    "node_test_backup_path": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/audit_source/orch_r141_independent_reduction_20260916_0420_test.py",
+    "node_test_backup_sha256": "dc3ba3241185c579095543018809347de5fc0978e69780bb24cee7bc4fb189b5",
+    "node_backups_byte_identical": true,
+    "execution_command": "bash gpu/ovx3_ssh.sh 'CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/source_v2 python3 -B -' < /tmp/orch_r141_independent_reduction_20260916_0420.py",
+    "path": "/tmp/orch_r141_independent_reduction_20260916_0420.py",
+    "raw_read_location": "node-local run1 only; stdout compact reduction",
+    "sha256": "1309e9b31a32d0f9750ba953a314b48631693ccdb2c2d423a298ffaf40d5d52e",
+    "test_command": "PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES= PYTHONPATH=/data/home/rohing/dream-state-orch python3 -B /tmp/orch_r141_independent_reduction_20260916_0420_test.py -q",
+    "test_path": "/tmp/orch_r141_independent_reduction_20260916_0420_test.py",
+    "test_seconds": 16.556,
+    "test_sha256": "dc3ba3241185c579095543018809347de5fc0978e69780bb24cee7bc4fb189b5",
+    "tests_passed": 15
+  },
+  "inventory_coverage": "MAIN_DECLARED_HASH_ONLY_BOUNDED_INVENTORIES",
+  "launch_command_sha256": "6cb93713e82d4589c7d2161cf0dba0e9234ab8d96f6114d11b5177b3a2738afd",
+  "launch_sha256": "f6832f91edfba25168dabaeab6dac71646dac2fcbd5b20c83b8f728769c98e7f",
+  "limitations": [
+    "Independent recomputation was performed by the implementation author, not a fresh independent reviewer.",
+    "Sixteen shared task clusters, not 96 independent samples; no four-way benchmark or retained-learning conclusion.",
+    "All 96 calls are present, but BASE task index 13 draft is truncated; exclude its triplet from both complete-draft contrasts.",
+    "Semantic correction requires valid safe expressions on both sides; sandbox-to-pass recovery is not counted in this narrower field.",
+    "AST changes are only measurable when both expressions pass the unchanged validator; unavailable comparisons are not unchanged ASTs.",
+    "Token arrays and recorded prompt bounds checked; no model/tokenizer re-execution or weight-file rehash.",
+    "Loaded identity and weights-unchanged native terminal verified; inventory coverage relies on Main declared hash-only inventories and the pinned guard.",
+    "Launch receipt is pinned; actual exited process argv is not independently recovered from its command hash.",
+    "Historical R133/R136/R138 calls and canonical scores remain unchanged; the new cohort is not an old-prompt causal control."
+  ],
+  "max_new_tokens_per_call": 2048,
+  "metadata_evidence_sha256": "781b27bfdc8efde4e78c8ba4478234cb6a179a4007e877a460154d375fe0e843",
+  "model_calls": 0,
+  "model_results": {
+    "BASE_NO_LORA": {
+      "call_finished_max_unix": 1789532624.6406963,
+      "call_started_min_unix": 1789532400.6712923,
+      "feedback_vs_neutral": {
+        "complete_triplets": 15,
+        "contrast_denominator": 15,
+        "failed_draft_pass_table": {
+          "both_fail": 5,
+          "both_pass": 0,
+          "feedback_only_pass": 0,
+          "neutral_only_pass": 2
+        },
+        "failed_draft_triplets": 7,
+        "feedback_minus_neutral_passes": -3,
+        "pass_table": {
+          "both_fail": 5,
+          "both_pass": 7,
+          "feedback_only_pass": 0,
+          "neutral_only_pass": 3
+        },
+        "planned_triplets": 16
+      },
+      "forks": {
+        "interpreter_feedback": {
+          "ast_comparable_pairs": 7,
+          "complete_pairs": 15,
+          "expression_ast_changed": 0,
+          "expression_text_changed": 4,
+          "failed_drafts": 7,
+          "failed_to_passed": 0,
+          "format_recovered": 0,
+          "invalid_format_drafts": 0,
+          "planned_pairs": 16,
+          "raw_changed": 4,
+          "regressions": 1,
+          "safe_wrong_drafts": 0,
+          "semantic_correction": 0
+        },
+        "neutral_review": {
+          "ast_comparable_pairs": 8,
+          "complete_pairs": 15,
+          "expression_ast_changed": 0,
+          "expression_text_changed": 6,
+          "failed_drafts": 7,
+          "failed_to_passed": 2,
+          "format_recovered": 0,
+          "invalid_format_drafts": 0,
+          "planned_pairs": 16,
+          "raw_changed": 6,
+          "regressions": 0,
+          "safe_wrong_drafts": 0,
+          "semantic_correction": 0
+        }
+      },
+      "incomplete_cells": [
+        {
+          "stage": "draft",
+          "task_index": 13,
+          "terminal": false,
+          "tokens": 2048,
+          "truncated": true
+        }
+      ],
+      "planned_calls": 48,
+      "stages": {
+        "draft": {
+          "categories": {
+            "EXECUTED": 8,
+            "PARSER_ERROR": 1,
+            "SANDBOX_ERROR": 7
+          },
+          "complete": 15,
+          "eligible_passes": 8,
+          "format_valid_complete": 15,
+          "format_valid_recorded": 15,
+          "incomplete": 1,
+          "max_output_tokens": 2048,
+          "output_tokens": 2924,
+          "planned": 16,
+          "recorded": 16,
+          "safe_expression_complete": 8,
+          "strict_pass_recorded": 8
+        },
+        "interpreter_feedback": {
+          "categories": {
+            "EXECUTED": 8,
+            "INTERPRETER_ERROR": 1,
+            "SANDBOX_ERROR": 7
+          },
+          "complete": 16,
+          "eligible_passes": 8,
+          "format_valid_complete": 16,
+          "format_valid_recorded": 16,
+          "incomplete": 0,
+          "max_output_tokens": 225,
+          "output_tokens": 893,
+          "planned": 16,
+          "recorded": 16,
+          "safe_expression_complete": 9,
+          "strict_pass_recorded": 8
+        },
+        "neutral_review": {
+          "categories": {
+            "EXECUTED": 12,
+            "SANDBOX_ERROR": 4
+          },
+          "complete": 16,
+          "eligible_passes": 11,
+          "format_valid_complete": 16,
+          "format_valid_recorded": 16,
+          "incomplete": 0,
+          "max_output_tokens": 53,
+          "output_tokens": 507,
+          "planned": 16,
+          "recorded": 16,
+          "safe_expression_complete": 12,
+          "strict_pass_recorded": 11
+        }
+      }
+    },
+    "FULL_FIXED18404": {
+      "call_finished_max_unix": 1789532630.8722072,
+      "call_started_min_unix": 1789532396.0272107,
+      "feedback_vs_neutral": {
+        "complete_triplets": 16,
+        "contrast_denominator": 16,
+        "failed_draft_pass_table": {
+          "both_fail": 11,
+          "both_pass": 0,
+          "feedback_only_pass": 0,
+          "neutral_only_pass": 0
+        },
+        "failed_draft_triplets": 11,
+        "feedback_minus_neutral_passes": 0,
+        "pass_table": {
+          "both_fail": 11,
+          "both_pass": 5,
+          "feedback_only_pass": 0,
+          "neutral_only_pass": 0
+        },
+        "planned_triplets": 16
+      },
+      "forks": {
+        "interpreter_feedback": {
+          "ast_comparable_pairs": 9,
+          "complete_pairs": 16,
+          "expression_ast_changed": 1,
+          "expression_text_changed": 2,
+          "failed_drafts": 11,
+          "failed_to_passed": 0,
+          "format_recovered": 0,
+          "invalid_format_drafts": 0,
+          "planned_pairs": 16,
+          "raw_changed": 2,
+          "regressions": 0,
+          "safe_wrong_drafts": 5,
+          "semantic_correction": 0
+        },
+        "neutral_review": {
+          "ast_comparable_pairs": 9,
+          "complete_pairs": 16,
+          "expression_ast_changed": 0,
+          "expression_text_changed": 1,
+          "failed_drafts": 11,
+          "failed_to_passed": 0,
+          "format_recovered": 0,
+          "invalid_format_drafts": 0,
+          "planned_pairs": 16,
+          "raw_changed": 1,
+          "regressions": 0,
+          "safe_wrong_drafts": 5,
+          "semantic_correction": 0
+        }
+      },
+      "incomplete_cells": [],
+      "planned_calls": 48,
+      "stages": {
+        "draft": {
+          "categories": {
+            "EXECUTED": 9,
+            "INTERPRETER_ERROR": 1,
+            "SANDBOX_ERROR": 6
+          },
+          "complete": 16,
+          "eligible_passes": 5,
+          "format_valid_complete": 16,
+          "format_valid_recorded": 16,
+          "incomplete": 0,
+          "max_output_tokens": 240,
+          "output_tokens": 726,
+          "planned": 16,
+          "recorded": 16,
+          "safe_expression_complete": 10,
+          "strict_pass_recorded": 5
+        },
+        "interpreter_feedback": {
+          "categories": {
+            "EXECUTED": 9,
+            "SANDBOX_ERROR": 7
+          },
+          "complete": 16,
+          "eligible_passes": 5,
+          "format_valid_complete": 16,
+          "format_valid_recorded": 16,
+          "incomplete": 0,
+          "max_output_tokens": 240,
+          "output_tokens": 736,
+          "planned": 16,
+          "recorded": 16,
+          "safe_expression_complete": 9,
+          "strict_pass_recorded": 5
+        },
+        "neutral_review": {
+          "categories": {
+            "EXECUTED": 8,
+            "INTERPRETER_ERROR": 1,
+            "SANDBOX_ERROR": 7
+          },
+          "complete": 16,
+          "eligible_passes": 5,
+          "format_valid_complete": 16,
+          "format_valid_recorded": 16,
+          "incomplete": 0,
+          "max_output_tokens": 240,
+          "output_tokens": 729,
+          "planned": 16,
+          "recorded": 16,
+          "safe_expression_complete": 9,
+          "strict_pass_recorded": 5
+        }
+      }
+    }
+  },
+  "native_started_unix": 1789532341.8576977,
+  "native_started_utc": "2026-09-16T04:19:01.857698+00:00",
+  "next_reserved_unix": 1789538400,
+  "observed_utc": "2026-09-16T04:26:48.747733+00:00",
+  "outcomes_withheld": false,
+  "plan_sha256": "b4c15d48e86ee3005f143a589a3adf5541c8d0f5e4922f6522469bce92ce533a",
+  "planned_calls": 96,
+  "planned_tasks": 16,
+  "raw_exported": false,
+  "retained_learning_claim": false,
+  "run": "/localhome/local-rohing/orch_r141_code_interface_20260916_attempt1/run1",
+  "run_evidence_sha256": "08f870b86ae0a43fd14a8df2e2499a51e7c49a2b82814d2396b6b9bdb1612003",
+  "schema": "R141_INDEPENDENT_RESULT_VERIFICATION_V1",
+  "signals": 0,
+  "source_set_sha256": "f1d26ecb3ea305501dc3f7de1b293c3f25fb3792c5284c707aaa3c2f479a80d4",
+  "status": "COMPLETE_INDEPENDENTLY_VERIFIED",
+  "supervisor_finished_unix": 1789532659.1410868,
+  "supervisor_finished_utc": "2026-09-16T04:24:19.141087+00:00",
+  "tasks_sha256": "d234e0a345c1cd979bbd103e9b7276afe3a466be52484591a56683a89399a929",
+  "terminal_sha256": {
+    "EPISODES_TERMINAL.json": "8b2631f5fb23412d459120d860beaa4d1b3029fd4cbde8ebe975dae8af56cb0c",
+    "EXIT.json": "4181f8afab23ec207cc70d95031057af00ed19be60b39ed95cc1b7e249543323",
+    "NATIVE_TERMINAL.json": "2b985f3641a739c1f74d2868e8635e197aeba39ae05aff10a6000bd65b6043e4",
+    "SUPERVISOR_COMPLETE.json": "7fdd2abd0863e24c1b9a8ad1ff71a3120555f82573a6932b1773680d9e264e00"
+  },
+  "totals": {
+    "complete_responses": 95,
+    "eligible_complete_triplets": 31,
+    "format_valid_complete_responses": 95,
+    "format_valid_recorded_responses": 95,
+    "incomplete_responses": 1,
+    "max_observed_output_tokens_per_call": 2048,
+    "output_tokens": 6515,
+    "planned_model_task_triplets": 32,
+    "planned_output_token_ceiling": 196608,
+    "planned_tasks": 16,
+    "verified_call_receipts": 96,
+    "verified_intent_receipts": 96,
+    "verified_public_receipts": 96,
+    "verified_stored_triplet_summaries": 32,
+    "verified_strict_score_receipts": 96
+  },
+  "training_updates": 0,
+  "unchanged_pinned_sources": {
+    "gpu/orch_r141_code_interface.py": "4ec71fe6c1d92197329462d71526f0e2daa6cf1f271fb3aa136e415d7ffcb5d0",
+    "gpu/orch_r141_code_interface_guard.py": "143e68abbc67094a7223bfa75dc1b64d0909b30a245d68f091dc2c7b9f378493",
+    "tests/test_orch_r141_code_interface.py": "44d36aad88b2b529027992fc5c1357df2c002a4886f71249c85b5b4072b81bba",
+    "tests/test_orch_r141_code_interface_guard.py": "0c203ed6aa23aa834e3f568050c8ce5c89f52b8bd3a99c9c351a02c56a463e06"
+  },
+  "verified_calls": 96,
+  "verified_run_artifacts": 427,
+  "weights_rehashed": false,
+  "weights_unchanged_terminal_verified": true
+}

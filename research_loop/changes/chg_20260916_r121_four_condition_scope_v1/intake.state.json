@@ -3,6 +3,18 @@
     "architecture_change": {
       "path": "research_loop/changes/chg_20260916_r121_four_condition_scope_v1/change.json",
       "sha256": "20bc08d6c37adc9228d995fd54dbc86dfa2e06ac41648b94d12a70943c4f815f"
+    },
+    "architecture_critique": {
+      "path": "research_loop/changes/chg_20260916_r121_four_condition_scope_v1/critique.json",
+      "sha256": "68dc7ce2fe4e72f21aaffe176400c96cb4df4344567f20c7d6eacbee270b29df"
+    },
+    "architecture_interpretation:chg_20260916_r121_four_condition_scope_v1.benchmark": {
+      "path": "research_loop/changes/chg_20260916_r121_four_condition_scope_v1/interpretation_benchmark.json",
+      "sha256": "9e63ad312b7fb29dab63911ae29c6199b9af7858648532f2a2f7c098c2c59725"
+    },
+    "architecture_interpretation:chg_20260916_r121_four_condition_scope_v1.systems": {
+      "path": "research_loop/changes/chg_20260916_r121_four_condition_scope_v1/interpretation_systems.json",
+      "sha256": "2cd723dfea3042a42a99333c1b399837b0771a4ace9c9b48b08d4cea5fdfb798"
     }
   },
   "change_id": "chg_20260916_r121_four_condition_scope_v1",
@@ -12,11 +24,29 @@
       "artifact_sha256": "20bc08d6c37adc9228d995fd54dbc86dfa2e06ac41648b94d12a70943c4f815f",
       "at": "2026-09-16T04:22:43.642484+00:00",
       "transition": "proposed->collecting_interpretations"
+    },
+    {
+      "artifact_sha256": "2cd723dfea3042a42a99333c1b399837b0771a4ace9c9b48b08d4cea5fdfb798",
+      "at": "2026-09-16T04:28:09.919496+00:00",
+      "source_state_sha256": "0b3d37d0fd683c4485e16ed8dfe7054865e99d7d41e6a5f0ff3b2fc60f1607c4",
+      "transition": "collecting_interpretations->collecting_interpretations"
+    },
+    {
+      "artifact_sha256": "9e63ad312b7fb29dab63911ae29c6199b9af7858648532f2a2f7c098c2c59725",
+      "at": "2026-09-16T04:28:09.980117+00:00",
+      "source_state_sha256": "f2c17fdb79491b163545ff4ba2db894c2aff709cf28e2bfde741f4ba64c5e4b6",
+      "transition": "collecting_interpretations->collecting_interpretations"
+    },
+    {
+      "artifact_sha256": "68dc7ce2fe4e72f21aaffe176400c96cb4df4344567f20c7d6eacbee270b29df",
+      "at": "2026-09-16T05:07:20.562548+00:00",
+      "source_state_sha256": "d69f8f96c08e8b87e1ef5a466bcea0a145d2fb100921ada9f5be4be3670b3e7d",
+      "transition": "collecting_interpretations->awaiting_consensus"
     }
   ],
   "human_required": true,
   "implementation_authorized": false,
-  "phase": "collecting_interpretations",
+  "phase": "awaiting_consensus",
   "schema_version": 1,
-  "updated_at": "2026-09-16T04:22:43.642322+00:00"
+  "updated_at": "2026-09-16T05:07:20.562535+00:00"
 }
