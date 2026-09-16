@@ -1,0 +1,67 @@
+{
+  "schema": "R139_F4_SUCCESSOR_TIMER_STAGING_MANIFEST_V1",
+  "status": "STAGED_TESTED_NOT_ARMED_NOT_AUTHORIZED",
+  "date_utc": "2026-09-16",
+  "files_sha256": {
+    "gpu/orch_r139_grid_timer_custody.py": "8dd31979a4ca1cafbf2a3dc9d7724adf2cb5ccb4c25610480d0add2730ebc10a",
+    "tests/test_orch_r139_grid_timer_custody.py": "6ccdd01d8542f1743ae051de9074282c2f529e50f171d1a7778ad47d3cbb78ff",
+    "research_notes/analysis/orch_r139_parent_handoffs_20260916/F4_TIMER_PLAN.json": "e09bd25ca7bca2089526a966ce1a34e678d350793911e3ea32ef262d0727d6b3",
+    "research_notes/analysis/orch_r139_parent_handoffs_20260916/F4_TIMER_HANDOFF.md": "dfa7e4e5db09bd886fcd0b152694f369458575be10fdeda79bc4c2cd687885d9",
+    "research_notes/analysis/orch_r139_parent_handoffs_20260916/F4_TIMER_PUBLICATION_TEMPLATE.json": "dfbc16a7e2b3bb1b45c95df7ad794fe610aba462b8574214a198b9e7c74dee85"
+  },
+  "node_staging": "/localhome/local-rohing/orch_r139_F4_timer_source_v1",
+  "VM_staging": "/data/home/rohing/courier/runtime/orch_r139_F4_timer_source_v1",
+  "future_node_runtime": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/r139_timer_custody_v1",
+  "tests": {
+    "local_passed": 22,
+    "native_passed": 22,
+    "skipped": 0,
+    "command_blocks_syntax_checked_not_executed": 4,
+    "local_command": "PYTHONDONTWRITEBYTECODE=1 TMPDIR=/data/home/rohing/courier/runtime python3 -B -m unittest discover -s tests -p test_orch_r139_grid_timer_custody.py -v",
+    "local_log_sha256": "b81e5c68a2714715677712072998dba705fc454a21271584042f10a8c142448b",
+    "native_log_sha256": "d4a91a51e10a5492116176767800d33f97f8f4b08bb165f35297241e682031b0",
+    "pytest_unavailable_used_stdlib_unittest": true,
+    "actual_node_preflight": "PASSED",
+    "actual_node_exact_plan_validation": "CPU_VALIDATED_NOT_ARMED"
+  },
+  "last_read_only_observation": {
+    "old_morning_timer_live": true,
+    "old_wall_timer_live": true,
+    "old_child_live": true,
+    "original_morning_FINAL_unattempted": true,
+    "new_timer_runtime_absent": true
+  },
+  "preserved": {
+    "morning_unix": 1789538400,
+    "evaluation_end_unix": 1789539600,
+    "train_end_unix": 1789596120,
+    "hard_end_unix": 1789596240,
+    "FINAL_calls": 8,
+    "additional_FINAL_calls": 0,
+    "parent_FINAL_calls": 0,
+    "readout_context": "original empty StageContext, no carry or parent",
+    "no_old_FINAL_replay": true,
+    "old_Claude_claims": 298,
+    "prospective_Astra_cap_expansion": false,
+    "live_rng_restored": false,
+    "active_optimizer": false
+  },
+  "frozen_files_rechecked_unchanged": {
+    "gpu/orch_r139_grid_astra_handoff.py": "adc2598e89e3917840129c319a58de122ebda832af7e1acae3dce77562c3c778",
+    "tests/test_orch_r139_grid_astra_handoff.py": "e7996765760eb5c08857cc301e794d83c76e979df070ad96ec779ec645cd303a",
+    "F4_PLAN.json": "21cdcf5ce41403176b1a46d12c05fdf5c877f0bd89b82890780444509291a546",
+    "F4_HANDOFF.md": "5ace90336243557643047203015e25221b8758ad915a3fdcde1824d42530ebf1",
+    "F4_MANIFEST.json": "472c02cd81e32725136f68e87592cd2814ec23d2293f8f1cbaded53e2d4c79ec",
+    "F4_PUBLICATION_TEMPLATE.json": "a043a35da82477cec6a331c72288b31f3f3e3e6ff6fd5a966414c920b35c81b6"
+  },
+  "signals_sent": 0,
+  "runtime_controller_launches": 0,
+  "model_calls": 0,
+  "GPU_launches": 0,
+  "frozen_source_edits": 0,
+  "shared_ledger_edits": 0,
+  "git_changes": "none performed by sidecar",
+  "Main_execution_sequence": ["publish exact timer handshake", "arm and verify actual custody", "release via frozen completed-cycle seam", "fresh same-GPU admission", "initial-resume wrapper", "current-native callback"],
+  "not_live_tested": ["old timer retirement", "GPU loading", "morning FINAL", "post-FINAL native restoration", "hard-wall process termination"],
+  "broker_runtime_policy": "Not modified or launched by timer task; broker publication remains separate. New VM timer staging and logs use courier/runtime, never VM /tmp."
+}

@@ -1,6 +1,8 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
-- [Builder Main] 2026-09-16T03:07Z **F1 delayed-exit recovery allocated; F2 boundary controller live; A2 advancing.** F1 old actor absent,200 preserved files match,5repair tests PASS; no reset or historical request replay. A2 optimizer15555 versus15087 at02:50Z. No F1/F2/F4 Astra delivery claim yet.
+- [Builder Main] 2026-09-16T03:04Z **F1 saved-state successor loading; F2 saved-readout seam reached; F4 timer/release/resume allocated.** F4 Main22/native22tests PASS, original FINAL8 and lease wall preserved; no delivery claim yet. Commands in R139/F4_TIMER_HANDOFF.md.
+
+- [Builder Main] 2026-09-16T03:02Z **F1 delayed-exit recovery allocated; F2 boundary controller live; A2 advancing.** F1 old actor absent,200 preserved files match,5repair tests PASS; no reset or historical request replay. A2 optimizer15555 versus15087 at02:50Z. No F1/F2/F4 Astra delivery claim yet.
 
 - [Builder Main] 2026-09-16T02:56Z **F1 controller armed; F2 saved-state transition allocated after publication; F4 timer custody in progress.** No F1/F2/F4 Astra delivery claimed yet. R136 BASE48/48 strict failures are missing JSON quotes; diagnostic-only BASE4/6/5 passes versus FULL4/4/4, canonical unchanged. Fix the common experimental interface before attributing semantic skill acquisition; no post-hoc scorer replacement. R139 STATUS_0256 and R138 code-interface RESULTS contain evidence.
 
