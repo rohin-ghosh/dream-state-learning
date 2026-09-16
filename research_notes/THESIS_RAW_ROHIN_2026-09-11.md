@@ -1027,3 +1027,15 @@ yeah, so I thought about this so essentially all you need to do apparently when 
 - **Metric (later, then parent-guided):** diverse, related, important thought — the width of the pyramid (twice the height needs four times the thoughts); track how much novel related thought is happening; parents guide that search space.
 - **Fleet:** Rohin orchestrates through the agent, the agent orchestrates 4 GPUs, the rest of the fleet creates data and tests things on the side.
 - **Orders:** figure out the prompt (together); build and TEST the continual agent ("make sure this continual agent is working" — asked of the watcher as well); give it access to its own token usage (per action) and its context size; compaction taught later — for now dumb: when the context is full it loses from the start, or just runs slower.
+
+---
+
+## Message 126 — 2026-09-16 ~05:45 UTC (typed)
+
+wwath si th e foudn ciotn scope?
+
+have we had any success iwth any porstign adapther? markdown wdym by that, no mebrarigo or eradoignt idkr baotu seed,s um skill adn stake not sure baout this,      how manygpus set out for skills?
+
+### Fable's reading (not his words)
+
+Questions on the four-condition scope after I listed the open decisions: (1) has any existing adapter shown success (to serve as the level-1 starting point); (2) what "Markdown contract" means; (3) no embargo or readout schedule is needed, seeds are not a concern for him now; (4) the skill and task family — he is not sure yet; (5) how many GPUs are set aside for the skill-acquisition experiment. Answered in chat; decisions (3) relayed to the orchestrator; skill left open with the watcher's recommendation (math with checker) marked as a recommendation.
