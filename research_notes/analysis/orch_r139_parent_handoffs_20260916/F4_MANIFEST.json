@@ -1,0 +1,32 @@
+{
+  "schema": "R139_F4_STAGED_HANDOFF_MANIFEST_V1",
+  "status": "STAGED_NOT_AUTHORIZED",
+  "directive_commit": "bb2f2eb9716c97f13697dadb804fdedc6626f470",
+  "files_sha256": {
+    "gpu/orch_r139_grid_astra_handoff.py": "adc2598e89e3917840129c319a58de122ebda832af7e1acae3dce77562c3c778",
+    "tests/test_orch_r139_grid_astra_handoff.py": "e7996765760eb5c08857cc301e794d83c76e979df070ad96ec779ec645cd303a",
+    "F4_PLAN.json": "21cdcf5ce41403176b1a46d12c05fdf5c877f0bd89b82890780444509291a546"
+  },
+  "node_staging": "/tmp/orch_r139_F4_handoff_v1",
+  "VM_staging": "/tmp/orch_r139_F4_vm_v1",
+  "observed_utc": "2026-09-16T02:46:43Z",
+  "observed_counts": {"NATIVE": 4233, "PARENT": 320, "cycle": 106},
+  "observed_counts_are_not_release_cursor": true,
+  "local_tests": {"passed": 15, "seconds": 0.340},
+  "native_tests": {"passed": 14, "skipped": 1, "seconds": 0.126, "skip_reason": "VM-only pinned A4 runtime"},
+  "VM_broker_build": "CPU_COMPILED_NO_DISPATCH",
+  "local_test_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/tmp/orch_r118_grid_http_source_20260915_v1 python3 -B -m unittest discover -s /data/home/rohing/dream-state-orch/tests -p test_orch_r139_grid_astra_handoff.py -v",
+  "local_test_workdir": "/tmp",
+  "native_test_command": "bash gpu/ovx3_ssh.sh 'PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/localhome/local-rohing/orch_r118_grid_shared_source_20260915_attempt2 python3 -B -m unittest discover -s /tmp/orch_r139_F4_handoff_v1/tests -p test_orch_r139_grid_astra_handoff.py -v'",
+  "not_run": ["release", "resume", "broker", "GPU admission", "timer replacement"],
+  "provider_calls": 0,
+  "signals_sent": 0,
+  "child_launches": 0,
+  "old_run_or_frozen_source_writes": 0,
+  "shared_ledger_writes": 0,
+  "cap_expansion": false,
+  "active_optimizer": false,
+  "live_rng_snapshot_available": false,
+  "archived_optimizer_rng_preserved": true,
+  "Main_pending": ["exact phase publications", "successor-aware morning/hard-wall timer custody", "actual durable release", "fresh strict GPU admission", "actual RESUMED reference before broker start"]
+}

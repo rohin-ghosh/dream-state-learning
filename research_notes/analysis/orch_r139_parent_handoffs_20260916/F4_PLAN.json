@@ -1,0 +1,96 @@
+{
+  "approved_intake": "bb2f2eb9716c97f13697dadb804fdedc6626f470:COORDINATION_2026-09-16T02:35Z",
+  "broker_pins": {
+    "gpu/orch_r110_claude_broker.py": "6d2dc623cf1e7000175de78160d6f791ac040ad3679bbd6ae852529b8db1cb99",
+    "gpu/orch_r115_grid_astra.py": "a9afab32f2b15c2c1fdf420122c908c08bd185b467b2f1677eddab3a9d6d06d7",
+    "gpu/orch_r118_astra_slots.py": "2c0e63311dac814044234c1fc48d4650aab4947f560620bbc79ccbbbd67d7a4d",
+    "gpu/orch_r118_node3_6_grid_broker_http.py": "7ca44f23b83b334f91b539c22944814602577970b892fef85e09ef75ce0e9d18",
+    "gpu/orch_route_parent_campaign_providers.py": "b0f76da0d2037aa8dd5b922cc57942ba4f9ac7ec9249c4367380a9b5791ffc14"
+  },
+  "broker_runtime": "/tmp/orch_r118_grid_http_source_20260915_v1",
+  "child_launches": 0,
+  "counter_reset": false,
+  "cumulative_caps": {
+    "NATIVE": 1615314,
+    "PARENT": 404430
+  },
+  "custody_sha256": "28c8d5d052d289ec8f3feaa0095e083f0945b1f0829dc3dec1b8ce19f15913bd",
+  "hard_end_unix": 1789596240,
+  "morning_unix": 1789538400,
+  "new_segment_cap": "existing cumulative PARENT ceiling minus ACTUAL boundary PARENT high-water",
+  "observed_counts": {
+    "NATIVE": 4233,
+    "PARENT": 320
+  },
+  "observed_cycle": 106,
+  "observed_unix": 1789526803.4716673,
+  "old_Claude_cap": 298,
+  "optimizer_mode": "NO_ACTIVE_OPTIMIZER_ARCHIVED_ADAMW_RNG_BYTES_PRESERVED",
+  "output": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/r139_astra_handoff_v1",
+  "predecessor": {
+    "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+    "command_sha256": "760f7c7ae697a6a8881e7b2d9bda6c2d398b0678bbcd2a5ef26989b875b29c43",
+    "pid": 3324550,
+    "start_ticks": "3106304",
+    "uid": 2524
+  },
+  "provider_calls": 0,
+  "references": {
+    "broker_config": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/BROKER_CONFIG.json",
+      "sha256": "fbd5644482513b4604ed7aa782f841a66ad05291abbe8ce732f9dac66276b96c"
+    },
+    "budget": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/LEASE_BUDGET.json",
+      "sha256": "afd47a446543700ec1e838fd2584ba05080c9f537a5a70b0ee9483ec3b5cb41c"
+    },
+    "checkpoint": {
+      "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/generation_000000/sleep/checkpoint/CHECKPOINT.json",
+      "sha256": "43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d"
+    },
+    "config": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/CONFIG.json",
+      "sha256": "b75690eae7e762834abd9ca824c3deacbdfe1d6d9045e2c8e13dc4fbd2a090a8"
+    },
+    "loaded": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/LOADED.json",
+      "sha256": "6b9db52399488c777e4aa7b90dbb38555d6445cd611f11d1864d96ff3d0c2813"
+    },
+    "old_Claude_config": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/CONFIG.json",
+      "sha256": "8ff36d67256330dbbf728fedf191e307719070b268edcd3eb124a04f84ac8f3b"
+    },
+    "old_final_plan": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/final_20260916T060000Z_r119_v1/PLAN.json",
+      "sha256": "419982b772ae1b83d8d83d19bdf04779e91cf74069aa5661e9924433c8635104"
+    },
+    "old_morning_timer": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/final_20260916T060000Z_r119_v1/ARMED.json",
+      "sha256": "f5bdcfff42379152e721528dbf29844759e942dc0e3c161ecf51e27448f77f47"
+    },
+    "old_wall_timer": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/final_20260916T060000Z_r119_v1/WALL_ARMED.json",
+      "sha256": "9df97c4444ba7330c3097216e024ef4906381d9c9aff58d6ba84d243194f1f80"
+    },
+    "ready": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/READY.json",
+      "sha256": "8928d6b487459bda4a831f6bc3963a2d0345475261d1f89df6284c89232633f3"
+    }
+  },
+  "release_condition": "NEXT_DURABLE_COMPLETE_TWO_EPISODE_CYCLE_NO_INFLIGHT_CALLS",
+  "requested_model": "openai/openai/gpt-6-astra",
+  "requested_scope": "R121_LEVEL1_F4_PROSPECTIVE_PARENT_CHOICE_NO_RESET",
+  "required_Main_publication": [
+    "exact plan hash and approved scope",
+    "live successor-aware morning and hard-wall custody receipt",
+    "exact stopped-and-released durable boundary",
+    "fresh strict GPU admission before resume"
+  ],
+  "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4",
+  "runtime_rng_mode": "GREEDY_NO_SAMPLING_NO_LIVE_RNG_CHECKPOINT_AVAILABLE",
+  "schema": "R139_F4_SAVED_STATE_HANDOFF_V1",
+  "signals_sent": 0,
+  "source_sha256": "adc2598e89e3917840129c319a58de122ebda832af7e1acae3dce77562c3c778",
+  "status": "STAGED_NOT_AUTHORIZED",
+  "train_end_unix": 1789596120
+}

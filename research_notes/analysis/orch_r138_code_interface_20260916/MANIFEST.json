@@ -1,0 +1,26 @@
+{
+  "schema": "R138_INTERFACE_AUDIT_MANIFEST_V1",
+  "scope": "R121_LEVEL1_POSTHOC_DIAGNOSTIC_ONLY",
+  "files_sha256": {
+    "gpu/orch_r138_code_interface_audit.py": "48a2ba72ce15cdded4a352c504503203352bbd6ecd466c5e644eae6bb0aa7d8f",
+    "tests/test_orch_r138_code_interface_audit.py": "2bb7dfbfbc56ada4aec38bfc438629794d08b36c022d5b5d79bdc2cc8df7e7f1",
+    "DIAGNOSTIC.json": "e4ce0e1100de1d8a1ea3fe018c80d6db5ec898b1f00b64421d0e35dd04dd5273"
+  },
+  "diagnostic_bytes": 53323,
+  "verified_artifacts": 393,
+  "evidence_sha256": "bd655678955081f46b7694a0c29b84ba3e8f59b1c1211a641f9acfe2d406ea2d",
+  "frozen_plan_sha256": "4e6c6093b50d0ec3b79be50134a60cb9f5796da8034bf85b2b65bdc50e987195",
+  "saved_author_reduction_sha256": "d4080ff2bb8dfc34d976bc21c801f1943b85f0cbd7264ddf74a61a2238029a01",
+  "saved_author_results_sha256": "6aac5f0b942eb3a06336d9c258ddc3373f71db5a4a1500162cef8f0635f3fd88",
+  "local_tests": {"passed": 19, "seconds": 0.011},
+  "native_tests": {"passed": 19, "seconds": 0.015},
+  "local_test_command": "PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests -p test_orch_r138_code_interface_audit.py -q",
+  "node_command": "bash gpu/ovx3_ssh.sh 'PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/localhome/local-rohing/orch_r136_code_feedback_20260915_attempt1/source python3 -B /tmp/orch_r138_code_interface_audit_v2/gpu/orch_r138_code_interface_audit.py --expected-self-sha256 48a2ba72ce15cdded4a352c504503203352bbd6ecd466c5e644eae6bb0aa7d8f'",
+  "preserved_preliminary_failure": "/tmp/orch_r138_code_interface_audit_v1",
+  "preliminary_failure_reason": "Exact author status is COMPLETE_AUTHOR_REDERIVED, not generic COMPLETE; corrected and regression tested before successful audit.",
+  "canonical_scores_changed": false,
+  "raw_exported": false,
+  "provider_calls": 0,
+  "GPU_calls": 0,
+  "training_or_admission": false
+}
