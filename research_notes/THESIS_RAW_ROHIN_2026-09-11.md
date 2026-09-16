@@ -1039,3 +1039,15 @@ have we had any success iwth any porstign adapther? markdown wdym by that, no me
 ### Fable's reading (not his words)
 
 Questions on the four-condition scope after I listed the open decisions: (1) has any existing adapter shown success (to serve as the level-1 starting point); (2) what "Markdown contract" means; (3) no embargo or readout schedule is needed, seeds are not a concern for him now; (4) the skill and task family — he is not sure yet; (5) how many GPUs are set aside for the skill-acquisition experiment. Answered in chat; decisions (3) relayed to the orchestrator; skill left open with the watcher's recommendation (math with checker) marked as a recommendation.
+
+---
+
+## Message 127 — 2026-09-16 ~08:40 UTC (typed, then a forwarded startup draft from his reasoning agent; the draft is saved in full in research_notes/forwarded/CONTINUAL_LEARNER_STARTUP_DRAFT_v1_2026-09-16.md)
+
+up just approve eveyrhitng, and for the ocnital leanign systme im tired so im goig n to have you sned astra to do porbes fo rhtis, agian all my rultts o strihg to satra ieen if its intrurpign someitng thi sis what I want here : [forwarded: "Use this startup draft to launch a small pilot while I rest. …" + "Continual learner — startup draft v1"]
+
+### Fable's reading (not his words)
+
+- **Standing authorization: approve everything** — every Codex approval prompt in the orchestrator's session is to be approved by the watcher without waiting.
+- **Rulings go straight to Astra, even if it interrupts something** — the watcher may interrupt the orchestrator's turn to deliver his instructions; no more queueing behind long turns.
+- **The continual learning system tonight (he is resting):** Astra runs the pilot from the forwarded startup draft — fill the machine-side placeholders from the running implementation; verify continuity first (history survives task boundaries and sleep, tool results are real, generation resumes without invented child thoughts; describe exactly what happens at an end token, under context pressure, and at sleep); then Astra and Fable talk with the child, one leading at a time, responding to what it does, taking its questions seriously, never prescribing a recurring thought format or rewarding length/repetition; the child may use its workspace and resources, write notes/skills, run experiments; training configuration fixed; save starting checkpoint, attributed transcript, parent messages, sleep checkpoints, a small before/after capability check, failures; explicit run budget within allocated resources; a short end-to-end run first, then continue within budget; concise handoff for Rohin (what ran, what changed after sleep, revealing interactions, loops/failures, recommended next experiment). This supersedes, for this pilot's console conversation, the "Fable out as parent" ruling of message 121: Fable speaks to the child through the console as a deliberate conversational participant, not as an automated turn-by-turn sub-parent.
