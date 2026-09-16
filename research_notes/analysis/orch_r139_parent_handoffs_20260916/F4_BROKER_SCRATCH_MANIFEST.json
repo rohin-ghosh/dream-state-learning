@@ -1,0 +1,44 @@
+{
+  "schema": "R139_F4_SCRATCH_ONLY_WRAPPER_V1",
+  "status": "STAGED_TESTED_NOT_LAUNCHED",
+  "date_utc": "2026-09-16",
+  "files_sha256": {
+    "gpu/orch_r139_grid_broker_scratch.py": "790d65d1e69b4dd6d514ed3572fb458b1e7d6d748cea3feddd373333e6b3300b",
+    "tests/test_orch_r139_grid_broker_scratch.py": "6c4a1f352baec21bab2e1ed31de7614851cb6c1f7bb29a9302fdf5bea098a2f4",
+    "research_notes/analysis/orch_r139_parent_handoffs_20260916/F4_BROKER_SCRATCH_HANDOFF.md": "52b3ea898d42f8e4f660a7e2d2fdb19cca4ce679816de6731f7ae383c7fc4ee4"
+  },
+  "stage": "/data/home/rohing/courier/runtime/orch_r139_F4_broker_source_v1",
+  "raw_scratch_root": "/data/home/rohing/courier/runtime/orch_r139_F4_broker_scratch_v1",
+  "frozen_handoff_sha256": "adc2598e89e3917840129c319a58de122ebda832af7e1acae3dce77562c3c778",
+  "frozen_timer_sha256": "8dd31979a4ca1cafbf2a3dc9d7724adf2cb5ccb4c25610480d0add2730ebc10a",
+  "frozen_plan_sha256": "21cdcf5ce41403176b1a46d12c05fdf5c877f0bd89b82890780444509291a546",
+  "literal_changes": ["serve scratch allocator directory", "Astra evaluator scratch directory gate", "unchanged 10-GiB floor probes scratch filesystem"],
+  "shared_coordination": {
+    "path": "/tmp/orch_astra_http_slots",
+    "unchanged": true,
+    "limit": 4,
+    "content": "empty shared lock files, not raw transcripts",
+    "reason": "Do not create an independent concurrency pool"
+  },
+  "tests": {
+    "repository_CPU_passed": 13,
+    "staged_VM_CPU_passed": 13,
+    "uses_actual_pinned_VM_transport_with_synthetic_inputs": true,
+    "command_blocks_syntax_checked": 4,
+    "staged_compile": "CPU_COMPILED_NO_DISPATCH",
+    "log_sha256": "eddaf327013ea52be6efabd692fb11e1be8899c132468d8fad75b910545ff166",
+    "command": "PYTHONDONTWRITEBYTECODE=1 TMPDIR=/data/home/rohing/courier/runtime CUDA_VISIBLE_DEVICES= python3 -B -m unittest discover -s tests -p test_orch_r139_grid_broker_scratch.py -v",
+    "node_tests": "Not applicable: wrapper targets existing VM-only broker runtime"
+  },
+  "provider_calls": 0,
+  "live_queue_reads": 0,
+  "claims_created": 0,
+  "signals_sent": 0,
+  "broker_launches": 0,
+  "credential_or_provider_configuration_reads": 0,
+  "frozen_source_changes": 0,
+  "shared_ledger_edits": 0,
+  "no_Git_operations": true,
+  "unchanged": ["prompts", "model", "effort", "token cap", "timeouts", "visibility", "historical exclusions", "claims", "cumulative caps", "walls", "no retry", "node-local archive verification"],
+  "Main_sequence": ["publish wrapper", "complete native restoration", "capture verified current-native callback", "publish separate broker authorization bound to actual initial RESUMED and wrapper", "launch wrapper once"]
+}
