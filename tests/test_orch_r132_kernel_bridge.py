@@ -49,6 +49,14 @@ class ResultSummaryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'finished_kernel_result_status'):
             result_summary(self.result('DISPATCH_INCOMPLETE'))
 
+    def test_invalid_candidate_feedback_does_not_claim_execution(self):
+        result = self.result('REQUEST_REJECTED')
+        result.update(launch_attempted=False, error='imports_not_allowed')
+        text = result_summary(result)
+        self.assertIn('REQUEST_REJECTED', text)
+        self.assertIn('imports_not_allowed', text)
+        self.assertNotIn('reported_speedup=', text)
+
 
 if __name__ == '__main__':
     unittest.main()

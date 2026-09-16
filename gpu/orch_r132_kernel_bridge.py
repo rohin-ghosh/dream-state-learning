@@ -6,8 +6,9 @@ import json
 from pathlib import Path
 import re
 
-from gpu.orch_r125_cpu_experiment import read_document, read_regular, verify_origin
+from gpu.orch_r125_cpu_experiment import digest, read_document, read_regular, verify_origin
 from gpu.orch_r127_pilot_console import _directory, _inbox, _read
+from organism_v6.orch_r125_experiment_request import make_request
 
 
 def require(condition, reason):
@@ -16,8 +17,6 @@ def require(condition, reason):
 
 
 def child_request(root, index):
-    from gpu.orch_r132_kernel_executor import make_request
-
     require(type(index) is int and index > 0, 'positive_record_index')
     record = read_document(read_regular(Path(root)/'stream/records'/f'{index:020d}.json', 33554432))
     require(record.get('kind') == 'RESPONSE', 'child_response_only')
@@ -26,6 +25,8 @@ def child_request(root, index):
     require(len(blocks) == 1, 'one_explicit_kernel_request')
     request = make_request(blocks[0], dict(kind='TRAIN_CHILD_RESPONSE', record_index=index,
                                          record_sha256=record['sha256']))
+    request.update(schema='R132_KERNEL_REQUEST_V1', task='triton_add_f32_v1')
+    request['request_id'] = digest({key: value for key, value in request.items() if key != 'request_id'})
     verify_origin(request, root)
     return request
 
@@ -35,7 +36,8 @@ def result_summary(result):
     require(result.get('origin', {}).get('child_generated') is True, 'actual_child_origin')
     status = result.get('status')
     require(status in ('CORRECT', 'INCORRECT', 'KERNEL_ERROR', 'PROCESS_FAILED', 'TIMEOUT',
-                       'OUTPUT_LIMIT', 'TEARDOWN_UNVERIFIED', 'DISPATCH_FAILED_NO_RETRY'),
+                       'OUTPUT_LIMIT', 'TEARDOWN_UNVERIFIED', 'DISPATCH_FAILED_NO_RETRY',
+                       'REQUEST_REJECTED'),
             'finished_kernel_result_status')
     lines = ['Kernel tool result: ' + status]
     measurement = result.get('measurement', {})
@@ -76,12 +78,26 @@ def publish_result(root, result_path):
 
 
 def dispatch(root, index, *, spool, runtime_root, gate_path, admission_path):
-    from gpu.orch_r132_kernel_executor import run_request
+    from gpu.orch_r132_kernel_executor import parse_request, run_request
 
     request = child_request(root, index)
-    result = run_request(json.dumps(request).encode(), spool=spool, runtime_root=runtime_root,
-                         gate_path=gate_path, admission_path=admission_path,
-                         origin_verifier=lambda value: verify_origin(value, root))
+    raw = json.dumps(request).encode()
+    try:
+        parse_request(raw)
+    except ValueError as error:
+        destination = Path(spool)/request['request_id']
+        destination.mkdir(parents=True, exist_ok=False, mode=0o700)
+        result = dict(schema='R132_KERNEL_RESULT_V1', request_id=request['request_id'],
+                      source_sha256=request['source_sha256'], origin=verify_origin(request, root),
+                      status='REQUEST_REJECTED', launch_attempted=False, error=str(error))
+        with (destination/'REQUEST.json').open('xb') as output:
+            output.write(raw)
+        with (destination/'RESULT.json').open('x') as output:
+            json.dump(result, output, sort_keys=True, allow_nan=False)
+    else:
+        result = run_request(raw, spool=spool, runtime_root=runtime_root,
+                             gate_path=gate_path, admission_path=admission_path,
+                             origin_verifier=lambda value: verify_origin(value, root))
     path = Path(spool)/request['request_id']/'RESULT.json'
     require(read_document(read_regular(path, 1048576)) == result, 'persisted_result_required')
     receipt = publish_result(root, path)
