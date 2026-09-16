@@ -1,0 +1,73 @@
+{
+  "schema": "R140_READ_ONLY_NATIVE_UPTAKE_V1",
+  "lane": "F2",
+  "event_window_utc": ["2026-09-16T02:34:26.838465+00:00", "2026-09-16T03:34:26.838465+00:00"],
+  "event_window_unix": [1789526066.8384652, 1789529666.8384652],
+  "root": "/localhome/local-rohing/orch_r139_math_astra_handoff_20260916_v1/F2",
+  "predecessor_root": "/localhome/local-rohing/orch_math_feedback_uptake_r124_readout_20260915_attempt1/F2",
+  "queue_root": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1",
+  "actor": {
+    "pid": 2627464,
+    "start_ticks": "6361129",
+    "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+    "command_sha256": "92ef90a80ddcf673e7a9dcd65bfb08f20a120f5c09a96338c80097a21cbe1f58",
+    "alive_at_unix": 1789529666.8384652,
+    "source": "/localhome/local-rohing/orch_r139_math_astra_handoff_source_20260916_v1/gpu/orch_r139_math_astra_handoff.py",
+    "source_sha256": "ab81a47a460e129c0fdd8017f9cd42fbedf698b3e0581b79f16f5a1b42eb50e2"
+  },
+  "broker": {
+    "pid": 2229344,
+    "start_ticks": "163495612",
+    "boot_id": "6923d4d7-1372-4852-a65d-280a2a9bf831",
+    "command_sha256": "280f49898d7dbd5c2cb31b0f23146069d7cb8a0c1d84807cb6114cb438403a57",
+    "alive_at_unix": 1789529494.4993029,
+    "source": "/data/home/rohing/courier/runtime/r139_f2_astra_handoff_v1/orch_r139_math_astra_handoff.py",
+    "source_sha256": "ab81a47a460e129c0fdd8017f9cd42fbedf698b3e0581b79f16f5a1b42eb50e2"
+  },
+  "window_publications": {"COMPLETE": 4, "SILENT": 0, "MISSING": 0},
+  "window_native_applied_current_epoch": {"COMPLETE": 2, "SILENT": 0, "MISSING": 0},
+  "window_native_applied_predecessor_epoch": {"COMPLETE": 0, "SILENT": 0, "MISSING": 2},
+  "window_native_applied_logical_lane": {"COMPLETE": 2, "SILENT": 0, "MISSING": 2},
+  "publication_hashes": {
+    "R121_C000046_E0_experience": "13096a1877acde11854a744a24a84cbc1abd95473b1eef0b4940f40ae3553c2b",
+    "R121_C000046_E1_experience": "a572772eeeb892b6be308c082521916635c9506420e38efc5ac034f333751e04",
+    "R121_C000047_E0_experience": "7c6b37a2d1ea273654da133c2159c4a54853bdb78ed1fca033850ff6c45e5866",
+    "R121_C000047_E1_experience": "999e8f0192ed672493bad143b72fa3e96e5836405ea385bea2ad7539398f1b5e"
+  },
+  "publication_response_hashes_all_match": true,
+  "actual_model": "openai/openai/gpt-6-astra",
+  "uptake": [
+    {"id":"R121_C000046_E0_experience","status":"COMPLETE","published_unix":1789528181.1565359,"applied_unix":1789529135.6010966,"applied_sha256":"3b9c0b9b6a2bb0aa761e2d9eb42bb29340daa231c03ab8059ff601191aade4c2","injected_before":"episode","response_hash_matches":true},
+    {"id":"R121_C000046_E1_experience","status":"COMPLETE","published_unix":1789528244.9566016,"applied_unix":1789529135.6022766,"applied_sha256":"779f9eefc36ab49471e3374d0d1b1d76f6a3b634a58ebd797b986454dfc65aa2","injected_before":"episode","response_hash_matches":true}
+  ],
+  "shared_completed_native_call_witness": {
+    "path": "cycle000047/CALL_00001187.json",
+    "sha256": "049f77ae0bd933b9df7e193d2c98f80664cfbd384e5083efe698cb511d9042d8",
+    "phase": "episode",
+    "started_unix": 1789529135.6068897,
+    "finished_unix": 1789529136.7472522,
+    "each_exact_parent_guidance_matches_actual_user_message": true,
+    "parent_requests_witnessed": 2,
+    "distinct_native_calls": 1
+  },
+  "published_not_yet_applied_at_event_window_end": ["R121_C000047_E0_experience", "R121_C000047_E1_experience"],
+  "predecessor_missing_hashes_preserved": {
+    "R121_C000044_E0_experience": "8a2b24c30a7488d0c96450791dddbb03ce4efdfa0a81077029577cb436f6940f",
+    "R121_C000044_E1_experience": "cc89752ab9d3e7dd9b493a65835c5980169cf8a21171e7eea1e0a9e9bf4ad5f4"
+  },
+  "progress": {
+    "launch_optimizer_steps": 15981,
+    "committed_cycle": 46,
+    "committed_optimizer_steps": 16460,
+    "committed_delta_since_launch": 479,
+    "native_reservations": 1192,
+    "parent_reservations": 134,
+    "active_cycle": 47,
+    "unsaved_update_samples": [{"observed_unix":1789529439.9445696,"updates":203},{"observed_unix":1789529515.667082,"updates":234},{"observed_unix":1789529666.8384652,"updates":265}],
+    "active_updates_mtime_unix": 1789529662.4337869,
+    "terminal_present": false,
+    "unsaved_updates_are_not_committed_checkpoint_steps": true
+  },
+  "claim_scope": "Actual prompt injection and continuing training, not measured benefit, reasoning improvement or retained learning",
+  "mutations_calls_signals_launches": 0
+}

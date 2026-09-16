@@ -1,0 +1,61 @@
+{
+  "schema": "R140_READ_ONLY_NATIVE_UPTAKE_V1",
+  "lane": "A2",
+  "event_window_utc": ["2026-09-16T02:34:26.838465+00:00", "2026-09-16T03:34:26.838465+00:00"],
+  "event_window_unix": [1789526066.8384652, 1789529666.8384652],
+  "root": "/localhome/local-rohing/orch_math_feedback_uptake_r124_readout_20260915_attempt1/A2",
+  "actual_runtime_service": "runtime_recovery5",
+  "plan_sha256": "3d387dd15e2424871163773b6d7e97441cb51a60278487ef64e25486cb56d80e",
+  "queue_root": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane5",
+  "actor": {
+    "pid": 4156720,
+    "start_ticks": "3661474",
+    "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+    "command_sha256": "910d612c4493b2ad86784ede50dfd98a78e9d2103dcc5810f41b67a747c89a39",
+    "alive_at_unix": 1789529666.8384652,
+    "source": "/localhome/local-rohing/orch_math_feedback_uptake_r125_runtime_source_20260915_v4/gpu/orch_math_feedback_uptake_r125_runtime_scan.py",
+    "source_sha256": "310980c7b141abaa9cb17d552a2692fbb1e7670b576c8363c5567af406e181c1",
+    "frozen_runtime_dependency": "/localhome/local-rohing/orch_math_feedback_uptake_r124_runtime_source_20260915_v2/gpu/orch_math_feedback_uptake_r124_runtime.py",
+    "frozen_runtime_dependency_sha256": "b27d8196b9a6f4edae3e239abbd699858426d8d2f056640bb3c72eba28c4a1b5"
+  },
+  "broker": {
+    "pid": 2017450,
+    "start_ticks": "163239415",
+    "boot_id": "6923d4d7-1372-4852-a65d-280a2a9bf831",
+    "command_sha256": "7b5add99d49ac30bc3a482f44dabfb8a21063516dd0a33eeb2adad3484984669",
+    "alive_at_unix": 1789529494.4993029,
+    "source": "/data/home/rohing/courier/runtime/r137_a2_request_repair_v3/orch_r137_math_request_repair.py",
+    "source_sha256": "31691422dff7f597fd4ebbf15521d45f6d64bf1ce9479953c44e16fc6bc459c6"
+  },
+  "window_publications": {"COMPLETE": 4, "SILENT": 4, "MISSING": 0},
+  "window_native_applied": {"COMPLETE": 4, "SILENT": 3, "MISSING": 1},
+  "publication_response_hashes_all_match": true,
+  "complete_applied_response_hashes_all_match": true,
+  "actual_model": "openai/openai/gpt-6-astra",
+  "completed_native_guidance_witnesses": [
+    {"id":"R121_C000039_E1_experience","applied_unix":1789526338.9810183,"applied_sha256":"8e6ce2f608e8d8ce99ac1371c34e427e65f32b170023b68802480eaf490c17a2","call":"cycle000040/CALL_00000929.json","call_sha256":"26190f897e1bb7e5a457f7306b74921f15a21bd9d9fe192e7d38b40eda06737f"},
+    {"id":"R121_C000040_E1_experience","applied_unix":1789527317.571133,"applied_sha256":"23dd3de7686a7841213cbe2355bdb4c5c7ada4bea8e04f8e1dd91d5086c55ede","call":"cycle000041/CALL_00000955.json","call_sha256":"d852c738aab32662dd971796f221dfd19d75224116208203b4318f69d26b9060"},
+    {"id":"R121_C000041_E1_experience","applied_unix":1789528295.8503077,"applied_sha256":"b07cf1673e3d9d8c604a28353049e8508d035be7e307bfa7233f743288c55716","call":"cycle000042/CALL_00000981.json","call_sha256":"c71c9dd66ab64c8dd04eec78f487baf475caf17c1faaefca5e4bc49d1cf19d8b"},
+    {"id":"R121_C000042_E1_experience","applied_unix":1789529291.6210926,"applied_sha256":"4786a8e305b5bf9e1c765a4e0da1bc05e12678466807929974770b1360916b9d","call":"cycle000043/CALL_00001007.json","call_sha256":"534a6a97b318a8304793f7d8699297a4785830940b8836022d2c9c71c1c73747"}
+  ],
+  "witness_rule": "Exact response plan guidance equals a user message in the subsequent completed native TRAIN episode call; checked node-locally, never exported",
+  "native_silent_ids": ["R121_C000040_E0_experience","R121_C000041_E0_experience","R121_C000042_E0_experience"],
+  "historical_missing": {"id":"R121_C000039_E0_experience","sha256":"f7debda21baf511f617582f37e16d9c2f8f46e4bc60804f24e8a9a16407087a3"},
+  "window_count_explanation": "C39E1 COMPLETE publication predates this window but native uptake is inside it; C43E0 SILENT and C43E1 COMPLETE publications are inside this window but native uptake was not yet present",
+  "published_not_yet_applied_at_event_window_end": ["R121_C000043_E0_experience","R121_C000043_E1_experience"],
+  "progress": {
+    "committed_cycle": 42,
+    "committed_optimizer_steps": 16509,
+    "native_reservations": 1012,
+    "parent_reservations": 110,
+    "active_cycle": 43,
+    "unsaved_update_samples": [{"observed_unix":1789529399.0782871,"updates":70},{"observed_unix":1789529439.9445696,"updates":113},{"observed_unix":1789529515.667082,"updates":182},{"observed_unix":1789529666.8384652,"updates":225}],
+    "active_updates_mtime_unix": 1789529665.0488124,
+    "terminal_present": false,
+    "active_runtime_guard_terminal_present": false,
+    "old_root_guard_terminal_is_historical_not_current_failure": true,
+    "unsaved_updates_are_not_committed_checkpoint_steps": true
+  },
+  "claim_scope": "Actual parent guidance injection and continuing training, not science-success evidence",
+  "mutations_calls_signals_launches": 0
+}

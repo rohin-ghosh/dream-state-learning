@@ -1,0 +1,76 @@
+{
+  "schema": "R140_READ_ONLY_NATIVE_UPTAKE_V1",
+  "lane": "F1",
+  "event_window_utc": ["2026-09-16T02:34:26.838465+00:00", "2026-09-16T03:34:26.838465+00:00"],
+  "event_window_unix": [1789526066.8384652, 1789529666.8384652],
+  "root": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1",
+  "plan_sha256": "9a5537780508ac451125d9bc4afde85a45a021fb762498efdf05c070513b884e",
+  "actor": {
+    "pid": 2664733,
+    "start_ticks": "6398743",
+    "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+    "command_sha256": "5b7590a41ba36c1a00f930a81871265fd526d1ec4787a4cfbd0a5dd1fd124efc",
+    "alive_at_unix": 1789529666.8384652,
+    "source": "/localhome/local-rohing/orch_r139_F1_astra_handoff_20260916_attempt3/handoff.py",
+    "source_sha256": "77894fad3b736a05536e26119dee946674bd3c688d1b4db82b448a43a80b9057"
+  },
+  "broker": {
+    "pid": 2281435,
+    "start_ticks": "163556511",
+    "boot_id": "6923d4d7-1372-4852-a65d-280a2a9bf831",
+    "command_sha256": "9e0f7e91ebf78dbbb7b18844525dc0ecfc8f7768457d6700653155841687b9fb",
+    "alive_at_unix": 1789529494.4993029,
+    "source": "/data/home/rohing/courier/runtime/r139_f1_repair_source_20260916_attempt3b/gpu/orch_r139_route_resume_broker.py",
+    "source_sha256": "87f3c9c209a741c5fe88b9b1216cd89dd2c2f5384dbd9134708dec753c72123f",
+    "ledger": "parent_astra_r137"
+  },
+  "frozen_component_source_sha256": {
+    "attempt2/handoff.py": "22b251d95498fa946d79aed690284c20fc5a2b9f70bb1f2597dde70944ab7fba",
+    "orch_r121_route_independent.py": "d1b0de12edc1ad45bbc1b3d20def7f0084198310ef0a7c9ee2db3f6bc6095673"
+  },
+  "window_publications": {"COMPLETE": 0, "SILENT": 2, "MISSING": 0},
+  "published_not_yet_applied_at_event_window_end": [{"id":"000120_F1_C0057","status":"SILENT","published_unix":1789529406.610255,"publication_sha256":"a687eae4a6d0e733b4710bc0e49489324e4c77877c3cce9d1bdd0f546398f1bc"}],
+  "window_native_applied": {"COMPLETE": 0, "SILENT": 1, "MISSING": 2},
+  "focus": {
+    "id": "000119_F1_C0056",
+    "publication_status": "SILENT",
+    "published_unix": 1789528619.681534,
+    "publication_path": "parent_astra_r137/000119_F1_C0056.claim/PUBLISHED.json",
+    "publication_sha256": "91b75a49876abc565da0f0fd0048b2c93c7c8271fe44963bb74c2a6254c473d5",
+    "response_sha256": "7d5f3f4d2b27e930b2e29a1186614a26c594315058f7ca0ccc793660bbfebe1b",
+    "publication_response_hash_matches": true,
+    "native_applied_status": "SILENT",
+    "native_applied_unix": 1789529336.1388445,
+    "native_applied_path": "R121_PARENT_DELIVERY/000119_F1_C0056.applied.json",
+    "native_applied_sha256": "87b612aaa8295834247848b3a230d8e6111795455093ab9ca72fb51bca8308fd",
+    "native_call": "cycle_0057/CALL_003136.json",
+    "native_call_sha256": "5328e57a98292291a326c28d5adc89545304f24514c085c144f087d0a8abde75",
+    "native_call_started_unix": 1789529336.1812491,
+    "native_call_finished_unix": 1789529339.037382,
+    "native_call_has_actual_response": true,
+    "parent_delivery_id_join_verified": true,
+    "interpretation": "SILENT disposition consumed at C57; not parent guidance text injection"
+  },
+  "historical_missing_preserved": {
+    "000117_F1_C0054": "538a45dd269bdcd53b279d530394c8c862a69f77d4e4b447de48d0e615ebc51f",
+    "000118_F1_C0055": "5eda23562afaa9529c875b80987e4ec7f2d3839f4adfd77910236701f4e3e6f1"
+  },
+  "progress": {
+    "resume_after_cycle": 55,
+    "resume_optimizer_steps": 20948,
+    "latest_complete_cycle": 56,
+    "committed_optimizer_steps": 21489,
+    "committed_delta_since_resume": 541,
+    "active_cycle": 57,
+    "active_cycle_unsaved_updates": 291,
+    "unsaved_update_samples": [{"observed_unix":1789529515.667082,"updates":170},{"observed_unix":1789529666.8384652,"updates":291}],
+    "active_updates_mtime_unix": 1789529666.2858243,
+    "reservation_counts_observed_unix": 1789529515.667082,
+    "native_reservations": 3142,
+    "parent_reservations": 120,
+    "terminal_present": false,
+    "unsaved_updates_are_not_committed_checkpoint_steps": true
+  },
+  "claim_scope": "Transport/native-disposition uptake and continuing training only; no science-success or behavioral-effect claim",
+  "mutations_calls_signals_launches": 0
+}
