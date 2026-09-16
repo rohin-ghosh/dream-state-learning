@@ -1,0 +1,66 @@
+{
+  "capped_segments": 1,
+  "completed_sleeps": 1,
+  "exit": {
+    "exit_code": 1,
+    "finished_unix": 1789539423.078015,
+    "no_retry": true
+  },
+  "failure": "Actual generated endoftext token rejected before second-sleep optimizer updates",
+  "first_generation_unix": 1789539192.8327105,
+  "generated_segments": 6,
+  "generated_tokens": 1557,
+  "last_checkpoint": {
+    "adapter_files": {
+      "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+      "adapter_config.json": "312efe1da3f1afec95729e3eae76bd7e94c7fffdd18af2e524c98d92c5cc320b",
+      "adapter_model.safetensors": "56d7b0f0a7ef21295eba3f71870723bfd20bdc85f0455e970a744f93ace653bd"
+    },
+    "adapter_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000001/adapter",
+    "adapter_state_sha256": "e8b175872143060fed166498c5c00d6999441b5d8f02264e10b4c18aabf9de1e",
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "checkpoint_sha256": {
+      "adapter": "1ef8c6d32a60e217af137cc1bf319727ac0d803945b301fd7992d9142a1e97ed",
+      "optimizer": "5020f47b0b55b45bf9976a70e4c72e2c3e7e87cd6ea1760c73178af631caaf34",
+      "rng": "5020f47b0b55b45bf9976a70e4c72e2c3e7e87cd6ea1760c73178af631caaf34"
+    },
+    "created_unix": 1789539339.7052221,
+    "optimizer_rng_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000001/optimizer_rng.pt",
+    "optimizer_steps": 48,
+    "schema": "R125_NATIVE_CONTINUITY_V1"
+  },
+  "last_journal_kind": "SLEEP_REQUEST",
+  "loaded_unix": 1789539148.1825392,
+  "native_log_sha256": "0dce96b6a54f59d8e0c94585d395ec62b441a4b26c4cf61a4f354105eab620ba",
+  "native_pid": 42074,
+  "native_pid_present": false,
+  "observed_unix": 1789539832.6846805,
+  "optimizer_steps": 48,
+  "pending_cycle": 2,
+  "physical": 2,
+  "readout_calls_completed": 0,
+  "readout_failure": "CUDA UUID missing display prefix; both readouts failed before calls",
+  "reset": false,
+  "retained_learning_claim": false,
+  "root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+  "sleep_summary": {
+    "after_adapter_sha256": "e8b175872143060fed166498c5c00d6999441b5d8f02264e10b4c18aabf9de1e",
+    "anchor_lambda": 0.25,
+    "anchor_token_exposures": 2815,
+    "before_adapter_sha256": "95966e71c3ec81487d05e02d6b770c422febfc433fe367d856a6e4817f8dbe14",
+    "checkpoint_sha256": {
+      "adapter": "1ef8c6d32a60e217af137cc1bf319727ac0d803945b301fd7992d9142a1e97ed",
+      "optimizer": "5020f47b0b55b45bf9976a70e4c72e2c3e7e87cd6ea1760c73178af631caaf34",
+      "rng": "5020f47b0b55b45bf9976a70e4c72e2c3e7e87cd6ea1760c73178af631caaf34"
+    },
+    "child_token_exposures": 8816,
+    "cycle": 1,
+    "frozen_base_verified": true,
+    "mix_kind": "OBJECTIVE_WEIGHT_NOT_TOKEN_FRACTION",
+    "optimizer_steps": 48,
+    "status": "COMPLETE",
+    "total_optimizer_steps": 48
+  },
+  "status": "STOPPED_PRE_UPDATE_SECOND_SLEEP",
+  "wrapper": "ovx3"
+}
