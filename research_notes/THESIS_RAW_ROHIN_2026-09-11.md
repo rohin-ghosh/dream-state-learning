@@ -1144,3 +1144,13 @@ will there be a gpu left? doenst have to be on node 1, also i dont wna thte shit
 ### Fable's reading (not his words)
 
 Asks whether a GPU will be left for the repo-reader child (it need not be on node 1). Orders: no waiting in queue — all the new threads should be started on implementation ASAP, in parallel.
+
+---
+
+## Message 137 — 2026-09-16 ~10:08 UTC (03:08 PDT) (typed)
+
+make sure perisitnec pareing is tried, you can look thoruhg ht data when doing checks and give parneign suggetiosn bu mostly make surewere gettign diversity
+
+### Fable's reading (not his words)
+
+Make sure PERSISTENT parenting is tried (a sustained every-boundary cadence, not just three turns). The watcher's role during checks: read the data and offer parenting suggestions, but above all make sure the threads are DIVERSE (programmes, cadences, replay variants, parent styles) so tomorrow's data covers the space.
