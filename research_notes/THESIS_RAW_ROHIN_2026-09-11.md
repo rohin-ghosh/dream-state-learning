@@ -1299,3 +1299,9 @@ Reading (Fable): operational instruction — use the supplied gateway key in pla
 > do the update
 
 Reading (Fable): operational instruction — install the Codex CLI update (0.144.4 → 0.154.0) that the relaunched session offered and I had skipped. Installed on the VM at once; the running orchestrator picks it up on its next relaunch, done at the next turn boundary.
+
+## Message 159 — 2026-09-17 ~14:25 UTC (07:25 PDT), typed, to Fable
+
+> okay did you guys have the time to check the behveirosand peceroitns perisitoing thoruhg sleep cycles?
+
+Reading (Fable): question — did we (watcher and Astra) get to check whether the behaviours and perceptions carried in a child's context persist through sleep cycles into the weights (the top-priority check from messages 153–154)? Answered with what has actually been measured so far and what the spend-cap outage delayed.
