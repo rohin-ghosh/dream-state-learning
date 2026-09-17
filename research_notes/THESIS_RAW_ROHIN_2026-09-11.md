@@ -1358,3 +1358,9 @@ Reading (Fable): RULED — tie the context-survival change to the top priority (
 > you can also peridoiclly trian base behvior by have the mdoel copy on likeclena context ans ee behvior, which is a speate way to probe, i woudltn replace one probe with another
 
 Reading (Fable): addendum to msg 163 — periodically take a copy of the model (adapter) and run it on a clean context to see its behaviour; that is a separate way to probe from watching behaviour inside the living context. Do not replace one probe with the other: keep both the in-context behaviour checks and the clean-context copy probes (the empty-context ON/OFF extraction).
+
+## Message 165 — 2026-09-17 ~17:30 UTC (10:30 PDT), typed, to Fable — the per-agent behaviour document must be well audited; review behaviour improvements across the fleet and what is missing for the MVP
+
+> did you create the docuemnt for each agent agent bevhairo, it shoudl be very wlel audidted, i also want you to look over what imrpvoetns of bevhaior have been made over the fleet and how tis pimrpoveed bevhairos and where you think we need to imrpove to get to our desired MVP outcome
+
+Reading (Fable): ORDER — (1) the per-agent behaviour document (msg 162) must be very well audited (claims checked against the journals, not impressions); (2) add a fleet-level review: which behaviour improvements have been made across the fleet over time, how they improved behaviour (evidence), and where we still need to improve to reach the desired MVP outcome (an in-context behaviour/object that survives into the weights and accumulates; then the caption-game deployment).
