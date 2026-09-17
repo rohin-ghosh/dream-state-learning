@@ -1281,3 +1281,9 @@ Reading (Fable): RULED — all hands on deck; highest priority to Astra: make su
 > what is hte sepnd cap?
 
 Reading (Fable): question — he is asking what the "spend cap" is that I reported as blocking the orchestrator and all parents since 02:35 PDT. Answered: it is the per-key budget on the API gateway the Astra calls go through; the gateway now returns HTTP 429 `budget_exceeded` ("Budget has been exceeded! Current cost: 10001.16, Max budget: 10000.0") for every call on the project key, so Astra's Codex orchestrator is "Goal blocked" and every parent worker fails with HTTPError. Only raising the key's budget or issuing a new key clears it; the watcher cannot.
+
+## Message 156 — 2026-09-17 ~13:45 UTC (06:45 PDT), typed, to Fable
+
+> does this key work [key name removed]
+
+Reading (Fable): operational question after the spend-cap report — he offered an alternative API key (identified by its gateway alias; the alias is not recorded here) and asked me to test whether it works against the gateway. Tested from the VM; result reported in the reply and in the notebook.
