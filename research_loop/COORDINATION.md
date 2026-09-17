@@ -32769,3 +32769,7 @@ Delivered with interrupt at 08:03Z. Watcher's answer to Rohin on metacognition a
 - Parent deliveries in the last 15 min: node 1 a100 4 inbox files (classroom_brain +1, classroom_creative +1), node 3 ovx2 2 (creative_select +1); node 5 ovx3 0 and node 4 a40r 0 so far.
 - Fleet: 22 live, no stalls; run1 → ckpt 45 (SLEEP_COMPLETE), brain_free → 40, C2 36, C3 34, creative_select 40 (SLEEP_REQUEST).
 - Codex 0.154.0 installed on disk (Rohin msg 158 "do the update"); the running instance is 0.144.4. Relaunch on the same session deferred to Astra's next idle moment so the credential recovery turn is not cut.
+
+### Watcher — 2026-09-17 14:16Z (07:16 PDT) — Codex updated to 0.154.0 and resumed
+- Waited for the orchestrator's idle moment (14:13:35Z, after the parent-recovery turn ended), then `/quit` (exited cleanly in 4 s this time), relaunched `codex resume` on the same session with the new key. Codex 0.154.0 asked whether to resume the goal; chose "Resume goal". Status: Pursuing goal, Working; Astra's first line after resume: "Parent recovery made concrete progress. Next I'll advance replay and retention tests."
+- New-version warning seen once at startup: model metadata for `openai/openai/gpt-6-astra` not found, fallback metadata used (profile still sets model_context_window 1,050,000). Cosmetic unless context handling changes; watching.
