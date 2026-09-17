@@ -32841,3 +32841,6 @@ Delivered with interrupt at 08:03Z. Watcher's answer to Rohin on metacognition a
 
 ### Watcher — 2026-09-17 16:55Z (09:55 PDT) — RULING relayed: preserve context across sleep on all lives now (Rohin msg 163)
 - Rohin (verbatim msg 163): connect the context-survival finding to the top priority (behaviour learned through the LoRA); "make sure this step is happening on all steps right now". Accepts the reduced obviousness of the in-weights check; behaviour shows in different forms and, if learned, in extraction. Relayed to Main with interrupt at 16:55Z: apply the smallest safe runtime change to all 24 lives via saved-boundary handoffs (exact state preserved, retelling still trained), compact only at a context threshold (proposed 12k of 16,384) with the retelling as the summary, keep the empty-context ON/OFF probes as the measurement.
+
+### Watcher — 2026-09-17 17:00Z (10:00 PDT) — Rohin msg 164 relayed: keep both probes
+- Rohin (verbatim msg 164): periodically run a copy of the model on a clean context to see its behaviour — a separate probe; "I wouldn't replace one probe with another." So with context now preserved across sleep, keep (a) in-context behaviour observation on the living stream and (b) periodic clean-context copy probes (empty history, adapter ON vs OFF, R172/R176 style) — both, on all lives. Relayed to Main with interrupt.

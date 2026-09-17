@@ -1352,3 +1352,9 @@ Reading (Fable): (1) ORDER — a document of the distilled observations of all c
 > okay have the context worry conencted to the fist priotty of bahvairo leanringed thorugh lora, this will bascially make it so that its a ltitel less obvoisy to chekc if bevhiaor is leanred but luckily bevhiaro sint so obvisous percetoin and self relfoitn things of that mature come3 in differnt forms and if its propelry beign leraned then itll show ome extraiont idelaly so yea make sur this step is hapepngin o all steps rn
 
 Reading (Fable): RULED — tie the context-survival change to the top priority (behaviour learned through the LoRA): keep the child's context across sleeps, on all lives, now ("make sure this step is happening on all steps right now"). He accepts the cost: with context surviving it is a little less obvious whether a behaviour has been learned into the weights, but behaviour is not obvious anyway — perception and self-reflection show up in different forms — and if it is properly learned it will show in extraction (empty-context probes). So: preserve context across sleep fleet-wide, keep training on it, and keep checking by extraction.
+
+## Message 164 — 2026-09-17 ~17:25 UTC (10:25 PDT), typed, to Fable — clean-context copy probes are a separate probe; keep both
+
+> you can also peridoiclly trian base behvior by have the mdoel copy on likeclena context ans ee behvior, which is a speate way to probe, i woudltn replace one probe with another
+
+Reading (Fable): addendum to msg 163 — periodically take a copy of the model (adapter) and run it on a clean context to see its behaviour; that is a separate way to probe from watching behaviour inside the living context. Do not replace one probe with the other: keep both the in-context behaviour checks and the clean-context copy probes (the empty-context ON/OFF extraction).
