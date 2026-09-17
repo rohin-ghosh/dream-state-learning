@@ -32748,3 +32748,8 @@ Delivered with interrupt at 08:03Z. Watcher's answer to Rohin on metacognition a
 ## [Fable — tick] 2026-09-17T12:33Z (05:33 PDT) — still blocked by the spend cap (goal blocked; parent results 12:25–12:30Z all HTTPError); all 22 lives generating unparented (C1 35, C2 35, C3 33, C4 32, C5 31; run1 44, pilot 41; legacy 36–41). Nothing else changed.
 
 ## [Fable — tick] 2026-09-17T13:03Z (06:03 PDT) — still blocked by the spend cap (goal blocked; parent results 12:32–12:54Z all HTTPError); all 22 lives generating unparented (C1 35, C2 35, C3 33, C4 32, C5 31; run1 44, pilot 41, repo_reader 39; legacy 36–41). Nothing else changed.
+
+### Watcher tick — 2026-09-17 13:33Z (06:33 PDT) — still blocked by the API spend cap
+- Orchestrator pane: "■ exceeded retry limit, last status: 429 Too Many Requests … Goal blocked". `/goal resume` retries 6–7 (13:05Z, 13:20Z) both returned to Goal blocked. All parent RESULT.json in the last 30 min: PROVIDER_FAILED/MISSING, HTTPError (gateway `budget_exceeded`, cost 10001.16 vs max 10000.0). Blocked since ~09:35Z.
+- Fleet: 22 live children all generating unparented, no boundary stalls (all last records ≤ 8 min old). Checkpoints: node 5 — run1 44, pilot 41, repo_reader 39, C1 36, C2 35, C3 33, C4 33 (SLEEP_REQUEST in progress), C5 32; node 1 — classroom 36/37/41, teach 39/40/38; node 3 — 39/41/37/38/39/41; node 4 — kernel0 37, kernel_parented 36, raw_parented 37, raw_unparented 38. Parent counts unchanged (+0) fleet-wide.
+- Rohin asked (msg 155) what the spend cap is; answered (per-key gateway budget; only a raised cap or new key clears it). Retry loop re-armed (15-min `/goal resume` until the cap lifts).
