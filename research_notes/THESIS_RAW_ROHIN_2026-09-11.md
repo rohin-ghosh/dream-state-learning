@@ -1364,3 +1364,9 @@ Reading (Fable): addendum to msg 163 — periodically take a copy of the model (
 > did you create the docuemnt for each agent agent bevhairo, it shoudl be very wlel audidted, i also want you to look over what imrpvoetns of bevhaior have been made over the fleet and how tis pimrpoveed bevhairos and where you think we need to imrpove to get to our desired MVP outcome
 
 Reading (Fable): ORDER — (1) the per-agent behaviour document (msg 162) must be very well audited (claims checked against the journals, not impressions); (2) add a fleet-level review: which behaviour improvements have been made across the fleet over time, how they improved behaviour (evidence), and where we still need to improve to reach the desired MVP outcome (an in-context behaviour/object that survives into the weights and accumulates; then the caption-game deployment).
+
+## Message 166 — 2026-09-17 ~18:25 UTC (11:25 PDT), typed, to Fable
+
+> firx the node asap
+
+Reading (Fable): ORDER — recover node 3's six children (down since 10:59 PDT at an internal timeout) as fast as possible. Relayed to Astra with interrupt at once.
