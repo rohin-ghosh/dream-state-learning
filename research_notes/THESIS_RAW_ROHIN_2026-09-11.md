@@ -1233,3 +1233,17 @@ Reading (Fable): RULED — (1) retire the five degraded children (creative_none,
 > contitnue, gimme an update on parengin, the good the bad the need to change, anythgin interwting distilled
 
 Reading (Fable): continue the watch; deliver a distilled update on parenting — good, bad, what needs to change, anything interesting — covering the afternoon and evening including the community pilot.
+
+
+## Message 149 — 2026-09-17 ~07:05 UTC (00:05 PDT), typed, to Fable
+
+> tell me what hapepned again it went away
+
+Reading (Fable): the parenting update rendered in his terminal disappeared; re-send it.
+
+
+## Message 150 — 2026-09-17 ~07:08 UTC (00:08 PDT), typed, to Fable
+
+> ooh i lie this credit, i liek thi anti sychphancy this is very good work, hmm if the stoeps repalsty sut eek rencoigning, and hten tlel the mdoel to notice when it is being told the same htigns and to think about it more whya all that, have the models been taught percetion and self relfoint  btw? because you just make suer its pericingign repetping more, it needs to sorta run a cepercetion judgment thought on thigns more frequlety, like shoudp i epricipgte this more? its bascially trianing its own cotunsou attention like that ykwim and igureoug out what is workgn epciringign storngly, lets make srue the neinering is oslid ive been mkaign huge leap son what our paper scope will look like, in cmrusos how far we woudl be at righ tnow with it, ill give it in a second, make cthsoe changes they seem good, good work
+
+Reading (Fable): (1) praise for the crediting and anti-sycophancy parenting. (2) STEER on relapse: if credited steps relapse, keep recognising (crediting) them, and tell the child to notice when it is being told the same thing again and to think about why. (3) QUESTION: have the children been taught perception and self-reflection? (4) STEER: the child should run a "perception judgment" thought more often — "should I perceive this more? what is worth perceiving strongly?" — training its own continuous attention. (5) "Make sure the engineering is solid." (6) He has been making big leaps on the paper scope and will send it shortly. (7) RULED: "make those changes, they seem good" — the six changes proposed in the evening parenting update are approved.
