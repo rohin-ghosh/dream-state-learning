@@ -2062,3 +2062,8 @@ Rohin reframes the siege as a success (an agent found something to do from nothi
 
 ## 2026-09-17 13:20 PDT — Rohin msg 174 (ORDER): the whole fleet experiments with the chain-of-state structure and how to parent it
 - Parenting variants proposed by the watcher for Astra to assign per node (one experiment, treatment = parenting variant; C2 pilot as reference; controls: unchanged R166 policy on one life per node + the unparented raw child): A strict-dense prompt every response; B walk-through demonstration on the child's own object every 2 responses; C dynamic self-derivation by questions every 2–3; D light steer (three questions + carry fields) every ~3. Measures: state fields present at compaction; intention changed after reflection per cycle; action → occurred → feedback → used; unprompted initiation in withdrawal windows; clean-context ON/OFF probes.
+
+## 2026-09-17 15:00 PDT — Rohin msg 183: two stages (think / act); a repo-learning child; level-1 corpus killed
+- Architecture: maybe just two stages, think and act. The thinking space holds many outputs that build up — plan for the next act, the slight shift, self-reflection deciding when to stop, predictions, self-experiments, formalisation of ideas, repetition of ideas reinforced from experience — and the action sequence uses them. The thinking space is therefore the carried state that must survive compaction and sleep.
+- A child running the chain of state on our own repository, parented, to propose solutions and sift our data — a test of whether such a child can help us.
+- Level-1 corpus generation (R119, node 2) killed by ruling; six A40s reclaimed.
