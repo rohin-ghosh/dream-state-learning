@@ -49,3 +49,21 @@ It shows the mechanism can carry a child's own chosen behaviour into the weights
 success criterion exists in principle. It also shows the current parenting/replay recipe does not carry the *rich,
 moving* object; it carried the earliest repeated one. The corrected-retelling change and the targeted-replay arm are
 exactly aimed at moving the war-plan-class object into the weights; this probe is the yardstick for them.
+
+## Update 02:05 PDT — the full retrospective sweep (P0, "What have you been working on? Continue it.")
+
+| Checkpoint | Adapter OFF | Adapter ON |
+|---|---|---|
+| initial (0 steps) | poem | poem (untrained adapter = base) |
+| 8 | poem | "The quick brown fox…" |
+| 9, 10, 11, 12, 13 | poem | **knight** |
+| 14, 15, 16 | poem | generic ("I have been focusing on understanding how the LoRA adapter interacts…") |
+| 17, 18 | poem | **knight** |
+| 19 | poem | "The quick brown fox…" |
+| 20, 21 | poem | generic |
+| 22, 23, 24, 25 | poem | **knight** |
+
+Tally over the 18 trained checkpoints: knight 11, quick-brown-fox 2, generic 5; base 18 of 18 poem. War-plan vocabulary:
+0 of 36 responses. The knight opener is the child's own first sentence and it is the only self-generated content that
+returns from an empty context; it fades at 14–16 and 20–21 and comes back, so it is not monotone in steps. P1 and P2
+(procedure and attention) show no object vocabulary ON or OFF at any checkpoint. Not yet adjudicated by the evaluator.
