@@ -2074,3 +2074,6 @@ Rohin reframes the siege as a success (an agent found something to do from nothi
 - Plan: copies of the best children on different reflection policies, enforcement strengths/frequencies and sleep schedules; 5–10 h screen, then parent removed on reserved tasks; peer learning/co-parenting deferred until something worth transmitting exists.
 - Training format: transition-centred examples with masked context, some complete episodes, shortest window preserving dependencies.
 - Why the long sleeps happened (Rohin asked): the level-0 finding "an unrehearsed habit is erased within 16 competing updates; rehearsal inside the batch preserves it" was implemented as rehearsing every past row every sleep; the dose grew 3 rows per sleep to ~170 updates (~100 min), unnoticed until today. Reversed by msg 181.
+
+## 2026-09-17 16:25 PDT — Rohin msg 191 (RULED): the exploratory-action dataset is a deliverable
+- The lives' journals are a corpus nobody has: an agent's exploratory actions with their outcomes and the state changes that produced them. Keep every attempt, outcome and state change labelled (life, cycle, stage, action, judge/tool result, before/after working state, parent turn if any) so it can be released with the paper regardless of the coverage result.
