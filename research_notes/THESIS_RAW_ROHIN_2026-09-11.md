@@ -1287,3 +1287,9 @@ Reading (Fable): question — he is asking what the "spend cap" is that I report
 > does this key work [key name removed]
 
 Reading (Fable): operational question after the spend-cap report — he offered an alternative API key (identified by its gateway alias; the alias is not recorded here) and asked me to test whether it works against the gateway. Tested from the VM; result reported in the reply and in the notebook.
+
+## Message 157 — 2026-09-17 ~13:40 UTC (06:40 PDT), typed, to Fable
+
+> here use this [API key removed]
+
+Reading (Fable): operational instruction — use the supplied gateway key in place of the one that hit its spend cap. Done at 13:43 UTC: key file on the VM swapped (old key backed up), Codex relaunched on the same session with the new key; Astra told to restart the parent workers that still hold the old key. The secret is not recorded anywhere in the repo.
