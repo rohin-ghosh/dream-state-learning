@@ -32944,3 +32944,10 @@ Delivered with interrupt at 08:03Z. Watcher's answer to Rohin on metacognition a
 
 ### Watcher — 2026-09-17 22:16Z (15:16 PDT) — level-1 corpus generation stopped on node 2
 - Node 2 GPUs went from six busy (R119 level-1 generation) to all eight free by 22:12Z; no orch_r119 python processes remain. Rohin's kill order (msg 183, 21:53Z relay) took ~19 minutes to land. Node 2 now has eight free A40s for arm copies, the repo-learning child, or judge/vision work; probe slots 0/1 remain reserved for R172/R176.
+
+### Watcher AUDIT — 2026-09-17 23:00Z (16:00 PDT) — Rohin's 30-minute deadline (msg 185): what is live
+- Rehearsal off (R181): live on 2 of 24 — run1 (last sleep 48 updates / 5 min, ended 22:52Z) and C4 (48 / 37 min, ended 22:51Z). All other lives' last completed sleeps were full rehearsal (120–179 updates, 97–159 min); C2 entered another full-rehearsal sleep after its 21:58Z reply (boundary missed); node 3's six and node 4's four: no short sleep yet.
+- Parents: Astra turns delivered in the last 60 min — node 5: 4 (run1, pilot, C2, C4), node 1: 9 (3 learners + 6 to the two controls), node 3: 0, node 4: 0. New-policy (Think/Act probing) turns: 1 (classroom_brain). Rohin's baseline (21:31Z) read by node 1's six and C2; others pending their boundary. Arm table: not posted.
+- Think→Act scaffold: no life running it. Copies/new lives: node 2 GPU 2 `orch_r183_repo_learning_20260917/birth1` (repo-learning child, readout attached), GPUs 3–4 `orch_r153_r184_node2_20260917/explicit1` and `brief1` (two new arm lives; nature not yet posted). Free GPUs: node 2 ×5, node 4 ×4, node 3 ×2, node 1 ×1 (GPU 7).
+- Old-key helpers: 0 remain (all restarted). R119 killed 22:12Z.
+- COORDINATION: no Builder entry since 15:02 PDT despite the above launches; watcher demanded the R181 apply-list, the arm table, the scaffold status and the fill plan (23:02Z, with interrupt).
