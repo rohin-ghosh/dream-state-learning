@@ -67,3 +67,11 @@ Tally over the 18 trained checkpoints: knight 11, quick-brown-fox 2, generic 5; 
 0 of 36 responses. The knight opener is the child's own first sentence and it is the only self-generated content that
 returns from an empty context; it fades at 14–16 and 20–21 and comes back, so it is not monotone in steps. P1 and P2
 (procedure and attention) show no object vocabulary ON or OFF at any checkpoint. Not yet adjudicated by the evaluator.
+
+## Update 07:40 PDT — the evaluator's private report exists
+
+The blind evaluator's settlement of the fixed 60-packet semantic batch is complete (52 valid annotations, 8 invalid/missing;
+no new model calls). It lives on node 2 under the R167 private appendices (`retention_report_20260917_generation1/`,
+`REPORT.private.md`, SHA256 8a547893…) with a VM copy under `/tmp/orch_r167_retention_report_20260917_generation1_private/`,
+and a redacted copy is in Rohin's Downloads. By the frozen protocol its labels and conclusions are for Rohin only and are
+not reproduced in this repo file or in COORDINATION; the lexical read above is the watcher's own and stands as written.
