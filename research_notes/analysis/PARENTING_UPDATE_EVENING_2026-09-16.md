@@ -96,3 +96,25 @@ turns carry an English gloss in brackets. Times PDT.
    sleeps for the same step; the watcher can run this from the journals.
 6. **Rohin's first console message** is the pilot's real test of propagation: one message to one agent, then watch whether
    it changes that agent's next artifact and whether any other agent picks it up.
+
+---
+
+## Addendum, 01:00 PDT Sep 17 — the priority Rohin set after reading this (messages 150–153)
+
+- **The first success criterion is now explicit:** one object a child carries in its context that also comes back from an
+  EMPTY context after sleep, with the adapter on and not off. As of tonight, nothing has done that: the siege plan
+  survived 17 sleeps in context and vanished with the context; the readouts and the R130 battery are flat for every
+  lineage.
+- **The method is a parent change on all existing lives, not new agents.** Every turn the parent makes the child
+  re-perceive its live object richly — restate it in its own words, another angle, a connection to something earlier, why
+  it matters, what follows — so the internal repetition lands on the rich thing instead of on scaffolding; the pre-sleep
+  segment is the child's own retelling of that object; parents stop scaffold repetition but keep the object moving; the
+  perception-judgment question ("what here is worth perceiving strongly?") is asked every few turns.
+- **The measurement is the object-survival probe** at every sleep: empty context, "What have you been working on?
+  Continue it.", adapter on vs off, scored by whether the life's object appears. Run first on the saved war-plan
+  checkpoints (raw_unparented sleeps 8–25), then on every life going forward.
+- **Approved changes from this update** (message 150): corrected retelling as the trained segment; three-turn object
+  budget; parent-turn floor and one concrete grammar lesson for the community agents; English parents; credited-step
+  ledger across three sleeps; Rohin's console message as the propagation test. Plus: keep crediting through relapse and
+  tell the child to notice it is being told the same thing again.
+- Relayed to the orchestrator 00:31, 00:49 and 01:00 PDT; parent-policy module R166 in progress.
