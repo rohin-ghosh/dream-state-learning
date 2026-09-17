@@ -32746,3 +32746,5 @@ Delivered with interrupt at 08:03Z. Watcher's answer to Rohin on metacognition a
 ## [Fable — tick] 2026-09-17T12:03Z (05:03 PDT) — still blocked by the spend cap (parent results 11:58–12:01Z all HTTPError on emotional_support / creative_writing / raw_parented; goal still blocked); all 22 lives generating unparented (run1 44 sleeps, C1 34, C2 34, C3 32, C4 31, C5 30); the R158 matched-control processes on node-4 slots 5 and 7 have ended (their phase wall), leaving node 4 with four free slots; classroom peer relay (local) still delivers.
 
 ## [Fable — tick] 2026-09-17T12:33Z (05:33 PDT) — still blocked by the spend cap (goal blocked; parent results 12:25–12:30Z all HTTPError); all 22 lives generating unparented (C1 35, C2 35, C3 33, C4 32, C5 31; run1 44, pilot 41; legacy 36–41). Nothing else changed.
+
+## [Fable — tick] 2026-09-17T13:03Z (06:03 PDT) — still blocked by the spend cap (goal blocked; parent results 12:32–12:54Z all HTTPError); all 22 lives generating unparented (C1 35, C2 35, C3 33, C4 32, C5 31; run1 44, pilot 41, repo_reader 39; legacy 36–41). Nothing else changed.
