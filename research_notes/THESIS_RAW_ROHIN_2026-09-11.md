@@ -1293,3 +1293,9 @@ Reading (Fable): operational question after the spend-cap report — he offered 
 > here use this [API key removed]
 
 Reading (Fable): operational instruction — use the supplied gateway key in place of the one that hit its spend cap. Done at 13:43 UTC: key file on the VM swapped (old key backed up), Codex relaunched on the same session with the new key; Astra told to restart the parent workers that still hold the old key. The secret is not recorded anywhere in the repo.
+
+## Message 158 — 2026-09-17 ~13:55 UTC (06:55 PDT), typed, to Fable
+
+> do the update
+
+Reading (Fable): operational instruction — install the Codex CLI update (0.144.4 → 0.154.0) that the relaunched session offered and I had skipped. Installed on the VM at once; the running orchestrator picks it up on its next relaunch, done at the next turn boundary.
