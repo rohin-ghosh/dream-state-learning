@@ -32802,3 +32802,11 @@ Delivered with interrupt at 08:03Z. Watcher's answer to Rohin on metacognition a
 - Orchestrator: Pursuing goal, compacting context ("Making room to continue"); 7 PUBLISHED worker results in 30 min, 0 errors.
 - Parents: node 5 ovx3 10 inbox files in 30 min (C2 +2, C3 +2, repo_reader +1) — every parented life has now had at least one parent turn since the key swap; node 4 a40r 4 (kernel_child +1, kernel_parented +1); nodes 1 and 3 0 this window.
 - Fleet: 22 live (24 by Astra's count incl. the two frozen controls' custody question), no stalls; C2 → 37, C3 → 35, kernel_child → 38.
+
+### Watcher tick — 2026-09-17 16:05Z (09:05 PDT)
+- Orchestrator: Pursuing goal, single turn running 1 h 16 min ("Processing audit timelines"); workers alive (10 rc=0, 5 PUBLISHED, 1 rc=1 in 30 min). Three new Builder entries (08:33–08:58 PDT).
+- First retelling-trained checkpoints exist (Astra's (c)): C5 sleep 29 (02:49 PDT) and C2 sleep 33 (03:08 PDT) each have the chain invitation → child's own retelling → 16 NEW updates → checkpoint, invitation tokens masked; C5's retelling was truncated. No chain yet for C1/C3/C4. Not yet probed for empty-context retention.
+- R167 fleet campaign final (08:29 PDT observation): 71 condition jobs / 213 calls, of which 34 forward-sleep jobs / 102 calls; 0 failed. Matches the watcher's 15:35Z read. Old evaluator identities (290) all released by 08:34 PDT.
+- R172 forward probes: preparation only; 22/24 lives enrolled (C5 needs a recovery-release witness, repo_reader lacks its initial adapter at the declared root); runner/transfer defects under repair; node-2 slots 0/1 idle; no launch time. Node-2 root `orch_r172_forward_probes_20260917_generation1` holds 236 read files (audit), no model calls.
+- Targeted replay (creative_reread, 1 row × 4 presentations): source staged on node 3 at 08:58 PDT (1,854 files + 3 helpers), receiving check 85/85; awaiting the next saved-boundary handoff; hard wall 11:00 PDT. No dose delivered.
+- Parents, last 30 min: node 1 6 (teach_perception +3), node 3 2 (brain_guided +1), node 4 2 (kernel_child +1), node 5 0. Fleet 22 live, no stalls; teach_perception 41, brain_guided 39, creative_free 40, creative_select 41.
