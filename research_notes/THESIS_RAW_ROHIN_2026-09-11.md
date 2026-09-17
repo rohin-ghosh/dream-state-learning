@@ -1557,3 +1557,9 @@ Reading (Fable): (1) STEER — every node should produce valuable, different var
 > go do the unblockin gshort sleep that a a good idea, sto c2 logn sleep we cant have mreo delays on this shit, laos another way to propogadte good behviaor is to have exapmels
 
 Reading (Fable): RULED — (1) unblock the short sleeps now; (2) STOP C2's current long (full-rehearsal) sleep rather than waiting for its boundary — no more delays; (3) examples (demonstrations of good behaviour, e.g. C2's k=3 exchange) are another way to propagate good behaviour to other children.
+
+## Message 189 — 2026-09-17 ~23:15 UTC (16:15 PDT), typed, to Fable — the flow is general; specialisation happens in a guided exploration phase; meta-thinking high at the start and under failure, consolidation under success
+
+> by the way the strucure that I cam eup with for how the thignikgin shoudl flwo from thinign to aciton is like soerta speicitc but the acutla flow is genralizable and the spec, i think how the gnelziable arhcithecure is bsically adaptive to the prurpose shoud lhappen when it kwnows the sturuere adn then has an intital guided phase of epxloraiton where its liek oaky let me do guesses but thinka  lto about how i can succeed in this space, so it deos even more meta thingkign at thestart, and if it encourngts ta lot of fialture itll kepe metaghtingkign as well, but when sucess is hapenign you wanna consoitnoite and learn and sorta hodl onft patterns that leat to success, ykwimg
+
+Reading (Fable): DESIGN PRINCIPLE — the think→act flow is general; it adapts to a purpose through an initial guided exploration phase in which the agent guesses but thinks a lot about how to succeed in the space (more meta-thinking at the start); meta-thinking stays high while failure persists; when success comes, the agent consolidates, learns and holds onto the patterns that led to success. The think/act ratio is outcome-driven.
