@@ -10,6 +10,7 @@
 # (speaker "Rohin", schema R127_ATTRIBUTED_INBOX_V1). The child reads it at its next step; the
 # runtime renders it as "Rohin: ..." in the child's context and masks it from training targets.
 # Nothing else is touched: no process is started or stopped. Works with macOS bash 3.2.
+# 2026-09-17 11:40 PDT: node-3 lives moved to the R179 recovery roots (control0/1/2/3/4/7) after the 11:00 timeout.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -24,12 +25,12 @@ lookup() {  # prints "node root"
                       echo "a100 $L/orch_r136_a100_$1_20260916_attempt1/run1" ;;
     frozen_base)      echo "a100 $L/orch_r139_a100_frozen_base_no_adapter_20260916_attempt1/run1" ;;
     frozen_rank8)     echo "a100 $L/orch_r139_a100_frozen_rank8_no_sleep_20260916_attempt1/run1" ;;
-    brain_free)       echo "ovx2 $L/orch_r133_brain_free_20260916_attempt1/run1" ;;
-    creative_reread)  echo "ovx2 $L/orch_r133_creative_reread_20260916_attempt1/run1" ;;
-    brain_guided)     echo "ovx2 $L/orch_r133_node3_brain_guided_20260916_attempt1/run1" ;;
-    creative_free)    echo "ovx2 $L/orch_r133_node3_creative_free_20260916_attempt1/run1" ;;
-    creative_select)  echo "ovx2 $L/orch_r133_node3_creative_select_20260916_attempt1/run1" ;;
-    support_free)     echo "ovx2 $L/orch_r133_support_free_20260916_attempt1/run1" ;;
+    brain_free)       echo "ovx2 $L/orch_r179_node3_recovery_20260917t1818z_2/control2/run1" ;;
+    creative_reread)  echo "ovx2 $L/orch_r179_node3_recovery_20260917t1818z_2/control1/run1" ;;
+    brain_guided)     echo "ovx2 $L/orch_r179_node3_recovery_20260917t1818z_2/control3/run1" ;;
+    creative_free)    echo "ovx2 $L/orch_r179_node3_recovery_20260917t1818z_2/control4/run1" ;;
+    creative_select)  echo "ovx2 $L/orch_r179_node3_recovery_20260917t1818z_2/control7/run1" ;;
+    support_free)     echo "ovx2 $L/orch_r179_node3_recovery_20260917t1818z_2/control0/run1" ;;
     kernel0)          echo "a40r $L/orch_r132_kernel_child_20260916_attempt1/run1" ;;
     kernel_parented)  echo "a40r $L/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1" ;;
     raw_parented)     echo "a40r $L/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1" ;;
@@ -40,7 +41,7 @@ lookup() {  # prints "node root"
 srcdir() {  # node-side checkout that contains gpu/orch_r127_pilot_console.py
   case "$1" in
     ovx3) echo "$L/orch_r153_sandbox_source_20260916t2245z" ;;
-    ovx2) echo "$L/orch_r145_integration_20260916t1611z_b" ;;
+    ovx2) echo "$L/orch_r179_node3_context_20260917t1715z_1/physical0/source" ;;
     a40r) echo "$L/orch_r141_kernel_tools_v1" ;;
     *)    echo "" ;;   # found dynamically on the node
   esac
