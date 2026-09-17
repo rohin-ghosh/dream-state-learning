@@ -43,7 +43,8 @@ srcdir() {  # node-side checkout that contains gpu/orch_r127_pilot_console.py
     ovx3) echo "$L/orch_r153_sandbox_source_20260916t2245z" ;;
     ovx2) echo "$L/orch_r179_node3_context_20260917t1715z_1/physical0/source" ;;
     a40r) echo "$L/orch_r141_kernel_tools_v1" ;;
-    *)    echo "" ;;   # found dynamically on the node
+    a100) echo "/localhome/local-rohing/orch_r144_target_rollout_a100_20260916t1525z/lane7/source" ;;
+    *)    echo "" ;;
   esac
 }
 CHILDREN="C1 C2 C3 C4 C5 run1 pilot repo_reader classroom_brain classroom_creative classroom_support teach_parenting teach_perception teach_replay frozen_base frozen_rank8 brain_free creative_reread brain_guided creative_free creative_select support_free kernel0 kernel_parented raw_parented raw_unparented"
