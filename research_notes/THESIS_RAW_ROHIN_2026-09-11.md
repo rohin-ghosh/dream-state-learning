@@ -1488,3 +1488,13 @@ Reading (Fable): ORDER on execution speed — the fleet-wide baseline (C2's succ
 > why tf has c2 not ready my message yet thigns need to move fast , what is qith these queuers, if the queus if ull then you shoud laudit the hwole queue and start the itniattive and get it done, dont just let thigns wait, ,base line foreveyrone i mean that all the ohter children need to get at least as good as c2 not to make them all c2
 
 Reading (Fable): (1) Anger at latency — C2 has not read his 13:08 PDT message; things must move fast; if a queue is full, audit the whole queue, start the initiative and get it done rather than wait. (2) Clarification of "baseline for everyone": every other child must get at least as good as C2 (the observation→action connection carried forward), not become a copy of C2 — each keeps its own object.
+
+## Messages 178–180 — 2026-09-17 ~21:38 UTC (14:38 PDT), typed, to Fable
+
+> parent all nodes to be at least as good as c2
+
+> are you usign my new infernce key porpagtred thoruhgout all of hte nodes?
+
+> fuck you wast so much time with this shit you have to be keeping up with things
+
+Reading (Fable): (178) RULED — parent every child on every node to at least C2's level (the observation→action connection carried forward), including the previously unparented control; keep its pre-parenting checkpoint so an unparented fork can be resumed for the matched lineage. (179) QUESTION — is the new inference key in use everywhere? (The key is used by the parents/orchestrator on the VM; the children on the nodes run local inference and need no key; checked which processes still hold the old key.) (180) Anger at wasted time; the watcher must keep up.
