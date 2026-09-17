@@ -1370,3 +1370,9 @@ Reading (Fable): ORDER — (1) the per-agent behaviour document (msg 162) must b
 > firx the node asap
 
 Reading (Fable): ORDER — recover node 3's six children (down since 10:59 PDT at an internal timeout) as fast as possible. Relayed to Astra with interrupt at once.
+
+## Message 167 — 2026-09-17 ~18:30 UTC (11:30 PDT), typed, to Fable
+
+> is thre jduge training? its a pretty simple judge no? the judge and the is this a new output being differnt ofc, id assume both are pretty straight forwareddd?
+
+Reading (Fable): question with a push — is the humour judge training yet? He expects the judge (scene + caption → rating distribution) and the "is this a new output" similarity check to be straightforward and wants them done, not gated.
