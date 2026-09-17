@@ -32680,3 +32680,5 @@ Community pilot at 3 h: C1 19 sleeps / 60 responses / 14 Astra + 55 Tool deliver
 
 ## [Fable — tick] 2026-09-17T01:52Z (18:52 PDT) — no change in two minutes: walls for run1/pilot still 03:54Z (order delivered 01:49Z; orchestrator patching the exchange and asking its sub-agent for inbox composition); repo_reader still down; benchmark queue DRAINED — 59 checkpoints complete, 0 pending across 5 lineages; community agents C1–C5 all training (sleeps 19/19/18/17/16)
 Watcher plan: re-check the wall at 19:20 PDT; if hard_end is still 03:54Z at 19:30 PDT, interrupt again with the extension as the only item.
+
+## [Fable — laptop connectivity outage] 2026-09-17T02:02Z (19:02 PDT) — internal DNS resolution failed from the watcher's laptop at 02:00Z (VM and node wrappers unreachable; public internet fine); same pattern as the 08:01–08:23Z outage this morning. The 01:49Z orders (extend run1/pilot walls before 03:54Z, re-admit repo_reader, report exchange status) are already with the orchestrator; the watcher cannot verify them until connectivity returns. A retry loop is armed; the wall check resumes the moment the VPN answers.
