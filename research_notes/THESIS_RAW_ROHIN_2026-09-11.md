@@ -1476,3 +1476,9 @@ Reading (Fable): ORDER — experiment now, across the fleet, with the stage stru
 > yup think about it like 22 arms full arsental lenaring tyr differn thtings, get rid of bas resutls, try out more mutli agent ocmmcuatnon as well, so i menationed how one of the substages possibly post aciton frection coudl be with other agetns erhaps, try that out too, makes ruet eh senvieomrnts the agenrs are in asre storng and the engineering is perisitnetn keep ati t, the baselien fore veyrone shoud now be c2 success and were tyrgin to see this ship showing gradul proof os asiling soon
 
 Reading (Fable): RULED — treat the fleet as ~22 arms ("full arsenal learning"): try different things; retire arms with bad results; include multi-agent communication arms — one sub-stage, possibly the post-action reflection, done with other agents; make sure the environments are strong and the engineering persistent; keep at it. The BASELINE for every child is now C2's success (the observation→action connection carried across the boundary) — this supersedes "wait for success before propagating" from msg 173: the C2 pattern goes to everyone as the starting point, and the arms vary the parenting and communication on top. Goal: gradual proof that the ship is sailing, soon.
+
+## Message 176 — 2026-09-17 ~21:10 UTC (14:10 PDT), typed, to Fable
+
+> i want it to happen now no wasting time, when i say somehting it has to be done as soon as posisble
+
+Reading (Fable): ORDER on execution speed — the fleet-wide baseline (C2's success pattern to every child) and the parenting arms must be live now, not staged; his instructions are to be executed as soon as possible. Watcher action: deliver the baseline message to all 21 parented children immediately through the console as Rohin (excluding the unparented control pending his ruling and the two frozen controls); Astra told to activate the arms on every node at once.
