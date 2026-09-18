@@ -61,6 +61,11 @@ def validate_registration(registration):
     for epoch in registration['runtime_epochs']:
         if epoch.get('record_index') is not None:
             record_at(life, epoch['record_index'], registration['journal_id'], epoch['record_sha256'])
+    for anchor in registration.get('additional_record_anchors', []):
+        record_at(life, anchor['index'], registration['journal_id'], anchor['sha256'])
+    for reference in registration.get('owner_metadata_files', []):
+        if file_hash(Path(reference['path'])) != reference['sha256']:
+            raise ValueError('owner_runtime_metadata_changed')
     return life
 
 
@@ -77,7 +82,10 @@ def completed_records(life, journal_id, maximum_index=None):
             break
         value = json.loads(path.read_bytes())
         if value['kind'] == 'SLEEP_COMPLETE' and value['document'].get('status') == 'COMPLETE':
-            records.append(record_at(life, index, journal_id)[0])
+            verified=record_at(life,index,journal_id)[0]
+            records.append(dict(index=verified['index'],sha256=verified['sha256'],journal_id=verified['journal_id'],
+                kind=verified['kind'],document={key:verified['document'][key] for key in
+                    ('status','cycle','total_optimizer_steps','after_adapter_sha256')}))
     return cut, records
 
 
@@ -89,6 +97,19 @@ def capture(registration, output, record, head_index):
         raise ValueError('completed_sleep_only')
     cycle = document['cycle']
     checkpoint = life/'checkpoints'/f'sleep_{cycle:06d}'
+    if checkpoint.resolve() != checkpoint:
+        raise ValueError('physical_checkpoint_not_symlink')
+    key = f"sleep_{cycle:06d}_{record['sha256'][:16]}"
+    destination = output/'sources'/key
+    if destination.exists():
+        existing = json.loads((destination/'SOURCE.json').read_bytes())
+        if existing['sleep_complete_sha256'] != record['sha256'] or existing['journal_id'] != registration['journal_id']:
+            raise ValueError('immutable_queue_entry_changed')
+        for relative, expected in existing['copy_files'].items():
+            status = (destination/relative).stat()
+            if status.st_size != expected['bytes']:
+                raise ValueError('retained_queue_file_size_changed')
+        return existing
     commit_path = checkpoint/'COMMIT.json'
     commit = json.loads(commit_path.read_bytes())
     if commit['base_sha256'] != BASE_SHA or commit['adapter_state_sha256'] != document['after_adapter_sha256'] or commit['optimizer_steps'] != document['total_optimizer_steps']:
@@ -107,13 +128,6 @@ def capture(registration, output, record, head_index):
     if not epochs:
         raise ValueError('no_bound_runtime_epoch_for_source')
     epoch = max(epochs, key=lambda row: row['after_record_index'])
-    key = f"sleep_{cycle:06d}_{record['sha256'][:16]}"
-    destination = output/'sources'/key
-    if destination.exists():
-        existing = json.loads((destination/'SOURCE.json').read_bytes())
-        if existing['sleep_complete_sha256'] != record['sha256'] or existing['copy_files'] != before:
-            raise ValueError('immutable_queue_entry_changed')
-        return existing
     staging = output/'staging'/key
     (staging/'adapter').mkdir(parents=True, mode=0o700, exist_ok=False)
     for name in names:
@@ -153,13 +167,32 @@ def scan(registration, output, *, latest=False):
         if not records:
             raise ValueError('no_completed_sleep_available')
         records = records[-1:]
-    entries = [capture(registration, output, record, cut) for record in records]
+    bound_markers = {registration['initial_loaded']['index']}
+    bound_markers.update(epoch['record_index'] for epoch in registration['runtime_epochs'] if epoch.get('record_index') is not None)
+    bound_markers.update(anchor['index'] for anchor in registration.get('additional_record_anchors', []))
+    unknown_markers=[]
+    for path in sorted((life/'stream/records').iterdir()):
+        if not re.fullmatch(r'\d{20}\.json',path.name) or int(path.stem)>cut:
+            continue
+        record=json.loads(path.read_bytes())
+        if record['kind'] in ('LOADED','R232_RECOVERY_CONTEXT') and record['index'] not in bound_markers:
+            unknown_markers.append(record['index'])
+    allowed = [record for record in records if not unknown_markers or record['index']<min(unknown_markers)]
+    blocked = [record for record in records if record not in allowed]
+    entries = [capture(registration, output, record, cut) for record in allowed]
+    for record in blocked:
+        path=output/'pending_epoch'/f"{record['document']['cycle']:06d}_{record['sha256'][:16]}.json"
+        if not path.exists():
+            put(path,dict(status='PENDING_EPOCH_BINDING',cycle=record['document']['cycle'],
+                record_index=record['index'],record_sha256=record['sha256'],unknown_epoch_markers=unknown_markers,
+                model_or_GPU_calls=0))
     status = dict(schema='R232_BOUNDARY_QUEUE_STATUS_V1', unix=time.time(),
         source_name=registration['source_name'], source_cut_index=cut,
         enrollment='LATEST_COHERENT_CUT' if latest else 'EVERY_COMPLETED_SLEEP_NO_SUBSAMPLING',
         registered_epochs=registration['runtime_epochs'], captured_ages=[row['absolute_sleep'] for row in entries],
-        pending_ages=[row['absolute_sleep'] for row in entries], launched_ages=[], learner_signals=[],
-        queue_only=True, source_binding_verified=True)
+        pending_ages=[record['document']['cycle'] for record in records], launched_ages=[], learner_signals=[],
+        pending_epoch_ages=[record['document']['cycle'] for record in blocked],
+        unknown_epoch_markers=unknown_markers, queue_only=True, source_binding_verified=not unknown_markers)
     output.mkdir(parents=True, mode=0o700, exist_ok=True)
     temporary=output/'STATUS.tmp'
     temporary.write_bytes(canonical(status)+b'\n')

@@ -62,3 +62,13 @@ def test_wrong_journal_or_tampered_commit_fails(tmp_path):
     (life/'checkpoints/sleep_000003/adapter/adapter_model.safetensors').write_bytes(b'changed')
     with pytest.raises(ValueError,match='adapter_bytes_not_committed'):
         queue.scan(registration,tmp_path/'queue',latest=True)
+
+
+def test_new_runtime_epoch_is_pending_not_silently_same_source(tmp_path):
+    life,registration=fixture(tmp_path)
+    record(life,3,'R232_RECOVERY_CONTEXT',dict(state_sha256='a'*64))
+    output=tmp_path/'queue'
+    result=queue.scan(registration,output)
+    assert result['captured_ages']==[1]
+    assert result['pending_ages']==[1,3] and result['pending_epoch_ages']==[3]
+    assert result['unknown_epoch_markers']==[3] and result['source_binding_verified'] is False
