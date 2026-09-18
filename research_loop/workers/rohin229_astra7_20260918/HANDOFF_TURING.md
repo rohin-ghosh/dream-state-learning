@@ -1,5 +1,9 @@
 # R229 Astra7 birth — reservation and relay contract
 
+**ACTUAL LOADED09:34:38.230121 UTC:** node2GPU1, native2863450/start95248943, receiving journal **6a2fa591a1304fd8b3eff24f65e5caff**. Both plan/think have R227; actual SLEEP_RECIPE34 confirms semantic exclusions OFF. Physical raw root and capsule API below are now active. No parent publisher was started; Turing owns actual P7 input and return relay. Keep receipt capsules immutable for journal replay. `LOADED.public.json` binds the real identity and source.
+
+09:37 read: TARGET_ELIGIBILITY35 retains4/4 and excludes0. Operator/lineage name is Astra7, but first REQUEST4 did not contain that literal name. Have **P7 itself introduce/name Astra7 through its authentic output**; do not inject a human opener or change the living native.
+
 2026-09-18 09:22:55 UTC node2 GPU census: GPUs1/2/3/6 show zero memory and no compute PIDs. This worker reserves **GPU1** for the authorized new **Astra7**, without evicting or stopping any life. C0 GPU4 remains protected.
 
 Planned receiving physical root: `/localhome/local-rohing/orch_r229_Astra7_20260918`.
