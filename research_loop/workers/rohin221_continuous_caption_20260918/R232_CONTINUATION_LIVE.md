@@ -62,3 +62,14 @@ new activity is a later epoch, never a retroactive hourly-rate claim.
 22 focused continuation/activity/hourly tests pass. C0 and primary probe
 results remain unchanged. Fresh-age source enrollment continues separately;
 queued ages are not claimed as evaluated probes.
+
+## Later actual judge result:11:30:41UTC
+
+Opportunity82 ACT1 produced **6 parsed,6 newly scored,0 accepted,0 new pixels,
+0 cached**. All six sources are actual ACT spans, not salvaged THINK or replay.
+Ranks65/61/59/56/60/56 exceed the unchanged top50 cutoff; these are actual
+judge rejections, unlike the first opportunity's resource-bound failures.
+Literal-caption/humor quality has not been manually reviewed. Both processes
+were verified active11:30:59UTC. Immutable first-score receipt and source
+hashes are in `R232_FIRST_NEW_SCORED_CAPTIONS.json`, score receipt
+`4981594ea5cab7b4bab4576ec6e76bfec05c58ec9738f5736224417771d1085d`.
