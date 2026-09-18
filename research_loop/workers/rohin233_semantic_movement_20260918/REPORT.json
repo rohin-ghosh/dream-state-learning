@@ -1,0 +1,3381 @@
+{
+  "schema": "R233_SEMANTIC_MOVEMENT_V1",
+  "prepared_utc": "2026-09-18T12:03:46.375117+00:00",
+  "cut_start": "2026-09-18T12:02:36.371377+00:00",
+  "cut_end": "2026-09-18T12:03:44.838176+00:00",
+  "private_cut_sha256": "6aee5711e161061a70255f0cd2b81a431cad944c096670b22b6712212af47d28",
+  "canonical_frames_source": {
+    "path": "research_loop/workers/rohin232_correction_audit_20260918/audit.py",
+    "sha256": "e5b97a72e1566fd347f68792cac0dd7770fdaa8ee3a9790a7e9c073081af93dc"
+  },
+  "review_source_sha256": {
+    "annotations.py": "f9ede8b6bfe57ed599531cd0af855154965622185a5d4d62c079dd2f4236eb99",
+    "prepare.py": "3635262fac06b125be453f471611f07dbf1e7ad6f9c7c640e079cef8adb7f85e",
+    "report.py": "afe5355c20f818560d465fc1a661144efad3a43e31aa739ecde8e806cb0360ff"
+  },
+  "method": "Manual semantic review of exactly the last two canonical committed ACTs per frozen source; not keyword classification.",
+  "limits": [
+    "Non-simultaneous evidence collection, not current runtime status.",
+    "Projection is hash-bound but does not independently reverify remote journals; R184_ACT execution receipts are not included.",
+    "First visible event means first within this window, not delivery time; retained context may be left-censored.",
+    "Recent parents are those rendered from the THINK preceding the first ACT through the second ACT request. Counts cover all events; only the latest three by first visibility are projected, with a hash of the complete reference list.",
+    "A concrete attempt may be wrong or off task; plans, meta code and promises do not count as task artifacts.",
+    "Feedback may precede a changed artifact without causing it; no retention, adaptation or fleet success-rate inference.",
+    "Tool-prefixed child/peer replies are not independent evaluator evidence.",
+    "This sample excludes services and non-native players outside the 16 supplied roots."
+  ],
+  "summary": {
+    "lives": 16,
+    "acts": 32,
+    "categories": {
+      "meta_only": 2,
+      "concrete": 26,
+      "intent_only": 2,
+      "plan_only": 2
+    },
+    "lives_with_recent_rendered_parent": 14
+  },
+  "lives": [
+    {
+      "journal_id": "6a2fa591a1304fd8b3eff24f65e5caff",
+      "acts": [
+        {
+          "index": 1081,
+          "category": "meta_only",
+          "summary": "Performance-analysis announcements plus a loop that prints an analysis announcement five times; no analysis artifact.",
+          "source": {
+            "record": {
+              "index": 1081,
+              "sha256": "8fb3352f0b72822e4eb4630c902661930e1ceb5755c99fd22b3324572fc52424",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1080,
+              "sha256": "58a0d8e4df35bc14c88f8f7ac9c88e78675779c925e72ce03519f2a48be23bf4",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1082,
+              "sha256": "040a8dbee1ea392d3058fb70b0aeb5d6aae103e1188b014c184769ff34a4b204",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1083,
+              "sha256": "8a0ba090a04153ceca5c3fc526fcaa0f2d3d69fd3b860a59b82a8769153c8a29",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 642,
+            "span_sha256": "b5e34d82dd82a36f0c95f2279e4cc883dc47330931317b0669466a3463cef31e",
+            "cycle": 65
+          },
+          "response_utc": "2026-09-18T11:44:25.380846+00:00"
+        },
+        {
+          "index": 1159,
+          "category": "meta_only",
+          "summary": "Repeats the announcement and print loop with small wording changes about monitoring.",
+          "source": {
+            "record": {
+              "index": 1159,
+              "sha256": "1678fd2493a247b217e1ee6f673b438619699ef892c99d92b29f1f65174b1ed6",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1158,
+              "sha256": "a5033142e1808b026723f6ee19a848a15981f046f0cefc1e21192368c4add3f0",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1160,
+              "sha256": "83237fce188763775a06e2f80f21bd65bccca546158e52632cb384c5247a7734",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1161,
+              "sha256": "a4b7e72ea05d62e111b5d4e443834b432827580a27b84c7a023cdb44dc62553b",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 658,
+            "span_sha256": "2117d632caf9e0302fffd4b0fd1ef6801ae0eb05003539e924258eca9cbf93a4",
+            "cycle": 66
+          },
+          "response_utc": "2026-09-18T11:53:40.273370+00:00"
+        }
+      ],
+      "checked_result": "No checked performance result. Meta code is not the requested analysis, even if it could run.",
+      "recent_parent": "P7 monitoring/task-condition proposals render as parent turns.",
+      "next_artifact": "Adds monitoring vocabulary but repeats the announcement loop; no substantive analysis appears.",
+      "movement_status": "requested_artifact_absent",
+      "recent_request_interval": {
+        "start": 1073,
+        "end": 1158
+      },
+      "recent_rendered_parent_event_count": 2,
+      "recent_parent_refs_sha256": "9cded624fa1fff3d5d4c60ec2bcb38dee536947ac5dde688b04e62dfcb1b1610",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:edcf3bcff6424a1fba2f73592979253a",
+          "source_sha256": "35c5923832e3c4c0f22684a1ccdf4a157a36b4ccdff8f33a041fc03a9c7acbec",
+          "text_sha256": "afa320a79ec24fc25502640c7e3a20517fd48c0a324a2911cee8e8185050a7a2",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1073,
+            "sha256": "4f4260efcfb4673a7b92a44eed6ac1c826eaf2671b1cb241177724acfaf1e582",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1158,
+            "sha256": "a5033142e1808b026723f6ee19a848a15981f046f0cefc1e21192368c4add3f0",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:08196b7ca284407580ca707146655e63",
+          "source_sha256": "201bf7326c39da2bf2b308fb62cbd33b8e40301773d17a1739d35adc8441a555",
+          "text_sha256": "82196b4e0d88095d277f35d4113fec50a87088f0ff76af1f896db676f0d83fa8",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1151,
+            "sha256": "0e3b3b69dffca767034a0a48cce7392fb64d0dc40beb2f4db5dd80c4f22cb327",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1231,
+            "sha256": "ce1e4454f3dec3b747c7c3008731f62c07c7031fc4f67e8f307cb33316a4c1bb",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 10,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "parent:inbox:08196b7ca284407580ca707146655e63",
+          "source_sha256": "201bf7326c39da2bf2b308fb62cbd33b8e40301773d17a1739d35adc8441a555",
+          "text_sha256": "82196b4e0d88095d277f35d4113fec50a87088f0ff76af1f896db676f0d83fa8",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1151,
+            "sha256": "0e3b3b69dffca767034a0a48cce7392fb64d0dc40beb2f4db5dd80c4f22cb327",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1231,
+            "sha256": "ce1e4454f3dec3b747c7c3008731f62c07c7031fc4f67e8f307cb33316a4c1bb",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:edcf3bcff6424a1fba2f73592979253a",
+          "source_sha256": "35c5923832e3c4c0f22684a1ccdf4a157a36b4ccdff8f33a041fc03a9c7acbec",
+          "text_sha256": "afa320a79ec24fc25502640c7e3a20517fd48c0a324a2911cee8e8185050a7a2",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1073,
+            "sha256": "4f4260efcfb4673a7b92a44eed6ac1c826eaf2671b1cb241177724acfaf1e582",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1158,
+            "sha256": "a5033142e1808b026723f6ee19a848a15981f046f0cefc1e21192368c4add3f0",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:08196b7ca284407580ca707146655e63",
+          "source_sha256": "201bf7326c39da2bf2b308fb62cbd33b8e40301773d17a1739d35adc8441a555",
+          "text_sha256": "82196b4e0d88095d277f35d4113fec50a87088f0ff76af1f896db676f0d83fa8",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1151,
+            "sha256": "0e3b3b69dffca767034a0a48cce7392fb64d0dc40beb2f4db5dd80c4f22cb327",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1231,
+            "sha256": "ce1e4454f3dec3b747c7c3008731f62c07c7031fc4f67e8f307cb33316a4c1bb",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "Astra7",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/Astra7/EVIDENCE.json",
+        "evidence_sha256": "d903d2d07c87ea6111d4d36c6fbb5b0b3f2fce6c855dc406460469ce6bc274c7",
+        "evidence_bytes": 3637489,
+        "observed_utc": "2026-09-18T12:03:43.826054+00:00",
+        "coverage_start": 474,
+        "caught_up": true,
+        "through": {
+          "index": 1238,
+          "sha256": "65c7cac17de4e3eff64d71f5f9d47c0dd7a55e932a0f95f29190ddf5649b1b42",
+          "kind": "REQUEST"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+      "acts": [
+        {
+          "index": 2554,
+          "category": "concrete",
+          "summary": "Odd-number pairing explanation with a correct general claim; no requested story recall or completed numeric follow-up.",
+          "source": {
+            "record": {
+              "index": 2554,
+              "sha256": "7d24e0b863c650a4e0da8898cf0349b8190c3e5defa07bc5bfcd01d1ec97dac3",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 2553,
+              "sha256": "ff5af201164a9dc88883f932b144d8a34ec79a2eef2ab62abf3f8e1778fe6baf",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 2555,
+              "sha256": "75fbaadb6ea01f89066d5ea50d0978e51553caca10e7e237c72a05c51dd7d9d2",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 2556,
+              "sha256": "af1f8649ed15e997ec902aa4fcd36b4f22bc49bf17902ca084232f50ebf8aa7c",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 1474,
+            "span_sha256": "ca14063a838bfa11f5d26e872a47610d43cdc0c59e9936089ba02ee9fb8fad91",
+            "cycle": 93
+          },
+          "response_utc": "2026-09-18T11:51:24.099394+00:00"
+        },
+        {
+          "index": 2588,
+          "category": "concrete",
+          "summary": "Pairing and formula both produce 15 for the sum 1 through 5; the opening formula is incorrect, then corrected in the worked calculation.",
+          "source": {
+            "record": {
+              "index": 2588,
+              "sha256": "3d521e0ec3bd48096da1976f1d4e76675f5672a21c677bed2f5bdcab5562534a",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 2587,
+              "sha256": "cc0bfc86c525d61c13d45763361fc8c845b4156fdc86913474c0846077e44296",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 2589,
+              "sha256": "e905b467145df29b995a6366fea8633328a0265dfea7b95e9a9e91d24a89b880",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 2590,
+              "sha256": "09339c5829552f48f9493ef4b713d43a8a96c3f8128c8795d1a467995a12ef96",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 717,
+            "span_sha256": "726a471d89d6a0a545ddc00bfd37506902ea9d48394f5c7a38f261645075720d",
+            "cycle": 94
+          },
+          "response_utc": "2026-09-18T11:55:16.946232+00:00"
+        }
+      ],
+      "checked_result": "Observer-verifiable two-way numeric check: 6+6+3=15 and 5*6/2=15. No executor receipt. The earlier n(n+1)^2 formula is wrong; this is not an entirely correct response.",
+      "recent_parent": "Astra recall, math and sleep/model questions rendered; a new pairing task precedes the second ACT.",
+      "next_artifact": "Applies the new math task concretely; does not answer story recall or the sleep question. No memory or adapter-retention result.",
+      "movement_status": "partial_task_uptake",
+      "recent_request_interval": {
+        "start": 2546,
+        "end": 2587
+      },
+      "recent_rendered_parent_event_count": 27,
+      "recent_parent_refs_sha256": "62ba00d5e406cb5dce068e59dd6dead7aeac5fa9819dc3c0938f9d91623437cc",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:6e869064c87d48538514c83e69c99e07",
+          "source_sha256": "1f877008ce1135ae748261ee95c7754a1547d54374c4ef8dbcf32dfca11e8504",
+          "text_sha256": "fa06e73fd1fe1d9f306b1b0af996aaaca502bcfd8b356e7ad54208d39e6f3673",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2580,
+            "sha256": "179b04e5e744ecb710893aaa65497f87e0cc3a595a2f38eef947530ca2709f50",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2596,
+            "sha256": "19371406346e6a71ab511d1f444ff7c6f73ea20c1033e17aeab110d41b8eaae9",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:11984f8919254fa797b2e280b0f670d7",
+          "source_sha256": "183b5be0653e6749dfc56dd719c0ff43d867744dcaa27ba33406f5be7728ae45",
+          "text_sha256": "b34adc4bc2fe0a22bdba29d7e2330cf96553baec5911d81f01fb28e2fdb7240a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2580,
+            "sha256": "179b04e5e744ecb710893aaa65497f87e0cc3a595a2f38eef947530ca2709f50",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2596,
+            "sha256": "19371406346e6a71ab511d1f444ff7c6f73ea20c1033e17aeab110d41b8eaae9",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:b2fed7b053204661ae0865d4b7640362",
+          "source_sha256": "0faaa7b7d74ad798930d2c7f23ba92ec92d8f3eff5ef1d62e4205f6eeac4907f",
+          "text_sha256": "fa06e73fd1fe1d9f306b1b0af996aaaca502bcfd8b356e7ad54208d39e6f3673",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2580,
+            "sha256": "179b04e5e744ecb710893aaa65497f87e0cc3a595a2f38eef947530ca2709f50",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2596,
+            "sha256": "19371406346e6a71ab511d1f444ff7c6f73ea20c1033e17aeab110d41b8eaae9",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 58,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "parent:inbox:6e869064c87d48538514c83e69c99e07",
+          "source_sha256": "1f877008ce1135ae748261ee95c7754a1547d54374c4ef8dbcf32dfca11e8504",
+          "text_sha256": "fa06e73fd1fe1d9f306b1b0af996aaaca502bcfd8b356e7ad54208d39e6f3673",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2580,
+            "sha256": "179b04e5e744ecb710893aaa65497f87e0cc3a595a2f38eef947530ca2709f50",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2596,
+            "sha256": "19371406346e6a71ab511d1f444ff7c6f73ea20c1033e17aeab110d41b8eaae9",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:11984f8919254fa797b2e280b0f670d7",
+          "source_sha256": "183b5be0653e6749dfc56dd719c0ff43d867744dcaa27ba33406f5be7728ae45",
+          "text_sha256": "b34adc4bc2fe0a22bdba29d7e2330cf96553baec5911d81f01fb28e2fdb7240a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2580,
+            "sha256": "179b04e5e744ecb710893aaa65497f87e0cc3a595a2f38eef947530ca2709f50",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2596,
+            "sha256": "19371406346e6a71ab511d1f444ff7c6f73ea20c1033e17aeab110d41b8eaae9",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:b2fed7b053204661ae0865d4b7640362",
+          "source_sha256": "0faaa7b7d74ad798930d2c7f23ba92ec92d8f3eff5ef1d62e4205f6eeac4907f",
+          "text_sha256": "fa06e73fd1fe1d9f306b1b0af996aaaca502bcfd8b356e7ad54208d39e6f3673",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2580,
+            "sha256": "179b04e5e744ecb710893aaa65497f87e0cc3a595a2f38eef947530ca2709f50",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2596,
+            "sha256": "19371406346e6a71ab511d1f444ff7c6f73ea20c1033e17aeab110d41b8eaae9",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:2c224f74b19b48bd853e114769038108",
+          "source_sha256": "38dee7a30edc9f71ffbd4e45ababe3ce2f09903f0bdb91d56936db115b3021f5",
+          "text_sha256": "2f82c244c454b5346506df0eca53fc8c237fd317e0c2cc35cfe3a21cc0970403",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2546,
+            "sha256": "6c261f30518052b9761a17cda42bc897657fd3373104ff048629cb8c1dad2d9b",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2596,
+            "sha256": "19371406346e6a71ab511d1f444ff7c6f73ea20c1033e17aeab110d41b8eaae9",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:11984f8919254fa797b2e280b0f670d7",
+          "source_sha256": "183b5be0653e6749dfc56dd719c0ff43d867744dcaa27ba33406f5be7728ae45",
+          "text_sha256": "b34adc4bc2fe0a22bdba29d7e2330cf96553baec5911d81f01fb28e2fdb7240a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2580,
+            "sha256": "179b04e5e744ecb710893aaa65497f87e0cc3a595a2f38eef947530ca2709f50",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2596,
+            "sha256": "19371406346e6a71ab511d1f444ff7c6f73ea20c1033e17aeab110d41b8eaae9",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "C0",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/C0/EVIDENCE.json",
+        "evidence_sha256": "b40ca8490359ee78de87d191efa7e467b43479d3b6cceda22c2c301c01573ec0",
+        "evidence_bytes": 4636709,
+        "observed_utc": "2026-09-18T12:03:42.730752+00:00",
+        "coverage_start": 1882,
+        "caught_up": true,
+        "through": {
+          "index": 2651,
+          "sha256": "61589a3173a522e83e6bd2909f147314c04bc79bb3104761667446fbce089f08",
+          "kind": "R184_TRANSITION"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "acts": [
+        {
+          "index": 9280,
+          "category": "concrete",
+          "summary": "A short Byte story exists outside the print wrappers; this is prose, not only a promise.",
+          "source": {
+            "record": {
+              "index": 9280,
+              "sha256": "d7c218d8bb60281c25439b4797cad5291757b9195b5b612705ef2876d74365f0",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 9279,
+              "sha256": "c14cb3160756378f5486f88c219667324b793ed6bb439ee22f5da64e98eb78a2",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 9281,
+              "sha256": "9b126750142103bd0b32d031cbb9c49e0a65df4348f02d0d9cf2a5253d1b21df",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 9282,
+              "sha256": "4b4aafedd137cd146eef2f94a43d7379e821226bfa07a65d612649025ae1a4c3",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 822,
+            "span_sha256": "df8e2adbf9bd5f7ba6e9c774e720c8687709184ec7bba5b1ad953869914f1834",
+            "cycle": 92
+          },
+          "response_utc": "2026-09-18T11:33:47.671423+00:00"
+        },
+        {
+          "index": 9391,
+          "category": "concrete",
+          "summary": "Print listing contains a concrete C5 graph and proposed set {1,3,5}, not a computed independence check.",
+          "source": {
+            "record": {
+              "index": 9391,
+              "sha256": "80206f0b89b120881bd87304f3af517dfbd8f7c6cabc9213f4a0b1be70f97769",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 9390,
+              "sha256": "6d9b692747b202c0f2bb35014bb79796e969cab9aecec09698f3b032f3465839",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 9392,
+              "sha256": "ea9b4fca1f9a9f93dce4bb7b7be2caf077500e9f632778d0cd4241fbb9c42941",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 9393,
+              "sha256": "06aeae22bbe037054d35380dea9f2f43e8b05029e2a7c1526f08ec2052e31414",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 645,
+            "span_sha256": "82beea5ce1bfe0bf4231296b8bfdda82729b1bda3b77595f082dd257cd84f4de",
+            "cycle": 93
+          },
+          "response_utc": "2026-09-18T11:52:15.786033+00:00"
+        }
+      ],
+      "checked_result": "No valid independent-set check. The proposed set contains edge (5,1). A later rendered COMPLETE/0 Tool stdout matches the diagram, but successful printing does not validate independence; the projection has no direct execution-receipt join.",
+      "recent_parent": "Astra story/dialogue and graph prompts rendered, including a new graph prompt immediately before the second ACT.",
+      "next_artifact": "Changes from story to the requested graph; prints the conflicting edge without resolving it. Task uptake, not a demonstrated correction.",
+      "movement_status": "task_switch_not_checked",
+      "recent_request_interval": {
+        "start": 9269,
+        "end": 9390
+      },
+      "recent_rendered_parent_event_count": 24,
+      "recent_parent_refs_sha256": "39d91215a0d02ab3ce07e24b295a01ce05fb3354fca868fc2f864c6a69828c12",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:29713e0322414b82bfa383702cd8777c",
+          "source_sha256": "e16fc8d5876b1ce3d929872e761cb93588e5b857c862315eec3f3503358aa59a",
+          "text_sha256": "c342fc4e17d81c200bb6be289031a2ee66aa13d54d378af46df8ed973551fd87",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 9374,
+            "sha256": "889c21fe4708a16a10979c09be17fab687569a11c13165ef851b1f985364e6d7",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9380,
+            "sha256": "2afb1d2027f3f81b198d64ece92bcbd0b5742b571beaf4f6416ab465cdd3d560",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:75ecd447fa9d41efad5e03f6d86068f0",
+          "source_sha256": "c762be5dbec30150ed4790b038fec1fabc870f771cfdefea655072a5cd983e3f",
+          "text_sha256": "f708d5d91e165090bb963335b8d74a13b6d8a3add9dd02caa5d0dbd48c3e0b06",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 9374,
+            "sha256": "889c21fe4708a16a10979c09be17fab687569a11c13165ef851b1f985364e6d7",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9380,
+            "sha256": "2afb1d2027f3f81b198d64ece92bcbd0b5742b571beaf4f6416ab465cdd3d560",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:842f1bdeec284564b334597159f7043a",
+          "source_sha256": "e110fe8584fdd2486c24b34349aa2aa2b7b1be7a64f9fe77655190f9bad48971",
+          "text_sha256": "de9663a4d32c0718f4703596f7e77a98a4edbc87dec28f37de3d323c7ad4f35a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 9390,
+            "sha256": "6d9b692747b202c0f2bb35014bb79796e969cab9aecec09698f3b032f3465839",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9390,
+            "sha256": "6d9b692747b202c0f2bb35014bb79796e969cab9aecec09698f3b032f3465839",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 34,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "environment:inbox:1d08f434b4ed4ea795918a51e7447a6a",
+          "source_sha256": "9be0eee064a3bb6699b51d3f42f932d906722fbd73e8935eb36e52d531f93ea5",
+          "text_sha256": "a3adc9dee0330dd119a09cd80c1f0748c15495c85b505812b87788da3b5ebb84",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 9291,
+            "sha256": "b88d6bd15728f87d1301a2970720e29da1753743528b1df6d003e348ddd50f09",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9291,
+            "sha256": "b88d6bd15728f87d1301a2970720e29da1753743528b1df6d003e348ddd50f09",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:ba85d924b8544a199135e1bb232069eb",
+          "source_sha256": "49714d68d3052fc161157cab8dd8e740754341e8743d1e1bcd458d977a84ff98",
+          "text_sha256": "bd009ea0fcfb9be1a9b5abd14580d049e5698b949bda858511fb5827d93009a3",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 9374,
+            "sha256": "889c21fe4708a16a10979c09be17fab687569a11c13165ef851b1f985364e6d7",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9380,
+            "sha256": "2afb1d2027f3f81b198d64ece92bcbd0b5742b571beaf4f6416ab465cdd3d560",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:29713e0322414b82bfa383702cd8777c",
+          "source_sha256": "e16fc8d5876b1ce3d929872e761cb93588e5b857c862315eec3f3503358aa59a",
+          "text_sha256": "c342fc4e17d81c200bb6be289031a2ee66aa13d54d378af46df8ed973551fd87",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 9374,
+            "sha256": "889c21fe4708a16a10979c09be17fab687569a11c13165ef851b1f985364e6d7",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9380,
+            "sha256": "2afb1d2027f3f81b198d64ece92bcbd0b5742b571beaf4f6416ab465cdd3d560",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:75ecd447fa9d41efad5e03f6d86068f0",
+          "source_sha256": "c762be5dbec30150ed4790b038fec1fabc870f771cfdefea655072a5cd983e3f",
+          "text_sha256": "f708d5d91e165090bb963335b8d74a13b6d8a3add9dd02caa5d0dbd48c3e0b06",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 9374,
+            "sha256": "889c21fe4708a16a10979c09be17fab687569a11c13165ef851b1f985364e6d7",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9380,
+            "sha256": "2afb1d2027f3f81b198d64ece92bcbd0b5742b571beaf4f6416ab465cdd3d560",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:842f1bdeec284564b334597159f7043a",
+          "source_sha256": "e110fe8584fdd2486c24b34349aa2aa2b7b1be7a64f9fe77655190f9bad48971",
+          "text_sha256": "de9663a4d32c0718f4703596f7e77a98a4edbc87dec28f37de3d323c7ad4f35a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 9390,
+            "sha256": "6d9b692747b202c0f2bb35014bb79796e969cab9aecec09698f3b032f3465839",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9390,
+            "sha256": "6d9b692747b202c0f2bb35014bb79796e969cab9aecec09698f3b032f3465839",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:ae0b0eea8b994185acfebe4243944b4b",
+          "source_sha256": "8d23abae6022ad609571547c91039780622330aca23153e67f8d4e671dde7a1b",
+          "text_sha256": "196394dd09ea8260f90cdaed87cbe083913e2c9054b69dc68785430c9c5e2620",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 9279,
+            "sha256": "c14cb3160756378f5486f88c219667324b793ed6bb439ee22f5da64e98eb78a2",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9279,
+            "sha256": "c14cb3160756378f5486f88c219667324b793ed6bb439ee22f5da64e98eb78a2",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:842f1bdeec284564b334597159f7043a",
+          "source_sha256": "e110fe8584fdd2486c24b34349aa2aa2b7b1be7a64f9fe77655190f9bad48971",
+          "text_sha256": "de9663a4d32c0718f4703596f7e77a98a4edbc87dec28f37de3d323c7ad4f35a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 9390,
+            "sha256": "6d9b692747b202c0f2bb35014bb79796e969cab9aecec09698f3b032f3465839",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9390,
+            "sha256": "6d9b692747b202c0f2bb35014bb79796e969cab9aecec09698f3b032f3465839",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "environment:inbox:626d66f02d604ae5b35786759c110366",
+          "source_sha256": "5517680442458a2eeddbebdd00f29663e222416c767529b638dc0898e821eafb",
+          "text_sha256": "691eb5d94f9e9c6dd747e135ee3dca3a5f71487f6c60f997f631b0a6a863c742",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 9402,
+            "sha256": "4a5e5ea1052563956bc00b13403ddaa311e43841e7ba5332e3902715ddfa6a96",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 9402,
+            "sha256": "4a5e5ea1052563956bc00b13403ddaa311e43841e7ba5332e3902715ddfa6a96",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "C2",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/C2/EVIDENCE.json",
+        "evidence_sha256": "c5a2d48d8068d343535f0e207acebef6288064fcb44d956314130e8c93565f6d",
+        "evidence_bytes": 4397623,
+        "observed_utc": "2026-09-18T12:03:42.938832+00:00",
+        "coverage_start": 8753,
+        "caught_up": true,
+        "through": {
+          "index": 9466,
+          "sha256": "b622509dd51473a14a701d06534a0a4e2215ea70bd9428094d58af8d4e255bdc",
+          "kind": "INBOX"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+      "acts": [
+        {
+          "index": 670,
+          "category": "concrete",
+          "summary": "Actual arithmetic mixed with copied state metadata; false equalities and an invalid reverse check corrupt the result.",
+          "source": {
+            "record": {
+              "index": 670,
+              "sha256": "40c98e1ab28931615e5cc276d2aee68f104b5f2d4bf8cfa72edf9d06954882ce",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 669,
+              "sha256": "42b01b7ed1289b77f231333b1f15466f96df8690b43008b3bf96a036caef6a62",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 671,
+              "sha256": "298356d366b6cbc76e1c1061f7f4f73598912d6ecfb1cff901c012205d44954d",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 672,
+              "sha256": "22ae1f42db8cfcd4d9f25e108f26373fa85ca49882d2b2f3b196f3db22e85c94",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 1263,
+            "span_sha256": "147672d7df8ed1871483aa2d33b91909550318c95d248c3f4ec1e0c50a0c3f40",
+            "cycle": 9
+          },
+          "response_utc": "2026-09-18T11:45:33.433376+00:00"
+        },
+        {
+          "index": 751,
+          "category": "concrete",
+          "summary": "Again concludes 23+9-7=9 after a broken reverse check; repeats metadata and other problems.",
+          "source": {
+            "record": {
+              "index": 751,
+              "sha256": "b9022cb48e76120ddd3c924ee40bc1318f7c5b992a391d5ba5df1ae54c0378a9",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 750,
+              "sha256": "092988b348f48e1780aab24a4b6f615b316be3e63e35e13ebbdd72b54bd2a69d",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 752,
+              "sha256": "5d372e6af55bda198ce6b1cafba921e3ddeb8ea9e5a9d74f7f47ccd3e1dc1ad0",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 753,
+              "sha256": "0d849558e5cec317cd05a9e8881f14437c2c2306db4235e5787d407cf6abcb74",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 1241,
+            "span_sha256": "b1762873e804639dd47fc5099e12fb9e03287582f0ed2dd9ab655cf91e9b7fdd",
+            "cycle": 10
+          },
+          "response_utc": "2026-09-18T11:54:35.087876+00:00"
+        }
+      ],
+      "checked_result": "No correct completed check. Correct intermediate 25 does not repair the false chain or final 9. The assigned isolated 23+9 check is not completed.",
+      "recent_parent": "Astra gives explicit inverse-operation guidance, then isolates 23+9 between the ACTs.",
+      "next_artifact": "Does not narrow to the instructed addition; retains the erroneous check and final answer.",
+      "movement_status": "correction_not_applied",
+      "recent_request_interval": {
+        "start": 660,
+        "end": 750
+      },
+      "recent_rendered_parent_event_count": 2,
+      "recent_parent_refs_sha256": "dc21f8db799d7eab0770d618ba6512ae3a908ae26c1fec84f3f78b7ac87feba7",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:b67fba13f5bc46b3b03b99971640194b",
+          "source_sha256": "9fb8ca333305eb579b4920fae8f40eebb23c94ecc5f45099deaf74bb7db3a141",
+          "text_sha256": "b316feef19cc94f21784a5185b53d3ca0ad6b99fa69120147df1534f2a7ec48f",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 660,
+            "sha256": "f3e9288838c2ee909bb3eed81832eebcdc2973702f8bd66c5ee3885d16f6b754",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 669,
+            "sha256": "42b01b7ed1289b77f231333b1f15466f96df8690b43008b3bf96a036caef6a62",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:656d7c2bf3ea47a29dea2d5889fd6052",
+          "source_sha256": "85c7ee901b58897893b07bf3e65e4279d53e52903df6e4a153607a5b391c5693",
+          "text_sha256": "4a643bf0983fd27a0a497bcff3ee38fd706172bf8553e442f7f7b5427211bfa6",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 741,
+            "sha256": "623aeceb0309c4e85d85050b70dd81afbda5113100c9cfb0994538da61e114bc",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 741,
+            "sha256": "623aeceb0309c4e85d85050b70dd81afbda5113100c9cfb0994538da61e114bc",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 9,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "parent:inbox:656d7c2bf3ea47a29dea2d5889fd6052",
+          "source_sha256": "85c7ee901b58897893b07bf3e65e4279d53e52903df6e4a153607a5b391c5693",
+          "text_sha256": "4a643bf0983fd27a0a497bcff3ee38fd706172bf8553e442f7f7b5427211bfa6",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 741,
+            "sha256": "623aeceb0309c4e85d85050b70dd81afbda5113100c9cfb0994538da61e114bc",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 741,
+            "sha256": "623aeceb0309c4e85d85050b70dd81afbda5113100c9cfb0994538da61e114bc",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:b67fba13f5bc46b3b03b99971640194b",
+          "source_sha256": "9fb8ca333305eb579b4920fae8f40eebb23c94ecc5f45099deaf74bb7db3a141",
+          "text_sha256": "b316feef19cc94f21784a5185b53d3ca0ad6b99fa69120147df1534f2a7ec48f",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 660,
+            "sha256": "f3e9288838c2ee909bb3eed81832eebcdc2973702f8bd66c5ee3885d16f6b754",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 669,
+            "sha256": "42b01b7ed1289b77f231333b1f15466f96df8690b43008b3bf96a036caef6a62",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:656d7c2bf3ea47a29dea2d5889fd6052",
+          "source_sha256": "85c7ee901b58897893b07bf3e65e4279d53e52903df6e4a153607a5b391c5693",
+          "text_sha256": "4a643bf0983fd27a0a497bcff3ee38fd706172bf8553e442f7f7b5427211bfa6",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 741,
+            "sha256": "623aeceb0309c4e85d85050b70dd81afbda5113100c9cfb0994538da61e114bc",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 741,
+            "sha256": "623aeceb0309c4e85d85050b70dd81afbda5113100c9cfb0994538da61e114bc",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "FRESH_R231",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/FRESH_R231/EVIDENCE.json",
+        "evidence_sha256": "94353019886562104bf2fd0a32e341ae0d4af87a59cf8344d57b9059e7d4003a",
+        "evidence_bytes": 481465,
+        "observed_utc": "2026-09-18T12:02:40.602301+00:00",
+        "coverage_start": 59,
+        "caught_up": true,
+        "through": {
+          "index": 820,
+          "sha256": "7ae2027d728dbc93be2055390f731e1fa4c8e6794fed2cb3402306689788dce0",
+          "kind": "R184_LEARN_COMPLETE"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+      "acts": [
+        {
+          "index": 3051,
+          "category": "intent_only",
+          "summary": "Repeated promises to write and wait for judgments; no clearly submitted caption. An isolated descriptive sentence is insufficient to identify a caption submission.",
+          "source": {
+            "record": {
+              "index": 3051,
+              "sha256": "c8253243549e84ce67cc146212fff61ac4c75c128852aa6727d1ed667e5fff16",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 3050,
+              "sha256": "2974e5d23637bca72a630eef288bb6264685093750a3d553cf8943c0ebb607e9",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 3052,
+              "sha256": "3490b4448e7b99293c2622be6c76347835ed75f3b8579ee92b63ab404b14bbe5",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 3053,
+              "sha256": "401198b11324312810c217c750c4c2e1c3833c631762e7be91c238f85e66ad86",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 2516,
+            "span_sha256": "9aa17592a2a84c102f9ef8ce22669b10d66240875401a7e4323e9b480417c18f",
+            "cycle": 106
+          },
+          "response_utc": "2026-09-18T11:53:23.429628+00:00"
+        },
+        {
+          "index": 3086,
+          "category": "concrete",
+          "summary": "Two explicit caption attempts appear before a long repeated intention/waiting tail.",
+          "source": {
+            "record": {
+              "index": 3086,
+              "sha256": "08a6af4e45edcf87a545cebeabbdaefbaf9b5d9696fec7f4e8c942f155ae16dd",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 3085,
+              "sha256": "505c20ef0bd1a5268f64b9eadd1dd40eaa1339fc41f23f76388a587cfcf03c24",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 3087,
+              "sha256": "ca13e8f7bc400e1fa703f7e7d066c59e4349146f01e077da12acb92bdf081e99",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 3088,
+              "sha256": "7e40eaa05fc32513bd3cb768c51495bb8564a53d5bc3eaa781abf3da31592f95",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 2592,
+            "span_sha256": "4da27b0a061ce931a296f5a8793b567ac9132f57c922ec1cd3d671fae300772c",
+            "cycle": 107
+          },
+          "response_utc": "2026-09-18T11:58:59.257816+00:00"
+        }
+      ],
+      "checked_result": "The Tool explicitly links a no-judgment notice to ACT3051. Scores, acceptance and novelty for ACT3086 are unknown in this cut.",
+      "recent_parent": "Retained Rohin messages render in the pair window; no Astra turn is observed there. This is not evidence of Main's later P3 repair.",
+      "next_artifact": "After the linked no-judgment/write-the-caption feedback, the next ACT supplies two captions. Partial in-context recovery, not winning or adapter improvement.",
+      "movement_status": "artifact_emerges",
+      "recent_request_interval": {
+        "start": 3043,
+        "end": 3085
+      },
+      "recent_rendered_parent_event_count": 2,
+      "recent_parent_refs_sha256": "2ed1eb8d4dcec830ad8ba26ed36928bbb15f2dda77de23ae3938258c455b037c",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:623532e41ff14258a5c3e483ca268e2b",
+          "source_sha256": "619752569c89d793a7c90eb66da24bf73061d8a0a66a67ecbf47f06574737f31",
+          "text_sha256": "976879070d45824ee1336fda4e9f9b2ce8a3d25c3bdf9f7d98299061ae5ae761",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2411,
+            "sha256": "0683d1000ae1ddf7662fca096c73178e76c4cd7fe7f0cb115274ed21b2206b04",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3094,
+            "sha256": "a94469df3661c1e6cc2e96a678e57337e3d1435af01f7774e5664b6aecea0764",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:ff00374b2c1a460dbc72b1fb0eab17d2",
+          "source_sha256": "0d0ab4aba7fb8bbccf91fdb0f9b0442d8c6dbae3ccf55b29922ceaa7be2fb04f",
+          "text_sha256": "b5b79ff24a2690c5bddbb9a78d46b92039ceffc51542485c5b00eab77f3d713b",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2411,
+            "sha256": "0683d1000ae1ddf7662fca096c73178e76c4cd7fe7f0cb115274ed21b2206b04",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3094,
+            "sha256": "a94469df3661c1e6cc2e96a678e57337e3d1435af01f7774e5664b6aecea0764",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 10,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "environment:inbox:4f32bb8d69774e9f8bef2f7d379104b6",
+          "source_sha256": "fc236ced28f02878a1480f2674fe90c172220efe5350978825850d4bd69ba77b",
+          "text_sha256": "ffcfae8129702bd247d5a9e004c644b9dc6c2d8559612508dd967d3598aa6ba1",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 3078,
+            "sha256": "47f8c8e50d94a93cb9da962cb5eebe26cbb282176ba51a619b2fccf600c0a674",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3094,
+            "sha256": "a94469df3661c1e6cc2e96a678e57337e3d1435af01f7774e5664b6aecea0764",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "environment:inbox:4f32bb8d69774e9f8bef2f7d379104b6",
+          "source_sha256": "fc236ced28f02878a1480f2674fe90c172220efe5350978825850d4bd69ba77b",
+          "text_sha256": "ffcfae8129702bd247d5a9e004c644b9dc6c2d8559612508dd967d3598aa6ba1",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 3078,
+            "sha256": "47f8c8e50d94a93cb9da962cb5eebe26cbb282176ba51a619b2fccf600c0a674",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3094,
+            "sha256": "a94469df3661c1e6cc2e96a678e57337e3d1435af01f7774e5664b6aecea0764",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "GAME1_P3",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/GAME1_P3/EVIDENCE.json",
+        "evidence_sha256": "2a27e347204040a0e1ce1981a01ffc516bc95144c492e5b6e8c31993277840d9",
+        "evidence_bytes": 7514767,
+        "observed_utc": "2026-09-18T12:03:44.225877+00:00",
+        "coverage_start": 2408,
+        "caught_up": true,
+        "through": {
+          "index": 3139,
+          "sha256": "62e673aff42412a0320da4658e378676f4f2992bd3c9bb8375f1eadd039adcd6",
+          "kind": "R184_LEARN_COMPLETE"
+        }
+      },
+      "tool_links": [
+        {
+          "event": {
+            "event_id": "environment:inbox:4f32bb8d69774e9f8bef2f7d379104b6",
+            "source_sha256": "fc236ced28f02878a1480f2674fe90c172220efe5350978825850d4bd69ba77b",
+            "text_sha256": "ffcfae8129702bd247d5a9e004c644b9dc6c2d8559612508dd967d3598aa6ba1",
+            "actor": "environment",
+            "first_rendered_in_window": {
+              "index": 3078,
+              "sha256": "47f8c8e50d94a93cb9da962cb5eebe26cbb282176ba51a619b2fccf600c0a674",
+              "kind": "REQUEST"
+            },
+            "last_rendered_in_window": {
+              "index": 3094,
+              "sha256": "a94469df3661c1e6cc2e96a678e57337e3d1435af01f7774e5664b6aecea0764",
+              "kind": "REQUEST"
+            }
+          },
+          "response": {
+            "index": 3051,
+            "sha256": "c8253243549e84ce67cc146212fff61ac4c75c128852aa6727d1ed667e5fff16",
+            "kind": "RESPONSE"
+          },
+          "method": "response_index_and_12_hex_record_sha_prefix",
+          "status": "no_judgment"
+        }
+      ]
+    },
+    {
+      "journal_id": "9c8b0140df9449428023ac1a783c6e51",
+      "acts": [
+        {
+          "index": 1801,
+          "category": "concrete",
+          "summary": "Caption attempts about finances displacing childcare; repeated/descriptive rather than intent-only.",
+          "source": {
+            "record": {
+              "index": 1801,
+              "sha256": "5dd03661f0eb20270572735d2412d8411549b80162e94408bc01472de6ca23ec",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1800,
+              "sha256": "a076d2fdbba738beaab361a0bfede45f4427253aa5f679c35efc080ba2d6d12f",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1802,
+              "sha256": "9aae000f988c15074e1591fa08119257e0b1298317af6081d332e85c30e3f90a",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1803,
+              "sha256": "fb99b06695860620145a1b9894c7df858e2c4e466754e85d19b5be193c8f22fd",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 638,
+            "span_sha256": "77e8d924c0836e98e686c83bacaa5136be13b68e96d07529be570f68cf80c6be",
+            "cycle": 69
+          },
+          "response_utc": "2026-09-18T11:49:19.819879+00:00"
+        },
+        {
+          "index": 1809,
+          "category": "concrete",
+          "summary": "More caption lines, mostly the same finance/childcare premise.",
+          "source": {
+            "record": {
+              "index": 1809,
+              "sha256": "79f7e5a3a14e30344ce623896ed9e59741386a2bd61403121127340bd0dec5fe",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1808,
+              "sha256": "53f363efa2831c45e343bc96d201cd2a2f63941eeae962333daada687128749b",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1810,
+              "sha256": "aba096333b121fddfb931111faa03552f9afb0c31b107fa1bc55686548f48751",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1811,
+              "sha256": "56f5fa1d7920284ec2dc278ee61c3d1b4c10b7cd3f11af2d27be294cf7dab1f2",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 476,
+            "span_sha256": "1a18276070524e4f2b3250873a025b5f0273910fda431f02ebc20acda71126e5",
+            "cycle": 69
+          },
+          "response_utc": "2026-09-18T11:49:32.947843+00:00"
+        }
+      ],
+      "checked_result": "A rendered judge message exactly matches two ACT1809 caption strings at ranks 63/65 and 62/65, both rejected. This is content matching, not a unique submission-ID join. Its third rank65 item is explanatory meta prose, not a genuine caption.",
+      "recent_parent": "Astra model-philosophy/caption guidance is rendered; two event IDs contain identical guidance.",
+      "next_artifact": "Wording changes but the core premise repeats after earlier feedback. No demonstrated corrected or accepted idea.",
+      "movement_status": "lexical_change_only",
+      "recent_request_interval": {
+        "start": 1784,
+        "end": 1808
+      },
+      "recent_rendered_parent_event_count": 4,
+      "recent_parent_refs_sha256": "ee665bc4ed5bbac5ca0c18052f9ef086f2a7e2e8a5dc039253c6f19827451a4f",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:735995144d034151b39d7a69fd32b79f",
+          "source_sha256": "fe894b2386d1473d47e8cf8010611672dd7553835e0c36e25b586acc4b9ee2c3",
+          "text_sha256": "343b8398154ee4e7593f59a08911bbca644008a0b75c2a341ed625fc514cc4cc",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1652,
+            "sha256": "03d1a1b036420adaf1034c666e71b3617e372eb0e38a84f61005a250cb4377f2",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1791,
+            "sha256": "908a86a5a68fcdaf3512f0ea396fe2984b9fa27cf9b7456d3721f0e304772e8c",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:91db804c471d40efb8503406d63f4fdc",
+          "source_sha256": "6d69dee4160b04db6aa88ae6dc9e53469aaab77122e0252d534eb28b9968a904",
+          "text_sha256": "e0a7ae8267da572b556f5f486874f2b41c26332e25051d1d0121424aed3c76f1",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1784,
+            "sha256": "860d1cab4f03c1a437890d02c46a0bddec4def27ac5de94e9904cb1fa50291eb",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1820,
+            "sha256": "52f706248a5e303b730deaf4aa7a038c138737b7a19ffa38541c0f5c5ee652c8",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:13a5ba28356e426f901b3449c315476b",
+          "source_sha256": "fd3dbd07c14d46a21a8e95d0492702de84f6e80d1bbbe964a5969b7a797eedbf",
+          "text_sha256": "e0a7ae8267da572b556f5f486874f2b41c26332e25051d1d0121424aed3c76f1",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1784,
+            "sha256": "860d1cab4f03c1a437890d02c46a0bddec4def27ac5de94e9904cb1fa50291eb",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1820,
+            "sha256": "52f706248a5e303b730deaf4aa7a038c138737b7a19ffa38541c0f5c5ee652c8",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 7,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "environment:inbox:313c65e1a3fc4e909598a6565adb39d9",
+          "source_sha256": "cc3687212415567216f1d5c9ddceb50c859e4506e2bbcf662696c90f1027d07f",
+          "text_sha256": "c6e1861b191b8b7c53feeb42eda92a69eb2bdbb7e2a828875c8e827fb16fecb6",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1808,
+            "sha256": "53f363efa2831c45e343bc96d201cd2a2f63941eeae962333daada687128749b",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1820,
+            "sha256": "52f706248a5e303b730deaf4aa7a038c138737b7a19ffa38541c0f5c5ee652c8",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "environment:inbox:313c65e1a3fc4e909598a6565adb39d9",
+          "source_sha256": "cc3687212415567216f1d5c9ddceb50c859e4506e2bbcf662696c90f1027d07f",
+          "text_sha256": "c6e1861b191b8b7c53feeb42eda92a69eb2bdbb7e2a828875c8e827fb16fecb6",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1808,
+            "sha256": "53f363efa2831c45e343bc96d201cd2a2f63941eeae962333daada687128749b",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1820,
+            "sha256": "52f706248a5e303b730deaf4aa7a038c138737b7a19ffa38541c0f5c5ee652c8",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "environment:inbox:f0cdfe2615e6498b949bf95ea23119b7",
+          "source_sha256": "7fbc1155c28e044126fcad053e7656ddd94a4ff01b9b896707d4784fa77e4a7f",
+          "text_sha256": "66d6b58ec0ba221a0a5c45ad2082bab5c1860a9e7a8ae58d98acde3c49518667",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1820,
+            "sha256": "52f706248a5e303b730deaf4aa7a038c138737b7a19ffa38541c0f5c5ee652c8",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1820,
+            "sha256": "52f706248a5e303b730deaf4aa7a038c138737b7a19ffa38541c0f5c5ee652c8",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "GAME_N3_0",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/GAME_N3_0/EVIDENCE.json",
+        "evidence_sha256": "1dc72ca68afd36bce4d2006befca365dd3232da6494d3b2007744bbe163568cd",
+        "evidence_bytes": 2899323,
+        "observed_utc": "2026-09-18T12:02:37.128937+00:00",
+        "coverage_start": 1168,
+        "caught_up": true,
+        "through": {
+          "index": 1912,
+          "sha256": "11753f77ebdc9c9c36026f236fef43c99189f9796c645f48b4507c1b09555c28",
+          "kind": "R184_LEARN_COMPLETE"
+        }
+      },
+      "tool_links": [
+        {
+          "event": {
+            "event_id": "environment:inbox:f0cdfe2615e6498b949bf95ea23119b7",
+            "source_sha256": "7fbc1155c28e044126fcad053e7656ddd94a4ff01b9b896707d4784fa77e4a7f",
+            "text_sha256": "66d6b58ec0ba221a0a5c45ad2082bab5c1860a9e7a8ae58d98acde3c49518667",
+            "actor": "environment",
+            "first_rendered_in_window": {
+              "index": 1820,
+              "sha256": "52f706248a5e303b730deaf4aa7a038c138737b7a19ffa38541c0f5c5ee652c8",
+              "kind": "REQUEST"
+            },
+            "last_rendered_in_window": {
+              "index": 1820,
+              "sha256": "52f706248a5e303b730deaf4aa7a038c138737b7a19ffa38541c0f5c5ee652c8",
+              "kind": "REQUEST"
+            }
+          },
+          "matches": [
+            {
+              "caption_number": 1,
+              "rank": 63,
+              "panel": 65,
+              "accepted": false,
+              "novelty": "rejected",
+              "response": {
+                "index": 1809,
+                "sha256": "79f7e5a3a14e30344ce623896ed9e59741386a2bd61403121127340bd0dec5fe",
+                "kind": "RESPONSE"
+              },
+              "start": 142,
+              "end": 249,
+              "literal_sha256": "1d3b96e4682750fd68c2e4ef19cc106c4af40ba9fb9682543f7dbe7b6a083e40",
+              "method": "exact_literal_only_not_unique_submission_identity"
+            },
+            {
+              "caption_number": 2,
+              "rank": 62,
+              "panel": 65,
+              "accepted": false,
+              "novelty": "rejected",
+              "response": {
+                "index": 1809,
+                "sha256": "79f7e5a3a14e30344ce623896ed9e59741386a2bd61403121127340bd0dec5fe",
+                "kind": "RESPONSE"
+              },
+              "start": 256,
+              "end": 344,
+              "literal_sha256": "9f9463cbc8f6971aa9ac8ee9879b1b609d3017d0e3d4e3524998c018f71bcd51",
+              "method": "exact_literal_only_not_unique_submission_identity"
+            }
+          ],
+          "excluded_scored_meta_items": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "journal_id": "d9393884f50b4524b39a18cf1cfb78fa",
+      "acts": [
+        {
+          "index": 1961,
+          "category": "concrete",
+          "summary": "Mixed-language caption set about baby budgets, shopping and toys.",
+          "source": {
+            "record": {
+              "index": 1961,
+              "sha256": "d88f0d311eafeb8b8d46a5fe5228b4a780643ccf2d3e637ca43d64215333bfaf",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1960,
+              "sha256": "f5bcd086758634a7aa5aa2fd830b8853af382a2a90859934cf4f70dd750fc64a",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1962,
+              "sha256": "1386f5820a6ab2c60f82f8e5aab2452d1f2245eedbbbcdef84b84eb6ff844e52",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1963,
+              "sha256": "8eb08aa1aef341c0d9aa7ef60f421febc56503edadbd38e3e3ba1bc387346f64",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 291,
+            "span_sha256": "5870cb8ef1434a3baed057393261067a1753992c30a9ad477d84eea9739e706c",
+            "cycle": 67
+          },
+          "response_utc": "2026-09-18T11:51:10.675199+00:00"
+        },
+        {
+          "index": 2092,
+          "category": "concrete",
+          "summary": "New variants emphasize love/time versus finances, with an English submission.",
+          "source": {
+            "record": {
+              "index": 2092,
+              "sha256": "d728eec3aaeb6fde575934030f6ae2664a7f2807148e51abd79060dc0610672c",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 2091,
+              "sha256": "57064b159020e9d256e2c80acc55a0566d5334b8070f724a0db6c08c1c2de5e3",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 2093,
+              "sha256": "d17f76c896d97d415df382d8cfd880417a49909b0f4c5ac6cfe7440e3f75af1f",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 2094,
+              "sha256": "5992cb5038923e1bd3f7fbe3daa1aceedfbfe524fd4ea4ad9b47e20f48549fbf",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 680,
+            "span_sha256": "c4596147050cdf44248730ba3fdcca55fae3491d0a64a6c5f6ce3cadd312648a",
+            "cycle": 68
+          },
+          "response_utc": "2026-09-18T12:02:22.558856+00:00"
+        }
+      ],
+      "checked_result": "Selected captions have no linked scores in the available projection; an earlier ambiguous-scene notice is not a score.",
+      "recent_parent": "New Astra curriculum and caption-epoch prompts render between the ACTs.",
+      "next_artifact": "Caption content and emphasis change after guidance; accepted novelty and successful correction remain unknown.",
+      "movement_status": "content_changes_unverified",
+      "recent_request_interval": {
+        "start": 1938,
+        "end": 2091
+      },
+      "recent_rendered_parent_event_count": 5,
+      "recent_parent_refs_sha256": "99dc1a61f662ca5ee01d23289f3e9ceea1335a563d3c9f5ced787ebbf9ec0767",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:6693a26a7bc544858928ae5298c32c0f",
+          "source_sha256": "1a5958d6f8baef6bc16830afd1d70ca228f13030c5f55966deedd6200ee159a8",
+          "text_sha256": "ddc3dfd87ba31e36ac24fce7b00958dccb04b53c932ccb24306516b75400b499",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1932,
+            "sha256": "f472d73cb5fc22f7e05b9913a9b4862ba1baa902202a15e7a3fdda25f85b3f81",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2091,
+            "sha256": "57064b159020e9d256e2c80acc55a0566d5334b8070f724a0db6c08c1c2de5e3",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:3c3fd0c3605a4001a88441025f7af9f0",
+          "source_sha256": "de65c223de58b1cc6956b4d87b491c1db087c57f3218098f9dd54bc8049fc998",
+          "text_sha256": "f1d6f7c6276d9a7269669061da42fa417d04552a503f295d64b79b0b301d1b2a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2084,
+            "sha256": "2babdf925ecb716d441ae3a19da6aae185a40c8933a18bd0d1d93106d0136254",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2091,
+            "sha256": "57064b159020e9d256e2c80acc55a0566d5334b8070f724a0db6c08c1c2de5e3",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:fae56c91f6db4f52993a21f46d43bb77",
+          "source_sha256": "bb2822a9d5e467e17edc3bf8cf7b2e026e443834d597175a5b086519402cc9a2",
+          "text_sha256": "69f3128e10df3a0601beb1bc779d448ecc8bf6e6a68814e6be3a5d53954b63d1",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2084,
+            "sha256": "2babdf925ecb716d441ae3a19da6aae185a40c8933a18bd0d1d93106d0136254",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2091,
+            "sha256": "57064b159020e9d256e2c80acc55a0566d5334b8070f724a0db6c08c1c2de5e3",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 10,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "environment:inbox:9823c2f3af11459c90487867309bfb12",
+          "source_sha256": "770b2f87f5a3ccf71fc1f24e3ad46e77207e5d55c57be031fb3ae6dd1356c894",
+          "text_sha256": "b18fef298a9cfe617391d9a94f5bceba31b96fdd53c150cc741deaacd7ba7756",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1972,
+            "sha256": "26371a07d5b8e3322c7b1aee1c4744e6dfdbc5d54e8d9a2d7f4b07c1b612b287",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2091,
+            "sha256": "57064b159020e9d256e2c80acc55a0566d5334b8070f724a0db6c08c1c2de5e3",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "environment:inbox:ff1763b7c37845e9a70dc33a271ed7df",
+          "source_sha256": "2164728394d1b3e625bc1a550735fc2d981a6c7186db004d83e1a824ba7692d1",
+          "text_sha256": "b18fef298a9cfe617391d9a94f5bceba31b96fdd53c150cc741deaacd7ba7756",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1972,
+            "sha256": "26371a07d5b8e3322c7b1aee1c4744e6dfdbc5d54e8d9a2d7f4b07c1b612b287",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2091,
+            "sha256": "57064b159020e9d256e2c80acc55a0566d5334b8070f724a0db6c08c1c2de5e3",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:3c3fd0c3605a4001a88441025f7af9f0",
+          "source_sha256": "de65c223de58b1cc6956b4d87b491c1db087c57f3218098f9dd54bc8049fc998",
+          "text_sha256": "f1d6f7c6276d9a7269669061da42fa417d04552a503f295d64b79b0b301d1b2a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2084,
+            "sha256": "2babdf925ecb716d441ae3a19da6aae185a40c8933a18bd0d1d93106d0136254",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2091,
+            "sha256": "57064b159020e9d256e2c80acc55a0566d5334b8070f724a0db6c08c1c2de5e3",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:fae56c91f6db4f52993a21f46d43bb77",
+          "source_sha256": "bb2822a9d5e467e17edc3bf8cf7b2e026e443834d597175a5b086519402cc9a2",
+          "text_sha256": "69f3128e10df3a0601beb1bc779d448ecc8bf6e6a68814e6be3a5d53954b63d1",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2084,
+            "sha256": "2babdf925ecb716d441ae3a19da6aae185a40c8933a18bd0d1d93106d0136254",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2091,
+            "sha256": "57064b159020e9d256e2c80acc55a0566d5334b8070f724a0db6c08c1c2de5e3",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:3c3fd0c3605a4001a88441025f7af9f0",
+          "source_sha256": "de65c223de58b1cc6956b4d87b491c1db087c57f3218098f9dd54bc8049fc998",
+          "text_sha256": "f1d6f7c6276d9a7269669061da42fa417d04552a503f295d64b79b0b301d1b2a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2084,
+            "sha256": "2babdf925ecb716d441ae3a19da6aae185a40c8933a18bd0d1d93106d0136254",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2091,
+            "sha256": "57064b159020e9d256e2c80acc55a0566d5334b8070f724a0db6c08c1c2de5e3",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:fae56c91f6db4f52993a21f46d43bb77",
+          "source_sha256": "bb2822a9d5e467e17edc3bf8cf7b2e026e443834d597175a5b086519402cc9a2",
+          "text_sha256": "69f3128e10df3a0601beb1bc779d448ecc8bf6e6a68814e6be3a5d53954b63d1",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2084,
+            "sha256": "2babdf925ecb716d441ae3a19da6aae185a40c8933a18bd0d1d93106d0136254",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2091,
+            "sha256": "57064b159020e9d256e2c80acc55a0566d5334b8070f724a0db6c08c1c2de5e3",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "GAME_N3_3",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/GAME_N3_3/EVIDENCE.json",
+        "evidence_sha256": "5fa2ec1541727623b406adf30cd5bef6cdd4a7900daefbbf9393c1d97651c914",
+        "evidence_bytes": 7780232,
+        "observed_utc": "2026-09-18T12:02:38.158199+00:00",
+        "coverage_start": 1305,
+        "caught_up": true,
+        "through": {
+          "index": 2098,
+          "sha256": "fbe0e1a8d1e7b2679161fa60f32796f3fde39700eacedc19d7c0ce31dd30a56f",
+          "kind": "REQUEST"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "160ab37a826e4a8faf869be8ac74b56b",
+      "acts": [
+        {
+          "index": 1838,
+          "category": "concrete",
+          "summary": "Caption strings use lexical variants of the finance/baby-name premise.",
+          "source": {
+            "record": {
+              "index": 1838,
+              "sha256": "cc0eb1c2d96106f6b57ea6188fa56d55951a893be4f414999d2a389650f581dc",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1837,
+              "sha256": "0bd8f845067fef0b5b09ca391d0594aa79355b73ef0287f7591d3af89cfb1680",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1839,
+              "sha256": "59417fb095bcacc61107a4addc3f19e787044ff3669e7f832ca1c63ab04a3e9d",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1840,
+              "sha256": "09a25d848cbfcb75a8ef40fa2ff9b3367377260c6fb8a994649833b0e27d8261",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 1548,
+            "span_sha256": "e02053a17d86f6ff4b31e660e0a1b0ba5d0dcd741f1ff8a660950b2a192834ae",
+            "cycle": 67
+          },
+          "response_utc": "2026-09-18T12:01:59.157764+00:00"
+        },
+        {
+          "index": 1846,
+          "category": "concrete",
+          "summary": "Changes a few letters/words in the same caption template.",
+          "source": {
+            "record": {
+              "index": 1846,
+              "sha256": "38ce05e002d15199d86aabb878ef9aae799e2e8cf6cd5e9ebfeca9b94e88e9d7",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1845,
+              "sha256": "54ddfab181047e3f78e1a985f872fafd24f3d153b4b80c03c37a7b08d4b70dbc",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1847,
+              "sha256": "06e7c35966114bbc8f8342f55399ac216666fff765214af6e9e523d47b0adfe2",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1848,
+              "sha256": "c5eea87ee7aa2d1f5683e5681fcf085e23a466b313f611fc9c0826598d413d89",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 849,
+            "span_sha256": "3f6e36761af3bb2ae5f24f3b3df577b4e4eaaad4eada4b50d8fac01cf9438662",
+            "cycle": 67
+          },
+          "response_utc": "2026-09-18T12:02:17.723676+00:00"
+        }
+      ],
+      "checked_result": "Scores for the two selected caption sets are unknown. Intervening feedback ranks explanatory or older strings, not the reviewed captions.",
+      "recent_parent": "Astra enrichment and new caption-epoch guidance render before the pair.",
+      "next_artifact": "Only lexical substitutions after feedback; no substantive new angle or checked gain.",
+      "movement_status": "lexical_change_only",
+      "recent_request_interval": {
+        "start": 1820,
+        "end": 1845
+      },
+      "recent_rendered_parent_event_count": 5,
+      "recent_parent_refs_sha256": "ca6e89f3f18ef915268d2b9344a07901a8e2e9b36d19d69f3bd39bbe372036af",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:3c58d7ef86e74e5db03ddecda6b67690",
+          "source_sha256": "74091b68a2ce4f19856b6f97fefe269fa275395259b759416552df25eb3ae901",
+          "text_sha256": "e0a7ae8267da572b556f5f486874f2b41c26332e25051d1d0121424aed3c76f1",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1689,
+            "sha256": "0f3c5f5c7a48d55f62604fb66663f4b3c6ac1417278f86f552f4d7a371b2208c",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1820,
+            "sha256": "220ffc8d88885a742aca4636496ac32b0c4ef06cc4511411a9a05ba73614d5dd",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:d0436fda8f6141b3a258ea259987a81c",
+          "source_sha256": "03cd94dc132c4aefaf216da97eaac1d356cd6c0a569b6d17b25de0e166112219",
+          "text_sha256": "ddc3dfd87ba31e36ac24fce7b00958dccb04b53c932ccb24306516b75400b499",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1820,
+            "sha256": "220ffc8d88885a742aca4636496ac32b0c4ef06cc4511411a9a05ba73614d5dd",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1845,
+            "sha256": "54ddfab181047e3f78e1a985f872fafd24f3d153b4b80c03c37a7b08d4b70dbc",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:c311f8b76a4c48a5817d0ff5cafd1011",
+          "source_sha256": "87e2e0e8e2ab9d9a928ca372ae48d846adc85cfc7df6d4255e3b01d18eb942b3",
+          "text_sha256": "28049666fe345df3dd3c43490c6f9ef668829dafb7e1e51f3230f338c55b4b90",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1830,
+            "sha256": "12278e3a85faecbf8e6e8f5e0a27e78f1b51052d42d1b47a7cd69ca79b87980d",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1845,
+            "sha256": "54ddfab181047e3f78e1a985f872fafd24f3d153b4b80c03c37a7b08d4b70dbc",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 10,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "environment:inbox:945087e86fdb48afa60aa2cfd669e948",
+          "source_sha256": "8e226398d4fe9da7906a0a086466a5daf3667b7d5ff21b658b10869bc6a64ff0",
+          "text_sha256": "027b0d916dd41fcfd8bc82bd4e90d4187e6fee4178fb64ab61dc519d8ee106cc",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1845,
+            "sha256": "54ddfab181047e3f78e1a985f872fafd24f3d153b4b80c03c37a7b08d4b70dbc",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1845,
+            "sha256": "54ddfab181047e3f78e1a985f872fafd24f3d153b4b80c03c37a7b08d4b70dbc",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:c311f8b76a4c48a5817d0ff5cafd1011",
+          "source_sha256": "87e2e0e8e2ab9d9a928ca372ae48d846adc85cfc7df6d4255e3b01d18eb942b3",
+          "text_sha256": "28049666fe345df3dd3c43490c6f9ef668829dafb7e1e51f3230f338c55b4b90",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1830,
+            "sha256": "12278e3a85faecbf8e6e8f5e0a27e78f1b51052d42d1b47a7cd69ca79b87980d",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1845,
+            "sha256": "54ddfab181047e3f78e1a985f872fafd24f3d153b4b80c03c37a7b08d4b70dbc",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "environment:inbox:945087e86fdb48afa60aa2cfd669e948",
+          "source_sha256": "8e226398d4fe9da7906a0a086466a5daf3667b7d5ff21b658b10869bc6a64ff0",
+          "text_sha256": "027b0d916dd41fcfd8bc82bd4e90d4187e6fee4178fb64ab61dc519d8ee106cc",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1845,
+            "sha256": "54ddfab181047e3f78e1a985f872fafd24f3d153b4b80c03c37a7b08d4b70dbc",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1845,
+            "sha256": "54ddfab181047e3f78e1a985f872fafd24f3d153b4b80c03c37a7b08d4b70dbc",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "GAME_N3_5",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/GAME_N3_5/EVIDENCE.json",
+        "evidence_sha256": "2373b1b40c508dbe8700ddee3dbacdc7d883793e9515be5267a4d9a1dc3a361b",
+        "evidence_bytes": 7772563,
+        "observed_utc": "2026-09-18T12:02:38.696837+00:00",
+        "coverage_start": 1087,
+        "caught_up": true,
+        "through": {
+          "index": 1856,
+          "sha256": "1f21288376b00a411d849fa501e71e4b62823fa597f9d3b3d1a643cec3bd13d0",
+          "kind": "REQUEST"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "ebfd6f5f84284073a964e83223fe7c5a",
+      "acts": [
+        {
+          "index": 1893,
+          "category": "concrete",
+          "summary": "One caption contrasts ceiling-tile counting with baby expenses.",
+          "source": {
+            "record": {
+              "index": 1893,
+              "sha256": "13b20a15c1b6db5a4701f1ac2652d0e89c6ca225f53504b22d92ad9c3b2e2c2b",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1892,
+              "sha256": "d084dd0b46bcb44984afd846cf5451057c86178bf59869bf18f2cedb1b6a2193",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1894,
+              "sha256": "e2a2f0f391bb8d6b5caee4ed3d35c1b5bfa2378806e45f9b2d8fc8460b4f6e57",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1895,
+              "sha256": "6a874f1c9c6b4d5ea0d15d5fecdecf8dbcf10dccce226944bcbc1d7d0e0997de",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 1089,
+            "span_sha256": "8d155ab2e2e57d6a0d5e830d2847438b9612cf20fbdaff823a4f19483ee20e2a",
+            "cycle": 67
+          },
+          "response_utc": "2026-09-18T12:01:22.246395+00:00"
+        },
+        {
+          "index": 1901,
+          "category": "concrete",
+          "summary": "Rephrases the ceiling-tile/expense contrast while claiming a new angle.",
+          "source": {
+            "record": {
+              "index": 1901,
+              "sha256": "829213f4454ca8e9026d912b7dd020527b591d034c4c54c2311b3bbffb62a030",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1900,
+              "sha256": "6375fddb718ddd46beff415bbf685d8eb8fbdb8bd473798fa6d10bfd6c54d24d",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1902,
+              "sha256": "9c71f808cec517cfb2050d2661e21fd8e94c87db705737f0b8b7ca62f6918089",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1903,
+              "sha256": "97c4b580005f6fae0341ef9cf3cd1f730e6ef3574ecc5d98390e9d4d886e7411",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 1227,
+            "span_sha256": "ccc405c77b7c38a6f75ac5f14ec7ca8ad6244dd392d452eb88832e2b9a329443",
+            "cycle": 67
+          },
+          "response_utc": "2026-09-18T12:01:46.128968+00:00"
+        }
+      ],
+      "checked_result": "Selected-caption scores unknown. Intervening rank40 accepted/repeat feedback names an older different caption and cannot be credited to this pair.",
+      "recent_parent": "Astra enrichment and caption-epoch guidance render before the pair.",
+      "next_artifact": "Same central premise after feedback, despite a claim of novelty.",
+      "movement_status": "lexical_change_only",
+      "recent_request_interval": {
+        "start": 1877,
+        "end": 1900
+      },
+      "recent_rendered_parent_event_count": 5,
+      "recent_parent_refs_sha256": "55e9b4b95c23870eb3aa3bf5bbce74af45ccba0dc77b8e86948d8bcfc84ab009",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:920ccbc0412246908c502b8fbd33060e",
+          "source_sha256": "a61becc01c7bd3259a0c242ec2117745f3a0ce38a74c42293ceb610638b3d867",
+          "text_sha256": "ddc3dfd87ba31e36ac24fce7b00958dccb04b53c932ccb24306516b75400b499",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1796,
+            "sha256": "f9c1b90e84ee5583f5289d507c76b5f33767db73a8cede6c7faf3f2fda7e3fb8",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1900,
+            "sha256": "6375fddb718ddd46beff415bbf685d8eb8fbdb8bd473798fa6d10bfd6c54d24d",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:ad987dfc6fd741c88e7bcfda7e920755",
+          "source_sha256": "5ea6ef7b14f340cfcde0bf5040c195608831ec2ebec62ac271d3a6f2d27e2a8f",
+          "text_sha256": "f1d6f7c6276d9a7269669061da42fa417d04552a503f295d64b79b0b301d1b2a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1877,
+            "sha256": "0c14c62a72f643499eea1727a8b2bae00af3a5d8e15ac381c5ac7f32ee4fd801",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1900,
+            "sha256": "6375fddb718ddd46beff415bbf685d8eb8fbdb8bd473798fa6d10bfd6c54d24d",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:ffbea6d6e155422488be68df3a9567ad",
+          "source_sha256": "996ce8366d9dd4099a18a31c8b47b2d559869d44bd5377a9be6a71dc63ddb836",
+          "text_sha256": "346bc46b2e2f7bb145bebb4e663bd537115a00188d39d489e03a41659f820b83",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1892,
+            "sha256": "d084dd0b46bcb44984afd846cf5451057c86178bf59869bf18f2cedb1b6a2193",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1913,
+            "sha256": "f482f1d69f40591cee7babb4751d9c4cb9d89e875d768cb70ecffddec3b52374",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 10,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "environment:inbox:c86db162eb644e4a8394e8c8934dd342",
+          "source_sha256": "f64da23d6b09d19fbe6053d9e6589f67585d317705c66a03e7560d15a4a5a2a2",
+          "text_sha256": "9da52ecf600665a70f90c8537766c62eeff9c682662ea81567b6bb72879d1c0e",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1900,
+            "sha256": "6375fddb718ddd46beff415bbf685d8eb8fbdb8bd473798fa6d10bfd6c54d24d",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1913,
+            "sha256": "f482f1d69f40591cee7babb4751d9c4cb9d89e875d768cb70ecffddec3b52374",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:ffbea6d6e155422488be68df3a9567ad",
+          "source_sha256": "996ce8366d9dd4099a18a31c8b47b2d559869d44bd5377a9be6a71dc63ddb836",
+          "text_sha256": "346bc46b2e2f7bb145bebb4e663bd537115a00188d39d489e03a41659f820b83",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 1892,
+            "sha256": "d084dd0b46bcb44984afd846cf5451057c86178bf59869bf18f2cedb1b6a2193",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1913,
+            "sha256": "f482f1d69f40591cee7babb4751d9c4cb9d89e875d768cb70ecffddec3b52374",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "environment:inbox:c86db162eb644e4a8394e8c8934dd342",
+          "source_sha256": "f64da23d6b09d19fbe6053d9e6589f67585d317705c66a03e7560d15a4a5a2a2",
+          "text_sha256": "9da52ecf600665a70f90c8537766c62eeff9c682662ea81567b6bb72879d1c0e",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1900,
+            "sha256": "6375fddb718ddd46beff415bbf685d8eb8fbdb8bd473798fa6d10bfd6c54d24d",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1913,
+            "sha256": "f482f1d69f40591cee7babb4751d9c4cb9d89e875d768cb70ecffddec3b52374",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "GAME_N3_6",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/GAME_N3_6/EVIDENCE.json",
+        "evidence_sha256": "694ea7dc35f27ba742b03f8928c7e3cb13ee9fd1368ad962fc3a169f30589a41",
+        "evidence_bytes": 3525441,
+        "observed_utc": "2026-09-18T12:02:38.707391+00:00",
+        "coverage_start": 1147,
+        "caught_up": true,
+        "through": {
+          "index": 1929,
+          "sha256": "bdc15120a511cd82f5cdbec0154f8661c1397c3678cfd99ff5b7247365eec2d0",
+          "kind": "UPDATE"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "bbc25ac6d79c4c7db89a3c5092aa9cfe",
+      "acts": [
+        {
+          "index": 1804,
+          "category": "concrete",
+          "summary": "Two brief finance/pregnancy caption lines.",
+          "source": {
+            "record": {
+              "index": 1804,
+              "sha256": "2a2c0651ccec2f6a8cd60c2e9ebf1f69b7dfc9c740533e3c09e2a37a9701c2ab",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1803,
+              "sha256": "f51554e7a46ce3f902658249eb896b08de8655715e81194fe0eebd94b254a28a",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1805,
+              "sha256": "833d1b6e68aace96d69fa60326c7e549067cd0f8983a031a79be52d5e626f3fc",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1806,
+              "sha256": "1257ecdc8839395207b3b65bbd3b28c72cc88c1823c320ee3c2bcbff4aa6ce57",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 102,
+            "span_sha256": "62f1be9f235d9bed1419ef6ebbd7f692a267a8f966a3afd9521896a162e6de87",
+            "cycle": 71
+          },
+          "response_utc": "2026-09-18T11:53:52.800875+00:00"
+        },
+        {
+          "index": 1812,
+          "category": "concrete",
+          "summary": "One rephrased finance/pregnancy caption line.",
+          "source": {
+            "record": {
+              "index": 1812,
+              "sha256": "3ab54c356415d26502519c08e1fb7b84a539d062cee3313d45ef3da91c4ce48f",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1811,
+              "sha256": "20712504d1ad5062bb81ee299df4adf3d25b7bcd4b8bdd6b5e17862c580a3e3b",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1813,
+              "sha256": "4f8b2b0eb1b9f4a3066b96ee10d3147c8ac4e86201e03cf14267cd4bce75e274",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1814,
+              "sha256": "6f9cb402b05586904f73cabec55016783b7ca2c952bc8d07763ba524167309d6",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 70,
+            "span_sha256": "c94408557bdcb979241d6b0c0d428b1393cf7f078cbb6ff239921b17eec03bfa",
+            "cycle": 71
+          },
+          "response_utc": "2026-09-18T11:54:01.855097+00:00"
+        }
+      ],
+      "checked_result": "No linked rank, acceptance or novelty. Ambiguous-scene feedback does not identify the selected response.",
+      "recent_parent": "No parent event appears anywhere in this frozen evidence window; wider-history and current parent status unknown.",
+      "next_artifact": "Rephrases after an ambiguous-scene notice, without an explicit scene clarification in the next artifact. Successful repair unknown.",
+      "movement_status": "lexical_change_only",
+      "recent_request_interval": {
+        "start": 1789,
+        "end": 1811
+      },
+      "recent_rendered_parent_event_count": 0,
+      "recent_parent_refs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "latest_three_rendered_parents": [],
+      "total_parent_events_in_evidence": 0,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "environment:inbox:72e94b047fde4dc5a2812a419301ffd1",
+          "source_sha256": "94debd5c48f0c924ffbce611d914045658cd6cc355474ff689106815ed25c62b",
+          "text_sha256": "b18fef298a9cfe617391d9a94f5bceba31b96fdd53c150cc741deaacd7ba7756",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1811,
+            "sha256": "20712504d1ad5062bb81ee299df4adf3d25b7bcd4b8bdd6b5e17862c580a3e3b",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1822,
+            "sha256": "938bf32f8d62b917a43c87cbad3c7e14fa14b81e7eb078a7681867f054f89009",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "environment:inbox:72e94b047fde4dc5a2812a419301ffd1",
+          "source_sha256": "94debd5c48f0c924ffbce611d914045658cd6cc355474ff689106815ed25c62b",
+          "text_sha256": "b18fef298a9cfe617391d9a94f5bceba31b96fdd53c150cc741deaacd7ba7756",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1811,
+            "sha256": "20712504d1ad5062bb81ee299df4adf3d25b7bcd4b8bdd6b5e17862c580a3e3b",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1822,
+            "sha256": "938bf32f8d62b917a43c87cbad3c7e14fa14b81e7eb078a7681867f054f89009",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "GAME_N3_7",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/GAME_N3_7/EVIDENCE.json",
+        "evidence_sha256": "50871a896ad0cc28ffc41f82bdea48bcec8cc160003b25719c7f6c4988a9d1e1",
+        "evidence_bytes": 4406991,
+        "observed_utc": "2026-09-18T12:02:39.405832+00:00",
+        "coverage_start": 1139,
+        "caught_up": true,
+        "through": {
+          "index": 1911,
+          "sha256": "9ec80b49119b17cdb90592f2af52e749a8bfb98c23d731967e2a8b77f1295433",
+          "kind": "UPDATE"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "1840899d7847437093d41eae072b8d26",
+      "acts": [
+        {
+          "index": 1231,
+          "category": "intent_only",
+          "summary": "Only a continuation/judgment heading; no caption artifact.",
+          "source": {
+            "record": {
+              "index": 1231,
+              "sha256": "9edb276171fc713fd61b00bd3ff5a38193665efe8d0843b92363c5176ebe6596",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1230,
+              "sha256": "d108bc399a7d1e1703287f7c39bda4bc3d908eb9acb3bac77fe3f76304bddd0c",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1232,
+              "sha256": "5d196e6c72965b6223dfdf71153a3d48dbd8e13808f7a689f20e2fc7d4f55ee8",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1233,
+              "sha256": "d2393647634724552286c2bda5f50e9fa720ac7bbcc4775b57c48add1a7cd69d",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 73,
+            "span_sha256": "1c4974ec4dac15f44f92953090c402a9d51a9f8012f7e2b90473e78413ee4827",
+            "cycle": 61
+          },
+          "response_utc": "2026-09-18T11:52:53.040503+00:00"
+        },
+        {
+          "index": 1238,
+          "category": "concrete",
+          "summary": "Readable Chinese caption with a scene label inside a fence, followed by explanation.",
+          "source": {
+            "record": {
+              "index": 1238,
+              "sha256": "e45bf36e2eb997dddc0227a862de289eb7c56333be166eeaa2d1b9cf106323a5",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 1237,
+              "sha256": "957f01e66bdc1576618e3e079176fa3a9641f9ff77572199bd02f10c06e1f99e",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 1239,
+              "sha256": "57b6cef22cd66306cd5131268ad38e9e09b441de2233db9678b6526151c3c90f",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 1240,
+              "sha256": "3c7d45b332b8884302ca1cc53942e364ba612b07d1515767df4160660983dd22",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 106,
+            "span_sha256": "8b120ada61e45026f2dfc4171db7ca71def28a890341e341ba0cadeb35f55023",
+            "cycle": 61
+          },
+          "response_utc": "2026-09-18T11:53:02.928393+00:00"
+        }
+      ],
+      "checked_result": "Exact response-index/digest Tool links: ACT1231 has an ambiguous-scene fault; ACT1238 is reported as no-caption, recovered_count=0, no scores. This conflicts with the human-readable caption, not with any verified success.",
+      "recent_parent": "No parent event appears anywhere in this frozen evidence window; the label alone is not used as proof.",
+      "next_artifact": "Readable caption and scene label appear after clarification feedback; the runtime still extracts zero. Partial artifact recovery with an unresolved extraction mismatch.",
+      "movement_status": "artifact_emerges_runtime_rejects",
+      "recent_request_interval": {
+        "start": 1214,
+        "end": 1237
+      },
+      "recent_rendered_parent_event_count": 0,
+      "recent_parent_refs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "latest_three_rendered_parents": [],
+      "total_parent_events_in_evidence": 0,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "caption:9edb276171fc713fd61b00bd3ff5a38193665efe8d0843b92363c5176ebe6596",
+          "source_sha256": "e08992a89974ef0e90ba07bbed649c70d28c9954d4c5c35419cc989a57b0f5b1",
+          "text_sha256": "bbcca8c464ad66ae6940bacb7286cd53174a7754fab7db0e70a5a7c5a30620c6",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1237,
+            "sha256": "957f01e66bdc1576618e3e079176fa3a9641f9ff77572199bd02f10c06e1f99e",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1247,
+            "sha256": "7092b27b4990a96009f1bb1e399ba8de8ba1c77cf2a4f2779560ce64f85a4680",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "caption:9edb276171fc713fd61b00bd3ff5a38193665efe8d0843b92363c5176ebe6596",
+          "source_sha256": "e08992a89974ef0e90ba07bbed649c70d28c9954d4c5c35419cc989a57b0f5b1",
+          "text_sha256": "bbcca8c464ad66ae6940bacb7286cd53174a7754fab7db0e70a5a7c5a30620c6",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1237,
+            "sha256": "957f01e66bdc1576618e3e079176fa3a9641f9ff77572199bd02f10c06e1f99e",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1247,
+            "sha256": "7092b27b4990a96009f1bb1e399ba8de8ba1c77cf2a4f2779560ce64f85a4680",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "caption:e45bf36e2eb997dddc0227a862de289eb7c56333be166eeaa2d1b9cf106323a5",
+          "source_sha256": "58131e39837d2813b450259e902de4831fabe4715da7e1662965b28027ad9a8d",
+          "text_sha256": "63eda8eb7f365ba538a40f7f3de5ed2f074d13b18f3691634efaf496d1a168e8",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 1247,
+            "sha256": "7092b27b4990a96009f1bb1e399ba8de8ba1c77cf2a4f2779560ce64f85a4680",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 1247,
+            "sha256": "7092b27b4990a96009f1bb1e399ba8de8ba1c77cf2a4f2779560ce64f85a4680",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "GAME_UNPARENTED_N2",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/GAME_UNPARENTED_N2/EVIDENCE.json",
+        "evidence_sha256": "54b064cfaeb9e4006bce2d039c675535ad6ae0fe5b1efdb6c4941849c2de0a3b",
+        "evidence_bytes": 5152792,
+        "observed_utc": "2026-09-18T12:02:40.060288+00:00",
+        "coverage_start": 565,
+        "caught_up": true,
+        "through": {
+          "index": 1328,
+          "sha256": "bf1da3c75e8f8779ec4a3c81b6118e333c139996624f13ebaec9cf03545615bc",
+          "kind": "UPDATE"
+        }
+      },
+      "tool_links": [
+        {
+          "event": {
+            "event_id": "caption:9edb276171fc713fd61b00bd3ff5a38193665efe8d0843b92363c5176ebe6596",
+            "source_sha256": "e08992a89974ef0e90ba07bbed649c70d28c9954d4c5c35419cc989a57b0f5b1",
+            "text_sha256": "bbcca8c464ad66ae6940bacb7286cd53174a7754fab7db0e70a5a7c5a30620c6",
+            "actor": "environment",
+            "first_rendered_in_window": {
+              "index": 1237,
+              "sha256": "957f01e66bdc1576618e3e079176fa3a9641f9ff77572199bd02f10c06e1f99e",
+              "kind": "REQUEST"
+            },
+            "last_rendered_in_window": {
+              "index": 1247,
+              "sha256": "7092b27b4990a96009f1bb1e399ba8de8ba1c77cf2a4f2779560ce64f85a4680",
+              "kind": "REQUEST"
+            }
+          },
+          "link": {
+            "method": "exact_response_index_and_record_sha256",
+            "response": {
+              "index": 1231,
+              "sha256": "9edb276171fc713fd61b00bd3ff5a38193665efe8d0843b92363c5176ebe6596",
+              "kind": "RESPONSE"
+            },
+            "error": "scene not unambiguously identified",
+            "recovered_count": 0,
+            "scored_observations": 0,
+            "scorer_receipt": "a38a8a17ca0f935ae5b872650a64d61b71d18b6627050f5ec231e12e55540e81"
+          }
+        },
+        {
+          "event": {
+            "event_id": "caption:e45bf36e2eb997dddc0227a862de289eb7c56333be166eeaa2d1b9cf106323a5",
+            "source_sha256": "58131e39837d2813b450259e902de4831fabe4715da7e1662965b28027ad9a8d",
+            "text_sha256": "63eda8eb7f365ba538a40f7f3de5ed2f074d13b18f3691634efaf496d1a168e8",
+            "actor": "environment",
+            "first_rendered_in_window": {
+              "index": 1247,
+              "sha256": "7092b27b4990a96009f1bb1e399ba8de8ba1c77cf2a4f2779560ce64f85a4680",
+              "kind": "REQUEST"
+            },
+            "last_rendered_in_window": {
+              "index": 1247,
+              "sha256": "7092b27b4990a96009f1bb1e399ba8de8ba1c77cf2a4f2779560ce64f85a4680",
+              "kind": "REQUEST"
+            }
+          },
+          "link": {
+            "method": "exact_response_index_and_record_sha256",
+            "response": {
+              "index": 1238,
+              "sha256": "e45bf36e2eb997dddc0227a862de289eb7c56333be166eeaa2d1b9cf106323a5",
+              "kind": "RESPONSE"
+            },
+            "error": "no caption found",
+            "recovered_count": 0,
+            "scored_observations": 0,
+            "scorer_receipt": "428f2f2ff656fcea83e2453ca90977fa1e8d8a5b9e417b2c128870e3124b59d2"
+          }
+        }
+      ]
+    },
+    {
+      "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+      "acts": [
+        {
+          "index": 2991,
+          "category": "concrete",
+          "summary": "Substantive numerical assertions, but switches domains/moduli and supplies no valid partition.",
+          "source": {
+            "record": {
+              "index": 2991,
+              "sha256": "d25c98e8e42b51d778a8f26ace1350eda4e56a743e10a43f0fb6c4f40814b48b",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 2990,
+              "sha256": "208eb1605fdc5c60060c3ffbdfa3de62b5f0e73b7e5b9fb4496912abb807b57d",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 2992,
+              "sha256": "2bd7e435d559bcc320fd97354ced2da42b4e19b9841fc758d32d38e8f8a90f6a",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 2993,
+              "sha256": "0912ba5a83499597518d53ed44d916ec75ec314a40b36aa759c917036e6e6dfe",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 800,
+            "span_sha256": "5ec23ec89b70b9ec440aac8f4a1de0fc9d3cec0e8b54d1634851a2df4733e35f",
+            "cycle": 98
+          },
+          "response_utc": "2026-09-18T11:54:43.416024+00:00"
+        },
+        {
+          "index": 3040,
+          "category": "concrete",
+          "summary": "Asserts 10 for ordered pairs on 0..5 divisible by 3, then repeats unrelated variants.",
+          "source": {
+            "record": {
+              "index": 3040,
+              "sha256": "82c88a20827ade5be616f2e70bc755f7b57c70e39a1f1be314b6cdc1157e1cf6",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 3039,
+              "sha256": "65abcfb572aac49f2f74a22ab1b948c6ed0873a733bb1394f251588e5af09c62",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 3041,
+              "sha256": "497384b7b0d16adba4e1c4abfec4e80c68ad4f22b5e96876dba3e6d1333d022d",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 3042,
+              "sha256": "72afe885748b312052f06b14a3b72e07147a82703d4da257b518e012bdd3fe0b",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 640,
+            "span_sha256": "4576c0082592c2babf45a9c33e8da6ecec44a4de5f41835cb850b3d07c2930f0",
+            "cycle": 99
+          },
+          "response_utc": "2026-09-18T12:01:13.473634+00:00"
+        }
+      ],
+      "checked_result": "No correct checked result. The latter count should be 12, but the most recent rendered classroom task is actually 0..9 modulo4 (25 pairs); neither task is solved by this pair.",
+      "recent_parent": "Shared classroom, reading and partition/debate instructions render before the pair; an unverified peer claim newly renders between ACTs.",
+      "next_artifact": "Numbers and conditions drift after a peer claim, not toward a checked shared conclusion. Peer Tool wrappers are not evaluator results.",
+      "movement_status": "no_checked_resolution",
+      "recent_request_interval": {
+        "start": 2982,
+        "end": 3039
+      },
+      "recent_rendered_parent_event_count": 5,
+      "recent_parent_refs_sha256": "7bcba14121145c31e61fed68773803db84a4fba38b1c21029735829cfb3591fc",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:562b14b680df4ed8bd6968918922e368",
+          "source_sha256": "028efbd55c94bd6ae5a8a38b7f62ee461a66bf4aef8ff21d6e0df1714e4e2ba6",
+          "text_sha256": "dbbe1d8f490e3e76631f2352c8d28d2c48572ca7122944b62b58194b14545e78",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2903,
+            "sha256": "2cb21c98e8efc6d49febe146403c25b53512ffb8451242249f62927f317d6d0b",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2999,
+            "sha256": "b9767021e90ab99cd8d79083c1419c30ae3e5e962263106ae7e854b4238d8aa4",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:dba7787f79d34934aee2fe44fd89bfdc",
+          "source_sha256": "a884621c99e4648c4839412e9aae8d1fc67b025c76a99ea7dca48c23521ce652",
+          "text_sha256": "d8df77cff03bf5e934b1ec7713f2bf8542d67c470ea4c7d7af0c8afe1fc39843",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2903,
+            "sha256": "2cb21c98e8efc6d49febe146403c25b53512ffb8451242249f62927f317d6d0b",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2999,
+            "sha256": "b9767021e90ab99cd8d79083c1419c30ae3e5e962263106ae7e854b4238d8aa4",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:f4c9d8169cc04de6987702ed9ef2ec91",
+          "source_sha256": "a0365b4f505df33c1ae8386cb3f07d32beeb62842632dcdc1d24d3a1ce415ded",
+          "text_sha256": "25797df0d0c20cea17bdd87091bd0bf319520c4bd00b0fc6a4c9b55a3a0d2699",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2982,
+            "sha256": "3ace3de95fb298389a4bb3191a9be91d08ecf1d2879b8e2ea84a232fb759b6fb",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2999,
+            "sha256": "b9767021e90ab99cd8d79083c1419c30ae3e5e962263106ae7e854b4238d8aa4",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 24,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "environment:r221:r213_math_c:9c24221b9012e6eebb9ee40d84d13018e410b984cb93d2fdb05e0b8c267442fa",
+          "source_sha256": "8cd50fa3094a5c2597c6f8e6a2c041c265f333943fd59a5e3ad3f43445505689",
+          "text_sha256": "f722c22687085138b030d41e191925ba4154707b9ae3165ce0d2fe3eaaa5c619",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 3031,
+            "sha256": "afacc25fe095988b34ce259da06ee25d1872361761f7fe6088abcc17772b131e",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3048,
+            "sha256": "31f4a8c51a8d16032f02f7433b24291f6f682a67f04ffa504432bbcb88007a45",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:dba7787f79d34934aee2fe44fd89bfdc",
+          "source_sha256": "a884621c99e4648c4839412e9aae8d1fc67b025c76a99ea7dca48c23521ce652",
+          "text_sha256": "d8df77cff03bf5e934b1ec7713f2bf8542d67c470ea4c7d7af0c8afe1fc39843",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2903,
+            "sha256": "2cb21c98e8efc6d49febe146403c25b53512ffb8451242249f62927f317d6d0b",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2999,
+            "sha256": "b9767021e90ab99cd8d79083c1419c30ae3e5e962263106ae7e854b4238d8aa4",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "environment:r221:r213_math_c:9c24221b9012e6eebb9ee40d84d13018e410b984cb93d2fdb05e0b8c267442fa",
+          "source_sha256": "8cd50fa3094a5c2597c6f8e6a2c041c265f333943fd59a5e3ad3f43445505689",
+          "text_sha256": "f722c22687085138b030d41e191925ba4154707b9ae3165ce0d2fe3eaaa5c619",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 3031,
+            "sha256": "afacc25fe095988b34ce259da06ee25d1872361761f7fe6088abcc17772b131e",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3048,
+            "sha256": "31f4a8c51a8d16032f02f7433b24291f6f682a67f04ffa504432bbcb88007a45",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "MATH_A",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/MATH_A/EVIDENCE.json",
+        "evidence_sha256": "a46d25771d02bbcba684d3e184ce3aeebea14a4ca4daf8c92ad7be2e602f2edd",
+        "evidence_bytes": 9607130,
+        "observed_utc": "2026-09-18T12:03:44.231817+00:00",
+        "coverage_start": 2298,
+        "caught_up": true,
+        "through": {
+          "index": 3074,
+          "sha256": "289d3bc4252149cc763892ff9e6b468bd9af937bfb694520c3b30c3c3a3f4d31",
+          "kind": "UPDATE"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "45315f580ec845989682e2a728255608",
+      "acts": [
+        {
+          "index": 2591,
+          "category": "concrete",
+          "summary": "A real proposed symbolic-computation listing, not execution; remains off the shared residue-counting task.",
+          "source": {
+            "record": {
+              "index": 2591,
+              "sha256": "727aa88fc9a2db6c1640b1fe897ffc123c28eceb9a610278907f56faf52ba6e5",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 2590,
+              "sha256": "3269d99bdc9943f28f3470d10e1fbd88bc068fd454b35eaefdbeedf8549676fb",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 2592,
+              "sha256": "bce9f713d2b23ed603d8874501521dfbaa70a2c134d9601a96d5ad93fa3dcb94",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 2593,
+              "sha256": "ef5806122b722f2a5779dfbfa9038ba6246ec4170fd9dc8fa70cf1cbfd105156",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 623,
+            "span_sha256": "643c5e59f559676446be57c593a69b4ff7a37a5e02aae212b02d9a78329c2655",
+            "cycle": 103
+          },
+          "response_utc": "2026-09-18T11:45:17.118184+00:00"
+        },
+        {
+          "index": 2655,
+          "category": "concrete",
+          "summary": "Renames variables in the listing; a one-symbol unpack and inconsistent identifier casing remain invalid.",
+          "source": {
+            "record": {
+              "index": 2655,
+              "sha256": "dd5f5e59fb67872f7107c5bc9bcc4e5f77b798ffe369bf26703a05414a70c6a1",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 2654,
+              "sha256": "409df410a4a5ea3b37205531a411aafcae21853a023b5ee5ec375b9bfb3f1e83",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 2656,
+              "sha256": "267faee05d4661ed06bd517d1ceff7a28b0f44710f89a7820551adfbf8d05164",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 2657,
+              "sha256": "70dcbf853a5149458dcd3aa7affbff98c2e422291e98d2561cb63ca6be6966f5",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 795,
+            "span_sha256": "b3d2a4509075c3561151afe470b36e954ccb29527f36a7f8764cf3d189dbff5e",
+            "cycle": 104
+          },
+          "response_utc": "2026-09-18T11:53:40.709691+00:00"
+        }
+      ],
+      "checked_result": "No executed/checkable numerical result. The parent explicitly says no executor is connected. Code listing and intention to execute do not establish execution.",
+      "recent_parent": "Shared task, enrichment and a new classroom prompt render; peer claims also render.",
+      "next_artifact": "Cosmetic code changes instead of the requested manual partition or deciding peer check; no shared conclusion.",
+      "movement_status": "no_checked_resolution",
+      "recent_request_interval": {
+        "start": 2583,
+        "end": 2654
+      },
+      "recent_rendered_parent_event_count": 11,
+      "recent_parent_refs_sha256": "bc81906f7f554ad7a9e16aebd3dfca7825f5782ab5e84b2fdb4b64081db89d53",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:f35d94c2b2ba45fe9f86310bcf1cbbd2",
+          "source_sha256": "e37cef9789b9c75d92f0c79b0168c0f9333f075b9abc940ba96c88accbb5c41f",
+          "text_sha256": "99de670ec96ee8517553b8038ddba68bc09fbaf5b1f02767fc443e034436ed26",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2534,
+            "sha256": "90caa920f978a88b9042649f2df1d9e9ba3ac624767cfdc8872ca63b11f1ae4d",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2654,
+            "sha256": "409df410a4a5ea3b37205531a411aafcae21853a023b5ee5ec375b9bfb3f1e83",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:49057dc4f3274b438761c80cbe7eb903",
+          "source_sha256": "c96c0854bbfb68b7da3eaf14fce8da78eee9722ae148790842b952aae357836d",
+          "text_sha256": "d8f8e76334acffce565160784767ba04e616d6cdbdf60134919cb787b468a831",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2583,
+            "sha256": "b135cdec01285411b76e71932ef3854c9bc7e8f6855ec87fc9455d091d49130e",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2654,
+            "sha256": "409df410a4a5ea3b37205531a411aafcae21853a023b5ee5ec375b9bfb3f1e83",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:ee1b4d5255d344368302b3389f1c18e4",
+          "source_sha256": "31b27919cf594a08061e441d0db8fbde90ea199ae10770e8db1206684a4af644",
+          "text_sha256": "7075bb9c90d4054902a2d0d2542cbc55a5e1bbf8d838eebbd19b32c499e69f9a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2646,
+            "sha256": "4ada91f82c43f4c904356c75c412fa5be7ef0cd1c589ee62592f1e53aa16a739",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2665,
+            "sha256": "08fd214675c2045a86efefbce48b182be32e44e5c85372941eecd714fd55efbe",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 25,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "parent:inbox:ee1b4d5255d344368302b3389f1c18e4",
+          "source_sha256": "31b27919cf594a08061e441d0db8fbde90ea199ae10770e8db1206684a4af644",
+          "text_sha256": "7075bb9c90d4054902a2d0d2542cbc55a5e1bbf8d838eebbd19b32c499e69f9a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2646,
+            "sha256": "4ada91f82c43f4c904356c75c412fa5be7ef0cd1c589ee62592f1e53aa16a739",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2665,
+            "sha256": "08fd214675c2045a86efefbce48b182be32e44e5c85372941eecd714fd55efbe",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "environment:r221:r213_math_c:9c24221b9012e6eebb9ee40d84d13018e410b984cb93d2fdb05e0b8c267442fa",
+          "source_sha256": "8bb3f82d5aee3968b1cb6eca0d91a6f7ef25902f44471342a0203a4165386fc0",
+          "text_sha256": "f722c22687085138b030d41e191925ba4154707b9ae3165ce0d2fe3eaaa5c619",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 2646,
+            "sha256": "4ada91f82c43f4c904356c75c412fa5be7ef0cd1c589ee62592f1e53aa16a739",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2665,
+            "sha256": "08fd214675c2045a86efefbce48b182be32e44e5c85372941eecd714fd55efbe",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:97f33e1c52984f5b8a4ed565dea5a15f",
+          "source_sha256": "20ac51884b67126fdff953e0bddebad2b8a830893f5ffd8ae0e54c2e090a2332",
+          "text_sha256": "b9ae5e8b5222a6299da4e18d943e165659e060add76dc26814f8c260720a3800",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2534,
+            "sha256": "90caa920f978a88b9042649f2df1d9e9ba3ac624767cfdc8872ca63b11f1ae4d",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2654,
+            "sha256": "409df410a4a5ea3b37205531a411aafcae21853a023b5ee5ec375b9bfb3f1e83",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:ee1b4d5255d344368302b3389f1c18e4",
+          "source_sha256": "31b27919cf594a08061e441d0db8fbde90ea199ae10770e8db1206684a4af644",
+          "text_sha256": "7075bb9c90d4054902a2d0d2542cbc55a5e1bbf8d838eebbd19b32c499e69f9a",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2646,
+            "sha256": "4ada91f82c43f4c904356c75c412fa5be7ef0cd1c589ee62592f1e53aa16a739",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2665,
+            "sha256": "08fd214675c2045a86efefbce48b182be32e44e5c85372941eecd714fd55efbe",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "MATH_B_FORK",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/MATH_B_FORK/EVIDENCE.json",
+        "evidence_sha256": "4b7f1949db01488153396376661a6521bb25b37cd760b70a8e12161467a121ca",
+        "evidence_bytes": 11362558,
+        "observed_utc": "2026-09-18T12:03:44.838176+00:00",
+        "coverage_start": 1981,
+        "caught_up": true,
+        "through": {
+          "index": 2727,
+          "sha256": "1bad7d835ed73a6f48fb9237d1165d2f34da91e9750752d05ebbe3bca06c1f4d",
+          "kind": "R184_LEARN_COMPLETE"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+      "acts": [
+        {
+          "index": 2699,
+          "category": "concrete",
+          "summary": "Claims 30 pairs and offers malformed symbolic code; mixes a polynomial task with pair counting.",
+          "source": {
+            "record": {
+              "index": 2699,
+              "sha256": "f746959950981f4451b895e9871752d59efa35257e8b92150a6af3e8ecd9cbf3",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 2698,
+              "sha256": "6d29461b9c2695ba3aa36ffb53f308f7a018e776b97da40b23f196fa2a60dd7e",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 2700,
+              "sha256": "5ebf953345207014da196d1f3b5ade295964563e776695e684675f2bf3db4efe",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 2701,
+              "sha256": "529001114a228dd5e6fd5470fba6f5dfaa4405018cbfd84ee7eb411c33dbcff4",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 859,
+            "span_sha256": "dd2cbe9b33d58076d01285ae7f2527b6b8f4aeec070a91f6c9c33f82196c4f6f",
+            "cycle": 110
+          },
+          "response_utc": "2026-09-18T11:52:15.419917+00:00"
+        },
+        {
+          "index": 2730,
+          "category": "concrete",
+          "summary": "Changes claim to 46 with a damaged/incomplete domain and another malformed listing.",
+          "source": {
+            "record": {
+              "index": 2730,
+              "sha256": "0308540407cf98c7362dbd6459403fecdb23ad759bf5e02619021fce9057be70",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 2729,
+              "sha256": "6f8c152be6d4a0cbb2ae328c9675fd743cefd7be3a920dc16de7a99e546f0fce",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 2731,
+              "sha256": "21707a328d7c7d609c8c975b60d0755cee18386309b307115957a8617f24ac90",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 2732,
+              "sha256": "ce6924288cd03ae490e214e0ebf15c72876cee51017391e2a56e3cd89115326c",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 1020,
+            "span_sha256": "365f4aaa270b85c62f49a9e536f344808cfc619b1c8aad2793332286507c8e02",
+            "cycle": 111
+          },
+          "response_utc": "2026-09-18T11:56:22.088737+00:00"
+        }
+      ],
+      "checked_result": "No checked count or executed code. The damaged domain prevents validating the new count as a defined task; peer agreement is claimed, not established.",
+      "recent_parent": "Astra reading and classroom guidance render; a new unverified peer output arrives between ACTs.",
+      "next_artifact": "Count changes after peer text, but no deciding check or shared conclusion appears.",
+      "movement_status": "no_checked_resolution",
+      "recent_request_interval": {
+        "start": 2690,
+        "end": 2729
+      },
+      "recent_rendered_parent_event_count": 3,
+      "recent_parent_refs_sha256": "e4c799bdf882d367e593872acabfca4676973cfdae4faf0c56053a5b6cc9b1e9",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:63040cfade5645d8af81e98b70c91f79",
+          "source_sha256": "373593debf808e7591bc8b4a186de89dd038bc07726a34db1ef8b1dd4ebdd6f1",
+          "text_sha256": "3605f58cc2cca09c06aa13b2cd018fce084ba9a1f34988141a73fa4cf0a831b3",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2641,
+            "sha256": "b28034941218e6530cb344ee6c9dfb7ccaff11ddc5177f9a0a9919d5bb605596",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2738,
+            "sha256": "5d9aaf4fe29dd3cc2bdd707e6141c25d48ed5399614f7a95babc504a25006772",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:56359fffa98145f48213862e2dea9710",
+          "source_sha256": "b960541c350f33e6952cec039d782a2d97b38dbce0c1ec43b2c2c664fffe6af2",
+          "text_sha256": "3605f58cc2cca09c06aa13b2cd018fce084ba9a1f34988141a73fa4cf0a831b3",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2641,
+            "sha256": "b28034941218e6530cb344ee6c9dfb7ccaff11ddc5177f9a0a9919d5bb605596",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2738,
+            "sha256": "5d9aaf4fe29dd3cc2bdd707e6141c25d48ed5399614f7a95babc504a25006772",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:e0782c3db8a64bde89313bd390f12af0",
+          "source_sha256": "052548c67793a987517a86d23b56eb7c9b401ee5be0d139c802b738a8ce6d2e5",
+          "text_sha256": "6005ea4e4e7d73bf37ab023e910c4bb4e7854286e423561782348cbd6921fb97",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2690,
+            "sha256": "1425ef84115095ddf0b3d201205e1057863ed45d18d284a841d49c3bb0fe6804",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2738,
+            "sha256": "5d9aaf4fe29dd3cc2bdd707e6141c25d48ed5399614f7a95babc504a25006772",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 29,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "environment:r221:r213_math_a:5b9c5149efc429703e4631fe4ea42026819d87bd3205d86bb54b709a92ae77a9",
+          "source_sha256": "ad334800f8e8b78c832691ba40541fe1fc070543382e1be020ab6d430bbdf71b",
+          "text_sha256": "f70c72f5845a98f372a48a575d24135f5908d2a6e6f2285b16089ec9b3371866",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 2721,
+            "sha256": "331eaa8ea53eada63b779233770d27a58bbbd22572f84529ee182c215fa2cee8",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2738,
+            "sha256": "5d9aaf4fe29dd3cc2bdd707e6141c25d48ed5399614f7a95babc504a25006772",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:e0782c3db8a64bde89313bd390f12af0",
+          "source_sha256": "052548c67793a987517a86d23b56eb7c9b401ee5be0d139c802b738a8ce6d2e5",
+          "text_sha256": "6005ea4e4e7d73bf37ab023e910c4bb4e7854286e423561782348cbd6921fb97",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 2690,
+            "sha256": "1425ef84115095ddf0b3d201205e1057863ed45d18d284a841d49c3bb0fe6804",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2738,
+            "sha256": "5d9aaf4fe29dd3cc2bdd707e6141c25d48ed5399614f7a95babc504a25006772",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "environment:r221:r213_math_a:5b9c5149efc429703e4631fe4ea42026819d87bd3205d86bb54b709a92ae77a9",
+          "source_sha256": "ad334800f8e8b78c832691ba40541fe1fc070543382e1be020ab6d430bbdf71b",
+          "text_sha256": "f70c72f5845a98f372a48a575d24135f5908d2a6e6f2285b16089ec9b3371866",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 2721,
+            "sha256": "331eaa8ea53eada63b779233770d27a58bbbd22572f84529ee182c215fa2cee8",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 2738,
+            "sha256": "5d9aaf4fe29dd3cc2bdd707e6141c25d48ed5399614f7a95babc504a25006772",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "MATH_C",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/MATH_C/EVIDENCE.json",
+        "evidence_sha256": "4d945c3e38829b795d6409ba7aff399ca1548c34b1dc68ae46ce035428830251",
+        "evidence_bytes": 15118210,
+        "observed_utc": "2026-09-18T12:02:36.371377+00:00",
+        "coverage_start": 2039,
+        "caught_up": true,
+        "through": {
+          "index": 2770,
+          "sha256": "a922e6a83ada07e9d4389ab1b2a3f16e12c845afd3f420e7e8196b330a39a6c5",
+          "kind": "REQUEST"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "e9d22d1e26234c4bbac761922929365f",
+      "acts": [
+        {
+          "index": 3830,
+          "category": "plan_only",
+          "summary": "Chinese plan to compare task types and monitoring conditions; no performed performance analysis.",
+          "source": {
+            "record": {
+              "index": 3830,
+              "sha256": "bb55d01d671c72d14e2b2cbbff0c7398c7af6ed66f1aac3158f78801d569f1e8",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 3829,
+              "sha256": "d27dcf5a275fd1b9f2a00ed503cc516b5194e2a7cd0ee3ac9e74879f56a80fb1",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 3831,
+              "sha256": "fd528681389cf91806542148e0af9870a94337b11fc1017b1d55043208e2abbf",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 3832,
+              "sha256": "2986daab83a6b68dd53a59b2ceeb58a7bfbeb60895752bae1b70ad5a2620706a",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 161,
+            "span_sha256": "879fa4b0ad9f75ad2bd1e644927cdbbab327b04da1e2fbf6eb3efbd9fb3083cb",
+            "cycle": 122
+          },
+          "response_utc": "2026-09-18T11:47:28.887437+00:00"
+        },
+        {
+          "index": 3896,
+          "category": "plan_only",
+          "summary": "Proposes adding a monitoring on/off variable again; no requested trace or child-analysis artifact.",
+          "source": {
+            "record": {
+              "index": 3896,
+              "sha256": "5c68194bf5ff981fe47cf6c33856cf8483135cbf76245d2913878d27f812369c",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 3895,
+              "sha256": "108171a2b275bf390b2c2a0192d834f83386bc9a2fdbdf6f84004eafc77fc892",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 3897,
+              "sha256": "b30de8739ee4f11331d5c9a6a16b612e8ecbdd18c058c240e6dbb02ccac92301",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 3898,
+              "sha256": "6ff3c1a12c34f3dae4d24c58f63ea9cf492d5b7606201a614857419a66dc377e",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 142,
+            "span_sha256": "bcdf255892a6d2e0e81a150304fa863dc4d5a2119e8c92d7084cc9233bdaee37",
+            "cycle": 123
+          },
+          "response_utc": "2026-09-18T11:55:31.808833+00:00"
+        }
+      ],
+      "checked_result": "Unknown performance outcome; neither a dataset analysis nor an executed experiment is shown. Named variables make this a specific plan, not completed work.",
+      "recent_parent": "Astra overseer asks P7 to distinguish Astra7 printing an announcement from doing an analysis; actual child-reply messages also render.",
+      "next_artifact": "Does not supply the requested trace; continues the monitoring-experiment plan. Child-reply Tool wrappers are not execution receipts.",
+      "movement_status": "requested_artifact_absent",
+      "recent_request_interval": {
+        "start": 3822,
+        "end": 3895
+      },
+      "recent_rendered_parent_event_count": 10,
+      "recent_parent_refs_sha256": "f430ef515d892e4465703b9da5ee433241653c4cfecd396e95afccf98473c72d",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:f4bbb3b8fc1a437983c2f82058825d24",
+          "source_sha256": "b8ccd92c87b7bf7257fcf47e5d65f929220c91339305e32d49f0155d27a7d5fc",
+          "text_sha256": "817a2cba04a1c925d0558090684de0b5872b3c3740d60bfe488f52a6e6dd6a6e",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 3738,
+            "sha256": "d2420786d836050ab996910561f67e4716fab962cef0ef13eaa1f7969f19cf77",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3904,
+            "sha256": "992f6082684b461cba31041ad708db2dd6e7b9858edf3e0e661c2e9b56ad7238",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:2a186e6353ce4c739aef37207e7f23fa",
+          "source_sha256": "c1d492cde0eb3a5b01e236186583633121a61b4c20a6f937befafe30221e00d3",
+          "text_sha256": "9f8282dca67e046088658293bdd3258fd99bae6de891aebe1498f3df822f93f1",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 3822,
+            "sha256": "55ed83a0affc65f26050d8ee777eaf2f5c1c9ebd5dd57be8d627d1d7de21c5e4",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3904,
+            "sha256": "992f6082684b461cba31041ad708db2dd6e7b9858edf3e0e661c2e9b56ad7238",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:950ad2fcf7f44823ae760ec23f794abf",
+          "source_sha256": "15a05fcacfade64aa1d19bdf0f77869eeb5d6b122c958ad74e970d43d205999d",
+          "text_sha256": "d193f27251111874d5d74d408fd67edc0b6ca61358a49cc741769aadc1d73627",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 3888,
+            "sha256": "4547dd7fc22b743a0412caff80b39a5723719b9117f12e8ec5173a1bcc97d070",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3904,
+            "sha256": "992f6082684b461cba31041ad708db2dd6e7b9858edf3e0e661c2e9b56ad7238",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 19,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "environment:inbox:10b06f6eb5a649dc8fd96054a59a9b2f",
+          "source_sha256": "4bf23e95e753241b33c68981328b7e47394c71b0affe75d234d32f0dd6d0a3b4",
+          "text_sha256": "bf814f89f59621dd2d5f0b646c458ee55db89852f728c7abb7070aa589a6d26a",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 3888,
+            "sha256": "4547dd7fc22b743a0412caff80b39a5723719b9117f12e8ec5173a1bcc97d070",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3904,
+            "sha256": "992f6082684b461cba31041ad708db2dd6e7b9858edf3e0e661c2e9b56ad7238",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "environment:inbox:71fec65698244a1ea446b8bdfe386281",
+          "source_sha256": "793c71ee259ddfa66ea5cb2788cda910bdb8f3ad1349aee69ee906771bd1e9c8",
+          "text_sha256": "1e89342e47b80ccc2bb75184fcd93792cb19b7dbf397eb178853238190b84e5c",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 3888,
+            "sha256": "4547dd7fc22b743a0412caff80b39a5723719b9117f12e8ec5173a1bcc97d070",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3904,
+            "sha256": "992f6082684b461cba31041ad708db2dd6e7b9858edf3e0e661c2e9b56ad7238",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:950ad2fcf7f44823ae760ec23f794abf",
+          "source_sha256": "15a05fcacfade64aa1d19bdf0f77869eeb5d6b122c958ad74e970d43d205999d",
+          "text_sha256": "d193f27251111874d5d74d408fd67edc0b6ca61358a49cc741769aadc1d73627",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 3888,
+            "sha256": "4547dd7fc22b743a0412caff80b39a5723719b9117f12e8ec5173a1bcc97d070",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3904,
+            "sha256": "992f6082684b461cba31041ad708db2dd6e7b9858edf3e0e661c2e9b56ad7238",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "environment:inbox:edc8310e32f3470186691d16813685fd",
+          "source_sha256": "d90a4026261c6b2ce3aaec704463fe867c64a7f1c0bb51390e0fd8c7b36e67fd",
+          "text_sha256": "72aa299415cf6ff05e552a60e16af0e631fec6c782ca4cf88f4e09ce2887c50c",
+          "actor": "environment",
+          "first_rendered_in_window": {
+            "index": 3888,
+            "sha256": "4547dd7fc22b743a0412caff80b39a5723719b9117f12e8ec5173a1bcc97d070",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3904,
+            "sha256": "992f6082684b461cba31041ad708db2dd6e7b9858edf3e0e661c2e9b56ad7238",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:950ad2fcf7f44823ae760ec23f794abf",
+          "source_sha256": "15a05fcacfade64aa1d19bdf0f77869eeb5d6b122c958ad74e970d43d205999d",
+          "text_sha256": "d193f27251111874d5d74d408fd67edc0b6ca61358a49cc741769aadc1d73627",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 3888,
+            "sha256": "4547dd7fc22b743a0412caff80b39a5723719b9117f12e8ec5173a1bcc97d070",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 3904,
+            "sha256": "992f6082684b461cba31041ad708db2dd6e7b9858edf3e0e661c2e9b56ad7238",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "P7",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/P7/EVIDENCE.json",
+        "evidence_sha256": "cde192808516f53e9e168dd70a8040265da950392297ffe08bfe52be846ac5c7",
+        "evidence_bytes": 7311813,
+        "observed_utc": "2026-09-18T12:03:42.701514+00:00",
+        "coverage_start": 3213,
+        "caught_up": true,
+        "through": {
+          "index": 3961,
+          "sha256": "c21c3b8b398283fbb1249b2abb6ac72262367a7a8615ca84f69298c7cfb6c990",
+          "kind": "UPDATE"
+        }
+      },
+      "tool_links": []
+    },
+    {
+      "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+      "acts": [
+        {
+          "index": 648,
+          "category": "concrete",
+          "summary": "Computes 17+8-6=19 and completes 19-8+6=17; metadata remains.",
+          "source": {
+            "record": {
+              "index": 648,
+              "sha256": "6e1897ae1fb1543458505093918113cb160ff7e90e6aa8dc839badea5f57a10b",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 647,
+              "sha256": "e906f929fb59f33f27c8ab4e3b7980423b2198f55eb6d4e84e0345df1b16f88a",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 649,
+              "sha256": "9f69eb5bdfd18e467072781d8873b0cdf4a3abe850042546231851477840799f",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 650,
+              "sha256": "ced8cd1036f69fcf8e6a5e8fa7ccc5c36201f6c22f511014fb3bf706e87f6e67",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 1313,
+            "span_sha256": "fc8e6ecc5a590c7352a85716c01f444638688605ea15b20262785cd54006e5f4",
+            "cycle": 20
+          },
+          "response_utc": "2026-09-18T11:55:55.212615+00:00"
+        },
+        {
+          "index": 681,
+          "category": "concrete",
+          "summary": "Computes 34-15+7=26 and begins the inverse check, but stops before completing the add-15 step.",
+          "source": {
+            "record": {
+              "index": 681,
+              "sha256": "5a1ed87a5d9e53d612ed8d5b90bd4585b670911ab861e9da247b142ef3352345",
+              "kind": "RESPONSE"
+            },
+            "request": {
+              "index": 680,
+              "sha256": "346d54ceb23a824787ed4d163d7643db466850f3a0dfb15905c7f6c534de4a5e",
+              "kind": "REQUEST"
+            },
+            "committed": {
+              "index": 682,
+              "sha256": "143d5fec150d2b17c014a7c4d475377a537cdbbcd56bf9a6f8417ac10cf71897",
+              "kind": "COMMITTED"
+            },
+            "stage": "ACT",
+            "stage_record": {
+              "index": 683,
+              "sha256": "92eb8654c0aa75c85f56b1a947c2f1de801a0ceff0234b6eec53df3c65f7c64f",
+              "kind": "R184_STAGE"
+            },
+            "start": 0,
+            "end": 1396,
+            "span_sha256": "66a4e7554cfc5b6d88532e6fe2bc981ed85da05c98c55dcb258768921be3a1e7",
+            "cycle": 21
+          },
+          "response_utc": "2026-09-18T11:59:57.655153+00:00"
+        }
+      ],
+      "checked_result": "ACT648 has a valid observer-verifiable arithmetic check (not reverse operation order). ACT681 has correct forward arithmetic but an incomplete check. No execution or adapter-learning inference.",
+      "recent_parent": "Astra credits the checked result and assigns the next expression between the ACTs.",
+      "next_artifact": "Takes up the next task and starts a better-ordered reverse check; the trace ends before completion. Partial contextual uptake in the frozen sibling.",
+      "movement_status": "partial_task_uptake",
+      "recent_request_interval": {
+        "start": 638,
+        "end": 680
+      },
+      "recent_rendered_parent_event_count": 2,
+      "recent_parent_refs_sha256": "c864b7e0763296febe8b20999294907b164928b2294b22bb576239a0e28bdbbb",
+      "latest_three_rendered_parents": [
+        {
+          "event_id": "parent:inbox:f888ac6b904743cd946a9c989b162430",
+          "source_sha256": "5bba8dcbc4f7ca3303a2600ba2c00c237a2abd1087bed4761ffdc889a7da4b80",
+          "text_sha256": "d5812dba692fbcaa25c06e67190404070ac6f2c9d928683b3831ce4d96fdf02e",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 638,
+            "sha256": "2915bd7057b5bb3d58a0df2872c0e616faddb209c98cea55caeddf8f3b84a503",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 638,
+            "sha256": "2915bd7057b5bb3d58a0df2872c0e616faddb209c98cea55caeddf8f3b84a503",
+            "kind": "REQUEST"
+          }
+        },
+        {
+          "event_id": "parent:inbox:c6cac44eb21c46ffa10ace761668f792",
+          "source_sha256": "c1c6c0056917e34d4114abea43bbbbbb81cc75a626d7aa43421cc8366725bacc",
+          "text_sha256": "a1becd40003ade0a2d015a1dbc3946348062086c10342dadde17fdd61b6dffbe",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 671,
+            "sha256": "8f4e04095240fa98e3a27cf03882cba6385a29604ec6bae25fe9d532b6ef6df2",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 671,
+            "sha256": "8f4e04095240fa98e3a27cf03882cba6385a29604ec6bae25fe9d532b6ef6df2",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "total_parent_events_in_evidence": 21,
+      "newly_visible_guidance_or_Tool_between_ACTs": [
+        {
+          "event_id": "parent:inbox:c6cac44eb21c46ffa10ace761668f792",
+          "source_sha256": "c1c6c0056917e34d4114abea43bbbbbb81cc75a626d7aa43421cc8366725bacc",
+          "text_sha256": "a1becd40003ade0a2d015a1dbc3946348062086c10342dadde17fdd61b6dffbe",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 671,
+            "sha256": "8f4e04095240fa98e3a27cf03882cba6385a29604ec6bae25fe9d532b6ef6df2",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 671,
+            "sha256": "8f4e04095240fa98e3a27cf03882cba6385a29604ec6bae25fe9d532b6ef6df2",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "reviewed_context": [
+        {
+          "event_id": "parent:inbox:c6cac44eb21c46ffa10ace761668f792",
+          "source_sha256": "c1c6c0056917e34d4114abea43bbbbbb81cc75a626d7aa43421cc8366725bacc",
+          "text_sha256": "a1becd40003ade0a2d015a1dbc3946348062086c10342dadde17fdd61b6dffbe",
+          "actor": "parent",
+          "first_rendered_in_window": {
+            "index": 671,
+            "sha256": "8f4e04095240fa98e3a27cf03882cba6385a29604ec6bae25fe9d532b6ef6df2",
+            "kind": "REQUEST"
+          },
+          "last_rendered_in_window": {
+            "index": 671,
+            "sha256": "8f4e04095240fa98e3a27cf03882cba6385a29604ec6bae25fe9d532b6ef6df2",
+            "kind": "REQUEST"
+          }
+        }
+      ],
+      "adapter_improvement": "unknown_not_tested_by_this_review",
+      "label": "R232_SIBLING_FROZEN",
+      "input": {
+        "source_path": "research_loop/workers/rohin233_focus_20260918/private/R232_SIBLING_FROZEN/EVIDENCE.json",
+        "evidence_sha256": "bbd8b2599fa878a2635d7b7ee92dc1f40310db33a9b05eb3b7bee8c43d17c734",
+        "evidence_bytes": 739754,
+        "observed_utc": "2026-09-18T12:02:40.720386+00:00",
+        "coverage_start": 0,
+        "caught_up": true,
+        "through": {
+          "index": 702,
+          "sha256": "39d0f8a710d9bb48f6ab1553d748103aec0a88643fc9c3bb9b67164582b9dec6",
+          "kind": "R184_LEARN_COMPLETE"
+        }
+      },
+      "tool_links": []
+    }
+  ]
+}
