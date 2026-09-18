@@ -3,6 +3,7 @@ from pathlib import Path
 import tempfile
 from types import SimpleNamespace
 import unittest
+import pytest
 from unittest.mock import patch
 
 from gpu.ny_caption_life import POLICY, activate, child_act, observed_counts, parse_batch
@@ -127,3 +128,14 @@ class CaptionLifeTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+def test_r212_explicit_humour_and_parameterised_rank_bar():
+    from gpu.ny_caption_life import HELP
+    from gpu.ny_caption_life_service import DEFAULT_TOP_K, scoring_rule
+
+    assert DEFAULT_TOP_K == 50
+    assert 'humour contest' in HELP and '64 human captions' in HELP
+    assert 'rank <= 50 of 65' in scoring_rule(DEFAULT_TOP_K)
+    assert 'rank <= 8 of 65' in scoring_rule(8)
+    for invalid in (0, 66, True, 50.0):
+        with pytest.raises(ValueError, match='rank_bar_between_one_and_65'):
+            scoring_rule(invalid)

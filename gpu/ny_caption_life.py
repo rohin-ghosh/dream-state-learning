@@ -15,6 +15,8 @@ from gpu.orch_r189_outcome_allocation import counts
 POLICY = 'R210_LANGUAGE_NATIVE_CAPTION_BATCH_V1'
 LIMIT = 262144
 HELP = (
+    'This is a humour contest: write funny captions or jokes for the cartoon scenes. '
+    'A judge ranks each caption against 64 human captions from the same contest. '
     'This environment accepts captions, not Python. In ACT choose one numbered scene, a direction, '
     'and a guess count. Use plain lines: Scene: 1; Direction: your chosen approach; Count: 2; '
     'then one Caption: your literal caption per line. Put each field on its own line. '
@@ -52,6 +54,53 @@ def parse_batch(raw, scene_ids):
                      for caption in captions), 'bounded_literal_captions')
     return dict(tool='caption_batch', contest_id=scene_ids[int(scene) - 1],
                 direction=fields['direction'], count=int(count), captions=captions)
+
+
+def extract_batch(raw, scene_ids):
+    action, fault = None, None
+    try:
+        action = parse_batch(raw, scene_ids)
+    except ValueError as error:
+        fault = str(error)
+    data.require(isinstance(raw, str) and len(raw.encode()) <= 65536, 'bounded_ACT_text')
+    fields, candidates, unprefixed = {}, [], 0
+    ambiguous_scene = False
+    for line in raw.splitlines():
+        if not line.strip() or line.strip().startswith('```'):
+            continue
+        match = re.fullmatch(r'\s*([A-Za-z]+)\s*[:：][ \t]?(.*)', line)
+        name, value = (match.group(1).lower(), match.group(2)) if match else (None, line)
+        if name in ('scene', 'direction', 'count'):
+            if name == 'scene' and name in fields and fields[name] != value:
+                ambiguous_scene = True
+            fields[name] = value
+        elif name == 'caption':
+            candidates.append(value)
+        elif name not in ('check', 'incorporation', 'explanation') and ('scene' in fields or candidates):
+            candidates.append(line)
+            unprefixed += 1
+    if action is not None and not unprefixed:
+        return action, dict(format_fault=False, recovered_count=action['count'], unprefixed_lines=0)
+    scene = unicodedata.normalize('NFKC', fields.get('scene', '')).strip()
+    diagnostics = dict(format_fault=True, strict_error=fault or 'additional_unprefixed_caption_lines', unprefixed_lines=unprefixed,
+                       declared_count=fields.get('count'), recovered_count=len(candidates),
+                       candidate_lines=candidates, caption_text_normalized=False)
+    if ambiguous_scene or not re.fullmatch(r'[0-9]+', scene) or not 1 <= int(scene) <= len(scene_ids):
+        return None, dict(diagnostics, unscored_reason='scene_not_unambiguously_identified')
+    captions, unscored = [], []
+    for ordinal, caption in enumerate(candidates, 1):
+        if not caption.strip() or len(caption.split()) > 50 or len(caption.encode()) > 4096:
+            unscored.append(dict(ordinal=ordinal, reason='caption_bounds', text=caption))
+        elif len(captions) == 100:
+            unscored.append(dict(ordinal=ordinal, reason='batch_bounds', text=caption))
+        else:
+            captions.append(caption)
+    diagnostics.update(recovered_count=len(captions), unscored_lines=unscored)
+    if not captions:
+        return None, dict(diagnostics, unscored_reason='no_readable_bounded_caption_lines')
+    return dict(tool='caption_batch', contest_id=scene_ids[int(scene) - 1],
+                direction=fields.get('direction', '').strip()[:2048] or 'Direction not stated',
+                count=len(captions), captions=captions), diagnostics
 
 
 def child_act(life_root, origin):

@@ -11,7 +11,7 @@ unparented control. CPU/provenance checks remain; unrelated process gates do not
 | Node1 clones | Cicero | Creative communication and math correction; complementary attributed THINK-only peer capsules | Actual parent rendering, new object, two-turn outcome, language-filter source/eligibility |
 | Node2 clones | Jason | Math/repo/creative; pair complementary objects without sharing private evaluator information | Parent on math_d1/repo_c1 and every other live clone; new object and peer receipts |
 | Node3 clones | Copernicus | Conversational C2; fresh first-principles math; math↔repo peers; matched plasticity variants | Current custom-entrypoint identities; active parent phase; maintain each presentation/LR treatment |
-| Node4 clones | Turing | Self-derivation, communication and environment-specific objects; paired THINK exchanges | SCALE_physical7 parent plus genuine Rohin INBOX→console ACT receipt first |
+| Node4 clones | Turing | Self-derivation, communication and environment-specific objects; P7 deliberately isolated under R211 | P7 parent silent and no inbound peers; genuine Rohin INBOX→console ACT remains enabled |
 | Original C2 / node5 | Descartes | Parent-child LoRA/system homework, then own English reply and two full story redrafts | Genuine homework inbox→parent THINK→child response order; English-target eligibility |
 | Games-node judges | Leibniz | Matched rank8/rank16 text judges, whole-node DDP; crossed-scene discrimination | Safe cross-negative phase transition, checkpoint/optimizer/RNG continuity, updated measured ETA |
 | Caption game / integration | Main | Existing widegap judge now; same child's real rejection→THINK→next ACT | Public scored receipt and actual feedback delivery; distinguish inference from learning |
@@ -58,3 +58,24 @@ actual journal/server UTC receipts (September 18 UTC, September 17 PDT). A
 dispatch, staged patch, or inherited journal record is not evidence of a live
 parent, filter, reply, or current incarnation. Operators append actual receipt
 IDs and paths to COORDINATION; the maintenance table remains independent.
+
+## R212 supersession — no operator holds
+
+R212 supersedes homework gates and pause-based deployment. All homework,
+language checks and curriculum changes happen inside running cycles. Genuine
+Rohin messages get their own ACT at the next boundary; no artifact prerequisite
+may block the response. Historical pause markers must be archived/superseded,
+not mistaken for the state of a current process. Preserve journal evidence.
+
+The language cluster includes node1 creative_b1/creative_a4 and node2
+creative_d1. P7 is explicitly excluded while Rohin's isolation treatment runs.
+Parent instructional prose is English; use minimally necessary, clearly
+attributed corrupt child excerpts only when teaching a language self-check.
+
+The game service loaded at 05:35:38 UTC with rank <=50 of65, relevance, and
+novelty; earlier top8 outcomes remain labelled with their original rule. The
+opener now explicitly calls this a humour contest against human captions.
+Matched frozen base and C2 proposal workers were dispatched on the new ovx4
+A10G GPUs0/1 at 05:38:17 UTC. A dispatch is not a loaded-model or scored-game
+receipt. These are first-opportunity search controls, not long-horizon learning
+evidence. All times are September18 UTC / September17 PDT.

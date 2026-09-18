@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-ROOT=/localhome/local-rohing/orch_r210_caption_service_20260918
+ROOT=/localhome/local-rohing/orch_r213_caption_service_20260918
 INPUT=/localhome/local-rohing/orch_r209_first_caption_game_20260918
 export CUDA_VISIBLE_DEVICES=GPU-5b370d4d-bdcc-21d5-cf06-e9bea52e602d
 export PYTHONPATH="$ROOT/source:$INPUT/source"
@@ -16,5 +16,5 @@ exec /localhome/local-rohing/v2/venv/bin/python -B -m gpu.ny_caption_life_servic
     --pixel-config "$INPUT/similarity/pixel_config.json" \
     --relevance-config "$INPUT/RELEVANCE_PROBE.json" \
     --life-root /localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life \
-    --agent-id C2-SCALE3-R210-caption --socket /tmp/r210_caption_n4.sock \
-    --output "$ROOT/session1" --seconds 21600
+    --agent-id C2-SCALE3-R213-caption --socket /tmp/r213_caption_n4.sock \
+    --output "$ROOT/session1" --seconds 21600 --top-k 50
