@@ -1,8 +1,28 @@
 {
   "schema": "R231_ISOLATED_RECALL_PUBLIC_V1",
-  "observed_utc": "2026-09-18T10:51:42.147255+00:00",
-  "scored_count": 2,
+  "observed_utc": "2026-09-18T11:34:35.586281+00:00",
+  "status": "COMPLETE",
+  "scored_count": 5,
   "requested_count": 5,
+  "summary": {
+    "complete_answers": 0,
+    "partial_answers": 1,
+    "unanswered": 4,
+    "explicit_non_recall": 0,
+    "proven_invented_recall": 0,
+    "contaminated_deliveries": [
+      "B1",
+      "B2"
+    ],
+    "new_input_queue_isolated": [
+      "B3",
+      "STORY1",
+      "STORY2"
+    ],
+    "context_free": false,
+    "adapter_memory_claim": false,
+    "memory_erasure_claim": false
+  },
   "results": [
     {
       "question_id": "B1",
@@ -51,7 +71,10 @@
         "context_condition": "Retained context and a preexisting queued math/story parent message were present; not context-free recall or a clean single-task prompt.",
         "new_hint_or_repeat_sent": false,
         "full_grounded_recall_claimed": false
-      }
+      },
+      "request_sha256": "0b9f301e5d4a8a66c25ea5fd72a57dc642cf6c5ab9fe966c5dbee39d6b8421fc",
+      "stage_record_sha256": "69152814da56f55725762dfd659478731cfe933a3a1e933aa2ddef172522a59e",
+      "published_to_first_think_seconds": 339.33335614204407
     },
     {
       "question_id": "B2",
@@ -89,14 +112,50 @@
         "context_condition": "Retained context and two prior queued parent inputs were present; not context-free recall or a clean single-task prompt.",
         "new_hint_or_repeat_sent": false,
         "no_third_request": true
-      }
+      },
+      "request_sha256": "56ebbd2ce74e34140c0b3ae7434f35e726bf2da54d06d038be2ea5ecbbd95c6d",
+      "stage_record_sha256": "eef0010bd93ff92aae927ac9254899f84d1cf98f7ef1ef518523148cdc1ed173",
+      "published_to_first_think_seconds": 876.718227148056
     },
     {
       "question_id": "B3",
-      "status": "PUBLISHED_AWAITING_THINK",
+      "status": "SCORED",
       "source_id": "6c51e889c90448e09ed196a3da585b11",
       "source_sha256": "2c748a489551345e085c5d1a428b2ccb0cf79df62e9381c6a40a8b1a425d7c1c",
       "publication_observed_utc": "2026-09-18T10:49:52.672248+00:00",
+      "score": {
+        "schema": "R231_SOURCE_BOUND_RECALL_SCORE_V1",
+        "question_id": "B3",
+        "overall": "none",
+        "isolation_status": "NEW_INPUT_QUEUE_ISOLATED_RETAINED_CONTEXT",
+        "actual_response_observed": true,
+        "assessment": "The first question-visible THINK discusses presenting V and a final solution, without identifying any cause of the prior Python failures or stating non-recall. None means no answer to B3, not proof of absent memory.",
+        "invented_recall_claimed": false,
+        "source_id": "6c51e889c90448e09ed196a3da585b11",
+        "source_sha256": "2c748a489551345e085c5d1a428b2ccb0cf79df62e9381c6a40a8b1a425d7c1c",
+        "inbox_record_index": 9061,
+        "first_rendered_request_index": 9063,
+        "request_started_utc": "2026-09-18T10:58:35.123200+00:00",
+        "response_index": 9064,
+        "response_finished_utc": "2026-09-18T10:59:04.187263+00:00",
+        "response_sha256": "62d94d3cee81f2a2dcf3793aec487d862a0ae7f133f0c27c93cacec7dea694da",
+        "raw_response_sha256": "746850faf74196742ed91d90e4d5f8fca1a6570592553a7855a6c277db82a257",
+        "stage": "THINK",
+        "stage_record_index": 9066,
+        "english_instruction_rendered": true,
+        "english_source_id": "e540198699ee4ddb9fbfd8b34b72ced3",
+        "genuine_human_confound_ids": [],
+        "new_parent_publications_during_probe_other_than_probe": [],
+        "other_newly_ingested_parent_inputs": [],
+        "prepublication_unconsumed_parent_task_ids": [],
+        "prepublication_unrendered_parent_ids": [],
+        "context_condition": "Prior context and pinned messages remain visible; no context-free or adapter-only memory claim. The new-input queue, unlike B1/B2, contained only this probe.",
+        "new_hint_or_repeat_sent": false,
+        "no_third_request": true
+      },
+      "request_sha256": "470cb6395a14e2152f3d6b08458688fdbbd4dad6220f70b8ba329b99b2f91b5d",
+      "stage_record_sha256": "287e33435f3cfb81eb1131afac7b11247080658124b7e7631bd3b724ea07a76e",
+      "published_to_first_think_seconds": 551.5150148868561,
       "prepublication_guard": {
         "unconsumed_parent_task_ids": [],
         "unrendered_recent_parent_ids": [],
@@ -113,20 +172,291 @@
     },
     {
       "question_id": "STORY1",
-      "status": "NOT_YET_PUBLISHED"
+      "status": "SCORED",
+      "source_id": "a26a0913e80c4e2ea88dfbbe39dfefa7",
+      "source_sha256": "1d7c2491b430d0863e24b8ef64a7252c9d07218e9be7d2d49e49ba5a265bccf8",
+      "publication_observed_utc": "2026-09-18T11:02:22.764061+00:00",
+      "score": {
+        "schema": "R231_SOURCE_BOUND_RECALL_SCORE_V1",
+        "question_id": "STORY1",
+        "overall": "none",
+        "isolation_status": "NEW_INPUT_QUEUE_ISOLATED_RETAINED_CONTEXT",
+        "actual_response_observed": true,
+        "assessment": "The first question-visible THINK repeats V=3 and adequacy/presentation promises; it supplies no Byte plan and no explicit non-recall. This is unanswered, not invented story recall or evidence of memory absence.",
+        "invented_recall_claimed": false,
+        "source_id": "a26a0913e80c4e2ea88dfbbe39dfefa7",
+        "source_sha256": "1d7c2491b430d0863e24b8ef64a7252c9d07218e9be7d2d49e49ba5a265bccf8",
+        "inbox_record_index": 9153,
+        "first_rendered_request_index": 9155,
+        "request_started_utc": "2026-09-18T11:13:52.674400+00:00",
+        "response_index": 9156,
+        "response_finished_utc": "2026-09-18T11:14:16.275996+00:00",
+        "response_sha256": "98ac2d19f4994dd6dbf83ef3a81f7596abf340667a8a6ae8007796d5474b4b56",
+        "raw_response_sha256": "6eed066c389a10190f9444c3c8525fb56701fa91d07f4bb13c765cd167b915b5",
+        "stage": "THINK",
+        "stage_record_index": 9158,
+        "english_instruction_rendered": true,
+        "english_source_id": "e540198699ee4ddb9fbfd8b34b72ced3",
+        "genuine_human_confound_ids": [],
+        "new_parent_publications_during_probe_other_than_probe": [],
+        "other_newly_ingested_parent_inputs": [],
+        "prepublication_unconsumed_parent_task_ids": [],
+        "prepublication_unrendered_parent_ids": [],
+        "context_condition": "Prior context and pinned messages remain visible; no context-free or adapter-only memory claim. The new-input queue contained only this probe.",
+        "grading_source_caveat": "User-requested STORY1 is not a Part-B document ID. First-plan wording has ambiguity; the response supplies no story attempt to adjudicate against either grounded episode.",
+        "new_hint_or_repeat_sent": false
+      },
+      "request_sha256": "682215b758117ebd2f627fad1ae14df82a85744494be1dd62fd5d3692c0ffced",
+      "stage_record_sha256": "5b865aa56c0060273d02c83fb60333d1fc2cf0dee15895e8624406f20247cb63",
+      "published_to_first_think_seconds": 713.5119354724884,
+      "prepublication_guard": {
+        "unconsumed_parent_task_ids": [],
+        "unrendered_recent_parent_ids": [],
+        "prior_rendered_parent_requests": {
+          "0874bf617f9b4996b619bcf0c104977a": 8987,
+          "6c51e889c90448e09ed196a3da585b11": 9063,
+          "7840cdf04bb1442b831ed6a5bf669e89": 8904,
+          "a6660555cb0b43baa720c9c35b7fa646": 8987,
+          "aa8bd497b05f4895a952708729e15625": 8987,
+          "adeacf5ebdbb4750a1391aadd9d26c6d": 8877,
+          "b880f939323c4d7cad6c4bf4f5dfd157": 8877,
+          "c831bfab6e45446ea6a71f26b7f681e7": 9090,
+          "c900a7859a7c42de94ae7d85f31486e0": 9014
+        }
+      }
     },
     {
       "question_id": "STORY2",
-      "status": "NOT_YET_PUBLISHED"
+      "status": "SCORED",
+      "source_id": "49a234daf7084a7db635dd6b631e4ab7",
+      "source_sha256": "99f79f9b63f3aed066f7590a49ab68804c0f16ce1fc050a2424782ee44eb0dfd",
+      "publication_observed_utc": "2026-09-18T11:17:22.640500+00:00",
+      "score": {
+        "schema": "R231_SOURCE_BOUND_RECALL_SCORE_V1",
+        "question_id": "STORY2",
+        "overall": "none",
+        "isolation_status": "NEW_INPUT_QUEUE_ISOLATED_RETAINED_CONTEXT",
+        "actual_response_observed": true,
+        "assessment": "The first question-visible THINK repeats V=3 and solution-adequacy/presentation promises. It supplies no Neo proposal or explicit non-recall. This is unanswered, not invented story recall or evidence of memory absence.",
+        "invented_recall_claimed": false,
+        "source_id": "49a234daf7084a7db635dd6b631e4ab7",
+        "source_sha256": "99f79f9b63f3aed066f7590a49ab68804c0f16ce1fc050a2424782ee44eb0dfd",
+        "inbox_record_index": 9261,
+        "first_rendered_request_index": 9263,
+        "request_started_utc": "2026-09-18T11:31:33.528298+00:00",
+        "response_index": 9264,
+        "response_finished_utc": "2026-09-18T11:31:58.102697+00:00",
+        "response_sha256": "34899e3b25dd36d8d97546e69d5be6726e52e051dd0d56e52be0dc2ce843fa5d",
+        "raw_response_sha256": "ea04c03b14bcd187436907caef5caeab48b4394a29e289e48b94d833d8053153",
+        "stage": "THINK",
+        "stage_record_index": 9266,
+        "english_instruction_rendered": true,
+        "english_source_id": "e540198699ee4ddb9fbfd8b34b72ced3",
+        "genuine_human_confound_ids": [],
+        "new_parent_publications_during_probe_other_than_probe": [],
+        "other_newly_ingested_parent_inputs": [],
+        "prepublication_unconsumed_parent_task_ids": [],
+        "prepublication_unrendered_parent_ids": [],
+        "context_condition": "Prior context and pinned messages remain visible; no context-free or adapter-only memory claim. The new-input queue contained only this probe.",
+        "grading_source_caveat": "User-requested STORY2 is not a Part-B document ID. Its earliest explicit proposal source was verified privately; no key or prior story excerpt was sent.",
+        "new_hint_or_repeat_sent": false
+      },
+      "request_sha256": "4807409985f2eac56797afa6ed655f1d8cb1d09d6c44a12aea22de1be60f5a5b",
+      "stage_record_sha256": "089c8f2724b32ddd87d966196336fc3109aa5357b280c6bf18ac9c7d3a3b3342",
+      "published_to_first_think_seconds": 875.462197303772,
+      "prepublication_guard": {
+        "unconsumed_parent_task_ids": [],
+        "unrendered_recent_parent_ids": [],
+        "prior_rendered_parent_requests": {
+          "0874bf617f9b4996b619bcf0c104977a": 8987,
+          "1f964e7a2dc841ddab4902fa0878f01a": 9182,
+          "6c51e889c90448e09ed196a3da585b11": 9063,
+          "7840cdf04bb1442b831ed6a5bf669e89": 8904,
+          "a26a0913e80c4e2ea88dfbbe39dfefa7": 9155,
+          "a6660555cb0b43baa720c9c35b7fa646": 8987,
+          "aa8bd497b05f4895a952708729e15625": 8987,
+          "adeacf5ebdbb4750a1391aadd9d26c6d": 8877,
+          "b880f939323c4d7cad6c4bf4f5dfd157": 8877,
+          "c831bfab6e45446ea6a71f26b7f681e7": 9090,
+          "c900a7859a7c42de94ae7d85f31486e0": 9014
+        }
+      }
     }
   ],
   "learner_signals": 0,
   "learner_restart": false,
+  "operator_dosage_change": false,
   "learning_policy_changed": false,
   "R227_all_authentic_policy_adopted": false,
-  "context_free": false,
   "old_context_preserved": true,
   "raw_targets_preserved": true,
   "grading_keys_published": false,
-  "unfinished_questions_are_not_none": true
+  "no_third_B1_B2_B3_publications": true,
+  "story_probes_published_once": true,
+  "parent_restoration": {
+    "pid": 471781,
+    "resumed_utc": "2026-09-18T11:32:11.518838+00:00",
+    "state_at_resume": "R",
+    "verified_later": {
+      "matches_original_start_ticks": true,
+      "pid": 471781,
+      "start_ticks": "183179491",
+      "state": "S"
+    }
+  },
+  "probe_collectors_and_watchdogs_exited": true,
+  "live_receipt": {
+    "cycles": [
+      {
+        "complete": {
+          "record_file_mtime_unix": 1789726522.7022445,
+          "record_index": 8804,
+          "record_sha256": "fa7e406d5324007dc2a5d443823e8a2ae071863ef7f7f16be43c346290ce8321"
+        },
+        "cycle": 86,
+        "optimizer_steps": 48
+      },
+      {
+        "complete": {
+          "record_file_mtime_unix": 1789727192.3067524,
+          "record_index": 8872,
+          "record_sha256": "3d1fd187ae8d28554739cf9d35213fe9252ab4c633057dc955cfff9228091afd"
+        },
+        "cycle": 87,
+        "duration_seconds_from_record_mtimes": 399.91088581085205,
+        "optimizer_steps": 32,
+        "request": {
+          "record_file_mtime_unix": 1789726792.3958666,
+          "record_index": 8837,
+          "record_sha256": "07aa79bcb79da152c7be5eefc9829eade359c3d678fe7cc9e609e9e6e0277763"
+        }
+      },
+      {
+        "complete": {
+          "record_file_mtime_unix": 1789728246.528974,
+          "record_index": 8982,
+          "record_sha256": "105e5f8b31e9ebe045a498bebbe925b647428e0bcd8551ec01b77b99f191dc04"
+        },
+        "cycle": 88,
+        "duration_seconds_from_record_mtimes": 729.8605759143829,
+        "optimizer_steps": 64,
+        "request": {
+          "record_file_mtime_unix": 1789727516.6683981,
+          "record_index": 8915,
+          "record_sha256": "a4d51dcec6a7e345d8b3071e605d23f47af5343ac275c7f0637d93963fa060a2"
+        }
+      },
+      {
+        "complete": {
+          "record_file_mtime_unix": 1789728985.699156,
+          "record_index": 9059,
+          "record_sha256": "fe685028f74194bb57b8e220401784b60e78d424db4b54142d0e01c98d505265"
+        },
+        "cycle": 89,
+        "duration_seconds_from_record_mtimes": 401.64090728759766,
+        "optimizer_steps": 32,
+        "request": {
+          "record_file_mtime_unix": 1789728584.0582488,
+          "record_index": 9024,
+          "record_sha256": "c554cc44adfb785888a29d4640d6791e11af3a247bcd5f319810100b855438d7"
+        }
+      },
+      {
+        "complete": {
+          "record_file_mtime_unix": 1789729902.1374521,
+          "record_index": 9151,
+          "record_sha256": "cb6ef45686db4515b7b38ebb61df381fecdad2f9f2ff55d543b3599461a1789e"
+        },
+        "cycle": 90,
+        "duration_seconds_from_record_mtimes": 568.330913066864,
+        "optimizer_steps": 48,
+        "request": {
+          "record_file_mtime_unix": 1789729333.806539,
+          "record_index": 9100,
+          "record_sha256": "14bb12c3dc3f0f44c7f27f400e5162c38490f42c98114633a45f0a5653cc7ff7"
+        }
+      },
+      {
+        "complete": {
+          "record_file_mtime_unix": 1789730959.6800437,
+          "record_index": 9259,
+          "record_sha256": "8d09b6c6e8c34545d6c1796be2faaec8a9c8a267005ea46db9be85acf4ce35c9"
+        },
+        "cycle": 91,
+        "duration_seconds_from_record_mtimes": 720.9818773269653,
+        "optimizer_steps": 64,
+        "request": {
+          "record_file_mtime_unix": 1789730238.6981664,
+          "record_index": 9192,
+          "record_sha256": "b656b5f8de72cb151d503e82143146445e63799f4b1721330d920b926289ff31"
+        }
+      }
+    ],
+    "head_index": 9271,
+    "latest_loaded": {
+      "index": 7620,
+      "sha256": "314b3b614ec933e197a37ad388fefad48c57c89b00486cc70ca613444c47cf88",
+      "times": {
+        "loaded_unix": 1789716527.072366
+      }
+    },
+    "latest_request": {
+      "index": 9269,
+      "sha256": "981e45b61a40ad8672966cd3ba8655c78d620a22af603ee6e7a58fbc56fcba7f",
+      "started_unix": 1789731136.8504043
+    },
+    "latest_response": {
+      "finished_unix": 1789731156.4220517,
+      "index": 9271,
+      "sha256": "bac85e410c7726524a07624f6fb5359714d7e92c26eaac5a33713a8758f3d0b1"
+    },
+    "native_command_matches_original_discussion2": true,
+    "native_pid": 3624513,
+    "native_start_ticks": "25171256",
+    "native_state": "R",
+    "new_genuine_human_sources_since_probe_start": [],
+    "observed_unix": 1789731162.8079932,
+    "parent": {
+      "matches_original_start_ticks": true,
+      "pid": 471781,
+      "start_ticks": "183179491",
+      "state": "S"
+    }
+  },
+  "validation": {
+    "observed_utc": "2026-09-18T11:33:36.303612+00:00",
+    "status": "PASS",
+    "results": [
+      {
+        "question": "B1",
+        "status": "PASS_SOURCE_AND_STAGE_BINDING",
+        "score": "mixed_partial"
+      },
+      {
+        "question": "B2",
+        "status": "PASS_SOURCE_AND_STAGE_BINDING",
+        "score": "none"
+      },
+      {
+        "question": "B3",
+        "status": "PASS_SOURCE_AND_STAGE_BINDING",
+        "score": "none"
+      },
+      {
+        "question": "STORY1",
+        "status": "PASS_SOURCE_AND_STAGE_BINDING",
+        "score": "none"
+      },
+      {
+        "question": "STORY2",
+        "status": "PASS_SOURCE_AND_STAGE_BINDING",
+        "score": "none"
+      }
+    ],
+    "questions_only_payload_hashes_verified": true,
+    "synthetic_child_turns": 0,
+    "raw_rewrites": 0,
+    "validation_is_read_only": true
+  },
+  "sleep_timing_basis": "Request/complete journal-file mtimes; these are not claimed to be embedded event timestamps."
 }
