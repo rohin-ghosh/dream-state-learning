@@ -170,6 +170,8 @@ def content_exclusions(rows):
     checks, excluded = [], []
     for index, row in enumerate(rows):
         if 'content_target_filter' not in row:
+            if 'question_target_filter' in row or 'fabricated_speaker_filter' in row:
+                raise ValueError('question_and_speaker_targets_require_content_filter')
             continue
         if row['content_target_filter'] != POLICY:
             raise ValueError('known_content_target_filter_policy')
@@ -177,13 +179,20 @@ def content_exclusions(rows):
                 or row.get('prefix_loss') is not False or row.get('target_loss') is not True):
             raise ValueError('content_filter_child_targets_only')
         evidence = scan_target(row['target'], row.get('token_ids'))
+        if 'question_target_filter' in row:
+            from organism_v6.orch_r220_question_target_filter import apply_question_policy
+            evidence = apply_question_policy(row['target'], evidence, row['question_target_filter'])
+        if 'fabricated_speaker_filter' in row:
+            from organism_v6.orch_r220_speaker_target_filter import apply_speaker_policy
+            evidence = apply_speaker_policy(row['target'], evidence, row['fabricated_speaker_filter'])
         check = dict(source_sha256=row['source_sha256'], segment=row['segment'], cohort='NEW',
             row_index=index, raw_target_sha256=hashlib.sha256(row['target'].encode()).hexdigest(),
             policy=POLICY, evidence=evidence)
         checks.append(check)
         if not evidence['eligible']:
             reasons = dict(meta_only='meta_only_target', repetition_collapse='repetition_collapse_target',
-                code_wrapped_prose='labelled_prose_inside_code_fence')
+                code_wrapped_prose='labelled_prose_inside_code_fence',
+                fabricated_human_turn='fabricated_human_speaker_target')
             excluded.append(dict(check, reason=reasons.get(evidence['classification'], 'uncertain_content_target')))
     return dict(policy=POLICY, checks=checks, excluded=excluded, raw_modified=False,
         targets_normalized=False, provisional=True, semantic_correctness_claimed=False,
