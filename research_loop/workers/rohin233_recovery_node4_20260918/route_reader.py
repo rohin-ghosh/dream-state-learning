@@ -50,7 +50,7 @@ def current():
         parent_poll_age_seconds=time.time() - parent_poll.stat().st_mtime,
         forwards=forwards, returned=returned, snapshot_linked_roundtrip_stage_count=len(rounds),
         first_snapshot_linked_roundtrip=rounds[0] if rounds else None,
-        phases=phases, native_deadlines_renewed=False, native_signals=[],
+        phases=phases, native_deadlines_renewed=(OWN / 'NATIVE_CONTINUATION.public.json').exists(), native_signals=[],
         note='Stage count is not independent conversation count; P7 exact REQUEST text audit is separate.',
         forward_stage_limit='ACT_ONLY_NO_RELABEL; old queues preserved, unsupported current stages not retried')
 

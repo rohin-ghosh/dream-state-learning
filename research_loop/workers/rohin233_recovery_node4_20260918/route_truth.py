@@ -37,3 +37,25 @@ def overlay(observation, proof):
             'P7 remains the only parent of Astra7. Never invent P7 words, directly parent Astra7, supply feelings, or claim an executed outcome without an actual receipt.'
         ]
     return result
+
+
+def continued_receiver(observation, receipt):
+    if (receipt['native_pid'] != 886059 or receipt['loaded_index'] != 3545
+            or receipt['loaded_sha256'] != '02af6cdb281ff43a1f6040146ec9fb37a54340ea944ff40d8220eff090e851a3'
+            or receipt['hard_end_unix'] != 1789927200):
+        raise ValueError('exact_Jason_authorized_same_journal_continuation')
+    result = deepcopy(observation)
+    route = result['actual_birth_and_route']
+    if 'R233_receiver_recovery' in route:
+        route['R233_receiver_recovery']['scope'] = (
+            'Historical genuine exchange before same-journal native continuation; not a current-incarnation roundtrip.')
+    route['R233_current_receiver'] = deepcopy(receipt)
+    route['R233_current_receiver']['new_incarnation_roundtrip_claim'] = False
+    brief = route.get('standing_overseer_curriculum', {}).get(KEY)
+    if brief is not None:
+        brief['current_route_status'] = 'NEW_NATIVE_RECEIVER_VERIFIED_AS_OF_RECEIPT_NEW_ROUNDTRIP_NOT_YET_CLAIMED'
+        brief['guidance'].append(
+            'The same child has resumed from its complete state under the attached actual LOAD. Earlier replies stay '
+            'real and historical. Use only returned, actually rendered child text as a concrete object; never invent '
+            'a fresh reply or teaching success. English is requested, not a training exclusion.')
+    return result

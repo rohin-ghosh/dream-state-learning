@@ -10,7 +10,7 @@ import time
 
 from receipt_window import linked_reply, read_record
 from lease_horizon import cpu_horizon
-from route_truth import overlay
+from route_truth import overlay, continued_receiver
 from native_binding import verify as verify_native
 
 
@@ -54,7 +54,10 @@ def install():
     def observe(reference=None):
         observation = original_observe(reference)
         proof = Path(__file__).with_name('RENEWED_RETURN_1748.json')
-        return overlay(observation, json.loads(proof.read_bytes())) if proof.exists() else observation
+        if proof.exists():
+            observation = overlay(observation, json.loads(proof.read_bytes()))
+        current = Path(__file__).with_name('CURRENT_ASTRA7_RECEIVER.json')
+        return continued_receiver(observation, json.loads(current.read_bytes())) if current.exists() else observation
 
     endpoint.observe = observe
 

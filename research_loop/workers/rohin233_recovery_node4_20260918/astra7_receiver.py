@@ -12,10 +12,10 @@ ROOT = Path('/localhome/local-rohing/orch_r229_Astra7_20260918')
 OPERATOR = ROOT / 'node4_bridge/operator'
 EPOCH = ROOT / 'node4_bridge/r233_recovery'
 JOURNAL = '6a2fa591a1304fd8b3eff24f65e5caff'
-LOADED_SHA = '1454621c60943dea4399858b30ee195418f4406e2201c19e5a891965621e28f1'
+LOADED_SHA = '02af6cdb281ff43a1f6040146ec9fb37a54340ea944ff40d8220eff090e851a3'
 RECEIVER_SHA = 'a829156ed6341b96ca17754e2335bc51f1c029271e1b8c9a86641a7aa232da16'
-PLAN_SHA = '29322446a88ee4e7a82d8b4cba2aee08601d2d98b51dd3a2a7b410cd55e30a5a'
-GUARD_SHA = 'c2678d44a20ab286ec3fde0a2b86143ba59905498d6719062f64c880497ff87d'
+PLAN_SHA = '5e0eb5bfd150bb9ec7bcf8510c147d13f33b6bf529e7d1ad335e533c84dfda8d'
+GUARD_SHA = 'fae6f4ede1e9c80be060aeca8dd494cbb24a6228b9225e33856b62ec3c0047f6'
 
 
 def renewed_matches(matches, current_publications):
@@ -27,8 +27,8 @@ def install():
     import r229_astra7_endpoint as old
 
     def status():
-        source, life = ROOT / 'source_r233_recovery', ROOT / 'raw'
-        guard_path, plan_path = [ROOT / 'control_r233_recovery' / name for name in ('GUARD.json', 'PLAN.json')]
+        source, life = ROOT / 'source_r233_lease_continuation', ROOT / 'raw'
+        guard_path, plan_path = [ROOT / 'control_r233_lease_continuation' / name for name in ('GUARD.json', 'PLAN.json')]
         old.require(os.getuid() == 2524 and old.read(life / 'stream/JOURNAL.json')['journal_id'] == JOURNAL,
             'actual_same_Astra7_user_and_journal')
         old.require(hashlib.sha256(guard_path.read_bytes()).hexdigest() == GUARD_SHA
@@ -38,17 +38,17 @@ def install():
         old.require(hashlib.sha256(receiver.read_bytes()).hexdigest() == RECEIVER_SHA
             and guard['source_pins']['gpu/r229_p7_inbox.py'] == RECEIVER_SHA
             and guard['plan_sha256'] == PLAN_SHA, 'unchanged_authenticated_P7_receiver')
-        process = Path('/proc/762967')
+        process = Path('/proc/886059')
         fields = (process / 'stat').read_text().rsplit(') ', 1)[1].split()
-        old.require(fields[19] == '98059264' and fields[0] != 'Z'
+        old.require(fields[19] == '98343651' and fields[0] != 'Z'
             and os.readlink(process / 'cwd') == str(source), 'actual_recovered_Astra7_PID_start_source')
-        loaded = old.check_record(old.read(life / 'stream/records/00000000000000003128.json'), JOURNAL, 'LOADED')
-        old.require(loaded['sha256'] == LOADED_SHA and loaded['document']['pid'] == 762967
+        loaded = old.check_record(old.read(life / 'stream/records/00000000000000003545.json'), JOURNAL, 'LOADED')
+        old.require(loaded['sha256'] == LOADED_SHA and loaded['document']['pid'] == 886059
             and time.time() < plan['hard_end_unix'], 'actual_recovered_Astra7_LOAD_and_current_budget')
         sys.path.insert(0, str(source))
         from gpu.r229_p7_inbox import publish_p7
         return dict(journal_id=JOURNAL, physical_root=str(life), source_root=str(source),
-            native_pid=762967, native_start_ticks='98059264', loaded=True, loaded_record=loaded,
+            native_pid=886059, native_start_ticks='98343651', loaded=True, loaded_record=loaded,
             logical_root=plan['root'], hard_end_unix=plan['hard_end_unix'], receiver_imported=callable(publish_p7),
             receiver_supported_stages=['ACT'], source_receiver_sha256=RECEIVER_SHA,
             frontier_index=max(int(path.stem) for path in (life / 'stream/records').glob('[0-9]' * 20 + '.json')),

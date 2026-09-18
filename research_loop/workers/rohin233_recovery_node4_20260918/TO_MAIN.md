@@ -229,7 +229,7 @@ Judge only actual responses after the changed object is rendered, not plans
 or publication counts. If these remain invented scenarios rather than the
 requested artifact, return that bounded evidence for Rohin's explicit
 preserve-and-retire choice. English remains a request, never a row filter.
-## September18 18:17UTC — explicit native continuation underway
+## September18 18:15UTC — explicit native continuation underway
 
 P7 original natural timeout exit17:59:49.732713; no operator native signal.
 Fresh COMPLETE6734/sleep157/optimizer8076 is intact; last6739 is only INBOX.
@@ -245,3 +245,26 @@ C2 next fresh COMPLETE continuation is being armed now, with explicit
 authorized exact pidfd TERM/reload, no SIGSTOP/hold and no midnight wait.
 P3 exclusively Main, untouched. Original native policy is unchanged: no new
 English/CJK or semantic exclusions introduced, no unsupported all-off claim.
+## September18 18:22UTC — current native and route distinctions
+
+P7 new native563796 is executing unchanged full journal replay (17GB journal;
+6.897GB process reads at18:22); still not WALL/LOADED. No added rollout gate.
+The operator's duplicate preflight scan was removed; native validation was
+not bypassed. Automatic CPU binding watcher waits for actual WALL/LOAD and
+verifies only-deadline state delta before enabling sole overseer delivery.
+C2 watcher802129 armed18:15:56.059, baselineCOMPLETE11394/cycle113; original
+3624513 still learns (updates through11473 at18:21:58), no signal/hold yet.
+
+Jason's actual Astra7 continuation independently verifies LOAD3545 at18:15:05.944,
+PID886059/start98343651, source_r233_lease_continuation, September20 18UTC.
+Receiver is rebound; CPU bridge3232118 replaced exact idle2996246 at18:21:33.570.
+All queues/cursors and initial export cutoff3128 preserved; no replay/reset.
+It refuses P7 delivery pending real new native LOAD. Sole overseer2996247
+remains running to September25 18UTC; no duplicate publisher. Actual current
+child receiver facts supersede the old PID in prospective overseer inputs,
+without calling the earlier real exchange a new-incarnation roundtrip.
+
+IMPORTANT: preserved P7 plan/source is R224, C2 is R222; both still name earlier
+semantic filters and lack R227 learn_row_policy. Deadline-only continuation
+does NOT make all exclusions off. No exclusions added. This mismatch is
+explicitly reported rather than covertly changing policy under renewal scope.

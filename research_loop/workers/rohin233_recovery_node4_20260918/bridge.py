@@ -77,7 +77,7 @@ def main():
                         if not any((output / 'P7_TO_ASTRA7/published').glob('*.json')):
                             continue
                         batch = call('ASTRA7', '', dict(op='export', cursor=cursors[direction],
-                            cutoff_index=binding['astra7']['loaded_record']['index'],
+                            cutoff_index=binding.get('astra7_export_cutoff_index', binding['astra7']['loaded_record']['index']),
                             loaded_sha256=binding['astra7']['loaded_record']['sha256']))
                     write_once(output / direction / 'polls' / f'{time.time_ns()}.json', batch)
                     previous.drain(output, direction, batch, binding)

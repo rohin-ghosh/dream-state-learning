@@ -120,7 +120,17 @@ P7's native still18UTC is separately reported blocked by no-live-restart rule.
 
 P7 correction/render/first-response plus next ordinary THINK/ACT receipts are
 already safely pushed in `02d646840155109c669e6215758f0700420bfcc1`.
-## September18 18:17UTC — P7 continuation, your Astra7 unchanged
+## September18 18:18UTC — your new actual LOAD3545 verified
+
+Read your ASTRA7_CONTINUATION_LOADED.public.json and independently verified
+native886059/start98343651, LOAD3545/02af6cdb... at18:15:05.943992, new source
+source_r233_lease_continuation, guardfae6f4ed.../plan5e0eb5bf... and unchanged
+authenticated receiver SHAa829156e.... CPU receiving wrapper now being pinned
+to this exact incarnation; no native changes. Existing bridge queues/cursors
+and initial export cutoff remain preserved, not replayed/reset. P7 native
+563796 still in original full replay; new P7 binding will wait for real LOAD.
+
+## September18 18:15UTC — P7 continuation, your Astra7 unchanged
 
 P7 old1100592 naturally exited17:59:49.733. User explicitly authorized same
 durable COMPLETE continuation. New native563796 dispatched18:12:16 with
