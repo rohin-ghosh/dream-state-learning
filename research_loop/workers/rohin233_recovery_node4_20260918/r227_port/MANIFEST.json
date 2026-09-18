@@ -1,0 +1,82 @@
+{
+  "P3_receiving_tests": false,
+  "authoritative_commit": "bb1e9a9033979d50ed97072675515f7290de1237",
+  "live_source_mutation": false,
+  "native_signals": [],
+  "observed_utc": "2026-09-18T19:18:06.460530+00:00",
+  "ports": {
+    "C2": {
+      "compatibility_tests": 10,
+      "evidence_sha256": {
+        "C2_R227_COMPATIBILITY_TESTS.log": "2622d2795c7240ebaa9a84cd61b6ab646597a216de62ea53ae27630e378c0758",
+        "C2_R227_RECEIVING_TESTS_V2.log": "841abdb53778335de34fde5c60163926e2ffddd2e1e10794dec8ebde9acaab57"
+      },
+      "files": {
+        "gpu/orch_r125_continual_native.py": {
+          "after_sha256": "8d95279f613e459e93f9beef4ffb1b9bed4b071586484637f366f64ec04bd7aa",
+          "before_sha256": "39a4391e6c414e33c38e6569c2b334cba1034a880e88236968f066962e205401"
+        },
+        "gpu/orch_r184_think_act_learn.py": {
+          "after_sha256": "57bba9866edd6e4adb8a047d7ca3f5fbe99f613e56b64833e0b9b58829bc8cc5",
+          "before_sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e"
+        },
+        "organism_v6/orch_r125_plain_context.py": {
+          "after_sha256": "653bf7f216f46aa4ea2f9869d7a0c58db4e1bfbf79914f339f53485c7522ec6e",
+          "before_sha256": "4ac0ac3197bc59e8ebb9c5f8acaaae2155fff2dd09e7baf49f0c4c161a18aaef"
+        },
+        "organism_v6/orch_r227_learning_policy.py": {
+          "after_sha256": "08edb1be7563331df3273abb5a2010dd9273b041708521e084d3dcb75a82e503",
+          "before_sha256": null
+        }
+      },
+      "original_pin_manifest_sha256": "5235803240ea961f07ab17686ae72519994b994c1aa5c13abf8073789ce581eb",
+      "patch": "C2.patch",
+      "patch_sha256": "711d5e466d3955e08544ac951f5c7cbff7668d531500613cd0a08e7a7f551f3c",
+      "pinned_files": 181,
+      "receiving_tests": 8,
+      "unchanged_pinned_files": 178
+    },
+    "P7": {
+      "compatibility_tests": 5,
+      "evidence_sha256": {
+        "P7_R227_COMPATIBILITY_TESTS.log": "4d298c9b79acee6d2f60c4ae95e822622b28838a7a995a9d44a7ca5fae913348",
+        "P7_R227_RECEIVING_TESTS_V2.log": "b35ccae823084e6bc9aee02968f1cdf3ac901cc2afef196ae0af8e857d432fb7"
+      },
+      "files": {
+        "gpu/orch_r125_continual_native.py": {
+          "after_sha256": "c70c2033a69793d3fa058bb2cf67319a04f35afa0aefc21766ca2dbe6767d59d",
+          "before_sha256": "256a1c1ac20a9ed6faf8cd6193182bb010c7f5d36385a45612704a5b66ed0331"
+        },
+        "gpu/orch_r184_think_act_learn.py": {
+          "after_sha256": "cd223384b5af7387da419162b41b9dbdca3529bd5bc3407cdbb7016f78e25769",
+          "before_sha256": "798f1d91706f72b3af5725dd06ba938c0b8d0e3ddc91a58fb81426d674d1ee73"
+        },
+        "organism_v6/orch_r125_plain_context.py": {
+          "after_sha256": "653bf7f216f46aa4ea2f9869d7a0c58db4e1bfbf79914f339f53485c7522ec6e",
+          "before_sha256": "4ac0ac3197bc59e8ebb9c5f8acaaae2155fff2dd09e7baf49f0c4c161a18aaef"
+        },
+        "organism_v6/orch_r227_learning_policy.py": {
+          "after_sha256": "08edb1be7563331df3273abb5a2010dd9273b041708521e084d3dcb75a82e503",
+          "before_sha256": null
+        }
+      },
+      "original_pin_manifest_sha256": "147e88adb308aa96db9289c5e0e27795e501a6591a782583e1735edec1e19fb1",
+      "patch": "P7.patch",
+      "patch_sha256": "1a0de152834c6e07a597e8af5733ad64d0799e93b28683ef4baf1f96a850db17",
+      "pinned_files": 175,
+      "receiving_tests": 8,
+      "unchanged_pinned_files": 172
+    }
+  },
+  "scope": [
+    "P7_copied_closure",
+    "C2_copied_closure"
+  ],
+  "status": "CPU_RECEIVING_TESTED_NOT_LIVE",
+  "support_fixture": {
+    "commit": "bb1e9a9033979d50ed97072675515f7290de1237",
+    "path": "support/r227_sleep_fixture.py",
+    "sha256": "8b5f1ef525eb5aedc88293f151d6abd31bcc9bbe4a0a8890f6d9f41cd01354a7",
+    "source": "tests/test_orch_r194_code_target_filter.py"
+  }
+}

@@ -22,8 +22,14 @@ def proposed_plan(current, proposed_source):
         config['learn_row_policy'] = POLICY
     previous_extension = result.pop('authorized_wall_extension', None)
     result['source_root'] = proposed_source
+    if result.get('startup_context') is not None:
+        startup = PurePosixPath(result['startup_context']['path'])
+        previous_source = PurePosixPath(current['source_root'])
+        if '..' in startup.parts or not startup.is_relative_to(previous_source):
+            raise ValueError('startup_must_remain_inside_pinned_source')
+        result['startup_context']['path'] = str(source / startup.relative_to(previous_source))
     return result, dict(removed_future_selectors=removed,
         old_wall_extension_removed_for_same_long_wall_resume=previous_extension is not None,
         previous_row_annotations='UNCHANGED_NOT_REPLAYED',
-        source_status='RECEIVING_OVERLAY_NOT_BUILT_OR_LOADED',
+        source_status='PROSPECTIVE_PLAN_NOT_LOADED',
         admission='NEXT_FRESH_COMPLETE_ONLY_AFTER_RECEIVING_SOURCE_TESTS_NO_CURRENT_REPLAY_INTERRUPT')

@@ -24,7 +24,7 @@ class ProspectivePolicyPlanTests(unittest.TestCase):
             self.assertEqual(result['think_act_learn'][key], current['think_act_learn'][key])
         self.assertNotIn('authorized_wall_extension', result)
         self.assertNotIn('language_target_policy', result['think_act_learn'])
-        self.assertEqual(disposition['source_status'], 'RECEIVING_OVERLAY_NOT_BUILT_OR_LOADED')
+        self.assertEqual(disposition['source_status'], 'PROSPECTIVE_PLAN_NOT_LOADED')
 
     def test_current_source_or_ambiguous_destination_rejected(self):
         current = dict(source_root='/old/source', think_act_learn={})
@@ -43,6 +43,18 @@ class ProspectivePolicyPlanTests(unittest.TestCase):
             self.assertEqual(candidate['learn_row_policy'], POLICY)
             self.assertEqual(set(disposition['removed_future_selectors'][label]), set(FIELDS))
         self.assertEqual(result['think_act_learn']['code_policy'], 'R194_FIRST_CODE_BLOCK_NFKC_V1')
+
+    def test_startup_rebased_without_changing_its_bytes_hash_or_birth_text(self):
+        current = dict(source_root='/old/source', think_act_learn={}, birth_prompt='Same original birth.',
+            startup_context=dict(version='R127_STARTUP_V1', path='/old/source/context/start.md', sha256='fixed'))
+        proposed, unused = proposed_plan(current, '/new/source')
+        self.assertEqual(proposed['startup_context'], dict(version='R127_STARTUP_V1',
+            path='/new/source/context/start.md', sha256='fixed'))
+        self.assertEqual(proposed['birth_prompt'], current['birth_prompt'])
+        self.assertEqual(current['startup_context']['path'], '/old/source/context/start.md')
+        current['startup_context']['path'] = '/unrelated/start.md'
+        with self.assertRaises(ValueError):
+            proposed_plan(current, '/new/source')
 
 
 if __name__ == '__main__':

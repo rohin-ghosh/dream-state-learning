@@ -92,3 +92,13 @@ native replay; after actual LOAD it may exact-pidfd drain the idle CPU parent,
 reuse its provider/source brief/lock/ledger and bind CPU to September20 18UTC.
 No native signals, no new policy adoption, no historical replay or P3 action.
 Actual publish/render/ACT evidence remains required before claiming delivery.
+# September 18, 2026, 19:19UTC — R227 receiving port, not live adoption
+
+[Builder] In the explicitly assigned P7/C2 copied closures only, ported the
+authorized R227 no-semantic-exclusion implementation without changing live
+sources, replays, deadlines, dose, provenance, CPU bridge or deep-work seams.
+Actual remote CPU receiving tests P7(8+5), C2(8+10) pass;40 scoped operator
+tests pass. Hash-bound four-file patches and safe test receipts are published
+under r227_port. No GPU science launch, live policy adoption or P3 changes.
+Future adoption requires coordinated fresh COMPLETE and actual source-bound
+LOAD/recipe/eligibility/update receipts. Current resident exclusions disclosed.

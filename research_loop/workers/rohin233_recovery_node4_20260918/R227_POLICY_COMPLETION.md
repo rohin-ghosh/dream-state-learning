@@ -24,7 +24,37 @@ September 18, 2026, 18:46 UTC. Own P7 and original C2 only; no P3 action.
 - Neither current continuation satisfies the requested all-semantic-exclusions
   disabled policy. A zero-exclusion batch is not a disabled-filter receipt.
 
-## Tested plan, receiving merge still required
+## 19:19UTC: copied runtime ports now receiving-tested, not live
+
+The receiving merge is implemented in disjoint copied source closures;
+`r227_port/README.md` describes exact seams and remaining adoption work.
+`r227_port/MANIFEST.json` binds both four-file deltas and before/after hashes.
+No resident source or replay was changed. The receiving tests now validate
+the actual copied plan and driver, semantic bypass including authentic
+Chinese and normal Chinese punctuation, historical-annotation non-veto,
+technical/provenance checks, CPU code/root forwarding, and synthetic AdamW
+checkpoint/history/RNG restoration followed by a new-only sleep.
+
+P7:8 receiving +5 compatibility tests pass. C2:8 receiving +10 compatibility
+tests pass, including5 deep-work cases with R227 enabled.40 local operator
+tests pass separately. The two receiving closures preserve every other
+pinned file and all untouched function ASTs. These are CPU/synthetic tests,
+not live adoption or an actual new GPU/CPU-tool execution claim.
+
+The initial receiving attempt identified and fixed startup-context rebasing
+and a missing test-fixture boundary policy. Earlier failure logs are retained.
+The extra broad deep-work invocation imported legacy semantic-filter tests;
+those two expectations intentionally conflict with R227. No shared tests were
+rewritten; the focused deep-work class and seam runner pass.
+
+Main can reuse `r227_plan.py:proposed_plan` and the exact delta hunks for P3,
+not overwrite whole files. P3's `r212_prose_replay` and R233 recovered-boundary
+guard must remain intact. No P3 receiving pass or source adoption is claimed.
+Current resident policy mismatch remains as observed above. C2's existing
+replay must finish; parent restoration and a later fresh COMPLETE precede
+any coordinated runtime policy adoption.
+
+## Earlier 18:46UTC diagnosis (superseded receiving-work status)
 
 The authoritative R227 implementation is commit
 `bb1e9a9033979d50ed97072675515f7290de1237`. It changes only the native trainer,

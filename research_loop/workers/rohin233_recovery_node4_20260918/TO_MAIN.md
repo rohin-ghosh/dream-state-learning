@@ -1,5 +1,30 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 19:19UTC R227 port handoff; C2 replay untouched
+
+Reusable helper: `r227_plan.py:proposed_plan` is root-neutral and prospective
+only. Source edits are not a general patcher: `r227_port/{C2,P7}.patch` are
+four-file, hash-bound deltas against the two actual old closures. Reuse hunks,
+not entire files, for P3. Native seams are validate_plan/NativeChild.sleep
+plus receipt metadata; driver seams validate_config/run_loop; plain-context
+eligible_rows; new exact R227 module. Preserve P3's r212_prose_replay and
+R233 recovered-boundary guard, existing CPU/root propagation and console.
+
+P7 tests8+5 and C2 tests8+10 PASS on remote copied closures, including C2's
+five deep-work tests under R227.40 operator tests PASS. Manifest, safe logs,
+synthetic support fixture and reusable receiving runners are in this worker.
+No resident-source mutation or native interruption, no staged-as-live claim.
+Receiving caught a genuine startup-context rebasing requirement; the helper
+now preserves its exact birth-text hash at the new source-relative path.
+New guard/source-parent CPU bridge metadata still needs exact binding at a
+coordinated fresh COMPLETE. Current resident semantic filters remain active.
+
+C2 at19:16:47 remains CPU replay829798/start29168595,8.692GB cumulative read
+against16.687GB journal; no WALL/LOAD/error yet. Existing waiter3427323 and
+old CPU parent471781 remain alive. Waiter performs only CPU parent renewal
+after actual LOAD; it does not restart the native. No progress ETA is
+inferred from bytes because replay may have additional passes.
+
 ## 18:55UTC renewed P7/Astra7 roundtrip verified; C2 parent continuation prepared
 
 `FIRST_CONTINUED_ROUNDTRIP.json`: new P7 ACT6761 was published as authenticated
