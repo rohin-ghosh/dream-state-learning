@@ -1,0 +1,73 @@
+{
+  "additional_publication": "This audit file and only the two scoped Builder entries in COORDINATION. Audit does not hash itself; COORDINATION existing upstream content is not republished from the dirty root.",
+  "checks": [
+    "Existing clean_public scanner: configured hosts, IP/address, key/token/credential patterns",
+    "Explicit UTF-8 regular-file allowlist; no binaries, symlinks or files over256KiB",
+    "JSON projection has no raw/message/text payload fields",
+    "Receiving operator source hashes equal tested local source"
+  ],
+  "complete_utc": "2026-09-18T11:51:21.943026+00:00",
+  "disposition": "PASS_EXPLICIT_PUBLIC_TEXT_ALLOWLIST",
+  "files": [
+    {
+      "bytes": 12634,
+      "path": "research_loop/workers/rohin233_focus_node2_20260918/focus.py",
+      "sha256": "9fe17b0af9ba8ebb2f6d651c52a1c1b456a0329eb871618a8bf06aab7e62dd77"
+    },
+    {
+      "bytes": 3913,
+      "path": "research_loop/workers/rohin233_focus_node2_20260918/test_focus.py",
+      "sha256": "214ec9da5e685145272a59cef65dfcee5b4393aa33f40204fb71018b7401c1a1"
+    },
+    {
+      "bytes": 8160,
+      "path": "research_loop/workers/rohin233_focus_node2_20260918/STATUS.md",
+      "sha256": "ec7e54c737cdd76e41d3f32f3297699d5ad1a9535833eaf8f1cf130497e2926f"
+    },
+    {
+      "bytes": 3177,
+      "path": "research_loop/workers/rohin233_focus_node2_20260918/BUILDER_ENTRY.md",
+      "sha256": "69ac4b8cd63ae0722bbfaf49a69f071e600505fadecca3b3fd727730b7e26559"
+    },
+    {
+      "bytes": 15111,
+      "path": "research_loop/workers/rohin233_focus_node2_20260918/PRESERVATION.public.json",
+      "sha256": "9481707cb24918cfa54b1da663ec8c6ca0a576697e2a79c10913b5f013f9f52c"
+    },
+    {
+      "bytes": 2746,
+      "path": "research_loop/workers/rohin233_focus_node2_20260918/BRIDGE_RETIRED.public.json",
+      "sha256": "e80bf16b01933c6a2ab46509c6cb2352428456299a1798249a10883eaad4fcdf"
+    },
+    {
+      "bytes": 19239,
+      "path": "research_loop/workers/rohin233_focus_node2_20260918/C0_CURRENT.public.json",
+      "sha256": "9a397446d5d2fa1140444eec155991850d6aaeb5cbfb4d6ff3956658cb9bd010"
+    },
+    {
+      "bytes": 4431,
+      "path": "research_loop/workers/rohin233_focus_node2_20260918/FINAL_IDENTITIES.public.json",
+      "sha256": "79e05cb5744c367b9c4c59269c26e6225e4f864c210eab5299940b04d3fdc522"
+    },
+    {
+      "bytes": 1069,
+      "path": "research_loop/workers/rohin233_focus_node2_20260918/CPU_TESTS.public.json",
+      "sha256": "2387bc5fd34d6956a5dd2864198649110daec7c6c80deea244ed9230b30b1b26"
+    },
+    {
+      "bytes": 276,
+      "path": "research_loop/workers/rohin233_focus_node2_20260918/RECEIVING_SOURCE.public.json",
+      "sha256": "a71fd93d56a92f9fc8ecf46f2f30b9e3f95f5e0af7a76b9934d7ef26688d8ee9"
+    }
+  ],
+  "omissions": [
+    "All checkpoint/adapter/optimizer/RNG binaries",
+    "All raw journals and record bodies",
+    "All private raw transcript/prompt artifacts and judge panels",
+    "All hosts, credentials, keys, leases and network configuration",
+    "Unrelated dirty-root files and other workers"
+  ],
+  "payload_bytes": 70756,
+  "payload_file_count": 10,
+  "redactions_required": 0
+}
