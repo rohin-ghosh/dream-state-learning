@@ -9,6 +9,19 @@ from recovery import PHASE, current_control, read, utc
 from retirement import PROTECTED, identity, metadata, public_identity, record, save, sha
 
 
+def wall_projection(value, configured):
+    document = value['document']
+    authorization = document['authorization']
+    actual = document['state']['state']['deadline_unix']
+    if (document['schema'] != 'R131_WALL_EXTENDED_V1'
+            or authorization['new_deadline_unix'] != configured or actual != configured):
+        raise ValueError('actual_authorized_working_state_wall_must_match')
+    return dict(index=value['index'], sha256=value['sha256'],
+        previous_deadline_utc=utc(authorization['previous_deadline_unix']),
+        new_deadline_utc=utc(actual), working_state_sha256=document['state']['sha256'],
+        safety_margin_seconds=authorization['safety_margin_seconds'])
+
+
 def project(root):
     rows = []
     for name, gpu in PROTECTED.items():
@@ -47,6 +60,8 @@ def project(root):
                 if int(path.stem) <= floor:
                     continue
                 kind = metadata(path)
+                if kind == 'WALL_EXTENDED':
+                    row['WALL_EXTENDED'] = wall_projection(record(path), plan['hard_end_unix'])
                 if kind == 'SLEEP_RECIPE':
                     recipe = record(path)
                     row['SLEEP_RECIPE'] = dict(index=recipe['index'], sha256=recipe['sha256'],

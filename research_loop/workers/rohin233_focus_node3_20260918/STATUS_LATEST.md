@@ -1,28 +1,30 @@
-# Node3 recovery — actual cut 2026-09-18T17:36:18.726378+00:00
+# Node3 recovery — current native cut 2026-09-18T18:08:55.217141+00:00
 
-**4/8 actual LOADED and alive.** Prepared/dispatched is not live. Math A/B have no new LOADED; reports that they are currently live are not supported by this cut.
+**All eight were actually LOADED together at 2026-09-18T18:02:49.420745+00:00.** The newly authorized four-caption checkpoint handoffs are now in progress. Current native cut: **5/8 live**, not eight while successors replay. See the preserved all-eight cut in `RECOVERY_EIGHT_BEFORE_HANDOFF.json`.
 
-|GPU|Life|Actual status / native PID|LOADED / ACT|New parent INBOX → REQUEST → RESPONSE|Deadline adoption|
+Deadline/component cut: **2026-09-18T18:09:18.510473+00:00**. Parent cut: **2026-09-18T18:09:08.857672+00:00**, with **7/8 actual model-provider parent renders** recorded since initial recovery (not all necessarily after a later handoff). Purely scripted turns are not adaptive-parent evidence.
+
+|GPU|Kept life|Actual native status / PID|LOADED / first ACT|Actual current wall|Latest adaptive parent REQUEST → ACT|
 |---|---|---|---|---|---|
-|0|`r213_r226_caption_observation_fork`|LOADED_ALIVE / 1941202|3111 / 3125|3301 → 3303 → 3304|2026-09-19T04:51:09.675802+00:00 — resident, still latched|
-|1|`r213_math_a`|RECONCILED_NOT_LAUNCHED / none|none / none|No post-recovery uptake|2026-09-24T18:00:00+00:00 — configured only|
-|2|`r213_math_b_fork`|RECONCILED_NOT_LAUNCHED / none|none / none|No post-recovery uptake|2026-09-24T18:00:00+00:00 — configured only|
-|3|`r213_r226_caption_perspective_fork`|LOADED_ALIVE / 1944402|3361 / 3381|3510 → 3512 → 3513|2026-09-19T04:54:40.704853+00:00 — resident, still latched|
-|4|`r213_math_c`|DISPATCHED_NOT_LOADED / none|none / none|No post-recovery uptake|2026-09-24T18:00:00+00:00 — configured only|
-|5|`r213_r226_caption_revision_fork`|LOADED_ALIVE / 1946892|2878 / 2892|3005 → 3007 → 3008|2026-09-19T04:54:40.710867+00:00 — resident, still latched|
-|6|`r213_r226_caption_selfderive_fork`|LOADED_ALIVE / 1948574|3036 / 3050|3118 → 3120 → 3121|2026-09-19T04:54:40.727050+00:00 — resident, still latched|
-|7|`r213_r226_caption_unparented_fork`|RECONCILED_NOT_LAUNCHED / none|none / none|No post-recovery uptake|2026-09-24T18:00:00+00:00 — configured only|
+|0|`r213_r226_caption_observation_fork`|AUTHORIZED_HANDOFF_CPU_REPLAY / none LOADED|3111 / 3125|No resident; successor target Sep24 18UTC|3549 → 3560|
+|1|`r213_math_a`|LOADED_ALIVE / 1966154|4180 / 4193|2026-09-24T18:00:00+00:00|4262 → 4274|
+|2|`r213_math_b_fork`|LOADED_ALIVE / 1966159|3859 / 3873|2026-09-24T18:00:00+00:00|3944 → 3956|
+|3|`r213_r226_caption_perspective_fork`|AUTHORIZED_HANDOFF_CPU_REPLAY / none LOADED|3361 / 3381|No resident; successor target Sep24 18UTC|3796 → 3813|
+|4|`r213_math_c`|LOADED_ALIVE / 1957352|3755 / 3768|2026-09-24T18:00:00+00:00|3839 → 3851|
+|5|`r213_r226_caption_revision_fork`|SUCCESSOR_DISPATCHED_LOAD_PENDING / none LOADED|pending / pending|No resident; successor target Sep24 18UTC|pending → pending|
+|6|`r213_r226_caption_selfderive_fork`|LOADED_ALIVE / 1948574|3036 / 3050|2026-09-19T04:54:40.727050+00:00|3358 → 3369|
+|7|`r213_r226_caption_unparented_fork`|LOADED_ALIVE / 1966164|3187 / 3201|2026-09-24T18:00:00+00:00|3319 → 3330|
 
-## Current Boundaries
-- Math C dispatched at **17:32:30.142631UTC**, outer PID1957334. Fresh admission and native LAUNCH exist; actual LOADED remains pending. The serial worker waits for that actual LOADED before starting A, B, then GPU7.
-- September24 18:00UTC is the latest user-authorized date-only conservative operational ceiling, not a newly verified provider expiry or a lease extension. A/B/C/GPU7 passed the existing R131 saved-boundary extension/provenance gate with that configured ceiling.
-- GPU7's previous attempt failed `fresh_privileged_admission` before native start. The failure is preserved; a later root scan was clear. Its new ceiling-bound control is prepared, not dispatched.
-- The four already-running natives still have startup-latched native SIGALRM, GNU timeout, and systemd budgets ending September19 04:51–04:54UTC. GNU timeout acts roughly ten seconds earlier. **No tested live renewal hook exists in these resident sources; no native was held, paused, signalled, or restarted to change it.**
-- New parent uptake is verified for all four live captions. Parent CPU1949315 is an actual scripted Astra publisher, not a model-provider request. Math parents rebind each verified recovery; the separate bounded debate waits for all three actual natives. Prior phase4/exchange3 parent receipts are authenticated for reuse, not duplicate publication. No new shared-conclusion claim.
-- CPU parent/Tool service horizons remain at their earlier September19 limits until a source-bound successor adopts the new ceiling; shared scorer extension is requested from Leibniz, not claimed completed. The original Tool relay remains sole and retains its dedup cursors.
-- Observation retains the explicit R227 adoption gap. Perspective/revision/selfderive have actual R227 no-semantic-exclusion SLEEP_RECIPE receipts. This does not rewrite old receipts or claim policy adoption on other nodes.
-- Tests: **50 owned CPU tests PASS**; prior receiving parent suite32PASS. Current source/record hashes and checkpoint/tail-gap proofs are in `SOURCE_PINS.json`, `RECOVERY_CURRENT.json`, and `RECOVERY_PARENTS_CURRENT.json`. Full private states and old failed attempts remain off publication.
-
+## Renewal And Parent Evidence
+- A/B/C/GPU7 have actual new `WALL_EXTENDED` and `LOADED` records to **September24 18:00UTC**. This is a conservative user-authorized operational ceiling, not a new provider-expiry assertion or a lease purchase/extension.
+- Per the explicit September18 17:59:12UTC authorization, GPUs0/3/5/6 use coherent latest-COMPLETE, exact-PID/startticks SIGTERM handoffs, then same-journal resumes. No SIGSTOP, deliberate hold, checkpoint51 rebirth, deletion, or retired-life resurrection. Their old short walls are not labelled renewed until actual WALL_EXTENDED plus LOADED.
+- All four successor sources passed **139 receiving CPU/provenance tests each** before any native signal. Current owned suite: **61 tests PASS**; deployed handoff-worker suite59PASS. Actual wrapper GNU-timeout/systemd settings, termination/manifest references, measured reload gaps, and separate staged-versus-adopted flags are in `DEADLINES.json`.
+- All eight initial recovery LOAD IDs by GPU0–7: **3111/4180/3859/3361/3755/2878/3036/3187**. Initial native PIDs:1941202/1966154/1966159/1944402/1957352/1946892/1948574/1966164. These remain historical evidence after a later authorized handoff, not current PID claims.
+- The actual local existing-provider parent has **9 completed source-bound model calls** at this cut. One source-bound remote classroom writer plus the separate fifth-caption writer publishes exact responses; no model keys are stored remotely. `RECOVERY_PARENTS_CURRENT.json` distinguishes provider request, publication, INBOX, rendered REQUEST, own RESPONSE, and origin-authenticated ACT with the parent still masked in its prompt.
+- Shared classroom, individual child records and the existing bounded THINK-only debate remain attached. Model-parent guidance is not a claim of mathematical resolution. No new checked shared conclusion or conclusion-specific training success is asserted.
+- Classroom/fifth-caption parent and sole Tool projection relay have actual September24 18UTC process budgets. The debate uses actual September24 17:59UTC startup bindings. Scorer/transport renewal remains **owner-verification pending (Leibniz)**; the Tool projection relay is not a scorer, and socket liveness/cached results are not new judgments.
+- Observation retains its legacy R227 gap until its newly prepared tested-policy successor actually emits a new SLEEP_RECIPE. Other lives require their actual recipe evidence, not source alone. Earlier controls, claims, raw rows and published histories are not rewritten.
+- Original failed tails and coherent states remain preserved. Original lost-tail UPDATE counts by GPU0–7 were0/2/14/40/0/56/27/48. New handoff losses and gaps are recorded separately; exact resident continuity is never claimed.
 ## Historical R233 parented epochs — September18 12:09UTC
 
 Current caption proof cut: **2026-09-18T12:09:34.589289+00:00**. All five epoch openers published at12:00:50–51UTC; **5/5 actually rendered and received an own RESPONSE** at this cut. GPU7 is no longer assigned an unparented treatment; its previous zero-parent epoch remains historical. The unchanged root name containing `unparented` is a lineage identifier, not the new treatment.

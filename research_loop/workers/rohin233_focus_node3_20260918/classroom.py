@@ -13,6 +13,7 @@ import sys
 import time
 
 from retirement import PROTECTED, identity, metadata, record, save, sha
+from service_horizon import service_deadline
 
 
 MATH = ('r213_math_a', 'r213_math_b_fork', 'r213_math_c')
@@ -111,6 +112,12 @@ def restore(helper, root, output, current):
     sequence = dict.fromkeys(MEMBERS, 0)
     for name in MEMBERS:
         turns = sorted((output / name).glob('turn_*'))
+        for pending in list(turns):
+            if not (pending / 'PUBLISHED.json').exists() and (pending / 'PROVIDER_REQUEST.json').exists():
+                if any(path.name not in ('PROVIDER_REQUEST.json', 'PROVIDER_RESULT.json', 'PROVIDER_FAILED.json')
+                        for path in pending.iterdir()):
+                    raise ValueError('uncertain publication must be reconciled, never duplicated')
+                turns.remove(pending)
         if not turns:
             continue
         directory = turns[-1]
@@ -186,10 +193,12 @@ def inherited(helper, root, old_output, name):
         baseline=prepared['before_addition_checkpoint']['index'], old_turn=prepared['turn'], stage=prepared['stage'])
 
 
-def serve(root, output, config, resume=False, recovering=False):
+def serve(root, output, config, resume=False, recovering=False, service_end_unix=None, adaptive=False):
     if recovering and not resume:
         raise ValueError('recovering_attachment_requires_preserved_parent_state')
     helper, bound = load_helpers(root, config, recovering)
+    deadline = service_deadline(root, service_end_unix,
+        min(item['deadline'] for item in bound.values() if helper.alive(item)) - 60)
     lock = (root / 'R230_CURRICULUM_WRITER.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     current = {name: inherited(helper, root, root / 'r230_curriculum_live_v1', name) for name in MEMBERS}
@@ -205,14 +214,15 @@ def serve(root, output, config, resume=False, recovering=False):
         code_sha256=sha(Path(__file__)), config_sha256=hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest(),
         bindings=bound, original_humans={name: sorted(values) for name, values in original_humans.items()},
         one_shared_parent='Astra', separate_authenticated_math_debate_service_retained=True,
-        all_old_publications_preserved=True, native_signals=0, learning_policy_changes=0))
+        all_old_publications_preserved=True, native_signals=0, learning_policy_changes=0,
+        service_end_unix=deadline, resident_native_deadlines_changed=False,
+        parent_kind='MODEL_PROVIDER_MAILBOX' if adaptive else 'SCRIPTED_NOT_MODEL_PROVIDER'))
     round_number = 0
     math_round = dict.fromkeys(MATH, -1)
     caption_turn = {name: current[name]['old_turn'] + 1 for name in CAPTIONS}
     sequence = dict.fromkeys(MEMBERS, 0)
     if resume:
         round_number, math_round, caption_turn, sequence = restore(helper, root, output, current)
-    deadline = min(item['deadline'] for item in bound.values() if helper.alive(item)) - 60
     while time.time() < deadline:
         rows = []
         math_complete = []
@@ -247,7 +257,6 @@ def serve(root, output, config, resume=False, recovering=False):
             if name in MATH:
                 text = shared_prompt(name, round_number, intervention, sequence[name])
                 stage = 'R233_CLASSROOM_' + STAGES[round_number % len(STAGES)]
-                math_round[name] = round_number
             else:
                 text = helper.prompt(name, caption_turn[name])
                 stage = 'R233_CAPTION_' + helper.STAGES[caption_turn[name] % len(helper.STAGES)]
@@ -255,8 +264,17 @@ def serve(root, output, config, resume=False, recovering=False):
                     text = ('Change the approach after three completed cycles: use a different concrete detail '
                         'from the actual scene and check your last real judge feedback. Do not repeat a scoring '
                         'claim without its receipt. ') + text
-                caption_turn[name] += 1
             directory = output / name / f'turn_{sequence[name]:04d}'
+            if adaptive:
+                from adaptive_parent import model_text
+                text = model_text(helper, root, name, directory, text, item)
+                if text is None:
+                    row['state'] = 'MODEL_PARENT_REQUEST_PENDING_NOT_PUBLISHED'
+                    continue
+            if name in MATH:
+                math_round[name] = round_number
+            else:
+                caption_turn[name] += 1
             save(directory / 'PRIOR_DELIVERY_AND_METRICS.json', dict(delivery=delivery, cycles=cycles,
                 metrics=metrics, three_cycle_parent_change=intervention, previous_parent_id=item['publication']['id']))
             current[name] = publish(helper, root, name, text, stage, directory, bound[name], before)
@@ -269,6 +287,8 @@ def serve(root, output, config, resume=False, recovering=False):
                 curriculum_success_not_inferred=True, debate_conclusion_not_inferred=True))
             round_number += 1
         heartbeat = dict(observed_utc=utc(), pid=os.getpid(), shared_round=round_number, rows=rows,
+            service_end_unix=deadline,
+            parent_kind='MODEL_PROVIDER_MAILBOX' if adaptive else 'SCRIPTED_NOT_MODEL_PROVIDER',
             native_signals=0, unparented_writes=0, learning_exclusions=0,
             peer_and_tool_readers_unchanged=True, node4_admitted=False)
         partial = output / 'HEARTBEAT.partial'
@@ -285,6 +305,8 @@ if __name__ == '__main__':
     parser.add_argument('--config', type=Path, required=True)
     parser.add_argument('--resume', action='store_true')
     parser.add_argument('--recovering', action='store_true')
+    parser.add_argument('--service-end-unix', type=float)
+    parser.add_argument('--adaptive', action='store_true')
     options = parser.parse_args()
     configuration = json.loads(options.config.read_bytes())
     if options.mode == 'validate':
@@ -292,4 +314,5 @@ if __name__ == '__main__':
         print(json.dumps(dict(cpu_import_and_source_gate=True, protected_parented_natives=len(bindings),
             helper_pins=configuration['helper_pins'], classroom_code_sha256=sha(Path(__file__)))))
     else:
-        serve(options.root, options.output, configuration, options.resume, options.recovering)
+        serve(options.root, options.output, configuration, options.resume, options.recovering,
+            options.service_end_unix, options.adaptive)

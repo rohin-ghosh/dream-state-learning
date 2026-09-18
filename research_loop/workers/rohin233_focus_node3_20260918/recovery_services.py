@@ -11,6 +11,7 @@ import time
 from recovery import current_control, read, utc
 from recovery_proof import project
 from retirement import PROTECTED, identity, save, sha
+from service_horizon import service_deadline
 
 
 def start(output, name, command, source, environment):
@@ -38,12 +39,13 @@ def wait_for(root, output, deadline, names):
     raise ValueError('parent_attachment_expired_without_required_exact_natives')
 
 
-def run(root, output, python, parents_only=False):
+def run(root, output, python, parents_only=False, service_end_unix=None, parent_source=None, adaptive=False):
     output.mkdir(parents=True, exist_ok=True)
     lock = (root / 'R233_RECOVERY_SERVICES.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     plans = {name: read(current_control(root / name) / 'PLAN.json') for name in PROTECTED}
-    deadline = min(plan['hard_end_unix'] for plan in plans.values()) - 120
+    deadline = service_deadline(root, service_end_unix,
+        min(plan['hard_end_unix'] for plan in plans.values()) - 120)
     if deadline - time.time() < 3600:
         raise ValueError('services_need_viable_current_authorized_horizon')
     relay_source = root / 'r228_feedback_relay_20260918T0908Z'
@@ -55,16 +57,19 @@ def run(root, output, python, parents_only=False):
             '--output', str(relay_source / 'output'), '--formatter-sha256', sha(relay_source / 'relay.py'),
             '--end-unix', str(deadline)], relay_source, environment)
     wait_for(root, output, deadline, ('r213_r226_caption_observation_fork',))
-    parent_source = root / 'r233_recovery_parents_v2'
+    parent_source = parent_source or root / 'r233_recovery_parents_v2'
+    horizon_arguments = [] if service_end_unix is None else ['--service-end-unix', str(deadline)]
+    if adaptive:
+        horizon_arguments.append('--adaptive')
     environment['PYTHONPATH'] = os.pathsep.join((str(parent_source), str(root)))
     start(output, 'classroom', [python, '-B', str(parent_source / 'classroom.py'), 'serve', '--resume', '--recovering',
         '--root', str(root), '--output', str(root / 'r233_classroom_handoff_v1/live'),
-        '--config', str(root / 'r233_classroom_operator_v2/CONFIG_PRIVATE.json')], parent_source, environment)
+        '--config', str(root / 'r233_classroom_operator_v2/CONFIG_PRIVATE.json')] + horizon_arguments, parent_source, environment)
     wait_for(root, output, deadline, ('r213_r226_caption_unparented_fork',))
     start(output, 'caption_gpu7', [python, '-B', str(parent_source / 'caption_epoch.py'),
         'serve-former-control', '--resume', '--root', str(root),
         '--output', str(root / 'r233_all_five_caption_epochs_v1'),
-        '--config', str(root / 'r233_caption_epoch_operator_v1/CONFIG_PRIVATE.json')], parent_source, environment)
+        '--config', str(root / 'r233_caption_epoch_operator_v1/CONFIG_PRIVATE.json')] + horizon_arguments, parent_source, environment)
     proof = wait_for(root, output, deadline, ('r213_math_a', 'r213_math_b_fork', 'r213_math_c'))
     start(output, 'math_debate', [python, '-B', str(parent_source / 'debate_resume.py'),
         '--root', str(root), '--output', str(root / 'r231_math_parent_live_v2'),
@@ -81,5 +86,9 @@ if __name__ == '__main__':
         parser.add_argument('--' + name, required=True, type=Path)
     parser.add_argument('--python', required=True)
     parser.add_argument('--parents-only', action='store_true')
+    parser.add_argument('--service-end-unix', type=float)
+    parser.add_argument('--parent-source', type=Path)
+    parser.add_argument('--adaptive', action='store_true')
     options = parser.parse_args()
-    run(options.root, options.output, options.python, options.parents_only)
+    run(options.root, options.output, options.python, options.parents_only,
+        options.service_end_unix, options.parent_source, options.adaptive)

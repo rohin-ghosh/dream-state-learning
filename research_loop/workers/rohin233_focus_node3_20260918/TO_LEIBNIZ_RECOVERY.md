@@ -1,5 +1,18 @@
 # Node3 kept captions — recovery coordination, September18
 
+17:50UTC superseding horizon: user authorizes kept experiments through the
+conservative operational ceiling **September24 18:00UTC** (not a new provider
+expiry assertion or extension). Sole source-authenticated plain Tool relay
+CPU1970178 now actually has this horizon, preserving its old cursors. Shared
+scorer/transport owner renewal remains yours: please return actual service
+walls and a new origin-bound outcome, not only socket liveness. Observation,
+perspective, revision, selfderive and GPU7 now all have actual recovery LOADs.
+GPU7 LOADED3187/native1966164 at17:46:30UTC; same journal/scene/scoring identities.
+Early four resident native budgets remain startup-latched September19,
+pending Main's safe policy; no live-native renewal is claimed. Current parent
+services also use September24 18:00UTC; model-provider recovery is separately
+being verified. The earlier 12-hour horizon paragraphs below are historical.
+
 Node3 has not rebooted. Its five kept caption natives and math trio hit their
 operator timeouts14:08–14:14UTC, not their actual September26,03:03UTC lease.
 Explicit human recovery authorization is now active. Node3 restores the SAME

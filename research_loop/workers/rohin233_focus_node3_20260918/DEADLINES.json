@@ -1,0 +1,407 @@
+{
+  "Tool_feedback_projection": {
+    "command_sha256": "54c09d09fa8b63a28ea3dad9aa416099fca2ffebba3ea97c1a49b004b2097336",
+    "end_utc": "2026-09-24T18:00:00+00:00",
+    "pid": 1970178,
+    "ppid": 1,
+    "start_ticks": "45982872",
+    "state": "S",
+    "status": "ACTUAL_LIVE_COMMAND_BOUND"
+  },
+  "fifth_caption_parent": {
+    "command_sha256": "5ba4f30459701962e412faf128e6ef9fd8ffd3eee648a9a2798b219e3b4373a4",
+    "end_utc": "2026-09-24T18:00:00+00:00",
+    "pid": 1973234,
+    "ppid": 1,
+    "start_ticks": "46002520",
+    "state": "S",
+    "status": "ACTUAL_LIVE_COMMAND_BOUND"
+  },
+  "lease_purchase_or_extension": false,
+  "lives": [
+    {
+      "LOADED": {
+        "index": 3111,
+        "loaded_unix": 1789751311.788289,
+        "optimizer_steps": 6780,
+        "pid": 1941202,
+        "resume": true,
+        "sha256": "64954fcbbbd8c33a69312078586824340f703b99616a40a6b8bb8580d010ff47"
+      },
+      "WALL_EXTENDED": null,
+      "actual_native": null,
+      "boundary_handoff": {
+        "actually_adopted": false,
+        "checkpoint_sha256": {
+          "adapter": "c43c7c95d8ba2c17bf54b1c3127c587951b87ab08b73e5a6f5e70793393a5b66",
+          "optimizer": "1fe473f1aa8be9951e4aff547d8b273edccdb8cf1fcc6ad1090576463fe3b2a5",
+          "rng": "1fe473f1aa8be9951e4aff547d8b273edccdb8cf1fcc6ad1090576463fe3b2a5"
+        },
+        "complete_cycle": 86,
+        "files": {
+          "HANDOFF_SIGNAL.json": "40c8f5407ffb800b351f8c75af2758f488a59f3540df6fb2bdc212ac98d89cd1",
+          "OLD_EXIT_OBSERVED.json": "0bcacc7800c58a3b46324056286802490c3db6f5fab4f4868bc5687b91f241d2",
+          "PREPARED.json": "a60e2e5c611550b8b50f3215a755fef79fdf5e4580acdfff490459dfdd9f6d25",
+          "RECOVERY.json": "780081f5f639daf30c99313e0cb4a8a910cdc6b4a91fbc7d5831408280325c18",
+          "WAITING_NEXT_COMPLETE.json": "790f2c4cdfafe025995f89e976c65e430c5de42939ac0ee61194f0d0a6549aed"
+        },
+        "lost_tail_updates": 0,
+        "old_exit_utc": "2026-09-18T18:05:14.508954+00:00",
+        "preserved_manifest_sha256": "a31944b5ab9d3ed1c5bdbb4d20f8e082dc0dd9ed18293d158a419478b34165de"
+      },
+      "configured_deadline_utc": "2026-09-19T04:51:09.675802+00:00",
+      "gpu": 0,
+      "life": "r213_r226_caption_observation_fork",
+      "resident_deadline_utc": null,
+      "status": "EXITED_AFTER_ATTEMPT"
+    },
+    {
+      "GNU_timeout": {
+        "boot_timestamp_resolution_seconds": 1,
+        "command_sha256": "40db2e7e67f0cbebececd815e3374a071f4016d93ec978b47179189170712682",
+        "derived_end_utc": "2026-09-24T17:59:48.630000+00:00",
+        "duration_seconds": 519456,
+        "pid": 1966153,
+        "ppid": 1966152,
+        "start_ticks": "45959563",
+        "state": "S"
+      },
+      "LOADED": {
+        "index": 4180,
+        "loaded_unix": 1789753969.1398413,
+        "optimizer_steps": 6828,
+        "pid": 1966154,
+        "resume": true,
+        "sha256": "063832f3e31a98219c326b4733ebd7c23570bd1d36d56c3e9d0d91346dee8d0a"
+      },
+      "WALL_EXTENDED": {
+        "index": 4179,
+        "new_deadline_utc": "2026-09-24T18:00:00+00:00",
+        "previous_deadline_utc": "2026-09-19T04:54:40.721288+00:00",
+        "safety_margin_seconds": 21600,
+        "sha256": "b7c2056897bbb681fe05053801560518e08e791983a8656578720de20fe67c62",
+        "working_state_sha256": "082b1d793c233c5ad3f56fa517b91fefaaef191ebb1fa76ca734d5bbd617653a"
+      },
+      "actual_native": {
+        "command_sha256": "ecf96d3871f36c87bd8e2f7e814eac934f729b9c41d9d0f464218e98c0441531",
+        "pid": 1966154,
+        "ppid": 1966153,
+        "start_ticks": "45959563",
+        "state": "S"
+      },
+      "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "gpu": 1,
+      "life": "r213_math_a",
+      "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "status": "LOADED_ALIVE",
+      "systemd": {
+        "actual_properties": {
+          "ActiveEnterTimestamp": "Fri 2026-09-18 17:42:13 UTC",
+          "ActiveState": "active",
+          "RuntimeMaxUSec": "6d 17min 46s"
+        },
+        "unit_name_sha256": "47e13d996ffabba1d7d06537a97a05de3fba19f5ed0a00d88481d7f8418582b7"
+      }
+    },
+    {
+      "GNU_timeout": {
+        "boot_timestamp_resolution_seconds": 1,
+        "command_sha256": "5948a4cd27e977a9065e252fad88be2b688152c96115c317edbe1bc9071344cc",
+        "derived_end_utc": "2026-09-24T17:59:48.980000+00:00",
+        "duration_seconds": 519456,
+        "pid": 1966158,
+        "ppid": 1966157,
+        "start_ticks": "45959598",
+        "state": "S"
+      },
+      "LOADED": {
+        "index": 3859,
+        "loaded_unix": 1789754100.5461254,
+        "optimizer_steps": 6348,
+        "pid": 1966159,
+        "resume": true,
+        "sha256": "e333e51c8be0d169b5822d1dc0af9bedf1f68a01a853c88bbae1bee896f54928"
+      },
+      "WALL_EXTENDED": {
+        "index": 3858,
+        "new_deadline_utc": "2026-09-24T18:00:00+00:00",
+        "previous_deadline_utc": "2026-09-19T04:54:40.750161+00:00",
+        "safety_margin_seconds": 21600,
+        "sha256": "b3d497bbdd0864b7960fafa20155ac43f9f8e69b93dcf05be6cb1db6b5610599",
+        "working_state_sha256": "1325514a03d8ec1cffcaf23ad67d2ad18c2047f995be926571b2a66728da0e83"
+      },
+      "actual_native": {
+        "command_sha256": "8d18751d8a9050bb2bc9e824bb3742d93a2cc87d0065249981c1a3133391ce82",
+        "pid": 1966159,
+        "ppid": 1966158,
+        "start_ticks": "45959598",
+        "state": "S"
+      },
+      "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "gpu": 2,
+      "life": "r213_math_b_fork",
+      "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "status": "LOADED_ALIVE",
+      "systemd": {
+        "actual_properties": {
+          "ActiveEnterTimestamp": "Fri 2026-09-18 17:42:13 UTC",
+          "ActiveState": "active",
+          "RuntimeMaxUSec": "6d 17min 46s"
+        },
+        "unit_name_sha256": "432e11bbbaef641954b199b85b2dea4f0baf83db6a5a864d7c796aba53602b1d"
+      }
+    },
+    {
+      "LOADED": {
+        "index": 3361,
+        "loaded_unix": 1789751756.3951676,
+        "optimizer_steps": 6924,
+        "pid": 1944402,
+        "resume": true,
+        "sha256": "78c6d7f2aad4a5f6339da3021f999686bfd561f81fe50b910c8717ff2dd1a3d0"
+      },
+      "WALL_EXTENDED": null,
+      "actual_native": null,
+      "boundary_handoff": {
+        "actually_adopted": false,
+        "checkpoint_sha256": {
+          "adapter": "1fe4eba83a44fe6efb409eee3fef4dd3d32b56a7bb128a0b9d51db8516928400",
+          "optimizer": "5997c9421bad36904e11d575b13d7dad13d3869053d4687f1f6c04548077779f",
+          "rng": "5997c9421bad36904e11d575b13d7dad13d3869053d4687f1f6c04548077779f"
+        },
+        "complete_cycle": 82,
+        "files": {
+          "HANDOFF_SIGNAL.json": "54e699a8333ece5603a5237a74ad24edaf27dd4b0aede578f7732464f44f9bc7",
+          "OLD_EXIT_OBSERVED.json": "19b5e88871e892a9e39b06a246e4bd6483ae0a37e3a0fe2f290cd03b19280685",
+          "PREPARED.json": "50317c5a532f1c42d70b358c9c6382c5d642ac0b9577dbfa02b5ca24bcf2c3e9",
+          "RECOVERY.json": "b6faed9e67b64c40bdfe3bb9ef1bc5330b497cbc03e552aba19ae9b249aec6ba",
+          "WAITING_NEXT_COMPLETE.json": "9159ea7d17b433093655ce5790a010780ad6a83befeb796ddc460c105eaab539"
+        },
+        "lost_tail_updates": 0,
+        "old_exit_utc": "2026-09-18T18:06:58.059041+00:00",
+        "preserved_manifest_sha256": "71d57bd448d166b6787ae40bf8b86e54ca8f595321df2bc6b83289a38cfaf6b2"
+      },
+      "configured_deadline_utc": "2026-09-19T04:54:40.704853+00:00",
+      "gpu": 3,
+      "life": "r213_r226_caption_perspective_fork",
+      "resident_deadline_utc": null,
+      "status": "EXITED_AFTER_ATTEMPT"
+    },
+    {
+      "GNU_timeout": {
+        "boot_timestamp_resolution_seconds": 1,
+        "command_sha256": "e302c9d319e30aec0b0485f8fa9d8629623f9bf97f8df5c2bb074e36af578a36",
+        "derived_end_utc": "2026-09-24T17:59:49.200000+00:00",
+        "duration_seconds": 520038,
+        "pid": 1957351,
+        "ppid": 1957350,
+        "start_ticks": "45901420",
+        "state": "S"
+      },
+      "LOADED": {
+        "index": 3755,
+        "loaded_unix": 1789753695.3447108,
+        "optimizer_steps": 6028,
+        "pid": 1957352,
+        "resume": true,
+        "sha256": "a8b0d40d9235f8924e452d620275ae3c8f28f2f4809939b0724bd1b440c75a8a"
+      },
+      "WALL_EXTENDED": {
+        "index": 3754,
+        "new_deadline_utc": "2026-09-24T18:00:00+00:00",
+        "previous_deadline_utc": "2026-09-19T04:54:40.802438+00:00",
+        "safety_margin_seconds": 21600,
+        "sha256": "00e609fabea39130fd3e8aceb7e63788a1439d30b2f54b739ea6054fb16b5405",
+        "working_state_sha256": "611da9f835b0016f67b9218513760c78019584e4e543193c5a540b107cfc1e59"
+      },
+      "actual_native": {
+        "command_sha256": "fa3353a5157d9ee12d6800df35a8ded053c355f4dd203eaa9bbca9a6d8d17f05",
+        "pid": 1957352,
+        "ppid": 1957351,
+        "start_ticks": "45901421",
+        "state": "R"
+      },
+      "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "gpu": 4,
+      "life": "r213_math_c",
+      "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "status": "LOADED_ALIVE",
+      "systemd": {
+        "actual_properties": {
+          "ActiveEnterTimestamp": "Fri 2026-09-18 17:32:31 UTC",
+          "ActiveState": "active",
+          "RuntimeMaxUSec": "6d 27min 28s"
+        },
+        "unit_name_sha256": "3a976c11e9974e27e0c77f769416ba970eb0be9c07be431e2f07f7626890c1ef"
+      }
+    },
+    {
+      "LOADED": null,
+      "WALL_EXTENDED": null,
+      "actual_native": null,
+      "boundary_handoff": {
+        "actually_adopted": false,
+        "checkpoint_sha256": {
+          "adapter": "3381461384f0bd03dd1511df720012a23705dfa5af578c8ee05a8a1febf5815f",
+          "optimizer": "7a65b8a3fbc521054bb05ed1a90ecd69275d290929a935c1368953e406481dde",
+          "rng": "7a65b8a3fbc521054bb05ed1a90ecd69275d290929a935c1368953e406481dde"
+        },
+        "complete_cycle": 79,
+        "files": {
+          "DISPATCHED.json": "ba74b88cdd16406320f30ca70f8e2aec6f96c22d241681bd53046f9938aa1b51",
+          "HANDOFF_SIGNAL.json": "2deb711a5f6e1521d13cc17c70e3a47b92d825cd15613bc0a49a92ffee5b8fd4",
+          "OLD_EXIT_OBSERVED.json": "33c6291266e0a96ad9cda677699161236041512d99699ed5035965525704c0b3",
+          "PREPARED.json": "7ac36cd8389264209ae3e4441fce714915d7240739efccd4600dac1aa60fc17d",
+          "RECONCILED.json": "d6b15f2a69691fadde5ce4928ed2897198dbdd3ffda477249db43e2cf74d7c56",
+          "RECOVERY.json": "127bb278e4174e93d1fbd8e4eefe0faa907c8f6d0a5c80a5456ad0b5ab97684d",
+          "WAITING_NEXT_COMPLETE.json": "0292b0c8e9593ed8b81001802ed641dedfd2ae24e437b68757d09b64b08e85ef"
+        },
+        "lost_tail_updates": 0,
+        "old_exit_utc": "2026-09-18T18:02:51.318564+00:00",
+        "preserved_manifest_sha256": "7540e19a7c9a07257425d38b25541cc9bcf1d447110739d481aeff697a6f600d"
+      },
+      "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "gpu": 5,
+      "life": "r213_r226_caption_revision_fork",
+      "resident_deadline_utc": null,
+      "status": "DISPATCHED_NOT_LOADED"
+    },
+    {
+      "GNU_timeout": {
+        "boot_timestamp_resolution_seconds": 1,
+        "command_sha256": "d4f02ba8878380f2bbb7de23f0f1df99243653e34ada90dade5cb6a24d7b4b9a",
+        "derived_end_utc": "2026-09-19T04:54:29.120000+00:00",
+        "duration_seconds": 41652,
+        "pid": 1948573,
+        "ppid": 1948572,
+        "start_ticks": "45828012",
+        "state": "S"
+      },
+      "LOADED": {
+        "index": 3036,
+        "loaded_unix": 1789752315.4081812,
+        "optimizer_steps": 6700,
+        "pid": 1948574,
+        "resume": true,
+        "sha256": "f12e29c955aa3c92fceba1ec8dd9fac133d11f3c044435f37007ff6afae7e1e3"
+      },
+      "WALL_EXTENDED": null,
+      "actual_native": {
+        "command_sha256": "38f1a67ea2556e5650b5f51a66237ed95ef51e33d3823315b35d8a36f65e4b8f",
+        "pid": 1948574,
+        "ppid": 1948573,
+        "start_ticks": "45828012",
+        "state": "R"
+      },
+      "boundary_handoff": {
+        "actually_adopted": false,
+        "files": {
+          "PREPARED.json": "8369d127a50368daa0b96e001eb2f015b2a538487e4cd2cc47167f3e6b0a01c5",
+          "WAITING_NEXT_COMPLETE.json": "3e864f13c3c4ad2c2a97b72c2b05e82b10410789606c228f31c90c8f6a1430bc"
+        }
+      },
+      "configured_deadline_utc": "2026-09-19T04:54:40.727050+00:00",
+      "gpu": 6,
+      "life": "r213_r226_caption_selfderive_fork",
+      "resident_deadline_utc": "2026-09-19T04:54:40.727050+00:00",
+      "status": "LOADED_ALIVE",
+      "systemd": {
+        "actual_properties": {
+          "ActiveEnterTimestamp": "Fri 2026-09-18 17:20:17 UTC",
+          "ActiveState": "active",
+          "RuntimeMaxUSec": "11h 34min 23s"
+        },
+        "unit_name_sha256": "588a408e00fe1e1bc79daba279f2f15e0fbda3552981e79e5677cd67d0915f2d"
+      }
+    },
+    {
+      "GNU_timeout": {
+        "boot_timestamp_resolution_seconds": 1,
+        "command_sha256": "c46d694e3c72d7d4b901c68ab74f04dcd8eb26b831af6c5affed832beb87043a",
+        "derived_end_utc": "2026-09-24T17:59:49.290000+00:00",
+        "duration_seconds": 519456,
+        "pid": 1966163,
+        "ppid": 1966162,
+        "start_ticks": "45959629",
+        "state": "S"
+      },
+      "LOADED": {
+        "index": 3187,
+        "loaded_unix": 1789753590.6319554,
+        "optimizer_steps": 6780,
+        "pid": 1966164,
+        "resume": true,
+        "sha256": "49c8f06b0e86802ba8e78e1ceace8a07709c1e68700ef9738ee7660a0e5bfc3d"
+      },
+      "WALL_EXTENDED": {
+        "index": 3186,
+        "new_deadline_utc": "2026-09-24T18:00:00+00:00",
+        "previous_deadline_utc": "2026-09-19T04:54:40.736359+00:00",
+        "safety_margin_seconds": 21600,
+        "sha256": "f3d434f6387ee0db752318bdcb20e41e37a1f90cb8d63d00b5d53539b9383574",
+        "working_state_sha256": "3c76e08b843bb793cf2cd7ace0822bcff2550ea151b40979fe9ebbf51572436c"
+      },
+      "actual_native": {
+        "command_sha256": "cddf0625f7b40eeb27e250e72be20293baddd2619f5c90354df29d645edd45fc",
+        "pid": 1966164,
+        "ppid": 1966163,
+        "start_ticks": "45959629",
+        "state": "S"
+      },
+      "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "gpu": 7,
+      "life": "r213_r226_caption_unparented_fork",
+      "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "status": "LOADED_ALIVE",
+      "systemd": {
+        "actual_properties": {
+          "ActiveEnterTimestamp": "Fri 2026-09-18 17:42:13 UTC",
+          "ActiveState": "active",
+          "RuntimeMaxUSec": "6d 17min 46s"
+        },
+        "unit_name_sha256": "815afdfeb60af05c0068aa3b7c4388b8f41e4f88040f648ffe94474ca686cda2"
+      }
+    }
+  ],
+  "local_model_parent": {
+    "command_sha256": "b5cae010bdcd053ae9636856df37267dcc3893047f3f07c7eb54fdd752bb037d",
+    "end_utc": "2026-09-24T18:00:00+00:00",
+    "native_controls": 0,
+    "pid": 3057541,
+    "ppid": 1,
+    "start_ticks": "186079440",
+    "startup_receipt_sha256": "ecd029a26c793d207bf5bdf903876611b7d7af15568e115d41879de4fba27776",
+    "state": "S",
+    "status": "ACTUAL_LOCAL_PROVIDER_PROCESS"
+  },
+  "math_debate": {
+    "attachment_sha256": "a3183db734dc26bb9b1310e9d7e21534af2fa50d39fd95805fba7ba4a3fccc40",
+    "command_sha256": "244737389229ae4c67e70a2a9adbcaf131e75200ea45c5febec1f6d3bd6be3e1",
+    "end_utc": "2026-09-24T17:59:00+00:00",
+    "pid": 1980077,
+    "ppid": 1,
+    "source_sha256": "2c1722b0b0603469625e39559bff2e1e32d1fbc0e8df0209ac70c5214ea6d4c6",
+    "start_ticks": "46037341",
+    "state": "S",
+    "status": "ACTUAL_LIVE_STARTUP_BINDINGS"
+  },
+  "node": "node3",
+  "observed_utc": "2026-09-18T18:09:18.510473+00:00",
+  "operator_ceiling_utc": "2026-09-24T18:00:00+00:00",
+  "parent_classroom": {
+    "command_sha256": "774cd0b9b95d3cc7867c668c43e7ef096cb45ac5fc0445bff2e31e353cd3e614",
+    "end_utc": "2026-09-24T18:00:00+00:00",
+    "pid": 1973233,
+    "ppid": 1,
+    "start_ticks": "46002029",
+    "state": "S",
+    "status": "ACTUAL_LIVE_COMMAND_BOUND"
+  },
+  "provider_expiry_new_claim": false,
+  "shared_scorer_transport": {
+    "node3_Tool_projection_is_not_a_scorer": true,
+    "owner": "Leibniz",
+    "status": "OWNER_VERIFICATION_PENDING"
+  },
+  "stage_never_counted_as_adoption": true
+}

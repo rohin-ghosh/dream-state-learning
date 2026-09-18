@@ -213,7 +213,8 @@ def current_control(arm):
     active = read(arm / 'ACTIVE_RUNTIME.json')
     selected = Path(active['control'])
     if selected.parent == arm and selected.name in (default.name, default.name + '_admission_retry1',
-            default.name + '_policy', default.name + '_policy_lease_ceiling'):
+            default.name + '_policy', default.name + '_policy_lease_ceiling',
+            default.name + '_boundary_lease_ceiling'):
         return selected
     return default
 

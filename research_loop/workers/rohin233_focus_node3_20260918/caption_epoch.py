@@ -9,6 +9,7 @@ import subprocess
 import time
 
 import classroom
+from service_horizon import service_deadline
 from retirement import identity, save, sha, stamp
 
 
@@ -58,7 +59,7 @@ def helpers(root, config, recovering=False):
     return helper, {name: bound[name] for name in PLAYERS}
 
 
-def send(helper, root, name, directory, binding, turn):
+def send(helper, root, name, directory, binding, turn, adaptive_text=None):
     if name not in PLAYERS:
         raise ValueError('caption epochs cannot target math or another node')
     if (directory / 'PUBLISHED.json').exists():
@@ -66,9 +67,9 @@ def send(helper, root, name, directory, binding, turn):
         if sha(directory / 'PREPARED.json') != publication['prepared_sha256'] or sha(Path(publication['path'])) != publication['sha256']:
             raise ValueError('existing publication changed')
         return publication
-    if directory.exists():
+    if directory.exists() and (adaptive_text is None or (directory / 'PREPARED.json').exists()):
         raise ValueError('uncertain epoch publication requires reconciliation, never resend')
-    text = prompt(name, turn)
+    text = prompt(name, turn) if adaptive_text is None else adaptive_text
     checkpoint = helper.latest_checkpoint(root, name)
     floor = max(int(path.stem) for path, kind in helper.records(root, name))
     parent_count = sum(json.loads(path.read_bytes()).get('speaker') == 'Astra'
@@ -108,12 +109,13 @@ def attachment_path(output, resume, pid):
     return output / 'former_control_attachments' / (str(pid) + '.json')
 
 
-def serve_former_control(root, output, config, resume=False):
+def serve_former_control(root, output, config, resume=False, service_end_unix=None, adaptive=False):
     helper, bound = helpers(root, config, recovering=resume)
     lock = (root / 'R233_FORMER_CONTROL_PARENT.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     name = FORMER_CONTROL
     binding = bound[name]
+    deadline = service_deadline(root, service_end_unix, binding['deadline'] - 60)
     first = output / name / 'turn_0000'
     if not (first / 'PUBLISHED.json').exists():
         raise ValueError('actual explicitly authorized epoch opener required first')
@@ -124,9 +126,11 @@ def serve_former_control(root, output, config, resume=False):
     save(started_path, dict(pid=os.getpid(), start_ticks=own['start_ticks'],
         code_sha256=sha(Path(__file__)), started_utc=stamp(), sole_life=name,
         previous_unparented_epoch_preserved=True, parented_epoch_policy=POLICY, native_signals=0,
-        other_four_parents_unchanged=True, actual_new_native_launch=False))
-    while helper.alive(binding) and time.time() < binding['deadline'] - 60:
-        turns = sorted((output / name).glob('turn_*'))
+        other_four_parents_unchanged=True, actual_new_native_launch=False,
+        service_end_unix=deadline,
+        parent_kind='MODEL_PROVIDER_MAILBOX' if adaptive else 'SCRIPTED_NOT_MODEL_PROVIDER'))
+    while helper.alive(binding) and time.time() < deadline:
+        turns = sorted(path for path in (output / name).glob('turn_*') if (path / 'PUBLISHED.json').exists())
         current = turns[-1]
         prepared = json.loads((current / 'PREPARED.json').read_bytes())
         publication = json.loads((current / 'PUBLISHED.json').read_bytes())
@@ -137,6 +141,8 @@ def serve_former_control(root, output, config, resume=False):
         new_humans = [path.stem for path in (root / name / 'raw/stream/inbox').glob('*.json')
             if path.stem not in humans and json.loads(path.read_bytes()).get('speaker') == 'Rohin']
         state = dict(pid=os.getpid(), observed_utc=stamp(), parent_id=publication['id'], delivery=delivery,
+            service_end_unix=deadline,
+            parent_kind='MODEL_PROVIDER_MAILBOX' if adaptive else 'SCRIPTED_NOT_MODEL_PROVIDER',
             completed_cycles=len(cycles), native_signals=0, learning_exclusions=0,
             sole_life=name, actual_parented_epoch=True)
         if new_humans:
@@ -145,7 +151,15 @@ def serve_former_control(root, output, config, resume=False):
             next_turn = prepared['turn'] + 1
             following = output / name / f'turn_{next_turn:04d}'
             metrics = classroom.repetition_metrics(helper, root, name, prepared['floor'])
-            sent = send(helper, root, name, following, binding, next_turn)
+            text = None
+            if adaptive:
+                from adaptive_parent import model_text
+                text = model_text(helper, root, name, following, prompt(name, next_turn),
+                    dict(publication=publication))
+                if text is None:
+                    time.sleep(15)
+                    continue
+            sent = send(helper, root, name, following, binding, next_turn, text)
             save(following / 'PRIOR_RECEIPTS.json', dict(delivery=delivery, cycles=cycles, metrics=metrics,
                 parent_approach_changed=True, three_cycle_forced=len(cycles) >= 3, learning_exclusions=0))
             state.update(status='NEW_PARENT_PUBLISHED_RENDER_PENDING', new_parent_id=sent['id'])
@@ -185,12 +199,15 @@ if __name__ == '__main__':
     parser.add_argument('--config', type=Path, required=True)
     parser.add_argument('--receipt', type=Path)
     parser.add_argument('--resume', action='store_true')
+    parser.add_argument('--service-end-unix', type=float)
+    parser.add_argument('--adaptive', action='store_true')
     options = parser.parse_args()
     configuration = json.loads(options.config.read_bytes())
     if options.mode == 'open':
         open_epochs(options.root, options.output, configuration)
     elif options.mode == 'serve-former-control':
-        serve_former_control(options.root, options.output, configuration, options.resume)
+        serve_former_control(options.root, options.output, configuration, options.resume,
+            options.service_end_unix, options.adaptive)
     else:
         result = projection(options.root, options.output, configuration)
         save(options.receipt, result)
