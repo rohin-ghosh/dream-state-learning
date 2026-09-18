@@ -23,10 +23,22 @@ phase=pathlib.Path('/localhome/local-rohing/orch_r226_base_schedule_20260918')
 def read(path): return json.loads(path.read_bytes())
 def reference(path): return dict(sha256=hashlib.sha256(path.read_bytes()).hexdigest(),mtime_unix=path.stat().st_mtime)
 pointer=read(phase/'CURRENT.json')
-if pointer['root']!=str(phase/'attempt2') or pointer['scorer_root']!=str(phase/'recovery_scorer'):
+if pointer['root']==str(phase/'attempt2') and pointer['scorer_root']==str(phase/'recovery_scorer'):
+ epoch='R226_recovery_attempt2';active=phase/'attempt2';scorer_root=phase/'recovery_scorer'
+ units_by_role=[('player','orch-r226-base-schedule-recovery-20260918'),('scorer','orch-r226-base-scorer-recovery-20260918')]
+ expected_pids=(48524,48502);plan=read(original/'LAUNCH_PLAN.json')
+elif pointer['root']==str(phase/'r232_epoch3') and pointer['scorer_root']==str(phase/'r232_epoch3/scorer'):
+ active=phase/'r232_epoch3';scorer_root=active/'scorer';epoch='R232_FROZEN_BASE_CONTINUATION_3'
+ if reference(active/'EPOCH.json')['sha256']!='315c7079ce6ac875cb5ba27e6050b0cc10e3e33496d5964fe94e7ff6bf6b10cd':
+  raise ValueError('exact_authorized_continuation_epoch_required')
+ config=read(active/'EPOCH.json')
+ plan=dict(hard_end_unix=config['deadline_unix'],maximum_GPU_hours=None)
+ units_by_role=[('player','orch-r232-base-epoch3-player-20260918'),('scorer','orch-r232-base-epoch3-scorer-20260918')]
+ expected_pids=(162813,162806)
+else:
  raise ValueError('different_base_epoch_requires_new_binding')
-loaded=read(phase/'attempt2/LOADED.json');scorer_loaded=read(phase/'recovery_scorer/LOADED.json')
-if loaded['pid']!=48524 or scorer_loaded['pid']!=48502 or pointer['loaded']['pid']!=48524:
+loaded=read(active/'LOADED.json');scorer_loaded=read(scorer_root/'LOADED.json')
+if (loaded['pid'],scorer_loaded['pid'])!=expected_pids or pointer['loaded']['pid']!=loaded['pid']:
  raise ValueError('registered_epoch_pid_changed')
 controller=read(original/'player/ATTEMPTS.public.json')
 state=read(original/'player/private/state.json')
@@ -37,14 +49,15 @@ if events!=state['events'] or len({event['source']['request_id'] for event in ev
 if set(scorer['seen'])!={event['source']['request_id'] for event in events}:
  raise ValueError('scorer_controller_seen_prefix_mismatch')
 units={}
-for role,unit in [('player','orch-r226-base-schedule-recovery-20260918'),('scorer','orch-r226-base-scorer-recovery-20260918')]:
+for role,unit in units_by_role:
  raw=subprocess.check_output(['systemctl','show',unit,'--property=MainPID,Result,ActiveState,ExecMainStatus,ExecMainStartTimestamp,ExecMainExitTimestamp'],text=True)
  value=dict(line.split('=',1) for line in raw.splitlines() if '=' in line)
- exit_time=datetime.datetime.strptime(value['ExecMainExitTimestamp'],'%a %Y-%m-%d %H:%M:%S %Z').replace(tzinfo=datetime.timezone.utc).timestamp()
+ exit_time=(datetime.datetime.strptime(value['ExecMainExitTimestamp'],'%a %Y-%m-%d %H:%M:%S %Z').replace(tzinfo=datetime.timezone.utc).timestamp() if value['ExecMainExitTimestamp'] else None)
  units[role]=dict(main_pid=int(value['MainPID']),result=value['Result'],active_state=value['ActiveState'],exit_status=int(value['ExecMainStatus']),exit_unix=exit_time)
-plan=read(original/'LAUNCH_PLAN.json')
-result=dict(schema='R232_BASE_ACTIVITY_EVIDENCE_V1',observed_unix=time.time(),epoch='R226_recovery_attempt2',
- player_pid=48524,scorer_pid=48502,player_present=pathlib.Path('/proc/48524').exists(),scorer_present=pathlib.Path('/proc/48502').exists(),
+result=dict(schema='R232_BASE_ACTIVITY_EVIDENCE_V1',observed_unix=time.time(),epoch=epoch,
+ player_pid=loaded['pid'],scorer_pid=scorer_loaded['pid'],
+ player_present=pathlib.Path('/proc',str(loaded['pid'])).exists() and units['player']['main_pid']==loaded['pid'],
+ scorer_present=pathlib.Path('/proc',str(scorer_loaded['pid'])).exists() and units['scorer']['main_pid']==scorer_loaded['pid'],
  units=units,hard_end_unix=plan['hard_end_unix'],maximum_GPU_hours=plan['maximum_GPU_hours'],
  completed_opportunities=controller['completed_opportunities'],controller_attempts=len(events),
  total_generated_tokens=controller['total_generated_tokens'],controller_pending=state['pending'] is not None,
@@ -72,7 +85,7 @@ def verified_empty(evidence, start, end):
     if evidence['player_present'] or evidence['scorer_present']:
         return False
     if any(unit['main_pid'] != 0 or unit['result'] != 'timeout'
-           or unit['exit_unix'] > start for unit in evidence['units'].values()):
+           or unit['exit_unix'] is None or unit['exit_unix'] > start for unit in evidence['units'].values()):
         return False
     return not any(start <= moment < end for moment in evidence['controller_event_times'])
 
@@ -95,12 +108,15 @@ def supplement(primary, evidence, primary_sha256):
             window = dict(window_counts([], [], start, end, completed=0, planned_unknown=0), partial_UTC_hour=False)
             status = 'VERIFIED_NO_ACTIVITY_EXPIRED_BUDGET'
         rows.append(dict(player=player['player'], status=status, counts=window))
+    continuation = ('RUNNING_DISCLOSED_NEW_EPOCH' if evidence.get('player_present') and evidence.get('scorer_present')
+        else 'REGISTERED_EPOCH_ENDED_OR_NOT_LIVE' if evidence.get('complete_controller_and_scorer_history')
+        else 'UNKNOWN_NO_CONTINUATION_OR_ZERO_CLAIM')
     return dict(schema='R232_HOURLY_ACTIVITY_SUPPLEMENT_V1', observed_cut_utc=primary['observed_cut_utc'],
         created_utc=utc(time.time()), primary_report_sha256=primary_sha256,
         window_start_utc=utc(start), window_end_utc=utc(end), players=rows, base_evidence=evidence,
         missing_is_not_zero=True, raw_counts_unchanged=True, original_reports_modified=False,
         historical_resubmissions=0, scoring_calls=0, native_or_service_signals=[],
-        base_continuation='NOT_RELAUNCHED_DECLARED_BUDGET_EXPIRED_REQUIRES_NEW_BOUNDED_ALLOCATION',
+        base_continuation=continuation,
         caveat='Accepted strings include repeats and unreviewed commentary; pixels are provisional events, not hourly-rate or H2 claims.')
 
 
@@ -116,11 +132,15 @@ def markdown(report):
         faults = f"{counts['format_fault_attempts']} / {counts['routing_ambiguity_attempts']}" if counts else 'unknown'
         lines.append('| ' + ' | '.join([row['player'], row['status'], *values, faults]) + ' |')
     evidence = report['base_evidence']
-    if evidence.get('complete_controller_and_scorer_history'):
+    if evidence.get('player_present') and evidence.get('scorer_present'):
+        lines += ['', f"Bound continuation {evidence['epoch']} is actually running: player{evidence['player_pid']}, dedicated scorer{evidence['scorer_pid']}; deadline {utc(evidence['hard_end_unix'])}.",
+            f"Retained cumulative history: {evidence['completed_opportunities']} complete opportunities, {evidence['controller_attempts']} attempts, {evidence['scorer_seen_count']} seen origins.",
+            'Prior inactivity and the disclosed gap remain historical facts; cumulative counts include previous epochs and are not new hourly rates.']
+    elif evidence.get('complete_controller_and_scorer_history'):
         lines += ['', f"Registered base player and dedicated scorer exited at {utc(evidence['units']['player']['exit_unix'])}; both systemd results timeout at the declared budget end.",
             f"Retained controller: {evidence['completed_opportunities']} completed opportunities, {evidence['controller_attempts']} attempts, {evidence['total_generated_tokens']} generated tokens; scorer retains {evidence['scorer_seen_count']} seen origins.",
             'Shared native scorers are separate processes; their presence does not establish base-player uptime.',
-            'No continuation was launched under the expired allocation. Context, novelty and dedup state are retained; any continuation must bind a new explicit epoch and budget.']
+            'This registered epoch is not live. Context, novelty and dedup state are retained; any further continuation must bind a new explicit epoch and budget.']
     else:
         lines += ['', 'Activity evidence could not be collected; omitted primary rows remain unknown, never synthetic zeros.']
     return '\n'.join(lines + ['', report['caveat'], 'Original hourly reporter/publisher and all lives remain unchanged.', ''])

@@ -42,3 +42,14 @@ must not be reclaimed. No process was stopped or signalled for this audit.
 
 C0 probe results and every-sleep source queue remain separate. No plot was
 created; Main owns the immutable-primary-results SVG.
+
+## Later update: allocation renewed, exact-state continuation loaded
+
+The status above is historical. Main authorized a new bounded allocation;
+`R232_CONTINUATION_LIVE.md/.json` bind actual scorerLOAD11:25:26.829952UTC
+and playerLOAD11:25:27.252795UTC on physical5/4. This supersedes the earlier
+unresolved-budget statement, not the verified zero10–11UTC or real gap.
+The new epoch preserves all prior state and ends before14:00UTC. The separate
+activity companion is now1053668 with exact new-epoch binding; original hourly
+reporter/publisher remain untouched. First three new ACTs are unscored due to
+the unchanged caption resource bound, not new successful caption outcomes.

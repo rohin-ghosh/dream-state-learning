@@ -39,6 +39,14 @@ def test_missing_or_contradictory_evidence_never_manufactures_zero(change):
 def test_missing_remote_collection_preserves_unknown():
     report = supplement(primary(), dict(complete_controller_and_scorer_history=False), 'b' * 64)
     assert all(row['counts'] is None for row in report['players'])
+    assert report['base_continuation'] == 'UNKNOWN_NO_CONTINUATION_OR_ZERO_CLAIM'
+
+
+def test_registered_running_continuation_not_described_as_unrenewed():
+    active = dict(evidence(), player_present=True, scorer_present=True)
+    report = supplement(primary(), active, 'd' * 64)
+    assert report['base_continuation'] == 'RUNNING_DISCLOSED_NEW_EPOCH'
+    assert report['players'][0]['counts'] is None
 
 
 def test_observed_activity_contradiction_fails_closed():
