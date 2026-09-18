@@ -2,7 +2,7 @@
 
 | Life | Actual native / LOAD | Latest COMPLETE | CPU parent / actual delivery | Active native horizon |
 |---|---|---|---|---|
-| Learner GPU0 |399101/start9637168;1875 at17:02:26.389781|2179/sleep27 at17:33:43.932641;optimizer1280|2946722/start185959705;4recovery-era publications,3rendered atREQUEST1959/2040/2119; fourth pending|Sep18 23:30UTC; not hot-renewed|
+| Learner GPU0 |399101/start9637168;1875 at17:02:26.389781|2179/sleep27 at17:33:43.932641;optimizer1280|2946722/start185959705;5recovery-era publications,4rendered atREQUEST1959/2040/2119/2182; fifth pending|Sep18 23:30UTC; not hot-renewed|
 | Frozen GPU1 |412570/start9735357;1595 at17:33:46.848556;REQUEST1598→RESPONSE1599 at17:34:04.951765|1628/sleep49 at17:36:47.904044;optimizer0,unchanged adapter|2946721/start185959703; actual provider17:35:14.587989/publicationf8b89ebbae8b4f799a552cb90e8e3f67; render pending|Sep18 18:00UTC; not hot-renewed|
 
 Both CPU parents actually adopted September30 18:00UTC, from the user's October1 existing-lease date minus the unchanged6hour margin. No lease purchase/extension or provider-CLI verification claimed. Same physical node/device UUIDs. Main cutoff418521 canceled17:30:08.832727; original native399101 remains live. My COMPLETE watcher415506 canceled before action, CPU-parent cutoff2887549 canceled; no native signals or operator holds.
