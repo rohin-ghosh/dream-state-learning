@@ -1,5 +1,19 @@
 # R233 node3 focus
 
+## Recovery supersedes the historical cut
+
+The September18 evening recovery and explicitly authorized same-journal
+checkpoint handoffs supersede the midday process and policy descriptions below.
+Use `STATUS_LATEST.md`, `RECOVERY_CURRENT.json`, `RECOVERY_PARENTS_CURRENT.json`
+and `DEADLINES.json` for dated actual native identities, renewed walls, model-parent
+renders and measured reload gaps. The operational ceiling is September24 18UTC,
+not a new provider-expiry claim or lease extension. Native adoption requires
+actual WALL_EXTENDED plus current LOADED; prepared sources are not adoption.
+Model-provider results, parent publication, rendered input, child ACT and actual
+learning recipes are distinct evidence. The shared scorer is owned separately.
+
+## Historical September18 midday consolidation
+
 **Continuation supersedes the earlier unparented condition:** all FIVE caption
 forks enter explicitly named parented epochs from the12:00:50–51UTC opener
 publications. GPU7's original root name is retained, but it is not an ongoing

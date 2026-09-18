@@ -8,6 +8,7 @@
     "state": "S",
     "status": "ACTUAL_LIVE_COMMAND_BOUND"
   },
+  "actual_live_native_wall_adoptions": 8,
   "fifth_caption_parent": {
     "command_sha256": "5ba4f30459701962e412faf128e6ef9fd8ffd3eee648a9a2798b219e3b4373a4",
     "end_utc": "2026-09-24T18:00:00+00:00",
@@ -20,18 +21,41 @@
   "lease_purchase_or_extension": false,
   "lives": [
     {
-      "LOADED": {
-        "index": 3111,
-        "loaded_unix": 1789751311.788289,
-        "optimizer_steps": 6780,
-        "pid": 1941202,
-        "resume": true,
-        "sha256": "64954fcbbbd8c33a69312078586824340f703b99616a40a6b8bb8580d010ff47"
+      "GNU_timeout": {
+        "boot_timestamp_resolution_seconds": 1,
+        "command_sha256": "562abf3556c769f64f450caf8b39759c2c92d7cb9ef6d3696d7f2a4efb1ca450",
+        "derived_end_utc": "2026-09-24T17:59:49.220000+00:00",
+        "duration_seconds": 517760,
+        "pid": 1998499,
+        "ppid": 1998498,
+        "start_ticks": "46129222",
+        "state": "S"
       },
-      "WALL_EXTENDED": null,
-      "actual_native": null,
+      "LOADED": {
+        "index": 3682,
+        "loaded_unix": 1789755371.2673738,
+        "optimizer_steps": 7116,
+        "pid": 1998500,
+        "resume": true,
+        "sha256": "1fcfadb8538cc0d5eff65cf47a9ea86b64905e5d0ef50cd4817faa0a95e69b48"
+      },
+      "WALL_EXTENDED": {
+        "index": 3681,
+        "new_deadline_utc": "2026-09-24T18:00:00+00:00",
+        "previous_deadline_utc": "2026-09-19T04:51:09.675802+00:00",
+        "safety_margin_seconds": 21600,
+        "sha256": "f7a03c6184ae7c35ab402ff63163e8e2f28ceeb4e7b5af028055d35c0b5f302a",
+        "working_state_sha256": "9b2e406db851f48292d84bdb50eb0e7176332b66b2b219f389b2131dd4038e1e"
+      },
+      "actual_native": {
+        "command_sha256": "f77598a6502587ee6e8a8bcdce9d957af7297c96402d5964227ff50bbfd1c24c",
+        "pid": 1998500,
+        "ppid": 1998499,
+        "start_ticks": "46129222",
+        "state": "S"
+      },
       "boundary_handoff": {
-        "actually_adopted": false,
+        "actually_adopted": true,
         "checkpoint_sha256": {
           "adapter": "c43c7c95d8ba2c17bf54b1c3127c587951b87ab08b73e5a6f5e70793393a5b66",
           "optimizer": "1fe473f1aa8be9951e4aff547d8b273edccdb8cf1fcc6ad1090576463fe3b2a5",
@@ -39,21 +63,33 @@
         },
         "complete_cycle": 86,
         "files": {
+          "DISPATCHED.json": "13c8984f0df9a05a37f123ecaf898f122bf658bcef8ccfb0f3f1fa6cfadf0c27",
           "HANDOFF_SIGNAL.json": "40c8f5407ffb800b351f8c75af2758f488a59f3540df6fb2bdc212ac98d89cd1",
           "OLD_EXIT_OBSERVED.json": "0bcacc7800c58a3b46324056286802490c3db6f5fab4f4868bc5687b91f241d2",
           "PREPARED.json": "a60e2e5c611550b8b50f3215a755fef79fdf5e4580acdfff490459dfdd9f6d25",
+          "RECONCILED.json": "3225884650c67fd8552ef7d443684b17f99f8c6c027f6840ca6658422009fe41",
           "RECOVERY.json": "780081f5f639daf30c99313e0cb4a8a910cdc6b4a91fbc7d5831408280325c18",
           "WAITING_NEXT_COMPLETE.json": "790f2c4cdfafe025995f89e976c65e430c5de42939ac0ee61194f0d0a6549aed"
         },
         "lost_tail_updates": 0,
+        "observed_reload_gap_seconds": 656.7583992481232,
         "old_exit_utc": "2026-09-18T18:05:14.508954+00:00",
         "preserved_manifest_sha256": "a31944b5ab9d3ed1c5bdbb4d20f8e082dc0dd9ed18293d158a419478b34165de"
       },
-      "configured_deadline_utc": "2026-09-19T04:51:09.675802+00:00",
+      "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
       "gpu": 0,
       "life": "r213_r226_caption_observation_fork",
-      "resident_deadline_utc": null,
-      "status": "EXITED_AFTER_ATTEMPT"
+      "native_wall_actually_adopted": true,
+      "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "status": "LOADED_ALIVE",
+      "systemd": {
+        "actual_properties": {
+          "ActiveEnterTimestamp": "Fri 2026-09-18 18:10:29 UTC",
+          "ActiveState": "active",
+          "RuntimeMaxUSec": "5d 23h 49min 30s"
+        },
+        "unit_name_sha256": "04524402746b6cfcf30185d760f8a4c596f76ce8cd88d53e5a9d1e95f2374497"
+      }
     },
     {
       "GNU_timeout": {
@@ -87,11 +123,12 @@
         "pid": 1966154,
         "ppid": 1966153,
         "start_ticks": "45959563",
-        "state": "S"
+        "state": "R"
       },
       "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
       "gpu": 1,
       "life": "r213_math_a",
+      "native_wall_actually_adopted": true,
       "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
       "status": "LOADED_ALIVE",
       "systemd": {
@@ -135,11 +172,12 @@
         "pid": 1966159,
         "ppid": 1966158,
         "start_ticks": "45959598",
-        "state": "S"
+        "state": "R"
       },
       "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
       "gpu": 2,
       "life": "r213_math_b_fork",
+      "native_wall_actually_adopted": true,
       "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
       "status": "LOADED_ALIVE",
       "systemd": {
@@ -152,18 +190,41 @@
       }
     },
     {
-      "LOADED": {
-        "index": 3361,
-        "loaded_unix": 1789751756.3951676,
-        "optimizer_steps": 6924,
-        "pid": 1944402,
-        "resume": true,
-        "sha256": "78c6d7f2aad4a5f6339da3021f999686bfd561f81fe50b910c8717ff2dd1a3d0"
+      "GNU_timeout": {
+        "boot_timestamp_resolution_seconds": 1,
+        "command_sha256": "b3a7a805c00ec9c663dd140a3e0de6d44fe350391fcb78b0e18fa3cafb8c8530",
+        "derived_end_utc": "2026-09-24T17:59:48.630000+00:00",
+        "duration_seconds": 517219,
+        "pid": 2009181,
+        "ppid": 2009180,
+        "start_ticks": "46183263",
+        "state": "S"
       },
-      "WALL_EXTENDED": null,
-      "actual_native": null,
+      "LOADED": {
+        "index": 3949,
+        "loaded_unix": 1789755942.4917233,
+        "optimizer_steps": 7292,
+        "pid": 2009182,
+        "resume": true,
+        "sha256": "65b02b879fcdbfaacae3136903c15adb356110176644d1f4958f53c31e99d481"
+      },
+      "WALL_EXTENDED": {
+        "index": 3948,
+        "new_deadline_utc": "2026-09-24T18:00:00+00:00",
+        "previous_deadline_utc": "2026-09-19T04:54:40.704853+00:00",
+        "safety_margin_seconds": 21600,
+        "sha256": "189d5fa91717424de0a29ae06ebeb1e64ffab92f780392177deac71263c5f666",
+        "working_state_sha256": "a89ba9241e7ae2891ae73efa19341f94575b03f4167533d558562353ea9c383e"
+      },
+      "actual_native": {
+        "command_sha256": "e859381ec21bdcff2870c2f5d2043259c61b2d5b0bf9bb8f6101355798fa23b2",
+        "pid": 2009182,
+        "ppid": 2009181,
+        "start_ticks": "46183263",
+        "state": "S"
+      },
       "boundary_handoff": {
-        "actually_adopted": false,
+        "actually_adopted": true,
         "checkpoint_sha256": {
           "adapter": "1fe4eba83a44fe6efb409eee3fef4dd3d32b56a7bb128a0b9d51db8516928400",
           "optimizer": "5997c9421bad36904e11d575b13d7dad13d3869053d4687f1f6c04548077779f",
@@ -171,21 +232,41 @@
         },
         "complete_cycle": 82,
         "files": {
+          "DISPATCHED.json": "6a6a947e9413249c64c5f6cf798a39f400187bdd2958d8f941db6b7c349db14a",
           "HANDOFF_SIGNAL.json": "54e699a8333ece5603a5237a74ad24edaf27dd4b0aede578f7732464f44f9bc7",
           "OLD_EXIT_OBSERVED.json": "19b5e88871e892a9e39b06a246e4bd6483ae0a37e3a0fe2f290cd03b19280685",
           "PREPARED.json": "50317c5a532f1c42d70b358c9c6382c5d642ac0b9577dbfa02b5ca24bcf2c3e9",
+          "RECONCILED.json": "4f2dbd60cb84c8abefebbbc757a358e756584945d11eca93c9bf5dfc7b74bf46",
           "RECOVERY.json": "b6faed9e67b64c40bdfe3bb9ef1bc5330b497cbc03e552aba19ae9b249aec6ba",
           "WAITING_NEXT_COMPLETE.json": "9159ea7d17b433093655ce5790a010780ad6a83befeb796ddc460c105eaab539"
         },
         "lost_tail_updates": 0,
+        "observed_reload_gap_seconds": 1124.432645559311,
         "old_exit_utc": "2026-09-18T18:06:58.059041+00:00",
         "preserved_manifest_sha256": "71d57bd448d166b6787ae40bf8b86e54ca8f595321df2bc6b83289a38cfaf6b2"
       },
-      "configured_deadline_utc": "2026-09-19T04:54:40.704853+00:00",
+      "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
       "gpu": 3,
       "life": "r213_r226_caption_perspective_fork",
-      "resident_deadline_utc": null,
-      "status": "EXITED_AFTER_ATTEMPT"
+      "native_wall_actually_adopted": true,
+      "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "separate_admission_retry": {
+        "clear": true,
+        "failed_attempt_sha256": "e838be0a6a059955cd24806938bbfbae030f332d9ca7d16f5297fe47bb895ea4",
+        "failed_native_was_not_started": true,
+        "fresh_admission_sha256": "99d8553a5f4ed7afe2df6a607e99b3545850ac6c8005d1b0d510bbd5167a15ba",
+        "original_rejection_details_unknown": true,
+        "scanner_euid": 0
+      },
+      "status": "LOADED_ALIVE",
+      "systemd": {
+        "actual_properties": {
+          "ActiveEnterTimestamp": "Fri 2026-09-18 18:19:30 UTC",
+          "ActiveState": "active",
+          "RuntimeMaxUSec": "5d 23h 40min 29s"
+        },
+        "unit_name_sha256": "e19886c0906121447d01aa18e06e2daf41b0cb4c7de994a7c96e9b20401205cb"
+      }
     },
     {
       "GNU_timeout": {
@@ -224,6 +305,7 @@
       "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
       "gpu": 4,
       "life": "r213_math_c",
+      "native_wall_actually_adopted": true,
       "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
       "status": "LOADED_ALIVE",
       "systemd": {
@@ -236,11 +318,41 @@
       }
     },
     {
-      "LOADED": null,
-      "WALL_EXTENDED": null,
-      "actual_native": null,
+      "GNU_timeout": {
+        "boot_timestamp_resolution_seconds": 1,
+        "command_sha256": "b1e0af485814aa1ea6507cc9bd9a42ac1c6d53b16c837dc184732c41ed2a667a",
+        "derived_end_utc": "2026-09-24T17:59:48.650000+00:00",
+        "duration_seconds": 517942,
+        "pid": 1994936,
+        "ppid": 1994898,
+        "start_ticks": "46110965",
+        "state": "S"
+      },
+      "LOADED": {
+        "index": 3323,
+        "loaded_unix": 1789755150.125438,
+        "optimizer_steps": 6844,
+        "pid": 1994937,
+        "resume": true,
+        "sha256": "b22ed6e5d99512c9b8dc876e2e6565934582289f342a47d4f684c6ea522292a1"
+      },
+      "WALL_EXTENDED": {
+        "index": 3322,
+        "new_deadline_utc": "2026-09-24T18:00:00+00:00",
+        "previous_deadline_utc": "2026-09-19T04:54:40.710867+00:00",
+        "safety_margin_seconds": 21600,
+        "sha256": "87aa6cfdb127e3bcdc5bac823b493fd523dd0cde94439372ac6f55ea543ce0a4",
+        "working_state_sha256": "45607bc0ace0bc13580f16581aa3d2edc8edf8bd4fc54310160243e41bb59b28"
+      },
+      "actual_native": {
+        "command_sha256": "1199c5ad885436a76a48a410b6e593a74937ec7c55ab0135c59d636873035ebb",
+        "pid": 1994937,
+        "ppid": 1994936,
+        "start_ticks": "46110965",
+        "state": "S"
+      },
       "boundary_handoff": {
-        "actually_adopted": false,
+        "actually_adopted": true,
         "checkpoint_sha256": {
           "adapter": "3381461384f0bd03dd1511df720012a23705dfa5af578c8ee05a8a1febf5815f",
           "optimizer": "7a65b8a3fbc521054bb05ed1a90ecd69275d290929a935c1368953e406481dde",
@@ -257,61 +369,94 @@
           "WAITING_NEXT_COMPLETE.json": "0292b0c8e9593ed8b81001802ed641dedfd2ae24e437b68757d09b64b08e85ef"
         },
         "lost_tail_updates": 0,
+        "observed_reload_gap_seconds": 578.8068566322327,
         "old_exit_utc": "2026-09-18T18:02:51.318564+00:00",
         "preserved_manifest_sha256": "7540e19a7c9a07257425d38b25541cc9bcf1d447110739d481aeff697a6f600d"
       },
       "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
       "gpu": 5,
       "life": "r213_r226_caption_revision_fork",
-      "resident_deadline_utc": null,
-      "status": "DISPATCHED_NOT_LOADED"
+      "native_wall_actually_adopted": true,
+      "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
+      "status": "LOADED_ALIVE",
+      "systemd": {
+        "actual_properties": {
+          "ActiveEnterTimestamp": "Fri 2026-09-18 18:07:27 UTC",
+          "ActiveState": "active",
+          "RuntimeMaxUSec": "5d 23h 52min 32s"
+        },
+        "unit_name_sha256": "700dd4f783ab4ae2649ebc553177a808b74a8f4b3e1c26503b44c4152b2a183b"
+      }
     },
     {
       "GNU_timeout": {
         "boot_timestamp_resolution_seconds": 1,
-        "command_sha256": "d4f02ba8878380f2bbb7de23f0f1df99243653e34ada90dade5cb6a24d7b4b9a",
-        "derived_end_utc": "2026-09-19T04:54:29.120000+00:00",
-        "duration_seconds": 41652,
-        "pid": 1948573,
-        "ppid": 1948572,
-        "start_ticks": "45828012",
+        "command_sha256": "2b5ec97c1d79727d8575a493c58d0b911ac59d14bcae7e217adb331ac1af8ff0",
+        "derived_end_utc": "2026-09-24T17:59:48.770000+00:00",
+        "duration_seconds": 517208,
+        "pid": 2009363,
+        "ppid": 2009360,
+        "start_ticks": "46184377",
         "state": "S"
       },
       "LOADED": {
-        "index": 3036,
-        "loaded_unix": 1789752315.4081812,
-        "optimizer_steps": 6700,
-        "pid": 1948574,
+        "index": 3487,
+        "loaded_unix": 1789755945.098128,
+        "optimizer_steps": 6972,
+        "pid": 2009364,
         "resume": true,
-        "sha256": "f12e29c955aa3c92fceba1ec8dd9fac133d11f3c044435f37007ff6afae7e1e3"
+        "sha256": "023e71f15129d7ee8f5968cc8df2178e0abe26387671f158739f9e19b24ada7b"
       },
-      "WALL_EXTENDED": null,
+      "WALL_EXTENDED": {
+        "index": 3486,
+        "new_deadline_utc": "2026-09-24T18:00:00+00:00",
+        "previous_deadline_utc": "2026-09-19T04:54:40.727050+00:00",
+        "safety_margin_seconds": 21600,
+        "sha256": "e353dd7495183d17757337a581d11955e01a80a81094c4e25e641f42edb88fa5",
+        "working_state_sha256": "2f91b761ddd3c74dc075f3f67f938974b87381fb46a71d1b39e1f6c4ae2f6e04"
+      },
       "actual_native": {
-        "command_sha256": "38f1a67ea2556e5650b5f51a66237ed95ef51e33d3823315b35d8a36f65e4b8f",
-        "pid": 1948574,
-        "ppid": 1948573,
-        "start_ticks": "45828012",
-        "state": "R"
+        "command_sha256": "9cf8bc87455564db55a2f83baf3817a52d6c5f22ebe676721babebe260916f0a",
+        "pid": 2009364,
+        "ppid": 2009363,
+        "start_ticks": "46184377",
+        "state": "S"
       },
       "boundary_handoff": {
-        "actually_adopted": false,
+        "actually_adopted": true,
+        "checkpoint_sha256": {
+          "adapter": "41a8cbeb3f472b706adedecfcbfcd2524c93021662b610f386ffd07c7f607297",
+          "optimizer": "fed6c7ac358ea732c71a8b2e4c74c0da5809dd6c2290fd3b432cd2b2814b8fdf",
+          "rng": "fed6c7ac358ea732c71a8b2e4c74c0da5809dd6c2290fd3b432cd2b2814b8fdf"
+        },
+        "complete_cycle": 81,
         "files": {
+          "DISPATCHED.json": "d5bc5191dfb1241dca12941c253267389010f776c9ee3127be788d1ede783ff0",
+          "HANDOFF_SIGNAL.json": "7b88d442e72dc8eadae52d0cfae4b6ed79ad43db6313809254cc1f7b447493ac",
+          "OLD_EXIT_OBSERVED.json": "d4f49353ca76b3c81bf11f650d9b8070a3f652dff925745b4e6757579e335ac0",
           "PREPARED.json": "8369d127a50368daa0b96e001eb2f015b2a538487e4cd2cc47167f3e6b0a01c5",
+          "RECONCILED.json": "8b798bb2d67a3255aeadf6b2c5362adf18bed97c3f6aa46925e9d42483ddbc4b",
+          "RECOVERY.json": "67ea51fe263f6e48c1e2809b7ff9cb87cef8ce3b7cbce8b441d426c61839caa0",
           "WAITING_NEXT_COMPLETE.json": "3e864f13c3c4ad2c2a97b72c2b05e82b10410789606c228f31c90c8f6a1430bc"
-        }
+        },
+        "lost_tail_updates": 0,
+        "observed_reload_gap_seconds": 701.5958292484283,
+        "old_exit_utc": "2026-09-18T18:14:03.502280+00:00",
+        "preserved_manifest_sha256": "c1c6d40c638d9e218df2f87dd487f8feac1d8a3e4f9fc67ae28f3518c1e85723"
       },
-      "configured_deadline_utc": "2026-09-19T04:54:40.727050+00:00",
+      "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
       "gpu": 6,
       "life": "r213_r226_caption_selfderive_fork",
-      "resident_deadline_utc": "2026-09-19T04:54:40.727050+00:00",
+      "native_wall_actually_adopted": true,
+      "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
       "status": "LOADED_ALIVE",
       "systemd": {
         "actual_properties": {
-          "ActiveEnterTimestamp": "Fri 2026-09-18 17:20:17 UTC",
+          "ActiveEnterTimestamp": "Fri 2026-09-18 18:19:41 UTC",
           "ActiveState": "active",
-          "RuntimeMaxUSec": "11h 34min 23s"
+          "RuntimeMaxUSec": "5d 23h 40min 18s"
         },
-        "unit_name_sha256": "588a408e00fe1e1bc79daba279f2f15e0fbda3552981e79e5677cd67d0915f2d"
+        "unit_name_sha256": "7658dd5e5985d9e76e04de77be9b6955c1a2bc3f8d98434faaa87592bc80b9a3"
       }
     },
     {
@@ -351,6 +496,7 @@
       "configured_deadline_utc": "2026-09-24T18:00:00+00:00",
       "gpu": 7,
       "life": "r213_r226_caption_unparented_fork",
+      "native_wall_actually_adopted": true,
       "resident_deadline_utc": "2026-09-24T18:00:00+00:00",
       "status": "LOADED_ALIVE",
       "systemd": {
@@ -366,13 +512,15 @@
   "local_model_parent": {
     "command_sha256": "b5cae010bdcd053ae9636856df37267dcc3893047f3f07c7eb54fdd752bb037d",
     "end_utc": "2026-09-24T18:00:00+00:00",
-    "native_controls": 0,
+    "entrypoint_sha256": "08d74ee34eac0d36424dd5b4cd073082dfa82798837df5fba547aaa710b7eabb",
     "pid": 3057541,
     "ppid": 1,
+    "provider_source_sha256": "4d99658252310c7f57986750ff3002443d5c4038139f79b0381ff6eafbde837e",
+    "same_identity_alive": true,
     "start_ticks": "186079440",
     "startup_receipt_sha256": "ecd029a26c793d207bf5bdf903876611b7d7af15568e115d41879de4fba27776",
     "state": "S",
-    "status": "ACTUAL_LOCAL_PROVIDER_PROCESS"
+    "status": "ACTUAL_LIVE_STARTUP_RECEIPT_BOUND"
   },
   "math_debate": {
     "attachment_sha256": "a3183db734dc26bb9b1310e9d7e21534af2fa50d39fd95805fba7ba4a3fccc40",
@@ -386,7 +534,7 @@
     "status": "ACTUAL_LIVE_STARTUP_BINDINGS"
   },
   "node": "node3",
-  "observed_utc": "2026-09-18T18:09:18.510473+00:00",
+  "observed_utc": "2026-09-18T18:26:18.917434+00:00",
   "operator_ceiling_utc": "2026-09-24T18:00:00+00:00",
   "parent_classroom": {
     "command_sha256": "774cd0b9b95d3cc7867c668c43e7ef096cb45ac5fc0445bff2e31e353cd3e614",

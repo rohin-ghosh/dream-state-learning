@@ -1,6 +1,10 @@
 # Node3 kept-life recovery — 2026-09-18
 
-## Actual recovery cut, 17:15 UTC
+This file preserves earlier diagnosis and recovery cuts. Current actual
+identities, model parents, policy adoption and authorized deadline renewals are
+in `STATUS_LATEST.md` and `DEADLINES.json`; the short horizons below are historical.
+
+## Historical recovery cut, 17:15 UTC
 
 - Observation GPU0: LOADED3111 at17:08:31UTC, native1941202/startticks45731595,
   REQUEST3114, ACT3125, SLEEP_RECIPE3140. Actual legacy recipe has no R227 key;

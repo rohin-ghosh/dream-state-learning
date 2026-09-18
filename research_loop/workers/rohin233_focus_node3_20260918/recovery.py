@@ -214,7 +214,8 @@ def current_control(arm):
     selected = Path(active['control'])
     if selected.parent == arm and selected.name in (default.name, default.name + '_admission_retry1',
             default.name + '_policy', default.name + '_policy_lease_ceiling',
-            default.name + '_boundary_lease_ceiling'):
+            default.name + '_boundary_lease_ceiling',
+            default.name + '_boundary_lease_ceiling_admission_retry1'):
         return selected
     return default
 
@@ -312,11 +313,20 @@ def retry_policy(root, name, python):
     adopt_policy(root, name, python)
 
 
+def admission_retry_paths(arm):
+    old = current_control(arm)
+    require(old.name in ('control_' + PHASE, 'control_' + PHASE + '_boundary_lease_ceiling'),
+        'single_admission_retry_only')
+    source = Path(read(old / 'PLAN.json')['source_root'])
+    require(source == arm / old.name.replace('control_', 'source_', 1),
+        'admission_retry_same_owned_source')
+    return old, source
+
+
 def retry_admission(root, name, python):
     inactive(root, name)
     arm = root / name
-    old = arm / ('control_' + PHASE)
-    source = arm / ('source_' + PHASE)
+    old, source = admission_retry_paths(arm)
     require(read(old / 'OUTER_FAILED.json')['error'] == 'fresh_privileged_admission'
         and not (old / 'LAUNCH.json').exists() and not (old / 'NATIVE.log').exists(),
         'only_proven_pre_native_admission_rejection')

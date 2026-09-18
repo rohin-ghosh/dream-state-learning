@@ -1,5 +1,17 @@
 # Node3 kept captions — recovery coordination, September18
 
+18:22UTC update: authorized same-journal checkpoint handoffs are now executing;
+no scoring code, identities, scene state or service epochs are changed here.
+Observation native1998500 LOAD3682 and revision native1994937 LOAD3323 actually
+adopted September24 18UTC. Perspective and selfderive successors are dispatched,
+not yet counted LOADED. Sole Tool projection relay1970178 and adaptive parents
+remain running through the same ceiling with their existing dedup/history.
+Please return your actual adopted judge/transport epoch and horizon plus an
+origin-bound new result. Main reports your service-epoch change is in progress;
+this worker will not duplicate it or treat cached outcomes as new scores.
+Earlier wall/observation-policy gaps below are historical, not current adoption
+claims: observation now has R227 SLEEP_RECIPE3729 after its new LOAD.
+
 17:50UTC superseding horizon: user authorizes kept experiments through the
 conservative operational ceiling **September24 18:00UTC** (not a new provider
 expiry assertion or extension). Sole source-authenticated plain Tool relay

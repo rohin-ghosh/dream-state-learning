@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 import subprocess
 
-from recovery import PHASE, read, utc
+from recovery import PHASE, current_control, read, utc
 from recovery_proof import project as native_projection
 from retirement import identity, public_identity, sha
 
@@ -37,6 +37,13 @@ def service(receipt, horizon_flag):
         return dict(status='EXITED', pid=expected['pid'])
 
 
+def wall_adopted(row):
+    ceiling = '2026-09-24T18:00:00+00:00'
+    return bool(row['status'] == 'LOADED_ALIVE' and row['actual_native'] and row['LOADED']
+        and row.get('WALL_EXTENDED', {}).get('new_deadline_utc') == ceiling
+        and row.get('resident_deadline_utc') == ceiling)
+
+
 def project(root):
     native = native_projection(root)
     boot = int(next(line.split()[1] for line in Path('/proc/stat').read_text().splitlines() if line.startswith('btime ')))
@@ -46,7 +53,8 @@ def project(root):
         item = dict(life=row['life'], gpu=row['gpu'], status=row['status'],
             configured_deadline_utc=row['configured_deadline_utc'],
             resident_deadline_utc=row['resident_deadline_utc'], WALL_EXTENDED=row.get('WALL_EXTENDED'),
-            LOADED=row['LOADED'], actual_native=row['actual_native'])
+            LOADED=row['LOADED'], actual_native=row['actual_native'],
+            native_wall_actually_adopted=wall_adopted(row))
         if row['actual_native']:
             timeout = identity(row['actual_native']['ppid'])
             duration = timeout_seconds(timeout['args'])
@@ -67,8 +75,7 @@ def project(root):
             item['boundary_handoff'] = dict(files={filename:sha(control / filename) for filename in
                 ('PREPARED.json', 'WAITING_NEXT_COMPLETE.json', 'HANDOFF_SIGNAL.json', 'OLD_EXIT_OBSERVED.json',
                  'RECOVERY.json', 'RECONCILED.json', 'DISPATCHED.json') if (control / filename).exists()},
-                actually_adopted=bool(row.get('WALL_EXTENDED') and row['LOADED'] and row['actual_native']
-                    and row['configured_deadline_utc'].startswith('2026-09-24T18:00:00')))
+                actually_adopted=wall_adopted(row))
             if (control / 'OLD_EXIT_OBSERVED.json').exists():
                 exited = read(control / 'OLD_EXIT_OBSERVED.json')
                 item['boundary_handoff']['old_exit_utc'] = exited['observed_utc']
@@ -79,6 +86,16 @@ def project(root):
                 item['boundary_handoff'].update(lost_tail_updates=recovery['lost_tail_updates'],
                     preserved_manifest_sha256=recovery['preservation_manifest_sha256'],
                     checkpoint_sha256=recovery['checkpoint_sha256'], complete_cycle=recovery['complete_cycle'])
+        active = current_control(root / row['life'])
+        if (active / 'PREVIOUS_REJECTED_ATTEMPT.json').exists():
+            previous = read(active / 'PREVIOUS_REJECTED_ATTEMPT.json')
+            admission = read(active / 'FRESH_ADMISSION.json')
+            item['separate_admission_retry'] = dict(
+                failed_attempt_sha256=previous['failed_sha256'],
+                failed_native_was_not_started=previous['native_was_not_started'],
+                fresh_admission_sha256=sha(active / 'FRESH_ADMISSION.json'),
+                scanner_euid=admission['scanner_euid'], clear=admission['clear'],
+                original_rejection_details_unknown=True)
         rows.append(item)
     services = root / 'r233_recovery_services_v4'
     debate = dict(status='NO_ACTUAL_ATTACHMENT')
@@ -95,6 +112,7 @@ def project(root):
                 end_utc=utc(min(binding['deadline'] for binding in started['bindings'].values()) - 60),
                 attachment_sha256=sha(attachment), source_sha256=started['source_sha256'])
     return dict(observed_utc=utc(), node='node3', lives=rows,
+        actual_live_native_wall_adoptions=sum(item['native_wall_actually_adopted'] for item in rows),
         parent_classroom=service(services / 'classroom.json', '--service-end-unix'),
         fifth_caption_parent=service(services / 'caption_gpu7.json', '--service-end-unix'),
         Tool_feedback_projection=service(root / 'r233_recovery_services_v3/feedback.json', '--end-unix'),

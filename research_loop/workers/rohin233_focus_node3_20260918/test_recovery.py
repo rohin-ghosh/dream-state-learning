@@ -23,6 +23,28 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(len(recovery_serial.ORDER), 8)
         self.assertEqual(recovery_serial.ORDER[0], 'r213_math_c')
 
+    def test_boundary_admission_retry_selected_without_alias(self):
+        arm = Path('/owned/r213_r226_caption_perspective_fork')
+        selected = arm / ('control_' + recovery.PHASE + '_boundary_lease_ceiling_admission_retry1')
+        with patch('recovery.read', return_value=dict(control=str(selected))):
+            self.assertEqual(recovery.current_control(arm), selected)
+
+    def test_admission_retry_bound_to_current_source_once_only(self):
+        arm = Path('/owned/r213_r226_caption_perspective_fork')
+        for suffix in ('', '_boundary_lease_ceiling'):
+            control = arm / ('control_' + recovery.PHASE + suffix)
+            source = arm / ('source_' + recovery.PHASE + suffix)
+            with patch('recovery.current_control', return_value=control), \
+                    patch('recovery.read', return_value=dict(source_root=str(source))):
+                self.assertEqual(recovery.admission_retry_paths(arm), (control, source))
+            with patch('recovery.current_control', return_value=control), \
+                    patch('recovery.read', return_value=dict(source_root='/other/life/source')):
+                with self.assertRaisesRegex(ValueError, 'same_owned_source'):
+                    recovery.admission_retry_paths(arm)
+        with patch('recovery.current_control', return_value=control.with_name(control.name + '_admission_retry1')):
+            with self.assertRaisesRegex(ValueError, 'single_admission_retry_only'):
+                recovery.admission_retry_paths(arm)
+
     def test_serial_requires_policy_at_both_levels(self):
         policy = 'R227_ALL_AUTHENTIC_CHILD_ROWS_V1'
         with patch('pathlib.Path.read_bytes', side_effect=[
