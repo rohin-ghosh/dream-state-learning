@@ -1,5 +1,27 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 17:44UTC first renewed authentic P7 forward published
+
+`FIRST_RENEWED_FORWARD.json`: exact committed P7 ACT6583/commit6584/stage6585
+published17:43:51.439980UTC into Astra7 INBOX58109827d255469bb75075801ef74ced,
+actorparent/speakerP7, source SHA verified. Literal monitoring-threshold80/95
+proposal, not executed improvement or supplied configurations. No current
+child render/return claimed at this cut. Sole coordinator2996246 and read-only
+reader3018354 maintain actual separate publication/render counts. Native
+1100592 remains unchanged; no recommendation action.
+
+## 17:43UTC actual CPU overseer renewal; native bound unresolved
+
+`CPU_RENEWAL_1743.json`: current overseer2996247 actually loaded September25
+18UTC and is polling. Exact old CPU2805259/start185812216 stopped17:43:07.451325
+via pidfd only after fresh reply-null poll, no child subprocess, no pending
+model/publication, sleeping between polls. Existing successor took both locks
+and same ledger. This supersedes the17:38 waiting-only status; no native signal
+or pause. Native1100592 remains old18UTC, boundary exception is Main's pending
+question. Bridge2996246/reader3018354 alive and caught up6573; actual receiver
+762967/LOADED3128 bound, no new forwarded ACT or roundtrip yet. No curriculum
+change or competing parent message added during this CPU handoff.
+
 ## 17:33UTC urgent actual deadlines; recommendation posted in notebook
 
 17:38 table is `TABLE_1738.md`. Recommendation notebook is safely pushed
