@@ -24,6 +24,10 @@ analyst adjudications, not an autonomous general semantic judge. New candidates
 remain visibly pending direct review. No extra model/agent is invoked.
 
 `public/STATUS.md` is the bounded best-partial table, not a lifetime leaderboard.
+`public/MAINTENANCE_CONTEXT.json` records owner-reported treatment changes,
+recall contamination and recovery exclusions separately from native proof.
+Caught-up journal coverage does not mean a life is currently running. A parent
+process replacement is not proof its new treatment rendered to the child.
 `public/CURRENT.json` includes exact feedback event/INBOX/REQUEST IDs, child
 RESPONSE/COMMITTED/STAGE IDs and hashes, observed subsequent outputs, reminder
 counts or explicit unknowns, parent-solution exposure, and cross-task/sleep
