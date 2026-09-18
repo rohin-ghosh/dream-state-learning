@@ -1,5 +1,25 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 17:21UTC ordinary THINK/ACT follow-up — explicit proposal, no retirement
+
+The next ordinary REQUEST6412 (17:20:07.977708UTC) and ACT REQUEST6419
+(17:20:30.197469UTC) both contain the reading correction at message28 and
+varied historical-child-object prompt at message31; both are masked.
+THINK RESPONSE6413 at17:20:19.521150UTC and ACT RESPONSE6420 at17:20:40.940813UTC
+continue Chinese hypothetical monitoring-parameter experiments, without the
+requested leaf answer or English two-sentence artifact. ACT commits6421 and
+stage6422 are source-bound. `ORDINARY_FOLLOWUP.json` retains exact own outputs,
+hashes, message positions and stage links, not an inferred time-only response.
+
+**Recommendation:** preserved retirement of P7 is preferable to open-ended
+English reminders for the current operational purpose. This is a proposal
+based on this bounded failed artifact-adoption trial, not a claim of
+irreversible damage or a whole-life evaluation. **No retirement authorized
+or performed here:** native and varied overseer remain running; no row
+exclusions or P3 actions. Jason's separate Astra7 recovery is not cancelled.
+If Rohin prefers a final genuine child-exchange trial, it requires Jason's
+current authenticated receiver first; old child replies are not substituted.
+
 ## 17:13UTC acceptance receipts obtained; behavior not improved yet
 
 Correction55 published17:09:39.364994UTC, exact INBOX
