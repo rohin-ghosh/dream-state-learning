@@ -1,0 +1,117 @@
+{
+  "schema": "R227_SANITIZED_OPERATOR_PROVENANCE_V1",
+  "observed_utc": "2026-09-18T08:46:02.203957+00:00",
+  "source_head_index": 8226,
+  "source_head_file_sha256": "c216e508d6c3e044e2bf5123c9b4c38c212f035a229930baecfe64b864d9752c",
+  "current_native": {
+    "pid": 3624513,
+    "latest_LOADED": 7620,
+    "loaded_utc": "2026-09-18T07:28:47.072366+00:00",
+    "native_source_sha256": "39a4391e6c414e33c38e6569c2b334cba1034a880e88236968f066962e205401",
+    "driver_source_sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e",
+    "learn_row_policy_live": false,
+    "plan_policy_absence_verified_utc": "2026-09-18T08:40:39Z"
+  },
+  "latest_complete": {
+    "index": 8174,
+    "sha256": "f0aeb2ec651395c5a7709967d424e1c8da2a154d5443455afa086ef7a01348cf",
+    "cycle": 78,
+    "optimizer_steps": 6044
+  },
+  "actual_current_recipe": {
+    "index": 8218,
+    "sha256": "4a54cd4da591f8e003bdc8a97dc38c27248afbe401b2f75450843db84e47e390",
+    "new_candidates": 4,
+    "presentations_per_retained_row": 16,
+    "selected_old": 0,
+    "anchor_lambda": 0.25,
+    "active_native_filters": {
+      "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+      "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1"
+    },
+    "active_driver_filters": {
+      "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+      "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+      "content_target_filter": "R213_CONTENT_BEARING_TARGETS_V1",
+      "question_target_filter": "R220_EXPLICIT_FABLE_QUESTIONS_V1",
+      "fabricated_speaker_filter": "R220_FABRICATED_HUMAN_TURNS_V1"
+    }
+  },
+  "actual_eligibility": {
+    "index": 8219,
+    "sha256": "7f586435cb71fc78a40649ae2ec1b9013e4cdef55d4cd985eb9c73b2b78139d2",
+    "retained_new": 2,
+    "excluded_rows": 2,
+    "raw_modified": false,
+    "excluded_reasons": [
+      "meta_only_target",
+      "meta_only_target"
+    ]
+  },
+  "prospective_R227": {
+    "commit": "bb1e9a9033979d50ed97072675515f7290de1237",
+    "learn_row_policy": "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+    "upstream_tests_reported": 191,
+    "upstream_subtests_reported": 372,
+    "reported_by": "Main",
+    "independently_rerun_by_this_operator": false,
+    "deployed_on_original_C2": false,
+    "known_baseline_note": "Main separately reports old plain-context fixture failure reproduced on baseline."
+  },
+  "operational_actions": {
+    "native_signals": 0,
+    "native_restart": false,
+    "new_native_dispatch": false,
+    "boundary_watcher_armed": false,
+    "human_inbox_writes": 0,
+    "rollback": false,
+    "V2_cancelled": true
+  },
+  "adoption_constraint": "No loaded policy-reload hook; same-life writer lock precedes model load. No supported gapless switch; no restart authorization received.",
+  "prior_measured_dispatch_to_LOAD_seconds": 376.565,
+  "saved_RNG_caveat": "Saved checkpoint RNG preservation does not establish uninterrupted resident post-console sampling RNG.",
+  "excluded_private_evidence": [
+    {
+      "location": "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/R227_OBSERVATION_20260918T084558Z_PRIVATE.json",
+      "sha256": "bf78bf08f55affadeb8176295b305b1077f344d72536c96f05449de9acf1a333"
+    },
+    {
+      "location": "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/R227_INTENTION_ACT_PRIVATE.json",
+      "sha256": "c6d45751081e6fc38297080b640d27dc615b17cc2dd0a8a314810cd26834989e"
+    },
+    {
+      "location": "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/R225_RECEIVER_PREPARED_PRIVATE.json",
+      "sha256": "ca51e40bc424e3a974be2cfb1ae028ed6262ac4fe724598d3acb0b47bb03893d"
+    },
+    {
+      "location": "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/R225_RECEIVER_CPU_PRIVATE.json",
+      "sha256": "65a7d65ccfd7113185d921ad54b4ea382b9c8cc7d06a6e643e095cfaa8ba3324"
+    },
+    {
+      "location": "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/LIVE_CONVERSATION_PARENT13_REATTACH.json",
+      "sha256": "7bb7ed003940b7e5b2ebea342d8cbe6d157484cfe5408357d351fd36c69fe732"
+    },
+    {
+      "location": "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/R227_PARENT_TWO_OBJECTS_PRIVATE.md",
+      "sha256": "2997eb96e5db8ae382c3b26eb1b5c7352bddecfe4eb2d5f244c882d8c944dad2"
+    },
+    {
+      "location": "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/R227_CANCEL_V2.json",
+      "sha256": "cec48aa47df756b28e2b264771a1b57b5d4a91a95cc22e46ebc64a9dbab3cdfd"
+    }
+  ],
+  "excluded_private_directories": [
+    "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/LIVE_CONVERSATION_PARENT13/run",
+    "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/R225_DELTA_b4fa71f38614"
+  ],
+  "excluded_material": [
+    "Raw own rows and human console sources",
+    "Provider request/response files and credentials",
+    "Receiving plans/guards and machine identifiers",
+    "Checkpoint and full journal payloads"
+  ],
+  "publication_includes_raw_rows": false,
+  "publication_includes_raw_human_messages": false,
+  "publication_includes_credentials": false,
+  "publication_includes_hostnames_or_IPs": false
+}
