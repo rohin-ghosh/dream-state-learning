@@ -89,6 +89,8 @@ def offline_type(plan, physical_stream):
 
 def locations(name):
     root = Path(TARGETS[name][0])
+    if name in ('C0', 'ASTRA7') and (root / 'control_r233_lease_continuation/DISPATCHED.json').exists():
+        return root, root / 'source_r233_lease_continuation', root / 'control_r233_lease_continuation', root / 'r233_preserved'
     return root, root / 'source_r233_recovery', root / 'control_r233_recovery', root / 'r233_preserved'
 
 

@@ -1,15 +1,36 @@
 """Small CPU seam tests; no process control or provider calls."""
 
 import unittest
+from copy import deepcopy
+from pathlib import Path
 from unittest.mock import patch
 
-from c0_parent import parent_identity, priority_chooser, replacements
+from c0_parent import parent_identity, priority_chooser, replacements, verify_pending
 from caption_endpoint import scoped_inspector
 from caption_parent_renew import renewed_source
 from observe import current_loaded, native_command
 
 
 class ParentRecoveryTests(unittest.TestCase):
+    def test_original_queued_or_inboxed_parent_is_verified_without_mutation(self):
+        pending = dict(publication=dict(id='actual', sha256='bound'), text='fixture', inbox=None)
+        packet = dict(id='actual', actor='parent', speaker='Astra', text='fixture', source_receipt=None)
+        record = dict(kind='INBOX', document=dict(message=dict(id='actual'), source_sha256='bound'))
+        with patch('c0_parent.sha', return_value='bound'), patch('c0_parent.read', return_value=packet), \
+                patch('c0_parent.checked', return_value=record) as reader:
+            before = deepcopy(pending)
+            verify_pending(Path('/owned/C0'), pending)
+            self.assertEqual(pending, before)
+            reader.assert_not_called()
+            pending['inbox'] = dict(index=321)
+            before = deepcopy(pending)
+            verify_pending(Path('/owned/C0'), pending)
+            self.assertEqual(pending, before)
+            reader.assert_called_once()
+            packet['speaker'] = 'P7'
+            with self.assertRaises(ValueError):
+                verify_pending(Path('/owned/C0'), pending)
+
     def test_caption_parent_uses_actual_guard_horizon_not_short_epoch(self):
         source = "deadline = min(epoch['baseline']['identity']['hard_end_unix'] - 60, time.time() + 10800)"
         self.assertEqual(renewed_source(source), "deadline = epoch['baseline']['identity']['hard_end_unix'] - 60")

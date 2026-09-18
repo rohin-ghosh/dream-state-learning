@@ -22,6 +22,11 @@ def parent_identity(observed, root):
 
 
 def replacements(source, floor):
+    pending_seam = "require(state['pending'].get('inbox'), 'recover_actual_inbox_before_replay')"
+    if pending_seam in source:
+        require(source.count(pending_seam) == 1, 'one_existing_pending_guard')
+        source = source.replace(pending_seam,
+            "require(state['pending'].get('publication'), 'preserve_actual_queued_publication_no_republish')")
     changes = {
         "require((legacy_directory/'EXIT.json').is_file() and (legacy_directory/control_name).is_file(), 'supported_old_reading_handoff_complete')":
             "require((legacy_directory/'EXIT.json').is_file(), 'verified_naturally_exited_previous_epoch')",
@@ -43,6 +48,19 @@ def priority_chooser(original, topic):
             return topic
         return original(state)
     return choose
+
+
+def verify_pending(root, pending):
+    publication = pending['publication']
+    packet_path = root / 'raw/stream/inbox' / (publication['id'] + '.json')
+    require(not packet_path.is_symlink() and sha(packet_path) == publication['sha256'], 'original_parent_packet_preserved')
+    packet = read(packet_path)
+    require(packet['id'] == publication['id'] and packet['actor'] == 'parent' and packet['speaker'] == 'Astra'
+        and packet['text'] == pending['text'] and packet['source_receipt'] is None, 'authentic_existing_C0_parent')
+    if pending.get('inbox'):
+        record = checked(root / 'raw/stream/records' / f'{pending["inbox"]["index"]:020d}.json')
+        require(record['kind'] == 'INBOX' and record['document']['message']['id'] == publication['id']
+            and record['document']['source_sha256'] == publication['sha256'], 'actual_unresolved_parent_inbox')
 
 
 def serve(priority_topic=None):
@@ -70,11 +88,7 @@ def serve(priority_topic=None):
     state['record_cursor'] = observed['loaded']['index'] + 1
     if state['pending']:
         pending = state['pending']
-        record = checked(root / 'raw/stream/records/00000000000000002858.json')
-        require(record['kind'] == 'INBOX' and record['document']['message']['id'] == pending['publication']['id']
-            and record['document']['source_sha256'] == pending['publication']['sha256'], 'actual_unresolved_parent_inbox')
-        pending['inbox'] = dict(index=record['index'], sha256=record['sha256'], id=pending['publication']['id'],
-            publication_sha256=pending['publication']['sha256'])
+        verify_pending(root, pending)
         pending['render'] = None
         pending.pop('first_content', None)
         state['inherited_pending'] = True
