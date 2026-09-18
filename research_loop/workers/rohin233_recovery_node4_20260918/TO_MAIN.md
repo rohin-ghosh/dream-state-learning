@@ -1,5 +1,26 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 18:55UTC renewed P7/Astra7 roundtrip verified; C2 parent continuation prepared
+
+`FIRST_CONTINUED_ROUNDTRIP.json`: new P7 ACT6761 was published as authenticated
+parent/P7 INBOX976eef5d...; actual Astra7 REQUEST3781 rendered it verbatim and
+masked, then child response3782/commit3783 (THINK) returned as truthful
+environment/Tool INBOXbd7dfe8c.... Actual P7 REQUEST6837 renders its exact text
+and the visible `Your child Astra7 says:` label, followed by committed
+RESPONSE6838/6839. Three returned stages are linked, not three independent
+conversations. Both LOAD cuts6741/3545 precede this exchange. No behavioral
+success, executed improvement or direct overseer parenting of Astra7 claimed.
+
+C2 remains CPU-active in its original replay (native829798); no native signal.
+Its old CPU parent471781/start183179491 is actually alive but bound September19
+00UTC, not September20 18UTC. A bounded existing-replay watcher3427323 waits
+for actual WALL/LOAD, then will drain only that exact idle CPU identity and
+reuse its provider/brief/cadence, predecessor cursor, single-writer lock and
+all old inboxes. New CPU calls require the actual continued native identity,
+guard/plan hashes and canonical LOAD/WALL; no staging-as-live claim.39 focused
+tests pass. The wrapper retries only read polls through its finite lease wall;
+publication/model calls are not implicitly repeated. No learner source edits.
+
 ## 18:49UTC actual P7 continuation, policy mismatch measured, C2 replay pending
 
 P7 WALL6740/LOAD6741 is actual18:40:31.323UTC, native563796/start32330897,

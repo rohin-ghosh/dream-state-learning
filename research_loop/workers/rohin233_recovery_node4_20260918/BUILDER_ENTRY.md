@@ -80,3 +80,15 @@ and P7's language-specific config seam. Receiving merge and end-to-end tests
 remain pending; no new policy is loaded and no current replay is interrupted.
 Existing sole parent/bridge rebound to actual P7 LOAD; no additional native
 signals, P3 changes, hidden retirement, historical replay or shared-file edits.
+
+# September18 18:55UTC C2 CPU-only deadline continuation prepared
+
+Latest explicit user requests actual C2 ready and long-bound parent delivery.
+39 focused tests pass, covering exact continued C2 PID/start/source/LOAD/WALL,
+expired/reused/mismatched identity rejection, parent behavior preservation and
+no predecessor cursor rollback. The existing sole parent471781 is alive with
+old September19 00UTC deadline. Bounded waiter3427323 only reads the unchanged
+native replay; after actual LOAD it may exact-pidfd drain the idle CPU parent,
+reuse its provider/source brief/lock/ledger and bind CPU to September20 18UTC.
+No native signals, no new policy adoption, no historical replay or P3 action.
+Actual publish/render/ACT evidence remains required before claiming delivery.
