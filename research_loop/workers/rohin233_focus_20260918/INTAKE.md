@@ -49,3 +49,15 @@ explicit; no row exclusions are introduced. Three-cycle unguided repetition is
 an alert requiring a parent/object/register change, not permission to falsify
 outcomes or modify training rows. Parent exposure and frozen controls accompany
 all correction/recall/age-probe interpretations.
+
+## P3 validator repair
+
+The first two xhigh parent turns failed the English script validator solely
+because their arithmetic used the multiplication symbol. The scoped V2 repair
+allows Unicode mathematical symbols in parent prose, retaining exact evidence,
+non-Latin-script checks, message bytes, word/byte bounds, model and effort,
+source bindings and publication reconciliation. Child training is untouched.
+Twelve CPU regressions pass; both preserved failed responses pass full decision
+validation and bounds in offline replay. They are not retroactively published.
+Only the exact drained P3 CPU publisher is replaced; no learner receives a
+signal. Original manifests, failures and handoff receipts remain immutable.

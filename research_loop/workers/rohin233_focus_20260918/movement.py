@@ -96,8 +96,9 @@ def summarize(evidence, label):
         coverage_start=evidence['coverage_start'], through=evidence['through'], caught_up=evidence['caught_up'],
         acts=acts, sleeps=sleeps, act_class_counts=dict(Counter(row['classification']['classification'] for row in acts)),
         latest_act=acts[-1] if acts else None,
-        current_alert=acts[-1]['parent_adjustment_required'] if acts else None,
-        three_cycle_unguided_alert=acts[-1]['alert_three_cycles_unguided'] if acts else None,
+        last_observed_alert=acts[-1]['parent_adjustment_required'] if acts else None,
+        current_alert=acts[-1]['parent_adjustment_required'] if acts and evidence['caught_up'] else None,
+        three_cycle_unguided_alert=acts[-1]['alert_three_cycles_unguided'] if acts and evidence['caught_up'] else None,
         learning_changes=[], parent_writes=0, learner_signals=0,
         interpretation='Heuristic movement surfaces, not correctness, retention, emotion or causal learning.')
 
@@ -157,19 +158,20 @@ def run_once():
     save(HERE / 'public/cuts' / (stamp + '.json'), report)
     lines = ['# R233 movement audit', '', report['observed_utc'], '',
         'Heuristics trigger parent review, never row exclusion. Missing adjudications remain unknown.', '',
-        '| Life | Latest ACT | Cycle | Observed surface | Repeating cycles | New guidance | Needs adjustment |',
-        '| --- | ---: | ---: | --- | ---: | ---: | --- |']
+        '| Life | Last observed ACT | Cycle | Caught up? | Observed surface | Repeating cycles | New guidance | Current heuristic alert |',
+        '| --- | ---: | ---: | --- | --- | ---: | ---: | --- |']
     for row in rows:
         act = row.get('latest_act')
         if act:
-            lines.append(f'| {row["label"]} | {act["response"]["index"]} | {act["cycle"]} | '
+            lines.append(f'| {row["label"]} | {act["response"]["index"]} | {act["cycle"]} | {row["caught_up"]} | '
                 f'{act["classification"]["classification"]} | {act["repeat_run_cycles"]} | '
-                f'{act["new_guidance_count"]} | {act["parent_adjustment_required"]} |')
+                f'{act["new_guidance_count"]} | {row["current_alert"]} |')
         else:
-            lines.append(f'| {row["label"]} | — | — | {row.get("status", "NO_ACT_IN_WINDOW")} | — | — | unknown |')
+            lines.append(f'| {row["label"]} | — | — | unknown | {row.get("status", "NO_ACT_IN_WINDOW")} | — | — | unknown |')
     lines.extend(['', 'Correctness, recall and correction level require source-bound task/probe reviews; '
         'this collector does not synthesize successful results. Parent-free age-probe completion comes from its queue.',
-        'No alert is itself evidence that a parent changed or that an intervention worked.'])
+        'No alert is itself evidence that a parent changed or that an intervention worked. '
+        'No heuristic alert is not a good-performance judgment. Uncaught-up windows have no current verdict.'])
     (HERE / 'public/MOVEMENT_LATEST.md').write_text('\n'.join(lines) + '\n')
     return report
 

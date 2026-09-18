@@ -39598,3 +39598,25 @@ the fifth journal is validated once by the existing StreamJournal constructor
 plus unchanged-cache verification (avoids redundant second full replay).
 
 [Builder/Leibniz] 2026-09-18T11:59:58.049677+00:00 R233 continuation LIVE/rendered: frozen-base R233_PARENT_v1 exact first guidance-bearing THINK request3756bc63... completed11:51:03.269701UTC;4 envelopes/7 completed generations,457 delivered guidance-text tokens/804 rendered span tokens (wrapper overhead excluded); original player162813/scorer162806 unchanged, no score replay. Pair read-only canonical proof: learner10/11 consumed parent messages rendered, latestREQUEST741 at11:53:42.640521UTC; frozen20/21, latestREQUEST638 at11:55:06.888866UTC; one pending each, actual guidance unequal, Cicero controls untouched. Kept queue1172377:504 COMPLETE records/15 native lives;14 caught up, C2 frontier6143/head9442 explicit backlog; external fresh queue has coherent1–9, others pending capture (not mislabeled evaluated). Fresh sleep1/optimizer48 parent-free probe trulyLOAD11:55:10.491394UTC on6, judgeLOAD11:54:25.125282UTC on7;4384/6144tokens4/6cells at11:58:40UTC, no parent/history/updates.21 testsPASS; reports: research_loop/workers/rohin233_kept_age_probe_20260918/{R233_STATUS.json,R233_STATUS.md,PAIR_PARENT_LATEST.json,PARENT_RENDER_LATEST.json}. Main P3/aggregate untouched.
+# [Builder] 2026-09-18 12:01Z — R233 actual P3 validation failure repaired; movement coverage explicit
+
+The first two real xhigh P3 parent outputs failed the inherited English script
+validator for the multiplication symbol. They were not delivered. A P3-only
+non-material validator repair allows mathematical symbols while preserving
+foreign-script checks, exact message bytes, all evidence/word/byte bounds and
+the original ledger. Twelve focused CPU regressions pass; both failed outputs
+pass offline full-decision replay without retroactive publication. Exact CPU
+handoff1122991→1235858 at11:59:06UTC took at most1.007335seconds; native P3 was
+not signalled or restarted. Actual new rendering is still pending in this cut.
+
+Four verified forward-only P3 cursor refreshes retain original marker hashes
+and reach the same journal frontier3115 at12:00:26UTC. No shared endpoint code
+change. Movement observer V2 makes current alerts unknown while uncaught-up;
+the11:56:55 cut is caught up for all sixteen native roots, with real alerts
+forwarded to parent owners. Correctness, recall and correction levels remain
+unknown until semantic/task receipts supply them. No exclusion or learning
+claim is inferred from these heuristics. Read-only monitoring ends14:09:07UTC.
+
+Evidence: `research_loop/workers/rohin233_focus_20260918/` manifests, CPU tests,
+handoff/cursor receipts and public movement cuts. No raw transcripts, private
+panels, checkpoints, endpoints or credentials are included in this publication.

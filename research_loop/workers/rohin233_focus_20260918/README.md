@@ -21,6 +21,23 @@ configuration's low-effort field remains historical provenance; the new pinned
 wrapper explicitly supplies xhigh to the actual provider and records the epoch.
 The next real provider dispatch and child REQUEST must verify actual use/rendering.
 
+The first actual xhigh dispatch at11:52:19UTC and the following turn failed the
+old English script validator solely because their English arithmetic contained
+the multiplication symbol. Neither was delivered. Both failures remain intact.
+The non-material V2 repair permits mathematical symbols in parent prose, not
+foreign-language prose. It retains the generated message bytes and all other
+source, evidence and publication checks. Twelve CPU tests and offline complete
+decision replay of both failed turns pass. `P3_VALIDATION_CPU.json` binds them.
+At11:59:06UTC the drained CPU publisher was replaced with1235858; the CPU-only
+handoff upper bound is1.007335seconds. No learner signal/restart occurred.
+`P3_VALIDATION_LIVE.json` initially says pending: startup is not delivery.
+
+The parent initially replayed a stale2244 cursor. Four source/chain-verified,
+forward-only cursor refreshes preserve every old bootstrap marker and advance
+the same P3 journal to3115 at12:00:26UTC. No shared endpoint code was changed.
+Receipts are `P3_CURSOR_REFRESH*.json`; `advance_p3_cursor.py` refuses another
+root, journal or backward frontier. This addresses observation lag, not learning.
+
 The brief makes actual funny captions, varied ideas, real returned judgments,
 distinct accepted ideas/hour and generated-token movement central. It changes
 the intervention when outputs converge, keeps brief diverse enrichment, and
@@ -50,7 +67,13 @@ horizon, not a learner stop or lease extension. It has no remote-write,
 parent-publication or learner-control capability. Read errors are not zero
 activity. Its bounded starting windows are not entire life histories.
 
-Three focused P3 policy/identity tests and three movement tests pass. Existing
+V2 process1161041 replaced that exact CPU observer without any learner signal.
+It retains last-observed alerts but makes current verdicts unknown until the
+reader is caught up. Read lag is not reported as current child failure. Current
+alerts were sent to the corresponding parent owners for actual interventions;
+the observer itself does not silently change the children or their parents.
+
+Twelve focused parent, cursor and movement tests pass. Existing
 predecessor runtime source/config pins validate before adoption. Private raw
 projections stay ignored locally; only source-bound, transcript-free summaries,
 manifests and explicit safe files are published. No large checkpoints are added.

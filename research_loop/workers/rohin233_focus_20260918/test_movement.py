@@ -46,6 +46,15 @@ class MovementTests(unittest.TestCase):
         self.assertGreater(result['latest_act']['cjk_fullwidth_character_count'], 0)
         self.assertEqual(result['latest_act']['classification']['classification'], 'UNKNOWN')
 
+    def test_uncaught_up_window_has_no_current_verdict(self):
+        evidence, frames = fixture(['I will write a caption.']*3)
+        evidence['caught_up'] = False
+        with patch.object(movement.correction, 'frames', return_value=frames):
+            result = movement.summarize(evidence, 'test')
+        self.assertTrue(result['last_observed_alert'])
+        self.assertIsNone(result['current_alert'])
+        self.assertIsNone(result['three_cycle_unguided_alert'])
+
 
 if __name__ == '__main__':
     unittest.main()
