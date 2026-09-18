@@ -36,6 +36,7 @@ from organism_v6.orch_r125_continual_stream import (
     ContinualStream, PRESLEEP_INVITATIONS, digest, experiment_binding, require,
     validate_experiment, verify_experiment_resume,
 )
+from organism_v6.orch_r227_learning_policy import all_child_rows, recipe_fields
 
 
 SCHEMA = 'R125_NATIVE_CONTINUITY_V1'
@@ -167,6 +168,10 @@ def apply_plasticity(optimizer, plan):
 
 def validate_plan(plan):
     require(plan['schema'] == SCHEMA and plan['base_sha256'] == BASE_SHA256, 'frozen_native_contract')
+    all_child_rows(plan)
+    if plan.get('think_act_learn') is not None:
+        require(plan.get('learn_row_policy') == plan['think_act_learn'].get('learn_row_policy'),
+            'same_learn_row_policy_in_driver_and_trainer')
     sleep_loss_implementation(plan)
     if 'code_target_filter' in plan:
         from organism_v6.orch_r194_code_target_filter import validate_policy
@@ -497,14 +502,15 @@ class NativeChild:
 
     def sleep(self, new_rows, old_rows, anchors, record):
         loss_implementation = sleep_loss_implementation(self.plan)
+        retain_all = all_child_rows(self.plan)
         code_target_policy = None
-        if 'code_target_filter' in self.plan:
+        if not retain_all and 'code_target_filter' in self.plan:
             from organism_v6.orch_r194_code_target_filter import (
                 CODE_FILTER_SUBREASON, filter_sleep_targets, validate_policy, zero_update_authorization,
             )
             code_target_policy = validate_policy(self.plan)
         review_policy = None
-        if 'learn_review_filter' in self.plan:
+        if not retain_all and 'learn_review_filter' in self.plan:
             from organism_v6.orch_r194_code_target_filter import (
                 REVIEW_FILTER_SUBREASON, filter_learn_review_targets,
                 review_zero_update_authorization, validate_review_policy,
@@ -517,6 +523,7 @@ class NativeChild:
             new_rows=len(new_rows), available_old_rows=available_old_rows,
             selected_old_rows=len(old_rows), anchor_lambda=0.25,
             candidate_row_filter_policies=candidate_row_filter_policies(new_rows, old_rows),
+            **recipe_fields(self.plan),
             **(dict(plasticity=self.plasticity) if self.plasticity is not None else {}),
             **(dict(sleep_loss_impl=loss_implementation) if loss_implementation != MODEL_DEFAULT else {}),
             **(dict(code_target_filter=code_target_policy) if code_target_policy is not None else {}),
@@ -540,15 +547,15 @@ class NativeChild:
             from organism_v6.orch_r125_plain_context import eligible_rows
             presentation = dict(version=self.plan['presentation_version'],
                 system_prompt=self.plan['system_prompt'], birth_prompt=self.plan['birth_prompt'])
-            new_rows, rejected_new = eligible_rows(new_rows, presentation)
-            old_rows, rejected_old = eligible_rows(old_rows, presentation)
+            new_rows, rejected_new = eligible_rows(new_rows, presentation, exclude_scaffolding=not retain_all)
+            old_rows, rejected_old = eligible_rows(old_rows, presentation, exclude_scaffolding=not retain_all)
             exclusions.extend([dict(row, cohort='NEW') for row in rejected_new] + [
                 dict(row, cohort='REHEARSAL') for row in rejected_old])
         from gpu.orch_r144_sleep_targets import POLICY, encode_sleep_targets
         new_rows, old_rows, encoded, rejected_targets = encode_sleep_targets(
             new_rows, old_rows, self.tokenizer, self.plan['context_limit'], encode_own)
         exclusions.extend(rejected_targets)
-        code_filter_fields = {}
+        code_filter_fields = recipe_fields(self.plan)
         if code_filter_proof is not None or review_proof is not None:
             scheduled = {}
             for rows, dose in ((new_rows, self.plan['new_presentations']), (old_rows, 1)):

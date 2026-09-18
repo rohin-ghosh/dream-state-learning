@@ -12,6 +12,7 @@ import unicodedata
 
 from organism_v6.orch_r124_train_history import CompactionRequired, TrainEvent, WorkingStateSpan
 from organism_v6.orch_r125_continual_stream import digest, require
+from organism_v6.orch_r227_learning_policy import all_child_rows, effective_config
 from gpu.orch_r189_outcome_allocation import (
     SCHEMA as OUTCOME_SCHEMA, OutcomeAllocation, counts, validate_counts,
 )
@@ -64,6 +65,8 @@ STATUS_FIELD = re.compile(r'^\s*(?P<label>POSSIBILITY|EXPERIMENT|STANDING PRACTI
 
 
 def validate_config(config):
+    all_child_rows(config)
+    config = effective_config(config)
     fields = {'schema', 'trial_id', 'reflection_policy', 'think_segments', 'cpu_gate_root', 'cpu_gate_sha256'}
     optional = {'outcome_policy', 'continuity_policy', 'environment_facts', 'console_reflection', 'code_policy',
         'judgment_policy', 'learn_review_filter', 'correction_ledger', 'effort_policy',
@@ -71,7 +74,7 @@ def validate_config(config):
         'think_continuation_policy', 'console_reply_policy', 'pinned_messages_policy',
         'reading_reply_policy', 'reading_parent_speaker', 'console_preemption_policy',
         'content_target_filter', 'artifact_elicitation_policy', 'question_target_filter',
-        'fabricated_speaker_filter', 'deep_work_policy'}
+        'fabricated_speaker_filter', 'deep_work_policy', 'learn_row_policy'}
     require(type(config) is dict and fields <= set(config) <= fields | optional,
         'exact_think_act_learn_config')
     require(config['schema'] == SCHEMA and config['reflection_policy'] in ('explicit', 'brief'),
@@ -897,7 +900,10 @@ def pending_console_sources(stream, journal):
 def run_loop(child, stream, journal, anchors, plan, root, plan_path, completed_sleeps):
     from gpu.orch_r125_continual_native import finish_sleep, fresh_readout
     require(plan['rehearsal_presentations'] == 0, 'R184_new_rows_only')
-    require(plan.get('learn_review_filter') == plan['think_act_learn'].get('learn_review_filter'),
+    require(plan.get('learn_row_policy') == plan['think_act_learn'].get('learn_row_policy'),
+        'same_learn_row_policy_in_driver_and_trainer')
+    require(all_child_rows(plan) or
+        plan.get('learn_review_filter') == plan['think_act_learn'].get('learn_review_filter'),
         'same_learn_review_policy_in_driver_and_trainer')
     driver = ThinkActLearn(child, stream, journal, plan['think_act_learn'],
         new_presentations=plan['new_presentations'])

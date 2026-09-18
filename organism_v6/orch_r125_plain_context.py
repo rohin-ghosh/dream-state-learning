@@ -81,10 +81,10 @@ def replay_prefix(messages, presentation):
     return result
 
 
-def eligible_rows(rows, presentation):
+def eligible_rows(rows, presentation, *, exclude_scaffolding=True):
     accepted, excluded = [], []
     for row in rows:
-        if has_scaffolding(row['target']):
+        if exclude_scaffolding and has_scaffolding(row['target']):
             excluded.append(dict(source_sha256=row['source_sha256'], reason='journal_scaffolding_target'))
             continue
         clean = deepcopy(row)
