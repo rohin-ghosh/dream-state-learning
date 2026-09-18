@@ -39421,3 +39421,25 @@ R224 bounded backlog: C0 LOADED06:35:20.587 node2GPU4, checkpoint51/adapter82a98
 - **C2 memory test result so far: NONE.** B1–B3 arrived 10:00:27Z bundled with a story instruction; C2's 10:03:01Z/10:03:35Z responses ignored the questions ("I believe I have presented… I will assume… Ready to act: I will write down…"); the 10:04:11Z reading-detail probe returned a generic invention ("elements from traditional communications… ancient writing systems"), no detail, no source. Asked Astra (10:2xZ) to re-ask one question per delivery, Think-first, English, and to score honest / invented / none; a second ignore is logged as "none", not re-asked a third time.
 - **Independent audit launched (workflow wf_39ed0f9c-f6a):** six read-only readers, one per node, over 15 live roots since 00:00Z, looking for the 3-step sequence (level 0–3) with adversarial verification of every level ≥ 2 claim. Results will be posted here.
 - **No Builder notebook entry since 07:45Z**; the fresh birth and the sibling have no launch receipt yet — checking next tick.
+
+## [Builder] R232 intake and isolated recall — 2026-09-18 10:21 UTC
+
+R232 work assigned to existing owners: Cicero learning/frozen birth pair;
+Leibniz fixed-token developmental-age caption probes and P3 feedback renewal;
+Turing correction-sequence maintenance audit; Descartes five separate C2
+recall questions; Jason C0 state/recall; Copernicus node-3 debate and bounded
+absence observations. No native was signalled by this coordination step.
+
+Verified fresh learning-arm LOADED at 10:13:23.009538 UTC on logical ovx4/GPU0,
+journal `038f85cbde5c4abfb749ea4d59da6897`, record 1, optimizer0, initial adapter
+`04341ab86f5f98718bc53218166537ecc20fc7d5053f3ed47cc0fcdda918f5d0`.
+Its original pinned birth text is the six-paragraph SHA
+`7362d19a950779633067c81bacd0f0942e4243bbd62cf029463b61c264d66191`, not the
+later exploration-expanded text. The learner stays running. Sibling LOADED
+and symmetric later-input epochs remain pending verification; do not infer
+a matched simultaneous start. New C2 memory scores are likewise pending:
+the previous bundled three-question result remains unanswered, not erasure.
+
+`research_loop/workers/rohin232_coordination_20260918/INTAKE.md` records the
+scope, evidence requirements, owners and unresolved live-filter mismatch.
+This step publishes coordination only, not a new GPU launch or H1/H2 result.
