@@ -45,6 +45,16 @@ lookup() {  # prints "node root"
     repo_c3)          echo "a100 $L/rohin174_parenting_20260917/node1/R195_FLEET/r203_repo_evidence_c3/life" ;;
     creative_d1|math_d1|math_transfer_c1|repo_c1)
                       echo "ovx $L/orch_r153_r201_node2_clones_20260917_operator1/$1/raw" ;;
+    # node 3 (ovx2) R213 groups, 2026-09-17 late evening: siege group and math trio
+    S_conv)           echo "ovx2 $L/orch_r205_node3_20260918/conversational/raw" ;;
+    S_lr03)           echo "ovx2 $L/orch_r205_node3_20260918/lr03/raw" ;;
+    S_lr3)            echo "ovx2 $L/orch_r205_node3_20260918/lr3/raw" ;;
+    S_p32)            echo "ovx2 $L/orch_r205_node3_20260918/p32/raw" ;;
+    S_repo)           echo "ovx2 $L/orch_r205_node3_20260918/peer_repo/raw" ;;
+    S_scout)          echo "ovx2 $L/orch_r205_node3_20260918/r213_siege_scout_fork/raw" ;;
+    M_a)              echo "ovx2 $L/orch_r205_node3_20260918/r213_math_a/raw" ;;
+    M_b)              echo "ovx2 $L/orch_r205_node3_20260918/r213_math_b_fork/raw" ;;
+    M_c)              echo "ovx2 $L/orch_r205_node3_20260918/r213_math_c/raw" ;;
     *) return 1 ;;
   esac
 }
