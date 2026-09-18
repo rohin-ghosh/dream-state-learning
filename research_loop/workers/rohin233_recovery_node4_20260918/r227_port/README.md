@@ -70,6 +70,28 @@ fixtures are required. The first runner checks all other pinned files and
 untouched function ASTs. `--deep-work` adds C2's five deep-work regressions.
 The support fixture is bound to the authoritative commit in the manifest.
 
+Executable plan/test usage from the repository root (set the input paths to
+Main's P3 files; both outputs must be new files):
+
+```bash
+WORKER=research_loop/workers/rohin233_recovery_node4_20260918
+python3 "$WORKER/r227_plan.py" --plan "$P3_CURRENT_PLAN" \
+  --source "$P3_COPIED_SOURCE" --output "$P3_PROSPECTIVE_PLAN" \
+  --receipt "$P3_PLAN_RECEIPT"
+CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  "$RECEIVING_PYTHON" "$WORKER/r227_receiving_tests.py" \
+  --source "$P3_COPIED_SOURCE" --original "$P3_ORIGINAL_SOURCE_COPY" \
+  --plan "$P3_PROSPECTIVE_PLAN" --support "$WORKER/r227_port/support" --life P3
+CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  "$RECEIVING_PYTHON" "$WORKER/r227_compatibility_tests.py" --source "$P3_COPIED_SOURCE"
+```
+
+First port the four runtime delta hunks into the copy; the plan command does
+not patch runtime files. The original-copy pin manifest must describe P3's
+actual original source, including its custom seams. No command dispatches a
+learner or replaces a live plan. P3 receiving compatibility remains untested
+here; its owner must run the copied-source tests.
+
 Earlier V1 failures are preserved privately: startup-context path rebasing
 was a real staging defect, now fixed; a console fixture missed its required
 stage boundary policy, now fixed. The first extra deep-work invocation also

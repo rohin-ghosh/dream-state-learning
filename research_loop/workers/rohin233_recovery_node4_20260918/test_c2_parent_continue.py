@@ -1,11 +1,33 @@
 from copy import deepcopy
 import unittest
+from unittest.mock import patch
 
 from c2_parent_binding import CONTROL, JOURNAL, ROOT, SOURCE, WALL, verify_documents
 from c2_parent_continue import validate_config_change
+from renew_c2_cpu import stop_drained_parent, wait_deadline
 
 
 class C2ParentContinuationTests(unittest.TestCase):
+    def test_absent_predecessor_does_not_receive_a_signal(self):
+        with patch('renew_c2_cpu.os.pidfd_open', side_effect=ProcessLookupError), \
+                patch('renew_c2_cpu.Path.exists', return_value=False), \
+                patch('renew_c2_cpu.signal.pidfd_send_signal') as send_signal:
+            result = stop_drained_parent()
+        self.assertEqual(result['status'], 'PREDECESSOR_ALREADY_ABSENT_EXACT_EXIT_TIME_UNKNOWN')
+        self.assertIsNone(result['signal'])
+        send_signal.assert_not_called()
+
+    def test_cpu_waiter_uses_exact_lease_horizon(self):
+        self.assertEqual(wait_deadline(None, WALL, WALL - 86400), WALL)
+        self.assertEqual(wait_deadline(2 * 86400, None, WALL - 86400), WALL)
+        self.assertEqual(wait_deadline(30, None, WALL - 86400), WALL - 86370)
+
+    def test_cpu_waiter_rejects_expired_wrong_or_nonpositive_bound(self):
+        for seconds, horizon, now in [(None, WALL + 1, WALL - 1),
+                (None, WALL, WALL), (0, None, WALL - 1), (None, None, WALL - 1)]:
+            with self.subTest(seconds=seconds, horizon=horizon, now=now), self.assertRaises(ValueError):
+                wait_deadline(seconds, horizon, now)
+
     def documents(self):
         actual = dict(pid=829798, start_ticks='29168595', uid=2524, cwd=SOURCE,
             argv=['python', 'native', '--config', str(CONTROL / 'GUARD.json')], cgroup='exact')

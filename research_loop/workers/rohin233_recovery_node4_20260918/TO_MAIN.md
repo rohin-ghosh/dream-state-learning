@@ -1,5 +1,25 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 19:28UTC sole CPU waiter now bound to node5 horizon; ownership remains active
+
+`C2_WAITER_LEASE.public.json`: exact idle waiter3574413 retired without any
+parent/native signal; successor3590563/start186658124 actually started with
+`--hard-end-unix 1789927200`, September20 18UTC, plus an exclusive controller
+lock. Read-only transport failures retry under that bound; mutation/handoff
+is not blindly retried. An already-absent predecessor is recorded honestly,
+without claiming its exit time or sending a signal.44 scoped tests pass.
+C2 same native829798 remains in replay at19:27:38; no WALL/LOAD or new parent
+binding/render is claimed. Renewal task remains ACTIVE until those receipts.
+
+Executable generic prospective-plan CLI is now `r227_plan.py --plan CURRENT
+--source COPIED_SOURCE --output NEW_PLAN --receipt NEW_RECEIPT`. It refuses
+overwrites and same-source staging; it does not patch runtime or dispatch.
+Full runnable receiving-test commands, including `--life P3`, are in
+`r227_port/README.md`. Runtime deltas remain source-specific four-file patches;
+port only hunks and preserve P3's recovered-boundary/prose-replay guards.
+P7/C2 R227 status remains CPU_RECEIVING_TESTED_NOT_LIVE. No native restart
+during current recovery, no live-source edits, no config-only adoption claim.
+
 ## 19:22UTC measured C2 replay blocker and CPU waiter renewal
 
 `C2_REPLAY_PROGRESS_1922.json`: same native829798/start29168595, started

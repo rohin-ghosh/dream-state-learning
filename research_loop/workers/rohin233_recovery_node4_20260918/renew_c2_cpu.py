@@ -2,6 +2,7 @@
 
 import argparse
 from datetime import datetime, timezone
+import fcntl
 import json
 import os
 from pathlib import Path
@@ -23,6 +24,7 @@ OLD_PID = 471781
 OLD_START = '183179491'
 OLD_CONFIG = FLEET / 'LIVE_CONVERSATION_PARENT14_CONFIG.json'
 OLD_OUTPUT = FLEET / 'LIVE_CONVERSATION_PARENT14/run'
+WALL = 1789927200
 
 
 def write_once(path, value):
@@ -46,7 +48,14 @@ def stop_drained_parent():
     expected = ['python3', str(FLEET / 'r202_parent.py'), '--config', str(OLD_CONFIG),
         '--output', str(OLD_OUTPUT), '--policy-addendum', str(FLEET / 'R230_PARENT_CURRICULUM.md'),
         '--priority-policy-update']
-    descriptor = os.pidfd_open(OLD_PID)
+    try:
+        descriptor = os.pidfd_open(OLD_PID)
+    except ProcessLookupError:
+        if process.exists():
+            raise RuntimeError('C2_CPU_identity_changed_no_signal')
+        return dict(pid=OLD_PID, start_ticks=OLD_START, absence_observed_unix=time.time(),
+            status='PREDECESSOR_ALREADY_ABSENT_EXACT_EXIT_TIME_UNKNOWN', signal=None,
+            native_signals=[])
     try:
         until = time.monotonic() + 180
         while time.monotonic() < until:
@@ -134,13 +143,41 @@ print(json.dumps(binding,sort_keys=True,indent=2))
     print(json.dumps(receipt), flush=True)
 
 
+def wait_deadline(wait_seconds, hard_end_unix, now):
+    if hard_end_unix is not None:
+        if hard_end_unix != WALL or now >= hard_end_unix:
+            raise ValueError('exact_unexpired_node5_horizon_required')
+        return hard_end_unix
+    if wait_seconds is None or wait_seconds <= 0 or now >= WALL:
+        raise ValueError('positive_bounded_wait_required')
+    return min(now + wait_seconds, WALL)
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--wait-seconds', type=int, default=5400)
+    bounds = parser.add_mutually_exclusive_group(required=True)
+    bounds.add_argument('--wait-seconds', type=int)
+    bounds.add_argument('--hard-end-unix', type=int)
     arguments = parser.parse_args()
-    until = time.monotonic() + arguments.wait_seconds
-    while time.monotonic() < until:
-        result = json.loads(remote(PYTHON + ' -B ' + REMOTE + '/deadline_status.py C2'))
+    until = wait_deadline(arguments.wait_seconds, arguments.hard_end_unix, time.time())
+    lock = (OWN / 'private/C2_WAIT_CONTROLLER.lock').open('a')
+    fcntl.flock(lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+    fields = (Path('/proc') / str(os.getpid()) / 'stat').read_text().rsplit(') ', 1)[1].split()
+    started = dict(observed_utc=datetime.now(timezone.utc).isoformat(), pid=os.getpid(),
+        start_ticks=fields[19], hard_end_unix=until,
+        hard_end_utc=datetime.fromtimestamp(until, timezone.utc).isoformat(),
+        status='SOLE_CPU_WAITER_WAITING_ACTUAL_C2_LOAD', native_signals=[])
+    write_once(OWN / f'private/C2_WAIT_STARTED_{os.getpid()}.json', started)
+    while time.time() < until:
+        try:
+            result = json.loads(remote(PYTHON + ' -B ' + REMOTE + '/deadline_status.py C2'))
+        except (RuntimeError, subprocess.TimeoutExpired, json.JSONDecodeError) as error:
+            with (OWN / 'private/C2_WAIT_READ_RETRIES.jsonl').open('a') as stream:
+                stream.write(json.dumps(dict(observed_unix=time.time(),
+                    error_type=type(error).__name__, hard_end_unix=until,
+                    retry_scope='READ_ONLY_STATUS', native_signals=[])) + '\n')
+            time.sleep(min(30, max(0, until - time.time())))
+            continue
         temporary = OWN / 'private/C2_CURRENT.next.json'
         temporary.write_text(json.dumps(result, sort_keys=True, indent=2) + '\n')
         os.replace(temporary, OWN / 'C2_CONTINUATION_STATUS.json')
@@ -148,7 +185,7 @@ def main():
             write_once(OWN / 'C2_NATIVE_READY.public.json', result)
             continue_parent(result)
             return
-        time.sleep(30)
+        time.sleep(min(30, max(0, until - time.time())))
     raise TimeoutError('bounded_C2_LOAD_wait_expired_no_native_signal')
 
 

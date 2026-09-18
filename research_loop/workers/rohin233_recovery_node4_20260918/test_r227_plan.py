@@ -1,10 +1,37 @@
 from copy import deepcopy
+import json
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
 import unittest
 
 from r227_plan import proposed_plan, POLICY
 
 
 class ProspectivePolicyPlanTests(unittest.TestCase):
+    def test_cli_writes_new_plan_and_never_overwrites(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            original = directory / 'original.json'
+            output = directory / 'prospective.json'
+            receipt = directory / 'receipt.json'
+            original.write_text(json.dumps(dict(root='/life', source_root='/old/source',
+                think_act_learn=dict(code_policy='R194_FIRST_CODE_BLOCK_NFKC_V1'))))
+            before = original.read_bytes()
+            command = [sys.executable, str(Path(__file__).with_name('r227_plan.py')),
+                '--plan', str(original), '--source', '/copied/source',
+                '--output', str(output), '--receipt', str(receipt)]
+            result = subprocess.run(command, capture_output=True, text=True, check=True)
+            self.assertEqual(json.loads(result.stdout)['status'], 'PROSPECTIVE_PLAN_NOT_LOADED')
+            self.assertEqual(json.loads(output.read_bytes())['learn_row_policy'], POLICY)
+            self.assertEqual(json.loads(receipt.read_bytes())['source_status'], 'PROSPECTIVE_PLAN_NOT_LOADED')
+            self.assertEqual(original.read_bytes(), before)
+            self.assertNotEqual(subprocess.run(command, capture_output=True).returncode, 0)
+            command[command.index('--output') + 1] = str(original)
+            self.assertNotEqual(subprocess.run(command, capture_output=True).returncode, 0)
+            self.assertEqual(original.read_bytes(), before)
+
     def test_only_prospective_selectors_source_and_stale_wall_authorization_change(self):
         current = dict(root='/same/life', source_root='/old/source', hard_end_unix=1790359200,
             new_presentations=16, anchor_lambda=.25, learning_rate=3e-5,

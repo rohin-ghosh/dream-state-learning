@@ -1,7 +1,9 @@
 """Prospective plan transformation only; no live source or process mutation."""
 
+import argparse
 from copy import deepcopy
-from pathlib import PurePosixPath
+import json
+from pathlib import Path, PurePosixPath
 
 
 POLICY = 'R227_ALL_AUTHENTIC_CHILD_ROWS_V1'
@@ -33,3 +35,31 @@ def proposed_plan(current, proposed_source):
         previous_row_annotations='UNCHANGED_NOT_REPLAYED',
         source_status='PROSPECTIVE_PLAN_NOT_LOADED',
         admission='NEXT_FRESH_COMPLETE_ONLY_AFTER_RECEIVING_SOURCE_TESTS_NO_CURRENT_REPLAY_INTERRUPT')
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--plan', type=Path, required=True)
+    parser.add_argument('--source', required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--receipt', type=Path)
+    arguments = parser.parse_args()
+    if arguments.output.exists() or arguments.output.resolve() == arguments.plan.resolve():
+        raise ValueError('new_prospective_plan_only_no_overwrite')
+    if arguments.receipt is not None and (arguments.receipt.exists()
+            or arguments.receipt.resolve() == arguments.output.resolve()):
+        raise ValueError('new_distinct_receipt_only')
+    proposed, receipt = proposed_plan(json.loads(arguments.plan.read_bytes()), arguments.source)
+    with arguments.output.open('x') as stream:
+        json.dump(proposed, stream, indent=2, sort_keys=True)
+        stream.write('\n')
+    if arguments.receipt is not None:
+        with arguments.receipt.open('x') as stream:
+            json.dump(receipt, stream, indent=2, sort_keys=True)
+            stream.write('\n')
+    print(json.dumps(dict(status='PROSPECTIVE_PLAN_NOT_LOADED', output=str(arguments.output),
+        runtime_files_changed=False, native_signals=[])))
+
+
+if __name__ == '__main__':
+    main()
