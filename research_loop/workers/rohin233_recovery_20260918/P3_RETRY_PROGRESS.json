@@ -1,33 +1,44 @@
 {
-  "ETA": null,
-  "controller": {
-    "cpu_ticks": 244737,
-    "pid": 658049,
-    "rchar": 20280078705,
-    "read_calls": 81676,
-    "start_ticks": "32833295",
-    "state": "S"
-  },
-  "dispatch_utc": "2026-09-18T20:16:52.819966Z",
-  "exact_replay_position": null,
-  "head": {
-    "index": 5315,
-    "kind": "R233_P3_RECOVERED_BOUNDARY",
-    "sha256": "a407153ca048806c61d8c74083c7149068ff3b1a65a7938690958ce5a3080a6b"
-  },
-  "native": {
-    "cpu_ticks": 214151,
+  "actual_receipt": "P3_RETRY_ACTUAL.json",
+  "fastpath_replacement_needed": false,
+  "first_complete_observed": false,
+  "life": "P3",
+  "loaded": {
+    "index": 5317,
+    "loaded_unix": 1789765132.4859247,
+    "optimizer_steps": 6748,
     "pid": 699464,
-    "rchar": 16982872263,
-    "read_calls": 20832,
+    "resume": true,
+    "sha256": "f397616c711988f5e469920e3b76db5c01113452f35c2c3b42fdd603912256cc"
+  },
+  "loaded_utc": "2026-09-18T20:58:52.485925+00:00",
+  "native": {
+    "command_sha256": "dc134301c56e9d9f15abc86db3e3e0e5ed2cf5a8ce551d91b08861b3407f093e",
+    "pid": 699464,
     "start_ticks": "33078516",
     "state": "R"
   },
+  "native_alive_same_incarnation": true,
   "native_signals": [],
-  "native_two_second_delta": {
-    "cpu_ticks": 201,
-    "rchar": 22381317,
-    "read_calls": 4
+  "node": "node4",
+  "observed_utc": "2026-09-18T21:04:00.154351+00:00",
+  "parent": {
+    "pid": 4071384,
+    "start_ticks": "187218132"
   },
-  "observed_utc": "2026-09-18T20:52:39.218785+00:00"
+  "parent_alive": true,
+  "status": "LOADED_PARENT_TOOL_RENDERED_ACT_COMMITTED_R227_UPDATING",
+  "through": {
+    "index": 5360,
+    "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+    "kind": "UPDATE",
+    "previous_sha256": "ffd8e781bd70ecdab83b27f9da1e826dbe038aacc7ea3b9a48a5127dc939341b",
+    "sha256": "036a6e4025a90e2caef72964f55c7ec060cdb75ebf66ba2fd772d79ef103d88d"
+  },
+  "wall": {
+    "deadline_unix": 1790359200,
+    "index": 5316,
+    "sha256": "e48028cec1667cd5f8e2a5cfebcf2909e45ddee48be0b1fedcc9cd46b11cf49f",
+    "working_state_sha256": "eddf2545ec99bf0d3433f1ad5ca51fbd907c1cf9aba671c0cd57779164dc4527"
+  }
 }

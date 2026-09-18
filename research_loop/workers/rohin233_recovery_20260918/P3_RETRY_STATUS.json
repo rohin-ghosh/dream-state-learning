@@ -1,14 +1,44 @@
 {
   "evidence": {
-    "binding_present": false,
-    "loaded": null,
-    "native": {},
-    "observed_utc": "2026-09-18T19:46:42.008668+00:00",
+    "binding_present": true,
+    "loaded": {
+      "index": 5317,
+      "loaded_unix": 1789765132.4859247,
+      "optimizer_steps": 6748,
+      "pid": 699464,
+      "resume": true,
+      "sha256": "f397616c711988f5e469920e3b76db5c01113452f35c2c3b42fdd603912256cc"
+    },
+    "native": {
+      "command_sha256": "dc134301c56e9d9f15abc86db3e3e0e5ed2cf5a8ce551d91b08861b3407f093e",
+      "pid": 699464,
+      "start_ticks": "33078516",
+      "state": "R"
+    },
+    "observed_utc": "2026-09-18T20:59:21.370624+00:00",
     "recovery_sha256": "9c35e4885feeef2a6b0d289b6db96f6fb9cc8a0308e63fe41a7d6e4bc0a95731",
-    "status": "RETRY_CPU_REPLAY_OR_LOAD_PENDING",
-    "wall_extended": null
+    "status": "RETRY_LOADED_ALIVE_WALL_VERIFIED",
+    "wall_extended": {
+      "deadline_unix": 1790359200,
+      "index": 5316,
+      "sha256": "e48028cec1667cd5f8e2a5cfebcf2909e45ddee48be0b1fedcc9cd46b11cf49f",
+      "working_state_sha256": "eddf2545ec99bf0d3433f1ad5ca51fbd907c1cf9aba671c0cd57779164dc4527"
+    }
   },
   "native_signals": [],
-  "observed_unix": 1789760802.318163,
-  "status": "WAITING_ACTUAL_RETRY_LOAD"
+  "observed_unix": 1789765165.2587478,
+  "parent": {
+    "credentials_inherited_not_persisted": true,
+    "hard_end_unix": 1790359200,
+    "loaded_index": 5317,
+    "native_pid": 699464,
+    "native_signals": [],
+    "pid": 4071384,
+    "publication_claim": false,
+    "source_sha256": "a2d18a55196aa95fe6244517b79d07b9559a1549f9530b1d330e5ab68d9e204d",
+    "start_ticks": "187218132",
+    "started_unix": 1789765163.2575338
+  },
+  "parent_exit_code": null,
+  "status": "PARENT_PROCESS_STARTED_RENDER_PENDING"
 }
