@@ -2133,3 +2133,7 @@ Rohin reframes the siege as a success (an agent found something to do from nothi
 - **Sailboat (to C2):** thoughts are the wind and may change fast; the sail is direction; the oars are the slow work of reinforcing a thought by validating it in new situations and by going through one's own memory; behaviour changes slowly, thought quickly. Incoherent, unplanned thought is noise that degrades the adapter — hence self-checks (language, memory, metacognition).
 - **Quitting point:** a child that works too long on one thing must be able to judge when to quit — a behaviour to parent explicitly.
 - **Reading over drip-feeding:** for systems knowledge, give the child a full overview to read rather than a few facts per turn.
+
+## 2026-09-17 23:15 PDT — Rohin msg 216: the isolation chamber, and C0 as the restored twin
+- **Isolation-chamber degradation:** a child with little memory and experience, a goal, and no interaction converges on one thought and trains on it (P7: six identical rows in two cycles; C2: four sleeps of meta-statements). Interaction — a parent's turn, Rohin's question, a peer — is what breaks the loop. Implication for the fleet: a child alive without interaction is not "running", it is degrading.
+- **C0:** the 19:18 PDT snapshot of C2 restored as a new life that continues the math games with a parent, while the drifted C2 stays in conversation with Rohin. Same starting weights, two different paths from tonight — a natural comparison of "conversation repairs drift" against "fresh start on structured work".
