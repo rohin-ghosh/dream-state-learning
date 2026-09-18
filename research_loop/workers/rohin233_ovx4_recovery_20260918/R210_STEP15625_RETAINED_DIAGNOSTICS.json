@@ -1,0 +1,70 @@
+{
+  "unix": 1789754519.3437297,
+  "checkpoint_step": 15625,
+  "diagnostics": [
+    {
+      "directory": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank8_20260918_continuation2/training/checkpoint_diagnostics/step_015625",
+      "receipt_sha256": "59816321282b72e8c89c7998855cfef2e56fb08a883169a398e4c1006395ace0",
+      "optimizer_step": 15625,
+      "files": [
+        "CONTRAST.private.json",
+        "COMPLETE.json",
+        "SPEARMAN.private.json"
+      ],
+      "contrast": {
+        "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+        "by_type": {
+          "mid_tier": {
+            "scored": 100,
+            "wins": 77,
+            "ties": 0,
+            "losses": 23,
+            "tie_half_accuracy": 0.77
+          },
+          "nonsense": {
+            "scored": 100,
+            "wins": 96,
+            "ties": 0,
+            "losses": 4,
+            "tie_half_accuracy": 0.96
+          },
+          "other_contest": {
+            "scored": 100,
+            "wins": 90,
+            "ties": 0,
+            "losses": 10,
+            "tie_half_accuracy": 0.9
+          },
+          "scene_description": {
+            "scored": 100,
+            "wins": 97,
+            "ties": 0,
+            "losses": 3,
+            "tie_half_accuracy": 0.97
+          },
+          "truncated": {
+            "scored": 100,
+            "wins": 93,
+            "ties": 0,
+            "losses": 7,
+            "tie_half_accuracy": 0.93
+          },
+          "word_shuffled": {
+            "scored": 100,
+            "wins": 97,
+            "ties": 0,
+            "losses": 3,
+            "tie_half_accuracy": 0.97
+          }
+        },
+        "source_sha256": "54b8b719024734a02c1536d595292cc1cae3f1ddb877c30ce5c131197ff75c3c"
+      },
+      "selection": {
+        "macro_mean_rating_spearman": 0.251139888402297,
+        "source_sha256": "2deb2ac1b5d42a981be64bc91dc38fc72cf1606b3a0a2826f45e3b670c79cc70"
+      }
+    }
+  ],
+  "private_examples_exported": false,
+  "new_inference_run": false
+}
