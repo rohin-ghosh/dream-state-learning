@@ -151,6 +151,7 @@ def collect():
         entry.get('recorded_exit_to_loaded_seconds'))
     if p3.get('parent'):
         supports.append(dict(component='P3_parent', node='local', pid=p3['parent']['pid'],
+            start_ticks=p3['parent'].get('start_ticks'),
             status=p3['status'], deadline_utc=utc(p3['parent']['hard_end_unix']), evidence=reference))
     else:
         supports.append(dict(component='P3_parent', node='local', pid=None,
