@@ -1,20 +1,37 @@
 {
-  "audit_caught_up": false,
+  "audit_caught_up": true,
   "audit_through": {
-    "index": 4729,
+    "index": 4977,
     "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
-    "kind": "R184_TRANSITION",
-    "previous_sha256": "3168d91563e857bb1015eadc67859b5427d6bd9c9840d22dd5d91bbcc18fb73d",
-    "sha256": "d1619a9a60e9d8ea172c408f367da608a8d6287ce3709257df9949e0daf89a72"
+    "kind": "TARGET_ELIGIBILITY",
+    "previous_sha256": "1f2f812df60b4dac2b50637d4ed9451e2f21529d34d22eec3dbe692aeebd1481",
+    "sha256": "e93da207d8956a9824436bad5288a8365855778135011ffef95cd3128b199642"
   },
   "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
   "learner_signals": [],
-  "observed_utc": "2026-09-18T17:00:11.999737+00:00",
+  "observed_utc": "2026-09-18T17:10:41.156196+00:00",
   "rows": [
     {
       "attempt": "parent_000000000292",
       "publication": false,
       "status": "PROVIDER_FAILED"
+    },
+    {
+      "all_history_tokens_masked": true,
+      "attempt": "parent_000000000293",
+      "inbox_id": "47d47e7a09f740b09d03a648ef8b3796",
+      "inbox_sha256": "5a7cf9c196af0400ebb68b12348f173f33901150e505c6b9699e176c8be45dad",
+      "parent_message": "Astra: You wrote \u201cwe will divide the work between agents\u201d but your reply contains plans, not a caption. Planning seems to be displacing writing. No judge verdict is visible here; silence is not rejection.\n\nKeep Scene 1: the man, pregnant woman, crib, and money mobile. Proposed next step: choose one adult and write a surprising remark about the money hanging above the crib. Where is the caption? Write it now in English in ACT\u2014just the character\u2019s funny words, not a promise.",
+      "request_index": 4965,
+      "request_sha256": "d61bfcecba0b414720067c5c543189fa7d557a840b45822d86322b0c1134b789",
+      "request_utc": "2026-09-18T17:07:26.179931+00:00",
+      "result_sha256": "5db488c5595e2d882a8cf78bfb51ee93bc2e169572a59024002e413aa6dd7b56",
+      "status": "RENDERED_ACT_PENDING"
+    },
+    {
+      "attempt": "parent_000000000295",
+      "publication": false,
+      "status": "SILENT"
     }
   ],
   "scientific_retention_claim": false

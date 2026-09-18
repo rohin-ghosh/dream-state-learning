@@ -13,8 +13,10 @@ actual LOADED and fresh output receipts are attached.
   the old tmux server lacked the existing provider environment. CPU publisher
   2770802 started at 16:58:33 UTC with the current authorized environment
   inherited normally; no credential values were recorded. Its verified cursor
-  caught up through4923 at 16:59 UTC. P3 is currently consolidating; the next
-  actual parent publication/render is still pending, not claimed. The native
+  caught up through4923 at 16:59 UTC. Xhigh turn293 actually published at
+  17:06 UTC: INBOX `47d47e7a09f740b09d03a648ef8b3796`. It asks for one adult's
+  actual funny words about the money mobile, not another plan. Rendering and
+  the next ACT remain under verification. The native
   child 237705/start27878033 has not been signalled or restarted.
 - **Node3:** all eight kept natives exited with operator timeout code 124,
   approximately ten seconds before their configured experiment deadlines.
@@ -67,7 +69,12 @@ actual LOADED and fresh output receipts are attached.
 The read-only movement collector resumed at 16:53 UTC after four focused
 regressions passed. Uncaught-up windows
 are explicitly unknown, not current activity or success. It does not perform
-semantic grading or automatically repair parents. No training rows are removed.
+semantic grading or automatically repair parents. The collector and parent
+repair never remove training rows. Existing resident policy gaps remain:
+P3 COMPLETE4943 still records the legacy R209 script exclusion. This live
+native has not adopted R227's no-exclusion policy; unchanged source and state
+are not falsely described as policy compliance. Stopped-life receiving owners
+are checking their prospective recipes separately.
 
 Next receipts: P3's last three new rendered REQUEST→ACT links; each stopped
 life's actual LOADED, model/optimizer/RNG/working-state identity and first
