@@ -40,7 +40,8 @@ def bind(policy, original):
         validate(candidate)
         return prior_prompt(original, *arguments, **keywords)
 
-    namespace = dict(policy.tick.__globals__, validate=validate, prompt=prompt)
+    namespace = dict(policy.tick.__globals__, validate=validate,
+        prompt=lambda *arguments, **keywords: policy.prompt(*arguments, **keywords))
     policy.tick = types.FunctionType(policy.tick.__code__, namespace,
         policy.tick.__name__, policy.tick.__defaults__, policy.tick.__closure__)
     policy.validate, policy.prompt = validate, prompt
