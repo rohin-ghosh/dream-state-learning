@@ -1,0 +1,200 @@
+{
+  "SLEEP_RECIPE": {
+    "document": {
+      "anchor_lambda": 0.25,
+      "available_old_rows": 187,
+      "candidate_row_filter_policies": {
+        "NEW": {
+          "content_target_filter": [],
+          "fabricated_speaker_filter": [],
+          "question_target_filter": []
+        },
+        "REHEARSAL": {
+          "content_target_filter": [],
+          "fabricated_speaker_filter": [],
+          "question_target_filter": []
+        }
+      },
+      "new_presentations": 16,
+      "new_rows": 3,
+      "policy": "R181_NEW_ONLY_V1",
+      "selected_old_rows": 0,
+      "sleep_loss_impl": "MASKED_CAUSAL_CE_V1"
+    },
+    "index": 943,
+    "kind": "SLEEP_RECIPE",
+    "sha256": "f23d51f40991d35d72d83e83a5bfe2f0c959686a4f436251ef9b4a55af302fd8"
+  },
+  "TARGET_ELIGIBILITY": {
+    "document": {
+      "excluded": [],
+      "new_row_sha256": [
+        "68197355b4b0842f6bf85324c66a008f5853b81bc805f79a70c718f5e7b1d05c",
+        "854acd14a7d724cbb3b6b0cbc7ce730deeafa4c14de30bfb95fdf413f41a0ef9",
+        "e5e7ad9ecc26cf4a5b1401b1570b2e7f0d55095812f384c265bdff43a91d3bd8"
+      ],
+      "raw_modified": false,
+      "rehearsal_row_sha256": [],
+      "runtime_policy": "R144_SPECIAL_TOKEN_TARGET_EXCLUSION_V1",
+      "version": "R125_PLAIN_CONTEXT_V1"
+    },
+    "index": 944,
+    "kind": "TARGET_ELIGIBILITY",
+    "sha256": "180bc581548eb6435793bf76799a32ee8aa70b3c9a310f93a66bb4f205dbce3a"
+  },
+  "actual_ACT": {
+    "index": 923,
+    "kind": "R184_ACT",
+    "sha256": "7098c5a4eb6050349ab47ff8962c8566c2e4c5f4c70fae2380f1e57fc9627ed9"
+  },
+  "actual_optimizer_steps": 48,
+  "caveat": "Prototype END outcome.assistance lists received speakers, not verified rendered aid; use explicit actual_REQUEST_renders here.",
+  "checkpoint_sha256": {
+    "adapter": "8eaafd0b0ec0bb1ea9eedca675d8051afe932be366c73510b3820c43adccf24c",
+    "optimizer": "8def7027dd0dea410765886ec090985a0cb8a2104c18c9b7610eb06509493cb7",
+    "rng": "8def7027dd0dea410765886ec090985a0cb8a2104c18c9b7610eb06509493cb7"
+  },
+  "clean_independence_claimed": false,
+  "complete_epoch_RESPONSE_indices": [
+    913,
+    920,
+    932
+  ],
+  "correction_result": "NO_VERIFIED_CORRECTION_OBSERVED_IN_COMPLETED_CYCLE",
+  "end_REQUEST": {
+    "index": 931,
+    "kind": "REQUEST",
+    "sha256": "3c76b0e1fd828872b6a57f078f3c1fa10eb346442546bf49cbb9568f02978472"
+  },
+  "end_SLEEP_COMPLETE": {
+    "index": 993,
+    "kind": "SLEEP_COMPLETE",
+    "sha256": "b2df66b5fe89b428913692fce5593ceeb4a9fc8b56eced166db1f1a002870d19"
+  },
+  "end_observed_utc": "2026-09-18T10:27:11.264526+00:00",
+  "life": "r213_r226_caption_observation_fork",
+  "manual_assessment_covers_entire_epoch": true,
+  "manual_read_only_assessment": {
+    "LEARN": "Further paraphrases of the same theme, not a demonstrated correction or grounded check.",
+    "NEXT_ACT": "ACT supplies three closely related caption variants about the same financial-discussion theme; wording change is not a checked correction.",
+    "correction_before_return": "NO_VERIFIED_CORRECTION_OBSERVED_IN_COMPLETED_CYCLE",
+    "error_identification": "No concrete error identification or deciding check in the three source-bound responses.",
+    "fabricated_runtime_claim": "ACT includes an unsupported context-truncation assertion; not a tool receipt.",
+    "later_reuse_without_reminder": "NOT_ESTABLISHED",
+    "level_0_to_3_promotion": "NOT_CLAIMED"
+  },
+  "native_opportunity_observation": {
+    "cached": 0,
+    "evaluated": 3,
+    "not_dispatched": 0,
+    "quality_accepted": 2,
+    "repeats": 2,
+    "requested": 3,
+    "successes": 0,
+    "unknown": 0
+  },
+  "native_signals": 0,
+  "native_successes_not_inferred_from_PUBLISHED": true,
+  "new_aid_receipts": [
+    {
+      "INBOX": {
+        "index": 936,
+        "kind": "INBOX",
+        "sha256": "7d5749f9d0bc225c72cc9ddd7a0a24922a4c1d326a745e82f434ad5d0f7b5c13"
+      },
+      "actual_REQUEST_renders": [],
+      "id": "fb700bfce95d49c78781c6c4c1c5f113",
+      "source_sha256": "576cf66e82c8dc2c115aea0b71b00271527dab914d03bf56767a8cfb723f1b41",
+      "speaker": "Tool"
+    }
+  ],
+  "no_new_Astra_or_Rohin_or_peer_input_before_these_outputs": true,
+  "no_parent_or_human_or_peer_inbox_during_cycle": true,
+  "observed_utc": "2026-09-18T10:28:18.247449+00:00",
+  "opportunity": {
+    "index": 925,
+    "kind": "R223_CAPTION_OPPORTUNITY",
+    "sha256": "e3210b8771b523750c2bf8fc73f0ebd01f9a29d1bf5c13053caaae97ac84783c"
+  },
+  "parent_return_published": true,
+  "partial_interval": false,
+  "prior_aid_caveat": "Prior Astra and Tool context visible. Exact N2 text absent at START but prior exposure remains a confound. Tool936 received after child outputs was not rendered in measured cycle.",
+  "prior_parent_and_Tool_context_visible": true,
+  "prior_seed_exposure_REQUEST": 749,
+  "raw_interval_sha256": "c15d56b4e724f5395fd36c03cc1b43209f46edb7e9c47e0d33fd324add838d85",
+  "raw_targets_not_exported": true,
+  "return_parent": {
+    "delivery": {
+      "INBOX": null,
+      "REQUEST": null,
+      "RESPONSE": null
+    },
+    "id": "c4857996944042879cbf21d7662dd4f0",
+    "published_utc": "2026-09-18T10:27:11.479051+00:00",
+    "sha256": "a0cda99ca079262341ee0f8a093dd0aded111bc7bc8e5aae7d778660cd362e06"
+  },
+  "seed_exact_text_visible_in_start_REQUEST": false,
+  "source_bound_chain": [
+    {
+      "R184_STAGE": {
+        "index": 915,
+        "kind": "R184_STAGE",
+        "sha256": "04473c804c1b6f59c90a671f9faec5c5ce7f74a1cbf0b266941553f3ce9d70b8"
+      },
+      "REQUEST": {
+        "index": 912,
+        "kind": "REQUEST",
+        "sha256": "728df1c58d329e985d5d612b7ae65c7ff1fd0c8781d094a0795496cbaaa9a727"
+      },
+      "RESPONSE": {
+        "index": 913,
+        "kind": "RESPONSE",
+        "sha256": "c8c63368183eef65add16b6479be86f74f42cd4b2e26a371f8a229dab613e17d"
+      },
+      "generated_token_ids": 128,
+      "raw_sha256": "a163f82bcddd82fdfe951c46329b68e2c70c46f690db21d2f60bb1e98376b0dc",
+      "stage": "THINK"
+    },
+    {
+      "R184_STAGE": {
+        "index": 922,
+        "kind": "R184_STAGE",
+        "sha256": "7deeff0be253da9c273e3e444363f0bd57cf2a4317f55446dc2a3ea806420d8c"
+      },
+      "REQUEST": {
+        "index": 919,
+        "kind": "REQUEST",
+        "sha256": "e84e214dc16c56717c3fdc639f9e6eff5753ca3c94f6c1aa9d1cebf4e9fc2b25"
+      },
+      "RESPONSE": {
+        "index": 920,
+        "kind": "RESPONSE",
+        "sha256": "e55cef850cf3bb0a442e9b865aad48e770ae7b8e1912d593acf7eab343fe7886"
+      },
+      "generated_token_ids": 117,
+      "raw_sha256": "0081e65481fb354fdf167ac0a58fd85dff1ffcd2d742111d2346064d9de217fc",
+      "stage": "ACT"
+    },
+    {
+      "R184_STAGE": {
+        "index": 934,
+        "kind": "R184_STAGE",
+        "sha256": "41f80bf9efc47ac225764e7d4cbaa5e85dde6228451ee6da6f33c3bfcc828bfe"
+      },
+      "REQUEST": {
+        "index": 931,
+        "kind": "REQUEST",
+        "sha256": "3c76b0e1fd828872b6a57f078f3c1fa10eb346442546bf49cbb9568f02978472"
+      },
+      "RESPONSE": {
+        "index": 932,
+        "kind": "RESPONSE",
+        "sha256": "002f923bdce8157e7ae350d412732f0ec4b7baed65123a488cf6a8d0288df51d"
+      },
+      "generated_token_ids": 130,
+      "raw_sha256": "6f0258358976cbf8f995e09d7202af1eba3b342262d27cfbb51da2642291e415",
+      "stage": "LEARN"
+    }
+  ],
+  "update_records_at_cut": 48
+}
