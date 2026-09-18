@@ -1,0 +1,185 @@
+--- a/gpu/orch_r184_think_act_learn.py
++++ b/gpu/orch_r184_think_act_learn.py
+@@ -338,6 +338,7 @@
+         self.corrections = None
+         self.correction_thinks = []
+         self.correction_parents = []
++        self._active_parent_event_id = None
+         self.correction_parent_ids = {event.event_id for event in stream.history.events if event.actor == 'parent'}
+         self.readings = None
+         if 'reading_reply_policy' in config:
+@@ -498,6 +499,28 @@
+             result = self._generate_stage(stage, incoming=incoming, extra=instruction, think_remaining=think_remaining)
+             if not result.get('aborted'):
+                 return result
++
++    def _retain_stage_parent(self, stage, incoming, *, console_events=()):
++        if stage == 'LEARN':
++            self._active_parent_event_id = None
++        elif not console_events and stage in ('THINK', 'ACT'):
++            seen = {event.event_id for event in self.stream.history.events}
++            fresh = [event for event in incoming if event.actor == 'parent' and event.event_id not in seen]
++            if fresh:
++                self._active_parent_event_id = fresh[-1].event_id
++        return self._active_parent_event_id
++
++    def _remember_rendered_parent(self, messages):
++        contents = {message['content'] for message in messages if message['role'] == 'user'}
++        plain_ids = set(self.stream.history._pinned_parent_event_ids)
++        if self.stream.presentation is not None:
++            plain_ids.update(event.event_id for event in self.stream.history.events[
++                self.stream.history.visible_frontier.event_count:])
++            plain_ids.add(self._active_parent_event_id)
++        self._active_parent_event_id = next((event.event_id
++            for event in reversed(self.stream.history.events) if event.actor == 'parent'
++            and (self.stream.history._message(event)['content'] in contents
++                or event.event_id in plain_ids and event.text in contents)), None)
+ 
+     def _generate_stage(self, stage, *, incoming, extra='', think_remaining=1, console_events=()):
+         state_before = deepcopy(self.stream.history.working_state)
+@@ -617,6 +640,8 @@
+                         review['learn_review_evidence'] = [deepcopy(self.last_act_evidence)]
+                 document = dict(document, state=self.stream.checkpoint())
+             receipt = self.journal.record(kind, document)
++            if kind == 'REQUEST' and stage == 'THINK' and boundary_policy:
++                captured['retention_messages'] = deepcopy(document['messages'])
+             if kind in ('REQUEST', 'RESPONSE'):
+                 captured[kind] = dict(record_index=receipt['index'], record_sha256=receipt['sha256'])
+                 if stage == 'THINK' and self.readings is not None:
+@@ -631,6 +656,9 @@
+         try:
+             options = (dict(compaction_threshold=min(self.stream.context_limit * 3 // 4,
+                 self.stream.context_limit - self.stream.segment_tokens)) if boundary_policy else {})
++            if boundary_policy:
++                options['retained_parent_event_id'] = self._retain_stage_parent(
++                    stage, incoming, console_events=console_events)
+             if console_events:
+                 options['action_policy'] = CONSOLE_REPLY_POLICY
+             elif stage in ('THINK', 'ACT') and 'console_preemption_policy' in self.config:
+@@ -651,6 +679,8 @@
+             return result
+         if self.allocation is not None:
+             self.cycle_metrics[stage] += result['cost']['segment_tokens']
++        if stage == 'THINK' and boundary_policy:
++            self._remember_rendered_parent(captured['retention_messages'])
+         if stage == 'THINK' and 'correction_ledger' in self.config:
+             self.correction_thinks.append(self.stream.rows[-1]['target'])
+         self.journal.record('R184_STAGE', dict(schema=SCHEMA, trial_id=self.config['trial_id'], stage=stage,
+@@ -777,6 +807,7 @@
+                 pending_rows_preserved=True, historical_rows_modified=False, human_replayed=False))
+         self.cycle_metrics = dict(THINK=0, ACT=0, LEARN=0)
+         self.cycle_phase = 'THINK'
++        self._active_parent_event_id = None
+         self.last_transition = None
+         self.last_act_evidence = None
+         self.correction_thinks = []
+--- a/organism_v6/orch_r125_continual_stream.py
++++ b/organism_v6/orch_r125_continual_stream.py
+@@ -113,11 +113,12 @@
+     def pending_rows(self):
+         return copy.deepcopy(self.rows[self.sleep_frontier:])
+ 
+-    def render(self, token_count):
++    def render(self, token_count, *, retained_parent_event_id=None):
+         while True:
+             try:
+                 return self.history.render(token_count, self.context_limit-self.segment_tokens,
+-                                           presentation=self.presentation)
++                                           presentation=self.presentation,
++                                           retained_parent_event_id=retained_parent_event_id)
+             except CompactionRequired:
+                 if not self.allow_eviction:
+                     raise
+@@ -131,13 +132,15 @@
+                 self.history.evict_oldest(through,
+                     reason='R125 explicit oldest-context removal to reserve the next segment')
+ 
+-    def compact_for_prompt(self, token_count, record, *, threshold, protected_from):
++    def compact_for_prompt(self, token_count, record, *, threshold, protected_from,
++                           retained_parent_event_id=None):
+         require(type(threshold) is int and 0 < threshold <= self.context_limit-self.segment_tokens,
+                 'bounded_pre_generation_compaction_threshold')
+         require(type(protected_from) is int and 0 <= protected_from <= len(self.history.events),
+                 'compaction_protects_new_incoming_events')
+         try:
+-            rendered = self.history.render(token_count, threshold - 1, presentation=self.presentation)
++            rendered = self.history.render(token_count, threshold - 1, presentation=self.presentation,
++                retained_parent_event_id=retained_parent_event_id)
+             return rendered
+         except CompactionRequired as overflow:
+             before_tokens = overflow.token_count
+@@ -169,7 +172,8 @@
+             summary = replace(source, event_id='r203:bounded-carry:' + identity, phase='compaction')
+             self.history.compact(summary, through=self.history.frontier(through_count))
+             try:
+-                rendered = self.history.render(token_count, threshold - 1, presentation=self.presentation)
++                rendered = self.history.render(token_count, threshold - 1, presentation=self.presentation,
++                    retained_parent_event_id=retained_parent_event_id)
+             except CompactionRequired:
+                 continue
+             require(self.history.working_state == working_state, 'threshold_compaction_keeps_working_state_verbatim')
+@@ -189,7 +193,7 @@
+         raise CompactionRequired(before_tokens, threshold - 1)
+ 
+     def step(self, generate, token_count, record, *, incoming=(), now=time.time, train_response=True,
+-             compaction_threshold=None, action_policy=None):
++             compaction_threshold=None, action_policy=None, retained_parent_event_id=None):
+         require(type(train_response) is bool, 'explicit_response_training_policy')
+         require(action_policy in (None, 'R205_CONSOLE_REPLY_ACT_V1'), 'known_response_action_policy')
+         require(self.pending is None, 'unresolved_request_never_redispatched')
+@@ -202,9 +206,10 @@
+         if compaction_threshold is not None and len(self.history.events) > protected_from:
+             record('CONTEXT_INPUT', dict(kind='R203_PRE_GENERATION_INPUT',
+                 protected_from=protected_from, training_eligible=False, state=self.checkpoint()))
+-        rendered = (self.render(token_count) if compaction_threshold is None else
++        rendered = (self.render(token_count, retained_parent_event_id=retained_parent_event_id)
++            if compaction_threshold is None else
+             self.compact_for_prompt(token_count, record, threshold=compaction_threshold,
+-                protected_from=protected_from))
++                protected_from=protected_from, retained_parent_event_id=retained_parent_event_id))
+         messages = copy.deepcopy(rendered.messages)
+         actual_prompt_tokens = token_count(copy.deepcopy(messages))
+         require(type(actual_prompt_tokens) is int and actual_prompt_tokens >= 0
+@@ -220,6 +225,11 @@
+             model_state_sha256=self.model_state_sha256, parent_wait_seconds=0, retry_allowed=False)
+         if action_policy is not None:
+             request['action_policy'] = action_policy
++        if retained_parent_event_id is not None:
++            retained = next(event for event in self.history.events if event.event_id == retained_parent_event_id)
++            request['retained_parent_input'] = dict(event_id=retained.event_id,
++                source_id=retained.source_id, source_sha256=retained.source_sha256,
++                training_eligible=False, retention_scope='CURRENT_THINK_TO_ACT')
+         if not train_response:
+             request['training_eligible'] = False
+         self.pending = digest(request)
+--- a/organism_v6/orch_r124_train_history.py
++++ b/organism_v6/orch_r124_train_history.py
+@@ -353,11 +353,16 @@
+                             dropped_summary_id=summary.event_id if summary else None)
+ 
+     def render(self, token_count: Callable[[list[dict[str, str]]], int],
+-               token_budget: int, *, split='TRAIN', presentation=None) -> MaskedInput:
++               token_budget: int, *, split='TRAIN', presentation=None,
++               retained_parent_event_id=None) -> MaskedInput:
+         """Strict, non-mutating render. Overflow requires an explicit caller action."""
+         require(split == 'TRAIN', 'history_forbidden_in_readout')
+         require(type(token_budget) is int and token_budget >= 0, 'nonnegative_token_budget')
+         require(callable(token_count), 'token_counter_required')
++        require(retained_parent_event_id is None or
++                retained_parent_event_id in self._by_id and
++                self._by_id[retained_parent_event_id].actor == 'parent',
++                'retention_requires_existing_parent_input')
+         messages = [dict(role='system', content=self._system_prompt),
+                     dict(role='user', content=self._birth_prompt)]
+         summary = self._summary()
+@@ -375,6 +380,10 @@
+         for event in self._events[self.visible_frontier.event_count:]:
+             if event.event_id not in self._pinned_parent_event_ids:
+                 messages.append(self._message(event))
++        if retained_parent_event_id is not None and retained_parent_event_id not in self._pinned_parent_event_ids:
++            retained = self._by_id[retained_parent_event_id]
++            if retained in self._events[:self.visible_frontier.event_count]:
++                messages.append(self._message(retained))
+         if presentation is not None:
+             from organism_v6.orch_r125_plain_context import VERSION, replay_prefix
+             require(presentation['version'] == VERSION, 'known_presentation_version')

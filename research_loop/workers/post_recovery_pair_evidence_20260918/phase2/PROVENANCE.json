@@ -1,0 +1,279 @@
+{
+  "schema": "PHASE2_PARENT_RETENTION_NON_MATERIAL_CPU_REPAIR_V1",
+  "prepared_utc": "2026-09-18T21:56:13.584575+00:00",
+  "status": "PROPOSED_NOT_DEPLOYED",
+  "scope": "worker-local fork, synthetic tests and immutable TRAIN token-budget replay only",
+  "native_signals": 0,
+  "remote_file_writes": 0,
+  "model_generations": 0,
+  "GPU_jobs": 0,
+  "parent_messages": 0,
+  "test_contract_sha256": {
+    "tests/test_orch_r124_train_history.py": "ef7cecd803b22da9b59a0c51afd5b7411aeb76e288953a54af8369ef4d22c76f",
+    "tests/test_orch_r125_continual_stream.py": "0d866dd30100821ebca5d762f7b9006d30f8a64ec4c3a7fa0a485b1793ead19a",
+    "organism_v6/orch_r125_plain_context.py": "653bf7f216f46aa4ea2f9869d7a0c58db4e1bfbf79914f339f53485c7522ec6e"
+  },
+  "sources": {
+    "learner": {
+      "pid": 493500,
+      "start_ticks": "10070880",
+      "process_state": "S",
+      "guard_sha256": "282ad372328b6244f0cc82b4cfbd39de0fcdd2b7a748c681449f937cbfadd632",
+      "files": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "running_disk_sha256": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46",
+          "native_guard_source_pin": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46",
+          "guard_match": true,
+          "proposed_fork_sha256": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "running_disk_sha256": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e",
+          "native_guard_source_pin": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e",
+          "guard_match": true,
+          "proposed_fork_sha256": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "running_disk_sha256": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+          "native_guard_source_pin": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+          "guard_match": true,
+          "proposed_fork_sha256": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3"
+        },
+        "organism_v6/orch_r125_plain_context.py": {
+          "running_disk_sha256": "653bf7f216f46aa4ea2f9869d7a0c58db4e1bfbf79914f339f53485c7522ec6e",
+          "native_guard_source_pin": "653bf7f216f46aa4ea2f9869d7a0c58db4e1bfbf79914f339f53485c7522ec6e",
+          "guard_match": true
+        }
+      },
+      "binding": "verified /proc cwd and native guard; not resident Python heap attestation"
+    },
+    "frozen": {
+      "pid": 471737,
+      "start_ticks": "9987073",
+      "process_state": "R",
+      "guard_sha256": "197463ab56dab2b04a88797c28dffd854a56bd1a8756cdfa611f0995690d7a0b",
+      "files": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "running_disk_sha256": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46",
+          "native_guard_source_pin": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46",
+          "guard_match": true,
+          "proposed_fork_sha256": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "running_disk_sha256": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e",
+          "native_guard_source_pin": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e",
+          "guard_match": true,
+          "proposed_fork_sha256": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "running_disk_sha256": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+          "native_guard_source_pin": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+          "guard_match": true,
+          "proposed_fork_sha256": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3"
+        },
+        "organism_v6/orch_r125_plain_context.py": {
+          "running_disk_sha256": "653bf7f216f46aa4ea2f9869d7a0c58db4e1bfbf79914f339f53485c7522ec6e",
+          "native_guard_source_pin": "653bf7f216f46aa4ea2f9869d7a0c58db4e1bfbf79914f339f53485c7522ec6e",
+          "guard_match": true
+        }
+      },
+      "binding": "verified /proc cwd and native guard; not resident Python heap attestation"
+    }
+  },
+  "source_capture_saved_utc": "2026-09-18T21:47:44.968852+00:00",
+  "verified_requests": [
+    {
+      "label": "learner",
+      "record_index": 4056,
+      "kind": "REQUEST",
+      "record_sha256": "bbce294f8ca8e084ea17446e4509bad9b5ef6b5ab87d68a72e220fcbda0fdf97",
+      "request_started_unix": 1789765124.971474,
+      "all_history_masked": true,
+      "historical_parent_events_checked": 52,
+      "parents": [
+        {
+          "event_id": "parent:inbox:d3f951c175e8484dad4fa696912e1c14",
+          "source_sha256": "9a80c12c5824de6e19bb2db172ca7ecb499341e102137fd277a9dcc8e7b88c13",
+          "rendered_message_indices": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "label": "learner",
+      "record_index": 4135,
+      "kind": "REQUEST",
+      "record_sha256": "b6276a3dbc480a68845cef7430080bf20d3f9ab8c4fec55b597782a6dfa75969",
+      "request_started_unix": 1789765623.1428657,
+      "all_history_masked": true,
+      "historical_parent_events_checked": 53,
+      "parents": [
+        {
+          "event_id": "parent:inbox:5bdeda56054649518dea9e4eb5e3ae26",
+          "source_sha256": "8edc2b02e7aab253e030e947eaa17fdfe569e14a8a1aa631901b7c360990c47f",
+          "rendered_message_indices": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "label": "learner",
+      "record_index": 4214,
+      "kind": "REQUEST",
+      "record_sha256": "825f4d746dea50162e4af1b4a3e4acd9f0f925ee4c469076f7b0bca5b49cc4a2",
+      "request_started_unix": 1789766121.9551585,
+      "all_history_masked": true,
+      "historical_parent_events_checked": 54,
+      "parents": [
+        {
+          "event_id": "parent:inbox:68b918594349478080a0defac5e6c786",
+          "source_sha256": "ccdd95f47a9a8c139f7d80dbb987b39a6605e9a4dde404136a6fffd1d63b03ce",
+          "rendered_message_indices": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "label": "learner",
+      "record_index": 4293,
+      "kind": "REQUEST",
+      "record_sha256": "fb69d4080d42a3c21369c6775af281b489c341203833a359a2b28bb9092d2567",
+      "request_started_unix": 1789766618.4131203,
+      "all_history_masked": true,
+      "historical_parent_events_checked": 55,
+      "parents": [
+        {
+          "event_id": "parent:inbox:3d37d4dba66243b6ae3c7eb90a824f40",
+          "source_sha256": "768f7d08619f79851a0aa589858614ec570778322eb2ecf0d669b9cf4aa7dcd5",
+          "rendered_message_indices": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "label": "frozen",
+      "record_index": 2690,
+      "kind": "REQUEST",
+      "record_sha256": "eb18111e4fa45f37d71b9047fde266ab1b6896ce160a106368df84ec09b62090",
+      "request_started_unix": 1789765765.3491533,
+      "all_history_masked": true,
+      "historical_parent_events_checked": 82,
+      "parents": [
+        {
+          "event_id": "parent:inbox:0c9d6a00067a45e887c37c2180a94424",
+          "source_sha256": "64da8da138c24f6c5a09222d86e463efe9bfd25ba1457e66882ec7832ccb61d6",
+          "rendered_message_indices": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "label": "frozen",
+      "record_index": 2699,
+      "kind": "REQUEST",
+      "record_sha256": "08e676772fe85fc643938fcaf17502d5759435da5ac27a427015fe268aed49ed",
+      "request_started_unix": 1789765846.4351892,
+      "all_history_masked": true,
+      "historical_parent_events_checked": 82,
+      "parents": [
+        {
+          "event_id": "parent:inbox:0c9d6a00067a45e887c37c2180a94424",
+          "source_sha256": "64da8da138c24f6c5a09222d86e463efe9bfd25ba1457e66882ec7832ccb61d6",
+          "rendered_message_indices": []
+        }
+      ]
+    },
+    {
+      "label": "frozen",
+      "record_index": 2723,
+      "kind": "REQUEST",
+      "record_sha256": "301c266e89422b2f6131be376cfdb54566e3869c1287cc331bce289e70aca7be",
+      "request_started_unix": 1789766186.2454796,
+      "all_history_masked": true,
+      "historical_parent_events_checked": 83,
+      "parents": [
+        {
+          "event_id": "parent:inbox:cd4bfa6498e54f3dbd7fcd0b1e46080a",
+          "source_sha256": "74be146cd247a9c1f49992b19ddd4b7da12d1320fb7507ce5f688297034262ae",
+          "rendered_message_indices": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "label": "frozen",
+      "record_index": 2732,
+      "kind": "REQUEST",
+      "record_sha256": "80ccc94655e6c35eff559b924b5d6b6905908d96a9047310f93d7f1184fa001e",
+      "request_started_unix": 1789766268.5435684,
+      "all_history_masked": true,
+      "historical_parent_events_checked": 83,
+      "parents": [
+        {
+          "event_id": "parent:inbox:cd4bfa6498e54f3dbd7fcd0b1e46080a",
+          "source_sha256": "74be146cd247a9c1f49992b19ddd4b7da12d1320fb7507ce5f688297034262ae",
+          "rendered_message_indices": []
+        }
+      ]
+    },
+    {
+      "label": "frozen",
+      "record_index": 2756,
+      "kind": "REQUEST",
+      "record_sha256": "20c0614362bfd70fd6d827e5b50b094fd71d16a2081834dc2e5dbee7381c2049",
+      "request_started_unix": 1789766609.6363764,
+      "all_history_masked": true,
+      "historical_parent_events_checked": 84,
+      "parents": [
+        {
+          "event_id": "parent:inbox:910c908bf27745289ac7155581abedf0",
+          "source_sha256": "6738e46b1d1c372022c359e85283e9a1265500e2fb60686c4a7573683c7511f0",
+          "rendered_message_indices": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "label": "frozen",
+      "record_index": 2765,
+      "kind": "REQUEST",
+      "record_sha256": "4e25e400a0cecf2ed34411f596a9692dc579c6f1de0a845dfa2d3cdb6ab9606c",
+      "request_started_unix": 1789766682.9965394,
+      "all_history_masked": true,
+      "historical_parent_events_checked": 84,
+      "parents": [
+        {
+          "event_id": "parent:inbox:910c908bf27745289ac7155581abedf0",
+          "source_sha256": "6738e46b1d1c372022c359e85283e9a1265500e2fb60686c4a7573683c7511f0",
+          "rendered_message_indices": []
+        }
+      ]
+    }
+  ],
+  "exact_lost_parent_compaction": {
+    "after_tokens": 4072,
+    "before_tokens": 5182,
+    "carry_source_kind": "PRIOR_CHILD_COMPACTION",
+    "child_notice_event_id": "r204:compaction:b47e407f0d355ef1600b61552e19e4dcbf6c319b2f437a1e6af9f10cd93c5fc5",
+    "kind": "R203_PRE_GENERATION_CHILD_SOURCE_CARRY",
+    "new_child_distillation": false,
+    "protected_from": 1169,
+    "raw_history_preserved": true,
+    "source_event_id": "r184:summary:83",
+    "source_sha256": "07ae794088b483a34ded526a414402efeacc4fd35e9bfea15c6fca447d96177b",
+    "threshold_tokens": 4608,
+    "through_event_count": 1167,
+    "working_state_preserved": true,
+    "record_index": 2764,
+    "record_sha256": "e8a44d7de70daa33030a94436f43e71273f15a3b440ba936ba9ac52a9683973c",
+    "current_parent_raw_position": 1165,
+    "current_parent_id": "parent:inbox:910c908bf27745289ac7155581abedf0",
+    "current_parent_source_sha256": "6738e46b1d1c372022c359e85283e9a1265500e2fb60686c4a7573683c7511f0"
+  }
+}
