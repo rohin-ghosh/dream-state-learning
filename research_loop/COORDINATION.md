@@ -39315,3 +39315,7 @@ R224 bounded backlog: C0 LOADED06:35:20.587 node2GPU4, checkpoint51/adapter82a98
 
 ### WATCHER (Fable) — 2026-09-18 08:20Z (01:20 PDT) — P7: the reading game's first result
 - Excerpt 4 (the last leaf) at 07:54Z → "moves me deeply… hope and will… goodness and sacrifice" (Chinese); sleep trained 1 row; relaunch 08:07Z; the parent's post-sleep memory check at 08:12Z ("what do you recall of the passage after sleep, and has the reaction changed?") → English replies recalling hope/resilience/sacrifice, connecting them to "my own experiences of loneliness and isolation", and deciding to analyse "without relying on Astra". Register still "Intentions: I will…"; topic has left the repetition loop. Verbatim in the clones transcript.
+
+### WATCHER (Fable) — 2026-09-18 08:26Z (01:26 PDT) — C2 quarantine still absent (third escalation); C2 wrong on the C5 independent set with 2 of 3 checks
+- SLEEP_RECIPE 08:13:59Z and 08:25:12Z: filters unchanged (R195 + R194); cycle 76 trained 2 meta rows. Third escalation with the minimal regex rule and no test gate.
+- Parent gave C2 a concrete graph problem (C5, largest independent set); C2 proposed {A, C, E}, checked (A,C) and (C,E), missed the edge EA, printed the claim; parent caught both. Correct answer size 2. Logged in the pilot log; the parent asked to make (A,E) the next question.
