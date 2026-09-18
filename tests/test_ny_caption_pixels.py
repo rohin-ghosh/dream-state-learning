@@ -438,3 +438,17 @@ def test_calibration_cli_rejects_vector_provenance_mismatch(config, tmp_path):
         main(['calibrate', '--pairs', str(tmp_path / 'pairs.json'), '--vectors', str(tmp_path / 'vectors.json'),
               '--config', str(tmp_path / 'config.json'), '--output-dir', str(tmp_path / 'output')])
     assert not (tmp_path / 'output').exists()
+def test_relative_archive_preserves_scalar_rank_without_probability(config):
+    from gpu.ny_caption_pixels import PixelArchive, RelativeJudgeResult
+    archive = PixelArchive('agent', 'contest', 'Synthetic scene', config, lambda text: (1, 0))
+    decision = RelativeJudgeResult(-4.0, 1, 10, 2)
+    trace = archive.submit('Synthetic candidate', accepted=True, relative_rank=decision)
+    assert trace.q is None and trace.relative_rank == decision and trace.status == 'new_pixel'
+    assert archive.submit('Synthetic candidate', accepted=True, relative_rank=decision) == trace
+    with pytest.raises(ValueError, match='conflicting'):
+        archive.submit('Synthetic candidate', accepted=True, relative_rank=RelativeJudgeResult(-3.0, 1, 10, 2))
+    with pytest.raises(ValueError, match='no q'):
+        archive.submit('Another', accepted=True, q=0.9, relative_rank=decision)
+    with pytest.raises(ValueError, match='top-k'):
+        archive.submit('Another', accepted=False, relative_rank=decision)
+

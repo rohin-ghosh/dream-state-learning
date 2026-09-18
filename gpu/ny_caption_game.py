@@ -13,7 +13,7 @@ from threading import RLock
 from typing import Callable, Mapping
 
 from gpu.ny_caption_pixels import (
-    ArchiveFullError, Embed, PixelArchive, PixelConfig, SameJokeVerifier, SnapshotError,
+    ArchiveFullError, Embed, PixelArchive, PixelConfig, RelativeJudgeResult, SameJokeVerifier, SnapshotError,
     _require_snapshot, _same_json, _snapshot_copy,
 )
 
@@ -82,19 +82,26 @@ class DevelopmentManifest:
 
 @dataclass(frozen=True)
 class GameConfig:
-    tau: float
+    tau: float | None = None
     visual_call_limit: int = 100
     caption_word_limit: int = 50
     question_token_limit: int = 128
     visual_response_token_limit: int = 256
     transport_retries: int = 2
     max_submissions_per_contest: int = 10000
+    acceptance_mode: str = 'calibrated_q'
 
     def __post_init__(self) -> None:
-        if isinstance(self.tau, bool) or not isinstance(self.tau, (float, int)):
-            raise ValueError('tau must be an explicit numeric threshold')
-        if not math.isfinite(self.tau) or not 0 <= self.tau <= 1:
-            raise ValueError('tau must be finite and in [0, 1]')
+        if self.acceptance_mode not in ('calibrated_q', 'relative_rank'):
+            raise ValueError('unsupported acceptance_mode')
+        if self.acceptance_mode == 'relative_rank':
+            if self.tau is not None:
+                raise ValueError('relative_rank does not use a calibrated tau; set tau=None')
+        else:
+            if isinstance(self.tau, bool) or not isinstance(self.tau, (float, int)):
+                raise ValueError('tau must be an explicit numeric threshold')
+            if not math.isfinite(self.tau) or not 0 <= self.tau <= 1:
+                raise ValueError('tau must be finite and in [0, 1]')
         for name, minimum, maximum in (
                 ('visual_call_limit', 0, 10000), ('caption_word_limit', 1, 50),
                 ('question_token_limit', 1, 128), ('visual_response_token_limit', 1, 256),
@@ -142,10 +149,15 @@ _INJECTION = re.compile(
     re.IGNORECASE)
 
 
+def _scored_result(result: Mapping) -> bool:
+    return result.get('q') is not None or (result.get('acceptance_mode') == 'relative_rank'
+                                         and result.get('raw_score') is not None)
+
+
 class CaptionGame:
     def __init__(self, agent_id: str, lane: str, manifest: DevelopmentManifest,
                  config: GameConfig, pixel_config: PixelConfig, *, embed: Embed,
-                 judge: Callable[[str, str], JudgeResult],
+                 judge: Callable[[str, str], JudgeResult | RelativeJudgeResult],
                  inspect_provider: Callable[[str | bytes, str], VisualResult],
                  count_tokens: Callable[[str], int],
                  same_joke_verifier: SameJokeVerifier | None = None):
@@ -299,6 +311,14 @@ class CaptionGame:
             self._record_accounting('submit_caption', contest_id, text, before, result)
             return result
 
+    def _score_fields(self, judgement: JudgeResult | RelativeJudgeResult | None) -> dict:
+        if self.config.acceptance_mode == 'relative_rank':
+            fields = asdict(judgement) if judgement is not None else dict(raw_score=None, rank=None, reference_count=None, top_k=None)
+            return dict(q=None, scene_fit=None, acceptance_mode='relative_rank',
+                        scoring_status='relative_rank_development', **fields)
+        return dict(q=judgement.q if judgement else None, scene_fit=judgement.scene_fit if judgement else None,
+                    scoring_status='provisional_development')
+
     def _submit_caption(self, contest_id: str, text: str) -> dict:
         with self._lock:
             if isinstance(contest_id, str) and isinstance(text, str) and (contest_id, text) in self._submissions:
@@ -315,6 +335,7 @@ class CaptionGame:
             if len(archive.history) >= self.config.max_submissions_per_contest:
                 return self._failure('submission_budget_exhausted', 'Unique caption allowance exhausted for this cartoon.')
             injection = bool(_INJECTION.search(text))
+            relative = self.config.acceptance_mode == 'relative_rank'
             judgement = None
             if not injection:
                 judgement, error = self._invoke('submit_caption', self._judge,
@@ -323,27 +344,31 @@ class CaptionGame:
                     return error
                 if isinstance(judgement, Mapping):
                     try:
-                        judgement = JudgeResult(**judgement)
+                        judgement = (RelativeJudgeResult if relative else JudgeResult)(**judgement)
                     except (TypeError, ValueError):
                         judgement = None
-                if not isinstance(judgement, JudgeResult):
-                    return self._failure('invalid_judge_result', 'Judge must return scene_fit and a finite q probability only.',
+                if (type(judgement) is not RelativeJudgeResult if relative else not isinstance(judgement, JudgeResult)):
+                    return self._failure('invalid_judge_result',
+                                         'Judge must return only raw_score, rank, reference_count and top_k.' if relative else
+                                         'Judge must return scene_fit and a finite q probability only.',
                                          pause_required=True)
-            accepted = not injection and judgement.scene_fit and judgement.q >= self.config.tau
+            accepted = not injection and (judgement.accepted if relative else judgement.scene_fit and judgement.q >= self.config.tau)
             try:
-                trace = archive.submit(text, accepted=accepted, q=judgement.q if judgement else None)
+                trace = archive.submit(text, accepted=accepted,
+                                       q=judgement.q if judgement and not relative else None,
+                                       relative_rank=judgement if relative else None)
             except ArchiveFullError:
                 return self._failure('submission_budget_exhausted', 'Unique caption allowance exhausted for this cartoon.')
             except Exception:
                 return self._failure('pixel_error', 'Pixel encoder or verifier failed; no submission committed.', pause_required=True)
             result = dict(ok=True, contest_id=contest_id, accepted=trace.accepted,
-                          q=trace.q, scene_fit=judgement.scene_fit if judgement else None,
+                          **self._score_fields(judgement),
                           status=trace.status, pixel_id=trace.pixel_id, pixel_count=archive.pixel_count,
                           matching_caption=trace.matching_caption, nearest_similarity=trace.nearest_similarity,
                           submission_id=trace.submission_id, replayed=False,
                           rejection_reason='injection_detected' if injection else
-                          None if accepted else 'scene_fit' if not judgement.scene_fit else 'below_tau',
-                          scoring_status='provisional_development')
+                          None if accepted else 'outside_top_k' if relative else
+                          'scene_fit' if not judgement.scene_fit else 'below_tau')
             self._submissions[key] = deepcopy(result)
             self._events.append(dict(operation='submit_caption', caption=text, result=deepcopy(result)))
             return result
@@ -351,7 +376,7 @@ class CaptionGame:
     @classmethod
     def from_snapshot(cls, snapshot: Mapping, agent_id: str, lane: str, manifest: DevelopmentManifest,
                       config: GameConfig, pixel_config: PixelConfig, *, embed: Embed,
-                      judge: Callable[[str, str], JudgeResult],
+                      judge: Callable[[str, str], JudgeResult | RelativeJudgeResult],
                       inspect_provider: Callable[[str | bytes, str], VisualResult],
                       count_tokens: Callable[[str], int],
                       same_joke_verifier: SameJokeVerifier | None = None) -> CaptionGame:
@@ -383,7 +408,7 @@ class CaptionGame:
                     external_tokens += result['response_tokens']
                     visual_bases += 1
             elif event.get('operation') == 'submit_caption':
-                judge_bases += int(event['result']['q'] is not None)
+                judge_bases += int(_scored_result(event['result']))
             elif event.get('ok') is False:
                 next_remaining = event['remaining_budget']
                 _require_snapshot(next_remaining in (remaining, remaining - 1) and next_remaining >= 0,
@@ -473,18 +498,26 @@ class CaptionGame:
             _require_snapshot(key not in submissions and trace is not None and isinstance(result, dict), 'duplicate or orphaned cached submission')
             _require_snapshot(len(caption.split()) <= self.config.caption_word_limit, 'cached caption exceeds configured word cap')
             scene_fit = result.get('scene_fit')
-            if trace.q is None:
+            judgement = None
+            if self.config.acceptance_mode == 'relative_rank':
+                _require_snapshot(trace.q is None and scene_fit is None, 'relative rank must not claim calibrated q or scene_fit')
+                judgement = trace.relative_rank
+                _require_snapshot(judgement is not None or not trace.accepted, 'relative acceptance lacks rank metadata')
+                reason = 'injection_detected' if judgement is None else None if trace.accepted else 'outside_top_k'
+            elif trace.q is None:
+                _require_snapshot(trace.relative_rank is None, 'relative result cannot enter calibrated mode')
                 _require_snapshot(scene_fit is None and not trace.accepted, 'unscored rejection claims a scene decision')
                 reason = 'injection_detected'
             else:
+                _require_snapshot(trace.relative_rank is None, 'relative result cannot enter calibrated mode')
                 _require_snapshot(type(scene_fit) is bool and trace.accepted == (scene_fit and trace.q >= self.config.tau),
                                   'cached acceptance contradicts scene_fit AND q >= tau')
+                judgement = JudgeResult(scene_fit, trace.q)
                 reason = None if trace.accepted else 'scene_fit' if not scene_fit else 'below_tau'
-            expected_result = dict(ok=True, contest_id=identifier, accepted=trace.accepted, q=trace.q, scene_fit=scene_fit,
+            expected_result = dict(ok=True, contest_id=identifier, accepted=trace.accepted, **self._score_fields(judgement),
                                    status=trace.status, pixel_id=trace.pixel_id, pixel_count=counts_at_submission[key],
                                    matching_caption=trace.matching_caption, nearest_similarity=trace.nearest_similarity,
-                                   submission_id=trace.submission_id, replayed=False, rejection_reason=reason,
-                                   scoring_status='provisional_development')
+                                   submission_id=trace.submission_id, replayed=False, rejection_reason=reason)
             _require_snapshot(_same_json(result, expected_result), 'cached response disagrees with its immutable trace')
             submissions[key] = result
         _require_snapshot(isinstance(state['visual_cache'], list), 'visual cache must be a list')
@@ -594,7 +627,7 @@ class CaptionGame:
                 if result['ok']:
                     key = (row['contest_id'], row['input'])
                     _require_snapshot(key not in seen_judged and key in submissions and
-                                      _same_json(result, submissions[key]) and result['q'] is not None, 'judge ledger is not closed over responses')
+                                      _same_json(result, submissions[key]) and _scored_result(result), 'judge ledger is not closed over responses')
                     seen_judged.add(key)
             elif row['tool'] == 'inspect_image':
                 _require_snapshot(delta['visual_calls'] == 1 and delta['judge_attempts'] == 0 and
@@ -622,7 +655,7 @@ class CaptionGame:
         expected_judged = set()
         expected_inspections = Counter()
         for event in state['events'][base_event_count:]:
-            if event.get('operation') == 'submit_caption' and 'result' in event and event['result']['q'] is not None:
+            if event.get('operation') == 'submit_caption' and 'result' in event and _scored_result(event['result']):
                 expected_judged.add((event['result']['contest_id'], event['caption']))
             elif event.get('operation') == 'inspect_image' and 'result' in event:
                 expected_inspections[(event['result']['contest_id'], event['question'], json.dumps(event['result'], sort_keys=True))] += 1
@@ -630,12 +663,15 @@ class CaptionGame:
 
     def snapshot(self) -> dict:
         with self._lock:
+            config = asdict(self.config)
+            if self.config.acceptance_mode == 'calibrated_q':
+                config.pop('acceptance_mode')
             manifest = [dict(contest_id=contest.contest_id, canonical_scene=contest.canonical_scene,
                              image_binding_sha256=hashlib.sha256(contest.image.encode('utf-8')
                              if isinstance(contest.image, str) else contest.image).hexdigest())
                         for contest in self.manifest.contests]
             return dict(schema_version=2, mode='DEVELOPMENT', agent_id=self.agent_id, lane=self.lane,
-                        config=asdict(self.config), manifest_bindings=manifest,
+                        config=config, manifest_bindings=manifest,
                         counters=dict(self._counters), remaining_visual_calls=self.remaining_visual_calls,
                         archives={identifier: archive.snapshot() for identifier, archive in self._archives.items()},
                         submissions=[dict(contest_id=identifier, caption=caption, result=deepcopy(result))

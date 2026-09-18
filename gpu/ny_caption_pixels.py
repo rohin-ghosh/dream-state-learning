@@ -96,6 +96,30 @@ def cosine(left: Sequence[float], right: Sequence[float]) -> float:
 
 
 @dataclass(frozen=True)
+class RelativeJudgeResult:
+    """One-based candidate rank among reference_count references plus the candidate."""
+
+    raw_score: float
+    rank: int
+    reference_count: int
+    top_k: int
+
+    def __post_init__(self) -> None:
+        if isinstance(self.raw_score, bool) or not isinstance(self.raw_score, (int, float)) or not math.isfinite(self.raw_score):
+            raise ValueError('raw_score must be a finite scalar, not a probability estimate')
+        if type(self.reference_count) is not int or self.reference_count < 1:
+            raise ValueError('reference_count must be a positive integer')
+        for name in ('rank', 'top_k'):
+            value = getattr(self, name)
+            if type(value) is not int or not 1 <= value <= self.reference_count + 1:
+                raise ValueError(f'{name} must be a one-based integer within the comparison population')
+
+    @property
+    def accepted(self) -> bool:
+        return self.rank <= self.top_k
+
+
+@dataclass(frozen=True)
 class SubmissionTrace:
     submission_id: str
     sequence: int
@@ -111,6 +135,7 @@ class SubmissionTrace:
     verifier_same_joke: bool | None
     vector: tuple[float, ...] | None
     created_at: str
+    relative_rank: RelativeJudgeResult | None = None
 
 
 @dataclass(frozen=True)
@@ -120,6 +145,17 @@ class Pixel:
     representative_vector: tuple[float, ...]
     discovered_sequence: int
     members: tuple[SubmissionTrace, ...]
+
+
+def _trace_document(trace: SubmissionTrace) -> dict:
+    result = asdict(trace)
+    if trace.relative_rank is None:
+        result.pop('relative_rank')
+    return result
+
+
+def _pixel_document(pixel: Pixel) -> dict:
+    return dict(asdict(pixel), members=tuple(_trace_document(trace) for trace in pixel.members))
 
 
 class ArchiveFullError(RuntimeError):
@@ -193,18 +229,24 @@ class PixelArchive:
         with self._lock:
             return self._by_caption.get(caption)
 
-    def submit(self, caption: str, *, accepted: bool, q: float | None) -> SubmissionTrace:
+    def submit(self, caption: str, *, accepted: bool, q: float | None = None,
+               relative_rank: RelativeJudgeResult | None = None) -> SubmissionTrace:
         _text(caption, 'caption')
         if type(accepted) is not bool:
             raise ValueError('accepted must be a bool')
-        if q is not None:
+        if relative_rank is not None:
+            if type(relative_rank) is not RelativeJudgeResult or q is not None:
+                raise ValueError('relative_rank requires a RelativeJudgeResult and no q probability')
+            if accepted != relative_rank.accepted:
+                raise ValueError('accepted must match the relative top-k decision')
+        elif q is not None:
             _number(q, 'q', 0, 1)
         elif accepted:
             raise ValueError('accepted captions require an actual q score')
         with self._lock:
             previous = self._by_caption.get(caption)
             if previous is not None:
-                if previous.accepted != accepted or previous.q != q:
+                if previous.accepted != accepted or previous.q != q or previous.relative_rank != relative_rank:
                     raise ValueError('conflicting exact submission; use a new archive for rescoring')
                 return previous
             if len(self._history) >= self.max_submissions:
@@ -243,7 +285,7 @@ class PixelArchive:
                 _submission_identity(self.agent_id, self.contest_id, caption), sequence, caption,
                 accepted, q, status, pixel_id, matching_caption,
                 nearest.pixel_id if nearest else None, nearest_similarity, similarities,
-                verifier_decision, vector, datetime.now(timezone.utc).isoformat())
+                verifier_decision, vector, datetime.now(timezone.utc).isoformat(), relative_rank)
             if accepted:
                 if repeat:
                     self._pixels[nearest_index] = replace(nearest, members=nearest.members + (trace,))
@@ -281,7 +323,8 @@ class PixelArchive:
             history, pixels, by_caption = [], [], {}
             trace_fields = {field.name for field in fields(SubmissionTrace)}
             for sequence, raw in enumerate(state['history'], start=1):
-                _require_snapshot(isinstance(raw, dict) and set(raw) == trace_fields, 'invalid submission trace fields')
+                _require_snapshot(isinstance(raw, dict) and set(raw) in (trace_fields, trace_fields - {'relative_rank'}),
+                                  'invalid submission trace fields')
                 _require_snapshot(type(raw['sequence']) is int and raw['sequence'] == sequence, 'noncontiguous submission sequence')
                 _require_snapshot(isinstance(raw['caption'], str) and bool(raw['caption'].strip()), 'invalid archived caption')
                 _require_snapshot(raw['caption'] not in by_caption, 'duplicate exact caption in archive history')
@@ -289,6 +332,12 @@ class PixelArchive:
                                   'submission identity does not bind agent, contest and exact caption')
                 _require_snapshot(type(raw['accepted']) is bool, 'invalid archived acceptance flag')
                 try:
+                    relative_rank = None
+                    if 'relative_rank' in raw:
+                        _require_snapshot(isinstance(raw['relative_rank'], dict), 'invalid relative rank metadata')
+                        relative_rank = RelativeJudgeResult(**raw['relative_rank'])
+                        _require_snapshot(raw['q'] is None and raw['accepted'] == relative_rank.accepted,
+                                          'relative rank contradicts acceptance or claims a probability')
                     if raw['q'] is not None:
                         _number(raw['q'], 'q', 0, 1)
                     recorded_at = datetime.fromisoformat(raw['created_at'])
@@ -314,7 +363,7 @@ class PixelArchive:
                 expected_similarities = ()
                 repeat = False
                 if raw['accepted']:
-                    _require_snapshot(raw['q'] is not None, 'accepted trace lacks its actual score')
+                    _require_snapshot(raw['q'] is not None or relative_rank is not None, 'accepted trace lacks its actual score')
                     _require_snapshot(isinstance(raw['vector'], list) and bool(raw['vector']), 'accepted trace lacks its vector')
                     vector = tuple(raw['vector'])
                     try:
@@ -351,7 +400,7 @@ class PixelArchive:
                 _require_snapshot(raw['nearest_pixel_id'] == (nearest.pixel_id if nearest else None) and
                                   raw['nearest_similarity'] == nearest_similarity and similarities == expected_similarities,
                                   'nearest-neighbor trace does not close over immutable representatives')
-                trace = SubmissionTrace(**dict(raw, vector=vector, similarities=similarities))
+                trace = SubmissionTrace(**dict(raw, vector=vector, similarities=similarities, relative_rank=relative_rank))
                 if raw['accepted']:
                     if repeat:
                         pixels[nearest_index] = replace(nearest, members=nearest.members + (trace,))
@@ -359,7 +408,7 @@ class PixelArchive:
                         pixels.append(Pixel(expected_pixel_id, trace.caption, vector, sequence, (trace,)))
                 history.append(trace)
                 by_caption[trace.caption] = trace
-            _require_snapshot(_same_json(state['pixels'], [asdict(pixel) for pixel in pixels]),
+            _require_snapshot(_same_json(state['pixels'], [_pixel_document(pixel) for pixel in pixels]),
                               'pixel representatives or membership do not close over history')
             self._history, self._pixels, self._by_caption = history, pixels, by_caption
             self._trace_policy = state.get('similarity_trace')
@@ -371,8 +420,8 @@ class PixelArchive:
                         max_submissions=self.max_submissions,
                         similarity_trace=self._trace_policy,
                         implementation='embedding_plus_verifier' if self._verifier else 'embedding_only',
-                        history=[asdict(trace) for trace in self._history],
-                        pixels=[asdict(pixel) for pixel in self._pixels])
+                        history=[_trace_document(trace) for trace in self._history],
+                        pixels=[_pixel_document(pixel) for pixel in self._pixels])
             if self._trace_policy is None:
                 result.pop('similarity_trace')
             return result
