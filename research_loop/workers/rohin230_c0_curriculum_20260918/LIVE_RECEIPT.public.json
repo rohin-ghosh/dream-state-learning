@@ -1,0 +1,281 @@
+{
+  "coherent_checkpoint_before_addition": {
+    "adapter_state_sha256": "3fc111c5f7440c1281f53829f4ff58e281d22275b377dda8a70f3555ed428daf",
+    "checkpoint_created_utc": "2026-09-18T09:51:40.000482+00:00",
+    "checkpoint_path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/checkpoints/sleep_000077",
+    "commit_sha256": "3b43a44914555e7b594f1cc5922af326991d3eab090d867d5674bdaf03243a2e",
+    "completed_record_index": 1533,
+    "completed_record_sha256": "e65e63fdca70cbea40452d4c7717890c1e248141bb9c76da703426bbd0a8cf8e",
+    "created_utc": "2026-09-18T09:53:06.531278+00:00",
+    "cycle": 77,
+    "files": {
+      "adapter/README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+      "adapter/adapter_config.json": "23d0f67452a979c2804989c475a3845cd71193d9f0e3ac8fc1d1e0eef79c0cb8",
+      "adapter/adapter_model.safetensors": "1652ffcb84caf8fddff5c4f92786b9af63c8789a20c75b072b45c9f9b798a241",
+      "optimizer_rng.pt": "2dd8be3a136157551ad5454fe28b489e8b510093ebd593e3092670212fc7c5dd"
+    },
+    "learner_controls": 0,
+    "model_calls": 0,
+    "optimizer_steps": 5580,
+    "preservation": "Existing immutable completed checkpoint; bytes verified, not a new live-process snapshot or copied payload.",
+    "resume_state_sha256": "87b71a900821b8266ced80f158965a7ded230e80b44563e397712062967032bc"
+  },
+  "corrections": {
+    "actual_awake_cycle": 78,
+    "created_utc": "2026-09-18T09:58:42.664224+00:00",
+    "earlier_observer_cycle": 79,
+    "parent_prompt_republished": false,
+    "raw_history_changed": false,
+    "reason": "Recovery must use request-bound completed sleeps, not the later observer cursor.",
+    "request_index": 1546,
+    "request_sha256": "42342b31d2c445c33122957c7acf7393169bd7a0928582b6a2be9d5922473adb",
+    "response_index": 1547,
+    "response_sha256": "1ed017c3da567439cb8bd6095752645f798b81fa9ab362aa52333841cd2dc11c"
+  },
+  "current_native_learning": {
+    "completed_sleep_index": 1602,
+    "completed_sleep_sha256": "86d8e03bae6ca951505450874951f9edffcaf6452bd7398c86b37cec327ff7ae",
+    "cycle": 79,
+    "eligibility_index": 1601,
+    "eligibility_sha256": "4bb50ff243c292a3f211a3b18674d48f4397d23e1e87cf5314d7c65e1bcd1242",
+    "excluded_count": 3,
+    "excluded_reason_counts": {
+      "provisional_english_target_script_quarantine": 3
+    },
+    "optimizer_steps": 5580,
+    "raw_modified": false,
+    "recipe": {
+      "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+      "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+      "new_presentations": 16,
+      "new_rows": 3,
+      "policy": "R181_NEW_ONLY_V1",
+      "selected_old_rows": 0
+    },
+    "recipe_index": 1600,
+    "recipe_sha256": "a056ca5a88f5d129f7b54ac5477408f8578b43470e1fcf445ac3ee3a0dda4859",
+    "semantic_filters_off": false,
+    "supported_live_disable": "Not established for resident C0; source changes do not change this process. No native intervention authorized or performed."
+  },
+  "current_publisher": {
+    "actual_process": {
+      "cmdline_sha256": "5664f8b0481ee2cab2408209c8015a85fd909c4127283715a72ffa0b6859c1cb",
+      "pid": 2929240,
+      "start_ticks": 95395597,
+      "state": "S"
+    },
+    "failure_receipt_present": false,
+    "pending_topic": "reading",
+    "service": {
+      "adapter_retention_claim": false,
+      "arm": "C0_math_first_curriculum_added_late",
+      "automatic_stage_transitions": false,
+      "birth_prompt_changed": false,
+      "child_history_edits": 0,
+      "continuation_from": "/localhome/local-rohing/orch_r230_c0_operator_20260918/curriculum_v2_receipts",
+      "curriculum_sha256": "b3a1b793633f40f81edbdb7f899e05e56e4ff758b57e741ac41a9aa10c8d5ba6",
+      "deadline_unix": 1789734718.1793144,
+      "identity": {
+        "adapter_at_load": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "gpu_uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+        "guard_sha256": "46b88748175a5750ec1de9f6e9b1e30fa1d49f38b4a4f8f7395de1275d137016",
+        "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+        "loaded_index": 1,
+        "loaded_sha256": "bfd5c0cce84abe72354adbe87de1916906be968db9c75ce108e7383c3834f1f9",
+        "loaded_utc": "2026-09-18T06:35:20.587470+00:00",
+        "node": "node2",
+        "physical_gpu": 4,
+        "pid": 2561156,
+        "process_state": "R",
+        "root": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2",
+        "start_ticks": 94173182
+      },
+      "inherited_pending": false,
+      "learning_rate_changes": 0,
+      "live_native_filter_policy_changed": false,
+      "max_publications": 80,
+      "old_reading_pid": 2729920,
+      "original_math_parent_unchanged": true,
+      "parent_turns_withheld": 0,
+      "pid": 2929240,
+      "previous_publisher_pid": 2924268,
+      "recall_success_automatically_assessed": false,
+      "rigid_response_schema_added": false,
+      "schedule_scope": "R231 gradual responsiveness and read-only metrics; no birth reset, rigid schema, plasticity change, or advancement gate",
+      "semantic_selection_in_publisher": false,
+      "signals": 0,
+      "source_sha256": "d3374eb7119bf243dd3c581ba8dae64ef4a34d663705d90b6ac8583b9c1b8a9d",
+      "start_ticks": 95395597,
+      "started_utc": "2026-09-18T09:58:36.881233+00:00"
+    },
+    "state": {
+      "completed_cycle": 79,
+      "next_due_cycle": 78,
+      "publications": 2,
+      "reading_step": 0,
+      "record_cursor": 1604,
+      "topic_index": 2,
+      "unresolved_recall": true
+    }
+  },
+  "graceful_handoff": {
+    "completed_utc": "2026-09-18T09:53:12.536426+00:00",
+    "identity": {
+      "adapter_at_load": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+      "gpu_uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+      "guard_sha256": "46b88748175a5750ec1de9f6e9b1e30fa1d49f38b4a4f8f7395de1275d137016",
+      "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+      "loaded_index": 1,
+      "loaded_sha256": "bfd5c0cce84abe72354adbe87de1916906be968db9c75ce108e7383c3834f1f9",
+      "loaded_utc": "2026-09-18T06:35:20.587470+00:00",
+      "node": "node2",
+      "physical_gpu": 4,
+      "pid": 2561156,
+      "process_state": "S",
+      "root": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2",
+      "start_ticks": 94173182
+    },
+    "inherited_pending": false,
+    "inherited_record_cursor": 1535,
+    "learner_controls": 0,
+    "no_learning_rate_changes": true,
+    "old_exit_sha256": "e1ffce7686f37584f25e8484b1dc9aeb81679ea77cca225bc206556ff9731dea",
+    "old_reading_publisher": {
+      "cmdline_sha256": "ef462b6f72be27cff99f5466100eba5235f7078bb7ec999705d120c2c5bf4962",
+      "pid": 2729920,
+      "start_ticks": 94773801,
+      "state": "S"
+    },
+    "original_math_parent": {
+      "cmdline_sha256": "0c8c8a7a38f1e42393d8b5eca987cc72d0052939ffed3cab176a1630f1ba1d98",
+      "pid": 2561001,
+      "start_ticks": 94172764,
+      "state": "S"
+    },
+    "signals": 0
+  },
+  "identity": {
+    "adapter_at_load": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+    "gpu_uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+    "guard_sha256": "46b88748175a5750ec1de9f6e9b1e30fa1d49f38b4a4f8f7395de1275d137016",
+    "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+    "loaded_index": 1,
+    "loaded_sha256": "bfd5c0cce84abe72354adbe87de1916906be968db9c75ce108e7383c3834f1f9",
+    "loaded_utc": "2026-09-18T06:35:20.587470+00:00",
+    "node": "node2",
+    "physical_gpu": 4,
+    "pid": 2561156,
+    "process_state": "S",
+    "root": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2",
+    "start_ticks": 94173182
+  },
+  "observed_utc": "2026-09-18T09:59:44.738650+00:00",
+  "original_math_parent": {
+    "cmdline_sha256": "0c8c8a7a38f1e42393d8b5eca987cc72d0052939ffed3cab176a1630f1ba1d98",
+    "pid": 2561001,
+    "start_ticks": 94172764,
+    "state": "S"
+  },
+  "reading_delivery": {},
+  "reading_followup": {
+    "after_cycle": 78,
+    "number": 1,
+    "publication": {
+      "id": "81a8dccdb59a41f7a4e7167822e51cb0",
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/inbox/81a8dccdb59a41f7a4e7167822e51cb0.json",
+      "sha256": "6b3f75bcb861ef59f5730f072ad9b104020b59516bcb8573b1104e5bdfc05d8a"
+    },
+    "published_utc": "2026-09-18T09:58:42.918383+00:00",
+    "reading_step": 0,
+    "text_sha256": "5abaf943a369be387627c7768d4cab4cd29720fe877c6c3cd476606d572c92ae",
+    "topic": "reading"
+  },
+  "reprobe": {
+    "act": {
+      "request": {
+        "all_history_tokens_masked": true,
+        "awake_cycle": 78,
+        "context_carryover_not_controlled": true,
+        "document_sha256": "61fd42bfbfd2ac77ed65b659b7e898c7430ec3d656172060486943d781d24a1a",
+        "exact_story_visible": false,
+        "index": 1546,
+        "prompt_tokens": 8169,
+        "request_sha256": "a5079c97925c5c96c19451a364446dfdd6ba171f7ecdc0ef05df727d9fb9cda6",
+        "sha256": "42342b31d2c445c33122957c7acf7393169bd7a0928582b6a2be9d5922473adb",
+        "started_utc": "2026-09-18T09:53:56.099028+00:00"
+      },
+      "response": {
+        "finished_utc": "2026-09-18T09:54:04.573628+00:00",
+        "index": 1547,
+        "raw_sha256": "a5e52ac3c98f14fce18a1dfdb97db1e27d59d9d9960cb7c433bfb8387879244a",
+        "sha256": "1ed017c3da567439cb8bd6095752645f798b81fa9ab362aa52333841cd2dc11c",
+        "source_path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000001547.json"
+      },
+      "stage": {
+        "index": 1549,
+        "name": "ACT",
+        "sha256": "39425baa050303619643369ac986e7d94307f561b90128323d40a76537c83335"
+      }
+    },
+    "first_content": {
+      "request": {
+        "all_history_tokens_masked": true,
+        "awake_cycle": 78,
+        "context_carryover_not_controlled": true,
+        "document_sha256": "bdc26aced8f068a4fcf4ed90a92ad7a25788aa521ebfaa4cd504f684bbfbba76",
+        "exact_story_visible": false,
+        "index": 1537,
+        "prompt_tokens": 12054,
+        "request_sha256": "b67d13e6ab4b17cbab973c324af321cca19b2d7dbd48f4f56f6e77e556d92fc2",
+        "sha256": "d697559a2308faa8500675f0b80005345d9d1522251ca9de89d3128ce33287c8",
+        "started_utc": "2026-09-18T09:53:42.086607+00:00"
+      },
+      "response": {
+        "finished_utc": "2026-09-18T09:53:51.780568+00:00",
+        "index": 1538,
+        "raw_sha256": "f269ce7427429b788e305626cc61147aec2259d92a491ccf887318b7d6048ffa",
+        "sha256": "de7a2f40d215f552d24618f99ca49d817b981dfd1db1a5e906aea0d4e6caed64",
+        "source_path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000001538.json"
+      },
+      "stage": {
+        "index": 1540,
+        "name": "THINK",
+        "sha256": "6e5204b1c2e66e9c5c75c353d5453aa1bf5679f4766f40869cc554d794323f1e"
+      }
+    },
+    "inbox": {
+      "id": "6af6fe18f2014d8c9b0b2aa04c864648",
+      "index": 1535,
+      "publication_sha256": "1b9e82cdafe9c153d10203dcd050ac9aa886ac1737b805b795551671988cf65b",
+      "sha256": "072d9244a70658d92a448448690e09d708aa7571f3f4a8a6ad452bc9bb7ea227"
+    },
+    "manual_review": {
+      "adapter_retention_claim": false,
+      "content_vs_intention": "method_or_intention_only",
+      "context_carryover_controlled": false,
+      "observed_content": "Predominantly Chinese restatement of the method/task; not an actual story recollection or explicit first-person lack-of-recall answer.",
+      "recall": "unresolved",
+      "relation_to_own_situation": "not_answered",
+      "reviewer": "C0 operator",
+      "story_detail_accuracy": "not_scored"
+    },
+    "publication": {
+      "id": "6af6fe18f2014d8c9b0b2aa04c864648",
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/inbox/6af6fe18f2014d8c9b0b2aa04c864648.json",
+      "sha256": "1b9e82cdafe9c153d10203dcd050ac9aa886ac1737b805b795551671988cf65b"
+    },
+    "published_utc": "2026-09-18T09:53:17.981129+00:00",
+    "text_sha256": "36729a828b71e7b90ca3ec6837200629cd43863d62f334b7dadd1918bd56e1f9"
+  },
+  "safety": {
+    "external_messages_masked": true,
+    "learner_restarts": 0,
+    "learner_signals": 0,
+    "learning_rate_changes": 0,
+    "model_calls": 0,
+    "no_birth_reset": true,
+    "no_new_Astra7_parent": true,
+    "parent_turns_withheld": 0,
+    "raw_child_text_exported": false
+  }
+}
