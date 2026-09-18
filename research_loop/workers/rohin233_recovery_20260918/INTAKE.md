@@ -1,5 +1,26 @@
 # Kept-fleet recovery — September 18, 2026
 
+## Horizon update — 17:25 UTC directive
+
+The latest user directive supersedes short experiment horizons and old date-only
+lease assumptions. Existing reported leases yield conservative UTC midnight
+minus six-hour bounds: ovx4 September30 18:00, node3 September24 18:00,
+node2/node5 September20 18:00, node4 September25 18:00. These are scheduling
+bounds under the existing allocation, not independently verified provider
+timestamps or authorization to purchase/extend a lease.
+
+Scope includes removing the obsolete Main cutoff, renewing CPU parents/readers
+and service horizons, restoring already-down kept lives, and reporting actual
+native deadline adoption. Exact child identity, preserved state, confinement,
+base model, source provenance and scientific-claim boundaries remain unchanged.
+Startup-latched native deadlines cannot be called renewed after a file edit.
+Where renewal requires a reload gap, Main asks for an explicit exception to the
+no-gap instruction before stopping a currently running native. No SIGSTOP,
+debugger injection, safety-scan bypass or pause marker is authorized here.
+
+The earlier 18:00 CPU-parent recovery bound below is historical, not the new
+continuation bound. Original receipts remain preserved.
+
 Authority: Fable relays Rohin message 233 at 16:38 UTC: restore the stopped
 kept lives from their preserved state, original nodes, and continuous journals.
 The 16:42 UTC addendum prioritizes P3's strong parent and one actual caption.
