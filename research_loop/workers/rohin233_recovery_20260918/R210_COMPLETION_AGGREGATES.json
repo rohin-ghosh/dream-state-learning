@@ -1,0 +1,202 @@
+{
+  "contains_case_texts": false,
+  "observed_unix": 1789754946.92473,
+  "runs": [
+    {
+      "completion": {
+        "R210_crossed_comparisons": 247680,
+        "R210_within_comparisons": 743040,
+        "comparisons": 1000000,
+        "completed_unix": 1789741168.7727077,
+        "no_claim_all_cross_captions_invalid": true,
+        "optimizer_updates": 15625,
+        "retained_R209_updates": 145,
+        "selected_R210_step": 146
+      },
+      "diagnostics": [
+        {
+          "by_type": {
+            "mid_tier": {
+              "losses": 24,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 0.75,
+              "tie_half_accuracy": 0.755,
+              "ties": 1,
+              "wins": 75
+            },
+            "nonsense": {
+              "losses": 0,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 1.0,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "other_contest": {
+              "losses": 46,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 0.51,
+              "tie_half_accuracy": 0.525,
+              "ties": 3,
+              "wins": 51
+            },
+            "scene_description": {
+              "losses": 0,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 1.0,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "truncated": {
+              "losses": 6,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 0.94,
+              "tie_half_accuracy": 0.94,
+              "ties": 0,
+              "wins": 94
+            },
+            "word_shuffled": {
+              "losses": 0,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 1.0,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            }
+          },
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "cases": 600,
+          "contests": 20,
+          "spearman": {
+            "examples": 4864,
+            "macro_mean_rating_spearman": 0.273878812162536,
+            "step": 146
+          },
+          "step": 146
+        },
+        {
+          "by_type": {
+            "mid_tier": {
+              "losses": 23,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 0.77,
+              "tie_half_accuracy": 0.77,
+              "ties": 0,
+              "wins": 77
+            },
+            "nonsense": {
+              "losses": 4,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 0.96,
+              "tie_half_accuracy": 0.96,
+              "ties": 0,
+              "wins": 96
+            },
+            "other_contest": {
+              "losses": 10,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 0.9,
+              "tie_half_accuracy": 0.9,
+              "ties": 0,
+              "wins": 90
+            },
+            "scene_description": {
+              "losses": 3,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 0.97,
+              "tie_half_accuracy": 0.97,
+              "ties": 0,
+              "wins": 97
+            },
+            "truncated": {
+              "losses": 7,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 0.93,
+              "tie_half_accuracy": 0.93,
+              "ties": 0,
+              "wins": 93
+            },
+            "word_shuffled": {
+              "losses": 3,
+              "opportunities": 100,
+              "scored": 100,
+              "skipped": 0,
+              "strict_accuracy": 0.97,
+              "tie_half_accuracy": 0.97,
+              "ties": 0,
+              "wins": 97
+            }
+          },
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "cases": 600,
+          "contests": 20,
+          "spearman": {
+            "examples": 4864,
+            "macro_mean_rating_spearman": 0.251139888402297,
+            "step": 15625
+          },
+          "step": 15625
+        }
+      ],
+      "final_adapter_files": {
+        "README.md": {
+          "bytes": 5386,
+          "sha256": "fb5e3f69430ada914e1ea7492de58c8a0b4efff16de168cb0d0d3c8917116acc"
+        },
+        "adapter_config.json": {
+          "bytes": 1262,
+          "sha256": "57e7a77670d826d004b3849b8694f7042036f6ce80c5ca4f6464c1c3b9c09649"
+        },
+        "adapter_model.safetensors": {
+          "bytes": 10114552,
+          "sha256": "a070b28ef0bf1f57ad994e5bd715db77e2649d196960cea422971523696be3c4"
+        }
+      },
+      "final_update": {
+        "aggregate_comparisons": 1000000,
+        "completed_updates": 15625,
+        "fitting_elapsed_seconds": 32280.816283545166,
+        "observed_unix": 1789741142.589255,
+        "phase_comparisons": 990720,
+        "phase_pairs_per_second": 30.690673720819444
+      },
+      "load": {
+        "completed_updates": 145,
+        "loaded_unix": 1789708353.7260275,
+        "optimizer_reset": false,
+        "rank": 8,
+        "world_size": 4
+      },
+      "rank": 8,
+      "root": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank8_20260918_continuation2/training"
+    },
+    {
+      "rank": 16,
+      "status": "EXACT_ROOT_NOT_FOUND"
+    }
+  ],
+  "source_node_alias": "ovx5"
+}
