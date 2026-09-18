@@ -46,6 +46,12 @@ def observe():
         old_head_index=recovery['old_head_index'], preserved_tail_records=recovery['preserved_tail_record_count'],
         native=None, loaded=None, wall_extended=None, binding=None)
     result['complete_index'] = read(Path(recovery['complete_path']))['index']
+    old_exit_path = ROOT / 'r212/control/EXIT.json'
+    if old_exit_path.is_file():
+        old_exit = read(old_exit_path)
+        result['old_exit'] = dict(receipt_sha256=digest(old_exit_path),
+            exit_code=old_exit['exit_code'], finished_unix=old_exit['finished_unix'],
+            finished_utc=utc(old_exit['finished_unix']))
     for name in ('RECOVERY_APPENDED.json', 'GUARD.json', 'DISPATCHING.json'):
         result[name] = digest(CONTROL / name) if (CONTROL / name).exists() else None
     if result['DISPATCHING.json'] is not None:
@@ -90,6 +96,9 @@ def observe():
                 guard_sha256=digest(CONTROL / 'GUARD.json'))
             result.update(status='LOADED_ALIVE_WALL_EXTENDED', actual_deadline_utc=utc(END_UNIX),
                 binding=binding, loaded_utc=utc(loaded['document']['loaded_unix']))
+            if 'old_exit' in result:
+                result['recorded_exit_to_loaded_seconds'] = (
+                    loaded['document']['loaded_unix'] - result['old_exit']['finished_unix'])
         else:
             result['status'] = 'LOADED_RECEIPT_NATIVE_NOT_ALIVE'
     return result
