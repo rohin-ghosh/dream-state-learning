@@ -1,0 +1,175 @@
+{
+  "schema": "R229_ACTUAL_LATENCY_AND_POLICY_V1",
+  "observed_utc": "2026-09-18T09:25:37.310809+00:00",
+  "head_index": 8485,
+  "native": {
+    "pid": 3624513,
+    "state": "S",
+    "loaded": {
+      "index": 7620,
+      "sha256": "314b3b614ec933e197a37ad388fefad48c57c89b00486cc70ca613444c47cf88",
+      "pid": 3624513,
+      "loaded_unix": 1789716527.072366,
+      "loaded_utc": "2026-09-18T07:28:47.072366+00:00",
+      "optimizer_steps": 5836
+    },
+    "plan_sha256": "b3016752f19004842de09eca39595f68cc6dd1b4fc7b16366c1850d509704f98",
+    "guard_sha256": "e4ec9ee6f9b481612061148a232750955a0c4e7fbbd1889f8c2213a4d1379e87",
+    "source_pins": {
+      "gpu/orch_r125_continual_native.py": "39a4391e6c414e33c38e6569c2b334cba1034a880e88236968f066962e205401",
+      "gpu/orch_r184_think_act_learn.py": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e",
+      "organism_v6/orch_r213_content_target_filter.py": "b8c6c1710d92deda72b7db085eeded147511f168ca86d51d52a951b528a2577e"
+    },
+    "learn_row_policy": {
+      "native": null,
+      "driver": null
+    },
+    "existing_console_preemption_policy": "R205_CONSOLE_PREEMPTION_V1"
+  },
+  "R227_committed_source_not_adoption": true,
+  "semantic_exclusions_still_active": true,
+  "latest_complete": {
+    "index": 8421,
+    "sha256": "63ebf7b499125590a1b97fc339dddc0af31d2aa3337f1e35383868eee3a4d174",
+    "cycle": 81,
+    "optimizer_steps": 6156
+  },
+  "recipe": {
+    "index": 8464,
+    "sha256": "de3d2a6fe94347d79e18488d82b57a4b626b0ee3538149a01f7f3df215a01e60",
+    "document": {
+      "anchor_lambda": 0.25,
+      "available_old_rows": 272,
+      "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+      "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+      "new_presentations": 16,
+      "new_rows": 4,
+      "policy": "R181_NEW_ONLY_V1",
+      "selected_old_rows": 0,
+      "sleep_loss_impl": "MASKED_CAUSAL_CE_V1"
+    }
+  },
+  "eligibility": {
+    "index": 8465,
+    "sha256": "a45ea6c122ac8484080c9254d36014776ff42b301180df257b1fdfd35eadde60",
+    "raw_modified": false,
+    "rows": [
+      {
+        "stage": "THINK",
+        "segment": 272,
+        "response_index": 8426,
+        "source_sha256": "70d56afbd274261d5990ff1caab614036375cddd3b75a6e53b9da1415ea8c044",
+        "retained": true,
+        "excluded_reason": null
+      },
+      {
+        "stage": "THINK",
+        "segment": 273,
+        "response_index": 8432,
+        "source_sha256": "96950c70fafde857c7086fd75bfd10b09a4a8d76a93977e1461b5578c4d7ed17",
+        "retained": true,
+        "excluded_reason": null
+      },
+      {
+        "stage": "ACT",
+        "segment": 274,
+        "response_index": 8441,
+        "source_sha256": "db8a780723feaa81418cbb126a5094cddc1f8c3911d4d807b39908d54ac354f6",
+        "retained": false,
+        "excluded_reason": "labelled_prose_inside_code_fence"
+      },
+      {
+        "stage": "LEARN",
+        "segment": 275,
+        "response_index": 8453,
+        "source_sha256": "4d9c1d038d7dc4178c9e6ed8e59e07ad7f2bfa32577c6a6e5e2e0bef81d33699",
+        "retained": false,
+        "excluded_reason": "labelled_prose_inside_code_fence"
+      }
+    ],
+    "scheduled_updates": 32,
+    "cycle82_complete_at_observation": false
+  },
+  "active_selectors": {
+    "native": {
+      "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+      "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1"
+    },
+    "driver": {
+      "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+      "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+      "content_target_filter": "R213_CONTENT_BEARING_TARGETS_V1",
+      "question_target_filter": "R220_EXPLICIT_FABLE_QUESTIONS_V1",
+      "fabricated_speaker_filter": "R220_FABRICATED_HUMAN_TURNS_V1"
+    }
+  },
+  "conversation": {
+    "reground_utc": "2026-09-18T08:09:41.655041+00:00",
+    "new_genuine_human_sources": [],
+    "pending_genuine_sources_since_R218": [],
+    "most_recent_genuine_source": {
+      "id": "5faf05882c6c44d8b5a8885e0dfffbee",
+      "source_sha256": "7572d75a316ce45d65aa585b30faba3f13df7d27a8a29786a6905f5e8695f7c9",
+      "speaker": "Rohin",
+      "published_file_mtime_unix": 1789716101.7662866,
+      "published_file_mtime_utc": "2026-09-18T07:21:41.766287+00:00",
+      "publication_clock_basis": "immutable original inbox file mtime; not watcher prose"
+    },
+    "last_two_actual_replies": [
+      {
+        "index": 7617,
+        "sha256": "e9d66455a3c7b7d8302658faa4d1533222d6f58e38f6576f3679d7acc966da89",
+        "response_index": 7614,
+        "response_sha256": "cede043abf71ed670497a9ba18e04920d6e74e567a787e4d890dc4ea754e94fa",
+        "finished_unix": 1789715394.6700997,
+        "finished_utc": "2026-09-18T07:09:54.670100+00:00",
+        "genuine_human_sources": [
+          {
+            "id": "6fd359ad40044e80b5351973ded3a96f",
+            "source_sha256": "505ed905c3427a63e7e69ae50a62824f5e313821b88da559bb56209985ed251a",
+            "published_utc": "2026-09-18T07:05:52.836630+00:00",
+            "end_to_end_seconds": 241.83347010612488
+          }
+        ],
+        "outcome": {
+          "executed": false,
+          "human_read_confirmed": false,
+          "status": "CONSOLE_REPLY_RECORDED",
+          "tool_execution_allowed": false
+        },
+        "after_most_recent_LOAD_seconds": 1640.6766741275787
+      },
+      {
+        "index": 7631,
+        "sha256": "65ea8e1706483992a74f4357cc51f03cef2d1062ab510be3005e31184c5e36a0",
+        "response_index": 7628,
+        "response_sha256": "a5ca51d9308440f6a91c15af27a95bb52eab3610f17d4d4eb60cb8f0596d3565",
+        "finished_unix": 1789716547.811527,
+        "finished_utc": "2026-09-18T07:29:07.811527+00:00",
+        "genuine_human_sources": [
+          {
+            "id": "5faf05882c6c44d8b5a8885e0dfffbee",
+            "source_sha256": "7572d75a316ce45d65aa585b30faba3f13df7d27a8a29786a6905f5e8695f7c9",
+            "published_utc": "2026-09-18T07:21:41.766287+00:00",
+            "end_to_end_seconds": 446.0452404022217
+          }
+        ],
+        "outcome": {
+          "executed": false,
+          "human_read_confirmed": false,
+          "status": "CONSOLE_REPLY_RECORDED",
+          "tool_execution_allowed": false
+        },
+        "after_most_recent_LOAD_seconds": 20.739161014556885
+      }
+    ],
+    "fresh_latency_sample_since_reground": false,
+    "under_60_seconds_established": false,
+    "timing_caveat": "446.045s end-to-end on the most recent genuine turn includes the earlier recovery/load interval. 20.739s post-LOAD is not end-to-end latency. No new genuine inbox was found after math regrounding."
+  },
+  "native_signals": 0,
+  "restart": false,
+  "rollback": false,
+  "human_inbox_writes": 0,
+  "new_operator_prompts": 0
+}
