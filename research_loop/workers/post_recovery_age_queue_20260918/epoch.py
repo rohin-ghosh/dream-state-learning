@@ -13,7 +13,8 @@ SEEDS = (23201, 23202)
 
 
 def digest(value):
-    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest()
+    return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False,
+        separators=(',', ':'), allow_nan=False).encode()).hexdigest()
 
 
 def sha(path):
@@ -57,3 +58,7 @@ def bound_result(request, reply, epoch_sha):
     if reply.get('request_sha256') != digest(request) or reply.get('judge_epoch_sha256') != epoch_sha:
         raise ValueError('same_request_and_judge_epoch')
     return reply
+
+
+def model_scene(contest):
+    return {key: contest[key] for key in ('contest_id', 'canonical_scene')}

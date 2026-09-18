@@ -1,7 +1,7 @@
 import copy
 import unittest
 
-from epoch import ADAPTER_SHA, DEADLINE, bound_result, digest, require_config, rescore_panels
+from epoch import ADAPTER_SHA, DEADLINE, bound_result, digest, model_scene, require_config, rescore_panels
 
 
 class FakeScorer:
@@ -10,6 +10,16 @@ class FakeScorer:
 
 
 class EpochTests(unittest.TestCase):
+    def test_only_scene_text_reaches_the_existing_prompt_contract(self):
+        from research_loop.workers.rohin232_age_probe_20260918.contract import initial_messages
+        contest = dict(contest_id='development_test', canonical_scene='A person beside a clock.',
+            image='private-handle', split='agent_development', parent='not for the model')
+        scene = model_scene(contest)
+        self.assertEqual(set(scene), {'contest_id', 'canonical_scene'})
+        messages = initial_messages(scene)
+        self.assertNotIn('private-handle', str(messages))
+        self.assertNotIn('not for the model', str(messages))
+
     def config(self):
         return dict(deadline_unix=DEADLINE, parent_tokens=0, source_context_loaded=False,
             training_updates=0, judge_rank=8, judge_step=15625, adapter_sha256=ADAPTER_SHA,
@@ -46,6 +56,12 @@ class EpochTests(unittest.TestCase):
         for change in (dict(judge_epoch_sha256='widegap'), dict(request_sha256='other')):
             with self.assertRaises(ValueError):
                 bound_result(request, dict(reply, **change), 'adopted')
+
+    def test_unicode_request_hash_matches_original_battery(self):
+        from research_loop.workers.rohin232_age_probe_20260918 import contract
+        request = dict(raw='“Another café?” — 问', identity=dict(condition='unicode'))
+        self.assertEqual(digest(request), contract.digest(request))
+        bound_result(request, dict(request_sha256=contract.digest(request), judge_epoch_sha256='new'), 'new')
 
     def test_no_parent_training_budget_or_lease_drift(self):
         require_config(self.config(), DEADLINE - 60)

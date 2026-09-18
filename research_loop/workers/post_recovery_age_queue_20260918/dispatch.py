@@ -34,7 +34,7 @@ def main():
     marker = root / (options.mode + '_DISPATCHED.json')
     if marker.exists():
         raise ValueError('one_dispatch_per_immutable_source')
-    unit = 'orch-age-adopted-' + root.name + '-' + options.mode + '-20260918'
+    unit = root.parent.name.replace('_', '-') + '-' + root.name + '-' + options.mode
     command = ['sudo', '-n', 'systemd-run', '--unit=' + unit, '--property=User=1352', '--property=Group=1352',
         '--property=WorkingDirectory=' + str(root / 'source'),
         '--property=RuntimeMaxSec=' + str(int(config['deadline_unix'] - time.time())),

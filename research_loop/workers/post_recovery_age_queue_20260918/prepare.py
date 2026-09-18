@@ -12,7 +12,7 @@ from epoch import ADAPTER_SHA, DEADLINE, require_config, sha
 
 
 BASE = Path('/localhome/local-rohing')
-BATCH = BASE / 'orch_post_recovery_age_20260918'
+BATCH = BASE / 'orch_post_recovery_age_20260918_attempt3'
 TEMPLATE = BASE / 'orch_r233_recovery_s24_probe_20260918'
 ORIGINAL = BASE / 'orch_r232_age_probe_20260918'
 MODULE = Path('research_loop/workers/post_recovery_age_queue_20260918')

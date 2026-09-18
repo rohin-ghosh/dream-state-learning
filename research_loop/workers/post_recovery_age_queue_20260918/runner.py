@@ -135,7 +135,8 @@ def player(config):
         source_parent_text_loaded=False, judge_epoch_sha256=epoch_sha,
         actual_visible_device=os.environ['CUDA_VISIBLE_DEVICES']))
     results = []
-    for scene in runtime.read(root / 'GAME_MANIFEST.json')['contests']:
+    for contest in runtime.read(root / 'GAME_MANIFEST.json')['contests']:
+        scene = epoch.model_scene(contest)
         for seed in epoch.SEEDS:
             cell = output / f"{scene['contest_id']}_{seed}"
             counter = 0
