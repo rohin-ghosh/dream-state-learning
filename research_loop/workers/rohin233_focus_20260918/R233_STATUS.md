@@ -116,6 +116,12 @@ credit. C0 and the fresh birth are **separate branches**, not later points on a
 raw accepted strings nor novelty-model events certify humor or H2. Training
 compute remains a separate quantity, not silently folded into generated tokens.
 
+Later supplement: fresh-birth sleep2 also completed the same6144-token probe,
+with53 raw accepted strings and15 new-pixel events. The figure remains the
+earlier explicitly named five-condition cut; it does not silently overwrite
+sleep1 or pretend to show all future ages. Sleep1→2 has51→53 accepted strings
+but29→15 novelty events: more accepted strings is not greater exploratory yield.
+
 Completed C2 memory check: **0 complete answers,1 partial,4 unanswered; no
 explicit “I don't remember.”** First-two delivery confounds and retained-context
 limits remain in the published receipt; no adapter-only memory conclusion.
@@ -131,6 +137,14 @@ limits remain in the published receipt; no adapter-only memory conclusion.
   sources/hour. That capacity cannot clear the570-age backlog during the current
   allocation. Prospective fair capture/evaluation priority is requested without
   hiding historical pending/unavailable ages; no full every-sleep coverage claim.
+  The12:23:03UTC supplement now records590 enrolled/5 evaluated,42 coherent
+  captures,508 pending capture and40 unavailable registered paths. The first
+  round-robin prospective-priority capture round captured14 ages across14 lives;
+  the other two had no available post-frontier completion in its bound ledgers.
+  Thirty-seven captures await exposure eligibility. This remains incomplete:
+  future capture/admission rounds are explicit operator work, not an automatic
+  all-backlog GPU dispatcher. `PROSPECTIVE_STATUS.md` records that limitation
+  and a measured expansion plan; no extra GPU lane was silently assigned.
 - R227 no-exclusion is **not live on resident C2/C0/math images**. C2 recipe9414
   and eligibility9415 exclude one of four new rows; the newer12:13:37UTC audit
   finds cycle94 recipe9508/eligibility9509 exclude three rows and retain one for
