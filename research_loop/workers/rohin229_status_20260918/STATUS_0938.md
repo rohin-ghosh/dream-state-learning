@@ -3,7 +3,7 @@
 These are separately timed observations, not an atomic fleet snapshot. A
 published inbox is not counted as delivered until exact REQUEST text is seen.
 
-Publication note, 09:47 UTC: this snapshot missed the requested 09:40 status
+Publication note, 09:45 UTC: this snapshot missed the requested 09:40 status
 deadline. It remains an explicitly historical snapshot, not a claim about
 current activity. Rohin message 230 subsequently superseded the single-retry
 limit below: C0's parent is to persist with reading/recall while retaining math.
