@@ -1,0 +1,30 @@
+# [Builder/Turing] P7 CPU-only overseer repair — September18, 2026
+
+17:05UTC: non-material repair under current P7-only recovery authorization.
+No learner restart, pause, signals, new exclusions, direct parenting of Astra7,
+shared-runtime changes, P3 controls, or wall extension.
+
+The earlier brief-only adoption proved insufficient: existing system text
+forbade reading, and actual delivered-turn matching loaded every historical
+journal body. Actual model-response-to-publication54 interval was94.013seconds.
+No timeout is claimed for this observed advance. Exact CPU parent405221 was
+drained at a completed publication and replaced with2805259, preserving both
+single-writer locks, all prior artifacts, current verified cursor and ledger.
+
+The scoped metadata reader verifies the same canonical record hashes and
+REQUEST→RESPONSE→COMMITTED linkage, source/pid/start/LOADED identity and masked
+rendered text. Actual6251→6252→6253 lookup took2.655seconds. Nine local unittest
+checks pass; four brief-adoption plus five lookup receiving checks pass.
+The unavailable `pytest` command was not an executed test; standard-library
+unittest ran these tests successfully. No dependency installation.
+
+The first reading message is transparently operator-authorized, using the
+verbatim released excerpt and short English artifact request in `BRIEF.json`.
+It is not represented as a model-generated turn. Subsequent responsive turns
+use the existing bound provider with the latest reading authorization explicit.
+Publications/render/response are reported separately when observed.
+
+Jason owns actual node2/GPU1 Astra7 native recovery and receiver renewal.
+No bridge revival before current binding verification. Old route/queue and
+interrupted journal history remain preserved. P7 remains bound18:00UTC with
+outer timeout approximately17:59:49UTC; longer allocation not established.
