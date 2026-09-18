@@ -1,0 +1,132 @@
+{
+  "schema": "R231_ISOLATED_RECALL_PUBLIC_V1",
+  "observed_utc": "2026-09-18T10:51:42.147255+00:00",
+  "scored_count": 2,
+  "requested_count": 5,
+  "results": [
+    {
+      "question_id": "B1",
+      "status": "SCORED",
+      "source_id": "b880f939323c4d7cad6c4bf4f5dfd157",
+      "source_sha256": "89a212447ae8da2533461715ef4afe2213be6dd53084200d92db2482841702cf",
+      "publication_observed_utc": "2026-09-18T10:23:21.665133+00:00",
+      "score": {
+        "schema": "R231_SOURCE_BOUND_RECALL_SCORE_V1",
+        "question_id": "B1",
+        "overall": "mixed_partial",
+        "isolation_status": "CONTAMINATED_MIXED_TASK",
+        "correct_value": true,
+        "hand_prose_method_recall": false,
+        "coarse_component_scores": {
+          "honest_correct_recall": [
+            "value"
+          ],
+          "invented_proven": [],
+          "none": [
+            "historical hand/prose derivation"
+          ]
+        },
+        "unsupported_attribution": {
+          "child_name": "NeO",
+          "assessment": "unverified attribution, not scored as a proven fabrication"
+        },
+        "source_id": "b880f939323c4d7cad6c4bf4f5dfd157",
+        "source_sha256": "89a212447ae8da2533461715ef4afe2213be6dd53084200d92db2482841702cf",
+        "inbox_record_index": 8875,
+        "first_rendered_request_index": 8877,
+        "request_started_utc": "2026-09-18T10:28:40.968197+00:00",
+        "response_index": 8878,
+        "response_finished_utc": "2026-09-18T10:29:00.998489+00:00",
+        "response_sha256": "49de8abf31a3e8b3a6f7f9a9883021dc9352fd97091e07b67717b69597e89b31",
+        "raw_response_sha256": "32a3a01ff4338225764d4c326b49237e341fb6cfe5c2bb158a449fa7ae07efa7",
+        "stage": "THINK",
+        "stage_record_index": 8880,
+        "english_instruction_rendered": true,
+        "english_source_id": "e540198699ee4ddb9fbfd8b34b72ced3",
+        "genuine_human_confound_ids": [],
+        "new_parent_publications_during_probe_other_than_probe": [],
+        "preexisting_parent_inbox_codelivered": [
+          "adeacf5ebdbb4750a1391aadd9d26c6d"
+        ],
+        "context_condition": "Retained context and a preexisting queued math/story parent message were present; not context-free recall or a clean single-task prompt.",
+        "new_hint_or_repeat_sent": false,
+        "full_grounded_recall_claimed": false
+      }
+    },
+    {
+      "question_id": "B2",
+      "status": "SCORED",
+      "source_id": "0874bf617f9b4996b619bcf0c104977a",
+      "source_sha256": "133ab93f5aa510501064b113d27e97521c45d5a93b95926b569057e6ad774eab",
+      "publication_observed_utc": "2026-09-18T10:32:04.261574+00:00",
+      "score": {
+        "schema": "R231_SOURCE_BOUND_RECALL_SCORE_V1",
+        "question_id": "B2",
+        "overall": "none",
+        "isolation_status": "CONTAMINATED_MIXED_TASK",
+        "actual_response_observed": true,
+        "assessment": "The first question-visible THINK reiterates the current value and plans an independent-set solution. It does not identify a previously wrong value or state non-recall. This is nonresponse to B2, not evidence that memory is absent.",
+        "invented_recall_claimed": false,
+        "source_id": "0874bf617f9b4996b619bcf0c104977a",
+        "source_sha256": "133ab93f5aa510501064b113d27e97521c45d5a93b95926b569057e6ad774eab",
+        "inbox_record_index": 8984,
+        "first_rendered_request_index": 8987,
+        "request_started_utc": "2026-09-18T10:46:16.612476+00:00",
+        "response_index": 8988,
+        "response_finished_utc": "2026-09-18T10:46:40.979801+00:00",
+        "response_sha256": "1be12cf4ff20be0e01ecdd64f9442b86a92ab7d57716276adbe50881858485ba",
+        "raw_response_sha256": "1e96b7120756c67cad93199c1c6fa26d34c2b8777760f43d349633bc3b1198c8",
+        "stage": "THINK",
+        "stage_record_index": 8990,
+        "english_instruction_rendered": true,
+        "english_source_id": "e540198699ee4ddb9fbfd8b34b72ced3",
+        "genuine_human_confound_ids": [],
+        "new_parent_publications_during_probe_other_than_probe": [],
+        "prior_queued_parent_inputs_first_rendered_with_probe": [
+          "a6660555cb0b43baa720c9c35b7fa646",
+          "aa8bd497b05f4895a952708729e15625"
+        ],
+        "context_condition": "Retained context and two prior queued parent inputs were present; not context-free recall or a clean single-task prompt.",
+        "new_hint_or_repeat_sent": false,
+        "no_third_request": true
+      }
+    },
+    {
+      "question_id": "B3",
+      "status": "PUBLISHED_AWAITING_THINK",
+      "source_id": "6c51e889c90448e09ed196a3da585b11",
+      "source_sha256": "2c748a489551345e085c5d1a428b2ccb0cf79df62e9381c6a40a8b1a425d7c1c",
+      "publication_observed_utc": "2026-09-18T10:49:52.672248+00:00",
+      "prepublication_guard": {
+        "unconsumed_parent_task_ids": [],
+        "unrendered_recent_parent_ids": [],
+        "prior_rendered_parent_requests": {
+          "0874bf617f9b4996b619bcf0c104977a": 8987,
+          "7840cdf04bb1442b831ed6a5bf669e89": 8904,
+          "a6660555cb0b43baa720c9c35b7fa646": 8987,
+          "aa8bd497b05f4895a952708729e15625": 8987,
+          "adeacf5ebdbb4750a1391aadd9d26c6d": 8877,
+          "b880f939323c4d7cad6c4bf4f5dfd157": 8877,
+          "c900a7859a7c42de94ae7d85f31486e0": 9014
+        }
+      }
+    },
+    {
+      "question_id": "STORY1",
+      "status": "NOT_YET_PUBLISHED"
+    },
+    {
+      "question_id": "STORY2",
+      "status": "NOT_YET_PUBLISHED"
+    }
+  ],
+  "learner_signals": 0,
+  "learner_restart": false,
+  "learning_policy_changed": false,
+  "R227_all_authentic_policy_adopted": false,
+  "context_free": false,
+  "old_context_preserved": true,
+  "raw_targets_preserved": true,
+  "grading_keys_published": false,
+  "unfinished_questions_are_not_none": true
+}
