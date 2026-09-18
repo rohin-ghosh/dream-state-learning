@@ -1,5 +1,17 @@
 # Node3 kept captions — recovery coordination, September18
 
+19:16UTC bounded read-only follow-up: all eight renewed natives retain their
+PID/startticks; caption identities and scene/scoring bindings are unchanged.
+Latest source-authenticated ACTs0/3/5/6/7 are4233/4414/3874/3859/3998.
+Observation reports no_caption_found; the other four report
+scene_not_unambiguously_identified. All five latest reports have zero
+scored results. Plain Tool error projections reach source-bound native INBOXs;
+preceding error projections have chronological masked REQUEST proof. This is
+not a claim of new rank/accept/new-pixel feedback or scorer failure. Exact
+ACT/receipt/epoch digests are in FOLLOWUP_FEEDBACK_CURRENT.json. No native,
+transport, scorer or service-epoch changes performed here. Existing sole
+Tool relay1970178 remains alive and current; no replay request is made.
+
 18:22UTC update: authorized same-journal checkpoint handoffs are now executing;
 no scoring code, identities, scene state or service epochs are changed here.
 Observation native1998500 LOAD3682 and revision native1994937 LOAD3323 actually

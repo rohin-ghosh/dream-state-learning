@@ -54,6 +54,12 @@ def process(receipt):
         return dict(pid=expected['pid'], same_identity_alive=False)
 
 
+def latest_completed_model_parent(deliveries):
+    return next((item for item in reversed(deliveries)
+        if item['parent_kind'] == 'ACTUAL_MODEL_PROVIDER'
+        and item['delivery'].get('REQUEST') and item.get('actual_ACT_after_parent')), None)
+
+
 def project(root):
     natives = native_projection(root)
     config = json.loads((root / 'r233_classroom_operator_v2/CONFIG_PRIVATE.json').read_bytes())
@@ -96,12 +102,14 @@ def project(root):
         rows.append(dict(life=name, gpu=native['gpu'], native_status=native['status'],
             new_parent_publications=len(deliveries), first_new_render=rendered[0] if rendered else None,
             latest_parent=deliveries[-1] if deliveries else None,
+            latest_completed_model_parent=latest_completed_model_parent(deliveries),
             first_new_model_render=model_rendered[0] if model_rendered else None))
     output = root / 'r233_recovery_services_v4'
     heartbeat_path = root / 'r233_classroom_handoff_v1/live/HEARTBEAT.json'
     heartbeat = json.loads(heartbeat_path.read_bytes())
     return dict(observed_utc=utc(), rows=rows, new_parent_render_count=sum(bool(row['first_new_render']) for row in rows),
         new_model_parent_render_count=sum(bool(row['first_new_model_render']) for row in rows),
+        new_model_parent_ACT_count=sum(bool(row['latest_completed_model_parent']) for row in rows),
         services={name:process(output / (name + '.json')) for name in ('classroom','caption_gpu7','math_debate')},
         feedback_service=process(root / 'r233_recovery_services_v3/feedback.json'),
         classroom_service_end_unix=heartbeat.get('service_end_unix'), heartbeat_utc=heartbeat['observed_utc'],
