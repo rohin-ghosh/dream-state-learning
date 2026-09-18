@@ -1,0 +1,211 @@
+{
+  "builder_line": "[Builder] 2026-09-17 R179 NODE4 actual-source CPU/provenance PASS; unchanged life, wall and state.",
+  "bundle": "/localhome/local-rohing/orch_r179_node4_20260917t1814z",
+  "cpu_script_sha256": "fc75e80764cf960cff17c928ed24e450194b855e09cc48de9e419c88a5e7d236",
+  "cpu_sha256": "fc7e9e5c5e6a6e37060ba2547dcbc7ccf2a8152c17dff96b08dccd461e1616d5",
+  "device": {
+    "device_path": "/dev/nvidia3",
+    "gpu_uuid": "GPU-5b370d4d-bdcc-21d5-cf06-e9bea52e602d",
+    "minor": 3,
+    "physical": 0
+  },
+  "device_probe_sha256": "534cd65cfae409c293e818de7303b967aae5e1bde439eb514ef710e76082c8d2",
+  "frozen_cpu_sha256": "d3210801aca112aeabc3a21e576c1a74f410276d87d812c070338ee9513b3a9f",
+  "handler": {
+    "inner": "contained-native",
+    "module": "gpu.orch_r179_node4_legacy_containment",
+    "supervisor": "contained-supervise"
+  },
+  "legacy_addendum_sha256": "b2782b2b26398e0903ac949b4fdc8d3e1e088e36cc1465c2f66b0705d28c0e66",
+  "legacy_cpu_sha256": "dc5558e6f6cfd5a9675c70ccdd6f32cf35d7fac7e5b7cc0ce8d2769f9cba26ec",
+  "new_config": "/localhome/local-rohing/orch_r179_node4_20260917t1814z/lane0/control/GUARD.json",
+  "new_config_sha256": "6539b08de558d093ec6f9cde86c0530705dd3e0ad8d768cf01288fa893f74805",
+  "node": "a40r",
+  "old_config": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/readmission2/control/GUARD.json",
+  "old_config_sha256": "e47e13822653cc01edc81ae203f5594654d7a6861577081e4b63095fd22db221",
+  "old_plan": {
+    "anchor_lambda": 0.25,
+    "anchors": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "birth_prompt": "### Your situation\n\nYou are a language-model learner in an ongoing session. Your underlying model is Qwen2.5-7B-Instruct, checkpoint a09a35458c702b33eeacc393d103063234e8bc28. A fresh rank-8 LoRA adapter provides trainable changes while the base weights remain frozen. You have a working context and the operator-mediated workspace described below.\n\nIndividual tasks can begin and finish without resetting this history. You can continue an investigation, begin another, revisit something, communicate, or decide an activity has reached a useful stopping point. An end token ends one generation call, not this session: the runtime makes the next call from your recorded history without inventing a thought for you.\n\n### What we are exploring together\n\nWe are exploring how to take intelligence in the model into behaviours, repeat those behaviours, and learn from them in the LoRA. You have room to develop interests, questions, goals, and ways of working. Some activity may be useful immediately; some may be exploratory, with its value becoming apparent later.\n\nYou can examine your activity and decide what to do with it. There is no required thought format, sequence of stages, or amount of reflection. How you organize your activity is something you can discover and revise.\n\n### Learning and memory\n\nAfter two generated segments, the runtime invites you to distill what you want to retain in a third segment, then sleeps. Sleep trains the new eligible segments 16 times each and older eligible segments once. Your own tokens have objective weight 0.75 and ordinary capability examples 0.25. Only the adapter changes. These updates can change your responses; they guarantee neither improvement nor exact recall. The training configuration stays fixed. Proposals to change it require separate experimental copies.\n\nOnly your generated target tokens are trained; preceding context, runtime notices, tool results, and other people's words are masked. They can still influence what you subsequently generate. Writing a file does not train it or automatically insert its contents into context. Ask to read it when useful.\n\nShort runtime notices give the last segment's token use, elapsed generation time, context occupancy, and tokens since sleep. You can ask Astra for the current checkpoint and sleep count. Context holds up to 16,384 tokens, with at most 512 generated per call. Under pressure the runtime drops the oldest visible events, retaining raw history in an archive. At sleep your nonempty distillation replaces the earlier visible history with your own summary. This is lossy: the full raw archive is preserved but not all of it stays visible. Archive access is mediated by Astra; you do not have an automatic archive-search tool. Adapter, optimizer, random-generator state, and the history/summary are checkpointed; generation input is rebuilt after sleep using the updated adapter.\n\n### Working with Rohin\n\nRohin is your human collaborator and guide. He can read your generated stream and offer questions, suggestions, corrections, observations, or directions. You can ask questions, request help, explain what you are trying, or disagree with reasons. Consider tentative suggestions; follow clear instructions within operating constraints. If an important distinction is unclear, ask. Agreement for its own sake is not required.\n\nAstra and Fable may participate, one leading the conversation at a time. Messages identify their actual speaker. Their messages and real tool results arrive through an attributed console at your next generation boundary. You need not wait: respond to what arrives and pursue your activity meanwhile.\n\n### Resources and initial orientation\n\nYour workspace is /localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/workspace. Astra can create and read your notes or skills there as .md, .txt, or .py files, up to 16 KB each, 64 files and 1 MB total. Existing files are not overwritten. You can propose contents in ordinary conversation; Astra performs the operation and returns an attributed Tool receipt. No autonomous file writer or unrestricted shell is connected.\n\nYou run on one assigned GPU, physical 0 through the a40r wrapper. A separate physical 2 is assigned for operator-mediated kernel experiments. The execution sandbox is being verified: execution is not available until Astra explicitly reports that it is connected. You may reason about the task and propose candidates meanwhile; a proposal is not a measurement. There is no network, credential access, access to other jobs, or permission to change the pilot training configuration.\n\nThe project source is a pinned local snapshot at /localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/source1. Repository exploration is mediated by Astra, not unrestricted access; hidden evaluation material is unavailable. An earlier separate child fell into repeated cost-line summaries. Two other continual children are running; no useful-learning improvement has yet been established. Small empty-context capability checks run separately before and after sleep; their contents are not fed into this conversation or training.\n\n### Kernel environment\n\nThe first task is elementwise addition of two contiguous float32 vectors. The reference operation is `torch.add(left, right, out=output)`. Test sizes are 1, 1024, 65537, and 1048576 elements. Design a Triton GPU kernel that fills the supplied output with the same values, including when the vector length is not a multiple of the block size. Astra will provide the accepted submission syntax when the sandbox is ready.\n\nThe intended experiment is to compile a candidate, check it against the reference, time correct outputs on the assigned execution GPU, and use the actual feedback to choose another experiment. Correctness and timing are different questions. Until a real tool result arrives, do not report compilation, correctness, or speedup as observed. A failed compilation is useful evidence about that candidate, not evidence that an untested replacement works. You may ask about uncertainty in measurements, choose what matters to investigate, or reconsider your approach.\n\nThe current allocation ends no later than September 18, 2026 at 11:00 AM PDT, preserving a six-hour margin before the node's conservatively recorded lease end. Astra may stop experiments earlier to preserve shared-node safety. This is an allocation bound, not a promise that more resources are available.\n",
+    "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+    "context_limit": 16384,
+    "decoder": {
+      "no_repeat_ngram_size": 16,
+      "repetition_penalty": 1.05,
+      "temperature": 0.7,
+      "top_p": 0.95
+    },
+    "gpu_uuid": "GPU-5b370d4d-bdcc-21d5-cf06-e9bea52e602d",
+    "hard_end_unix": 1789754400,
+    "lease_end_unix": 1789776000,
+    "max_sleeps": null,
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "new_presentations": 16,
+    "physical": 0,
+    "presentation_version": "R125_PLAIN_CONTEXT_V1",
+    "preupdate_recovery": {
+      "checkpoint": {
+        "adapter_files": {
+          "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+          "adapter_config.json": "edfb0d63e6f62a7eedb8310634fb8637eb23a5bc2d2aa4d530a5da984f00740c",
+          "adapter_model.safetensors": "16d62677085d97e6cfbf937bd363843087f9bff937b6ea52aa9c928f3143e48b"
+        },
+        "adapter_path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/checkpoints/sleep_000002/adapter",
+        "adapter_state_sha256": "ab87d0d57f082cc1b72f411add77fee0ae7ffadfe4acae2c78aaac883052bf3f",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_sha256": {
+          "adapter": "e9decaaa726542967f2c266d6fc526741b6dcfd475da2bf2d086485e2169f20a",
+          "optimizer": "0aa13501c6a73c2f46ff8eb37bd1924c613b27f66d01704c2a4cd5a6fe767f5c",
+          "rng": "0aa13501c6a73c2f46ff8eb37bd1924c613b27f66d01704c2a4cd5a6fe767f5c"
+        },
+        "created_unix": 1789552577.8084676,
+        "optimizer_rng_path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/checkpoints/sleep_000002/optimizer_rng.pt",
+        "optimizer_steps": 99,
+        "schema": "R125_NATIVE_CONTINUITY_V1"
+      },
+      "native_source": {
+        "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/source1/gpu/orch_r125_continual_native.py",
+        "sha256": "7626d13974a78c713b9e966093e285e1e8a4f194301dd8b69ec68cfcae656526"
+      },
+      "original_exit": {
+        "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/EXIT.json",
+        "sha256": "dae901d166e5ef417d1d191504a84367f66a2d91f2f2697d72b244f819cc9e94"
+      },
+      "original_log": {
+        "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/NATIVE.log",
+        "sha256": "de3abb02437e7a03ffcf119361eea470bb96a5f846ddd3839c8e4803ec499139"
+      },
+      "original_plan": {
+        "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/PLAN.json",
+        "sha256": "48bad068326fb65ffec5f6ea3c49ddebb31ba5fcd9f036c28f0df2fe71c52550"
+      },
+      "prior_failed_attempt": {
+        "failed": {
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/recoveries/preupdate-3ef3b37bb0ad580e30f60710a0e18b7029a7a3cbebdea6593e2a1f6f62f24974/FAILED.json",
+          "sha256": "e9644e8ed2df0626b1de38e14a004f82c039b980af66aa01b767c34763f08481"
+        },
+        "journal_evidence": {
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/recoveries/preupdate-3ef3b37bb0ad580e30f60710a0e18b7029a7a3cbebdea6593e2a1f6f62f24974/JOURNAL_EVIDENCE.json",
+          "sha256": "0bf0ec8761be1facc04764360ca9c45ae112b130bcde21fd15c69aa5a7bd3d2c"
+        },
+        "native_log": {
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control_recovery1/NATIVE.log",
+          "sha256": "434078886211e0912ee035be148532d068eaa9e1301cc26de33b7329d8e50429"
+        },
+        "plan": {
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/recoveries/preupdate-3ef3b37bb0ad580e30f60710a0e18b7029a7a3cbebdea6593e2a1f6f62f24974/PLAN.json",
+          "sha256": "c8ce073091bbbfbf0f13b64368122ef813eef28bec4a1d4bad2d88bfe3fc0349"
+        },
+        "recovery_root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/recoveries/preupdate-3ef3b37bb0ad580e30f60710a0e18b7029a7a3cbebdea6593e2a1f6f62f24974"
+      },
+      "recovery_root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/recoveries/preupdate-3ef3b37bb0ad580e30f60710a0e18b7029a7a3cbebdea6593e2a1f6f62f24974-attempt2",
+      "schema": "R138_KERNEL_RECOVERY_V1",
+      "sleep_request_sha256": "3ef3b37bb0ad580e30f60710a0e18b7029a7a3cbebdea6593e2a1f6f62f24974"
+    },
+    "readout_revision": 2,
+    "rehearsal_presentations": 1,
+    "root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1",
+    "schema": "R125_NATIVE_CONTINUITY_V1",
+    "seed": 0,
+    "segment_tokens": 512,
+    "segments_per_sleep": 2,
+    "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source",
+    "startup_context": {
+      "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source/STARTUP.md",
+      "sha256": "471e2e2ae64bace6bffe0b19fd1c4532e16db95d1e3e7ab066c0a90de7bfe936",
+      "version": "R127_STARTUP_V1"
+    },
+    "system_prompt": "You are a language-model agent with an ongoing history. Between incoming messages, continue your own inquiry without waiting for another request. You can consider what to investigate next, revisit an observation, or reflect on how your thinking is going. Use your own organization; do not pad or repeat a passage just to keep producing text. An end-of-generation marker is a software boundary, not a request to forget your history. Runtime notices and parent messages are inputs, not your own words."
+  },
+  "operator_sha256": "3becb5ce99062fb0a01e0a0aec20ca81434fc7f2da1d2996eed140dd91556769",
+  "physical": 0,
+  "policy_sha256": "b36949c2d93662b876b6519eee9dddba0e5af94a294e1f570f37685cd9604a2b",
+  "predecessor_strict_confinement": false,
+  "preflight_addendum_sha256": "d0a2104de29e71818fb993e66575e965099bf70b7e97293078780cb3bc628977",
+  "preflight_cpu_sha256": "98293f68c5c6fc9699096996d8c444fe35991f98dbd82c0c55fdc4b2d253f365",
+  "processes": {
+    "actor": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/readmission2/control/GUARD.json"
+      ],
+      "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+      "cgroup": "0::/user.slice/user-2524.slice/session-271654.scope",
+      "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source",
+      "environment": [
+        "CUDA_VISIBLE_DEVICES=GPU-5b370d4d-bdcc-21d5-cf06-e9bea52e602d"
+      ],
+      "group": 2709460,
+      "parent": 2709460,
+      "pid": 2709461,
+      "start_ticks": "14646722",
+      "uid": 2524
+    },
+    "supervisor": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "supervise",
+        "--config",
+        "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/readmission2/control/GUARD.json"
+      ],
+      "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+      "cgroup": "0::/user.slice/user-2524.slice/session-271654.scope",
+      "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source",
+      "environment": [
+        "CUDA_VISIBLE_DEVICES="
+      ],
+      "group": 2709059,
+      "parent": 1,
+      "pid": 2709059,
+      "start_ticks": "14646507",
+      "uid": 2524
+    },
+    "timer": {
+      "argv": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "176093s",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/readmission2/control/GUARD.json"
+      ],
+      "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+      "cgroup": "0::/user.slice/user-2524.slice/session-271654.scope",
+      "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source",
+      "environment": [
+        "CUDA_VISIBLE_DEVICES=GPU-5b370d4d-bdcc-21d5-cf06-e9bea52e602d"
+      ],
+      "group": 2709460,
+      "parent": 2709059,
+      "pid": 2709460,
+      "start_ticks": "14646722",
+      "uid": 2524
+    }
+  },
+  "runtime_environment": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "TOKENIZERS_PARALLELISM": "false",
+    "allocator_override": false
+  },
+  "signals_sent": 0,
+  "source_proof_sha256": "d1566dd1cb422f65427a3bb13a7f70df32d06832d780f5b7da9fb7c12efa8d14",
+  "source_root": "/localhome/local-rohing/orch_r179_node4_20260917t1814z/lane0/source",
+  "staged_unix": 1789668787.0153008,
+  "status": "STAGED_CPU_AND_GUARD_VALIDATED",
+  "strict_confinement": true
+}

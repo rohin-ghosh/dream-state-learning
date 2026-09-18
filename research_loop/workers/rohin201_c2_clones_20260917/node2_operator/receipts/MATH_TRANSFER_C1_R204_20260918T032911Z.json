@@ -1,0 +1,217 @@
+{
+  "observed_utc": "2026-09-18T03:29:11.618729+00:00",
+  "actors": {
+    "math_bridge_r204": {
+      "pid": 2204403,
+      "state": "S",
+      "start_ticks": "93044464",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "parent": {
+      "pid": 2196052,
+      "state": "R",
+      "start_ticks": "93018637",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "supervisor_r204": {
+      "pid": 2204409,
+      "state": "S",
+      "start_ticks": "93044584",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "native": {
+      "pid": 2204538,
+      "state": "R",
+      "start_ticks": "93044773",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source",
+      "ppid": 2204537
+    }
+  },
+  "receipts": {
+    "LAUNCH.json": {
+      "admission_sha256": "34b1a7bc055808f0829c40cef13f5dc90ed63d7ccf87733ba0c5d2ec360acc6c",
+      "admission_verified_unix": 1789702008.5961206,
+      "command_sha256": "76b35c5e41f5e83328b66a4ff9b9d21088f0b7ab38eb6c59526bc25e52f4de67",
+      "gpu_uuid": "GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf",
+      "guard_sha256": "fd428735bd13ac1db010f1af9e5a216aa10bb14cf63be836dc4c5f13dd374899",
+      "hard_end_unix": 1789776000,
+      "no_retry": true,
+      "parent_start_ticks": "93044773",
+      "pid": 2204537,
+      "plan_sha256": "9436851af6288be73e208986279f152aae0aca2a81a60cb185fbc7436b5bb4f1",
+      "started_unix": 1789702008.5972352
+    },
+    "PRE_SERVICE_ADMISSION.json": {
+      "verified_unix": 1789702008.324863,
+      "clear": true,
+      "blocking_reasons": []
+    },
+    "CONFINEMENT_CHILD.json": {
+      "observed_unix": 1789702008.5758548,
+      "pid": 2204488,
+      "gpu_uuid": "GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf",
+      "target_minor": 6,
+      "checks": {
+        "allowed_open_close": [
+          "/dev/nvidia6",
+          "/dev/nvidiactl",
+          "/dev/nvidia-uvm"
+        ],
+        "denied_foreign_minors": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "index": 5847,
+      "kind": "LOADED",
+      "sha256": "fec4895e57249c4afc026cea1ad25a974e28f64f8ec2aaeb1c6c4340524bf84e",
+      "mtime_utc": "2026-09-18T03:28:05.591008+00:00",
+      "pid": 2204538,
+      "optimizer_steps": 4908,
+      "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+      "loaded_unix": 1789702085.558742,
+      "resume": true
+    },
+    {
+      "index": 5848,
+      "kind": "INBOX",
+      "sha256": "d4f26cf51bbd49d3cefa85045b35a8627ba1fd8d5fe938a2c94c23b221e4243e",
+      "mtime_utc": "2026-09-18T03:28:05.681355+00:00",
+      "speaker": "Rohin",
+      "message_id": "r202_000_rohin_part_one",
+      "text_sha256": "48921afaf6c1a7dec7fbe7cbb79c3be8c52bd9612cbcdad3ff6da64fc7469e30"
+    },
+    {
+      "index": 5849,
+      "kind": "INBOX",
+      "sha256": "8b6fb5d4a083bcd5be2e20d6004fcfdb31559ca941bd495102b0ae4e38b01b49",
+      "mtime_utc": "2026-09-18T03:28:05.718597+00:00",
+      "speaker": "Astra",
+      "message_id": "r202_001_astra_math_transfer_c1",
+      "text_sha256": "cb51af5468a85b2f184b730abda6d6802147315c1a84c4153103c83420db44d3"
+    },
+    {
+      "index": 5853,
+      "kind": "REQUEST",
+      "sha256": "acf860250e60ef4b595e43f9ed94cdd4717a08ba65ea7759aacce575d340070b",
+      "mtime_utc": "2026-09-18T03:28:07.819931+00:00",
+      "segment": 153,
+      "started_unix": 1789702087.3979712
+    },
+    {
+      "index": 5854,
+      "kind": "RESPONSE",
+      "sha256": "237f04ba2c60a12412ae64df8d17ee5131d33975aca632884a1f9bcefa2991b1",
+      "mtime_utc": "2026-09-18T03:28:23.434437+00:00",
+      "finished_unix": 1789702103.4020317,
+      "raw_response_present": true,
+      "raw_characters": 1175
+    },
+    {
+      "index": 5856,
+      "kind": "R184_STAGE",
+      "sha256": "856f27e1b1dfcda423fae8d48036214247c9a51e03bf36a3b674b02983f71112",
+      "mtime_utc": "2026-09-18T03:28:23.930133+00:00",
+      "stage": "THINK",
+      "segment": 153
+    },
+    {
+      "index": 5859,
+      "kind": "REQUEST",
+      "sha256": "0b9e0e5340a45fbd32514dedfc336e680c6a1930c7dbe1fe4cccb0807542ac2f",
+      "mtime_utc": "2026-09-18T03:28:24.848044+00:00",
+      "segment": 154,
+      "started_unix": 1789702104.4355836
+    },
+    {
+      "index": 5860,
+      "kind": "RESPONSE",
+      "sha256": "be4b8a422c3d7ead5a52a754af52eb9b6d2452fd19dc88482c9cac26b2afd6a1",
+      "mtime_utc": "2026-09-18T03:28:37.107641+00:00",
+      "finished_unix": 1789702117.0754468,
+      "raw_response_present": true,
+      "raw_characters": 909
+    },
+    {
+      "index": 5862,
+      "kind": "R184_STAGE",
+      "sha256": "a61cc91e14f107769e923588021528137c3fd4ab2a778158cf40f6c0a27f7e6d",
+      "mtime_utc": "2026-09-18T03:28:37.605483+00:00",
+      "stage": "THINK",
+      "segment": 154
+    },
+    {
+      "index": 5864,
+      "kind": "R184_TRANSITION",
+      "sha256": "b4ab782f669d076414dbac221106f3c5b0358ce4718c0931a618e3ba5f053dec",
+      "mtime_utc": "2026-09-18T03:28:37.668522+00:00",
+      "segment": 154
+    },
+    {
+      "index": 5866,
+      "kind": "REQUEST",
+      "sha256": "06439e27ae47849e30496569bda1934b359a00ee1057af4e1726fe9b264dc4f8",
+      "mtime_utc": "2026-09-18T03:28:38.567505+00:00",
+      "segment": 155,
+      "started_unix": 1789702118.14507
+    },
+    {
+      "index": 5867,
+      "kind": "RESPONSE",
+      "sha256": "7f96c738d1f62ee30f998b6a9fcfb768b1e5122537333687dfb0706f7e70f00f",
+      "mtime_utc": "2026-09-18T03:28:55.830136+00:00",
+      "finished_unix": 1789702135.797675,
+      "raw_response_present": true,
+      "raw_characters": 938
+    },
+    {
+      "index": 5869,
+      "kind": "R184_STAGE",
+      "sha256": "b2e30fe7fa0976a58a4a46a7d47926eef6f469362359467f24568037aed19183",
+      "mtime_utc": "2026-09-18T03:28:56.328125+00:00",
+      "stage": "ACT",
+      "segment": 155
+    },
+    {
+      "index": 5875,
+      "kind": "REQUEST",
+      "sha256": "e00c1006dd6b41e3856b9c7db0deeb2522ac046711c53c9940b26f1415222923",
+      "mtime_utc": "2026-09-18T03:28:57.508058+00:00",
+      "segment": 156,
+      "started_unix": 1789702137.0866537
+    }
+  ],
+  "nvml_processes": [
+    "1849630, GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, 33114 MiB",
+    "2128807, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4, 18328 MiB",
+    "1815204, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 402 MiB",
+    "2206207, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 15154 MiB",
+    "2170067, GPU-c9450d3d-0455-f034-b9bf-7f8956e44733, 376 MiB",
+    "2207238, GPU-c9450d3d-0455-f034-b9bf-7f8956e44733, 15082 MiB",
+    "2204408, GPU-d304a15c-516a-16a0-a926-a560304077cc, 19746 MiB",
+    "1849923, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 416 MiB",
+    "2208002, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 14880 MiB",
+    "2204538, GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf, 20174 MiB",
+    "1849180, GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed, 32934 MiB"
+  ],
+  "read_only": true
+}

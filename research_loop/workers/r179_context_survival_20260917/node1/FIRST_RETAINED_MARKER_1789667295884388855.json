@@ -1,0 +1,97 @@
+{
+  "schema": "R179_NODE1_FIRST_RETAINED_PRE_SLEEP_MARKER_V1",
+  "status": "FIRST_RETAINED_PRE_SLEEP_ONLY",
+  "observed_utc": "2026-09-17T17:48:15.851464+00:00",
+  "observed_unix": 1789667295.8514638,
+  "physical": 4,
+  "label": "teach_parenting",
+  "cycle": 42,
+  "actor": {
+    "pid": 1418920,
+    "start_ticks": "38727122",
+    "state": "R",
+    "current_ticks_and_source_match": true
+  },
+  "source": {
+    "root": "/localhome/local-rohing/orch_r179_node1_20260917_attempt2/lanes/lane4/source",
+    "native_path": "gpu/orch_r125_continual_native.py",
+    "native_sha256": "1b6cb9622d5da9cfa54bb7ada1292e0de9b994cb9aea2f65474143bfe03a9a3b",
+    "policy_path": "gpu/orch_r179_context_survival.py",
+    "policy_sha256": "b36949c2d93662b876b6519eee9dddba0e5af94a294e1f570f37685cd9604a2b",
+    "both_actual_source_files_match_current_guard_pins": true
+  },
+  "counts": {
+    "context_limit": 16384,
+    "threshold_tokens": 12288,
+    "visible_prompt_tokens": 2523,
+    "raw_event_count": 333,
+    "visible_frontier_before": 324,
+    "new_committed_records_since_saved_handoff": 3
+  },
+  "history_sha256_before": "e6504d493e7cdbb9ea79d16aed5507cced0adb44c27658ea4893df8d45a1394a",
+  "history_sha256_after": "e6504d493e7cdbb9ea79d16aed5507cced0adb44c27658ea4893df8d45a1394a",
+  "retelling_source_sha256": "37720231d728f1065358f55ea4c9051a1016caee77ea11376361013d36519a06",
+  "context_retained": {
+    "path": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1/stream/records/00000000000000005030.json",
+    "index": 5030,
+    "sha256": "527f591474c423a7efbc343e7d2ad1ba362b7f7732f8585ef56bd5aa95f54a23",
+    "file_bytes": 891,
+    "file_mtime_unix_ns": 1789666936882966983,
+    "file_mtime_utc": "2026-09-17T17:42:16.882967+00:00",
+    "time_caveat": "Filesystem mtime, not an embedded journal timestamp."
+  },
+  "sleep_request": {
+    "path": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1/stream/records/00000000000000005031.json",
+    "index": 5031,
+    "sha256": "d5d597aaf4b27676c62a6cb65e409266253c015759d00407ea7c6bb010c21e3e",
+    "file_bytes": 2745227,
+    "file_mtime_unix_ns": 1789666983179707389,
+    "file_mtime_utc": "2026-09-17T17:43:03.179707+00:00",
+    "time_caveat": "Filesystem mtime, not an embedded journal timestamp.",
+    "saved_history_bound_to_retained_history": true
+  },
+  "proof_boundary": {
+    "journal_chain_verified_through_index": 5037,
+    "new_sleep_complete_observed": false,
+    "post_sleep_prompt_history_custody_verified": false,
+    "gpu_learning_effect_claimed": false,
+    "interpretation": "The first actual below-threshold retention decision and its saved sleep request are proven. UPDATE records show the new sleep is in progress. Completion and post-sleep custody remain pending."
+  },
+  "coverage": {
+    "loaded": [4],
+    "armed_receiving_cpu_passed_not_loaded": [2, 3, 5, 6],
+    "already_compliant_no_restart": [7],
+    "new_attempt2_watcher_failures_observed": [],
+    "status_receipt": "EXECUTION_STATUS_1789667330135748076.json",
+    "status_receipt_sha256": "2f34cdc2bf6df33b7e681d0bcfbf3a49a541fafa153ac052fd99a9b9e16cfb65",
+    "caveat": "Armed denotes live independent boundary operators, not successor loading. No-op is the prior source/CPU proof, not a new actor-health census."
+  },
+  "evidence": {
+    "observation_path": "CONTEXT_CUSTODY_LANE4_1789667295884388855.json",
+    "observation_sha256": "267ab4fd9db7f9368aa481a59f0e01a08d9849d7f5fa1e56f1451a56401a1582",
+    "observer_path": "observe_retained.py",
+    "observer_sha256": "05d3f84d40daf2583e853721a73de5b31fa6e8bf0639d9856fdf1b5da3decc06",
+    "test_path": "test_observe_retained.py",
+    "test_sha256": "9e4e7a913c38cbc03f2ea54ba4f7899d50c90bef102ca224eb27350a76161947",
+    "cpu_log": "OBSERVER_CPU_1789667295884388855.log",
+    "cpu_log_sha256": "1a4938f09706bff05141619305ad90323329dfa32a13bd7049d858c3e2cbd980",
+    "observer_cpu_tests_passed": 11,
+    "observer_prior_bytes_preserved": "observer_v1_source/"
+  },
+  "visibility_and_controls": {
+    "bytes_read_this_custody_observation": 22251540,
+    "aggregate_read_cap_bytes": 268435456,
+    "per_record_read_cap_bytes": 67108864,
+    "record_count_cap": 512,
+    "child_text_exported": false,
+    "sealed_content_reads": 0,
+    "key_reads": 0,
+    "parent_messages_sent": 0,
+    "r164_probe_channels_modified": false,
+    "r164_probe_runtime_success_claimed": false,
+    "shared_native_policy_tests_modified": false,
+    "coordination_modified": false,
+    "new_signals_or_restarts_in_this_observation": 0
+  },
+  "next_check": "Leave all independent bounded handoffs active. Do not repeatedly reread the full history while this sleep runs. A later completed-sleep signal warrants a fresh bounded chain/render verification and a new receipt, not overwriting this pre-sleep marker."
+}

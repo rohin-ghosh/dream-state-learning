@@ -1,0 +1,54 @@
+{
+  "actor": {
+    "argv": [
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "-m",
+      "gpu.orch_r125_continual_guard",
+      "native",
+      "--config",
+      "/localhome/local-rohing/orch_r203_C2_20260918_resume1/control/GUARD.json"
+    ],
+    "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+    "cgroup": "0::/system.slice/orch-r188-node5-c2-child-83f54707181898df.service",
+    "cwd": "/localhome/local-rohing/orch_r203_C2_20260918_resume1/source",
+    "group": 3165022,
+    "parent": 3165022,
+    "pid": 3165023,
+    "start_ticks": "23723871",
+    "uid": 2524
+  },
+  "checkpoint_files": {
+    "COMMIT.json": "f5c1f68e0d9375179ff571013bfe8a2b1674542fc265555155ef32c0dae3b20f",
+    "adapter/README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+    "adapter/adapter_config.json": "5678e6dad493d4c5ada75ffbc53baa5f0c60afebe0d9ea650e2bfe36d2d7e565",
+    "adapter/adapter_model.safetensors": "a87e79836edd2dbfce0e88eeb96261b8847d9d4bdc53a04e966766c36d54a81e",
+    "optimizer_rng.pt": "e640a14166ca79ec73c71771364786b0e3e438a8dd1004e5f64fd9cd9591a0b9"
+  },
+  "complete_index": 6055,
+  "complete_sha256": "5cd183f337d2c63b3619543e6dcacd449693bf0518a81f5b61b2424b45ae3857",
+  "completed_preservation_unix": 1789702166.6440704,
+  "cycle": 53,
+  "earlier_live_console_sampling_RNG_not_separately_checkpointed": true,
+  "exact_head": {
+    "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006056.json",
+    "sha256": "2be39afe6459407eb31dafa52a8086f512b269e024cb1cb17c9d2e6a9ff5038f"
+  },
+  "inbox_source_writes": 0,
+  "no_history_rollback": true,
+  "observed_unix": 1789702159.2403076,
+  "optimizer_steps": 5036,
+  "same_parent": true,
+  "snapshot_root": "/localhome/local-rohing/orch_r204_C2_20260918_resume1/preserved_boundary",
+  "source52_retained_with_corrupt_exposure": true,
+  "tail": [
+    {
+      "index": 6056,
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "kind": "R184_LEARN_COMPLETE",
+      "previous_sha256": "5cd183f337d2c63b3619543e6dcacd449693bf0518a81f5b61b2424b45ae3857",
+      "schema": "R125_STREAM_JOURNAL_V1",
+      "sha256": "7c5e6e8671067156b8b8c7d7b53e9e3893fc54e6a686435e3baa73545dec677d"
+    }
+  ]
+}

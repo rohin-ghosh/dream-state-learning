@@ -1,0 +1,21 @@
+{
+  "command": [
+    "timeout",
+    "--foreground",
+    "3489",
+    "bash",
+    "gpu/a40r_ssh.sh",
+    "-N",
+    "-o",
+    "ExitOnForwardFailure=yes",
+    "-L",
+    "[REDACTED_ADDRESS]:8177:[REDACTED_ADDRESS]:8177"
+  ],
+  "endpoint": "http://[REDACTED_ADDRESS]:8177",
+  "maximum_seconds": 3489,
+  "observed_unix": 1789673550.690572,
+  "packet_sha256": "b897b91143f18212ff280f2773c84cd01dfecab25e89b13e9ce0b6b7b2aae211",
+  "pid": 4145476,
+  "start_ticks": "178056875",
+  "status": "FORWARD_STARTED_NOT_IMAGE_RESULT"
+}

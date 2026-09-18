@@ -1,0 +1,89 @@
+{
+  "CPU_RNG_equal": true,
+  "CUDA_RNG_equal": false,
+  "Python_RNG_equal": true,
+  "adapter_files": {
+    "initial": {
+      "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+      "adapter_config.json": "defb66b9d5bfdeff0a65f5624c661420b59219091a525401e23fa491824fe997",
+      "adapter_model.safetensors": "2beaa09d4930b1eafa6a1a07a67f3d062b35336d5e5ac58778a00ad518cf9dfe"
+    },
+    "sleep_000001": {
+      "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+      "adapter_config.json": "f2272102e22e6b7b16484ce1569de9b961d38cd36ae41fd9bcfc5fe153f24a78",
+      "adapter_model.safetensors": "2beaa09d4930b1eafa6a1a07a67f3d062b35336d5e5ac58778a00ad518cf9dfe"
+    }
+  },
+  "adapter_state_hashes_recorded": {
+    "initial": "95966e71c3ec81487d05e02d6b770c422febfc433fe367d856a6e4817f8dbe14",
+    "sleep_000001": "95966e71c3ec81487d05e02d6b770c422febfc433fe367d856a6e4817f8dbe14"
+  },
+  "all_adapter_tensors_exact_equal": true,
+  "changed_tensor_names": [],
+  "commit_hashes_verified": {
+    "initial": "68580b9e6f4db25d0bc8b5a2107eec7507863d617065ff8b3f6d7c352a97417c",
+    "sleep_000001": "1aa0ab173c105e880c5b8da7ce697d57113c49d6c6536255b15cd4a3d443b977"
+  },
+  "config_field_changes": {
+    "target_modules": {
+      "initial": [
+        "down_proj",
+        "gate_proj",
+        "k_proj",
+        "o_proj",
+        "v_proj",
+        "up_proj",
+        "q_proj"
+      ],
+      "sleep1": [
+        "v_proj",
+        "up_proj",
+        "gate_proj",
+        "down_proj",
+        "k_proj",
+        "q_proj",
+        "o_proj"
+      ]
+    }
+  },
+  "cpu_rng_hashes": {
+    "initial": "1ccf17250133dec5e96478acd63e13d728d0dbbabb30389415a302c6f872f81f",
+    "sleep_000001": "1ccf17250133dec5e96478acd63e13d728d0dbbabb30389415a302c6f872f81f"
+  },
+  "cuda_initialized": false,
+  "cuda_rng_hashes": {
+    "initial": [
+      "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+    ],
+    "sleep_000001": [
+      "2f0f8c7b03065df885704c1d9e8b721dcc4e22031cd35ba600ec5d3da273ddbf"
+    ]
+  },
+  "existing_states_modified": false,
+  "experiment_equal": true,
+  "model_loaded": false,
+  "observed_unix": 1789628655.1679442,
+  "optimizer_payload_steps": {
+    "initial": 0,
+    "sleep_000001": 0
+  },
+  "optimizer_state_and_groups_equal": true,
+  "optimizer_state_entries": {
+    "initial": 0,
+    "sleep_000001": 0
+  },
+  "optimizer_steps": {
+    "initial": 0,
+    "sleep_000001": 0
+  },
+  "original_native_verify_checkpoint": "PASS_BOTH",
+  "parameter_order_equal": true,
+  "remote_writes": false,
+  "root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_frozen",
+  "schema": "R160_FROZEN_SAVED_TENSORS_CPU_AUDIT_V1",
+  "tensor_count": 392,
+  "tensor_dtypes": [
+    "torch.float32"
+  ],
+  "tensor_numel": 20185088
+}

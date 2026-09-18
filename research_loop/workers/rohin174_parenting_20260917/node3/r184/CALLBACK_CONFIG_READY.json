@@ -1,0 +1,65 @@
+{
+  "callback_entrypoint": "gpu.orch_r153_community_transport.cpu_once",
+  "code_policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+  "dispatcher_closure": {
+    "capture": "b45825aad250ad0305b1f2d2c1b475690a4c6dda89045f97d5ee63da1294119d",
+    "code_blocks": "a7bd5a92be9937845f3653687af710a9a26d0276c3317e7c5c4c291ad117bdf1",
+    "dispatcher": "88e7303fb2bedc6fa891bf2fd16807015d887234cf2fdec20bdd413349e81c8c",
+    "profile": "9117c4d72cdbb700e351f4625e763f96cf94341a3cf6d2a2cf3445687bfae48b",
+    "request_parser": "8894819b74275760038313be4b894fd2f5c92b7004aa99d2a6c2cf60cad05f93"
+  },
+  "evidence": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r184/NODE2_GATE_EXECUTED.json",
+    "sha256": "f57a35bfb70b0d379e43435bcc8d2a406cd1e8e3845415f7e5e41bb8330629bd"
+  },
+  "gate_reverify_at_dispatch": true,
+  "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/gate",
+  "gate_sha256": "5241727deccc099cdf93d6bde213d44df2ae52ba4b6b73103d10abbb5bfc0a89",
+  "host": "[REDACTED_HOST]",
+  "preserve_unknown_no_retry": true,
+  "readiness_scope": "verified NODE2 CPU primitive and real builder smoke, not C2 ACT execution or learner exposure",
+  "ready": true,
+  "required_call": {
+    "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/gate",
+    "gate_sha256": "5241727deccc099cdf93d6bde213d44df2ae52ba4b6b73103d10abbb5bfc0a89",
+    "journal_id": "actual clone manifest journal_id",
+    "origin": "actual committed ACT RESPONSE index and sha256, never THINK",
+    "root": "actual absolute clone root containing r153 component",
+    "start": true
+  },
+  "schema": "R184_NODE2_CALLBACK_CONFIG_V1",
+  "smoke": {
+    "cgroup_removed_after_stop": true,
+    "child_generated": false,
+    "launch_attempted": true,
+    "origin": {
+      "child_generated": false,
+      "kind": "BUILDER_TEST"
+    },
+    "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/spool/dd96b6fd85c6e3648cd1d24be17aeae38f6667dc601fb6739d2f00989932b947/RESULT.json",
+    "request_id": "dd96b6fd85c6e3648cd1d24be17aeae38f6667dc601fb6739d2f00989932b947",
+    "returncode": 0,
+    "sha256": "ee1220d49b9d7bc5f9241e8d6e23addfdcb5e296dab99e77ff6c232400178fe4",
+    "status": "COMPLETE",
+    "stdout": "42\n",
+    "teardown_error": null
+  },
+  "source_pins": {
+    "gpu/orch_r125_bounded_capture.py": "b45825aad250ad0305b1f2d2c1b475690a4c6dda89045f97d5ee63da1294119d",
+    "gpu/orch_r125_cpu_confinement_probe.py": "9117c4d72cdbb700e351f4625e763f96cf94341a3cf6d2a2cf3445687bfae48b",
+    "gpu/orch_r125_cpu_experiment.py": "88e7303fb2bedc6fa891bf2fd16807015d887234cf2fdec20bdd413349e81c8c",
+    "gpu/orch_r125_stream_console.py": "35697239e89a6b9dd49505b3556eb2c149b214fdb5ad3116677712d9b4231b75",
+    "gpu/orch_r125_stream_journal.py": "3925a6dff44c71994d446445833207ba3b4a9c8a983b56a8f3e3de84239eb0ca",
+    "gpu/orch_r127_pilot_console.py": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683",
+    "gpu/orch_r153_code_blocks.py": "a7bd5a92be9937845f3653687af710a9a26d0276c3317e7c5c4c291ad117bdf1",
+    "gpu/orch_r153_community_exchange.py": "5599d061984734110860fad2293db9e4203400c9d411e01f8bd3c8a58566f605",
+    "gpu/orch_r153_community_transport.py": "b798199a10508164de724631fc8a81bf28fb3500db5bc0048ec486cb7707905a",
+    "organism_v6/orch_r124_train_history.py": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91",
+    "organism_v6/orch_r125_continual_stream.py": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09",
+    "organism_v6/orch_r125_experiment_request.py": "8894819b74275760038313be4b894fd2f5c92b7004aa99d2a6c2cf60cad05f93",
+    "organism_v6/orch_r125_plain_context.py": "dcfd1f7f5584867e39356f336f53bb7222aeb535da87d5ecb8f1f0bb59f72feb"
+  },
+  "source_root": "/localhome/local-rohing/orch_r176_retelling_retention_20260917_generation1/receiving_source1/source",
+  "stage_source_requirement": "exact matching profile and bounded-capture bytes; use pinned source closure rather than silently importing different stage copies",
+  "wrapper": "gpu/ovx_ssh.sh"
+}

@@ -1,0 +1,6 @@
+{
+  "observed_unix": 1789632914.6025605,
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/legacy_takeover.py\", line 335, in <module>\n    execute(args.go, args.go_sha256)\n  File \"/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/legacy_takeover.py\", line 278, in execute\n    with quiesce(binding) as (descriptor, operations):\n  File \"/usr/lib/python3.12/contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/legacy_takeover.py\", line 213, in quiesce\n    operations.childless_stopped(observed['pid'])\n  File \"/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/legacy_takeover.py\", line 188, in childless_stopped\n    require(not (task / 'children').read_text().strip(), 'provider_or_publish_child_defer')\n  File \"/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/legacy_takeover.py\", line 32, in require\n    raise ValueError(reason)\nValueError: provider_or_publish_child_defer\n",
+  "stdout": ""
+}

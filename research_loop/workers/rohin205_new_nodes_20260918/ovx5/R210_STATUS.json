@@ -1,0 +1,953 @@
+{
+  "aggregate_diagnostics_only": true,
+  "arms": [
+    {
+      "checkpoint_diagnostic_coverage": {
+        "diagnosed_full_states": 2,
+        "full_states_present": 2,
+        "incomplete_state_directories": [],
+        "observed_checkpoint_directories": 2,
+        "pending_receipt_is_not_launch_authorization": true,
+        "required_diagnostics": "selection_Spearman_and_same600_cases_100_per_six_types",
+        "saved_steps_without_complete_diagnostics": []
+      },
+      "continuity": {
+        "additional_partial_inflight_work_possible": true,
+        "additional_unlogged_completed_updates_bounds": [
+          0,
+          10
+        ],
+        "description": "SAME_CHECKPOINT_MODEL_OPTIMIZER_RNG_RESTORE_WITH_EXPLICIT_R209_REWIND",
+        "discarded_documented_pair_draws": 31040,
+        "discarded_documented_updates": 485,
+        "original_raw_receipts_preserved": true,
+        "raw_reset_flags_scope": "saved_checkpoint_state_not_continuity_from_latest_R209_update",
+        "restored_checkpoint_step": 145,
+        "rollback_to_saved_checkpoint": true,
+        "uninterrupted_continuity": false
+      },
+      "declared_crossed_fraction": 0.25,
+      "diagnostics": [
+        {
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "checkpoint": "pilot_checkpoint",
+          "completed_utc": "2026-09-18T04:57:37.791777+00:00",
+          "contrast_by_type": {
+            "mid_tier": {
+              "losses": 27,
+              "scored": 100,
+              "tie_half_accuracy": 0.73,
+              "ties": 0,
+              "wins": 73
+            },
+            "nonsense": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "other_contest": {
+              "losses": 49,
+              "scored": 100,
+              "tie_half_accuracy": 0.505,
+              "ties": 1,
+              "wins": 50
+            },
+            "scene_description": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "truncated": {
+              "losses": 5,
+              "scored": 100,
+              "tie_half_accuracy": 0.945,
+              "ties": 1,
+              "wins": 94
+            },
+            "word_shuffled": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            }
+          },
+          "optimizer_step": 145,
+          "phase": "R209_PRESERVED",
+          "private_examples_exported": false,
+          "rank": 8,
+          "selection_Spearman": 0.27299681823986627,
+          "source_receipt": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank8_20260918_candidate1/checkpoint_diagnostics/pilot_checkpoint/COMPLETE.json"
+        },
+        {
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "checkpoint": "selected_step_000008",
+          "completed_utc": "2026-09-18T04:53:39.459681+00:00",
+          "contrast_by_type": {
+            "mid_tier": {
+              "losses": 26,
+              "scored": 100,
+              "tie_half_accuracy": 0.74,
+              "ties": 0,
+              "wins": 74
+            },
+            "nonsense": {
+              "losses": 1,
+              "scored": 100,
+              "tie_half_accuracy": 0.99,
+              "ties": 0,
+              "wins": 99
+            },
+            "other_contest": {
+              "losses": 48,
+              "scored": 100,
+              "tie_half_accuracy": 0.52,
+              "ties": 0,
+              "wins": 52
+            },
+            "scene_description": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "truncated": {
+              "losses": 5,
+              "scored": 100,
+              "tie_half_accuracy": 0.95,
+              "ties": 0,
+              "wins": 95
+            },
+            "word_shuffled": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            }
+          },
+          "optimizer_step": 8,
+          "phase": "R209_PRESERVED",
+          "private_examples_exported": false,
+          "rank": 8,
+          "selection_Spearman": 0.2871991360488515,
+          "source_receipt": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank8_20260918_candidate1/checkpoint_diagnostics/selected_step_000008/COMPLETE.json"
+        },
+        {
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "checkpoint": "step_000146",
+          "completed_utc": "2026-09-18T05:13:03.374428+00:00",
+          "contrast_by_type": {
+            "mid_tier": {
+              "losses": 24,
+              "scored": 100,
+              "tie_half_accuracy": 0.755,
+              "ties": 1,
+              "wins": 75
+            },
+            "nonsense": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "other_contest": {
+              "losses": 46,
+              "scored": 100,
+              "tie_half_accuracy": 0.525,
+              "ties": 3,
+              "wins": 51
+            },
+            "scene_description": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "truncated": {
+              "losses": 6,
+              "scored": 100,
+              "tie_half_accuracy": 0.94,
+              "ties": 0,
+              "wins": 94
+            },
+            "word_shuffled": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            }
+          },
+          "optimizer_step": 146,
+          "phase": "R210_MIX",
+          "private_examples_exported": false,
+          "rank": 8,
+          "selection_Spearman": 0.273878812162536,
+          "source_receipt": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank8_20260918_continuation2/training/checkpoint_diagnostics/step_000146/COMPLETE.json"
+        },
+        {
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "checkpoint": "step_001000",
+          "completed_utc": "2026-09-18T05:43:24.440393+00:00",
+          "contrast_by_type": {
+            "mid_tier": {
+              "losses": 40,
+              "scored": 100,
+              "tie_half_accuracy": 0.595,
+              "ties": 1,
+              "wins": 59
+            },
+            "nonsense": {
+              "losses": 3,
+              "scored": 100,
+              "tie_half_accuracy": 0.97,
+              "ties": 0,
+              "wins": 97
+            },
+            "other_contest": {
+              "losses": 15,
+              "scored": 100,
+              "tie_half_accuracy": 0.85,
+              "ties": 0,
+              "wins": 85
+            },
+            "scene_description": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "truncated": {
+              "losses": 15,
+              "scored": 100,
+              "tie_half_accuracy": 0.84,
+              "ties": 2,
+              "wins": 83
+            },
+            "word_shuffled": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            }
+          },
+          "optimizer_step": 1000,
+          "phase": "R210_MIX",
+          "private_examples_exported": false,
+          "rank": 8,
+          "selection_Spearman": 0.23436783422899063,
+          "source_receipt": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank8_20260918_continuation2/training/checkpoint_diagnostics/step_001000/COMPLETE.json"
+        }
+      ],
+      "first_mix_utc": "2026-09-18T05:12:37.613947+00:00",
+      "full_state_checkpoints": [
+        {
+          "adapter_present": true,
+          "all_four_rank_states_present": true,
+          "complete_receipt_present": true,
+          "optimizer_step": 146,
+          "path": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank8_20260918_continuation2/training/checkpoint_step_000146",
+          "validation": "public_rank_step_receipts_and_file_presence_not_tensor_readback"
+        },
+        {
+          "adapter_present": true,
+          "all_four_rank_states_present": true,
+          "complete_receipt_present": true,
+          "optimizer_step": 1000,
+          "path": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank8_20260918_continuation2/training/checkpoint_step_001000",
+          "validation": "public_rank_step_receipts_and_file_presence_not_tensor_readback"
+        }
+      ],
+      "latest_ETA": {
+        "actual_phase_fitting_seconds": 1987.1990996579698,
+        "complete": false,
+        "completed_updates": 1090,
+        "diagnostics_so_far_seconds": 51.861108448996674,
+        "five_minute_measurement": true,
+        "future_diagnostics_seconds": 466.74997604097007,
+        "no_tau_gate": true,
+        "observed_unix": 1789710393.8930695,
+        "phase_pairs_per_second": 30.43479639780917,
+        "predicted_finish_utc": "2026-09-18T14:23:45.657771+00:00"
+      },
+      "latest_update": {
+        "aggregate_comparisons": 69760,
+        "completed_updates": 1090,
+        "fitting_elapsed_seconds": 1987.1990996579698,
+        "global_batch": 64,
+        "observed_unix": 1789710393.892795,
+        "pair_types": {
+          "CROSSED_SCENE_ASSUMPTION": 16,
+          "WITHIN_CONTEST_OBSERVED": 48
+        },
+        "phase_comparisons": 60480,
+        "phase_pairs_per_second": 30.43479639780917
+      },
+      "live": true,
+      "live_crossed_fraction": 0.25,
+      "live_crossed_fraction_denominator": {
+        "crossed": 16,
+        "optimizer_step": 1090,
+        "scope": "latest_completed_R210_update_pair_count_not_loss_weight_or_entire_history",
+        "total": 64
+      },
+      "loaded_utc": "2026-09-18T05:12:33.726027+00:00",
+      "native_processes": [
+        {
+          "pid": 67713,
+          "start_ticks": "23097766",
+          "state": "R"
+        },
+        {
+          "pid": 67714,
+          "start_ticks": "23097766",
+          "state": "R"
+        },
+        {
+          "pid": 67715,
+          "start_ticks": "23097766",
+          "state": "R"
+        },
+        {
+          "pid": 67716,
+          "start_ticks": "23097766",
+          "state": "R"
+        }
+      ],
+      "rank": 8,
+      "receipts": {
+        "ADMISSION.json": {
+          "blockers": [],
+          "clear": true,
+          "observed_unix": 1789708297.0752423,
+          "privileged": true,
+          "target_physical": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "CONFINEMENT_CPU.json": {
+          "allowed": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "config_sha256": "4c9e58abf0942ee45e2c932ec9a68501cc239a9c0ec040248e5f5e5d158c8815",
+          "denied": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "observed_unix": 1789708296.8365076,
+          "passed": true
+        },
+        "R210_TRANSITION.json": {
+          "additional_inflight_work_possible": true,
+          "additional_unlogged_completed_updates_bounds": [
+            0,
+            10
+          ],
+          "checkpoint_manifest_sha256": "49b301ce4010245b8b10a686e407d2f72c7703a4c514971c329555d4fce3b877",
+          "declared_crossed_fraction": 0.25,
+          "declared_within_fraction": 0.75,
+          "discarded_documented_pair_draws": 31040,
+          "discarded_documented_updates": 485,
+          "exact_discarded_suffix_count_unknown_due_to_prior_ten_step_logging": true,
+          "failed_R210_dispatch_preserved": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank8_20260918_continuation1",
+          "failed_dispatch_updates": 0,
+          "first_new_mix_step": 146,
+          "last_complete_progress": {
+            "aggregate_comparisons": 40320,
+            "completed_updates": 630,
+            "elapsed_seconds": 1528.2701603487076,
+            "full_five_minute_pilot": true,
+            "observed_unix": 1789708137.7097552,
+            "pairs_per_second": 26.382769909477346
+          },
+          "no_weights_or_optimizer_reset": true,
+          "observed_utc": "2026-09-18T05:09:14.118773+00:00",
+          "old_owner_stopped": true,
+          "original_phase_files_retained": true,
+          "partial_progress_files": [],
+          "planned_stop_not_scientific_failure": true,
+          "prior_main_pid": 63187,
+          "prior_unit": "orch-r209-ovx5-allpair-rank8-candidate1-pilot.service",
+          "processes": [
+            {
+              "pid": 63187,
+              "start_ticks": "22920139",
+              "state": "T"
+            },
+            {
+              "pid": 63223,
+              "start_ticks": "22920390",
+              "state": "T"
+            },
+            {
+              "pid": 63224,
+              "start_ticks": "22920390",
+              "state": "T"
+            },
+            {
+              "pid": 63225,
+              "start_ticks": "22920390",
+              "state": "T"
+            },
+            {
+              "pid": 63226,
+              "start_ticks": "22920390",
+              "state": "T"
+            }
+          ],
+          "resume_step": 145,
+          "source_checkpoint": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank8_20260918_candidate1/training/pilot_checkpoint",
+          "stopped_unix": 1789708154.1365852,
+          "transition_reason": "EXPLICIT_R210_RECIPE_CHANGE_OLD_WRITER_HAS_NO_ON_DEMAND_FULL_CHECKPOINT"
+        },
+        "RECEIVING_CPU.json": {
+          "CUDA_initialized": false,
+          "actual_Torch_CPU_tests": 5,
+          "new_mix_first_step": null,
+          "observed_unix": 1789708267.3825517,
+          "passed": true,
+          "restore_step": null
+        },
+        "training/LOADED.json": {
+          "completed_updates": 145,
+          "loaded_unix": 1789708353.7260275,
+          "optimizer_reset": false,
+          "physical": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "rank": 8,
+          "source_checkpoint_sha256": "49b301ce4010245b8b10a686e407d2f72c7703a4c514971c329555d4fce3b877",
+          "status": "R210_EXACT_MODEL_ADAMW_RNG_LOADED",
+          "trainable_layout_sha256": "c4f57eb0486aa6452eab38da1f956e473d7b2075480c78f6377e07ef5aaceec8",
+          "transition_sha256": "1b44f2d3b4292b72999bd4cfacab3ca57ec9ad2f03d7e25e11624f165bdcdfbe",
+          "world_size": 4
+        },
+        "training/NEW_MIX_STARTED.json": {
+          "TRAIN_only": true,
+          "actual_first_batch_counts": {
+            "CROSSED_SCENE_ASSUMPTION": 16,
+            "WITHIN_CONTEST_OBSERVED": 48
+          },
+          "constructed_negative_assumption_not_proof": true,
+          "first_completed_update": 146,
+          "no_weight_or_optimizer_reset": true,
+          "optimizer_and_RNG_restored": true,
+          "previous_saved_step": 145,
+          "started_unix": 1789708357.6139474
+        }
+      },
+      "root": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank8_20260918_continuation2",
+      "trainer_sha256": "1a87e43ce4114c841ff37215bac0c2626b878f0d5b615ce88b848fc420e72578"
+    },
+    {
+      "checkpoint_diagnostic_coverage": {
+        "diagnosed_full_states": 2,
+        "full_states_present": 2,
+        "incomplete_state_directories": [],
+        "observed_checkpoint_directories": 2,
+        "pending_receipt_is_not_launch_authorization": true,
+        "required_diagnostics": "selection_Spearman_and_same600_cases_100_per_six_types",
+        "saved_steps_without_complete_diagnostics": []
+      },
+      "continuity": {
+        "additional_partial_inflight_work_possible": true,
+        "additional_unlogged_completed_updates_bounds": [
+          0,
+          10
+        ],
+        "description": "SAME_CHECKPOINT_MODEL_OPTIMIZER_RNG_RESTORE_WITH_EXPLICIT_R209_REWIND",
+        "discarded_documented_pair_draws": 31104,
+        "discarded_documented_updates": 486,
+        "original_raw_receipts_preserved": true,
+        "raw_reset_flags_scope": "saved_checkpoint_state_not_continuity_from_latest_R209_update",
+        "restored_checkpoint_step": 144,
+        "rollback_to_saved_checkpoint": true,
+        "uninterrupted_continuity": false
+      },
+      "declared_crossed_fraction": 0.25,
+      "diagnostics": [
+        {
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "checkpoint": "pilot_checkpoint",
+          "completed_utc": "2026-09-18T04:57:38.222604+00:00",
+          "contrast_by_type": {
+            "mid_tier": {
+              "losses": 28,
+              "scored": 100,
+              "tie_half_accuracy": 0.72,
+              "ties": 0,
+              "wins": 72
+            },
+            "nonsense": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "other_contest": {
+              "losses": 47,
+              "scored": 100,
+              "tie_half_accuracy": 0.515,
+              "ties": 3,
+              "wins": 50
+            },
+            "scene_description": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "truncated": {
+              "losses": 5,
+              "scored": 100,
+              "tie_half_accuracy": 0.95,
+              "ties": 0,
+              "wins": 95
+            },
+            "word_shuffled": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            }
+          },
+          "optimizer_step": 144,
+          "phase": "R209_PRESERVED",
+          "private_examples_exported": false,
+          "rank": 16,
+          "selection_Spearman": 0.27397016402178936,
+          "source_receipt": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank16_20260918_candidate1/checkpoint_diagnostics/pilot_checkpoint/COMPLETE.json"
+        },
+        {
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "checkpoint": "selected_step_000008",
+          "completed_utc": "2026-09-18T04:53:39.371023+00:00",
+          "contrast_by_type": {
+            "mid_tier": {
+              "losses": 24,
+              "scored": 100,
+              "tie_half_accuracy": 0.755,
+              "ties": 1,
+              "wins": 75
+            },
+            "nonsense": {
+              "losses": 1,
+              "scored": 100,
+              "tie_half_accuracy": 0.99,
+              "ties": 0,
+              "wins": 99
+            },
+            "other_contest": {
+              "losses": 50,
+              "scored": 100,
+              "tie_half_accuracy": 0.5,
+              "ties": 0,
+              "wins": 50
+            },
+            "scene_description": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "truncated": {
+              "losses": 6,
+              "scored": 100,
+              "tie_half_accuracy": 0.94,
+              "ties": 0,
+              "wins": 94
+            },
+            "word_shuffled": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            }
+          },
+          "optimizer_step": 8,
+          "phase": "R209_PRESERVED",
+          "private_examples_exported": false,
+          "rank": 16,
+          "selection_Spearman": 0.2876330566653696,
+          "source_receipt": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank16_20260918_candidate1/checkpoint_diagnostics/selected_step_000008/COMPLETE.json"
+        },
+        {
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "checkpoint": "step_000145",
+          "completed_utc": "2026-09-18T05:10:42.781617+00:00",
+          "contrast_by_type": {
+            "mid_tier": {
+              "losses": 27,
+              "scored": 100,
+              "tie_half_accuracy": 0.715,
+              "ties": 3,
+              "wins": 70
+            },
+            "nonsense": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "other_contest": {
+              "losses": 50,
+              "scored": 100,
+              "tie_half_accuracy": 0.485,
+              "ties": 3,
+              "wins": 47
+            },
+            "scene_description": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "truncated": {
+              "losses": 5,
+              "scored": 100,
+              "tie_half_accuracy": 0.95,
+              "ties": 0,
+              "wins": 95
+            },
+            "word_shuffled": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            }
+          },
+          "optimizer_step": 145,
+          "phase": "R210_MIX",
+          "private_examples_exported": false,
+          "rank": 16,
+          "selection_Spearman": 0.2771723266263227,
+          "source_receipt": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank16_20260918_continuation1/training/checkpoint_diagnostics/step_000145/COMPLETE.json"
+        },
+        {
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "checkpoint": "step_001000",
+          "completed_utc": "2026-09-18T05:41:26.450074+00:00",
+          "contrast_by_type": {
+            "mid_tier": {
+              "losses": 35,
+              "scored": 100,
+              "tie_half_accuracy": 0.64,
+              "ties": 2,
+              "wins": 63
+            },
+            "nonsense": {
+              "losses": 2,
+              "scored": 100,
+              "tie_half_accuracy": 0.98,
+              "ties": 0,
+              "wins": 98
+            },
+            "other_contest": {
+              "losses": 14,
+              "scored": 100,
+              "tie_half_accuracy": 0.86,
+              "ties": 0,
+              "wins": 86
+            },
+            "scene_description": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            },
+            "truncated": {
+              "losses": 10,
+              "scored": 100,
+              "tie_half_accuracy": 0.89,
+              "ties": 2,
+              "wins": 88
+            },
+            "word_shuffled": {
+              "losses": 0,
+              "scored": 100,
+              "tie_half_accuracy": 1.0,
+              "ties": 0,
+              "wins": 100
+            }
+          },
+          "optimizer_step": 1000,
+          "phase": "R210_MIX",
+          "private_examples_exported": false,
+          "rank": 16,
+          "selection_Spearman": 0.2509500237100443,
+          "source_receipt": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank16_20260918_continuation1/training/checkpoint_diagnostics/step_001000/COMPLETE.json"
+        }
+      ],
+      "first_mix_utc": "2026-09-18T05:10:16.753515+00:00",
+      "full_state_checkpoints": [
+        {
+          "adapter_present": true,
+          "all_four_rank_states_present": true,
+          "complete_receipt_present": true,
+          "optimizer_step": 145,
+          "path": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank16_20260918_continuation1/training/checkpoint_step_000145",
+          "validation": "public_rank_step_receipts_and_file_presence_not_tensor_readback"
+        },
+        {
+          "adapter_present": true,
+          "all_four_rank_states_present": true,
+          "complete_receipt_present": true,
+          "optimizer_step": 1000,
+          "path": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank16_20260918_continuation1/training/checkpoint_step_001000",
+          "validation": "public_rank_step_receipts_and_file_presence_not_tensor_readback"
+        }
+      ],
+      "latest_ETA": {
+        "actual_phase_fitting_seconds": 2116.2783050543803,
+        "complete": false,
+        "completed_updates": 1140,
+        "diagnostics_so_far_seconds": 52.16187033901224,
+        "five_minute_measurement": true,
+        "future_diagnostics_seconds": 469.45683305111015,
+        "no_tau_gate": true,
+        "observed_unix": 1789710382.4698641,
+        "phase_pairs_per_second": 30.1208020928807,
+        "predicted_finish_utc": "2026-09-18T14:27:09.327551+00:00"
+      },
+      "latest_update": {
+        "aggregate_comparisons": 73344,
+        "completed_updates": 1146,
+        "fitting_elapsed_seconds": 2128.6977113333705,
+        "global_batch": 64,
+        "observed_unix": 1789710394.8929803,
+        "pair_types": {
+          "CROSSED_SCENE_ASSUMPTION": 16,
+          "WITHIN_CONTEST_OBSERVED": 48
+        },
+        "phase_comparisons": 64128,
+        "phase_pairs_per_second": 30.125461054698835
+      },
+      "live": true,
+      "live_crossed_fraction": 0.25,
+      "live_crossed_fraction_denominator": {
+        "crossed": 16,
+        "optimizer_step": 1146,
+        "scope": "latest_completed_R210_update_pair_count_not_loss_weight_or_entire_history",
+        "total": 64
+      },
+      "loaded_utc": "2026-09-18T05:10:12.379156+00:00",
+      "native_processes": [
+        {
+          "pid": 67117,
+          "start_ticks": "23083686",
+          "state": "S"
+        },
+        {
+          "pid": 67118,
+          "start_ticks": "23083686",
+          "state": "S"
+        },
+        {
+          "pid": 67119,
+          "start_ticks": "23083686",
+          "state": "S"
+        },
+        {
+          "pid": 67120,
+          "start_ticks": "23083686",
+          "state": "S"
+        }
+      ],
+      "rank": 16,
+      "receipts": {
+        "ADMISSION.json": {
+          "blockers": [],
+          "clear": true,
+          "observed_unix": 1789708156.6429672,
+          "privileged": true,
+          "target_physical": [
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        "CONFINEMENT_CPU.json": {
+          "allowed": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "config_sha256": "14af1b025cf49bc5223e76cb759691f5b00762b23a4a240376afb04f0668566a",
+          "denied": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "observed_unix": 1789708156.239167,
+          "passed": true
+        },
+        "R210_TRANSITION.json": {
+          "additional_inflight_work_possible": true,
+          "additional_unlogged_completed_updates_bounds": [
+            0,
+            10
+          ],
+          "checkpoint_manifest_sha256": "afc0df55cb7c3f985d59eb941edeb570a6c8f44c6ee6237a138b132723432ca1",
+          "declared_crossed_fraction": 0.25,
+          "declared_within_fraction": 0.75,
+          "discarded_documented_pair_draws": 31104,
+          "discarded_documented_updates": 486,
+          "exact_discarded_suffix_count_unknown_due_to_prior_ten_step_logging": true,
+          "first_new_mix_step": 145,
+          "last_complete_progress": {
+            "aggregate_comparisons": 40320,
+            "completed_updates": 630,
+            "elapsed_seconds": 1536.108869591204,
+            "full_five_minute_pilot": true,
+            "observed_unix": 1789708145.3150964,
+            "pairs_per_second": 26.24813956756212
+          },
+          "no_weights_or_optimizer_reset": true,
+          "observed_utc": "2026-09-18T05:09:14.195631+00:00",
+          "old_owner_stopped": true,
+          "original_phase_files_retained": true,
+          "partial_progress_files": [],
+          "planned_stop_not_scientific_failure": true,
+          "prior_main_pid": 63188,
+          "prior_unit": "orch-r209-ovx5-allpair-rank16-candidate1-pilot.service",
+          "processes": [
+            {
+              "pid": 63188,
+              "start_ticks": "22920141",
+              "state": "T"
+            },
+            {
+              "pid": 63229,
+              "start_ticks": "22920392",
+              "state": "T"
+            },
+            {
+              "pid": 63230,
+              "start_ticks": "22920392",
+              "state": "T"
+            },
+            {
+              "pid": 63231,
+              "start_ticks": "22920392",
+              "state": "T"
+            },
+            {
+              "pid": 63232,
+              "start_ticks": "22920392",
+              "state": "T"
+            }
+          ],
+          "resume_step": 144,
+          "source_checkpoint": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank16_20260918_candidate1/training/pilot_checkpoint",
+          "stopped_unix": 1789708156.017818,
+          "transition_reason": "EXPLICIT_R210_RECIPE_CHANGE_OLD_WRITER_HAS_NO_ON_DEMAND_FULL_CHECKPOINT"
+        },
+        "RECEIVING_CPU.json": {
+          "CUDA_initialized": false,
+          "actual_Torch_CPU_tests": 5,
+          "new_mix_first_step": 145,
+          "observed_unix": 1789708069.9513445,
+          "passed": true,
+          "restore_step": 144
+        },
+        "training/LOADED.json": {
+          "completed_updates": 144,
+          "loaded_unix": 1789708212.379156,
+          "optimizer_reset": false,
+          "physical": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "rank": 16,
+          "source_checkpoint_sha256": "afc0df55cb7c3f985d59eb941edeb570a6c8f44c6ee6237a138b132723432ca1",
+          "status": "R210_EXACT_MODEL_ADAMW_RNG_LOADED",
+          "trainable_layout_sha256": "c4f57eb0486aa6452eab38da1f956e473d7b2075480c78f6377e07ef5aaceec8",
+          "transition_sha256": "a22a6488145135e93f985f13bb8a0a5f9560a60f37390807e27331beef6fcc06",
+          "world_size": 4
+        },
+        "training/NEW_MIX_STARTED.json": {
+          "TRAIN_only": true,
+          "actual_first_batch_counts": {
+            "CROSSED_SCENE_ASSUMPTION": 16,
+            "WITHIN_CONTEST_OBSERVED": 48
+          },
+          "constructed_negative_assumption_not_proof": true,
+          "first_completed_update": 145,
+          "no_weight_or_optimizer_reset": true,
+          "optimizer_and_RNG_restored": true,
+          "previous_saved_step": 144,
+          "started_unix": 1789708216.7535152
+        }
+      },
+      "root": "/localhome/local-rohing/orch_r210_ovx5_mixed1m_rank16_20260918_continuation1",
+      "trainer_sha256": "1a87e43ce4114c841ff37215bac0c2626b878f0d5b615ce88b848fc420e72578"
+    }
+  ],
+  "node2_operations": 0,
+  "node2_owner": "Jason",
+  "nvml": [
+    "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82, 67715, 272 MiB",
+    "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82, 67716, 272 MiB",
+    "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82, 67714, 272 MiB",
+    "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82, 67713, 18714 MiB",
+    "GPU-3aaf4dfd-b6c9-a56d-3ca7-ee7748ee5f4d, 67715, 262 MiB",
+    "GPU-3aaf4dfd-b6c9-a56d-3ca7-ee7748ee5f4d, 67716, 262 MiB",
+    "GPU-3aaf4dfd-b6c9-a56d-3ca7-ee7748ee5f4d, 67714, 19668 MiB",
+    "GPU-6d1c0d5e-d7b6-e9a4-183d-dedfadabfefa, 67715, 22600 MiB",
+    "GPU-6d1c0d5e-d7b6-e9a4-183d-dedfadabfefa, 67716, 262 MiB",
+    "GPU-6d1c0d5e-d7b6-e9a4-183d-dedfadabfefa, 67714, 262 MiB",
+    "GPU-9dba6108-a040-2cd0-4ea1-274bc6a99e47, 67715, 262 MiB",
+    "GPU-9dba6108-a040-2cd0-4ea1-274bc6a99e47, 67716, 20202 MiB",
+    "GPU-9dba6108-a040-2cd0-4ea1-274bc6a99e47, 67714, 262 MiB",
+    "GPU-967bc219-6586-d50f-c774-eb4426f3af97, 67117, 19920 MiB",
+    "GPU-967bc219-6586-d50f-c774-eb4426f3af97, 67120, 282 MiB",
+    "GPU-967bc219-6586-d50f-c774-eb4426f3af97, 67119, 282 MiB",
+    "GPU-967bc219-6586-d50f-c774-eb4426f3af97, 67118, 282 MiB",
+    "GPU-11c058aa-f9ac-0a2b-5016-6c817e2e5b2f, 67120, 262 MiB",
+    "GPU-11c058aa-f9ac-0a2b-5016-6c817e2e5b2f, 67119, 262 MiB",
+    "GPU-11c058aa-f9ac-0a2b-5016-6c817e2e5b2f, 67118, 19232 MiB",
+    "GPU-ff82fd85-f324-35e5-5db3-4b6274a3f11e, 67120, 262 MiB",
+    "GPU-ff82fd85-f324-35e5-5db3-4b6274a3f11e, 67119, 22418 MiB",
+    "GPU-ff82fd85-f324-35e5-5db3-4b6274a3f11e, 67118, 262 MiB",
+    "GPU-6e850dab-3d57-cf83-1929-3a0f1efe46b6, 67120, 20222 MiB",
+    "GPU-6e850dab-3d57-cf83-1929-3a0f1efe46b6, 67119, 262 MiB",
+    "GPU-6e850dab-3d57-cf83-1929-3a0f1efe46b6, 67118, 262 MiB"
+  ],
+  "observed_utc": "2026-09-18T05:46:35.627532+00:00",
+  "schema": "R210_LIVE_TRAINING_RECEIPT_V1"
+}

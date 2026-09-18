@@ -1,0 +1,77 @@
+
+SUITE research_loop/workers/rohin174_parenting_20260917/node4/test_collect_r175_node4_receipts.py
+test_exact_TRAIN_parent_receipt_required (test_collect_r175_node4_receipts.ReceiptTests.test_exact_TRAIN_parent_receipt_required) ... ok
+test_incomplete_current_write_not_a_valid_snapshot (test_collect_r175_node4_receipts.ReceiptTests.test_incomplete_current_write_not_a_valid_snapshot) ... ok
+test_live_H_or_observed_render_is_not_silently_overridden (test_collect_r175_node4_receipts.ReceiptTests.test_live_H_or_observed_render_is_not_silently_overridden) ... ok
+test_no_render_inferred_from_publication (test_collect_r175_node4_receipts.ReceiptTests.test_no_render_inferred_from_publication) ... ok
+test_withdrawal_supersedes_pending_not_historical_publication (test_collect_r175_node4_receipts.ReceiptTests.test_withdrawal_supersedes_pending_not_historical_publication) ... ok
+test_wrong_withdrawal_receipt_never_overrides_a_publication (test_collect_r175_node4_receipts.ReceiptTests.test_wrong_withdrawal_receipt_never_overrides_a_publication) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK
+
+SUITE research_loop/workers/rohin174_parenting_20260917/node4/test_kernel5_rebind.py
+test_fixture_binding_changes_only_historical_target (test_kernel5_rebind.Kernel5Tests.test_fixture_binding_changes_only_historical_target) ... ok
+test_non_target_tests_unchanged (test_kernel5_rebind.Kernel5Tests.test_non_target_tests_unchanged) ... ok
+test_only_kernel_children_on_physical5_minor6 (test_kernel5_rebind.Kernel5Tests.test_only_kernel_children_on_physical5_minor6) ... ok
+test_still_requires_real_fresh_admission (test_kernel5_rebind.Kernel5Tests.test_still_requires_real_fresh_admission) ... ok
+test_strict_sandbox_denies_every_other_GPU_by_policy (test_kernel5_rebind.Kernel5Tests.test_strict_sandbox_denies_every_other_GPU_by_policy) ... ok
+test_unknown_or_already_modified_source_refused (test_kernel5_rebind.Kernel5Tests.test_unknown_or_already_modified_source_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.036s
+
+OK
+
+SUITE research_loop/workers/rohin174_parenting_20260917/node4/test_preflight_diagnostic.py
+test_changed_uid_or_executable_and_visibility_not_promoted (test_preflight_diagnostic.DiagnosticTests.test_changed_uid_or_executable_and_visibility_not_promoted) ... ok
+test_missing_process_and_unrelated_reasons_preserved (test_preflight_diagnostic.DiagnosticTests.test_missing_process_and_unrelated_reasons_preserved) ... ok
+test_original_all_fields_and_classification_unchanged (test_preflight_diagnostic.DiagnosticTests.test_original_all_fields_and_classification_unchanged) ... ok
+test_too_few_samples_not_promoted (test_preflight_diagnostic.DiagnosticTests.test_too_few_samples_not_promoted) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.006s
+
+OK
+
+SUITE research_loop/workers/rohin174_parenting_20260917/node4/test_r175_control_admission.py
+test_corrective_recovery_and_fresh_stage_refused (test_r175_control_admission.AdmissionTests.test_corrective_recovery_and_fresh_stage_refused) ... ok
+test_direct_corrective_call_stops_before_validator_or_provider (test_r175_control_admission.AdmissionTests.test_direct_corrective_call_stops_before_validator_or_provider) ... ok
+test_generic_H_remains_available_for_separately_authorized_forks (test_r175_control_admission.AdmissionTests.test_generic_H_remains_available_for_separately_authorized_forks) ... ok
+test_mismatched_CONFIG_cannot_hide_raw_root_behind_physical0 (test_r175_control_admission.AdmissionTests.test_mismatched_CONFIG_cannot_hide_raw_root_behind_physical0) ... ok
+test_missing_or_changed_V2_never_falls_back_to_V1 (test_r175_control_admission.AdmissionTests.test_missing_or_changed_V2_never_falls_back_to_V1) ... ok
+test_old_V1_CLI_actions_return_explicit_refusal (test_r175_control_admission.AdmissionTests.test_old_V1_CLI_actions_return_explicit_refusal) ... ok
+test_old_V1_operator_restart_before_any_side_effect (test_r175_control_admission.AdmissionTests.test_old_V1_operator_restart_before_any_side_effect) ... ok
+test_original_physical_refused_for_any_root (test_r175_control_admission.AdmissionTests.test_original_physical_refused_for_any_root) ... ok
+test_original_root_refused_for_other_or_missing_physical (test_r175_control_admission.AdmissionTests.test_original_root_refused_for_other_or_missing_physical) ... ok
+test_other_three_scopes_pass_exclusion_only (test_r175_control_admission.AdmissionTests.test_other_three_scopes_pass_exclusion_only) ... ok
+test_publication_guard_denies_first_and_all_later_H_calls (test_r175_control_admission.AdmissionTests.test_publication_guard_denies_first_and_all_later_H_calls) ... ok
+test_staging_descriptor_refuses_original_control_from_V1 (test_r175_control_admission.AdmissionTests.test_staging_descriptor_refuses_original_control_from_V1) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.507s
+
+OK
+
+SUITE research_loop/workers/rohin174_parenting_20260917/node4/test_r175_node4_errata.py
+setUpClass (test_r175_node4_errata.ErrataTests) ... ERROR
+
+======================================================================
+ERROR: setUpClass (test_r175_node4_errata.ErrataTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/test_r175_node4_errata.py", line 23, in setUpClass
+    cls.policy, cls.parent = errata.ORIGINAL_IMPORT(FIXTURE)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_operator.py", line 179, in import_owned
+    require(all(Path(module.__file__).resolve().is_relative_to(source) for module in (policy, parent, provider)), 'owned_bundle_imports_only')
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_operator.py", line 41, in require
+    raise ValueError(reason)
+ValueError: owned_bundle_imports_only
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.062s
+
+FAILED (errors=1)

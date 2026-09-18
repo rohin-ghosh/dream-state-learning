@@ -1,0 +1,49 @@
+{
+  "schema": "R177_BACON_PHYSICAL5_ADDRESSED_EVIDENCE_STATUS_V1",
+  "addressed_to": ["Bacon", "Main", "Gauss"],
+  "evidence_handoff": "HANDOFF.json",
+  "allocation_and_existing_lease_already_authorized": true,
+  "generic_review_or_permission_wait": false,
+  "actual_strict_device_proof": "PASS_PHYSICAL5_KERNEL_MINOR6_ALL_SEVEN_FOREIGN_MINORS_DENIED",
+  "lease_receipt_available": true,
+  "earlier_original_scanner_clear_utc": "2026-09-17T19:16:50.201276+00:00",
+  "earlier_report_reusable_as_current_admission": false,
+  "latest_scanner": {
+    "observed_utc": "2026-09-17T19:20:34.924947+00:00",
+    "path": "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/attempts/check_5_1789672834219831897/ORIGINAL_ADMISSION.json",
+    "sha256": "2fb1eb79d5eb1ac6bf45459f64ae7cfd6c090df756cc91df1253592c011efaa4",
+    "clear": false,
+    "scanner_euid": 0,
+    "blocking_reasons": ["minor_scan_process_drift:4109754"],
+    "gpu_memory_used_mib": 0,
+    "gpu_utilization_percent": 0,
+    "target_compute_processes": [],
+    "drift_PID_has_no_entry_in_original_report_processes": true,
+    "classification_as_harmless": false,
+    "report_filtered_or_modified": false,
+    "automatic_retry": false
+  },
+  "receiving_helper_test": {
+    "script": "fresh_scanner_receipt.sh",
+    "sha256": "2f2d58c052c82feeb4bcd0ac1d40f85677126483c1ad93e30091b765e5382cf6",
+    "syntax_check": "PASS",
+    "exact_wrapper_and_bundle_pins": "PASS",
+    "runtime_result": "FAILED_CLOSED_ON_ORIGINAL_REPORT_BLOCKER_NO_ADMISSION_EMITTED",
+    "model_calls": 0
+  },
+  "concrete_owner_code_issue": {
+    "source": "gpu/ny_caption_vision.py",
+    "source_sha256": "30fe8ac5404c44408f1784c4ccfb08b180b2a8806e5e4d491f04281014470846",
+    "function": "validate_admission",
+    "lines": [346, 353],
+    "current_target_minor_comparison": 5,
+    "actual_target_minor": 6,
+    "change_physical_allocation_or_widen_foreign_device_access": false,
+    "owner_fix_and_bound_receiving_regression_required": true
+  },
+  "next_action": "Bacon/Main use supplied real scanner/device/lease fields; correct minor6 validation and match the vision service/budget contract. At actual launch the original privileged scan must genuinely clear. Do not filter the latest unknown drift, replay the old clear receipt, or request another generic approval.",
+  "learner_safe_boundary_only_policy_unchanged": true,
+  "learner_signals_or_restarts": 0,
+  "physical2_allocation_touched": false,
+  "model_dispatches_by_this_worker": 0
+}

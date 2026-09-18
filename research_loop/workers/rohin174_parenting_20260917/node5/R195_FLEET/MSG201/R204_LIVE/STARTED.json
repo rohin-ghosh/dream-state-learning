@@ -1,0 +1,46 @@
+{
+  "complete_index": 6055,
+  "loaded": false,
+  "no_human_or_parent_message_fabrication": true,
+  "observed_unix": 1789702169.3690872,
+  "processes": {
+    "bridge": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "/localhome/local-rohing/orch_r204_C2_20260918_resume1/math_bridge.py",
+        "--config",
+        "/localhome/local-rohing/orch_r204_C2_20260918_resume1/BRIDGE.json"
+      ],
+      "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+      "cgroup": "0::/user.slice/user-2524.slice/session-595395.scope",
+      "cwd": "/localhome/local-rohing/orch_r204_C2_20260918_resume1/source",
+      "group": 3179422,
+      "parent": 3179132,
+      "pid": 3179422,
+      "start_ticks": "23772834",
+      "uid": 2524
+    },
+    "supervisor": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.r188_node5_confinement",
+        "dispatch",
+        "--config",
+        "/localhome/local-rohing/orch_r204_C2_20260918_resume1/control/GUARD.json"
+      ],
+      "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+      "cgroup": "0::/user.slice/user-2524.slice/session-595395.scope",
+      "cwd": "/localhome/local-rohing/orch_r204_C2_20260918_resume1/source",
+      "group": 3179463,
+      "parent": 3179132,
+      "pid": 3179463,
+      "start_ticks": "23772955",
+      "uid": 2524
+    }
+  },
+  "same_root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+  "source_cycle": 53
+}

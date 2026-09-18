@@ -1,0 +1,47 @@
+{
+  "bytes_read": 46066,
+  "files": [
+    {
+      "bytes": 38556,
+      "exists": true,
+      "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source/gpu/orch_r125_continual_native.py",
+      "r145_mentions": [],
+      "sha256": "cdb54252763472fd21ea12fd7694b208d968422c375dbf0647088cde736e6d48"
+    },
+    {
+      "bytes": 7510,
+      "exists": true,
+      "imports": [
+        "import argparse",
+        "import hashlib",
+        "import json",
+        "import os",
+        "from pathlib import Path",
+        "import socket",
+        "import subprocess",
+        "import sys",
+        "import time",
+        "from types import SimpleNamespace",
+        "from gpu import orch_r125_continual_native as child",
+        "from gpu.orch_r133_code_feedback_guard import await_startup, publish_launch, reap_owned_child"
+      ],
+      "native_entry": "def native_entry(config_path):\n    config, plan = validate(config_path)\n    await_startup(config, sys.stdin)\n    attempt = Path(config['attempt_dir'])\n    launch = child.read(attempt/'LAUNCH.json')\n    child.require((attempt/'DISPATCH_ONCE').is_dir() and launch['pid'] == os.getppid(), 'actual_timeout_parent')\n    ticks = Path('/proc',str(os.getppid()),'stat').read_text().rsplit(')',1)[1].split()[19]\n    child.require(ticks == launch['parent_start_ticks'] and launch['guard_sha256'] == child.sha(config_path),\n                  'launch_process_and_config_binding')\n    report = child.read(attempt/'ADMISSION.json')\n    child.require(child.sha(attempt/'ADMISSION.json') == launch['admission_sha256']\n        and report['scanner_euid'] == 0 and report['clear'] and not report['blocking_reasons']\n        and report['gpu']['uuid'] == plan['gpu_uuid']\n        and 0 <= time.time()-launch['admission_verified_unix'] <= 120, 'fresh_clear_admission')\n    child.require(os.environ.get('CUDA_VISIBLE_DEVICES') == plan['gpu_uuid'], 'native_GPU_binding')\n    os.environ['R125_ADMISSION_PLAN_SHA256'] = config['plan_sha256']\n    child.run(config['plan_path'], resume=config['resume'])",
+      "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source/gpu/orch_r125_continual_guard.py",
+      "sha256": "4be0fd5ac06bf447e9ae425ad940efbd203a1d6c3cfb88ad8b4dec0db449bea3"
+    },
+    {
+      "exists": false,
+      "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source/gpu/orch_r145_suffix_boundary.py"
+    },
+    {
+      "exists": false,
+      "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source/gpu/orch_r145_suffix_loss.py"
+    }
+  ],
+  "native_pid": 1266769,
+  "observed_unix": 1789636546.274466,
+  "schema": "R168_ACTUAL_NATIVE_SUFFIX_PATH_CHECK_V1",
+  "scope": "four exact process-located TRAIN source paths only; no model/GPU, source edit, deployment, signals or checkpoint read",
+  "source_root": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source",
+  "start_ticks": "28048014"
+}

@@ -1,0 +1,481 @@
+pilot console: operation failed (NotADirectoryError); inspect artifacts before retrying
+pilot console: operation failed (NotADirectoryError); inspect artifacts before retrying
+pilot console: operation failed (NotADirectoryError); inspect artifacts before retrying
+pilot console: operation failed (NotADirectoryError); inspect artifacts before retrying
+======================================================================
+ERROR: test_bounded_tool_summary_and_workspace_tampering (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_bounded_tool_summary_and_workspace_tampering)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 184, in test_bounded_tool_summary_and_workspace_tampering
+    text = self.document(console.publish_tool(self.root, path))['text']
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_concurrent_writers_cannot_exceed_quota (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_concurrent_writers_cannot_exceed_quota)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 171, in test_concurrent_writers_cannot_exceed_quota
+    self.assertEqual(sum(pool.map(attempt, range(4))), 1)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 166, in attempt
+    console.write_note(self.workspace, f'note{index}.txt', 'data')
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 241, in write_note
+    return _note(workspace, name, text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 214, in _note
+    with _workspace(workspace) as (directory, receipt_directory, path, receipts):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 173, in _workspace
+    with _directory(path.parent) as parent:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_failed_tool_never_labelled_success (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_failed_tool_never_labelled_success)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 62, in test_failed_tool_never_labelled_success
+    text = self.document(console.publish_tool(self.root, path))['text']
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_inbox_collision_does_not_change_existing_message (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_inbox_collision_does_not_change_existing_message)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 153, in test_inbox_collision_does_not_change_existing_message
+    receipt = console.publish_parent(self.root, 'Rohin', 'original')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 87, in publish_parent
+    return _inbox(root, speaker, text, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 80, in _inbox
+    with _open_stream_directory(root, 'inbox') as (directory, path):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r125_stream_console.py", line 43, in _open_stream_directory
+    directory = os.open(component, flags, dir_fd=directory)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (raw=b'not json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 75, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, path)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (raw=b'[]')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 75, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, path)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (raw=b'{}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 75, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, path)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (raw=b'{"schema":"unknown"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 75, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, path)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (raw=b'\xff')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 75, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, path)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (raw=b'{"schema":"R125_CPU_EXPERIMENT_RESULT_V1","status":"COMPLETE"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 75, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, path)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (raw=b'{"schema":"x","schema":"y"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 75, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, path)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (raw=b'{}                                                                                                  ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 75, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, path)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (fields={'stdout': []})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 78, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, self.source(**fields))
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (fields={'returncode': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 78, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, self.source(**fields))
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (fields={'returncode': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 78, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, self.source(**fields))
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_malformed_unknown_and_inconsistent_receipts_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_malformed_unknown_and_inconsistent_receipts_rejected) (fields={'status': 'SUCCESS'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 78, in test_malformed_unknown_and_inconsistent_receipts_rejected
+    console.publish_tool(self.root, self.source(**fields))
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_no_overwrite_or_invalid_names (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_no_overwrite_or_invalid_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 113, in test_no_overwrite_or_invalid_names
+    receipt = console.write_note(self.workspace, 'note.md', 'original')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 241, in write_note
+    return _note(workspace, name, text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 214, in _note
+    with _workspace(workspace) as (directory, receipt_directory, path, receipts):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 173, in _workspace
+    with _directory(path.parent) as parent:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_note_and_workspace_symlinks_rejected (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_note_and_workspace_symlinks_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 126, in test_note_and_workspace_symlinks_rejected
+    console.write_note(self.workspace, 'real.txt', 'safe')
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 241, in write_note
+    return _note(workspace, name, text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 214, in _note
+    with _workspace(workspace) as (directory, receipt_directory, path, receipts):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 173, in _workspace
+    with _directory(path.parent) as parent:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_note_byte_and_capacity_boundaries (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_note_byte_and_capacity_boundaries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 146, in test_note_byte_and_capacity_boundaries
+    console.write_note(self.workspace, f'note{index}.txt', 'a' * console.NOTE_LIMIT)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 241, in write_note
+    return _note(workspace, name, text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 214, in _note
+    with _workspace(workspace) as (directory, receipt_directory, path, receipts):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 173, in _workspace
+    with _directory(path.parent) as parent:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_notes_return_separate_immutable_receipts_without_publication (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_notes_return_separate_immutable_receipts_without_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 95, in test_notes_return_separate_immutable_receipts_without_publication
+    inbox = console.publish_parent(self.root, 'Astra', 'untouched')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 87, in publish_parent
+    return _inbox(root, speaker, text, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 80, in _inbox
+    with _open_stream_directory(root, 'inbox') as (directory, path):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r125_stream_console.py", line 43, in _open_stream_directory
+    directory = os.open(component, flags, dir_fd=directory)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_parent_exact_schema_and_immutable_publication (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_parent_exact_schema_and_immutable_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 39, in test_parent_exact_schema_and_immutable_publication
+    receipt = console.publish_parent(self.root, speaker, 'plain note')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 87, in publish_parent
+    return _inbox(root, speaker, text, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 80, in _inbox
+    with _open_stream_directory(root, 'inbox') as (directory, path):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r125_stream_console.py", line 43, in _open_stream_directory
+    directory = os.open(component, flags, dir_fd=directory)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_tool_attribution_and_exact_source_hash (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_tool_attribution_and_exact_source_hash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 51, in test_tool_attribution_and_exact_source_hash
+    result = self.document(console.publish_tool(self.root, path))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 153, in publish_tool
+    with _directory(path.parent) as directory:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+ERROR: test_total_limit_and_insecure_receipt_directory (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_total_limit_and_insecure_receipt_directory)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 175, in test_total_limit_and_insecure_receipt_directory
+    console.write_note(self.workspace, 'one.md', '1234')
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 241, in write_note
+    return _note(workspace, name, text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 214, in _note
+    with _workspace(workspace) as (directory, receipt_directory, path, receipts):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 173, in _workspace
+    with _directory(path.parent) as parent:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/gpu/orch_r127_pilot_console.py", line 44, in _directory
+    descriptor = os.open(component, flags, dir_fd=descriptor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'home'
+
+======================================================================
+FAIL: test_cli_modes (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_cli_modes) (command=['parent', '--root', '/home/rohing/.tmp/tmp9lasbjsc', '--speaker', 'Astra', '--text', 'hello'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 204, in test_cli_modes
+    self.assertEqual(console.main(command), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_cli_modes (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_cli_modes) (command=['tool', '--root', '/home/rohing/.tmp/tmp9lasbjsc', '--result-path', '/home/rohing/.tmp/tmp9lasbjsc/result.json'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 204, in test_cli_modes
+    self.assertEqual(console.main(command), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_cli_modes (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_cli_modes) (command=['write-note', '--workspace', '/home/rohing/.tmp/tmp9lasbjsc/notes', '--name', 'cli.md', '--text', 'note'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 204, in test_cli_modes
+    self.assertEqual(console.main(command), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_cli_modes (tests.test_orch_r127_pilot_console.PilotConsoleTests.test_cli_modes) (command=['read-note', '--workspace', '/home/rohing/.tmp/tmp9lasbjsc/notes', '--name', 'cli.md'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin183_repo_learning_20260917/runtime_source/tests/test_orch_r127_pilot_console.py", line 204, in test_cli_modes
+    self.assertEqual(console.main(command), 0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 155 tests in 13.736s
+
+FAILED (failures=4, errors=23)

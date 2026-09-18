@@ -1,0 +1,10 @@
+{
+  "command": "env CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HUB_DISABLE_TELEMETRY=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /localhome/local-rohing/v2/venv/bin/python -I -B -c 'import base64,json,sys; payload=json.load(sys.stdin); namespace={\"__name__\":\"r173_receiving_cpu\"}; exec(compile(base64.b64decode(payload[\"runner\"],validate=True),\"<R173_transferred_receiving_cpu>\",\"exec\"),namespace); sys.stdout.buffer.write(namespace[\"execute\"](payload))'",
+  "payload_sha256": "55d04600e380f291bf7b22a54f8c39906ab39202756ee64aade304ee235cfe02",
+  "retry_permitted": false,
+  "runner_sha256": "79f68ba20697d63aa8a80cb52956855bd5886660489dffe190c088b45e4c8637",
+  "schema": "R173_SINGLE_ATTEMPT_LATCH_V1",
+  "scratch": "/localhome/local-rohing/orch_r173_actual_replay_cpu_20260917_attempt1",
+  "started_utc": "2026-09-17T15:11:03.552350+00:00",
+  "wrapper": "gpu/ovx2_ssh.sh"
+}

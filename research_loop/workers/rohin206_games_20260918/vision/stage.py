@@ -3,6 +3,7 @@
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import time
 
@@ -27,8 +28,11 @@ with (HOME / 'RECEIVING_CPU.log').open('x') as output:
         subprocess.run([PYTHON, '-B', '-m', 'unittest', 'discover', '-s', directory, '-p', pattern, '-v'],
             cwd=HOME / 'source', env=dict(os.environ, PYTHONDONTWRITEBYTECODE='1', CUDA_VISIBLE_DEVICES=''),
             stdout=output, stderr=subprocess.STDOUT, check=True, timeout=45)
-once(HOME / 'CPU_RECEIPT.json', dict(status='PASS', observed_unix=time.time(), tests=41,
+test_counts = re.findall(r'^Ran (\d+) tests? in ', (HOME / 'RECEIVING_CPU.log').read_text(), re.MULTILINE)
+vision.require(len(test_counts) == 2, 'both_focused_test_suites_reported')
+test_count = sum(map(int, test_counts))
+once(HOME / 'CPU_RECEIPT.json', dict(status='PASS', observed_unix=time.time(), tests=test_count,
     source_pins=source_pins(), original_image_packet_sha256=original_packet_sha,
     packet_sha256=vision.file_digest(HOME / 'IMAGE_PACKET.json'), actual_released_image_hashes_verified=3,
     gpu_model_loaded=False, smoke_status='ACTUAL_IMAGE_TO_SCENE_STILL_REQUIRED', no_judge_or_game_edits=True))
-print(json.dumps(dict(status='RECEIVING_CPU_PASS_NOT_MODEL_LOADED', tests=41, released_images_verified=3)), flush=True)
+print(json.dumps(dict(status='RECEIVING_CPU_PASS_NOT_MODEL_LOADED', tests=test_count, released_images_verified=3)), flush=True)

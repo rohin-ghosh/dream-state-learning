@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1815z_1/bootstrap/RECOVERY_OPERATOR.py", line 448, in <module>
+    main()
+  File "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1815z_1/bootstrap/RECOVERY_OPERATOR.py", line 428, in main
+    result = stage(args.physical)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1815z_1/bootstrap/RECOVERY_OPERATOR.py", line 215, in stage
+    family['verify_source'](source.parent / 'PROPOSED_GUARD.json', old_config, old_plan, config, plan)
+  File "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1815z_1/bootstrap/RECOVERY_OPERATOR.py", line 224, in <lambda>
+    unsaved_updates=row['suffix']['unsaved_updates'])
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1815z_1/bootstrap/RECOVERY_OPERATOR.py", line 127, in verify_source
+    if prior.is_file():
+         ^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1815z_1/bootstrap/RECOVERY_OPERATOR.py", line 58, in load
+    stream.flush()
+^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/localhome/local-rohing/orch_r179_node3_context_20260917t1715z_1/bootstrap/POLICY.py", line 6, in <module>
+    from organism_v6.orch_r124_train_history import CompactionRequired
+ModuleNotFoundError: No module named 'organism_v6'

@@ -1,0 +1,67 @@
+{
+  "actors": [
+    {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r181/physical0/GUARD.json"
+      ],
+      "cgroup": "0::/system.slice/orch-r181-node3-edcf0cf5c71d4b3ba84c3f8b3c9cbeb6.service\n",
+      "cwd": "/localhome/local-rohing/orch_r179_node3_context_20260917t1715z_1/physical0/source",
+      "parent": 1701553,
+      "pid": 1701554,
+      "ticks": "39439163",
+      "uid": 2524
+    },
+    {
+      "argv": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "860s",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r181/physical0/GUARD.json"
+      ],
+      "cgroup": "0::/system.slice/orch-r181-node3-edcf0cf5c71d4b3ba84c3f8b3c9cbeb6.service\n",
+      "cwd": "/localhome/local-rohing/orch_r179_node3_context_20260917t1715z_1/physical0/source",
+      "parent": 1701548,
+      "pid": 1701553,
+      "ticks": "39439163",
+      "uid": 2524
+    },
+    {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r181_journal_boundary.py",
+        "contained",
+        "--physical",
+        "0"
+      ],
+      "cgroup": "0::/system.slice/orch-r181-node3-edcf0cf5c71d4b3ba84c3f8b3c9cbeb6.service\n",
+      "cwd": "/localhome/local-rohing/orch_r179_node3_context_20260917t1715z_1/physical0/source",
+      "parent": 1,
+      "pid": 1701548,
+      "ticks": "39439132",
+      "uid": 2524
+    }
+  ],
+  "cycle": 46,
+  "discarded_updates": 0,
+  "hard_end_unix": 1789689000,
+  "no_successor_or_restart": true,
+  "observed_unix": 1789688808.3488238,
+  "record_index": 5927,
+  "record_sha256": "06395ee1b8e1956ce0991424a6e4dfafe13c175024846e5bcfee62d42a9892a9",
+  "root_preserved_in_place": "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1818z_2/control0/run1",
+  "status": "EXACT_SAVED_BOUNDARY_STOPPED"
+}

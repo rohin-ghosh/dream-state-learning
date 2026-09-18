@@ -1,0 +1,99 @@
+{
+  "exact_already_dispatched_readout": null,
+  "final_original_clear_admission_required": true,
+  "helper_sha256": "0fdbd4da086efac21d297874d7a61ee6d73e6515fafa0d02a56bd35fcd441bcf",
+  "observed_unix": 1789681975.9663594,
+  "original_blocking_reasons": [
+    "active_compute_pid:310254",
+    "minor_scan_identity_changed:4599",
+    "open_device_pid:310254",
+    "process_identity_drift:4599",
+    "reserved_cvd_pid:310148",
+    "reserved_cvd_pid:310253",
+    "reserved_cvd_pid:310254",
+    "unexplained_device_memory",
+    "uuid_reservation:310148",
+    "uuid_reservation:310253",
+    "uuid_reservation:310254"
+  ],
+  "original_clear": false,
+  "original_report_sha256": "df2dc2a5f9622408f882de2fb613b2b620275248efa402229d64cd3a75dadc47",
+  "owners": {
+    "actor": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/control/GUARD.json"
+      ],
+      "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+      "cgroup": "0::/system.slice/orch-r136-native-dfb6a12284e94317aba7fb5a93caca3b.service",
+      "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/source",
+      "environment": [
+        "CUDA_VISIBLE_DEVICES=GPU-f83fb491-34ce-4176-5852-c94652151a9f"
+      ],
+      "group": 310253,
+      "parent": 310253,
+      "pid": 310254,
+      "start_ticks": "24398138",
+      "uid": 2524
+    },
+    "supervisor": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r144_a40r4_strict",
+        "contained-native",
+        "--config",
+        "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/control/GUARD.json"
+      ],
+      "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+      "cgroup": "0::/system.slice/orch-r136-native-dfb6a12284e94317aba7fb5a93caca3b.service",
+      "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/source",
+      "environment": [
+        "CUDA_VISIBLE_DEVICES=GPU-f83fb491-34ce-4176-5852-c94652151a9f"
+      ],
+      "group": 310148,
+      "parent": 1,
+      "pid": 310148,
+      "start_ticks": "24398109",
+      "uid": 2524
+    },
+    "timer": {
+      "argv": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "78578s",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/control/GUARD.json"
+      ],
+      "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+      "cgroup": "0::/system.slice/orch-r136-native-dfb6a12284e94317aba7fb5a93caca3b.service",
+      "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/source",
+      "environment": [
+        "CUDA_VISIBLE_DEVICES=GPU-f83fb491-34ce-4176-5852-c94652151a9f"
+      ],
+      "group": 310253,
+      "parent": 310148,
+      "pid": 310253,
+      "start_ticks": "24398138",
+      "uid": 2524
+    }
+  },
+  "proven_non_gpu_argv_only_pids": [
+    4599
+  ],
+  "report_path": "/localhome/local-rohing/orch_r179_node4_r181_20260917t2150z/lane4/PREFLIGHT_SCAN_1789681975944871757.json",
+  "report_sha256": "598ff130c648d73f9b0f331782208c9398a8939a7657a1888be3c4b8acb3a71a",
+  "status": "KNOWN_OWNER_PREFLIGHT_ONLY_NOT_ADMISSION"
+}

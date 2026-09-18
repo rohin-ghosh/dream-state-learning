@@ -1,0 +1,392 @@
+{
+  "actor_pause_allowed": false,
+  "execution_authorized": false,
+  "full_plan_bytes_loaded": false,
+  "full_source_closure_verified": false,
+  "gpu_actions_performed": 0,
+  "input_receipts": {
+    "census": {
+      "bytes": 109563,
+      "path": "research_loop/workers/rohin162_context_console_20260917/SOURCE_CENSUS_1789663949490665603.json",
+      "sha256": "83375f2fb0b39a5acecf244737ee4fa5ab38138676793544f3ad3a00ac7694b1"
+    },
+    "console": {
+      "bytes": 25665,
+      "path": "research_loop/workers/rohin162_console_route_20260917/a100.json",
+      "sha256": "0015b1acaf01787d9486024a683e39cd797031e86708b3181f39e27b7c1f7e8a"
+    },
+    "roster": {
+      "bytes": 268739,
+      "path": "research_loop/workers/r171_forward_roster_20260917/CURRENT_LEARNER_ROSTER.json",
+      "sha256": "71f5e62821adb90b9d260810386362959c6215f5ac2dbba0c7f22f89c56df93a"
+    }
+  },
+  "lives": [
+    {
+      "console_module_sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683",
+      "console_observed_unix": 1789664071.1787066,
+      "console_root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+      "interpreter": "/localhome/local-rohing/v2/venv/bin/python",
+      "label": "teach_replay",
+      "life_root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+      "observed_unix": 1789663949.0703506,
+      "original_actor": {
+        "argv_sha256": "a7fe310783a8250e58223593f614d025011ed04cb15720cabd7142d0fd1d012e",
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source",
+        "parent_pid": 2197974,
+        "pid": 2197976,
+        "start_ticks": "30656088",
+        "state": "R",
+        "uid": 1395
+      },
+      "original_guard": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/GUARD.json",
+        "sha256": "dc7920c79c8141f82cd5473579564c71370a7a811912c0cb42c19d8b6403718c"
+      },
+      "original_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/PLAN.json",
+        "sha256": "827829405ae62b518c50d71bdd0d686c7e2b193d9ecf4785c00c2f6a584b59ed"
+      },
+      "partial_source_pins": {
+        "gpu/orch_r125_continual_native.py": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6",
+        "organism_v6/orch_r124_train_history.py": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91",
+        "organism_v6/orch_r125_continual_stream.py": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09",
+        "organism_v6/orch_r125_plain_context.py": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+      },
+      "physical": 2,
+      "plan_metadata": {
+        "context_limit": 16384,
+        "gpu_uuid": "GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296",
+        "hard_end_unix": 1790442300,
+        "max_sleeps": null,
+        "new_presentations": 16,
+        "physical": 2,
+        "presentation_version": "R125_PLAIN_CONTEXT_V1",
+        "presleep_variant": "free_distillation",
+        "rehearsal_presentations": 1,
+        "root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+        "schema": "R125_NATIVE_CONTINUITY_V1",
+        "segment_tokens": 512,
+        "segments_per_sleep": 2,
+        "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source"
+      },
+      "proposed_successor_source": "/localhome/local-rohing/orch_r179_context_survival_a100_20260917/lane2/source",
+      "receiving_cpu_proof": null,
+      "saved_boundary": null,
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source",
+      "successor_source_staged": false,
+      "supervisor_identity": null,
+      "timer_identity": null,
+      "wrapper": "gpu/a100_ssh.sh"
+    },
+    {
+      "console_module_sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683",
+      "console_observed_unix": 1789664071.1995585,
+      "console_root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+      "interpreter": "/localhome/local-rohing/v2/venv/bin/python",
+      "label": "teach_perception",
+      "life_root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+      "observed_unix": 1789663949.10243,
+      "original_actor": {
+        "argv_sha256": "2032ed6c241ec17bc6cdffa25e3f23ddf714d6a3113d3f81b86b2fb580ea05d7",
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source",
+        "parent_pid": 2409678,
+        "pid": 2409681,
+        "start_ticks": "30796516",
+        "state": "R",
+        "uid": 1395
+      },
+      "original_guard": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/control/GUARD.json",
+        "sha256": "ee15e5e6d8b571ecefc8980249255a988fd64556de3d7d8f3d713d7ff78c08b3"
+      },
+      "original_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/control/PLAN.json",
+        "sha256": "8c6654d6d8822f6cdb1d661ed7a4e8332eee52d5be7cb41fc8696304c76e72c6"
+      },
+      "partial_source_pins": {
+        "gpu/orch_r125_continual_native.py": "9ac05f14009f404623c281d09c8a88ede27ff3bf9dd63cd5ae7562e62e3b18f3",
+        "organism_v6/orch_r124_train_history.py": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91",
+        "organism_v6/orch_r125_continual_stream.py": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09",
+        "organism_v6/orch_r125_plain_context.py": "f4908d4208023d2e454d57363f93b93bcdef1020070a5b96088b93dae88953b6"
+      },
+      "physical": 3,
+      "plan_metadata": {
+        "context_limit": 16384,
+        "gpu_uuid": "GPU-631f3e6a-fbce-0ec5-b934-f08dd64634f8",
+        "hard_end_unix": 1790442300,
+        "max_sleeps": null,
+        "new_presentations": 16,
+        "physical": 3,
+        "presentation_version": "R125_PLAIN_CONTEXT_V1",
+        "presleep_variant": "reread_select",
+        "rehearsal_presentations": 1,
+        "root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+        "schema": "R125_NATIVE_CONTINUITY_V1",
+        "segment_tokens": 512,
+        "segments_per_sleep": 2,
+        "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source"
+      },
+      "proposed_successor_source": "/localhome/local-rohing/orch_r179_context_survival_a100_20260917/lane3/source",
+      "receiving_cpu_proof": null,
+      "saved_boundary": null,
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source",
+      "successor_source_staged": false,
+      "supervisor_identity": null,
+      "timer_identity": null,
+      "wrapper": "gpu/a100_ssh.sh"
+    },
+    {
+      "console_module_sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683",
+      "console_observed_unix": 1789664071.218812,
+      "console_root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+      "interpreter": "/localhome/local-rohing/v2/venv/bin/python",
+      "label": "teach_parenting",
+      "life_root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+      "observed_unix": 1789663949.1310434,
+      "original_actor": {
+        "argv_sha256": "f2c470ab7d04f7be1d5e4bda4e2d8b8767c6b2c06f0117b190761245cc5ef599",
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source",
+        "parent_pid": 1025180,
+        "pid": 1025183,
+        "start_ticks": "29900700",
+        "state": "R",
+        "uid": 1395
+      },
+      "original_guard": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/control/GUARD.json",
+        "sha256": "3d3e7634f741fecd00fd8744dabf16250f472e58c202a6674320261195f3800b"
+      },
+      "original_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/control/PLAN.json",
+        "sha256": "22ca67b931ca2fd2ef119d333468521ac3fb411a75b3676dbbf0f45ee2fae36d"
+      },
+      "partial_source_pins": {
+        "gpu/orch_r125_continual_native.py": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6",
+        "organism_v6/orch_r124_train_history.py": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91",
+        "organism_v6/orch_r125_continual_stream.py": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09",
+        "organism_v6/orch_r125_plain_context.py": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+      },
+      "physical": 4,
+      "plan_metadata": {
+        "context_limit": 16384,
+        "gpu_uuid": "GPU-31583768-d90f-520c-51ed-5dac761526d0",
+        "hard_end_unix": 1790442300,
+        "max_sleeps": null,
+        "new_presentations": 16,
+        "physical": 4,
+        "presentation_version": "R125_PLAIN_CONTEXT_V1",
+        "presleep_variant": "parent_guided_distillation",
+        "rehearsal_presentations": 1,
+        "root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+        "schema": "R125_NATIVE_CONTINUITY_V1",
+        "segment_tokens": 512,
+        "segments_per_sleep": 2,
+        "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source"
+      },
+      "proposed_successor_source": "/localhome/local-rohing/orch_r179_context_survival_a100_20260917/lane4/source",
+      "receiving_cpu_proof": null,
+      "saved_boundary": null,
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source",
+      "successor_source_staged": false,
+      "supervisor_identity": null,
+      "timer_identity": null,
+      "wrapper": "gpu/a100_ssh.sh"
+    },
+    {
+      "console_module_sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683",
+      "console_observed_unix": 1789664071.2378476,
+      "console_root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+      "interpreter": "/localhome/local-rohing/v2/venv/bin/python",
+      "label": "classroom_brain",
+      "life_root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+      "observed_unix": 1789663949.1593924,
+      "original_actor": {
+        "argv_sha256": "5954a898078536bd95ad235eef178c396074b4f7e23c234727f18204c0537272",
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source",
+        "parent_pid": 1072655,
+        "pid": 1072657,
+        "start_ticks": "29930996",
+        "state": "R",
+        "uid": 1395
+      },
+      "original_guard": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/control/GUARD.json",
+        "sha256": "730bea50f6cb070ad9f0a8ac83a1778b550086e7f443e9175385ccbbdaba9259"
+      },
+      "original_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/control/PLAN.json",
+        "sha256": "9357f2c195d386e6a90952fb41fbc290954aabf0d44a8bccaf45712fcfe61e91"
+      },
+      "partial_source_pins": {
+        "gpu/orch_r125_continual_native.py": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6",
+        "organism_v6/orch_r124_train_history.py": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91",
+        "organism_v6/orch_r125_continual_stream.py": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09",
+        "organism_v6/orch_r125_plain_context.py": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+      },
+      "physical": 5,
+      "plan_metadata": {
+        "context_limit": 16384,
+        "gpu_uuid": "GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9",
+        "hard_end_unix": 1790442300,
+        "max_sleeps": null,
+        "new_presentations": 16,
+        "physical": 5,
+        "presentation_version": "R125_PLAIN_CONTEXT_V1",
+        "presleep_variant": "free_distillation",
+        "rehearsal_presentations": 1,
+        "root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+        "schema": "R125_NATIVE_CONTINUITY_V1",
+        "segment_tokens": 512,
+        "segments_per_sleep": 2,
+        "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source"
+      },
+      "proposed_successor_source": "/localhome/local-rohing/orch_r179_context_survival_a100_20260917/lane5/source",
+      "receiving_cpu_proof": null,
+      "saved_boundary": null,
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source",
+      "successor_source_staged": false,
+      "supervisor_identity": null,
+      "timer_identity": null,
+      "wrapper": "gpu/a100_ssh.sh"
+    },
+    {
+      "console_module_sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683",
+      "console_observed_unix": 1789664071.2567494,
+      "console_root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+      "interpreter": "/localhome/local-rohing/v2/venv/bin/python",
+      "label": "classroom_creative",
+      "life_root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+      "observed_unix": 1789663949.1881468,
+      "original_actor": {
+        "argv_sha256": "5e7de9b80a6c3049bfa75c350a96c18c060e05d4b6bb3a422312fc6cafc17c05",
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source",
+        "parent_pid": 1316794,
+        "pid": 1316795,
+        "start_ticks": "30086561",
+        "state": "R",
+        "uid": 1395
+      },
+      "original_guard": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/readmission1/control/GUARD.json",
+        "sha256": "88286346124b502ef64de3cdddc40641aa43007d65be08c8edb46bde9745a8af"
+      },
+      "original_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/control/PLAN.json",
+        "sha256": "77a236b7b6606b07e93dd1b8ad62b6a25db6d439d9433566ec1744b225180cfa"
+      },
+      "partial_source_pins": {
+        "gpu/orch_r125_continual_native.py": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6",
+        "organism_v6/orch_r124_train_history.py": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91",
+        "organism_v6/orch_r125_continual_stream.py": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09",
+        "organism_v6/orch_r125_plain_context.py": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+      },
+      "physical": 6,
+      "plan_metadata": {
+        "context_limit": 16384,
+        "gpu_uuid": "GPU-6de3930d-104a-f969-7d36-009271368dd1",
+        "hard_end_unix": 1790442300,
+        "max_sleeps": null,
+        "new_presentations": 16,
+        "physical": 6,
+        "presentation_version": "R125_PLAIN_CONTEXT_V1",
+        "presleep_variant": "reread_select",
+        "rehearsal_presentations": 1,
+        "root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+        "schema": "R125_NATIVE_CONTINUITY_V1",
+        "segment_tokens": 512,
+        "segments_per_sleep": 2,
+        "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source"
+      },
+      "proposed_successor_source": "/localhome/local-rohing/orch_r179_context_survival_a100_20260917/lane6/source",
+      "receiving_cpu_proof": null,
+      "saved_boundary": null,
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source",
+      "successor_source_staged": false,
+      "supervisor_identity": null,
+      "timer_identity": null,
+      "wrapper": "gpu/a100_ssh.sh"
+    },
+    {
+      "console_module_sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683",
+      "console_observed_unix": 1789664071.275729,
+      "console_root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+      "interpreter": "/localhome/local-rohing/v2/venv/bin/python",
+      "label": "classroom_support",
+      "life_root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+      "observed_unix": 1789663949.2163713,
+      "original_actor": {
+        "argv_sha256": "f1146ba78e057f7821d751a49f31e1f86cf2eac58e7f1f4d8eed970ff6aa19b9",
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source",
+        "parent_pid": 1997021,
+        "pid": 1997023,
+        "start_ticks": "30523369",
+        "state": "R",
+        "uid": 1395
+      },
+      "original_guard": {
+        "path": "/localhome/local-rohing/orch_r147_a1007_recovery_20260916t1834z/attempt2/control/GUARD.json",
+        "sha256": "4340dc243fbe359ef884c00a2d1866bc7a316e3ef5edb793044cd94843514f6a"
+      },
+      "original_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/control/PLAN.json",
+        "sha256": "afdbddbe2fbe2ce02488fd316c7f13a90a63d3fe932ad68a8d6a3fd65f368985"
+      },
+      "partial_source_pins": {
+        "gpu/orch_r125_continual_native.py": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6",
+        "organism_v6/orch_r124_train_history.py": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91",
+        "organism_v6/orch_r125_continual_stream.py": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09",
+        "organism_v6/orch_r125_plain_context.py": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+      },
+      "physical": 7,
+      "plan_metadata": {
+        "context_limit": 16384,
+        "gpu_uuid": "GPU-f0405a96-813d-7ac7-d641-3ec31d103037",
+        "hard_end_unix": 1790442300,
+        "max_sleeps": null,
+        "new_presentations": 16,
+        "physical": 7,
+        "presentation_version": "R125_PLAIN_CONTEXT_V1",
+        "presleep_variant": "no_distillation",
+        "rehearsal_presentations": 1,
+        "root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+        "schema": "R125_NATIVE_CONTINUITY_V1",
+        "segment_tokens": 512,
+        "segments_per_sleep": 2,
+        "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source"
+      },
+      "proposed_successor_source": "/localhome/local-rohing/orch_r179_context_survival_a100_20260917/lane7/source",
+      "receiving_cpu_proof": null,
+      "saved_boundary": null,
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source",
+      "successor_source_staged": false,
+      "supervisor_identity": null,
+      "timer_identity": null,
+      "wrapper": "gpu/a100_ssh.sh"
+    }
+  ],
+  "messages_sent": 0,
+  "metadata_observations_not_current_execution_admission": true,
+  "node": "a100",
+  "old_journal_mutations": 0,
+  "remote_actions_performed": 0,
+  "rollout_ready": false,
+  "schema": "R179_NODE1_METADATA_PREPARATION_V1",
+  "sealed_content_reads": 0,
+  "signals_sent": 0,
+  "status": "PREPARED_LOCALLY_WAITING_MAIN_PATCH_AND_CPU_GO",
+  "unresolved": [
+    "Main exact core patch/source closure and CPU GO",
+    "A100-specific operator and independently bound operator tests",
+    "Fresh receiving CPU proof against actual staged source",
+    "Fresh exact actor/timer/supervisor/device ownership and resource admission",
+    "Per-life completed quiescent boundary and full adapter/AdamW/RNG/history proof",
+    "Actual successor loaded/resumed proof; never inferred from CPU passes"
+  ]
+}

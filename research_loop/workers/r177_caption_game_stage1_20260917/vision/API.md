@@ -3,7 +3,7 @@
 ## Actual runtime status — 2026-09-17
 
 The pinned local model is loaded and the sanctioned local forward is listening
-at `http://127.0.0.1:8177`, but the visual tool is **not integration-ready**.
+at `http://[REDACTED_ADDRESS]:8177`, but the visual tool is **not integration-ready**.
 Seven actual generations on Main's exact three released images yielded five
 strict JSON parse failures and two exact-schema failures. No accepted visual
 result or canonical scene was produced; no output was repaired. The live source
@@ -41,8 +41,8 @@ retry in either adapter. Main owns game caching, budgets and parent/masking.
 
 For a separate GPU service, run `python -B -m gpu.ny_caption_vision --help`.
 The CLI requires packet, pinned snapshot, exact admission file/hash, receipt
-directory and a local port. Bind is only `127.0.0.1`. Reach it through an approved
-SSH local forward, then inject `LocalHTTPProvider('http://127.0.0.1:8177', packet,
+directory and a local port. Bind is only `[REDACTED_ADDRESS]`. Reach it through an approved
+SSH local forward, then inject `LocalHTTPProvider('http://[REDACTED_ADDRESS]:8177', packet,
 receipt_sink=ReceiptWriter(client_receipt_directory))`. Hostnames, external IPs,
 HTTPS gateways, redirects and environment proxy routing are not supported.
 Server payload is exactly `{"image": "opaque_handle", "question": "factual question"}`.
@@ -105,7 +105,7 @@ actual external generation compute.
 ## Post-admission factual smoke
 
 `PYTHONPATH=. python -B research_loop/workers/r177_caption_game_stage1_20260917/vision/smoke_client.py
---packet RELEASED_IMAGE_PACKET --endpoint http://127.0.0.1:8177 --output FRESH_SMOKE_DIRECTORY`
+--packet RELEASED_IMAGE_PACKET --endpoint http://[REDACTED_ADDRESS]:8177 --output FRESH_SMOKE_DIRECTORY`
 is a client command, not a model launcher. It requests the first two handles in
 the released packet order with the same preregistered factual question, preserves
 actual service receipts/results, and never repairs or automatically retries.

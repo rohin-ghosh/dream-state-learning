@@ -1,0 +1,1406 @@
+{
+  "arms": [
+    {
+      "BOUNDARY.json": {
+        "full_stream_and_checkpoint": true,
+        "preserved_unix": 1789702999.0699592,
+        "same_logical_life": true
+      },
+      "BOUNDARY_STATE.json": {
+        "cycle": 53,
+        "record_sha256": "e91d54b0dd879c4131a3914ec6d1281920e58c697066e686e42343623f9c2762",
+        "state_sha256": "27fbc116de92415888ab729a66322eabdfe4417421818be7acf5d754d0fa8db6",
+        "terminal_sha256": "0698b2a550816ae7d7b6f40ab9ab996e6bf2c31e53f88f87af8a23fc7eeadaa1"
+      },
+      "DISPATCHED.json": {
+        "dispatched_unix": 1789703002.421077,
+        "no_input_replay": true,
+        "same_logical_life": true
+      },
+      "RESTORE_CPU.json": {
+        "adapter_sha256": "03bda16a0d8948dd9855a86748f56d8c78117e4812f20b9f40157f6b1609ed5c",
+        "cuda_initialized": false,
+        "exact_state_sha256": "27fbc116de92415888ab729a66322eabdfe4417421818be7acf5d754d0fa8db6",
+        "no_input_replay": true,
+        "observed_unix": 1789702998.167678,
+        "optimizer_restored_exact": true,
+        "optimizer_steps": 4988,
+        "same_logical_life": true,
+        "status": "PASS"
+      },
+      "RETIRED.json": {
+        "old_process_only": true,
+        "retired_unix": 1789703001.968976,
+        "same_logical_life": true
+      },
+      "active_control_redirect": true,
+      "all_current_requests_below_threshold": true,
+      "compaction_threshold_tokens": 12288,
+      "control/LAUNCH.json": {
+        "pid": 2673186,
+        "started_unix": 1789703005.5197895
+      },
+      "current_compaction_notices": [],
+      "current_compactions": [],
+      "current_request_max_tokens": 12229,
+      "current_requests": [
+        {
+          "index": 5998,
+          "messages_sha256": "a967eb008d19743d10f84ad7e104dcef74592e8cba15bcc4c9c2bfa3f822cbd1",
+          "mtime_unix": 1789703106.094466,
+          "prompt_tokens": 10407,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 10407
+          },
+          "sha256": "c67837fde377e6bcd71c3eba8d5d003ea74466063c5f193136d30d3fdec6e2e7",
+          "started_unix": 1789703105.5460298
+        },
+        {
+          "index": 6005,
+          "messages_sha256": "af453c3eb38f36a771de4516f2020488d52c06e83ec6038d2461494cb853917c",
+          "mtime_unix": 1789703118.6976936,
+          "prompt_tokens": 11203,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 11203
+          },
+          "sha256": "6e198d7592f4e2d18c22edaa71fad12955e29107c6450973a9005db7fb5b4b78",
+          "started_unix": 1789703118.156208
+        },
+        {
+          "index": 6015,
+          "messages_sha256": "7a37aff6e6dc6362d478dd60145e8197f3efe0c656f5b997153a0dc67c90980d",
+          "mtime_unix": 1789703128.3902879,
+          "prompt_tokens": 12229,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 12229
+          },
+          "sha256": "03d40a9c2dfa6e3f61292a95634cd1bedcd6399922305a1bd7bddb3850446387",
+          "started_unix": 1789703127.847703
+        }
+      ],
+      "exact_saved_to_loaded_match": true,
+      "failure_receipts": [],
+      "first_request_after_r204": {
+        "index": 5998,
+        "messages_sha256": "a967eb008d19743d10f84ad7e104dcef74592e8cba15bcc4c9c2bfa3f822cbd1",
+        "mtime_unix": 1789703106.094466,
+        "prompt_tokens": 10407,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 10407
+        },
+        "sha256": "c67837fde377e6bcd71c3eba8d5d003ea74466063c5f193136d30d3fdec6e2e7",
+        "started_unix": 1789703105.5460298
+      },
+      "first_think_after_r204": {
+        "index": 6001,
+        "mtime_unix": 1789703116.9531295,
+        "sha256": "9e6d84fd0b556be4ef9c20cb9d8d9a23f8798bef4b0e2b9820eb8b1ff710e72c",
+        "source_sha256": "a5197c204ef2fe5c0a79ab09a8d0a6932e948a6f5aec5d2541ced56020e7379d"
+      },
+      "initial_load": {
+        "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "index": 5848,
+        "loaded_unix": 1789702070.1638,
+        "mtime_unix": 1789702070.2181153,
+        "optimizer_steps": 4908,
+        "pid": 2474769,
+        "resume": true,
+        "sha256": "1b6412aac62ae01d402f6ccc018d3c619b71c06edfb57a2a5a2e36bdc4df9ea4"
+      },
+      "last_record": {
+        "index": 6057,
+        "kind": "UPDATE",
+        "mtime_unix": 1789703312.752602,
+        "sha256": "e53099643fee70cae15be900f49699cd71966fce7fbd399b75d75d87f8f15d15"
+      },
+      "latest_complete": 53,
+      "name": "MATH-COMM-B",
+      "native_identity": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_comm_b2_r204/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_comm_b2_r204/source",
+        "pid": 2673188,
+        "start_ticks": "42415871",
+        "state": "R"
+      },
+      "opening_consumed": {
+        "index": 5860,
+        "messages_sha256": "71e44b59b4b528f088a8acadc20227a89190475638259ad534e1d8c97ff31f8e",
+        "mtime_unix": 1789702099.0813196,
+        "prompt_tokens": 6052,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 6052
+        },
+        "sha256": "aeee973ee7d9f20553e182ababeffb09d95aaabf1775602d936a8f85cee1c2cf",
+        "started_unix": 1789702098.566725
+      },
+      "parent_feedback": [
+        {
+          "draft": 5861,
+          "first_render": {
+            "index": 5933,
+            "messages_sha256": "829d2afc5bfd2a2a976c47ce62173b09b03616d83ecbfff11dd6486709eddef9",
+            "mtime_unix": 1789702550.8406901,
+            "prompt_tokens": 7743,
+            "render_receipt": {
+              "all_history_tokens_masked": true,
+              "token_count": 7743
+            },
+            "sha256": "170d16a501d98ecbe40d42c062b7baa88696d1b0d5d95ad014dca4ccca6cae78",
+            "started_unix": 1789702550.3015954
+          },
+          "inbox": {
+            "index": 5931,
+            "mtime_unix": 1789702549.7297206,
+            "sha256": "a10e16dec75ab70239aaf1f1cafd3dff8388b70d3bbc6cc8fdbb7f0fe714378b"
+          },
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 52,
+            "id": "88984aebf9504e38bbbdf07d4e6535f9",
+            "kind": "PARENT_B_FEEDBACK_5861",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_comm_b2/life/stream/inbox/88984aebf9504e38bbbdf07d4e6535f9.json",
+            "published_unix": 1789702127.2998009,
+            "quality_score": null,
+            "sha256": "bc910cbfa0dd8572eb60f92148cdc0454e4d97d210f7100a742edfec2d75f911"
+          },
+          "render_cycle": 53
+        },
+        {
+          "draft": 5941,
+          "first_render": {
+            "index": 5998,
+            "messages_sha256": "a967eb008d19743d10f84ad7e104dcef74592e8cba15bcc4c9c2bfa3f822cbd1",
+            "mtime_unix": 1789703106.094466,
+            "prompt_tokens": 10407,
+            "render_receipt": {
+              "all_history_tokens_masked": true,
+              "token_count": 10407
+            },
+            "sha256": "c67837fde377e6bcd71c3eba8d5d003ea74466063c5f193136d30d3fdec6e2e7",
+            "started_unix": 1789703105.5460298
+          },
+          "inbox": {
+            "index": 5996,
+            "mtime_unix": 1789703104.953642,
+            "sha256": "d41fa83394d1884a37c7b0175fc8902ce1fe000afc944f4d4b5ce01b4fff6266"
+          },
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 53,
+            "id": "76cc4a81a5384d68a39f701c6ea84e37",
+            "kind": "PARENT_B_FEEDBACK_5941",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_comm_b2/life/stream/inbox/76cc4a81a5384d68a39f701c6ea84e37.json",
+            "published_unix": 1789702585.057524,
+            "quality_score": null,
+            "sha256": "6f69ddeca2aa10fbfbd931324e0a4e8fcaa20258c81055ebfa0ecc13a59e3797"
+          },
+          "render_cycle": 54
+        },
+        {
+          "draft": 6006,
+          "first_render": null,
+          "inbox": null,
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 54,
+            "id": "d1cd4887905949aba499d94f054fe8fd",
+            "kind": "PARENT_B_FEEDBACK_6006",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_comm_b2/life/stream/inbox/d1cd4887905949aba499d94f054fe8fd.json",
+            "published_unix": 1789703143.178495,
+            "quality_score": null,
+            "sha256": "522ba6eab36c6ccada00b81ae498dd251be2ac3ca1837167d363d8c66de3869c"
+          },
+          "render_cycle": null
+        }
+      ],
+      "parent_observer_withdrawn": false,
+      "physical": 2,
+      "policy": {
+        "cpu_gate_sha256": "ca755cbd60be96fa310bff0c8149ed8777159e0e09dbd437c076190f7577356d",
+        "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_continuation_policy": "R204_EXPLICIT_THINK_CONTINUATION_V1"
+      },
+      "preserved_inbox_file_count": 142,
+      "prior_clone_request_max_tokens": 9444,
+      "r204_load": {
+        "adapter_sha256": "03bda16a0d8948dd9855a86748f56d8c78117e4812f20b9f40157f6b1609ed5c",
+        "index": 5995,
+        "loaded_unix": 1789703104.7663827,
+        "mtime_unix": 1789703104.8256543,
+        "optimizer_steps": 4988,
+        "pid": 2673188,
+        "resume": true,
+        "sha256": "fa8abd85794209a49b22e25ad7222af5a26950c1746ea537cf5ded29670c5684"
+      },
+      "same_logical_life": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+      "same_physical_life": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_comm_b2/life",
+      "source_file_count": 2786,
+      "source_hashes_match": true,
+      "task": "Teach by answering concrete mathematical questions with actual obtained results. Choose a small question, derive or calculate an answer, and explain it clearly; distinguish evidence from a plan or an unexecuted tool call."
+    },
+    {
+      "BOUNDARY.json": {
+        "full_stream_and_checkpoint": true,
+        "preserved_unix": 1789703159.9209816,
+        "same_logical_life": true
+      },
+      "BOUNDARY_STATE.json": {
+        "cycle": 53,
+        "record_sha256": "de4e64b904f08080beeb915e5df2ec2460ac2f09fbe5015a327d236a29723339",
+        "state_sha256": "9266bba3ea107374b3565a0aeab8dcde4497d00491b1ad500662a77f0a998f71",
+        "terminal_sha256": "a6112bc063d072e873bfa17b1666128dd13fe69831e58fbdd3917c329757fb5d"
+      },
+      "DISPATCHED.json": {
+        "dispatched_unix": 1789703162.761437,
+        "no_input_replay": true,
+        "same_logical_life": true
+      },
+      "RESTORE_CPU.json": {
+        "adapter_sha256": "b2ecc63f70fe6a5fe51ec7c704d558d4afcab4d1385fb3a86051889fb431099e",
+        "cuda_initialized": false,
+        "exact_state_sha256": "9266bba3ea107374b3565a0aeab8dcde4497d00491b1ad500662a77f0a998f71",
+        "no_input_replay": true,
+        "observed_unix": 1789703159.0704925,
+        "optimizer_restored_exact": true,
+        "optimizer_steps": 5004,
+        "same_logical_life": true,
+        "status": "PASS"
+      },
+      "RETIRED.json": {
+        "old_process_only": true,
+        "retired_unix": 1789703162.2843075,
+        "same_logical_life": true
+      },
+      "active_control_redirect": true,
+      "all_current_requests_below_threshold": true,
+      "compaction_threshold_tokens": 12288,
+      "control/LAUNCH.json": {
+        "pid": 2701435,
+        "started_unix": 1789703165.8799145
+      },
+      "current_compaction_notices": [
+        {
+          "index": 6020,
+          "mtime_unix": 1789703267.8267052,
+          "sha256": "fd1d25fb729ee39e26565402d02741cf371e7de2b3fb76894506ee0fb685913b",
+          "training_eligible": false
+        }
+      ],
+      "current_compactions": [
+        {
+          "index": 6021,
+          "metadata": {
+            "after_tokens": 5524,
+            "before_tokens": 12724,
+            "carry_source_kind": "PRIOR_CHILD_COMPACTION",
+            "child_notice_event_id": "r204:compaction:b1f4e268b756ab70b7a7fd26f97690796423f00720917189191d1980e4c49534",
+            "kind": "R203_PRE_GENERATION_CHILD_SOURCE_CARRY",
+            "new_child_distillation": false,
+            "protected_from": 549,
+            "raw_history_preserved": true,
+            "source_event_id": "r203:bounded-carry:ac61e3c8a3a0caf84da8eeb7cba5039d3ca06fc83cb7e90675dc00a224cd8712",
+            "source_sha256": "e3fc83240837fcb1b49135bf847bc11a14aab77512bee03985881c97f6b224fd",
+            "threshold_tokens": 12288,
+            "through_event_count": 537,
+            "working_state_preserved": true
+          },
+          "mtime_unix": 1789703268.4134707,
+          "sha256": "65b2b0d49660e81336129b7fbc66df2fdb2810d816912e57d7ab18d9f90aed0c"
+        }
+      ],
+      "current_request_max_tokens": 8896,
+      "current_requests": [
+        {
+          "index": 6022,
+          "messages_sha256": "4fe7b609c1da19bd146c26086663fd64a136717817ce6c4b53dc5b499c786104",
+          "mtime_unix": 1789703268.9945667,
+          "prompt_tokens": 5524,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 5524
+          },
+          "sha256": "32f2fef89823a78378b4a2a925077ea91eb0ad9e7b995baec416f8ebe9eb66f8",
+          "started_unix": 1789703268.4306056
+        },
+        {
+          "index": 6028,
+          "messages_sha256": "5bb80b87b43ff735d2a57b93b50fcfc2c45bf32c58a665fcbf89e05ea2fbcfcd",
+          "mtime_unix": 1789703289.1071684,
+          "prompt_tokens": 6458,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 6458
+          },
+          "sha256": "a0b94f1f6aa85a805a9d503492670df1ab964bcca9e713cd676478850f83fd6f",
+          "started_unix": 1789703288.5451355
+        },
+        {
+          "index": 6035,
+          "messages_sha256": "f6ef8f67abbe9319444991fdda8b41bfe98c33bb4b82cdd36853b8cad17d8fba",
+          "mtime_unix": 1789703324.6827097,
+          "prompt_tokens": 7635,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 7635
+          },
+          "sha256": "f93be5d92b42ff908a3bd36ef644d549c7afc7d3b3a5e5ce0247911ce2b35545",
+          "started_unix": 1789703324.113157
+        },
+        {
+          "index": 6045,
+          "messages_sha256": "7f5d4d60451a16868bcec1e471b03016e28cd0a3387dcbb2270e97ac0fc50d97",
+          "mtime_unix": 1789703346.5761733,
+          "prompt_tokens": 8896,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 8896
+          },
+          "sha256": "68ad176fcca318249931430686a6f262b96bbce3dbd8229e44f9010d29c8b2ce",
+          "started_unix": 1789703345.8478127
+        }
+      ],
+      "exact_saved_to_loaded_match": true,
+      "failure_receipts": [],
+      "first_request_after_r204": {
+        "index": 6022,
+        "messages_sha256": "4fe7b609c1da19bd146c26086663fd64a136717817ce6c4b53dc5b499c786104",
+        "mtime_unix": 1789703268.9945667,
+        "prompt_tokens": 5524,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 5524
+        },
+        "sha256": "32f2fef89823a78378b4a2a925077ea91eb0ad9e7b995baec416f8ebe9eb66f8",
+        "started_unix": 1789703268.4306056
+      },
+      "first_think_after_r204": {
+        "index": 6025,
+        "mtime_unix": 1789703287.2637181,
+        "sha256": "bb39d7b61fffb41b299b007e5bb1e62a65891cb6ce61052240c47a4874d9e232",
+        "source_sha256": "ef1a3b66917cf25d8afa567dc1ba7c2ba1397459ba5ba7032ec76d8dfd9fe42e"
+      },
+      "initial_load": {
+        "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "index": 5848,
+        "loaded_unix": 1789702012.1151853,
+        "mtime_unix": 1789702012.1662724,
+        "optimizer_steps": 4908,
+        "pid": 2464226,
+        "resume": true,
+        "sha256": "461e0e3dfab701d6940d953c92ca8beaa484ca0b4486ca259418a86a8c7919f5"
+      },
+      "last_record": {
+        "index": 6045,
+        "kind": "REQUEST",
+        "mtime_unix": 1789703346.5761733,
+        "sha256": "68ad176fcca318249931430686a6f262b96bbce3dbd8229e44f9010d29c8b2ce"
+      },
+      "latest_complete": 53,
+      "name": "REPO-EVIDENCE-C",
+      "native_identity": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_repo_evidence_c3_r204/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_repo_evidence_c3_r204/source",
+        "pid": 2701436,
+        "start_ticks": "42431907",
+        "state": "R"
+      },
+      "opening_consumed": {
+        "index": 5860,
+        "messages_sha256": "38c93d4845ed996767a8956a1e8dc836693c25ba3c25a16eac521374e6a9ae6e",
+        "mtime_unix": 1789702042.9303823,
+        "prompt_tokens": 6442,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 6442
+        },
+        "sha256": "100dfbfe7751a984e908380b5eab1e704896cd3fe1240d081f3f9768ef255923",
+        "started_unix": 1789702042.375425
+      },
+      "parent_feedback": [
+        {
+          "draft": 5861,
+          "first_render": {
+            "index": 5933,
+            "messages_sha256": "ba756080b8da1c1ea305f5512246782eb187babca18e8a6ae5c0aaf4f7aae113",
+            "mtime_unix": 1789702529.9983926,
+            "prompt_tokens": 8370,
+            "render_receipt": {
+              "all_history_tokens_masked": true,
+              "token_count": 8370
+            },
+            "sha256": "655e4ad6262755fb5efedff0ec48a38214d98335f349c9982e28b8759a44605e",
+            "started_unix": 1789702529.4585438
+          },
+          "inbox": {
+            "index": 5931,
+            "mtime_unix": 1789702528.8753831,
+            "sha256": "38cc48c89389b07f9fd9e2d3b2e5e3a201d14a6f2349b1879db80d3077e2f7fb"
+          },
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 52,
+            "id": "001a711b94bd4b7d8b7dd697736491c7",
+            "kind": "PARENT_B_FEEDBACK_5861",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_repo_evidence_c3/life/stream/inbox/001a711b94bd4b7d8b7dd697736491c7.json",
+            "published_unix": 1789702075.648,
+            "quality_score": null,
+            "sha256": "accd6dbc40852abb6c8deb4c80d8d49cbf1f14e2416e00398fc07fd3a6e174a2"
+          },
+          "render_cycle": 53
+        },
+        {
+          "draft": 5947,
+          "first_render": {
+            "index": 6022,
+            "messages_sha256": "4fe7b609c1da19bd146c26086663fd64a136717817ce6c4b53dc5b499c786104",
+            "mtime_unix": 1789703268.9945667,
+            "prompt_tokens": 5524,
+            "render_receipt": {
+              "all_history_tokens_masked": true,
+              "token_count": 5524
+            },
+            "sha256": "32f2fef89823a78378b4a2a925077ea91eb0ad9e7b995baec416f8ebe9eb66f8",
+            "started_unix": 1789703268.4306056
+          },
+          "inbox": {
+            "index": 6018,
+            "mtime_unix": 1789703266.6944566,
+            "sha256": "b4f90bf84a1f605f89b0257933ccd836165d9dcb2379905238d09d24ac9d204e"
+          },
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 53,
+            "id": "cdde10c6df00479bbaa7a123d4ae6fa2",
+            "kind": "PARENT_B_FEEDBACK_5947",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_repo_evidence_c3/life/stream/inbox/cdde10c6df00479bbaa7a123d4ae6fa2.json",
+            "published_unix": 1789702620.551296,
+            "quality_score": null,
+            "sha256": "bca6116f46f26cb4921da4bc310a21a1b7558f368b2ee347750e4a09f1895821"
+          },
+          "render_cycle": 54
+        }
+      ],
+      "parent_observer_withdrawn": false,
+      "physical": 3,
+      "policy": {
+        "cpu_gate_sha256": "ca755cbd60be96fa310bff0c8149ed8777159e0e09dbd437c076190f7577356d",
+        "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_continuation_policy": "R204_EXPLICIT_THINK_CONTINUATION_V1"
+      },
+      "preserved_inbox_file_count": 142,
+      "prior_clone_request_max_tokens": 11402,
+      "r204_load": {
+        "adapter_sha256": "b2ecc63f70fe6a5fe51ec7c704d558d4afcab4d1385fb3a86051889fb431099e",
+        "index": 6017,
+        "loaded_unix": 1789703266.5132132,
+        "mtime_unix": 1789703266.5692677,
+        "optimizer_steps": 5004,
+        "pid": 2701436,
+        "resume": true,
+        "sha256": "235f8a3bb46726e54ec9eb8bdcb18e5cb87dd6ac6e45c73388b54aa99a02cf75"
+      },
+      "same_logical_life": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+      "same_physical_life": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_repo_evidence_c3/life",
+      "source_file_count": 2786,
+      "source_hashes_match": true,
+      "task": "Investigate read-only repository hypotheses using explicitly supplied, source-bound excerpts. The Python sandbox cannot read the host repository. Ask the parent for a specific path or symbol; only a supplied source receipt supports a repository observation. Never claim edits, tests or commands occurred without a real receipt."
+    },
+    {
+      "BOUNDARY.json": {
+        "full_stream_and_checkpoint": true,
+        "preserved_unix": 1789702799.951631,
+        "same_logical_life": true
+      },
+      "BOUNDARY_STATE.json": {
+        "cycle": 52,
+        "record_sha256": "e054eee8d61dbbeceeeab24e78c1eebc4324962a86df06379d7c4c548b8475bc",
+        "state_sha256": "1214e44db35d8ae65789358af3cd884d9da1025ab9cc826d16d2f07d13420f1c",
+        "terminal_sha256": "534b4275fb76e84695f00a6f6c77e83f1d30c3119d7785b14ac28326dc4ec299"
+      },
+      "DISPATCHED.json": {
+        "dispatched_unix": 1789702802.919379,
+        "no_input_replay": true,
+        "same_logical_life": true
+      },
+      "RESTORE_CPU.json": {
+        "adapter_sha256": "11b5de2531446a7ebbd97ba2d8fd1f672eeb39f51bd30a47c91dabb85633e12f",
+        "cuda_initialized": false,
+        "exact_state_sha256": "1214e44db35d8ae65789358af3cd884d9da1025ab9cc826d16d2f07d13420f1c",
+        "no_input_replay": true,
+        "observed_unix": 1789702799.1308446,
+        "optimizer_restored_exact": true,
+        "optimizer_steps": 4956,
+        "same_logical_life": true,
+        "status": "PASS"
+      },
+      "RETIRED.json": {
+        "old_process_only": true,
+        "retired_unix": 1789702802.3559723,
+        "same_logical_life": true
+      },
+      "active_control_redirect": true,
+      "all_current_requests_below_threshold": true,
+      "compaction_threshold_tokens": 12288,
+      "control/LAUNCH.json": {
+        "pid": 2634732,
+        "started_unix": 1789702806.0392435
+      },
+      "current_compaction_notices": [],
+      "current_compactions": [],
+      "current_request_max_tokens": 10944,
+      "current_requests": [
+        {
+          "index": 5933,
+          "messages_sha256": "2d4e65275c9b42180c3c9a7fdf3ce4a51c2a3d46515ef685a71e3b52884b7270",
+          "mtime_unix": 1789702902.3274574,
+          "prompt_tokens": 9126,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 9126
+          },
+          "sha256": "b3bb83e3433e1033980cf77465508549619ca91732c4f0bc21067cd1ec5cfcdb",
+          "started_unix": 1789702901.7860284
+        },
+        {
+          "index": 5940,
+          "messages_sha256": "228c6fb0d56d13d59f499d36e82db7dbdbe364b7d783212c7fabb4b20d5056ad",
+          "mtime_unix": 1789702915.1285627,
+          "prompt_tokens": 9939,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 9939
+          },
+          "sha256": "e4a42be47d9ee9a2e75727bdb36b3e11e3c031b5e89e57874d871c3eb1b8db4b",
+          "started_unix": 1789702914.5846307
+        },
+        {
+          "index": 5950,
+          "messages_sha256": "6d8929e7740520f6ac7713c9bf9e159a7d496edef15581aae7f839bbc7588a69",
+          "mtime_unix": 1789702923.4044983,
+          "prompt_tokens": 10944,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 10944
+          },
+          "sha256": "4b27fb4dfee241d6293d733ee54a3f8782ff143caed79c220b69498119fd63cd",
+          "started_unix": 1789702922.8687348
+        }
+      ],
+      "exact_saved_to_loaded_match": true,
+      "failure_receipts": [
+        {
+          "error_type": "AssertionError",
+          "no_automatic_retry": true,
+          "observed_unix": 1789702378.2243938,
+          "reason": "",
+          "retired": false
+        }
+      ],
+      "first_request_after_r204": {
+        "index": 5933,
+        "messages_sha256": "2d4e65275c9b42180c3c9a7fdf3ce4a51c2a3d46515ef685a71e3b52884b7270",
+        "mtime_unix": 1789702902.3274574,
+        "prompt_tokens": 9126,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 9126
+        },
+        "sha256": "b3bb83e3433e1033980cf77465508549619ca91732c4f0bc21067cd1ec5cfcdb",
+        "started_unix": 1789702901.7860284
+      },
+      "first_think_after_r204": {
+        "index": 5936,
+        "mtime_unix": 1789702913.6276639,
+        "sha256": "533ec36c3028cfe2aa7f2b6f52cd09a229519195725ec0a06f55ba47ac7a1187",
+        "source_sha256": "7e1560c8ab7cb87b468c472244c6d387b4e5efe2ad1c754a284b32aea7665841"
+      },
+      "initial_load": {
+        "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "index": 5848,
+        "loaded_unix": 1789702293.7531283,
+        "mtime_unix": 1789702293.8046257,
+        "optimizer_steps": 4908,
+        "pid": 2519932,
+        "resume": true,
+        "sha256": "25cc8ecc9d5405c7c4940c9fda31789441afe41edd64eb1361c5731da507865c"
+      },
+      "last_record": {
+        "index": 6010,
+        "kind": "R184_LEARN_COMPLETE",
+        "mtime_unix": 1789703237.6220694,
+        "sha256": "18af63c77ca1ed6c21fe2d8830b5373027c09cbd241398a9bf11a61a640a4d6c"
+      },
+      "latest_complete": 53,
+      "name": "CREATIVE-STRUCTURED-A",
+      "native_identity": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_creative_structured_a4_r204/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_creative_structured_a4_r204/source",
+        "pid": 2634733,
+        "start_ticks": "42395923",
+        "state": "S"
+      },
+      "opening_consumed": {
+        "index": 5860,
+        "messages_sha256": "78ee5e7f7b30cab643ebf7ab735d19784ee31ffe2f766448004a2f12705ef8db",
+        "mtime_unix": 1789702316.806512,
+        "prompt_tokens": 6735,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 6735
+        },
+        "sha256": "17535618a67ff08769f9e82987d9140adfa7cf40b94ae845c9b5adda50bbe303",
+        "started_unix": 1789702316.2929275
+      },
+      "parent_feedback": [
+        {
+          "draft": 5861,
+          "first_render": {
+            "index": 5933,
+            "messages_sha256": "2d4e65275c9b42180c3c9a7fdf3ce4a51c2a3d46515ef685a71e3b52884b7270",
+            "mtime_unix": 1789702902.3274574,
+            "prompt_tokens": 9126,
+            "render_receipt": {
+              "all_history_tokens_masked": true,
+              "token_count": 9126
+            },
+            "sha256": "b3bb83e3433e1033980cf77465508549619ca91732c4f0bc21067cd1ec5cfcdb",
+            "started_unix": 1789702901.7860284
+          },
+          "inbox": {
+            "index": 5931,
+            "mtime_unix": 1789702901.2100837,
+            "sha256": "2716eeb235b6b2eb18b2ff2c29fb8917fc23960fcd53422f85a1d05a1b611f61"
+          },
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 52,
+            "id": "e1e797aa87d7477a9c76ffc7639c813c",
+            "kind": "PARENT_B_FEEDBACK_5861",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_creative_structured_a4/life/stream/inbox/e1e797aa87d7477a9c76ffc7639c813c.json",
+            "published_unix": 1789702370.0083687,
+            "quality_score": null,
+            "sha256": "d577bfc32ddf290f7c441b98279b390ebb1cc6eb656cea6e2f51c8ea4cf5bfd1"
+          },
+          "render_cycle": 53
+        },
+        {
+          "draft": 5941,
+          "first_render": null,
+          "inbox": null,
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 53,
+            "id": "2e5db6fff7ce4f59a6722276a9ac0007",
+            "kind": "PARENT_B_FEEDBACK_5941",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_creative_structured_a4/life/stream/inbox/2e5db6fff7ce4f59a6722276a9ac0007.json",
+            "published_unix": 1789702940.0221324,
+            "quality_score": null,
+            "sha256": "26825edb0636b777ea4f6a87a222cbb36bb64c0a3702372d5c380edf192e9276"
+          },
+          "render_cycle": null
+        }
+      ],
+      "parent_observer_withdrawn": false,
+      "physical": 4,
+      "policy": {
+        "cpu_gate_sha256": "ca755cbd60be96fa310bff0c8149ed8777159e0e09dbd437c076190f7577356d",
+        "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "structured_think_policy": "R202_WIDE_NARROW_WIDE_V1",
+        "think_continuation_policy": "R204_EXPLICIT_THINK_CONTINUATION_V1"
+      },
+      "preserved_inbox_file_count": 136,
+      "prior_clone_request_max_tokens": 7863,
+      "r204_load": {
+        "adapter_sha256": "11b5de2531446a7ebbd97ba2d8fd1f672eeb39f51bd30a47c91dabb85633e12f",
+        "index": 5930,
+        "loaded_unix": 1789702901.0296335,
+        "mtime_unix": 1789702901.0854926,
+        "optimizer_steps": 4956,
+        "pid": 2634733,
+        "resume": true,
+        "sha256": "f8879d711e7a8e2dfc1538b2db7a95b10943973000001740f0c78870e2de49bc"
+      },
+      "same_logical_life": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+      "same_physical_life": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_creative_structured_a4/life",
+      "source_file_count": 2786,
+      "source_hashes_match": true,
+      "task": "Choose an original scene or dialogue, write it, and revise using actual attributed parent judgment. Use wide/narrow/wide structured THINK. No peer is connected; creative feedback is a reader judgment, never an objective quality score."
+    },
+    {
+      "BOUNDARY.json": {
+        "full_stream_and_checkpoint": true,
+        "preserved_unix": 1789702666.8312852,
+        "same_logical_life": true
+      },
+      "BOUNDARY_STATE.json": {
+        "cycle": 52,
+        "record_sha256": "849aa44ec1803d70ee28292c815c718398be0bb28f2d9f0a5d57d391eb1ce30c",
+        "state_sha256": "a72904e101d7631163f5ce9f4df5a0e5f4b4408df50739ba1655a2018ed79d47",
+        "terminal_sha256": "6c1c7d099a5a6c2d0d1b8bccfe2e5c38bfd31f9e2eb0e6543639a56b06e79d2a"
+      },
+      "DISPATCHED.json": {
+        "dispatched_unix": 1789702669.7334604,
+        "no_input_replay": true,
+        "same_logical_life": true
+      },
+      "RESTORE_CPU.json": {
+        "adapter_sha256": "0cc1ba53acc750d0a470b698635da7f20ff2f0345cd4f3fb6995d4c41309e729",
+        "cuda_initialized": false,
+        "exact_state_sha256": "a72904e101d7631163f5ce9f4df5a0e5f4b4408df50739ba1655a2018ed79d47",
+        "no_input_replay": true,
+        "observed_unix": 1789702666.0103426,
+        "optimizer_restored_exact": true,
+        "optimizer_steps": 4956,
+        "same_logical_life": true,
+        "status": "PASS"
+      },
+      "RETIRED.json": {
+        "old_process_only": true,
+        "retired_unix": 1789702669.225478,
+        "same_logical_life": true
+      },
+      "active_control_redirect": true,
+      "all_current_requests_below_threshold": true,
+      "compaction_threshold_tokens": 12288,
+      "control/LAUNCH.json": {
+        "pid": 2611236,
+        "started_unix": 1789702672.8271096
+      },
+      "current_compaction_notices": [
+        {
+          "index": 6005,
+          "mtime_unix": 1789703233.3756685,
+          "sha256": "05677437ba253b39a8fb597713572adc4260d795c34b57f6ba109d7d546e9a25",
+          "training_eligible": false
+        }
+      ],
+      "current_compactions": [
+        {
+          "index": 6006,
+          "metadata": {
+            "after_tokens": 5750,
+            "before_tokens": 12908,
+            "carry_source_kind": "PRIOR_CHILD_COMPACTION",
+            "child_notice_event_id": "r204:compaction:3afdf184c64228578fab1f7f3daf345165688e86c828a87f26ed2004b79c7b0f",
+            "kind": "R203_PRE_GENERATION_CHILD_SOURCE_CARRY",
+            "new_child_distillation": false,
+            "protected_from": 550,
+            "raw_history_preserved": true,
+            "source_event_id": "r203:bounded-carry:ac61e3c8a3a0caf84da8eeb7cba5039d3ca06fc83cb7e90675dc00a224cd8712",
+            "source_sha256": "e3fc83240837fcb1b49135bf847bc11a14aab77512bee03985881c97f6b224fd",
+            "threshold_tokens": 12288,
+            "through_event_count": 538,
+            "working_state_preserved": true
+          },
+          "mtime_unix": 1789703233.974432,
+          "sha256": "4a55ec79baa23f2d55e9f1dae4b8376f3d8d674326cec7f3904ad3487e7fdd95"
+        }
+      ],
+      "current_request_max_tokens": 11888,
+      "current_requests": [
+        {
+          "index": 5934,
+          "messages_sha256": "ea9cb39ced61a054664d41ee44243e718c022835b41dc8de7ee342d0027902a5",
+          "mtime_unix": 1789702769.6323986,
+          "prompt_tokens": 8329,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 8329
+          },
+          "sha256": "3d7433d4a5c75d120dd744dbd978cbbf0b709464adca533ff0f171fc47dd50ce",
+          "started_unix": 1789702769.0952644
+        },
+        {
+          "index": 5941,
+          "messages_sha256": "0dc56b41948fa19768f17cc39e54b70c559088734544ab273dbd4df7db057b80",
+          "mtime_unix": 1789702790.9423864,
+          "prompt_tokens": 9259,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 9259
+          },
+          "sha256": "4ac527f0cbedc0bb82a1207e8aaf9b2a1ecb25a355082e9ba2a40aa237017b11",
+          "started_unix": 1789702790.4099808
+        },
+        {
+          "index": 5951,
+          "messages_sha256": "d3489df3b3dcd8e558e10dfffc14b8ade20680bbea461dba451733ae38030b47",
+          "mtime_unix": 1789702818.5805068,
+          "prompt_tokens": 10593,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 10593
+          },
+          "sha256": "621228614a73b1a04822320eec6f38352141d94158b838934fa1b3b96c710919",
+          "started_unix": 1789702818.0324304
+        },
+        {
+          "index": 5998,
+          "messages_sha256": "e52e7a7a83c22b6b93c7268ac951b1aa091dce33275d07f56162118b8db90aa9",
+          "mtime_unix": 1789703205.1989503,
+          "prompt_tokens": 11888,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 11888
+          },
+          "sha256": "d66d4ac68177f7bde5413524a8d59c540cf56bf3f131ea115e961ddc7301dda8",
+          "started_unix": 1789703204.640074
+        },
+        {
+          "index": 6007,
+          "messages_sha256": "dbfb45a2cfbe3034bf4e3de5a8c1894ae557a274ea9530f50c4f3b9e1cbfe710",
+          "mtime_unix": 1789703234.5653217,
+          "prompt_tokens": 5750,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 5750
+          },
+          "sha256": "ae6b629b86f5a0af01d044805d37949ee7f82bb8e54474efca04913ef6e9156d",
+          "started_unix": 1789703233.9919777
+        },
+        {
+          "index": 6016,
+          "messages_sha256": "0726f0733213509f7cc2890acbce7487a1061759ffe2996515400b26ccdd974d",
+          "mtime_unix": 1789703258.2323868,
+          "prompt_tokens": 7067,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 7067
+          },
+          "sha256": "34ca9ee14676af05263838c04e6be793486aba0119ebef799ec511c3a299097b",
+          "started_unix": 1789703257.6576061
+        }
+      ],
+      "exact_saved_to_loaded_match": true,
+      "failure_receipts": [],
+      "first_request_after_r204": {
+        "index": 5934,
+        "messages_sha256": "ea9cb39ced61a054664d41ee44243e718c022835b41dc8de7ee342d0027902a5",
+        "mtime_unix": 1789702769.6323986,
+        "prompt_tokens": 8329,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 8329
+        },
+        "sha256": "3d7433d4a5c75d120dd744dbd978cbbf0b709464adca533ff0f171fc47dd50ce",
+        "started_unix": 1789702769.0952644
+      },
+      "first_think_after_r204": {
+        "index": 5937,
+        "mtime_unix": 1789702789.4523041,
+        "sha256": "4a45b78d1dedc868b139d442f7c64e7ebd3770343f6f842908a2621b3c3bc2b0",
+        "source_sha256": "74a708e987be5e94b284289fbf8b588e0f78babb115389dfa3b221452476c375"
+      },
+      "initial_load": {
+        "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "index": 5848,
+        "loaded_unix": 1789702156.0272696,
+        "mtime_unix": 1789702156.0796509,
+        "optimizer_steps": 4908,
+        "pid": 2492641,
+        "resume": true,
+        "sha256": "49f21014a69a27fa94195a29ce529e51ab18d8f627c7435c9eb41aadebdfc923"
+      },
+      "last_record": {
+        "index": 6047,
+        "kind": "UPDATE",
+        "mtime_unix": 1789703364.895577,
+        "sha256": "2b4785f3cdbe20de95745bba4c23f780b6c41ffcb4629596640a0c292f4a0730"
+      },
+      "latest_complete": 53,
+      "name": "MATH-SELF-DERIVE-C",
+      "native_identity": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_self_derive_c5_r204/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_self_derive_c5_r204/source",
+        "pid": 2611237,
+        "start_ticks": "42382601",
+        "state": "S"
+      },
+      "opening_consumed": {
+        "index": 5860,
+        "messages_sha256": "336d79beff61210c47593282cbc524fca84722d0b23ea23102a80abc408c57f6",
+        "mtime_unix": 1789702183.9695435,
+        "prompt_tokens": 6054,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 6054
+        },
+        "sha256": "1145d672b6f1f284b5a837f084781e8c211330c5fd17bc38b2b07c729cabafce",
+        "started_unix": 1789702183.4562035
+      },
+      "parent_feedback": [
+        {
+          "draft": 5861,
+          "first_render": {
+            "index": 5934,
+            "messages_sha256": "ea9cb39ced61a054664d41ee44243e718c022835b41dc8de7ee342d0027902a5",
+            "mtime_unix": 1789702769.6323986,
+            "prompt_tokens": 8329,
+            "render_receipt": {
+              "all_history_tokens_masked": true,
+              "token_count": 8329
+            },
+            "sha256": "3d7433d4a5c75d120dd744dbd978cbbf0b709464adca533ff0f171fc47dd50ce",
+            "started_unix": 1789702769.0952644
+          },
+          "inbox": {
+            "index": 5932,
+            "mtime_unix": 1789702768.5243561,
+            "sha256": "dba955a9fa29a52e8b48647c7c251230a43eb9299e175dba686edb368d451cd3"
+          },
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 52,
+            "id": "f9a331d44af246cf84e85a2c57dc422d",
+            "kind": "PARENT_B_FEEDBACK_5861",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_self_derive_c5/life/stream/inbox/f9a331d44af246cf84e85a2c57dc422d.json",
+            "published_unix": 1789702228.0520988,
+            "quality_score": null,
+            "sha256": "d939020de2dff4cad03eec10c76216f7f05539bce4d6ccef158755357a7b0265"
+          },
+          "render_cycle": 53
+        },
+        {
+          "draft": 5942,
+          "first_render": {
+            "index": 5998,
+            "messages_sha256": "e52e7a7a83c22b6b93c7268ac951b1aa091dce33275d07f56162118b8db90aa9",
+            "mtime_unix": 1789703205.1989503,
+            "prompt_tokens": 11888,
+            "render_receipt": {
+              "all_history_tokens_masked": true,
+              "token_count": 11888
+            },
+            "sha256": "d66d4ac68177f7bde5413524a8d59c540cf56bf3f131ea115e961ddc7301dda8",
+            "started_unix": 1789703204.640074
+          },
+          "inbox": {
+            "index": 5996,
+            "mtime_unix": 1789703204.032967,
+            "sha256": "f400ea119a387d7c09f1a5f3ef745042192d3064d7d12cc0f4045e72f25d4400"
+          },
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 53,
+            "id": "736778591909476c8e523806f7686fa0",
+            "kind": "PARENT_B_FEEDBACK_5942",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_self_derive_c5/life/stream/inbox/736778591909476c8e523806f7686fa0.json",
+            "published_unix": 1789702834.2908654,
+            "quality_score": null,
+            "sha256": "15b934d15069a3ad56f6bcaa653c2c5be4f575d4a06d6b5fc2f2a9bd25754983"
+          },
+          "render_cycle": 54
+        },
+        {
+          "draft": 6008,
+          "first_render": null,
+          "inbox": null,
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 54,
+            "id": "a84a1f000eb646d38bb9d867a6dac75b",
+            "kind": "PARENT_B_FEEDBACK_6008",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_self_derive_c5/life/stream/inbox/a84a1f000eb646d38bb9d867a6dac75b.json",
+            "published_unix": 1789703284.050569,
+            "quality_score": null,
+            "sha256": "080368bcd2ffa119565ac23bda4ab300a0875e547249852f3dd7a487a7e81ef1"
+          },
+          "render_cycle": null
+        }
+      ],
+      "parent_observer_withdrawn": false,
+      "physical": 5,
+      "policy": {
+        "cpu_gate_sha256": "ca755cbd60be96fa310bff0c8149ed8777159e0e09dbd437c076190f7577356d",
+        "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_continuation_policy": "R204_EXPLICIT_THINK_CONTINUATION_V1"
+      },
+      "preserved_inbox_file_count": 138,
+      "prior_clone_request_max_tokens": 7300,
+      "r204_load": {
+        "adapter_sha256": "0cc1ba53acc750d0a470b698635da7f20ff2f0345cd4f3fb6995d4c41309e729",
+        "index": 5931,
+        "loaded_unix": 1789702768.3565953,
+        "mtime_unix": 1789702768.4090614,
+        "optimizer_steps": 4956,
+        "pid": 2611237,
+        "resume": true,
+        "sha256": "1ac2ea6007df24a2ce76367c2295cc1708bf1ff4426391406331353c929402c6"
+      },
+      "same_logical_life": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+      "same_physical_life": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_self_derive_c5/life",
+      "source_file_count": 2786,
+      "source_hashes_match": true,
+      "task": "Use open THINK to choose and independently derive a mathematical relationship. Test a discriminating example when useful, retain actual results, and revise your own conjecture. Do not replace derivation with a repeated plan."
+    },
+    {
+      "BOUNDARY.json": {
+        "full_stream_and_checkpoint": true,
+        "preserved_unix": 1789702732.4226618,
+        "same_logical_life": true
+      },
+      "BOUNDARY_STATE.json": {
+        "cycle": 55,
+        "record_sha256": "6cfce6422e2bbf3daa72e5b2305bd00630b62808a5e67726c3d175185d91763b",
+        "state_sha256": "2d8da564634ee100fcf8e7ab359010e687ab3195e6d97969d62fa8a21b0766e7",
+        "terminal_sha256": "9e1fa2e3c7ba089d6ca0341a06ec38696823ea7aa0fd859be16b26fd167d6fb0"
+      },
+      "DISPATCHED.json": {
+        "dispatched_unix": 1789702735.2514548,
+        "no_input_replay": true,
+        "same_logical_life": true
+      },
+      "RESTORE_CPU.json": {
+        "adapter_sha256": "415f8a8ad7e2b9818f2bcbe31f35a21ff94805b2fd26abad1db887cb61bc412a",
+        "cuda_initialized": false,
+        "exact_state_sha256": "2d8da564634ee100fcf8e7ab359010e687ab3195e6d97969d62fa8a21b0766e7",
+        "no_input_replay": true,
+        "observed_unix": 1789702731.5141246,
+        "optimizer_restored_exact": true,
+        "optimizer_steps": 5084,
+        "same_logical_life": true,
+        "status": "PASS"
+      },
+      "RETIRED.json": {
+        "old_process_only": true,
+        "retired_unix": 1789702734.7493627,
+        "same_logical_life": true
+      },
+      "active_control_redirect": true,
+      "all_current_requests_below_threshold": true,
+      "compaction_threshold_tokens": 12288,
+      "control/LAUNCH.json": {
+        "pid": 2622450,
+        "started_unix": 1789702738.348673
+      },
+      "current_compaction_notices": [],
+      "current_compactions": [],
+      "current_request_max_tokens": 8647,
+      "current_requests": [
+        {
+          "index": 6175,
+          "messages_sha256": "6fec6bb9b4f1a121f2bf34c94e67054d8927435a762172851bdee643bcdd7a39",
+          "mtime_unix": 1789702860.7081149,
+          "prompt_tokens": 2716,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 2716
+          },
+          "sha256": "d4e3019bd73d46c2b6474bb151097a4ae7d5759b142de7a92f026acd908513cc",
+          "started_unix": 1789702859.7663596
+        },
+        {
+          "index": 6182,
+          "messages_sha256": "0aa77a52edf83815c09a108af1e6e8158352b6a2f0956ad42c60f6d50b9de5ea",
+          "mtime_unix": 1789702893.5603852,
+          "prompt_tokens": 3903,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 3903
+          },
+          "sha256": "8b3905d35de37104545ed0e81945137e92d18d77af40ae279f85256075f839a9",
+          "started_unix": 1789702892.6363914
+        },
+        {
+          "index": 6192,
+          "messages_sha256": "693592552586db6a771a90d624d0b475b5be44bde103d6df78d648aac15de534",
+          "mtime_unix": 1789702907.4644997,
+          "prompt_tokens": 5047,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 5047
+          },
+          "sha256": "1fb7682e9a1ab2427febff260c299e3d14b850bd4c8cbc867099549af8840b46",
+          "started_unix": 1789702906.506972
+        },
+        {
+          "index": 6238,
+          "messages_sha256": "7c765f6667e16494812c211163028522414d381b7589c81e2d02729f2aad6964",
+          "mtime_unix": 1789703209.0639822,
+          "prompt_tokens": 6171,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 6171
+          },
+          "sha256": "b3613ec4f7a8c32451710f1cf2dfc086aa047529f5e71b25ddb5d5d4b4d0f4b5",
+          "started_unix": 1789703208.1112363
+        },
+        {
+          "index": 6245,
+          "messages_sha256": "134ca4fc22e6f281862cdfd4ce0802e0cddfe6c636ab2059c5201188cc9736fc",
+          "mtime_unix": 1789703240.39024,
+          "prompt_tokens": 7315,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 7315
+          },
+          "sha256": "0e88624000bcaa2d2772951870af0c447a10ccce35d52aada9bab150b25ce7f9",
+          "started_unix": 1789703239.4321735
+        },
+        {
+          "index": 6255,
+          "messages_sha256": "9d1fc79f1299f3f3b3401f592e19d6a43f886f167734a77891f351e4fe9c771c",
+          "mtime_unix": 1789703266.639456,
+          "prompt_tokens": 8647,
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 8647
+          },
+          "sha256": "a02ca13f4c9ea1f78d61897b58e46f8ed9f0a5d08bda8e55926fc223454d5305",
+          "started_unix": 1789703265.6327186
+        }
+      ],
+      "exact_saved_to_loaded_match": true,
+      "failure_receipts": [],
+      "first_request_after_r204": {
+        "index": 6175,
+        "messages_sha256": "6fec6bb9b4f1a121f2bf34c94e67054d8927435a762172851bdee643bcdd7a39",
+        "mtime_unix": 1789702860.7081149,
+        "prompt_tokens": 2716,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 2716
+        },
+        "sha256": "d4e3019bd73d46c2b6474bb151097a4ae7d5759b142de7a92f026acd908513cc",
+        "started_unix": 1789702859.7663596
+      },
+      "first_think_after_r204": {
+        "index": 6178,
+        "mtime_unix": 1789702889.730276,
+        "sha256": "c270e3c070e3f64cc4e5659eb97dc8b1c1c32ea86c822f54d95330bd41e63005",
+        "source_sha256": "0b2f14a6248d1f87afb2d180268d962568ba234c7dfb2ef04cb02d185b0229e1"
+      },
+      "initial_load": {
+        "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "index": 5848,
+        "loaded_unix": 1789700389.146938,
+        "mtime_unix": 1789700389.197664,
+        "optimizer_steps": 4908,
+        "pid": 2204208,
+        "resume": true,
+        "sha256": "23e29887a1bcea2290fc5b410944368a6f84116ba4a624cb9085ce45de485eb0"
+      },
+      "last_record": {
+        "index": 6281,
+        "kind": "UPDATE",
+        "mtime_unix": 1789703356.322979,
+        "sha256": "902837197951480e566f5c06eedc2ee78044c02da676cd8e2ca97f24fc56005e"
+      },
+      "latest_complete": 56,
+      "name": "CREATIVE-B",
+      "native_identity": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1_r204/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1_r204/source",
+        "pid": 2622451,
+        "start_ticks": "42389154",
+        "state": "R"
+      },
+      "opening_consumed": {
+        "index": 5856,
+        "messages_sha256": "54fe132e8332830dd1509305c5ff0065d81b51639a56f083c51574a60a0ad63e",
+        "mtime_unix": 1789700429.1650803,
+        "prompt_tokens": 15784,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 15784
+        },
+        "sha256": "b675ec2c802deb14366ada285c59faffcb0036209d388895d1a78b669f8cfade",
+        "started_unix": 1789700428.6255505
+      },
+      "parent_feedback": [
+        {
+          "draft": 5868,
+          "first_render": {
+            "index": 5939,
+            "messages_sha256": "bf2505743ccc9add7d8c8b053ea1f198abb8a1581fe2b58377e5af64ee289caa",
+            "mtime_unix": 1789701108.8436923,
+            "prompt_tokens": 2407,
+            "render_receipt": {
+              "all_history_tokens_masked": true,
+              "token_count": 2407
+            },
+            "sha256": "f00c4683004409bcc646352456c9d787f77275da3fe28884d9242f551a982078",
+            "started_unix": 1789701108.014655
+          },
+          "inbox": {
+            "index": 5938,
+            "mtime_unix": 1789701107.9961288,
+            "sha256": "c5942540bec8e220f9940cd4f47049bd70112b40651a496154f1f0cc5f8661ea"
+          },
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 52,
+            "id": "afdddf62e88a46b0816eb8f2d8b8bf92",
+            "kind": "PARENT_B_FEEDBACK_5868",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1/life/stream/inbox/afdddf62e88a46b0816eb8f2d8b8bf92.json",
+            "published_unix": 1789700539.9658878,
+            "quality_score": null,
+            "sha256": "7d6f006a711d98e8c7c1bb9ce5de8f6454eb9bb12bf8d1c4b8bec5376a905ff5"
+          },
+          "render_cycle": 53
+        },
+        {
+          "draft": 5946,
+          "first_render": {
+            "index": 6015,
+            "messages_sha256": "27670b40d7ceaf8135bbb3e2b985f8be8f282b95d19edbc6080a07a369c5103c",
+            "mtime_unix": 1789701509.6107438,
+            "prompt_tokens": 5937,
+            "render_receipt": {
+              "all_history_tokens_masked": true,
+              "token_count": 5937
+            },
+            "sha256": "75cb15bb282b6399953d743ed09b36efad14ed486c5a14d3d0493aa6da5a8de2",
+            "started_unix": 1789701508.7727358
+          },
+          "inbox": {
+            "index": 6014,
+            "mtime_unix": 1789701508.742113,
+            "sha256": "7d108ed28e60469ccbe776707fe30a27dab684acd988f64e4af22164aea7609b"
+          },
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 53,
+            "id": "37c14b1db2104e9895c8cabb057818e2",
+            "kind": "PARENT_B_FEEDBACK_5946",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1/life/stream/inbox/37c14b1db2104e9895c8cabb057818e2.json",
+            "published_unix": 1789701185.294081,
+            "quality_score": null,
+            "sha256": "66bd412a4054cd243164649be5b81f6d6a5ccb8846ca70c752ab07c55b0b0663"
+          },
+          "render_cycle": 54
+        },
+        {
+          "draft": 6032,
+          "first_render": {
+            "index": 6086,
+            "messages_sha256": "74cf720b368c4920a0f26114b2dbde997b2fbd3652f925e4f4cd45a3bcc8431f",
+            "mtime_unix": 1789701952.8886409,
+            "prompt_tokens": 11646,
+            "render_receipt": {
+              "all_history_tokens_masked": true,
+              "token_count": 11646
+            },
+            "sha256": "46611e56c301ac320cee667b1c39d6a3bfdbc9fcf777bb729a536ed534d94044",
+            "started_unix": 1789701951.9969318
+          },
+          "inbox": {
+            "index": 6085,
+            "mtime_unix": 1789701951.9431381,
+            "sha256": "6119edb059c1a612dd57fb8b6508f0f45ad3dd6dc3a77c6ab82c0819a6dfd455"
+          },
+          "publication": {
+            "attribution": "Astra",
+            "cycle_at_publication": 54,
+            "id": "22baffe5c4154b4fa2aacf0f1f68b428",
+            "kind": "PARENT_B_FEEDBACK_6032",
+            "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1/life/stream/inbox/22baffe5c4154b4fa2aacf0f1f68b428.json",
+            "published_unix": 1789701636.5015125,
+            "quality_score": null,
+            "sha256": "7a969d000c793a98694ce5b876d5f7ad5d05d9d089d24e5397e52d1ccf0cecba"
+          },
+          "render_cycle": 55
+        }
+      ],
+      "parent_observer_withdrawn": true,
+      "physical": 7,
+      "policy": {
+        "cpu_gate_sha256": "ca755cbd60be96fa310bff0c8149ed8777159e0e09dbd437c076190f7577356d",
+        "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "structured_think_policy": "R202_WIDE_NARROW_WIDE_V1",
+        "think_continuation_policy": "R204_EXPLICIT_THINK_CONTINUATION_V1"
+      },
+      "preserved_inbox_file_count": 146,
+      "prior_clone_request_max_tokens": 15854,
+      "r204_load": {
+        "adapter_sha256": "415f8a8ad7e2b9818f2bcbe31f35a21ff94805b2fd26abad1db887cb61bc412a",
+        "index": 6173,
+        "loaded_unix": 1789702858.6945965,
+        "mtime_unix": 1789702858.7519753,
+        "optimizer_steps": 5084,
+        "pid": 2622451,
+        "resume": true,
+        "sha256": "8a700e9c9361b1997c480927ac1a96668994dc4d52a66fd67205d3c4e1040bb7"
+      },
+      "same_logical_life": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+      "same_physical_life": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1/life",
+      "source_file_count": 2786,
+      "source_hashes_match": true,
+      "task": "Structured scene/dialogue workshop; attributed draft judgment, not an objective score."
+    }
+  ],
+  "hard_end_unix": 1790442300,
+  "lease_end_unix": 1790463900,
+  "main_ready_archive_sha256": "b0f148c92172af9d1525fda79a97bebfb31337e312e26c0f6bc805b3c687f8fc",
+  "observed_unix": 1789703362.636072,
+  "protected": [
+    {
+      "pid": 2258434,
+      "start_ticks": "28070412",
+      "state": "R",
+      "unchanged": true
+    },
+    {
+      "pid": 2245391,
+      "start_ticks": "28062062",
+      "state": "R",
+      "unchanged": true
+    },
+    {
+      "pid": 183848,
+      "start_ticks": "40797822",
+      "state": "R",
+      "unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "observed_unix": 1789619764.211282,
+  "phase_sha256": "657c8b797c59b2cee21927cd8d010f87237ec8626b16e32b053ff9d6f9c66127",
+  "status_path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/successor_phase_r158_20260917t0416z/STATUS_000036.json",
+  "status_sha256": "353788b5d0e9b717397e4dc2f46af5f722b06e1ed6bf7ee58917437ff1db4bea",
+  "status": {
+    "active_config_path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/SCHEDULER_R158_20260917T0416Z.json",
+    "active_config_sha256": "fb9281e6a0c90f26b2ef30c1a4ba2215e419b0029e87b0cfa794e97b96bc8a0e",
+    "active_physical": [
+      1
+    ],
+    "completed_checkpoint_count": 64,
+    "future_completed_checkpoints": 58,
+    "hard_end_unix": 1789624440,
+    "next_dispatch_unix": null,
+    "observed_unix": 1789619743.5772493,
+    "own_admitted": 2,
+    "pending_unique_checkpoints": 1,
+    "phase_charged": 55,
+    "phase_sha256": "657c8b797c59b2cee21927cd8d010f87237ec8626b16e32b053ff9d6f9c66127",
+    "registered_lineages": 5,
+    "remaining_jobs": 3,
+    "remaining_total_call_budget": 780,
+    "reserved_checkpoint_count": 67,
+    "status": "SEGMENT_RUNNING"
+  },
+  "jobs": [
+    {
+      "lineage_id": "legacy",
+      "commit_sha256": "2dca50898e02dbec419a999dd9219f518f7619a93a09b93b8ca3966a725f6a37",
+      "job_path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/scheduler_run_r158_20260917t0416z/dispatch_0001/physical1_job_26614f2a98fc811b644113aaec9aa35633ff0070de563eae1eeabcd92e5309a5",
+      "ledger_complete": true,
+      "failed": false,
+      "raw_file_count": 60,
+      "launch_identity": {
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "pid": 1690518,
+        "start_ticks": "84786890",
+        "uid": 2524
+      },
+      "launch_observed_unix": 1789619429.7614646,
+      "identity_alive": false,
+      "exit": {
+        "exit_code": 0,
+        "observed_unix": 1789619741.318457
+      },
+      "ledger_complete_path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/scheduler_ledger/26614f2a98fc811b644113aaec9aa35633ff0070de563eae1eeabcd92e5309a5.COMPLETE.json",
+      "ledger_complete_sha256": "2f52dfad5e4a4b5500761426eb2b693e29c4034a01809a911153a04e5e20d258",
+      "claim_hash_matches": true,
+      "native_complete_hash_matches": true
+    },
+    {
+      "lineage_id": "kernel",
+      "commit_sha256": "72a01de59097eea55827a413dcf9e359e33072767163548860a73336150174cb",
+      "job_path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/scheduler_run_r158_20260917t0416z/dispatch_0001/physical0_job_80ea94611680d4c1f70d49cc41b0f10f13962bf07b624aae39ab2bf20175e7b2",
+      "ledger_complete": true,
+      "failed": false,
+      "raw_file_count": 60,
+      "launch_identity": {
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "pid": 1690510,
+        "start_ticks": "84786801",
+        "uid": 2524
+      },
+      "launch_observed_unix": 1789619428.8803477,
+      "identity_alive": false,
+      "exit": {
+        "exit_code": 0,
+        "observed_unix": 1789619706.2918923
+      },
+      "ledger_complete_path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/scheduler_ledger/80ea94611680d4c1f70d49cc41b0f10f13962bf07b624aae39ab2bf20175e7b2.COMPLETE.json",
+      "ledger_complete_sha256": "fc06697bf90affd82c74f3e4c8ac2560075d7b603e7f4cb72cfc8061b065272a",
+      "claim_hash_matches": true,
+      "native_complete_hash_matches": true
+    }
+  ],
+  "historical_metadata_count": 125,
+  "historical_metadata_unchanged": true,
+  "total_reserved_files": 61,
+  "total_complete_including_seeds": 64
+}

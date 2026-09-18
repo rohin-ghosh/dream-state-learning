@@ -1,0 +1,16 @@
+{
+  "schema": "R166_INVITATION_CPU_GATE_V1",
+  "status": "PASS",
+  "execution_kind": "CPU_ONLY",
+  "observed_utc": "2026-09-17T08:04:10Z",
+  "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/tmp/r136-pytest-support python3 -B -m pytest -p no:cacheprovider -q tests/test_orch_r166_corrected_retelling.py tests/test_orch_r125_continual_native.py tests/test_orch_r125_continual_stream.py",
+  "tests_passed": 87,
+  "subtests_passed": 126,
+  "duration_seconds": 17.79,
+  "helper_sha256": "9277b09ca3f312bd7afa8bbcfc94f883940652c4199fe686c2ed47d73a992bcc",
+  "focused_test_sha256": "b6f4ef8a65c09fa93b9b9fa705fd73f6f0ee589375eafa75024aa1f91f88132e",
+  "review": "research_loop/workers/R166_RETELLING_REVIEW.md, latest R154 invitation-only verdict",
+  "effective_native_adoption": false,
+  "scope": "Own-object and corrected-retelling invitation only; exact-root parented non-frozen free/parent-guided distillation; no target rewrite, recipe count change, or scientific retention claim",
+  "prior_gate_preserved": "RETELLING_CPU_GATE.json"
+}

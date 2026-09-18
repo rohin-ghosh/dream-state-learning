@@ -1,0 +1,90 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0
+rootdir: /data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/kernel5_cpu_stage_20260917T2203Z/source
+collected 198 items
+
+tests/test_orch_r132_kernel_bridge.py .......                            [  3%]
+tests/test_orch_r148_kernel_tool_service.py E
+
+==================================== ERRORS ====================================
+_ ERROR at setup of test_exact_accepted_uses_unchanged_bridge_real_lock_console_and_source _
+
+tmp_path = PosixPath('/data/home/rohing/.tmp/pytest-of-rohing/pytest-52/test_exact_accepted_uses_uncha0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7a0596133d10>
+
+    @pytest.fixture
+    def rig(tmp_path, monkeypatch):
+        clock = SimpleNamespace(now=1000.0)
+        clock.time = lambda: clock.now
+        clock.monotonic = lambda: clock.now
+        clock.sleep = lambda seconds: setattr(clock, 'now', clock.now + seconds)
+        monkeypatch.setattr(service, 'time', clock)
+        monkeypatch.setattr(service.executor, 'time', clock)
+        monkeypatch.setattr(service.executor, 'LOCK_PATH', tmp_path / 'GPU.lock')
+        monkeypatch.setattr(service.subprocess, 'Popen', Mock(side_effect=AssertionError('GPU subprocess forbidden')))
+        root = tmp_path / 'child'
+        (root / 'stream/records').mkdir(parents=True)
+        (root / 'stream/inbox').mkdir()
+        (root / 'stream/JOURNAL.json').write_bytes(service.encoded(
+            dict(schema='R125_STREAM_JOURNAL_V1', journal_id='a' * 32)))
+        runtime = tmp_path / 'runtime'
+        runtime.mkdir()
+        (runtime / 'file').write_bytes(b'fixture')
+        manifest = dict(schema='R132_RUNTIME_MANIFEST_V1', files={'file': service.sha(b'fixture')})
+        (runtime / 'MANIFEST.json').write_bytes(service.encoded(manifest))
+        runtime_hash = service.sha(service.encoded(manifest))
+        monkeypatch.setattr(service.executor, 'validate_runtime', Mock(return_value=runtime_hash))
+        devices = dict(gpu_uuid=service.executor.GPU_UUID, physical_index=2,
+                       nodes={'/dev/nvidia1': [195, 1]})
+        identity = dict(devices=devices, runtime_manifest_sha256=runtime_hash, test_only=True)
+        monkeypatch.setattr(service.executor, 'device_identity', Mock(return_value=devices))
+        monkeypatch.setattr(service.executor, 'policy_identity', Mock(return_value=identity))
+        census = Mock(return_value=b'<fixture>empty assigned GPU, not a live census</fixture>')
+        monkeypatch.setattr(service, 'census', census)
+        gate_dir = tmp_path / 'gate'
+        gate_dir.mkdir()
+        checks = {}
+        for name in service.executor.GATE_CHECKS:
+            path = gate_dir / (name + '.json')
+            receipt = dict(identity=identity, passed=True, checks={name: True})
+            path.write_bytes(service.encoded(receipt))
+            checks[name] = dict(passed=True, receipt_path=str(path), receipt_sha256=service.sha(path.read_bytes()))
+        gate = dict(schema='R132_GPU_CONFINEMENT_GATE_V1', identity=identity, passed=True,
+                    observed_unix=clock.now, expires_unix=clock.now + 3600, checks=checks)
+        gate_path = gate_dir / 'GATE.json'
+        gate_path.write_bytes(service.encoded(gate))
+        lease_path = tmp_path / 'LEASE.json'
+        lease_path.write_bytes(service.encoded(dict(conservative_lease_end_utc=
+            datetime.datetime.fromtimestamp(100000, datetime.timezone.utc).isoformat(), margin_seconds=21600)))
+        config = dict(root=str(root), state=str(tmp_path / 'state'), spool=str(tmp_path / 'spool'),
+            source_root=str(Path(service.__file__).resolve().parents[1]), runtime_root=str(runtime),
+            gate_path=str(gate_path), lease_receipt_path=str(lease_path), start_index=START,
+            gpu_uuid=service.executor.GPU_UUID, device_minor=1, executor_lock=str(service.executor.LOCK_PATH),
+            main_authorized=True, exclusive_gpu_custody=True, wall_seconds=600, poll_seconds=0.1,
+            max_polls=8, max_calls=1, max_reads=10000, max_read_bytes=100 * 1024**3,
+            max_request_bytes=100000, max_output_bytes=service.OUTPUT_RESERVATION,
+            max_runtime_files=100, max_runtime_bytes=1048576)
+        write_records(config, [make_record(START - 1, 'REQUEST', dict(split='TRAIN', resume_state={}), '0' * 64)])
+>       config = service.pin_config(config)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_orch_r148_kernel_tool_service.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_r148_kernel_tool_service.py:120: in pin_config
+    base_config(config)
+gpu/orch_r148_kernel_tool_service.py:91: in base_config
+    require(config['gpu_uuid'] == executor.GPU_UUID and type(config['device_minor']) is int
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'unchanged_GPU_and_executor_lock'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: unchanged_GPU_and_executor_lock
+
+gpu/orch_r125_cpu_experiment.py:40: ValueError
+=========================== short test summary info ============================
+ERROR tests/test_orch_r148_kernel_tool_service.py::test_exact_accepted_uses_unchanged_bridge_real_lock_console_and_source
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+========================== 7 passed, 1 error in 0.25s ==========================

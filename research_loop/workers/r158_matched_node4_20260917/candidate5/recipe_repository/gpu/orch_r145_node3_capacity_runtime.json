@@ -1,0 +1,103 @@
+{
+  "files": {
+    "peft.peft_model": "c07bf9545b3b17ea0363263b11fc25d0a2ebe814e3f8083da3fa08adaa824879",
+    "peft.tuners.lora.layer": "1ef4e7033ebd01c9c6fbf0fc3837695b75b795c54f8a837b7578e8dfba2251a4",
+    "peft.tuners.lora.model": "bce383b627ccc546d8298569094fb62cd25154354881938ada038c2cc6bf403f",
+    "torch.nn.functional": "990a8b717645fa603b0dd2957b7b3ed68c5fb937fa205048c096ac8bb532510e",
+    "torch.utils.checkpoint": "eab49639231cc989d65c04212923eef0ade4aa059b68bcabfe2819007f34e69f",
+    "transformers.loss.loss_utils": "3df3438f0cb80cb7b903d6d06f522839756f4ca9301a02d793748ae099c27d9f",
+    "transformers.modeling_utils": "b8467e1ada952862d2e4d76632475ac2f9fa198121d0e1ce64fa393ea3773e16",
+    "transformers.models.qwen2.modeling_qwen2": "99fa98c5676604cf6ef505892b70fda5c1c4cd835971459f38d61090cccab1e4"
+  },
+  "functions": {
+    "checkpoint": [
+      {
+        "code_sha256": "d976fb0ddd84d2b520334e40ebce14974ed7e97f476d0fa2225f1354c7a1afd7",
+        "module": "torch.utils.checkpoint",
+        "qualname": "checkpoint"
+      },
+      {
+        "code_sha256": "85cc36f819b6780d7c1a1d66867f9c5366e2c4b82c7048486e62fc521f29273a",
+        "module": "torch.utils.checkpoint",
+        "qualname": "checkpoint"
+      }
+    ],
+    "cross_entropy": [
+      {
+        "code_sha256": "c6a6bb168c6193cddf2528187315f318d6f4308b18088bbec47e1e6ec4b471c4",
+        "module": "torch.nn.functional",
+        "qualname": "cross_entropy"
+      }
+    ],
+    "linear_forward": [
+      {
+        "code_sha256": "e2acfd1d1dde5f7ac41b0040c299c84bc75c5bb81b61e1603f9c9a25fa86fe40",
+        "module": "torch.nn.modules.linear",
+        "qualname": "Linear.forward"
+      }
+    ],
+    "lora_linear_forward": [
+      {
+        "code_sha256": "824662f54e31b364def83464b4f2b5e366420c0bf97bc577786c84ea1ba7de98",
+        "module": "peft.tuners.lora.layer",
+        "qualname": "Linear.forward"
+      }
+    ],
+    "loss": [
+      {
+        "code_sha256": "7347c462895f3315fc3c8cf757e213e090d61d8008154a41d507410716c9699a",
+        "module": "transformers.loss.loss_utils",
+        "qualname": "ForCausalLMLoss"
+      }
+    ],
+    "peft_forward": [
+      {
+        "code_sha256": "3b0d2be7eb0224341695a667a2f96317cfbed3e6d29fb9b5b1649344065fc7e0",
+        "module": "peft.peft_model",
+        "qualname": "PeftModelForCausalLM.forward"
+      }
+    ],
+    "qwen_forward": [
+      {
+        "code_sha256": "de2530b3354109a84fbe88c953e74291f3e89423ea5cbea7925c2cdf82ff0d92",
+        "module": "transformers.models.qwen2.modeling_qwen2",
+        "qualname": "Qwen2ForCausalLM.forward"
+      },
+      {
+        "code_sha256": "f28b1ce53d20f4a7ec03eac177ef755e2bb225fc9025dd8ddcefc8a73ca62d34",
+        "module": "transformers.models.qwen2.modeling_qwen2",
+        "qualname": "Qwen2ForCausalLM.forward"
+      }
+    ],
+    "qwen_model_forward": [
+      {
+        "code_sha256": "0749cdf540fdd51a7796a19d32adcb35244fc9e918c672e3c4245206b25f8b71",
+        "module": "transformers.models.qwen2.modeling_qwen2",
+        "qualname": "Qwen2Model.forward"
+      },
+      {
+        "code_sha256": "38b0e802064904aa3b6cf74012bc33f1a6b4948ca00033d270f5ea203295f4ed",
+        "module": "transformers.models.qwen2.modeling_qwen2",
+        "qualname": "Qwen2Model.forward"
+      },
+      {
+        "code_sha256": "b02bc7b8491705b7004a3918fa631f74c65a2b4099fc64b4751c15e23f771cb0",
+        "module": "transformers.models.qwen2.modeling_qwen2",
+        "qualname": "Qwen2Model.forward"
+      }
+    ]
+  },
+  "imported_versions": {
+    "peft": "0.20.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.5.3"
+  },
+  "schema": "R145_NODE3_CHILD_SUFFIX_CAPACITY_V1",
+  "versions": {
+    "peft": "0.20.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0",
+    "transformers": "5.5.3"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "actual_model_tokenizer_file_inventory_bound": false,
+  "author_evidence_not_independent_approval": true,
+  "differing_native_methods": [
+    "sleep"
+  ],
+  "disposition": "Only sleep differs: selected candidate5 has the R145 runtime-proof/child suffix deployment patch; executor never calls NativeChild.sleep. All other NativeChild method ASTs are identical.",
+  "expected_base_state_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "files": {
+    "gpu/orch_r161_native_executor.py": "81805bdb61c93f4b6df792f8c10468f018e61046c5c218280cf7584ee78b42eb",
+    "research_loop/workers/R161_NATIVE_EXECUTOR_REVIEW.md": "b6b5b664673ffb55b98f8696f5a56a36c47fd9f9cbb0a9402ab36b8b1b92a6ed",
+    "research_loop/workers/r161_native_executor_20260917/repair_attempt5/CPU.json": "82ad312b89aae40dd062a7b5de997e0957d5e5931f994d93b63dbeab4314bd7e",
+    "research_loop/workers/r161_native_executor_20260917/repair_attempt5/CPU_TESTS.log": "a62d0b90f43406c49702bd4fe5be8821322d56bea2e871350fcb680c9d13747d",
+    "research_loop/workers/r161_native_executor_20260917/repair_attempt5/run_cpu.py": "3471407578c967b8318f334f395a6e3ed07434ddbf40d05e56c46bb3394e6d91",
+    "tests/test_orch_r161_native_executor.py": "fe49cf4d638434c4b79f3a64fdb8253432714dc6df8b5ef7b7a958607a63f650"
+  },
+  "local_native_method_ast_sha256": {
+    "__init__": "443d6da8f60bbca04219c472fe87c5ad1ac1935067efd5545493bebf1372e808",
+    "adapter_hash": "69bcb53a0e2f61330b79965c8027887e41a3e3c7880896ae3310d354d62410d1",
+    "check": "cd729530169ea04f38a5ebf4154908056253f71e79e05edc0439c89a25daa073",
+    "checkpoint": "c2bb41be86accfb141235a3cc084b6d0aa5a625a39e99bce92ba60e54ebc5dfc",
+    "count_tokens": "3f641bf7f8a99a7a5882f6cfda84e712330971aa3cef47202f3f3f90d702504e",
+    "generate": "3fe237fd5f7e23f0293e93a44fa63798641ea5785fc98f4ce5756a0590e81207",
+    "initialize_adapter": "ec0a5fd1f752fca270b1aa702344766b5293934e4dffd1b2ae893c9d68e47883",
+    "offload_for_readout": "491bbb330ddae927e61f4420553ff270bbbcd788ef025c1d6e175e172e1b8624",
+    "restore_after_readout": "8e63d07468c92cc9b329a6ee5d3cb9bb7e2813388744f518d9b4a9dcdeb2afb3",
+    "seed_rng": "34f8d5fd5845af123dab874fcd8225b206f2180dc1b81cd0a159d472767dfe7f",
+    "sleep": "dd43b689ee4864e1381995e984655f6ecfdde0b2a4105cb801510696ceab560d",
+    "verify_checkpoint": "d0d40c1c014818925eb4d5836ac8e5f02ce10e6d7a541d9c3a64ddb454883a43"
+  },
+  "local_native_sha256": "cdb54252763472fd21ea12fd7694b208d968422c375dbf0647088cde736e6d48",
+  "original_CPU_dependency_origins_exactly_matched": [
+    "gpu.astra_pchain2_native",
+    "gpu.astra_pchain2_nulls",
+    "gpu.astra_pchain2_prepare",
+    "gpu.orch_r125_continual_native",
+    "gpu.orch_r145_suffix_boundary",
+    "gpu.orch_r145_suffix_loss",
+    "organism_v6.composition_birth_stage2a_primitives",
+    "organism_v6.orch_r124_train_history",
+    "organism_v6.orch_r125_continual_stream",
+    "organism_v6.pcfl_vertical_dev",
+    "organism_v6.pcfl_vertical_prepare",
+    "organism_v6.pcfl_vertical_train",
+    "organism_v6.train_adapter_v3"
+  ],
+  "outstanding_gates": [
+    "Fresh independent review of these exact repairs and Main probe",
+    "Main binds actual configured base/model/tokenizer files and receiving-node runtime before any real7B probe",
+    "Main GO for the actual7B probe",
+    "Mendel integrates mandatory admission/restore and final bridge is reviewed"
+  ],
+  "real_7b_validated": false,
+  "schema": "R161_REPAIR_BINDINGS_V1",
+  "selected_native_method_ast_sha256": {
+    "__init__": "443d6da8f60bbca04219c472fe87c5ad1ac1935067efd5545493bebf1372e808",
+    "adapter_hash": "69bcb53a0e2f61330b79965c8027887e41a3e3c7880896ae3310d354d62410d1",
+    "check": "cd729530169ea04f38a5ebf4154908056253f71e79e05edc0439c89a25daa073",
+    "checkpoint": "c2bb41be86accfb141235a3cc084b6d0aa5a625a39e99bce92ba60e54ebc5dfc",
+    "count_tokens": "3f641bf7f8a99a7a5882f6cfda84e712330971aa3cef47202f3f3f90d702504e",
+    "generate": "3fe237fd5f7e23f0293e93a44fa63798641ea5785fc98f4ce5756a0590e81207",
+    "initialize_adapter": "ec0a5fd1f752fca270b1aa702344766b5293934e4dffd1b2ae893c9d68e47883",
+    "offload_for_readout": "491bbb330ddae927e61f4420553ff270bbbcd788ef025c1d6e175e172e1b8624",
+    "restore_after_readout": "8e63d07468c92cc9b329a6ee5d3cb9bb7e2813388744f518d9b4a9dcdeb2afb3",
+    "seed_rng": "34f8d5fd5845af123dab874fcd8225b206f2180dc1b81cd0a159d472767dfe7f",
+    "sleep": "41e9c75ab66fd5399c23ed61a3c1d7f910f0b562c50d53958bac35fcb1e8d3b9",
+    "verify_checkpoint": "d0d40c1c014818925eb4d5836ac8e5f02ce10e6d7a541d9c3a64ddb454883a43"
+  },
+  "selected_native_sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6",
+  "selected_source_closure": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/source",
+  "selected_test_support": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/test_support"
+}

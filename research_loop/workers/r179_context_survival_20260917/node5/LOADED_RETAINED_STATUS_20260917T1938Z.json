@@ -1,0 +1,177 @@
+{
+  "C5": {
+    "binding_request": {
+      "path": "research_loop/workers/r179_context_survival_20260917/node5/CONTROLLER_TRANSFER_READY_1789669705560365287.json",
+      "sha256": "a9fbaaad21fc6a972842e75f762adacaa140a03410b410e95299e408d989f3b9"
+    },
+    "deadline_unix": 1789675200,
+    "required_output": "/localhome/local-rohing/orch_r179_context_C5_20260917_attempt4",
+    "status": "ORIGINAL_RUNNING_ATTEMPT4_STAGED_NOT_ARMED",
+    "supplied_addendum": {
+      "path": "research_loop/workers/r179_context_survival_20260917/node5/C5_CONTROLLER_MAIN_ADDENDUM.json",
+      "sha256": "5eae8b686fe21842a8c4e0146dc1b89bff42cc292f5e0afaf3c093189f190389"
+    },
+    "supplied_addendum_output": "/localhome/local-rohing/orch_r179_context_C5_20260917_attempt3"
+  },
+  "completed_retained_sleep_proofs": [
+    {
+      "completed": {
+        "cycle": 40,
+        "full_history_sha256": "26cca8d11e0b6d7650c51d4778fb04fec9ac17fa9f6f3235702d7e2f0530e5fa",
+        "index": 4936,
+        "kind": "SLEEP_COMPLETE",
+        "record_sha256": "d91a7b57b67439c35b85c968f81329eadc4bd734c31303345f06d170621dc66e"
+      },
+      "cycle": 40,
+      "label": "C1",
+      "loaded": {
+        "adapter_sha256": "55d54d58eca7f579cc17875cce127be81f23491f24f463cebf6db25598587b88",
+        "attribution": "MAIN_READMISSION",
+        "loaded_record_sha256": "bc577b6e15a1152465fdb117e6faeda25418068d3a758438311c3052fb995677",
+        "loaded_unix": 1789667916.9793246,
+        "matches_saved_adapter_and_step": true,
+        "optimizer_steps": 4095,
+        "pid": 1575686,
+        "start_ticks": "20339995"
+      },
+      "retained": {
+        "action": "RETAIN_CONTEXT_ACROSS_SLEEP",
+        "cycle": 40,
+        "history_sha256_after": "26cca8d11e0b6d7650c51d4778fb04fec9ac17fa9f6f3235702d7e2f0530e5fa",
+        "history_sha256_before": "26cca8d11e0b6d7650c51d4778fb04fec9ac17fa9f6f3235702d7e2f0530e5fa",
+        "index": 4767,
+        "kind": "CONTEXT_RETAINED",
+        "record_sha256": "46ca5c89307e67ecef8805c1b79c19f8b06b598a611e83810997ef9a47e46b4c",
+        "threshold_tokens": 12288,
+        "visible_prompt_tokens": 1572
+      },
+      "source_observation": {
+        "path": "research_loop/workers/r179_context_survival_20260917/node5/ROLLOUT_METADATA_1789673985439732655.json",
+        "sha256": "f55a7d8e96033a64fe1a7068cbb4ccf83e706fc907492eea0ca97adb0f59755e"
+      }
+    }
+  ],
+  "loaded_lanes": [
+    {
+      "label": "C2",
+      "loaded": {
+        "adapter_sha256": "b122a2ddc810d58fd5bcfe48b69a39227b4532b47913966c4d7b3ac18106d92b",
+        "attribution": "SUCCESSOR_LOADED",
+        "index": 4762,
+        "kind": "LOADED",
+        "loaded_unix": 1789668925.2206364,
+        "matches_saved_adapter_and_step": true,
+        "optimizer_steps": 4095,
+        "own_attempt_launch_recorded": true,
+        "pid": 1626817,
+        "record_sha256": "0dc095f703deacf320ba9757ca56b4563a3aa85a26cdf18be5595877a1f3d921",
+        "resume": true
+      },
+      "output": "/localhome/local-rohing/orch_r179_context_C2_20260917_attempt4"
+    },
+    {
+      "label": "pilot",
+      "loaded": {
+        "adapter_sha256": "4e17809bc23f6cc615b8d4ff8fccbb999ee794d3b38523c96f7d6d2ef264bb5c",
+        "attribution": "SUCCESSOR_LOADED",
+        "index": 5580,
+        "kind": "LOADED",
+        "loaded_unix": 1789673041.763062,
+        "matches_saved_adapter_and_step": true,
+        "optimizer_steps": 4932,
+        "own_attempt_launch_recorded": true,
+        "pid": 1835262,
+        "record_sha256": "0627ba7f88b7cb7ad123febaa376df500872a34c9330fc0a1307cf68f5a99345",
+        "resume": true
+      },
+      "output": "/localhome/local-rohing/orch_r179_context_pilot_20260917_attempt5"
+    },
+    {
+      "label": "run1",
+      "loaded": {
+        "adapter_sha256": "5918b4dd3e46a198d7c655a027ee94b598457c44830362ed825916dc107ac584",
+        "attribution": "SUCCESSOR_LOADED",
+        "index": 5737,
+        "kind": "LOADED",
+        "loaded_unix": 1789672919.3745587,
+        "matches_saved_adapter_and_step": true,
+        "optimizer_steps": 5079,
+        "own_attempt_launch_recorded": true,
+        "pid": 1828793,
+        "record_sha256": "d5ef0a75351ba63043a7add473e94b31085bbd076399d20e30b172dc921c3a86",
+        "resume": true
+      },
+      "output": "/localhome/local-rohing/orch_r179_context_run1_20260917_attempt4"
+    },
+    {
+      "label": "C1",
+      "loaded": {
+        "adapter_sha256": "55d54d58eca7f579cc17875cce127be81f23491f24f463cebf6db25598587b88",
+        "attribution": "MAIN_READMISSION",
+        "loaded_record_sha256": "bc577b6e15a1152465fdb117e6faeda25418068d3a758438311c3052fb995677",
+        "loaded_unix": 1789667916.9793246,
+        "matches_saved_adapter_and_step": true,
+        "optimizer_steps": 4095,
+        "pid": 1575686,
+        "start_ticks": "20339995"
+      },
+      "output": "/localhome/local-rohing/orch_r179_C1_readmission_20260917_attempt2"
+    },
+    {
+      "label": "C3",
+      "loaded": {
+        "adapter_sha256": "8fb8b72169386db416c8587f80a39faf9f8a08eea9d9afba82f662c8807ee16f",
+        "attribution": "SUCCESSOR_LOADED",
+        "index": 4301,
+        "kind": "LOADED",
+        "loaded_unix": 1789669524.6895275,
+        "matches_saved_adapter_and_step": true,
+        "optimizer_steps": 3682,
+        "own_attempt_launch_recorded": true,
+        "pid": 1656800,
+        "record_sha256": "bb7546afba272c7bd9537f0fef5c67b9d675228c354f9fc237cdd38defc77cbb",
+        "resume": true
+      },
+      "output": "/localhome/local-rohing/orch_r179_context_C3_20260917_attempt3"
+    },
+    {
+      "label": "C4",
+      "loaded": {
+        "adapter_sha256": "155271010eb6b3961f7887552472447e0d91b4b2fa9f1bcf25556377c8d7fa16",
+        "attribution": "NODE5_C4_READMISSION",
+        "loaded_record_sha256": "e8b1f76608fd9a2bc60f66ce498ce47d838a5af5a71fa1eea87c45465aaa15aa",
+        "loaded_unix": 1789668908.731973,
+        "matches_saved_adapter_and_step": true,
+        "optimizer_steps": 3618,
+        "pid": 1625840,
+        "start_ticks": "20438890"
+      },
+      "output": "/localhome/local-rohing/orch_r179_C4_readmission_20260917_attempt1"
+    },
+    {
+      "label": "repo_reader",
+      "loaded": {
+        "adapter_sha256": "e0b1f757d31475821b39ce138b45c5f0b86a52302069eb4705febc493e594d3b",
+        "attribution": "SUCCESSOR_LOADED",
+        "index": 5211,
+        "kind": "LOADED",
+        "loaded_unix": 1789673829.73179,
+        "matches_saved_adapter_and_step": true,
+        "optimizer_steps": 4599,
+        "own_attempt_launch_recorded": true,
+        "pid": 1875185,
+        "record_sha256": "189504625f145dbacbf4bfeac95df7f439bc52acc5fd340332cab1712348c48e",
+        "resume": true
+      },
+      "output": "/localhome/local-rohing/orch_r179_context_repo_reader_20260917_attempt3"
+    }
+  ],
+  "new_signals_sent": false,
+  "observed_unix": 1789673985.4400475,
+  "readouts_included": false,
+  "schema": "R179_NODE5_LOADED_AND_COMPLETED_RETAINED_SLEEP_V1",
+  "source_observation": {
+    "path": "research_loop/workers/r179_context_survival_20260917/node5/ROLLOUT_METADATA_1789673985439732655.json",
+    "sha256": "f55a7d8e96033a64fe1a7068cbb4ccf83e706fc907492eea0ca97adb0f59755e"
+  }
+}

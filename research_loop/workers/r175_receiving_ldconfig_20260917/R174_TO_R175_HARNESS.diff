@@ -1,0 +1,172 @@
+diff --git a/research_loop/workers/r174_receiving_cpu_repair_20260917/receiving_cpu.py b/research_loop/workers/r175_receiving_ldconfig_20260917/receiving_cpu.py
+index 8ff4c5ec..7ff129fe 100644
+--- a/research_loop/workers/r174_receiving_cpu_repair_20260917/receiving_cpu.py
++++ b/research_loop/workers/r175_receiving_ldconfig_20260917/receiving_cpu.py
+@@ -3,6 +3,7 @@
+ import ast
+ import base64
+ from contextlib import redirect_stderr, redirect_stdout
++from contextvars import ContextVar
+ from datetime import datetime, timezone
+ import hashlib
+ import importlib.abc
+@@ -14,13 +15,14 @@ from pathlib import Path
+ import re
+ import signal
+ import stat
++import subprocess
+ import sys
+ import tempfile
+ import traceback
+ import unittest
+ 
+ 
+-SCRATCH = '/localhome/local-rohing/orch_r174_actual_replay_cpu_20260917_attempt1'
++SCRATCH = '/localhome/local-rohing/orch_r175_actual_replay_cpu_20260917_attempt1'
+ OLD_SOURCE = '/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source'
+ OLD_GUARD = '/localhome/local-rohing/orch_r144_node3_target_physical1_20260916t1545z_5/GUARD.json'
+ GUARD_SHA256 = '8bbb6c007083884574b427b318ef3e466f26e514452b5ee5e7972801aca8ce9d'
+@@ -50,6 +52,14 @@ TEST_SUPPORT = {
+ }
+ MAX_FILE_BYTES = 2 * 1024 * 1024
+ MAX_OPERATIONAL_BYTES = 64 * 1024 * 1024
++LDCONFIG_COMMAND = ['/sbin/ldconfig', '-p']
++LDCONFIG_ENVIRONMENT = {'PATH': '/usr/bin:/bin', 'LC_ALL': 'C', 'LANG': 'C'}
++LDCONFIG_EXECUTABLES = {
++    '/sbin/ldconfig': dict(path='/usr/sbin/ldconfig',
++        sha256='bfd5df90c7f070feab584435f106f254ffffaa268a04de5b5c3bd61d59c092f3'),
++    '/sbin/ldconfig.real': dict(path='/usr/sbin/ldconfig.real',
++        sha256='aa6de6d24c9223de013f6294c1db270c0c5247741a35127a0e058bf386725666'),
++}
+ 
+ 
+ def require(condition, reason):
+@@ -180,7 +190,7 @@ class CandidateImports(importlib.abc.MetaPathFinder):
+             return importlib.util.spec_from_file_location(fullname, support)
+         namespace = fullname.split('.')[0]
+         if namespace in ('transformers', 'peft', 'datasets', 'openai', 'anthropic', 'bitsandbytes'):
+-            raise ImportError('R173_forbids_model_provider_or_dataset_import:' + fullname)
++            raise ImportError('R175_forbids_model_provider_or_dataset_import:' + fullname)
+         if namespace not in ('gpu', 'organism_v6'):
+             return None
+         search = [str(self.source)] if path is None else path
+@@ -208,6 +218,7 @@ class RuntimeFence:
+         self.loaded = {}
+         self.denied = []
+         self.allowed_runtime_probes = []
++        self.ldconfig_context = ContextVar('r175_exact_ldconfig_request', default=False)
+         self.test_support_loaded = {}
+         self.open_context = []
+         self.read_roots = [scratch, Path(sys.prefix).resolve(), Path(sys.base_prefix).resolve(),
+@@ -218,7 +229,7 @@ class RuntimeFence:
+ 
+     def deny(self, reason):
+         self.denied.append(reason)
+-        raise PermissionError('R173_CPU_fence:' + reason)
++        raise PermissionError('R175_CPU_fence:' + reason)
+ 
+     def path_for(self, value, directory_fd=None):
+         if isinstance(value, int):
+@@ -236,9 +247,54 @@ class RuntimeFence:
+                   or str(path) in self.special_reads):
+             self.deny('read_outside_candidate_or_installed_runtime:' + str(path))
+ 
++    def prepare_ldconfig(self, command, positional, keywords):
++        if command != LDCONFIG_COMMAND:
++            return None
++        accepted = {'stdin', 'stdout', 'stderr', 'env', 'shell', 'cwd', 'executable'}
++        if (positional or set(keywords) - accepted
++                or keywords.get('stdin') != subprocess.DEVNULL
++                or keywords.get('stdout') != subprocess.PIPE
++                or keywords.get('stderr') != subprocess.DEVNULL
++                or keywords.get('shell', False) is not False
++                or keywords.get('cwd') is not None
++                or keywords.get('executable') not in (None, '/sbin/ldconfig')):
++            self.deny('only_exact_readonly_ldconfig_Popen_contract')
++        prepared = dict(keywords)
++        prepared['env'] = dict(LDCONFIG_ENVIRONMENT)
++        return prepared
++
++    def verify_ldconfig(self):
++        references = []
++        for requested, reference in LDCONFIG_EXECUTABLES.items():
++            path = Path(requested).resolve(strict=True)
++            require(str(path) == reference['path'], 'exact_ldconfig_canonical_path')
++            metadata = path.stat()
++            require(stat.S_ISREG(metadata.st_mode) and metadata.st_uid == 0
++                    and metadata.st_mode & 0o111 and not metadata.st_mode & 0o022,
++                    'root_owned_nonwritable_ldconfig_executable')
++            BoundReader().read(path, reference['sha256'])
++            references.append(dict(requested_path=requested, **reference,
++                                   uid=metadata.st_uid, mode=oct(stat.S_IMODE(metadata.st_mode))))
++        return references
++
+     def audit(self, event, arguments):
+         if event == 'subprocess.Popen':
+             executable, command, cwd, environment = arguments
++            if (executable == '/sbin/ldconfig' and command == LDCONFIG_COMMAND
++                    and cwd is None and environment == LDCONFIG_ENVIRONMENT
++                    and os.environ.get('PATH') == '/usr/bin:/bin'
++                    and self.ldconfig_context.get()):
++                try:
++                    references = self.verify_ldconfig()
++                except Exception as error:
++                    self.denied.append(dict(event=event, executable=executable,
++                        command=list(command), reason='ldconfig_executable_binding_failed',
++                        error_type=type(error).__name__))
++                    raise
++                self.allowed_runtime_probes.append(dict(event=event, executable=executable,
++                    command=list(command), cwd=None, environment=dict(LDCONFIG_ENVIRONMENT),
++                    binary_references=references, purpose='READ_ONLY_LIBRARY_CACHE_PRINT'))
++                return
+             if (command in (['uname', '-p'], ['/usr/bin/uname', '-p'], ['/bin/uname', '-p'])
+                     and executable in ('uname', '/usr/bin/uname', '/bin/uname')
+                     and os.environ.get('PATH') == '/usr/bin:/bin'
+@@ -289,6 +345,20 @@ class RuntimeFence:
+ 
+     def install(self):
+         original_open = os.open
++        original_popen = subprocess.Popen
++        fence = self
++
++        class ReadOnlyProbePopen(original_popen):
++            def __init__(self, command, *positional, **keywords):
++                prepared = fence.prepare_ldconfig(command, positional, keywords)
++                if prepared is None:
++                    super().__init__(command, *positional, **keywords)
++                    return
++                token = fence.ldconfig_context.set(True)
++                try:
++                    super().__init__(command, **prepared)
++                finally:
++                    fence.ldconfig_context.reset(token)
+ 
+         def scoped_open(path, flags, mode=0o777, *, dir_fd=None):
+             absolute = self.path_for(path, dir_fd)
+@@ -302,6 +372,7 @@ class RuntimeFence:
+             self.deny('real_signal_or_timer')
+ 
+         os.open = scoped_open
++        subprocess.Popen = ReadOnlyProbePopen
+         for name in ('signal', 'setitimer', 'alarm', 'pthread_kill', 'pthread_sigmask'):
+             if hasattr(signal, name):
+                 setattr(signal, name, forbidden_signal)
+@@ -341,7 +412,9 @@ def inventory(source, expected):
+ 
+ 
+ def execute(payload):
+-    receipt = dict(schema='R173_ACTUAL_RECEIVING_CPU_V1', started_utc=utc_now(),
++    receipt = dict(schema='R175_ACTUAL_RECEIVING_CPU_V1', started_utc=utc_now(),
++        base_r174_runner_sha256='6ebeeed6786b2194f874cd1a66a3164b0c302a1054d0fed8f36b48e9cd09b2f2',
++        base_r174_receipt_sha256='d14cda179688a3d145ea1ae5e8039c4e5c4dd3f530ded4d28ac523051a2e28dd',
+         scratch=SCRATCH, old_source_root=OLD_SOURCE,
+         old_guard_ref=dict(path=OLD_GUARD, sha256=GUARD_SHA256),
+         attempt_limit=1, retry_permitted=False, success=False, evidence_rebind_eligible=False,
+@@ -473,6 +546,7 @@ def execute(payload):
+     if fence is not None:
+         receipt['executed_project_files'] = fence.loaded
+         receipt['denied_runtime_operations'] = fence.denied
++        receipt['allowed_runtime_probes'] = fence.allowed_runtime_probes
+     receipt['ended_utc'] = utc_now()
+     raw = encoded(receipt)
+     if created:

@@ -1,0 +1,11 @@
+cp: cannot create regular file '/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r188/relocation_20260917t2340z/physical0/source/gpu/orch_r125_continual_native.py': Permission denied
+Traceback (most recent call last):
+  File "/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r188_preserve_packet.py", line 95, in <module>
+    capture(args.physical, args.batch)
+  File "/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r188_preserve_packet.py", line 51, in capture
+    copy(control / 'new_native.py', packet / 'source' / base.NATIVE)
+  File "/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r188_preserve_packet.py", line 16, in copy
+    subprocess.run(['cp', '-a', '--reflink=auto', str(source), str(target)], check=True)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['cp', '-a', '--reflink=auto', '/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r181/physical0/new_native.py', '/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r188/relocation_20260917t2340z/physical0/source/gpu/orch_r125_continual_native.py']' returned non-zero exit status 1.

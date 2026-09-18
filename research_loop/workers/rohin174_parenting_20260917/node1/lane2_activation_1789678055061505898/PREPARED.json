@@ -1,0 +1,141 @@
+{
+  "assignment": {
+    "arm": "A",
+    "cadence": 1,
+    "child": "teach_replay",
+    "gpu": 2,
+    "node": "a100",
+    "peer": null
+  },
+  "bundle_manifest_sha256": "259a376dd7854541d4e84fea92e9c4eb001af5f201d9f52967fa3b54a36e50ec",
+  "child_signals": 0,
+  "cpu": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/lane2_activation_1789678055061505898/RECEIVING_CPU_1789678055941606065.json",
+    "sha256": "1ad1bf1c0a8c5ae0e9bf77d50e62c8e77951e38c70730f6bd2b58f0584dd7215"
+  },
+  "parent_signals": 0,
+  "row": {
+    "arm": "A",
+    "baseline": "C2_OBSERVATION_TO_ACTION",
+    "cadence_responses": 1,
+    "label": "teach_replay",
+    "native": {
+      "actor": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r179_node1_20260917_attempt2/lanes/lane2/control/GUARD.json"
+        ],
+        "argv_sha256": "5fffc4d4bce8723ad4032f4f4d373ab9bbce097c7582bdb7eb511a5d6e7513a9",
+        "cwd": "/localhome/local-rohing/orch_r179_node1_20260917_attempt2/lanes/lane2/source",
+        "pid": 2134079,
+        "state": "S",
+        "ticks": "39231221",
+        "uid": 1395
+      },
+      "control_native": false,
+      "guard": {
+        "bytes": 334053,
+        "path": "/localhome/local-rohing/orch_r179_node1_20260917_attempt2/lanes/lane2/control/GUARD.json",
+        "sha256": "196c5ba39ca9c88750912ae010af98242438da6c49c19a6ef92fe08db5ff9aad"
+      },
+      "guard_physical": null,
+      "plan": {
+        "bytes": 7781,
+        "path": "/localhome/local-rohing/orch_r179_node1_20260917_attempt2/lanes/lane2/control/PLAN.json",
+        "sha256": "66ab0b834f57bebeee468922ceb8d5c2253ef1d2da652d147d4bad8e71870911"
+      },
+      "plan_fields": {
+        "gpu_uuid": "GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296",
+        "hard_end_unix": 1790442300,
+        "max_sleeps": null,
+        "physical": 2,
+        "presleep_variant": "free_distillation",
+        "root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+        "segments_per_sleep": 2,
+        "source_root": "/localhome/local-rohing/orch_r179_node1_20260917_attempt2/lanes/lane2/source"
+      },
+      "plan_keys": [
+        "anchor_lambda",
+        "anchors",
+        "base_sha256",
+        "birth_prompt",
+        "compaction_invitation",
+        "context_limit",
+        "decoder",
+        "gpu_uuid",
+        "hard_end_unix",
+        "lease_end_unix",
+        "max_sleeps",
+        "model_dir",
+        "new_presentations",
+        "physical",
+        "presentation_version",
+        "presleep_variant",
+        "rehearsal_presentations",
+        "root",
+        "schema",
+        "seed",
+        "segment_tokens",
+        "segments_per_sleep",
+        "source_root",
+        "startup_context",
+        "system_prompt"
+      ]
+    },
+    "no_child_restart": true,
+    "observed_reserved_response_count": 125,
+    "old_output": "/data/home/rohing/dream-state-orch/research_loop/workers/r169_parent_auth_refresh_20260917/parent_409541/parent",
+    "old_parent": {
+      "argv": [
+        "/usr/bin/python3.12",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/r169_parent_auth_refresh_20260917/refresh.py",
+        "serve",
+        "--binding",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/r169_parent_auth_refresh_20260917/parent_409541/BINDING.json"
+      ],
+      "argv_sha256": "3fbe9202f1877fcbbd20fe93f05162251752af779eb3b82c35fe7c5ceaf3baeb",
+      "cwd": "/tmp/r136-node1-build/source",
+      "pid": 2258489,
+      "state": "S",
+      "ticks": "176045330",
+      "uid": 158984
+    },
+    "old_parent_binding": {
+      "bytes": 1929,
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r169_parent_auth_refresh_20260917/parent_409541/BINDING.json",
+      "sha256": "112866359e34d6782fadb9a12744e82a6e2dd06affa06d50bdfe03a40c73fd65"
+    },
+    "original": {
+      "binding": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/ACTIVATION_PREP_1789677032315502264/lane2/ORIGINAL_BINDING.json",
+        "sha256": "112866359e34d6782fadb9a12744e82a6e2dd06affa06d50bdfe03a40c73fd65"
+      },
+      "config": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/ACTIVATION_PREP_1789677032315502264/lane2/ORIGINAL_CONFIG.json",
+        "sha256": "99f05b6ae2e29859f5b7820040a36cf26bf52af570211d57ad3fea8fd4cf9ad6"
+      },
+      "source": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/ACTIVATION_PREP_1789677032315502264/lane2/ORIGINAL_SOURCE.py",
+        "sha256": "f0df6eaf468dacb713ed352c0c751b129176953d53ffb0aef7dd17ec871b3255"
+      }
+    },
+    "original_hard_end_unix": 1790442300,
+    "parent_word_cap": 90,
+    "physical": 2,
+    "preparation_directory": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/ACTIVATION_PREP_1789677032315502264/lane2",
+    "previous_output": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/a100_2_teach_replay_731080/parent",
+    "retirement_authorized": false,
+    "root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+    "runtime_sleep_r179_unchanged": true,
+    "schedule_on": "response",
+    "three_sleep_check_starts_at": "FIRST_VERIFIED_ASSIGNED_PARENT_REQUEST_EXPOSURE",
+    "wait_for_c2_success": false
+  },
+  "status": "ACTUAL_RECEIVING_CPU_PASS"
+}

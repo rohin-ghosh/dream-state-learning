@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678199677664261/source/activate_parent.py", line 381, in <module>
+    activate(arguments.manifest, arguments.manifest_sha256)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678199677664261/source/activate_parent.py", line 230, in activate
+    require(policy.parent.remote(source, config, probe) == {'source_verified': True}, 'receiving_exact_source_closure')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678199677664261/source/gpu/orch_r133_programme_parent.py", line 77, in remote
+    require(result.returncode == 0, 'node_transport_failed_no_implicit_retry')
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678199677664261/source/gpu/orch_r133_programme_parent.py", line 21, in require
+    raise ValueError(message)
+ValueError: node_transport_failed_no_implicit_retry

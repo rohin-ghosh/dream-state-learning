@@ -1,0 +1,55 @@
+{
+  "actual_native": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r181/physical2/original_native.py",
+    "sha256": "95dc2799e833e545a7802656ae2e984dce00b939f79890c99b3fddd5a6b98de7"
+  },
+  "checkpoint_calls": [
+    {
+      "arguments": "child.checkpoint(checkpoint_path)",
+      "function": "finish_sleep",
+      "line": 425
+    },
+    {
+      "arguments": "child.checkpoint(root / 'checkpoints' / 'initial')",
+      "function": "run",
+      "line": 508
+    }
+  ],
+  "last_actual_UPDATE_fields": [
+    "finished_unix",
+    "losses",
+    "optimizer_step",
+    "source_sha256"
+  ],
+  "no_injection_or_native_signal": true,
+  "observed_unix": 1789683447.2556512,
+  "old_saved_prefix_not_exact_mid_sleep": true,
+  "remote_identity": {
+    "pid": 989340,
+    "state": "R",
+    "ticks": "37650538"
+  },
+  "signal_registrations": [
+    {
+      "call": "signal.signal(signal.SIGALRM, lambda signum, frame: (_ for _ in ()).throw(TimeoutError('native_wall')))",
+      "function": "run",
+      "line": 469
+    },
+    {
+      "call": "signal.setitimer(signal.ITIMER_REAL, plan['hard_end_unix'] - time.time())",
+      "function": "run",
+      "line": 470
+    },
+    {
+      "call": "signal.setitimer(signal.ITIMER_REAL, 0)",
+      "function": "run",
+      "line": 570
+    },
+    {
+      "call": "signal.signal(signal.SIGALRM, old_handler)",
+      "function": "run",
+      "line": 571
+    }
+  ],
+  "status": "NO_EXISTING_EXTERNAL_EXACT_MID_SLEEP_SAVE_MECHANISM"
+}

@@ -1,0 +1,22 @@
+# C1 bounded Elara search — September 17, 2026
+
+**Object candidates found; no target admitted or activated.** One authorized read of the same 1,368,933-byte committed TRAIN record, not a new journal search. All93 saved rows were tested for the word Elara;52 matched, and at most three distinct targets with relational detail were returned. No matched target explicitly contains `maze`, `labyrinth` or `迷宫`; this is a literal search result, not a proof about every possible implicit narrative interpretation. Do not relabel map/cave/woods as a demonstrated Elara-maze object.
+
+Source: C1 `life/stream/records/00000000000000003423.json`, sleep31, under `/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1`. File SHA256 `277edaaff897b8dea93dd8e57b211b23c08792c18cf9250471d8febdf4629d37`; state SHA256 `126f7a3ccbaf8c773b6b937af939b503822388703c4476b85d82edd851b3ded8`. Metadata receipt `C1_ELARA_BOUNDED_SEARCH.json` contains full target excerpts, row/source/target/event/token/prefix hashes and provenance checks. The record/state hashes and exact child TRAIN event text/source binding were verified from the same decoded bytes. This does not verify checkpoint payload restoration or future native eligibility.
+
+| Ref | Recorded target tokens | Relational content, exact excerpt | Own source SHA256 |
+| --- | --- | --- | --- |
+| `child:segment:17` / state.rows[17] | 192 | “The map leads her to either the Whispering Woods or encourages her to decipher more of the inscriptions.” Later text describes woods challenges/rewards versus studying cave surroundings/hidden puzzles/characters. | `2a0f17ff828371e734cb1f937e009d536efba8a9eb472a73602ad5181ed52957` |
+| `child:segment:33` / state.rows[33] | 125 | “discovers an ancient map in her late grandfather's chest”; knowledge/friendships are contrasted with gold as the possible true treasure. | `23652ab2b23ac7836e6e490a6a1ca8a295cebfb18f2a74d5f7dc21d67137ad0a` |
+| `child:segment:43` / state.rows[43] | 66 | “The map leadsher to an ancient treasure hidden in a remote cave.” Puzzles, traps and creatures follow; spelling is retained. | `4ad24b87b9459b5b827cc18e291af760eb771cf506f443e2f951ee5be566ab2c` |
+
+## Admission disposition
+
+- Row17 is the strongest returned **relational OBJECT candidate**: a concrete character and two different prospective paths with different activities/consequences. It describes intentions, not a performed attention strategy, executed game or successful tool action. Exact whole target begins with a `{"op":"sleep"}` block and includes planning/self-reference. It is **not admitted under the existing no-scaffolding constraint**.
+- Row33 contains richer map provenance and a narrative value contrast but also begins with a sleep-operation block. Row43 wraps its story in fenced Python `print(...)`; no execution was observed. Neither is accepted merely because the narrative is substantive.
+- The receipt's automated `structured_or_write_wrapper=false` is a **narrow parser result**, not a clean-prose certificate: it tested whole-target JSON or `write_workspace`. Mixed sleep-operation-plus-prose and fenced Python do not satisfy that detector but visibly contain scaffolding, as retained in the complete excerpts. This manual disposition takes precedence for eligibility; no source code/selector was changed.
+- Do not replay row80's unsupported “created Python” claim, `{}`, sleep-only rows, or substitute row74's generic forest for Elara. Do not crop away any wrapper, rewrite tokens or fabricate an Elara maze to obtain eligibility.
+
+**No eligible scaffolding-free Elara target established by this bounded returned sample; no further remote search performed.** A subsequent decision must resolve the exact whole-row constraint rather than assume selection approval. If any target is later admitted, exposure remains **one row × four extra presentations at one future authorized sleep**, with exact recorded prefix/tokens/masks, full anchors, and automatic expiry; for row17 that would be768 additional recorded target-token exposures, but no such dose is authorized or executed here.
+
+C1 invitation activation2 proceeds independently. This search does not patch or re-pin its sources, modify its GO, add a hook to that already-authorized closure, restart C1, or read held/eval data. Any later targeted hook requires its own explicitly bound source/readmission/selection review and Main GO; the historical sleep31 record is not permission to rewind the live life.

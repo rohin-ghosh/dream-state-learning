@@ -1,0 +1,71 @@
+{
+  "schema": "R206_HARDWARE_AND_SETUP_AUTHORITATIVE_USER_RECEIPT_V1",
+  "latest_direct_auth_and_driver_model_receipt": "research_loop/workers/rohin204_maintenance_20260917/R207_NEW_HOST_AUTH_CURRENT.json",
+  "recorded_utc": "2026-09-18T04:02:28.847685+00:00",
+  "verbatim_directive": "Hardware authoritativeuserreceipt: ovx4p3-02eightA10G24GB NOTA40;ovx5p6-07eightA4048GB. Setupdone03:54verifiedFable04:07. Please recordaudittable correcttype no26freeA40claim. Need freshest maintenancepass briefcurrentincarnationfacts NOW forFable discrepancies/parentstatus. Newnodesalreadyready no setupgate.",
+  "hosts": [
+    {
+      "alias": "ovx4",
+      "host": "[REDACTED_HOST]",
+      "gpu_count": 8,
+      "gpu_model": "NVIDIA A10G",
+      "memory_gb_per_gpu": 24,
+      "hardware_provenance": "AUTHORITATIVE_USER_RECEIPT",
+      "setup_status": "READY_PER_AUTHORITATIVE_USER_RECEIPT",
+      "setup_completed_utc_reported": "2026-09-18T03:54:00Z",
+      "fable_verified_utc_reported": "2026-09-18T04:07:00Z",
+      "helper": "gpu/ovx4_ssh.sh",
+      "helper_sha256": "687bea95dc55f3cfa14f01ac79f521c1778438b7cdbe8f15bc8b6a381b8ce87f",
+      "lease_end_date_reported": "2026-10-01",
+      "exact_lease_end_utc": null,
+      "free_gpu_count": null,
+      "live_native_count": null,
+      "current_occupancy": "NOT_COLLECTED_NOT_FREE_CAPACITY_PROOF",
+      "setup_gate": false,
+      "recurring_audit_enabled": false
+    },
+    {
+      "alias": "ovx5",
+      "host": "[REDACTED_HOST]",
+      "gpu_count": 8,
+      "gpu_model": "NVIDIA A40",
+      "memory_gb_per_gpu": 48,
+      "hardware_provenance": "AUTHORITATIVE_USER_RECEIPT",
+      "setup_status": "READY_PER_AUTHORITATIVE_USER_RECEIPT",
+      "setup_completed_utc_reported": "2026-09-18T03:54:00Z",
+      "fable_verified_utc_reported": "2026-09-18T04:07:00Z",
+      "helper": "gpu/ovx5_ssh.sh",
+      "helper_sha256": "b74d9e68c70a43d0306feb2e0f84eed9a06981d3bd718e9f76662958dea4ee39",
+      "lease_end_date_reported": "2026-09-29",
+      "exact_lease_end_utc": null,
+      "free_gpu_count": null,
+      "live_native_count": null,
+      "current_occupancy": "NOT_COLLECTED_NOT_FREE_CAPACITY_PROOF",
+      "setup_gate": false,
+      "recurring_audit_enabled": false
+    }
+  ],
+  "prior_pending_setup_interpretation_superseded": true,
+  "prior_local_blocker_is_historical_not_current_setup_status": {
+    "source": "research_loop/workers/rohin205_new_nodes_20260918/ovx4/SSH_BLOCKER.json",
+    "sha256": "d73ef34f9405198734c7a7be5c699cc7f1a36207a022db31452e114b63c0e790",
+    "recorded_utc": "2026-09-18T03:54:25Z",
+    "status": "HOST_KEY_VERIFICATION_FAILED",
+    "remote_commands_executed": false,
+    "setup_completion_established": false,
+    "probe_owner": "ovx4 operator, not maintenance"
+  },
+  "clock_provenance_note": "The observed fleet pass is September18 2026 04:00:24-04:00:27 UTC. The user-supplied Fable September18 04:07 UTC verification time is later than this local observation; retained as reported, not claimed independently observed. Readiness is accepted from the authoritative user directive without a setup gate.",
+  "free_A40_total_claim": null,
+  "audit_allowlist": [
+    "node1",
+    "node2",
+    "node4",
+    "node5"
+  ],
+  "audit_coverage_is_not_launch_gate": true,
+  "exact_lease_hardwalls_changed": false,
+  "helpers_or_keys_modified": false,
+  "new_hosts_probed_this_turn": false,
+  "learner_interventions": 0
+}

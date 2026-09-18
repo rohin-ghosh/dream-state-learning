@@ -1,0 +1,112 @@
+{
+  "dispatcher_closure": {
+    "capture": "b45825aad250ad0305b1f2d2c1b475690a4c6dda89045f97d5ee63da1294119d",
+    "code_blocks": "a7bd5a92be9937845f3653687af710a9a26d0276c3317e7c5c4c291ad117bdf1",
+    "dispatcher": "88e7303fb2bedc6fa891bf2fd16807015d887234cf2fdec20bdd413349e81c8c",
+    "profile": "9117c4d72cdbb700e351f4625e763f96cf94341a3cf6d2a2cf3445687bfae48b",
+    "request_parser": "8894819b74275760038313be4b894fd2f5c92b7004aa99d2a6c2cf60cad05f93"
+  },
+  "gate_references": {
+    "basic": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/gate/basic.json",
+      "sha256": "34f89b8d7d5c9891bcecfa1834d275a601112b51f853293888b4e18551e5d06b"
+    },
+    "files": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/gate/files.json",
+      "sha256": "3b4ee320803376418efc01b1705b1081217d56282e6c5b2bf210ce42974cdd98"
+    },
+    "memory": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/gate/memory.json",
+      "sha256": "42a53c3192686c0b6a5b2f34e6462a1ac53e12b018966144fd6fb99ca4d8844a"
+    },
+    "output": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/gate/output.json",
+      "sha256": "5732f4d0df63efb8b77c11dd8f4e5833f0d3b707ee1f89e0fda42a7157800c71"
+    },
+    "timeout": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/gate/timeout.json",
+      "sha256": "62baafe57bb4e9b2fdf43e019cb5f056374b3035b3a76a8674a4abeb8ac4212d"
+    }
+  },
+  "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/gate",
+  "gate_sha256": "5241727deccc099cdf93d6bde213d44df2ae52ba4b6b73103d10abbb5bfc0a89",
+  "host": "[REDACTED_HOST]",
+  "no_gpu_launch": true,
+  "observed_unix": 1789684987.171697,
+  "plain_smoke": {
+    "cgroup_removed_after_stop": true,
+    "child_generated": false,
+    "launch_attempted": true,
+    "origin": {
+      "child_generated": false,
+      "kind": "BUILDER_TEST"
+    },
+    "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/spool/dd96b6fd85c6e3648cd1d24be17aeae38f6667dc601fb6739d2f00989932b947/RESULT.json",
+    "request_id": "dd96b6fd85c6e3648cd1d24be17aeae38f6667dc601fb6739d2f00989932b947",
+    "returncode": 0,
+    "sha256": "ee1220d49b9d7bc5f9241e8d6e23addfdcb5e296dab99e77ff6c232400178fe4",
+    "status": "COMPLETE",
+    "stdout": "42\n",
+    "teardown_error": null
+  },
+  "schema": "R184_NODE2_EXECUTED_CPU_GATE_V1",
+  "source_pins": {
+    "gpu/orch_r125_bounded_capture.py": "b45825aad250ad0305b1f2d2c1b475690a4c6dda89045f97d5ee63da1294119d",
+    "gpu/orch_r125_cpu_confinement_probe.py": "9117c4d72cdbb700e351f4625e763f96cf94341a3cf6d2a2cf3445687bfae48b",
+    "gpu/orch_r125_cpu_experiment.py": "88e7303fb2bedc6fa891bf2fd16807015d887234cf2fdec20bdd413349e81c8c",
+    "gpu/orch_r125_stream_console.py": "35697239e89a6b9dd49505b3556eb2c149b214fdb5ad3116677712d9b4231b75",
+    "gpu/orch_r125_stream_journal.py": "3925a6dff44c71994d446445833207ba3b4a9c8a983b56a8f3e3de84239eb0ca",
+    "gpu/orch_r127_pilot_console.py": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683",
+    "gpu/orch_r153_code_blocks.py": "a7bd5a92be9937845f3653687af710a9a26d0276c3317e7c5c4c291ad117bdf1",
+    "gpu/orch_r153_community_exchange.py": "5599d061984734110860fad2293db9e4203400c9d411e01f8bd3c8a58566f605",
+    "gpu/orch_r153_community_transport.py": "b798199a10508164de724631fc8a81bf28fb3500db5bc0048ec486cb7707905a",
+    "organism_v6/orch_r124_train_history.py": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91",
+    "organism_v6/orch_r125_continual_stream.py": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09",
+    "organism_v6/orch_r125_experiment_request.py": "8894819b74275760038313be4b894fd2f5c92b7004aa99d2a6c2cf60cad05f93",
+    "organism_v6/orch_r125_plain_context.py": "dcfd1f7f5584867e39356f336f53bb7222aeb535da87d5ecb8f1f0bb59f72feb"
+  },
+  "source_root": "/localhome/local-rohing/orch_r176_retelling_retention_20260917_generation1/receiving_source1/source",
+  "workflow_result": {
+    "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/RESULT.json",
+    "result": {
+      "examples": {
+        "plain": {
+          "request_id": "dd96b6fd85c6e3648cd1d24be17aeae38f6667dc601fb6739d2f00989932b947",
+          "returncode": 0,
+          "status": "COMPLETE",
+          "stdout": "42\n"
+        },
+        "punctuation": {
+          "request_id": "d24fa759cc1df161bf340c8b604b7349d87ef38456de53a1f4e4195c98042bf1",
+          "returncode": 0,
+          "status": "COMPLETE",
+          "stdout": "normalized\n"
+        },
+        "syntax_failure": {
+          "request_id": "2c34d79d55f82573f39595641cfed9ee707a844aab337fbb73299c9c1af5c7e5",
+          "returncode": 1,
+          "status": "PROCESS_FAILED",
+          "stdout": ""
+        }
+      },
+      "finished_unix": 1789684945.0141237,
+      "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2242z/gate",
+      "gpu_access": false,
+      "model_generated": false,
+      "source_closure": {
+        "capture": "b45825aad250ad0305b1f2d2c1b475690a4c6dda89045f97d5ee63da1294119d",
+        "code_blocks": "a7bd5a92be9937845f3653687af710a9a26d0276c3317e7c5c4c291ad117bdf1",
+        "dispatcher": "88e7303fb2bedc6fa891bf2fd16807015d887234cf2fdec20bdd413349e81c8c",
+        "profile": "9117c4d72cdbb700e351f4625e763f96cf94341a3cf6d2a2cf3445687bfae48b",
+        "request_parser": "8894819b74275760038313be4b894fd2f5c92b7004aa99d2a6c2cf60cad05f93"
+      },
+      "started_unix": 1789684930.15609,
+      "status": "PASS"
+    },
+    "sha256": "16751081e4163b96e34bab63b1c95e22033775e8eca7eb0c1fc96937353e4ca6"
+  },
+  "workflow_source": {
+    "path": "/localhome/local-rohing/orch_r176_retelling_retention_20260917_generation1/receiving_source1/source/gpu/orch_r153_sandbox_smoke.py",
+    "sha256": "01cc348c7f3d67581adf3e316a72908eba0702fb3bd6f933986653987ac5a6fb"
+  }
+}

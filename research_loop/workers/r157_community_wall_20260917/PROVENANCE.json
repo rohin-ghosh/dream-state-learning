@@ -1,0 +1,39 @@
+{
+  "schema": "R157_NODE5_TARGETED_RESERVATION_AUDIT_V1",
+  "host": "[REDACTED_HOST]",
+  "authorization_sha256": "05c50f8012559360221a889b26c00700a988878fbe4d32d30e3f786937dfc392",
+  "observed_utc": "2026-09-17T02:12:00Z",
+  "conflicting_real_reservation_found": false,
+  "numeric_cutoff_is_not_booking": true,
+  "actual_reservation_receipts": [],
+  "provider_reservation_expiry_verified": false,
+  "finding": "None found in bounded source trace. No positive provider booking or exact provider expiry claim.",
+  "original_node5_sources": [
+    {
+      "path": "/localhome/local-rohing/orch_r109_route_node5_20260915_node5_0_attempt1/source/gpu/orch_r109_route_node5_run.py",
+      "sha256": "502628b5489d652ce53ae1221012b1545c774867f320c347f07438b947d5fa12"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r109_route_node5_20260915_node5_1_attempt1/source/gpu/orch_r109_route_node5_run.py",
+      "sha256": "502628b5489d652ce53ae1221012b1545c774867f320c347f07438b947d5fa12"
+    }
+  ],
+  "source_line_27": "LEASES = {'node5':datetime(2026,9,17,4,4,tzinfo=timezone.utc).timestamp()}",
+  "source_relative_finding": "Both original node5 route roots lack LEASE.json. The source_relative hash check is inside the LEASES-missing-host fallback; node5 is explicitly present, so that fallback is not node5 provider evidence. The separately observed node3 LEASE.json/source_relative points to an author-generated conservative guard cutoff.",
+  "budget_chain": [
+    {
+      "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control6/LEASE_BUDGET.json",
+      "sha256": "12e187a3237d6c167d91c4abaae9e6ef671e096d827c9ed68a662aa465d51049",
+      "kind": "R131_RUNTIME_BUDGET"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/independent_r119_recovery_v2/LEASE_BUDGET.json",
+      "sha256": "287e36bc9b646401f5382b06c8bda4e71748a5f94d6eb011d436c1ead7b246a5",
+      "kind": "R119_AUTHOR_GENERATED_NUMERIC_LOOP_BUDGET_NO_PROVIDER_LINK"
+    }
+  ],
+  "wrapper_header": "gpu/ovx3_ssh.sh says lease to 2026-09-19; comment only, not a reservation receipt",
+  "search_scope": "Read-only explicit R119/R131 receipt paths, LEASE.json names within known R111/R115/R125 roots, exact original R109 node5 source roots; no credential files, provider APIs, readout contents or hardware transactions.",
+  "runtime_authority": "Exact shared R157 user authorization, not an inference from old numeric budgets or wrapper dates",
+  "purchase_performed": false
+}

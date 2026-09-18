@@ -1,0 +1,137 @@
+{
+  "schema": "R205_FRESH_MAINTENANCE_AND_INSURANCE_V1",
+  "reported_utc": "2026-09-18T03:59:50.663151+00:00",
+  "fleet_pass": {
+    "path": "research_loop/workers/rohin204_maintenance_20260917/PASS_20260918T035821Z.json",
+    "sha256": "6cb73c41a2705b3741ab6a53b26426f9a491a3c9ae9c5f4b78dd63567571ba5b",
+    "started_utc": "2026-09-18T03:58:21.046644+00:00",
+    "finished_utc": "2026-09-18T03:58:23.827900+00:00",
+    "observed_native_count": 27,
+    "observed_state_counts": {
+      "R": 16,
+      "S": 8,
+      "T": 3,
+      "D": 0,
+      "Z": 0
+    },
+    "counts_by_node": {
+      "node1": 5,
+      "node2": 7,
+      "node4": 7,
+      "node5": 8
+    }
+  },
+  "c2_followup": "research_loop/workers/rohin204_maintenance_20260917/R205_C2_CURRENT_0359.json",
+  "r205_c2_console_reload": "UNVERIFIED_NO_NEW_LOADED_OBSERVED",
+  "insurance_copy_status": {
+    "source": "research_loop/workers/rohin205_node5_offnode_20260918/STATUS.json",
+    "stage": "complete",
+    "updated": "2026-09-18T03:55:23.343496+00:00",
+    "receipts": [
+      {
+        "life": "C2",
+        "source": "research_loop/workers/rohin205_node5_offnode_20260918/C2/VERIFIED.json",
+        "receipt_sha256": "ff15655df0420c14dc5f6c5f7279965617bff937d755a66f1f60ff61195c2d12",
+        "verified_utc": "2026-09-18T03:49:39.118991+00:00",
+        "selected_checkpoints": [
+          "sleep_000051",
+          "sleep_000052",
+          "sleep_000055"
+        ],
+        "consistency": "Immutable completed checkpoints and enumerated journal prefix; mutable sidecars are a live insurance copy, not an atomic whole-life snapshot.",
+        "archive_sha256": "7ae4e6aaa1afc9eea0c90e93e7fa947999d67503368a326007d844dd7f5f0c6c"
+      },
+      {
+        "life": "C1",
+        "source": "research_loop/workers/rohin205_node5_offnode_20260918/C1/VERIFIED.json",
+        "receipt_sha256": "d33281a0140cc87fdf163d0a93e9d1b0f59084db0e72459952cde957d8327cf6",
+        "verified_utc": "2026-09-18T03:50:18.811059+00:00",
+        "selected_checkpoints": [
+          "sleep_000073"
+        ],
+        "consistency": "Immutable completed checkpoints and enumerated journal prefix; mutable sidecars are a live insurance copy, not an atomic whole-life snapshot.",
+        "archive_sha256": "ff8aa0dbdef13c11b5bae196927dc9e88190e264ea0d19746df2d6701468bdc4"
+      },
+      {
+        "life": "run1",
+        "source": "research_loop/workers/rohin205_node5_offnode_20260918/run1/VERIFIED.json",
+        "receipt_sha256": "8fe591c61f803dd0d407ccfabd4bde2a920c03491d5bc5a05dde63df5ca63e64",
+        "verified_utc": "2026-09-18T03:51:26.507564+00:00",
+        "selected_checkpoints": [
+          "sleep_000084"
+        ],
+        "consistency": "Immutable completed checkpoints and enumerated journal prefix; mutable sidecars are a live insurance copy, not an atomic whole-life snapshot.",
+        "archive_sha256": "8bd2d775289d8167a72e10c54d69a5558870052ffb4a1801e0cc4fb8946cb2b7"
+      },
+      {
+        "life": "C3",
+        "source": "research_loop/workers/rohin205_node5_offnode_20260918/C3/VERIFIED.json",
+        "receipt_sha256": "74f40372a72b9ac4a1407a047d1ab4dd8a3a836431ab37184565984bf4759414",
+        "verified_utc": "2026-09-18T03:52:13.448163+00:00",
+        "selected_checkpoints": [
+          "sleep_000068"
+        ],
+        "consistency": "Immutable completed checkpoints and enumerated journal prefix; mutable sidecars are a live insurance copy, not an atomic whole-life snapshot.",
+        "archive_sha256": "837973801c8af048195aaba5a2a665a0b775f5da52dd3ef8daf7bef3ab7eb0e6"
+      },
+      {
+        "life": "C4",
+        "source": "research_loop/workers/rohin205_node5_offnode_20260918/C4/VERIFIED.json",
+        "receipt_sha256": "2c73152c384dd1a593bb9027baf21337e7f88eb595cfff53268988bd48fe28ad",
+        "verified_utc": "2026-09-18T03:53:01.013197+00:00",
+        "selected_checkpoints": [
+          "sleep_000070"
+        ],
+        "consistency": "Immutable completed checkpoints and enumerated journal prefix; mutable sidecars are a live insurance copy, not an atomic whole-life snapshot.",
+        "archive_sha256": "eebf4d34fb4ff5706e927181810926b52e02829892eabafbca002fad5c6e6a0e"
+      },
+      {
+        "life": "C5",
+        "source": "research_loop/workers/rohin205_node5_offnode_20260918/C5/VERIFIED.json",
+        "receipt_sha256": "b0de177a7bbf2ab8f05921eb30b87bd518f820e652a7de20938323af1b273055",
+        "verified_utc": "2026-09-18T03:53:49.512980+00:00",
+        "selected_checkpoints": [
+          "sleep_000083"
+        ],
+        "consistency": "Immutable completed checkpoints and enumerated journal prefix; mutable sidecars are a live insurance copy, not an atomic whole-life snapshot.",
+        "archive_sha256": "85cd413ba3adf950a6822b52ad2fc8ebf1a85ac8e95d29fd15e977fef48afd56"
+      },
+      {
+        "life": "pilot",
+        "source": "research_loop/workers/rohin205_node5_offnode_20260918/pilot/VERIFIED.json",
+        "receipt_sha256": "a6e38963f3ba7d62c4ff32df974d5c3743e58074c19a520b9f1d66787e8b18fc",
+        "verified_utc": "2026-09-18T03:54:38.898336+00:00",
+        "selected_checkpoints": [
+          "sleep_000074"
+        ],
+        "consistency": "Immutable completed checkpoints and enumerated journal prefix; mutable sidecars are a live insurance copy, not an atomic whole-life snapshot.",
+        "archive_sha256": "ec354243e914ae7edd6e385f765530a3bf7fcb69687429fe76d96f304fe246d2"
+      },
+      {
+        "life": "repo_reader",
+        "source": "research_loop/workers/rohin205_node5_offnode_20260918/repo_reader/VERIFIED.json",
+        "receipt_sha256": "e1bebe2c5918fb9ea95318d8c69c36966a9d803de607502cb92722ebffab826e",
+        "verified_utc": "2026-09-18T03:55:23.330090+00:00",
+        "selected_checkpoints": [
+          "sleep_000071"
+        ],
+        "consistency": "Immutable completed checkpoints and enumerated journal prefix; mutable sidecars are a live insurance copy, not an atomic whole-life snapshot.",
+        "archive_sha256": "166da48ba0b0a643e97680ac5b1e5f5b5e6e0cc11047bec40e6b3d9011d32974"
+      }
+    ],
+    "archive_rehash_performed_by_this_audit": false,
+    "mutable_sidecars_atomic": false
+  },
+  "service": {
+    "pid": 2656637,
+    "uid": 158984,
+    "start_ticks": "180945900",
+    "cmdline_sha256": "c5e6103370c0ae078a090c7be5caf0e94cca7e9e674505d7053f73fce1e4f801",
+    "interval_seconds": 1200,
+    "control": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin204_maintenance_20260917/STOP",
+    "stop_command": "python3 -B research_loop/workers/rohin204_maintenance_20260917/audit.py stop",
+    "identity_alive": true
+  },
+  "learner_interventions": 0,
+  "gpu_model_calls": 0
+}

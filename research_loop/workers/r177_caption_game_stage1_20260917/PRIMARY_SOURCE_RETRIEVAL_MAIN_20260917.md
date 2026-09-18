@@ -18,7 +18,7 @@ was blind to all caption examples; no such universal-blindness claim is made.
 Source retrieved:
 
 ```text
-https://huggingface.co/datasets/yguooo/newyorker_caption_ranking
+https://[REDACTED_HOST]/datasets/yguooo/newyorker_caption_ranking
 ```
 
 Operational counts and launch status remain grounded in local immutable

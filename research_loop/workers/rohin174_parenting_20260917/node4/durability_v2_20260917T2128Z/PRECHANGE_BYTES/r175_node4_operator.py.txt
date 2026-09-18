@@ -1,0 +1,405 @@
+"""Exact R175 NODE4 parent-only takeover, one-publication H, and exposure clock."""
+
+import argparse
+import fcntl
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import select
+import signal
+import subprocess
+import sys
+import time
+import unicodedata
+
+
+HOME = Path(__file__).resolve().parent
+REPO = HOME.parents[3]
+BUILDER_SHA = 'ae2c9df909d9b48ebebef968690ee2e4c9085452151dbb96474311cf55b11923'
+ASSIGNMENT_SHA = '25b45432bebb388e920d5cc8dc8fed6c705cd54156cbfd530828e1520a9174b2'
+ARMS = {0: 'B', 1: 'H', 3: 'D', 4: 'A'}
+PREDECESSOR_PIDS = {0: 2258473, 3: 2278329, 4: 2329041}
+WALL = 1789754400
+REMOTE = '/localhome/local-rohing/orch_r175_node4_20260917t2040z'
+ROOTS = {
+    0: '/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1',
+    1: '/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1',
+    3: '/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1',
+    4: '/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1',
+}
+
+
+def require(condition, reason):
+    if not condition:
+        raise ValueError(reason)
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def read(path, maximum=16 * 1024 * 1024):
+    path = Path(path)
+    require(path.is_file() and not path.is_symlink() and path.stat().st_size <= maximum, 'bounded_regular_metadata')
+    return json.loads(path.read_text())
+
+
+def write(path, value):
+    with Path(path).open('x') as output:
+        json.dump(value, output, sort_keys=True, indent=2, allow_nan=False)
+        output.write('\n')
+        output.flush()
+        os.fsync(output.fileno())
+
+
+def authority():
+    require(sha(REPO / 'gpu/orch_r175_parent_arms.py') == BUILDER_SHA, 'exact_Main_builder')
+    path = HOME.parent / 'ASSIGNMENTS_V1.json'
+    require(sha(path) == ASSIGNMENT_SHA, 'exact_Main_assignment')
+    rows = {row['gpu']: row['arm'] for row in read(path)['rows'] if row['node'] == 'a40r'}
+    require(rows == ARMS, 'exact_four_NODE4_arms')
+
+
+def identity(pid):
+    root = Path('/proc', str(pid))
+    before = (root / 'stat').read_text().rsplit(')', 1)[1].split()
+    argv = [part.decode() for part in (root / 'cmdline').read_bytes().split(b'\0') if part]
+    after = (root / 'stat').read_text().rsplit(')', 1)[1].split()
+    require(before[19] == after[19], 'stable_PID_read')
+    return dict(pid=pid, start_ticks=after[19], argv=argv, cwd=str((root / 'cwd').resolve()),
+                uid=root.stat().st_uid, state=after[0])
+
+
+def same_parent(expected, observed):
+    keys = ('pid', 'start_ticks', 'argv', 'cwd', 'uid')
+    require(all(expected[key] == observed[key] for key in keys) and observed['state'] not in ('Z', 'X'), 'exact_live_predecessor')
+    require('native' not in observed['argv'] and 'gpu.orch_r125_continual_guard' not in observed['argv'], 'never_signal_a_child')
+
+
+def children(pid):
+    return {int(value) for path in Path('/proc', str(pid), 'task').glob('*/children') for value in path.read_text().split()}
+
+
+def checked_bundle(lane):
+    manifest = read(lane / 'source/ARM_BUNDLE.json')
+    physical = read(lane / 'PLAN.json')['physical']
+    require(manifest['builder_sha256'] == BUILDER_SHA and manifest['arm'] == ARMS[physical], 'exact_arm_bundle')
+    for name, record in manifest['files'].items():
+        require(not Path(name).is_absolute() and '..' not in Path(name).parts, 'relative_bundle_source')
+        require(sha(lane / 'source' / name) == record['sha256'], 'immutable_owned_sources')
+    support = read(lane / 'source/SUPPORT_SOURCE_MANIFEST.json')
+    require(support['original_arm_bundle_sha256'] == sha(lane/'source/ARM_BUNDLE.json'), 'support_bound_to_original_arm')
+    for name, expected in support['files'].items():
+        require(not Path(name).is_absolute() and '..' not in Path(name).parts
+            and name not in manifest['files'] and sha(lane/'source'/name) == expected, 'unchanged_owned_import_support')
+    return manifest
+
+
+def ssh(script, timeout=90):
+    completed = subprocess.run(['bash', str(REPO / 'gpu/a40r_ssh.sh'),
+        'CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 /localhome/local-rohing/v2/venv/bin/python -B -'],
+        input=script, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout)
+    require(completed.returncode == 0, 'bounded_remote_metadata_failed:' + completed.stderr[-500:])
+    return json.loads(completed.stdout)
+
+
+def snapshot(lane, reference=None):
+    plan = read(lane / 'PLAN.json')
+    remote_source = REMOTE + f"/physical{plan['physical']}/source"
+    store = REMOTE + f"/physical{plan['physical']}/cursor"
+    manifest = checked_bundle(lane)
+    pins = {name: row['sha256'] for name, row in manifest['files'].items()}
+    pins.update(read(lane/'source/SUPPORT_SOURCE_MANIFEST.json')['files'])
+    script = ('import hashlib,json,sys\nfrom pathlib import Path\n'
+        f'root=Path({remote_source!r})\npins={pins!r}\n'
+        'assert all(hashlib.sha256((root/name).read_bytes()).hexdigest()==value for name,value in pins.items())\n'
+        'sys.path.insert(0,str(root))\nfrom gpu.orch_r166_parent_snapshot import stored_poll\n'
+        f'print(json.dumps(stored_poll({plan["root"]!r},{store!r},{reference!r})))\n')
+    return ssh(script)
+
+
+def bootstrap(lane):
+    reference = None
+    for sequence in range(150):
+        result = snapshot(lane, reference)
+        write(lane / f'BOOTSTRAP_{sequence:04d}.json', result)
+        reference = result['reference']
+        if result['snapshot']['caught_up']:
+            write(lane / 'INITIAL_SNAPSHOT.json', result)
+            return result
+    raise ValueError('bounded_initial_snapshot_not_caught_up')
+
+
+def legacy_seed(row, state):
+    entries = []
+    reserved_response = 0
+    reserved_request = 0
+    if row:
+        config = read(row['config_path'])
+        require(config['root'] == state['root'] if 'root' in state else True, 'legacy_same_root')
+        for directory in sorted(Path(row['output']).glob('parent_*')):
+            source_path, result_path = directory / 'SOURCE.json', directory / 'RESULT.json'
+            source, result = read(source_path), read(result_path)
+            require(result['status'] in ('PUBLISHED', 'SILENT'), 'uncertain_legacy_attempt_no_takeover')
+            require(result['source_head_sha256'] == source['head_sha256']
+                and result['source_response_count'] == source['response_count'], 'legacy_result_source_binding')
+            reserved_response = max(reserved_response, source['response_count'])
+            reserved_request = max(reserved_request, source.get('request_count', 0))
+            normalized = dict(status=result['status'])
+            if result['status'] == 'PUBLISHED':
+                message = result['response']['message']
+                publication = result['inbox_publication']
+                normalized.update(publication=publication, message=message,
+                    object_id='legacy-unclassified-' + publication['id'], legacy_object_classification_unknown=True)
+            entries.append(dict(source=dict(journal_id=state['journal_id'], response_count=source['response_count'],
+                request_count=source.get('request_count', 0)), result=normalized,
+                original_refs=dict(source=dict(path=str(source_path), sha256=sha(source_path)), result=dict(path=str(result_path), sha256=sha(result_path)))))
+    require(reserved_response <= state['response_count'] and reserved_request <= state['request_count'], 'snapshot_covers_reserved_legacy_clock')
+    return dict(schema='R166_PARENT_SUCCESSOR_V1', journal_id=state['journal_id'], attempts=entries,
+        object_delivered_turns={}, last_response_count=reserved_response,
+        last_request_count=reserved_request, prospective_request_count=state['request_count'],
+        credits={}, grammar_delivered=False, historical_R133_evidence_preserved=True,
+        historical_object_and_credit_classification_unknown=True)
+
+
+def import_owned(lane):
+    source = (lane / 'source').resolve()
+    sys.path.insert(0, str(source))
+    from gpu import orch_r166_parent_policy as policy
+    from gpu import orch_r133_programme_parent as parent
+    from gpu import orch_route_parent_campaign_providers as provider
+    require(all(Path(module.__file__).resolve().is_relative_to(source) for module in (policy, parent, provider)), 'owned_bundle_imports_only')
+    parent.PROGRAMMES = set(parent.PROGRAMMES) | {'kernel'}
+    return policy, parent
+
+
+def publication_allowed(physical, output, message, cap):
+    require(type(message) is str and 0 < len(message.split()) <= cap and len(message.encode()) <= 4096, 'actual_publication_cap')
+    require(not any(character.isalpha() and 'LATIN' not in unicodedata.name(character, '') for character in message)
+        if physical == 3 else True, 'preserve_raw3_English_guard')
+    if physical == 1:
+        require(not list(Path(output).glob('PUBLICATION_*_INTENT.json')), 'H_at_most_one_operator_publication_attempt')
+
+
+def withdrawal_state(exposure_sleep, current_sleep):
+    require(type(exposure_sleep) is int and type(current_sleep) is int and current_sleep >= exposure_sleep, 'monotonic_completed_sleeps')
+    elapsed = current_sleep - exposure_sleep
+    return 'PARENT_WITHDRAWAL_ONE_SLEEP' if elapsed == 3 else ('WITHDRAWAL_COMPLETE' if elapsed >= 4 else 'ARM_ACTIVE')
+
+
+def checked_predecessor(plan):
+    physical = plan['physical']
+    require(physical in ARMS and plan['arm'] == ARMS[physical] and plan['root'] == ROOTS[physical], 'exact_frozen_plan')
+    row = plan['predecessor']
+    if physical == 1:
+        require(row is None, 'H_no_existing_parent_to_signal')
+    else:
+        require(row['parent_actor']['pid'] == PREDECESSOR_PIDS[physical]
+            and row['child_root'] == ROOTS[physical], 'exact_scoped_legacy_parent_only')
+        require(sha(row['config_path']) == row['config_sha256'], 'unchanged_current_parent_config')
+    return row
+
+
+def serve(lane, preflight=False):
+    authority()
+    checked_bundle(lane)
+    plan = read(lane / 'PLAN.json')
+    physical = plan['physical']
+    require(plan['root'] == ROOTS[physical] and plan['arm'] == ARMS[physical], 'exact_plan_life')
+    config = read(lane / 'CONFIG.json')
+    require(config['hard_end_unix'] == WALL and config['root'] == ROOTS[physical], 'unchanged_root_wall')
+    policy, parent = import_owned(lane)
+    policy.validate(config)
+    seed = read(lane / 'SEED.json')
+    for entry in seed['attempts']:
+        for reference in entry['original_refs'].values():
+            require(sha(reference['path']) == reference['sha256'], 'preserved_predecessor_attempt_bytes')
+    if preflight:
+        initial = read(lane / 'INITIAL_SNAPSHOT.json')['snapshot']
+        memory = policy.memory(seed, [], initial)
+        instruction, payload = policy.prompt(config, initial, memory)
+        require('ROHIN175_OBSERVATION_TO_ACTION_BASELINE_V1' in instruction
+            and str(config['r175_word_limit']) in instruction, 'actual_patched_tick_prompt_caps')
+        require('bound_r175_arm' in policy.tick.__code__.co_consts, 'actual_patched_R166_tick')
+        from gpu import orch_route_parent_campaign_providers as provider
+        response = dict(speak=True, message=' '.join(['word'] * config['r175_word_limit']), rationale='CPU fixture')
+        require(provider.response_schema(json.dumps(response)) == response, 'actual_patched_provider_parser')
+        response['message'] += ' overflow'
+        try:
+            provider.response_schema(json.dumps(response))
+        except ValueError:
+            pass
+        else:
+            raise ValueError('actual_parser_overflow_not_rejected')
+        return dict(status='CPU_PREFLIGHT_PASS', physical=physical, model_calls=0, actual_tick_prompt_parser_verified=True)
+    require((lane / 'CPU_PREFLIGHT.json').exists() and (lane / 'CUSTODY_READY.json').exists(), 'tested_owned_custody_before_parent_run')
+    ready = read(lane / 'CUSTODY_READY.json')
+    require(ready['predecessor_terminal'] is True and ready['physical'] == physical, 'predecessor_terminal_or_H_no_parent')
+    cpu = read(lane / 'CPU_PREFLIGHT.json')
+    require(cpu['config_sha256'] == sha(lane/'CONFIG.json') and cpu['seed_sha256'] == sha(lane/'SEED.json')
+        and cpu['bundle_sha256'] == sha(lane/'source/ARM_BUNDLE.json'), 'executed_CPU_binding_unchanged')
+    output = lane / 'parent'
+    output.mkdir()
+    lock_path = HOME / f'R175_PARENT_{physical}.lock'
+    with lock_path.open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        write(output / 'STARTED.json', dict(pid=os.getpid(), actor=identity(os.getpid()), observed_unix=time.time(),
+            arm=plan['arm'], physical=physical, root=plan['root'], config_sha256=sha(lane/'CONFIG.json'),
+            assignment_sha256=ASSIGNMENT_SHA, bundle_sha256=sha(lane/'source/ARM_BUNDLE.json')))
+        original_publish = parent.publish
+        publication_sequence = 0
+
+        def observed_publish(repository, published_config, message):
+            nonlocal publication_sequence
+            cap = min(90, config['r175_word_limit']) if physical == 1 else config['r175_word_limit']
+            publication_allowed(physical, output, message, cap)
+            prefix = output / f'PUBLICATION_{publication_sequence:04d}'
+            publication_sequence += 1
+            before = time.time()
+            write(prefix.with_name(prefix.name + '_INTENT.json'), dict(physical=physical, arm=plan['arm'],
+                started_unix=before, message_sha256=hashlib.sha256(message.encode()).hexdigest(), words=len(message.split()),
+                assignment_sha256=ASSIGNMENT_SHA, config_sha256=sha(lane/'CONFIG.json')))
+            publication = original_publish(repository, published_config, message)
+            after = time.time()
+            write(prefix.with_name(prefix.name + '_RECEIPT.json'), dict(publication=publication,
+                publication_interval_unix=[before, after], observed_unix=after,
+                exact_remote_publication_timestamp_not_inferred=True, message_sha256=hashlib.sha256(message.encode()).hexdigest()))
+            return publication
+
+        parent.publish = observed_publish
+        original_prompt = policy.prompt
+
+        def grounded_prompt(prompt_config, state, memory):
+            instruction, payload = original_prompt(prompt_config, state, memory)
+            instruction += '\nCurrent operator availability: no active kernel execution service or raw-life external task executor is bound. Do not claim a code listing or prediction ran. Preserve the child\'s live object; no result is valid evidence of unavailable execution, not a fabricated outcome.'
+            if physical == 1:
+                instruction += '\nInterim baseline only: at most90 whitespace-separated words. The operator permits one publication, then hands off permanently.'
+            return instruction, payload
+
+        policy.prompt = grounded_prompt
+        reference = read(lane / 'INITIAL_SNAPSHOT.json')['reference']
+        anchor = None
+        fourth_sleep_recorded = False
+        for sequence in range(10000):
+            if time.time() >= WALL:
+                break
+            observed = snapshot(lane, reference)
+            reference, state = observed['reference'], observed['snapshot']
+            write(output / f'POLL_{sequence:06d}.json', observed)
+            publications = [read(path) for path in sorted(output.glob('PUBLICATION_*_RECEIPT.json'))]
+            for publication in publications:
+                delivered = state['delivered'].get(publication['publication']['id'])
+                if delivered and anchor is None:
+                    require(delivered['inbox_sha256'] == publication['publication']['sha256']
+                        and delivered['text_sha256'] == publication['message_sha256'], 'actual_exact_first_render')
+                    anchor = dict(physical=physical, arm=plan['arm'], journal_id=state['journal_id'],
+                        publication=publication, first_render=delivered, observed_unix=time.time(),
+                        baseline_completed_sleeps=delivered['sleep_count'], third_sleep_target=delivered['sleep_count']+3,
+                        fourth_sleep_target=delivered['sleep_count']+4, child_restart=False)
+                    write(output / 'FIRST_RENDERED_EXPOSURE.json', anchor)
+            phase = withdrawal_state(anchor['baseline_completed_sleeps'], state['sleep_count']) if anchor else 'AWAIT_FIRST_EXPOSURE'
+            held = (physical == 1 and bool(list(output.glob('PUBLICATION_*_INTENT.json')))) or phase == 'PARENT_WITHDRAWAL_ONE_SLEEP'
+            status = dict(status='HANDS_OFF_BASELINE_PUBLISHED' if physical == 1 and held else phase,
+                observed_unix=time.time(), sleep_count=state['sleep_count'], publications=len(publications),
+                new_parent_turns_withheld=held, peer_turns=0, node4_peer_pair=None)
+            if not held:
+                status.update(policy.tick(REPO, config, output, seed, state))
+            write(output / f'STATUS_{sequence:06d}.json', status)
+            if status['status'] in ('PUBLICATION_UNKNOWN', 'VALIDATION_FAILED', 'PROVIDER_FAILED'):
+                write(output / 'ATTENTION_REQUIRED.json', dict(status=status['status'], observed_unix=time.time(), no_automatic_retry=True))
+                return status
+            if anchor and not fourth_sleep_recorded and state['sleep_count'] >= anchor['fourth_sleep_target']:
+                write(output / 'FOUR_COMPLETED_SLEEP_OBSERVATION.json', dict(anchor=anchor, observed_sleep_count=state['sleep_count'],
+                    no_retention_claim=True, pending_old_invitations_not_removed=True))
+                if physical == 1:
+                    return status
+                fourth_sleep_recorded = True
+            time.sleep(5)
+        write(output / 'TERMINAL.json', dict(status='UNCHANGED_WALL_OR_BOUNDED_POLL_END', observed_unix=time.time()))
+
+
+def activate(lane):
+    authority()
+    plan = read(lane / 'PLAN.json')
+    checked_bundle(lane)
+    cpu = read(lane.parent/'CPU_OPERATOR_READY.json')
+    require(cpu['status'] == 'PASS' and cpu['operator_sha256'] == sha(__file__)
+        and cpu['test_sha256'] == sha(HOME/'test_r175_node4_operator.py'), 'own_takeover_CPU_gate_required')
+    row = checked_predecessor(plan)
+    descriptor = None
+    paused = False
+    terminated = False
+    try:
+        if row:
+            expected = row['parent_actor']
+            same_parent(expected, identity(expected['pid']))
+            descriptor = os.pidfd_open(expected['pid'])
+            for attempt in range(120):
+                same_parent(expected, identity(expected['pid']))
+                if children(expected['pid']):
+                    time.sleep(1)
+                    continue
+                signal.pidfd_send_signal(descriptor, signal.SIGSTOP)
+                paused = True
+                time.sleep(.05)
+                if children(expected['pid']):
+                    signal.pidfd_send_signal(descriptor, signal.SIGCONT)
+                    paused = False
+                    continue
+                same_parent(expected, identity(expected['pid']))
+                break
+            require(paused and identity(expected['pid'])['state'] in ('T', 't'), 'settled_parent_only_boundary')
+        current = snapshot(lane, read(lane/'INITIAL_SNAPSHOT.json')['reference'])
+        require(current['snapshot']['caught_up'], 'current_verified_snapshot_before_parent_takeover')
+        seed = legacy_seed(row, current['snapshot'])
+        write(lane/'SEED.json', seed)
+        command = [sys.executable, '-B', str(Path(__file__).resolve()), 'serve', '--lane', str(lane)]
+        environment = dict(os.environ, PYTHONDONTWRITEBYTECODE='1', CUDA_VISIBLE_DEVICES='')
+        result = subprocess.run(command + ['--preflight'], env=environment, cwd=lane/'source',
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=45)
+        require(result.returncode == 0, 'actual_owned_bundle_CPU_preflight:' + result.stderr[-500:])
+        write(lane/'CPU_PREFLIGHT.json', dict(status='PASS', execution_kind='CPU_ONLY', output=result.stdout,
+            config_sha256=sha(lane/'CONFIG.json'), seed_sha256=sha(lane/'SEED.json'), bundle_sha256=sha(lane/'source/ARM_BUNDLE.json')))
+        if row:
+            require(legacy_seed(row, current['snapshot']) == seed, 'unchanged_paused_predecessor_ledger')
+            same_parent(expected, identity(expected['pid']))
+            write(lane/'PARENT_RETIREMENT_INTENT.json', dict(expected=expected, observed_unix=time.time(), native_signals=0))
+            signal.pidfd_send_signal(descriptor, signal.SIGTERM)
+            signal.pidfd_send_signal(descriptor, signal.SIGCONT)
+            paused = False
+            terminated = True
+            require(bool(select.select([descriptor], [], [], 20)[0]), 'predecessor_exit_confirmed')
+        write(lane/'CUSTODY_READY.json', dict(physical=plan['physical'], predecessor_terminal=True,
+            predecessor=row, seed_sha256=sha(lane/'SEED.json'), observed_unix=time.time(), child_signals=0))
+        with (lane/'PARENT.log').open('x') as output:
+            process = subprocess.Popen(command, cwd=lane/'source', env=environment, stdin=subprocess.DEVNULL,
+                stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
+        receipt = dict(physical=plan['physical'], arm=plan['arm'], parent_pid=process.pid,
+            observed_unix=time.time(), command=command, source=str(lane/'source'), native_restarts=0,
+            status='PARENT_STARTED_NOT_A_PUBLICATION')
+        write(lane/'DISPATCHED.json', receipt)
+        return receipt
+    except Exception as error:
+        write(lane/f'ACTIVATION_ERROR_{time.time_ns()}.json', dict(error_type=type(error).__name__, error=str(error),
+            predecessor_terminated=terminated, child_changes=0))
+        raise
+    finally:
+        if paused:
+            signal.pidfd_send_signal(descriptor, signal.SIGCONT)
+        if descriptor is not None:
+            os.close(descriptor)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('action', choices=('bootstrap', 'activate', 'serve'))
+    parser.add_argument('--lane', type=Path, required=True)
+    parser.add_argument('--preflight', action='store_true')
+    options = parser.parse_args()
+    selected = options.lane.resolve()
+    require(selected.parent.parent == HOME and selected.parent.name.startswith('activation_')
+        and selected.name in ('physical0','physical1','physical3','physical4'), 'owned_four_lane_activation_only')
+    result = bootstrap(selected) if options.action == 'bootstrap' else (activate(selected) if options.action == 'activate' else serve(selected, options.preflight))
+    print(json.dumps(result, sort_keys=True))

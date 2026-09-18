@@ -1,0 +1,19 @@
+test_actual_global_and_per_life_caps_preserve_all_nominal_passes (test_phasecap_review.PhaseCapReviewTests.test_actual_global_and_per_life_caps_preserve_all_nominal_passes) ... ok
+test_all_new_and_superseded_authorities_remain_exact_nonrefunded_files (test_phasecap_review.PhaseCapReviewTests.test_all_new_and_superseded_authorities_remain_exact_nonrefunded_files) ... ok
+test_each_actual_phase_proof_request_and_persisted_receipt_is_bound (test_phasecap_review.PhaseCapReviewTests.test_each_actual_phase_proof_request_and_persisted_receipt_is_bound) ... ok
+test_old_phase_cap_still_refuses_before_any_callback (test_phasecap_review.PhaseCapReviewTests.test_old_phase_cap_still_refuses_before_any_callback) ... ok
+test_repaired_candidate_and_request_match_actual_receiving_bytes (test_phasecap_review.PhaseCapReviewTests.test_repaired_candidate_and_request_match_actual_receiving_bytes) ... ok
+test_unchanged_native_callback_fits_full_token_envelope_and_extra_source_pass (test_phasecap_review.PhaseCapReviewTests.test_unchanged_native_callback_fits_full_token_envelope_and_extra_source_pass) ... FAIL
+
+======================================================================
+FAIL: test_unchanged_native_callback_fits_full_token_envelope_and_extra_source_pass (test_phasecap_review.PhaseCapReviewTests.test_unchanged_native_callback_fits_full_token_envelope_and_extra_source_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/r176_retelling_retention_20260917/review_r179_phasecap1/test_phasecap_review.py", line 87, in test_unchanged_native_callback_fits_full_token_envelope_and_extra_source_pass
+    self.assertEqual(result['metadata_charged_bytes'], 50204387)
+AssertionError: 50203387 != 50204387
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.200s
+
+FAILED (failures=1)

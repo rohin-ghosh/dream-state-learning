@@ -1,0 +1,26 @@
+test_H_failed_attempt_without_intent_allows_next_boundary (test_r175_node4_errata.ErrataTests.test_H_failed_attempt_without_intent_allows_next_boundary) ... ok
+test_H_prior_uncertain_intent_blocks_new_output (test_r175_node4_errata.ErrataTests.test_H_prior_uncertain_intent_blocks_new_output) ... ok
+test_child_question_allowed_private_null (test_r175_node4_errata.ErrataTests.test_child_question_allowed_private_null) ... ok
+test_clarification_preserves_original_prompt_payload_and_decision (test_r175_node4_errata.ErrataTests.test_clarification_preserves_original_prompt_payload_and_decision) ... ok
+test_continue_private_next_task_nonnull_rejected (test_r175_node4_errata.ErrataTests.test_continue_private_next_task_nonnull_rejected) ... ok
+test_credit_ID_and_alias_counter_validator_unchanged (test_r175_node4_errata.ErrataTests.test_credit_ID_and_alias_counter_validator_unchanged) ... ok
+test_exact_Main_errata_pin (test_r175_node4_errata.ErrataTests.test_exact_Main_errata_pin) ... ok
+test_existing_uppercase_validator_unchanged (test_r175_node4_errata.ErrataTests.test_existing_uppercase_validator_unchanged) ... ok
+test_preserved_failed_attempt_reserves_126_without_modelcall (test_r175_node4_errata.ErrataTests.test_preserved_failed_attempt_reserves_126_without_modelcall) ... ERROR
+
+======================================================================
+ERROR: test_preserved_failed_attempt_reserves_126_without_modelcall (test_r175_node4_errata.ErrataTests.test_preserved_failed_attempt_reserves_126_without_modelcall)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/test_r175_node4_errata.py", line 107, in test_preserved_failed_attempt_reserves_126_without_modelcall
+    result = self.policy.tick(errata.base.REPO, config, previous, restored, current)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2040Z/physical1/source/gpu/orch_r166_parent_policy.py", line 381, in tick
+    status = dict(memory=memory_state, observed_unix=time.time(), journal_head=state['head_sha256'])
+                                                                               ~~~~~^^^^^^^^^^^^^^^
+KeyError: 'head_sha256'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.216s
+
+FAILED (errors=1)

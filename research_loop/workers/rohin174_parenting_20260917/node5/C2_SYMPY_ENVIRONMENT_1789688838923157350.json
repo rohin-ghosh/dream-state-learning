@@ -1,0 +1,179 @@
+{
+  "observed_unix": 1789688840.064358,
+  "packages": [
+    {
+      "executable": "/usr/bin/python3",
+      "version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "prefix": "/usr",
+      "isolated": 1,
+      "sys_path": [
+        "/usr/lib/python312.zip",
+        "/usr/lib/python3.12",
+        "/usr/lib/python3.12/lib-dynload",
+        "/usr/local/lib/python3.12/dist-packages",
+        "/usr/lib/python3/dist-packages"
+      ],
+      "packages": {
+        "sympy": {
+          "origin": null,
+          "version": null,
+          "requires": null,
+          "requires_python": null,
+          "metadata_path": null
+        },
+        "mpmath": {
+          "origin": null,
+          "version": null,
+          "requires": null,
+          "requires_python": null,
+          "metadata_path": null
+        }
+      }
+    },
+    {
+      "executable": "/localhome/local-rohing/v2/venv/bin/python",
+      "version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "prefix": "/localhome/local-rohing/v2/venv",
+      "isolated": 1,
+      "sys_path": [
+        "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages",
+        "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages",
+        "/usr/lib/python312.zip",
+        "/usr/lib/python3.12",
+        "/usr/lib/python3.12/lib-dynload",
+        "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages"
+      ],
+      "packages": {
+        "sympy": {
+          "origin": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/sympy/__init__.py",
+          "version": "1.14.0",
+          "requires": [
+            "mpmath<1.4,>=1.1.0",
+            "pytest>=7.1.0; extra == \"dev\"",
+            "hypothesis>=6.70.0; extra == \"dev\""
+          ],
+          "requires_python": ">=3.9",
+          "metadata_path": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/sympy-1.14.0.dist-info"
+        },
+        "mpmath": {
+          "origin": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/mpmath/__init__.py",
+          "version": "1.3.0",
+          "requires": [
+            "pytest (>=4.6) ; extra == 'develop'",
+            "pycodestyle ; extra == 'develop'",
+            "pytest-cov ; extra == 'develop'",
+            "codecov ; extra == 'develop'",
+            "wheel ; extra == 'develop'",
+            "sphinx ; extra == 'docs'",
+            "gmpy2 (>=2.1.0a4) ; (platform_python_implementation != \"PyPy\") and extra == 'gmpy'",
+            "pytest (>=4.6) ; extra == 'tests'"
+          ],
+          "requires_python": null,
+          "metadata_path": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/mpmath-1.3.0.dist-info"
+        }
+      }
+    }
+  ],
+  "live_changes": 0,
+  "bridge_config": {
+    "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260916t2245z/gate",
+    "gate_sha256": "8b4579d9c99c2f4d54fbd738ff965bc9472ed9f08ff6fae5f4dbfeadceaf1150",
+    "journal_id": "260be8b8710a42559b291797c6e14983",
+    "raw_root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+    "socket": "/tmp/r188_node5_c2_recovery1.sock",
+    "stop_unix": 1789776000
+  },
+  "bridge_config_ref": {
+    "path": "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/BRIDGE.json",
+    "sha256": "f1cfaebe88240ee7e7016e62b6d8a1eb6ee5471837b4528eb586aba3c86fe796"
+  },
+  "sources": {
+    "gpu/orch_r125_cpu_confinement_probe.py": {
+      "path": "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/source/gpu/orch_r125_cpu_confinement_probe.py",
+      "sha256": "9117c4d72cdbb700e351f4625e763f96cf94341a3cf6d2a2cf3445687bfae48b"
+    },
+    "gpu/orch_r125_cpu_experiment.py": {
+      "path": "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/source/gpu/orch_r125_cpu_experiment.py",
+      "sha256": "88e7303fb2bedc6fa891bf2fd16807015d887234cf2fdec20bdd413349e81c8c"
+    },
+    "gpu/orch_r153_community_transport.py": {
+      "path": "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/source/gpu/orch_r153_community_transport.py",
+      "sha256": "b798199a10508164de724631fc8a81bf28fb3500db5bc0048ec486cb7707905a"
+    },
+    "gpu/r184_cpu_bridge.py": {
+      "path": "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/source/gpu/r184_cpu_bridge.py",
+      "sha256": "43e2c8f4f1bf68b4613d508fd25db97f37f843cfd8ba1e93e8e2d3c154ac7a69"
+    }
+  },
+  "failed_result_ref": {
+    "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/9be0b6967523ea7b7e5a1c538313558b9a3304c17d541532d1d5e6aa4d895806/RESULT.json",
+    "sha256": "39db240103e433d5dc2c1e77f8aa3e9892ecd7de20bb50b4e1280b9908667c19"
+  },
+  "failed_result": {
+    "status": "PROCESS_FAILED",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/job.py\", line 1, in <module>\n    from sympy import symbols, Eq, solve\nModuleNotFoundError: No module named 'sympy'\n",
+    "command": [
+      "sudo",
+      "-n",
+      "systemd-run",
+      "--quiet",
+      "--wait",
+      "--pipe",
+      "--unit=orch-r125-cpu-962ecc94f740d410",
+      "--property=DynamicUser=yes",
+      "--property=RootDirectory=/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/9be0b6967523ea7b7e5a1c538313558b9a3304c17d541532d1d5e6aa4d895806/rootfs",
+      "--property=BindReadOnlyPaths=/usr /localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/9be0b6967523ea7b7e5a1c538313558b9a3304c17d541532d1d5e6aa4d895806/payload.py:/job.py /localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/9be0b6967523ea7b7e5a1c538313558b9a3304c17d541532d1d5e6aa4d895806/readonly.txt:/readonly.txt /localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/9be0b6967523ea7b7e5a1c538313558b9a3304c17d541532d1d5e6aa4d895806/empty:/sys/fs/cgroup",
+      "--property=MountAPIVFS=no",
+      "--property=PrivateNetwork=yes",
+      "--property=PrivateDevices=yes",
+      "--property=ProtectSystem=strict",
+      "--property=ProtectHome=yes",
+      "--property=ProtectProc=invisible",
+      "--property=ProcSubset=pid",
+      "--property=NoNewPrivileges=yes",
+      "--property=CapabilityBoundingSet=",
+      "--property=AmbientCapabilities=",
+      "--property=ProtectKernelTunables=yes",
+      "--property=ProtectKernelModules=yes",
+      "--property=ProtectKernelLogs=yes",
+      "--property=ProtectControlGroups=yes",
+      "--property=RestrictNamespaces=yes",
+      "--property=RestrictSUIDSGID=yes",
+      "--property=LockPersonality=yes",
+      "--property=MemoryDenyWriteExecute=yes",
+      "--property=RestrictRealtime=yes",
+      "--property=TemporaryFileSystem=/tmp:rw,size=8M,mode=1777 /work:rw,size=8M,mode=1777",
+      "--property=ReadWritePaths=/tmp /work",
+      "--property=WorkingDirectory=/work",
+      "--property=InaccessiblePaths=/sys /sys/fs/cgroup",
+      "--property=MemoryMax=128M",
+      "--property=MemorySwapMax=0",
+      "--property=TasksMax=8",
+      "--property=CPUQuota=25%",
+      "--property=RuntimeMaxSec=15",
+      "--property=TimeoutStopSec=2",
+      "--property=KillMode=control-group",
+      "--property=OOMPolicy=kill",
+      "--property=DevicePolicy=strict",
+      "--property=DeviceAllow=/dev/null rw",
+      "--property=SystemCallFilter=~@mount @network-io @privileged @reboot @swap @module @debug",
+      "--property=SystemCallErrorNumber=EPERM",
+      "--property=UMask=0077",
+      "--property=LimitCORE=0",
+      "--property=LimitFSIZE=1048576",
+      "/usr/bin/env",
+      "-i",
+      "PATH=/usr/bin:/bin",
+      "LANG=C.UTF-8",
+      "PYTHONHASHSEED=0",
+      "/usr/bin/python3",
+      "-I",
+      "/job.py"
+    ],
+    "launch_attempted": true,
+    "cgroup_removed_after_stop": true
+  },
+  "disk": "Filesystem        1B-blocks         Used    Available Use% Mounted on\n/dev/nvme1n1p2 944323264512 310650593280 595063930880  35% /\n"
+}

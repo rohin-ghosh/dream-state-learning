@@ -1,0 +1,26 @@
+{
+  "schema": "R159_MAIN_METADATA_READ_AUTHORITY_V1",
+  "issuer": "Main",
+  "issued_utc": "2026-09-17T05:52:00Z",
+  "read_end_utc": "2026-09-17T08:00:00Z",
+  "node_wrapper": "gpu/a40r_ssh.sh",
+  "cohort_root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5",
+  "cohort_sha256": "da04b4cd814f6f695ca49a1ace66f9378039f6166d04e26bbd27ed7692ad0b4b",
+  "arms": ["parented_learning", "parented_frozen", "unparented_learning"],
+  "worker": "Euclid",
+  "scan_bytes_maximum": 268435456,
+  "returned_metadata_bytes_maximum": 16777216,
+  "scope": [
+    "Read initial COMMIT original metadata bytes and hashes for existing arms",
+    "Verify complete-through-observation first birth, TRAIN and evaluation metadata",
+    "Return metadata only, preserving unknown or incomplete coverage explicitly"
+  ],
+  "prohibited": [
+    "Optimizer or RNG payload reads",
+    "Held prompts, answers, scores or private evaluation log contents",
+    "Adapter copies, input installation, enrollment or GPU execution",
+    "Changing or restarting learners, parents or services"
+  ],
+  "final_timestamp_attestation": "PENDING_OBSERVATION",
+  "execution_go": false
+}

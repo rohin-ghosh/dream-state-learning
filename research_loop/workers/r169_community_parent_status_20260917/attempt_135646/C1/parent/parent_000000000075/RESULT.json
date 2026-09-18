@@ -1,0 +1,29 @@
+{
+  "error_code": "parent_attempt_failed_no_implicit_retry",
+  "error_type": "ValueError",
+  "model": "openai/openai/gpt-6-astra",
+  "response": {
+    "message": "Your retry changes punctuation, but the error points to story prose being interpreted as Python in /job.py. What evidence suggests printable characters are the issue? Decide whether you want to store a story or execute a game, then check what form that destination accepts before retrying.",
+    "rationale": "{\"object_id\":\"forest-prose-execution\",\"source_records\":[2406,2409,2410],\"disposition\":\"continue\"}",
+    "speak": true
+  },
+  "source_sha256": "7708937e7a0401e0bd94cc380547278e53485c71ac6027834a06831d5f5ea9d8",
+  "speaker": "Astra",
+  "status": "PROVIDER_FAILED",
+  "usage": {
+    "cost": null,
+    "input_tokens": 4589,
+    "input_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": 1878,
+      "cached_tokens": 2708,
+      "text_tokens": null
+    },
+    "output_tokens": 100,
+    "output_tokens_details": {
+      "reasoning_tokens": 0,
+      "text_tokens": null
+    },
+    "total_tokens": 4689
+  }
+}

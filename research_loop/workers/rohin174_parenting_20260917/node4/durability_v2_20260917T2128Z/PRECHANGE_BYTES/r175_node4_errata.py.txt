@@ -1,0 +1,307 @@
+"""Pinned prompt-only successor preserving failed attempts and parent custody."""
+
+import argparse
+import copy
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import select
+import shutil
+import signal
+import subprocess
+import sys
+import time
+
+
+HOME = Path(__file__).resolve().parent
+BASE_SHA = '894c8f9ac21c094cde9ca812bf6554bae2a8e6305220c2e9b73457204ee27d81'
+ERRATA_SHA = 'cd51e8bacdfa171127c537502c2159f59e1e0fdfa80f4ec7ed684e3e65ff22b9'
+RESPONSE_SHA = 'a0f8d74530b558724a8b5636a5b53556abd21267c316d94b3beeb08cd41c61a1'
+BASE_PATH = HOME / 'r175_node4_operator.py'
+assert hashlib.sha256(BASE_PATH.read_bytes()).hexdigest() == BASE_SHA
+SPEC = importlib.util.spec_from_file_location('r175_preserved_operator', BASE_PATH)
+base = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(base)
+ORIGINAL_IMPORT = base.import_owned
+ORIGINAL_PUBLICATION_ALLOWED = base.publication_allowed
+
+
+def checked_lane(lane):
+    lane = Path(lane).resolve()
+    base.require(lane.parent.parent == HOME and lane.parent.name.startswith('activation_')
+        and lane.name in ('physical0', 'physical1', 'physical3', 'physical4'), 'owned_activation_only')
+    return lane
+
+
+def metadata_instruction(lane):
+    path = lane / 'PARENT_METADATA_ERRATA_V1.md'
+    base.require(base.sha(path) == ERRATA_SHA, 'exact_Main_metadata_errata')
+    return path.read_text()
+
+
+def import_bound(lane):
+    instruction = metadata_instruction(lane)
+    policy, parent = ORIGINAL_IMPORT(lane)
+    response_path = lane / 'orch_r175_parent_response.py'
+    base.require(base.sha(response_path) == RESPONSE_SHA, 'exact_Main_response_compatibility')
+    response_spec = importlib.util.spec_from_file_location('bound_parent_response', response_path)
+    response_module = importlib.util.module_from_spec(response_spec)
+    response_spec.loader.exec_module(response_module)
+    from gpu import orch_route_parent_campaign_providers as provider
+    provider.response_schema = response_module.compatible_parser(provider.response_schema)
+    policy.community.response_schema = response_module.compatible_parser(policy.community.response_schema)
+    original_prompt = policy.prompt
+
+    def clarified_prompt(config, state, memory):
+        prompt, payload = original_prompt(config, state, memory)
+        return prompt + '\n\n' + instruction, payload
+
+    policy.prompt = clarified_prompt
+    plan_path = lane / 'PLAN.json'
+    if plan_path.exists() and base.read(plan_path).get('one_corrective_call'):
+        original_tick = policy.tick
+
+        def corrective_first_tick(repository, config, output, seed, state):
+            base.require(config.get('r175_schema') == 'ROHIN175_PARENT_ARMS_V1'
+                and config.get('r175_arm') == 'H' and config.get('schedule_on') == 'response'
+                and config['cadence_responses'] == 1 and config.get('r175_word_limit') == 160, 'bound_r175_arm')
+            if state['caught_up'] and not policy.local_attempts(output):
+                return corrective_tick(policy, repository, config, output, seed, state)
+            return original_tick(repository, config, output, seed, state)
+
+        policy.tick = corrective_first_tick
+    return policy, parent
+
+
+def corrective_tick(policy, repository, config, output, seed, state):
+    policy.validate(config)
+    base.require(config['r175_arm'] == 'H' and not config['community_learner'], 'single_H_corrective_scope')
+    base.require(state['caught_up'] and not policy.local_attempts(output), 'new_corrective_attempt_only')
+    memory = policy.memory(seed, [], state)
+    policy.bind_watcher_audits(memory, config.get('watcher_audits', []), state)
+    base.require(not memory['awaiting_render'] and any(event['actor'] == 'child' for event in state['events']),
+        'known_committed_source_no_pending_publication')
+    failures = [attempt for attempt in seed['attempts'] if attempt['result']['status'] == 'VALIDATION_FAILED']
+    base.require(len(failures) == 1 and failures[0]['result'].get('error') == 'stable_object_id',
+        'documented_first_H_failure_only')
+    base.write(Path(output) / 'ONE_CORRECTIVE_CALL_INTENT.json', dict(authorization='Main_20260917_one_corrective_call',
+        source_head_sha256=state['head_sha256'], request_count=state['request_count'], response_count=state['response_count'],
+        preserved_last_response_count=memory['last_response_count'], failure_refs=failures[0]['original_refs'],
+        observed_unix=time.time(), no_publication_unknown_retry=True))
+    directory = Path(output) / f"parent_{state['request_count']:012d}"
+    directory.mkdir(mode=0o700)
+    policy.community.write(directory / 'SOURCE.json', state)
+    instruction, payload = policy.prompt(config, state, memory)
+    policy.community.write(directory / 'PROMPT.json', dict(instruction=instruction, payload=payload))
+    policy.community.write(directory / 'DISPATCH_INTENT.json', dict(request_count=state['request_count'], corrective=True))
+    result = dict(status='PROVIDER_FAILED', source_sha256=policy.parent.sha(directory / 'SOURCE.json'))
+    try:
+        response, model, usage = policy.parent.strong(payload, directory, config['hard_end_unix'], instruction,
+            reasoning_effort=config.get('parent_reasoning_effort', 'low'))
+        result.update(model=model, usage=usage, status='VALIDATION_FAILED')
+        details = policy.decision(response, state, memory)
+        if details is None:
+            result['status'] = 'SILENT'
+        else:
+            message = response['message']
+            base.require(0 < len(message.split()) <= 90 and len(message.encode()) <= 4096
+                and time.time() < config['hard_end_unix'], 'bounded_timely_H_corrective_publication')
+            result.update(details, message=message, grammar_lesson=False, status='PUBLICATION_UNKNOWN',
+                relapse_audit_sha256=[audit['authority_sha256'] for audit in memory['relapses']
+                    if audit['credit_id'] == details['relapse_credit_id']])
+            policy.community.write(directory / 'PUBLISH_INTENT.json', dict(message=message, speaker='Astra'))
+            result['publication'] = policy.parent.publish(repository, config, message)
+            result['status'] = 'PUBLISHED'
+    except Exception as error:
+        result.update(error_type=type(error).__name__, error=str(error)[:500])
+    policy.community.write(directory / 'RESULT.json', result)
+    return dict(status=result['status'], memory=memory, observed_unix=time.time(), journal_head=state['head_sha256'])
+
+
+def preserved_seed(previous, policy, state):
+    seed = copy.deepcopy(base.read(previous / 'SEED.json'))
+    base.require(seed['journal_id'] == state['journal_id'], 'same_exact_life_seed')
+    exported = policy.export_predecessor(previous / 'parent', state)
+    for attempt in exported['attempts']:
+        attempt['original_refs'] = attempt.pop('refs')
+        seed['attempts'].append(attempt)
+    for attempt in seed['attempts']:
+        for reference in attempt['original_refs'].values():
+            base.require(base.sha(reference['path']) == reference['sha256'], 'preserved_attempt_bytes')
+        source = attempt['source']
+        base.require(source['response_count'] <= state['response_count']
+            and source.get('request_count', 0) <= state['request_count'], 'current_snapshot_covers_attempt')
+        seed['last_response_count'] = max(seed['last_response_count'], source['response_count'])
+        seed['last_request_count'] = max(seed['last_request_count'], source.get('request_count', 0))
+    return seed
+
+
+def lineage_outputs(previous):
+    path = previous / 'ERRATA_BINDING.json'
+    ancestors = base.read(path)['prior_outputs'] if path.exists() else []
+    return ancestors + [str(previous / 'parent')]
+
+
+def guard_prior_H(outputs):
+    for output in outputs:
+        root = Path(output)
+        base.require(not list(root.glob('PUBLICATION_*_INTENT.json'))
+            and not list(root.glob('parent_*/PUBLISH_INTENT.json')), 'H_no_prior_publication_intent')
+        for result in root.glob('parent_*/RESULT.json'):
+            base.require(base.read(result)['status'] != 'PUBLISHED', 'H_no_prior_publication')
+
+
+def stage(previous, lane):
+    base.authority()
+    base.checked_bundle(previous)
+    errata = HOME.parent / 'PARENT_METADATA_ERRATA_V1.md'
+    base.require(base.sha(errata) == ERRATA_SHA, 'Main_errata_pin')
+    response_path = base.REPO / 'gpu/orch_r175_parent_response.py'
+    base.require(base.sha(response_path) == RESPONSE_SHA, 'Main_response_pin')
+    plan = base.read(previous / 'PLAN.json')
+    base.require(lane.name == previous.name and lane != previous, 'same_life_new_output')
+    actor = base.read(previous / 'parent/STARTED.json')['actor']
+    expected_argv = [sys.executable, '-B', str(BASE_PATH), 'serve', '--lane', str(previous)]
+    base.require(actor['argv'] == expected_argv and actor['uid'] == os.getuid(), 'exact_owned_parent_predecessor')
+    lane.mkdir(parents=True, exist_ok=False)
+    shutil.copytree(previous / 'source', lane / 'source')
+    shutil.copyfile(errata, lane / errata.name)
+    (lane / errata.name).chmod(0o444)
+    shutil.copyfile(response_path, lane / response_path.name)
+    (lane / response_path.name).chmod(0o444)
+    for name in ('CONFIG.json', 'INITIAL_SNAPSHOT.json'):
+        shutil.copyfile(previous / name, lane / name)
+    plan.update(source_bundle=str(lane / 'source'), previous_lane=str(previous), parent_actor=actor)
+    plan['one_corrective_call'] = plan['physical'] == 1
+    base.write(lane / 'PLAN.json', plan)
+    binding = dict(scope='NON_MATERIAL_EXACT_VALIDATOR_PROMPT_CLARIFICATION',
+        base_sha256=BASE_SHA, wrapper_sha256=base.sha(__file__), errata_sha256=ERRATA_SHA,
+        compatible_response_sha256=RESPONSE_SHA, same_source_one_corrective_call=plan['one_corrective_call'],
+        previous_lane=str(previous), previous_seed_sha256=base.sha(previous / 'SEED.json'),
+        prior_outputs=lineage_outputs(previous), object_ID_normalization=False,
+        rationale_object_lossless_serialization_only=True,
+        validators_changed=False, native_signals=0, publication_count_not_reset=True)
+    base.write(lane / 'ERRATA_BINDING.json', binding)
+    base.checked_bundle(lane)
+    return dict(status='STAGED_NOT_ACTIVATED', lane=str(lane), errata_sha256=ERRATA_SHA)
+
+
+def receiving_cpu(lane):
+    base.import_owned = import_bound
+    result = base.serve(lane, preflight=True)
+    result.update(errata_sha256=ERRATA_SHA, wrapper_sha256=base.sha(__file__))
+    return result
+
+
+def serve(lane, preflight):
+    binding = base.read(lane / 'ERRATA_BINDING.json')
+    base.require(binding['wrapper_sha256'] == base.sha(__file__)
+        and binding['base_sha256'] == BASE_SHA, 'exact_new_wrapper_bytes')
+    base.import_owned = import_bound
+    if preflight:
+        return receiving_cpu(lane)
+
+    def one_H_across_outputs(physical, output, message, cap):
+        if physical == 1:
+            guard_prior_H(binding['prior_outputs'])
+        ORIGINAL_PUBLICATION_ALLOWED(physical, output, message, cap)
+
+    base.publication_allowed = one_H_across_outputs
+    return base.serve(lane)
+
+
+def activate(lane):
+    base.authority()
+    base.checked_bundle(lane)
+    gate = base.read(lane.parent / 'CPU_ERRATA_READY.json')
+    base.require(gate['status'] == 'PASS' and gate['wrapper_sha256'] == base.sha(__file__)
+        and gate['test_sha256'] == base.sha(HOME / 'test_r175_node4_errata.py'), 'own_errata_CPU_gate')
+    plan = base.read(lane / 'PLAN.json')
+    previous = checked_lane(plan['previous_lane'])
+    actor = plan['parent_actor']
+    base.require(actor == base.read(previous / 'parent/STARTED.json')['actor'], 'exact_predecessor_receipt')
+    base.require(actor['argv'] == [sys.executable, '-B', str(BASE_PATH), 'serve', '--lane', str(previous)]
+        and actor['uid'] == os.getuid(), 'parent_only_allowlisted_argv')
+    descriptor, paused, terminated = None, False, False
+    try:
+        if Path('/proc', str(actor['pid'])).exists():
+            base.same_parent(actor, base.identity(actor['pid']))
+            descriptor = os.pidfd_open(actor['pid'])
+            for attempt in range(120):
+                base.same_parent(actor, base.identity(actor['pid']))
+                if base.children(actor['pid']):
+                    time.sleep(1)
+                    continue
+                signal.pidfd_send_signal(descriptor, signal.SIGSTOP)
+                paused = True
+                time.sleep(.05)
+                if base.children(actor['pid']):
+                    signal.pidfd_send_signal(descriptor, signal.SIGCONT)
+                    paused = False
+                    continue
+                base.same_parent(actor, base.identity(actor['pid']))
+                break
+            base.require(paused and base.identity(actor['pid'])['state'] in ('T', 't'), 'quiet_parent_boundary')
+        binding = base.read(lane / 'ERRATA_BINDING.json')
+        if plan['physical'] == 1:
+            guard_prior_H(binding['prior_outputs'])
+        current = base.snapshot(lane, base.read(lane / 'INITIAL_SNAPSHOT.json')['reference'])
+        base.require(current['snapshot']['caught_up'], 'current_verified_TRAIN_snapshot')
+        policy, parent = import_bound(lane)
+        seed = preserved_seed(previous, policy, current['snapshot'])
+        base.write(lane / 'SEED.json', seed)
+        base.write(lane / 'TAKEOVER_SNAPSHOT.json', current)
+        command = [sys.executable, '-B', str(Path(__file__).resolve()), 'serve', '--lane', str(lane)]
+        environment = dict(os.environ, CUDA_VISIBLE_DEVICES='', PYTHONDONTWRITEBYTECODE='1')
+        result = subprocess.run(command + ['--preflight'], cwd=lane / 'source', env=environment,
+            text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=45)
+        base.require(result.returncode == 0, 'actual_owned_errata_receiving_CPU:' + result.stderr[-1000:])
+        base.write(lane / 'CPU_PREFLIGHT.json', dict(status='PASS', execution_kind='CPU_ONLY', output=result.stdout,
+            config_sha256=base.sha(lane / 'CONFIG.json'), seed_sha256=base.sha(lane / 'SEED.json'),
+            bundle_sha256=base.sha(lane / 'source/ARM_BUNDLE.json'), errata_sha256=ERRATA_SHA))
+        base.require(preserved_seed(previous, policy, current['snapshot']) == seed, 'unchanged_settled_ledger')
+        if descriptor is not None:
+            base.same_parent(actor, base.identity(actor['pid']))
+            base.write(lane / 'PARENT_RETIREMENT_INTENT.json', dict(expected=actor, observed_unix=time.time(), native_signals=0))
+            signal.pidfd_send_signal(descriptor, signal.SIGTERM)
+            signal.pidfd_send_signal(descriptor, signal.SIGCONT)
+            paused, terminated = False, True
+            base.require(bool(select.select([descriptor], [], [], 20)[0]), 'old_parent_exit_confirmed')
+        base.write(lane / 'CUSTODY_READY.json', dict(physical=plan['physical'], predecessor_terminal=True,
+            predecessor=actor, seed_sha256=base.sha(lane / 'SEED.json'), observed_unix=time.time(), child_signals=0))
+        with (lane / 'PARENT.log').open('x') as output:
+            process = subprocess.Popen(command, cwd=lane / 'source', env=environment, stdin=subprocess.DEVNULL,
+                stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
+        receipt = dict(status='PARENT_STARTED_NOT_A_PUBLICATION', physical=plan['physical'], arm=plan['arm'],
+            parent_pid=process.pid, observed_unix=time.time(), command=command, source=str(lane / 'source'),
+            errata_sha256=ERRATA_SHA, native_restarts=0)
+        base.write(lane / 'DISPATCHED.json', receipt)
+        return receipt
+    except Exception as error:
+        base.write(lane / f'ACTIVATION_ERROR_{time.time_ns()}.json', dict(error=str(error),
+            predecessor_terminated=terminated, native_signals=0))
+        raise
+    finally:
+        if paused:
+            signal.pidfd_send_signal(descriptor, signal.SIGCONT)
+        if descriptor is not None:
+            os.close(descriptor)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('action', choices=('stage', 'activate', 'serve'))
+    parser.add_argument('--lane', type=Path, required=True)
+    parser.add_argument('--previous', type=Path)
+    parser.add_argument('--preflight', action='store_true')
+    arguments = parser.parse_args()
+    selected = checked_lane(arguments.lane)
+    if arguments.action == 'stage':
+        response = stage(checked_lane(arguments.previous), selected)
+    elif arguments.action == 'activate':
+        response = activate(selected)
+    else:
+        response = serve(selected, arguments.preflight)
+    print(json.dumps(response, sort_keys=True))

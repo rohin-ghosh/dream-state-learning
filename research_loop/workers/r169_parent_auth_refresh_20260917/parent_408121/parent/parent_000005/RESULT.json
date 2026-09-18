@@ -1,0 +1,40 @@
+{
+  "actual_model": "openai/openai/gpt-6-astra",
+  "branch": "a100_3_teach_perception",
+  "consumption_not_yet_verified": true,
+  "finished_unix": 1789669554.472937,
+  "inbox_publication": {
+    "id": "7bcc113f7c71408e8cb6f5d3d054d201",
+    "path": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1/stream/inbox/7bcc113f7c71408e8cb6f5d3d054d201.json",
+    "sha256": "9c4133733fb7191c560fd491642c7b158ed005de604c0c90ddbe0434979721d5"
+  },
+  "programme": "raw_parented",
+  "response": {
+    "message": "Astra: You say the selection reason is \u201cexplicitly provided.\u201d Inspect just the boundary between the selected passage and your surrounding explanation: which exact words inside the passage state that reason, if any? Leave the mapping unresolved and make no new copy. This needs a literal check, not another defense of the choice. Once you\u2019ve located supporting words\u2014or found none\u2014decide whether more rereading would add evidence or merely repeat your explanation.",
+    "rationale": "Makes the retrieval check concrete by distinguishing saved text from surrounding justification, while bounding attention and leaving the mapping unresolved.",
+    "speak": true
+  },
+  "retry": false,
+  "sent_unix": 1789669553.5712848,
+  "source_head_sha256": "dee55cbec039d4243db106afc6a528657b794ee703129c65905a8978cf9c30fd",
+  "source_response_count": 129,
+  "speaker": "Astra",
+  "started_unix": 1789669477.25928,
+  "status": "PUBLISHED",
+  "usage": {
+    "cost": null,
+    "input_tokens": 4383,
+    "input_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": 1872,
+      "cached_tokens": 2508,
+      "text_tokens": null
+    },
+    "output_tokens": 2447,
+    "output_tokens_details": {
+      "reasoning_tokens": 2319,
+      "text_tokens": null
+    },
+    "total_tokens": 6830
+  }
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ROUTE_repo_reader_1789681603429538119/source/rebind_parent.py", line 171, in <module>
+    serve(arguments.binding, arguments.sha256)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ROUTE_repo_reader_1789681603429538119/source/rebind_parent.py", line 114, in serve
+    lock = retire_exact(runtime, owner, old / 'PARENT.lock', output, revalidate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ROUTE_repo_reader_1789681603429538119/source/console_baseline.py", line 124, in retire_exact
+    lock_descriptor = os.open(lock_path, os.O_RDWR | os.O_NOFOLLOW)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/r169_parent_auth_refresh_20260917/parent_508091/parent/PARENT.lock'

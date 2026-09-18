@@ -1,0 +1,69 @@
+{
+  "Main_GPU_promotion": false,
+  "capacity_consumer_fixed": true,
+  "deadline_cleanup_fixed": true,
+  "failure_receipts_fixed": true,
+  "files": {
+    "gpu/orch_r150_matched_native.py": "9e901662f3e76dd282b610b87210e824e2ac99c7b91768823f087d9b4e842b71",
+    "gpu/orch_r151_matched_containment.py": "cbef4a98de3f230c8a50f4ec2d54b02200e6f835477bb39e8b9b60f24691bf70",
+    "gpu/orch_r151_matched_stage.py": "cc3b80e9b7ca5f71f9a953feb5f2216318b86af40aa8edc730ef7836fa7bf94f",
+    "gpu/orch_r151_memory_probe.py": "6c47e9f49b696f036e2ab8d990bcdb5872c9ad3dcdf02c09913aefce0762b619",
+    "gpu/orch_r158_matched_node4.py": "fe78b670378a84fde1b16d0f4a34bf9a3bf58d8a1ae5c490bbbce970e6c9f9b5",
+    "gpu/orch_r158_train_gym.py": "dd88f24f5ff12949e94cc8a78c398c699219c9823b93027dd878342a824bbc8b",
+    "organism_v6/bootstrap_reasoning_gym.txt": "9b2cf7521bc75fe995ffa05a117f61d12ded24395e8b315e384f58add846e1f1",
+    "organism_v6/reasoning_gym_families.json": "220071c8783ed4d608b04015c188e8b22fc5745c10f250c7fbd724dd854649ea",
+    "tests/test_orch_r150_matched_native.py": "ae43b9a2ed9ff5c1cb9b6640dbc80bf1a4d7bad80fc7b881b935899caab10a38",
+    "tests/test_orch_r151_matched_containment.py": "18ce1de94ac57f93235195e5123cf8e9b88b3c56a9ab62e67ef78de12b141643",
+    "tests/test_orch_r151_memory_probe.py": "68a15210f8d0bfeacf2af0202603d46b61637acf238a98e6170d4713dc2bf734",
+    "tests/test_orch_r158_matched_node4.py": "0e94f454c5e9e0b47485cba441f36b14156ca2dc825cfd418e436bd3a5fa5e8a",
+    "tests/test_orch_r158_train_gym.py": "c30b41de00bdefacdac56d030e224236986e2ad220c23b5f35887fbc5e792de5"
+  },
+  "freeze_allowed": false,
+  "gym_repair_tests": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_train_gym_20260917/CPU_TESTS_REPAIR1.log",
+    "sha256": "0e1f5d340f189e0ee4a930ac6c45780bfbb8b958be208fce4e7933519a7a1a6e"
+  },
+  "independent_review_claimed": false,
+  "issuer": "Builder",
+  "observed_utc": "2026-09-17T04:27:08.970691+00:00",
+  "schema": "R158_MATCHED_REPAIR_REVIEW_V1",
+  "source_authority": "Main explicitly requests unfrozen candidate2 installed actual adapter smoke before Mill re-review",
+  "source_staging_only": true,
+  "status": "PASS",
+  "tests": {
+    "command": [
+      "uv",
+      "run",
+      "--with",
+      "pytest",
+      "python",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-rs",
+      "-p",
+      "no:cacheprovider",
+      "tests/test_orch_r158_matched_node4.py",
+      "tests/test_orch_r150_matched_native.py",
+      "tests/test_orch_r150_matched_journal.py",
+      "tests/test_orch_r150_matched_stream.py",
+      "tests/test_orch_r151_memory_probe.py",
+      "tests/test_orch_r151_matched_containment.py",
+      "tests/test_orch_r151_matched_stage.py",
+      "tests/test_orch_r158_train_gym.py"
+    ],
+    "exit_code": 0,
+    "logs": [
+      {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/CANDIDATE2_LOCAL_CPU_TESTS.log",
+        "sha256": "dac36b03d5f7c0b936926d3c9c533981a75ccaf92baca6859a1b9705b5b8da56"
+      }
+    ],
+    "passed": 887
+  },
+  "upstream_repair_report": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/R158_MATCHED_CAPACITY_REPAIR.md",
+    "sha256": "724f63bcc63106820e347476c4b99038a2be0d37d492feb4ff8c739b71ca2de2"
+  }
+}

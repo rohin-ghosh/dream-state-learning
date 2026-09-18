@@ -1,0 +1,2332 @@
+{
+  "limitations": [
+    "Registered identity/source census, not full process ancestry validation.",
+    "No child journal, sealed readout, provider call, inbox write, signal, or GPU action."
+  ],
+  "local_source": {
+    "history": {
+      "functions": {
+        "checkpoint": {
+          "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+          "line": 264
+        },
+        "compact": {
+          "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+          "line": 174
+        },
+        "evict_oldest": {
+          "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+          "line": 199
+        },
+        "render": {
+          "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+          "line": 221
+        }
+      },
+      "path": "/data/home/rohing/dream-state-orch/organism_v6/orch_r124_train_history.py",
+      "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+    },
+    "native": {
+      "functions": {
+        "finish_sleep": {
+          "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+          "line": 483
+        },
+        "prepare_sleep": {
+          "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+          "line": 462
+        },
+        "run": {
+          "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+          "line": 527
+        }
+      },
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r125_continual_native.py",
+      "sha256": "cdb54252763472fd21ea12fd7694b208d968422c375dbf0647088cde736e6d48"
+    },
+    "presentation": {
+      "functions": {
+        "event_message": {
+          "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+          "line": 24
+        },
+        "replay_prefix": {
+          "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+          "line": 35
+        }
+      },
+      "path": "/data/home/rohing/dream-state-orch/organism_v6/orch_r125_plain_context.py",
+      "sha256": "dcfd1f7f5584867e39356f336f53bb7222aeb535da87d5ecb8f1f0bb59f72feb"
+    },
+    "stream": {
+      "functions": {
+        "checkpoint": {
+          "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+          "line": 229
+        },
+        "commit_sleep": {
+          "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+          "line": 204
+        },
+        "render": {
+          "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+          "line": 115
+        }
+      },
+      "path": "/data/home/rohing/dream-state-orch/organism_v6/orch_r125_continual_stream.py",
+      "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+    }
+  },
+  "nodes": [
+    {
+      "node": "a100",
+      "rows": [
+        {
+          "life_root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+          "node": "a100",
+          "observed_unix": 1789663949.0703506,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1790442300,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "free_distillation",
+            "root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/PLAN.json",
+            "sha256": "827829405ae62b518c50d71bdd0d686c7e2b193d9ecf4785c00c2f6a584b59ed"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 489
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 533
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source/gpu/orch_r125_continual_native.py",
+              "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+          "node": "a100",
+          "observed_unix": 1789663949.10243,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1790442300,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "reread_select",
+            "root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/control/PLAN.json",
+            "sha256": "8c6654d6d8822f6cdb1d661ed7a4e8332eee52d5be7cb41fc8696304c76e72c6"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 489
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "b77b54ac2ab7b2ba7822aa1d4ed4638d547cb47fa529db0ed013932596f871d8",
+                  "line": 533
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source/gpu/orch_r125_continual_native.py",
+              "sha256": "9ac05f14009f404623c281d09c8a88ede27ff3bf9dd63cd5ae7562e62e3b18f3"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "f4908d4208023d2e454d57363f93b93bcdef1020070a5b96088b93dae88953b6"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+          "node": "a100",
+          "observed_unix": 1789663949.1310434,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1790442300,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "parent_guided_distillation",
+            "root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/control/PLAN.json",
+            "sha256": "22ca67b931ca2fd2ef119d333468521ac3fb411a75b3676dbbf0f45ee2fae36d"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 489
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 533
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source/gpu/orch_r125_continual_native.py",
+              "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+          "node": "a100",
+          "observed_unix": 1789663949.1593924,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1790442300,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "free_distillation",
+            "root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/control/PLAN.json",
+            "sha256": "9357f2c195d386e6a90952fb41fbc290954aabf0d44a8bccaf45712fcfe61e91"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 489
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 533
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source/gpu/orch_r125_continual_native.py",
+              "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+          "node": "a100",
+          "observed_unix": 1789663949.1881468,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1790442300,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "reread_select",
+            "root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/control/PLAN.json",
+            "sha256": "77a236b7b6606b07e93dd1b8ad62b6a25db6d439d9433566ec1744b225180cfa"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 489
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 533
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source/gpu/orch_r125_continual_native.py",
+              "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+          "node": "a100",
+          "observed_unix": 1789663949.2163713,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1790442300,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "no_distillation",
+            "root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/control/PLAN.json",
+            "sha256": "afdbddbe2fbe2ce02488fd316c7f13a90a63d3fe932ad68a8d6a3fd65f368985"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 489
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 533
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source/gpu/orch_r125_continual_native.py",
+              "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "node": "a40r",
+      "rows": [
+        {
+          "life_root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1",
+          "node": "a40r",
+          "observed_unix": 1789663948.979418,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789754400,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/control/PLAN.json",
+            "sha256": "5f91ccd4882a07fefcac6fdd996396f541b920bb6f532eac0e3350c7199e5a9b"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "4273f4e5c0cc8691971e45b0257b8bcf943a18cb3b2c167137a3f9dede679153",
+                  "line": 423
+                },
+                "run": {
+                  "ast_sha256": "7deaa02878d7280cb96305101206affc910b7014e5c26f2a774c8908f8ed4df6",
+                  "line": 466
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source/gpu/orch_r125_continual_native.py",
+              "sha256": "ebc23f30800d0ea508477c853fe656875e1a0233ec691e7a4c88e33e3775cfe7"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "dcfd1f7f5584867e39356f336f53bb7222aeb535da87d5ecb8f1f0bb59f72feb"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "20f6c161375a74b6f9a8210be2889fc7ccd3d3a471689f705fe967d399883fed",
+                  "line": 187
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 162
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 73
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1",
+          "node": "a40r",
+          "observed_unix": 1789663949.0086987,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789754400,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane1/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane1/control/PLAN.json",
+            "sha256": "aa14b78669f354e3cb6c090689ac0fd7d256dfdd8c1e910ab4b925806833b74e"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane1/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "4273f4e5c0cc8691971e45b0257b8bcf943a18cb3b2c167137a3f9dede679153",
+                  "line": 423
+                },
+                "run": {
+                  "ast_sha256": "ca50ab8cfb6e1772e51f2516c84c3a24eba8f8fe84f5fbb6214fb8d44e843c8a",
+                  "line": 466
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane1/source/gpu/orch_r125_continual_native.py",
+              "sha256": "d3cbd3b0053f0c7c5d3d8e36e37c52954bdb39a40fc4346e4e6d3ab4bf5a2ad1"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane1/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "20f6c161375a74b6f9a8210be2889fc7ccd3d3a471689f705fe967d399883fed",
+                  "line": 187
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 162
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 73
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane1/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1",
+          "node": "a40r",
+          "observed_unix": 1789663949.0351696,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789754400,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "free_distillation",
+            "root": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane3/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane3/control/PLAN.json",
+            "sha256": "44386b156b9c4f871ce2aad884676da31576b5c6f1da7c8f15906f797a6dbeae"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane3/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 489
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 533
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane3/source/gpu/orch_r125_continual_native.py",
+              "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane3/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane3/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1",
+          "node": "a40r",
+          "observed_unix": 1789663949.0632226,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789754400,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane4/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane4/control/PLAN.json",
+            "sha256": "1f703e8cbf6de362ed5100d81fe0ef7de3e064e5a5a3d0f8f46583ae73b6606f"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane4/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "4273f4e5c0cc8691971e45b0257b8bcf943a18cb3b2c167137a3f9dede679153",
+                  "line": 423
+                },
+                "run": {
+                  "ast_sha256": "ca50ab8cfb6e1772e51f2516c84c3a24eba8f8fe84f5fbb6214fb8d44e843c8a",
+                  "line": 466
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane4/source/gpu/orch_r125_continual_native.py",
+              "sha256": "d3cbd3b0053f0c7c5d3d8e36e37c52954bdb39a40fc4346e4e6d3ab4bf5a2ad1"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane4/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "20f6c161375a74b6f9a8210be2889fc7ccd3d3a471689f705fe967d399883fed",
+                  "line": 187
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 162
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 73
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane4/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "node": "ovx2",
+      "rows": [
+        {
+          "life_root": "/localhome/local-rohing/orch_r133_support_free_20260916_attempt1/run1",
+          "node": "ovx2",
+          "observed_unix": 1789663948.834178,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789668000.0,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r133_support_free_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/PROPOSED_PLAN.json",
+            "sha256": "7307bafb877987bf9895fec2a3cf98121952718ea637bcb823fb3799e56f626c"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "4273f4e5c0cc8691971e45b0257b8bcf943a18cb3b2c167137a3f9dede679153",
+                  "line": 417
+                },
+                "run": {
+                  "ast_sha256": "ca50ab8cfb6e1772e51f2516c84c3a24eba8f8fe84f5fbb6214fb8d44e843c8a",
+                  "line": 460
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/source/gpu/orch_r125_continual_native.py",
+              "sha256": "106be5bd8bde805c092bbbf49233391b799c2b0641d3c41fdd75cb66d75ebc45"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "20f6c161375a74b6f9a8210be2889fc7ccd3d3a471689f705fe967d399883fed",
+                  "line": 187
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 162
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 73
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1",
+          "node": "ovx2",
+          "observed_unix": 1789663948.8586183,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789668000.0,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "reread_select",
+            "root": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/PROPOSED_PLAN.json",
+            "sha256": "cde51871c4ebb8e0b95b484c79f6a6bab0cb7ac424fd3c893a477ff8d68b1413"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 483
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 462
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 527
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source/gpu/orch_r125_continual_native.py",
+              "sha256": "cdb54252763472fd21ea12fd7694b208d968422c375dbf0647088cde736e6d48"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1",
+          "node": "ovx2",
+          "observed_unix": 1789663948.882378,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789668000.0,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/PROPOSED_PLAN.json",
+            "sha256": "3ed70172ee87eb8082235cda012acdc42d1ec5ee5d55b42ca23a2e33dff1c1f0"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "4273f4e5c0cc8691971e45b0257b8bcf943a18cb3b2c167137a3f9dede679153",
+                  "line": 417
+                },
+                "run": {
+                  "ast_sha256": "ca50ab8cfb6e1772e51f2516c84c3a24eba8f8fe84f5fbb6214fb8d44e843c8a",
+                  "line": 460
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/source/gpu/orch_r125_continual_native.py",
+              "sha256": "106be5bd8bde805c092bbbf49233391b799c2b0641d3c41fdd75cb66d75ebc45"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "20f6c161375a74b6f9a8210be2889fc7ccd3d3a471689f705fe967d399883fed",
+                  "line": 187
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 162
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 73
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/run1",
+          "node": "ovx2",
+          "observed_unix": 1789663948.9042573,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789668000.0,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "parent_guided_distillation",
+            "root": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/PROPOSED_PLAN.json",
+            "sha256": "ba3b4cc2dadaee3b870e543da74a3651c1d0128d71a982fd945e8aa6d179cf7a"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 483
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 462
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 527
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/source/gpu/orch_r125_continual_native.py",
+              "sha256": "cdb54252763472fd21ea12fd7694b208d968422c375dbf0647088cde736e6d48"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1",
+          "node": "ovx2",
+          "observed_unix": 1789663948.9277754,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789668000.0,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "free_distillation",
+            "root": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/PROPOSED_PLAN.json",
+            "sha256": "5c7f4a952dbc57bd9f0d1bf5e21831e0e6d12d49b06007df4faf6768fa8c8cd4"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 483
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 462
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 527
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/source/gpu/orch_r125_continual_native.py",
+              "sha256": "cdb54252763472fd21ea12fd7694b208d968422c375dbf0647088cde736e6d48"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1",
+          "node": "ovx2",
+          "observed_unix": 1789663948.950967,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789668000.0,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": "reread_select",
+            "root": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/PROPOSED_PLAN.json",
+            "sha256": "797e8dc0ac541f40e7390a7ca164180f90def3584fad0f7a4828036bc8d79078"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 483
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 462
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 527
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/source/gpu/orch_r125_continual_native.py",
+              "sha256": "cdb54252763472fd21ea12fd7694b208d968422c375dbf0647088cde736e6d48"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "node": "ovx3",
+      "rows": [
+        {
+          "life_root": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life",
+          "node": "ovx3",
+          "observed_unix": 1789663949.216721,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789776000,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/control/PLAN.json",
+            "sha256": "078df2c0239ea8ef0670a29bd3ba044ef1cb65b7011596dc82c84681018ea9c5"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 489
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 533
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/source/gpu/orch_r125_continual_native.py",
+              "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+          "node": "ovx3",
+          "observed_unix": 1789663949.2432508,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789776000,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r166_retelling_C2_20260917_activation4/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r166_retelling_C2_20260917_activation4/control/PLAN.json",
+            "sha256": "331abbc0655e4a3bd73f12ce135402f838e0149d8e71054f022c0b0c44868b2e"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r166_retelling_C2_20260917_activation4/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 490
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "9a6b1a9ad1c5a85f8e0de37eb614e4da19d31c71bedb0829a375461a32c0f786",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 534
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r166_retelling_C2_20260917_activation4/source/gpu/orch_r125_continual_native.py",
+              "sha256": "f47a3b90968c92ed772c8637cf48d4c34d6ea8bb974f5c377c7eb1c32d960559"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r166_retelling_C2_20260917_activation4/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r166_retelling_C2_20260917_activation4/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+          "node": "ovx3",
+          "observed_unix": 1789663949.2676556,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789776000.0,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical2_20260916t1626z_attempt1/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r157_keepalive_run1_20260917_readmit2/PLAN.json",
+            "sha256": "283468db6a48dc1ec2a5508f9b44d344ee21e403a484c8c76ee21730f738036e"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical2_20260916t1626z_attempt1/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "4273f4e5c0cc8691971e45b0257b8bcf943a18cb3b2c167137a3f9dede679153",
+                  "line": 423
+                },
+                "run": {
+                  "ast_sha256": "ca50ab8cfb6e1772e51f2516c84c3a24eba8f8fe84f5fbb6214fb8d44e843c8a",
+                  "line": 466
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical2_20260916t1626z_attempt1/source/gpu/orch_r125_continual_native.py",
+              "sha256": "d3cbd3b0053f0c7c5d3d8e36e37c52954bdb39a40fc4346e4e6d3ab4bf5a2ad1"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical2_20260916t1626z_attempt1/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "20f6c161375a74b6f9a8210be2889fc7ccd3d3a471689f705fe967d399883fed",
+                  "line": 187
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 162
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 73
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical2_20260916t1626z_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life",
+          "node": "ovx3",
+          "observed_unix": 1789663949.2898865,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789776000,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/control/PLAN.json",
+            "sha256": "9ee3949087ceccbe18f78decfee8bae57991348a4614156682920a58c3e3a3e8"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 489
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 533
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source/gpu/orch_r125_continual_native.py",
+              "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life",
+          "node": "ovx3",
+          "observed_unix": 1789663949.3136392,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789776000,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r157_community_C4_20260917_attempt1/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r157_community_C4_20260917_attempt1/control/PLAN.json",
+            "sha256": "0303de16d68a507e92bc10771805522771c61f4d7f56d99001448b05edea12aa"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C4_20260917_attempt1/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 489
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "00b9e075424bea8d47bf64c059805249b9aa13c46f5ddfb573414f24c7b1cd99",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 533
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C4_20260917_attempt1/source/gpu/orch_r125_continual_native.py",
+              "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C4_20260917_attempt1/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r157_community_C4_20260917_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life",
+          "node": "ovx3",
+          "observed_unix": 1789663949.3370867,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789776000,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r166_retelling_C5_20260917_recovery2/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r166_retelling_C5_20260917_recovery2/control/PLAN.json",
+            "sha256": "af6ed5d6a0c1d7b5f586849a52c7a61072e76604d6ddac34e0ef9f665878fd01"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r166_retelling_C5_20260917_recovery2/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "2274e1b49b361dc5c77a1e7db2622d0ad8ac6a3f6b56d61f7eb428b29c848e22",
+                  "line": 490
+                },
+                "prepare_sleep": {
+                  "ast_sha256": "b10839a8b79a60b657afb8a21869c31bcb97c2362a173cc6448855fdd804691d",
+                  "line": 468
+                },
+                "run": {
+                  "ast_sha256": "9e61c6ceb979af0a4b5c33cdc91dd75199384c9c9dbaa9c2bc435d5c965a6c09",
+                  "line": 534
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r166_retelling_C5_20260917_recovery2/source/gpu/orch_r125_continual_native.py",
+              "sha256": "596299686436882a5502229069f152b0032febc8f5d905cd370d1c3cb871b692"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r166_retelling_C5_20260917_recovery2/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "919a353538b1c189301503d753f2184a9f9bea138dd1858479536f6de592c908",
+                  "line": 229
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 204
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 115
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r166_retelling_C5_20260917_recovery2/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1",
+          "node": "ovx3",
+          "observed_unix": 1789663949.3608878,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789776000.0,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical6_20260916t1626z_attempt1/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r157_keepalive_pilot_20260917_readmit1/PLAN.json",
+            "sha256": "565efd26002b090815f75498272ffba218340bc20d53f88527a2fa75e3937f8f"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical6_20260916t1626z_attempt1/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "4273f4e5c0cc8691971e45b0257b8bcf943a18cb3b2c167137a3f9dede679153",
+                  "line": 423
+                },
+                "run": {
+                  "ast_sha256": "ca50ab8cfb6e1772e51f2516c84c3a24eba8f8fe84f5fbb6214fb8d44e843c8a",
+                  "line": 466
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical6_20260916t1626z_attempt1/source/gpu/orch_r125_continual_native.py",
+              "sha256": "d3cbd3b0053f0c7c5d3d8e36e37c52954bdb39a40fc4346e4e6d3ab4bf5a2ad1"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical6_20260916t1626z_attempt1/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "20f6c161375a74b6f9a8210be2889fc7ccd3d3a471689f705fe967d399883fed",
+                  "line": 187
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 162
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 73
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical6_20260916t1626z_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+            }
+          }
+        },
+        {
+          "life_root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/run1",
+          "node": "ovx3",
+          "observed_unix": 1789663949.3833303,
+          "plan": {
+            "context_limit": 16384,
+            "hard_end_unix": 1789776000,
+            "presentation_version": "R125_PLAIN_CONTEXT_V1",
+            "presleep_variant": null,
+            "root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/run1",
+            "segment_tokens": 512,
+            "segments_per_sleep": 2,
+            "source_root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/source"
+          },
+          "plan_ref": {
+            "path": "/localhome/local-rohing/orch_r157_repo_reader_wall_20260917_attempt2/PLAN.json",
+            "sha256": "cfef30fca28965930adad12e49f45df0364dc77cf3079e9db0801edd979263af"
+          },
+          "registered_identity_live": true,
+          "source": {
+            "history": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "afe2a771317d59c0b9cf57bcde2093e4745e0587bce672398bc3d848dea12148",
+                  "line": 264
+                },
+                "compact": {
+                  "ast_sha256": "ce47ded5afc94e243ca1f8956acb6eaadafc64b324d9ba3869b4a244d4391f1d",
+                  "line": 174
+                },
+                "evict_oldest": {
+                  "ast_sha256": "72745027fe9136eee8b65cc0ce46a67a5358915e816e6997b3224c000a26d0ed",
+                  "line": 199
+                },
+                "render": {
+                  "ast_sha256": "222e32f82b65e7aadba02cd2de1df393a996d3cf5ef9a0ace0e60f59e8cf03f3",
+                  "line": 221
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/source/organism_v6/orch_r124_train_history.py",
+              "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+            },
+            "native": {
+              "functions": {
+                "finish_sleep": {
+                  "ast_sha256": "4273f4e5c0cc8691971e45b0257b8bcf943a18cb3b2c167137a3f9dede679153",
+                  "line": 414
+                },
+                "run": {
+                  "ast_sha256": "ca50ab8cfb6e1772e51f2516c84c3a24eba8f8fe84f5fbb6214fb8d44e843c8a",
+                  "line": 457
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/source/gpu/orch_r125_continual_native.py",
+              "sha256": "7626d13974a78c713b9e966093e285e1e8a4f194301dd8b69ec68cfcae656526"
+            },
+            "presentation": {
+              "functions": {
+                "event_message": {
+                  "ast_sha256": "b275aec21b22f65a84bf0d7d2e9be9602ad290fbccb1792272126c7d3acbdbce",
+                  "line": 24
+                },
+                "replay_prefix": {
+                  "ast_sha256": "75ca8ad64d6947c138c3c639df4f1c0a903c0b5d1d85a532ca456cd67e9f19ad",
+                  "line": 35
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/source/organism_v6/orch_r125_plain_context.py",
+              "sha256": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+            },
+            "stream": {
+              "functions": {
+                "checkpoint": {
+                  "ast_sha256": "20f6c161375a74b6f9a8210be2889fc7ccd3d3a471689f705fe967d399883fed",
+                  "line": 187
+                },
+                "commit_sleep": {
+                  "ast_sha256": "b74b2b1f96ff723ed2398073ff63f4c521ab46b4bd86ddceecf719230e9fc4c7",
+                  "line": 162
+                },
+                "render": {
+                  "ast_sha256": "1dbb0f922a80e64c5b49f623b66b7dee292fe7bfbea62b7c455cc06a8a65de9d",
+                  "line": 73
+                }
+              },
+              "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/source/organism_v6/orch_r125_continual_stream.py",
+              "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "observed_unix": 1789663949.4651208,
+  "roster_ref": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r171_forward_roster_20260917/CURRENT_LEARNER_ROSTER.json",
+    "sha256": "71f5e62821adb90b9d260810386362959c6215f5ac2dbba0c7f22f89c56df93a"
+  },
+  "schema": "ROHIN162_READONLY_SOURCE_CENSUS_V1"
+}

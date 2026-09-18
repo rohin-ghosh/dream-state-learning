@@ -1,0 +1,33 @@
+{
+  "anchor_lambda": 0.25,
+  "anchors": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "birth_prompt": "Take the intelligence in your inherited model and turn it into behaviours you actually do, repeat those behaviours, and learn them in your LoRA. What is worth exploring and practising is for you to discover through experience and conversation. Your inherited model is frozen Qwen2.5-7B-Instruct. Your rank-8 LoRA is a small adapter attached to it, and only that adapter changes during sleep. Sleep trains on your own words, not the words people or the environment supply. Ordinary competent examples are mixed in to help keep general abilities accessible. Repeated errors and empty rituals can also be learned; improvement is not guaranteed. At the end of a thought, consider what you want to think about next and continue. When nothing else is happening, you can think about how you are thinking. Before sleep, consider what from your experience you want to carry forward. Your context is finite: the oldest visible passages are dropped when it fills. Short notices tell you your token costs. People can speak to you as you go; you need not wait for them. For now you have this conversation, not an enabled shell or experiment tools. Distinguish your ideas and predictions from results you actually receive.",
+  "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+  "context_limit": 16384,
+  "decoder": {
+    "no_repeat_ngram_size": 16,
+    "repetition_penalty": 1.05,
+    "temperature": 0.7,
+    "top_p": 0.95
+  },
+  "gpu_uuid": "GPU-bc211959-642d-664b-3581-42a0dbe434e9",
+  "hard_end_unix": 1789630080,
+  "lease_end_unix": 1789689600.0,
+  "max_sleeps": null,
+  "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+  "new_presentations": 16,
+  "physical": 5,
+  "presentation_version": "R125_PLAIN_CONTEXT_V1",
+  "presleep_variant": "free_distillation",
+  "r163_validation_only": true,
+  "readout_revision": 1,
+  "rehearsal_presentations": 1,
+  "root": "/localhome/local-rohing/orch_r163_numerical_preparation_20260917_attempt1/validation_run1",
+  "schema": "R125_NATIVE_CONTINUITY_V1",
+  "seed": 0,
+  "segment_tokens": 512,
+  "segments_per_sleep": 2,
+  "source_root": "/localhome/local-rohing/orch_r163_numerical_preparation_20260917_attempt1/selected_source_candidate3",
+  "system_prompt": "You are a language-model agent with an ongoing history. Between incoming messages, continue your own inquiry without waiting for another request. You can consider what to investigate next, revisit an observation, or reflect on how your thinking is going. Use your own organization; do not pad or repeat a passage just to keep producing text. An end-of-generation marker is a software boundary, not a request to forget your history. Runtime notices and parent messages are inputs, not your own words."
+}

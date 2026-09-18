@@ -1,0 +1,84 @@
+{
+  "schema": "R177_LOCAL_VISION_MAIN_BINDINGS_V1",
+  "status": "ALLOCATION_AUTHORIZED_RUNTIME_INPUTS_PENDING_NOT_LIVE",
+  "allocation_authorized_by_current_Main_instruction": true,
+  "additional_conceptual_review_required": false,
+  "observed_unix": 1789672486.0947402,
+  "physical": 5,
+  "gpu_uuid": "GPU-2e7eb3b8-9b0b-3729-f5ff-2bbdad6a4a30",
+  "host_sha256": "e376292376f9f56a83e1255021f5b1a4249f1afdff42b5aed3cad36a9635834b",
+  "max_gpu_seconds": 3600,
+  "runtime_max_seconds": 3570,
+  "cleanup_max_seconds": 30,
+  "model_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "source": {
+    "local_path": "gpu/ny_caption_vision.py",
+    "remote_path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/cpu_stage2/source/gpu/ny_caption_vision.py",
+    "sha256": "30fe8ac5404c44408f1784c4ccfb08b180b2a8806e5e4d491f04281014470846"
+  },
+  "tests": {
+    "local_path": "tests/test_ny_caption_vision.py",
+    "sha256": "cb2b91cd6e2bab571c32d94127064f2bd4ed29c70499dd1936b60cfaba84db55",
+    "receiving_count": 24,
+    "receiving_status": "PASS",
+    "actual_image_inference_tests": 0
+  },
+  "cpu_receipt": {
+    "path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/cpu_stage2/CPU_RECEIPT.json",
+    "sha256": "837c9aa208c35b7f4716869491e767ee2e2453fb1766718ae6776425aa94672f"
+  },
+  "snapshot": {
+    "path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/snapshot",
+    "manifest_sha256": "761c106a4ff5f61f7ac86eb31e588fa8b651c38021d757e425817e85a008d53c",
+    "download_verified_bytes": 16595961188
+  },
+  "expected_runtime_root": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/runtime1",
+  "expected_runtime_admission_path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/runtime1/ADMISSION.json",
+  "runtime_admission_sha256": null,
+  "expected_service_unit": "orch-r177-vision-runtime1.service",
+  "missing_supplied_inputs": [
+    "Released DEVELOPMENT image-only packet path/SHA256 with exactly three distinct agent-development handles, server-local PNG/JPEG paths, actual image SHA256 and byte counts; no captions, judge labels or training descriptions",
+    "Existing node4 lease receipt path/SHA256 exposing the unchanged hard_end_unix"
+  ],
+  "operator_prelaunch_work": [
+    "Verify all released image bytes without sending judge/reference/arm/history metadata to Qwen",
+    "Obtain a fresh unchanged privileged physical5-clear scanner receipt and pin its exact bytes",
+    "Bind packet, receiving CPU, snapshot, existing lease and fresh device receipt in runtime1/ADMISSION.json under the already-authorized allocation",
+    "Start only the bound own strict single-device systemd unit; publish actual load and listening receipts separately"
+  ],
+  "transport": {
+    "server_bind": "[REDACTED_ADDRESS]:8177",
+    "client_endpoint": "http://[REDACTED_ADDRESS]:8177",
+    "route": "POST /v1/inspect",
+    "cross_node_transport": "approved SSH local forward through gpu/a40r_ssh.sh",
+    "port_accepting_at_observation": false,
+    "ssh_forward_started": false,
+    "hosted_fallback": false
+  },
+  "availability": {
+    "gpu_model_loaded": false,
+    "vision_units_present": false,
+    "physical5_memory_used_mib": 0,
+    "physical5_utilization_percent": 0,
+    "real_image_smoke_completed": 0,
+    "real_image_smoke_target": 2,
+    "canonical_scene_descriptions_available": false,
+    "runnable_game_manifest_available": false
+  },
+  "game_interface": {
+    "constructor": "gpu.ny_caption_game.DevelopmentManifest.from_mapping",
+    "top_level_fields": ["mode", "development_contest_ids", "contests"],
+    "mode": "DEVELOPMENT",
+    "contest_count": 3,
+    "contest_fields": ["contest_id", "canonical_scene", "image", "split"],
+    "split": "agent_development",
+    "image_value": "released opaque image handle, not an absolute filesystem path",
+    "canonical_scene_source": "actual pinned local Qwen observations and explicit uncertainty only; unavailable until inference",
+    "provider": "LocalHTTPProvider(endpoint, ImagePacket.load(packet_path), receipt_sink=ReceiptWriter(client_receipt_directory))",
+    "provider_return": "gpu.ny_caption_game.VisualResult(observations, uncertainty)",
+    "Main_owned_smoke_glue": "gpu/ny_caption_stage1_tools.py"
+  },
+  "not_runtime_admission": true,
+  "no_process_stopped": true
+}

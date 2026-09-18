@@ -1,0 +1,119 @@
+{
+  "GPU_access": false,
+  "cgroup_removed_after_stop": true,
+  "command": [
+    "sudo",
+    "-n",
+    "systemd-run",
+    "--quiet",
+    "--wait",
+    "--pipe",
+    "--unit=orch-r125-cpu-b6acdf856242bd40",
+    "--property=DynamicUser=yes",
+    "--property=RootDirectory=/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0212z/spool/dd96b6fd85c6e3648cd1d24be17aeae38f6667dc601fb6739d2f00989932b947/rootfs",
+    "--property=BindReadOnlyPaths=/usr /localhome/local-rohing/orch_r153_cpu_smoke_20260918t0212z/spool/dd96b6fd85c6e3648cd1d24be17aeae38f6667dc601fb6739d2f00989932b947/payload.py:/job.py /localhome/local-rohing/orch_r153_cpu_smoke_20260918t0212z/spool/dd96b6fd85c6e3648cd1d24be17aeae38f6667dc601fb6739d2f00989932b947/readonly.txt:/readonly.txt /localhome/local-rohing/orch_r153_cpu_smoke_20260918t0212z/spool/dd96b6fd85c6e3648cd1d24be17aeae38f6667dc601fb6739d2f00989932b947/empty:/sys/fs/cgroup",
+    "--property=MountAPIVFS=no",
+    "--property=PrivateNetwork=yes",
+    "--property=PrivateDevices=yes",
+    "--property=ProtectSystem=strict",
+    "--property=ProtectHome=yes",
+    "--property=ProtectProc=invisible",
+    "--property=ProcSubset=pid",
+    "--property=NoNewPrivileges=yes",
+    "--property=CapabilityBoundingSet=",
+    "--property=AmbientCapabilities=",
+    "--property=ProtectKernelTunables=yes",
+    "--property=ProtectKernelModules=yes",
+    "--property=ProtectKernelLogs=yes",
+    "--property=ProtectControlGroups=yes",
+    "--property=RestrictNamespaces=yes",
+    "--property=RestrictSUIDSGID=yes",
+    "--property=LockPersonality=yes",
+    "--property=MemoryDenyWriteExecute=yes",
+    "--property=RestrictRealtime=yes",
+    "--property=TemporaryFileSystem=/tmp:rw,size=8M,mode=1777 /work:rw,size=8M,mode=1777",
+    "--property=ReadWritePaths=/tmp /work",
+    "--property=WorkingDirectory=/work",
+    "--property=InaccessiblePaths=/sys /sys/fs/cgroup",
+    "--property=MemoryMax=128M",
+    "--property=MemorySwapMax=0",
+    "--property=TasksMax=8",
+    "--property=CPUQuota=25%",
+    "--property=RuntimeMaxSec=15",
+    "--property=TimeoutStopSec=2",
+    "--property=KillMode=control-group",
+    "--property=OOMPolicy=kill",
+    "--property=DevicePolicy=strict",
+    "--property=DeviceAllow=/dev/null rw",
+    "--property=SystemCallFilter=~@mount @network-io @privileged @reboot @swap @module @debug",
+    "--property=SystemCallErrorNumber=EPERM",
+    "--property=UMask=0077",
+    "--property=LimitCORE=0",
+    "--property=LimitFSIZE=1048576",
+    "/usr/bin/env",
+    "-i",
+    "PATH=/usr/bin:/bin",
+    "LANG=C.UTF-8",
+    "PYTHONHASHSEED=0",
+    "/usr/bin/python3",
+    "-I",
+    "/job.py"
+  ],
+  "elapsed_seconds": 0.3444267379818484,
+  "environment_injected": false,
+  "finished_utc": "2026-09-18T02:12:10.938620+00:00",
+  "gate": {
+    "basic": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0212z/gate/basic.json",
+      "sha256": "a2b93e386326881f670ddb60b2fae4d506d2ed935804a8fde0cc04724f7f5086"
+    },
+    "files": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0212z/gate/files.json",
+      "sha256": "364107b4c45562d0d88c616e72119dc95c010dab3db32ede0565ae7741dc5e7b"
+    },
+    "memory": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0212z/gate/memory.json",
+      "sha256": "978fe7e0923eaadb52a9d6a8470a1d5dc9514641ab071eb7fd83e9d54ba91dfb"
+    },
+    "output": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0212z/gate/output.json",
+      "sha256": "5ebe4430bbfcd8d72b8b797785eed8b21070b65fbe893b9dca902ede2929f53b"
+    },
+    "timeout": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0212z/gate/timeout.json",
+      "sha256": "ba26307ab3ca1fcb3617ee610564d877390fa78f6c9dbf3551f6c5597c8ea516"
+    }
+  },
+  "launch_attempted": true,
+  "limit_reason": null,
+  "observed_bytes": 3,
+  "origin": {
+    "child_generated": false,
+    "kind": "BUILDER_TEST"
+  },
+  "output_is_untrusted": true,
+  "raw_request_sha256": "a6970e87a4e0246bfbd5f6f630709754d9bb8f99c71d7358bc1ba29dced20bd8",
+  "request_id": "dd96b6fd85c6e3648cd1d24be17aeae38f6667dc601fb6739d2f00989932b947",
+  "requested_origin": {
+    "kind": "BUILDER_TEST",
+    "record_index": 0,
+    "record_sha256": "382c07fb355b51323d693a14a6043f04c249036bd8cdd30d75ec5542ecec32df"
+  },
+  "retained_bytes": 3,
+  "returncode": 0,
+  "schema": "R125_CPU_EXPERIMENT_RESULT_V1",
+  "source_closure_sha256": {
+    "capture": "b45825aad250ad0305b1f2d2c1b475690a4c6dda89045f97d5ee63da1294119d",
+    "code_blocks": "95854d7c223d08931793ef86c7a64c119283fc86e270725dc40e967e389b38bd",
+    "dispatcher": "a1cd93ab6ab2cc1412ebdbce89142a332247164fe1f29d47a52bcb42a871f942",
+    "profile": "9117c4d72cdbb700e351f4625e763f96cf94341a3cf6d2a2cf3445687bfae48b",
+    "request_parser": "8894819b74275760038313be4b894fd2f5c92b7004aa99d2a6c2cf60cad05f93"
+  },
+  "source_sha256": "e10d13ee6beb328301b03cd6651a69e7c0b475c9559e6bf9f3dde151dc373eeb",
+  "started_utc": "2026-09-18T02:12:10.459875+00:00",
+  "status": "COMPLETE",
+  "stderr": "",
+  "stdout": "42\n",
+  "teardown_called": false,
+  "teardown_error": null
+}

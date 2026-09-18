@@ -1,0 +1,99 @@
+{
+  "probe_sha256": "65f49f373960032206ab13e8fd4838905c42f3836ffb8c9faa8320a8b57edfdc",
+  "rows": [
+    {
+      "attempt": 2,
+      "callsite": "fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)",
+      "callsite_line": 285,
+      "callsite_path": "/localhome/local-rohing/orch_r179_context_C2_20260917_attempt2/rollout_operator.py",
+      "child_launched": false,
+      "failure": {
+        "automatic_retry": false,
+        "error_type": "BlockingIOError",
+        "reason": "[Errno 11] Resource temporarily unavailable",
+        "recorded_unix": 1789665124.7969568,
+        "retired": false,
+        "terminated": false
+      },
+      "label": "C2",
+      "locks": [
+        {
+          "holders": [
+            {
+              "known_action": "execute",
+              "pid": 4068493,
+              "start_ticks": "17152921",
+              "state": "S"
+            }
+          ],
+          "inode": 27167739,
+          "kind": "legacy_handoff",
+          "path": "/localhome/local-rohing/orch_r157_C2_HANDOFF.lock"
+        },
+        {
+          "holders": [
+            {
+              "known_action": "native",
+              "pid": 4077813,
+              "start_ticks": "17169605",
+              "state": "R"
+            }
+          ],
+          "inode": 40118468,
+          "kind": "resident_stream_writer",
+          "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/WRITER.lock"
+        }
+      ],
+      "no_native_termination_intent": true,
+      "observed_unix": 1789666649.1218426,
+      "source_sha256": "5f878f2822323d5fc3932fde711e0b25fef956720bbf3f862f157878845bd878"
+    },
+    {
+      "attempt": 1,
+      "callsite": "fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)",
+      "callsite_line": 285,
+      "callsite_path": "/localhome/local-rohing/orch_r179_context_C5_20260917_attempt1/rollout_operator.py",
+      "child_launched": false,
+      "failure": {
+        "automatic_retry": false,
+        "error_type": "BlockingIOError",
+        "reason": "[Errno 11] Resource temporarily unavailable",
+        "recorded_unix": 1789665159.7316477,
+        "retired": false,
+        "terminated": false
+      },
+      "label": "C5",
+      "locks": [
+        {
+          "holders": [
+            {
+              "known_action": "execute-recovery",
+              "pid": 4015531,
+              "start_ticks": "17063460",
+              "state": "S"
+            }
+          ],
+          "inode": 27167742,
+          "kind": "legacy_handoff",
+          "path": "/localhome/local-rohing/orch_r157_C5_HANDOFF.lock"
+        },
+        {
+          "holders": [
+            {
+              "known_action": "native",
+              "pid": 4018497,
+              "start_ticks": "17068304",
+              "state": "R"
+            }
+          ],
+          "inode": 40118504,
+          "kind": "resident_stream_writer",
+          "path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/WRITER.lock"
+        }
+      ],
+      "no_native_termination_intent": true,
+      "observed_unix": 1789666649.1225462,
+      "source_sha256": "5f878f2822323d5fc3932fde711e0b25fef956720bbf3f862f157878845bd878"
+    }
+  ]
+}

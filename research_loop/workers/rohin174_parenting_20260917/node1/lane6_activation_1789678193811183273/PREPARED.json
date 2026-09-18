@@ -1,0 +1,141 @@
+{
+  "assignment": {
+    "arm": "C",
+    "cadence": 3,
+    "child": "classroom_creative",
+    "gpu": 6,
+    "node": "a100",
+    "peer": "classroom_brain"
+  },
+  "bundle_manifest_sha256": "392de385efeaf5cab14dace5c291c874dd7865a863bde5d0574f8093016b5109",
+  "child_signals": 0,
+  "cpu": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/lane6_activation_1789678193811183273/RECEIVING_CPU_1789678194731781897.json",
+    "sha256": "67d65425a4707500a03cf86c6c9e1196d82cafcabb53e9ff5e5b5ca03374b001"
+  },
+  "parent_signals": 0,
+  "row": {
+    "arm": "C",
+    "baseline": "C2_OBSERVATION_TO_ACTION",
+    "cadence_responses": 3,
+    "label": "classroom_creative",
+    "native": {
+      "actor": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r179_node1_20260917_attempt3/lanes/lane6/control/GUARD.json"
+        ],
+        "argv_sha256": "9802bc16ed72b1a2e1afa8c17585fe87056fd9fe6a82ebf44afc6d896c7c1650",
+        "cwd": "/localhome/local-rohing/orch_r179_node1_20260917_attempt2/lanes/lane6/source",
+        "pid": 2266999,
+        "state": "R",
+        "ticks": "39324155",
+        "uid": 1395
+      },
+      "control_native": false,
+      "guard": {
+        "bytes": 334274,
+        "path": "/localhome/local-rohing/orch_r179_node1_20260917_attempt3/lanes/lane6/control/GUARD.json",
+        "sha256": "e760691ddc49d07e8b43779c540b57132392dd1281afdfe34166f996e89bbeff"
+      },
+      "guard_physical": null,
+      "plan": {
+        "bytes": 7712,
+        "path": "/localhome/local-rohing/orch_r179_node1_20260917_attempt3/lanes/lane6/control/PLAN.json",
+        "sha256": "2f815f4a775e483eaa8eb2bee733479c58f760b315600dc0607228bb6beab5c5"
+      },
+      "plan_fields": {
+        "gpu_uuid": "GPU-6de3930d-104a-f969-7d36-009271368dd1",
+        "hard_end_unix": 1790442300,
+        "max_sleeps": null,
+        "physical": 6,
+        "presleep_variant": "reread_select",
+        "root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+        "segments_per_sleep": 2,
+        "source_root": "/localhome/local-rohing/orch_r179_node1_20260917_attempt2/lanes/lane6/source"
+      },
+      "plan_keys": [
+        "anchor_lambda",
+        "anchors",
+        "base_sha256",
+        "birth_prompt",
+        "compaction_invitation",
+        "context_limit",
+        "decoder",
+        "gpu_uuid",
+        "hard_end_unix",
+        "lease_end_unix",
+        "max_sleeps",
+        "model_dir",
+        "new_presentations",
+        "physical",
+        "presentation_version",
+        "presleep_variant",
+        "rehearsal_presentations",
+        "root",
+        "schema",
+        "seed",
+        "segment_tokens",
+        "segments_per_sleep",
+        "source_root",
+        "startup_context",
+        "system_prompt"
+      ]
+    },
+    "no_child_restart": true,
+    "observed_reserved_response_count": 122,
+    "old_output": "/data/home/rohing/dream-state-orch/research_loop/workers/r169_parent_auth_refresh_20260917/parent_407890/parent",
+    "old_parent": {
+      "argv": [
+        "/usr/bin/python3.12",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/r169_parent_auth_refresh_20260917/refresh.py",
+        "serve",
+        "--binding",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/r169_parent_auth_refresh_20260917/parent_407890/BINDING.json"
+      ],
+      "argv_sha256": "73f1915f9803b47e850a65d384a667ee2690b210dbbb6e61d6a143e1bc81c612",
+      "cwd": "/tmp/r136-node1-build/source",
+      "pid": 2258593,
+      "state": "S",
+      "ticks": "176045455",
+      "uid": 158984
+    },
+    "old_parent_binding": {
+      "bytes": 1977,
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r169_parent_auth_refresh_20260917/parent_407890/BINDING.json",
+      "sha256": "1ca8fd07e02d2abed8666e356d42641f6d840c48552c7663e93b2062b45b2c5b"
+    },
+    "original": {
+      "binding": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/ACTIVATION_PREP_1789677032315502264/lane6/ORIGINAL_BINDING.json",
+        "sha256": "1ca8fd07e02d2abed8666e356d42641f6d840c48552c7663e93b2062b45b2c5b"
+      },
+      "config": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/ACTIVATION_PREP_1789677032315502264/lane6/ORIGINAL_CONFIG.json",
+        "sha256": "c750fe654640f04500b4de814ad108a092220078c023ad780fa4f34e8924459d"
+      },
+      "source": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/ACTIVATION_PREP_1789677032315502264/lane6/ORIGINAL_SOURCE.py",
+        "sha256": "eb21c814a186006b3a78dcd76d6835bb31015962968f5f795cf9574f0d1dead9"
+      }
+    },
+    "original_hard_end_unix": 1790442300,
+    "parent_word_cap": 90,
+    "physical": 6,
+    "preparation_directory": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/ACTIVATION_PREP_1789677032315502264/lane6",
+    "previous_output": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/a100_6_classroom_creative_1160366/parent",
+    "retirement_authorized": false,
+    "root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+    "runtime_sleep_r179_unchanged": true,
+    "schedule_on": "response",
+    "three_sleep_check_starts_at": "FIRST_VERIFIED_ASSIGNED_PARENT_REQUEST_EXPOSURE",
+    "wait_for_c2_success": false
+  },
+  "status": "ACTUAL_RECEIVING_CPU_PASS"
+}

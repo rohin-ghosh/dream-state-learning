@@ -1,0 +1,134 @@
+{
+  "arms": {
+    "fresh_math": {
+      "CONFINEMENT_CHILD.json": {
+        "denied_foreign_minors": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "gpu_uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821",
+        "model_calls": 0,
+        "observed_unix": 1789703601.273632,
+        "physical": 1,
+        "pid": 1745729,
+        "unit": "orch-r184-c2-explicit-child-970bdd15f9d790c3"
+      },
+      "dispatch": {
+        "arm": "fresh_math",
+        "observed_unix": 1789703599.4635637,
+        "processes": {
+          "parent": {
+            "pid": 1745646,
+            "start_ticks": "40986179"
+          },
+          "supervisor": {
+            "pid": 1745647,
+            "start_ticks": "40986179"
+          }
+        },
+        "status": "DISPATCHED_NOT_LOADED_PROOF"
+      },
+      "loaded": {
+        "adapter_sha256": "dbf7b4a05c787157ee2470c66ba079e77aa0545a402eedea610dcaf898f26085",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "index": 1,
+        "loaded_unix": 1789703655.1758585,
+        "optimizer_steps": 0,
+        "path": "/localhome/local-rohing/orch_r205_node3_20260918/fresh_math/raw/stream/records/00000000000000000001.json",
+        "pid": 1745731,
+        "plasticity": null,
+        "resume": false,
+        "sha256": "3f23b9bee2fbaac463366b1d72b62632d0291181f64314be970ee720f953d2b0"
+      },
+      "physical": 1,
+      "plan_sha256": "38c0b15cf1d59ca69f6e2bb3e207e624320261cd1f2ac02c6121aa3c1b1a5fe1",
+      "root": "/localhome/local-rohing/orch_r205_node3_20260918/fresh_math",
+      "status": "LOADED",
+      "trial_id": "R205_FRESH_MATH_FIRST_PRINCIPLES"
+    },
+    "frozen_c2": {
+      "CONFINEMENT_CHILD.json": {
+        "denied_foreign_minors": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "gpu_uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939",
+        "model_calls": 0,
+        "observed_unix": 1789703609.3854609,
+        "physical": 0,
+        "pid": 1745760,
+        "unit": "orch-r184-c2-explicit-child-39e7b754a968733f"
+      },
+      "dispatch": {
+        "arm": "frozen_c2",
+        "observed_unix": 1789703607.6549885,
+        "processes": {
+          "parent": {
+            "pid": 1745742,
+            "start_ticks": "40986998"
+          },
+          "supervisor": {
+            "pid": 1745743,
+            "start_ticks": "40986998"
+          }
+        },
+        "status": "DISPATCHED_NOT_LOADED_PROOF"
+      },
+      "first_ACT": {
+        "index": 15,
+        "path": "/localhome/local-rohing/orch_r205_node3_20260918/frozen_c2/raw/stream/records/00000000000000000015.json",
+        "segment": 154,
+        "sha256": "826082fc1b2ad53a4162feca57af5e3430dff263a066302be1351e843a10be22",
+        "stage": "ACT"
+      },
+      "loaded": {
+        "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "index": 1,
+        "loaded_unix": 1789703636.785895,
+        "optimizer_steps": 4908,
+        "path": "/localhome/local-rohing/orch_r205_node3_20260918/frozen_c2/raw/stream/records/00000000000000000001.json",
+        "pid": 1745762,
+        "plasticity": null,
+        "resume": true,
+        "sha256": "a40e4aeb0d63e7b365c3bde9b6228bed3bf45756232913b55bf36643bdb22a1b"
+      },
+      "physical": 0,
+      "plan_sha256": "07d57d46af1708fb8f78d551c27cd6465f57bce627a45b04ad1761f9b9aec7da",
+      "root": "/localhome/local-rohing/orch_r205_node3_20260918/frozen_c2",
+      "status": "LOADED",
+      "trial_id": "R205_PARENTED_NO_WEIGHT_UPDATES"
+    },
+    "lr03": {
+      "status": "NOT_STAGED"
+    },
+    "lr3": {
+      "status": "NOT_STAGED"
+    },
+    "p32": {
+      "status": "NOT_STAGED"
+    },
+    "p4": {
+      "status": "NOT_STAGED"
+    },
+    "peer_math": {
+      "status": "NOT_STAGED"
+    },
+    "peer_repo": {
+      "status": "NOT_STAGED"
+    }
+  },
+  "hostname": "[REDACTED_HOST]",
+  "observed_utc": "2026-09-18T03:54:39.506808+00:00",
+  "unique_loaded": 2
+}

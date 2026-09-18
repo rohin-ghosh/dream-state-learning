@@ -1,0 +1,211 @@
+{
+  "actual_source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source",
+  "birth_plan_evidence": {
+    "guard": {
+      "bytes": 344334,
+      "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/control1/GUARD.json",
+      "sha256": "964cb84e82e665d57cbef7137b52694df2f74869562cb6826c3878ac81636b6b"
+    },
+    "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+  },
+  "completed_boundary": {
+    "checkpoint": {
+      "adapter_files": {
+        "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+        "adapter_config.json": "fb87218d94a999abf47fbeb736c633561806c2db8a05aae7420f97604d2173e9",
+        "adapter_model.safetensors": "1372282af1ae6446d42a174380a17761f4ad0d60a1df71e819616a2ba3815fae"
+      },
+      "adapter_path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/checkpoints/sleep_000036/adapter",
+      "adapter_state_sha256": "394757f73553f7d18d149a1c3fe0c28d52f9952a0011eda5fe0d8b5436676027",
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "checkpoint_sha256": {
+        "adapter": "3d2b108614b055427c82e21739a1880255ba37b9854b192fcd377a38519ee138",
+        "optimizer": "833f09a51bad0f44511640452baa9b78cf45f9f3b74f0924aeedc2eba63d72b4",
+        "rng": "833f09a51bad0f44511640452baa9b78cf45f9f3b74f0924aeedc2eba63d72b4"
+      },
+      "created_unix": 1789629272.018201,
+      "experiment_digest": "8eda581cd796c18b803672dae435cae5ff3b493d6eefbdc8517918af1d473a69",
+      "optimizer_rng_path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/checkpoints/sleep_000036/optimizer_rng.pt",
+      "optimizer_steps": 3531,
+      "presence_only": {
+        "adapter/adapter_config.json": {
+          "bytes": 1263,
+          "regular": true
+        },
+        "adapter/adapter_model.safetensors": {
+          "bytes": 80792096,
+          "regular": true
+        },
+        "optimizer_rng.pt": {
+          "bytes": 161854973,
+          "regular": true
+        }
+      },
+      "reference": {
+        "bytes": 7823,
+        "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/checkpoints/sleep_000036/COMMIT.json",
+        "sha256": "ac8c1225da9b7b82bb7013bd8805144305bba5a4e88689c517bd1f6bb44360d6"
+      },
+      "schema": "R125_NATIVE_CONTINUITY_V1"
+    },
+    "cycle": 36,
+    "generations": 108,
+    "record": {
+      "chain_sha256": "2cecdac58781a78773ad804b067196384b934de2723c404bbb07a846da5f1b94",
+      "index": 4060,
+      "intent": {
+        "bytes": 265,
+        "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/stream/records/00000000000000004060.intent.json",
+        "sha256": "5985da3642116d26ac81cc4a68fae86c9edc05139c1d2c694fc6eee01ec2fe66"
+      },
+      "kind": "SLEEP_COMPLETE",
+      "previous_sha256": "7fbd7501b6de7142f4f39f9538e58e10f6ed4fa7607349a44248c948bbb8bea4",
+      "record": {
+        "bytes": 2234531,
+        "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/stream/records/00000000000000004060.json",
+        "sha256": "c592172e32a4694eb35b0caab7bc86aac95bf3e5c573a10737f9a5d63575dc6f"
+      }
+    },
+    "resume_state_sha256": "22a227034c9bae2fb349317d5c8ab7b36ac164cfc3b04930d3866caa6ce33ff2",
+    "rows": 108,
+    "sleep_frontier": 108
+  },
+  "cumulative_reads": {
+    "journal_bytes": 20396391,
+    "metadata_bytes": 2619657,
+    "record_count": 155
+  },
+  "current_plans": [
+    {
+      "bytes": 7893,
+      "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/PLAN.json",
+      "sha256": "827829405ae62b518c50d71bdd0d686c7e2b193d9ecf4785c00c2f6a584b59ed"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/A100_CUSTODY_attempt1.json",
+      "sha256": "cd71e94040dbd02b09dc64cc9b2a6c17309c064f8d45c9e000190bec2c379a7e"
+    },
+    {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/A100_BIRTH_FOLLOWUP.json",
+      "sha256": "28d5d5d7a8d90240e1350dfff8db7e788eeed4f0fbe8a601175473b668dd0a4d"
+    },
+    {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/A100_EXACT_PLAN_FOLLOWUP.json",
+      "sha256": "acccb0679ae44956935b987b08ba3a67f150784c0cbd6fd6430b95ca91eff010"
+    }
+  ],
+  "hostname": "[REDACTED_HOST]",
+  "initial_commit": {
+    "adapter_files": {
+      "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+      "adapter_config.json": "dc183733ee754a164774d729bf580299060cb278a791726030e7abe871982bb7",
+      "adapter_model.safetensors": "2beaa09d4930b1eafa6a1a07a67f3d062b35336d5e5ac58778a00ad518cf9dfe"
+    },
+    "adapter_path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/checkpoints/initial/adapter",
+    "adapter_state_sha256": "95966e71c3ec81487d05e02d6b770c422febfc433fe367d856a6e4817f8dbe14",
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "checkpoint_sha256": {
+      "adapter": "9c1a334783c83bd22bd80415c6444ad9197a4598accd9c4ff0576889ba1260a9",
+      "optimizer": "aa67b400c808d807a63ba7a6d0f04791fdbf4e7df28a2351907fad32d5fd7f44",
+      "rng": "aa67b400c808d807a63ba7a6d0f04791fdbf4e7df28a2351907fad32d5fd7f44"
+    },
+    "created_unix": 1789554186.311657,
+    "experiment_digest": "8eda581cd796c18b803672dae435cae5ff3b493d6eefbdc8517918af1d473a69",
+    "optimizer_rng_path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/checkpoints/initial/optimizer_rng.pt",
+    "optimizer_steps": 0,
+    "presence_only": {
+      "adapter/adapter_config.json": {
+        "bytes": 1263,
+        "regular": true
+      },
+      "adapter/adapter_model.safetensors": {
+        "bytes": 80792096,
+        "regular": true
+      },
+      "optimizer_rng.pt": {
+        "bytes": 48933,
+        "regular": true
+      }
+    },
+    "reference": {
+      "bytes": 7810,
+      "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/checkpoints/initial/COMMIT.json",
+      "sha256": "5417af5620b0f023078c2fd30b7c11256ce8b1c8ba08849472e6e9239391417d"
+    },
+    "schema": "R125_NATIVE_CONTINUITY_V1"
+  },
+  "initial_record": {
+    "chain_sha256": "c03dbec9cb6b3806146d28c879b252fa2e125e96a580a286d268b80d7aa97340",
+    "index": 0,
+    "intent": {
+      "bytes": 262,
+      "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/stream/records/00000000000000000000.intent.json",
+      "sha256": "3a22a82e8bf032f20d9628d46db07f75c124c8f15c0b59db3c0d08a229b0f5c4"
+    },
+    "kind": "COMMITTED",
+    "previous_sha256": "1f2657ac076f84f574e30e69596e5e6867ef331d4c79c0289d6d1eee9ecfab36",
+    "record": {
+      "bytes": 20811,
+      "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/stream/records/00000000000000000000.json",
+      "sha256": "8e57570996dea5f6111073bf8bcd8f128cb417486798b1ddf3a3e6c6a1aced7c"
+    }
+  },
+  "journal": {
+    "bytes": 84,
+    "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/stream/JOURNAL.json",
+    "sha256": "bed1d16a3012926f9ee19037a917de2e563cbdac442c500d96c345bfaeceaa2e"
+  },
+  "last_completed_sleep": 36,
+  "life_id": "teach_replay",
+  "limitations": [
+    "Bounded intent-verified contiguous suffix to completed boundary, not full historical journal replay.",
+    "Initial COMMIT/birth state and zero optimizer steps verified; adapter/optimizer file presence only, bytes not loaded.",
+    "Birth-context comparison never exports prompt or TRAIN response contents.",
+    "Source pin verifies the current on-disk native file against guard inventory, not all imported modules or process code-memory.",
+    "Freeze/milestones and source-copy authority must be bound separately by Main."
+  ],
+  "native_identity": {
+    "argv_sha256": "a7fe310783a8250e58223593f614d025011ed04cb15720cabd7142d0fd1d012e",
+    "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+    "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source",
+    "pid": 2197976,
+    "start_ticks": "30656088",
+    "state": "R",
+    "uid": 1395
+  },
+  "native_source_binding": {
+    "guard": {
+      "bytes": 345050,
+      "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/GUARD.json",
+      "sha256": "dc7920c79c8141f82cd5473579564c71370a7a811912c0cb42c19d8b6403718c"
+    },
+    "relative_path": "gpu/orch_r125_continual_native.py",
+    "source": {
+      "bytes": 39213,
+      "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source/gpu/orch_r125_continual_native.py",
+      "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+    },
+    "verified": true
+  },
+  "node": "a100",
+  "observed_unix": 1789635711.3898644,
+  "original_birth_plan": {
+    "bytes": 7857,
+    "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/control1/PLAN.json",
+    "sha256": "df476e937d077575396aa187cd302767996016757aa3bbee8cb25950876f44d2"
+  },
+  "process_plan_root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+  "queue_admission": false,
+  "registry_birth_plan": {
+    "bytes": 7893,
+    "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/PLAN.json",
+    "sha256": "827829405ae62b518c50d71bdd0d686c7e2b193d9ecf4785c00c2f6a584b59ed"
+  },
+  "registry_birth_plan_is_original": false,
+  "schema": "R167_LEGACY_REGISTRATION_OBSERVATION_V1",
+  "source_copy_authority": false,
+  "source_root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+  "status": "IDENTITY_AND_COMPLETED_FRONTIER_VERIFIED"
+}

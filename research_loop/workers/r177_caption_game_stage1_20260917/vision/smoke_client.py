@@ -14,7 +14,7 @@ QUESTION = 'What people, objects, and spatial relationships are clearly visible?
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--packet', type=Path, required=True)
-    parser.add_argument('--endpoint', default='http://127.0.0.1:8177')
+    parser.add_argument('--endpoint', default='http://[REDACTED_ADDRESS]:8177')
     parser.add_argument('--output', type=Path, required=True)
     arguments = parser.parse_args()
     packet = ImagePacket.load(arguments.packet)

@@ -1,0 +1,26 @@
+{
+  "schema": "R177_NODE4_AMPERE_EXACT_PREPARED_LAUNCH_V1",
+  "status": "PREPARED_NOT_DISPATCHED_BY_NODE4_WORKER",
+  "physical": 2,
+  "owner": "Ampere",
+  "root": "/localhome/local-rohing/orch_r177_ampere_judge_20260917/released_all_v4",
+  "config": "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/attempts/launch_2_1789671689211770505/CONFIG.json",
+  "config_sha256": "645474ca7b42d88aa430eecb266fa39fe992f0696a9d74739e21236d5724ae3e",
+  "local_exact_copy": "receipts_v1/PREPARED_AMPERE_CONFIG.json",
+  "command_argv": [
+    "/usr/bin/env",
+    "CUDA_VISIBLE_DEVICES=",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/slot_policy.py",
+    "launch",
+    "--config",
+    "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/attempts/launch_2_1789671689211770505/CONFIG.json"
+  ],
+  "alternative": "Use ampere_launch.sh once to prepare a fresh finite attempt. Do not dispatch both this exact attempt and the alternative; never retry a failed workload blindly.",
+  "actual_privileged_clear_scan_runs_at_launch": true,
+  "actual_strict_probe_repeats_before_exec": true,
+  "owner_workload_and_CPU_gates_preserved": true,
+  "GPU_model_load_claim": false
+}

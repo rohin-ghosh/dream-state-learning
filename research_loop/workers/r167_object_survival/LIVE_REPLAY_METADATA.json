@@ -1,0 +1,640 @@
+{
+  "nodes": {
+    "a100": {
+      "bytes_read": 2097152,
+      "limit": 2097152,
+      "method": "Known R166/R157 native PIDs only; bound GUARD/PLAN and experiment-binding source; no journal or checkpoint reads",
+      "observed_unix": 1789631676.1168354,
+      "rows": [
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/control/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Re-read the guidance your parent has supplied in this conversation and use it to distill from your history what you want to carry forward. If no parent guidance is present, choose for yourself.",
+          "config_ref": {
+            "bytes": 345063,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/control/GUARD.json",
+            "sha256": "3d3e7634f741fecd00fd8744dabf16250f472e58c202a6674320261195f3800b"
+          },
+          "declared_variant": "parent_guided_distillation",
+          "default_applied": false,
+          "effective_variant": "parent_guided_distillation",
+          "pid": 1025183,
+          "plan_ref": {
+            "bytes": 7978,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/control/PLAN.json",
+            "sha256": "22ca67b931ca2fd2ef119d333468521ac3fb411a75b3676dbbf0f45ee2fae36d"
+          },
+          "root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "29900700",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/control/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 345276,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/control/GUARD.json",
+            "sha256": "730bea50f6cb070ad9f0a8ac83a1778b550086e7f443e9175385ccbbdaba9259"
+          },
+          "declared_variant": "free_distillation",
+          "default_applied": false,
+          "effective_variant": "free_distillation",
+          "pid": 1072657,
+          "plan_ref": {
+            "bytes": 7709,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/control/PLAN.json",
+            "sha256": "9357f2c195d386e6a90952fb41fbc290954aabf0d44a8bccaf45712fcfe61e91"
+          },
+          "root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "29930996",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/readmission1/control/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Re-read your visible history and select the passages you want to carry forward. Copy those passages verbatim rather than writing a new summary.",
+          "config_ref": {
+            "bytes": 345292,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/readmission1/control/GUARD.json",
+            "sha256": "88286346124b502ef64de3cdddc40641aa43007d65be08c8edb46bde9745a8af"
+          },
+          "declared_variant": "reread_select",
+          "default_applied": false,
+          "effective_variant": "reread_select",
+          "pid": 1316795,
+          "plan_ref": {
+            "bytes": 7824,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/control/PLAN.json",
+            "sha256": "77a236b7b6606b07e93dd1b8ad62b6a25db6d439d9433566ec1744b225180cfa"
+          },
+          "root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "30086561",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r147_a1007_recovery_20260916t1834z/attempt2/control/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "",
+          "config_ref": {
+            "bytes": 345269,
+            "path": "/localhome/local-rohing/orch_r147_a1007_recovery_20260916t1834z/attempt2/control/GUARD.json",
+            "sha256": "4340dc243fbe359ef884c00a2d1866bc7a316e3ef5edb793044cd94843514f6a"
+          },
+          "declared_variant": "no_distillation",
+          "default_applied": false,
+          "effective_variant": "no_distillation",
+          "pid": 1997023,
+          "plan_ref": {
+            "bytes": 7635,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/control/PLAN.json",
+            "sha256": "afdbddbe2fbe2ce02488fd316c7f13a90a63d3fe932ad68a8d6a3fd65f368985"
+          },
+          "root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "30523369",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 345050,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/GUARD.json",
+            "sha256": "dc7920c79c8141f82cd5473579564c71370a7a811912c0cb42c19d8b6403718c"
+          },
+          "declared_variant": "free_distillation",
+          "default_applied": false,
+          "effective_variant": "free_distillation",
+          "pid": 2197976,
+          "plan_ref": {
+            "bytes": 7893,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/PLAN.json",
+            "sha256": "827829405ae62b518c50d71bdd0d686c7e2b193d9ecf4785c00c2f6a584b59ed"
+          },
+          "root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "30656088",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "error": "Unterminated string starting at: line 1955 column 5 (char 249002)",
+          "pid": 2409681,
+          "root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+          "status": "UNVERIFIED"
+        }
+      ]
+    },
+    "a40r": {
+      "bytes_read": 270585,
+      "limit": 2097152,
+      "method": "Known R166/R157 native PIDs only; bound GUARD/PLAN and experiment-binding source; no journal or checkpoint reads",
+      "observed_unix": 1789631677.164944,
+      "rows": [
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r158_matched_node4",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/control/run-parented_learning/GUARD.json",
+            "--receipt-dir",
+            "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/attempts/run-parented_learning-attempt1",
+            "--main-go",
+            "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/main_release/RUN_parented_learning_MAIN_GO.json",
+            "--main-go-sha256",
+            "0d79d449227c34429d51615573fe1941064bf9e5df5fb1b7fe6c6a7be96d21ed"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 249227,
+            "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/control/run-parented_learning/GUARD.json",
+            "sha256": "c9d77bccdcb0d92a6dfaa4532d72d06d92e64de4d31813fba8b5f96c669d825f"
+          },
+          "declared_variant": "free_distillation",
+          "default_applied": false,
+          "effective_variant": "free_distillation",
+          "pid": 530635,
+          "plan_ref": {
+            "bytes": 4496,
+            "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning.PLAN.json",
+            "sha256": "0e857b2c39e04e13683d429717315cfb2b4e1aa87b3570e4de796a0638081789"
+          },
+          "root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "19154269",
+          "status": "LIVE_NATIVE_BOUND"
+        }
+      ]
+    },
+    "ovx2": {
+      "bytes_read": 1423426,
+      "limit": 2097152,
+      "method": "Known R166/R157 native PIDs only; bound GUARD/PLAN and experiment-binding source; no journal or checkpoint reads",
+      "observed_unix": 1789631678.3573594,
+      "rows": [
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_node3_target_physical3_20260916t1520z_1/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Re-read the guidance your parent has supplied in this conversation and use it to distill from your history what you want to carry forward. If no parent guidance is present, choose for yourself.",
+          "config_ref": {
+            "bytes": 214202,
+            "path": "/localhome/local-rohing/orch_r144_node3_target_physical3_20260916t1520z_1/GUARD.json",
+            "sha256": "4f6c959ab466b9178b14235ca3b52bfd73705c3adb37dd6b60348a1ebaa0556c"
+          },
+          "declared_variant": "parent_guided_distillation",
+          "default_applied": false,
+          "effective_variant": "parent_guided_distillation",
+          "pid": 1029925,
+          "plan_ref": {
+            "bytes": 7255,
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/PROPOSED_PLAN.json",
+            "sha256": "ba3b4cc2dadaee3b870e543da74a3651c1d0128d71a982fd945e8aa6d179cf7a"
+          },
+          "root": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/run1",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "27821045",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_node3_target_physical4_20260916t1520z_1/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 214202,
+            "path": "/localhome/local-rohing/orch_r144_node3_target_physical4_20260916t1520z_1/GUARD.json",
+            "sha256": "b0c2b9be2eeb133f01a3933157027953a955a70b51027596292062c97931ede0"
+          },
+          "declared_variant": "free_distillation",
+          "default_applied": false,
+          "effective_variant": "free_distillation",
+          "pid": 1098298,
+          "plan_ref": {
+            "bytes": 6975,
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/PROPOSED_PLAN.json",
+            "sha256": "5c7f4a952dbc57bd9f0d1bf5e21831e0e6d12d49b06007df4faf6768fa8c8cd4"
+          },
+          "root": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "27886072",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "error": "",
+          "pid": 1172314,
+          "root": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1",
+          "status": "UNVERIFIED"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_node3_target_physical7_20260916t1545z_5/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Re-read your visible history and select the passages you want to carry forward. Copy those passages verbatim rather than writing a new summary.",
+          "config_ref": {
+            "bytes": 214202,
+            "path": "/localhome/local-rohing/orch_r144_node3_target_physical7_20260916t1545z_5/GUARD.json",
+            "sha256": "4d377f53d809a71f8c4c636a7b0862a593223309f52466e8fad41e8ffe5c87af"
+          },
+          "declared_variant": "reread_select",
+          "default_applied": false,
+          "effective_variant": "reread_select",
+          "pid": 1202149,
+          "plan_ref": {
+            "bytes": 7272,
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/PROPOSED_PLAN.json",
+            "sha256": "797e8dc0ac541f40e7390a7ca164180f90def3584fad0f7a4828036bc8d79078"
+          },
+          "root": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "27985431",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_node3_target_physical1_20260916t1545z_5/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Re-read your visible history and select the passages you want to carry forward. Copy those passages verbatim rather than writing a new summary.",
+          "config_ref": {
+            "bytes": 214306,
+            "path": "/localhome/local-rohing/orch_r144_node3_target_physical1_20260916t1545z_5/GUARD.json",
+            "sha256": "8bbb6c007083884574b427b318ef3e466f26e514452b5ee5e7972801aca8ce9d"
+          },
+          "declared_variant": "reread_select",
+          "default_applied": false,
+          "effective_variant": "reread_select",
+          "pid": 1266769,
+          "plan_ref": {
+            "bytes": 7540,
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/PROPOSED_PLAN.json",
+            "sha256": "cde51871c4ebb8e0b95b484c79f6a6bab0cb7ac424fd3c893a477ff8d68b1413"
+          },
+          "root": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "28048014",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "error": "",
+          "pid": 1347090,
+          "root": "/localhome/local-rohing/orch_r133_support_free_20260916_attempt1/run1",
+          "status": "UNVERIFIED"
+        }
+      ]
+    },
+    "ovx3": {
+      "bytes_read": 1527184,
+      "limit": 2097152,
+      "method": "Known R166/R157 native PIDs only; bound GUARD/PLAN and experiment-binding source; no journal or checkpoint reads",
+      "observed_unix": 1789631679.4180956,
+      "rows": [
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/control/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 220042,
+            "path": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/control/GUARD.json",
+            "sha256": "b269348cf44d6d1f2bb251c975853bd18fb18b3b0964c724ed148985521a9a3e"
+          },
+          "declared_variant": null,
+          "default_applied": true,
+          "effective_variant": "free_distillation",
+          "pid": 2525436,
+          "plan_ref": {
+            "bytes": 7262,
+            "path": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/control/PLAN.json",
+            "sha256": "9ee3949087ceccbe18f78decfee8bae57991348a4614156682920a58c3e3a3e8"
+          },
+          "root": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "14761894",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/control/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 220042,
+            "path": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/control/GUARD.json",
+            "sha256": "53fb878f3899c4208941caf3e3336b26a9f5debc988a32d1d46a916f4445036b"
+          },
+          "declared_variant": null,
+          "default_applied": true,
+          "effective_variant": "free_distillation",
+          "pid": 2578597,
+          "plan_ref": {
+            "bytes": 7268,
+            "path": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/control/PLAN.json",
+            "sha256": "078df2c0239ea8ef0670a29bd3ba044ef1cb65b7011596dc82c84681018ea9c5"
+          },
+          "root": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "14835459",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r157_community_C5_20260917_attempt1/control/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 220042,
+            "path": "/localhome/local-rohing/orch_r157_community_C5_20260917_attempt1/control/GUARD.json",
+            "sha256": "22b81248364e89d5ee0329fcea42bc67a522b9d290dd73bb87ed2dfd3bc8dfa5"
+          },
+          "declared_variant": null,
+          "default_applied": true,
+          "effective_variant": "free_distillation",
+          "pid": 2578735,
+          "plan_ref": {
+            "bytes": 7259,
+            "path": "/localhome/local-rohing/orch_r157_community_C5_20260917_attempt1/control/PLAN.json",
+            "sha256": "486fafdc7958b9da3449ca4f096de56bdd59760a14656daa7374816d459bd75a"
+          },
+          "root": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r157_community_C5_20260917_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "14835679",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r157_community_C2_20260917_attempt1/control/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 220042,
+            "path": "/localhome/local-rohing/orch_r157_community_C2_20260917_attempt1/control/GUARD.json",
+            "sha256": "ac858fdf85868acf60cc417fbc0f81776130b38a35e717df4aa9370eb14870ca"
+          },
+          "declared_variant": null,
+          "default_applied": true,
+          "effective_variant": "free_distillation",
+          "pid": 2610332,
+          "plan_ref": {
+            "bytes": 7282,
+            "path": "/localhome/local-rohing/orch_r157_community_C2_20260917_attempt1/control/PLAN.json",
+            "sha256": "0059733c7986ee2d5e242f90f4c2836a4833252a4c4977d91cac498245415e53"
+          },
+          "root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r157_community_C2_20260917_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "14878521",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r157_community_C4_20260917_attempt1/control/GUARD.json"
+          ],
+          "binding_function_ast_sha256": "6f385fc7d965d47a68c4f2588f9f0a5d0538a97298045caf7a0604e0c4a6e6d2",
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 220042,
+            "path": "/localhome/local-rohing/orch_r157_community_C4_20260917_attempt1/control/GUARD.json",
+            "sha256": "5aa6c77e7860d91575abe8cccf44e20f2ab38b5d8148fbe11c666c24d6280d05"
+          },
+          "declared_variant": null,
+          "default_applied": true,
+          "effective_variant": "free_distillation",
+          "pid": 2619696,
+          "plan_ref": {
+            "bytes": 7269,
+            "path": "/localhome/local-rohing/orch_r157_community_C4_20260917_attempt1/control/PLAN.json",
+            "sha256": "0303de16d68a507e92bc10771805522771c61f4d7f56d99001448b05edea12aa"
+          },
+          "root": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life",
+          "same_plan_as_r166": true,
+          "segments_per_sleep": 2,
+          "source_ref": {
+            "bytes": 15317,
+            "path": "/localhome/local-rohing/orch_r157_community_C4_20260917_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+            "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+          },
+          "start_ticks": "14891073",
+          "status": "LIVE_NATIVE_BOUND"
+        },
+        {
+          "error": "",
+          "pid": 2736739,
+          "root": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1",
+          "status": "UNVERIFIED"
+        },
+        {
+          "error": "",
+          "pid": 2803009,
+          "root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+          "status": "UNVERIFIED"
+        },
+        {
+          "error": "plan_binding_mismatch",
+          "pid": 2611440,
+          "root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1",
+          "status": "UNVERIFIED"
+        }
+      ]
+    }
+  },
+  "schema": "R167_LIVE_REPLAY_METADATA_V1",
+  "source_receipts": {
+    "research_loop/workers/r157_keepalive_20260917/ALL_EIGHT_APPLIED.json": "3651574dab4ccbe5f1eb56924f9cd131888f15d17de32eaafd0e9358d64fe2e8",
+    "research_loop/workers/r166_parenting_update_20260917/REMOTE_CHILD_METADATA.json": "df3b15080cae8c988052f465b17fce54abd15e8bf1b43bcbc2e95c13324943b9",
+    "research_loop/workers/r166_parenting_update_20260917/SUPPLEMENTAL_METADATA.json": "7473bf9c0cc1edf3bef7b1e799f00dcd32dcf0cd6e49619ec674896f5bf9889a"
+  },
+  "total_bytes_read": 5318347
+}

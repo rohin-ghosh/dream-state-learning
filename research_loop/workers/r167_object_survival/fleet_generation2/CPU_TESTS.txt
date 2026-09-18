@@ -1,0 +1,17 @@
+======================================================================
+ERROR: test_native_custody (unittest.loader._FailedTest.test_native_custody)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_native_custody
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/r167_object_survival/fleet_generation2/source/test_native_custody.py", line 4, in <module>
+    import pytest
+ModuleNotFoundError: No module named 'pytest'
+
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.730s
+
+FAILED (errors=1)

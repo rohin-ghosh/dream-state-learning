@@ -1,0 +1,6 @@
+{
+  "observed_unix": 1789633676.263811,
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/a100_rollout.py\", line 248, in <module>\n    execute(arguments.go, arguments.go_sha256)\n  File \"/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/a100_rollout.py\", line 201, in execute\n    previous = ledger(binding['old_output'], old, binding['original_source']['sha256'])\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/a100_rollout.py\", line 42, in ledger\n    result = json.loads(legacy.read(directory / 'RESULT.json'))\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_parent_rollout/legacy_takeover.py\", line 36, in read\n    descriptor = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r136_node1_20260916/parent1/parent_000057/RESULT.json'\n",
+  "stdout": ""
+}

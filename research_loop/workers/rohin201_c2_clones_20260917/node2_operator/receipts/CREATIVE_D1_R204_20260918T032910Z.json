@@ -1,0 +1,242 @@
+{
+  "observed_utc": "2026-09-18T03:29:10.678002+00:00",
+  "actors": {
+    "parent": {
+      "pid": 2195733,
+      "state": "S",
+      "start_ticks": "93017983",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/creative_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "supervisor_r204": {
+      "pid": 2204209,
+      "state": "S",
+      "start_ticks": "93044299",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/creative_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "native": {
+      "pid": 2204408,
+      "state": "S",
+      "start_ticks": "93044490",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/creative_d1/source",
+      "ppid": 2204407
+    }
+  },
+  "receipts": {
+    "LAUNCH.json": {
+      "admission_sha256": "1a7d12dc54bad2b0c36e3ecea92d7c0f376702fafec725b148bb83f03cef6a65",
+      "admission_verified_unix": 1789702005.766463,
+      "command_sha256": "f305f938b30783d05925d212e066821cb1154fc69c8f2f2958a1bc143282416f",
+      "gpu_uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+      "guard_sha256": "241c5c4d76fd3fd626896dea35095302ca6fa64955bd65e4c1682be2ff506a4a",
+      "hard_end_unix": 1789776000,
+      "no_retry": true,
+      "parent_start_ticks": "93044490",
+      "pid": 2204407,
+      "plan_sha256": "bdfc11359bc979fcaab915b09afea75dcb0b87cc87e4229670ca1c65e630bd87",
+      "started_unix": 1789702005.767729
+    },
+    "PRE_SERVICE_ADMISSION.json": {
+      "verified_unix": 1789702005.47969,
+      "clear": true,
+      "blocking_reasons": []
+    },
+    "CONFINEMENT_CHILD.json": {
+      "observed_unix": 1789702005.746519,
+      "pid": 2204406,
+      "gpu_uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+      "target_minor": 4,
+      "checks": {
+        "allowed_open_close": [
+          "/dev/nvidia4",
+          "/dev/nvidiactl",
+          "/dev/nvidia-uvm"
+        ],
+        "denied_foreign_minors": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6,
+          7
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "index": 5847,
+      "kind": "LOADED",
+      "sha256": "16628371ce8e2d4d2aae5d18c9f061d2515507248c272b535cf5106a465d60f0",
+      "mtime_utc": "2026-09-18T03:28:02.766511+00:00",
+      "pid": 2204408,
+      "optimizer_steps": 4908,
+      "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+      "loaded_unix": 1789702082.7321541,
+      "resume": true
+    },
+    {
+      "index": 5848,
+      "kind": "INBOX",
+      "sha256": "a638995a61e04ce1d25da3cb77d3925ae9d833c604f105f49dbe0d51edba2ca3",
+      "mtime_utc": "2026-09-18T03:28:02.844946+00:00",
+      "speaker": "Rohin",
+      "message_id": "r202_000_rohin_part_one",
+      "text_sha256": "48921afaf6c1a7dec7fbe7cbb79c3be8c52bd9612cbcdad3ff6da64fc7469e30"
+    },
+    {
+      "index": 5849,
+      "kind": "INBOX",
+      "sha256": "a1e4a6fe071f7037d3e350e6108baf1ca42a26cfa7608bc7aca1cae9c0a10e53",
+      "mtime_utc": "2026-09-18T03:28:02.877726+00:00",
+      "speaker": "Astra",
+      "message_id": "r202_001_astra_creative_d1",
+      "text_sha256": "a0fa3702a35880692bb413085687e99c2a12e27c3da023987f065bab8a308e0f"
+    },
+    {
+      "index": 5853,
+      "kind": "REQUEST",
+      "sha256": "370f85a8918c0d1588918b5cbdc0335b510d870927ce00eac59d3d0e7290c382",
+      "mtime_utc": "2026-09-18T03:28:04.789140+00:00",
+      "segment": 153,
+      "started_unix": 1789702084.3474855
+    },
+    {
+      "index": 5854,
+      "kind": "RESPONSE",
+      "sha256": "c59f3b04bd194764857386862ae8684c9d9e3e388074fe2a028cd6bb4222296a",
+      "mtime_utc": "2026-09-18T03:28:24.526940+00:00",
+      "finished_unix": 1789702104.4934201,
+      "raw_response_present": true,
+      "raw_characters": 1753
+    },
+    {
+      "index": 5856,
+      "kind": "R184_STAGE",
+      "sha256": "d3a1024fe54370d3b98f4bea0def35414ad868d7de9bdeea3d16100403826134",
+      "mtime_utc": "2026-09-18T03:28:25.025416+00:00",
+      "stage": "THINK",
+      "segment": 153
+    },
+    {
+      "index": 5858,
+      "kind": "R184_TRANSITION",
+      "sha256": "a58853b5ebf068b1cdd2917a5ec06002b33ef38b7c69f7a2d8f96b2935846d62",
+      "mtime_utc": "2026-09-18T03:28:25.085661+00:00",
+      "segment": 153
+    },
+    {
+      "index": 5860,
+      "kind": "REQUEST",
+      "sha256": "adec9c16418d7b79606813b51429973db88c4c94fa001e394c8a72dae9d3d0e7",
+      "mtime_utc": "2026-09-18T03:28:25.981889+00:00",
+      "segment": 154,
+      "started_unix": 1789702105.563862
+    },
+    {
+      "index": 5861,
+      "kind": "RESPONSE",
+      "sha256": "7195199ef85c34befc6d10d242ac9a05255b7820718c08a0d3c7cfa752bf23c9",
+      "mtime_utc": "2026-09-18T03:28:46.411309+00:00",
+      "finished_unix": 1789702126.3785956,
+      "raw_response_present": true,
+      "raw_characters": 1726
+    },
+    {
+      "index": 5863,
+      "kind": "R184_STAGE",
+      "sha256": "15d43fcdb01de08af3f0757a19ac7a89c46e8d39d0432233aa5ef1e4777bf245",
+      "mtime_utc": "2026-09-18T03:28:46.913354+00:00",
+      "stage": "ACT",
+      "segment": 154
+    },
+    {
+      "index": 5869,
+      "kind": "REQUEST",
+      "sha256": "c81143ecc5745d944f411d612d77c7585291a838d94db8e55d5c595850a82592",
+      "mtime_utc": "2026-09-18T03:28:48.089572+00:00",
+      "segment": 155,
+      "started_unix": 1789702127.6691513
+    },
+    {
+      "index": 5870,
+      "kind": "RESPONSE",
+      "sha256": "fae04bd65662873b4f1e3692964938941e7ada2b8860bb90ffa3bcf8db90b865",
+      "mtime_utc": "2026-09-18T03:29:06.201181+00:00",
+      "finished_unix": 1789702146.1689038,
+      "raw_response_present": true,
+      "raw_characters": 1520
+    },
+    {
+      "index": 5872,
+      "kind": "R184_STAGE",
+      "sha256": "c7d07d7987d91984f759f82921e200ad13380079e80795e9dbf7b1562a91676c",
+      "mtime_utc": "2026-09-18T03:29:06.701655+00:00",
+      "stage": "LEARN",
+      "segment": 155
+    },
+    {
+      "index": 5878,
+      "kind": "SLEEP_RECIPE",
+      "sha256": "d291d83d61fd4b42e0eac96ae13c08d44ac7b2b6c2e57477345fbb7cc4b50418",
+      "mtime_utc": "2026-09-18T03:29:07.293947+00:00",
+      "new_rows": 3,
+      "new_presentations": 16,
+      "selected_old_rows": 0,
+      "available_old_rows": 153
+    },
+    {
+      "index": 5879,
+      "kind": "TARGET_ELIGIBILITY",
+      "sha256": "35c84b86e88e3bc9eeee8e3016d14388f1f0a7e3e781b537befc1e47360104fa",
+      "mtime_utc": "2026-09-18T03:29:07.468518+00:00",
+      "excluded_count": 0,
+      "learn_review_filter": {
+        "retained_counts": {
+          "NEW": 3,
+          "REHEARSAL": 0
+        },
+        "excluded_counts": {
+          "NEW": 0,
+          "REHEARSAL": 0
+        },
+        "policy": "R195_CHILD_ROW_REVIEW_V1"
+      },
+      "fields": [
+        "code_target_filter",
+        "code_target_filter_counts",
+        "code_target_filter_presentations",
+        "excluded",
+        "learn_review_filter",
+        "learn_review_filter_counts",
+        "learn_review_filter_presentations",
+        "new_row_sha256",
+        "raw_modified",
+        "rehearsal_row_sha256",
+        "runtime_policy",
+        "version"
+      ]
+    }
+  ],
+  "nvml_processes": [
+    "1849630, GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, 33114 MiB",
+    "2128807, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4, 18240 MiB",
+    "1815204, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 402 MiB",
+    "2206207, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 15154 MiB",
+    "2170067, GPU-c9450d3d-0455-f034-b9bf-7f8956e44733, 376 MiB",
+    "2207238, GPU-c9450d3d-0455-f034-b9bf-7f8956e44733, 15038 MiB",
+    "2204408, GPU-d304a15c-516a-16a0-a926-a560304077cc, 19708 MiB",
+    "1849923, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 416 MiB",
+    "2208002, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 14880 MiB",
+    "2204538, GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf, 20174 MiB",
+    "1849180, GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed, 32934 MiB"
+  ],
+  "read_only": true
+}

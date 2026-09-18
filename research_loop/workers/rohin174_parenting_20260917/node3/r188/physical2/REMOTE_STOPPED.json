@@ -1,0 +1,125 @@
+{
+  "document": {
+    "actors": [
+      {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1818z_2/control2/GUARD.json"
+        ],
+        "cgroup": "0::/system.slice/orch-r144-native-3e504125a45e4f31adadac29cd73b1d0.service\n",
+        "cwd": "/localhome/local-rohing/orch_r179_node3_context_20260917t1715z_1/physical2/source",
+        "parent": 989339,
+        "pid": 989340,
+        "ticks": "37650538",
+        "uid": 2524
+      },
+      {
+        "argv": [
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=5s",
+          "18746s",
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1818z_2/control2/GUARD.json"
+        ],
+        "cgroup": "0::/system.slice/orch-r144-native-3e504125a45e4f31adadac29cd73b1d0.service\n",
+        "cwd": "/localhome/local-rohing/orch_r179_node3_context_20260917t1715z_1/physical2/source",
+        "parent": 989336,
+        "pid": 989339,
+        "ticks": "37650538",
+        "uid": 2524
+      },
+      {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1818z_2/bootstrap/RECOVERY_OPERATOR.py",
+          "--action",
+          "contained",
+          "--physical",
+          "2"
+        ],
+        "cgroup": "0::/system.slice/orch-r144-native-3e504125a45e4f31adadac29cd73b1d0.service\n",
+        "cwd": "/localhome/local-rohing/orch_r179_node3_context_20260917t1715z_1/physical2/source",
+        "parent": 1,
+        "pid": 989336,
+        "ticks": "37650492",
+        "uid": 2524
+      }
+    ],
+    "authority": "Rohin188: explicitly authorized rollback/discard of partial sleeps with ETA over15min; not unbroken exact continuation",
+    "checkpoint_file_sha256": "820ea1da4f4217dc11fe3a3d25ec847f5727cdbff7f0d8a0589ad962d8bbd503",
+    "counts": {
+      "discarded_REQUEST": 3,
+      "discarded_RESPONSE": 3,
+      "discarded_records": 132,
+      "last_logged_step": 4650,
+      "logged_discarded_updates": 118,
+      "unknown_inflight_update": "UNKNOWN_NOT_COUNTED"
+    },
+    "observed_unix": 1789686988.222263,
+    "physical": 2,
+    "saved_cycle": 42,
+    "saved_index": 5191,
+    "saved_record_sha256": "7ee9f9af5b315834b1377fc964205a525da591b05cee4c921fe2ae0f05119d43",
+    "status": "ACTUAL_R188_STOPPED_WITH_AUTHORIZED_LOSS",
+    "terminal": {
+      "document": {
+        "finished_unix": 1789686869.4364853,
+        "losses": [
+          {
+            "kind": "REHEARSAL",
+            "mean_loss": 0.0013582151150330901,
+            "objective_weight": 0.75,
+            "target_tokens": 221
+          },
+          {
+            "kind": "ANCHOR:code",
+            "mean_loss": 1.1517056009324733e-05,
+            "objective_weight": 0.0625,
+            "target_tokens": 13
+          },
+          {
+            "kind": "ANCHOR:concise_answer",
+            "mean_loss": 0.00010161922546103597,
+            "objective_weight": 0.0625,
+            "target_tokens": 2
+          },
+          {
+            "kind": "ANCHOR:math",
+            "mean_loss": 2.425845741527155e-05,
+            "objective_weight": 0.0625,
+            "target_tokens": 4
+          },
+          {
+            "kind": "ANCHOR:simulated_tools",
+            "mean_loss": 1.250877721759025e-05,
+            "objective_weight": 0.0625,
+            "target_tokens": 35
+          }
+        ],
+        "optimizer_step": 4650,
+        "source_sha256": "59c207bbc63dcace5d3f06c9accd92e0b67aa8b0c2c453c39c00a203c650eff2"
+      },
+      "index": 5323,
+      "journal_id": "1455ea3e509740d98f88638aacebd70d",
+      "kind": "UPDATE",
+      "previous_sha256": "bc10e742f3a441cc70018aad2456981763eb0eeedc567aff59ac2e4c062b1c40",
+      "schema": "R125_STREAM_JOURNAL_V1",
+      "sha256": "f081e18db063ba8341917e501c97fe6bf0c0c3274c5e646e9a88a8d603ec78f9"
+    },
+    "unbroken_exact_continuation": false
+  },
+  "path": "/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r188/physical2/STOPPED.json",
+  "sha256": "d054144ec5e6e7116306b2547910970c86d27fd840b4227ccb0d429a69c47e6a"
+}

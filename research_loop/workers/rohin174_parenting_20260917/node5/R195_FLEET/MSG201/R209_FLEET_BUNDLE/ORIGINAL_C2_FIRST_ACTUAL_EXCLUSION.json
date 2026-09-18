@@ -1,0 +1,145 @@
+{
+  "observed_at_utc": "2026-09-18T04:59:18.906970+00:00",
+  "review_record_index": 6672,
+  "review_record_sha256": "3fc9db1e7802897a5c7dcb60f912070883c3323ac0fb51597558298a5bb399b1",
+  "review_file_mtime_utc": "2026-09-18T04:55:59.289949+00:00",
+  "cycle": 61,
+  "excluded": [
+    {
+      "cohort": "NEW",
+      "policy": "R195_CHILD_ROW_REVIEW_V1",
+      "prose_exclusions": [
+        {
+          "cohort": "NEW",
+          "evidence": {
+            "capitalized_common_words": 0,
+            "capitalized_rate": 0.0,
+            "cjk_characters": 101,
+            "decision_scope": "ANY_PROSE_PARAGRAPH",
+            "eligible_common_word_opportunities": 1,
+            "english_target_scope": true,
+            "fullwidth_characters": 5,
+            "language_detection_claimed": false,
+            "qualifying_paragraphs": [],
+            "quarantined": true,
+            "scan_character_limit": 65536,
+            "scan_truncated": false,
+            "scanned_characters": 149,
+            "thresholds": {
+              "min_capitalized_common_words": 10,
+              "min_capitalized_rate": 0.35,
+              "min_eligible_common_words": 20
+            }
+          },
+          "policy": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+          "raw_target_sha256": "ae4b3e6f05258b368a44d6057b5415c4da2efefd9408114d6665dcd160f64d15",
+          "reason": "provisional_english_target_script_quarantine",
+          "row_index": 2,
+          "segment": 186,
+          "source_sha256": "292eb082155619d8617cee6a6ce473b0063c60c0d7c0bc4ddcef5fd330df9cf5"
+        }
+      ],
+      "raw_target_sha256": "ae4b3e6f05258b368a44d6057b5415c4da2efefd9408114d6665dcd160f64d15",
+      "reason": "provisional_english_target_script_quarantine",
+      "row_index": 2,
+      "segment": 186,
+      "source_sha256": "292eb082155619d8617cee6a6ce473b0063c60c0d7c0bc4ddcef5fd330df9cf5"
+    }
+  ],
+  "source_stages": [
+    {
+      "index": 6671,
+      "document": {
+        "consolidation": {
+          "source_event_id": "child:segment:186",
+          "status": "NO_EXPLICIT_STATE_DELTA"
+        },
+        "runtime_notice_is_target": false,
+        "schema": "R184_THINK_ACT_LEARN_V1",
+        "segment": 186,
+        "source_sha256": "292eb082155619d8617cee6a6ce473b0063c60c0d7c0bc4ddcef5fd330df9cf5",
+        "stage": "LEARN",
+        "trial_id": "C2_R209_prose_cadence_saved_boundary_resume"
+      }
+    }
+  ],
+  "sleep_records": [
+    {
+      "index": 6679,
+      "kind": "SLEEP_REQUEST",
+      "sha256": "f63adcbef300c84faa477c9c8f72fb63152dd22dc501e0c0060fa68468410bda",
+      "file_mtime_utc": "2026-09-18T04:56:02.091112+00:00"
+    },
+    {
+      "index": 6680,
+      "kind": "SLEEP_RECIPE",
+      "sha256": "7a369729732a8477821567e23b743bba3f905605c55d29619f8b52835f381f13",
+      "file_mtime_utc": "2026-09-18T04:56:02.135410+00:00",
+      "document": {
+        "anchor_lambda": 0.25,
+        "available_old_rows": 184,
+        "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+        "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+        "new_presentations": 16,
+        "new_rows": 3,
+        "policy": "R181_NEW_ONLY_V1",
+        "selected_old_rows": 0,
+        "sleep_loss_impl": "MASKED_CAUSAL_CE_V1"
+      }
+    },
+    {
+      "index": 6681,
+      "kind": "TARGET_ELIGIBILITY",
+      "sha256": "1d578c75f653ed61d05b3f331598b266713de9f37f9d5256900b80e041cc696f",
+      "file_mtime_utc": "2026-09-18T04:56:02.306890+00:00",
+      "retained_new_sources": [
+        "65ad6cd972ec9b9e910569201ee219b87b504b6200198e3a7d5c5d42fc6a168f",
+        "54a0d1f4e8b7b2d0b1a19dc5f3fe46b1cd3132753c8a70f7ac628819d8fcd85b"
+      ],
+      "excluded_sources_present_in_retained": false,
+      "native_learn_review_excluded": [
+        {
+          "cohort": "NEW",
+          "policy": "R195_CHILD_ROW_REVIEW_V1",
+          "prose_exclusions": [
+            {
+              "cohort": "NEW",
+              "evidence": {
+                "capitalized_common_words": 0,
+                "capitalized_rate": 0.0,
+                "cjk_characters": 101,
+                "decision_scope": "ANY_PROSE_PARAGRAPH",
+                "eligible_common_word_opportunities": 1,
+                "english_target_scope": true,
+                "fullwidth_characters": 5,
+                "language_detection_claimed": false,
+                "qualifying_paragraphs": [],
+                "quarantined": true,
+                "scan_character_limit": 65536,
+                "scan_truncated": false,
+                "scanned_characters": 149,
+                "thresholds": {
+                  "min_capitalized_common_words": 10,
+                  "min_capitalized_rate": 0.35,
+                  "min_eligible_common_words": 20
+                }
+              },
+              "policy": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+              "raw_target_sha256": "ae4b3e6f05258b368a44d6057b5415c4da2efefd9408114d6665dcd160f64d15",
+              "reason": "provisional_english_target_script_quarantine",
+              "row_index": 2,
+              "segment": 186,
+              "source_sha256": "292eb082155619d8617cee6a6ce473b0063c60c0d7c0bc4ddcef5fd330df9cf5"
+            }
+          ],
+          "raw_target_sha256": "ae4b3e6f05258b368a44d6057b5415c4da2efefd9408114d6665dcd160f64d15",
+          "reason": "provisional_english_target_script_quarantine",
+          "row_index": 2,
+          "segment": 186,
+          "source_sha256": "292eb082155619d8617cee6a6ce473b0063c60c0d7c0bc4ddcef5fd330df9cf5"
+        }
+      ]
+    }
+  ],
+  "native_eligibility_observed_at_utc": "2026-09-18T05:00:08.607255+00:00"
+}

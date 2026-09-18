@@ -1,0 +1,150 @@
+{
+  "artifacts": {
+    "CONTAINMENT_AVAILABILITY.txt": "dd071722792ab6905238302c836351675e7212148343fd185f93badfcb4468c9",
+    "GUARD_PROVENANCE.json": "02f6ceb527922d90be9dbadef78eb961421fbe0fd17e9356d61f7dadcc43944d",
+    "NODE3_BINDINGS.json": "f987f86c585c86d4c0fec35bff244955445568b829bbe9d51cb4759685b955fa",
+    "NODE3_INITIAL_METADATA.txt": "c5058531f493a2df1c37f22c1a8dc02d8022ff0b5a1373eb0441ebe545345d3a",
+    "PRIVILEGED_SCANS.json": "8848fd08cf30e8dce0c27b3708b53f2b42d92625a9a490cbd38e4628832b2a3d",
+    "STRICT_SERVICE_PROVENANCE.json": "be99a7bb4bd24eb9827c86dc53f0e49531e5f4e39f804e9208243fb8a50ce6b5"
+  },
+  "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+  "candidates": {
+    "5": {
+      "config_path": "/localhome/local-rohing/orch_r144_node3_target_r145_5_20260916t1650z/GUARD.json",
+      "containment_helper_path": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source/gpu/orch_r133_node3_programmes.py",
+      "device_minor": 5,
+      "existing_scanner_reconciled_argv_only_pids": [
+        3082,
+        1703923
+      ],
+      "gpu": {
+        "index": 5,
+        "memory_used_mib": 1,
+        "utilization_percent": 0,
+        "uuid": "GPU-bc211959-642d-664b-3581-42a0dbe434e9"
+      },
+      "guard_report_clear": true,
+      "historical_label": "creative_none",
+      "old_unit_state": "MainPID=0\nControlGroup=\nDevicePolicy=strict\nDeviceAllow=/dev/nvidia-uvm rw\nDeviceAllow=/dev/nvidiactl rw\nDeviceAllow=/dev/nvidia5 rw\nDeviceAllow=/dev/urandom r\nDeviceAllow=/dev/random r\nDeviceAllow=/dev/zero rw\nDeviceAllow=/dev/null rw\nUser=2524\nGroup=2524\nLoadState=loaded\nActiveState=failed\nSubState=failed\n",
+      "physical": 5,
+      "release_ref": {
+        "path": "/localhome/local-rohing/orch_r153_node3_retire_creative5_20260916t2210z/RELEASED.json",
+        "sha256": "ac68bc49bd95228672d8db524175c175f4d59cb61b916216aaf73235af2e8901"
+      },
+      "scan_utc": "2026-09-17T06:10:14.434540+00:00",
+      "scanner_euid": 0,
+      "source_root": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source",
+      "target_compute_processes": [],
+      "target_device_openers": [
+        {
+          "command_sha256": "d250ab36e404960de1b7a048b03a49474a69777e275c3d5c1011604698a4fe60",
+          "owner": "nvidia-persistenced",
+          "pid": 2725,
+          "start_ticks": "1396",
+          "target_device_open": true,
+          "target_device_path": "/dev/nvidia5",
+          "uid": 127,
+          "verified_persistence_service": true
+        }
+      ],
+      "unreconciled_reasons_preserved": [
+        "minor_scan_identity_changed:1703923",
+        "process_identity_drift:3082"
+      ]
+    },
+    "6": {
+      "config_path": "/localhome/local-rohing/orch_r144_node3_target_r145_6_20260916t1650z_readmit1/GUARD.json",
+      "containment_helper_path": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical6/source/gpu/orch_r133_node3_programmes.py",
+      "device_minor": 6,
+      "existing_scanner_reconciled_argv_only_pids": [
+        3082,
+        1704005
+      ],
+      "gpu": {
+        "index": 6,
+        "memory_used_mib": 1,
+        "utilization_percent": 0,
+        "uuid": "GPU-1a83d900-1e95-c7b4-9b12-8117399697f8"
+      },
+      "guard_report_clear": true,
+      "historical_label": "support_none",
+      "old_unit_state": "MainPID=0\nControlGroup=\nDevicePolicy=strict\nDeviceAllow=/dev/nvidia-uvm rw\nDeviceAllow=/dev/nvidiactl rw\nDeviceAllow=/dev/nvidia6 rw\nDeviceAllow=/dev/urandom r\nDeviceAllow=/dev/random r\nDeviceAllow=/dev/zero rw\nDeviceAllow=/dev/null rw\nUser=2524\nGroup=2524\nLoadState=loaded\nActiveState=failed\nSubState=failed\n",
+      "physical": 6,
+      "release_ref": {
+        "path": "/localhome/local-rohing/orch_r153_node3_retire_support6_20260916t2210z/RELEASED.json",
+        "sha256": "4711686a5e6f42c4ad77bd767914c53c9b5923a32226ad63eb17f64bf93efb06"
+      },
+      "scan_utc": "2026-09-17T06:10:15.574349+00:00",
+      "scanner_euid": 0,
+      "source_root": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical6/source",
+      "target_compute_processes": [],
+      "target_device_openers": [
+        {
+          "command_sha256": "d250ab36e404960de1b7a048b03a49474a69777e275c3d5c1011604698a4fe60",
+          "owner": "nvidia-persistenced",
+          "pid": 2725,
+          "start_ticks": "1396",
+          "target_device_open": true,
+          "target_device_path": "/dev/nvidia6",
+          "uid": 127,
+          "verified_persistence_service": true
+        }
+      ],
+      "unreconciled_reasons_preserved": [
+        "minor_scan_identity_changed:1704005",
+        "process_identity_drift:3082"
+      ]
+    }
+  },
+  "existing_budget": {
+    "document": {
+      "authorized_unix": 1789494285.03069,
+      "config_sha256": "d59d9b178dfed9ca61532ec191b92de5dbac5861dab05f0158d14d60f0379595",
+      "counter_reset": false,
+      "cumulative_used": {
+        "NATIVE": 1236,
+        "PARENT": 90
+      },
+      "directive": "only crash/lease wall ends life; explicitly logged prospective lease-budget headroom; cumulative used unchanged, no replay/reset",
+      "final_calls_added": 0,
+      "hard_end_unix": 1789668000.0,
+      "headroom_is_not_target_dose": true,
+      "headroom_rate_per_second": {
+        "NATIVE": 16,
+        "PARENT": 4
+      },
+      "historical_caps": {
+        "NATIVE": 1858,
+        "PARENT": 298
+      },
+      "lease_end_unix": 1789689600.0,
+      "ledger_prefix_bytes": 238959,
+      "ledger_prefix_sha256": "71f8496b1b818588a7356f34a10ef6b92aef7966ef9ef7a82e8d9fd6bbb5b985",
+      "lifetime_cycle_limit": null,
+      "optimizer_reset": false,
+      "policy": "continue_until_crash_or_lease_wall_no_budget_dose_target",
+      "prospective_caps": {
+        "NATIVE": 2782322,
+        "PARENT": 696182
+      },
+      "root": "/localhome/local-rohing/orch_r118_node3_7_grid_20260915_attempt1",
+      "schema": "R119_GRID_LEASE_BUDGET_V1"
+    },
+    "path": "/localhome/local-rohing/orch_r118_node3_7_grid_20260915_attempt1/lease_budget_r119_learned/LEASE_BUDGET.json",
+    "sha256": "919e9fb3f9cfd6cadb57af90844319e50eb114068eb52cd75aa3ab715f9c3770"
+  },
+  "fresh_R161_admission_and_allocation_required": true,
+  "gpu_probe_or_model_load": false,
+  "hard_wall_utc": "2026-09-17T18:00:00Z",
+  "host": "[REDACTED_HOST]",
+  "host_sha256": "3e10ebcb89f013079c1e088fa82820188b1a805b879ebb85a7ffeb689e7b86e9",
+  "other_nodes_audited": false,
+  "provider_booking_verified": false,
+  "published_utc": "2026-09-17T06:11:31.313818+00:00",
+  "remote_file_writes": false,
+  "reserved_or_launched": false,
+  "runtime_lease_ceiling_utc": "2026-09-18T00:00:00Z",
+  "schema": "R161_READ_ONLY_FORK_PLACEMENT_V1",
+  "signals_or_service_changes": false,
+  "wrapper_comment": "lease to 2026-09-19; date-only comment, not a provider booking receipt"
+}

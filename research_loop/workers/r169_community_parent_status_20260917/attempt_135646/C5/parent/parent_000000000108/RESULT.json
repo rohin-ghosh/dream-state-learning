@@ -1,0 +1,29 @@
+{
+  "error_code": "parent_attempt_failed_no_implicit_retry",
+  "error_type": "ValueError",
+  "model": "openai/openai/gpt-6-astra",
+  "response": {
+    "message": "Astra: We\u2019ll leave the unresolved execution-evidence question aside rather than repeat that correction. Within your regression comparison, consider what you want the noise-change experiment to establish: better modeling, or performance on different data? Where would you look most closely to decide whether the before-and-after comparison answers that question? Choose one concrete comparison to clarify before expanding the hyperparameter grid.",
+    "rationale": "{\"object_id\":\"regression-execution-evidence\",\"source_records\":[3831,3838,4003],\"disposition\":\"set_aside\"}",
+    "speak": true
+  },
+  "source_sha256": "9195839ca3c6f46fa9da2b7be260cdcceaf9da62319e8160f44e1cb8ecfb7ef2",
+  "speaker": "Astra",
+  "status": "PROVIDER_FAILED",
+  "usage": {
+    "cost": null,
+    "input_tokens": 10673,
+    "input_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": 10670,
+      "cached_tokens": 0,
+      "text_tokens": null
+    },
+    "output_tokens": 124,
+    "output_tokens_details": {
+      "reasoning_tokens": 0,
+      "text_tokens": null
+    },
+    "total_tokens": 10797
+  }
+}

@@ -1,0 +1,102 @@
+"""CPU-only parent takeover guards and publication/withdrawal regressions."""
+
+import copy
+import importlib.util
+from pathlib import Path
+import tempfile
+import unittest
+from unittest.mock import patch
+
+
+SPEC = importlib.util.spec_from_file_location('r175_node4_operator', Path(__file__).with_name('r175_node4_operator.py'))
+operator = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(operator)
+
+
+class OperatorTests(unittest.TestCase):
+    def test_actual_repo_resolution(self):
+        self.assertTrue((operator.REPO / 'gpu/orch_r175_parent_arms.py').is_file())
+        operator.authority()
+
+    def test_exact_Main_assignment(self):
+        self.assertEqual(operator.ARMS, {0:'B', 1:'H', 3:'D', 4:'A'})
+
+    def test_never_signal_native(self):
+        actor = dict(pid=5, start_ticks='4', argv=['python', '-m', 'gpu.orch_r125_continual_guard', 'native'], cwd='/same', uid=1, state='S')
+        with self.assertRaisesRegex(ValueError, 'never_signal_a_child'):
+            operator.same_parent(actor, actor)
+
+    def test_changed_PID_start_UID_argv_never_accepted(self):
+        actor = dict(pid=5, start_ticks='4', argv=['python', 'parent'], cwd='/same', uid=1, state='S')
+        for name, value in [('pid',6), ('start_ticks','5'), ('uid',2), ('argv',['python','other']), ('state','Z')]:
+            altered = dict(actor, **{name:value})
+            with self.assertRaisesRegex(ValueError, 'exact_live_predecessor'):
+                operator.same_parent(actor, altered)
+
+    def test_H_has_no_predecessor_signal_target(self):
+        plan = dict(physical=1, arm='H', root=operator.ROOTS[1], predecessor=None)
+        self.assertIsNone(operator.checked_predecessor(plan))
+        plan['predecessor'] = {'parent_actor':{'pid':2709461}}
+        with self.assertRaisesRegex(ValueError, 'H_no_existing_parent_to_signal'):
+            operator.checked_predecessor(plan)
+
+    def test_invented_parent_or_other_slot_rejected(self):
+        plan = dict(physical=3, arm='D', root=operator.ROOTS[3], predecessor=dict(parent_actor={'pid':259097}, child_root=operator.ROOTS[3]))
+        with self.assertRaisesRegex(ValueError, 'exact_scoped_legacy_parent_only'):
+            operator.checked_predecessor(plan)
+        plan['physical'] = 6
+        with self.assertRaisesRegex(ValueError, 'exact_frozen_plan'):
+            operator.checked_predecessor(plan)
+
+    def test_H_second_publication_attempt_is_forbidden_even_without_result(self):
+        with tempfile.TemporaryDirectory() as directory:
+            operator.publication_allowed(1, directory, 'one baseline', 90)
+            Path(directory, 'PUBLICATION_0000_INTENT.json').write_text('{}')
+            with self.assertRaisesRegex(ValueError, 'H_at_most_one_operator_publication_attempt'):
+                operator.publication_allowed(1, directory, 'another baseline', 90)
+
+    def test_H_legacy_outputs_do_not_count_as_new_publications(self):
+        with tempfile.TemporaryDirectory() as directory:
+            previous = Path(directory, 'old')
+            previous.mkdir()
+            (previous/'PUBLICATION_0000_INTENT.json').write_text('{}')
+            current = Path(directory, 'new')
+            current.mkdir()
+            operator.publication_allowed(1, current, 'one baseline', 90)
+
+    def test_caps_applied_to_actual_child_message(self):
+        for physical, cap in [(0,160),(1,90),(3,90),(4,240)]:
+            with tempfile.TemporaryDirectory() as directory:
+                operator.publication_allowed(physical,directory,' '.join(['word']*cap),cap)
+                with self.assertRaisesRegex(ValueError,'actual_publication_cap'):
+                    operator.publication_allowed(physical,directory,' '.join(['word']*(cap+1)),cap)
+
+    def test_raw3_English_guard_preserved(self):
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(ValueError,'preserve_raw3_English_guard'):
+                operator.publication_allowed(3,directory,'次の行動',90)
+
+    def test_legacy_seed_preserves_publications_and_reservations(self):
+        state = dict(journal_id='life',response_count=10,request_count=11)
+        seed = operator.legacy_seed(None,state)
+        self.assertEqual(seed['attempts'],[])
+        self.assertEqual(seed['prospective_request_count'],11)
+        self.assertTrue(seed['historical_object_and_credit_classification_unknown'])
+
+    def test_parent_only_withdrawal_is_three_then_one_completed_sleep(self):
+        self.assertEqual(operator.withdrawal_state(40,42),'ARM_ACTIVE')
+        self.assertEqual(operator.withdrawal_state(40,43),'PARENT_WITHDRAWAL_ONE_SLEEP')
+        self.assertEqual(operator.withdrawal_state(40,44),'WITHDRAWAL_COMPLETE')
+        with self.assertRaisesRegex(ValueError,'monotonic_completed_sleeps'):
+            operator.withdrawal_state(40,39)
+
+    def test_H_no_shared_old_attempt_output_reuse(self):
+        source = Path(operator.__file__).read_text()
+        self.assertIn("output = lane / 'parent'",source)
+        self.assertIn('output.mkdir()',source)
+        self.assertIn('owned_bundle_imports_only',source)
+        self.assertIn('policy.tick(REPO, config, output, seed, state)',source)
+
+
+if __name__ == '__main__':
+    unittest.main()

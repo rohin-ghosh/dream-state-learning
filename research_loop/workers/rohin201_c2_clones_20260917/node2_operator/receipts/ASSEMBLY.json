@@ -1,0 +1,19 @@
+{
+  "sha256": "af72151fd089d62cc5df2361440427480fb94a08d24dbee2d89eef172d84b5b7",
+  "document": {
+    "Main_adapter_only_delta": {
+      "driver_sha256": "bdbb6541c89bad2e9ba630c6b21ad1d94a30404cc29bbafb0802d0b68598547a",
+      "original_cpu_method": "    def _cpu(self, origin):\n        from gpu.orch_r153_community_transport import EXISTING_LIFE_CPU_POLICY, cpu_once\n        return cpu_once(str(self.journal.root.parent), self.journal._manifest['journal_id'], origin,\n            self.config['cpu_gate_sha256'], gate_root=self.config['cpu_gate_root'], start=True,\n            root_policy=EXISTING_LIFE_CPU_POLICY,\n            **({'code_policy': self.config['code_policy']} if 'code_policy' in self.config else {}))\n"
+    },
+    "baseline_records": 5129,
+    "complete_cycle": 51,
+    "console_record": 5846,
+    "launches": 0,
+    "optimizer_steps": 4908,
+    "protected_original_source_writes": 0,
+    "registered_inbox": 130,
+    "terminal_sha256": "3c8c45a6bfef9bb7d5a36dd9ddaf1e0a2293c6a83c718cbe2bca8e0ed6d16b48",
+    "total_records": 5847,
+    "unused_inbox_not_replayed": 0
+  }
+}

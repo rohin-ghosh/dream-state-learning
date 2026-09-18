@@ -226,7 +226,7 @@ To train a model:
 # ======================
 # Distributed Configuration
 # ======================
-MASTER_ADDR="127.0.0.1"                     # [Required] Master node IP for multi-GPU training
+MASTER_ADDR="[REDACTED_ADDRESS]"                     # [Required] Master node IP for multi-GPU training
 MASTER_PORT=$(shuf -i 20000-29999 -n 1)     # Random port to avoid conflicts
 NPROC_PER_NODE=$(nvidia-smi --list-gpus | wc -l)  # Automatically detects available GPUs
 

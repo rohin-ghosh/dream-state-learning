@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/source/activate_parent.py", line 406, in <module>
+    activate(arguments.manifest, arguments.manifest_sha256)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/source/activate_parent.py", line 255, in activate
+    observed = snapshot_poll(policy, source, config, None, bootstrap=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/source/activate_parent.py", line 206, in snapshot_poll
+    return policy.parent.remote(source, config, script)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/source/gpu/orch_r133_programme_parent.py", line 77, in remote
+    require(result.returncode == 0, 'node_transport_failed_no_implicit_retry')
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/source/gpu/orch_r133_programme_parent.py", line 21, in require
+    raise ValueError(message)
+ValueError: node_transport_failed_no_implicit_retry

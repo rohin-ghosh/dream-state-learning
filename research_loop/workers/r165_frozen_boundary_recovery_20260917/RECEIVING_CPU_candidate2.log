@@ -1,0 +1,46 @@
+test_COMMIT_drift_rejected (r165_receiving_tests.CheckpointAndTransitionTests.test_COMMIT_drift_rejected) ... ok
+test_actual_journal_transition_and_resume_select_orphan_without_replay (r165_receiving_tests.CheckpointAndTransitionTests.test_actual_journal_transition_and_resume_select_orphan_without_replay) ... ok
+test_authorized_completion_appends_once_and_preserves_prefix (r165_receiving_tests.CheckpointAndTransitionTests.test_authorized_completion_appends_once_and_preserves_prefix) ... ok
+test_config_decode_uses_hashed_bytes_after_path_replacement (r165_receiving_tests.CheckpointAndTransitionTests.test_config_decode_uses_hashed_bytes_after_path_replacement) ... ok
+test_future_boundary_retains_strong_frozen_invariants (r165_receiving_tests.CheckpointAndTransitionTests.test_future_boundary_retains_strong_frozen_invariants) ... ok
+test_metadata_zero_not_enough_without_payload_zero (r165_receiving_tests.CheckpointAndTransitionTests.test_metadata_zero_not_enough_without_payload_zero) ... ok
+test_nonconfig_readme_drift_rejected_even_rehashed (r165_receiving_tests.CheckpointAndTransitionTests.test_nonconfig_readme_drift_rejected_even_rehashed) ... ok
+test_optimizer_load_uses_hashed_BytesIO_after_path_replacement (r165_receiving_tests.CheckpointAndTransitionTests.test_optimizer_load_uses_hashed_BytesIO_after_path_replacement) ... ok
+test_optimizer_payload_mutations_rejected (r165_receiving_tests.CheckpointAndTransitionTests.test_optimizer_payload_mutations_rejected) ... ok
+test_pending_identity_drift_and_nonfrozen_arm_rejected (r165_receiving_tests.CheckpointAndTransitionTests.test_pending_identity_drift_and_nonfrozen_arm_rejected) ... ok
+test_raw_file_drift_rejected (r165_receiving_tests.CheckpointAndTransitionTests.test_raw_file_drift_rejected) ... ok
+test_real_config_changes_even_with_rehashed_COMMIT_rejected (r165_receiving_tests.CheckpointAndTransitionTests.test_real_config_changes_even_with_rehashed_COMMIT_rejected) ... ok
+test_real_journal_faults_preserve_records_and_forbid_replay (r165_receiving_tests.CheckpointAndTransitionTests.test_real_journal_faults_preserve_records_and_forbid_replay) ... ok
+test_real_tensor_and_payload_identity_order_only (r165_receiving_tests.CheckpointAndTransitionTests.test_real_tensor_and_payload_identity_order_only) ... ok
+test_real_tensor_change_even_with_rehashed_COMMIT_rejected (r165_receiving_tests.CheckpointAndTransitionTests.test_real_tensor_change_even_with_rehashed_COMMIT_rejected) ... ok
+test_safetensors_load_uses_hashed_bytes_after_path_replacement (r165_receiving_tests.CheckpointAndTransitionTests.test_safetensors_load_uses_hashed_bytes_after_path_replacement) ... ok
+test_unknown_adapter_file_rejected (r165_receiving_tests.CheckpointAndTransitionTests.test_unknown_adapter_file_rejected) ... ok
+test_GO_replacement_under_lock_is_rejected_before_record (r165_receiving_tests.CompletionAdmissionTests.test_GO_replacement_under_lock_is_rejected_before_record) ... ok
+test_completed_receipt_failure_cannot_retry (r165_receiving_tests.CompletionAdmissionTests.test_completed_receipt_failure_cannot_retry) ... ok
+test_crash_after_directory_consumption_cannot_retry (r165_receiving_tests.CompletionAdmissionTests.test_crash_after_directory_consumption_cannot_retry) ... ok
+test_expiry_during_preparation_consumes_without_record (r165_receiving_tests.CompletionAdmissionTests.test_expiry_during_preparation_consumes_without_record) ... ok
+test_expiry_during_transition_consumes_without_record (r165_receiving_tests.CompletionAdmissionTests.test_expiry_during_transition_consumes_without_record) ... ok
+test_failed_constructor_cannot_retry_in_another_directory (r165_receiving_tests.CompletionAdmissionTests.test_failed_constructor_cannot_retry_in_another_directory) ... ok
+test_two_concurrent_callers_only_one_can_reach_journal (r165_receiving_tests.CompletionAdmissionTests.test_two_concurrent_callers_only_one_can_reach_journal) ... ok
+test_all_other_config_changes_rejected (r165_receiving_tests.SerializationTests.test_all_other_config_changes_rejected) ... ok
+test_bound_decodes_only_admitted_bytes_after_replacement (r165_receiving_tests.SerializationTests.test_bound_decodes_only_admitted_bytes_after_replacement) ... ok
+test_complete_requires_new_exact_GO (r165_receiving_tests.SerializationTests.test_complete_requires_new_exact_GO) ... ok
+test_duplicate_json_keys_rejected (r165_receiving_tests.SerializationTests.test_duplicate_json_keys_rejected) ... ok
+test_exact_prefix_rejects_appended_boundary (r165_receiving_tests.SerializationTests.test_exact_prefix_rejects_appended_boundary) ... ok
+test_invalid_target_sets_rejected (r165_receiving_tests.SerializationTests.test_invalid_target_sets_rejected) ... ok
+test_nonfinite_json_rejected (r165_receiving_tests.SerializationTests.test_nonfinite_json_rejected) ... ok
+test_only_target_order_is_normalized (r165_receiving_tests.SerializationTests.test_only_target_order_is_normalized) ... ok
+test_parent_symlink_and_fifo_not_admitted (r165_receiving_tests.SerializationTests.test_parent_symlink_and_fifo_not_admitted) ... ok
+test_patch_exactly_reversible_and_all_other_checks_retained (r165_receiving_tests.SerializationTests.test_patch_exactly_reversible_and_all_other_checks_retained) ... ok
+test_patch_rejects_drift_and_second_application (r165_receiving_tests.SerializationTests.test_patch_rejects_drift_and_second_application) ... ok
+test_readout_unstarted_is_not_completed (r165_receiving_tests.SerializationTests.test_readout_unstarted_is_not_completed) ... ok
+test_receipt_never_overwritten (r165_receiving_tests.SerializationTests.test_receipt_never_overwritten) ... ok
+test_reference_drift_rejected (r165_receiving_tests.SerializationTests.test_reference_drift_rejected) ... ok
+test_stage_only_declared_files_with_readonly_original (r165_receiving_tests.SerializationTests.test_stage_only_declared_files_with_readonly_original) ... ok
+test_symlink_reference_rejected (r165_receiving_tests.SerializationTests.test_symlink_reference_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 2.631s
+
+OK
+{"GPU_calls": 0, "cuda_initialized": false, "errors": 0, "failures": 0, "helper": {"path": "/localhome/local-rohing/orch_r165_frozen_boundary_recovery_20260917/candidate2/operator.py", "sha256": "2d1a21bf23de229338fbf1cc8a5fd2a21abf00d68323d3b1cfca55cb735a49e8"}, "production_operation_marker_exists": false, "skipped": 0, "source_manifest": {"path": "/localhome/local-rohing/orch_r165_frozen_boundary_recovery_20260917/candidate2/SOURCE_REPAIR.json", "sha256": "40b43fca2be1e0f3c9e5d50d1164061a056f4b213ceec4a6459b1d6dac31904d"}, "status": "PASS", "tests": 40, "tests_file": {"path": "/localhome/local-rohing/orch_r165_frozen_boundary_recovery_20260917/candidate2/test_recovery.py", "sha256": "a1fc746b05ad7d7dc7435231fe31d2ddc6ecc0b94e75ecd7a5d3694001c28eb6"}}

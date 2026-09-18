@@ -9,8 +9,8 @@ Root: `/localhome/local-rohing/rohin206_games_20260918/vision_node4_r209`.
 | Game manifest | `GAME_MANIFEST.json`, SHA256 `b3ccd7f7956d62f622f4af571ed22ba28e2fef4961013bcf45abd7b7b23ebc83` |
 | Image packet | `IMAGE_PACKET.json`, SHA256 `2974b6947e9355fe0d4b88c889d2d6816f07d46e7256e5bd2b55207a2923a111` |
 | Scene evidence | `GAME_MANIFEST_RECEIPT.json`, SHA256 `56defbd32b6b4169f6123ec7d486727326686d1230363e50c890b9b08b197a12` |
-| Vision POST | `http://127.0.0.1:8178/v1/inspect` |
-| `LocalHTTPProvider` constructor endpoint | `http://127.0.0.1:8178` (without route suffix) |
+| Vision POST | `http://[REDACTED_ADDRESS]:8178/v1/inspect` |
+| `LocalHTTPProvider` constructor endpoint | `http://[REDACTED_ADDRESS]:8178` (without route suffix) |
 | Private comparator POST | `runtime_combined/comparator.sock`, route `/v1/compare` |
 | Source | `source/gpu/ny_caption_vision.py`, SHA256 `aa49c3e2bf7c7495e8629b7a3fe16f830afc6e48d77042fe9f7eec110dde3f18` |
 | Sidecar source | `source/research_loop/workers/rohin206_games_20260918/vision/service.py`, SHA256 `39471b0cc521a309e34b69ef869d236f8e24e00f44da9a4b88e21c91cbbdfa7b` |
@@ -30,7 +30,7 @@ Remote worker root: `/localhome/local-rohing/rohin206_games_20260918/vision`.
 
 ## Vision5
 
-Loopback POST `http://127.0.0.1:8177/v1/inspect` accepts exactly `{"image":"released_handle","question":"factual question"}`. Core `LocalHTTPProvider` remains the client. Copy the exact corrected `gpu/ny_caption_vision.py` to its source closure because clients verify source hashes and replay raw-to-canonical binding. Output contains observations, uncertainty and actual measured receipt. Raw output is preserved, never syntax/semantic repaired; format canonicalization is disclosed. Unstructured plaintext retains the raw observations verbatim and labels absent model uncertainty with an operator notice. Invalid/unsafe/truncated structured output still fails closed.
+Loopback POST `http://[REDACTED_ADDRESS]:8177/v1/inspect` accepts exactly `{"image":"released_handle","question":"factual question"}`. Core `LocalHTTPProvider` remains the client. Copy the exact corrected `gpu/ny_caption_vision.py` to its source closure because clients verify source hashes and replay raw-to-canonical binding. Output contains observations, uncertainty and actual measured receipt. Raw output is preserved, never syntax/semantic repaired; format canonicalization is disclosed. Unstructured plaintext retains the raw observations verbatim and labels absent model uncertainty with an operator notice. Invalid/unsafe/truncated structured output still fails closed.
 
 `runtime_vision/incarnation_*/IMAGE_TO_SCENE.json` is required evidence of the real image→scene call. LOADED or LISTENING alone is not that evidence. Startup probes only the first of the three already-released R177 development images, with a fixed factual question. No synthetic success claim. The immutable image allowlist currently contains three released handles; a larger released-development packet must be explicitly bound before serving additional images. No LOCKED/FINAL images or hidden panel data are read.
 

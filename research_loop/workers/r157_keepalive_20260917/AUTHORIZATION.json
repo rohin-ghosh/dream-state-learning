@@ -1,0 +1,21 @@
+{
+  "schema": "R157_EXPLICIT_TEAM_NODE_RUNTIME_AUTHORIZATION_V1",
+  "authority": "Rohin, relayed by Fable in the user message dated 2026-09-17 02:10 UTC",
+  "verbatim_directive": "extend run1, the pilot, repo_reader and C1–C5 on node 5 through at least 2026-09-19 00:00Z now, as a saved-state wall extension exactly like R131 (WALL_EXTENDED record + new LEASE_BUDGET), no relocation and no reset. If a real machine reservation does end tonight, say so with the receipt path and relocate by saved-state handoff to the six free slots (node-4 slots 2/5/6/7, node-3 slots 5/6) before 20:45 PDT — but only in that case.",
+  "host": "[REDACTED_HOST]",
+  "wrapper": "gpu/ovx3_ssh.sh",
+  "lives": ["run1", "R127", "repo_reader", "C1", "C2", "C3", "C4", "C5"],
+  "physical_devices": [0, 1, 2, 3, 4, 5, 6, 7],
+  "new_hard_end_utc": "2026-09-19T00:00:00+00:00",
+  "runtime_resource_ceiling_utc": "2026-09-19T00:10:00+00:00",
+  "safety_margin_seconds": 600,
+  "authorization_is_runtime_budget_not_provider_booking": true,
+  "provider_reservation_expiry_verified": false,
+  "must_abort_on_conflicting_real_reservation": true,
+  "purchase_or_lease_transaction_authorized": false,
+  "previous_runtime_receipt_sha256": "12e187a3237d6c167d91c4abaae9e6ef671e096d827c9ed68a662aa465d51049",
+  "reset": false,
+  "learning_recipe_change": false,
+  "visibility_change": false,
+  "handoff_requirement": "Exact completed sleep boundary; preserve adapter, AdamW, RNG, full history/carry, delivery identity and original journal; validated same-device confinement and fresh admission on successor."
+}

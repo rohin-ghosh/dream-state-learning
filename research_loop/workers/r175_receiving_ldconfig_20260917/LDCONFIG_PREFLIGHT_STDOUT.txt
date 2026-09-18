@@ -1,0 +1,14 @@
+{
+  "binary_executed": false,
+  "bytes": 387,
+  "canonical_path": "/usr/sbin/ldconfig",
+  "ctypes_ldconfig_excerpt": "        def _findSoname_ldconfig(name):\n            import struct\n            # XXX this code assumes that we know all unames and that a single\n            # ABI is supported per uname; instead we should find what the\n            # ABI is (e.g. check ABI of current process) or simply ask libc\n            # to load the library for us\n            uname = os.uname()\n            # ARM has a variety of unames, e.g. armv7l\n            if uname.machine.startswith(\"arm\"):\n                machine = \"arm\"\n            if struct.calcsize('l') == 4:\n                machine = uname.machine + '-32'\n            else:\n                machine = uname.machine + '-64'\n            mach_map = {\n                'x86_64-64': 'libc6,x86-64',\n                'ppc64-64': 'libc6,64bit',\n                'sparc64-64': 'libc6,64bit',\n                's390x-64': 'libc6,64bit',\n                'ia64-64': 'libc6,IA-64',\n                # this actually breaks on biarch or multiarch as the first\n                # library wins; uname doesn't tell us which ABI we're using\n                'arm-32': 'libc6(,hard-float)?',\n                }\n            abi_type = mach_map.get(machine, 'libc6')\n\n            # XXX assuming GLIBC's ldconfig (with option -p)\n            regex = r'\\s+(lib%s\\.[^\\s]+)\\s+\\(%s'\n            regex = os.fsencode(regex % (re.escape(name), abi_type))\n            try:\n                with subprocess.Popen(['/sbin/ldconfig', '-p'],\n                                      stdin=subprocess.DEVNULL,\n                                      stderr=subprocess.DEVNULL,\n                                      stdout=subprocess.PIPE,\n                                      env={'LC_ALL': 'C', 'LANG': 'C'}) as p:\n                    res = re.search(regex, p.stdout.read())\n                    if res:\n                        return os.fsdecode(res.group(1))",
+  "ctypes_util_path": "/usr/lib/python3.12/ctypes/util.py",
+  "ctypes_util_sha256": "9cddec0d3640c812f023cf850107e38705a040fb22213181a8cd30cdd49ea0d1",
+  "mode": "0o755",
+  "remote_writes": false,
+  "requested_path": "/sbin/ldconfig",
+  "schema": "R175_LDCONFIG_READONLY_PREFLIGHT_V1",
+  "sha256": "bfd5df90c7f070feab584435f106f254ffffaa268a04de5b5c3bd61d59c092f3",
+  "uid": 0
+}

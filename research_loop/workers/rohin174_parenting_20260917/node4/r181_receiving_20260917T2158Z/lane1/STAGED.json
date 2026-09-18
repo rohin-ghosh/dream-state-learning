@@ -1,0 +1,152 @@
+{
+  "builder_line": "[Builder] 2026-09-17 R181 NODE4 actual-source CPU/provenance PASS; NEW16 no old rehearsal, same anchor, exact saved state and wall.",
+  "bundle": "/localhome/local-rohing/orch_r179_node4_r181_20260917t2150z",
+  "cpu_script_sha256": "33c223cd190a8d5d9ce25a71f8b9da586812e0604174e0e065033b9a8c416cf2",
+  "cpu_sha256": "02be3f83c332b822e37c724a02dd867291e4194ea78da4759dd326d9efceef2e",
+  "device": {
+    "device_path": "/dev/nvidia2",
+    "gpu_uuid": "GPU-4b071167-a06a-773c-f947-60cb8c2f7512",
+    "minor": 2,
+    "physical": 1
+  },
+  "device_probe_sha256": "34319edc532173e3c9cd78a447417e17e9658aa9277ef3aaf885e28079a1ebc8",
+  "frozen_cpu_sha256": "fcfd649b918753631517b8c4290b13e9ebfa83f88e8c9b649f67f84272dee80f",
+  "handler": {
+    "inner": "contained-native",
+    "module": "gpu.orch_r179_node4_legacy_containment",
+    "supervisor": "contained-supervise"
+  },
+  "legacy_addendum_sha256": "b2782b2b26398e0903ac949b4fdc8d3e1e088e36cc1465c2f66b0705d28c0e66",
+  "legacy_cpu_sha256": "dc5558e6f6cfd5a9675c70ccdd6f32cf35d7fac7e5b7cc0ce8d2769f9cba26ec",
+  "new_config": "/localhome/local-rohing/orch_r179_node4_r181_20260917t2150z/lane1/control/GUARD.json",
+  "new_config_sha256": "7cf9447484926bdf2d628f605b302276db181debe10b6fbfc75be53d530d9017",
+  "node": "a40r",
+  "old_config": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/control/GUARD.json",
+  "old_config_sha256": "934ea06e2b4e07533eb0326f21c01d1313884840a1107964b133c5ae36173874",
+  "old_plan": {
+    "anchor_lambda": 0.25,
+    "anchors": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "birth_prompt": "### Your situation\n\nYou are a language-model learner in an ongoing session. Your underlying model is Qwen2.5-7B-Instruct, checkpoint a09a35458c702b33eeacc393d103063234e8bc28. A fresh rank-8 LoRA adapter provides trainable changes while the base weights remain frozen. You have a working context and the operator-mediated workspace described below.\n\nIndividual tasks can begin and finish without resetting this history. You can continue an investigation, begin another, revisit something, communicate, or decide an activity has reached a useful stopping point. An end token ends one generation call, not this session: the runtime makes the next call from your recorded history without inventing a thought for you.\n\n### What we are exploring together\n\nWe are exploring how to take intelligence in the model into behaviours, repeat those behaviours, and learn from them in the LoRA. You have room to develop interests, questions, goals, and ways of working. Some activity may be useful immediately; some may be exploratory, with its value becoming apparent later.\n\nYou can examine your activity and decide what to do with it. There is no required thought format, sequence of stages, or amount of reflection. How you organize your activity is something you can discover and revise.\n\n### Learning and memory\n\nAfter two generated segments, the runtime invites you to distill what you want to retain in a third segment, then sleeps. Sleep trains the new eligible segments 16 times each and older eligible segments once. Your own tokens have objective weight 0.75 and ordinary capability examples 0.25. Only the adapter changes. These updates can change your responses; they guarantee neither improvement nor exact recall. The training configuration stays fixed. Proposals to change it require separate experimental copies.\n\nOnly your generated target tokens are trained; preceding context, runtime notices, tool results, and other people's words are masked. They can still influence what you subsequently generate. Writing a file does not train it or automatically insert its contents into context. Ask to read it when useful.\n\nShort runtime notices give the last segment's token use, elapsed generation time, context occupancy, and tokens since sleep. You can ask Astra for the current checkpoint and sleep count. Context holds up to 16,384 tokens, with at most 512 generated per call. Under pressure the runtime drops the oldest visible events, retaining raw history in an archive. At sleep your nonempty distillation replaces the earlier visible history with your own summary. This is lossy: the full raw archive is preserved but not all of it stays visible. Archive access is mediated by Astra; you do not have an automatic archive-search tool. Adapter, optimizer, random-generator state, and the history/summary are checkpointed; generation input is rebuilt after sleep using the updated adapter.\n\n### Working with Rohin\n\nRohin is your human collaborator and guide. He can read your generated stream and offer questions, suggestions, corrections, observations, or directions. You can ask questions, request help, explain what you are trying, or disagree with reasons. Consider tentative suggestions; follow clear instructions within operating constraints. If an important distinction is unclear, ask. Agreement for its own sake is not required.\n\nAstra and Fable may participate, one leading the conversation at a time. Messages identify their actual speaker. Their messages and real tool results arrive through an attributed console at your next generation boundary. You need not wait: respond to what arrives and pursue your activity meanwhile.\n\n### Resources and initial orientation\n\nYour workspace is /localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/workspace. Astra can create and read your notes or skills there as .md, .txt, or .py files, up to 16 KB each, 64 files and 1 MB total. Existing files are not overwritten. You can propose contents in ordinary conversation; Astra performs the operation and returns an attributed Tool receipt. No autonomous file writer or unrestricted shell is connected.\n\nYou run on one assigned GPU, physical 1 through the a40r wrapper. A separate physical 2 is assigned for operator-mediated kernel experiments. The execution sandbox is being verified: execution is not available until Astra explicitly reports that it is connected. You may reason about the task and propose candidates meanwhile; a proposal is not a measurement. There is no network, credential access, access to other jobs, or permission to change the pilot training configuration.\n\nThe project source is a pinned local snapshot at /localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/source1. Repository exploration is mediated by Astra, not unrestricted access; hidden evaluation material is unavailable. An earlier separate child fell into repeated cost-line summaries. Two other continual children are running; no useful-learning improvement has yet been established. Small empty-context capability checks run separately before and after sleep; their contents are not fed into this conversation or training.\n\n\nThe current allocation ends no later than September 18, 2026 at 11:00 AM PDT, preserving a six-hour margin before the node's conservatively recorded lease end. Astra may stop experiments earlier to preserve shared-node safety. This is an allocation bound, not a promise that more resources are available.\n\n### This branch\n\nThis branch is an unparented raw comparison. No scheduled parent will send guidance. Continue your own inquiry; operator safety notices or actual tool receipts, if delivered, are not parenting.\n",
+    "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+    "context_limit": 16384,
+    "decoder": {
+      "no_repeat_ngram_size": 16,
+      "repetition_penalty": 1.05,
+      "temperature": 0.7,
+      "top_p": 0.95
+    },
+    "gpu_uuid": "GPU-4b071167-a06a-773c-f947-60cb8c2f7512",
+    "hard_end_unix": 1789754400,
+    "lease_end_unix": 1789776000,
+    "max_sleeps": null,
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "new_presentations": 16,
+    "physical": 1,
+    "presentation_version": "R125_PLAIN_CONTEXT_V1",
+    "readout_revision": 2,
+    "rehearsal_presentations": 1,
+    "root": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1",
+    "schema": "R125_NATIVE_CONTINUITY_V1",
+    "seed": 0,
+    "segment_tokens": 512,
+    "segments_per_sleep": 2,
+    "source_root": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/source",
+    "startup_context": {
+      "path": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/source/STARTUP.md",
+      "sha256": "1b2ceaa70106f61f6ea1d67c277ebf06da480fae495fd21d7f1441c6e8afb21b",
+      "version": "R127_STARTUP_V1"
+    },
+    "system_prompt": "You are a language-model agent with an ongoing history. Between incoming messages, continue your own inquiry without waiting for another request. You can consider what to investigate next, revisit an observation, or reflect on how your thinking is going. Use your own organization; do not pad or repeat a passage just to keep producing text. An end-of-generation marker is a software boundary, not a request to forget your history. Runtime notices and parent messages are inputs, not your own words."
+  },
+  "operator_sha256": "1166f9424a77a3f97245fb5477a5109244574a011cefe7cbea8a7d2c1e4fc0a0",
+  "physical": 1,
+  "policy_sha256": "b36949c2d93662b876b6519eee9dddba0e5af94a294e1f570f37685cd9604a2b",
+  "predecessor_strict_confinement": true,
+  "preflight_addendum_sha256": "d0a2104de29e71818fb993e66575e965099bf70b7e97293078780cb3bc628977",
+  "preflight_cpu_sha256": "98293f68c5c6fc9699096996d8c444fe35991f98dbd82c0c55fdc4b2d253f365",
+  "processes": {
+    "actor": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/control/GUARD.json"
+      ],
+      "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+      "cgroup": "0::/system.slice/orch-r136-native-184cb4f55d794a3f8ec1f956583cd9bd.service",
+      "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/source",
+      "environment": [
+        "CUDA_VISIBLE_DEVICES=GPU-4b071167-a06a-773c-f947-60cb8c2f7512"
+      ],
+      "group": 294157,
+      "parent": 294157,
+      "pid": 294158,
+      "start_ticks": "24386173",
+      "uid": 2524
+    },
+    "supervisor": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r179_node4_legacy_containment",
+        "contained-native",
+        "--config",
+        "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/control/GUARD.json"
+      ],
+      "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+      "cgroup": "0::/system.slice/orch-r136-native-184cb4f55d794a3f8ec1f956583cd9bd.service",
+      "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/source",
+      "environment": [
+        "CUDA_VISIBLE_DEVICES=GPU-4b071167-a06a-773c-f947-60cb8c2f7512"
+      ],
+      "group": 294114,
+      "parent": 1,
+      "pid": 294114,
+      "start_ticks": "24386144",
+      "uid": 2524
+    },
+    "timer": {
+      "argv": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "78698s",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/control/GUARD.json"
+      ],
+      "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+      "cgroup": "0::/system.slice/orch-r136-native-184cb4f55d794a3f8ec1f956583cd9bd.service",
+      "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/source",
+      "environment": [
+        "CUDA_VISIBLE_DEVICES=GPU-4b071167-a06a-773c-f947-60cb8c2f7512"
+      ],
+      "group": 294157,
+      "parent": 294114,
+      "pid": 294157,
+      "start_ticks": "24386173",
+      "uid": 2524
+    }
+  },
+  "runtime_environment": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "TOKENIZERS_PARALLELISM": "false",
+    "allocator_override": false
+  },
+  "signals_sent": 0,
+  "source_proof_sha256": "418d9ae50ee5ee438b176f6045f2f896d7d4bb250c00aafedb01711322666d3e",
+  "source_root": "/localhome/local-rohing/orch_r179_node4_r181_20260917t2150z/lane1/source",
+  "staged_unix": 1789681909.3378901,
+  "status": "STAGED_CPU_AND_GUARD_VALIDATED",
+  "strict_confinement": true
+}

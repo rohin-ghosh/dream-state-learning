@@ -1,0 +1,33 @@
+{
+  "schema": "R179_NODE4_LEGACY_CONTAINMENT_ADDENDUM_V1",
+  "author": "Main/Astra",
+  "recorded_local": "2026-09-17T10:20:54-07:00",
+  "base_scope": "research_loop/workers/r179_context_survival_20260917/BUILDER_SCOPE.json",
+  "added_module": {
+    "path": "gpu/orch_r179_node4_legacy_containment.py",
+    "sha256": "b5385da9892dff75884b67f6fbf286a1c67fd1d658cd67cb3ab02c37943ca5c7"
+  },
+  "tests": {
+    "path": "tests/test_orch_r179_node4_legacy_containment.py",
+    "sha256": "3bbb473f82bde48bbeddbad7d54c44d18a8235067020d06902b49f5d96372f7a"
+  },
+  "cpu": {
+    "path": "research_loop/workers/r179_context_survival_20260917/CPU_LEGACY_CONTAINMENT_1.log",
+    "sha256": "b55a90c923bbbff96171ac26908a32e0d8aba76488dabda72a6062e151ddecab",
+    "passed": 35,
+    "subtests_passed": 63
+  },
+  "allowed_delta": [
+    "For only NODE4 physical0/kernel0 and physical1/raw_unparented, add this exact strict-device module to the immutable successor source closure.",
+    "Add exact device_containment binding to the successor guard, derived from actual host/kernel UUID-to-minor mapping and unique systemd unit.",
+    "Use the module's bounded contained-supervise/native path; retain the original privileged scanner, complete source-closure validation, clear-after-owner-exit admission, and native saved-resume guard unchanged."
+  ],
+  "requirements": [
+    "Receiving CPU tests must execute this module against each actual successor source, not just the VM source.",
+    "Before retiring either owner, a real receiving-host probe must deny all seven foreign NVIDIA minors under the exact nonroot identity and planned strict service policy.",
+    "Keep original owners running if strict admission fails; no unconfined fallback.",
+    "Preserve original memory/runtime environment semantics; Main observed both original native processes had no PYTORCH_CUDA_ALLOC_CONF/PYTORCH_ALLOC_CONF/CUDA_DEVICE_ORDER override, OMP/MKL threads1, TOKENIZERS_PARALLELISM=false.",
+    "No change to training masks, targets, recipe, walls, life state, or existing custody/readout rules."
+  ],
+  "claim": "Fixes an explicit confinement gap for the context-policy handoff; not a GPU launch or retained-learning result."
+}

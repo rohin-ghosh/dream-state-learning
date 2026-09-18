@@ -1,0 +1,89 @@
+{
+  "assignments": [
+    {
+      "active_child_root": "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1818z_2/control0/run1",
+      "arm": "A",
+      "baseline": true,
+      "cadence": 1,
+      "cadence_clock": "response",
+      "life": "support_free",
+      "peer_physical": null,
+      "physical": 0
+    },
+    {
+      "active_child_root": "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1818z_2/control1/run1",
+      "arm": "B",
+      "baseline": true,
+      "cadence": 2,
+      "cadence_clock": "response",
+      "life": "creative_reread",
+      "peer_physical": 4,
+      "physical": 1
+    },
+    {
+      "active_child_root": "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1818z_2/control2/run1",
+      "arm": "C",
+      "baseline": true,
+      "cadence": 3,
+      "cadence_clock": "response",
+      "life": "brain_free",
+      "peer_physical": 3,
+      "physical": 2
+    },
+    {
+      "active_child_root": "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1818z_2/control3/run1",
+      "arm": "D",
+      "baseline": true,
+      "cadence": 3,
+      "cadence_clock": "response",
+      "life": "brain_guided",
+      "peer_physical": 2,
+      "physical": 3
+    },
+    {
+      "active_child_root": "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1818z_2/control4/run1",
+      "arm": "A",
+      "baseline": true,
+      "cadence": 1,
+      "cadence_clock": "response",
+      "life": "creative_free",
+      "peer_physical": 1,
+      "physical": 4
+    },
+    {
+      "active_child_root": "/localhome/local-rohing/orch_r179_node3_recovery_20260917t1818z_2/control7/run1",
+      "arm": "C",
+      "baseline": true,
+      "cadence": 3,
+      "cadence_clock": "response",
+      "life": "creative_select",
+      "peer_physical": null,
+      "physical": 7
+    }
+  ],
+  "baseline_for_all": true,
+  "child_restarts": 0,
+  "directive_verbatim": "Activate node3 R175 now when Main bundle helper released shortly. Frozen assignments: support_free A strict-dense/1; creative_reread B walkthrough/2; brain_free C self-derivation/3; brain_guided D light steer/3; creative_free A/1; creative_select C/3. State-only peer pairs brain_free\u2194brain_guided and creative_reread\u2194creative_free. Own node3 scope, prepare roots/configs and takeover, no child restarts; actual first published+rendered receipts/+3 completed sleep baseline. Machine ceiling17:00 unchanged, stop16:50. Main implements gpu/orch_r175_parent_arms.py caps+clock tests; API shortly.",
+  "existing_pending_messages": "preserve; do not wait for propagation before bound takeover",
+  "expected_helper": "gpu/orch_r175_parent_arms.py",
+  "helper_release_binding": null,
+  "initial_bounded_window_end_pdt": "2026-09-17T13:48:00-07:00",
+  "internal_hard_end_unix": 1789689000,
+  "machine_ceiling_unix": 1789689600,
+  "model": "openai/openai/gpt-6-astra",
+  "peer_exchange": "state-only; no solutions, full transcripts, exact success payloads, or invented outcomes",
+  "peer_pairs": [
+    [
+      "brain_free",
+      "brain_guided"
+    ],
+    [
+      "creative_reread",
+      "creative_free"
+    ]
+  ],
+  "prepared_pdt": "2026-09-17T13:31:33-07:00",
+  "schema": "ROHIN175_NODE3_USER_FROZEN_ASSIGNMENTS_V1",
+  "scientific_comparison": "prospective",
+  "status": "ASSIGNMENTS_FROZEN_HELPER_API_PENDING_NO_TAKEOVER_YET"
+}

@@ -1,0 +1,184 @@
+{
+  "observed_utc": "2026-09-18T03:35:32.255738+00:00",
+  "arms": {
+    "repo_c1": {
+      "act_record": 5938,
+      "act_sha256": "d0ab5b10056c92770e6882b98a7efc5bca09bdcf7e703a29d8a6ec71452910b8",
+      "outcome": {
+        "action": "list",
+        "actual_tool_receipt": {
+          "bytes": 497,
+          "path": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/repo_c1/tool_receipts/PUBLICATION_000000.json",
+          "sha256": "5d557c03a7144a56e1e57f8a7f868cb7424058bb0bf957a7d3efcb9c4c6f5d22"
+        },
+        "code_executed": false,
+        "executed": false,
+        "origin": {
+          "kind": "TRAIN_CHILD_RESPONSE",
+          "record_index": 5935,
+          "record_sha256": "459cf4d20cfcef2b6bab273037db32fdb9d530d5c4db9e87f23809723c1a82c3"
+        },
+        "semantics": "Actual repository operation, not a CPU/test execution or successful scientific result",
+        "status": "PUBLISHED",
+        "tool": "REPOSITORY"
+      },
+      "following_REQUEST": {
+        "index": 5943,
+        "sha256": "f40751051520d52645ae9fcb33a95b26ada77a269871e6bb040e41a3f4449d54",
+        "started_unix": 1789701873.2465708,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 4124
+        },
+        "feedback": [
+          {
+            "text": "Tool: {\"schema\":\"R183_ACTUAL_TOOL_RESULT_V1\",\"status\":\"COMPLETE\",\"action\":\"list\",\"request\":{\"action\":\"list\",\"path\":\".\",\"page\":0},\"origin\":{\"actor\":\"child\",\"split\":\"TRAIN\",\"record_index\":5935,\"record_sha256\":\"459cf4d20cfcef2b6bab273037db32fdb9d530d5c4db9e87f23809723c1a82c3\"},\"sequence\":0,\"model_produced_result\":false,\"executed_code\":false,\"paths\":[\"AGENTS.md\",\"CLAUDE.md\",\"DESIGN_SUPER.md\",\"README.md\",\"REVIEW_PACK.md\",\"SPEC_V2.md\",\"gpu/V2_NODE_SETUP.md\",\"gpu/__init__.py\",\"gpu/a100_scp.sh\",\"gpu/a100_ssh.sh\",\"gpu/a40_scp.sh\",\"gpu/a40_ssh.sh\",\"gpu/a40r_scp.sh\",\"gpu/a40r_ssh.sh\",\"gpu/astra_additive_native_parity_probe.py\",\"gpu/astra_adult_collection_guard.sh\",\"gpu/astra_adult_stage_guard.sh\",\"gpu/astra_correction_utility_analysis.py\",\"gpu/astra_correction_utility_diagnostic.py\",\"gpu/astra_corrective_reselect.py\",\"gpu/astra_corrective_reselect_guard.sh\",\"gpu/astra_corrective_sleep_train.py\",\"gpu/astra_cumulative_specificity.py\",\"gpu/astra_event_two_hop.py\",\"gpu/astra_event_two_hop_guard.sh\",\"gpu/astra_event_two_hop_lesson.py\",\"gpu/astra_event_two_hop_lesson_control.py\",\"gpu/astra_event_two_hop_lesson_control_guard.sh\",\"gpu/astra_event_two_hop_lesson_guard.sh\",\"gpu/astra_event_two_hop_memory.py\"],\"total_paths\":16352,\"page\":0,\"next_page\":1}",
+            "characters": 1251,
+            "text_sha256": "198a87037303a73d140a50a618a7e88849935ee404f3115dd10d61fbd901def2",
+            "truncated": false
+          }
+        ]
+      },
+      "new_Tool_INBOX": [
+        {
+          "index": 5942,
+          "sha256": "8a7cf3d27e45444c32c56f170417591c8ebcb74e2f2eaa7434134092752554e6",
+          "id": "fb313f87b29a4549b51b96c68aab2c90",
+          "message_text_sha256": "694777476457e27e9ffe4fe1b7ab8aee0a0b655fc50d6cb5faa6d28eb1968f2e"
+        }
+      ],
+      "publication": {
+        "publication": {
+          "id": "fb313f87b29a4549b51b96c68aab2c90",
+          "path": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/repo_c1/raw/stream/inbox/fb313f87b29a4549b51b96c68aab2c90.json",
+          "sha256": "97eee73a5acb4e9706b8d6626d60804b12228fa6b557246a3af327771b3b34c5"
+        },
+        "result": {
+          "bytes": 1245,
+          "path": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/repo_c1/tool_receipts/ACTION_000000.json",
+          "sha256": "135c3e272c1c5bc4115de5d27b865daaafc3635926c5709c4a594f4a75715b9e"
+        }
+      },
+      "actual_operation": {
+        "action": "list",
+        "executed_code": false,
+        "model_produced_result": false,
+        "next_page": 1,
+        "origin": {
+          "actor": "child",
+          "record_index": 5935,
+          "record_sha256": "459cf4d20cfcef2b6bab273037db32fdb9d530d5c4db9e87f23809723c1a82c3",
+          "split": "TRAIN"
+        },
+        "page": 0,
+        "paths": [
+          "AGENTS.md",
+          "CLAUDE.md",
+          "DESIGN_SUPER.md",
+          "README.md",
+          "REVIEW_PACK.md",
+          "SPEC_V2.md",
+          "gpu/V2_NODE_SETUP.md",
+          "gpu/__init__.py",
+          "gpu/a100_scp.sh",
+          "gpu/a100_ssh.sh",
+          "gpu/a40_scp.sh",
+          "gpu/a40_ssh.sh",
+          "gpu/a40r_scp.sh",
+          "gpu/a40r_ssh.sh",
+          "gpu/astra_additive_native_parity_probe.py",
+          "gpu/astra_adult_collection_guard.sh",
+          "gpu/astra_adult_stage_guard.sh",
+          "gpu/astra_correction_utility_analysis.py",
+          "gpu/astra_correction_utility_diagnostic.py",
+          "gpu/astra_corrective_reselect.py",
+          "gpu/astra_corrective_reselect_guard.sh",
+          "gpu/astra_corrective_sleep_train.py",
+          "gpu/astra_cumulative_specificity.py",
+          "gpu/astra_event_two_hop.py",
+          "gpu/astra_event_two_hop_guard.sh",
+          "gpu/astra_event_two_hop_lesson.py",
+          "gpu/astra_event_two_hop_lesson_control.py",
+          "gpu/astra_event_two_hop_lesson_control_guard.sh",
+          "gpu/astra_event_two_hop_lesson_guard.sh",
+          "gpu/astra_event_two_hop_memory.py"
+        ],
+        "request": {
+          "action": "list",
+          "page": 0,
+          "path": "."
+        },
+        "schema": "R183_ACTUAL_TOOL_RESULT_V1",
+        "sequence": 0,
+        "status": "COMPLETE",
+        "total_paths": 16352
+      },
+      "action_keys": [
+        "action",
+        "executed_code",
+        "model_produced_result",
+        "next_page",
+        "origin",
+        "page",
+        "paths",
+        "request",
+        "schema",
+        "sequence",
+        "status",
+        "total_paths"
+      ]
+    },
+    "creative_d1": {
+      "act_record": 5864,
+      "act_sha256": "9ecfe9462af56165736683a80986bf87e5fc72bed4e3dc00b97969a00ed47b8c",
+      "outcome": {
+        "executed": false,
+        "status": "LANGUAGE_RESPONSE_UNVERIFIED"
+      },
+      "following_REQUEST": {
+        "index": 5869,
+        "sha256": "c81143ecc5745d944f411d612d77c7585291a838d94db8e55d5c595850a82592",
+        "started_unix": 1789702127.6691513,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 7413
+        },
+        "feedback": [
+          {
+            "text": "Tool status: LANGUAGE_RESPONSE_UNVERIFIED. No successful execution is established. An unknown dispatch is not retried automatically. Continue from the evidence available.",
+            "characters": 170,
+            "text_sha256": "ecb4796270422832be1278cbbc1ff868658edefbff065be2cc38d32499c7ad22",
+            "truncated": false
+          }
+        ]
+      },
+      "new_Tool_INBOX": []
+    },
+    "math_transfer_c1": {
+      "act_record": 5870,
+      "act_sha256": "bae98c25f555cfe31b63f6d7bb3fdca1a909e74463814d0550db994a10e28ab6",
+      "outcome": {
+        "executed": false,
+        "status": "LANGUAGE_RESPONSE_UNVERIFIED"
+      },
+      "following_REQUEST": {
+        "index": 5875,
+        "sha256": "e00c1006dd6b41e3856b9c7db0deeb2522ac046711c53c9940b26f1415222923",
+        "started_unix": 1789702137.0866537,
+        "render_receipt": {
+          "all_history_tokens_masked": true,
+          "token_count": 8244
+        },
+        "feedback": [
+          {
+            "text": "Tool status: LANGUAGE_RESPONSE_UNVERIFIED. No successful execution is established. An unknown dispatch is not retried automatically. Continue from the evidence available.",
+            "characters": 170,
+            "text_sha256": "ecb4796270422832be1278cbbc1ff868658edefbff065be2cc38d32499c7ad22",
+            "truncated": false
+          }
+        ]
+      },
+      "new_Tool_INBOX": []
+    }
+  }
+}

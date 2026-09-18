@@ -1,0 +1,192 @@
+{
+  "observed_unix": 1789635110.3250597,
+  "parents": [
+    {
+      "branch": "C2",
+      "fresh_attempts": [],
+      "log_tail": "",
+      "next_due_response_count": 98,
+      "parent": {
+        "argv": [
+          "/usr/bin/python3",
+          "-m",
+          "gpu.orch_r153_community_parents",
+          "--config",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/C2/CONFIG.json",
+          "--repository",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/local_source",
+          "--output",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_community_prompt_final_20260917/attempt3/C2/parent",
+          "--gate",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/ROLLOUT/PARENT_GATE.json",
+          "--gate-sha256",
+          "c1fb6f68a8c1b917b0d5472e556b4230d211b77322b91acb4af0b123fecd5aa8"
+        ],
+        "pid": 564248,
+        "start_ticks": "174162005",
+        "state": "S"
+      },
+      "reserved_response_count": 96
+    },
+    {
+      "branch": "C3",
+      "fresh_attempts": [],
+      "log_tail": "",
+      "next_due_response_count": 92,
+      "parent": {
+        "argv": [
+          "/usr/bin/python3",
+          "-m",
+          "gpu.orch_r153_community_parents",
+          "--config",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/C3/CONFIG.json",
+          "--repository",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/local_source",
+          "--output",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_community_prompt_final_20260917/attempt3/C3/parent",
+          "--gate",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/ROLLOUT/PARENT_GATE.json",
+          "--gate-sha256",
+          "c1fb6f68a8c1b917b0d5472e556b4230d211b77322b91acb4af0b123fecd5aa8"
+        ],
+        "pid": 564572,
+        "start_ticks": "174162399",
+        "state": "S"
+      },
+      "reserved_response_count": 90
+    },
+    {
+      "branch": "C4",
+      "fresh_attempts": [
+        {
+          "PROMPT.json": {
+            "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r168_community_prompt_final_20260917/attempt3/C4/parent/parent_000000000089/PROMPT.json",
+            "sha256": "4b2b40a71a4ce6e8939a5db367553625fa5c18cc0d5bf7d9886b27bdde6d36c5"
+          },
+          "RESULT.json": {
+            "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r168_community_prompt_final_20260917/attempt3/C4/parent/parent_000000000089/RESULT.json",
+            "sha256": "37bf0d1a979ae0fb34e8143c7a9adb29932e9e468c537044939a70a6fee87788"
+          },
+          "SOURCE.json": {
+            "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r168_community_prompt_final_20260917/attempt3/C4/parent/parent_000000000089/SOURCE.json",
+            "sha256": "d3b8877d28f490e9b1617e8b2bfabab864e87abdd00003989bdecb6fe4cab66c"
+          },
+          "attempt": "parent_000000000089",
+          "error_type": null,
+          "final_policy_precedence": true,
+          "message": "Astra: Set aside the earlier storage-verification question for now. In your notes script, whole-script rewrites keep changing unrelated details: the latest version changes the directory and reintroduces an import error. Which small region deserves your attention next? Try preserving the rest unchanged while you work on that region, and judge whether this narrower editing approach reduces accidental changes before expanding your scope.",
+          "new_policy_present": true,
+          "publication": {
+            "id": "64cad043040d47dfabb8f24363fc46ba",
+            "path": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life/stream/inbox/64cad043040d47dfabb8f24363fc46ba.json",
+            "sha256": "01926040bd98f614d1965c49cdf682e8abd7a1666650aa8768fcc76463d859f8"
+          },
+          "rationale": null,
+          "response_count": 89,
+          "status": "PUBLISHED"
+        }
+      ],
+      "log_tail": "",
+      "next_due_response_count": 91,
+      "parent": {
+        "argv": [
+          "/usr/bin/python3",
+          "-m",
+          "gpu.orch_r153_community_parents",
+          "--config",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/C4/CONFIG.json",
+          "--repository",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/local_source",
+          "--output",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_community_prompt_final_20260917/attempt3/C4/parent",
+          "--gate",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/ROLLOUT/PARENT_GATE.json",
+          "--gate-sha256",
+          "c1fb6f68a8c1b917b0d5472e556b4230d211b77322b91acb4af0b123fecd5aa8"
+        ],
+        "pid": 565196,
+        "start_ticks": "174163009",
+        "state": "S"
+      },
+      "reserved_response_count": 87
+    }
+  ],
+  "tail_counts": {
+    "children": [
+      {
+        "basis": "bounded_authoritative_tail_checkpoint_not_fresh_full_chain_audit",
+        "branch": "C2",
+        "committed_rows": 96,
+        "head": {
+          "index": 3537,
+          "kind": "UPDATE",
+          "mtime_unix": 1789635096.2078128,
+          "optimizer_step": 2982
+        },
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "SLEEP_REQUEST",
+        "native_state": "R",
+        "observed_unix": 1789635111.3012748,
+        "pending": true,
+        "pid": 2610332,
+        "record_index": 3436,
+        "record_mtime_unix": 1789633131.7462513,
+        "record_sha256": "5e80a150ed9f423be371ac97a670d0d22b9cce5b46cc691f9034eefbc628d25a",
+        "sleep_frontier": 93,
+        "source_bytes": 1618617,
+        "start_ticks": "14878521"
+      },
+      {
+        "basis": "bounded_authoritative_tail_checkpoint_not_fresh_full_chain_audit",
+        "branch": "C3",
+        "committed_rows": 90,
+        "head": {
+          "index": 3168,
+          "kind": "UPDATE",
+          "mtime_unix": 1789635096.0753443,
+          "optimizer_step": 2654
+        },
+        "journal_id": "d486e78b03ef47008c0b5c41c5dddca3",
+        "kind": "SLEEP_REQUEST",
+        "native_state": "R",
+        "observed_unix": 1789635111.3542798,
+        "pending": true,
+        "pid": 2525436,
+        "record_index": 3046,
+        "record_mtime_unix": 1789632478.1242602,
+        "record_sha256": "1b90be267177675619a6e9ea1a9cd8ce8b19ec1067088d59a4e7d467e23cf2f9",
+        "sleep_frontier": 87,
+        "source_bytes": 1970983,
+        "start_ticks": "14761894"
+      },
+      {
+        "basis": "bounded_authoritative_tail_checkpoint_not_fresh_full_chain_audit",
+        "branch": "C4",
+        "committed_rows": 89,
+        "head": {
+          "index": 3078,
+          "kind": "COMMITTED",
+          "mtime_unix": 1789635089.7846336,
+          "optimizer_step": null
+        },
+        "journal_id": "cd9091a9a971469788a78240e1688328",
+        "kind": "COMMITTED",
+        "native_state": "R",
+        "observed_unix": 1789635111.4001353,
+        "pending": false,
+        "pid": 2619696,
+        "record_index": 3078,
+        "record_mtime_unix": 1789635089.7846336,
+        "record_sha256": "e69e0324a602cd361e526501e126838c521dbd55feeb0f136e4d077072fe370d",
+        "sleep_frontier": 87,
+        "source_bytes": 2019182,
+        "start_ticks": "14891073"
+      }
+    ],
+    "reader_source": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_parent_policy_candidates_20260917/R154_ATTENTION_V2/OBSERVE.py",
+      "sha256": "3de25c730cd7020d288ca2a7c77fafb900f1022436107e29086673c66103a921"
+    },
+    "source_bytes": 5608782
+  }
+}

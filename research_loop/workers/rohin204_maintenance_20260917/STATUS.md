@@ -1,0 +1,36 @@
+## [Builder/Jason — R204 maintenance read-only pass] 2026-09-18 05:54:20 UTC
+
+25 native processes observed on nodes1/2/4/5 (includes T/held, not a live-learning count); node3 excluded. State counts: {'R': 10, 'S': 15, 'T': 0, 'D': 0, 'Z': 0}. Receipts: `research_loop/workers/rohin204_maintenance_20260917/PASS_20260918T055420Z.json`.
+
+| Node/slot/life | PID/state; head age | REQUEST /12288 | Compaction | THINK sequence | Raw10 FW; capitals; CJK; mixed; spaces | Sleep rows new/replay; updates new/replay (total); seconds | Parent INBOX/hr; REQUEST opportunities | State rejects/edits |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| node1/2/R203_MATH_COMM_B_node1_clone1 | 3504267/R; 26s | 11249/12288 | COMPACTION:6508 | THINK,ACT,LEARN,THINK,ACT,LEARN | 10/10: 54/10940; 2/521; 395/7041; 8/1576; 0/2027 | 3/0; 0/0 (0); 61.998 | 12; 25 | 0/0 |
+| node1/3/R203_REPO_EVIDENCE_C_node1_clone1 | 3504161/S; 25s | 8195/12288 | COMPACTION:6662 | THINK,ACT,LEARN,THINK,ACT,LEARN | 10/10: 57/15153; 3/437; 879/11231; 5/2171; 0/2635 | 3/0; 16/0 (16); 127.573 | 9; 19 | 5/5 |
+| node1/4/R203_CREATIVE_STRUCTURED_A_node1_clone1 | 3504447/S; 1s | 5896/12288 | COMPACTION:6688 | THINK,ACT,LEARN,THINK,ACT,LEARN | 10/10: 1/7037; 1/301; 2/5620; 2/1118; 0/1153 | 3/0; 32/0 (32); 205.714 (+active) | 11; 21 | 0/0 |
+| node1/5/R203_MATH_SELF_DERIVE_C_node1_clone1 | 3504215/S; 3s | 10969/12288 | COMPACTION:6609 | THINK,ACT,LEARN,THINK,ACT,LEARN | 10/10: 9/7338; 0/307; 0/5015; 0/1108; 0/1422 | 3/0; 16/0 (16); 158.935 (+active) | 13; 25 | 0/0 |
+| node1/6/classroom_creative | 183848/R; 15s | 8236/12288 | COMPACTION:7975 | none observed | 10/10: 107/4742; 0/12; 2829/4333; 120/334; 0/198 | 3/0; 48/0 (48); 264.75 | 2; 28 | 0/0 |
+| node1/7/R202_CREATIVE_B_node1_clone1 | 3504375/S; 20s | 8941/12288 | COMPACTION:6579 | THINK,ACT,LEARN,THINK,ACT,LEARN | 10/10: 6/9524; 0/404; 15/7737; 1/1388; 0/1461 | 3/0; 48/0 (48); 266.821 | 5; 21 | 0/0 |
+| node2/0/creative_reread | 1849630/R; 1s | 7004/12288 | COMPACTION:7882 | none observed | 10/10: 322/7656; 0/0; 5948/6324; 21/657; 12/504 | 4/0; 64/0 (64); 395.612 | 5; 19 | 0/0 |
+| node2/1/R201_MATH_D_node2_clone1 | 2308366/R; 8s | 9350/12288 | COMPACTION:7026 | THINK,ACT,LEARN,THINK,ACT,LEARN | 10/10: 8/1260; 0/53; 23/890; 0/206; 0/243 | 3/0; 32/0 (32); 311.804 (+active) | 7; 21 | 0/0 |
+| node2/3/R202_REPO_C_node2_clone1 | 2366411/S; 8s | 7144/12288 | COMPACTION:6961 | THINK,ACT,LEARN,THINK,ACT,LEARN | 10/10: 1/4245; 0/185; 2/2877; 1/664; 0/775 | 3/0; 48/0 (48); 497.591 (+active) | 7; 21 | 0/0 |
+| node2/5/creative_select | 1849923/S; 100s | 2555/12288 | COMPACTION:7527 | none observed | 10/10: 350/11991; 6/150; 5141/9885; 81/1437; 0/1166 | 3/0; 48/0 (48); 198.065 | 5; 15 | 0/0 |
+| node2/6/R203_MATH_TRANSFER_C_node2_clone1 | 2370147/R; 81s | 8839/12288 | COMPACTION:6671 | THINK,ACT,LEARN,THINK,ACT,LEARN | 10/10: 4/6137; 1/317; 0/4312; 0/893; 0/1110 | 3/0; 48/0 (48); 393.573 | 4; 19 | 0/0 |
+| node2/7/creative_free | 1849180/S; 2s | 6933/12288 | COMPACTION:7559 | none observed | 10/10: 426/10943; 0/43; 6207/8716; 38/1218; 0/1074 | 4/0; 64/0 (64); 309.388 (+active) | 19; 20 | 0/0 |
+| node4/2/R203_NODE4_2_MATH_PROSE_B | 4170044/R; 5s | 8876/12288 | COMPACTION:786 | THINK,ACT,LEARN,THINK,ACT,LEARN | 10/10: 42/13059; 6/412; 33/8472; 3/1903; 0/2135 | 3/0; 0/0 (0); 61.215 (+active) | 3; 25 | 0/0 |
+| node4/3/R203_NODE4_3_KERNEL_REFLECT_B | 237705/S; 6s | 9024/12288 | COMPACTION:374 | THINK,ACT,LEARN | 3/10: 0/2749; 0/135; 0/2180; 0/465; 0/467 | ?/?; ?/? (?); ? (+active) | 3; 3 | 1/1 |
+| node4/4/kernel_parented | 1643508/R; 16s | 9973/12288 | COMPACTION:6799 | none observed | 10/10: 70/16657; 0/7; 1011/9229; 10/2285; 4/4054 | 3/0; 48/0 (48); 425.882 (+active) | 0; 15 | 0/0 |
+| node4/5/R203_NODE4_5_REPO_TRACE_B | 4173024/S; 15s | 9294/12288 | COMPACTION:656 | THINK,ACT,LEARN,THINK,ACT,LEARN | 10/10: 13/6114; 1/375; 211/4816; 5/1015; 0/1030 | 3/0; 32/0 (32); 289.705 | 3; 18 | 0/0 |
+| node4/6/R201_MATH_C_node4_6 | 4175823/R; 4s | 10144/12288 | COMPACTION:784 | LEARN,THINK,ACT,LEARN,THINK,ACT | 10/10: 9/626; 0/20; 158/387; 0/90; 0/62 | 3/0; 0/0 (0); 61.672 | 4; 21 | 0/0 |
+| node4/7/R203_NODE4_7_CREATIVE_OPEN_C | 4159095/S; 25s | 11075/12288 | COMPACTION:659 | ACT,LEARN,ACT,THINK,ACT,LEARN | 10/10: 1/2760; 0/103; 13/2225; 1/458; 0/454 | 4/0; 64/0 (64); 616.095 | 5; 15 | 0/0 |
+| node5/0/C1 | 2707975/R; 5s | 6133/12288 | COMPACTION:7805 | none observed | 10/10: 73/19058; 1/940; 1220/15927; 25/2892; 0/2751 | 3/0; 48/0 (48); 267.655 (+active) | 0; 19 | 0/0 |
+| node5/1/C2_R209_prose_cadence_saved_boundary_resume | 3371337/S; 5s | 12217/12288 | COMPACTION:7055 | ACT,ACT,THINK,THINK,ACT,LEARN | 10/10: 4/6950; 0/315; 85/5510; 2/1102; 0/1118 | 4/0; 64/0 (64); 541.717 (+active) | 13; 14 | 0/0 |
+| node5/2/run1 | 2495635/S; 35s | 1161/12288 | COMPACTION:8769 | none observed | 10/10: 0/566; 0/14; 12/470; 1/84; 0/77 | 3/0; 48/0 (48); 147.936 | 0; 21 | 0/0 |
+| node5/3/C3 | 2668022/S; 2s | 6246/12288 | COMPACTION:7017 | none observed | 10/10: 22/9849; 1/473; 4/7545; 1/1352; 0/1571 | 3/0; 48/0 (48); 302.467 (+active) | 0; 24 | 0/0 |
+| node5/4/C4 | 2606742/R; 8s | 8659/12288 | COMPACTION:6826 | none observed | 10/10: 12/7034; 3/174; 71/4772; 9/943; 0/1139 | 3/0; 48/0 (48); 394.266 (+active) | 0; 21 | 0/0 |
+| node5/5/C5 | 2761060/S; 99s | 1993/12288 | COMPACTION:8730 | none observed | 10/10: 159/5574; 0/49; 1927/4697; 135/529; 0/427 | 3/0; 48/0 (48); 171.356 | 0; 33 | 0/0 |
+| node5/6/pilot | 2757295/S; 10s | 2519/12288 | COMPACTION:8199 | none observed | 10/10: 4/5887; 0/131; 22/3956; 6/680; 0/1032 | 3/0; 48/0 (48); 195.02 | 0; 18 | 0/0 |
+
+Counts are descriptive opportunities, not degradation, causal, or quality claims. Raw columns: fullwidth/chars; internal common-word capitals/opportunities (existing R203 scanner); CJK+Kana+Hangul/letters; mixed-script words/words; non-ASCII whitespace/all whitespace. Zero-width, internal multispace and case-join counts are in JSON. Original raw TRAIN strings and SHA receipts are retained unchanged; possible credentials are withheld. Parent counts are accepted TRAIN parent INBOX records, not a claim of attention or actual REQUEST visibility; denominator is TRAIN REQUESTs in up to one hour of this incarnation, not an extrapolated hourly rate. >= means the 2,000-record bound did not cover the full hour. Sleep rows are raw-new/selected-replay; actual new/replay updates join presentation hashes to new-row hashes. Duration uses SLEEP_REQUEST-to-COMPLETE file mtimes, including checkpoint time; last completed sleep is shown, not an update-rate claim. State edits deduplicate consolidation source_event_id and exclude NO_EXPLICIT_STATE_DELTA. T means stopped/held, not diagnosed broken. Current metrics begin at a hash-verified LOADED matching PID and process-start time, under the observed trial/root/plan; no current REQUEST or raw sample is reported before that boundary. Inherited source head/REQUEST are separate JSON fields. Document started/finished/loaded timestamps are preferred when present; zero mtimes are unknown, never multi-decade staleness. Missing evidence is unverified. No launch gate, child/operator intervention, or sealed/FINAL access.
+
+Owner routing (report only; no signals/restarts/reconfiguration):
+No bounded readout fault flagged; this does not establish overall runtime health.

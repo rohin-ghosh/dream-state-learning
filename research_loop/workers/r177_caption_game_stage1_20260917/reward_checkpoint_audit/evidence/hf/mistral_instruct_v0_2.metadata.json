@@ -1,0 +1,58 @@
+{
+  "id": "mistralai/Mistral-7B-Instruct-v0.2",
+  "sha": "63a8b081895390a26e140280378bc85ec8bce07a",
+  "author": "mistralai",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "library_name": "transformers",
+  "pipeline_tag": "text-generation",
+  "createdAt": "2023-12-11T13:18:44.000Z",
+  "lastModified": "2025-07-24T16:57:21.000Z",
+  "tags": [
+    "transformers",
+    "pytorch",
+    "safetensors",
+    "mistral",
+    "text-generation",
+    "finetuned",
+    "mistral-common",
+    "conversational",
+    "arxiv:2310.06825",
+    "license:apache-2.0",
+    "eval-results",
+    "text-generation-inference",
+    "deploy:azure",
+    "region:us"
+  ],
+  "config": {
+    "architectures": [
+      "MistralForCausalLM"
+    ],
+    "model_type": "mistral",
+    "tokenizer_config": {
+      "bos_token": "<s>",
+      "chat_template": "{%- if messages[0]['role'] == 'system' %}\n    {%- set system_message = messages[0]['content'] %}\n    {%- set loop_messages = messages[1:] %}\n{%- else %}\n    {%- set loop_messages = messages %}\n{%- endif %}\n\n{{- bos_token }}\n{%- for message in loop_messages %}\n    {%- if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}\n        {{- raise_exception('After the optional system message, conversation roles must alternate user/assistant/user/assistant/...') }}\n    {%- endif %}\n    {%- if message['role'] == 'user' %}\n        {%- if loop.first and system_message is defined %}\n            {{- ' [INST] ' + system_message + '\\n\\n' + message['content'] + ' [/INST]' }}\n        {%- else %}\n            {{- ' [INST] ' + message['content'] + ' [/INST]' }}\n        {%- endif %}\n    {%- elif message['role'] == 'assistant' %}\n        {{- ' ' + message['content'] + eos_token}}\n    {%- else %}\n        {{- raise_exception('Only user and assistant roles are supported, with the exception of an initial optional system message!') }}\n    {%- endif %}\n{%- endfor %}\n",
+      "eos_token": "</s>",
+      "pad_token": null,
+      "unk_token": "<unk>",
+      "use_default_system_prompt": false
+    }
+  },
+  "safetensors": {
+    "parameters": {
+      "BF16": 7241732096
+    },
+    "total": 7241732096
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCausalLM",
+    "pipeline_tag": "text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "cardData_allowed_fields": {
+    "license": "apache-2.0",
+    "library_name": "transformers"
+  },
+  "omissions": "All widgets, examples, model-index, spaces and other fields omitted."
+}

@@ -1,0 +1,41 @@
+{
+  "counts": {
+    "complete": 1,
+    "dispatch": 9,
+    "failed": 6,
+    "reserved": 9,
+    "responses": 8,
+    "worker_annotations_frozen": 1
+  },
+  "driver_state": "T",
+  "failed_packets_examined": 6,
+  "observed_unix": 1789635879.284455,
+  "processes": [
+    {
+      "parent": 1,
+      "pid": 673114,
+      "role": "driver_or_timeout",
+      "start_ticks": "174271463",
+      "state": "S"
+    },
+    {
+      "parent": 673114,
+      "pid": 673115,
+      "role": "driver_or_timeout",
+      "start_ticks": "174271463",
+      "state": "T"
+    },
+    {
+      "parent": 673115,
+      "pid": 688234,
+      "role": "worker",
+      "start_ticks": "174286387",
+      "state": "S"
+    }
+  ],
+  "provider_calls_from_diagnosis": 0,
+  "span_schema_error_counts": {
+    "TRAIN_NOT_EXACT_IN_SUPPLIED_EVIDENCE": 20
+  },
+  "status": "STRUCTURAL_DIAGNOSIS_NO_ANNOTATION_VALUES"
+}

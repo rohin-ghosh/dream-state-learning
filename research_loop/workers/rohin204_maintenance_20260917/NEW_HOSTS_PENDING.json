@@ -1,0 +1,64 @@
+{
+  "schema": "R206_SUPERSEDED_PENDING_SETUP_POINTER_V1",
+  "current_status": "READY_PER_AUTHORITATIVE_USER_RECEIPT_NO_SETUP_GATE",
+  "superseding_receipt": "research_loop/workers/rohin204_maintenance_20260917/HARDWARE_READY_RECEIPT.json",
+  "recorded_utc": "2026-09-18T04:02:28.847685+00:00",
+  "historical_pending_record": {
+    "schema": "R205_NEW_HOSTS_PENDING_VERIFIED_RECEIPTS_V1",
+    "source_type": "USER_REPORT",
+    "reported_source_helpers_commit": "88f49919",
+    "reported_hosts_file": "/data/home/rohing/dream-state/gpu/hosts.env",
+    "reported_auth_time_utc": "2026-09-18T03:48:00Z",
+    "reported_provisioning_start_utc": "2026-09-18T03:52:00Z",
+    "reported_provisioning_owner": "Fable",
+    "estimated_completion_window_utc": [
+      "2026-09-18T04:12:00Z",
+      "2026-09-18T04:32:00Z"
+    ],
+    "completion_window_is_estimate_not_receipt": true,
+    "hosts": [
+      {
+        "alias": "ovx4",
+        "reported_helper": "gpu/ovx4_ssh.sh",
+        "reported_host": "[REDACTED_HOST]",
+        "reported_lease_end_date": "2026-10-01",
+        "exact_lease_end_utc": null,
+        "authoritative_host_bound_lease_receipt": null,
+        "verified_setup_receipt": null,
+        "audit_enabled": false
+      },
+      {
+        "alias": "ovx5",
+        "reported_helper": "gpu/ovx5_ssh.sh",
+        "reported_host": "[REDACTED_HOST]",
+        "reported_lease_end_date": "2026-09-29",
+        "exact_lease_end_utc": null,
+        "authoritative_host_bound_lease_receipt": null,
+        "verified_setup_receipt": null,
+        "audit_enabled": false
+      }
+    ],
+    "helper_and_key_safe_copy_owner": "Main",
+    "ovx4_operator_local_receipt": {
+      "source": "research_loop/workers/rohin205_new_nodes_20260918/ovx4/SSH_BLOCKER.json",
+      "sha256": "d73ef34f9405198734c7a7be5c699cc7f1a36207a022db31452e114b63c0e790",
+      "recorded_utc": "2026-09-18T03:54:25Z",
+      "status": "HOST_KEY_VERIFICATION_FAILED",
+      "remote_commands_executed": false,
+      "setup_completion_established": false,
+      "probe_owner": "ovx4 operator, not maintenance"
+    },
+    "this_audit_copied_helpers_or_keys": false,
+    "this_audit_probed_new_hosts": false,
+    "existing_allowlist": [
+      "node1",
+      "node2",
+      "node4",
+      "node5"
+    ],
+    "node3": "Pending Copernicus authoritative host-bound evidence; not contacted or added",
+    "next_action": "Add hosts only after exact host-bound lease and completed setup receipts, and Main's helper copy, are supplied",
+    "lease_purchases_or_extensions": 0,
+    "learner_mutations": 0
+  }
+}

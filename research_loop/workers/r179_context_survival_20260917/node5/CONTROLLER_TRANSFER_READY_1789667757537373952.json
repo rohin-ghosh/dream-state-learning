@@ -1,0 +1,208 @@
+{
+  "main_addendum_required_before_signals": true,
+  "observed_unix": 1789667757.537323,
+  "rows": [
+    {
+      "controller_stop_intent": false,
+      "detach_cpu": {
+        "controller_stop": {
+          "path": "/localhome/local-rohing/orch_r179_context_C2_20260917_attempt4/CPU_DETACH_PROBE_8fbb435e91384ad89b418e22054a4230/CPU_CONTROLLER_STOP_INTENT.json",
+          "sha256": "4d5401d06f3d9279b8f2e36e793a5d420a4dbac1b20a4af44c7dd272fa03edb3"
+        },
+        "group_signals": 0,
+        "helper": {
+          "path": "/localhome/local-rohing/orch_r179_context_C2_20260917_attempt4/controller_transfer.py",
+          "sha256": "0145a4975a8756947fce00c89c5035c5a13a23ad720880e18e342265da8e7042"
+        },
+        "live_controller_signals": 0,
+        "model_loaded": false,
+        "native_equivalent_identity_unchanged": true,
+        "observed_unix": 1789667678.884915,
+        "production_locks_opened": 0,
+        "real_systemd_wait_pipe": true,
+        "same_inode_flock_acquired": true,
+        "service_completed_naturally": {
+          "path": "/localhome/local-rohing/orch_r179_context_C2_20260917_attempt4/CPU_DETACH_PROBE_8fbb435e91384ad89b418e22054a4230/SERVICE_COMPLETE.json",
+          "sha256": "8231483d312ede818cbc3a9823a7bfbb7aa4328bfbd9729bac238f73f828b091"
+        },
+        "service_survived_outer_SIGTERM": true,
+        "status": "PASS",
+        "sudo_wait_child_survived": true,
+        "test_script": {
+          "path": "/localhome/local-rohing/orch_r179_context_C2_20260917_attempt4/detach_cpu_integration.py",
+          "sha256": "fd795c8d0f6dd5e557d4e5ed0c0b80dfdeacc0bb21bd1b021fc6f86c06224723"
+        }
+      },
+      "device_cpu": {
+        "guard_sha256": "1c04c96967cd3a6fb334ba17dba8e1fa7d12cfd4d69b7833950a2b2215d78e98",
+        "model_loaded": false,
+        "observed_unix": 1789667664.2105129,
+        "operator_sha256": "e59649d3fd1fde7514f75e7af9d557d6f7f1ecee504403d47a610ccac5405b80",
+        "proof": {
+          "checked_unix": 1789667664.2099175,
+          "denied_foreign_minors": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "pid": 1566584,
+          "policy": {
+            "gid": 2524,
+            "minor": 1,
+            "uid": 2524,
+            "unit": "orch-r179-context-C2-20260917-attempt4-cpu-proof-1789667664040776778"
+          }
+        },
+        "status": "PASS",
+        "torch_imported": false
+      },
+      "extra_files": {
+        "COMMAND_PREFLIGHT.json": "be9037b5efe94b0f1d048ad15d9816177746105b32bf99e0ae04f391fd211835",
+        "OPERATOR_CPU.log": "998cd1cd8f0b9cbcbc6f94e3e8bbacdbbfbd14faf9bff889e8d1ab048a00992f",
+        "SOURCE_MANIFEST.json": "ba76fadd529d8fbd902bc7f9dc32fadda0ee36bfa47f4860825106216ff1e498",
+        "STAGE_CPU.json": "7dde71078362f0041f0e4e4b911fa193bfcc86c78fc7d1e210baff7f5d4b9dfb",
+        "detach_cpu_integration.py": "fd795c8d0f6dd5e557d4e5ed0c0b80dfdeacc0bb21bd1b021fc6f86c06224723",
+        "test_controller_transfer.py": "8b33c1592e48267747938595788f5b02eeafc3602ceae1388113352403c81288"
+      },
+      "files": {
+        "CONTROLLER_BINDING.json": "fd1cc0acf32ad9a4bbebf9464a0cfa296807edb36aff9277013bafcea4181989",
+        "CONTROLLER_PREFLIGHT.json": "3eb7ef8795eda0f98b020921c3e2247e44943533d5685f0f43a3609c9a2e435d",
+        "DETACH_CPU_INTEGRATION.json": "7de0f9a539a7c721db04cfb0578c883eaa30123c7439516fc187b84084e1d312",
+        "DEVICE_CPU.json": "99ea1a6daf62077e9c24e8ba337253b4831f45bae7af477d09b70ebc2f4e351b",
+        "READY.json": "3c34a87ed8cbc79b95e6ba21d3d9f5692dc47e338ee93ad045b6bb256fe110bf",
+        "controller_transfer.py": "0145a4975a8756947fce00c89c5035c5a13a23ad720880e18e342265da8e7042",
+        "rollout_operator.py": "e59649d3fd1fde7514f75e7af9d557d6f7f1ecee504403d47a610ccac5405b80"
+      },
+      "holder_still_live_and_unchanged": true,
+      "label": "C2",
+      "native_stop_intent": false,
+      "observed_unix": 1789667757.4940953,
+      "output": "/localhome/local-rohing/orch_r179_context_C2_20260917_attempt4",
+      "receiving_operator_tests_tail": [
+        "----------------------------------------------------------------------",
+        "Ran 39 tests in 0.051s",
+        "",
+        "OK"
+      ],
+      "source_proof": {
+        "automatic_relaunch": false,
+        "functions": {
+          "execute": "b7e70c9681f269cf6b88e5d5dc38441179ad270ac4fdd27ffdbc8135ea074369",
+          "execute_recovery": "f88df6e76d324f4a5c4f913b3fbef08b9d724205ccd1dbbe8808bc7e635e45d4",
+          "supervise": "2c7af707598328b3a2640d1b3b31856ce2c984cef735aac7664076cef548563d"
+        },
+        "source": {
+          "path": "/localhome/local-rohing/orch_r166_retelling_C2_20260917_activation4/source/gpu/orch_r166_retelling_handoff.py",
+          "sha256": "655e72c553c934538b47e12987ffb9d493505f668721e0c432275b4617233681"
+        },
+        "synchronous_wait": true
+      }
+    },
+    {
+      "controller_stop_intent": false,
+      "detach_cpu": {
+        "controller_stop": {
+          "path": "/localhome/local-rohing/orch_r179_context_C5_20260917_attempt3/CPU_DETACH_PROBE_d791f492c1bd48b08d83cf85d1e16ad6/CPU_CONTROLLER_STOP_INTENT.json",
+          "sha256": "c91e1f5d1f284a9434d0843b26b81cb51de79ec8c7c35d43b336142c1ce3cad9"
+        },
+        "group_signals": 0,
+        "helper": {
+          "path": "/localhome/local-rohing/orch_r179_context_C5_20260917_attempt3/controller_transfer.py",
+          "sha256": "0145a4975a8756947fce00c89c5035c5a13a23ad720880e18e342265da8e7042"
+        },
+        "live_controller_signals": 0,
+        "model_loaded": false,
+        "native_equivalent_identity_unchanged": true,
+        "observed_unix": 1789667693.1323743,
+        "production_locks_opened": 0,
+        "real_systemd_wait_pipe": true,
+        "same_inode_flock_acquired": true,
+        "service_completed_naturally": {
+          "path": "/localhome/local-rohing/orch_r179_context_C5_20260917_attempt3/CPU_DETACH_PROBE_d791f492c1bd48b08d83cf85d1e16ad6/SERVICE_COMPLETE.json",
+          "sha256": "2bf52ea62894131ab160e8ee0a007271845cb10b41b090bf82a34759aee857a1"
+        },
+        "service_survived_outer_SIGTERM": true,
+        "status": "PASS",
+        "sudo_wait_child_survived": true,
+        "test_script": {
+          "path": "/localhome/local-rohing/orch_r179_context_C5_20260917_attempt3/detach_cpu_integration.py",
+          "sha256": "fd795c8d0f6dd5e557d4e5ed0c0b80dfdeacc0bb21bd1b021fc6f86c06224723"
+        }
+      },
+      "device_cpu": {
+        "guard_sha256": "95e389cde5595f13c6e28f687e236ccfda9edba447edc80ae5ae33dc81bf2eb1",
+        "model_loaded": false,
+        "observed_unix": 1789667664.5025883,
+        "operator_sha256": "e59649d3fd1fde7514f75e7af9d557d6f7f1ecee504403d47a610ccac5405b80",
+        "proof": {
+          "checked_unix": 1789667664.5018315,
+          "denied_foreign_minors": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7
+          ],
+          "pid": 1566592,
+          "policy": {
+            "gid": 2524,
+            "minor": 5,
+            "uid": 2524,
+            "unit": "orch-r179-context-C5-20260917-attempt3-cpu-proof-1789667664314190620"
+          }
+        },
+        "status": "PASS",
+        "torch_imported": false
+      },
+      "extra_files": {
+        "COMMAND_PREFLIGHT.json": "826c095fd02fd3fbe50ec0f793f2941056fcd21f6e90b96ea113160ab8af24a4",
+        "OPERATOR_CPU.log": "998cd1cd8f0b9cbcbc6f94e3e8bbacdbbfbd14faf9bff889e8d1ab048a00992f",
+        "SOURCE_MANIFEST.json": "8fcd56e01203c8b0b027d1aa008c0a3557b6cfba1f2244d5bc87f33df0bcb551",
+        "STAGE_CPU.json": "d977ecf010d98c22d5d4a1a9b45c203f4c164823194be15acf17ce407c5bbadd",
+        "detach_cpu_integration.py": "fd795c8d0f6dd5e557d4e5ed0c0b80dfdeacc0bb21bd1b021fc6f86c06224723",
+        "test_controller_transfer.py": "8b33c1592e48267747938595788f5b02eeafc3602ceae1388113352403c81288"
+      },
+      "files": {
+        "CONTROLLER_BINDING.json": "70328690e7c5e98576487e759e26bb1dc7e19b65d7255cc96c6e294a18064175",
+        "CONTROLLER_PREFLIGHT.json": "0823f3f1355ba5d9bd98bf39644f96da71b229652517fe64859f94153a840af0",
+        "DETACH_CPU_INTEGRATION.json": "ed605127ad8688e134704d129e2aa117c884d80613d93c3b1a35b537e839bc20",
+        "DEVICE_CPU.json": "00d3241edb3c6e66aeb78ee1fa46e49ce115585902e8c9a42e2e51f9c87d2dfc",
+        "READY.json": "eacec8878bf31ec3f8b4d7516abdb9f88633a81401f048d2129599c8a04dc721",
+        "controller_transfer.py": "0145a4975a8756947fce00c89c5035c5a13a23ad720880e18e342265da8e7042",
+        "rollout_operator.py": "e59649d3fd1fde7514f75e7af9d557d6f7f1ecee504403d47a610ccac5405b80"
+      },
+      "holder_still_live_and_unchanged": true,
+      "label": "C5",
+      "native_stop_intent": false,
+      "observed_unix": 1789667757.5156243,
+      "output": "/localhome/local-rohing/orch_r179_context_C5_20260917_attempt3",
+      "receiving_operator_tests_tail": [
+        "----------------------------------------------------------------------",
+        "Ran 39 tests in 0.051s",
+        "",
+        "OK"
+      ],
+      "source_proof": {
+        "automatic_relaunch": false,
+        "functions": {
+          "execute": "b7e70c9681f269cf6b88e5d5dc38441179ad270ac4fdd27ffdbc8135ea074369",
+          "execute_recovery": "f88df6e76d324f4a5c4f913b3fbef08b9d724205ccd1dbbe8808bc7e635e45d4",
+          "supervise": "2c7af707598328b3a2640d1b3b31856ce2c984cef735aac7664076cef548563d"
+        },
+        "source": {
+          "path": "/localhome/local-rohing/orch_r166_retelling_C5_20260917_recovery2/source/gpu/orch_r166_retelling_handoff.py",
+          "sha256": "655e72c553c934538b47e12987ffb9d493505f668721e0c432275b4617233681"
+        },
+        "synchronous_wait": true
+      }
+    }
+  ],
+  "schema": "R179_NODE5_CONTROLLER_TRANSFER_REQUEST_V1",
+  "supersedes": "CONTROLLER_TRANSFER_READY_1789667544747957194.json"
+}

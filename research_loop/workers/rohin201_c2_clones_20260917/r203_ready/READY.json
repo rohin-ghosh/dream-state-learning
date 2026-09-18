@@ -1,0 +1,117 @@
+{
+  "archive_sha256": "ca6c1b006260c677bdbb003baf52333e354d7a9e0ec266ebdacac08992f89544",
+  "base_archive_sha256": "599f44f1a39bc0a312a180963feef8affc62748cec20721a79112bfc5a0540b1",
+  "compaction_rule": "Source-bound previous child passage plus protected incoming input and verbatim working state; raw history retained; NOT a fresh child distillation",
+  "console_rule": "Fresh actual Rohin turns defer from ACT/LEARN to THINK. All external words masked; historical hold responses remain context-only.",
+  "context_threshold_rule": "min(3*context_limit//4,context_limit-segment_tokens); prompts strictly below threshold",
+  "created_unix": 1789701384.321598,
+  "driver_config_delta": {
+    "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+    "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1"
+  },
+  "files": {
+    "gpu/orch_r125_continual_native.py": "256a1c1ac20a9ed6faf8cd6193182bb010c7f5d36385a45612704a5b66ed0331",
+    "gpu/orch_r125_cpu_experiment.py": "a1cd93ab6ab2cc1412ebdbce89142a332247164fe1f29d47a52bcb42a871f942",
+    "gpu/orch_r125_stream_journal.py": "08dab0bb84596b522fc08db8cdb2c4a26db9e416acfcf9cc35bacdd233d924a4",
+    "gpu/orch_r132_kernel_bridge.py": "a62d0f40f774ce03e30345a3fcfcf69ee79a868b17957623f33a6a63adfc3d12",
+    "gpu/orch_r145_suffix_loss.py": "d5e69655fd30f3317d114bd4aab2025024fdfb1521664b536d54ad61069bf026",
+    "gpu/orch_r153_code_blocks.py": "95854d7c223d08931793ef86c7a64c119283fc86e270725dc40e967e389b38bd",
+    "gpu/orch_r153_community_transport.py": "54b04f8528c9cd15284b97826d00928fe4e267e833accbdb3e34ebfded661dea",
+    "gpu/orch_r184_think_act_learn.py": "5c978819c83346c4ac90d0f68ec60a36781c3317b92a040931a3cccdd13f3f1e",
+    "gpu/orch_r189_outcome_allocation.py": "69f172334d53510c34e7b731e98a3b90948d76907fbf96206230ae2b28be5262",
+    "gpu/orch_r191_exploration_dataset.py": "d74404ad778f734855c4f2c83a704017b424d58f2c5df96cf0e2d4de6fedf3b0",
+    "gpu/orch_r193_continuity.py": "5d4952de07d41c43841fbc0502fa8f1cc41dd9715569bc07f921eb96c740971a",
+    "gpu/orch_r194_console_reflection.py": "31fd502e83a68c7056dfb80b5f4cda0ae6d5df9e3e5205534d5957120edc9d3e",
+    "gpu/orch_r197_correction_ledger.py": "1c936422226e3268aee3a29adf507d2f21a3d9f12bf5aa232940b928918664ce",
+    "organism_v6/orch_r124_train_history.py": "a91f4aadd97484cecdad348958fc70c72648764133f12d731ac294a053d96e7f",
+    "organism_v6/orch_r125_continual_stream.py": "41cc556085597ec4bb029f5e889f15408caa58a862b149dd563be55725a4d684",
+    "organism_v6/orch_r125_plain_context.py": "009e2994d1221a86e6029104576c64352572d894e7ebbe0d8ddedeb097690976",
+    "organism_v6/orch_r194_code_target_filter.py": "b42bb51df51f9102fe0d3f4e934ce839d92224261ef0c7b86db5cfc3cc09c168",
+    "organism_v6/orch_r195_receipt_target_filter.py": "36316b8befc1c0f270fcd2573fb45543f50dd35cc551f67c71f5194ebafc9f3c",
+    "organism_v6/orch_r203_prose_target_filter.py": "d9cc89488fa38a4c478b24ecaad7ae1228d37e6a505de530a25dd74e362bb5be",
+    "tests/test_orch_r125_continual_native.py": "c097d8915278da3c7e9628696463caf452e700c1bd51e493f51d0a577c7a8106",
+    "tests/test_orch_r125_continual_stream.py": "75b39a11dedbe698221137bc240af717d6ebe184529c08ff1f126d04c3d76977",
+    "tests/test_orch_r125_masked_causal_loss.py": "df67adc8881037edad57798627ab1b1fe230826fe7db52ac0feb716483bc0832",
+    "tests/test_orch_r125_plain_context.py": "9adeae73bfbbbae7886c4c35946eb4d056ba84f52ab9d4e638bede06c8dc2aca",
+    "tests/test_orch_r125_stream_journal.py": "2dbf1380f90dd939140f5303e9a9137ca583c379457ab3aaa448321c51ea39f1",
+    "tests/test_orch_r132_kernel_bridge.py": "973e8523dd2cb205d9249b3d9696a3a162dd6ca045073e533599ace6775de8ab",
+    "tests/test_orch_r145_suffix_loss.py": "d327a496e594cbe8ba1e17b97451b2a1e1318dd652b6837d51783a14c372a034",
+    "tests/test_orch_r153_code_blocks.py": "28f48a0c2e1817b1a2e9f3f8eb80a89195867228615f80e0e9de6c431097e1eb",
+    "tests/test_orch_r153_community_transport.py": "6fc916b6cd91dabdf78da8f288c85bd6227bc25eb3a6031a5152ae71f2e05224",
+    "tests/test_orch_r184_think_act_learn.py": "df482985137f5a4c2613f8d843ec773c3ec80088261d014ac37d341a15bf8a90",
+    "tests/test_orch_r189_outcome_allocation.py": "441dbbdd1c1da5a10c9a3231c5b5a2ea1c3452da4dfb46dce967bde861c60649",
+    "tests/test_orch_r191_exploration_dataset.py": "97417791c9f9eb7a4e7fc69be14f1fa952a0780533a5de09a4811f2e92ddbfc1",
+    "tests/test_orch_r194_code_target_filter.py": "8b5f1ef525eb5aedc88293f151d6abd31bcc9bbe4a0a8890f6d9f41cd01354a7",
+    "tests/test_orch_r194_console_reflection.py": "b7cdbc5cc5ddfa1ee184a8c3e50a8e474a0a35196b343b74f89aec50bcdcd802",
+    "tests/test_orch_r195_learn_review_filter.py": "61fdacf8c1e1849db3a9df0506fa09e3f3553b080371555c3f183eef38e7b557",
+    "tests/test_orch_r195_receipt_target_filter.py": "8197dc373395b699d4756bb0eda4f49ac5b84c87c7406020bd3cc31370843442",
+    "tests/test_orch_r197_correction_ledger.py": "5a6b33ca7a95fcc8aa0ba046360efb17e1ee5ef271ec644c2696a6b44d58d3a8",
+    "tests/test_orch_r203_prose_target_filter.py": "707a075aa7795a681796151ae7a7c74859951fe69da3a9ea1e4fbb9488777ab3"
+  },
+  "new_target_rule": "Only newly committed R203 child rows are annotated for provisional paragraph capitalization quarantine; no retroactive row creation/modification.",
+  "no_lease_change": true,
+  "no_native_recipe_change": true,
+  "operator_binds": [
+    "actual trial_id",
+    "receiving CPU gate path/hash",
+    "true sandbox environment facts",
+    "unchanged physical wall",
+    "complete source checkpoint",
+    "separate committed context snapshot",
+    "exact retired-life preservation if applicable"
+  ],
+  "optional_structured_think_policy": "R202_WIDE_NARROW_WIDE_V1",
+  "original_C2": "Reload same original life from preserved COMPLETE52; no rollback or duplicate process; preserve original hold transcript/inboxes; parent resumes after repaired load.",
+  "prose_quarantine": {
+    "false_positive_rate": "UNMEASURED",
+    "min_capitalized": 10,
+    "min_opportunities": 20,
+    "min_rate": 0.35,
+    "provisional": true,
+    "scope": "ANY_PROSE_PARAGRAPH"
+  },
+  "required_driver_options": {
+    "code_policy": "R194_FIRST_CODE_BLOCK_NFKC_V1",
+    "continuity_policy": "R193_CONTINUITY_V1",
+    "correction_ledger": "R197_CORRECTION_LEDGER_V1",
+    "effort_policy": "R201_OUTCOME_EFFORT_V1",
+    "judgment_policy": "R198_JUDGMENT_FIRST_V1",
+    "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+    "outcome_policy": "R189_OUTCOME_ALLOCATION_V1",
+    "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+    "reflection_policy": "explicit",
+    "schema": "R184_THINK_ACT_LEARN_V1",
+    "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+    "think_segments": 3
+  },
+  "required_native_options": {
+    "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+    "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+    "new_presentations": 16,
+    "rehearsal_presentations": 0
+  },
+  "schema": "R203_MAIN_TESTED_SOURCE_OVERLAY_V1",
+  "status": "CPU_TESTED_NOT_LIVE",
+  "validation": [
+    {
+      "failed": 0,
+      "passed": 125,
+      "skipped": 0,
+      "suite": "stream_R184_console_review_correction"
+    },
+    {
+      "failed": 0,
+      "passed": 217,
+      "skipped": 0,
+      "suite": "prose_code_receipt_filters_native_journal_loss"
+    },
+    {
+      "deselected": 1,
+      "failed": 0,
+      "known_preexisting_failure": "test_all_scaffolding_rows_skip_training_without_fabricating_progress: KeyError new_presentations",
+      "passed": 29,
+      "suite": "plain_context"
+    }
+  ],
+  "validation_note": "Suite counts overlap; not a unique-test total. Original console-pressure test caught missing pre-compaction CONTEXT_INPUT persistence; repaired before these passing runs."
+}

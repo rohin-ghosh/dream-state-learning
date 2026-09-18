@@ -1,0 +1,122 @@
+{
+  "journal_head": "bd190f983dec208740f9343d7947549f1d59c30b55b793534f124e0cda23e565",
+  "memory": {
+    "audit_tasks": [
+      {
+        "credit_id": "inspect_before_modify",
+        "sleep_count": 2,
+        "status": "DUE_UNREVIEWED"
+      },
+      {
+        "credit_id": "inspect_before_modify",
+        "sleep_count": 3,
+        "status": "WAITING_FOR_SLEEP"
+      },
+      {
+        "credit_id": "inspect_before_modify",
+        "sleep_count": 4,
+        "status": "WAITING_FOR_SLEEP"
+      },
+      {
+        "credit_id": "recognize_missing_receipt",
+        "sleep_count": 3,
+        "status": "WAITING_FOR_SLEEP"
+      },
+      {
+        "credit_id": "recognize_missing_receipt",
+        "sleep_count": 4,
+        "status": "WAITING_FOR_SLEEP"
+      },
+      {
+        "credit_id": "recognize_missing_receipt",
+        "sleep_count": 5,
+        "status": "WAITING_FOR_SLEEP"
+      }
+    ],
+    "awaiting_render": false,
+    "credits": {
+      "inspect_before_modify": {
+        "audit_sleep_counts": [
+          2,
+          3,
+          4
+        ],
+        "delivered": {
+          "inbox_sha256": "d53465230b985422854e887352c0ee981d3115360a4ff81e29d88e128cdd4cf5",
+          "record_index": 89,
+          "record_sha256": "9e9adcb453c85709c01fa6257763a3df0669df289c67cb9f2c6ae0458dc21599",
+          "request_count": 5,
+          "sleep_count": 1,
+          "speaker": "Astra",
+          "text_sha256": "5fefa65eff26ea48b8f6fda05df1dcf20b378771a2f1582eb6f2ecbbfaff76bd"
+        },
+        "evidence": {
+          "quote": "I will check the current settings for my LoRA system to see if there are any specific configurations that could be altered to increase the richness of the patterns being learned.",
+          "record_index": 18,
+          "record_sha256": "29e333e38c38d394541471fda0278aa48b6648f566015cc3f9d4f9a2b582fe0a"
+        },
+        "id": "inspect_before_modify",
+        "publication": {
+          "id": "92747c32b4614058a96cc73afdbc23e8",
+          "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical5/life/stream/inbox/92747c32b4614058a96cc73afdbc23e8.json",
+          "sha256": "d53465230b985422854e887352c0ee981d3115360a4ff81e29d88e128cdd4cf5"
+        },
+        "step": "Chose inspection of existing settings before modification; no execution credit."
+      },
+      "recognize_missing_receipt": {
+        "audit_sleep_counts": [
+          3,
+          4,
+          5
+        ],
+        "delivered": {
+          "inbox_sha256": "7df09ba6eb1e3d6dbc72072c29149d850919ef9a3cfbfc8f9e01227a25ad0c60",
+          "record_index": 168,
+          "record_sha256": "5432c199950152e78cd831480734e5756673c14cbef832c45802a9fc192cfdba",
+          "request_count": 8,
+          "sleep_count": 2,
+          "speaker": "Astra",
+          "text_sha256": "8ecf50f1308003834ec8dddacb936cd191c80ac5ad6d5c872536c7308a3e077f"
+        },
+        "evidence": {
+          "quote": "The previous `repo_read` output was not accompanied by a proper tool receipt, which means the file contents and the result of the repository read operation are currently unverified.",
+          "record_index": 90,
+          "record_sha256": "28a3a82a0396e51a6b3afa0de6d47e98a13b49bf3ff563ddecaa5965b8119e04"
+        },
+        "id": "recognize_missing_receipt",
+        "publication": {
+          "id": "a0730b01f5934b3e813b6c8e34d73fe2",
+          "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical5/life/stream/inbox/a0730b01f5934b3e813b6c8e34d73fe2.json",
+          "sha256": "7df09ba6eb1e3d6dbc72072c29149d850919ef9a3cfbfc8f9e01227a25ad0c60"
+        },
+        "step": "Explicitly recognized that the previous read and contents remain unverified; no execution credit."
+      }
+    },
+    "delivered_next_steps": [],
+    "deliveries": [
+      5,
+      8
+    ],
+    "grammar_delivered": false,
+    "last_request_count": 9,
+    "last_response_count": 8,
+    "missed_floor_windows": [
+      [
+        6,
+        7
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "object_delivered_turns": {
+      "lora_settings_verification": 2
+    },
+    "prospective_request_count": 3,
+    "relapses": [],
+    "responded_audits": []
+  },
+  "observed_unix": 1789705398.9360304,
+  "status": "VALIDATION_FAILED"
+}

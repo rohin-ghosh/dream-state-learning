@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euo pipefail
+PYTHON=/localhome/local-rohing/v2/venv/bin/python
+BUNDLE=/localhome/local-rohing/orch_r177_strict_slots_20260917_v1
+printf '%s  %s\n' 6c69c690d4e2491255a3a12370b1143515a4d223456880e889fd24eafaea0c51 "$BUNDLE/slot_policy.py" d26f808fcce89c9d5674d69484bcbac614608761b1f2602d04ee6e5935b49aec "$BUNDLE/BUNDLE.json" | sha256sum -c - >&2
+CHECK="$(CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 "$PYTHON" -B "$BUNDLE/slot_policy.py" check --physical 5)"
+printf '%s' "$CHECK" | CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 "$PYTHON" -B -c 'import json,sys,time;from pathlib import Path;sys.path.insert(0,"/localhome/local-rohing/orch_r177_strict_slots_20260917_v1");import slot_policy as policy;result=json.load(sys.stdin);config=policy.validate_config(Path(result["config"]));attempt=Path(result["attempt"]);binding=policy.read(attempt/"ADMISSION_BINDING.json");report=policy.bound(binding["report"]);policy.require_clear(report,config);policy.require(0<=time.time()-binding["verified_unix"]<30,"fresh_receipt_before_owner_admission");print(json.dumps(dict(status="ACTUAL_FRESH_ORIGINAL_CLEAR_SCAN_NOT_MODEL_DISPATCH",physical=5,gpu_uuid=config["gpu_uuid"],kernel_minor=config["minor"],device_receipt=binding["report"],device_checked_unix=binding["verified_unix"],lease_receipt=config["lease"],lease_hard_end_unix=config["hard_end_unix"],scanner_binding=policy.reference(attempt/"ADMISSION_BINDING.json"),model_calls=0)))'

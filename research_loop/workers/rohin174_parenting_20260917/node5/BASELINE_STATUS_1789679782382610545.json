@@ -1,0 +1,249 @@
+{
+  "C2": "EXCLUDED_MAIN_OWNED_NO_ACTION",
+  "GPU_actions": 0,
+  "blockers": {
+    "five_bootstrap_failures": "R166 _reduce rejects historical ambiguous_delivery; no bypass or consumed retries",
+    "run1_provider": "Existing configured strong provider returned HTTP 404 before PUBLISH_INTENT"
+  },
+  "builder": "[Builder] 2026-09-17: 12 actual-owned-source CPU tests per arm and receiving hash/compile checks PASS; lifecycle and publication evidence remain separate",
+  "child_signals": 0,
+  "observed_unix": 1789679782.3826163,
+  "peers_active": false,
+  "rows": [
+    {
+      "arm": "A",
+      "attempts": [],
+      "current_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678829928180897/C3",
+      "current_status": "OPERATOR_FAILED_NOT_CHILD_FAILURE",
+      "failure": {
+        "child_signals": 0,
+        "error": "node_transport_failed_no_implicit_retry",
+        "error_type": "ValueError",
+        "observed_unix": 1789678883.6989698,
+        "retired": false,
+        "status": "OPERATOR_FAILED_NOT_CHILD_FAILURE"
+      },
+      "label": "C3",
+      "manifest": {
+        "label": "C3",
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678829928180897/C3_MANIFEST.json",
+        "sha256": "ebcaf31547da4a428c1fe9ca830271a36cdcf47ef3b091e2bba8fe79e70270c7"
+      },
+      "operator_live": false,
+      "operator_pid": 507325,
+      "original_activation_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678829928180897/C3",
+      "receipts": {
+        "FAILED_CLOSED": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678829928180897/C3/FAILED_CLOSED.json",
+          "sha256": "2446ff2954ee81a73b2f80ed0aafb11641e760f28ff3ddbbea02308fefcefb52"
+        }
+      }
+    },
+    {
+      "arm": "A",
+      "attempts": [
+        {
+          "error": null,
+          "model": null,
+          "receipt": {
+            "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679448120007427/parent/parent_000000000144_main_console_baseline1/RESULT.json",
+            "sha256": "3e26621143de22b8c4d487b573f3c02b82c9e5615ba040a26d7e15c24dc6136e"
+          },
+          "status": "PUBLISHED"
+        }
+      ],
+      "current_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679448120007427/parent",
+      "current_status": "PUBLISHED_NOT_RENDERED",
+      "label": "run1",
+      "latest_status": "AWAITING_RENDER",
+      "latest_status_receipt": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679448120007427/parent/STATUS_00000051.json",
+        "sha256": "e0d013a7af6176e741dcb0253da07ee7027ab63153a0d07ab595290a2c1e4023"
+      },
+      "manifest": {
+        "label": "run1",
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678829928180897/run1_MANIFEST.json",
+        "sha256": "5c89373b3f882142da71cf496f11ccd72a88c76185a84f8cfaa811dade3ffd62"
+      },
+      "operator_live": true,
+      "operator_pid": 563498,
+      "operator_state": "S",
+      "original_activation_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678829928180897/run1",
+      "receipts": {
+        "ACTIVE_PARENT": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679448120007427/parent/ACTIVE_PARENT.json",
+          "sha256": "274b33576a2f2d96072508bbf3b0ffbb46ab2bcbc8df5503a14210edf8c874a9"
+        },
+        "FIRST_PUBLICATION": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679448120007427/parent/FIRST_PUBLICATION.json",
+          "sha256": "671294c34d3186fe2e79579a03013ac0e68f2ca9f6665fbebd4dcc7c810199c8"
+        },
+        "PARENT_EXITED": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679448120007427/parent/PARENT_EXITED.json",
+          "sha256": "e15823617616a08f131b34628f168a4112792ee56140140b04db7e1f426dcbeb"
+        }
+      }
+    },
+    {
+      "arm": "B",
+      "attempts": [],
+      "current_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_B_1789678847374158305/C1",
+      "current_status": "OPERATOR_FAILED_NOT_CHILD_FAILURE",
+      "failure": {
+        "child_signals": 0,
+        "error": "node_transport_failed_no_implicit_retry",
+        "error_type": "ValueError",
+        "observed_unix": 1789678883.754216,
+        "retired": false,
+        "status": "OPERATOR_FAILED_NOT_CHILD_FAILURE"
+      },
+      "label": "C1",
+      "manifest": {
+        "label": "C1",
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_B_1789678847374158305/C1_MANIFEST.json",
+        "sha256": "237cd751f108013ac953503cbb164ffdde3d5e11dbba7499bb65d730d0aa8cc1"
+      },
+      "operator_live": false,
+      "operator_pid": 507345,
+      "original_activation_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_B_1789678847374158305/C1",
+      "receipts": {
+        "FAILED_CLOSED": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_B_1789678847374158305/C1/FAILED_CLOSED.json",
+          "sha256": "67f0fb9b339a2438bdd7c1ba87625e7cf74284be78467f90dbc6f0b922234afc"
+        }
+      }
+    },
+    {
+      "arm": "B",
+      "attempts": [
+        {
+          "error": null,
+          "model": null,
+          "receipt": {
+            "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_pilot_1789679476366113387/parent/parent_000000000135_main_console_baseline1/RESULT.json",
+            "sha256": "d2f0e17edee71d72c20e462ec61218f6377dcf032e5566081b826e3080dc2167"
+          },
+          "status": "PUBLISHED"
+        }
+      ],
+      "current_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_pilot_1789679476366113387/parent",
+      "current_status": "PUBLISHED_NOT_RENDERED",
+      "label": "pilot",
+      "latest_status": "AWAITING_RENDER",
+      "latest_status_receipt": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_pilot_1789679476366113387/parent/STATUS_00000046.json",
+        "sha256": "3a46b68eed88ef62dbe45f51c2c5feeedb54e595290653d59a65ed67af57cf28"
+      },
+      "manifest": {
+        "label": "pilot",
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_B_1789678847374158305/pilot_MANIFEST.json",
+        "sha256": "f3804369d5e51ffae7bebc15d5a4f36fe7364107b0a0caa2ab510be6190df933"
+      },
+      "operator_live": true,
+      "operator_pid": 566255,
+      "operator_state": "S",
+      "original_activation_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_B_1789678847374158305/pilot",
+      "receipts": {
+        "ACTIVE_PARENT": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_pilot_1789679476366113387/parent/ACTIVE_PARENT.json",
+          "sha256": "2ead46d8040c59d5b8208dea6e78159bceb18a507f2d9662f74c23909bf46fe1"
+        },
+        "FIRST_PUBLICATION": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_pilot_1789679476366113387/parent/FIRST_PUBLICATION.json",
+          "sha256": "806f45705b801a026a60f7dc4c10402e37f001a577cad441aaee14f36f669e69"
+        },
+        "PARENT_EXITED": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_pilot_1789679476366113387/parent/PARENT_EXITED.json",
+          "sha256": "2af2abf2cb7fbc8db5224fb0730fbbdde7be27f30c17add2fbadfa8c621945ff"
+        }
+      }
+    },
+    {
+      "arm": "C",
+      "attempts": [],
+      "current_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/C4",
+      "current_status": "OPERATOR_FAILED_NOT_CHILD_FAILURE",
+      "failure": {
+        "child_signals": 0,
+        "error": "node_transport_failed_no_implicit_retry",
+        "error_type": "ValueError",
+        "observed_unix": 1789678885.1801713,
+        "retired": false,
+        "status": "OPERATOR_FAILED_NOT_CHILD_FAILURE"
+      },
+      "label": "C4",
+      "manifest": {
+        "label": "C4",
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/C4_MANIFEST.json",
+        "sha256": "b570bf31264905fc1d711b8f84f79e5c892413490470f0ad326cbbbc235a071c"
+      },
+      "operator_live": false,
+      "operator_pid": 507379,
+      "original_activation_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/C4",
+      "receipts": {
+        "FAILED_CLOSED": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/C4/FAILED_CLOSED.json",
+          "sha256": "986fb9a0abc2d0444a9da89bb0280b9eb6791245632d9ff0b28edc16178d947c"
+        }
+      }
+    },
+    {
+      "arm": "C",
+      "attempts": [],
+      "current_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/repo_reader",
+      "current_status": "OPERATOR_FAILED_NOT_CHILD_FAILURE",
+      "failure": {
+        "child_signals": 0,
+        "error": "node_transport_failed_no_implicit_retry",
+        "error_type": "ValueError",
+        "observed_unix": 1789678883.505752,
+        "retired": false,
+        "status": "OPERATOR_FAILED_NOT_CHILD_FAILURE"
+      },
+      "label": "repo_reader",
+      "manifest": {
+        "label": "repo_reader",
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/repo_reader_MANIFEST.json",
+        "sha256": "aac11bde2968ab689295a6979f2e2465c21440bc63f82adc8244294be561033c"
+      },
+      "operator_live": false,
+      "operator_pid": 507383,
+      "original_activation_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/repo_reader",
+      "receipts": {
+        "FAILED_CLOSED": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_C_1789678852147451612/repo_reader/FAILED_CLOSED.json",
+          "sha256": "98c9a40bfdbf875568ca5846f8be729e5414cc408c30e032d414b1540f944aa9"
+        }
+      }
+    },
+    {
+      "arm": "D",
+      "attempts": [],
+      "current_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_D_1789678856612153632/C5",
+      "current_status": "OPERATOR_FAILED_NOT_CHILD_FAILURE",
+      "failure": {
+        "child_signals": 0,
+        "error": "node_transport_failed_no_implicit_retry",
+        "error_type": "ValueError",
+        "observed_unix": 1789678886.4509592,
+        "retired": false,
+        "status": "OPERATOR_FAILED_NOT_CHILD_FAILURE"
+      },
+      "label": "C5",
+      "manifest": {
+        "label": "C5",
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_D_1789678856612153632/C5_MANIFEST.json",
+        "sha256": "8ef110320cdea4c5d06363e48b5ba5c2c399070daf6666db62c55b1384e7d5f9"
+      },
+      "operator_live": false,
+      "operator_pid": 507408,
+      "original_activation_output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_D_1789678856612153632/C5",
+      "receipts": {
+        "FAILED_CLOSED": {
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_D_1789678856612153632/C5/FAILED_CLOSED.json",
+          "sha256": "ed93c5f5fce0d66891f15990f60ab4006955b3c0eb59db563dd45e39605a51d3"
+        }
+      }
+    }
+  ]
+}

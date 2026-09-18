@@ -1,0 +1,201 @@
+{
+  "admission_sha256": "9fd12b4e02e54cb6afb12a846a262194c25db475fcb7bf525f0b2e4ad7298055",
+  "capture": {
+    "elapsed_seconds": 5.468930930015631,
+    "limit_reason": null,
+    "observed_bytes": 129119,
+    "retained_bytes": 129119,
+    "returncode": 0,
+    "teardown_called": false,
+    "teardown_error": null
+  },
+  "cgroup_removed": true,
+  "command": [
+    "sudo",
+    "-n",
+    "systemd-run",
+    "--quiet",
+    "--wait",
+    "--pipe",
+    "--unit=orch-r132-kernel-dc234b846027d95a217f6d2614cf2d36",
+    "--property=DynamicUser=yes",
+    "--property=RootDirectory=/localhome/local-rohing/orch_r155_kernel_parser_20260917t0225z_attempt3/smoke/spool/332a19390413b6764834a3b5ddf4132f108ba3b8a52389c3e7121f755df91516/rootfs",
+    "--property=BindReadOnlyPaths=/usr /localhome/local-rohing/orch_r132_kernel_executor_20260916T093845Z/runtime_v2:/runtime /localhome/local-rohing/orch_r155_kernel_parser_20260917t0225z_attempt3/smoke/spool/332a19390413b6764834a3b5ddf4132f108ba3b8a52389c3e7121f755df91516/input:/input /localhome/local-rohing/orch_r155_kernel_parser_20260917t0225z_attempt3/smoke/spool/332a19390413b6764834a3b5ddf4132f108ba3b8a52389c3e7121f755df91516/empty:/sys/fs/cgroup /localhome/local-rohing/orch_r155_kernel_parser_20260917t0225z_attempt3/smoke/spool/332a19390413b6764834a3b5ddf4132f108ba3b8a52389c3e7121f755df91516/empty:/tmp /localhome/local-rohing/orch_r155_kernel_parser_20260917t0225z_attempt3/smoke/spool/332a19390413b6764834a3b5ddf4132f108ba3b8a52389c3e7121f755df91516/empty:/var/tmp",
+    "--property=BindPaths=/dev/nvidia1 /dev/nvidiactl /dev/nvidia-uvm",
+    "--property=PrivateNetwork=yes",
+    "--property=PrivateIPC=yes",
+    "--property=PrivateDevices=yes",
+    "--property=PrivateTmp=no",
+    "--property=MountAPIVFS=no",
+    "--property=ProtectSystem=strict",
+    "--property=ProtectHome=yes",
+    "--property=ProtectProc=invisible",
+    "--property=ProcSubset=pid",
+    "--property=NoNewPrivileges=yes",
+    "--property=CapabilityBoundingSet=",
+    "--property=AmbientCapabilities=",
+    "--property=ProtectKernelTunables=yes",
+    "--property=ProtectKernelModules=yes",
+    "--property=ProtectKernelLogs=yes",
+    "--property=ProtectControlGroups=yes",
+    "--property=RestrictNamespaces=yes",
+    "--property=RestrictSUIDSGID=yes",
+    "--property=RestrictRealtime=yes",
+    "--property=LockPersonality=yes",
+    "--property=MemoryDenyWriteExecute=no",
+    "--property=InaccessiblePaths=/sys /run /tmp -/var/tmp",
+    "--property=WorkingDirectory=/work",
+    "--property=TemporaryFileSystem=/work:rw,size=512M,mode=1777",
+    "--property=ReadWritePaths=/work",
+    "--property=MemoryMax=4G",
+    "--property=MemorySwapMax=0",
+    "--property=CPUQuota=200%",
+    "--property=TasksMax=64",
+    "--property=RuntimeMaxSec=90",
+    "--property=TimeoutStopSec=2",
+    "--property=KillMode=control-group",
+    "--property=OOMPolicy=kill",
+    "--property=DevicePolicy=strict",
+    "--property=RestrictAddressFamilies=AF_UNIX",
+    "--property=SystemCallFilter=~@mount @privileged @reboot @swap @module @debug",
+    "--property=SystemCallErrorNumber=EPERM",
+    "--property=UMask=0077",
+    "--property=LimitCORE=0",
+    "--property=LimitFSIZE=67108864",
+    "--property=DeviceAllow=",
+    "--property=DeviceAllow=/dev/null rw",
+    "--property=DeviceAllow=/dev/zero rw",
+    "--property=DeviceAllow=/dev/random r",
+    "--property=DeviceAllow=/dev/urandom r",
+    "--property=DeviceAllow=/dev/nvidia1 rw",
+    "--property=DeviceAllow=/dev/nvidiactl rw",
+    "--property=DeviceAllow=/dev/nvidia-uvm rw",
+    "/usr/bin/env",
+    "-i",
+    "PATH=/usr/bin:/bin",
+    "LANG=C.UTF-8",
+    "HOME=/work",
+    "TMPDIR=/work/tmp",
+    "TRITON_CACHE_DIR=/work/triton",
+    "CUDA_CACHE_PATH=/work/cuda",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "TRITON_LIBCUDA_PATH=/usr/lib/x86_64-linux-gnu",
+    "OMP_NUM_THREADS=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "CUDA_VISIBLE_DEVICES=GPU-35dcea35-12bc-f2f3-d5d2-d2eaa8bacdd8",
+    "/usr/bin/python3",
+    "-I",
+    "/input/harness.py"
+  ],
+  "finished_utc": "2026-09-17T02:36:48.090585+00:00",
+  "gate_sha256": "f0036a3a6c6cda2a075666605e07e89beb4ea0eb78babedd5af3d15e1c23c15e",
+  "gpu_context_teardown_verified": false,
+  "identity": {
+    "boot_id_sha256": "8e7326b753f594dc7b746cda1ed3ceddfbcc547c0f332f7ebc6599e7ba003db0",
+    "capture_sha256": "b45825aad250ad0305b1f2d2c1b475690a4c6dda89045f97d5ee63da1294119d",
+    "command_template_sha256": "b0438b4430c969a43faa19ed4f45d680e3aaed0982994a2ac5ef93ca425b0bc9",
+    "cpu_helpers_sha256": "88e7303fb2bedc6fa891bf2fd16807015d887234cf2fdec20bdd413349e81c8c",
+    "devices": {
+      "gpu_uuid": "GPU-35dcea35-12bc-f2f3-d5d2-d2eaa8bacdd8",
+      "nodes": {
+        "/dev/nvidia-uvm": [
+          508,
+          0
+        ],
+        "/dev/nvidia1": [
+          195,
+          1
+        ],
+        "/dev/nvidiactl": [
+          195,
+          255
+        ]
+      },
+      "physical_index": 2
+    },
+    "driver_version_sha256": "0ce24127bcea57fdae8a51428509d1c5a3bc324993d95cb06528efa7519a895f",
+    "executor_sha256": "034ddbdddfea960b97a3461366d9eebfc05a9ff053c9cc7ec497c565cdea66b7",
+    "harness_sha256": "586cf2640da0405a06cfabd3547d4bc52c57d730b11ea8808b245b17f6c1a187",
+    "host_tools_sha256": {
+      "/usr/bin/python3": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+      "/usr/bin/systemd-run": "dbc8b988a849d5c9d7ef2de7068a6f107021bc6c11e0d7864c73f373eef726a7"
+    },
+    "kernel_release": "7.0.0-31-generic",
+    "request_parser_sha256": "8894819b74275760038313be4b894fd2f5c92b7004aa99d2a6c2cf60cad05f93",
+    "runtime_manifest_sha256": "72b5447ce7636c5357a651952f59b96cfa024bd5617ba564091fcfc1cd32c3f5",
+    "task_sha256": "469a1721a6694fa6ba7ed9d57c5fb73485a64c94ec91ac0340cdc8fb7e38a2d4"
+  },
+  "input_sha256": {
+    "candidate.py": "0002410963c35d59f2ad79a81430598e51ebabd4cb304f368139a1d6c6d19a88",
+    "harness.py": "586cf2640da0405a06cfabd3547d4bc52c57d730b11ea8808b245b17f6c1a187",
+    "kernel.py": "0002410963c35d59f2ad79a81430598e51ebabd4cb304f368139a1d6c6d19a88",
+    "left.f32": "84959ba33a31cd97038ba1aa51e43ed64efda2d65bfe1c4e8fd08689ef34144d",
+    "right.f32": "7fcb6b0405f828271e2b78ed29029d2ed55e1fcd585eb1d9c6725499ca762570",
+    "task.json": "0740be3b2d872596f5356858c38728003f666647b056fad3fcdbdabfa332ee32"
+  },
+  "kernel_ast_sha256": "5aa531739d5a4ce3efd4bb546409a1a08cb8b6698086210004bf3dc29f6534be",
+  "launch_attempted": true,
+  "measurement": {
+    "cases": {
+      "1": {
+        "candidate_ms": 0.03379200026392937,
+        "correct": true,
+        "output_sha256": "9e82a7818d22320c37c5dae808bd9793ca8a79bacf29a8befee7949651cc82a5",
+        "reference_ms": 0.01945599913597107,
+        "reported_speedup": 0.5757575456916354
+      },
+      "1024": {
+        "candidate_ms": 0.03328000009059906,
+        "correct": true,
+        "output_sha256": "67f2ea38c59c88963ee6c8e65f31afe0fcae16d3f155dfebd204798f5e38045b",
+        "reference_ms": 0.018432000651955605,
+        "reported_speedup": 0.5538461719284153
+      },
+      "1048576": {
+        "candidate_ms": 0.04198399931192398,
+        "correct": true,
+        "output_sha256": "20cf9422e301c74bb3097278831addcd3eb5e30d4613dcb42c370ce9f306bc6f",
+        "reference_ms": 0.02969600073993206,
+        "reported_speedup": 0.7073171023870998
+      },
+      "65537": {
+        "candidate_ms": 0.03379200026392937,
+        "correct": true,
+        "output_sha256": "383a88404eab4300aa3c6d48d3867bd8ae329f41e54c9078c34f8aa06f9378dc",
+        "reference_ms": 0.018928000703454018,
+        "reported_speedup": 0.5601325921998869
+      }
+    },
+    "correctness_verified": true,
+    "first_compile_seconds": 1.0417616010236088,
+    "kernel_source_contract": "R132_BOUNDED_TRITON_AST_V1",
+    "reported_runtime": {
+      "torch_version": "2.13.0+cu130",
+      "triton_version": "3.7.1"
+    },
+    "speedup_claim_authorized": false,
+    "status": "CORRECT",
+    "timing_is_child_reported": false,
+    "timing_origin": "TRUSTED_DRIVER_CUDA_EVENTS"
+  },
+  "origin": {
+    "child_generated": false,
+    "kind": "BUILDER_TEST"
+  },
+  "output_is_untrusted": true,
+  "raw_request_sha256": "adac1a137fccda626936d6669a012d5923217968c83584870a3b9b10e9255375",
+  "request_id": "332a19390413b6764834a3b5ddf4132f108ba3b8a52389c3e7121f755df91516",
+  "requested_origin": {
+    "kind": "BUILDER_TEST",
+    "record_index": 0,
+    "record_sha256": "697d7466d9075aaa2a71abc2c270824ff736c970f551417d2aca5705f8f5a9db"
+  },
+  "requires_fresh_Main_census_before_next_job": true,
+  "schema": "R132_KERNEL_RESULT_V1",
+  "source_sha256": "0002410963c35d59f2ad79a81430598e51ebabd4cb304f368139a1d6c6d19a88",
+  "speedup_claim_authorized": false,
+  "started_utc": "2026-09-17T02:36:42.207287+00:00",
+  "status": "CORRECT",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "0c3bd0553c2c99630bf65e459d4baaa82c8d21af4b97bb481dcaea89bdd589a5"
+}

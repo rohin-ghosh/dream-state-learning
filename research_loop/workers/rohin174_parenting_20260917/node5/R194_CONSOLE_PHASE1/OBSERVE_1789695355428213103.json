@@ -1,0 +1,169 @@
+{
+  "observed_local_unix": 1789695355.4281447,
+  "result": {
+    "config": {
+      "new_presentations": 16,
+      "rehearsal_presentations": 0,
+      "sleep_loss_impl": "MASKED_CAUSAL_CE_V1",
+      "source_root": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/source",
+      "think_act_learn": {
+        "console_reflection": {
+          "schema": "R194_CONSOLE_REFLECTION_V1",
+          "session_id": "rohin194_C2_20260917"
+        },
+        "continuity_policy": "R193_CONTINUITY_V1",
+        "cpu_gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/gate",
+        "cpu_gate_sha256": "c7821ed5b02651ed624c6dbe29a488bd15496440b59364e98e52ff2afe705e82",
+        "environment_facts": "The current confined Python tool has the standard library plus read-only SymPy 1.14.0 and mpmath 1.3.0. No network, GPU, home access, or Torch is provided. Earlier missing-SymPy feedback describes the older environment. Installation does not establish execution: only actual tool receipts do. Incomplete or truncated code is not executed or automatically retried.",
+        "reflection_policy": "explicit",
+        "schema": "R184_THINK_ACT_LEARN_V1",
+        "think_segments": 1,
+        "trial_id": "C2_R188_same_life_recovery"
+      }
+    },
+    "dataset": {
+      "complete_row_count": 0,
+      "exists": false,
+      "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/exploration/C2_R188_same_life_recovery.jsonl"
+    },
+    "head": {
+      "index": 5822,
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "kind": "UPDATE",
+      "previous_sha256": "afb818bf27534af7a0ef8638b45430faf4888ab24db61b12e807b767f567cc3a",
+      "schema": "R125_STREAM_JOURNAL_V1",
+      "sha256": "b7d29a4ee242f27db26ea787b8301cb268c18c0fb8d5b2fb9fc837f48e9d57a7"
+    },
+    "head_fields": {
+      "finished_unix": 1789695318.3151126,
+      "optimizer_step": 4908
+    },
+    "latest_complete": {
+      "cycle": 50,
+      "index": 5753,
+      "record_mtime_ns": 1789694719284824612,
+      "record_sha256": "3e908af14be27f5a5dc6ed9a6e82b1f92f776daff1491490483eea43ecd1f034",
+      "total_optimizer_steps": 4860,
+      "updates": 48
+    },
+    "live_changes": 0,
+    "loaded": null,
+    "mode": null,
+    "observed_unix": 1789695355.3081133,
+    "pids": {
+      "old_math_bridge": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/r193_c2_bridge.py",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/BRIDGE.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1",
+        "identity_matches": true,
+        "parent": 1,
+        "pid": 2930020,
+        "start_ticks": "22767768",
+        "state": "S"
+      },
+      "old_native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/source",
+        "identity_matches": true,
+        "parent": 2930122,
+        "pid": 2930123,
+        "start_ticks": "22768040",
+        "state": "R"
+      },
+      "old_outer": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r188_node5_confinement",
+          "dispatch",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/source",
+        "identity_matches": true,
+        "parent": 1,
+        "pid": 2930061,
+        "start_ticks": "22767888",
+        "state": "S"
+      },
+      "waiter": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/console_handoff.py",
+          "execute"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1",
+        "identity_matches": true,
+        "parent": 1,
+        "pid": 3006355,
+        "start_ticks": "23054618",
+        "state": "S"
+      }
+    },
+    "preservation": {},
+    "publications": 0,
+    "receipts": {
+      "ARMED.json": {
+        "document": {
+          "phase": "R194_C2_CONSOLE_REFLECTION_V1",
+          "pid": 3006355,
+          "signals": 0,
+          "time": 1789694986.0617025,
+          "wait_seconds": 1200
+        },
+        "path": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/ARMED.json",
+        "sha256": "b6c8314acb25c65553f828f4cf06583646972035fe017b0b23c1eea6e9c20d0f"
+      },
+      "WAITER_START.json": {
+        "document": {
+          "command": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/console_handoff.py",
+            "execute"
+          ],
+          "held": false,
+          "identity": {
+            "argv": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/console_handoff.py",
+              "execute"
+            ],
+            "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+            "cgroup": "0::/user.slice/user-2524.slice/session-591160.scope",
+            "cwd": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1",
+            "group": 3006355,
+            "parent": 3006354,
+            "pid": 3006355,
+            "start_ticks": "23054618",
+            "uid": 2524
+          },
+          "loaded": false,
+          "time": 1789694986.0018253
+        },
+        "path": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/WAITER_START.json",
+        "sha256": "02a8d0e9ca430787831c2c411eadcb270a9d9c25f35aff1c91aba962c319655e"
+      }
+    },
+    "recipe": null,
+    "signals": 0
+  },
+  "returncode": 0,
+  "stderr": ""
+}

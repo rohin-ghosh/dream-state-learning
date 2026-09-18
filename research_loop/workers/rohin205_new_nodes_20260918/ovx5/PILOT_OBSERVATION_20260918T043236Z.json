@@ -1,0 +1,70 @@
+{
+  "compute_processes": [
+    "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82, 61379, 490 MiB",
+    "GPU-3aaf4dfd-b6c9-a56d-3ca7-ee7748ee5f4d, 61380, 490 MiB",
+    "GPU-6d1c0d5e-d7b6-e9a4-183d-dedfadabfefa, 61381, 490 MiB",
+    "GPU-9dba6108-a040-2cd0-4ea1-274bc6a99e47, 61382, 490 MiB"
+  ],
+  "host": "[REDACTED_HOST]",
+  "observed_utc": "2026-09-18T04:32:36.589708+00:00",
+  "private_rows_or_scores_read": false,
+  "receipts": {
+    "ADMISSION.json": {
+      "blockers": [],
+      "clear": true,
+      "observed_unix": 1789705879.7929196,
+      "privileged": true,
+      "target_physical": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "CONFINEMENT_CPU.json": {
+      "allowed": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "config_sha256": "a77e04eccec649400c35de78aaad110f1689c6562be3f297b6580b376961a8d2",
+      "denied": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "observed_unix": 1789705879.5383182,
+      "passed": true
+    },
+    "DISPATCH_STARTED.json": {
+      "candidate_count": 1,
+      "observed_unix": 1789705879.3774595,
+      "physical": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "pid": 61346,
+      "private_rows_printed": false,
+      "start_ticks": "22855777",
+      "status": "DISPATCHED_NOT_LOADED_PROOF"
+    },
+    "RECEIVING_CPU.json": {
+      "CUDA_initialized": false,
+      "base_files_verified": 10,
+      "base_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "local_cpu_tests": 4,
+      "observed_unix": 1789705849.3844712,
+      "packet_sha256": "43d90b0530324b554d216c648d93e677aa02eaf4e19b9bcda815c9b4a06a5d91",
+      "passed": true,
+      "private_rows_printed": false,
+      "receiving_cpu_tests": 4,
+      "receiving_torch_cpu_weighted_loss_gradient": true,
+      "warmstart_step": 6250
+    }
+  },
+  "root": "/localhome/local-rohing/orch_r207_ovx5_widegap1m_20260918_candidate1"
+}

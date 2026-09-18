@@ -1,0 +1,38 @@
+{
+  "schema": "R174_NODE4_PARENT_VARIANT_STAGING_V1",
+  "status": "INVENTORY_AND_STAGING_ONLY_AWAIT_EXACT_MAIN_ASSIGNMENT_AND_POLICY_HASH",
+  "assignment_owner": "Main",
+  "frozen_assignment": null,
+  "common_policy_sha256": null,
+  "arms": {
+    "A": {"requested_style": "long strict dense", "cadence_responses": 1},
+    "B": {"requested_style": "grounded walkthrough", "cadence_responses": 2},
+    "C": {"requested_style": "questions-only derivation", "cadence_responses": 3},
+    "D": {"requested_style": "light three questions", "cadence_responses": 3}
+  },
+  "groups": {
+    "raw": [1, 3],
+    "kernel": [0, 4]
+  },
+  "must_remain_unparented": [1],
+  "unchanged_R166_parent_control_candidate": 0,
+  "control_candidate_is_frozen_assignment": false,
+  "excluded_physical_allocations": [2, 5, 6, 7],
+  "existing_lease_hard_end_unix": 1789754400,
+  "R179_keepalive_unchanged": true,
+  "R171_proposal_implemented": false,
+  "parent_deliveries_by_this_stage": 0,
+  "child_restarts_by_this_stage": 0,
+  "shared_source_edits": 0,
+  "recipe_changes": 0,
+  "model_calls": 0,
+  "sealed_output_reads": 0,
+  "first_actual_parent_turn_receipt": null,
+  "first_rendered_REQUEST_receipt": null,
+  "pending_delivery_evidence": [
+    "Main-frozen assignment and exact common-policy source bytes/hash.",
+    "Current parent custody and source/config/ledger closure without losing an in-flight attempt or reusing a published message ID.",
+    "Actual new parent result and publication receipt, bound to the authorized policy and assignment.",
+    "The same message ID and text hash in a subsequent actual rendered REQUEST of the existing child; no child restart or recipe change."
+  ]
+}

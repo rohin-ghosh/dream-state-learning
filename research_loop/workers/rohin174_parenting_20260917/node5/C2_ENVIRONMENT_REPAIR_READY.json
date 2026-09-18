@@ -1,0 +1,79 @@
+{
+  "candidate": {
+    "bundle": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/MATH_BUNDLE.json",
+      "sha256": "38381e95b6d810e8fb40a1e3466a747e54673f2c205cf757efd029e624fe686d"
+    },
+    "bundle_bytes": 28879403,
+    "bundle_files": 1662,
+    "gate_sha256": "c7821ed5b02651ed624c6dbe29a488bd15496440b59364e98e52ff2afe705e82",
+    "profile": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/source/gpu/orch_r125_cpu_confinement_probe.py",
+      "sha256": "81408d62fb926f4c61411084c56a7e08db842095dfc2b0d354b9b1cd95caa474"
+    },
+    "result": {
+      "path": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/RESULT.json",
+      "sha256": "1cabe76f2e851fd9eb381bf0e36598566ff76424965d35b80cf8d1275c06fbbd"
+    },
+    "root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z"
+  },
+  "cause": "System Python /usr/bin/python3 -I sees read-only /usr, not host venv; no sympy/mpmath there. No SymPy-specific import prohibition found.",
+  "confinement_modes_passed": [
+    "basic",
+    "output",
+    "timeout",
+    "memory",
+    "files"
+  ],
+  "deployment_constraints": [
+    "Only original C2; never explicit/brief/plasticity copies",
+    "Record prospective environment phase after complete44 before first amended ACT",
+    "No replay of failed historical requests or return of synthetic test results to the learner",
+    "Quiesce only original C2 external CPU bridge between calls; retain its pending/publication state; no learner restart",
+    "Bind new immutable bridge configuration to same original root/journal and newly tested gate",
+    "Keep existing CPU limits, no-network/no-GPU isolation, parent cadence/messages and model source unchanged",
+    "No pure-plasticity attribution across the environment phase change"
+  ],
+  "earliest_prospective_after": {
+    "cycle": 44,
+    "index": 5337,
+    "record_sha256": "30002558e2a5f620f642d5e7843e3f9eb7c41f7a174bf2d4a0f54345e077b078",
+    "time": 1789688913.5303257
+  },
+  "environment_cause": {
+    "path": "research_loop/workers/rohin174_parenting_20260917/node5/C2_SYMPY_ENVIRONMENT_1789688838923157350.json",
+    "sha256": "9791740f02b83b8a581426c883f0cc6b81c91090ae8341970a8d8cd69652c8e9"
+  },
+  "historical_requests_replayed": 0,
+  "live_changes": 0,
+  "live_deployment": false,
+  "local_builder": {
+    "path": "research_loop/workers/rohin174_parenting_20260917/node5/c2_math_environment.py",
+    "sha256": "d8890b421d3ddbf3b32f98085996bb9acd6d76d23b0742697540c7e6b7a07fe0"
+  },
+  "local_unit_tests": {
+    "path": "research_loop/workers/rohin174_parenting_20260917/node5/test_c2_math_environment.py",
+    "sha256": "3b36383ce4aae11d120263ea20c364c921833f45bbafd480a09c3f1ee63c6e65"
+  },
+  "original_C2_root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+  "original_window": {
+    "path": "research_loop/workers/rohin174_parenting_20260917/node5/C2_ENVIRONMENT_PRESERVATION_1789689105123151174.json",
+    "sha256": "c217bf23ac2dccfd1b1d9a8b7d245784a7432d03acf21dee2c524bba5a0ac131"
+  },
+  "parent_publications": 0,
+  "phase_label": "R188_ORIGINAL_C2_MATH_ENVIRONMENT_REPAIR_V1",
+  "preserved_observation_window": [
+    42,
+    43,
+    44
+  ],
+  "real_tests": {
+    "path": "research_loop/workers/rohin174_parenting_20260917/node5/C2_MATH_CANDIDATE_TEST_1789689024811327844.json",
+    "sha256": "2e57f4e6203b500520f58a105e5b1802efa7a66b595a814a749faffc92cb0437"
+  },
+  "schema": "R188_ORIGINAL_C2_ENVIRONMENT_REPAIR_READY_V1",
+  "status": "TESTED_READY_NOT_DEPLOYED",
+  "syntax_test": "PROCESS_FAILED/SyntaxError; // unchanged; no source rewriting introduced",
+  "synthetic_math": "COMPLETE; isolated system Python3.12.3; SymPy1.14.0; mpmath1.3.0; synthetic solution7",
+  "unit_tests_passed": 6
+}

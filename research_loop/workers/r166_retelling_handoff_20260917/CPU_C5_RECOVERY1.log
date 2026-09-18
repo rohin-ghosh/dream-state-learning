@@ -1,0 +1,125 @@
+.............................................. [ 48%]
+..............................FFFF..... [ 90%]
+.........                                                                [100%]
+=================================== FAILURES ===================================
+______ CommunityWallTests.test_resume_validation_delegates_original_guard ______
+
+self = <test_orch_r157_community_wall_extension.CommunityWallTests testMethod=test_resume_validation_delegates_original_guard>
+
+    def test_resume_validation_delegates_original_guard(self):
+        path,config,plan=self.control()
+>       self.assertEqual(self.validate(path,config,plan),(config,plan))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_orch_r157_community_wall_extension.py:248: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_orch_r157_community_wall_extension.py:105: in validate
+    result=extension.validate_resume(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gpu/orch_r157_community_wall_extension.py:475: in validate_resume
+    config, plan = guard.validate(config_path)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gpu/orch_r125_continual_guard.py:22: in validate
+    plan = child.validate_plan(child.read(config['plan_path']))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+plan = {'anchors': '/same/anchors', 'authorized_wall_extension': {'lease_end_unix': 1789776600, 'new_deadline_unix': 17897760...779c81c297efcdfcf71879741743e74c16ccfad47ff6a4c23009823eb', ...}, 'birth_prompt': 'birth', 'context_limit': 16384, ...}
+
+    def validate_plan(plan):
+>       require(plan['schema'] == SCHEMA and plan['base_sha256'] == BASE_SHA256, 'frozen_native_contract')
+                ^^^^^^^^^^^^^^
+E       KeyError: 'schema'
+
+gpu/orch_r125_continual_native.py:88: KeyError
+____ CommunityWallTests.test_resume_validation_rejects_device_policy_change ____
+
+self = <test_orch_r157_community_wall_extension.CommunityWallTests testMethod=test_resume_validation_rejects_device_policy_change>
+
+    def test_resume_validation_rejects_device_policy_change(self):
+        path,config,plan=self.control();config['device_containment']['minor']=1
+        with self.assertRaisesRegex(ValueError,'unchanged_device_envelope'):
+>           self.validate(path,config,plan)
+
+tests/test_orch_r157_community_wall_extension.py:264: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_orch_r157_community_wall_extension.py:105: in validate
+    result=extension.validate_resume(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gpu/orch_r157_community_wall_extension.py:475: in validate_resume
+    config, plan = guard.validate(config_path)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gpu/orch_r125_continual_guard.py:22: in validate
+    plan = child.validate_plan(child.read(config['plan_path']))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def validate_plan(plan):
+>       require(plan['schema'] == SCHEMA and plan['base_sha256'] == BASE_SHA256, 'frozen_native_contract')
+                ^^^^^^^^^^^^^^
+E       KeyError: 'schema'
+
+gpu/orch_r125_continual_native.py:88: KeyError
+___________ CommunityWallTests.test_resume_validation_rejects_reset ____________
+
+self = <test_orch_r157_community_wall_extension.CommunityWallTests testMethod=test_resume_validation_rejects_reset>
+
+    def test_resume_validation_rejects_reset(self):
+        path,config,plan=self.control();config['resume']=False
+        with self.assertRaisesRegex(ValueError,'same_life_resume'):
+>           self.validate(path,config,plan)
+
+tests/test_orch_r157_community_wall_extension.py:253: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_orch_r157_community_wall_extension.py:105: in validate
+    result=extension.validate_resume(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gpu/orch_r157_community_wall_extension.py:475: in validate_resume
+    config, plan = guard.validate(config_path)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gpu/orch_r125_continual_guard.py:22: in validate
+    plan = child.validate_plan(child.read(config['plan_path']))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def validate_plan(plan):
+>       require(plan['schema'] == SCHEMA and plan['base_sha256'] == BASE_SHA256, 'frozen_native_contract')
+                ^^^^^^^^^^^^^^
+E       KeyError: 'schema'
+
+gpu/orch_r125_continual_native.py:88: KeyError
+______ CommunityWallTests.test_resume_validation_rejects_source_mutation _______
+
+self = <test_orch_r157_community_wall_extension.CommunityWallTests testMethod=test_resume_validation_rejects_source_mutation>
+
+    def test_resume_validation_rejects_source_mutation(self):
+        path,config,plan=self.control()
+        changed=Path(plan['source_root'])/'gpu/native.py';changed.chmod(0o644);changed.write_text('changed')
+        with self.assertRaisesRegex(ValueError,'entire_new_source'):
+>           self.validate(path,config,plan)
+
+tests/test_orch_r157_community_wall_extension.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_orch_r157_community_wall_extension.py:105: in validate
+    result=extension.validate_resume(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gpu/orch_r157_community_wall_extension.py:475: in validate_resume
+    config, plan = guard.validate(config_path)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gpu/orch_r125_continual_guard.py:22: in validate
+    plan = child.validate_plan(child.read(config['plan_path']))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def validate_plan(plan):
+>       require(plan['schema'] == SCHEMA and plan['base_sha256'] == BASE_SHA256, 'frozen_native_contract')
+                ^^^^^^^^^^^^^^
+E       KeyError: 'schema'
+
+gpu/orch_r125_continual_native.py:88: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_orch_r157_community_wall_extension.py::CommunityWallTests::test_resume_validation_delegates_original_guard
+FAILED tests/test_orch_r157_community_wall_extension.py::CommunityWallTests::test_resume_validation_rejects_device_policy_change
+FAILED tests/test_orch_r157_community_wall_extension.py::CommunityWallTests::test_resume_validation_rejects_reset
+FAILED tests/test_orch_r157_community_wall_extension.py::CommunityWallTests::test_resume_validation_rejects_source_mutation
+4 failed, 90 passed, 59 subtests passed in 6.11s

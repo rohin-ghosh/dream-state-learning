@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/localhome/local-rohing/orch_r179_node4_20260917t1725z/node4_rollout.py", line 506, in <module>
+    handoff(bundle_path, output_path, arguments.wait_seconds))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r179_node4_20260917t1725z/node4_rollout.py", line 418, in handoff
+    preflight_scan(output, request, helpers)
+  File "/localhome/local-rohing/orch_r179_node4_20260917t1725z/node4_rollout.py", line 312, in preflight_scan
+    validate_occupied_preflight(report, request)
+  File "/localhome/local-rohing/orch_r179_node4_20260917t1725z/node4_rollout.py", line 323, in validate_occupied_preflight
+    require(all((re.fullmatch(r'(open_device_pid|active_compute_pid|reserved_cvd_pid|uuid_reservation):[0-9]+', reason)
+  File "/localhome/local-rohing/orch_r179_node4_20260917t1725z/node4_rollout.py", line 47, in require
+    raise ValueError(reason)
+ValueError: foreign_or_unknown_preflight_blockers:['active_compute_pid:2709461', 'minor_scan_identity_changed:3198245', 'minor_scan_identity_changed:4599', 'open_device_pid:2709461', 'process_identity_drift:4599', 'reserved_cvd_pid:2709460', 'reserved_cvd_pid:2709461', 'unexplained_device_memory', 'uuid_reservation:2709460', 'uuid_reservation:2709461']

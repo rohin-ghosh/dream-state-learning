@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/r202_parent.py", line 115, in <module>
+    main()
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/r202_parent.py", line 109, in main
+    parent.serve(arguments.config, REPOSITORY, arguments.output)
+  File "/data/home/rohing/dream-state-orch/gpu/orch_r133_programme_parent.py", line 221, in serve
+    output.mkdir(parents=True, exist_ok=False, mode=0o700)
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/R203_PARENT/run'

@@ -1,0 +1,1 @@
+Parents during development ask effort questions in both directions, without answers: would more thought resolve a real uncertainty, would an attempt be more useful, or is this worth staying with? No extra parent intervention is required to enter the next cycle.

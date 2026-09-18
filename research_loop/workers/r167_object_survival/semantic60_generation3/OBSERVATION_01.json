@@ -1,0 +1,42 @@
+{
+  "annotation_freeze": false,
+  "counts": {
+    "annotations_frozen": 0,
+    "complete": 0,
+    "failed": 0,
+    "provider_dispatch_records": 2,
+    "provider_response_files": 0,
+    "reserved": 2,
+    "worker_once": 2
+  },
+  "deadline_unix": 1789641096.6444273,
+  "observed_unix": 1789635723.6653368,
+  "processes": [
+    {
+      "parent_pid": 1,
+      "pid": 673114,
+      "role": "dispatch_or_timeout",
+      "start_ticks": "174271463"
+    },
+    {
+      "parent_pid": 673114,
+      "pid": 673115,
+      "role": "dispatch_or_timeout",
+      "start_ticks": "174271463"
+    },
+    {
+      "parent_pid": 673115,
+      "pid": 673135,
+      "role": "worker",
+      "start_ticks": "174271472"
+    },
+    {
+      "parent_pid": 673115,
+      "pid": 673136,
+      "role": "worker",
+      "start_ticks": "174271472"
+    }
+  ],
+  "public_completion": false,
+  "status": "METADATA_ONLY"
+}

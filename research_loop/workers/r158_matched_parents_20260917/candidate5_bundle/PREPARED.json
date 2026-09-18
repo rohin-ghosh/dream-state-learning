@@ -1,0 +1,237 @@
+{
+  "GPU_calls": 0,
+  "arms": {
+    "parented_frozen": {
+      "config_file": "parented_frozen.PARENT.json",
+      "gpu_uuid": "GPU-06b31c8f-7a96-d812-23f3-df3444d95397",
+      "learning_enabled": false,
+      "matched_policy": {
+        "arm": "parented_frozen",
+        "cohort_sha256": "da04b4cd814f6f695ca49a1ace66f9378039f6166d04e26bbd27ed7692ad0b4b",
+        "learning": "frozen",
+        "lora_rank": 8,
+        "parent_channel": "allow",
+        "schema": "R150_MATCHED_POLICY_V1"
+      },
+      "parent_enabled": true,
+      "physical": 6,
+      "plan": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/candidate5_inputs/parented_frozen.PLAN.json",
+        "sha256": "3ad87461ea05a9893cca1ad4ca0b6e4a927c17e757e7e3a1263085fb85eb1c44"
+      },
+      "runtime_root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_frozen"
+    },
+    "parented_learning": {
+      "config_file": "parented_learning.PARENT.json",
+      "gpu_uuid": "GPU-2e7eb3b8-9b0b-3729-f5ff-2bbdad6a4a30",
+      "learning_enabled": true,
+      "matched_policy": {
+        "arm": "parented_learning",
+        "cohort_sha256": "da04b4cd814f6f695ca49a1ace66f9378039f6166d04e26bbd27ed7692ad0b4b",
+        "learning": "lora",
+        "lora_rank": 8,
+        "parent_channel": "allow",
+        "schema": "R150_MATCHED_POLICY_V1"
+      },
+      "parent_enabled": true,
+      "physical": 5,
+      "plan": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/candidate5_inputs/parented_learning.PLAN.json",
+        "sha256": "0e857b2c39e04e13683d429717315cfb2b4e1aa87b3570e4de796a0638081789"
+      },
+      "runtime_root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning"
+    },
+    "unparented_learning": {
+      "config_file": null,
+      "gpu_uuid": "GPU-6eac3b9d-551a-d786-f598-04ef6d701c98",
+      "learning_enabled": true,
+      "matched_policy": {
+        "arm": "unparented_learning",
+        "cohort_sha256": "da04b4cd814f6f695ca49a1ace66f9378039f6166d04e26bbd27ed7692ad0b4b",
+        "learning": "lora",
+        "lora_rank": 8,
+        "parent_channel": "reject",
+        "schema": "R150_MATCHED_POLICY_V1"
+      },
+      "parent_enabled": false,
+      "physical": 7,
+      "plan": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/candidate5_inputs/unparented_learning.PLAN.json",
+        "sha256": "59753f66e2348ac5001444192ffef14f4d44542a8883784b265e9704fdfd3917"
+      },
+      "runtime_root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/unparented_learning"
+    }
+  },
+  "budget": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/candidate5_inputs/LEASE_BUDGET.json",
+    "sha256": "24e9392bde6741de3cc54117010aab99c445f2a78517a2a1e7d6fdc529a9783b"
+  },
+  "cohort": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/candidate5_inputs/COHORT.json",
+    "sha256": "da04b4cd814f6f695ca49a1ace66f9378039f6166d04e26bbd27ed7692ad0b4b"
+  },
+  "configs": {
+    "parented_frozen": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_parents_20260917/candidate5_bundle/parented_frozen.PARENT.json",
+      "sha256": "37322f010a86296ca007719c79b2132a6b9b1b06c608fd0faacd5788e620902e"
+    },
+    "parented_learning": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_parents_20260917/candidate5_bundle/parented_learning.PARENT.json",
+      "sha256": "167c115ac65202ba8c1267e0418a9e336bb9964e037163c4073ba29c1b7c4a40"
+    }
+  },
+  "launches": 0,
+  "node_contract": {
+    "hard_end_unix": 1789646400,
+    "host": "[REDACTED_HOST]",
+    "host_sha256": "e376292376f9f56a83e1255021f5b1a4249f1afdff42b5aed3cad36a9635834b",
+    "node": "a40r",
+    "physical_devices": [
+      5,
+      6,
+      7
+    ],
+    "remote_identity_verified": false,
+    "wrapper": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/a40r_ssh.sh",
+      "sha256": "ae7ded3d683311e7f5c3f95e581962e32ada4de277530537f96e6c39d34bec97"
+    }
+  },
+  "parent_contract": {
+    "arm_labels_visible": false,
+    "asynchronous": true,
+    "cadence": "persistent1",
+    "empty_train_payload_sha256": "78b854fb2cf80a9134fa6ccb4e1fa6245821bba474e6750e34f6005809e76bc1",
+    "model": "openai/openai/gpt-6-astra",
+    "parent_and_environment_targets": false,
+    "parent_identity": "R158_MATCHED",
+    "parenting_success_claim": false,
+    "prompt": "gpu.orch_r133_programme_parent.prompt",
+    "provider": "gpu.orch_route_parent_campaign_providers.strong",
+    "realized_coverage": "UNMEASURED",
+    "reasoning_effort": "low",
+    "schedule_on": "request",
+    "speaker": "Astra",
+    "split": "TRAIN",
+    "system_sha256": "d47980bb73a603b6d71c97cc3eb4de2080b4b81d23e41906031e8e4d8e45699e",
+    "tools": false
+  },
+  "parent_sources": {
+    "principles": {
+      "path": "/data/home/rohing/dream-state-orch/research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md",
+      "sha256": "5a6a3d28a2f0c9f99dd76873496a07468075509b4451373d90c11ce8d8b363f2"
+    },
+    "programme": {
+      "path": "/data/home/rohing/dream-state-orch/research_notes/R158_MATCHED_TRAIN_PARENTING_2026-09-17.md",
+      "sha256": "0f4f05de1ae93833c549f10f4a002e6cf0c1139c026d4c923497a691eb954a4f"
+    }
+  },
+  "provider_calls": 0,
+  "registration": {
+    "consumer": "gpu.orch_r150_matched_journal.MatchedJournal",
+    "consumer_owner": "gpu.orch_r150_matched_native.run",
+    "publisher": "gpu.orch_r127_pilot_console.publish_parent",
+    "r133_opens_journal": false,
+    "reader": "gpu.orch_r125_stream_console._read_record",
+    "require_admitted_births": true,
+    "require_main_bound_source_and_plan_verification": true,
+    "require_node4_wrapper_destination_verification": true,
+    "runtime_verified": false,
+    "shared_file_patch_required": false
+  },
+  "remote_writes": 0,
+  "repository": "/data/home/rohing/dream-state-orch",
+  "runtime_cohort_path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/COHORT.json",
+  "schema": "R158_MATCHED_PARENTS_V1",
+  "source_pins": {
+    "gpu/a40r_ssh.sh": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/a40r_ssh.sh",
+      "sha256": "ae7ded3d683311e7f5c3f95e581962e32ada4de277530537f96e6c39d34bec97"
+    },
+    "gpu/orch_l2_long_backend.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_l2_long_backend.py",
+      "sha256": "dfc3afd9d4d4ed9551201c0b81e4844755186a44049cce9ed701b6a66944bc1a"
+    },
+    "gpu/orch_l2_shared_run.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_l2_shared_run.py",
+      "sha256": "3da6491ba4284524d501a24b20d2f7946b3017e58359520865edcb3506e61eee"
+    },
+    "gpu/orch_r125_continual_native.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r125_continual_native.py",
+      "sha256": "cdb54252763472fd21ea12fd7694b208d968422c375dbf0647088cde736e6d48"
+    },
+    "gpu/orch_r125_stream_console.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r125_stream_console.py",
+      "sha256": "35697239e89a6b9dd49505b3556eb2c149b214fdb5ad3116677712d9b4231b75"
+    },
+    "gpu/orch_r125_stream_journal.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r125_stream_journal.py",
+      "sha256": "3925a6dff44c71994d446445833207ba3b4a9c8a983b56a8f3e3de84239eb0ca"
+    },
+    "gpu/orch_r127_pilot_console.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r127_pilot_console.py",
+      "sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683"
+    },
+    "gpu/orch_r133_programme_parent.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r133_programme_parent.py",
+      "sha256": "cc5599a8308c35c044720d4d8c9d988a5fcfdae25daa71cbc9b2c1f46de6658e"
+    },
+    "gpu/orch_r150_matched_journal.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r150_matched_journal.py",
+      "sha256": "0f66d3f2cc40b0d7bdc0bee9870eb0b29c17fb0475d980d5433dd1ece7c08f32"
+    },
+    "gpu/orch_r150_matched_native.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r150_matched_native.py",
+      "sha256": "f8919b47e63c759d2a15a89eaaa1e28b4c16a7c1d4dcf0fd5efa320227e3fed9"
+    },
+    "gpu/orch_r151_matched_parents.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r151_matched_parents.py",
+      "sha256": "a40430a2b86adbb68e76028da3c63cb6295ea6d831c35008a6caba1ab30c159c"
+    },
+    "gpu/orch_r158_matched_node4.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r158_matched_node4.py",
+      "sha256": "4e21fe3b72f823b9b26ba2edd08e8442ac68c3ea0fe3cdfea1590a2a5cd085d7"
+    },
+    "gpu/orch_r158_matched_parents.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r158_matched_parents.py",
+      "sha256": "67918c44392caf19b0b42855b45b90c0206c1defe2ed94709caf432447ff850b"
+    },
+    "gpu/orch_route_parent_campaign_parent.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_route_parent_campaign_parent.py",
+      "sha256": "0cc2781e24ecb21cf8b7acdf0fc8b5beb325d2ceec221dd94cc0da267e20bf71"
+    },
+    "gpu/orch_route_parent_campaign_providers.py": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_route_parent_campaign_providers.py",
+      "sha256": "4d99658252310c7f57986750ff3002443d5c4038139f79b0381ff6eafbde837e"
+    },
+    "organism_v6/orch_guided_bridge.py": {
+      "path": "/data/home/rohing/dream-state-orch/organism_v6/orch_guided_bridge.py",
+      "sha256": "f7915100d7c9e5b171b8e3bc9af23e6cee00fc09612bb947d5e3c1ea777ee652"
+    },
+    "organism_v6/orch_r124_train_history.py": {
+      "path": "/data/home/rohing/dream-state-orch/organism_v6/orch_r124_train_history.py",
+      "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+    },
+    "organism_v6/orch_r125_continual_stream.py": {
+      "path": "/data/home/rohing/dream-state-orch/organism_v6/orch_r125_continual_stream.py",
+      "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+    },
+    "organism_v6/orch_r125_plain_context.py": {
+      "path": "/data/home/rohing/dream-state-orch/organism_v6/orch_r125_plain_context.py",
+      "sha256": "dcfd1f7f5584867e39356f336f53bb7222aeb535da87d5ecb8f1f0bb59f72feb"
+    },
+    "organism_v6/orch_r150_matched_stream.py": {
+      "path": "/data/home/rohing/dream-state-orch/organism_v6/orch_r150_matched_stream.py",
+      "sha256": "99f1fc1b1c02d789d7d22e58cb98f2e36cd43f051e5e7a08b1afcabde7ed2866"
+    },
+    "organism_v6/orch_route_parent_campaign.py": {
+      "path": "/data/home/rohing/dream-state-orch/organism_v6/orch_route_parent_campaign.py",
+      "sha256": "e2e76cee5acc1421a15507d970f266e5c09378e326b51fe0cc77f4aa915064f1"
+    }
+  },
+  "status": "PREPARED_CPU_ONLY_NOT_REGISTERED",
+  "template": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_train_gym_20260917/PARENT_TEMPLATE.json",
+    "sha256": "e0c3cf0f766b9aa6fd3d15c764a7b72d4e25994aaedbba58306e8eac30ed2158"
+  }
+}

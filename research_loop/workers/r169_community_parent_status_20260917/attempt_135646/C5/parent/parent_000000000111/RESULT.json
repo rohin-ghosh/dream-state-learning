@@ -1,0 +1,29 @@
+{
+  "error_code": "parent_attempt_failed_no_implicit_retry",
+  "error_type": "ValueError",
+  "model": "openai/openai/gpt-6-astra",
+  "response": {
+    "message": "Astra: We\u2019ll leave the unresolved execution-evidence question aside for now; another correction on it is unlikely to help. Within your regression comparison, look instead at what you want the training-time measurement to mean. Your drafts move between grid search and retraining. Which operation matters for your comparison, and where would you focus a brief inspection to determine whether the draft measures that operation? Work with one existing draft rather than generating the whole script again.",
+    "rationale": "{\"object_id\":\"regression-execution-evidence\",\"source_records\":[4164,4167,4171],\"disposition\":\"set_aside\"}",
+    "speak": true
+  },
+  "source_sha256": "361e8c0f27de73b306bc201c16650eb364f6c1e297a4e3e504e7d8c9fdd194e6",
+  "speaker": "Astra",
+  "status": "PROVIDER_FAILED",
+  "usage": {
+    "cost": null,
+    "input_tokens": 10692,
+    "input_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": 10689,
+      "cached_tokens": 0,
+      "text_tokens": null
+    },
+    "output_tokens": 139,
+    "output_tokens_details": {
+      "reasoning_tokens": 0,
+      "text_tokens": null
+    },
+    "total_tokens": 10831
+  }
+}

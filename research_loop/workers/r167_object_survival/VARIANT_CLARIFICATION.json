@@ -1,0 +1,477 @@
+{
+  "nodes": {
+    "a100": {
+      "budget": 4194304,
+      "bytes_read": 418498,
+      "observed_unix": 1789631712.7912638,
+      "rows": [
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/control/GUARD.json"
+          ],
+          "compaction_invitation": "You are about to sleep. Re-read your visible history and select the passages you want to carry forward. Copy those passages verbatim rather than writing a new summary.",
+          "config_ref": {
+            "bytes": 346035,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/control/GUARD.json",
+            "sha256": "ee15e5e6d8b571ecefc8980249255a988fd64556de3d7d8f3d713d7ff78c08b3"
+          },
+          "declared_variant": "reread_select",
+          "pid": 2409681,
+          "plan_ref": {
+            "bytes": 16945,
+            "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/control/PLAN.json",
+            "sha256": "8c6654d6d8822f6cdb1d661ed7a4e8332eee52d5be7cb41fc8696304c76e72c6"
+          },
+          "prior_root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+          "root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+          "root_field_missing": false,
+          "segments_per_sleep": 2,
+          "sources": {
+            "gpu/orch_r125_continual_native.py": {
+              "reference": {
+                "bytes": 39313,
+                "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source/gpu/orch_r125_continual_native.py",
+                "sha256": "9ac05f14009f404623c281d09c8a88ede27ff3bf9dd63cd5ae7562e62e3b18f3"
+              },
+              "relevant_lines": [
+                {
+                  "line": 3,
+                  "text": "New PLANs may omit seed (0) and presleep_variant (free_distillation), or select"
+                },
+                {
+                  "line": 4,
+                  "text": "a nonnegative 32-bit seed and one of PRESLEEP_INVITATIONS with its exact"
+                },
+                {
+                  "line": 5,
+                  "text": "compaction_invitation. no_distillation uses an empty invitation and no extra"
+                },
+                {
+                  "line": 30,
+                  "text": "    ContinualStream, PRESLEEP_INVITATIONS, digest, experiment_binding, require,"
+                },
+                {
+                  "line": 62,
+                  "text": "COMPACTION_INVITATION = PRESLEEP_INVITATIONS['free_distillation']"
+                },
+                {
+                  "line": 411,
+                  "text": "        from gpu.orch_r145_suffix_boundary import prepare_sleep as r145_prepare_sleep"
+                },
+                {
+                  "line": 413,
+                  "text": "        r145_prepare_sleep(self.engine.model, __file__, 'c66a91b631937236d614095c07785f90242e4d476c45b7fa8fe5d65a8f277d2d')"
+                },
+                {
+                  "line": 468,
+                  "text": "def prepare_sleep(child, stream, journal, cycle):"
+                },
+                {
+                  "line": 470,
+                  "text": "    variant = child.plan.get('presleep_variant', 'free_distillation')"
+                },
+                {
+                  "line": 473,
+                  "text": "    invitation_text = child.plan['compaction_invitation']"
+                },
+                {
+                  "line": 620,
+                  "text": "                prepare_sleep(child, stream, journal, cycle)"
+                }
+              ]
+            },
+            "organism_v6/orch_r125_continual_stream.py": {
+              "reference": {
+                "bytes": 15317,
+                "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source/organism_v6/orch_r125_continual_stream.py",
+                "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+              },
+              "relevant_lines": [
+                {
+                  "line": 14,
+                  "text": "PRESLEEP_INVITATIONS = {"
+                },
+                {
+                  "line": 45,
+                  "text": "    variant = plan.get('presleep_variant', 'free_distillation')"
+                },
+                {
+                  "line": 46,
+                  "text": "    require(type(variant) is str and variant in PRESLEEP_INVITATIONS, 'known_presleep_variant')"
+                },
+                {
+                  "line": 47,
+                  "text": "    require(plan['compaction_invitation'] == PRESLEEP_INVITATIONS[variant], 'exact_posted_prompts')"
+                },
+                {
+                  "line": 48,
+                  "text": "    return dict(schema=EXPERIMENT_SCHEMA, seed=seed, presleep_variant=variant,"
+                },
+                {
+                  "line": 49,
+                  "text": "        compaction_invitation=plan['compaction_invitation'], system_prompt=plan['system_prompt'],"
+                },
+                {
+                  "line": 54,
+                  "text": "    require(type(binding) is dict and set(binding) == {'schema', 'seed', 'presleep_variant',"
+                },
+                {
+                  "line": 55,
+                  "text": "        'compaction_invitation', 'system_prompt', 'birth_prompt', 'seed_initialization'}, 'exact_experiment_binding')"
+                },
+                {
+                  "line": 64,
+                  "text": "        require(requested['seed'] == 0 and requested['presleep_variant'] == 'free_distillation',"
+                }
+              ]
+            }
+          },
+          "start_ticks": "30796516",
+          "status": "LIVE_NATIVE_PLAN_BOUND"
+        }
+      ]
+    },
+    "ovx2": {
+      "budget": 4194304,
+      "bytes_read": 542707,
+      "observed_unix": 1789631713.7700238,
+      "rows": [
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_node3_target_physical2_20260916t1541z_5/GUARD.json"
+          ],
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 213757,
+            "path": "/localhome/local-rohing/orch_r144_node3_target_physical2_20260916t1541z_5/GUARD.json",
+            "sha256": "26dd2d2b3120135fdc5929988b95d18e75ba3f844d76b9bc096c5f0d72940b63"
+          },
+          "declared_variant": null,
+          "pid": 1172314,
+          "plan_ref": {
+            "bytes": 8090,
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/PROPOSED_PLAN.json",
+            "sha256": "3ed70172ee87eb8082235cda012acdc42d1ec5ee5d55b42ca23a2e33dff1c1f0"
+          },
+          "prior_root": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1",
+          "root": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1",
+          "root_field_missing": false,
+          "segments_per_sleep": 2,
+          "sources": {
+            "gpu/orch_r125_continual_native.py": {
+              "reference": {
+                "bytes": 35724,
+                "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/source/gpu/orch_r125_continual_native.py",
+                "sha256": "106be5bd8bde805c092bbbf49233391b799c2b0641d3c41fdd75cb66d75ebc45"
+              },
+              "relevant_lines": [
+                {
+                  "line": 49,
+                  "text": "COMPACTION_INVITATION = 'You are about to sleep. Distill from your history what you want to carry forward.'"
+                },
+                {
+                  "line": 91,
+                  "text": "            and plan['compaction_invitation'] == COMPACTION_INVITATION, 'exact_posted_prompts')"
+                },
+                {
+                  "line": 544,
+                  "text": "                    source_sha256=digest([cycle,COMPACTION_INVITATION]), origin='TRAIN_COLLECTION', text=COMPACTION_INVITATION)"
+                }
+              ]
+            },
+            "organism_v6/orch_r125_continual_stream.py": {
+              "reference": {
+                "bytes": 12832,
+                "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/source/organism_v6/orch_r125_continual_stream.py",
+                "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+              },
+              "relevant_lines": []
+            }
+          },
+          "start_ticks": "27956809",
+          "status": "LIVE_NATIVE_PLAN_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r144_node3_target_physical0_20260916t1551z_5/GUARD.json"
+          ],
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 213757,
+            "path": "/localhome/local-rohing/orch_r144_node3_target_physical0_20260916t1551z_5/GUARD.json",
+            "sha256": "c9aa38760054820648882db052d0063194f6be5cdfe875a19688b8cd2563e42b"
+          },
+          "declared_variant": null,
+          "pid": 1347090,
+          "plan_ref": {
+            "bytes": 8156,
+            "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/PROPOSED_PLAN.json",
+            "sha256": "7307bafb877987bf9895fec2a3cf98121952718ea637bcb823fb3799e56f626c"
+          },
+          "prior_root": "/localhome/local-rohing/orch_r133_support_free_20260916_attempt1/run1",
+          "root": "/localhome/local-rohing/orch_r133_support_free_20260916_attempt1/run1",
+          "root_field_missing": false,
+          "segments_per_sleep": 2,
+          "sources": {
+            "gpu/orch_r125_continual_native.py": {
+              "reference": {
+                "bytes": 35724,
+                "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/source/gpu/orch_r125_continual_native.py",
+                "sha256": "106be5bd8bde805c092bbbf49233391b799c2b0641d3c41fdd75cb66d75ebc45"
+              },
+              "relevant_lines": [
+                {
+                  "line": 49,
+                  "text": "COMPACTION_INVITATION = 'You are about to sleep. Distill from your history what you want to carry forward.'"
+                },
+                {
+                  "line": 91,
+                  "text": "            and plan['compaction_invitation'] == COMPACTION_INVITATION, 'exact_posted_prompts')"
+                },
+                {
+                  "line": 544,
+                  "text": "                    source_sha256=digest([cycle,COMPACTION_INVITATION]), origin='TRAIN_COLLECTION', text=COMPACTION_INVITATION)"
+                }
+              ]
+            },
+            "organism_v6/orch_r125_continual_stream.py": {
+              "reference": {
+                "bytes": 12832,
+                "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/source/organism_v6/orch_r125_continual_stream.py",
+                "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+              },
+              "relevant_lines": []
+            }
+          },
+          "start_ticks": "28124205",
+          "status": "LIVE_NATIVE_PLAN_BOUND"
+        }
+      ]
+    },
+    "ovx3": {
+      "budget": 4194304,
+      "bytes_read": 429311,
+      "observed_unix": 1789631715.0192473,
+      "rows": [
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r157_keepalive_pilot_20260917_readmit1/GUARD.json"
+          ],
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 23754,
+            "path": "/localhome/local-rohing/orch_r157_keepalive_pilot_20260917_readmit1/GUARD.json",
+            "sha256": "e2d433d4a23e0a8c92f151b8f969da7c20223b6293d742199001ad11fd056342"
+          },
+          "declared_variant": null,
+          "pid": 2736739,
+          "plan_ref": {
+            "bytes": 8043,
+            "path": "/localhome/local-rohing/orch_r157_keepalive_pilot_20260917_readmit1/PLAN.json",
+            "sha256": "565efd26002b090815f75498272ffba218340bc20d53f88527a2fa75e3937f8f"
+          },
+          "prior_root": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1",
+          "root": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1",
+          "root_field_missing": false,
+          "segments_per_sleep": 2,
+          "sources": {
+            "gpu/orch_r125_continual_native.py": {
+              "reference": {
+                "bytes": 36381,
+                "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical6_20260916t1626z_attempt1/source/gpu/orch_r125_continual_native.py",
+                "sha256": "d3cbd3b0053f0c7c5d3d8e36e37c52954bdb39a40fc4346e4e6d3ab4bf5a2ad1"
+              },
+              "relevant_lines": [
+                {
+                  "line": 49,
+                  "text": "COMPACTION_INVITATION = 'You are about to sleep. Distill from your history what you want to carry forward.'"
+                },
+                {
+                  "line": 91,
+                  "text": "            and plan['compaction_invitation'] == COMPACTION_INVITATION, 'exact_posted_prompts')"
+                },
+                {
+                  "line": 366,
+                  "text": "        from gpu.orch_r145_suffix_boundary import prepare_sleep as r145_prepare_sleep"
+                },
+                {
+                  "line": 368,
+                  "text": "        r145_prepare_sleep(self.engine.model, __file__, 'c66a91b631937236d614095c07785f90242e4d476c45b7fa8fe5d65a8f277d2d')"
+                },
+                {
+                  "line": 550,
+                  "text": "                    source_sha256=digest([cycle,COMPACTION_INVITATION]), origin='TRAIN_COLLECTION', text=COMPACTION_INVITATION)"
+                }
+              ]
+            },
+            "organism_v6/orch_r125_continual_stream.py": {
+              "reference": {
+                "bytes": 12832,
+                "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical6_20260916t1626z_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+                "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+              },
+              "relevant_lines": []
+            }
+          },
+          "start_ticks": "15057389",
+          "status": "LIVE_NATIVE_PLAN_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r157_keepalive_run1_20260917_readmit2/GUARD.json"
+          ],
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 22675,
+            "path": "/localhome/local-rohing/orch_r157_keepalive_run1_20260917_readmit2/GUARD.json",
+            "sha256": "38aa7fef2ecadfe6ead32fa8e2b96b1e5bdf8fb2c4562f158625b32df986e81e"
+          },
+          "declared_variant": null,
+          "pid": 2803009,
+          "plan_ref": {
+            "bytes": 3135,
+            "path": "/localhome/local-rohing/orch_r157_keepalive_run1_20260917_readmit2/PLAN.json",
+            "sha256": "283468db6a48dc1ec2a5508f9b44d344ee21e403a484c8c76ee21730f738036e"
+          },
+          "prior_root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+          "root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+          "root_field_missing": false,
+          "segments_per_sleep": 2,
+          "sources": {
+            "gpu/orch_r125_continual_native.py": {
+              "reference": {
+                "bytes": 36381,
+                "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical2_20260916t1626z_attempt1/source/gpu/orch_r125_continual_native.py",
+                "sha256": "d3cbd3b0053f0c7c5d3d8e36e37c52954bdb39a40fc4346e4e6d3ab4bf5a2ad1"
+              },
+              "relevant_lines": [
+                {
+                  "line": 49,
+                  "text": "COMPACTION_INVITATION = 'You are about to sleep. Distill from your history what you want to carry forward.'"
+                },
+                {
+                  "line": 91,
+                  "text": "            and plan['compaction_invitation'] == COMPACTION_INVITATION, 'exact_posted_prompts')"
+                },
+                {
+                  "line": 366,
+                  "text": "        from gpu.orch_r145_suffix_boundary import prepare_sleep as r145_prepare_sleep"
+                },
+                {
+                  "line": 368,
+                  "text": "        r145_prepare_sleep(self.engine.model, __file__, 'c66a91b631937236d614095c07785f90242e4d476c45b7fa8fe5d65a8f277d2d')"
+                },
+                {
+                  "line": 550,
+                  "text": "                    source_sha256=digest([cycle,COMPACTION_INVITATION]), origin='TRAIN_COLLECTION', text=COMPACTION_INVITATION)"
+                }
+              ]
+            },
+            "organism_v6/orch_r125_continual_stream.py": {
+              "reference": {
+                "bytes": 12832,
+                "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical2_20260916t1626z_attempt1/source/organism_v6/orch_r125_continual_stream.py",
+                "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+              },
+              "relevant_lines": []
+            }
+          },
+          "start_ticks": "15153096",
+          "status": "LIVE_NATIVE_PLAN_BOUND"
+        },
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r157_repo_reader_wall_20260917_attempt2/GUARD.json"
+          ],
+          "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+          "config_ref": {
+            "bytes": 213600,
+            "path": "/localhome/local-rohing/orch_r157_repo_reader_wall_20260917_attempt2/GUARD.json",
+            "sha256": "2ac571f677df246b9a123d12cf9cea12d0b287a788518486b9da7eb7e7b58e8e"
+          },
+          "declared_variant": null,
+          "pid": 2611440,
+          "plan_ref": {
+            "bytes": 8519,
+            "path": "/localhome/local-rohing/orch_r157_repo_reader_wall_20260917_attempt2/PLAN.json",
+            "sha256": "cfef30fca28965930adad12e49f45df0364dc77cf3079e9db0801edd979263af"
+          },
+          "prior_root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1",
+          "root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/run1",
+          "root_field_missing": false,
+          "segments_per_sleep": 2,
+          "sources": {
+            "gpu/orch_r125_continual_native.py": {
+              "reference": {
+                "bytes": 35549,
+                "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/source/gpu/orch_r125_continual_native.py",
+                "sha256": "7626d13974a78c713b9e966093e285e1e8a4f194301dd8b69ec68cfcae656526"
+              },
+              "relevant_lines": [
+                {
+                  "line": 49,
+                  "text": "COMPACTION_INVITATION = 'You are about to sleep. Distill from your history what you want to carry forward.'"
+                },
+                {
+                  "line": 91,
+                  "text": "            and plan['compaction_invitation'] == COMPACTION_INVITATION, 'exact_posted_prompts')"
+                },
+                {
+                  "line": 541,
+                  "text": "                    source_sha256=digest([cycle,COMPACTION_INVITATION]), origin='TRAIN_COLLECTION', text=COMPACTION_INVITATION)"
+                }
+              ]
+            },
+            "organism_v6/orch_r125_continual_stream.py": {
+              "reference": {
+                "bytes": 12832,
+                "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/source/organism_v6/orch_r125_continual_stream.py",
+                "sha256": "b603f8aee2ae465b3170903486a6a974810673fe37eb1c1d19e47a707e235fa2"
+              },
+              "relevant_lines": []
+            }
+          },
+          "start_ticks": "14880066",
+          "status": "LIVE_NATIVE_PLAN_BOUND"
+        }
+      ]
+    }
+  },
+  "schema": "R167_NARROW_VARIANT_CLARIFICATION_V1"
+}

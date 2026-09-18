@@ -1,0 +1,14 @@
+{
+  "attempted": true,
+  "language": "python",
+  "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+  "raw_source": "@triton.jit\ndef add_kernel(left, right, output, size: tl.constexpr, BLOCK: tl.constexpr):\n    offsets = tl.program_id(0) * BLOCK + tl.arange(0, BLOCK)\n    mask = offsets < size\n    result = tl.load(left + offsets, mask=mask) + tl.load(right + offsets, mask=mask)\n    tl.store(output + offsets, result, mask=mask)\n",
+  "raw_source_sha256": "0002410963c35d59f2ad79a81430598e51ebabd4cb304f368139a1d6c6d19a88",
+  "raw_text_sha256": "697d7466d9075aaa2a71abc2c270824ff736c970f551417d2aca5705f8f5a9db",
+  "reason": "FIRST_CODE_BLOCK",
+  "source": "@triton.jit\ndef add_kernel(left, right, output, size: tl.constexpr, BLOCK: tl.constexpr):\n    offsets = tl.program_id(0) * BLOCK + tl.arange(0, BLOCK)\n    mask = offsets < size\n    result = tl.load(left + offsets, mask=mask) + tl.load(right + offsets, mask=mask)\n    tl.store(output + offsets, result, mask=mask)\n",
+  "source_sha256": "0002410963c35d59f2ad79a81430598e51ebabd4cb304f368139a1d6c6d19a88",
+  "span_end": 323,
+  "span_start": 10,
+  "transformations": []
+}

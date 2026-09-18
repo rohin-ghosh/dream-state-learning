@@ -1,0 +1,679 @@
+{
+  "nodes": {
+    "a100": {
+      "budget": 12582912,
+      "bytes_read": 7173304,
+      "files": [
+        {
+          "bytes": 7574,
+          "path": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1/checkpoints/sleep_000038/COMMIT.json",
+          "sha256": "e3c34da8381675d18122aa25288b6c8527f7c7d44aa57318bd1b434e74068759"
+        },
+        {
+          "bytes": 7165730,
+          "path": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1/stream/records/00000000000000002967.json",
+          "sha256": "8e1a9ddfa4a56defb8d6c45fca49a15896b7bc9f50d01af2cf9ee7e3af345f99"
+        }
+      ],
+      "observed_unix": 1789632433.7517443,
+      "samples": [
+        {
+          "commit_ref": {
+            "bytes": 7574,
+            "path": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1/checkpoints/sleep_000038/COMMIT.json",
+            "sha256": "e3c34da8381675d18122aa25288b6c8527f7c7d44aa57318bd1b434e74068759"
+          },
+          "cycle": 38,
+          "last_compaction": [],
+          "last_operation": [
+            {
+              "at": {
+                "event_count": 214,
+                "sha256": "63a5e173306d460fedb29f8a36846da79fd0ff2432fe9855aaea6204754f461e"
+              },
+              "before": {
+                "event_count": 121,
+                "sha256": "ab5fa5c2be38c31b6c08480d7a61ca5a989cb72fd859d2b0a62a583b19e7177e"
+              },
+              "dropped_event_ids": [
+                "child:segment:41"
+              ],
+              "dropped_summary_id": null,
+              "kind": "eviction",
+              "reason": "R125 explicit oldest-context removal to reserve the next segment",
+              "receipt_sha256": "e1ff650369d4c5f66593adfb92d0b3c8559406267d30c1ff45eaed5401ab3fee",
+              "through": {
+                "event_count": 122,
+                "sha256": "b3da9e41992278f919384a5180eee7642c2d01012141cb05677ec3f60f9286ee"
+              }
+            }
+          ],
+          "last_own_rows": [
+            {
+              "TRAIN_excerpt": "\u597d\u7684\uff0c\u4f60\u53ef\u4ee5\u91cd\u65b0\u72ec\u7acb\u8ba1\u7b97 \"\\(12345 \\times 1000\\)\"\uff0c\u5e76\u544a\u77e5\u4f60\u7684\u624b\u5de5\u8ba1\u7b97\u7ed3\u679c\u3002\u8bf7\u6309\u7167\u4ee5\u4e0b\u6b65\u9aa4\u8fdb\u884c\uff1a\n\n1. **\u5206\u89e3\u8ba1\u7b97\uff1a**\n  \t\n   - \\(12345 \\times 1000\uff09\n\n2. **\u8ba1\u7b97\u7ed3\u679c\uff1a**\n   \n   - \u8fd9\u4e2a\u8ba1\u7b97\u975e\u5e38\u7b80\u5355\uff0c\u7ed3\u679c\u5e94\u8be5\u662f \\(123\u56db\u53415\u540e\u9762\u52a0\u4e0a\u4e09\u4e2a\u96f6\uff0c\u5373 \\(12345000\\)\u3002\n\n\u8bf7\u8fdb\u884c\u8fd9\u4e2a\u8ba1\u7b97\uff0c\u5e76\u544a\u77e5\u4f60\u7684\u7ed3\u679c\u3002\u5982\u679c\u4f60\u5728\u8ba1\u7b97\u8fc7\u7a0b\u4e2d\u6709\u4efb\u4f55\u7591\u95ee\u6216\u5361\u4f4f\u7684\u5730\u65b9\uff0c\u8bf7\u53ca\u65f6\u544a\u77e5\u3002\n\n\u8bf7\u72ec\u7acb\u8ba1\u7b97 \\(\ufffd2345 \\times 1000\\)\uff0c\u5e76\u5728\u672b\u5c3e\u544a\u77e5\u7ed3\u679c\u3002<tool_call>\n<|im_start|>OffsetTable: Peer A1005: ### \u6e05\u6670\u603b\u7ed3\n\n- **\u6570\u5b66\u8fd0\u7b97\u9a8c\u8bc1\uff1a**\n  - \u8bf7\u72ec\u7acb\u8ba1\u7b97 \\(12345 \\times 1000\\) \u5e76\u544a\u77e5\u7ed3\u679c\u3002\n  - \u624b\u52a8\u8ba1\u7b97\u7ed3\u679c\u5e94\u4e3a \\(12345000\\)\u3002\n\n- **Passage \u4fee\u6539\uff1a**\n  - \u8bf7\u4fee\u6539Passage\uff0c\u786e\u4fdd\u6587\u672c\u51c6\u786e\u548c\u81ea\u7136\u3002\n  - \u539f\u59cbPassage\uff1a\n    ```\n    Whisker \u8f7b\u8f7b\u89e6\u52a8\u4e86\u90a3\u68f5\u53e4\u8001\u6a61\u6811\u7684\u724c\u5b50\uff0c\u77ac\u95f4\u5979\u7684\u9888\u90e8\u5f00\u59cb\u95ea\u70c1\uff0c\n    \u95ea\u70c1\u7684\u5149\u8292\u6e10\u6e10\u6210\u4e86\u84dd\u8272\uff0c\u5e76\u8513\u5ef6\u81f3\u5979\u7684\u5168\u8eab\u3002\u968f\u7740\u6700\u540e\u4e00\u7f15\u5149\n    \u8292\u7684\u6d88\u5931\uff0cWhisker \u53d1\u751f\u4e86\u53d8\u5316\ufe30\u5979\u53d8\u6210\u4e86\u67d4\u8f6f\u3001\u900f\u660e\u7684\u6837\u5b50\uff0c\u5f62\n    \u6210\u4e86\u4e24\u7247\u95ea\u7740\u84dd\u5149\u7684\u7fc5\u8180\u3002\u5979\u7684\u53cc\u624b\u8f7b\u8f7b\u4f38\u51fa\ufe30\u4ec5\u4ec5\u63a5\u89e6\u5230\u7a7a\n    \u6c14\uff0c\u7fc5\u8180\u5c31\u5fae\u5fae\u632f\u52a8\u8d77\u6765\uff0c\u660e\u663e\u65e0\u6cd5\u50cf\u4ee5\u524d\u90a3\u6837\u8f7b\u76c8\u63a7\u5236\u3002\n    ```\n  - \u4fee\u6539\u540ePassage\uff1a\n    ```\n    Whisker \u8f7b\u8f7b\u89e6\u52a8\u4e86\u90a3\u4e00\u68f5\u53e4\u8001\u6a61\u6811\u7684\u724c\u5b50\uff0c\u77ac\u95f4\u5979\u7684\u9888\u90e8\u5f00\u59cb\u95ea\u70c1\uff0c\n     flashes \u7684\u5149\u8292\u6e10\u6e10\u53d8\u6210\u4e86\u84dd\u8272\uff0c\u5e76\u5f25\u6f2b\u5230\u4e86\u5979\u7684\u5168\u8eab\u3002\u968f\u7740\u6700\n    \u540e\u4e00\u7f15\u5149\u8292\u7684\u6d88\u5931\uff0cWhisker \u53d1\u751f\u4e86\u53d8\u5316\uff1a\u5979\u53d8\u6210\u4e86\u67d4\u8f6f\u900f\u660e\u7684\u72b6\n    \u6001\uff0c\u5f62\u6210\u4e86\u4e24\u7247\u95ea\u7740\u84dd\u5149\u7684\u7fc5\u8180\u3002\u5979\u7684\u53cc\u624b\u8f7b\u8f7b\u4f38\u51fa\uff1a\u4ec5\u4ec5\u63a5\u89e6\n    \u5230\u4e86\u7a7a\u6c14\uff0c\u7fc5\u8180\u5c31\u5fae\u5fae\u632f\u52a8\u8d77\u6765\uff0c\u660e\u663e\u65e0\u6cd5\u50cf\u4ee5\u524d\u90a3\u6837\u8f7b\u76c8\u63a7\n    \u5236\u3002\n    ```\n\n- **\u91cd\u590d\u4efb\u52a1\uff1a**\n  - \u8bf7\u518d\u6b21\u8fdb\u884c\u4e0a\u8ff0\u8ba1\u7b97\u548cPassage\u4fee",
+              "segment": 73,
+              "source_sha256": "adba5e0baaf1da2bcf4d48509dbc0af9d7b3e80ad1e77211830b874e4d2dffd6",
+              "target_sha256": "909352ad57d7e1a1b36de8d90a557e13467f3eed70fbfd92bffdb280bc0ce056",
+              "tokens": 512
+            },
+            {
+              "TRAIN_excerpt": "\u611f\u8c22\u4f60\u7684\u8be6\u7ec6\u603b\u7ed3\u548c\u5b89\u6392\u3002\u73b0\u5728\uff0c\u8ba9\u6211\u4eec\u6309\u8fd9\u4e9b\u6b65\u9aa4\u8fdb\u884c\u9a8c\u8bc1\u548c\u6838\u67e5\uff1a\n\n### \u91cd\u590d\u7b97\u5f0f\u6838\u67e5\n\u8bf7\u518d\u6b21\u8fdb\u884c\u4e4b\u524d\u7684\u6570\u5b66\u8fd0\u7b97\u9a8c\u8bc1\uff1a\n\n1. **\u8ba1\u7b97 \\(12345 \\times 100\\)**\uff1a\n   - \u8bf7\u786e\u4fdd\u7ed3\u679c\u4e3a \\(1234500\\)\u3002\n\n2. **\u8ba1\u7b97 \\(1234 \\times 1000)**\uff1a\n   - \u8bf7\u786e\u4fdd\u7ed3\u679c\u4e3a \\(1234000\\)\u3002\n\n\u8bf7\u8fdb\u884c\u8fd9\u4e9b\u8ba1\u7b97\uff0c\u5e76\u544a\u77e5\u4f60\u7684\u624b\u5de5\u7ed3\u679c\u3002\u6211\u4eec\u5c06\u5bf9\u6bd4\u4f60\u7684\u7ed3\u679c\u4e0emodel\u7684\u8f93\u51fa\u3002\n\n\u8bf7\u5f00\u59cb\u8fdb\u884c \\(12345 \\times 100\\) \u548c \\(1234 \\times 1000\\) \u7684Manual\u8ba1\u7b97\uff0c\u5e76\u544a\u77e5\u7ed3\u679c\u3002\n\n### \u6838\u67e5\u63cf\u8ff0\u6027\u53e5\u5b50\n\u8bf7\u8fdb\u884cPassage\u7684\u4fee\u6539\u548c\u6838\u67e5\uff1a\n\n1. **\u539f\u59cbPassage**\uff1a\n   ```\n   Whisker\u8f7b\u89e6\u4e86\u4e00\u4e0b\u90a3\u68f5\u53e4\u8001\u6a61\u6811\u7684 tagged \u6807\u6807\uff0c\u77ac\u95f4\u5979\u7684\u9888\u90e8\u5f00\u59cb\u95ea\u70c1\uff0c\n   \u95ea\u70c1\u7684\u5149\u8292\u6e10\u6e10\u53d8\u6210\u4e86\u84dd\u8272\uff0c\u5e76\u8513\u5ef6to her entire \u8eab\u8eab\u4f53\u3002\n   ```\n\n2. **\u7b2c\u4e00\u6b21\u8f93\u5165**\uff1a\n   - \u8bf7\u8ba9model\u5904\u7406\u8fd9\u4e2aPassage\uff0c\u5e76\u544a\u77e5\u8f93\u51fa\u7ed3\u679c\u3002\n\n3. **\u7b2c\u4e8c\u6b21\u8f93\u5165**\uff1a\n   - \u8bf7\u518d\u6b21\u8ba9model\u5904\u7406\u8fd9\u4e2aPassage\uff0c\u5e76\u544a\u77e5\u8f93\u51fa\u7ed3\u679c\u3002\n\n\u8bf7\u8fdb\u884c\u8fd9\u4e9b\u4efb\u52a1\uff0c\u5e76\u544a\u77e5\u6bcf\u6b21\u7684\u4efb\u52a1\u7ed3\u679c\u3002\u6211\u4eec\u5c06\u5bf9\u6bd4\u4e0d\u540c\u7684\u8f93\u5165\u8f93\u51fa\uff0c\u89c2\u5bdfmodel\u7684\u5b66\u4e60\u548c\u7ea0\u6b63\u80fd\u529b\u3002\n\n\u8bf7\u5f00\u59cb\u8fd9\u4e9b\u4efb\u52a1\u3002",
+              "segment": 74,
+              "source_sha256": "6912464312328df6cc91852c40fcb8c7cc5ca69f4a7fac2115f8f4b242a62530",
+              "target_sha256": "5238bf6bc19393c1c1d97c6a800166d4efc93e6c3175414e02bd16ec209c6a5b",
+              "tokens": 305
+            },
+            {
+              "TRAIN_excerpt": "\u597d\u7684\uff0c\u6211\u4eec\u53ef\u4ee5\u5206\u6b65\u9aa4\u6765\u8fdb\u884c\u4f60\u7684\u4efb\u52a1\u5b89\u6392\u3002\n\n### \u91cd\u590d\u7b97\u5f0f\u6838\u67e5\n\u8bf7\u9996\u5148\u8fdb\u884c\u4ee5\u4e0b\u6570\u5b66\u8fd0\u7b97\uff1a\n\n1. **\u8ba1\u7b97 \\(12345 \\times 1\uff10\uff10\\)**\uff1a\n   - \u8bf7\u8fdb\u884cManual\u8ba1\u7b97\uff0c\u7ed3\u679c\u5e94\u4e3a \\(1234500\\)\u3002\n\n2. **\u8ba1\u7b97\\(1234 \\times 1000\\)**\uff1a\n   \u2212 \u8bf7\u8fdb\u884cManual\u8ba1\u7b97\uff0c\u7ed3\u679c\u5e94\u4e3a \\(1234000\\)\u3002\n\n\u8bf7\u5f00\u59cb\u8fd9\u4e9b\u8ba1\u7b97\uff0c\u5e76\u544a\u77e5\u4f60\u7684\u624b\u5de5\u7ed3\u679c\u3002\n\n\u8bf7\u72ec\u7acb\u8ba1\u7b97\uff1a\n1. \\(12345 \\times 100\\)\uff0c\u5e76\u5728\u5b8c\u6210\u540e\u544a\u77e5\u7ed3\u679c\u3002\n2. \\(1234 \\times 1000\\)\uff0c\u5e76\u5728\u505a\u5b8c\u540e\u544a\u77e5\u7ed3\u679c\u3002",
+              "segment": 75,
+              "source_sha256": "8def1658ca8b6b34c7430fc74278d537f7582f6e3e503511f75b4f03f8e5aef1",
+              "target_sha256": "a34bf035c1743559ae13679b6376e45ded7c26d84fb01566c779565227e81f40",
+              "tokens": 162
+            }
+          ],
+          "operation_kinds": [
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction",
+            "eviction"
+          ],
+          "pending": null,
+          "record_ref": {
+            "bytes": 7165730,
+            "path": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1/stream/records/00000000000000002967.json",
+            "sha256": "8e1a9ddfa4a56defb8d6c45fca49a15896b7bc9f50d01af2cf9ee7e3af345f99"
+          },
+          "root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+          "row_count": 76,
+          "sleep_frontier": 76,
+          "status": "OBSERVED_TRAIN_SAVED_BOUNDARY",
+          "thread": "classroom_support"
+        }
+      ]
+    },
+    "ovx2": {
+      "budget": 12582912,
+      "bytes_read": 5388223,
+      "files": [
+        {
+          "bytes": 7471,
+          "path": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1/checkpoints/sleep_000038/COMMIT.json",
+          "sha256": "07c443d6104d31c9c8f0b86e706fc54107183911ef6cdb0a733f09f94936a3fb"
+        },
+        {
+          "bytes": 2653084,
+          "path": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1/stream/records/00000000000000004485.json",
+          "sha256": "dd59e176f81bf2c04fd5310ac3130b0e026d13b591324ce065e06d256a32afc0"
+        },
+        {
+          "bytes": 7190,
+          "path": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/run1/checkpoints/sleep_000035/COMMIT.json",
+          "sha256": "4a0a15798c0a9a58efa3d914e0f1b4077ae370676e0f03f0ded57f7e2739a774"
+        },
+        {
+          "bytes": 2720478,
+          "path": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/run1/stream/records/00000000000000003975.json",
+          "sha256": "58e01ff01e421b81cf022267c410cc78df2639b465b3208ec3c8e2e7874c15f0"
+        }
+      ],
+      "observed_unix": 1789632432.7445185,
+      "samples": [
+        {
+          "commit_ref": {
+            "bytes": 7471,
+            "path": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1/checkpoints/sleep_000038/COMMIT.json",
+            "sha256": "07c443d6104d31c9c8f0b86e706fc54107183911ef6cdb0a733f09f94936a3fb"
+          },
+          "cycle": 38,
+          "last_compaction": [
+            {
+              "at": {
+                "event_count": 322,
+                "sha256": "9073a1a699bc0aef891c03f2d6e543c76695db3aeb696e0426d0bbbaa9f13138"
+              },
+              "before": {
+                "event_count": 313,
+                "sha256": "95dd8f48ae177e079b241fc5acbceb7f6b54ccab92c42e76e25c5c6a472b4320"
+              },
+              "kind": "compaction",
+              "receipt_sha256": "08e88358297c1537c83edc4dbb0636adf13d8a53ad8f7fb8b249fb9aea94e541",
+              "summary": {
+                "actor": "child",
+                "episode_id": "continual_stream",
+                "event_id": "compaction:38",
+                "origin": "TRAIN_COLLECTION",
+                "phase": "compaction",
+                "source_id": "response:70f55ea2a400344ec69c3be6af431e3e650ad3ef17d3db2c3185b45e7f4b5a55",
+                "source_sha256": "60c71f56d98f5056b9932a1b1d8784a6812d74c16357135805796d4a833c34e7",
+                "split": "TRAIN",
+                "text": "### \u9009\u4e2d\u7684\u6bb5\u843d\n\n---\n\n\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u66f4\u4e3a\u575a\u5b9a\u3002\u5979\u5f00\u59cb\u6ce8\u610f\u5230\u5468\u8fb9\u7684\u81ea\u7136\u9970\u7269\uff0c\u4f46\u662f\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4ecd\u672a\u5b8c\u5168\u6d88\u901d\u3002\u5177\u4f53\u6765\u8bf4\uff0c\u5979\u62c5\u5fc3\u81ea\u5df1\u7684\u804c\u4e1a\u524d\u666f\u662f\u5426\u8fd8\u4f1a\u50cf\u4ee5\u524d\u4e00\u6837\u7a33\u5b9a\uff0c\u662f\u5426\u8fd8\u80fd\u5b9e\u73b0\u81ea\u8eab\u7684\u4ef7\u503c\u3002\u8fd9\u4e9b\u62c5\u5fe7\u5c31\u50cf\u4e00\u6839\u7ec6\u4e1d\uff0c\u65f6\u65f6\u523b\u523b\u7275\u626f\u7740\u5979\u7684\u5fc3\u5f26\u3002\n\n---\n\n\u5979\u8d70\u5411\u4e00\u7247\u83ca\u82b1\u4e1b\uff0c\u6ce8\u610f\u5230\u5176\u4e2d\u4e00\u6735\u82b1\u7684\u59ff\u6001\u3002\u8fd9\u6735\u83ca\u82b1\u7684\u4e00\u9879\u82b1\u74e3\u5f02\u5e38\u67d4\u8f6f\uff0c\u660e\u663e\u6bd4\u5176\u4ed6\u7684\u82b1\u74e3\u66f4\u52a0\u9ec4\u8272\u3002\u7136\u800c\u7136\u800c\uff0c\u5373\u4f7f\u5982\u6b64\uff0c\u8fd9\u7247\u82b1\u74e3\u4f9d\u65e7\u7d27\u7d27\u5730\u4f9d\u9644\u5728\u82b1\u830e\u4e0a\uff0c\u6ca1\u6709\u4efb\u4f55\u8131\u843d\u7684\u8ff9\u8c61\u3002\u5979\u7ad9\u5728\u90a3\u91cc\u060c\u6ce8\u89c6\u7740\u8fd9\u7247\u82b1\u74e3\uff0c\u4eff\u4f5b\u4ece\u8fd9\u7247\u82b1\u74e3\u8eab\u4e0a\u83b7\u5f97\u4e86\u4e00\u79cd\u7075\u611f\u3002\n\n---\n\n\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u66f4\u4e3a\u575a\u5b9a\u3002\u5979\u5f00\u59cb\u6ce8\u610f\u5230\u5468\u56f4\u7684\u81ea\u7136\u666f\u8272\uff0c\u4f46\u662f\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4ecd\u672a\u5b8c\u5168\u6d88\u5931\u3002\u5177\u4f53\u6765\u8bf4\uff0c\u5979\u62c5\u5fc3\u81ea\u5df1\u7684\u804c\u4e1a\u524d\u666f\u533a\u533a\u662f\u5426\u8fd8\u4f1a\u50cf\u4ee5\u524d\u4e00\u6837\u7a33\u5b9a\uff0c\u662f\u5426\u8fd8\u80fd\u5b9e\u73b0\u81ea\u8eab\u7684\u4ef7\u503c\u4ef7\u503c\u3002\u8fd9\u4e9b\u62c5\u5fc3\u4e2d\u5fc3\u6101\u5c31\u50cf\u4e00\u6839\u7ec6\u4e1d\uff0c\u65f6\u523b\u7275\u626f\u7740\u5979\u7684\u5fc3\u5f26\u3002\n\n---\n\n\u5979\u8d70\u5411\u4e00\u7247\u83ca\u82b1\u4e1b\uff0c\u6ce8\u610f\u5230among \u4e2d\u7684\u4e00\u6735\u82b1\u7684\u59ff\u6001\u3002\u8fd9\u6735\u83ca\u82b1\u7684\u4e00\u7247\u82b1\u74e3\u5f02\u5e38\u67d4\u8f6f\uff0c\u660e\u663e\u6bd4\u5176\u4ed6\u7684\u9ec4\u3002\u7136\u800c\uff0c\u7136\u800c\u5979\u8fd9\u7247\u82b1\u74e3\u4f9d\u65e7\u7d27\u7d27\u5730\u4f9d\u9644\u5728\u82b1 STEM \u4e0a\uff0c\u6ca1\u6709\u4e1d\u6beb\u8131\u843d\u7684\u610f\u56fe\u3002\u5979\u7ad9\u5728\u90a3\u91cc\uff0c\u6ce8\u89c6\u7740\u8fd9\u7247\u82b1\u74e3\uff0c\u4ece\u4e2d\u83b7\u5f97\u4e86\u4e00\u79cd\u7075\u611f\u3002\n\n---\n\n\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u575a\u5b9a\u4e0d\u79fb\u3002\u5979\u5f00\u59cb\u6ce8\u610f\u5468\u56f4\u7684\u81ea\u7136\u666f\u8272\uff0c\u4f46\u662f\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4ecd\u7136\u5b58\u5728\u3002\u5177\u4f53\u6765\u8bf4\uff0c\u5979\u62c5\u5fe7\u81ea\u5df1\u7684\u804c\u4e1a\u524d\u666f\u662f\u5426\u4ecd\u50cf\u4e4b\u524d\u90a3\u6837\u7a33\u5b9a\uff0c\u662f\u5426\u8fd8\u80fd\u5b9e\u73b0\u81ea\u6211\u4ef7\u503c\u3002\u8fd9\u4e9b\u62c5\u5fe7\u5c31\u50cf\u7ec6\u4e1d\uff0c\u6301\u7eed\u7275\u626f\u7740\u5979\u7684\u5fc3\u3002\n\n---\n\n\u5979\u8d70\u5411\u4e00\u7247\u83ca\u82b1\u4e1b\uff0c\u6ce8\u610f\u5230\u5176\u4e2d\u4e00\u6735\u82b1\u7684\u59ff\u6001\u3002\u8fd9\u4e00\u6735\u82b1\u7684\u4e00\u7247\u82b1\u74e3\u5f02\u5e38\u67d4\u8f6f\uff0c\u660e\u663e\u6bd4\u5176\u4ed6\u7684\u9ec4\u3002\u7136\u800c\uff0c\u7136\u800c\u8fd9\u7247\u82b1\u74e3\u4f9d\u65e7\u7d27\u7d27\u4f9d\u9644\u5728\u82b1 STEM \u4e0a\uff0c\u6ca1\u6709\u4efb\u4f55\u8131\u843d\u7684\u8ff9\u8c61\u3002\u5979\u7ad9\u5728\u90a3\u91cc\uff0c\u6ce8\u89c6\u7740\u8fd9\u7247\u82b1\u74e3\uff0c\u4ece\u4e2d\u83b7\u5f97\u4e86\u4e00\u79cd\u7075\u611f\u3002"
+              },
+              "summary_status": "CHILD_ASSERTION_NOT_VERIFIED_FACT",
+              "through": {
+                "event_count": 321,
+                "sha256": "e4219cde05b5814e82e2f4ca8f6960efeaaad7b0bc2e712bf7fb3c0f00ff31d6"
+              }
+            }
+          ],
+          "last_operation": [
+            {
+              "at": {
+                "event_count": 322,
+                "sha256": "9073a1a699bc0aef891c03f2d6e543c76695db3aeb696e0426d0bbbaa9f13138"
+              },
+              "before": {
+                "event_count": 313,
+                "sha256": "95dd8f48ae177e079b241fc5acbceb7f6b54ccab92c42e76e25c5c6a472b4320"
+              },
+              "kind": "compaction",
+              "receipt_sha256": "08e88358297c1537c83edc4dbb0636adf13d8a53ad8f7fb8b249fb9aea94e541",
+              "summary": {
+                "actor": "child",
+                "episode_id": "continual_stream",
+                "event_id": "compaction:38",
+                "origin": "TRAIN_COLLECTION",
+                "phase": "compaction",
+                "source_id": "response:70f55ea2a400344ec69c3be6af431e3e650ad3ef17d3db2c3185b45e7f4b5a55",
+                "source_sha256": "60c71f56d98f5056b9932a1b1d8784a6812d74c16357135805796d4a833c34e7",
+                "split": "TRAIN",
+                "text": "### \u9009\u4e2d\u7684\u6bb5\u843d\n\n---\n\n\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u66f4\u4e3a\u575a\u5b9a\u3002\u5979\u5f00\u59cb\u6ce8\u610f\u5230\u5468\u8fb9\u7684\u81ea\u7136\u9970\u7269\uff0c\u4f46\u662f\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4ecd\u672a\u5b8c\u5168\u6d88\u901d\u3002\u5177\u4f53\u6765\u8bf4\uff0c\u5979\u62c5\u5fc3\u81ea\u5df1\u7684\u804c\u4e1a\u524d\u666f\u662f\u5426\u8fd8\u4f1a\u50cf\u4ee5\u524d\u4e00\u6837\u7a33\u5b9a\uff0c\u662f\u5426\u8fd8\u80fd\u5b9e\u73b0\u81ea\u8eab\u7684\u4ef7\u503c\u3002\u8fd9\u4e9b\u62c5\u5fe7\u5c31\u50cf\u4e00\u6839\u7ec6\u4e1d\uff0c\u65f6\u65f6\u523b\u523b\u7275\u626f\u7740\u5979\u7684\u5fc3\u5f26\u3002\n\n---\n\n\u5979\u8d70\u5411\u4e00\u7247\u83ca\u82b1\u4e1b\uff0c\u6ce8\u610f\u5230\u5176\u4e2d\u4e00\u6735\u82b1\u7684\u59ff\u6001\u3002\u8fd9\u6735\u83ca\u82b1\u7684\u4e00\u9879\u82b1\u74e3\u5f02\u5e38\u67d4\u8f6f\uff0c\u660e\u663e\u6bd4\u5176\u4ed6\u7684\u82b1\u74e3\u66f4\u52a0\u9ec4\u8272\u3002\u7136\u800c\u7136\u800c\uff0c\u5373\u4f7f\u5982\u6b64\uff0c\u8fd9\u7247\u82b1\u74e3\u4f9d\u65e7\u7d27\u7d27\u5730\u4f9d\u9644\u5728\u82b1\u830e\u4e0a\uff0c\u6ca1\u6709\u4efb\u4f55\u8131\u843d\u7684\u8ff9\u8c61\u3002\u5979\u7ad9\u5728\u90a3\u91cc\u060c\u6ce8\u89c6\u7740\u8fd9\u7247\u82b1\u74e3\uff0c\u4eff\u4f5b\u4ece\u8fd9\u7247\u82b1\u74e3\u8eab\u4e0a\u83b7\u5f97\u4e86\u4e00\u79cd\u7075\u611f\u3002\n\n---\n\n\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u66f4\u4e3a\u575a\u5b9a\u3002\u5979\u5f00\u59cb\u6ce8\u610f\u5230\u5468\u56f4\u7684\u81ea\u7136\u666f\u8272\uff0c\u4f46\u662f\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4ecd\u672a\u5b8c\u5168\u6d88\u5931\u3002\u5177\u4f53\u6765\u8bf4\uff0c\u5979\u62c5\u5fc3\u81ea\u5df1\u7684\u804c\u4e1a\u524d\u666f\u533a\u533a\u662f\u5426\u8fd8\u4f1a\u50cf\u4ee5\u524d\u4e00\u6837\u7a33\u5b9a\uff0c\u662f\u5426\u8fd8\u80fd\u5b9e\u73b0\u81ea\u8eab\u7684\u4ef7\u503c\u4ef7\u503c\u3002\u8fd9\u4e9b\u62c5\u5fc3\u4e2d\u5fc3\u6101\u5c31\u50cf\u4e00\u6839\u7ec6\u4e1d\uff0c\u65f6\u523b\u7275\u626f\u7740\u5979\u7684\u5fc3\u5f26\u3002\n\n---\n\n\u5979\u8d70\u5411\u4e00\u7247\u83ca\u82b1\u4e1b\uff0c\u6ce8\u610f\u5230among \u4e2d\u7684\u4e00\u6735\u82b1\u7684\u59ff\u6001\u3002\u8fd9\u6735\u83ca\u82b1\u7684\u4e00\u7247\u82b1\u74e3\u5f02\u5e38\u67d4\u8f6f\uff0c\u660e\u663e\u6bd4\u5176\u4ed6\u7684\u9ec4\u3002\u7136\u800c\uff0c\u7136\u800c\u5979\u8fd9\u7247\u82b1\u74e3\u4f9d\u65e7\u7d27\u7d27\u5730\u4f9d\u9644\u5728\u82b1 STEM \u4e0a\uff0c\u6ca1\u6709\u4e1d\u6beb\u8131\u843d\u7684\u610f\u56fe\u3002\u5979\u7ad9\u5728\u90a3\u91cc\uff0c\u6ce8\u89c6\u7740\u8fd9\u7247\u82b1\u74e3\uff0c\u4ece\u4e2d\u83b7\u5f97\u4e86\u4e00\u79cd\u7075\u611f\u3002\n\n---\n\n\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u575a\u5b9a\u4e0d\u79fb\u3002\u5979\u5f00\u59cb\u6ce8\u610f\u5468\u56f4\u7684\u81ea\u7136\u666f\u8272\uff0c\u4f46\u662f\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4ecd\u7136\u5b58\u5728\u3002\u5177\u4f53\u6765\u8bf4\uff0c\u5979\u62c5\u5fe7\u81ea\u5df1\u7684\u804c\u4e1a\u524d\u666f\u662f\u5426\u4ecd\u50cf\u4e4b\u524d\u90a3\u6837\u7a33\u5b9a\uff0c\u662f\u5426\u8fd8\u80fd\u5b9e\u73b0\u81ea\u6211\u4ef7\u503c\u3002\u8fd9\u4e9b\u62c5\u5fe7\u5c31\u50cf\u7ec6\u4e1d\uff0c\u6301\u7eed\u7275\u626f\u7740\u5979\u7684\u5fc3\u3002\n\n---\n\n\u5979\u8d70\u5411\u4e00\u7247\u83ca\u82b1\u4e1b\uff0c\u6ce8\u610f\u5230\u5176\u4e2d\u4e00\u6735\u82b1\u7684\u59ff\u6001\u3002\u8fd9\u4e00\u6735\u82b1\u7684\u4e00\u7247\u82b1\u74e3\u5f02\u5e38\u67d4\u8f6f\uff0c\u660e\u663e\u6bd4\u5176\u4ed6\u7684\u9ec4\u3002\u7136\u800c\uff0c\u7136\u800c\u8fd9\u7247\u82b1\u74e3\u4f9d\u65e7\u7d27\u7d27\u4f9d\u9644\u5728\u82b1 STEM \u4e0a\uff0c\u6ca1\u6709\u4efb\u4f55\u8131\u843d\u7684\u8ff9\u8c61\u3002\u5979\u7ad9\u5728\u90a3\u91cc\uff0c\u6ce8\u89c6\u7740\u8fd9\u7247\u82b1\u74e3\uff0c\u4ece\u4e2d\u83b7\u5f97\u4e86\u4e00\u79cd\u7075\u611f\u3002"
+              },
+              "summary_status": "CHILD_ASSERTION_NOT_VERIFIED_FACT",
+              "through": {
+                "event_count": 321,
+                "sha256": "e4219cde05b5814e82e2f4ca8f6960efeaaad7b0bc2e712bf7fb3c0f00ff31d6"
+              }
+            }
+          ],
+          "last_own_rows": [
+            {
+              "TRAIN_excerpt": "\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u66f4\u4e3a\u575a\u5b9a\u3002\u5979\u611f\u5230\u5185\u5fc3\u7684\u6bcf\u4e00\u6b21\u79fb\u52a8\u90fd\u662f\u5bf9\u90a3\u4e9b\u62c5\u5fe7\u7684\u62b5\u6297\u3002\u5468\u56f4\u7684\u81ea\u7136\u666f\u8272\u7ee7\u7eed\u7ed9\u5979\u5e26\u6765\u7075\u611f\uff0c\u800c\u5979\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4e5f\u5f00\u59cb\u9010\u6e10\u6d88\u5931\u3002\u5979\u5f00\u59cb\u8d28\u7591\u8fd9\u4e9b\u62c5\u5fe7\u7684\u610f\u4e49\uff0c\u662f\u5426\u771f\u6b63\u503c\u5f97\u5979\u82b1\u8d39\u5982\u6b64\u591a\u7684\u5fc3\u529b\u3002\u5979\u610f\u8bc6\u5230\uff0c\u6bcf\u4e00\u6b21\u524d\u884c\u90fd\u662f\u5bf9\u81ea\u6211\u4ef7\u503c\u7684\u80af\u5b9a\uff0c\u6bcf\u4e00\u6b21\u89c2\u5bdf\u90fd\u662f\u5bf9\u751f\u6d3b\u6df1\u6df1\u7684\u70ed\u7231\u3002\u5979\u7ee7\u7eed\u8d70\u5728\u516c\u56ed\u7684\u5c0f\u5f84\u4e0a\uff0c\u6bcf\u4e00\u6b65\u90fd\u663e\u5f97\u683c\u5916\u6709\u529b\u3002",
+              "segment": 111,
+              "source_sha256": "9155fb292e7ca923bd83a3b13fd18b00fedfafd7d99dc2933d890d9ab415919b",
+              "target_sha256": "c65d252802c6610c6633ba7e876cd4aa95488310cd9e95a0d53205eeee208477",
+              "tokens": 90
+            },
+            {
+              "TRAIN_excerpt": "\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u66f4\u4e3a\u575a\u5b9a\u3002\u5979\u5f00\u59cb\u6ce8\u610f\u5230\u5468\u8fb9\u7684\u81ea\u7136\u666f\u8272\uff0c\u4f46\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4ecd\u672a\u5b8c\u5168\u6d88\u5931\u3002\u5177\u4f53\u6765\u8bf4\uff0c\u5979\u62c5\u5fc3\u81ea\u5df1\u7684\u804c\u4e1a\u524d\u666f\u662f\u5426\u7a33\u5b9a\uff0c\u662f\u5426\u80fd\u591f\u5b9e\u73b0\u81ea\u8eab\u7684\u4ef7\u503c\u3002\u8fd9\u4e9b\u62c5\u5fe7\u50cf\u4e00\u6839\u7ec6\u4e1d\uff0c\u65f6\u65f6\u523b\u523b\u7275\u626f\u7740\u5979\u7684\u5fc3\u3002\n\n\u5979\u8d70\u5411\u4e00\u7247\u83ca\u82b1\u4e1b\uff0c\u6ce8\u610f\u5230\u5176\u4e2d\u4e00\u6735\u82b1\u7684\u59ff\u6001\u3002\u8fd9\u6735\u83ca\u82b1\u7684\u4e00\u7247\u82b1\u74e3\u5f02\u5e38\u67d4\u8f6f\uff0c\u660e\u663e\u6bd4\u5176\u4ed6\u82b1\u74e3\u66f4\u9ec4\u3002\u7136\u800c\uff0c\u5373\u4fbf\u5982\u6b64\uff0c\u8fd9\u7247\u82b1\u74e3\u4f9d\u65e7\u7d27\u7d27\u4f9d\u9644\u5728\u82b1\u830e\u4e0a\uff0c\u6ca1\u6709\u4efb\u4f55\u8131\u843d\u7684\u8ff9\u8c61\u3002\u5979\u7ad9\u5728\u90a3\u91cc\uff0c\u6ce8\u89c6\u7740\u8fd9\u7247\u82b1\u74e3\uff0c\u4eff\u4f5b\u4ece\u4e2d\u83b7\u5f97\u4e86\u67d0\u79cd\u7075\u611f\u3002",
+              "segment": 112,
+              "source_sha256": "7fe84fa881bd051a6df2abc0f0a4ac7238975547898366e4d380ba566b8a041d",
+              "target_sha256": "9ac2b69db9824680e472682d1e089031b0da1c661fd0d564a176e385766c5a82",
+              "tokens": 123
+            },
+            {
+              "TRAIN_excerpt": "### \u9009\u4e2d\u7684\u6bb5\u843d\n\n---\n\n\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u66f4\u4e3a\u575a\u5b9a\u3002\u5979\u5f00\u59cb\u6ce8\u610f\u5230\u5468\u8fb9\u7684\u81ea\u7136\u9970\u7269\uff0c\u4f46\u662f\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4ecd\u672a\u5b8c\u5168\u6d88\u901d\u3002\u5177\u4f53\u6765\u8bf4\uff0c\u5979\u62c5\u5fc3\u81ea\u5df1\u7684\u804c\u4e1a\u524d\u666f\u662f\u5426\u8fd8\u4f1a\u50cf\u4ee5\u524d\u4e00\u6837\u7a33\u5b9a\uff0c\u662f\u5426\u8fd8\u80fd\u5b9e\u73b0\u81ea\u8eab\u7684\u4ef7\u503c\u3002\u8fd9\u4e9b\u62c5\u5fe7\u5c31\u50cf\u4e00\u6839\u7ec6\u4e1d\uff0c\u65f6\u65f6\u523b\u523b\u7275\u626f\u7740\u5979\u7684\u5fc3\u5f26\u3002\n\n---\n\n\u5979\u8d70\u5411\u4e00\u7247\u83ca\u82b1\u4e1b\uff0c\u6ce8\u610f\u5230\u5176\u4e2d\u4e00\u6735\u82b1\u7684\u59ff\u6001\u3002\u8fd9\u6735\u83ca\u82b1\u7684\u4e00\u9879\u82b1\u74e3\u5f02\u5e38\u67d4\u8f6f\uff0c\u660e\u663e\u6bd4\u5176\u4ed6\u7684\u82b1\u74e3\u66f4\u52a0\u9ec4\u8272\u3002\u7136\u800c\u7136\u800c\uff0c\u5373\u4f7f\u5982\u6b64\uff0c\u8fd9\u7247\u82b1\u74e3\u4f9d\u65e7\u7d27\u7d27\u5730\u4f9d\u9644\u5728\u82b1\u830e\u4e0a\uff0c\u6ca1\u6709\u4efb\u4f55\u8131\u843d\u7684\u8ff9\u8c61\u3002\u5979\u7ad9\u5728\u90a3\u91cc\u060c\u6ce8\u89c6\u7740\u8fd9\u7247\u82b1\u74e3\uff0c\u4eff\u4f5b\u4ece\u8fd9\u7247\u82b1\u74e3\u8eab\u4e0a\u83b7\u5f97\u4e86\u4e00\u79cd\u7075\u611f\u3002\n\n---\n\n\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u66f4\u4e3a\u575a\u5b9a\u3002\u5979\u5f00\u59cb\u6ce8\u610f\u5230\u5468\u56f4\u7684\u81ea\u7136\u666f\u8272\uff0c\u4f46\u662f\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4ecd\u672a\u5b8c\u5168\u6d88\u5931\u3002\u5177\u4f53\u6765\u8bf4\uff0c\u5979\u62c5\u5fc3\u81ea\u5df1\u7684\u804c\u4e1a\u524d\u666f\u533a\u533a\u662f\u5426\u8fd8\u4f1a\u50cf\u4ee5\u524d\u4e00\u6837\u7a33\u5b9a\uff0c\u662f\u5426\u8fd8\u80fd\u5b9e\u73b0\u81ea\u8eab\u7684\u4ef7\u503c\u4ef7\u503c\u3002\u8fd9\u4e9b\u62c5\u5fc3\u4e2d\u5fc3\u6101\u5c31\u50cf\u4e00\u6839\u7ec6\u4e1d\uff0c\u65f6\u523b\u7275\u626f\u7740\u5979\u7684\u5fc3\u5f26\u3002\n\n---\n\n\u5979\u8d70\u5411\u4e00\u7247\u83ca\u82b1\u4e1b\uff0c\u6ce8\u610f\u5230among \u4e2d\u7684\u4e00\u6735\u82b1\u7684\u59ff\u6001\u3002\u8fd9\u6735\u83ca\u82b1\u7684\u4e00\u7247\u82b1\u74e3\u5f02\u5e38\u67d4\u8f6f\uff0c\u660e\u663e\u6bd4\u5176\u4ed6\u7684\u9ec4\u3002\u7136\u800c\uff0c\u7136\u800c\u5979\u8fd9\u7247\u82b1\u74e3\u4f9d\u65e7\u7d27\u7d27\u5730\u4f9d\u9644\u5728\u82b1 STEM \u4e0a\uff0c\u6ca1\u6709\u4e1d\u6beb\u8131\u843d\u7684\u610f\u56fe\u3002\u5979\u7ad9\u5728\u90a3\u91cc\uff0c\u6ce8\u89c6\u7740\u8fd9\u7247\u82b1\u74e3\uff0c\u4ece\u4e2d\u83b7\u5f97\u4e86\u4e00\u79cd\u7075\u611f\u3002\n\n---\n\n\u5979\u7ee7\u7eed\u524d\u884c\uff0c\u6b65\u4f10\u53d8\u5f97\u575a\u5b9a\u4e0d\u79fb\u3002\u5979\u5f00\u59cb\u6ce8\u610f\u5468\u56f4\u7684\u81ea\u7136\u666f\u8272\uff0c\u4f46\u662f\u5fc3\u4e2d\u7684\u62c5\u5fe7\u4ecd\u7136\u5b58\u5728\u3002\u5177\u4f53\u6765\u8bf4\uff0c\u5979\u62c5\u5fe7\u81ea\u5df1\u7684\u804c\u4e1a\u524d\u666f\u662f\u5426\u4ecd\u50cf\u4e4b\u524d\u90a3\u6837\u7a33\u5b9a\uff0c\u662f\u5426\u8fd8\u80fd\u5b9e\u73b0\u81ea\u6211\u4ef7\u503c\u3002\u8fd9\u4e9b\u62c5\u5fe7\u5c31\u50cf\u7ec6\u4e1d\uff0c\u6301\u7eed\u7275\u626f\u7740\u5979\u7684\u5fc3\u3002\n\n---\n\n\u5979\u8d70\u5411\u4e00\u7247\u83ca\u82b1\u4e1b\uff0c\u6ce8\u610f\u5230\u5176\u4e2d\u4e00\u6735\u82b1\u7684\u59ff\u6001\u3002\u8fd9\u4e00\u6735\u82b1\u7684\u4e00\u7247\u82b1\u74e3\u5f02\u5e38\u67d4\u8f6f\uff0c\u660e\u663e\u6bd4\u5176\u4ed6\u7684\u9ec4\u3002\u7136\u800c\uff0c\u7136\u800c\u8fd9\u7247\u82b1\u74e3\u4f9d\u65e7\u7d27\u7d27\u4f9d\u9644\u5728\u82b1 STEM \u4e0a\uff0c\u6ca1\u6709\u4efb\u4f55\u8131\u843d\u7684\u8ff9\u8c61\u3002\u5979\u7ad9\u5728\u90a3\u91cc\uff0c\u6ce8\u89c6\u7740\u8fd9\u7247\u82b1\u74e3\uff0c\u4ece\u4e2d\u83b7\u5f97\u4e86\u4e00\u79cd\u7075\u611f\u3002",
+              "segment": 113,
+              "source_sha256": "60c71f56d98f5056b9932a1b1d8784a6812d74c16357135805796d4a833c34e7",
+              "target_sha256": "9d967a3a63d46eb4b512495f87e9c089d53a24edd8e3aa4309439cdacbeb4d22",
+              "tokens": 393
+            }
+          ],
+          "operation_kinds": [
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction"
+          ],
+          "pending": null,
+          "record_ref": {
+            "bytes": 2653084,
+            "path": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1/stream/records/00000000000000004485.json",
+            "sha256": "dd59e176f81bf2c04fd5310ac3130b0e026d13b591324ce065e06d256a32afc0"
+          },
+          "root": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1",
+          "row_count": 114,
+          "sleep_frontier": 114,
+          "status": "OBSERVED_TRAIN_SAVED_BOUNDARY",
+          "thread": "creative_reread"
+        },
+        {
+          "commit_ref": {
+            "bytes": 7190,
+            "path": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/run1/checkpoints/sleep_000035/COMMIT.json",
+            "sha256": "4a0a15798c0a9a58efa3d914e0f1b4077ae370676e0f03f0ded57f7e2739a774"
+          },
+          "cycle": 35,
+          "last_compaction": [
+            {
+              "at": {
+                "event_count": 298,
+                "sha256": "d5c154e23580a7509fb8db25bb370c57f80c6d31a686fb1d869bebd609cc0e57"
+              },
+              "before": {
+                "event_count": 288,
+                "sha256": "9f80ae5bb63845ae3a5d10a2e9503a26ecf0de69a6ee3d31cba134905c80c833"
+              },
+              "kind": "compaction",
+              "receipt_sha256": "d77d196436b34aa81c7274b6e91ae93b25ad8c3d2b8c90453b8e4c1c644d73e7",
+              "summary": {
+                "actor": "child",
+                "episode_id": "continual_stream",
+                "event_id": "compaction:35",
+                "origin": "TRAIN_COLLECTION",
+                "phase": "compaction",
+                "source_id": "response:197882df8c1d21cc2ba592b7a32b344aa5a83a5430109bb7c7820988c9812994",
+                "source_sha256": "303ba385e75a3b23b1a1a05b2a418c2ab9d55c3fbedbbe0752de9463d3ea33d8",
+                "split": "TRAIN",
+                "text": "### Distilled Insights and findings\n\n#### Key Concepts:\n- **Epoch:** One complete pass through the entiredataset.\n- **Batch Size:** Subset of the dataset used tocompute gradient updates.\n\n#### Calculations:\nGiven a total of 1000 training examples and abatch size of 32:\n\\[\n\\text{Batches per epoch\u300b} = \\lceil \\frac{1000}{32} \\rceil = 32\n\\]\n\n##### Updates per Epoch\n- **Group 1:** \\( F_\uff11 = 5 \\)\n  \\[\n  \\text {Updates per epoch} = \\min \\left( \\left\\lfloor \\% \\frac{32}{5} \\right\\rfloor + \uff11, 32 \\right) = \\min \\left( \\left\\\\lfloor 6.4 \\right\\rfloor + \uff11, 32 \\right) =\n  \\min(6 + \uff11, 32) = \uff17\n  \\]\n\n- **Group 2:** \\( F_\uff12 = \uff110 \\)\n  \\[\n  \\text{Updates per epoch} = \\\\min \\left( \\left\\lfloor \\frac{32}{1\uff10} \\right\\rfloor + \uff11, 32\\\\right\uff09} = \\\\min \\left( \\left\\lfloor 3.\uff12 \\right\\rfloor + \uff11, 3\uff12\\right) \uff1d\n  \\min(\uff13 + \uff11, \uff13\uff12) = \uff14\n  \\]\n\n#### Policies:\n1. **Including the smaller batch:** Always include the remaining examples to make the total number of batches equal to 32.\n2. ____ **Accumulating gradients:** Yes, accumulate gradients from all batches. Atthe epoch boundary, discard pending gradients.\n\n#### Comparison Findings:\nFor \\( F_\uff11 = 5 \\):\n- Calculated updates: 7\n- Actual updates: 7\nThe formula correctly calculates the number of updates.\n\nFor \\( F_\uff12 = \uff110 \\):\n- Calculated updates: \uff14\n- Actual updates: \uff14\nThe formula also correctly calculates the number of updates.\n\n#### Conclusion:\nThe formula for calculating updates per epoch works correctly in both cases. The next step is to implement this policy in practice and compare the performance, stability, and generalization of the model across different update frequencies.\n\n#### Plan:\n1."
+              },
+              "summary_status": "CHILD_ASSERTION_NOT_VERIFIED_FACT",
+              "through": {
+                "event_count": 297,
+                "sha256": "8270dfffef12b6f992763e50e04034939e03f91920686f5cf518a6a256a2f2ce"
+              }
+            }
+          ],
+          "last_operation": [
+            {
+              "at": {
+                "event_count": 298,
+                "sha256": "d5c154e23580a7509fb8db25bb370c57f80c6d31a686fb1d869bebd609cc0e57"
+              },
+              "before": {
+                "event_count": 288,
+                "sha256": "9f80ae5bb63845ae3a5d10a2e9503a26ecf0de69a6ee3d31cba134905c80c833"
+              },
+              "kind": "compaction",
+              "receipt_sha256": "d77d196436b34aa81c7274b6e91ae93b25ad8c3d2b8c90453b8e4c1c644d73e7",
+              "summary": {
+                "actor": "child",
+                "episode_id": "continual_stream",
+                "event_id": "compaction:35",
+                "origin": "TRAIN_COLLECTION",
+                "phase": "compaction",
+                "source_id": "response:197882df8c1d21cc2ba592b7a32b344aa5a83a5430109bb7c7820988c9812994",
+                "source_sha256": "303ba385e75a3b23b1a1a05b2a418c2ab9d55c3fbedbbe0752de9463d3ea33d8",
+                "split": "TRAIN",
+                "text": "### Distilled Insights and findings\n\n#### Key Concepts:\n- **Epoch:** One complete pass through the entiredataset.\n- **Batch Size:** Subset of the dataset used tocompute gradient updates.\n\n#### Calculations:\nGiven a total of 1000 training examples and abatch size of 32:\n\\[\n\\text{Batches per epoch\u300b} = \\lceil \\frac{1000}{32} \\rceil = 32\n\\]\n\n##### Updates per Epoch\n- **Group 1:** \\( F_\uff11 = 5 \\)\n  \\[\n  \\text {Updates per epoch} = \\min \\left( \\left\\lfloor \\% \\frac{32}{5} \\right\\rfloor + \uff11, 32 \\right) = \\min \\left( \\left\\\\lfloor 6.4 \\right\\rfloor + \uff11, 32 \\right) =\n  \\min(6 + \uff11, 32) = \uff17\n  \\]\n\n- **Group 2:** \\( F_\uff12 = \uff110 \\)\n  \\[\n  \\text{Updates per epoch} = \\\\min \\left( \\left\\lfloor \\frac{32}{1\uff10} \\right\\rfloor + \uff11, 32\\\\right\uff09} = \\\\min \\left( \\left\\lfloor 3.\uff12 \\right\\rfloor + \uff11, 3\uff12\\right) \uff1d\n  \\min(\uff13 + \uff11, \uff13\uff12) = \uff14\n  \\]\n\n#### Policies:\n1. **Including the smaller batch:** Always include the remaining examples to make the total number of batches equal to 32.\n2. ____ **Accumulating gradients:** Yes, accumulate gradients from all batches. Atthe epoch boundary, discard pending gradients.\n\n#### Comparison Findings:\nFor \\( F_\uff11 = 5 \\):\n- Calculated updates: 7\n- Actual updates: 7\nThe formula correctly calculates the number of updates.\n\nFor \\( F_\uff12 = \uff110 \\):\n- Calculated updates: \uff14\n- Actual updates: \uff14\nThe formula also correctly calculates the number of updates.\n\n#### Conclusion:\nThe formula for calculating updates per epoch works correctly in both cases. The next step is to implement this policy in practice and compare the performance, stability, and generalization of the model across different update frequencies.\n\n#### Plan:\n1."
+              },
+              "summary_status": "CHILD_ASSERTION_NOT_VERIFIED_FACT",
+              "through": {
+                "event_count": 297,
+                "sha256": "8270dfffef12b6f992763e50e04034939e03f91920686f5cf518a6a256a2f2ce"
+              }
+            }
+          ],
+          "last_own_rows": [
+            {
+              "TRAIN_excerpt": "### Revised Insights and Policies\n\n#### Key Concepts:\n- **Epoch:** One complete pass\u901a\u8fc7\u6574\u6570\u9664\u6cd5\u8ba1\u7b97\u5468\u671f\u6570\uff0c\u5e76\u8003\u8651\u4f59\u6570\u60c5\u51b5\u3002\n- **Batch:** \u4e00\u6279\u6570\u636e\u96c6\u7684\u5b50\u96c6\uff0c\u7528\u4e8e\u8ba1\u7b97\u68af\u5ea6\u66f4\u65b0\u3002\n\n#### \u6bcfepoch\u7684\u6279\u91cf\u6b21\u6570\n\\[\n\\text{Batches per epoch} = \\frac{\\text{Total number of training examples}}{\\text{Batch_SIZE}}\n\\]\n\u5047\u8bbe\u603b\u8bad\u7ec3\u4f8b\u53e5\u6570\u4e3a1000\uff0c\u6279\u91cf\u5927\u5c0f\u4e3a32\uff1a\n\\[\n\\text{Batches per epoch} = \\frac{1000}{32} = 31.25 \\rightarrow 32 \\text{\uff08\u53d6\u4e0a\u6574\uff09}\n\\]\n\n#### \u6bcfepoch\u7684\u66f4\u65b0\u6b21\u6570\n- **Group 1:** \\( F_\uff11 = 5 \\\uff09\n  \\ [\n  \\text{Updates per epoch} = \\left\\lfloor \\frac{32}{5} \\right\u230a \\rfloor + 1 = \\left\\lfloor 6.4 \\right\u230b + 1 = 6 + 1 = 7\n  \\]\n\n- **Group 2:** \\( F_{\uff12} = 10 \\)\n  \\ [\n  \\text{Updates Per Epoch} = \\left\\lfloor \\frac{32}{10} \\ right\u230a \\rfloor + 1 = \\left\\lfloor 3.2 \\right\u230b + 1 = 3 + 1 = 4\n  \\]\n\n#### \u7b56\u7565\uff1a\n1. **\u5269\u4f59\u793a\u4f8b\u7684\u5904\u7406\uff1a** \u5c06\u5269\u4f59\u793a\u4f8b\u7eb3\u5165\u6700\u7ec8\u8f83\u5c0f\u7684\u6279\u91cf\u4e2d\u3002\n2. **\u68af\u5ea6\u7d2f\u79ef\uff1a** \u662f\u7684\uff0c\u4ece\u6240\u6709\u6279\u91cf\u4e2d\u7d2f\u79ef\u68af\u5ea6\u3002\u5728epoch\u8fb9\u754c\u65f6\uff0c\u9700\u8981\u51b3\u5b9a\u5982\u4f55\u5904\u7406\u672a\u4f7f\u7528\u7684\u68af\u5ea6\u3002\n\n#### \u5177\u4f53\u5b9e\u65bd\u8ba1\u5212\uff1a\n\n1. **\u4e0d\u540c\u66f4\u65b0\u9891\u7387\u7684\u5b9e\u73b0\uff1a**\n   - \u4f7f\u7528\\( F_1 = 5 \\)\u8bad\u7ec3\u6a21\u578b\uff0c\u89c2\u5bdf\u6027\u80fd\u3001\u7a33\u5b9a\u6027\u548c\u901a\u7528\u6027\u5dee\u5f02\u3002\n   - \u4f7f\u7528\\( F_2 = 10 \\)\u8bad\u7ec3\u6a21\u578b\uff0c\u8fdb",
+              "segment": 102,
+              "source_sha256": "caf8736a33450fd87fb29f86ae43292ec421623d581381806f80043af639a4e6",
+              "target_sha256": "8e7ee53b41c4e6f8ea006d3d76d5d40694ecbdb7ff62f4555591579d49baaace",
+              "tokens": 512
+            },
+            {
+              "TRAIN_excerpt": "### Expanded Experiment Plan\n\n#### Key Concepts:\n- **Epoch:**One complete pass through the entire dataset.\n- **Batch Size:**Subset of the dataset used to compute gradient updates.\n\n#### Batches per Epoch\nGiven a total of 1000 training examples and a batch size of 32:\n\\[\n\\text{Batches per epoch} = \\ceiling\\left(\\frac{1000}{32}\\right) = 32\n\\]\n\n#### Updates per Epoch\n- **Group1:** \\( F_\uff11 = 5 \\)\n  \\[\n  \\\\text{Updates per epoch} = \\min \\left( \\left\\floor \\left(\\frac{32}{5}\\right)\\right\\floor + 1, 32\\right) = \\min \\left( \\left\\floor 6.4 \\right\\floor + 1, 32\\right) =\n  \\min(6 + 1, 32\uff09\uff09= 7\n  \\]\n\n- **Group2:*** \\( F_\u2082 = 10 \\)\n  \\$\n  \\\\text{Updates per epoch} = \\ min \\left( \\left\\floor \\left(\\frac{32}{10}\\right)\\right\\floor + 1, 32\\right\uff09\\ = \\min \\left( \\left\\floor 3.2 \\right\\floor + 1, 32\\right) \uff1d\n  \\min(3 + 1, \uff13\uff12) = \uff14\n  \\$\n\n#### Policies:\n1. **Including the smaller batch:** Ensure the smaller ba",
+              "segment": 103,
+              "source_sha256": "891682aa3dfef9e6ac21bb315aba82c83a5090a8d3c30b6b25e5f69cfb2f7f14",
+              "target_sha256": "985e39207f5102199ae5958e176ba4f457ac4d4b24f9a31ce851c92b0b1c6a37",
+              "tokens": 512
+            },
+            {
+              "TRAIN_excerpt": "### Distilled Insights and findings\n\n#### Key Concepts:\n- **Epoch:** One complete pass through the entiredataset.\n- **Batch Size:** Subset of the dataset used tocompute gradient updates.\n\n#### Calculations:\nGiven a total of 1000 training examples and abatch size of 32:\n\\[\n\\text{Batches per epoch\u300b} = \\lceil \\frac{1000}{32} \\rceil = 32\n\\]\n\n##### Updates per Epoch\n- **Group 1:** \\( F_\uff11 = 5 \\)\n  \\[\n  \\text {Updates per epoch} = \\min \\left( \\left\\lfloor \\% \\frac{32}{5} \\right\\rfloor + \uff11, 32 \\right) = \\min \\left( \\left\\\\lfloor 6.4 \\right\\rfloor + \uff11, 32 \\right) =\n  \\min(6 + \uff11, 32) = \uff17\n  \\]\n\n- **Group 2:** \\( F_\uff12 = \uff110 \\)\n  \\[\n  \\text{Updates per epoch} = \\\\min \\left( \\left\\lfloor \\frac{32}{1\uff10} \\right\\rfloor + \uff11, 32\\\\right\uff09} = \\\\min \\left( \\left\\lfloor 3.\uff12 \\right\\rfloor + \uff11, 3\uff12\\right) \uff1d\n  \\min(\uff13 + \uff11, \uff13\uff12) = \uff14\n  \\]\n\n#### Policies:\n1. **Including the smaller batch:** Always include the remaining exa",
+              "segment": 104,
+              "source_sha256": "303ba385e75a3b23b1a1a05b2a418c2ab9d55c3fbedbbe0752de9463d3ea33d8",
+              "target_sha256": "ecbf66ecaa8b7aa5c7fcc2018992075ad7d30b6f38eec46bfcea91b7df4025b0",
+              "tokens": 512
+            }
+          ],
+          "operation_kinds": [
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction"
+          ],
+          "pending": null,
+          "record_ref": {
+            "bytes": 2720478,
+            "path": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/run1/stream/records/00000000000000003975.json",
+            "sha256": "58e01ff01e421b81cf022267c410cc78df2639b465b3208ec3c8e2e7874c15f0"
+          },
+          "root": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/run1",
+          "row_count": 105,
+          "sleep_frontier": 105,
+          "status": "OBSERVED_TRAIN_SAVED_BOUNDARY",
+          "thread": "brain_guided"
+        }
+      ]
+    },
+    "ovx3": {
+      "budget": 12582912,
+      "bytes_read": 1375780,
+      "files": [
+        {
+          "bytes": 6847,
+          "path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/checkpoints/sleep_000031/COMMIT.json",
+          "sha256": "8324d17879d5a4e1fa5ca5e031ed2320589ae890592ad060ac9f5e6c93a0e89c"
+        },
+        {
+          "bytes": 1368933,
+          "path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/stream/records/00000000000000003423.json",
+          "sha256": "277edaaff897b8dea93dd8e57b211b23c08792c18cf9250471d8febdf4629d37"
+        }
+      ],
+      "observed_unix": 1789632431.6196609,
+      "samples": [
+        {
+          "commit_ref": {
+            "bytes": 6847,
+            "path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/checkpoints/sleep_000031/COMMIT.json",
+            "sha256": "8324d17879d5a4e1fa5ca5e031ed2320589ae890592ad060ac9f5e6c93a0e89c"
+          },
+          "cycle": 31,
+          "last_compaction": [
+            {
+              "at": {
+                "event_count": 321,
+                "sha256": "eab70f9ebaa933a61b53f10e608f2e9d43fdbc1b64d18ea2aece480f75b4c2ae"
+              },
+              "before": {
+                "event_count": 310,
+                "sha256": "a04227d29c86039650835f2415572fb1c7d40c6c23fa8f38d414e29208f8cef8"
+              },
+              "kind": "compaction",
+              "receipt_sha256": "e3888ad2c8b606b64766421107a09a9a2f3651a158151d4ae370b57509a4a5a6",
+              "summary": {
+                "actor": "child",
+                "episode_id": "continual_stream",
+                "event_id": "compaction:31",
+                "origin": "TRAIN_COLLECTION",
+                "phase": "compaction",
+                "source_id": "response:0b8f465d5d7056a8691db9f233713a6dac8e1e978e055ff38b8a9d1f4d45e412",
+                "source_sha256": "ce1ccb6f86dea3cbe3b4f8d537d81397690d4b1b0410847203e7d88da23d174f",
+                "split": "TRAIN",
+                "text": "{}"
+              },
+              "summary_status": "CHILD_ASSERTION_NOT_VERIFIED_FACT",
+              "through": {
+                "event_count": 320,
+                "sha256": "3d37477aaf8d6a7b4a256da05fc2028850b9875cddfb4db05f5a75eb9c6e95b5"
+              }
+            }
+          ],
+          "last_operation": [
+            {
+              "at": {
+                "event_count": 321,
+                "sha256": "eab70f9ebaa933a61b53f10e608f2e9d43fdbc1b64d18ea2aece480f75b4c2ae"
+              },
+              "before": {
+                "event_count": 310,
+                "sha256": "a04227d29c86039650835f2415572fb1c7d40c6c23fa8f38d414e29208f8cef8"
+              },
+              "kind": "compaction",
+              "receipt_sha256": "e3888ad2c8b606b64766421107a09a9a2f3651a158151d4ae370b57509a4a5a6",
+              "summary": {
+                "actor": "child",
+                "episode_id": "continual_stream",
+                "event_id": "compaction:31",
+                "origin": "TRAIN_COLLECTION",
+                "phase": "compaction",
+                "source_id": "response:0b8f465d5d7056a8691db9f233713a6dac8e1e978e055ff38b8a9d1f4d45e412",
+                "source_sha256": "ce1ccb6f86dea3cbe3b4f8d537d81397690d4b1b0410847203e7d88da23d174f",
+                "split": "TRAIN",
+                "text": "{}"
+              },
+              "summary_status": "CHILD_ASSERTION_NOT_VERIFIED_FACT",
+              "through": {
+                "event_count": 320,
+                "sha256": "3d37477aaf8d6a7b4a256da05fc2028850b9875cddfb4db05f5a75eb9c6e95b5"
+              }
+            }
+          ],
+          "last_own_rows": [
+            {
+              "TRAIN_excerpt": "{\n  \"op\": \"write_workspace\",\n  \"name\": \"notes.md\",\n  \"text\": \"Starting a story about a young adventurer named Elara who discovers a mysterious map leading to an ancient treasure. She sets out on a quest to uncover the secrets of the map.\"\n}",
+              "segment": 90,
+              "source_sha256": "0f3bccae5716dba7f37edf645eb38a58f8e06ca216340db081cba99c4589ead1",
+              "target_sha256": "2aba77dc94fdd60d89c95af328d5912273084047127424de5479c9903e1e2455",
+              "tokens": 59
+            },
+            {
+              "TRAIN_excerpt": "{\n  \"op\": \"write_workspace\",\n  \u201cname\u201d: \u201cstory_outline.txt\u201d,\n  \u201ctext\u201d: \u201cElara, a young adventurer, discovers a mysterious map. The map leads to an ancient treasure hidden in a remote cave. Along her journey, she faces challenges such as puzzles, traps, and encounters with various creatures. Her goal is to uncover the secrets of the map and claim the treasure.\u201d\n}",
+              "segment": 91,
+              "source_sha256": "b96c48a62cd60d7612b35834964e2c2f1346d15dca0255f86fc8d470e9fb17a5",
+              "target_sha256": "3aace6c1f3a04bfba2b22c820e1d8f5fd1a1e49856059312822cd08f74614583",
+              "tokens": 85
+            },
+            {
+              "TRAIN_excerpt": "{}",
+              "segment": 92,
+              "source_sha256": "ce1ccb6f86dea3cbe3b4f8d537d81397690d4b1b0410847203e7d88da23d174f",
+              "target_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "tokens": 2
+            }
+          ],
+          "operation_kinds": [
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction",
+            "compaction"
+          ],
+          "pending": null,
+          "record_ref": {
+            "bytes": 1368933,
+            "path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/stream/records/00000000000000003423.json",
+            "sha256": "277edaaff897b8dea93dd8e57b211b23c08792c18cf9250471d8febdf4629d37"
+          },
+          "root": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life",
+          "row_count": 93,
+          "sleep_frontier": 93,
+          "status": "OBSERVED_TRAIN_SAVED_BOUNDARY",
+          "thread": "C1"
+        }
+      ]
+    }
+  },
+  "schema": "R168_BOUNDED_VARIANT_CARRY_V1",
+  "total_bytes_read": 13937307
+}

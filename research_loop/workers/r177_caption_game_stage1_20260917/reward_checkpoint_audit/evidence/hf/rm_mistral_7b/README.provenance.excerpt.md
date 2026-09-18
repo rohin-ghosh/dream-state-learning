@@ -6,27 +6,27 @@
 
 <!-- Provide a quick summary of what the model is/does. -->
 
-The reward model is trained from the base model [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2). 
+The reward model is trained from the base model [mistralai/Mistral-7B-Instruct-v0.2](https://[REDACTED_HOST]/mistralai/Mistral-7B-Instruct-v0.2). 
 
-The training script is available at https://github.com/WeiXiongUST/RLHF-Reward-Modeling .
+The training script is available at https://[REDACTED_HOST]/WeiXiongUST/RLHF-Reward-Modeling .
 
-Also see a short blog for the training details (data mixture, parameters...): https://www.notion.so/Reward-Modeling-for-RLHF-abe03f9afdac42b9a5bee746844518d0
+Also see a short blog for the training details (data mixture, parameters...): https://[REDACTED_HOST]/Reward-Modeling-for-RLHF-abe03f9afdac42b9a5bee746844518d0
 
 
 ## Model Details
 
-If you have any question with this reward model and also any question about reward modeling, feel free to drop me an email with wx13@illinois.edu. I would be happy to chat!
+If you have any question with this reward model and also any question about reward modeling, feel free to drop me an email with [REDACTED_CONTACT]. I would be happy to chat!
 
 ### Dataset preprocessing
 
 <!-- Provide a longer summary of what this model is. -->
 
-The model is trained on a mixture of the following datasets. We also provide the mixture in [weqweasdas/preference_dataset_mixture2_and_safe_pku](https://huggingface.co/datasets/weqweasdas/preference_dataset_mixture2_and_safe_pku).
-- [HH-RLHF](https://huggingface.co/datasets/Anthropic/hh-rlhf)
-- [SHP](https://huggingface.co/datasets/stanfordnlp/SHP)
-- [UltraFeedback](https://huggingface.co/datasets/openbmb/UltraFeedback)
+The model is trained on a mixture of the following datasets. We also provide the mixture in [weqweasdas/preference_dataset_mixture2_and_safe_pku](https://[REDACTED_HOST]/datasets/weqweasdas/preference_dataset_mixture2_and_safe_pku).
+- [HH-RLHF](https://[REDACTED_HOST]/datasets/Anthropic/hh-rlhf)
+- [SHP](https://[REDACTED_HOST]/datasets/stanfordnlp/SHP)
+- [UltraFeedback](https://[REDACTED_HOST]/datasets/openbmb/UltraFeedback)
 - [Capybara](argilla/distilabel-capybara-dpo-7k-binarized)
-- [HelpSteer](https://huggingface.co/datasets/nvidia/HelpSteer)
+- [HelpSteer](https://[REDACTED_HOST]/datasets/nvidia/HelpSteer)
 - [Orca](argilla/distilabel-intel-orca-dpo-pairs)
 
 Difference between this mixture and the original dataset

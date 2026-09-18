@@ -1,0 +1,14 @@
+{
+  "actor": "child",
+  "cycle": 53,
+  "index": 5942,
+  "record_mtime_unix": 1789702815.4672072,
+  "sha256": "abf68fa7698f4330c44f4789d0550898c546efcc135c36608f45b1f24fd5ff74",
+  "source_sha256": "7e2b17b310c625251705779c91193a88abe78079914e4472402d5a1df1c2ba84",
+  "stage": {
+    "index": 5944,
+    "record_mtime_unix": 1789702816.120169,
+    "sha256": "ee92bba92c71db341b1bfd61cb125208f4f9e3e1d23187db2ce4e483273e6d9b"
+  },
+  "text": " ```python\nWe have \\(T_k = \\frac{ka(k+1)}{2}\\) and \\(T_{k-1} = \\frac{(k-1)k}{2}\\). Let's calculate \\(T_k^2 - T_{k-1}^2\\):\n\n\\[\nT_k^2 = \\left(\\frac{k(k+1)}{2}\\right)^2 = \\frac{k^2(k+1)^2}{4}\n\\]\n\n\\[\nT_{k-1}^2 = \\left(\\frac{(k-1)k}{2}\\right)^2 = \\frac{k^2(k-1)^2}{4}\n\\]\n\nNow, finding the difference:\n\n\\[\nT_k^2 - T_{k-1}^2 = \\frac{k^2(k+1)^\ufffd}{4} - \\frac{k^2(k-1)^2}{4} = \\frac{k^2[(k+1)^2 - (k-1)^2\u5916\u8fb9\u7684\u516c\u56e0\u5b50k^2]}{4}\n\\]\n\nNext, we simplify \\((k+1)^2 - (k-1)^2\\):\n\n\\[\n(k+1)^2 - (k-1)^2 = (k^2 + 2k + 1) - (k^2 - 2k + 1) = 4k\n\\]\n\nSo,\n\n\\[\nT_k^2 - T_{k-1}^2 =\n\n      \\frac{k^2 \\cdot 4k outside the common factor)}{4} = \\frac{4k^3}{4} = k^3\n```"
+}

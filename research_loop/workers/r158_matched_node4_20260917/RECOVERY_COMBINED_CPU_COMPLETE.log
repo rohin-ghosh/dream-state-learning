@@ -1,0 +1,59 @@
+........................................................................ [  7%]
+........................................................................ [ 15%]
+........................................................................ [ 22%]
+........................................................................ [ 30%]
+........................................................................ [ 38%]
+........................................................................ [ 45%]
+........................................................................ [ 53%]
+........................................................................ [ 61%]
+........................................................................ [ 68%]
+........................................................................ [ 76%]
+........................................................................ [ 84%]
+....................................................................s... [ 91%]
+......F................................................................. [ 99%]
+sss...                                                                   [100%]
+=================================== FAILURES ===================================
+_ test_staged_inventory_includes_split_ledger_and_preserved_original_manifest __
+
+repairs = (PosixPath('/tmp/pytest-of-rohing/pytest-798/test_staged_inventory_includes0/repository'), PosixPath('/tmp/pytest-of-r...json'), {'schema': 'R158_MATCHED_REPAIR_REVIEW_V1', 'status': 'PASS', 'issuer': 'Banach', 'freeze_allowed': True, ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7aea251dc590>
+tmp_path = PosixPath('/tmp/pytest-of-rohing/pytest-798/test_staged_inventory_includes0')
+
+    def test_staged_inventory_includes_split_ledger_and_preserved_original_manifest(repairs, monkeypatch, tmp_path):
+        from gpu import orch_r151_matched_stage as staging
+        repository, path, proof = repairs
+        (repository / 'gpu/orch_r158_matched_node4.py').write_text('helper = True\n')
+    
+        def fake_original_stage(repository, destination, runtime, proof_path):
+            destination.mkdir()
+            for source in repository.rglob('*.py'):
+                target = destination / source.relative_to(repository)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(source.read_bytes())
+            node4.write(destination / 'STAGED_SOURCE.json', dict(files=node4.inventory(destination)))
+            return {'status': 'test_fixture_original_stage'}
+    
+        monkeypatch.setattr(staging, 'stage_source', fake_original_stage)
+        destination = tmp_path / 'candidate/source'
+        destination.parent.mkdir()
+>       node4.stage_source(repository, destination, tmp_path / 'runtime', tmp_path / 'proof', CAPSULE, path)
+
+tests/test_orch_r158_matched_node4.py:350: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_r158_matched_node4.py:217: in stage_source
+    verify_repairs(repairs, repository)
+gpu/orch_r158_matched_node4.py:199: in verify_repairs
+    require(not Path(name).is_absolute() and '..' not in Path(name).parts
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'actual_repaired_source_bytes'
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: actual_repaired_source_bytes
+
+gpu/orch_r158_matched_node4.py:49: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_orch_r158_matched_node4.py::test_staged_inventory_includes_split_ledger_and_preserved_original_manifest
+1 failed, 937 passed, 4 skipped in 26.03s

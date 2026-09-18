@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/localhome/local-rohing/orch_r158_kernel_execution_20260917t0402z/nudge_observer_source/observe.py", line 117, in <module>
+    observe(parser.parse_args().base)
+  File "/localhome/local-rohing/orch_r158_kernel_execution_20260917t0402z/nudge_observer_source/observe.py", line 99, in observe
+    evidence=evidence, cursors=cursors, services=snapshot_service(base),
+                                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r158_kernel_execution_20260917t0402z/nudge_observer_source/observe.py", line 45, in snapshot_service
+    state = document(phase / 'service/STATE.json')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r158_kernel_execution_20260917t0402z/nudge_observer_source/observe.py", line 17, in document
+    return service.cpu.read_document(service.read(path, 1048576))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r158_kernel_execution_20260917t0402z/source/gpu/orch_r148_kernel_tool_service.py", line 52, in read
+    return console._read(directory, path.name, limit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r158_kernel_execution_20260917t0402z/source/gpu/orch_r127_pilot_console.py", line 102, in _read
+    require(len(identities) == 1 and len(raw) == before.st_size, 'file_changed_during_read')
+  File "/localhome/local-rohing/orch_r158_kernel_execution_20260917t0402z/source/gpu/orch_r125_stream_journal.py", line 43, in require
+    raise ValueError(reason)
+ValueError: file_changed_during_read

@@ -1,0 +1,3 @@
+## [Builder] 2026-09-17 R158 benchmark wall-only continuation
+
+Explicit user execution task: own tested append-only benchmark controller/copier continuation; preserve4800 aggregate calls/58 shared phase jobs, failed keys, ownership, existing source enrollment and scoring; CPU/provenance gate before actual node2 GPU0/1 launch. New helper/test only; donor1091Python files unchanged.432 synthetic CPU tests pass. Original3 source roots only, current source-owner custody checked; no sealed results returned. Original node2 reservation and six-hour margin retained, not node5 authority. Deadline2026-09-17 05:54UTC. No new items, scores, parent/child actions, optimizer load or training. Existing successor/physical locks and empty-device guards retained.

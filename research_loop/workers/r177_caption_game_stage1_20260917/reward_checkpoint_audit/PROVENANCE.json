@@ -1,0 +1,579 @@
+{
+  "audit_utc": "2026-09-17T19:55:23.708039+00:00",
+  "scope": "Public primary metadata/source inspection only; no dataset records, caption examples, weights, tokenizer vocabulary, provider inference or GPU access.",
+  "pinning": {
+    "github": "7cb2419529c556fab06bf6584645d37ccaa36fc1",
+    "arxiv": "2406.10522v2",
+    "reward_initialization": "70e252672fdd640083505e2ca1da8547e0e6d478",
+    "underlying_base": "63a8b081895390a26e140280378bc85ec8bce07a"
+  },
+  "notes": [
+    "Full HTTP documents may contain unselected sections; only named non-example excerpts/projections are retained.",
+    "response_sha256 binds fetched response bytes, artifact_sha256 binds retained bytes; hashes differ for deliberate excerpts/projections or terminal LF normalization.",
+    "Revision-pinned Git/HF text files additionally verify the response's Git blob SHA1 against server metadata.",
+    "No claim that public availability establishes licensing, decontamination, or successful loading."
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/github/repository.metadata.json",
+      "artifact_bytes": 5575,
+      "artifact_sha256": "e68c3347f94e4a5641b9022112984de56ab1c40a3783b63b96999ef5db804abc",
+      "extraction": "Allowlisted repository, commit and source-filename metadata",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/repos/yguooo/cartoon-caption-generation",
+          "resolved_url": "https://[REDACTED_HOST]/repos/yguooo/cartoon-caption-generation",
+          "fetched_utc": "2026-09-17T19:55:11.770762+00:00",
+          "http_status": 200,
+          "response_bytes": 5896,
+          "response_sha256": "ef5b6d7500e7afe8c15279dfa23cf999e58a3e7092da9bd74514ebadd0f4fa28",
+          "etag": "W/\"ef5b6d7500e7afe8c15279dfa23cf999e58a3e7092da9bd74514ebadd0f4fa28\"",
+          "last_modified": "Fri, 14 Nov 2025 08:16:56 GMT"
+        },
+        {
+          "requested_url": "https://[REDACTED_HOST]/repos/yguooo/cartoon-caption-generation/commits/7cb2419529c556fab06bf6584645d37ccaa36fc1",
+          "resolved_url": "https://[REDACTED_HOST]/repos/yguooo/cartoon-caption-generation/commits/7cb2419529c556fab06bf6584645d37ccaa36fc1",
+          "fetched_utc": "2026-09-17T19:55:12.445044+00:00",
+          "http_status": 200,
+          "response_bytes": 5854,
+          "response_sha256": "bc7d0b7180099c683cfb96b9f1975d4af78c6a442eeb21db530a40232f659a2e",
+          "etag": "W/\"bc7d0b7180099c683cfb96b9f1975d4af78c6a442eeb21db530a40232f659a2e\"",
+          "last_modified": "Wed, 01 Oct 2025 06:20:09 GMT"
+        },
+        {
+          "requested_url": "https://[REDACTED_HOST]/repos/yguooo/cartoon-caption-generation/git/trees/7cb2419529c556fab06bf6584645d37ccaa36fc1?recursive=1",
+          "resolved_url": "https://[REDACTED_HOST]/repos/yguooo/cartoon-caption-generation/git/trees/7cb2419529c556fab06bf6584645d37ccaa36fc1?recursive=1",
+          "fetched_utc": "2026-09-17T19:55:11.118167+00:00",
+          "http_status": 200,
+          "response_bytes": 10636,
+          "response_sha256": "200fe46ce5e4f9163cd2ba09d71208af7f53c47d2ecd15cfa76ba91d2694a2fb",
+          "etag": "W/\"200fe46ce5e4f9163cd2ba09d71208af7f53c47d2ecd15cfa76ba91d2694a2fb\"",
+          "last_modified": "Fri, 14 Nov 2025 08:16:56 GMT"
+        }
+      ]
+    },
+    {
+      "path": "evidence/github/LICENSE.txt",
+      "artifact_bytes": 11357,
+      "artifact_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "extraction": "Full source; terminal LF normalized only if absent",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/LICENSE",
+          "resolved_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/LICENSE",
+          "fetched_utc": "2026-09-17T19:55:12.595847+00:00",
+          "http_status": 200,
+          "response_bytes": 11357,
+          "response_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "etag": "\"0f7ad233313d00f59c4f65f8c224ab2bfe14a8608ea59dc12ae4d7f13ba699e9\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+        }
+      ]
+    },
+    {
+      "path": "evidence/github/humor_reward_modeling.py.txt",
+      "artifact_bytes": 7417,
+      "artifact_sha256": "6c7c7e1c390fbb698dd443a00d29a0e14604b2b3c89734872c64fe41c173df1e",
+      "extraction": "Full source; terminal LF normalized only if absent",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/finetuning/humor_reward_modeling.py",
+          "resolved_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/finetuning/humor_reward_modeling.py",
+          "fetched_utc": "2026-09-17T19:55:12.724307+00:00",
+          "http_status": 200,
+          "response_bytes": 7417,
+          "response_sha256": "6c7c7e1c390fbb698dd443a00d29a0e14604b2b3c89734872c64fe41c173df1e",
+          "etag": "\"7390fe43858ec1e990b6053f33593b5c34a917c6b13bbfa15b8d203d98b03f26\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "25295d878319c0634a2236a001096b5f3a32bc5e"
+        }
+      ]
+    },
+    {
+      "path": "evidence/github/custom_trainer.py.txt",
+      "artifact_bytes": 999,
+      "artifact_sha256": "db0e424644bab8a2cefd26c57643d1353e853c7b6f602fdfce9e4c4317c439a0",
+      "extraction": "Full source; terminal LF normalized only if absent",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/finetuning/custom_trainer.py",
+          "resolved_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/finetuning/custom_trainer.py",
+          "fetched_utc": "2026-09-17T19:55:12.849647+00:00",
+          "http_status": 200,
+          "response_bytes": 998,
+          "response_sha256": "43a1b9329ac3e44a9315c1e9fbf97319f41e2c592154735306ba8d5de09fb673",
+          "etag": "\"01a65eb8c861413936a62dcf65700b97f839a2efa7b4e3aa774ae582df11b8f5\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "0758b38bc9a74b2355a388c005670f48d44cdf70"
+        }
+      ]
+    },
+    {
+      "path": "evidence/github/README.reward_release.excerpts.md",
+      "artifact_bytes": 914,
+      "artifact_sha256": "7286d2eb84ad070f0914a19cd0ef95b1dbc99feb2adbea895ebd23840217e7b7",
+      "extraction": "Only Reward Modeling and checkpoint-release introduction; examples section excluded",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/README.md",
+          "resolved_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/README.md",
+          "fetched_utc": "2026-09-17T19:55:12.965052+00:00",
+          "http_status": 200,
+          "response_bytes": 10462,
+          "response_sha256": "606f7babdae2e0f735aeaadf50059017767eac974675a0c4d7ea1f2b24f64257",
+          "etag": "\"73ab5aa181b092dc798e2be014605c896a33186368d4bda1e17293a1ab0eba37\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "0ed0b5a44d1d29216d5bde2253d7fc38d5def525"
+        }
+      ]
+    },
+    {
+      "path": "evidence/github/preprocess.py.excerpts.txt",
+      "artifact_bytes": 1987,
+      "artifact_sha256": "08d939bbaa2eae171889cdd9679296a931fa72f22e492b2fc9547fb1397c48e1",
+      "extraction": {
+        "original_line_ranges": [
+          [
+            52,
+            80
+          ],
+          [
+            173,
+            179
+          ]
+        ],
+        "source_not_executed": true
+      },
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/finetuning/preprocess.py",
+          "resolved_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/finetuning/preprocess.py",
+          "fetched_utc": "2026-09-17T19:55:12.985163+00:00",
+          "http_status": 200,
+          "response_bytes": 13717,
+          "response_sha256": "2c2fdb80e1b5fb6bf77c26c3d1eef4fef646bb60aaf7303edb9eff0aa5bacd3e",
+          "etag": "\"73157897afaa524b4c1eb1f7216ef7971f6dab91ffa9c97a94b7e697f6393d50\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "613013ca17dfda250d71c2b8a9e45ac118d51fda"
+        }
+      ]
+    },
+    {
+      "path": "evidence/github/save_bon_results.py.excerpts.txt",
+      "artifact_bytes": 1383,
+      "artifact_sha256": "b6a66c302dcad5133918cc9e4687172ba81ce24aee3940dcc3ac847c028eda65",
+      "extraction": {
+        "original_line_ranges": [
+          [
+            12,
+            30
+          ],
+          [
+            44,
+            58
+          ]
+        ],
+        "source_not_executed": true
+      },
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/finetuning/save_bon_results.py",
+          "resolved_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/finetuning/save_bon_results.py",
+          "fetched_utc": "2026-09-17T19:55:13.010624+00:00",
+          "http_status": 200,
+          "response_bytes": 3280,
+          "response_sha256": "e03a651b24931eba66997659591121e41eaa9de0d65357a600c400c87891dec3",
+          "etag": "\"7426dc2a83b02c2743bd42e47f31b05aa39a8708bf15cabe52062b330af43233\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "1bdd33208a5f489b276d9b514438059780f791a8"
+        }
+      ]
+    },
+    {
+      "path": "evidence/github/humor_ppo.py.excerpts.txt",
+      "artifact_bytes": 1086,
+      "artifact_sha256": "dd91b8fad2319e2b04b6da6cef3d84a7544ac20f7056ab8c088312b3f6caba8e",
+      "extraction": {
+        "original_line_ranges": [
+          [
+            139,
+            150
+          ],
+          [
+            170,
+            178
+          ]
+        ],
+        "source_not_executed": true
+      },
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/finetuning/humor_ppo.py",
+          "resolved_url": "https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/7cb2419529c556fab06bf6584645d37ccaa36fc1/finetuning/humor_ppo.py",
+          "fetched_utc": "2026-09-17T19:55:13.020071+00:00",
+          "http_status": 200,
+          "response_bytes": 8488,
+          "response_sha256": "37d14e9d8026762a837be2f3331203aaa1189555bdc81528386730ed2cb951ef",
+          "etag": "\"977fe9a16ef19c0414a521d2b14972a9afd6ae6e71b3d470392d47e22fe9f705\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "494d32f14ffe522fda84c104c286944d9caaf616"
+        }
+      ]
+    },
+    {
+      "path": "evidence/arxiv/version.metadata.json",
+      "artifact_bytes": 737,
+      "artifact_sha256": "9ea72aa0c45809b493947a07c91130d10c5383258d17ed6bc23347edb6e25ee8",
+      "extraction": "Citation meta tags and submission-history text only; no PDF retrieved",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/abs/2406.10522v2",
+          "resolved_url": "https://[REDACTED_HOST]/abs/2406.10522v2",
+          "fetched_utc": "2026-09-17T19:55:13.470535+00:00",
+          "http_status": 200,
+          "response_bytes": 43774,
+          "response_sha256": "953a547473b125a48ced5c529afc3c747545884786fc86819331bdcb0392c262",
+          "etag": null,
+          "last_modified": "Mon, 24 Aug 2026 20:26:49 GMT"
+        }
+      ]
+    },
+    {
+      "path": "evidence/arxiv/methods.aggregate_excerpts.txt",
+      "artifact_bytes": 5295,
+      "artifact_sha256": "38cad646763f70e1238679d82659f8e0106e80afa9d1d0dbe388c31ab87e11f1",
+      "extraction": {
+        "paragraph_ids": [
+          "S3.p1",
+          "S3.p3",
+          "S4.SS3.p3",
+          "S4.SS3.p6",
+          "A3.SS3.p1",
+          "A3.SS3.p2",
+          "A3.SS3.p3"
+        ],
+        "excluded": "figures/tables/images/notes/math; all other paragraphs incl. prompt/examples appendices"
+      },
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/html/2406.10522v2",
+          "resolved_url": "https://[REDACTED_HOST]/html/2406.10522v2",
+          "fetched_utc": "2026-09-17T19:55:13.541933+00:00",
+          "http_status": 200,
+          "response_bytes": 267523,
+          "response_sha256": "22ca67b5079ebe2fdab6581b079dd402b1a2177368076fd7d9b089c08b26736e",
+          "etag": "\"CNLKg/KMupYDEAE=\"",
+          "last_modified": "Mon, 24 Aug 2026 20:26:48 GMT"
+        }
+      ]
+    },
+    {
+      "path": "evidence/arxiv/resource_urls.json",
+      "artifact_bytes": 131,
+      "artifact_sha256": "d6c143a6b3e47e081ad394fa9dbfe68c8a3b21c596a9fe0b4d7e1e24fdb0dbdd",
+      "extraction": "Href strings only; dataset, viewer, image, Drive and example URLs were not followed",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/html/2406.10522v2",
+          "resolved_url": "https://[REDACTED_HOST]/html/2406.10522v2",
+          "fetched_utc": "2026-09-17T19:55:13.541933+00:00",
+          "http_status": 200,
+          "response_bytes": 267523,
+          "response_sha256": "22ca67b5079ebe2fdab6581b079dd402b1a2177368076fd7d9b089c08b26736e",
+          "etag": "\"CNLKg/KMupYDEAE=\"",
+          "last_modified": "Mon, 24 Aug 2026 20:26:48 GMT"
+        }
+      ]
+    },
+    {
+      "path": "evidence/hf/discovery.metadata.json",
+      "artifact_bytes": 7050,
+      "artifact_sha256": "ee6b2b393baa40ddec866c87f4cdfd605a61c5bd3ecf243dce87fe16bb7a2b20",
+      "extraction": "Model IDs/revisions/base-model tags only; bounded discovery is not proof of global nonexistence",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/api/models?author=yguooo&full=true&config=true&limit=100",
+          "resolved_url": "https://[REDACTED_HOST]/api/models?author=yguooo&full=true&config=true&limit=100",
+          "fetched_utc": "2026-09-17T19:55:14.015834+00:00",
+          "http_status": 200,
+          "response_bytes": 7839,
+          "response_sha256": "aa191ff3f01e7a33803cbafb543c3449cce12ebd4576e9a7615a4c164da999e9",
+          "etag": "W/\"1e9f-0DRMu+3yctZt/1MS+ywQwbYL4aE\"",
+          "last_modified": null
+        },
+        {
+          "requested_url": "https://[REDACTED_HOST]/api/models?author=jifanz&full=true&limit=100",
+          "resolved_url": "https://[REDACTED_HOST]/api/models?author=jifanz&full=true&limit=100",
+          "fetched_utc": "2026-09-17T19:55:14.538990+00:00",
+          "http_status": 200,
+          "response_bytes": 2,
+          "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "etag": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\"",
+          "last_modified": null
+        },
+        {
+          "requested_url": "https://[REDACTED_HOST]/api/models?filter=arxiv:2406.10522&full=true&limit=100",
+          "resolved_url": "https://[REDACTED_HOST]/api/models?filter=arxiv:2406.10522&full=true&limit=100",
+          "fetched_utc": "2026-09-17T19:55:15.057362+00:00",
+          "http_status": 200,
+          "response_bytes": 2,
+          "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "etag": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\"",
+          "last_modified": null
+        },
+        {
+          "requested_url": "https://[REDACTED_HOST]/api/models?search=newyorker&full=true&limit=100",
+          "resolved_url": "https://[REDACTED_HOST]/api/models?search=newyorker&full=true&limit=100",
+          "fetched_utc": "2026-09-17T19:55:15.582468+00:00",
+          "http_status": 200,
+          "response_bytes": 9044,
+          "response_sha256": "2a1a4a65e693e25e4c712fbe1f7821d72ababa090cf48b46bd33c5a4ff72fefc",
+          "etag": "W/\"2354-pMWwQSoiKgUF4LfJn7znEcvSs44\"",
+          "last_modified": null
+        },
+        {
+          "requested_url": "https://[REDACTED_HOST]/api/models?search=new-yorker&full=true&limit=100",
+          "resolved_url": "https://[REDACTED_HOST]/api/models?search=new-yorker&full=true&limit=100",
+          "fetched_utc": "2026-09-17T19:55:16.105651+00:00",
+          "http_status": 200,
+          "response_bytes": 9497,
+          "response_sha256": "7e14e2a345b65c942a2378557bf67377a1a7211293300e6c1fca6140a596fa20",
+          "etag": "W/\"2519-vEwJKgM82ughyXmOkXtfeY04gqY\"",
+          "last_modified": null
+        },
+        {
+          "requested_url": "https://[REDACTED_HOST]/api/models?search=humor_reward&full=true&limit=100",
+          "resolved_url": "https://[REDACTED_HOST]/api/models?search=humor_reward&full=true&limit=100",
+          "fetched_utc": "2026-09-17T19:55:16.634203+00:00",
+          "http_status": 200,
+          "response_bytes": 828,
+          "response_sha256": "3c13095bfa92d40cc2325fc059362a9e99722825b15fca9ecb951439af405dae",
+          "etag": "W/\"33c-XrgwlE6RzFDz1jvk1p3ZWVOOoQQ\"",
+          "last_modified": null
+        }
+      ]
+    },
+    {
+      "path": "evidence/hf/rm_mistral_7b/model.metadata.json",
+      "artifact_bytes": 4087,
+      "artifact_sha256": "6115037c0ba2e54479766cbe69d9acbcc5735fe796efb770be10c0004b883b5b",
+      "extraction": "Model metadata projection; LFS hashes/sizes advertised by server, not independently hashed weights",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/api/models/weqweasdas/RM-Mistral-7B/revision/70e252672fdd640083505e2ca1da8547e0e6d478?blobs=true",
+          "resolved_url": "https://[REDACTED_HOST]/api/models/weqweasdas/RM-Mistral-7B/revision/70e252672fdd640083505e2ca1da8547e0e6d478?blobs=true",
+          "fetched_utc": "2026-09-17T19:55:17.204404+00:00",
+          "http_status": 200,
+          "response_bytes": 3344,
+          "response_sha256": "16737b75611b5d8cb3c3a67d257483ea84333fbfc025621235396ce25b336936",
+          "etag": "W/\"d10-Z2POhDw03HZw3iVTSt+YpQyu1ks\"",
+          "last_modified": null
+        }
+      ]
+    },
+    {
+      "path": "evidence/hf/rm_mistral_7b/config.json",
+      "artifact_bytes": 818,
+      "artifact_sha256": "b6fc94181372cc5f133d5711866834c31cd77e5919f95554a5138007d298fc5a",
+      "extraction": "Full metadata/config JSON; terminal LF normalized only if absent",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/weqweasdas/RM-Mistral-7B/resolve/70e252672fdd640083505e2ca1da8547e0e6d478/config.json",
+          "resolved_url": "https://[REDACTED_HOST]/api/resolve-cache/models/weqweasdas/RM-Mistral-7B/70e252672fdd640083505e2ca1da8547e0e6d478/config.json?%2Fweqweasdas%2FRM-Mistral-7B%2Fresolve%2F70e252672fdd640083505e2ca1da8547e0e6d478%2Fconfig.json=&etag=%22d9597ec2b7088204594e16c75db34a017a9e7bee%22",
+          "fetched_utc": "2026-09-17T19:55:18.171473+00:00",
+          "http_status": 200,
+          "response_bytes": 818,
+          "response_sha256": "b6fc94181372cc5f133d5711866834c31cd77e5919f95554a5138007d298fc5a",
+          "etag": "\"d9597ec2b7088204594e16c75db34a017a9e7bee\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "d9597ec2b7088204594e16c75db34a017a9e7bee"
+        }
+      ]
+    },
+    {
+      "path": "evidence/hf/rm_mistral_7b/tokenizer_config.json",
+      "artifact_bytes": 1635,
+      "artifact_sha256": "83ce84cb74bedb6bc33ac6c32330d56ea8b016db92458c04a662d4796cea7640",
+      "extraction": "Full metadata/config JSON; terminal LF normalized only if absent",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/weqweasdas/RM-Mistral-7B/resolve/70e252672fdd640083505e2ca1da8547e0e6d478/tokenizer_config.json",
+          "resolved_url": "https://[REDACTED_HOST]/api/resolve-cache/models/weqweasdas/RM-Mistral-7B/70e252672fdd640083505e2ca1da8547e0e6d478/tokenizer_config.json?%2Fweqweasdas%2FRM-Mistral-7B%2Fresolve%2F70e252672fdd640083505e2ca1da8547e0e6d478%2Ftokenizer_config.json=&etag=%22c62dae81340551683caafa9cb8c546cf30d6ca3d%22",
+          "fetched_utc": "2026-09-17T19:55:19.134618+00:00",
+          "http_status": 200,
+          "response_bytes": 1635,
+          "response_sha256": "83ce84cb74bedb6bc33ac6c32330d56ea8b016db92458c04a662d4796cea7640",
+          "etag": "\"c62dae81340551683caafa9cb8c546cf30d6ca3d\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "c62dae81340551683caafa9cb8c546cf30d6ca3d"
+        }
+      ]
+    },
+    {
+      "path": "evidence/hf/rm_mistral_7b/special_tokens_map.json",
+      "artifact_bytes": 552,
+      "artifact_sha256": "ae23cb7a14676d4c1f7ec69eacebbe54aecd608c63e5a519b7bdaacc39897fe0",
+      "extraction": "Full metadata/config JSON; terminal LF normalized only if absent",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/weqweasdas/RM-Mistral-7B/resolve/70e252672fdd640083505e2ca1da8547e0e6d478/special_tokens_map.json",
+          "resolved_url": "https://[REDACTED_HOST]/api/resolve-cache/models/weqweasdas/RM-Mistral-7B/70e252672fdd640083505e2ca1da8547e0e6d478/special_tokens_map.json?%2Fweqweasdas%2FRM-Mistral-7B%2Fresolve%2F70e252672fdd640083505e2ca1da8547e0e6d478%2Fspecial_tokens_map.json=&etag=%220fe0f752d4bc23aad8903dfc5e8815fa90b34646%22",
+          "fetched_utc": "2026-09-17T19:55:20.087733+00:00",
+          "http_status": 200,
+          "response_bytes": 552,
+          "response_sha256": "ae23cb7a14676d4c1f7ec69eacebbe54aecd608c63e5a519b7bdaacc39897fe0",
+          "etag": "\"0fe0f752d4bc23aad8903dfc5e8815fa90b34646\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "0fe0f752d4bc23aad8903dfc5e8815fa90b34646"
+        }
+      ]
+    },
+    {
+      "path": "evidence/hf/rm_mistral_7b/added_tokens.json",
+      "artifact_bytes": 21,
+      "artifact_sha256": "75e3ca5df2973756aa612cb17246ef6020a68ff8d94671508987d373642f7a36",
+      "extraction": "Full metadata/config JSON; terminal LF normalized only if absent",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/weqweasdas/RM-Mistral-7B/resolve/70e252672fdd640083505e2ca1da8547e0e6d478/added_tokens.json",
+          "resolved_url": "https://[REDACTED_HOST]/api/resolve-cache/models/weqweasdas/RM-Mistral-7B/70e252672fdd640083505e2ca1da8547e0e6d478/added_tokens.json?%2Fweqweasdas%2FRM-Mistral-7B%2Fresolve%2F70e252672fdd640083505e2ca1da8547e0e6d478%2Fadded_tokens.json=&etag=%22e41416ddd79948246ea2dced6800ea3cd531c424%22",
+          "fetched_utc": "2026-09-17T19:55:21.097488+00:00",
+          "http_status": 200,
+          "response_bytes": 21,
+          "response_sha256": "75e3ca5df2973756aa612cb17246ef6020a68ff8d94671508987d373642f7a36",
+          "etag": "\"e41416ddd79948246ea2dced6800ea3cd531c424\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "e41416ddd79948246ea2dced6800ea3cd531c424"
+        }
+      ]
+    },
+    {
+      "path": "evidence/hf/rm_mistral_7b/model.safetensors.index.json",
+      "artifact_bytes": 23948,
+      "artifact_sha256": "a08bcc4f87fa1d8e3fb2a7f92d93e9365ee72cd479b4c8048b0218155584f5b5",
+      "extraction": "Full metadata/config JSON; terminal LF normalized only if absent",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/weqweasdas/RM-Mistral-7B/resolve/70e252672fdd640083505e2ca1da8547e0e6d478/model.safetensors.index.json",
+          "resolved_url": "https://[REDACTED_HOST]/api/resolve-cache/models/weqweasdas/RM-Mistral-7B/70e252672fdd640083505e2ca1da8547e0e6d478/model.safetensors.index.json?%2Fweqweasdas%2FRM-Mistral-7B%2Fresolve%2F70e252672fdd640083505e2ca1da8547e0e6d478%2Fmodel.safetensors.index.json=&etag=%22821791f7d7ade6ee35e2ac95962b55872728a0a0%22",
+          "fetched_utc": "2026-09-17T19:55:22.185530+00:00",
+          "http_status": 200,
+          "response_bytes": 23948,
+          "response_sha256": "a08bcc4f87fa1d8e3fb2a7f92d93e9365ee72cd479b4c8048b0218155584f5b5",
+          "etag": "\"821791f7d7ade6ee35e2ac95962b55872728a0a0\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "821791f7d7ade6ee35e2ac95962b55872728a0a0"
+        }
+      ]
+    },
+    {
+      "path": "evidence/hf/rm_mistral_7b/README.provenance.excerpt.md",
+      "artifact_bytes": 2302,
+      "artifact_sha256": "d9063c75399dcad68ea6b43b95e541a1d173ee02abf2755cca9585b21adc4646",
+      "extraction": "Only provenance/training documentation before Uses; usage examples excluded",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/weqweasdas/RM-Mistral-7B/resolve/70e252672fdd640083505e2ca1da8547e0e6d478/README.md",
+          "resolved_url": "https://[REDACTED_HOST]/api/resolve-cache/models/weqweasdas/RM-Mistral-7B/70e252672fdd640083505e2ca1da8547e0e6d478/README.md?%2Fweqweasdas%2FRM-Mistral-7B%2Fresolve%2F70e252672fdd640083505e2ca1da8547e0e6d478%2FREADME.md=&etag=%223274d74667a188c79fb8f3df29544dcaabfdbf3b%22",
+          "fetched_utc": "2026-09-17T19:55:23.176433+00:00",
+          "http_status": 200,
+          "response_bytes": 4593,
+          "response_sha256": "a54b64179acc4d05723d5c756ef464c13928cd0ba7e124944d0737d54d9ad3c3",
+          "etag": "\"3274d74667a188c79fb8f3df29544dcaabfdbf3b\"",
+          "last_modified": null,
+          "verified_git_blob_sha1": "3274d74667a188c79fb8f3df29544dcaabfdbf3b"
+        }
+      ]
+    },
+    {
+      "path": "evidence/hf/mistral_instruct_v0_2.metadata.json",
+      "artifact_bytes": 2480,
+      "artifact_sha256": "9769f031fbeafed14d60d9e6ddf6a84f82630310705e627296dcdc5c0009aef8",
+      "extraction": "Underlying base-model provenance/license metadata; widget and examples omitted",
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/api/models/mistralai/Mistral-7B-Instruct-v0.2/revision/63a8b081895390a26e140280378bc85ec8bce07a",
+          "resolved_url": "https://[REDACTED_HOST]/api/models/mistralai/Mistral-7B-Instruct-v0.2/revision/63a8b081895390a26e140280378bc85ec8bce07a",
+          "fetched_utc": "2026-09-17T19:55:23.707362+00:00",
+          "http_status": 200,
+          "response_bytes": 6290,
+          "response_sha256": "38e9d4cf534a609a858dffcb0672bf1a42b6a8f989894aea21e37dc8d56dae9f",
+          "etag": "W/\"1892-60zK+gi1dhtfgp5zgKfWc+XG5RU\"",
+          "last_modified": null
+        }
+      ]
+    },
+    {
+      "path": "evidence/local_cache_filename_check.json",
+      "artifact_bytes": 1122,
+      "artifact_sha256": "d3e01a2955ae6cf251884c60a02d8e27569f63b20a0a15727f09d2b3e64841af",
+      "extraction": "Local filename metadata only; no model or tensor loaded",
+      "sources": []
+    },
+    {
+      "path": "evidence/library_contracts/trl_reward_loss.reference.txt",
+      "artifact_bytes": 1837,
+      "artifact_sha256": "3e7063fc90c13fd57422ee68da74f5e3da82995e364d99b9d82fb2db41d11dfb",
+      "extraction": {
+        "class": "RewardTrainer",
+        "methods": [
+          "compute_loss"
+        ],
+        "original_line_ranges": [
+          [
+            216,
+            249
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/huggingface/trl/e90e8d91d2265e484f229c45a5eb8982f94a2936/trl/trainer/reward_trainer.py",
+          "resolved_url": "https://[REDACTED_HOST]/huggingface/trl/e90e8d91d2265e484f229c45a5eb8982f94a2936/trl/trainer/reward_trainer.py",
+          "fetched_utc": "2026-09-17T19:57:27.562572+00:00",
+          "http_status": 200,
+          "response_bytes": 14097,
+          "response_sha256": "f496262efc35b3e50f9d899531a4a8cb08bcd1a57dd0669ebf5da945ff4b7787",
+          "commit_sha": "e90e8d91d2265e484f229c45a5eb8982f94a2936",
+          "tag": "v0.8.6"
+        }
+      ]
+    },
+    {
+      "path": "evidence/library_contracts/transformers_mistral_classifier.reference.txt",
+      "artifact_bytes": 4973,
+      "artifact_sha256": "29be5958634110d97eb269be43320fc93b1c12fefd58437aee7ad8bff87ed473",
+      "extraction": {
+        "class": "MistralForSequenceClassification",
+        "methods": [
+          "__init__",
+          "forward"
+        ],
+        "original_line_ranges": [
+          [
+            1282,
+            1289
+          ],
+          [
+            1298,
+            1386
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "requested_url": "https://[REDACTED_HOST]/huggingface/transformers/a0857740c0e6127485c11476650314df3accc2b6/src/transformers/models/mistral/modeling_mistral.py",
+          "resolved_url": "https://[REDACTED_HOST]/huggingface/transformers/a0857740c0e6127485c11476650314df3accc2b6/src/transformers/models/mistral/modeling_mistral.py",
+          "fetched_utc": "2026-09-17T19:57:27.585154+00:00",
+          "http_status": 200,
+          "response_bytes": 63489,
+          "response_sha256": "6e706ea44e71c47dde084444058105752fec391261aef778dde7e45364ea82de",
+          "commit_sha": "a0857740c0e6127485c11476650314df3accc2b6",
+          "tag": "v4.38.1"
+        }
+      ]
+    }
+  ],
+  "supplemented_utc": "2026-09-17T19:57:27.585206+00:00"
+}

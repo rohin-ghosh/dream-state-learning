@@ -1,0 +1,61 @@
+{
+  "control_receipts": [
+    "ADMISSION.json",
+    "ADMISSION_TIME.json",
+    "ALLOCATION.json",
+    "CONTAINED_COMMAND.json",
+    "CONTAINMENT_VERIFIED.json",
+    "GUARD.json",
+    "LAUNCH.json",
+    "PLAN.json",
+    "SERVICE_IDENTITY.json"
+  ],
+  "last_readout_dispatch": {
+    "cycle": 42,
+    "path": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1/readouts/sleep_000042_DISPATCH.json",
+    "resident_pid": 2409681,
+    "sha256": "62ace89d3aa382cbb0bc1c2064857474785aa9ff4f5b4def459dc08567f37fa3"
+  },
+  "observed_unix": 1789668670.8851333,
+  "observer_race_caveat": "Previous metadata read saw readout PID1748870 exit between stat and cwd; this observation handles disappearance without signalling or retrying any model call.",
+  "operator": {
+    "cwd": "/localhome/local-rohing",
+    "parent": 1,
+    "pid": 1367396,
+    "start_ticks": "38691249",
+    "state": "S"
+  },
+  "original_actor": {
+    "pid": 2409681,
+    "state": "ABSENT_OR_EXITED_DURING_READ"
+  },
+  "physical": 3,
+  "preserved_checkpoint_exists": true,
+  "preserved_stream_exists": true,
+  "readout_request": {
+    "checkpoint_commit_sha256": "4df912627ea8321b9af4ab9739f97d1a80f7ca01bde8fae0763fc014a6be8a9f",
+    "checkpoint_path": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1/checkpoints/sleep_000042/COMMIT.json",
+    "completion_file_exists": true,
+    "completion_file_read": false,
+    "path": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1/readouts/sleep_000042/REQUEST.json",
+    "ppid": 2409681,
+    "process": {
+      "pid": 1748870,
+      "state": "ABSENT_OR_EXITED_DURING_READ"
+    },
+    "sha256": "1ffc2d8b0cca88a5f15c35fd7916a6a0b6a2f07a5567ea143b2791ecac42b329"
+  },
+  "receipts": [
+    "ARMED.json",
+    "BOUNDARY.json",
+    "BOUNDARY_RECEIVING_CPU.json",
+    "DISPATCHED.json",
+    "RECEIVING_CPU.json",
+    "RETIRED.json",
+    "RETIREMENT_STARTED.json",
+    "SOURCE_PROOF.json",
+    "STAGED.json"
+  ],
+  "sealed_content_reads": 0,
+  "signals_sent": 0
+}

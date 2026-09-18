@@ -1,0 +1,239 @@
+{
+  "batch_sha256": "5d73091fa467d24ec595f7f6adce8ce9f99e07d1569d2a97795302702e003b97",
+  "custody": {
+    "birth_context_digest": "490714b19e75bcff4746805a10c0b46959de1714b4c739594c1bbcd4c47ea87f",
+    "completed_birth_context_matches_initial": true,
+    "completed_boundary": {
+      "checkpoint": {
+        "adapter_files": {
+          "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+          "adapter_config.json": "7a3672e271f8b8ae20dbdbd922d69b7183c43cd9f5986dbd5756ff169fdb5bf9",
+          "adapter_model.safetensors": "a0f2212b3dcdcb933196ccb64adca14925acb6bcbf4fa93c2aeaf07811dfa698"
+        },
+        "adapter_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000042/adapter",
+        "adapter_state_sha256": "d32eb44b580637b836016708e456dcf33bcdd7a4ffc99be858a4e7141523070c",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_sha256": {
+          "adapter": "793543dabd9ab5e56f33b255750ae35721e0d0e21c66229815f7ab53f5e063b7",
+          "optimizer": "e688520184fb8c49e43ff819159895b3ba65ac488afb78dc8d5d853b34edacd1",
+          "rng": "e688520184fb8c49e43ff819159895b3ba65ac488afb78dc8d5d853b34edacd1"
+        },
+        "created_unix": 1789629461.5845027,
+        "experiment_digest": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "optimizer_rng_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000042/optimizer_rng.pt",
+        "optimizer_steps": 4229,
+        "presence_only": {
+          "adapter/adapter_config.json": {
+            "bytes": 1263,
+            "regular": true
+          },
+          "adapter/adapter_model.safetensors": {
+            "bytes": 80792096,
+            "regular": true
+          },
+          "optimizer_rng.pt": {
+            "bytes": 161848253,
+            "regular": true
+          }
+        },
+        "reference": {
+          "bytes": 1127,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000042/COMMIT.json",
+          "sha256": "fe5d107277f6a7c9570385032da844d68181faae7bf51c1af4c41447af7ba73b"
+        },
+        "schema": "R125_NATIVE_CONTINUITY_V1"
+      },
+      "cycle": 42,
+      "generations": 126,
+      "record": {
+        "chain_sha256": "2b9d147f54973218339dac071f5cd505f0bf620cac99e6eaaaaed4951ab9abb2",
+        "index": 4812,
+        "intent": {
+          "bytes": 265,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000004812.intent.json",
+          "sha256": "5c192595379e0fd859756c07983159f80937da61c4ec5bbfd82be1754cf7848c"
+        },
+        "kind": "SLEEP_COMPLETE",
+        "previous_sha256": "4986beac476bb402c855b5f6c317faa6c3fd4ed65ff527ff7a58decb189d29ad",
+        "record": {
+          "bytes": 2046579,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000004812.json",
+          "sha256": "c842fa13ac6490087f3cc589621ebf5966b0a38246163d1ad62205b5bc4fd077"
+        }
+      },
+      "resume_state_sha256": "edc8c7d468dcb3b652d6d4f235f9afdd16427073026ac4ce74015e7ae8dda4df",
+      "rows": 126,
+      "sleep_frontier": 126
+    },
+    "completed_history_TRAIN_only": true,
+    "current_plan_exact_storage_root": true,
+    "current_plans": [
+      {
+        "bytes": 3135,
+        "path": "/localhome/local-rohing/orch_r157_keepalive_run1_20260917_readmit2/PLAN.json",
+        "sha256": "283468db6a48dc1ec2a5508f9b44d344ee21e403a484c8c76ee21730f738036e"
+      }
+    ],
+    "full_birth_to_frontier_journal_scan_performed": false,
+    "historical_start_ticks_equal": true,
+    "identity_rechecked": true,
+    "initial_commit": {
+      "adapter_files": {
+        "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+        "adapter_config.json": "312efe1da3f1afec95729e3eae76bd7e94c7fffdd18af2e524c98d92c5cc320b",
+        "adapter_model.safetensors": "2beaa09d4930b1eafa6a1a07a67f3d062b35336d5e5ac58778a00ad518cf9dfe"
+      },
+      "adapter_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/initial/adapter",
+      "adapter_state_sha256": "95966e71c3ec81487d05e02d6b770c422febfc433fe367d856a6e4817f8dbe14",
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "checkpoint_sha256": {
+        "adapter": "a697f6786bed1726bbcfd7dfc4e9bc263a66d71f1e99cf5a4e7f8519cf99cd45",
+        "optimizer": "aa5811768e68f1de7765f7616da244170302211f4fb7cbc235a3434037ebafa5",
+        "rng": "aa5811768e68f1de7765f7616da244170302211f4fb7cbc235a3434037ebafa5"
+      },
+      "created_unix": 1789539147.7820733,
+      "experiment_digest": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "optimizer_rng_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/initial/optimizer_rng.pt",
+      "optimizer_steps": 0,
+      "presence_only": {
+        "adapter/adapter_config.json": {
+          "bytes": 1263,
+          "regular": true
+        },
+        "adapter/adapter_model.safetensors": {
+          "bytes": 80792096,
+          "regular": true
+        },
+        "optimizer_rng.pt": {
+          "bytes": 42213,
+          "regular": true
+        }
+      },
+      "reference": {
+        "bytes": 1114,
+        "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/initial/COMMIT.json",
+        "sha256": "fbcbb4791f84b7a21e662d25cf44de6dba791a73526c63743c07ba1ff4681324"
+      },
+      "schema": "R125_NATIVE_CONTINUITY_V1"
+    },
+    "initial_record": {
+      "chain_sha256": "8fc7d0e1f388dd82c272a031a9b81326e43e4583ba09fe4d6186ee1a7334017d",
+      "index": 0,
+      "intent": {
+        "bytes": 262,
+        "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000000000.intent.json",
+        "sha256": "8cf4c4a077b1bce2a317d99c18f6e79285b11fb0a78ec80f7172d45cf8a44cca"
+      },
+      "kind": "COMMITTED",
+      "previous_sha256": "0f561043cdd6593b18a8d38fe6fce5b850f872c1b9fb9803dcf4852c4ad52402",
+      "record": {
+        "bytes": 2803,
+        "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000000000.json",
+        "sha256": "c417b19dd86bb61a08e706b2773f54d37c724d457424fc6ee727b694aba6dc98"
+      }
+    },
+    "journal": {
+      "bytes": 84,
+      "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/JOURNAL.json",
+      "sha256": "d69c72f9e6ae8be810547ef10ef0c0bc1b7d75f430e30f0e1f7aacc6c837b121"
+    },
+    "last_completed_sleep": 42,
+    "life_id": "continual_run1",
+    "native_configurations": [
+      {
+        "keys": [
+          "allocation_path",
+          "allocation_sha256",
+          "attempt_dir",
+          "device_containment",
+          "hard_end_unix",
+          "host_sha256",
+          "lease_path",
+          "lease_sha256",
+          "next_reserved_unix",
+          "plan_path",
+          "plan_sha256",
+          "resume",
+          "schema",
+          "source_pins"
+        ],
+        "reference": {
+          "bytes": 22675,
+          "path": "/localhome/local-rohing/orch_r157_keepalive_run1_20260917_readmit2/GUARD.json",
+          "sha256": "38aa7fef2ecadfe6ead32fa8e2b96b1e5bdf8fb2c4562f158625b32df986e81e"
+        },
+        "source_fields": {}
+      }
+    ],
+    "native_identity": {
+      "argv_sha256": "b90453f9acbfd497cb68c8dc83d4f41c388d8feaa4b49663027d63fea89da5a0",
+      "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+      "cwd": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical2_20260916t1626z_attempt1/source",
+      "pid": 2803009,
+      "start_ticks": "15153096",
+      "state": "S",
+      "uid": 2524
+    },
+    "native_source_pins": [
+      {
+        "bytes": 36381,
+        "path": "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical2_20260916t1626z_attempt1/source/gpu/orch_r125_continual_native.py",
+        "sha256": "d3cbd3b0053f0c7c5d3d8e36e37c52954bdb39a40fc4346e4e6d3ab4bf5a2ad1"
+      }
+    ],
+    "node": "ovx3",
+    "observed_unix": 1789635957.7897809,
+    "original_plan_candidates": [
+      {
+        "birth_context_matches": true,
+        "reference": {
+          "bytes": 2561,
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/control/PLAN.json",
+          "sha256": "f19dd67754be9a387c47226d71839b9a58ea7baffa565d9b9d9a6d786dabb4dd"
+        },
+        "root_matches": true
+      }
+    ],
+    "queue_birth_binding_ready": false,
+    "reads": {
+      "journal_bytes": 18616815,
+      "metadata_bytes": 5726356,
+      "record_count": 157
+    },
+    "registered_storage_alias": false,
+    "registry_birth_plan": {
+      "bytes": 3135,
+      "path": "/localhome/local-rohing/orch_r157_keepalive_run1_20260917_readmit2/PLAN.json",
+      "sha256": "283468db6a48dc1ec2a5508f9b44d344ee21e403a484c8c76ee21730f738036e"
+    },
+    "registry_plan_birth_context_matches": false,
+    "source_candidates": [
+      "/localhome/local-rohing/orch_r143_node5_suffix_confined_physical2_20260916t1626z_attempt1/source"
+    ],
+    "source_root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+    "status": "IDENTITY_AND_COMPLETED_FRONTIER_VERIFIED",
+    "tail": {
+      "chain_sha256": "ea2e9978946caf834b68a3320c093691447761d51d4c15783f70ab890209e72e",
+      "index": 4967,
+      "intent": {
+        "bytes": 265,
+        "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000004967.intent.json",
+        "sha256": "083b5cf7f8c1aeef063e3a33fb51592ba575ac027eb614236388197e323d5828"
+      },
+      "kind": "UPDATE",
+      "previous_sha256": "9195b38c00e5837754ed29357508648de88b5a272434d5ec367e4503276f60c4",
+      "record": {
+        "bytes": 967,
+        "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000004967.json",
+        "sha256": "caf478f1c0d74b43a6633d2687f087d4b2aea2a1a3e73ce8bf7643fd642d944d"
+      }
+    },
+    "tail_index_at_listing": 4967
+  },
+  "helper_sha256": "8d4ba9626ad598db1ed36df9a3b24ddc26a0421f326862b8b032b3d6635d3e27",
+  "hostname": "[REDACTED_HOST]",
+  "no_signals": true,
+  "no_writes": true,
+  "node": "ovx3",
+  "observed_unix": 1789635957.5065308
+}

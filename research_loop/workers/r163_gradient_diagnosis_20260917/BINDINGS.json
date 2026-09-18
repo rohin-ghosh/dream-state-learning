@@ -1,0 +1,33 @@
+{
+  "actual_GPU_root_cause_established": false,
+  "compared_function_AST_sha256": {
+    "compare_tree": "76ca06d470c986df8fccd245af1da7614f8f106534d267dd1b1293b960339ecd",
+    "cpu_copy": "592d4feadaef012b75a9f92751f0e8c29a2ce1498f950d31962c13b8966e6a89",
+    "full_label_update": "7e5405a080e0e7eed87d698460c86373e87c8142688d842f4c4aa7545d4f1dca",
+    "restore_state": "6886ba2e103cea15fd800266db226cc3b5d7a3dd252f229465d121c8147ae13f",
+    "saved_state": "cf5ae3d2f030b63bff38032a3aac41d2f1978bd9b25d4f44f5a729cb9b567585"
+  },
+  "compared_function_ASTs_unchanged_in_prospective": true,
+  "cuda_initialized": false,
+  "explicit_injected_CPU_RNG_draw_control_cases": 1,
+  "files": {
+    "research_loop/workers/r163_executor_probe_20260917/launch1/FAILED.json": "8a0ac0e3c77608beb9d6277eb3361e935625fcc8f08d0c5fbecece217baf09f8",
+    "research_loop/workers/r163_executor_probe_20260917/launch1/PROBE.json": "b51061564a802ebabeecd37e1179daaae0bb6a562946f55c2392273ffa74eeb1",
+    "research_loop/workers/r163_executor_probe_20260917/launch1/SERVICE.log": "8793cc319536002c2e5cf33a872a40cdd3d6a136215a1331a6e663296ba44200",
+    "research_loop/workers/r163_executor_probe_20260917/launch1/SERVICE_EXIT.json": "3dbcfbfb1b34b6abffc3af35615b77ca1791ed12543cfe729c991b659d7a9c17",
+    "research_loop/workers/r163_gradient_diagnosis_20260917/attempt2/CPU.json": "53740209c8a873e9cb1cb9239302cc339771823e4b5563679426904e31f9760a",
+    "research_loop/workers/r163_gradient_diagnosis_20260917/attempt2/CPU_TESTS.log": "9537f0f519140d6dcf456cb3036e8153735010873d77156739d195a25057aa4f",
+    "research_loop/workers/r163_gradient_diagnosis_20260917/attempt2/orch_r161_native_executor.py": "b033fbe4f1e8db5fa071e6c47678706f6e2b054d54a505947d8e4161075bea15",
+    "research_loop/workers/r163_gradient_diagnosis_20260917/attempt2/orch_r163_executor_probe.py": "99c114f4cd68dbff86afb16ec39544460cacb68fdbff60a513b59eb801227422",
+    "research_loop/workers/r163_gradient_diagnosis_20260917/attempt2/run_cpu.py": "992e06da33823c30d8e03763195b124fb675c3b86414c13446b2a5231b12d5f7",
+    "tests/test_orch_r163_probe_qwen_cpu.py": "f9f1a2fd48dc161babf944f3c655bb47c23a0ac2cd177b319925856119fe5a1a"
+  },
+  "observed_prospective_probe_sha256": "9ae9d6f0fcf133154976980f2df887e74f1b3caa548f528d4dcd92b1fb73a026",
+  "original_candidate3_probe_sha256": "99c114f4cd68dbff86afb16ec39544460cacb68fdbff60a513b59eb801227422",
+  "proposed_next_step": "New separately reviewed/authorized diagnostic-only first-pair GPU full/full/suffix/suffix experiment; no longest-context or training run, unchanged tolerances",
+  "real_7b_validated": false,
+  "schema": "R163_CPU_GRADIENT_DIAGNOSIS_BINDINGS_V1",
+  "selected_probe_kind": "failed candidate3 exact bytes, copied from bound CPU3 source snapshot",
+  "tests_passed": 8,
+  "unperturbed_cases": 7
+}

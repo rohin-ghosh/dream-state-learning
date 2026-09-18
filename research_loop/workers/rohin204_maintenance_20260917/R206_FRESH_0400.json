@@ -1,0 +1,1231 @@
+{
+  "schema": "R206_CURRENT_INCARNATION_AND_PARENT_STATUS_V1",
+  "recorded_utc": "2026-09-18T04:02:28.847685+00:00",
+  "source_pass": "research_loop/workers/rohin204_maintenance_20260917/PASS_20260918T040024Z.json",
+  "source_pass_sha256": "4ec0dec786e5ffede15d70aae9cbc3c6d211f3aed48db92bc09cc4344163e58b",
+  "started_utc": "2026-09-18T04:00:24.896321+00:00",
+  "finished_utc": "2026-09-18T04:00:27.696245+00:00",
+  "observed_native_count": 28,
+  "observed_state_counts": {
+    "R": 17,
+    "S": 9,
+    "T": 2,
+    "D": 0,
+    "Z": 0
+  },
+  "identity_verified_count": 28,
+  "current_loaded_verified_count": 27,
+  "counts_by_node": {
+    "node1": 5,
+    "node2": 7,
+    "node4": 8,
+    "node5": 8
+  },
+  "selected_incarnations": [
+    {
+      "node": "node2",
+      "physical": 3,
+      "pid": 2170067,
+      "state_at_end": "S",
+      "native_identity_verified": true,
+      "incarnation_status": "LOADED_VERIFIED",
+      "current_loaded": {
+        "reference": {
+          "index": 5847,
+          "kind": "LOADED",
+          "record_sha256": "02ed025e04cb5f676d6d2bfc7913175c2f93233519f4b04a4e7813ffd9d0bc0e",
+          "path": "/proc/2170067/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+          "mtime_unix": 1789700990.487748
+        },
+        "pid": 2170067,
+        "loaded_unix": 1789700990.4532373,
+        "trial_id": "R202_REPO_C_node2_clone1",
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 173,
+        "split": "TRAIN",
+        "started_unix": 1789703718.279828,
+        "reference": {
+          "index": 6247,
+          "kind": "REQUEST",
+          "record_sha256": "8aa1077521f360dc25609ef78c495e85bc646f6f68f96971d1285e5ed2ad7842",
+          "path": "/proc/2170067/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006247.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006247.json",
+          "mtime_unix": 1789703718.7608347
+        },
+        "prompt_tokens": 14222,
+        "after_current_process_start": true
+      },
+      "compactions": [
+        {
+          "reference": {
+            "index": 5870,
+            "kind": "COMPACTION",
+            "record_sha256": "8b2b77a53624f7f4442fb87cad7aec34cc59a25bb21c9aa9a7c0a4e20a9b5142",
+            "path": "/proc/2170067/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005870.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005870.json",
+            "mtime_unix": 1789701035.1007059
+          },
+          "fields": {
+            "kind": "CHILD_COMPACTION"
+          }
+        },
+        {
+          "reference": {
+            "index": 6253,
+            "kind": "COMPACTION",
+            "record_sha256": "5720d58f35b55e85c547aa3d12d0cbb718890ec80626918b72cffed845550b66",
+            "path": "/proc/2170067/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006253.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006253.json",
+            "mtime_unix": 1789703728.1265109
+          },
+          "fields": {
+            "kind": "CHILD_COMPACTION"
+          }
+        }
+      ],
+      "head": {
+        "index": 6284,
+        "kind": "UPDATE",
+        "record_sha256": "1fc7f83fa607e03ddcc5e2fa4fdfad17d65568e8cb93136b0107c09d91468f25",
+        "path": "/proc/2170067/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006284.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006284.json",
+        "mtime_unix": 1789704018.4680214,
+        "age_seconds": 7.707833766937256,
+        "timestamp_unix": 1789704018.4680214,
+        "timestamp_source": "mtime"
+      },
+      "think_runs": [
+        1,
+        1,
+        3,
+        3,
+        3
+      ],
+      "working_state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 20,
+        "REJECTED_PRIOR_STATE_RETAINED": 1
+      },
+      "working_state_edit_opportunities": 1
+    },
+    {
+      "node": "node2",
+      "physical": 4,
+      "pid": 2204408,
+      "state_at_end": "R",
+      "native_identity_verified": true,
+      "incarnation_status": "LOADED_VERIFIED",
+      "current_loaded": {
+        "reference": {
+          "index": 5847,
+          "kind": "LOADED",
+          "record_sha256": "16628371ce8e2d4d2aae5d18c9f061d2515507248c272b535cf5106a465d60f0",
+          "path": "/proc/2204408/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+          "mtime_unix": 1789702082.7665107
+        },
+        "pid": 2204408,
+        "loaded_unix": 1789702082.7321541,
+        "trial_id": "R203_CREATIVE_D_node2_clone1",
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 166,
+        "split": "TRAIN",
+        "started_unix": 1789703820.4003177,
+        "reference": {
+          "index": 6104,
+          "kind": "REQUEST",
+          "record_sha256": "0dd5b072397c8f562bbc94e0b0b3980c3774f01ea6b415e919e0a64c977975a3",
+          "path": "/proc/2204408/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006104.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006104.json",
+          "mtime_unix": 1789703820.8679216
+        },
+        "prompt_tokens": 11781,
+        "after_current_process_start": true
+      },
+      "compactions": [
+        {
+          "reference": {
+            "index": 5852,
+            "kind": "COMPACTION",
+            "record_sha256": "f8d0a6910a09654812b52deefa52936a8d4ab2b74ba522a00c3d78abfee521af",
+            "path": "/proc/2204408/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005852.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005852.json",
+            "mtime_unix": 1789702084.325983
+          },
+          "fields": {
+            "kind": "R203_PRE_GENERATION_CHILD_SOURCE_CARRY",
+            "before_tokens": 14664,
+            "after_tokens": 5235
+          }
+        },
+        {
+          "reference": {
+            "index": 6019,
+            "kind": "COMPACTION",
+            "record_sha256": "4e1f34b8b206f3bc99ee8b158ed877187b0920f879f10e6245170d5641436fb9",
+            "path": "/proc/2204408/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006019.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006019.json",
+            "mtime_unix": 1789703271.573773
+          },
+          "fields": {
+            "kind": "R203_PRE_GENERATION_CHILD_SOURCE_CARRY",
+            "before_tokens": 12509,
+            "after_tokens": 5285
+          }
+        }
+      ],
+      "head": {
+        "index": 6132,
+        "kind": "UPDATE",
+        "record_sha256": "7a2d78743690c6427b0bf79aeab3ed2ff97198bbd46cbf2ba97fd5a4a5fd4732",
+        "path": "/proc/2204408/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006132.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006132.json",
+        "mtime_unix": 1789704025.4956052,
+        "age_seconds": 0.7984488010406494,
+        "timestamp_unix": 1789704025.4956052,
+        "timestamp_source": "mtime"
+      },
+      "think_runs": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "working_state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 14
+      },
+      "working_state_edit_opportunities": 0
+    },
+    {
+      "node": "node2",
+      "physical": 6,
+      "pid": 2204538,
+      "state_at_end": "R",
+      "native_identity_verified": true,
+      "incarnation_status": "LOADED_VERIFIED",
+      "current_loaded": {
+        "reference": {
+          "index": 5847,
+          "kind": "LOADED",
+          "record_sha256": "fec4895e57249c4afc026cea1ad25a974e28f64f8ec2aaeb1c6c4340524bf84e",
+          "path": "/proc/2204538/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+          "mtime_unix": 1789702085.5910077
+        },
+        "pid": 2204538,
+        "loaded_unix": 1789702085.558742,
+        "trial_id": "R203_MATH_TRANSFER_C_node2_clone1",
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 167,
+        "split": "TRAIN",
+        "started_unix": 1789703857.7532358,
+        "reference": {
+          "index": 6146,
+          "kind": "REQUEST",
+          "record_sha256": "c9177f0ae638bb5376cca8c6522566d6122dba3599d8a57db27fca5852964d42",
+          "path": "/proc/2204538/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006146.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006146.json",
+          "mtime_unix": 1789703858.233863
+        },
+        "prompt_tokens": 8641,
+        "after_current_process_start": true
+      },
+      "compactions": [
+        {
+          "reference": {
+            "index": 5852,
+            "kind": "COMPACTION",
+            "record_sha256": "1781bbfa7d2087106ba639cab8a3a69477c94ef383ba60329ba76a65160fd683",
+            "path": "/proc/2204538/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005852.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005852.json",
+            "mtime_unix": 1789702087.3809662
+          },
+          "fields": {
+            "kind": "R203_PRE_GENERATION_CHILD_SOURCE_CARRY",
+            "before_tokens": 14668,
+            "after_tokens": 5239
+          }
+        },
+        {
+          "reference": {
+            "index": 5978,
+            "kind": "COMPACTION",
+            "record_sha256": "cddd5f4453061cb53a57b7fa34f8be798b84f30612477e8cac1cc41aeecc9cde",
+            "path": "/proc/2204538/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005978.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005978.json",
+            "mtime_unix": 1789702804.803024
+          },
+          "fields": {
+            "kind": "R203_PRE_GENERATION_CHILD_SOURCE_CARRY",
+            "before_tokens": 12534,
+            "after_tokens": 5320
+          }
+        },
+        {
+          "reference": {
+            "index": 5985,
+            "kind": "COMPACTION",
+            "record_sha256": "5fb1527bd0ea289642241ca6a7b254b313d05724adc14f9eedb077529337ab10",
+            "path": "/proc/2204538/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005985.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005985.json",
+            "mtime_unix": 1789702822.8982515
+          },
+          "fields": {
+            "kind": "CHILD_COMPACTION"
+          }
+        }
+      ],
+      "head": {
+        "index": 6172,
+        "kind": "UPDATE",
+        "record_sha256": "efe3bd897aee8eb81abf40b26166bd00a0d69ba6ebb1dfc27fbf65b473ced226",
+        "path": "/proc/2204538/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006172.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006172.json",
+        "mtime_unix": 1789703995.6537066,
+        "age_seconds": 30.752063989639282,
+        "timestamp_unix": 1789703995.6537066,
+        "timestamp_source": "mtime"
+      },
+      "think_runs": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "working_state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 15
+      },
+      "working_state_edit_opportunities": 0
+    },
+    {
+      "node": "node2",
+      "physical": 2,
+      "pid": 2263935,
+      "state_at_end": "R",
+      "native_identity_verified": true,
+      "incarnation_status": "LOADING_OR_LOAD_UNVERIFIED",
+      "current_loaded": null,
+      "latest_request": null,
+      "compactions": [],
+      "head": null,
+      "think_runs": [],
+      "working_state_statuses": {},
+      "working_state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "physical": 6,
+      "pid": 3673431,
+      "state_at_end": "R",
+      "native_identity_verified": true,
+      "incarnation_status": "LOADED_VERIFIED",
+      "current_loaded": {
+        "reference": {
+          "index": 262,
+          "kind": "LOADED",
+          "record_sha256": "4a2e01bc17582c68d27122e7206efc57629b616aed14f455aaed2fd49988c9fd",
+          "path": "/proc/3673431/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000262.json",
+          "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000262.json",
+          "mtime_unix": 1789703457.670314
+        },
+        "pid": 3673431,
+        "loaded_unix": 1789703457.666667,
+        "trial_id": "R201_MATH_C_node4_6",
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 171,
+        "split": "TRAIN",
+        "started_unix": 1789703613.1486893,
+        "reference": {
+          "index": 288,
+          "kind": "REQUEST",
+          "record_sha256": "36250495b4bad152f555deef5e7fc24e76b3fe7bf1c2c868fd653736fbfb5229",
+          "path": "/proc/3673431/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000288.json",
+          "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000288.json",
+          "mtime_unix": 1789703613.971211
+        },
+        "prompt_tokens": 15827,
+        "after_current_process_start": true
+      },
+      "compactions": [
+        {
+          "reference": {
+            "index": 294,
+            "kind": "COMPACTION",
+            "record_sha256": "cc7a9ff348bba5b38df21ca8eb80dd26b99e22252ad7c885d091d8d9e46ca247",
+            "path": "/proc/3673431/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000294.json",
+            "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000294.json",
+            "mtime_unix": 1789703632.2523346
+          },
+          "fields": {
+            "kind": "CHILD_COMPACTION"
+          }
+        }
+      ],
+      "head": {
+        "index": 329,
+        "kind": "UPDATE",
+        "record_sha256": "b162bd451819ea3ba12f0a4e1a159293d7d59f68dc9d33c6051dba628fb8a6de",
+        "path": "/proc/3673431/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000329.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000329.json",
+        "mtime_unix": 1789704025.880891,
+        "age_seconds": 0.5992486476898193,
+        "timestamp_unix": 1789704025.880891,
+        "timestamp_source": "mtime"
+      },
+      "think_runs": [
+        3
+      ],
+      "working_state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 5
+      },
+      "working_state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "physical": 2,
+      "pid": 3735657,
+      "state_at_end": "R",
+      "native_identity_verified": true,
+      "incarnation_status": "LOADED_VERIFIED",
+      "current_loaded": {
+        "reference": {
+          "index": 310,
+          "kind": "LOADED",
+          "record_sha256": "82c7ed9bc808a6cdf6e7c3a8fb6ce3a85471dbd1deadff92d996c571d5acd9a1",
+          "path": "/proc/3735657/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/life/stream/records/00000000000000000310.json",
+          "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/life/stream/records/00000000000000000310.json",
+          "mtime_unix": 1789703972.7219095
+        },
+        "pid": 3735657,
+        "loaded_unix": 1789703972.71699,
+        "trial_id": "R203_NODE4_2_MATH_PROSE_B",
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 166,
+        "split": "TRAIN",
+        "started_unix": 1789703991.101304,
+        "reference": {
+          "index": 319,
+          "kind": "REQUEST",
+          "record_sha256": "9c7eb94a859a0b25c675f1c528fbcf1bf4405837bfffc5daa2dfeec906977f2d",
+          "path": "/proc/3735657/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/life/stream/records/00000000000000000319.json",
+          "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/life/stream/records/00000000000000000319.json",
+          "mtime_unix": 1789703991.6104944
+        },
+        "prompt_tokens": 8754,
+        "after_current_process_start": true
+      },
+      "compactions": [],
+      "head": {
+        "index": 319,
+        "kind": "REQUEST",
+        "record_sha256": "9c7eb94a859a0b25c675f1c528fbcf1bf4405837bfffc5daa2dfeec906977f2d",
+        "path": "/proc/3735657/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/life/stream/records/00000000000000000319.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/life/stream/records/00000000000000000319.json",
+        "mtime_unix": 1789703991.6104944,
+        "age_seconds": 35.414796113967896,
+        "timestamp_unix": 1789703991.101304,
+        "timestamp_source": "document.started_unix"
+      },
+      "think_runs": [
+        1
+      ],
+      "working_state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 1
+      },
+      "working_state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "physical": 7,
+      "pid": 3737619,
+      "state_at_end": "R",
+      "native_identity_verified": true,
+      "incarnation_status": "LOADED_VERIFIED",
+      "current_loaded": {
+        "reference": {
+          "index": 311,
+          "kind": "LOADED",
+          "record_sha256": "5e05c59461361df821b3620140a83165645776f506f074040938eef8214796b3",
+          "path": "/proc/3737619/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000311.json",
+          "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000311.json",
+          "mtime_unix": 1789703990.1791828
+        },
+        "pid": 3737619,
+        "loaded_unix": 1789703990.172019,
+        "trial_id": "R203_NODE4_7_CREATIVE_OPEN_C",
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 167,
+        "split": "TRAIN",
+        "started_unix": 1789704012.3374965,
+        "reference": {
+          "index": 329,
+          "kind": "REQUEST",
+          "record_sha256": "7b394601e2ec85125c431b8c3c2014e4c6c9c4ea0e78bd3c30a3401d6d48885b",
+          "path": "/proc/3737619/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000329.json",
+          "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000329.json",
+          "mtime_unix": 1789704012.8547404
+        },
+        "prompt_tokens": 8039,
+        "after_current_process_start": true
+      },
+      "compactions": [],
+      "head": {
+        "index": 340,
+        "kind": "UPDATE",
+        "record_sha256": "3bd065845b73652b3123598ba24985cf6e4a34f89df00cb710dbe202ddb678a3",
+        "path": "/proc/3737619/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000340.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000340.json",
+        "mtime_unix": 1789704025.7824051,
+        "age_seconds": 0.7441647052764893,
+        "timestamp_unix": 1789704025.7824051,
+        "timestamp_source": "mtime"
+      },
+      "think_runs": [
+        1
+      ],
+      "working_state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 3
+      },
+      "working_state_edit_opportunities": 0
+    },
+    {
+      "node": "node5",
+      "physical": 3,
+      "pid": 2668022,
+      "state_at_end": "S",
+      "native_identity_verified": true,
+      "incarnation_status": "LOADED_VERIFIED",
+      "current_loaded": {
+        "reference": {
+          "index": 4716,
+          "kind": "LOADED",
+          "record_sha256": "94ef09352401ff2fd60b1a0cb120dfdc10fc84277132621700b2306e288240c5",
+          "path": "/proc/2668022/root/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000004716.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000004716.json",
+          "mtime_unix": 1789686488.4537525
+        },
+        "pid": 2668022,
+        "loaded_unix": 1789686488.4254339,
+        "trial_id": null,
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 210,
+        "split": "TRAIN",
+        "started_unix": 1789703974.2389696,
+        "reference": {
+          "index": 6573,
+          "kind": "REQUEST",
+          "record_sha256": "2d654afda665d87f3b28773903889b315136b04f5531f07c3e9131d563b2f831",
+          "path": "/proc/2668022/root/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000006573.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000006573.json",
+          "mtime_unix": 1789703974.8972268
+        },
+        "prompt_tokens": 2029,
+        "after_current_process_start": true
+      },
+      "compactions": [
+        {
+          "reference": {
+            "index": 6513,
+            "kind": "COMPACTION",
+            "record_sha256": "ae7cb5e64499353e38a6bd560a14a417a4fc513919af894d6b10c68605235793",
+            "path": "/proc/2668022/root/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000006513.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000006513.json",
+            "mtime_unix": 1789703237.6136053
+          },
+          "fields": {
+            "kind": "CHILD_COMPACTION"
+          }
+        }
+      ],
+      "head": {
+        "index": 6592,
+        "kind": "UPDATE",
+        "record_sha256": "f3993988e76a895e5251e888f678f403d28163db275a8fbd086831cd8f529a6f",
+        "path": "/proc/2668022/root/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000006592.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000006592.json",
+        "mtime_unix": 1789704024.582867,
+        "age_seconds": 1.8847050666809082,
+        "timestamp_unix": 1789704024.582867,
+        "timestamp_source": "mtime"
+      },
+      "think_runs": [],
+      "working_state_statuses": {},
+      "working_state_edit_opportunities": 0
+    },
+    {
+      "node": "node5",
+      "physical": 1,
+      "pid": 3179563,
+      "state_at_end": "T",
+      "native_identity_verified": true,
+      "incarnation_status": "LOADED_VERIFIED",
+      "current_loaded": {
+        "reference": {
+          "index": 6057,
+          "kind": "LOADED",
+          "record_sha256": "e40ed5db7dca1ac3d6c6871c3d2723924542489d5cccba0344e32212b4cf22a9",
+          "path": "/proc/3179563/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006057.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006057.json",
+          "mtime_unix": 1789702260.3434007
+        },
+        "pid": 3179563,
+        "loaded_unix": 1789702260.3091197,
+        "trial_id": "C2_R204_saved_boundary_resume",
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 169,
+        "split": "TRAIN",
+        "started_unix": 1789703438.5423253,
+        "reference": {
+          "index": 6224,
+          "kind": "REQUEST",
+          "record_sha256": "6455b6e1daa78f60f58dcb86f3ca13cfbbe6c4daa57492f0f8c56cc87e316fd2",
+          "path": "/proc/3179563/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006224.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006224.json",
+          "mtime_unix": 1789703439.2745006
+        },
+        "prompt_tokens": 8194,
+        "after_current_process_start": true
+      },
+      "compactions": [
+        {
+          "reference": {
+            "index": 6207,
+            "kind": "COMPACTION",
+            "record_sha256": "b576020869c00efec392d4a8083995dcc7d73e87a9d46cffd8873d98cd3f19bb",
+            "path": "/proc/3179563/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006207.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006207.json",
+            "mtime_unix": 1789703407.240828
+          },
+          "fields": {
+            "kind": "R203_PRE_GENERATION_CHILD_SOURCE_CARRY",
+            "before_tokens": 13066,
+            "after_tokens": 5842
+          }
+        }
+      ],
+      "head": {
+        "index": 6284,
+        "kind": "R184_LEARN_COMPLETE",
+        "record_sha256": "bee7a26152050be7c702e877a4d759e2829b201173f52640845672337ea92227",
+        "path": "/proc/3179563/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006284.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006284.json",
+        "mtime_unix": 1789703818.0564468,
+        "age_seconds": 209.36956000328064,
+        "timestamp_unix": 1789703818.0564468,
+        "timestamp_source": "mtime"
+      },
+      "think_runs": [
+        1,
+        1,
+        1
+      ],
+      "working_state_statuses": {
+        "REJECTED_PRIOR_STATE_RETAINED": 2,
+        "NO_EXPLICIT_STATE_DELTA": 7
+      },
+      "working_state_edit_opportunities": 2
+    }
+  ],
+  "parent_rows": [
+    {
+      "node": "node1",
+      "physical": 6,
+      "pid": 183848,
+      "loaded": 5143,
+      "window_end_utc": "2026-09-18T04:00:26.594783+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 8,
+      "request_opportunities": 24,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 7517,
+          "kind": "INBOX",
+          "record_sha256": "70514609e937e309c3faf6ad636b2aabc486e281be9d628cde3dc8fbf489f3fe",
+          "path": "/proc/183848/root/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/records/00000000000000007517.json",
+          "configured_path": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/records/00000000000000007517.json",
+          "mtime_unix": 1789703722.78059
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node1",
+      "physical": 5,
+      "pid": 2611237,
+      "loaded": 5931,
+      "window_end_utc": "2026-09-18T04:00:26.594783+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 3,
+      "request_opportunities": 9,
+      "exposure_seconds": 1257.873219013214,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6077,
+          "kind": "INBOX",
+          "record_sha256": "c685eb3a670ce1df5f51f4bcf85a3fff8adfb5faf9c2b2de22c34454e74119e1",
+          "path": "/proc/2611237/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006077.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006077.json",
+          "mtime_unix": 1789703680.4974995
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node1",
+      "physical": 4,
+      "pid": 2634733,
+      "loaded": 5930,
+      "window_end_utc": "2026-09-18T04:00:26.594783+00:00",
+      "recent_5min_count": 1,
+      "recent_5min_receipts": [
+        {
+          "reference": {
+            "index": 6093,
+            "kind": "INBOX",
+            "record_sha256": "9b179201da82e86a2f8a550fed4d9b4be42179221309940e511e67de3fb2b1f3",
+            "path": "/proc/2634733/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006093.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006093.json",
+            "mtime_unix": 1789703800.674533
+          },
+          "speaker": "Astra"
+        }
+      ],
+      "incarnation_or_hour_count": 3,
+      "request_opportunities": 9,
+      "exposure_seconds": 1125.3155105113983,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6093,
+          "kind": "INBOX",
+          "record_sha256": "9b179201da82e86a2f8a550fed4d9b4be42179221309940e511e67de3fb2b1f3",
+          "path": "/proc/2634733/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006093.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006093.json",
+          "mtime_unix": 1789703800.674533
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node1",
+      "physical": 2,
+      "pid": 2673188,
+      "loaded": 5995,
+      "window_end_utc": "2026-09-18T04:00:26.594783+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 2,
+      "request_opportunities": 9,
+      "exposure_seconds": 921.6937425136566,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6060,
+          "kind": "INBOX",
+          "record_sha256": "9f52ef1fbc5a806f645cc89ec1c40f07742c5177054b31aa9a42218ef10f9f08",
+          "path": "/proc/2673188/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006060.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006060.json",
+          "mtime_unix": 1789703511.4984715
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node1",
+      "physical": 3,
+      "pid": 2701436,
+      "loaded": 6017,
+      "window_end_utc": "2026-09-18T04:00:26.594783+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 2,
+      "request_opportunities": 7,
+      "exposure_seconds": 760.0571649074554,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6074,
+          "kind": "INBOX",
+          "record_sha256": "ab63331f98b805548c1a782a986fc60f40237fda484d1c0d2e4b69e98b411962",
+          "path": "/proc/2701436/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006074.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006074.json",
+          "mtime_unix": 1789703640.2554696
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node2",
+      "physical": 7,
+      "pid": 1849180,
+      "loaded": 5295,
+      "window_end_utc": "2026-09-18T04:00:26.630982+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 16,
+      "request_opportunities": 16,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6872,
+          "kind": "INBOX",
+          "record_sha256": "d2e1ce1397a21bc1768eec6af5d91882e1f8d1dfa490f120891937004031cd2d",
+          "path": "/proc/1849180/root/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000006872.json",
+          "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000006872.json",
+          "mtime_unix": 1789703285.5126917
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node2",
+      "physical": 0,
+      "pid": 1849630,
+      "loaded": 5739,
+      "window_end_utc": "2026-09-18T04:00:26.630982+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 7,
+      "request_opportunities": 20,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 7300,
+          "kind": "INBOX",
+          "record_sha256": "1c701df828e28adfb1b71f50904c65783037a92bb18a69d6dca42063b1cc3e8a",
+          "path": "/proc/1849630/root/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1/stream/records/00000000000000007300.json",
+          "configured_path": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1/stream/records/00000000000000007300.json",
+          "mtime_unix": 1789703339.2464705
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node2",
+      "physical": 5,
+      "pid": 1849923,
+      "loaded": 5443,
+      "window_end_utc": "2026-09-18T04:00:26.630982+00:00",
+      "recent_5min_count": 1,
+      "recent_5min_receipts": [
+        {
+          "reference": {
+            "index": 6950,
+            "kind": "INBOX",
+            "record_sha256": "9f25572cdc236f236d777cec688d109ee119d1207f52eae3c2e6bfb25f70ec20",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006950.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006950.json",
+            "mtime_unix": 1789703869.2480452
+          },
+          "speaker": "Astra"
+        }
+      ],
+      "incarnation_or_hour_count": 6,
+      "request_opportunities": 18,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6950,
+          "kind": "INBOX",
+          "record_sha256": "9f25572cdc236f236d777cec688d109ee119d1207f52eae3c2e6bfb25f70ec20",
+          "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006950.json",
+          "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006950.json",
+          "mtime_unix": 1789703869.2480452
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node2",
+      "physical": 3,
+      "pid": 2170067,
+      "loaded": 5847,
+      "window_end_utc": "2026-09-18T04:00:26.630982+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 5,
+      "request_opportunities": 21,
+      "exposure_seconds": 3035.7226178646088,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6004,
+          "kind": "INBOX",
+          "record_sha256": "8914606d36a1bdedac15058dfd3109792d8237c3fa775712ed18391b5b176912",
+          "path": "/proc/2170067/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006004.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006004.json",
+          "mtime_unix": 1789702212.8584123
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node2",
+      "physical": 4,
+      "pid": 2204408,
+      "loaded": 5847,
+      "window_end_utc": "2026-09-18T04:00:26.630982+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 5,
+      "request_opportunities": 14,
+      "exposure_seconds": 1943.5618999004364,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6010,
+          "kind": "INBOX",
+          "record_sha256": "9007a2be990a4db777012205000fc3c11ce5c206d6b17e4a15072adef5dd9695",
+          "path": "/proc/2204408/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006010.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006010.json",
+          "mtime_unix": 1789703254.9905715
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node2",
+      "physical": 6,
+      "pid": 2204538,
+      "loaded": 5847,
+      "window_end_utc": "2026-09-18T04:00:26.630982+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 4,
+      "request_opportunities": 15,
+      "exposure_seconds": 1940.8470284938812,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6042,
+          "kind": "INBOX",
+          "record_sha256": "45070fdb69d335a015872d1846ed6e45b4f4e150c7ff7912ebcdf9dc532de86f",
+          "path": "/proc/2204538/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006042.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006042.json",
+          "mtime_unix": 1789703397.8899114
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node2",
+      "physical": 2,
+      "pid": 2263935,
+      "loaded": null,
+      "window_end_utc": "2026-09-18T04:00:26.630982+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 0,
+      "exposure_seconds": null,
+      "window_complete": false,
+      "latest_receipt": null
+    },
+    {
+      "node": "node4",
+      "physical": 4,
+      "pid": 1643508,
+      "loaded": 4825,
+      "window_end_utc": "2026-09-18T04:00:26.534980+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 15,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node4",
+      "physical": 5,
+      "pid": 1995652,
+      "loaded": 5323,
+      "window_end_utc": "2026-09-18T04:00:26.534980+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 2,
+      "request_opportunities": 15,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6395,
+          "kind": "INBOX",
+          "record_sha256": "a2f4a305887e4513c2a63bd471d0b1b0b143b2ebf71713bbf8eb175f6081e5a7",
+          "path": "/proc/1995652/root/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1/stream/records/00000000000000006395.json",
+          "configured_path": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1/stream/records/00000000000000006395.json",
+          "mtime_unix": 1789701004.5097406
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node4",
+      "physical": 3,
+      "pid": 3578364,
+      "loaded": 4,
+      "window_end_utc": "2026-09-18T04:00:26.534980+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 2,
+      "request_opportunities": 10,
+      "exposure_seconds": 1323.188794374466,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 15,
+          "kind": "INBOX",
+          "record_sha256": "1dae0dfa04e8ab734f10715ea1dd869a42ec42ad03846412a5b9fd3b0132539b",
+          "path": "/proc/3578364/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/records/00000000000000000015.json",
+          "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/records/00000000000000000015.json",
+          "mtime_unix": 1789702717.355747
+        },
+        "speaker": "Astra"
+      }
+    },
+    {
+      "node": "node4",
+      "physical": 6,
+      "pid": 3673431,
+      "loaded": 262,
+      "window_end_utc": "2026-09-18T04:00:26.534980+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 5,
+      "exposure_seconds": 568.8134727478027,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node4",
+      "physical": 1,
+      "pid": 3710748,
+      "loaded": 151,
+      "window_end_utc": "2026-09-18T04:00:26.534980+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 3,
+      "exposure_seconds": 275.9698190689087,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node4",
+      "physical": 0,
+      "pid": 3719354,
+      "loaded": 202,
+      "window_end_utc": "2026-09-18T04:00:26.534980+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 4,
+      "exposure_seconds": 195.6936149597168,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node4",
+      "physical": 2,
+      "pid": 3735657,
+      "loaded": 310,
+      "window_end_utc": "2026-09-18T04:00:26.534980+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 2,
+      "exposure_seconds": 53.79911017417908,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node4",
+      "physical": 7,
+      "pid": 3737619,
+      "loaded": 311,
+      "window_end_utc": "2026-09-18T04:00:26.534980+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 3,
+      "exposure_seconds": 36.35455083847046,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node5",
+      "physical": 2,
+      "pid": 2495635,
+      "loaded": 5932,
+      "window_end_utc": "2026-09-18T04:00:27.448297+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 18,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node5",
+      "physical": 4,
+      "pid": 2606742,
+      "loaded": 4596,
+      "window_end_utc": "2026-09-18T04:00:27.448297+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 17,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node5",
+      "physical": 3,
+      "pid": 2668022,
+      "loaded": 4716,
+      "window_end_utc": "2026-09-18T04:00:27.448297+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 18,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node5",
+      "physical": 0,
+      "pid": 2707975,
+      "loaded": 5306,
+      "window_end_utc": "2026-09-18T04:00:27.448297+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 21,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node5",
+      "physical": 6,
+      "pid": 2757295,
+      "loaded": 5843,
+      "window_end_utc": "2026-09-18T04:00:27.448297+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 24,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node5",
+      "physical": 5,
+      "pid": 2761060,
+      "loaded": 4509,
+      "window_end_utc": "2026-09-18T04:00:27.448297+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 34,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node5",
+      "physical": 7,
+      "pid": 2761360,
+      "loaded": 5466,
+      "window_end_utc": "2026-09-18T04:00:27.448297+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 0,
+      "request_opportunities": 18,
+      "exposure_seconds": 3600,
+      "window_complete": true,
+      "latest_receipt": null
+    },
+    {
+      "node": "node5",
+      "physical": 1,
+      "pid": 3179563,
+      "loaded": 6057,
+      "window_end_utc": "2026-09-18T04:00:27.448297+00:00",
+      "recent_5min_count": 0,
+      "recent_5min_receipts": [],
+      "incarnation_or_hour_count": 5,
+      "request_opportunities": 9,
+      "exposure_seconds": 1767.1168870925903,
+      "window_complete": true,
+      "latest_receipt": {
+        "reference": {
+          "index": 6204,
+          "kind": "INBOX",
+          "record_sha256": "4e5e7b455c3767f0b1454794bb2e17fec81a1fe0baf0966e21f1932b088cdbd3",
+          "path": "/proc/3179563/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006204.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006204.json",
+          "mtime_unix": 1789703405.0304615
+        },
+        "speaker": "Astra"
+      }
+    }
+  ],
+  "parent_inbox_active_5min": [
+    {
+      "node": "node1",
+      "physical": 4,
+      "pid": 2634733,
+      "count": 1
+    },
+    {
+      "node": "node2",
+      "physical": 5,
+      "pid": 1849923,
+      "count": 1
+    }
+  ],
+  "parent_receipt_interpretation": "Accepted TRAIN parent INBOX records after current LOADED; not operator process liveness, attention, rendered REQUEST visibility, or appropriateness of guided/withdrawn phase.",
+  "hardware_receipt": "research_loop/workers/rohin204_maintenance_20260917/HARDWARE_READY_RECEIPT.json",
+  "service": {
+    "pid": 2656637,
+    "uid": 158984,
+    "start_ticks": "180945900",
+    "cmdline_sha256": "c5e6103370c0ae078a090c7be5caf0e94cca7e9e674505d7053f73fce1e4f801",
+    "interval_seconds": 1200,
+    "control": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin204_maintenance_20260917/STOP",
+    "stop_command": "python3 -B research_loop/workers/rohin204_maintenance_20260917/audit.py stop",
+    "identity_alive": true
+  },
+  "learner_interventions": 0,
+  "gpu_model_calls": 0
+}

@@ -1,0 +1,1109 @@
+{
+  "schema": "R205_CURRENT_INCARNATION_RECHECK_V1",
+  "observed_start_utc": "2026-09-18T03:48:02.281315+00:00",
+  "observed_end_utc": "2026-09-18T03:48:04.750347+00:00",
+  "source_receipt": {
+    "path": "research_loop/workers/rohin204_maintenance_20260917/PASS_20260918T034802Z.json",
+    "sha256": "865331c2a780c0192ae91b874b44e646bd4ca5ff3a15a90383e706545d3489e5"
+  },
+  "observed_native_count": 29,
+  "r184_configured_observed": 15,
+  "states": {
+    "R": 20,
+    "S": 9,
+    "T": 0,
+    "D": 0,
+    "Z": 0
+  },
+  "superseded_since_033401": [
+    {
+      "node": "node1",
+      "slot": 5,
+      "prior_pid": 2492641,
+      "current_pid": 2611237
+    },
+    {
+      "node": "node1",
+      "slot": 7,
+      "prior_pid": 2204208,
+      "current_pid": 2622451
+    },
+    {
+      "node": "node1",
+      "slot": 4,
+      "prior_pid": 2519932,
+      "current_pid": 2634733
+    },
+    {
+      "node": "node1",
+      "slot": 2,
+      "prior_pid": 2474769,
+      "current_pid": 2673188
+    },
+    {
+      "node": "node1",
+      "slot": 3,
+      "prior_pid": 2464226,
+      "current_pid": 2701436
+    },
+    {
+      "node": "node4",
+      "slot": 3,
+      "prior_pid": 1565205,
+      "current_pid": 3578364
+    }
+  ],
+  "prior_slots_not_observed_now": [
+    {
+      "node": "node2",
+      "slot": 1,
+      "prior_pid": 2128807
+    }
+  ],
+  "lives": [
+    {
+      "node": "node1",
+      "slot": 6,
+      "pid": 183848,
+      "start_ticks": "40797822",
+      "state": "S",
+      "identity_verified": true,
+      "life": "classroom_creative",
+      "owner": "NODE1 sole operator",
+      "loaded_reference": {
+        "index": 5143,
+        "kind": "LOADED",
+        "record_sha256": "f094c798ef87dc094ca5827a81d8cad49b0016d5764cf6776153bd6260ad2c1a",
+        "path": "/proc/183848/root/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/records/00000000000000005143.json",
+        "configured_path": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/records/00000000000000005143.json",
+        "mtime_unix": 1789686902.5077362
+      },
+      "request_reference": {
+        "index": 7396,
+        "kind": "REQUEST",
+        "record_sha256": "d3751ba5ef7083156bcd10198c11ba48c2181b103fd5fe456761246b8f42fdec",
+        "path": "/proc/183848/root/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/records/00000000000000007396.json",
+        "configured_path": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/records/00000000000000007396.json",
+        "mtime_unix": 1789703024.4444625
+      },
+      "prompt_tokens": 2613,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node1",
+      "slot": 5,
+      "pid": 2611237,
+      "start_ticks": "42382601",
+      "state": "S",
+      "identity_verified": true,
+      "life": "R203_MATH_SELF_DERIVE_C_node1_clone1",
+      "owner": "NODE1 sole operator",
+      "loaded_reference": {
+        "index": 5931,
+        "kind": "LOADED",
+        "record_sha256": "1ac2ea6007df24a2ce76367c2295cc1708bf1ff4426391406331353c929402c6",
+        "path": "/proc/2611237/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005931.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005931.json",
+        "mtime_unix": 1789702768.4090614
+      },
+      "request_reference": {
+        "index": 6016,
+        "kind": "REQUEST",
+        "record_sha256": "34ca9ee14676af05263838c04e6be793486aba0119ebef799ec511c3a299097b",
+        "path": "/proc/2611237/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006016.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006016.json",
+        "mtime_unix": 1789703258.2323868
+      },
+      "prompt_tokens": 7067,
+      "think_runs": [
+        1,
+        1
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 6
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node1",
+      "slot": 7,
+      "pid": 2622451,
+      "start_ticks": "42389154",
+      "state": "R",
+      "identity_verified": true,
+      "life": "R202_CREATIVE_B_node1_clone1",
+      "owner": "NODE1 sole operator",
+      "loaded_reference": {
+        "index": 6173,
+        "kind": "LOADED",
+        "record_sha256": "8a700e9c9361b1997c480927ac1a96668994dc4d52a66fd67205d3c4e1040bb7",
+        "path": "/proc/2622451/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006173.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006173.json",
+        "mtime_unix": 1789702858.7519753
+      },
+      "request_reference": {
+        "index": 6255,
+        "kind": "REQUEST",
+        "record_sha256": "a02ca13f4c9ea1f78d61897b58e46f8ed9f0a5d08bda8e55926fc223454d5305",
+        "path": "/proc/2622451/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006255.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006255.json",
+        "mtime_unix": 1789703266.639456
+      },
+      "prompt_tokens": 8647,
+      "think_runs": [
+        1,
+        1
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "structured_think_policy": "R202_WIDE_NARROW_WIDE_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 5
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node1",
+      "slot": 4,
+      "pid": 2634733,
+      "start_ticks": "42395923",
+      "state": "S",
+      "identity_verified": true,
+      "life": "R203_CREATIVE_STRUCTURED_A_node1_clone1",
+      "owner": "NODE1 sole operator",
+      "loaded_reference": {
+        "index": 5930,
+        "kind": "LOADED",
+        "record_sha256": "f8879d711e7a8e2dfc1538b2db7a95b10943973000001740f0c78870e2de49bc",
+        "path": "/proc/2634733/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005930.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005930.json",
+        "mtime_unix": 1789702901.0854926
+      },
+      "request_reference": {
+        "index": 5950,
+        "kind": "REQUEST",
+        "record_sha256": "4b27fb4dfee241d6293d733ee54a3f8782ff143caed79c220b69498119fd63cd",
+        "path": "/proc/2634733/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005950.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005950.json",
+        "mtime_unix": 1789702923.4044983
+      },
+      "prompt_tokens": 10944,
+      "think_runs": [
+        1
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "structured_think_policy": "R202_WIDE_NARROW_WIDE_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 3
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node1",
+      "slot": 2,
+      "pid": 2673188,
+      "start_ticks": "42415871",
+      "state": "S",
+      "identity_verified": true,
+      "life": "R203_MATH_COMM_B_node1_clone1",
+      "owner": "NODE1 sole operator",
+      "loaded_reference": {
+        "index": 5995,
+        "kind": "LOADED",
+        "record_sha256": "fa8abd85794209a49b22e25ad7222af5a26950c1746ea537cf5ded29670c5684",
+        "path": "/proc/2673188/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005995.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005995.json",
+        "mtime_unix": 1789703104.8256543
+      },
+      "request_reference": {
+        "index": 6015,
+        "kind": "REQUEST",
+        "record_sha256": "03d40a9c2dfa6e3f61292a95634cd1bedcd6399922305a1bd7bddb3850446387",
+        "path": "/proc/2673188/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006015.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006015.json",
+        "mtime_unix": 1789703128.3902879
+      },
+      "prompt_tokens": 12229,
+      "think_runs": [
+        1
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 3
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node1",
+      "slot": 3,
+      "pid": 2701436,
+      "start_ticks": "42431907",
+      "state": "R",
+      "identity_verified": true,
+      "life": "R203_REPO_EVIDENCE_C_node1_clone1",
+      "owner": "NODE1 sole operator",
+      "loaded_reference": {
+        "index": 6017,
+        "kind": "LOADED",
+        "record_sha256": "235f8a3bb46726e54ec9eb8bdcb18e5cb87dd6ac6e45c73388b54aa99a02cf75",
+        "path": "/proc/2701436/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006017.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006017.json",
+        "mtime_unix": 1789703266.5692677
+      },
+      "request_reference": {
+        "index": 6022,
+        "kind": "REQUEST",
+        "record_sha256": "32f2fef89823a78378b4a2a925077ea91eb0ad9e7b995baec416f8ebe9eb66f8",
+        "path": "/proc/2701436/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006022.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006022.json",
+        "mtime_unix": 1789703268.9945667
+      },
+      "prompt_tokens": 5524,
+      "think_runs": [],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node2",
+      "slot": 2,
+      "pid": 1815204,
+      "start_ticks": "91233592",
+      "state": "R",
+      "identity_verified": true,
+      "life": "repo_learning_birth1",
+      "owner": "Leibniz/NODE2",
+      "loaded_reference": {
+        "index": 1,
+        "kind": "LOADED",
+        "record_sha256": "dcda84df29207cf7c09bc512f100274fc5e8e943f4332e8a31fef62e7972d52e",
+        "path": "/proc/1815204/root/localhome/local-rohing/orch_r183_repo_learning_20260917/birth1/life/stream/records/00000000000000000001.json",
+        "configured_path": "/localhome/local-rohing/orch_r183_repo_learning_20260917/birth1/life/stream/records/00000000000000000001.json",
+        "mtime_unix": 1789683950.061776
+      },
+      "request_reference": {
+        "index": 4924,
+        "kind": "REQUEST",
+        "record_sha256": "ff83242473e1bc25c6b20211446f243284f15762eac3234c5af9cf1f664f46e3",
+        "path": "/proc/1815204/root/localhome/local-rohing/orch_r183_repo_learning_20260917/birth1/life/stream/records/00000000000000004924.json",
+        "configured_path": "/localhome/local-rohing/orch_r183_repo_learning_20260917/birth1/life/stream/records/00000000000000004924.json",
+        "mtime_unix": 1789703171.0487254
+      },
+      "prompt_tokens": 887,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node2",
+      "slot": 7,
+      "pid": 1849180,
+      "start_ticks": "91779127",
+      "state": "R",
+      "identity_verified": true,
+      "life": "creative_free",
+      "owner": "Leibniz/NODE2",
+      "loaded_reference": {
+        "index": 5295,
+        "kind": "LOADED",
+        "record_sha256": "0b62b979db61b1822c38899310a5ac55826eb8c7ccb9888a06d4c050abe799e3",
+        "path": "/proc/1849180/root/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000005295.json",
+        "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000005295.json",
+        "mtime_unix": 1789689421.0091684
+      },
+      "request_reference": {
+        "index": 6868,
+        "kind": "REQUEST",
+        "record_sha256": "7fb127badb4d82886837ebe198101f8a06abef9f140496353f543152535e36c9",
+        "path": "/proc/1849180/root/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000006868.json",
+        "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000006868.json",
+        "mtime_unix": 1789703249.0491533
+      },
+      "prompt_tokens": 12031,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node2",
+      "slot": 0,
+      "pid": 1849630,
+      "start_ticks": "91786090",
+      "state": "R",
+      "identity_verified": true,
+      "life": "creative_reread",
+      "owner": "Leibniz/NODE2",
+      "loaded_reference": {
+        "index": 5739,
+        "kind": "LOADED",
+        "record_sha256": "273dfa8b39c96c15f13c3cfd7af507d0c04113f7be9a505a064efb46b6082079",
+        "path": "/proc/1849630/root/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1/stream/records/00000000000000005739.json",
+        "configured_path": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1/stream/records/00000000000000005739.json",
+        "mtime_unix": 1789689489.4546285
+      },
+      "request_reference": {
+        "index": 7293,
+        "kind": "REQUEST",
+        "record_sha256": "0baffc9b615ff111cbc954be65f08e8f7ca0ad8f6c37459cf56c8b2eb0e9b00c",
+        "path": "/proc/1849630/root/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1/stream/records/00000000000000007293.json",
+        "configured_path": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1/stream/records/00000000000000007293.json",
+        "mtime_unix": 1789703269.0212426
+      },
+      "prompt_tokens": 10890,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node2",
+      "slot": 5,
+      "pid": 1849923,
+      "start_ticks": "91791898",
+      "state": "R",
+      "identity_verified": true,
+      "life": "creative_select",
+      "owner": "Leibniz/NODE2",
+      "loaded_reference": {
+        "index": 5443,
+        "kind": "LOADED",
+        "record_sha256": "d3ed191406fec8bdf514ef0da153ee1f24291d59681f5680c54aeb28c38c50e5",
+        "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000005443.json",
+        "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000005443.json",
+        "mtime_unix": 1789689547.1319141
+      },
+      "request_reference": {
+        "index": 6891,
+        "kind": "REQUEST",
+        "record_sha256": "ae66faa4e35c31bb2cb6896041444098a8001e9ee32f8dee8409e133144e3d7a",
+        "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006891.json",
+        "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006891.json",
+        "mtime_unix": 1789703277.6846519
+      },
+      "prompt_tokens": 7452,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node2",
+      "slot": 3,
+      "pid": 2170067,
+      "start_ticks": "92935338",
+      "state": "R",
+      "identity_verified": true,
+      "life": "R202_REPO_C_node2_clone1",
+      "owner": "Leibniz/NODE2",
+      "loaded_reference": {
+        "index": 5847,
+        "kind": "LOADED",
+        "record_sha256": "02ed025e04cb5f676d6d2bfc7913175c2f93233519f4b04a4e7813ffd9d0bc0e",
+        "path": "/proc/2170067/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+        "mtime_unix": 1789700990.487748
+      },
+      "request_reference": {
+        "index": 6130,
+        "kind": "REQUEST",
+        "record_sha256": "1f5c57447c69727ecc60bab291fd75d9240fe0188e373262a3072ca06d3f6c78",
+        "path": "/proc/2170067/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006130.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006130.json",
+        "mtime_unix": 1789702829.6247265
+      },
+      "prompt_tokens": 10863,
+      "think_runs": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 15,
+        "REJECTED_PRIOR_STATE_RETAINED": 1
+      },
+      "state_edit_opportunities": 1
+    },
+    {
+      "node": "node2",
+      "slot": 4,
+      "pid": 2204408,
+      "start_ticks": "93044490",
+      "state": "R",
+      "identity_verified": true,
+      "life": "R203_CREATIVE_D_node2_clone1",
+      "owner": "Leibniz/NODE2",
+      "loaded_reference": {
+        "index": 5847,
+        "kind": "LOADED",
+        "record_sha256": "16628371ce8e2d4d2aae5d18c9f061d2515507248c272b535cf5106a465d60f0",
+        "path": "/proc/2204408/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+        "mtime_unix": 1789702082.7665107
+      },
+      "request_reference": {
+        "index": 6020,
+        "kind": "REQUEST",
+        "record_sha256": "edb686bf2d71941e930412254e7fef4a4d23ad09452e9f9e4a7e26f8e454d28e",
+        "path": "/proc/2204408/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006020.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006020.json",
+        "mtime_unix": 1789703272.035256
+      },
+      "prompt_tokens": 5285,
+      "think_runs": [
+        1,
+        1,
+        1
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 7
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node2",
+      "slot": 6,
+      "pid": 2204538,
+      "start_ticks": "93044773",
+      "state": "R",
+      "identity_verified": true,
+      "life": "R203_MATH_TRANSFER_C_node2_clone1",
+      "owner": "Leibniz/NODE2",
+      "loaded_reference": {
+        "index": 5847,
+        "kind": "LOADED",
+        "record_sha256": "fec4895e57249c4afc026cea1ad25a974e28f64f8ec2aaeb1c6c4340524bf84e",
+        "path": "/proc/2204538/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005847.json",
+        "mtime_unix": 1789702085.5910077
+      },
+      "request_reference": {
+        "index": 5979,
+        "kind": "REQUEST",
+        "record_sha256": "c17fcc8266b05512371a41b8de914900e157a11037ec4d4ea8f3bdf90c95b406",
+        "path": "/proc/2204538/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005979.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005979.json",
+        "mtime_unix": 1789702805.2720337
+      },
+      "prompt_tokens": 5320,
+      "think_runs": [
+        2,
+        2
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 8
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "slot": 4,
+      "pid": 1643508,
+      "start_ticks": "25450832",
+      "state": "R",
+      "identity_verified": true,
+      "life": "kernel_parented",
+      "owner": "Turing/NODE4",
+      "loaded_reference": {
+        "index": 4825,
+        "kind": "LOADED",
+        "record_sha256": "fa2db43cfa4bdd3284b7ef21a1403528d1159d94bd5da9ef083c31c54a2c8a72",
+        "path": "/proc/1643508/root/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/stream/records/00000000000000004825.json",
+        "configured_path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/stream/records/00000000000000004825.json",
+        "mtime_unix": 1789686411.749571
+      },
+      "request_reference": {
+        "index": 6418,
+        "kind": "REQUEST",
+        "record_sha256": "ae03ab98c86f672d7da97ba82e516c6944cba0da8ce919a7310d99391014b7f2",
+        "path": "/proc/1643508/root/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/stream/records/00000000000000006418.json",
+        "configured_path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/stream/records/00000000000000006418.json",
+        "mtime_unix": 1789703257.7759857
+      },
+      "prompt_tokens": 3182,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "slot": 5,
+      "pid": 1995652,
+      "start_ticks": "25800024",
+      "state": "R",
+      "identity_verified": true,
+      "life": "brain_free",
+      "owner": "Turing/NODE4",
+      "loaded_reference": {
+        "index": 5323,
+        "kind": "LOADED",
+        "record_sha256": "e5c21e2284e766841f766b4cafc990003edf154a80b827369f5640f3e7feb585",
+        "path": "/proc/1995652/root/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1/stream/records/00000000000000005323.json",
+        "configured_path": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1/stream/records/00000000000000005323.json",
+        "mtime_unix": 1789689914.054905
+      },
+      "request_reference": {
+        "index": 6588,
+        "kind": "REQUEST",
+        "record_sha256": "b70908a568be0fff8298f22bff8e8b7740c02b2420df269408ae2359fc4d4fe7",
+        "path": "/proc/1995652/root/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1/stream/records/00000000000000006588.json",
+        "configured_path": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1/stream/records/00000000000000006588.json",
+        "mtime_unix": 1789703161.9302409
+      },
+      "prompt_tokens": 11799,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "slot": 6,
+      "pid": 3358885,
+      "start_ticks": "26925973",
+      "state": "S",
+      "identity_verified": true,
+      "life": "R201_MATH_C_node4_6",
+      "owner": "Turing/NODE4",
+      "loaded_reference": {
+        "index": 4,
+        "kind": "LOADED",
+        "record_sha256": "1eeb845fde8080c813b672f29319401addd41eb7e5d4f62f4ed60ad2b94e9584",
+        "path": "/proc/3358885/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000004.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000004.json",
+        "mtime_unix": 1789701118.5012069
+      },
+      "request_reference": {
+        "index": 200,
+        "kind": "REQUEST",
+        "record_sha256": "ea3e14039bdfc5a9d4b4c22c8f54b25e5bed64613dad98147935776d1c03bd2c",
+        "path": "/proc/3358885/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000200.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life/stream/records/00000000000000000200.json",
+        "mtime_unix": 1789702757.6653013
+      },
+      "prompt_tokens": 10962,
+      "think_runs": [
+        3,
+        2,
+        3
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "structured_think_policy": "R202_WIDE_NARROW_WIDE_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 14
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "slot": 2,
+      "pid": 3429712,
+      "start_ticks": "26981543",
+      "state": "R",
+      "identity_verified": true,
+      "life": "R203_NODE4_2_MATH_PROSE_B",
+      "owner": "Turing/NODE4",
+      "loaded_reference": {
+        "index": 4,
+        "kind": "LOADED",
+        "record_sha256": "4e2c1cdac094fe7d2ae4a2745f9bd49e3061d7fbb7c231a7c3b216ec89b09d0d",
+        "path": "/proc/3429712/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/life/stream/records/00000000000000000004.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/life/stream/records/00000000000000000004.json",
+        "mtime_unix": 1789701674.1072845
+      },
+      "request_reference": {
+        "index": 232,
+        "kind": "REQUEST",
+        "record_sha256": "46cf1f75990150f711fa8a99dd007675b205074a139bbbfc46b38a7bc1b2baf7",
+        "path": "/proc/3429712/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/life/stream/records/00000000000000000232.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/life/stream/records/00000000000000000232.json",
+        "mtime_unix": 1789703235.5190766
+      },
+      "prompt_tokens": 6846,
+      "think_runs": [
+        2,
+        2,
+        2
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 12
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "slot": 7,
+      "pid": 3429844,
+      "start_ticks": "26981678",
+      "state": "R",
+      "identity_verified": true,
+      "life": "R203_NODE4_7_CREATIVE_OPEN_C",
+      "owner": "Turing/NODE4",
+      "loaded_reference": {
+        "index": 4,
+        "kind": "LOADED",
+        "record_sha256": "a351cb86d89b3de04c468387e205945f36f7c9af143dd0d84027631fd86d2e92",
+        "path": "/proc/3429844/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000004.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000004.json",
+        "mtime_unix": 1789701675.4840548
+      },
+      "request_reference": {
+        "index": 233,
+        "kind": "REQUEST",
+        "record_sha256": "1c2dd0865cd2ed82415380ff4bdb2b02ab005b2251d625616fb644bbbf1b142b",
+        "path": "/proc/3429844/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000233.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000233.json",
+        "mtime_unix": 1789703111.9136038
+      },
+      "prompt_tokens": 5448,
+      "think_runs": [
+        2,
+        2,
+        2
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 12
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "slot": 0,
+      "pid": 3532101,
+      "start_ticks": "27051602",
+      "state": "R",
+      "identity_verified": true,
+      "life": "R203_NODE4_0_KERNEL_VERIFY_A",
+      "owner": "Turing/NODE4",
+      "loaded_reference": {
+        "index": 4,
+        "kind": "LOADED",
+        "record_sha256": "d50b6d13922e58d0ed5abcd4446172b34f5e1f320b7faa779eb6505f9e5b2d7a",
+        "path": "/proc/3532101/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical0/life/stream/records/00000000000000000004.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical0/life/stream/records/00000000000000000004.json",
+        "mtime_unix": 1789702374.9571447
+      },
+      "request_reference": {
+        "index": 143,
+        "kind": "REQUEST",
+        "record_sha256": "4992538828c21894ee4389426cdf64a7ba09f76ce0144871b685e173689e8cf3",
+        "path": "/proc/3532101/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical0/life/stream/records/00000000000000000143.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical0/life/stream/records/00000000000000000143.json",
+        "mtime_unix": 1789703281.8384922
+      },
+      "prompt_tokens": 11446,
+      "think_runs": [
+        1,
+        1,
+        1
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 7
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "slot": 1,
+      "pid": 3544079,
+      "start_ticks": "27060119",
+      "state": "S",
+      "identity_verified": true,
+      "life": "R203_NODE4_1_MATH_SHORT_D",
+      "owner": "Turing/NODE4",
+      "loaded_reference": {
+        "index": 4,
+        "kind": "LOADED",
+        "record_sha256": "38cb9c78f94729d76c28b66006794e58aad66894d925b329f1b93c482b7c4390",
+        "path": "/proc/3544079/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical1/life/stream/records/00000000000000000004.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical1/life/stream/records/00000000000000000004.json",
+        "mtime_unix": 1789702460.8311923
+      },
+      "request_reference": {
+        "index": 72,
+        "kind": "REQUEST",
+        "record_sha256": "e6e7153437be76799b1098a2ed0793b0e5bf56a33df1657802947eb63819a5ad",
+        "path": "/proc/3544079/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical1/life/stream/records/00000000000000000072.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical1/life/stream/records/00000000000000000072.json",
+        "mtime_unix": 1789702885.4906921
+      },
+      "prompt_tokens": 10749,
+      "think_runs": [
+        1,
+        1
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 6
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node4",
+      "slot": 3,
+      "pid": 3578364,
+      "start_ticks": "27084446",
+      "state": "R",
+      "identity_verified": true,
+      "life": "R203_NODE4_3_KERNEL_REFLECT_B",
+      "owner": "Turing/NODE4",
+      "loaded_reference": {
+        "index": 4,
+        "kind": "LOADED",
+        "record_sha256": "9d95f90da508cd6935a0024f0a3d312de0bc80780cda66e1eae729d3fc9edc37",
+        "path": "/proc/3578364/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/records/00000000000000000004.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/records/00000000000000000004.json",
+        "mtime_unix": 1789702703.27036
+      },
+      "request_reference": {
+        "index": 95,
+        "kind": "REQUEST",
+        "record_sha256": "86e02e8d6cde3a8c37d88a86304fd5631cb896189308650eeb0d4356f79a9adf",
+        "path": "/proc/3578364/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/records/00000000000000000095.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/records/00000000000000000095.json",
+        "mtime_unix": 1789703267.845426
+      },
+      "prompt_tokens": 9023,
+      "think_runs": [
+        1,
+        1
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 4
+      },
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node5",
+      "slot": 2,
+      "pid": 2495635,
+      "start_ticks": "21970327",
+      "state": "R",
+      "identity_verified": true,
+      "life": "run1",
+      "owner": "Descartes/NODE5",
+      "loaded_reference": {
+        "index": 5932,
+        "kind": "LOADED",
+        "record_sha256": "1ae821dc9c2a8d960d7d763102b5940cb6f73070cf7224076e156e2c1f2a512c",
+        "path": "/proc/2495635/root/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000005932.json",
+        "configured_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000005932.json",
+        "mtime_unix": 1789684214.1147418
+      },
+      "request_reference": {
+        "index": 8199,
+        "kind": "REQUEST",
+        "record_sha256": "210b6bba34228c185449571684514c2f01397425e3543abb1fc162953d2b1682",
+        "path": "/proc/2495635/root/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000008199.json",
+        "configured_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000008199.json",
+        "mtime_unix": 1789703077.6428618
+      },
+      "prompt_tokens": 10793,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node5",
+      "slot": 4,
+      "pid": 2606742,
+      "start_ticks": "22116734",
+      "state": "R",
+      "identity_verified": true,
+      "life": "C4",
+      "owner": "Descartes/NODE5",
+      "loaded_reference": {
+        "index": 4596,
+        "kind": "LOADED",
+        "record_sha256": "75eba6e056b39f8a26877a5da8a617a373736761efdca0fb0a3cbe359f04fb2f",
+        "path": "/proc/2606742/root/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life/stream/records/00000000000000004596.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life/stream/records/00000000000000004596.json",
+        "mtime_unix": 1789685666.8337939
+      },
+      "request_reference": {
+        "index": 6445,
+        "kind": "REQUEST",
+        "record_sha256": "1b51dbd3a1d3a06e1459f5ffa0c9a60bf182f7a951f9531d766128fd86bbc185",
+        "path": "/proc/2606742/root/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life/stream/records/00000000000000006445.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life/stream/records/00000000000000006445.json",
+        "mtime_unix": 1789703246.1067438
+      },
+      "prompt_tokens": 2517,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node5",
+      "slot": 3,
+      "pid": 2668022,
+      "start_ticks": "22198740",
+      "state": "R",
+      "identity_verified": true,
+      "life": "C3",
+      "owner": "Descartes/NODE5",
+      "loaded_reference": {
+        "index": 4716,
+        "kind": "LOADED",
+        "record_sha256": "94ef09352401ff2fd60b1a0cb120dfdc10fc84277132621700b2306e288240c5",
+        "path": "/proc/2668022/root/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000004716.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000004716.json",
+        "mtime_unix": 1789686488.4537525
+      },
+      "request_reference": {
+        "index": 6510,
+        "kind": "REQUEST",
+        "record_sha256": "ca67cb197a0e6527d2336b879c6af37a1049632fe25809bbacffcfd342e26af4",
+        "path": "/proc/2668022/root/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000006510.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000006510.json",
+        "mtime_unix": 1789703232.2325528
+      },
+      "prompt_tokens": 12411,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node5",
+      "slot": 0,
+      "pid": 2707975,
+      "start_ticks": "22260069",
+      "state": "R",
+      "identity_verified": true,
+      "life": "C1",
+      "owner": "Descartes/NODE5",
+      "loaded_reference": {
+        "index": 5306,
+        "kind": "LOADED",
+        "record_sha256": "8355f059ab1c626cec8e5ffa0cfdd67ea431d010eeb65c112a37afac59791c2d",
+        "path": "/proc/2707975/root/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/stream/records/00000000000000005306.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/stream/records/00000000000000005306.json",
+        "mtime_unix": 1789687097.9441462
+      },
+      "request_reference": {
+        "index": 7235,
+        "kind": "REQUEST",
+        "record_sha256": "58ee4d5425ca86d216b3ff97fb6e341df2886db7a6db8dcca04a59d88020299a",
+        "path": "/proc/2707975/root/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/stream/records/00000000000000007235.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/stream/records/00000000000000007235.json",
+        "mtime_unix": 1789703191.7341576
+      },
+      "prompt_tokens": 9460,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node5",
+      "slot": 6,
+      "pid": 2757295,
+      "start_ticks": "22337732",
+      "state": "S",
+      "identity_verified": true,
+      "life": "pilot",
+      "owner": "Descartes/NODE5",
+      "loaded_reference": {
+        "index": 5843,
+        "kind": "LOADED",
+        "record_sha256": "f875a046175f1df3e0531453d99128215cf4cb7972244e806abf63e02742a738",
+        "path": "/proc/2757295/root/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/stream/records/00000000000000005843.json",
+        "configured_path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/stream/records/00000000000000005843.json",
+        "mtime_unix": 1789687885.818252
+      },
+      "request_reference": {
+        "index": 7503,
+        "kind": "REQUEST",
+        "record_sha256": "4e0d9f8b1a09785b846ef9f693753f5c0fc04bb4d9c663865aa52cf28e3c26cd",
+        "path": "/proc/2757295/root/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/stream/records/00000000000000007503.json",
+        "configured_path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/stream/records/00000000000000007503.json",
+        "mtime_unix": 1789703079.6774194
+      },
+      "prompt_tokens": 5642,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node5",
+      "slot": 5,
+      "pid": 2761060,
+      "start_ticks": "22343823",
+      "state": "S",
+      "identity_verified": true,
+      "life": "C5",
+      "owner": "Descartes/NODE5",
+      "loaded_reference": {
+        "index": 4509,
+        "kind": "LOADED",
+        "record_sha256": "37fbfa83ecb057bbb713036c62e3453cdb88d015f1b262272068e09a55662006",
+        "path": "/proc/2761060/root/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/records/00000000000000004509.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/records/00000000000000004509.json",
+        "mtime_unix": 1789687937.1474373
+      },
+      "request_reference": {
+        "index": 7255,
+        "kind": "REQUEST",
+        "record_sha256": "ed22590c8979c557c4b6a05a39bee8b68f7f7b1da5bdab7d26a1f049a0f26488",
+        "path": "/proc/2761060/root/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/records/00000000000000007255.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/records/00000000000000007255.json",
+        "mtime_unix": 1789703067.218943
+      },
+      "prompt_tokens": 1993,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node5",
+      "slot": 7,
+      "pid": 2761360,
+      "start_ticks": "22344351",
+      "state": "S",
+      "identity_verified": true,
+      "life": "repo_reader",
+      "owner": "Descartes/NODE5",
+      "loaded_reference": {
+        "index": 5466,
+        "kind": "LOADED",
+        "record_sha256": "933a542ed9f2df33acef72613b3342ffeedc4cebfcbf1a8d033f885e7a06fa34",
+        "path": "/proc/2761360/root/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/run1/stream/records/00000000000000005466.json",
+        "configured_path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/run1/stream/records/00000000000000005466.json",
+        "mtime_unix": 1789687953.958737
+      },
+      "request_reference": {
+        "index": 7089,
+        "kind": "REQUEST",
+        "record_sha256": "d737f2b6867c66f2d975e1964e46c60b1951f31e797b6761bcacbc100e7294a1",
+        "path": "/proc/2761360/root/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/run1/stream/records/00000000000000007089.json",
+        "configured_path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/run1/stream/records/00000000000000007089.json",
+        "mtime_unix": 1789702664.8940365
+      },
+      "prompt_tokens": 9944,
+      "think_runs": [],
+      "think_policy": {},
+      "state_statuses": {},
+      "state_edit_opportunities": 0
+    },
+    {
+      "node": "node5",
+      "slot": 1,
+      "pid": 3179563,
+      "start_ticks": "23773135",
+      "state": "R",
+      "identity_verified": true,
+      "life": "C2_R204_saved_boundary_resume",
+      "owner": "Descartes/NODE5",
+      "loaded_reference": {
+        "index": 6057,
+        "kind": "LOADED",
+        "record_sha256": "e40ed5db7dca1ac3d6c6871c3d2723924542489d5cccba0344e32212b4cf22a9",
+        "path": "/proc/3179563/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006057.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006057.json",
+        "mtime_unix": 1789702260.3434007
+      },
+      "request_reference": {
+        "index": 6143,
+        "kind": "REQUEST",
+        "record_sha256": "3c9ca9e2dc17da84dbb85670a3cb1583f917da1c92a2c9e0f12c3b6f292205b7",
+        "path": "/proc/3179563/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006143.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006143.json",
+        "mtime_unix": 1789702749.5742161
+      },
+      "prompt_tokens": 12084,
+      "think_runs": [
+        1,
+        1
+      ],
+      "think_policy": {
+        "effort_policy": "R201_OUTCOME_EFFORT_V1",
+        "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+        "think_segments": 3
+      },
+      "state_statuses": {
+        "REJECTED_PRIOR_STATE_RETAINED": 2,
+        "NO_EXPLICIT_STATE_DELTA": 4
+      },
+      "state_edit_opportunities": 2
+    }
+  ],
+  "overflow_receipt": "research_loop/workers/rohin204_maintenance_20260917/R205_OVERFLOW_RECHECK.json",
+  "tests_passed": 11,
+  "node3_added": false,
+  "node5_evacuation": false,
+  "learner_mutations": 0,
+  "signals": 0,
+  "gpu_calls": 0
+}

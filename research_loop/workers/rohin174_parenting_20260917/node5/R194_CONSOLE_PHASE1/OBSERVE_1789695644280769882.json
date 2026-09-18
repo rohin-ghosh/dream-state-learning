@@ -1,0 +1,589 @@
+{
+  "observed_local_unix": 1789695644.280622,
+  "result": {
+    "config": {
+      "new_presentations": 16,
+      "rehearsal_presentations": 0,
+      "sleep_loss_impl": "MASKED_CAUSAL_CE_V1",
+      "source_root": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/source",
+      "think_act_learn": {
+        "console_reflection": {
+          "schema": "R194_CONSOLE_REFLECTION_V1",
+          "session_id": "rohin194_C2_20260917"
+        },
+        "continuity_policy": "R193_CONTINUITY_V1",
+        "cpu_gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/gate",
+        "cpu_gate_sha256": "c7821ed5b02651ed624c6dbe29a488bd15496440b59364e98e52ff2afe705e82",
+        "environment_facts": "The current confined Python tool has the standard library plus read-only SymPy 1.14.0 and mpmath 1.3.0. No network, GPU, home access, or Torch is provided. Earlier missing-SymPy feedback describes the older environment. Installation does not establish execution: only actual tool receipts do. Incomplete or truncated code is not executed or automatically retried.",
+        "reflection_policy": "explicit",
+        "schema": "R184_THINK_ACT_LEARN_V1",
+        "think_segments": 1,
+        "trial_id": "C2_R188_same_life_recovery"
+      }
+    },
+    "console_turns": [
+      {
+        "document": {
+          "act_held": true,
+          "cost": {
+            "context_limit": 16384,
+            "context_only_generated_tokens": 204,
+            "generation_context_tokens": 10931,
+            "generation_seconds": 15.88125491142273,
+            "prompt_tokens": 10727,
+            "segment_tokens": 204,
+            "since_sleep_tokens": 0,
+            "total_generated_tokens": 32206,
+            "training_eligible": false
+          },
+          "learn_held": true,
+          "parent_event_id": "parent:inbox:1e9130e4c45145b98feecfdd54976768",
+          "response_event_id": "child:console:7dee047a86ebdb492f48a7d1f92c9d5a1b41698330d1ca78e6f40022fdcacd1f",
+          "response_sha256": "e3fc83240837fcb1b49135bf847bc11a14aab77512bee03985881c97f6b224fd",
+          "schema": "R194_CONSOLE_REFLECTION_V1",
+          "session_id": "rohin194_C2_20260917",
+          "stage": "THINK",
+          "training_eligible": false
+        },
+        "file_sha256": "51ee3377aba20c50cbfc19038bcfe9628839bc0cc6f11806e025b5f4aabb6f2d",
+        "index": 5832,
+        "record_sha256": "c61659f286cf836b80471d9ac55352ed6a59887647ae06419be6301646ba434a"
+      }
+    ],
+    "context_only_commits": [
+      {
+        "index": 5831,
+        "pending": null,
+        "record_sha256": "d3a98908ec9c7d88bda84d743537d0a94e7059ed6dfb4d01bbfda4eb136d2e3a",
+        "rows_equal_saved_boundary": true,
+        "training_eligible": false,
+        "training_rows": 153
+      }
+    ],
+    "dataset": {
+      "complete_row_count": 0,
+      "exists": false,
+      "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/exploration/C2_R188_same_life_recovery.jsonl"
+    },
+    "head": {
+      "index": 5832,
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "kind": "R194_TURN",
+      "previous_sha256": "d3a98908ec9c7d88bda84d743537d0a94e7059ed6dfb4d01bbfda4eb136d2e3a",
+      "schema": "R125_STREAM_JOURNAL_V1",
+      "sha256": "c61659f286cf836b80471d9ac55352ed6a59887647ae06419be6301646ba434a"
+    },
+    "head_fields": {
+      "stage": "THINK"
+    },
+    "latest_complete": {
+      "cycle": 51,
+      "index": 5823,
+      "record_mtime_ns": 1789695373699251373,
+      "record_sha256": "7c6cf68593c1d1f6c1ec56dd02f09e927b7ef4cd6a04e33ba8f2e40bc6894657",
+      "total_optimizer_steps": 4908,
+      "updates": 48
+    },
+    "live_changes": 0,
+    "loaded": {
+      "document": {
+        "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "anchors": {
+          "adapter": null,
+          "artifact_hashes": {
+            "ADMISSION.json": "e35295f88dfe04bccb06d1630aa3ac46e6f10ef2a80af7d0bb1b9a9f03199b0d",
+            "LAUNCH.json": "f4e3e251bcbf99d2165136e430b8bd437f6132b3cd29b854d41220fa16d534f6",
+            "PLAN.json": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+            "PUBLICATION.json": "df62b91c1ee2bac7ff09be31e11ef46020cb5fe1d0f9ed5f60f04eee4bb5f190",
+            "READY.json": "41899d13b57b250a8cecf406e645ff132e19f1c36fec6ae6e0e98ab2d3e5cc76",
+            "readout/AFTER.json": "a01dc627777cd8dab313c48d423385fca00b02a64c01b4fdee1e4b54ed378d66",
+            "readout/BEFORE.json": "b0dab498e1f35ed649a0a4f565e1bc433d700bc37b0091047c3330cbabbd0177",
+            "readout/COMPLETE.json": "7d4c672a279aac5427428d0c05a4ad0115bc60317a1a34db8614fba41b03ee90"
+          },
+          "automatic_fit": false,
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "completed_calls": 64,
+          "completion_categories": {
+            "correct": 42,
+            "exact_constraint_failure": 5,
+            "invalid_json": 4,
+            "invalid_numeric_format": 1,
+            "unsafe_or_invalid_expression": 3,
+            "wrong_answer": 9
+          },
+          "context_limit": 16384,
+          "encoded_anchors": 42,
+          "families": {
+            "code": 9,
+            "concise_answer": 11,
+            "math": 6,
+            "simulated_tools": 16
+          },
+          "native_target_ids_preserved": true,
+          "new_model_calls": 0,
+          "parent_calls": 0,
+          "prompt_labels_masked": true,
+          "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+          "schema": "R107_BASE_ANCHOR_NATIVE_TOKEN_INVENTORY_V1",
+          "semantic_richness": "NOT_CLAIMED",
+          "shortfalls": {
+            "code": 0,
+            "concise_answer": 0,
+            "math": 0,
+            "simulated_tools": 0
+          },
+          "source_condition": "PURE_BASE",
+          "source_finished_unix": 1789461513.0626216,
+          "source_fit_ready": false,
+          "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+          "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+          "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+          "source_training_allowed": false,
+          "split": "TRAIN",
+          "status": "ENCODED_INVENTORY_READY",
+          "suite_sha256": "dd0cd5b2bfcef830e95bc406f9d601c6f8f861354fae5ba1d5d8395ba0df8196",
+          "training_updates": 0
+        },
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "loaded_unix": 1789695573.5701792,
+        "optimizer_steps": 4908,
+        "pid": 3018395,
+        "resume": true,
+        "runtime": {
+          "distributions": {
+            "peft": "0.20.0",
+            "tokenizers": "0.22.2",
+            "torch": "2.13.0",
+            "transformers": "5.5.3"
+          },
+          "imported": {
+            "peft": "0.20.0",
+            "tokenizers": "0.22.2",
+            "torch": "2.13.0+cu130",
+            "transformers": "5.5.3"
+          }
+        }
+      },
+      "file_sha256": "248d2c8ab0d88724e7e4d043713397659c3585e2c6dfe0802ec7b7b074e2ea9a",
+      "index": 5825,
+      "matches_saved_adapter": true,
+      "matches_saved_optimizer_steps": true,
+      "record_sha256": "260a5e1c516ec330a119d73f2a3b0b092f665a088d24cf14a7e4cd6e15636bd6"
+    },
+    "mode": {
+      "document": {
+        "act_held": true,
+        "learn_held": true,
+        "mode": "REFLECTION",
+        "schema": "R194_CONSOLE_REFLECTION_V1",
+        "session_id": "rohin194_C2_20260917",
+        "time_unix": 1789695574.0064406
+      },
+      "file_sha256": "4a229ce2e3470788c995159a8c32131abc8f088e8fde0e0da205a4dc50516d5a",
+      "index": 5827,
+      "later_sleep_or_update_records": [],
+      "record_sha256": "fa18e6c4bb9f18b5984169341d601fc81d7395d08b626ab1a0a8e7627b077172"
+    },
+    "observed_unix": 1789695643.1865895,
+    "pids": {
+      "new_bridge": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/math_bridge.py",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/BRIDGE.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1",
+        "identity_matches": true,
+        "parent": 1,
+        "pid": 3018251,
+        "start_ticks": "23105688",
+        "state": "S"
+      },
+      "new_native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/source",
+        "expected_source_and_guard": true,
+        "identity_matches": true,
+        "parent": 3018394,
+        "pid": 3018395,
+        "start_ticks": "23105951",
+        "state": "S"
+      },
+      "new_supervisor": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r188_node5_confinement",
+          "dispatch",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/source",
+        "identity_matches": true,
+        "parent": 1,
+        "pid": 3018332,
+        "start_ticks": "23105789",
+        "state": "S"
+      },
+      "old_math_bridge": {
+        "alive": false,
+        "pid": 2930020
+      },
+      "old_native": {
+        "alive": false,
+        "pid": 2930123
+      },
+      "old_outer": {
+        "alive": false,
+        "pid": 2930061
+      },
+      "waiter": {
+        "alive": false,
+        "pid": 3006355
+      }
+    },
+    "post_boundary_record_kinds": {
+      "CONTEXT_COMMITTED": 1,
+      "CONTEXT_INPUT": 1,
+      "INBOX": 1,
+      "LOADED": 1,
+      "R194_MODE": 1,
+      "R194_TURN": 1,
+      "REQUEST": 1,
+      "RESPONSE": 1
+    },
+    "preservation": {
+      "adapter_files_match": true,
+      "boundary_index": 5823,
+      "boundary_record_unchanged": true,
+      "checkpoint_optimizer_steps": 4908,
+      "checkpoint_original_and_preserved_files_match": true,
+      "cycle": 51,
+      "exact_saved_state_digest": true,
+      "first_post_boundary_commit_index": 5826,
+      "first_post_boundary_commit_sha256": "e1b4e2fa3c62c8c9fc2f517b9a6c9fe61220a7c6c529c33c3cab31876f9a66d2",
+      "full_saved_history_events": 504,
+      "full_saved_rows": 153,
+      "head_index": 5824,
+      "head_record_unchanged": true,
+      "inbox_all_bound_bytes_preserved": true,
+      "inbox_preserved_ids": [
+        "002f09085caa8172c393dc08f8dcfbb313ffca18b1749324edc112c8c1d71647",
+        "00bfc710af3542d19b1910d0e45acdcb",
+        "04b65337c67e461f986f3a0144b02e42",
+        "065eb181adad4bb7a0601afb95204232",
+        "077a894323c5071184dc8e1f440440f44bff33316fa3bd6de2dfcabd9de77776",
+        "095ae0ae83bf31df0b84943d53990910cdf99c46a0c0569661fd994a7d45986c",
+        "0df3113ab6cf3f31737516c4147117f6a7f5e69737d0e8cc85d141f96ddac4e3",
+        "1011c86eda8f03b57a8b9ec67afc5752d402746a0b2f0faa3a4a0da21f807d2a",
+        "11199a5a655627122767573ac7e109a32ec3cc40fff76f8bf12463da8a368d82",
+        "11c282c4b9d5eb14de3d628a390c800cdb26be2d704464d02947439aaaf37451",
+        "12ba368ec641988054e77b254fbc0933e60e24fafbc501657b8cab629326a8fb",
+        "1401469d131c8c8cd0cfcf06feb92ae37caf42a0238a8d95a4bada07c35c0356",
+        "14d5769397e4dafac84e270b0cc19d5da9be6d448fc97d1fc8ac6199b213034d",
+        "14e6282128f0423f8fd1b902dc4bfa11",
+        "1ab6eda18cea7dc6902a93a31389aae2c8ef57a928ea79eb45062fef995bfdce",
+        "1c426ddc75a7ce6b8b4ff7ad5b96c5416b4b12dd691c31017d635295e1576d96",
+        "1e9130e4c45145b98feecfdd54976768",
+        "2c412fd3705c419b86ec898022fe3643",
+        "3078c29c7f70428da03ba284e247206c",
+        "311ae25be2484fccbcd8af839c4fa025",
+        "342cf28dd7430e7c6fa616f31078a46797d576693e5ed46625393626c546f8d5",
+        "3817a003b7e372ac1a68fa02692e321615e2823bfc711a8cdfc7ed91ed75434a",
+        "38805de46ac44b48816e6e6fca881f16",
+        "3c6b9cf70e36b7606538c7a485370da9dfccc2419195d6a0f3b75adb046c8463",
+        "3d8d928d954bb950a16e399647a6ec4f95e74956d77cac7ff9db48d62624b8c9",
+        "3f1f237549db691436f78b78b56d35b317b70feb11ada201208afde3e37f75f2",
+        "412b4466e52b42d18124975559b5eac8",
+        "4319ffc039b4d488d81d206496747cf33873c721c793f0c7fa0ffe90872e1cf8",
+        "43dca7351550d670e0a3c5a699235e285c0595c1b2e9b591884fe2e02a9503b8",
+        "44df8b3a01b6446da5f441ccbda8d2b8",
+        "495d8255a93c116b5bc4a4840b76bc41c820cbf89e423582f1e28990c26edc58",
+        "4bc137e6d9f342d3b63137eb2fb848cf",
+        "4d57080d61204584ab5fbfa9312a6e12",
+        "4fe5313c0d1a71e5d56c5ff08943e263c400085e8f45bffd5a5e9c9762597764",
+        "5361aaaf843add67bf330c55ef797e16139e80296d9f98e71e978c80d44eec57",
+        "540f4c185da81ffd01f584e810a19fa29a40dec92c07b51c156b477697647269",
+        "5d2314c85991cd3cb3d9ef697b1b538e02b6492b620dec80859729db66233667",
+        "5e2829797a4cb8b54abc9a0af2691c1976a2ba63515638e02a3bb106b747d60e",
+        "5e5ce7b828344f73b47b5a7c985b1785",
+        "62dc3e44f9077495fe9e111bf4006399fdcc624b70b72298f58a2a33eb7d3b10",
+        "63f7efb07e8448c4ad6466b00ca88de1",
+        "64b995a45be243a88728a3940158ed1a",
+        "650e3fe7668088776597d8e5e22080b401107a30596ff7a181b15c263d15a738",
+        "6695e72b30ac14fbd4aedddb1905f66caf4f33e894d2aca6c2829744bfba635f",
+        "69c33ffa5d3641faa69de31a85529510",
+        "6a2cf0a701a42b729dfd8994b967f07bc0ed475cc5ec3846b97225320c487c63",
+        "6a6adc4b52c5ec83f99331918a35e6edd56628e65f15b0c32db6af5e3383585f",
+        "6d00292b6e115e329aa7f42a390c13bc4466d977d70b99b9b875f158f0e522a3",
+        "6da95016874227568f9818bd3bf94b840927a8c9ce5d86da71c1e3824e737287",
+        "6ed8bc4e52f4445b8bc3788d32d86c13",
+        "6f5de94686fc4908846c861e1132a036",
+        "6fd11f36db973c8ed19df03e023853ba078559ca90b3b92c3afa87044068831a",
+        "6fd889c2495414931766ea3a01cc07326358ef3c60ebfba28fd0b4b05f1bcb86",
+        "707cdd4ec2d74a63a258b873a2a2f9fe",
+        "7571e6a9bd8a1aef626b57cacc8abbaa4fd661c454bed404e70f38382897e4c8",
+        "7749e5c3a96267d8ba3d1721d0c941c4c631fdccce9ec975a3d735fda2024c05",
+        "77c9cc5c4543b005c882cd4b2cb2f51e08b89218e599418844512ead325ca378",
+        "77fca212919b7629e32b782e844fef7d2517b0eaf2d181426cf4a2b1b86b79d9",
+        "78ba00706570418e95f13d9184b968f8",
+        "78ec0f22805dc3d3b40f9fc0e35622cbd86556ddcd9a2d26c3f87dcc4f6aeefe",
+        "78ee65fcc54fc0feb1ff0720ba133742d4795fd58488eeaaa9c75a9d71ae9b1e",
+        "7cef18eda77349aeae9b0eb0eeadea73",
+        "7d15372cf4b3e7bc762c7ff807acc60a9acc868a78e9df01aff34b263e8c8ec9",
+        "7d3afd6aff1efccddf6a4ff6d0bc7aa4c22683340e6a775602d35e27c144bb9b",
+        "7d7e209859f77a3fdfc574bdac542094b0df691fc99aca471138d090e83280be",
+        "7dbce03cef150a3327d809cdebcaffb0e58b7848bb939dda16097a6c537472fd",
+        "7f3604503dba568788b9d24ec161c875fcbe4202e670bee44886ef8d04689e3c",
+        "7fdc22fd7bbc5dfaac0c3fa122129a08cbccfe537f475a7c046bff791a9a1124",
+        "7ff1fb6b0fa3856e626af84f2f1961dd3d895acb80bd797070d175fd7d948b9e",
+        "806b30bda295426a2f4cc82052ab2631b6112427bb52a3da4afa094eb9a4ca26",
+        "80c4a691e17d30d31aeebd352fcaf7793281eff8d4fb7d465e591815371dfbc3",
+        "811498099d9d4428b8bba2f72460b67d",
+        "83216c8e59b90e5ef78224d7d5efb2a2378a7c3100e7427a7065e63fba912e1f",
+        "834ab6b8cde3db282acee3c1953ee95d5a4a2385ff5922390531e42ad25be565",
+        "849dfdfeee55aaec5eea040a79f263b276559733b5fc95f2ddf8804188dfeeb0",
+        "84a0105c7c0940d0a0ba24b6d66ebac4d591cb26e7a369d33ee6e2f8fb37f5bc",
+        "86a2199d09e264d030a293eaadb1ef45126adf029c5db7bdfc58a36096e80bfe",
+        "86dd74e047eb4c239eb734849ac0d54f",
+        "870f6b0405034c32b83a089a8b7bae00",
+        "89b594aef5cd417f9d04e1ecb0a386d3",
+        "8d995214bfa3f67a46b0359e5bf2209b558cf180a68f698d8696c111181533cd",
+        "8e74758f95cf06a73ac4bce1238aaa5e25d5aa60da1948f3c775a4277bd5a4c0",
+        "8e89b6e6e4801d2c0a96b1db066a231d81e248b9f47c78cbf45eb290a1a82e6b",
+        "8f4f07e845b06b028c4e5b1779ade88bcada97190e1309a171fd607cba0e0f90",
+        "92085031806c6e2b4af8c03af0a7e0dac32acd31fd15e7052d92d008fd175ffc",
+        "92d0a09c64224811aa665921d4e450f0",
+        "9883145578dc499c8d53b4137ee822eb",
+        "9979c273e69701b1443b1a5ff08e1612cff2c8fe835f5a2bd4b5a502d0831b6c",
+        "a47a84f466070c5a1d539b08eca3fbe0a276431b117aceb87ccc7a4aebd92b1a",
+        "a4ef98e56abe64608b5daaff896894da18f70fca452e76a3590a03a231b23cb6",
+        "a5624b8d77aa448fa5d7f60da7549424",
+        "a8f395026c1442db8b7638745a30f556",
+        "a990aff585554b77834a0398135dc713",
+        "aaef4dfd9022f6bf4395556fb8c6d33ce82e192f029b1293bb12482322a32cfc",
+        "aaf8aeb67c6e14e42ef2c99576c73d0ae6ceb0afa14cfa1dfa86ee07467f3c15",
+        "af0b8d92b5c10be1324143bb98b87e8faac019916a12630253923faf8e296d2b",
+        "b2be260c2c884acf96c64cbc70a95745",
+        "b65b6ced3731f1b005252b6b1d5374d3b70df82d6955c0305d2ca284eff97350",
+        "b66c9f6678b24431a1191d695ede5593",
+        "bc63b0a16e4cb54c9012475a4663b4a2d0e24754a132b30f175ff767a9bd60be",
+        "be63b15ff0c67dec98aaea4f07d34720b9d9f95bc96f511c39522674d190599b",
+        "c19c5750695d60d464df084d4af36d9cd4649947a27a3e5a4ec248d568e4194e",
+        "c873fb91ddf8470d9f69e8a66f4b8a32",
+        "c8f7ebccb4c41a16cf83f503990afe40273ddebd031408e4a2024b7411967859",
+        "cac7bc00fa1627baa88e5f8a036e050fa1eb83a2e1e6ab569fd567a969ba90fc",
+        "cb20da04ed1c406ea8f89095582035c2",
+        "cdb245617a545619db65279bfd2e8807785a9dc2bac2dd987782e8a66ff8e54b",
+        "ce14bdfc686148e191e8382b584f22e2",
+        "cf3d95f43cf50e2093ee47114721ef2c343196174dbbb19a2f4903cf6958588c",
+        "d67e4ba696f366e582a5235667008949352592deb7abfe5dec277abfc8234ef5",
+        "d720ed61c6b1e3c712120d8aad72a3a44f86817be5ab66e81e69f1ebd2c20e91",
+        "d80e7ff313f3bb582b51a2d6660aa5b5a42e4a9fb366613b3f9b34d0eb3bc01a",
+        "dd9511a5fe5b44c18a268696db6645a5",
+        "de4d3addaf7f15be5ff133871afb3fb5e3b3c7923e1afe7e5ee16c8368423b2b",
+        "dfac93e5207d97e2e08affb024efa9c0284794c37c0e37720339220c7bdc1487",
+        "e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b",
+        "e45eb2c6605843c58ed83c2ae73560df",
+        "e9de1ecce3edbee1df0d9637c42ce07c980845b7aecd9469541d12162da8568f",
+        "ed2405da84eec49bfec35d2cef121826cf550898555bfd6833700b4f71904c3f",
+        "eed10179b17740ed92e80cd71b5c27e82f1c8f646cbeb0c1727b247b33fd9af0",
+        "ef29c17a7b5129f8ab993cca5b181d23f1c75d9b9965de594246e428a233092e",
+        "ef543508be499e048163d8136eb5238fb276d77377238fdd4269c13f19cd66de",
+        "f0cc06e21817feb191c0ff90493a1a84e8fc9bef4fa948642f1943e7b5587c41",
+        "f968145267649c441b593558e79297258144eff852280eff69dae74763123bd2",
+        "fb3418918e29805a2d1c599b4f895c3beffd015a7872d6226cf7f4498347ca18",
+        "fe599794f4e949719fb6c74ff32036a8",
+        "feccda6614f423726f6f5e524f7704b4b6010034c5c66426b9c93c99cdc5af07"
+      ],
+      "optimizer_rng_bytes_match": true,
+      "optimizer_rng_file_sha256": "46f57cbf140b732b94bf02016a893f302835e7d6d24ed625f680eefe1e2145fc",
+      "pending": null,
+      "post_boundary_history_events_prefix_exact": true,
+      "post_boundary_rows_added": 0,
+      "post_boundary_rows_prefix_exact": true,
+      "saved_history_sha256": "b8affb4c431d7793314176a58f37c7bc425b8bd006eeaac16c556c9bcdeef313",
+      "saved_rows_sha256": "aa4b7f49f0e5b55ee4e21ce8e9242c1adf99a34f71e625172fe9cc988b69258f",
+      "sleep_frontier": 153
+    },
+    "publications": 0,
+    "receipts": {
+      "ARMED.json": {
+        "document": {
+          "phase": "R194_C2_CONSOLE_REFLECTION_V1",
+          "pid": 3006355,
+          "signals": 0,
+          "time": 1789694986.0617025,
+          "wait_seconds": 1200
+        },
+        "path": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/ARMED.json",
+        "sha256": "b6c8314acb25c65553f828f4cf06583646972035fe017b0b23c1eea6e9c20d0f"
+      },
+      "READY_AT_BOUNDARY.json": {
+        "document": {
+          "boundary": {
+            "path": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/BOUNDARY.json",
+            "sha256": "56c1f5ffb2e911a77f4315b72948f1605b9202d7126c016320f392f2bf1642fa"
+          },
+          "cycle": 51,
+          "no_discarded_updates": true,
+          "no_history_cut": true,
+          "readout_completion": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/readouts/sleep_000051_r3/COMPLETE.json",
+            "sha256": "eeb4af9d7bd7c38aaa9d9c8a78f47b3849c8cb9d09aca68275c869345e5ecd36"
+          },
+          "state_sha256": "249ed2e144b78b8090d699ecfb86b31768c735c7309ff6a6397a602718628e06",
+          "time": 1789695495.2923436
+        },
+        "path": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/READY_AT_BOUNDARY.json",
+        "sha256": "c9a22a0a41dd60794cc8d6a1c3d533940825e09176c0b26bd2f9fb2e898a0964"
+      },
+      "RETIRED.json": {
+        "document": {
+          "cycle": 51,
+          "no_discarded_updates": true,
+          "no_reset": true,
+          "optimizer_steps": 4908,
+          "phase": "R194_C2_CONSOLE_REFLECTION_V1",
+          "same_root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+          "time": 1789695496.6760604
+        },
+        "path": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/RETIRED.json",
+        "sha256": "b88611b16f4aaa021c5a04a81bc435144a14153f2627ea6422759b72ff2a347c"
+      },
+      "STARTED.json": {
+        "document": {
+          "cycle": 51,
+          "loaded": false,
+          "optimizer_steps": 4908,
+          "phase": "R194_C2_CONSOLE_REFLECTION_V1",
+          "processes": {
+            "bridge": {
+              "argv": [
+                "/localhome/local-rohing/v2/venv/bin/python",
+                "-B",
+                "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/math_bridge.py",
+                "--config",
+                "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/BRIDGE.json"
+              ],
+              "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+              "cgroup": "0::/user.slice/user-2524.slice/session-591160.scope",
+              "cwd": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1",
+              "group": 3018251,
+              "parent": 3006355,
+              "pid": 3018251,
+              "start_ticks": "23105688",
+              "uid": 2524
+            },
+            "supervisor": {
+              "argv": [
+                "/localhome/local-rohing/v2/venv/bin/python",
+                "-B",
+                "-m",
+                "gpu.r188_node5_confinement",
+                "dispatch",
+                "--config",
+                "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/control/GUARD.json"
+              ],
+              "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+              "cgroup": "0::/user.slice/user-2524.slice/session-591160.scope",
+              "cwd": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/source",
+              "group": 3018332,
+              "parent": 3006355,
+              "pid": 3018332,
+              "start_ticks": "23105789",
+              "uid": 2524
+            }
+          },
+          "time": 1789695497.7040255
+        },
+        "path": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/STARTED.json",
+        "sha256": "80f6afde6cddf32edd3f59eedc7597c7d48917a1cb7f3545085e796c73f4fd27"
+      },
+      "STATE_CPU.json": {
+        "document": {
+          "adapter_state_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+          "bundle_sha256": {
+            "adapter": "b46f8447055f18bc9af2eb8351614434bc235048cbef71d19560d6c145ef6ada",
+            "optimizer": "46f57cbf140b732b94bf02016a893f302835e7d6d24ed625f680eefe1e2145fc",
+            "rng": "46f57cbf140b732b94bf02016a893f302835e7d6d24ed625f680eefe1e2145fc"
+          },
+          "checkpoint_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/checkpoints/sleep_000051/COMMIT.json",
+          "checkpoint_sha256": "70ec4d1d033cc280538a4d37c4eeffc995cdc7323cdbd38ecabfe8fc0c7b0ddb",
+          "optimizer_steps": 4908,
+          "wall_record": null
+        },
+        "path": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/STATE_CPU.json",
+        "sha256": "acff328ac190b01e4fdeea98c2a61109e1d8f6947266fc9ba54e151da8367718"
+      },
+      "WAITER_START.json": {
+        "document": {
+          "command": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/console_handoff.py",
+            "execute"
+          ],
+          "held": false,
+          "identity": {
+            "argv": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/console_handoff.py",
+              "execute"
+            ],
+            "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+            "cgroup": "0::/user.slice/user-2524.slice/session-591160.scope",
+            "cwd": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1",
+            "group": 3006355,
+            "parent": 3006354,
+            "pid": 3006355,
+            "start_ticks": "23054618",
+            "uid": 2524
+          },
+          "loaded": false,
+          "time": 1789694986.0018253
+        },
+        "path": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/WAITER_START.json",
+        "sha256": "02a8d0e9ca430787831c2c411eadcb270a9d9c25f35aff1c91aba962c319655e"
+      },
+      "control/OUTER_STARTED.json": {
+        "document": {
+          "config_sha256": "b526664ab12200289dc53893fd10e2bb80ec49c9ec6ad503a9222a0757ba9162",
+          "cpu_sha256": "4812f33e0b6ac025e15067eec25b9e10860c9a02fd29cc915d4657ee838ec8cc",
+          "no_retry": true,
+          "pid": 3018332,
+          "started_unix": 1789695497.8058789
+        },
+        "path": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/control/OUTER_STARTED.json",
+        "sha256": "1874d0c82277e5e61b52527f04e63541bfac31f6a15ac64f6d55230e071d36e6"
+      }
+    },
+    "recipe": null,
+    "rohin_inputs": [
+      {
+        "id": "1e9130e4c45145b98feecfdd54976768",
+        "index": 5828,
+        "record_sha256": "3490d239f0b2ca0263fcf8d29deecbe7817925ac95fbc28cfbfd5f3dcbcbc40f",
+        "schema": "R127_ATTRIBUTED_INBOX_V1",
+        "source_id": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/1e9130e4c45145b98feecfdd54976768.json",
+        "source_sha256": "2eaaa2ffbb9645b979d03c99ed34d2ede73ed58870dcb84ca6b13cd3d6108cdb",
+        "speaker": "Rohin"
+      }
+    ],
+    "signals": 0
+  },
+  "returncode": 0,
+  "stderr": ""
+}

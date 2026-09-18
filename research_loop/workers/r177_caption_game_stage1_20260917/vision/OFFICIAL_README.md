@@ -10,8 +10,8 @@ library_name: transformers
 ---
 
 # Qwen2.5-VL-7B-Instruct
-<a href="https://chat.qwenlm.ai/" target="_blank" style="margin: 2px;">
-    <img alt="Chat" src="https://img.shields.io/badge/%F0%9F%92%9C%EF%B8%8F%20Qwen%20Chat%20-536af5" style="display: inline-block; vertical-align: middle;"/>
+<a href="https://[REDACTED_HOST]/" target="_blank" style="margin: 2px;">
+    <img alt="Chat" src="https://[REDACTED_HOST]/badge/%F0%9F%92%9C%EF%B8%8F%20Qwen%20Chat%20-536af5" style="display: inline-block; vertical-align: middle;"/>
 </a>
 
 ## Introduction
@@ -37,7 +37,7 @@ In the past five months since Qwen2-VL’s release, numerous developers have bui
 We extend dynamic resolution to the temporal dimension by adopting dynamic FPS sampling, enabling the model to comprehend videos at various sampling rates. Accordingly, we update mRoPE in the time dimension with IDs and absolute time alignment, enabling the model to learn temporal sequence and speed, and ultimately acquire the ability to pinpoint specific moments.
 
 <p align="center">
-    <img src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen2.5-VL/qwen2.5vl_arc.jpeg" width="80%"/>
+    <img src="https://[REDACTED_HOST]/Qwen2.5-VL/qwen2.5vl_arc.jpeg" width="80%"/>
 <p>
 
 
@@ -46,7 +46,7 @@ We extend dynamic resolution to the temporal dimension by adopting dynamic FPS s
 We enhance both training and inference speeds by strategically implementing window attention into the ViT. The ViT architecture is further optimized with SwiGLU and RMSNorm, aligning it with the structure of the Qwen2.5 LLM.
 
 
-We have three models with 3, 7 and 72 billion parameters. This repo contains the instruction-tuned 7B Qwen2.5-VL model. For more information, visit our [Blog](https://qwenlm.github.io/blog/qwen2.5-vl/) and [GitHub](https://github.com/QwenLM/Qwen2.5-VL).
+We have three models with 3, 7 and 72 billion parameters. This repo contains the instruction-tuned 7B Qwen2.5-VL model. For more information, visit our [Blog](https://[REDACTED_HOST]/blog/qwen2.5-vl/) and [GitHub](https://[REDACTED_HOST]/QwenLM/Qwen2.5-VL).
 
 
 
@@ -102,7 +102,7 @@ We have three models with 3, 7 and 72 billion parameters. This repo contains the
 ## Requirements
 The code of Qwen2.5-VL has been in the latest Hugging face transformers and we advise you to build from source with command:
 ```
-pip install git+https://github.com/huggingface/transformers accelerate
+pip install git+https://[REDACTED_HOST]/huggingface/transformers accelerate
 ```
 or you might encounter the following error:
 ```
@@ -116,7 +116,7 @@ Below, we provide simple examples to show how to use Qwen2.5-VL with 🤖 ModelS
 
 The code of Qwen2.5-VL has been in the latest Hugging face transformers and we advise you to build from source with command:
 ```
-pip install git+https://github.com/huggingface/transformers accelerate
+pip install git+https://[REDACTED_HOST]/huggingface/transformers accelerate
 ```
 or you might encounter the following error:
 ```
@@ -131,7 +131,7 @@ We offer a toolkit to help you handle various types of visual input more conveni
 pip install qwen-vl-utils[decord]==0.0.8
 ```
 
-If you are not using Linux, you might not be able to install `decord` from PyPI. In that case, you can use `pip install qwen-vl-utils` which will fall back to using torchvision for video processing. However, you can still [install decord from source](https://github.com/dmlc/decord?tab=readme-ov-file#install-from-source) to get decord used when loading video.
+If you are not using Linux, you might not be able to install `decord` from PyPI. In that case, you can use `pip install qwen-vl-utils` which will fall back to using torchvision for video processing. However, you can still [install decord from source](https://[REDACTED_HOST]/dmlc/decord?tab=readme-ov-file#install-from-source) to get decord used when loading video.
 
 ### Using 🤗  Transformers to Chat
 
@@ -169,7 +169,7 @@ messages = [
         "content": [
             {
                 "type": "image",
-                "image": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen-VL/assets/demo.jpeg",
+                "image": "https://[REDACTED_HOST]/Qwen-VL/assets/demo.jpeg",
             },
             {"type": "text", "text": "Describe this image."},
         ],
@@ -288,7 +288,7 @@ messages = [
         "content": [
             {
                 "type": "video",
-                "video": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen2-VL/space_woaudio.mp4",
+                "video": "https://[REDACTED_HOST]/Qwen2-VL/space_woaudio.mp4",
             },
             {"type": "text", "text": "Describe this video."},
         ],
@@ -406,7 +406,7 @@ messages = [
     {
         "role": "user",
         "content": [
-            {"type": "image", "image": "http://path/to/your/image.jpg"},
+            {"type": "image", "image": "http://[REDACTED_HOST]/to/your/image.jpg"},
             {"type": "text", "text": "Describe this image."},
         ],
     }
@@ -476,7 +476,7 @@ messages = [
 ### Processing Long Texts
 
 The current `config.json` is set for context length up to 32,768 tokens.
-To handle extensive inputs exceeding 32,768 tokens, we utilize [YaRN](https://arxiv.org/abs/2309.00071), a technique for enhancing model length extrapolation, ensuring optimal performance on lengthy texts.
+To handle extensive inputs exceeding 32,768 tokens, we utilize [YaRN](https://[REDACTED_HOST]/abs/2309.00071), a technique for enhancing model length extrapolation, ensuring optimal performance on lengthy texts.
 
 For supported frameworks, you could add the following to `config.json` to enable YaRN:
 
@@ -506,7 +506,7 @@ If you find our work helpful, feel free to give us a cite.
 ```
 @misc{qwen2.5-VL,
     title = {Qwen2.5-VL},
-    url = {https://qwenlm.github.io/blog/qwen2.5-vl/},
+    url = {https://[REDACTED_HOST]/blog/qwen2.5-vl/},
     author = {Qwen Team},
     month = {January},
     year = {2025}

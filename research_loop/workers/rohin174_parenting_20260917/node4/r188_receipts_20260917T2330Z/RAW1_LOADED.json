@@ -1,0 +1,41 @@
+{
+  "actor": {
+    "argv": [
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "-m",
+      "gpu.orch_r125_continual_guard",
+      "native",
+      "--config",
+      "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery1/control/GUARD.json"
+    ],
+    "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+    "cgroup": "0::/system.slice/orch-r136-native-8e49bcb830e04e2c9b8376429bcb40df.service",
+    "cwd": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery1/source",
+    "environment": [
+      "CUDA_VISIBLE_DEVICES=GPU-4b071167-a06a-773c-f947-60cb8c2f7512"
+    ],
+    "group": 1734750,
+    "parent": 1734750,
+    "pid": 1734752,
+    "start_ticks": "25543112",
+    "uid": 2524
+  },
+  "exact_inflight_continuation": null,
+  "observed_unix": 1789687334.142357,
+  "physical": 1,
+  "record_index": 5168,
+  "record_sha256": "84f680d1a860a6058580ba5f2b698e7b39d291e31407f43d484e148a2e681fea",
+  "saved": {
+    "adapter_state_sha256": "3849c76c0d226342fbc2caf965b0949bba9c308ffdd917232073d22300d147ee",
+    "checkpoint_path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/checkpoints/sleep_000042/COMMIT.json",
+    "checkpoint_sha256": "628fb7f711fd4e890d5b01a3095b5a4081e2f7161706e7972dbe61b1151d76c2",
+    "cycle": 42,
+    "old_head_index": 5167,
+    "old_head_sha256": "7bfa4487cccc96c9461a725d15cd781c30923711450bd62c5ae0d65beaec25fe",
+    "optimizer_steps": 4599,
+    "physical": 1,
+    "root": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1"
+  },
+  "status": "R188_SAVED_MODEL_LOADED"
+}

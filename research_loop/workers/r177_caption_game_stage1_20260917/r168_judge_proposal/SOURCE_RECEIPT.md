@@ -18,9 +18,9 @@ read, not pinned model weights or a reproducible future training installation.
 Source URLs, in the same order:
 
 ```text
-https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/raw/main/README.md
-https://raw.githubusercontent.com/QwenLM/Qwen2.5-VL/main/qwen-vl-finetune/README.md
-https://raw.githubusercontent.com/openai/CLIP/main/README.md
+https://[REDACTED_HOST]/Qwen/Qwen2.5-VL-3B-Instruct/raw/main/README.md
+https://[REDACTED_HOST]/QwenLM/Qwen2.5-VL/main/qwen-vl-finetune/README.md
+https://[REDACTED_HOST]/openai/CLIP/main/README.md
 ```
 
 Qwen's card identifies the 3B checkpoint and controllable image-token budget.

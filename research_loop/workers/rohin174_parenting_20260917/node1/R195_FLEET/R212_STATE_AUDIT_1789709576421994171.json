@@ -1,0 +1,1991 @@
+{
+  "arms": {
+    "2": {
+      "cut": 6240,
+      "filter_sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "filter_tags": [
+        {
+          "index": 6380,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6380,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6380,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6380,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        }
+      ],
+      "kinds": {
+        "COMMITTED": 12,
+        "COMPACTION": 2,
+        "CONTEXT_INPUT": 15,
+        "INBOX": 8,
+        "LOADED": 1,
+        "R184_ACT": 4,
+        "R184_LEARN_COMPLETE": 4,
+        "R184_SLEEP_NOTICE": 4,
+        "R184_STAGE": 12,
+        "R184_TRANSITION": 4,
+        "R189_LEARN_ALLOCATION": 4,
+        "R189_OUTCOME_CYCLE": 4,
+        "R191_DATASET_ROW": 12,
+        "R195_LEARN_REVIEW": 4,
+        "R197_CORRECTION_CYCLE": 4,
+        "REQUEST": 12,
+        "RESPONSE": 12,
+        "SLEEP_COMPLETE": 4,
+        "SLEEP_RECIPE": 4,
+        "SLEEP_REQUEST": 4,
+        "TARGET_ELIGIBILITY": 4,
+        "UPDATE": 16
+      },
+      "latest": {
+        "COMMITTED": {
+          "document_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "index": 6380,
+          "kind": "COMMITTED",
+          "mtime_unix": 1789709413.3120532,
+          "sha256": "04971c4210e050ba0ec25263e0c1886234f2b46ae5f071d967be69dcbdcbcd28"
+        },
+        "COMPACTION": {
+          "document_keys": [
+            "kind",
+            "reviewed_reflection_ids",
+            "state",
+            "working_state_preserved"
+          ],
+          "index": 6350,
+          "kind": "COMPACTION",
+          "mtime_unix": 1789709122.4466615,
+          "sha256": "d359bd0a7dc4e95ee65fbb624eafe37469bf1eaffeafe289b595a43d24aeb194"
+        },
+        "CONTEXT_INPUT": {
+          "document_keys": [
+            "kind",
+            "protected_from",
+            "state",
+            "training_eligible"
+          ],
+          "index": 6377,
+          "kind": "CONTEXT_INPUT",
+          "mtime_unix": 1789709378.5617676,
+          "sha256": "51826a732fff9b19053917e37b891b0304820cad9aa6b7e7ffb06ca23710e014"
+        },
+        "INBOX": {
+          "document_keys": [
+            "message",
+            "source_id",
+            "source_sha256"
+          ],
+          "index": 6376,
+          "kind": "INBOX",
+          "mtime_unix": 1789709377.825717,
+          "sha256": "e7c8bf1c256f58226eb3a9a527344bd0fa9ee2fec1c6c36bd980c0add6b47e8e"
+        },
+        "LOADED": {
+          "document_keys": [
+            "adapter_sha256",
+            "anchors",
+            "base_sha256",
+            "loaded_unix",
+            "optimizer_steps",
+            "pid",
+            "resume",
+            "runtime"
+          ],
+          "index": 6241,
+          "kind": "LOADED",
+          "mtime_unix": 1789708375.642726,
+          "sha256": "7cf6e92acbddc11b624897b23b1a1f4eb56f6d0e7e04063ffc5bcf8b8daa165e"
+        },
+        "R184_ACT": {
+          "document_keys": [
+            "origin",
+            "outcome",
+            "schema",
+            "segment",
+            "source_sha256"
+          ],
+          "index": 6372,
+          "kind": "R184_ACT",
+          "mtime_unix": 1789709377.270324,
+          "sha256": "6470f00230e9a48ec4f9004a59d8bba83546662f6922c11f9262b8db029cb8f5"
+        },
+        "R184_LEARN_COMPLETE": {
+          "document_keys": [
+            "checkpoint",
+            "cycle",
+            "parent_required_for_next_cycle",
+            "state_revision",
+            "working_state"
+          ],
+          "index": 6390,
+          "kind": "R184_LEARN_COMPLETE",
+          "mtime_unix": 1789709475.6600385,
+          "sha256": "211a3e836e50f24a3e43a0f1e85d518c4458283ae51a26d3be8f8e6ea37fb1e8"
+        },
+        "R184_SLEEP_NOTICE": {
+          "document_keys": [
+            "actual_optimizer_complete",
+            "compaction",
+            "cycle",
+            "new_presentations",
+            "new_rows",
+            "reviewed_reflection_ids",
+            "selected_old_rows"
+          ],
+          "index": 6384,
+          "kind": "R184_SLEEP_NOTICE",
+          "mtime_unix": 1789709413.6444144,
+          "sha256": "c7f74e15a4546366e5673e9c901365b85b01f93741983eda72a0fa44743c4e6f"
+        },
+        "R184_STAGE": {
+          "document_keys": [
+            "consolidation",
+            "runtime_notice_is_target",
+            "schema",
+            "segment",
+            "source_sha256",
+            "stage",
+            "trial_id"
+          ],
+          "index": 6381,
+          "kind": "R184_STAGE",
+          "mtime_unix": 1789709413.38103,
+          "sha256": "44ab3b6abbedc322a13546300cb619d005d9432c5a01e9402c2a4c180779ae10"
+        },
+        "R184_TRANSITION": {
+          "document_keys": [
+            "cause",
+            "child_chosen",
+            "continuation_policy",
+            "continuation_requests",
+            "default_think_segments",
+            "from_stage",
+            "opportunity",
+            "schema",
+            "segment",
+            "think_segments_budget",
+            "think_segments_used",
+            "to_stage"
+          ],
+          "index": 6366,
+          "kind": "R184_TRANSITION",
+          "mtime_unix": 1789709353.2435594,
+          "sha256": "eaa8ee57e837de7c72c9093acdf25369cc5d78777ee226cf0807e53c7475814e"
+        },
+        "R189_LEARN_ALLOCATION": {
+          "document_keys": [
+            "allocation",
+            "cycle",
+            "outcome_cycle",
+            "runtime_and_feedback_target",
+            "stage_tokens",
+            "think_share_including_learn"
+          ],
+          "index": 6385,
+          "kind": "R189_LEARN_ALLOCATION",
+          "mtime_unix": 1789709413.7026176,
+          "sha256": "982afbfd90dbbd688c4be7828dd66d318141fc0e4bd1377388361b8bb92175bc"
+        },
+        "R189_OUTCOME_CYCLE": {
+          "document_keys": [
+            "allocation",
+            "report",
+            "state"
+          ],
+          "index": 6373,
+          "kind": "R189_OUTCOME_CYCLE",
+          "mtime_unix": 1789709377.543759,
+          "sha256": "77284ec89d5a658a87d8b7e869d31b30b35191c671859297268247c1fd397ec4"
+        },
+        "R191_DATASET_ROW": {
+          "document_keys": [
+            "cycle",
+            "outcome_recorded",
+            "path",
+            "row_id",
+            "stage"
+          ],
+          "index": 6383,
+          "kind": "R191_DATASET_ROW",
+          "mtime_unix": 1789709413.5076323,
+          "sha256": "79896c7fda3f48bf80f86e63ca37371681c9ea2a0e63881c4b9b07da5d7e5b55"
+        },
+        "R195_LEARN_REVIEW": {
+          "document_keys": [
+            "cycle",
+            "optimizer_complete",
+            "proof",
+            "raw_modified",
+            "targets_normalized",
+            "trial_id"
+          ],
+          "index": 6382,
+          "kind": "R195_LEARN_REVIEW",
+          "mtime_unix": 1789709413.4470544,
+          "sha256": "484d25fc87ce4224507b38b7eb744e975b7ffa82818c522c8bc34d3324154db8"
+        },
+        "R197_CORRECTION_CYCLE": {
+          "document_keys": [
+            "ledger",
+            "runtime_repair_is_not_child_correction",
+            "semantic_labels"
+          ],
+          "index": 6374,
+          "kind": "R197_CORRECTION_CYCLE",
+          "mtime_unix": 1789709377.6142418,
+          "sha256": "8f6e2362d8657580fabfb5dc412be1d18f35bef6b0ba7023413eb630fc902d94"
+        },
+        "REQUEST": {
+          "document_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "index": 6378,
+          "kind": "REQUEST",
+          "mtime_unix": 1789709379.335312,
+          "sha256": "8b98ae722a004147d81649a581495bbfd6a333eef9a3e7fa9567aeaffb11f56f"
+        },
+        "RESPONSE": {
+          "document_keys": [
+            "finished_unix",
+            "raw_saved_before_validation",
+            "request_sha256",
+            "response",
+            "schema"
+          ],
+          "index": 6379,
+          "kind": "RESPONSE",
+          "mtime_unix": 1789709412.4910464,
+          "sha256": "eaffa9aa870c97dc605dab1908732792d27511df2e28fad4e028371e1c3fa36b"
+        },
+        "SLEEP_COMPLETE": {
+          "document_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "code_target_filter",
+            "code_target_filter_counts",
+            "code_target_filter_presentations",
+            "cycle",
+            "excluded_rows",
+            "learn_review_filter",
+            "learn_review_filter_counts",
+            "learn_review_filter_presentations",
+            "learn_review_zero_update",
+            "mix_kind",
+            "new_row_sha256",
+            "no_update_reason",
+            "no_update_subreason",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "index": 6389,
+          "kind": "SLEEP_COMPLETE",
+          "mtime_unix": 1789709475.5045648,
+          "sha256": "604928bcc3a0f24cc95e9ef2f416d021ff7b532c8f79ca1902078a4758f3a827"
+        },
+        "SLEEP_RECIPE": {
+          "document_keys": [
+            "anchor_lambda",
+            "available_old_rows",
+            "code_target_filter",
+            "learn_review_filter",
+            "new_presentations",
+            "new_rows",
+            "policy",
+            "selected_old_rows",
+            "sleep_loss_impl"
+          ],
+          "index": 6387,
+          "kind": "SLEEP_RECIPE",
+          "mtime_unix": 1789709414.5090523,
+          "sha256": "1f125967e464caeaf121cb82f72a1337d7411a335a53db87919a05ac662560dd"
+        },
+        "SLEEP_REQUEST": {
+          "document_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "index": 6386,
+          "kind": "SLEEP_REQUEST",
+          "mtime_unix": 1789709414.444397,
+          "sha256": "a78f6ff8c6a53d6d678377bf630b4ec604c0c94313084e3613a33ac52f4313cc"
+        },
+        "TARGET_ELIGIBILITY": {
+          "document_keys": [
+            "code_target_filter",
+            "code_target_filter_counts",
+            "code_target_filter_presentations",
+            "excluded",
+            "learn_review_filter",
+            "learn_review_filter_counts",
+            "learn_review_filter_presentations",
+            "new_row_sha256",
+            "raw_modified",
+            "rehearsal_row_sha256",
+            "runtime_policy",
+            "version"
+          ],
+          "index": 6388,
+          "kind": "TARGET_ELIGIBILITY",
+          "mtime_unix": 1789709414.6603892,
+          "sha256": "cfc9fafa35bcb4b407455dddbf15e9195d2419e16962cb0804efccd43309be70"
+        },
+        "UPDATE": {
+          "document_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "index": 6320,
+          "kind": "UPDATE",
+          "mtime_unix": 1789708814.3441277,
+          "sha256": "897ca90a105e13dc2f209efd415ba8d4404ba8b6895c7fb4c4d01e572211bfe9"
+        }
+      },
+      "latest_head": {
+        "document_keys": [
+          "checkpoint",
+          "cycle",
+          "parent_required_for_next_cycle",
+          "state_revision",
+          "working_state"
+        ],
+        "index": 6390,
+        "kind": "R184_LEARN_COMPLETE",
+        "mtime_unix": 1789709475.6600385,
+        "sha256": "211a3e836e50f24a3e43a0f1e85d518c4458283ae51a26d3be8f8e6ea37fb1e8"
+      },
+      "mode_and_filter_events": [],
+      "name": "r203_math_comm_b2",
+      "plan_policy": {}
+    },
+    "3": {
+      "cut": 6313,
+      "filter_sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "filter_tags": [
+        {
+          "index": 6476,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6476,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6476,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6476,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        }
+      ],
+      "kinds": {
+        "COMMITTED": 10,
+        "COMPACTION": 3,
+        "CONTEXT_INPUT": 14,
+        "INBOX": 5,
+        "LOADED": 1,
+        "R184_ACT": 3,
+        "R184_LEARN_COMPLETE": 2,
+        "R184_SLEEP_NOTICE": 3,
+        "R184_STAGE": 10,
+        "R184_TRANSITION": 3,
+        "R189_LEARN_ALLOCATION": 3,
+        "R189_OUTCOME_CYCLE": 3,
+        "R191_DATASET_ROW": 10,
+        "R195_LEARN_REVIEW": 3,
+        "R197_CORRECTION_CYCLE": 3,
+        "REQUEST": 10,
+        "RESPONSE": 10,
+        "SLEEP_COMPLETE": 2,
+        "SLEEP_RECIPE": 3,
+        "SLEEP_REQUEST": 3,
+        "TARGET_ELIGIBILITY": 3,
+        "UPDATE": 113
+      },
+      "latest": {
+        "COMMITTED": {
+          "document_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "index": 6476,
+          "kind": "COMMITTED",
+          "mtime_unix": 1789709398.481754,
+          "sha256": "807a2dca058208b915ec19aac24815ddcef09c5a14d6e2d841aa88678b5b52ee"
+        },
+        "COMPACTION": {
+          "document_keys": [
+            "kind",
+            "reviewed_reflection_ids",
+            "state",
+            "working_state_preserved"
+          ],
+          "index": 6410,
+          "kind": "COMPACTION",
+          "mtime_unix": 1789708915.8749628,
+          "sha256": "e2baca3066d1b7eb3d40e95dad056694887101315797008972a840dff6f5674f"
+        },
+        "CONTEXT_INPUT": {
+          "document_keys": [
+            "kind",
+            "protected_from",
+            "state",
+            "training_eligible"
+          ],
+          "index": 6473,
+          "kind": "CONTEXT_INPUT",
+          "mtime_unix": 1789709376.7707527,
+          "sha256": "5434d9dca32c51686b509ba4e6cab228943590ffac060e964a63d5ddeb05242d"
+        },
+        "INBOX": {
+          "document_keys": [
+            "message",
+            "source_id",
+            "source_sha256"
+          ],
+          "index": 6409,
+          "kind": "INBOX",
+          "mtime_unix": 1789708914.9919736,
+          "sha256": "3274bbba7ebf7d7ac4accda27141c92a88047f53e414cc1b5925752cc3660def"
+        },
+        "LOADED": {
+          "document_keys": [
+            "adapter_sha256",
+            "anchors",
+            "base_sha256",
+            "loaded_unix",
+            "optimizer_steps",
+            "pid",
+            "resume",
+            "runtime"
+          ],
+          "index": 6314,
+          "kind": "LOADED",
+          "mtime_unix": 1789708380.2722437,
+          "sha256": "29576583fd9a99aaa1f03cb32d2eb1f241fd84ab97943cc46c99d7a2de3aff1d"
+        },
+        "R184_ACT": {
+          "document_keys": [
+            "origin",
+            "outcome",
+            "schema",
+            "segment",
+            "source_sha256"
+          ],
+          "index": 6469,
+          "kind": "R184_ACT",
+          "mtime_unix": 1789709375.5847168,
+          "sha256": "b90c4f755f66739ff7cf652c964b5c42c70046d49f27ff389f86b9898dc6c445"
+        },
+        "R184_LEARN_COMPLETE": {
+          "document_keys": [
+            "checkpoint",
+            "cycle",
+            "parent_required_for_next_cycle",
+            "state_revision",
+            "working_state"
+          ],
+          "index": 6450,
+          "kind": "R184_LEARN_COMPLETE",
+          "mtime_unix": 1789709167.015133,
+          "sha256": "8613cb45a1b026088738117ce6d4af525aaf758a3fa9b1966f5a2b0b1cb87574"
+        },
+        "R184_SLEEP_NOTICE": {
+          "document_keys": [
+            "actual_optimizer_complete",
+            "compaction",
+            "cycle",
+            "new_presentations",
+            "new_rows",
+            "reviewed_reflection_ids",
+            "selected_old_rows"
+          ],
+          "index": 6480,
+          "kind": "R184_SLEEP_NOTICE",
+          "mtime_unix": 1789709398.79314,
+          "sha256": "6d3cd5b85774001b08e6b4a386d2ec0810257de103bba47ee6deab7ce5172121"
+        },
+        "R184_STAGE": {
+          "document_keys": [
+            "consolidation",
+            "runtime_notice_is_target",
+            "schema",
+            "segment",
+            "source_sha256",
+            "stage",
+            "trial_id"
+          ],
+          "index": 6477,
+          "kind": "R184_STAGE",
+          "mtime_unix": 1789709398.5449986,
+          "sha256": "c0e3d664b251446ef60ff4af23593453c8532bea7a9ac268455b945e274ca7c0"
+        },
+        "R184_TRANSITION": {
+          "document_keys": [
+            "cause",
+            "child_chosen",
+            "continuation_policy",
+            "continuation_requests",
+            "default_think_segments",
+            "from_stage",
+            "opportunity",
+            "schema",
+            "segment",
+            "think_segments_budget",
+            "think_segments_used",
+            "to_stage"
+          ],
+          "index": 6463,
+          "kind": "R184_TRANSITION",
+          "mtime_unix": 1789709355.085551,
+          "sha256": "fe2a8370d7c94e7087f1d8e710b2948672f004f2bbc126a0dfb2293039cd6625"
+        },
+        "R189_LEARN_ALLOCATION": {
+          "document_keys": [
+            "allocation",
+            "cycle",
+            "outcome_cycle",
+            "runtime_and_feedback_target",
+            "stage_tokens",
+            "think_share_including_learn"
+          ],
+          "index": 6481,
+          "kind": "R189_LEARN_ALLOCATION",
+          "mtime_unix": 1789709398.8480527,
+          "sha256": "5e41b4b4ecb65eb89e90420b08326001dbd06d5a72c277855d92735204d7210a"
+        },
+        "R189_OUTCOME_CYCLE": {
+          "document_keys": [
+            "allocation",
+            "report",
+            "state"
+          ],
+          "index": 6470,
+          "kind": "R189_OUTCOME_CYCLE",
+          "mtime_unix": 1789709375.8347452,
+          "sha256": "969aca5d0bbb0df824f5b33acb1b47e6f863a65525d2007cf9d98ba2a1826396"
+        },
+        "R191_DATASET_ROW": {
+          "document_keys": [
+            "cycle",
+            "outcome_recorded",
+            "path",
+            "row_id",
+            "stage"
+          ],
+          "index": 6479,
+          "kind": "R191_DATASET_ROW",
+          "mtime_unix": 1789709398.665489,
+          "sha256": "a7ec81e945a70e0e4c3017b5b1559969410ec21e321999ff8c732086ad396271"
+        },
+        "R195_LEARN_REVIEW": {
+          "document_keys": [
+            "cycle",
+            "optimizer_complete",
+            "proof",
+            "raw_modified",
+            "targets_normalized",
+            "trial_id"
+          ],
+          "index": 6478,
+          "kind": "R195_LEARN_REVIEW",
+          "mtime_unix": 1789709398.6079323,
+          "sha256": "02a88787c5c1d22bc0da3a78ad64fbeb9c027adc8d2f223e604430510886c667"
+        },
+        "R197_CORRECTION_CYCLE": {
+          "document_keys": [
+            "ledger",
+            "runtime_repair_is_not_child_correction",
+            "semantic_labels"
+          ],
+          "index": 6471,
+          "kind": "R197_CORRECTION_CYCLE",
+          "mtime_unix": 1789709375.9001765,
+          "sha256": "f7e55350ee01a78bd446377701ae1514e080da8ee0536f364f9a07403a6f1ca8"
+        },
+        "REQUEST": {
+          "document_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "index": 6474,
+          "kind": "REQUEST",
+          "mtime_unix": 1789709377.5403156,
+          "sha256": "7a64b56b6329fc2cb22ab77a131974639b855b69d98b469222341163168b66f7"
+        },
+        "RESPONSE": {
+          "document_keys": [
+            "finished_unix",
+            "raw_saved_before_validation",
+            "request_sha256",
+            "response",
+            "schema"
+          ],
+          "index": 6475,
+          "kind": "RESPONSE",
+          "mtime_unix": 1789709397.6433065,
+          "sha256": "95a9f4717261b711a593f5960ea63ad97741cae16ee16f5a0b021d71fb7a956a"
+        },
+        "SLEEP_COMPLETE": {
+          "document_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "code_target_filter",
+            "code_target_filter_counts",
+            "code_target_filter_presentations",
+            "cycle",
+            "excluded_rows",
+            "frozen_base_verified",
+            "learn_review_filter",
+            "learn_review_filter_counts",
+            "learn_review_filter_presentations",
+            "mix_kind",
+            "new_row_sha256",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "index": 6449,
+          "kind": "SLEEP_COMPLETE",
+          "mtime_unix": 1789709166.8590267,
+          "sha256": "53fdea770e76b24299c71946d3bfadf52ac49fa4b557af3f8bf54ebbe1853b4d"
+        },
+        "SLEEP_RECIPE": {
+          "document_keys": [
+            "anchor_lambda",
+            "available_old_rows",
+            "code_target_filter",
+            "learn_review_filter",
+            "new_presentations",
+            "new_rows",
+            "policy",
+            "selected_old_rows",
+            "sleep_loss_impl"
+          ],
+          "index": 6483,
+          "kind": "SLEEP_RECIPE",
+          "mtime_unix": 1789709399.6530406,
+          "sha256": "e235e31664a96794af4c9711e6c45ba4d60d14466dbcf557594d79bc59c8860d"
+        },
+        "SLEEP_REQUEST": {
+          "document_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "index": 6482,
+          "kind": "SLEEP_REQUEST",
+          "mtime_unix": 1789709399.591747,
+          "sha256": "8249c1f02699dbd725866fa218d36d6b022b899231d521b181447992bd4a4728"
+        },
+        "TARGET_ELIGIBILITY": {
+          "document_keys": [
+            "code_target_filter",
+            "code_target_filter_counts",
+            "code_target_filter_presentations",
+            "excluded",
+            "learn_review_filter",
+            "learn_review_filter_counts",
+            "learn_review_filter_presentations",
+            "new_row_sha256",
+            "raw_modified",
+            "rehearsal_row_sha256",
+            "runtime_policy",
+            "version"
+          ],
+          "index": 6484,
+          "kind": "TARGET_ELIGIBILITY",
+          "mtime_unix": 1789709399.8761017,
+          "sha256": "18feaa0accb88e947223c3b3db19c80b044de2d57ddc9566c834eee4cb3cc805"
+        },
+        "UPDATE": {
+          "document_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "index": 6533,
+          "kind": "UPDATE",
+          "mtime_unix": 1789709569.363145,
+          "sha256": "54e172d077463cb04c1ec7c15d10dea5ef367b0f1ffdef3d1a87f5ba052c338c"
+        }
+      },
+      "latest_head": {
+        "document_keys": [
+          "finished_unix",
+          "losses",
+          "optimizer_step",
+          "source_sha256"
+        ],
+        "index": 6533,
+        "kind": "UPDATE",
+        "mtime_unix": 1789709569.363145,
+        "sha256": "54e172d077463cb04c1ec7c15d10dea5ef367b0f1ffdef3d1a87f5ba052c338c"
+      },
+      "mode_and_filter_events": [],
+      "name": "r203_repo_evidence_c3",
+      "plan_policy": {}
+    },
+    "4": {
+      "cut": 6316,
+      "filter_sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "filter_tags": [
+        {
+          "index": 6492,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6492,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6492,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6492,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        }
+      ],
+      "kinds": {
+        "COMMITTED": 9,
+        "COMPACTION": 3,
+        "CONTEXT_INPUT": 13,
+        "INBOX": 6,
+        "LOADED": 1,
+        "R184_ACT": 3,
+        "R184_LEARN_COMPLETE": 3,
+        "R184_SLEEP_NOTICE": 3,
+        "R184_STAGE": 9,
+        "R184_TRANSITION": 3,
+        "R189_LEARN_ALLOCATION": 3,
+        "R189_OUTCOME_CYCLE": 3,
+        "R191_DATASET_ROW": 9,
+        "R195_LEARN_REVIEW": 3,
+        "R197_CORRECTION_CYCLE": 3,
+        "REQUEST": 9,
+        "RESPONSE": 9,
+        "SLEEP_COMPLETE": 3,
+        "SLEEP_RECIPE": 3,
+        "SLEEP_REQUEST": 3,
+        "TARGET_ELIGIBILITY": 3,
+        "UPDATE": 96
+      },
+      "latest": {
+        "COMMITTED": {
+          "document_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "index": 6487,
+          "kind": "COMMITTED",
+          "mtime_unix": 1789709320.5224876,
+          "sha256": "9c13d5c50437d0f517e86538a0b8a5d1f53f13d1167f327e168f338dcec8f16d"
+        },
+        "COMPACTION": {
+          "document_keys": [
+            "kind",
+            "reviewed_reflection_ids",
+            "state",
+            "working_state_preserved"
+          ],
+          "index": 6492,
+          "kind": "COMPACTION",
+          "mtime_unix": 1789709321.532758,
+          "sha256": "fab585e4b9df1ebc2a837dad23469cb7d2553e83c00a0c9bf3c88b86fbcd69af"
+        },
+        "CONTEXT_INPUT": {
+          "document_keys": [
+            "kind",
+            "state",
+            "training_eligible"
+          ],
+          "index": 6493,
+          "kind": "CONTEXT_INPUT",
+          "mtime_unix": 1789709322.2197576,
+          "sha256": "30f91ce2808edd0bbae4ef4fb6d78bb86faf4fcd228124ed356aa1b76eda4ad0"
+        },
+        "INBOX": {
+          "document_keys": [
+            "message",
+            "source_id",
+            "source_sha256"
+          ],
+          "index": 6491,
+          "kind": "INBOX",
+          "mtime_unix": 1789709320.8235002,
+          "sha256": "77c13b0e2d53235597e95f3dbc18356390c925068c206674d3be3904561f2852"
+        },
+        "LOADED": {
+          "document_keys": [
+            "adapter_sha256",
+            "anchors",
+            "base_sha256",
+            "loaded_unix",
+            "optimizer_steps",
+            "pid",
+            "resume",
+            "runtime"
+          ],
+          "index": 6317,
+          "kind": "LOADED",
+          "mtime_unix": 1789708378.3952632,
+          "sha256": "c2fde4cc1b4066024b07926672d906ccaabfb3908b64e308268691dd1a190456"
+        },
+        "R184_ACT": {
+          "document_keys": [
+            "origin",
+            "outcome",
+            "schema",
+            "segment",
+            "source_sha256"
+          ],
+          "index": 6477,
+          "kind": "R184_ACT",
+          "mtime_unix": 1789709283.7333596,
+          "sha256": "8f6e71f63c73f49a9d9d4550c5d7b595e3ce1ac4aba27cb67d45c2cfe653c758"
+        },
+        "R184_LEARN_COMPLETE": {
+          "document_keys": [
+            "checkpoint",
+            "cycle",
+            "parent_required_for_next_cycle",
+            "state_revision",
+            "working_state"
+          ],
+          "index": 6516,
+          "kind": "R184_LEARN_COMPLETE",
+          "mtime_unix": 1789709465.8814855,
+          "sha256": "0e473457a1791bd550e9ccae1b432047f177e35205187445278646ee8449863f"
+        },
+        "R184_SLEEP_NOTICE": {
+          "document_keys": [
+            "actual_optimizer_complete",
+            "compaction",
+            "cycle",
+            "new_presentations",
+            "new_rows",
+            "reviewed_reflection_ids",
+            "selected_old_rows"
+          ],
+          "index": 6494,
+          "kind": "R184_SLEEP_NOTICE",
+          "mtime_unix": 1789709322.2811058,
+          "sha256": "1e905591a227880f4e710826323c28e94f93bfca65cea09abbe15faf4762d100"
+        },
+        "R184_STAGE": {
+          "document_keys": [
+            "consolidation",
+            "runtime_notice_is_target",
+            "schema",
+            "segment",
+            "source_sha256",
+            "stage",
+            "trial_id"
+          ],
+          "index": 6488,
+          "kind": "R184_STAGE",
+          "mtime_unix": 1789709320.5850258,
+          "sha256": "99d2039f9e46e3ea2b7a18b5830525041d6ad2de7ddad6ce3e13e6fdeb12d6c4"
+        },
+        "R184_TRANSITION": {
+          "document_keys": [
+            "cause",
+            "child_chosen",
+            "continuation_policy",
+            "continuation_requests",
+            "default_think_segments",
+            "from_stage",
+            "opportunity",
+            "schema",
+            "segment",
+            "think_segments_budget",
+            "think_segments_used",
+            "to_stage"
+          ],
+          "index": 6471,
+          "kind": "R184_TRANSITION",
+          "mtime_unix": 1789709271.5075066,
+          "sha256": "9fd75b22158f77a74c07e448ca14b98761d0158ecfa9010fe06b665ef4cad7b7"
+        },
+        "R189_LEARN_ALLOCATION": {
+          "document_keys": [
+            "allocation",
+            "cycle",
+            "outcome_cycle",
+            "runtime_and_feedback_target",
+            "stage_tokens",
+            "think_share_including_learn"
+          ],
+          "index": 6495,
+          "kind": "R189_LEARN_ALLOCATION",
+          "mtime_unix": 1789709322.3360653,
+          "sha256": "745e5f193bb6230bafd2464a5f85aea428cf2cc430f45ec3e7dde51f2fa6fd67"
+        },
+        "R189_OUTCOME_CYCLE": {
+          "document_keys": [
+            "allocation",
+            "report",
+            "state"
+          ],
+          "index": 6478,
+          "kind": "R189_OUTCOME_CYCLE",
+          "mtime_unix": 1789709283.9746592,
+          "sha256": "e998ce1f70f8ddbccde80eb4c51b7604aaaecd250fade00f9144b331025f249c"
+        },
+        "R191_DATASET_ROW": {
+          "document_keys": [
+            "cycle",
+            "outcome_recorded",
+            "path",
+            "row_id",
+            "stage"
+          ],
+          "index": 6490,
+          "kind": "R191_DATASET_ROW",
+          "mtime_unix": 1789709320.7022917,
+          "sha256": "4d3d8f6f74ad9bf3749a853434fd2c751ac452a7adadd1a159ab02c23bfc376a"
+        },
+        "R195_LEARN_REVIEW": {
+          "document_keys": [
+            "cycle",
+            "optimizer_complete",
+            "proof",
+            "raw_modified",
+            "targets_normalized",
+            "trial_id"
+          ],
+          "index": 6489,
+          "kind": "R195_LEARN_REVIEW",
+          "mtime_unix": 1789709320.6460185,
+          "sha256": "d6647d9d4a73970473578d9c3a404c30b5f6c05d6a9f02f0f16afbd3fdc800e0"
+        },
+        "R197_CORRECTION_CYCLE": {
+          "document_keys": [
+            "ledger",
+            "runtime_repair_is_not_child_correction",
+            "semantic_labels"
+          ],
+          "index": 6479,
+          "kind": "R197_CORRECTION_CYCLE",
+          "mtime_unix": 1789709284.0375862,
+          "sha256": "a2fb0a0305cbdb63e9004a1aa333c490da272c2935316ed3a13b7f01815a3fe3"
+        },
+        "REQUEST": {
+          "document_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "index": 6485,
+          "kind": "REQUEST",
+          "mtime_unix": 1789709286.9935894,
+          "sha256": "8e5dd5c749519e323b53272fa93c1a7e54bea2423f302c241fd8a37bc9c11f10"
+        },
+        "RESPONSE": {
+          "document_keys": [
+            "finished_unix",
+            "raw_saved_before_validation",
+            "request_sha256",
+            "response",
+            "schema"
+          ],
+          "index": 6486,
+          "kind": "RESPONSE",
+          "mtime_unix": 1789709319.7543192,
+          "sha256": "c6e4e48ae1991013278bbd3249ffb8a6cf20385161a73883ca3500ac8f943bd6"
+        },
+        "SLEEP_COMPLETE": {
+          "document_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "code_target_filter",
+            "code_target_filter_counts",
+            "code_target_filter_presentations",
+            "cycle",
+            "excluded_rows",
+            "frozen_base_verified",
+            "learn_review_filter",
+            "learn_review_filter_counts",
+            "learn_review_filter_presentations",
+            "mix_kind",
+            "new_row_sha256",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "index": 6515,
+          "kind": "SLEEP_COMPLETE",
+          "mtime_unix": 1789709465.7321703,
+          "sha256": "735b94a32aef9a0890525a336c4085a2986dcea9f7c1c9740867ef7eac2b75fb"
+        },
+        "SLEEP_RECIPE": {
+          "document_keys": [
+            "anchor_lambda",
+            "available_old_rows",
+            "code_target_filter",
+            "learn_review_filter",
+            "new_presentations",
+            "new_rows",
+            "policy",
+            "selected_old_rows",
+            "sleep_loss_impl"
+          ],
+          "index": 6497,
+          "kind": "SLEEP_RECIPE",
+          "mtime_unix": 1789709323.1093116,
+          "sha256": "82cc0b8acda8ee72459a63d5943e606eab49dd04ad9b197895d5f88343abfada"
+        },
+        "SLEEP_REQUEST": {
+          "document_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "index": 6496,
+          "kind": "SLEEP_REQUEST",
+          "mtime_unix": 1789709323.0486925,
+          "sha256": "041d3105b0b4284f483772cca19b41968b1298d30e7b69a2651b5bc5cfb4304f"
+        },
+        "TARGET_ELIGIBILITY": {
+          "document_keys": [
+            "code_target_filter",
+            "code_target_filter_counts",
+            "code_target_filter_presentations",
+            "excluded",
+            "learn_review_filter",
+            "learn_review_filter_counts",
+            "learn_review_filter_presentations",
+            "new_row_sha256",
+            "raw_modified",
+            "rehearsal_row_sha256",
+            "runtime_policy",
+            "version"
+          ],
+          "index": 6498,
+          "kind": "TARGET_ELIGIBILITY",
+          "mtime_unix": 1789709323.283313,
+          "sha256": "a14fee24eae30824025bc1912522985ce78c5de4fbcd090cb05c55159c52f864"
+        },
+        "UPDATE": {
+          "document_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "index": 6514,
+          "kind": "UPDATE",
+          "mtime_unix": 1789709405.443403,
+          "sha256": "ab992dc874694a8abfa0d710a971202b62084751b6a8feb967a8bae35975cf09"
+        }
+      },
+      "latest_head": {
+        "document_keys": [
+          "checkpoint",
+          "cycle",
+          "parent_required_for_next_cycle",
+          "state_revision",
+          "working_state"
+        ],
+        "index": 6516,
+        "kind": "R184_LEARN_COMPLETE",
+        "mtime_unix": 1789709465.8814855,
+        "sha256": "0e473457a1791bd550e9ccae1b432047f177e35205187445278646ee8449863f"
+      },
+      "mode_and_filter_events": [],
+      "name": "r203_creative_structured_a4",
+      "plan_policy": {}
+    },
+    "5": {
+      "cut": 6293,
+      "filter_sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "filter_tags": [
+        {
+          "index": 6440,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6440,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6440,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        },
+        {
+          "index": 6440,
+          "tags": {
+            "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+          }
+        }
+      ],
+      "kinds": {
+        "COMMITTED": 13,
+        "COMPACTION": 2,
+        "CONTEXT_INPUT": 16,
+        "INBOX": 9,
+        "LOADED": 1,
+        "R184_ACT": 4,
+        "R184_LEARN_COMPLETE": 4,
+        "R184_SLEEP_NOTICE": 4,
+        "R184_STAGE": 13,
+        "R184_TRANSITION": 4,
+        "R189_LEARN_ALLOCATION": 4,
+        "R189_OUTCOME_CYCLE": 4,
+        "R191_DATASET_ROW": 13,
+        "R195_LEARN_REVIEW": 4,
+        "R197_CORRECTION_CYCLE": 4,
+        "REQUEST": 13,
+        "RESPONSE": 13,
+        "SLEEP_COMPLETE": 4,
+        "SLEEP_RECIPE": 4,
+        "SLEEP_REQUEST": 4,
+        "TARGET_ELIGIBILITY": 4,
+        "UPDATE": 32
+      },
+      "latest": {
+        "COMMITTED": {
+          "document_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "index": 6440,
+          "kind": "COMMITTED",
+          "mtime_unix": 1789709325.7893336,
+          "sha256": "81340d1fd3bc3819b43752d75a67308cb0f5637547750ba64ee9634c5307877e"
+        },
+        "COMPACTION": {
+          "document_keys": [
+            "kind",
+            "reviewed_reflection_ids",
+            "state",
+            "working_state_preserved"
+          ],
+          "index": 6357,
+          "kind": "COMPACTION",
+          "mtime_unix": 1789708722.6493587,
+          "sha256": "4be73127742382878b633f2465d024c83dcb61a8d67f2cd58d8b6895c1798244"
+        },
+        "CONTEXT_INPUT": {
+          "document_keys": [
+            "kind",
+            "protected_from",
+            "state",
+            "training_eligible"
+          ],
+          "index": 6437,
+          "kind": "CONTEXT_INPUT",
+          "mtime_unix": 1789709311.8812191,
+          "sha256": "08d37ea5622253000691ef69e4ae294b80a3e73b4128e8fad2843be06eef97a8"
+        },
+        "INBOX": {
+          "document_keys": [
+            "message",
+            "source_id",
+            "source_sha256"
+          ],
+          "index": 6420,
+          "kind": "INBOX",
+          "mtime_unix": 1789709268.926866,
+          "sha256": "8f555484c7a7f29c590bd6d0a81183468790fed2a8588fa58135c2bb92d86139"
+        },
+        "LOADED": {
+          "document_keys": [
+            "adapter_sha256",
+            "anchors",
+            "base_sha256",
+            "loaded_unix",
+            "optimizer_steps",
+            "pid",
+            "resume",
+            "runtime"
+          ],
+          "index": 6294,
+          "kind": "LOADED",
+          "mtime_unix": 1789708378.7735624,
+          "sha256": "e05b8fa0c7266364cb79fd9fca2aa9582e1c7b82a657ac1ba7e7ffe3c1b1c026"
+        },
+        "R184_ACT": {
+          "document_keys": [
+            "origin",
+            "outcome",
+            "schema",
+            "segment",
+            "source_sha256"
+          ],
+          "index": 6433,
+          "kind": "R184_ACT",
+          "mtime_unix": 1789709310.6794488,
+          "sha256": "0cb9c9552ebee57309c4fd2db67a359c617625b069524a400186237df21ee54e"
+        },
+        "R184_LEARN_COMPLETE": {
+          "document_keys": [
+            "checkpoint",
+            "cycle",
+            "parent_required_for_next_cycle",
+            "state_revision",
+            "working_state"
+          ],
+          "index": 6466,
+          "kind": "R184_LEARN_COMPLETE",
+          "mtime_unix": 1789709467.831959,
+          "sha256": "28b14a506df4456d72f5c94cb4f6b0fe1cff592aabef33a6547304ebfdf260f0"
+        },
+        "R184_SLEEP_NOTICE": {
+          "document_keys": [
+            "actual_optimizer_complete",
+            "compaction",
+            "cycle",
+            "new_presentations",
+            "new_rows",
+            "reviewed_reflection_ids",
+            "selected_old_rows"
+          ],
+          "index": 6444,
+          "kind": "R184_SLEEP_NOTICE",
+          "mtime_unix": 1789709326.11699,
+          "sha256": "a0649c0e547caa457849440136344d58430e35aa563749cdb2b18f17b1540369"
+        },
+        "R184_STAGE": {
+          "document_keys": [
+            "consolidation",
+            "runtime_notice_is_target",
+            "schema",
+            "segment",
+            "source_sha256",
+            "stage",
+            "trial_id"
+          ],
+          "index": 6441,
+          "kind": "R184_STAGE",
+          "mtime_unix": 1789709325.8564258,
+          "sha256": "be56fa91adf6bf5c240422e5dddbdccdf01cfde7fd1ab1085301e0e672e85057"
+        },
+        "R184_TRANSITION": {
+          "document_keys": [
+            "cause",
+            "child_chosen",
+            "continuation_policy",
+            "continuation_requests",
+            "default_think_segments",
+            "from_stage",
+            "opportunity",
+            "schema",
+            "segment",
+            "think_segments_budget",
+            "think_segments_used",
+            "to_stage"
+          ],
+          "index": 6427,
+          "kind": "R184_TRANSITION",
+          "mtime_unix": 1789709293.295565,
+          "sha256": "8d3cab90f13a9690829390d6bbdc4a07ff34421b515f76a91577077b1505bbca"
+        },
+        "R189_LEARN_ALLOCATION": {
+          "document_keys": [
+            "allocation",
+            "cycle",
+            "outcome_cycle",
+            "runtime_and_feedback_target",
+            "stage_tokens",
+            "think_share_including_learn"
+          ],
+          "index": 6445,
+          "kind": "R189_LEARN_ALLOCATION",
+          "mtime_unix": 1789709326.1754072,
+          "sha256": "a7fefcbde85c1619166081398e2897d74eea4041c7544ba1bc49ee39c1ef0bd9"
+        },
+        "R189_OUTCOME_CYCLE": {
+          "document_keys": [
+            "allocation",
+            "report",
+            "state"
+          ],
+          "index": 6434,
+          "kind": "R189_OUTCOME_CYCLE",
+          "mtime_unix": 1789709310.9352114,
+          "sha256": "bcd8bca15d5981a9eaf5bd2d0ea037372cde079c99b8d5bd427cfebc2618c53b"
+        },
+        "R191_DATASET_ROW": {
+          "document_keys": [
+            "cycle",
+            "outcome_recorded",
+            "path",
+            "row_id",
+            "stage"
+          ],
+          "index": 6443,
+          "kind": "R191_DATASET_ROW",
+          "mtime_unix": 1789709325.9812913,
+          "sha256": "45f17623d88b3b50bc96c5187a5fd66da7152824c15457f570a14b2667b3439c"
+        },
+        "R195_LEARN_REVIEW": {
+          "document_keys": [
+            "cycle",
+            "optimizer_complete",
+            "proof",
+            "raw_modified",
+            "targets_normalized",
+            "trial_id"
+          ],
+          "index": 6442,
+          "kind": "R195_LEARN_REVIEW",
+          "mtime_unix": 1789709325.9199545,
+          "sha256": "6cbbb6ddf4cb4808eb35fc171a516181a4f2f2fc26f251772fe4fee40daa9d6d"
+        },
+        "R197_CORRECTION_CYCLE": {
+          "document_keys": [
+            "ledger",
+            "runtime_repair_is_not_child_correction",
+            "semantic_labels"
+          ],
+          "index": 6435,
+          "kind": "R197_CORRECTION_CYCLE",
+          "mtime_unix": 1789709311.008,
+          "sha256": "ea5f5a94dbb0b48741685eba9645960c0d50c40ac69fd45a9f7c0c4ece57d823"
+        },
+        "REQUEST": {
+          "document_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "index": 6438,
+          "kind": "REQUEST",
+          "mtime_unix": 1789709312.6552255,
+          "sha256": "968bb398edf735f22e855584d54e7ad97a9def00e65e41847e4cc2f0c59d72e9"
+        },
+        "RESPONSE": {
+          "document_keys": [
+            "finished_unix",
+            "raw_saved_before_validation",
+            "request_sha256",
+            "response",
+            "schema"
+          ],
+          "index": 6439,
+          "kind": "RESPONSE",
+          "mtime_unix": 1789709324.980693,
+          "sha256": "c2bfddd4ed6c14f002b7b01c4537b15f987141c7c3d88027fd80c3361d725dea"
+        },
+        "SLEEP_COMPLETE": {
+          "document_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "code_target_filter",
+            "code_target_filter_counts",
+            "code_target_filter_presentations",
+            "cycle",
+            "excluded_rows",
+            "frozen_base_verified",
+            "learn_review_filter",
+            "learn_review_filter_counts",
+            "learn_review_filter_presentations",
+            "mix_kind",
+            "new_row_sha256",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "index": 6465,
+          "kind": "SLEEP_COMPLETE",
+          "mtime_unix": 1789709467.6746662,
+          "sha256": "6a457dff7cd42b3620beb488ed194ad00c8fe3e9e2939b6e00f4690f12a124bf"
+        },
+        "SLEEP_RECIPE": {
+          "document_keys": [
+            "anchor_lambda",
+            "available_old_rows",
+            "code_target_filter",
+            "learn_review_filter",
+            "new_presentations",
+            "new_rows",
+            "policy",
+            "selected_old_rows",
+            "sleep_loss_impl"
+          ],
+          "index": 6447,
+          "kind": "SLEEP_RECIPE",
+          "mtime_unix": 1789709326.9852314,
+          "sha256": "8deaa7e747f382c3ff9f4249eae175bbc532c89b816936194dcedcbd82d2bd97"
+        },
+        "SLEEP_REQUEST": {
+          "document_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "index": 6446,
+          "kind": "SLEEP_REQUEST",
+          "mtime_unix": 1789709326.9193428,
+          "sha256": "e7ab56430b73cde89baf683ed70beb2033fc7a0f4da2e097534be38a2ef3b6ed"
+        },
+        "TARGET_ELIGIBILITY": {
+          "document_keys": [
+            "code_target_filter",
+            "code_target_filter_counts",
+            "code_target_filter_presentations",
+            "excluded",
+            "learn_review_filter",
+            "learn_review_filter_counts",
+            "learn_review_filter_presentations",
+            "new_row_sha256",
+            "raw_modified",
+            "rehearsal_row_sha256",
+            "runtime_policy",
+            "version"
+          ],
+          "index": 6448,
+          "kind": "TARGET_ELIGIBILITY",
+          "mtime_unix": 1789709327.1590538,
+          "sha256": "b4b70d297e6bbaf2886cf9eebb896450af4d5275202d04ee23cfc57186d9451c"
+        },
+        "UPDATE": {
+          "document_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "index": 6464,
+          "kind": "UPDATE",
+          "mtime_unix": 1789709402.8524992,
+          "sha256": "e048ce00f9a0e8cf93541453a022fc67c9cf89511cf8b5c3d65b753b3e951473"
+        }
+      },
+      "latest_head": {
+        "document_keys": [
+          "checkpoint",
+          "cycle",
+          "parent_required_for_next_cycle",
+          "state_revision",
+          "working_state"
+        ],
+        "index": 6466,
+        "kind": "R184_LEARN_COMPLETE",
+        "mtime_unix": 1789709467.831959,
+        "sha256": "28b14a506df4456d72f5c94cb4f6b0fe1cff592aabef33a6547304ebfdf260f0"
+      },
+      "mode_and_filter_events": [],
+      "name": "r203_math_self_derive_c5",
+      "plan_policy": {}
+    },
+    "7": {
+      "cut": 6284,
+      "filter_sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "filter_tags": [],
+      "kinds": {
+        "COMMITTED": 12,
+        "COMPACTION": 3,
+        "CONTEXT_INPUT": 16,
+        "INBOX": 6,
+        "LOADED": 1,
+        "R184_ACT": 4,
+        "R184_LEARN_COMPLETE": 4,
+        "R184_SLEEP_NOTICE": 4,
+        "R184_STAGE": 12,
+        "R184_TRANSITION": 4,
+        "R189_LEARN_ALLOCATION": 4,
+        "R189_OUTCOME_CYCLE": 4,
+        "R191_DATASET_ROW": 12,
+        "R195_LEARN_REVIEW": 4,
+        "R197_CORRECTION_CYCLE": 4,
+        "REQUEST": 12,
+        "RESPONSE": 12,
+        "SLEEP_COMPLETE": 4,
+        "SLEEP_RECIPE": 4,
+        "SLEEP_REQUEST": 4,
+        "TARGET_ELIGIBILITY": 4,
+        "UPDATE": 32
+      },
+      "latest": {
+        "COMMITTED": {
+          "document_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "index": 6424,
+          "kind": "COMMITTED",
+          "mtime_unix": 1789709416.3516688,
+          "sha256": "7a3383e14ee7c7363f6b9dc69e964a15834e97da5c7e4432b84a6306e657b3ed"
+        },
+        "COMPACTION": {
+          "document_keys": [
+            "kind",
+            "reviewed_reflection_ids",
+            "state",
+            "working_state_preserved"
+          ],
+          "index": 6349,
+          "kind": "COMPACTION",
+          "mtime_unix": 1789708817.198151,
+          "sha256": "42abd5183616973b9d15b2bd5ea54c7f399b89776cf7ede8f150069e3ef5e046"
+        },
+        "CONTEXT_INPUT": {
+          "document_keys": [
+            "kind",
+            "protected_from",
+            "state",
+            "training_eligible"
+          ],
+          "index": 6421,
+          "kind": "CONTEXT_INPUT",
+          "mtime_unix": 1789709400.218387,
+          "sha256": "ac2921702f463149d73515a8d9d178e770a04e52b2b8b20cde751f05f494fa41"
+        },
+        "INBOX": {
+          "document_keys": [
+            "message",
+            "source_id",
+            "source_sha256"
+          ],
+          "index": 6358,
+          "kind": "INBOX",
+          "mtime_unix": 1789709015.3424795,
+          "sha256": "3cd695732162266c5cc061d3da5dac8e01eca40fd7f831c08a1ace368e01b76c"
+        },
+        "LOADED": {
+          "document_keys": [
+            "adapter_sha256",
+            "anchors",
+            "base_sha256",
+            "loaded_unix",
+            "optimizer_steps",
+            "pid",
+            "resume",
+            "runtime"
+          ],
+          "index": 6285,
+          "kind": "LOADED",
+          "mtime_unix": 1789708396.3485906,
+          "sha256": "8673eaaa65aaa24a862048c326821c7e4ca02c415042f3e3f0a9051fd24f434f"
+        },
+        "R184_ACT": {
+          "document_keys": [
+            "origin",
+            "outcome",
+            "schema",
+            "segment",
+            "source_sha256"
+          ],
+          "index": 6417,
+          "kind": "R184_ACT",
+          "mtime_unix": 1789709398.6512403,
+          "sha256": "8b9614583bef563b1c277ce9a30278348cd96d40fa5e69f39293e89007b25f02"
+        },
+        "R184_LEARN_COMPLETE": {
+          "document_keys": [
+            "checkpoint",
+            "cycle",
+            "parent_required_for_next_cycle",
+            "state_revision",
+            "working_state"
+          ],
+          "index": 6450,
+          "kind": "R184_LEARN_COMPLETE",
+          "mtime_unix": 1789709556.0646124,
+          "sha256": "ef1ac47e3c8e4f105a2dad7d3f2fe7b2f3a68656e67aeeae1d27185ca282cac0"
+        },
+        "R184_SLEEP_NOTICE": {
+          "document_keys": [
+            "actual_optimizer_complete",
+            "compaction",
+            "cycle",
+            "new_presentations",
+            "new_rows",
+            "reviewed_reflection_ids",
+            "selected_old_rows"
+          ],
+          "index": 6428,
+          "kind": "R184_SLEEP_NOTICE",
+          "mtime_unix": 1789709416.6745706,
+          "sha256": "46b91fc2014d503e497577fdbaebe2f2a2b70f09400ff4fe0c9cd39e7f079694"
+        },
+        "R184_STAGE": {
+          "document_keys": [
+            "consolidation",
+            "runtime_notice_is_target",
+            "schema",
+            "segment",
+            "source_sha256",
+            "stage",
+            "trial_id"
+          ],
+          "index": 6425,
+          "kind": "R184_STAGE",
+          "mtime_unix": 1789709416.4183278,
+          "sha256": "2bee70dc72f353eaa60531ccabded1e653c306c3299a5b0d74aae2c7461defc2"
+        },
+        "R184_TRANSITION": {
+          "document_keys": [
+            "cause",
+            "child_chosen",
+            "continuation_policy",
+            "continuation_requests",
+            "default_think_segments",
+            "from_stage",
+            "opportunity",
+            "schema",
+            "segment",
+            "think_segments_budget",
+            "think_segments_used",
+            "to_stage"
+          ],
+          "index": 6411,
+          "kind": "R184_TRANSITION",
+          "mtime_unix": 1789709382.4016545,
+          "sha256": "679b9e6508d132ce5876977f029f8c23e167470fa8056386bfcb09627b08f04e"
+        },
+        "R189_LEARN_ALLOCATION": {
+          "document_keys": [
+            "allocation",
+            "cycle",
+            "outcome_cycle",
+            "runtime_and_feedback_target",
+            "stage_tokens",
+            "think_share_including_learn"
+          ],
+          "index": 6429,
+          "kind": "R189_LEARN_ALLOCATION",
+          "mtime_unix": 1789709416.7327025,
+          "sha256": "a2fc32cca9f5cd520c172b1ae93502f36935ea4e230ddffce200aee3b1692e01"
+        },
+        "R189_OUTCOME_CYCLE": {
+          "document_keys": [
+            "allocation",
+            "report",
+            "state"
+          ],
+          "index": 6418,
+          "kind": "R189_OUTCOME_CYCLE",
+          "mtime_unix": 1789709398.9249349,
+          "sha256": "cafe14610e19e4ebdd87aaa21076cc5aafa387ca0a2477eb363dfe7e3251f313"
+        },
+        "R191_DATASET_ROW": {
+          "document_keys": [
+            "cycle",
+            "outcome_recorded",
+            "path",
+            "row_id",
+            "stage"
+          ],
+          "index": 6427,
+          "kind": "R191_DATASET_ROW",
+          "mtime_unix": 1789709416.540939,
+          "sha256": "49168101150bc16c8a5bbe1e70e3f315442273c72b6af39962bb6a54caf3974b"
+        },
+        "R195_LEARN_REVIEW": {
+          "document_keys": [
+            "cycle",
+            "optimizer_complete",
+            "proof",
+            "raw_modified",
+            "targets_normalized",
+            "trial_id"
+          ],
+          "index": 6426,
+          "kind": "R195_LEARN_REVIEW",
+          "mtime_unix": 1789709416.4809444,
+          "sha256": "c1e894d22493a0935106d6742335f69ba4e6bcc2800245ad082afb75255a38b8"
+        },
+        "R197_CORRECTION_CYCLE": {
+          "document_keys": [
+            "ledger",
+            "runtime_repair_is_not_child_correction",
+            "semantic_labels"
+          ],
+          "index": 6419,
+          "kind": "R197_CORRECTION_CYCLE",
+          "mtime_unix": 1789709398.9940777,
+          "sha256": "11fddff1c7ca33a85dc851efdbca85c47224763b0ad916ef45586e4c6bc2beb7"
+        },
+        "REQUEST": {
+          "document_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "index": 6422,
+          "kind": "REQUEST",
+          "mtime_unix": 1789709401.3439548,
+          "sha256": "85b3640a41953a9002c5fe551eb6e9a46ab469ace7704c12f51af9cc6571012a"
+        },
+        "RESPONSE": {
+          "document_keys": [
+            "finished_unix",
+            "raw_saved_before_validation",
+            "request_sha256",
+            "response",
+            "schema"
+          ],
+          "index": 6423,
+          "kind": "RESPONSE",
+          "mtime_unix": 1789709415.1789453,
+          "sha256": "bf073971982465cd2eb8a21b26c3f5170b31c3cc8f1b38f9bc2688cdf00aa9ba"
+        },
+        "SLEEP_COMPLETE": {
+          "document_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "code_target_filter",
+            "code_target_filter_counts",
+            "code_target_filter_presentations",
+            "cycle",
+            "excluded_rows",
+            "frozen_base_verified",
+            "learn_review_filter",
+            "learn_review_filter_counts",
+            "learn_review_filter_presentations",
+            "mix_kind",
+            "new_row_sha256",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "index": 6449,
+          "kind": "SLEEP_COMPLETE",
+          "mtime_unix": 1789709555.8984008,
+          "sha256": "9bf37005f275bd64ae490cc9dcddb5b24a6a0197ab474a03899330b97f83efec"
+        },
+        "SLEEP_RECIPE": {
+          "document_keys": [
+            "anchor_lambda",
+            "available_old_rows",
+            "code_target_filter",
+            "learn_review_filter",
+            "new_presentations",
+            "new_rows",
+            "policy",
+            "selected_old_rows",
+            "sleep_loss_impl"
+          ],
+          "index": 6431,
+          "kind": "SLEEP_RECIPE",
+          "mtime_unix": 1789709417.9009006,
+          "sha256": "d6423398d5f50c24dee22479b1295ecfd6b10477a980187e1258034d1bd23793"
+        },
+        "SLEEP_REQUEST": {
+          "document_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "index": 6430,
+          "kind": "SLEEP_REQUEST",
+          "mtime_unix": 1789709417.83622,
+          "sha256": "3ffe2728aad9cb58cbc78b7ce4a09ac3ee9f25cf6c1e775f27cde1774b265886"
+        },
+        "TARGET_ELIGIBILITY": {
+          "document_keys": [
+            "code_target_filter",
+            "code_target_filter_counts",
+            "code_target_filter_presentations",
+            "excluded",
+            "learn_review_filter",
+            "learn_review_filter_counts",
+            "learn_review_filter_presentations",
+            "new_row_sha256",
+            "raw_modified",
+            "rehearsal_row_sha256",
+            "runtime_policy",
+            "version"
+          ],
+          "index": 6432,
+          "kind": "TARGET_ELIGIBILITY",
+          "mtime_unix": 1789709418.0790925,
+          "sha256": "94465c72162d9bc313fe8fb8f8e257b13ba614cd8aaf0b5a9a4b33d5e2ec292b"
+        },
+        "UPDATE": {
+          "document_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "index": 6448,
+          "kind": "UPDATE",
+          "mtime_unix": 1789709491.4864352,
+          "sha256": "255053cc8adc520046ac21bbb2c4a7f26a74bfa92841df8f1f05302278a88298"
+        }
+      },
+      "latest_head": {
+        "document_keys": [
+          "checkpoint",
+          "cycle",
+          "parent_required_for_next_cycle",
+          "state_revision",
+          "working_state"
+        ],
+        "index": 6450,
+        "kind": "R184_LEARN_COMPLETE",
+        "mtime_unix": 1789709556.0646124,
+        "sha256": "ef1ac47e3c8e4f105a2dad7d3f2fe7b2f3a68656e67aeeae1d27185ca282cac0"
+      },
+      "mode_and_filter_events": [],
+      "name": "creative_b1",
+      "plan_policy": {}
+    }
+  },
+  "observed_unix": 1789709570.3405468,
+  "signals": []
+}

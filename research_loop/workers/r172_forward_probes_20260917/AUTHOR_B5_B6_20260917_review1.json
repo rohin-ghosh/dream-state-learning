@@ -1,0 +1,116 @@
+{
+  "schema": "R172_B5_B6_LOCAL_AUTHOR_CPU_V1",
+  "status": "AUTHOR_CPU_PASS_FRESH_REVIEW_AND_CONTROLLER_INTEGRATION_PENDING",
+  "recorded_utc": "2026-09-17T16:14:31Z",
+  "recorded_pdt": "2026-09-17T09:14:31-07:00",
+  "classification": "NON_MATERIAL_TRANSFER_COMPLETENESS_AND_RESOURCE_ACCOUNTING_REPAIR",
+  "authority": "Main/Astra builder scope under user standing directives; no new human ratification is asserted",
+  "scope": {
+    "path": "research_loop/workers/r172_forward_probes_20260917/PREPARATION_SCOPE.json",
+    "sha256": "c04b4fe0d9f885eb2a89aac95fb316706ef02fa3464ede0a36b422aa298a93a3"
+  },
+  "proposal": {
+    "path": "research_loop/workers/r172_forward_probes_20260917/PROPOSAL.json",
+    "sha256": "6ccd3b029948aa228d67d6f3123fc5289ff20d3ccf506b932d2574d874f80958"
+  },
+  "source_refs": [
+    {
+      "path": "research_loop/workers/r172_forward_probes_20260917/transfer.py",
+      "sha256": "87a1c8555a9799b8e11eaad12607b31d924003f25bc935cb4b9781890b6a9a47"
+    },
+    {
+      "path": "research_loop/workers/r172_forward_probes_20260917/prep_common.py",
+      "sha256": "2b76c48c8fdcbf91bd351c63928ad4cc349ab4b949a45d1564d24051fa14c2a3"
+    }
+  ],
+  "author_test_refs": [
+    {
+      "path": "research_loop/workers/r172_forward_probes_20260917/test_transfer_accounting.py",
+      "sha256": "b172859347b4fb28a6a5e159b4f96cb5a567f5bd15dd8c1c01b81a4bdf0a01e0"
+    },
+    {
+      "path": "research_loop/workers/r172_forward_probes_20260917/test_capture_transfer.py",
+      "sha256": "0415a8183441f083fa4fa63c1941565aef3b5633e1ba627529ba76ad9f1eadfd"
+    }
+  ],
+  "focused_cpu_run": {
+    "status": "PASS",
+    "exit_code": 0,
+    "started_utc": "2026-09-17T16:14:01.302755Z",
+    "started_pdt": "2026-09-17T09:14:01.302755-07:00",
+    "duration_seconds": 8.493,
+    "passed_tests": 66,
+    "passed_subtests": 24,
+    "junit_testcase_count_including_subtests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "command": "TMPDIR=/tmp CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=/tmp/r136-pytest-support python3 -B -m pytest research_loop/workers/r172_forward_probes_20260917/test_transfer_accounting.py research_loop/workers/r172_forward_probes_20260917/test_capture_transfer.py research_loop/workers/r172_forward_probes_20260917/test_preparation.py -q -p no:cacheprovider --tb=short --junitxml=research_loop/workers/r172_forward_probes_20260917/AUTHOR_B5_B6_20260917_review1.focused.xml",
+    "receipt": {
+      "path": "research_loop/workers/r172_forward_probes_20260917/AUTHOR_B5_B6_20260917_review1.focused.xml",
+      "sha256": "1733034273cf5c8f1e31d8de8fe0a5074bed79d38010f0bcadc99fc9725ac3a3"
+    }
+  },
+  "author_rerun_of_existing_Rawls_subset": {
+    "status": "FAIL_OLD_EXPORT_FIXTURE_REQUIRES_NEW_EXPLICIT_ACCOUNTING_INTERFACE",
+    "exit_code": 1,
+    "started_utc": "2026-09-17T16:14:22.671587Z",
+    "started_pdt": "2026-09-17T09:14:22.671587-07:00",
+    "duration_seconds": 0.232,
+    "passed": 5,
+    "failed": 1,
+    "deselected": 11,
+    "failing_test": "ForwardReviewTests.test_source_export_charges_every_metadata_reread",
+    "failure": "ValueError: existing_campaign_ledger_required_no_new_budget",
+    "interpretation": "The original export fixture calls export without a campaign ledger or prior source caps and contains synthetic placeholder registration metadata. It now refuses before payload I/O. The author did not edit the reviewer test or weaken the new contract to make it pass. Fresh independent review remains required; this subset result is not a PASS or a Rawls review verdict.",
+    "command": "TMPDIR=/tmp CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=/tmp/r136-pytest-support python3 -B -m pytest research_loop/workers/r172_forward_probes_20260917/test_review_forward.py -q -p no:cacheprovider --tb=short -k 'incomplete_transfer or growth_during or source_export or charge_precedes or budget_refusal or source_reader' --junitxml=research_loop/workers/r172_forward_probes_20260917/AUTHOR_B5_B6_20260917_review1.reviewer_subset.xml",
+    "test_ref": {
+      "path": "research_loop/workers/r172_forward_probes_20260917/test_review_forward.py",
+      "sha256": "d45e00b8ceb5ea8870d681baa1a5323662272ae0a73bc046b5a9782dcb7f9e75"
+    },
+    "receipt": {
+      "path": "research_loop/workers/r172_forward_probes_20260917/AUTHOR_B5_B6_20260917_review1.reviewer_subset.xml",
+      "sha256": "8c839277b8b5e6a42bd071bb586a970ee16a2910de85de233e11722bbff2a34a"
+    }
+  },
+  "earlier_local_test_results_not_relabelled": [
+    "Initial new-author run: 19 passed, 2 failed due to test bookkeeping (closed temporary buffered stream and unordered reservation enumeration); those assertions were repaired before the bound run.",
+    "A combined run using the inherited symlinked TMPDIR failed 23 pre-existing queue/capture fixtures with symlink_forbidden. No production symlink check or frozen fixture was weakened; subsequent runs use canonical TMPDIR=/tmp."
+  ],
+  "repair_boundaries": [
+    "Complete 13-file capture/registration closure, optional README only, original COMMIT/adapter/birth/boundary/registration/freeze joins and enrolled milestone checked before final-path COMPLETE publication.",
+    "Frozen queue validation runs against an isolated already-read metadata cache; it cannot reread untransferred files or mutate shared queue module globals.",
+    "Source metadata and adapters use exact unbuffered precharged reads. Metadata hash checks reuse cached bytes. Every outgoing wire hop and incoming header/payload/padding/EOF read is independently charged; existing destination metadata rereads are charged too.",
+    "Incoming reads reserve the full bounded operation before I/O; short reads consume remaining prepaid bytes, not a refund or a new budget. Failed reads retain their reservations.",
+    "Persistent nonrefundable 24-GiB staging and 16-GiB receiving disk ledgers include allocation overhead and conservative free-space admission. Unknown old transfer disk custody holds rather than silently starting a replacement ledger.",
+    "Failed or partial transfers preserve once-markers, reservations and failure receipts. Existing shared metadata is accepted only if identical; it is never overwritten. Partial payloads remain under the consumed operation, not the ready capture path.",
+    "Existing preparation hardwall is unchanged and checked between stream operations. No old source allocations, ledgers, failed attempts or receipts are reset."
+  ],
+  "controller_handoff": {
+    "export": "export(life_id, sleep, output, ledger=existing_campaign_ledger, source_caps={'metadata': prior_bound_metadata_cap, 'adapter': prior_bound_adapter_cap}, root=source_or_staging_root, custody_root=original_custody_root)",
+    "receive": "receive(raw_unbuffered_stream, receiving_root, life_id=life_id, sleep=sleep, ledger=existing_campaign_ledger, custody_root=original_custody_root, role='receiving')",
+    "staging": "Use receive(..., role='staging') under the 24-GiB staging cap; this emits EXACT_STAGING_COPY_VERIFIED, not receiving readiness. A later export and receive are additional charged hops.",
+    "held": "Standalone CLI intentionally refuses until a scoped controller supplies the existing persistent campaign ledger and exact transfer identity/source caps. No remote portable-ledger synchronization or prepaid-envelope reconciliation is supplied or claimed. Existing global and per-life headroom may refuse additional direct charges; do not reset a ledger or infer permission to borrow already allocated envelopes. Controller integration and any exact allocation reconciliation require Main and fresh review before operational use."
+  },
+  "actions_by_this_sidecar": {
+    "local_cpu_tests_only": true,
+    "synthetic_TRAIN_fixtures_only": true,
+    "remote_calls": 0,
+    "GPU_jobs": 0,
+    "model_calls": 0,
+    "provider_calls": 0,
+    "learner_writes": 0,
+    "learner_signals": 0,
+    "new_real_capture_or_transfer_attempts": 0,
+    "frozen_preparation_source_capture_attempt_edits": 0,
+    "old_receipt_edits": 0,
+    "runner_scheduler_coordination_edits": 0
+  },
+  "claims_not_made": [
+    "No actual receiving-node CPU proof",
+    "No saved-state ownership or evaluator admission",
+    "No full-source approval, GPU GO or scientific outcome",
+    "No independent Rawls approval and no new human ratification"
+  ],
+  "review_request_via_Main": "Please route these exact repaired-source and test-receipt hashes to Rawls for fresh independent B5/B6 review, including the explicit ledger interface, old unaccounted disk custody hold and the preserved failing legacy export fixture. No direct agent-messaging tool was used."
+}

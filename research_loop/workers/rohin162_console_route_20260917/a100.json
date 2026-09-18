@@ -1,0 +1,682 @@
+{
+  "inbox_content_reads": 0,
+  "journal_content_reads": 0,
+  "maximum_read_bytes": 4194304,
+  "messages_sent": 0,
+  "model_calls": 0,
+  "node": "a100",
+  "observed_unix": 1789664071.2946289,
+  "read_attempts": 43,
+  "reserved_read_bytes": 1818880,
+  "rows": [
+    {
+      "actual_root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "inbox_contents_read": false,
+      "inbox_json_names": 53,
+      "inbox_partial_names": 53,
+      "ingestion_proven": false,
+      "interpreter_exe": "/usr/bin/python3.12",
+      "labels": [
+        "a100_2_teach_replay",
+        "teach_replay"
+      ],
+      "native_state": "R",
+      "observed_unix": 1789664071.1787066,
+      "open_inbox": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/stream/inbox",
+      "original_pid_source_match": true,
+      "pid": 2197976,
+      "python": "/localhome/local-rohing/v2/venv/bin/python",
+      "roster_observed_unix": 1789656625.5687165,
+      "roster_root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+      "snapshot_source": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source",
+      "source_files": {
+        "gpu/orch_r125_continual_native.py": {
+          "attributed_schema": false,
+          "bytes": 39213,
+          "functions": [
+            "sha",
+            "read",
+            "write_once",
+            "validate_plan",
+            "encode_own",
+            "presentation_schedule",
+            "readout_name",
+            "fresh_readout",
+            "NativeChild",
+            "prepare_sleep",
+            "finish_sleep",
+            "prepare_wall_extension",
+            "run"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source/gpu/orch_r125_continual_native.py",
+          "read_inbox_call": true,
+          "rohin_supported": false,
+          "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+        },
+        "gpu/orch_r125_stream_console.py": {
+          "attributed_schema": false,
+          "bytes": 8505,
+          "functions": [
+            "_open_stream_directory",
+            "publish",
+            "_read_record",
+            "follow_responses",
+            "_lines",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source/gpu/orch_r125_stream_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": false,
+          "sha256": "35697239e89a6b9dd49505b3556eb2c149b214fdb5ad3116677712d9b4231b75"
+        },
+        "gpu/orch_r125_stream_journal.py": {
+          "attributed_schema": true,
+          "bytes": 26758,
+          "functions": [
+            "require",
+            "_encoded",
+            "_digest",
+            "_pairs",
+            "_decode",
+            "validate_wall_extension",
+            "_after_fork",
+            "StreamJournal"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source/gpu/orch_r125_stream_journal.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "3925a6dff44c71994d446445833207ba3b4a9c8a983b56a8f3e3de84239eb0ca"
+        },
+        "gpu/orch_r127_pilot_console.py": {
+          "attributed_schema": true,
+          "bytes": 12612,
+          "functions": [
+            "_directory",
+            "_bytes",
+            "_stage",
+            "_publish",
+            "_inbox",
+            "publish_parent",
+            "_read",
+            "_summary",
+            "publish_tool",
+            "_name",
+            "_workspace",
+            "_inventory",
+            "_note",
+            "write_note",
+            "read_note",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source/gpu/orch_r127_pilot_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683"
+        }
+      },
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source",
+      "start_ticks": "30656088",
+      "status": "LIVE_NATIVE_OPEN_INBOX_AND_SOURCE_VERIFIED",
+      "uid": 1395
+    },
+    {
+      "actual_root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "inbox_contents_read": false,
+      "inbox_json_names": 103,
+      "inbox_partial_names": 103,
+      "ingestion_proven": false,
+      "interpreter_exe": "/usr/bin/python3.12",
+      "labels": [
+        "a100_3_teach_perception",
+        "teach_perception"
+      ],
+      "native_state": "R",
+      "observed_unix": 1789664071.1995585,
+      "open_inbox": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1/stream/inbox",
+      "original_pid_source_match": true,
+      "pid": 2409681,
+      "python": "/localhome/local-rohing/v2/venv/bin/python",
+      "roster_observed_unix": 1789656625.5687165,
+      "roster_root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+      "snapshot_source": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source",
+      "source_files": {
+        "gpu/orch_r125_continual_native.py": {
+          "attributed_schema": false,
+          "bytes": 39313,
+          "functions": [
+            "sha",
+            "read",
+            "write_once",
+            "validate_plan",
+            "encode_own",
+            "presentation_schedule",
+            "readout_name",
+            "fresh_readout",
+            "NativeChild",
+            "prepare_sleep",
+            "finish_sleep",
+            "prepare_wall_extension",
+            "run"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source/gpu/orch_r125_continual_native.py",
+          "read_inbox_call": true,
+          "rohin_supported": false,
+          "sha256": "9ac05f14009f404623c281d09c8a88ede27ff3bf9dd63cd5ae7562e62e3b18f3"
+        },
+        "gpu/orch_r125_stream_console.py": {
+          "attributed_schema": false,
+          "bytes": 8505,
+          "functions": [
+            "_open_stream_directory",
+            "publish",
+            "_read_record",
+            "follow_responses",
+            "_lines",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source/gpu/orch_r125_stream_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": false,
+          "sha256": "35697239e89a6b9dd49505b3556eb2c149b214fdb5ad3116677712d9b4231b75"
+        },
+        "gpu/orch_r125_stream_journal.py": {
+          "attributed_schema": true,
+          "bytes": 26758,
+          "functions": [
+            "require",
+            "_encoded",
+            "_digest",
+            "_pairs",
+            "_decode",
+            "validate_wall_extension",
+            "_after_fork",
+            "StreamJournal"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source/gpu/orch_r125_stream_journal.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "3925a6dff44c71994d446445833207ba3b4a9c8a983b56a8f3e3de84239eb0ca"
+        },
+        "gpu/orch_r127_pilot_console.py": {
+          "attributed_schema": true,
+          "bytes": 12612,
+          "functions": [
+            "_directory",
+            "_bytes",
+            "_stage",
+            "_publish",
+            "_inbox",
+            "publish_parent",
+            "_read",
+            "_summary",
+            "publish_tool",
+            "_name",
+            "_workspace",
+            "_inventory",
+            "_note",
+            "write_note",
+            "read_note",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source/gpu/orch_r127_pilot_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683"
+        }
+      },
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source",
+      "start_ticks": "30796516",
+      "status": "LIVE_NATIVE_OPEN_INBOX_AND_SOURCE_VERIFIED",
+      "uid": 1395
+    },
+    {
+      "actual_root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "inbox_contents_read": false,
+      "inbox_json_names": 38,
+      "inbox_partial_names": 38,
+      "ingestion_proven": false,
+      "interpreter_exe": "/usr/bin/python3.12",
+      "labels": [
+        "a100_4_teach_parenting",
+        "teach_parenting"
+      ],
+      "native_state": "R",
+      "observed_unix": 1789664071.218812,
+      "open_inbox": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1/stream/inbox",
+      "original_pid_source_match": true,
+      "pid": 1025183,
+      "python": "/localhome/local-rohing/v2/venv/bin/python",
+      "roster_observed_unix": 1789656625.5687165,
+      "roster_root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+      "snapshot_source": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source",
+      "source_files": {
+        "gpu/orch_r125_continual_native.py": {
+          "attributed_schema": false,
+          "bytes": 39213,
+          "functions": [
+            "sha",
+            "read",
+            "write_once",
+            "validate_plan",
+            "encode_own",
+            "presentation_schedule",
+            "readout_name",
+            "fresh_readout",
+            "NativeChild",
+            "prepare_sleep",
+            "finish_sleep",
+            "prepare_wall_extension",
+            "run"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source/gpu/orch_r125_continual_native.py",
+          "read_inbox_call": true,
+          "rohin_supported": false,
+          "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+        },
+        "gpu/orch_r125_stream_console.py": {
+          "attributed_schema": false,
+          "bytes": 8505,
+          "functions": [
+            "_open_stream_directory",
+            "publish",
+            "_read_record",
+            "follow_responses",
+            "_lines",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source/gpu/orch_r125_stream_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": false,
+          "sha256": "35697239e89a6b9dd49505b3556eb2c149b214fdb5ad3116677712d9b4231b75"
+        },
+        "gpu/orch_r125_stream_journal.py": {
+          "attributed_schema": true,
+          "bytes": 26758,
+          "functions": [
+            "require",
+            "_encoded",
+            "_digest",
+            "_pairs",
+            "_decode",
+            "validate_wall_extension",
+            "_after_fork",
+            "StreamJournal"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source/gpu/orch_r125_stream_journal.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "3925a6dff44c71994d446445833207ba3b4a9c8a983b56a8f3e3de84239eb0ca"
+        },
+        "gpu/orch_r127_pilot_console.py": {
+          "attributed_schema": true,
+          "bytes": 12612,
+          "functions": [
+            "_directory",
+            "_bytes",
+            "_stage",
+            "_publish",
+            "_inbox",
+            "publish_parent",
+            "_read",
+            "_summary",
+            "publish_tool",
+            "_name",
+            "_workspace",
+            "_inventory",
+            "_note",
+            "write_note",
+            "read_note",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source/gpu/orch_r127_pilot_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683"
+        }
+      },
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source",
+      "start_ticks": "29900700",
+      "status": "LIVE_NATIVE_OPEN_INBOX_AND_SOURCE_VERIFIED",
+      "uid": 1395
+    },
+    {
+      "actual_root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "inbox_contents_read": false,
+      "inbox_json_names": 85,
+      "inbox_partial_names": 85,
+      "ingestion_proven": false,
+      "interpreter_exe": "/usr/bin/python3.12",
+      "labels": [
+        "a100_5_classroom_brain",
+        "classroom_brain"
+      ],
+      "native_state": "R",
+      "observed_unix": 1789664071.2378476,
+      "open_inbox": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1/stream/inbox",
+      "original_pid_source_match": true,
+      "pid": 1072657,
+      "python": "/localhome/local-rohing/v2/venv/bin/python",
+      "roster_observed_unix": 1789656625.5687165,
+      "roster_root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+      "snapshot_source": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source",
+      "source_files": {
+        "gpu/orch_r125_continual_native.py": {
+          "attributed_schema": false,
+          "bytes": 39213,
+          "functions": [
+            "sha",
+            "read",
+            "write_once",
+            "validate_plan",
+            "encode_own",
+            "presentation_schedule",
+            "readout_name",
+            "fresh_readout",
+            "NativeChild",
+            "prepare_sleep",
+            "finish_sleep",
+            "prepare_wall_extension",
+            "run"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source/gpu/orch_r125_continual_native.py",
+          "read_inbox_call": true,
+          "rohin_supported": false,
+          "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+        },
+        "gpu/orch_r125_stream_console.py": {
+          "attributed_schema": false,
+          "bytes": 8505,
+          "functions": [
+            "_open_stream_directory",
+            "publish",
+            "_read_record",
+            "follow_responses",
+            "_lines",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source/gpu/orch_r125_stream_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": false,
+          "sha256": "35697239e89a6b9dd49505b3556eb2c149b214fdb5ad3116677712d9b4231b75"
+        },
+        "gpu/orch_r125_stream_journal.py": {
+          "attributed_schema": true,
+          "bytes": 26758,
+          "functions": [
+            "require",
+            "_encoded",
+            "_digest",
+            "_pairs",
+            "_decode",
+            "validate_wall_extension",
+            "_after_fork",
+            "StreamJournal"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source/gpu/orch_r125_stream_journal.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "3925a6dff44c71994d446445833207ba3b4a9c8a983b56a8f3e3de84239eb0ca"
+        },
+        "gpu/orch_r127_pilot_console.py": {
+          "attributed_schema": true,
+          "bytes": 12612,
+          "functions": [
+            "_directory",
+            "_bytes",
+            "_stage",
+            "_publish",
+            "_inbox",
+            "publish_parent",
+            "_read",
+            "_summary",
+            "publish_tool",
+            "_name",
+            "_workspace",
+            "_inventory",
+            "_note",
+            "write_note",
+            "read_note",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source/gpu/orch_r127_pilot_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683"
+        }
+      },
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source",
+      "start_ticks": "29930996",
+      "status": "LIVE_NATIVE_OPEN_INBOX_AND_SOURCE_VERIFIED",
+      "uid": 1395
+    },
+    {
+      "actual_root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "inbox_contents_read": false,
+      "inbox_json_names": 90,
+      "inbox_partial_names": 90,
+      "ingestion_proven": false,
+      "interpreter_exe": "/usr/bin/python3.12",
+      "labels": [
+        "a100_6_classroom_creative",
+        "classroom_creative"
+      ],
+      "native_state": "R",
+      "observed_unix": 1789664071.2567494,
+      "open_inbox": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/inbox",
+      "original_pid_source_match": true,
+      "pid": 1316795,
+      "python": "/localhome/local-rohing/v2/venv/bin/python",
+      "roster_observed_unix": 1789656625.5687165,
+      "roster_root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+      "snapshot_source": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source",
+      "source_files": {
+        "gpu/orch_r125_continual_native.py": {
+          "attributed_schema": false,
+          "bytes": 39213,
+          "functions": [
+            "sha",
+            "read",
+            "write_once",
+            "validate_plan",
+            "encode_own",
+            "presentation_schedule",
+            "readout_name",
+            "fresh_readout",
+            "NativeChild",
+            "prepare_sleep",
+            "finish_sleep",
+            "prepare_wall_extension",
+            "run"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source/gpu/orch_r125_continual_native.py",
+          "read_inbox_call": true,
+          "rohin_supported": false,
+          "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+        },
+        "gpu/orch_r125_stream_console.py": {
+          "attributed_schema": false,
+          "bytes": 8505,
+          "functions": [
+            "_open_stream_directory",
+            "publish",
+            "_read_record",
+            "follow_responses",
+            "_lines",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source/gpu/orch_r125_stream_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": false,
+          "sha256": "35697239e89a6b9dd49505b3556eb2c149b214fdb5ad3116677712d9b4231b75"
+        },
+        "gpu/orch_r125_stream_journal.py": {
+          "attributed_schema": true,
+          "bytes": 26758,
+          "functions": [
+            "require",
+            "_encoded",
+            "_digest",
+            "_pairs",
+            "_decode",
+            "validate_wall_extension",
+            "_after_fork",
+            "StreamJournal"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source/gpu/orch_r125_stream_journal.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "3925a6dff44c71994d446445833207ba3b4a9c8a983b56a8f3e3de84239eb0ca"
+        },
+        "gpu/orch_r127_pilot_console.py": {
+          "attributed_schema": true,
+          "bytes": 12612,
+          "functions": [
+            "_directory",
+            "_bytes",
+            "_stage",
+            "_publish",
+            "_inbox",
+            "publish_parent",
+            "_read",
+            "_summary",
+            "publish_tool",
+            "_name",
+            "_workspace",
+            "_inventory",
+            "_note",
+            "write_note",
+            "read_note",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source/gpu/orch_r127_pilot_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683"
+        }
+      },
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source",
+      "start_ticks": "30086561",
+      "status": "LIVE_NATIVE_OPEN_INBOX_AND_SOURCE_VERIFIED",
+      "uid": 1395
+    },
+    {
+      "actual_root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "inbox_contents_read": false,
+      "inbox_json_names": 70,
+      "inbox_partial_names": 70,
+      "ingestion_proven": false,
+      "interpreter_exe": "/usr/bin/python3.12",
+      "labels": [
+        "a100_7_classroom_support",
+        "classroom_support"
+      ],
+      "native_state": "R",
+      "observed_unix": 1789664071.275729,
+      "open_inbox": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1/stream/inbox",
+      "original_pid_source_match": true,
+      "pid": 1997023,
+      "python": "/localhome/local-rohing/v2/venv/bin/python",
+      "roster_observed_unix": 1789656625.5687165,
+      "roster_root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+      "snapshot_source": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source",
+      "source_files": {
+        "gpu/orch_r125_continual_native.py": {
+          "attributed_schema": false,
+          "bytes": 39213,
+          "functions": [
+            "sha",
+            "read",
+            "write_once",
+            "validate_plan",
+            "encode_own",
+            "presentation_schedule",
+            "readout_name",
+            "fresh_readout",
+            "NativeChild",
+            "prepare_sleep",
+            "finish_sleep",
+            "prepare_wall_extension",
+            "run"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source/gpu/orch_r125_continual_native.py",
+          "read_inbox_call": true,
+          "rohin_supported": false,
+          "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+        },
+        "gpu/orch_r125_stream_console.py": {
+          "attributed_schema": false,
+          "bytes": 8505,
+          "functions": [
+            "_open_stream_directory",
+            "publish",
+            "_read_record",
+            "follow_responses",
+            "_lines",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source/gpu/orch_r125_stream_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": false,
+          "sha256": "35697239e89a6b9dd49505b3556eb2c149b214fdb5ad3116677712d9b4231b75"
+        },
+        "gpu/orch_r125_stream_journal.py": {
+          "attributed_schema": true,
+          "bytes": 26758,
+          "functions": [
+            "require",
+            "_encoded",
+            "_digest",
+            "_pairs",
+            "_decode",
+            "validate_wall_extension",
+            "_after_fork",
+            "StreamJournal"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source/gpu/orch_r125_stream_journal.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "3925a6dff44c71994d446445833207ba3b4a9c8a983b56a8f3e3de84239eb0ca"
+        },
+        "gpu/orch_r127_pilot_console.py": {
+          "attributed_schema": true,
+          "bytes": 12612,
+          "functions": [
+            "_directory",
+            "_bytes",
+            "_stage",
+            "_publish",
+            "_inbox",
+            "publish_parent",
+            "_read",
+            "_summary",
+            "publish_tool",
+            "_name",
+            "_workspace",
+            "_inventory",
+            "_note",
+            "write_note",
+            "read_note",
+            "main"
+          ],
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source/gpu/orch_r127_pilot_console.py",
+          "read_inbox_call": false,
+          "rohin_supported": true,
+          "sha256": "be7cfab563dcfe31590329e930b73238e26d39c7b03eb16c1859cc3e91f0b683"
+        }
+      },
+      "source_root": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source",
+      "start_ticks": "30523369",
+      "status": "LIVE_NATIVE_OPEN_INBOX_AND_SOURCE_VERIFIED",
+      "uid": 1395
+    }
+  ],
+  "schema": "ROHIN162_READ_ONLY_CONSOLE_ROUTES_V1",
+  "sealed_reads": 0,
+  "signals_sent": 0
+}

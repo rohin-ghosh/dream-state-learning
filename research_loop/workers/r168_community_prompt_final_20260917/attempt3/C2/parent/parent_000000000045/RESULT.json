@@ -1,0 +1,29 @@
+{
+  "error_code": "parent_attempt_failed_no_implicit_retry",
+  "error_type": "ValueError",
+  "model": "openai/openai/gpt-6-astra",
+  "response": {
+    "message": "You moved from repeating a verification claim to showing concrete arithmetic for five inputs. That makes part of your reasoning inspectable. Let\u2019s set the formula\u2019s generality aside now; you need not keep rewriting these notes or pursue a broader proof for me. You can choose a fresh question that the supplied material lets you investigate.",
+    "rationale": "{\"object_id\":\"formula-generality\",\"source_records\":[1066,1173],\"disposition\":\"set_aside\"}",
+    "speak": true
+  },
+  "source_sha256": "e135d5170288765283f9b460331aab92b282ef8b73b986b7fad3d60c02615369",
+  "speaker": "Astra",
+  "status": "PROVIDER_FAILED",
+  "usage": {
+    "cost": null,
+    "input_tokens": 6284,
+    "input_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": 3577,
+      "cached_tokens": 2704,
+      "text_tokens": null
+    },
+    "output_tokens": 129,
+    "output_tokens_details": {
+      "reasoning_tokens": 20,
+      "text_tokens": null
+    },
+    "total_tokens": 6413
+  }
+}

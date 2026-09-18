@@ -1,0 +1,1548 @@
+{
+  "canonical_report_path": "research_notes/analysis/R202_ENVIRONMENTS_2026-09-17.md",
+  "caption": {
+    "completion": {
+      "actual_caption_draws": 200000,
+      "actual_comparisons": 100000,
+      "completed_updates": 6250,
+      "known_dispatch_pid": 1055569,
+      "known_dispatch_pid_present_at_observation": false,
+      "process_state_changed_by_sidecar": false,
+      "public_report_completed_at_pdt": "2026-09-17T18:30:36.967922-07:00",
+      "public_report_completed_unix": 1789695036.9679217,
+      "report_status": "PROVISIONAL_REUSED_DEVELOPMENT_ONLY",
+      "required_pair_target_completed": true,
+      "selected_checkpoint_comparisons": 100000,
+      "selected_step": 6250,
+      "task_completed_at_pdt": "2026-09-17T18:30:37.388718-07:00",
+      "task_completed_unix": 1789695037.388718,
+      "task_status": "PROVISIONAL_WIDEGAP_TRAINED_NOT_ACCEPTANCE_CLAIM"
+    },
+    "observed_at_pdt": "2026-09-17T19:28:49.496589-07:00",
+    "observed_at_utc": "2026-09-18T02:28:49.496589Z",
+    "public_acceptance_evidence": {
+      "FINAL_used": false,
+      "calibration_examples": 3328,
+      "captions_included": false,
+      "contest_ids_included": false,
+      "development_audit": {
+        "accepted_count": 0,
+        "accepted_expected_positive_vote_mass": null,
+        "coverage": 0.0,
+        "examples": 1536,
+        "interpretation": "VOTE_MASS_PROXY_NOT_ACCEPTANCE_PRECISION"
+      },
+      "human_validated": false,
+      "locked_validation_used": false,
+      "q_meaning": "EXPECTED_SOMEWHAT_OR_FUNNY_VOTE_MASS",
+      "rank200_quality_audit": {
+        "accepted": 0,
+        "coverage": 0.0,
+        "examples": 1536,
+        "full_judge_usable": false,
+        "precision": null,
+        "precision_wilson95_lower": 0.0,
+        "reused_development_only": true,
+        "status": "BLOCKED_RANK200_QUALITY_POINT"
+      },
+      "rank200_quality_threshold": null,
+      "rank200_quality_threshold_status": "BLOCKED_NO_REGISTERED_RANK200_QUALITY_OPERATING_POINT",
+      "second_blind_comparator_complete": false,
+      "tau": null,
+      "tau_status": "NO_FEASIBLE_HELDOUT_THRESHOLD"
+    },
+    "remote_receipts": [
+      {
+        "bytes": 5397,
+        "mtime_unix": 1789695036.968404,
+        "read_and_hashed": true,
+        "relative_path": "training/PUBLIC_SCORING_REPORT.json",
+        "sha256": "11f0daccc968e6c453638c89be97a0360bfa5685f25e1a74a0e5be608f9ae896"
+      },
+      {
+        "bytes": 331,
+        "mtime_unix": 1789695037.3895538,
+        "read_and_hashed": true,
+        "relative_path": "COMPLETED.json",
+        "sha256": "95e4f84bc591a0856d6271ad13efe784ca87aea09c2d3207fa307c6270f71f4c"
+      },
+      {
+        "bytes": 714,
+        "mtime_unix": 1789694906.301285,
+        "read_and_hashed": true,
+        "relative_path": "training/FULL_POOL_SELECTION_REPORT.json",
+        "sha256": "ee0fecf39fdc58ae7df6b4e08ebbb20f0f6a7e373fa27259c83dff56ed7e4ab3"
+      },
+      {
+        "bytes": 341,
+        "mtime_unix": 1789693054.9378605,
+        "read_and_hashed": true,
+        "relative_path": "training/throughput/006250.json",
+        "sha256": "3da7e3e5d004fcd50762af70929e1bd9c8a69b033442808ba0280b6fdcb54f30"
+      },
+      {
+        "bytes": 324,
+        "mtime_unix": 1789681172.1561823,
+        "read_and_hashed": true,
+        "relative_path": "DISPATCH_STARTED.json",
+        "retained_fields": "Process existence only; command/admission contents not exported",
+        "sha256": "7102eacf8da28e47a00b0b218a1dfb755992f181037480dbf8aecea56aba83ff"
+      }
+    ],
+    "remote_root": "/localhome/local-rohing/orch_r177_ampere_judge_20260917/bt_widegap_v2",
+    "runtime_readiness": {
+      "actual_model_calls": 0,
+      "actual_private_config_body_read": false,
+      "game_null_tau_rejection": "tau must be an explicit numeric threshold",
+      "legacy_loader": "gpu.ny_caption_judge.load_cpu_judge",
+      "legacy_schema": "NY_TRAINED_JUDGE_CONFIG_V1",
+      "pytest_attempt": {
+        "dependencies_installed": false,
+        "exit_code": 1,
+        "fallback": "Direct standard-library synthetic assertions passed; not a pytest-suite pass",
+        "interpreter": "/usr/bin/python3",
+        "status": "NOT_RUN_DEPENDENCY_ABSENT",
+        "stderr": "/usr/bin/python3: No module named pytest\n",
+        "targets": [
+          "tests/test_ny_caption_game.py::test_caps_cannot_be_increased_and_tau_is_explicit",
+          "tests/test_ny_caption_game.py::test_acceptance_requires_scene_fit_and_q_at_explicit_tau",
+          "tests/test_ny_caption_game.py::test_game_stop_json_reload_continue_restores_exact_responses_cache_and_budget"
+        ]
+      },
+      "real_scalar_model_loaded": false,
+      "real_scalar_to_game_roundtrip": "NOT_DEMONSTRATED_BLOCKED",
+      "scalar_schema_declared_by_producer_source": "NY_WIDEGAP100K_SCALAR_JUDGE_CONFIG_V2",
+      "schema_rejected_before_model_imports": true,
+      "synthetic_game_roundtrip": {
+        "PARENTED": "PASS_SYNTHETIC_SUBMIT_JSON_RESTORE_CACHED_REPLAY_CONTINUE",
+        "UNPARENTED": "PASS_SYNTHETIC_SUBMIT_JSON_RESTORE_CACHED_REPLAY_CONTINUE",
+        "continued_submission_accounting_verified": true,
+        "private_judge_data_used": false,
+        "restore_and_cached_replay_callbacks": 0,
+        "synthetic_fixture_tau_not_candidate_tau": 0.7
+      },
+      "synthetic_legacy_judge_with_null_tau_accepted": false,
+      "synthetic_scalar_schema_rejection": "provisional_trained_judge_only",
+      "torch_imported_by_direct_checks": false,
+      "transformers_imported_by_direct_checks": false
+    }
+  },
+  "compiled_at_utc": "2026-09-18T02:52:34.484387+00:00",
+  "creative_retained_receipts": [
+    {
+      "archive_sha256": "02573d8662e104cdd2c383cb7faf27cf2e211179d3c393ad067375d599518c5d",
+      "cycle": 46,
+      "inventory_sha256": "3a60813de9389b064160be6083bd6f72556c6a508503f21751e891de7344100f",
+      "life": "creative_reread",
+      "local_verification_path": "research_loop/workers/rohin174_parenting_20260917/node3/r188/final_relocation_20260917t2350z/physical1.VERIFIED.json",
+      "observed_utc": "2026-09-18T02:16:42.242622+00:00",
+      "preserved_root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving1/preserved/physical1/root",
+      "quality_limit": "958 raw characters, truncated; mixed Chinese/English/Japanese and punctuation/wording errors. This is an unfinished creative draft, not demonstrated retention or high-quality completed prose.",
+      "raw_chars": 958,
+      "raw_response_sha256": "e1bb2f5e12d6855690ae444a57be94259b24d4175d4762205e87696b08db7f13",
+      "receipt_available": true,
+      "recommendation": "Preserve the existing node2/GPU0 rehome; receipt supports continued creative work, not a waste claim.",
+      "response_file_sha256": "429988ebfec4b1819c8bb11a658eafd4d2cc1a9ca36b76d33faa1c1088b66aeb",
+      "response_finished_pdt": "2026-09-17T16:34:26.767030-07:00",
+      "response_finished_unix": 1789688066.7670298,
+      "response_index": 5677,
+      "response_path": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving1/preserved/physical1/root/stream/records/00000000000000005677.json",
+      "response_record_sha256": "cd0633a09dceb2742f7c6632c280b2c2ec9edc7e758bed07ee3132c1ec0c66a4",
+      "saved_created_unix": 1789688473.832348,
+      "saved_file_sha256": "971273e10d533b8d92613d1ccef92ec7c0f2445948b751fb090872b65f24ab7d",
+      "saved_index": 5737,
+      "saved_optimizer_steps": 5062,
+      "saved_record_path": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving1/preserved/physical1/root/stream/records/00000000000000005737.json",
+      "saved_record_sha256": "25e84722d6bfe493d31c0fe4a22b4e02c370e8ac6135eb66ee93e4c5a5ea4abd",
+      "selection": "earliest RESPONSE after the preceding COMPLETE, before requested saved boundary; deterministic, not best-of",
+      "truncated": true
+    },
+    {
+      "archive_sha256": "3630109c365523d4832ae0dff54be60e28daff163d4b0fc7c2ad0ed0baee9fd1",
+      "cycle": 43,
+      "inventory_sha256": "e0b5c440c1c5e5aa8d0b9403d3d02d78ca5f7157d3f4c40ad1ff0e9fc13ffc84",
+      "life": "creative_free",
+      "local_verification_path": "research_loop/workers/rohin174_parenting_20260917/node3/r188/final_relocation_20260917t2350z/physical4.VERIFIED.json",
+      "observed_utc": "2026-09-18T02:16:42.288339+00:00",
+      "preserved_root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving4/preserved/physical4/root",
+      "quality_limit": "1165 characters, not truncated; awkward grammar and explicit explanatory telling remain. Useful draft/revision substance, not measured creative quality or learning gain.",
+      "raw_chars": 1165,
+      "raw_response_sha256": "3d848d25fb9f49454d463408943aeaf40a8dbd32103527d6e2d0bab7001acff1",
+      "receipt_available": true,
+      "recommendation": "Preserve the existing node2/GPU7 rehome; no evidence here authorizes freeing this slot.",
+      "response_file_sha256": "e6f2a741abb6e37a499dac67f0a2462f0f4e16bc6b2d9b9c967576b516975035",
+      "response_finished_pdt": "2026-09-17T16:36:21.248230-07:00",
+      "response_finished_unix": 1789688181.2482305,
+      "response_index": 5211,
+      "response_path": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving4/preserved/physical4/root/stream/records/00000000000000005211.json",
+      "response_record_sha256": "145a1ec28e588b37e3f8e926b79a88891117c61a7cc6ae68418627909ebc8cdc",
+      "saved_created_unix": 1789688727.1594462,
+      "saved_file_sha256": "58a2a3583c5a8fd4ed4271c80df5271354e9e25da60277e68cfedeb974ef3e9c",
+      "saved_index": 5293,
+      "saved_optimizer_steps": 4663,
+      "saved_record_path": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving4/preserved/physical4/root/stream/records/00000000000000005293.json",
+      "saved_record_sha256": "940b8331f23171bb5c22a051bda05ca86cbfd75859e80cca9e0d3fbf1b0af372",
+      "selection": "earliest RESPONSE after the preceding COMPLETE, before requested saved boundary; deterministic, not best-of",
+      "truncated": false
+    },
+    {
+      "archive_sha256": "8d17625319dc59f999d408d0c6fa74fc6c7f0c5ca9a3b9f5366a2c1a5a51b6a3",
+      "cycle": 44,
+      "inventory_sha256": "927a429a2e1aaebb2cf4dcb4c806c31c125924bc8ff190a389df28746d78a2b0",
+      "life": "creative_select",
+      "local_verification_path": "research_loop/workers/rohin174_parenting_20260917/node3/r188/final_relocation_20260917t2350z/physical7.VERIFIED.json",
+      "observed_utc": "2026-09-18T02:16:42.322157+00:00",
+      "preserved_root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving7/preserved/physical7/root",
+      "quality_limit": "Not truncated; spacing, grammar and fullwidth punctuation defects remain. A concrete creative revision exists; no semantic-quality score or retention result is claimed.",
+      "raw_chars": 1739,
+      "raw_response_sha256": "fe44d3ee6f1403f8e04a78df844a4dc1b1fc6b3c6da1d4d996a9e396c8012203",
+      "receipt_available": true,
+      "recommendation": "Preserve the existing node2/GPU5 rehome; the supplied saved44 sample is not evidence of zero useful output.",
+      "response_file_sha256": "b87cbeb13ed364b2f0d4461d81086283fb40223dcd37f65bc9054dee43aa07a5",
+      "response_finished_pdt": "2026-09-17T16:36:20.155586-07:00",
+      "response_finished_unix": 1789688180.155586,
+      "response_index": 5381,
+      "response_path": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving7/preserved/physical7/root/stream/records/00000000000000005381.json",
+      "response_record_sha256": "6b66903fac3c16db3cd6ddab20021066c2d28cb2c14cec85d1b36d1591a39072",
+      "saved_created_unix": 1789688522.4518023,
+      "saved_file_sha256": "c56a940837a3a0d174a1920faf5e94085da5df15632ab52edd40f4fde1295f33",
+      "saved_index": 5441,
+      "saved_optimizer_steps": 4821,
+      "saved_record_path": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving7/preserved/physical7/root/stream/records/00000000000000005441.json",
+      "saved_record_sha256": "c0fdb30d70ad5abdf1a038919c8116a898a37081c3b5d095e359f5686aa711e7",
+      "selection": "earliest RESPONSE after the preceding COMPLETE, before requested saved boundary; deterministic, not best-of",
+      "truncated": false
+    }
+  ],
+  "kernel": {
+    "observed_unix": 1789621234.8980024,
+    "refusals": {
+      "0": [],
+      "4": [
+        {
+          "path": "/localhome/local-rohing/orch_r158_kernel_execution_20260917t0402z/lane4/phase_02/service/NO_EXECUTION_00000000000000003480.json",
+          "receipt": {
+            "disposition": "INCOMPLETE_GENERATION_NO_EXECUTION",
+            "executed": false,
+            "published": false,
+            "record_index": 3480,
+            "records_sha256": {
+              "COMMITTED": "f22240bda4fa8d75fc388c06f8aefea32ad9c2f245e8f2ef2b33ca0cd9a683ad",
+              "REQUEST": "f9b18c2dd2bac13ffa005a09da12c13c3a23bb29527ee04532999fe41339d08f",
+              "RESPONSE": "73853d11a5ba2b2f0e9f4c7add91940d45518d337a516c46a162395f7ecd40a9"
+            },
+            "schema": "R141_KERNEL_TOOL_SERVICE_V1"
+          }
+        }
+      ]
+    },
+    "service_counts": [
+      {
+        "calls": 0,
+        "lane": "0",
+        "phase": "phase_01",
+        "result_count": 0,
+        "status": "STOPPED"
+      },
+      {
+        "calls": 0,
+        "lane": "0",
+        "phase": "phase_02",
+        "result_count": 0,
+        "status": "READY"
+      },
+      {
+        "calls": 0,
+        "lane": "4",
+        "phase": "phase_01",
+        "result_count": 0,
+        "status": "STOPPED"
+      },
+      {
+        "calls": 0,
+        "lane": "4",
+        "phase": "phase_02",
+        "result_count": 0,
+        "status": "READY"
+      }
+    ],
+    "service_observed_unix": 1789620680.4681172,
+    "tool_rendering": [
+      {
+        "index": 3479,
+        "rejection_text_in_rendered_messages": true,
+        "sha256": "668504ddd3634b56b6b4799379c769675017e53777ae9993574059b2781953be",
+        "started_unix": 1789620983.648214
+      }
+    ]
+  },
+  "last_updated_at_utc": "2026-09-18T02:55:20.074601+00:00",
+  "limits": [
+    "No sealed/FINAL/readout contents",
+    "No scoring information sent to a parent",
+    "R195 archived node3 provenance reused locally only; R202 never contacted node3",
+    "Exact sampled chains, not complete life-wide coverage",
+    "Parent publication, inbox registration, rendered prefix, task correctness, and learning are distinct"
+  ],
+  "main_verification_update": {
+    "dates": "UTC dates are September18, 2026; PDT dates are September17, 2026",
+    "math_d": {
+      "actual_child_ACT_outcome_checked": false,
+      "distinction": "Receiving smoke and initial input rendering are not an actual child ACT/evaluator outcome.",
+      "exact_part_one_present": true,
+      "existing_local_receipt": "research_loop/workers/rohin201_c2_clones_20260917/node2_operator/receipts/LIVE_20260918T024923Z.json",
+      "first_response_finished_at_utc": "2026-09-18T02:47:57.435Z",
+      "first_response_record": 5851,
+      "first_think_record": 5853,
+      "loaded_at_utc": "2026-09-18T02:47:30.403Z",
+      "loaded_record": 5847,
+      "mpmath_smoke_version_as_reported": "1.3",
+      "new_parent_opening_present": true,
+      "node": "node2",
+      "physical_gpu": 1,
+      "receiving_confinement_modes_passed": 5,
+      "request_record": 5850,
+      "smoke_passed": true,
+      "sympy_smoke_version_as_reported": "1.14"
+    },
+    "original_c2": {
+      "active_safety_operator": "Main reports operator active; no R202 intervention or safety recheck",
+      "actual_child_judge_call_or_outcome": "UNVERIFIED",
+      "authorized_release_at_utc": "2026-09-18T02:48:37Z",
+      "draft_quality": "UNVERIFIED",
+      "historically_bound_life_root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+      "judge_first_input_present": true,
+      "loaded_at_utc": "2026-09-18T02:49:57Z",
+      "loaded_record": 5856,
+      "parental_quality": "UNVERIFIED",
+      "record_hashes_supplied_in_relay": false,
+      "request_record": 5857,
+      "root_note": "Existing source binding reused for identification; new records not read by R202.",
+      "story_input_present": true
+    },
+    "r202_remote_recheck_performed": false,
+    "recorded_at_utc": "2026-09-18T02:55:02.183332+00:00",
+    "schema": "R202_MAIN_VERIFICATION_RELAY_V1",
+    "source_kind": "USER_RELAY_OF_MAIN_INDEPENDENT_VERIFICATION"
+  },
+  "math_d": {
+    "events": [
+      {
+        "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "index": 5847,
+        "kind": "LOADED",
+        "loaded_unix": 1789699650.4031322,
+        "mtime_utc": "2026-09-18T02:47:30.434921+00:00",
+        "optimizer_steps": 4908,
+        "pid": 2128807,
+        "resume": true,
+        "sha256": "ce8a5c6291c6427bb02862d367b8c841f845d05a92a71c8a0467d635116c3704"
+      },
+      {
+        "index": 5848,
+        "kind": "INBOX",
+        "message_id": "r202_000_rohin_part_one",
+        "mtime_utc": "2026-09-18T02:47:30.506867+00:00",
+        "sha256": "86bc609588c34ea94948ca072f97feb7a9d31203579bda8e4569c81b0fe6cf52",
+        "speaker": "Rohin",
+        "text_sha256": "48921afaf6c1a7dec7fbe7cbb79c3be8c52bd9612cbcdad3ff6da64fc7469e30"
+      },
+      {
+        "index": 5849,
+        "kind": "INBOX",
+        "message_id": "r202_001_astra_math_d_introduction",
+        "mtime_utc": "2026-09-18T02:47:30.539733+00:00",
+        "sha256": "8920160c5fae591d253a357a95fb1afda31390a3440e25692b25ca7d792a4c20",
+        "speaker": "Astra",
+        "text_sha256": "e49638647a0b55e62f328ef016f40219693eec6a9ab4e2596e3e4e77be8142d0"
+      },
+      {
+        "index": 5850,
+        "kind": "REQUEST",
+        "mtime_utc": "2026-09-18T02:47:31.175989+00:00",
+        "segment": 153,
+        "sha256": "a6a7b2c7149a54f743086980afd42e3193937a7323fdd427eaa6b43ef380551c",
+        "started_unix": 1789699650.6013174
+      },
+      {
+        "finished_unix": 1789699677.4346359,
+        "index": 5851,
+        "kind": "RESPONSE",
+        "mtime_utc": "2026-09-18T02:47:57.466693+00:00",
+        "raw_characters": 1872,
+        "raw_response_present": true,
+        "sha256": "00583f70ce103d455ffe545db84b7c4f1b435a9742b6267c61de96c0889b2d20"
+      },
+      {
+        "index": 5853,
+        "kind": "R184_STAGE",
+        "mtime_utc": "2026-09-18T02:47:57.946532+00:00",
+        "segment": 153,
+        "sha256": "1d4b27a99f9c87187c6555ac8b98745944cce615ed658a58873b39b74fcbe266",
+        "stage": "THINK"
+      },
+      {
+        "index": 5855,
+        "kind": "REQUEST",
+        "mtime_utc": "2026-09-18T02:47:58.473237+00:00",
+        "segment": 154,
+        "sha256": "bff81b8760884a1129c7238ce0e7bb685545b6f82a090fc5fc7bf323bcd23dae",
+        "started_unix": 1789699678.072013
+      },
+      {
+        "finished_unix": 1789699715.521884,
+        "index": 5856,
+        "kind": "RESPONSE",
+        "mtime_utc": "2026-09-18T02:48:35.554748+00:00",
+        "raw_characters": 1699,
+        "raw_response_present": true,
+        "sha256": "f518024dc69eecfdd51534ef834b646012ae027a4fa1ad85b99e4e92494dc4ad"
+      },
+      {
+        "index": 5858,
+        "kind": "R184_STAGE",
+        "mtime_utc": "2026-09-18T02:48:36.044430+00:00",
+        "segment": 154,
+        "sha256": "86a08f3f137c5f36512af08b0b2eb75915050e89820de4d0b08eae8a551da5a2",
+        "stage": "THINK"
+      },
+      {
+        "index": 5860,
+        "kind": "REQUEST",
+        "mtime_utc": "2026-09-18T02:48:36.720406+00:00",
+        "segment": 155,
+        "sha256": "de4ad013a73d7fbea233360e8a46cb8a74d119be6b58a087dd2c343e7235da09",
+        "started_unix": 1789699716.2860773
+      },
+      {
+        "finished_unix": 1789699751.6189137,
+        "index": 5861,
+        "kind": "RESPONSE",
+        "mtime_utc": "2026-09-18T02:49:11.651741+00:00",
+        "raw_characters": 1310,
+        "raw_response_present": true,
+        "sha256": "b4a48a9e0599c219c4ec73eb88e419b9db13a70592983e6bc0098be2a3c4bf24"
+      },
+      {
+        "index": 5863,
+        "kind": "R184_STAGE",
+        "mtime_utc": "2026-09-18T02:49:12.178458+00:00",
+        "segment": 155,
+        "sha256": "b0cf65be624f7f4950d33be3af10deb5b348a5bfcc906105c63d04de43281c33",
+        "stage": "THINK"
+      },
+      {
+        "index": 5865,
+        "kind": "R184_TRANSITION",
+        "mtime_utc": "2026-09-18T02:49:12.238550+00:00",
+        "segment": 155,
+        "sha256": "269fd21a831adf9a51b2e0d82414b93c4db08a6b524cbda92254c392bc56db37"
+      },
+      {
+        "index": 5866,
+        "kind": "REQUEST",
+        "mtime_utc": "2026-09-18T02:49:12.972861+00:00",
+        "segment": 156,
+        "sha256": "3eb2df7f4a1585a8bcae227a59cecc508c4a42900c256c2c8bee81f087132e48",
+        "started_unix": 1789699752.4924529
+      }
+    ],
+    "note": "LOADED and three THINK stages; not actual tool feedback",
+    "observed_utc": "2026-09-18T02:49:23.077013+00:00",
+    "real_ACT_present_in_observation": false
+  },
+  "original_c2_math": {
+    "acts": [
+      {
+        "act": {
+          "index": 5141,
+          "mtime_unix": 1789687291.1828213,
+          "outcome": {
+            "error_type": null,
+            "executed": true,
+            "result_status": "PROCESS_FAILED",
+            "status": "PUBLISHED"
+          },
+          "record_sha256": "510b56b6115d0079fbbe6337a5d6cd7b4f5c05c767a813d926ce3308683b8a94",
+          "reference": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005141.json",
+            "sha256": "59163af7935e78204c4cc5c04a7c36ebbd951e11f47255ecbb51e0437d28cd35"
+          },
+          "segment": 124,
+          "task_correctness": "NOT_ESTABLISHED"
+        },
+        "feedback": {
+          "id": "ce14bdfc686148e191e8382b584f22e2",
+          "inbox": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/ce14bdfc686148e191e8382b584f22e2.json",
+            "sha256": "bee873335aa0738a3680c78ba00bb8561ea998216efdf158a30364906c196603"
+          },
+          "result_fields": {
+            "returncode": 1,
+            "status": "PROCESS_FAILED"
+          },
+          "source_receipt": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/9be0b6967523ea7b7e5a1c538313558b9a3304c17d541532d1d5e6aa4d895806/RESULT.json",
+            "sha256": "39db240103e433d5dc2c1e77f8aa3e9892ecd7de20bb50b4e1280b9908667c19"
+          }
+        },
+        "following_response": {
+          "index": 5144,
+          "mtime_unix": 1789687305.8529978,
+          "record_sha256": "de3e4785f88f2194804616e3ea11c857c93b38a2b25f2d8af3af387e1b08753e",
+          "reference": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005144.json",
+            "sha256": "dc5369349d0cabf9125f200e79f5d9410c103a79cf9bd1f0ab989ed6a7d492d6"
+          },
+          "truncated": false
+        },
+        "rendered": {
+          "all_history_tokens_masked": true,
+          "index": 5143,
+          "mtime_unix": 1789687291.7654707,
+          "positions": [
+            30
+          ],
+          "record_sha256": "d02e24271c5e46dbc094600dcf6f8860e80a9f76ee08e98925edd3568362a3a1",
+          "reference": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005143.json",
+            "sha256": "6af910ed04a4c84f88afda2d52cf0292b7151cc86950881420ea0864222ab4b8"
+          },
+          "started_unix": 1789687291.3035858
+        },
+        "stage_consolidation": {
+          "consolidation": {
+            "reason": "working_state_overflow:2398>2048; explicit_child_revision_or_deletion_required; prior_state_unchanged",
+            "source_event_id": "child:segment:125",
+            "status": "REJECTED_PRIOR_STATE_RETAINED"
+          },
+          "index": 5146,
+          "mtime_unix": 1789687306.25089,
+          "record_sha256": "308ef1eb50e4e07332b379acd77ebe7d6b93d64e92a56f187414fc863dab9129",
+          "reference": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005146.json",
+            "sha256": "30c9a83fe66b8a1badce718825707815f9ea7c8275c48605f91fdde54cfe5411"
+          },
+          "runtime_notice_is_target": false,
+          "stage": "LEARN"
+        }
+      },
+      {
+        "act": {
+          "index": 5210,
+          "mtime_unix": 1789687825.969015,
+          "outcome": {
+            "error_type": null,
+            "executed": true,
+            "result_status": "PROCESS_FAILED",
+            "status": "PUBLISHED"
+          },
+          "record_sha256": "b279a828b8b5b71f9bcb7e3f5754caf5178d2858a3df9fb5fc43c1dbf0dd7afa",
+          "reference": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005210.json",
+            "sha256": "a5db5031d4346046d5fcc57b39586a64b6dee826c5bda131ea46fd3738fd87ca"
+          },
+          "segment": 127,
+          "task_correctness": "NOT_ESTABLISHED"
+        },
+        "feedback": {
+          "id": "b66c9f6678b24431a1191d695ede5593",
+          "inbox": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/b66c9f6678b24431a1191d695ede5593.json",
+            "sha256": "649d27efd17254a22e339309786634dae2d339c2f17101f929f1b123f077c66c"
+          },
+          "result_fields": {
+            "returncode": 1,
+            "status": "PROCESS_FAILED"
+          },
+          "source_receipt": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/4d508884af509b5a5bae217d82b5efabb64fcccfe6accf5dc4d4ed86a33c85a5/RESULT.json",
+            "sha256": "ef77811645d52acbdbe24eec191b2d60c63507974b5dfd43be1eee9e7d13f934"
+          }
+        },
+        "following_response": {
+          "index": 5213,
+          "mtime_unix": 1789687837.5446637,
+          "record_sha256": "f2db5b4633beab4e93e1db9df00c154473ed45e1dd018ace37000793b2b4e2e0",
+          "reference": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005213.json",
+            "sha256": "e1622ceddc41250684b6cf7dcf6aec891a5b8272d5364f919971b0c651985521"
+          },
+          "truncated": false
+        },
+        "rendered": {
+          "all_history_tokens_masked": true,
+          "index": 5212,
+          "mtime_unix": 1789687826.4659479,
+          "positions": [
+            40
+          ],
+          "record_sha256": "9a8f572df7d57e3802358689486540a825226359b2b7161e43ab29bc01664eac",
+          "reference": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005212.json",
+            "sha256": "46ca116a5c3f92b28def958009167cfaf6a054848f675d42a4eb51fe01ee1804"
+          },
+          "started_unix": 1789687826.094568
+        },
+        "stage_consolidation": {
+          "consolidation": {
+            "source_event_id": "child:segment:128",
+            "status": "NO_EXPLICIT_STATE_DELTA"
+          },
+          "index": 5215,
+          "mtime_unix": 1789687837.9644449,
+          "record_sha256": "67e4b775a314ac5192e45b6418e18b6066b32865709877b9097c509b959cd566",
+          "reference": {
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005215.json",
+            "sha256": "181ca2a29bc8f3da3d9383eeb6ddc4763fa23fd8c06f5785256cf886dc1e260b"
+          },
+          "runtime_notice_is_target": false,
+          "stage": "LEARN"
+        }
+      }
+    ],
+    "observed_unix": 1789688310.3735244
+  },
+  "original_c2_math_phase": {
+    "effective": {
+      "after_completed_cycle": 45,
+      "journal_index": 5407,
+      "journal_kind": "R184_LEARN_COMPLETE",
+      "journal_record_sha256": "c6353d84ffd8d05710feabd79cfef2bd4ed5162b2dd60460fbc9b887412fdec3",
+      "local_time": "2026-09-17T17:01:29.887770-07:00",
+      "receipt": "C2_MATH_ENV_PHASE1_RECEIPTS/receipts/EFFECTIVE_1789689689887775321.json",
+      "receipt_sha256": "00adc9d498adcb425968021036b0ba62f4e2cce3208244b4f858791043e998c5",
+      "unix": 1789689689.8877697
+    },
+    "first_post_phase_tool_reply": {
+      "error_type": "ValueError",
+      "executed": null,
+      "local_time": "2026-09-17T17:03:13.918818-07:00",
+      "native_ACT_record": 5417,
+      "native_ACT_record_sha256": "19ff5e104edc7791c25a9726cd6966cc0cf3f1d07eb9656da0ea22b020d9ca0c",
+      "origin_record_index": 5414,
+      "origin_record_sha256": "aa0cb5aeac843983b8446d1d14475a314042b1ee3412fc6027baf97cc0ad6ce8",
+      "receipt": "C2_MATH_ENV_PHASE1_RECEIPTS/receipts/TOOL_OUTCOME_1789689793918833382.json",
+      "receipt_sha256": "7d9eee98b5841d06bca24c7afc733b897002ad06bc13fd63d5270aab7bbe36d2",
+      "status": "TOOL_OUTCOME_UNKNOWN_NO_RETRY",
+      "unix": 1789689793.9188178,
+      "unknown_notice_REQUEST_record_sha256": "a377161838391459ed1a46be1d7f00ed4125365f85bae26eb08ffcd9cdd20dc9",
+      "unknown_notice_rendered_REQUEST": 5418
+    },
+    "learner_sympy_execution_verified": false,
+    "phase": "R188_C2_MATH_ENV_V1",
+    "pure_matched_arm_result": false,
+    "schema": "R188_C2_MATH_ENV_DEPLOYMENT_OBSERVATION_V1",
+    "subsequent_read_only_diagnosis": {
+      "actual_gate_digest_verified": true,
+      "attempt_directory_exists": false,
+      "dispatch_calls": 0,
+      "failure_callsite": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/source/gpu/orch_r125_cpu_experiment.py:109",
+      "failure_reason": "complete_source_generation",
+      "interpretation": "Unchanged origin validator rejected incomplete generation before request intent or CPU launch. No gate weakening, repair, or redispatch.",
+      "request_id": "33bcc0a505fee85d3a83a73c3b2a789426c32120109b2539bf2c8eb4f86d73e4",
+      "source_sha256": "a380226a975b859666e5b0b09bac6a4b782eb232b5d8c0c6ce1b8fe1da8abe94",
+      "spool_directory_exists": false,
+      "terminal": false,
+      "truncated": true,
+      "unix": 1789689855.137974
+    }
+  },
+  "peer": {
+    "broker_effect": {
+      "actor": "C1",
+      "created_unix": 1789601895.9682257,
+      "delivery_handles": [
+        "f3e402e55134d97aea8a5258cddbdfca06cb2e771b5b6713c31c50ef7cbf94bc",
+        "e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b"
+      ],
+      "effect_id": "07dff1541d2b36aa5dd617293ddb9f2396eeaa8308700cfa08cfea91f2650288",
+      "executed": false,
+      "operation": "send_message",
+      "origin": {
+        "actor": "C1",
+        "committed_sha256": "931dcce5e396c4a7d9ab42ae5740a05f8d246e5f68240a7d64ba0a0f3b432ea3",
+        "generated_sha256": "19ce5d51876e94d78a012e721864aae153e0bfde9255921257c572d5808f68e0",
+        "journal_id": "4af2ce0f428c43e6b0f846703f0d2853",
+        "kind": "TRAIN_CHILD_RESPONSE",
+        "record_index": 203,
+        "record_sha256": "36c672a4b8c0091e633a1df4914184e23edac07fc2e8b7fafae3abe2d3a8fa63",
+        "request_sha256": "647c44c1ee42a4a406226ac88fb9a8b305e5f72bc37ced036df339dbed271c1a"
+      },
+      "result": {
+        "message_id": "07dff1541d2b36aa5dd617293ddb9f2396eeaa8308700cfa08cfea91f2650288",
+        "recipient": "C2",
+        "sender": "C1",
+        "status": "QUEUED"
+      },
+      "schema": "R153_COMMUNITY_EXCHANGE_V1",
+      "status": "RECORDED",
+      "training_target": false
+    },
+    "broker_message_metadata": {
+      "actor": "C1",
+      "id": "07dff1541d2b36aa5dd617293ddb9f2396eeaa8308700cfa08cfea91f2650288",
+      "open_requested": 0,
+      "recipient": "C2",
+      "sequence": 1
+    },
+    "child_render_verified": false,
+    "delivery_installations": [
+      {
+        "actor": "C1",
+        "delivered": 1,
+        "handle": "f3e402e55134d97aea8a5258cddbdfca06cb2e771b5b6713c31c50ef7cbf94bc",
+        "installation": {
+          "actor": "C1",
+          "executed": false,
+          "handle": "f3e402e55134d97aea8a5258cddbdfca06cb2e771b5b6713c31c50ef7cbf94bc",
+          "journal_id": "4af2ce0f428c43e6b0f846703f0d2853",
+          "packet_sha256": "e0919b0f812d495641ab0e98b324d99f42a5c00cd4fc2961246d35086fd574ce",
+          "path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/stream/inbox/f3e402e55134d97aea8a5258cddbdfca06cb2e771b5b6713c31c50ef7cbf94bc.json",
+          "rendered": false,
+          "schema": "R153_DELIVERY_INSTALL_V1",
+          "sha256": "7e2875a30508e18c6df0bdc8006e25139fb336c5266511b6de503e1968003e61",
+          "source_path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/community_receipts/f3e402e55134d97aea8a5258cddbdfca06cb2e771b5b6713c31c50ef7cbf94bc.json",
+          "source_sha256": "467bd81315f9785f488292afa53c64e8a67d9563d6d9c30cd4245dd0f9fe4606",
+          "status": "INBOX_PUBLISHED"
+        }
+      },
+      {
+        "actor": "C2",
+        "delivered": 1,
+        "handle": "e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b",
+        "installation": {
+          "actor": "C2",
+          "executed": false,
+          "handle": "e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b",
+          "journal_id": "260be8b8710a42559b291797c6e14983",
+          "packet_sha256": "beb03836de13c4104695b25de9581f387e4770d1361e0d00a64f1dc2e3dada9b",
+          "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b.json",
+          "rendered": false,
+          "schema": "R153_DELIVERY_INSTALL_V1",
+          "sha256": "11c3518b20721468fce79571675cc6db3dbd8d1ff321d786f6a329da55c134a1",
+          "source_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_receipts/e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b.json",
+          "source_sha256": "d60871044497c26a79aa153b521ae966bbddc873b38302788d1f2ecff25b55e2",
+          "status": "INBOX_PUBLISHED"
+        }
+      }
+    ],
+    "operation_counts": {
+      "publish_artifact": 1,
+      "send_message": 1,
+      "write_workspace": 17
+    },
+    "service_observed_utc": "2026-09-17T01:53:00.103080+00:00",
+    "source_database_mtime_unix": 1789638647.38633
+  },
+  "repo_child_first_read": {
+    "files": {
+      "tool_receipts/ACTION_000000.json": {
+        "document": {
+          "action": "read",
+          "executed_code": false,
+          "model_produced_result": false,
+          "next_offset": 4096,
+          "offset": 0,
+          "origin": {
+            "actor": "child",
+            "record_index": 3,
+            "record_sha256": "2432a0cc52c7a1fa0054cb1858cc211bcfb49c501415cfc0e1f87d95c3ba4ba8",
+            "split": "TRAIN"
+          },
+          "path": "README.md",
+          "request": {
+            "action": "read",
+            "offset": 0,
+            "path": "README.md"
+          },
+          "returned_bytes": 4096,
+          "schema": "R183_ACTUAL_TOOL_RESULT_V1",
+          "sequence": 0,
+          "source_bytes": 4170,
+          "source_sha256": "c08f472cd9d9d2ad0308ea8a5c8ae96a6ee118f148d13af525cb844ac2192edf",
+          "status": "COMPLETE"
+        },
+        "sha256": "b29fb587dd391ea0a9c8bc48b2d5dee051783ab719a0d33bb55756eb0ad76477"
+      },
+      "tool_receipts/COMPLETE_000000.json": {
+        "document": {
+          "action": "read",
+          "observed_unix": 1789684072.2684934,
+          "origin": {
+            "actor": "child",
+            "record_index": 3,
+            "record_sha256": "2432a0cc52c7a1fa0054cb1858cc211bcfb49c501415cfc0e1f87d95c3ba4ba8",
+            "split": "TRAIN"
+          },
+          "receipt": {
+            "bytes": 468,
+            "path": "/localhome/local-rohing/orch_r183_repo_learning_20260917/birth1/tool_receipts/PUBLICATION_000000.json",
+            "sha256": "5bf20533bf17c3b9a64f827c3ecd390fa7bc545f5c8ff2c864776ce8a6dca814"
+          }
+        },
+        "sha256": "57f2e25b15aa934c4cbdff5f7cb7d8be7a9ca64da45548aef140271ae98217dd"
+      }
+    },
+    "observed_unix": 1789684278.766054
+  },
+  "repo_reader_retained": {
+    "basis": "REUSED_R154_METADATA_REPORT_NOT_REQUERIED",
+    "observation_pdt": "2026-09-16T18:48:21.933550-07:00",
+    "physical_root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1",
+    "read_to_consumed": [
+      {
+        "consumed": 3491,
+        "read": 3489,
+        "read_receipt_sha256": "8cb5ed7eb4c7943ad85d68dfd5535d3f167a8f268fd248b70586165c36f58d01"
+      },
+      {
+        "consumed": 3495,
+        "read": 3493,
+        "read_receipt_sha256": "5d650af1677ff2bd6862af5e13fff01cfa9f587b02e0e0828445b40056094e95"
+      }
+    ],
+    "unverified_consumption": {
+      "read": 3497,
+      "read_receipt_sha256": "9a4f06d9450b78faa5ff7d6e3e596733b4d08762d2042cbed37b2451da9ba1ad"
+    }
+  },
+  "retained_fleet_boundaries": [
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "teach_replay",
+      "node": "node1",
+      "observed_end_utc": "2026-09-18T02:06:46.696140+00:00",
+      "observed_start_utc": "2026-09-18T02:06:46.304431+00:00",
+      "physical_gpu": 2,
+      "physical_root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696998.047413,
+        "checkpoint_file_sha256": "22f725489264f2f435d3360c976b47f98a32fece242d49f490a9e2918de15a72",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5604,
+        "checkpoint_path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/checkpoints/sleep_000065/COMMIT.json",
+        "cycle": 65,
+        "index": 6583,
+        "mtime_unix": 1789696998.8895357,
+        "record_sha256": "db773f21950733a2663f058a554543ec3be7d5589227b924dc7dba7d0e8e849d"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node1_20260917/journal_overlay/r188/lane2/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "teach_perception",
+      "node": "node1",
+      "observed_end_utc": "2026-09-18T02:06:47.092970+00:00",
+      "observed_start_utc": "2026-09-18T02:06:46.696156+00:00",
+      "physical_gpu": 3,
+      "physical_root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789697045.9258235,
+        "checkpoint_file_sha256": "6978ab54f8f567bbcf36527ddb1b291543debfcccd33dc6f97018f9d03dec4cc",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5732,
+        "checkpoint_path": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1/checkpoints/sleep_000061/COMMIT.json",
+        "cycle": 61,
+        "index": 6739,
+        "mtime_unix": 1789697046.7722502,
+        "record_sha256": "b3acd5363a342c3c3b221e1851ed900b5d07072b723d19cb0629037b7a8b6e1f"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node1_20260917/journal_overlay/lanes/lane3/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "teach_parenting",
+      "node": "node1",
+      "observed_end_utc": "2026-09-18T02:06:47.514499+00:00",
+      "observed_start_utc": "2026-09-18T02:06:47.092986+00:00",
+      "physical_gpu": 4,
+      "physical_root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789697077.6368828,
+        "checkpoint_file_sha256": "931dd8ee5b4976f04a6c6b0b310a7825aca3115255b0eb0ed21d37d5b31d5f38",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5909,
+        "checkpoint_path": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1/checkpoints/sleep_000066/COMMIT.json",
+        "cycle": 66,
+        "index": 6911,
+        "mtime_unix": 1789697078.5524538,
+        "record_sha256": "2f6f1681adb479739674bc10c81010f3b11f614a2a4e244a791e884f9bc6991a"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node1_20260917/journal_overlay/lanes/lane4/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "classroom_brain",
+      "node": "node1",
+      "observed_end_utc": "2026-09-18T02:06:47.879161+00:00",
+      "observed_start_utc": "2026-09-18T02:06:47.514514+00:00",
+      "physical_gpu": 5,
+      "physical_root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696977.2820904,
+        "checkpoint_file_sha256": "28d9fba899aa08b7fc53771c9bd4dbc167858e7aacbea181fc4043c30c5c306a",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5076,
+        "checkpoint_path": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1/checkpoints/sleep_000056/COMMIT.json",
+        "cycle": 56,
+        "index": 5995,
+        "mtime_unix": 1789696978.1783965,
+        "record_sha256": "65afdb485afba7c71a3a22dc68166879b5ddab9456eb3ec2536c5a3eed1ab76c"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node1_20260917/journal_overlay/brain/lanes/lane5/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "classroom_creative",
+      "node": "node1",
+      "observed_end_utc": "2026-09-18T02:06:48.275969+00:00",
+      "observed_start_utc": "2026-09-18T02:06:47.879176+00:00",
+      "physical_gpu": 6,
+      "physical_root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789697081.086952,
+        "checkpoint_file_sha256": "3af0e0e2ded1d07cad8589ddff1d902261310688a4962679446751461550a59c",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5564,
+        "checkpoint_path": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/checkpoints/sleep_000064/COMMIT.json",
+        "cycle": 64,
+        "index": 6611,
+        "mtime_unix": 1789697081.995251,
+        "record_sha256": "0680ac490f2786e7df43e55c2f880834ed47d512ee24adbacf0f012e1e0145df"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node1_20260917/journal_overlay/lanes/lane6/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "classroom_support",
+      "node": "node1",
+      "observed_end_utc": "2026-09-18T02:06:48.689228+00:00",
+      "observed_start_utc": "2026-09-18T02:06:48.275983+00:00",
+      "physical_gpu": 7,
+      "physical_root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696857.5261304,
+        "checkpoint_file_sha256": "201e6b89b1484329f392b33303d1a6a61daa788030e4ba2d5496030401478d33",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 3997,
+        "checkpoint_path": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1/checkpoints/sleep_000066/COMMIT.json",
+        "cycle": 66,
+        "index": 4760,
+        "mtime_unix": 1789696859.907168,
+        "record_sha256": "3e4c58129aa3c1d635d408013839e9c7bc72fa60055ffc82332d4d90aaae1bcc"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node1_20260917/journal_overlay/lanes/lane7/identity_repair/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "creative_reread",
+      "node": "node2",
+      "observed_end_utc": "2026-09-18T02:06:46.676879+00:00",
+      "observed_start_utc": "2026-09-18T02:06:46.315467+00:00",
+      "physical_gpu": 0,
+      "physical_root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving1/root",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696983.5857425,
+        "checkpoint_file_sha256": "0950cd39ab30fd7a909f6e97f5d390eb57e5861149a21c30ff40f8f99e68bc4f",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5702,
+        "checkpoint_path": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving1/root/checkpoints/sleep_000057/COMMIT.json",
+        "cycle": 57,
+        "index": 6577,
+        "mtime_unix": 1789696984.2860887,
+        "record_sha256": "b04b55e336434d1f36b98a40b1ad7326d297f19b6737e32ed708fb9b820ca2eb"
+      },
+      "source_root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving1/preserved/physical1/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "repo_learning_birth1",
+      "node": "node2",
+      "observed_end_utc": "2026-09-18T02:06:46.844168+00:00",
+      "observed_start_utc": "2026-09-18T02:06:46.676894+00:00",
+      "physical_gpu": 2,
+      "physical_root": "/localhome/local-rohing/orch_r183_repo_learning_20260917/birth1/life",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789697173.9491265,
+        "checkpoint_file_sha256": "c777562d8afb4b87a06dba73ab9cb5dec3b3d19347529be42d852cf1c5399f52",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 2640,
+        "checkpoint_path": "/localhome/local-rohing/orch_r183_repo_learning_20260917/birth1/life/checkpoints/sleep_000055/COMMIT.json",
+        "cycle": 55,
+        "index": 3429,
+        "mtime_unix": 1789697174.4568248,
+        "record_sha256": "6001e73d4696a3617f355db562a33d2adf79b13d0013a4526cf6a8cb5d407cb6"
+      },
+      "source_root": "/localhome/local-rohing/orch_r183_repo_learning_20260917/birth1/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "creative_select",
+      "node": "node2",
+      "observed_end_utc": "2026-09-18T02:06:47.171643+00:00",
+      "observed_start_utc": "2026-09-18T02:06:46.844182+00:00",
+      "physical_gpu": 5,
+      "physical_root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving7/root",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696572.8062196,
+        "checkpoint_file_sha256": "f5ef81fbcadfd07d8c77a3c68cc943fdbb7e5c8c976af885b410703fcdeb5af3",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5397,
+        "checkpoint_path": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving7/root/checkpoints/sleep_000056/COMMIT.json",
+        "cycle": 56,
+        "index": 6193,
+        "mtime_unix": 1789696573.4608474,
+        "record_sha256": "d2e22298df4a26ae031ba72a1411a186aec5acbf92cbdaff7acd2705bb4b303b"
+      },
+      "source_root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving7/preserved/physical7/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "creative_free",
+      "node": "node2",
+      "observed_end_utc": "2026-09-18T02:06:47.521737+00:00",
+      "observed_start_utc": "2026-09-18T02:06:47.171657+00:00",
+      "physical_gpu": 7,
+      "physical_root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving4/root",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789697168.8089948,
+        "checkpoint_file_sha256": "98be82835d82408b5a0c614619246b05a4bd5893b8525a822fa30715f18ca9bc",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5319,
+        "checkpoint_path": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving4/root/checkpoints/sleep_000054/COMMIT.json",
+        "cycle": 54,
+        "index": 6170,
+        "mtime_unix": 1789697169.53902,
+        "record_sha256": "e04e1ce2b8e06aca01c8616e1c95490681c05825f5d23fee555cdcc01cdc66d2"
+      },
+      "source_root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving4/preserved/physical4/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "kernel0",
+      "node": "node4",
+      "observed_end_utc": "2026-09-18T02:06:46.738468+00:00",
+      "observed_start_utc": "2026-09-18T02:06:46.382880+00:00",
+      "physical_gpu": 0,
+      "physical_root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789697011.8360696,
+        "checkpoint_file_sha256": "91ee301de465a5b3f0741c1282e8a8efc28803991b2c06f85d77ef1473c801ec",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 4975,
+        "checkpoint_path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/checkpoints/sleep_000056/COMMIT.json",
+        "cycle": 56,
+        "index": 5966,
+        "mtime_unix": 1789697012.6652415,
+        "record_sha256": "4e153c8781f9a0e1f7dac335000798496a67aaf6d4afdcf6574e47795a1cb0a1"
+      },
+      "source_root": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery0_attempt2/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "raw1",
+      "node": "node4",
+      "observed_end_utc": "2026-09-18T02:06:47.120256+00:00",
+      "observed_start_utc": "2026-09-18T02:06:46.738483+00:00",
+      "physical_gpu": 1,
+      "physical_root": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696656.474814,
+        "checkpoint_file_sha256": "8b9279f5ebe68ec9d9d1f0b44614f29be3c62b1afdb9cf00b0b3342f3cd1f978",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5287,
+        "checkpoint_path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/checkpoints/sleep_000057/COMMIT.json",
+        "cycle": 57,
+        "index": 6082,
+        "mtime_unix": 1789696657.282192,
+        "record_sha256": "d510c6d679681350005edcb0950fcdb7e47fbd12f817ac97a871478b8af2a22a"
+      },
+      "source_root": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery1/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "raw_parented",
+      "node": "node4",
+      "observed_end_utc": "2026-09-18T02:06:47.494056+00:00",
+      "observed_start_utc": "2026-09-18T02:06:47.120270+00:00",
+      "physical_gpu": 3,
+      "physical_root": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789697147.664027,
+        "checkpoint_file_sha256": "ed9ca23e7c9fc6f70fd81b7f625e361444a3b8cd3c5177229b393a490aa29f00",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5388,
+        "checkpoint_path": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1/checkpoints/sleep_000061/COMMIT.json",
+        "cycle": 61,
+        "index": 6286,
+        "mtime_unix": 1789697148.5134106,
+        "record_sha256": "d4533c774ca08cc95629ecb722cea822efe1d76d2b2942aa6d3924ad13f4eaa6"
+      },
+      "source_root": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane3/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "kernel_parented",
+      "node": "node4",
+      "observed_end_utc": "2026-09-18T02:06:47.847280+00:00",
+      "observed_start_utc": "2026-09-18T02:06:47.494070+00:00",
+      "physical_gpu": 4,
+      "physical_root": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696576.5993588,
+        "checkpoint_file_sha256": "4717f1e54ff4fa8dea2d66759a4c8352d9cece9ac69b844d96b8307c80fd18cc",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 4991,
+        "checkpoint_path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/checkpoints/sleep_000056/COMMIT.json",
+        "cycle": 56,
+        "index": 5844,
+        "mtime_unix": 1789696577.4563458,
+        "record_sha256": "c5dce7cd534f0be72ec4aead680fd206108aa58da7f11c2bd5d9fd8d08773c52"
+      },
+      "source_root": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane4/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "brain_free",
+      "node": "node4",
+      "observed_end_utc": "2026-09-18T02:06:48.209961+00:00",
+      "observed_start_utc": "2026-09-18T02:06:47.847295+00:00",
+      "physical_gpu": 5,
+      "physical_root": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving2v2/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696955.2149274,
+        "checkpoint_file_sha256": "b801e1e3599156e6f9be2bd0f85a1cef06d5eece47eade9ab1b3a1e88c1f05f9",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5156,
+        "checkpoint_path": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving2v2/run1/checkpoints/sleep_000055/COMMIT.json",
+        "cycle": 55,
+        "index": 6016,
+        "mtime_unix": 1789696956.0315237,
+        "record_sha256": "81bb2614c36e6c930e034635fbd601d4b7ed7d1330cfd5476a1618bf926e0e16"
+      },
+      "source_root": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving2v2/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "brain_guided",
+      "node": "node4",
+      "observed_end_utc": "2026-09-18T02:06:48.560059+00:00",
+      "observed_start_utc": "2026-09-18T02:06:48.209975+00:00",
+      "physical_gpu": 6,
+      "physical_root": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving3v2/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696932.2523048,
+        "checkpoint_file_sha256": "45a1eb80317cb52f5bfe64267a7049e59226a5296fccd9e1ccd4438631096cad",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 4972,
+        "checkpoint_path": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving3v2/run1/checkpoints/sleep_000052/COMMIT.json",
+        "cycle": 52,
+        "index": 5730,
+        "mtime_unix": 1789696933.093036,
+        "record_sha256": "700f24ac2d34d1278a01ef40ae4b24697de3f3b7177f467e0229a6bc2c0a3282"
+      },
+      "source_root": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving3v2/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "support_free",
+      "node": "node4",
+      "observed_end_utc": "2026-09-18T02:06:48.904739+00:00",
+      "observed_start_utc": "2026-09-18T02:06:48.560074+00:00",
+      "physical_gpu": 7,
+      "physical_root": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving0v2/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696835.3013546,
+        "checkpoint_file_sha256": "4f04dee5d57332ba7f273b0e8b96ec8d26f07eb4a3101692c335b3ab125a6275",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5770,
+        "checkpoint_path": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving0v2/run1/checkpoints/sleep_000058/COMMIT.json",
+        "cycle": 58,
+        "index": 6673,
+        "mtime_unix": 1789696836.0461977,
+        "record_sha256": "98bffb46d34dea292c74882ebe1b44928372d9a1c315218010510388dbb4db1f"
+      },
+      "source_root": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving0v2/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "C1",
+      "node": "node5",
+      "observed_end_utc": "2026-09-18T02:06:47.073204+00:00",
+      "observed_start_utc": "2026-09-18T02:06:46.747628+00:00",
+      "physical_gpu": 0,
+      "physical_root": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696881.9089131,
+        "checkpoint_file_sha256": "0b0040885af0ab1eccc1f0c42b00c26c3d1aa84de8c1655a4af60a88561f6e6e",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5543,
+        "checkpoint_path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/checkpoints/sleep_000062/COMMIT.json",
+        "cycle": 62,
+        "index": 6551,
+        "mtime_unix": 1789696882.5319827,
+        "record_sha256": "09592ee634fc05b3e6e6da0ef60cbff8e19b3b8a8cb6e2bc3c1cd6d2ddd31469"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node5_c1_1789683715568589680/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "C2",
+      "node": "node5",
+      "observed_end_utc": "2026-09-18T02:06:47.359912+00:00",
+      "observed_start_utc": "2026-09-18T02:06:47.073218+00:00",
+      "physical_gpu": 1,
+      "physical_root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+      "r184_plan_enabled": true,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789695373.09087,
+        "checkpoint_file_sha256": "70ec4d1d033cc280538a4d37c4eeffc995cdc7323cdbd38ecabfe8fc0c7b0ddb",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 4908,
+        "checkpoint_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/checkpoints/sleep_000051/COMMIT.json",
+        "cycle": 51,
+        "index": 5823,
+        "mtime_unix": 1789695373.6992514,
+        "record_sha256": "7c6cf68593c1d1f6c1ec56dd02f09e927b7ef4cd6a04e33ba8f2e40bc6894657"
+      },
+      "source_root": "/localhome/local-rohing/orch_r153_r194_C2_20260917_console1/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "run1",
+      "node": "node5",
+      "observed_end_utc": "2026-09-18T02:06:47.747980+00:00",
+      "observed_start_utc": "2026-09-18T02:06:47.359925+00:00",
+      "physical_gpu": 2,
+      "physical_root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696850.0869663,
+        "checkpoint_file_sha256": "5a39a6879e1ac86da50bbbe8f31491cca8f75eb820633b722b646fd55ba11771",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 6490,
+        "checkpoint_path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/checkpoints/sleep_000074/COMMIT.json",
+        "cycle": 74,
+        "index": 7562,
+        "mtime_unix": 1789696850.86499,
+        "record_sha256": "92dbb5e3c071c6ac6b4035a2feec497aa6c74b1a0ae4c7dfacb7613abcc1c5a8"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node5_run1_1789684076650332578/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "C3",
+      "node": "node5",
+      "observed_end_utc": "2026-09-18T02:06:48.081240+00:00",
+      "observed_start_utc": "2026-09-18T02:06:47.747993+00:00",
+      "physical_gpu": 3,
+      "physical_root": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789697042.018152,
+        "checkpoint_file_sha256": "15654766a189d60b9424b88e25ef354536456e8609e3b40f7d9aa0dd8831aa98",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 4975,
+        "checkpoint_path": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/checkpoints/sleep_000059/COMMIT.json",
+        "cycle": 59,
+        "index": 5936,
+        "mtime_unix": 1789697042.7205317,
+        "record_sha256": "eb04a9e0ab85454dd18fb7a49d7c1036b935fe7c926ddbcf6d0a93d7459f23c2"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node5_c3_1789683881443707769/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "C4",
+      "node": "node5",
+      "observed_end_utc": "2026-09-18T02:06:48.440158+00:00",
+      "observed_start_utc": "2026-09-18T02:06:48.081253+00:00",
+      "physical_gpu": 4,
+      "physical_root": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696686.372976,
+        "checkpoint_file_sha256": "9fa2a075478b485061aba2b262ebdcdfc0e182c248fe095e54ddcfec54f9fb35",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 4877,
+        "checkpoint_path": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life/checkpoints/sleep_000058/COMMIT.json",
+        "cycle": 58,
+        "index": 5777,
+        "mtime_unix": 1789696687.094412,
+        "record_sha256": "afd5ca6e0038c82bd4f80ab9673cb36e5c41c3a4933f5f44ee0cb89c7459db18"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node5_c4_1789683881443639417/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "C5",
+      "node": "node5",
+      "observed_end_utc": "2026-09-18T02:06:48.722655+00:00",
+      "observed_start_utc": "2026-09-18T02:06:48.440171+00:00",
+      "physical_gpu": 5,
+      "physical_root": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789697052.0429955,
+        "checkpoint_file_sha256": "f91d0ff21cef99bb1e9eccb10718d08e9569e84ce6061fa71340c4fe19f7d6e3",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5117,
+        "checkpoint_path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/checkpoints/sleep_000063/COMMIT.json",
+        "cycle": 63,
+        "index": 6095,
+        "mtime_unix": 1789697052.9653025,
+        "record_sha256": "02a4e9baf94bf660ee8ae83f144da8ccde907e4cef7d16118bf86fe2caa23f35"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node5_c5_1789683715577507372/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "pilot",
+      "node": "node5",
+      "observed_end_utc": "2026-09-18T02:06:49.002131+00:00",
+      "observed_start_utc": "2026-09-18T02:06:48.722667+00:00",
+      "physical_gpu": 6,
+      "physical_root": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789697027.3888276,
+        "checkpoint_file_sha256": "e31be99636b91e9842345d5e6893c0eade9e0ff5c8dc4d97c4b858eca7f479e3",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5879,
+        "checkpoint_path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/checkpoints/sleep_000061/COMMIT.json",
+        "cycle": 61,
+        "index": 6788,
+        "mtime_unix": 1789697028.1143904,
+        "record_sha256": "37c6ceb3e979321c61cfc008562842513ea9876fe62f2fc059462f019e8506c7"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node5_pilot_r188_readmit_1789687810659483047/source"
+    },
+    {
+      "interpretation": "RETAINED_BOUNDARY_NOT_ENVIRONMENT_SUCCESS_OR_RETIREMENT_AUTHORITY",
+      "life": "repo_reader",
+      "node": "node5",
+      "observed_end_utc": "2026-09-18T02:06:49.282251+00:00",
+      "observed_start_utc": "2026-09-18T02:06:49.002143+00:00",
+      "physical_gpu": 7,
+      "physical_root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1",
+      "r184_plan_enabled": false,
+      "saved_checkpoint": {
+        "checkpoint_created_unix": 1789696887.7669532,
+        "checkpoint_file_sha256": "9db02eef6bc95566a7eaf07d0208f650e63ea9c50418e9c7b58b66ef86c6adc0",
+        "checkpoint_matches_receipt": true,
+        "checkpoint_optimizer_steps": 5541,
+        "checkpoint_path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/checkpoints/sleep_000059/COMMIT.json",
+        "cycle": 59,
+        "index": 6400,
+        "mtime_unix": 1789696888.4960403,
+        "record_sha256": "a8afa6d35929a6fadac7a9291e57bb2802ed348e680f693e1800985838d3b81a"
+      },
+      "source_root": "/localhome/local-rohing/orch_r181_node5_repo_reader_r188_readmit_1789687875211575341/source"
+    }
+  ],
+  "schema": "R202_ENVIRONMENT_RECEIPTS_V1",
+  "source_files": {
+    "E1": {
+      "bytes": 37192,
+      "mtime_unix": 1789688320.0181675,
+      "mtime_utc": "2026-09-17T23:38:40.018167+00:00",
+      "path": "research_loop/workers/rohin174_parenting_20260917/node5/R188_FEEDBACK_AUDIT_1789688320018393793.json",
+      "sha256": "6907fb73130f7577cfe7f5f4600cdc6e0827e16fa2a5099cc8a6cde6f66357f0"
+    },
+    "E10": {
+      "bytes": 1500,
+      "mtime_unix": 1789621234.9612513,
+      "mtime_utc": "2026-09-17T05:00:34.961251+00:00",
+      "path": "research_loop/workers/r158_kernel_execution_20260917/CHILD_ATTEMPT_FOLLOWUP_20260917T0500Z.json",
+      "sha256": "edf0145563d52e99fbf74822014a7d323896e6b0a3b2979519eaf6ade0718076"
+    },
+    "E11": {
+      "bytes": 8485,
+      "mtime_unix": 1789698673.6163626,
+      "mtime_utc": "2026-09-18T02:31:13.616363+00:00",
+      "path": "research_loop/workers/rohin201_c2_clones_20260917/caption_readiness/STATUS.json",
+      "sha256": "632e96aa7bab609d803133193dd9a6e44188cbecc65ae1747b42419afc2cac84"
+    },
+    "E12": {
+      "bytes": 4961,
+      "mtime_unix": 1789653985.295722,
+      "mtime_utc": "2026-09-17T14:06:25.295722+00:00",
+      "path": "research_loop/workers/r169_community_parent_status_20260917/STATUS.md",
+      "sha256": "f9ce2ea051cc247172b11c85c5ed015a8aa501b19c09801e9b0362808abe7f94"
+    },
+    "E13": {
+      "bytes": 2010,
+      "mtime_unix": 1789699722.6037605,
+      "mtime_utc": "2026-09-18T02:48:42.603760+00:00",
+      "path": "research_loop/workers/rohin202_environment_audit_20260917/REPO_CHILD_FIRST_FEEDBACK_FILTER.json",
+      "sha256": "806f6f5eb0ad774dd7fa5abc18c3d3e1af0632b0dc5e8ad0d7e4f2b8a3c4d68b"
+    },
+    "E14": {
+      "bytes": 4116,
+      "mtime_unix": 1789699746.5550683,
+      "mtime_utc": "2026-09-18T02:49:06.555068+00:00",
+      "path": "research_loop/workers/rohin202_environment_audit_20260917/PEER_DELIVERY.json",
+      "sha256": "9613d4cdf9787f643feeb05a3ae92e5cce8f2c6712c46ef3534b1dcd3d483749"
+    },
+    "E15": {
+      "bytes": 6956,
+      "mtime_unix": 1789699763.1272814,
+      "mtime_utc": "2026-09-18T02:49:23.127281+00:00",
+      "path": "research_loop/workers/rohin201_c2_clones_20260917/node2_operator/receipts/LIVE_20260918T024923Z.json",
+      "sha256": "56880d568ad4b5dff2c8e2b16f2d0edec361e895bce485f2735a205b9b1135a1"
+    },
+    "E16": {
+      "bytes": 10636,
+      "mtime_unix": 1789699511.3330438,
+      "mtime_utc": "2026-09-18T02:45:11.333044+00:00",
+      "path": "research_loop/workers/rohin174_parenting_20260917/node1/R195_FLEET/STATUS.md",
+      "sha256": "d24e4c8a41dc6d86a6460d16bc25937556faaa54dd45d1748c986a77b78ea5f1"
+    },
+    "E17": {
+      "bytes": 672,
+      "mtime_unix": 1789699502.597931,
+      "mtime_utc": "2026-09-18T02:45:02.597931+00:00",
+      "path": "research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/PARENT_RETIRED.json",
+      "sha256": "23e37454e239812c025d63f631a2389948578ca76ddb292611ed961b939dc890"
+    },
+    "E18": {
+      "bytes": 1865,
+      "mtime_unix": 1789700102.1897428,
+      "mtime_utc": "2026-09-18T02:55:02.189743+00:00",
+      "path": "research_loop/workers/rohin202_environment_audit_20260917/MAIN_VERIFICATION.json",
+      "provenance": "User relay of Main independent verification; no invented original-C2 record hashes",
+      "sha256": "9b8510dba80eb773b372ef7086a834b0b059992d4e83c84ac177922fcc305ec4"
+    },
+    "E2": {
+      "bytes": 3782,
+      "mtime_unix": 1789690005.0134099,
+      "mtime_utc": "2026-09-18T00:06:45.013410+00:00",
+      "path": "research_loop/workers/rohin174_parenting_20260917/node5/C2_MATH_ENV_FIRST_TOOL_STATUS.json",
+      "sha256": "288f3bc13c5c547308517a6832d0c9a658af6ec6b5b864feaef5adf9bd42c279"
+    },
+    "E3": {
+      "bytes": 534,
+      "mtime_unix": 1789699315.880517,
+      "mtime_utc": "2026-09-18T02:41:55.880517+00:00",
+      "path": "research_loop/workers/rohin174_parenting_20260917/node1/R195_FLEET/R202_RECEIVER_20260918T0241Z.json",
+      "sha256": "e494e19d4cc03e082b0aa6ddb11ed12a3efe23536796691f32ee096f2ca37400"
+    },
+    "E4": {
+      "bytes": 2653,
+      "mtime_unix": 1789699801.4477744,
+      "mtime_utc": "2026-09-18T02:50:01.447774+00:00",
+      "path": "research_loop/workers/rohin201_c2_clones_20260917/node2_operator/STATUS.json",
+      "sha256": "36279a8f86a12e1ebfbf691eb498879ae220748327fb6bd681759d72303bec3f"
+    },
+    "E5": {
+      "bytes": 3968,
+      "mtime_unix": 1789698333.0100486,
+      "mtime_utc": "2026-09-18T02:25:33.010049+00:00",
+      "path": "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/OPERATOR_HANDOFF.md",
+      "sha256": "f237bc22f3573fb9c1e43c0e7510cda797b20920c07dbf0859fb9ef75432017e"
+    },
+    "E6": {
+      "bytes": 5659,
+      "mtime_unix": 1789698239.993868,
+      "mtime_utc": "2026-09-18T02:23:59.993868+00:00",
+      "path": "research_loop/workers/rohin201_c2_clones_20260917/main_ready/READY.json",
+      "sha256": "197df573816ffa95460881593fcebf6591c299be8ce7de16b7aa51309c727391"
+    },
+    "E7": {
+      "bytes": 567361,
+      "mtime_unix": 1789697857.310023,
+      "mtime_utc": "2026-09-18T02:17:37.310023+00:00",
+      "path": "research_notes/analysis/R195_FLEET_GLYPH_AUDIT_2026-09-17.json",
+      "sha256": "12f5519714c47997583307140159ab81a0f241cf471eab251bd628f6ac63b0c0"
+    },
+    "E8": {
+      "bytes": 14760,
+      "mtime_unix": 1789684278.7992945,
+      "mtime_utc": "2026-09-17T22:31:18.799294+00:00",
+      "path": "research_loop/workers/rohin183_repo_learning_20260917/OBSERVATION_4.json",
+      "sha256": "6733521ecefdf7b68d9a28a88e19101d0b23979f65e92c201657127b699c8e6a"
+    },
+    "E9": {
+      "bytes": 39238,
+      "mtime_unix": 1789609788.843205,
+      "mtime_utc": "2026-09-17T01:49:48.843205+00:00",
+      "path": "research_loop/workers/R154_REPO_READER_RECOVERY.md",
+      "sha256": "f30d2d8c6665321be86764638a864232a951981803b3bbac99c0525ab6143005"
+    },
+    "kernel_service_observation": {
+      "bytes": 4115,
+      "mtime_unix": 1789620688.3134522,
+      "mtime_utc": "2026-09-17T04:51:28.313452+00:00",
+      "path": "research_loop/workers/r158_kernel_execution_20260917/NUDGE_OBSERVATION_V2_LATEST.json",
+      "sha256": "d3cd5428646a346698ac5f57a65c6a1cb71ca5fdda7be794b25c8952588b6a14"
+    },
+    "math_d_cpu": {
+      "bytes": 18917,
+      "mtime_unix": 1789699448.915237,
+      "mtime_utc": "2026-09-18T02:44:08.915237+00:00",
+      "path": "research_loop/workers/rohin201_c2_clones_20260917/node2_operator/receipts/CPU.json",
+      "sha256": "3beec288bf305c355c6628d9cf218a8600d11cfc10960a93c1f1651413fced12"
+    },
+    "math_d_restore": {
+      "bytes": 994,
+      "mtime_unix": 1789699448.922237,
+      "mtime_utc": "2026-09-18T02:44:08.922237+00:00",
+      "path": "research_loop/workers/rohin201_c2_clones_20260917/node2_operator/receipts/RESTORE_CPU.json",
+      "sha256": "d3461eacddb2bc9b9ead7e06ce3f5ddd34e4d44c871fe13c2745a8f15ad39339"
+    },
+    "peer_install_source": {
+      "bytes": 38895,
+      "mtime_unix": 1789609789.4442127,
+      "mtime_utc": "2026-09-17T01:49:49.444213+00:00",
+      "path": "gpu/orch_r153_community_exchange.py",
+      "sha256": "5599d061984734110860fad2293db9e4203400c9d411e01f8bd3c8a58566f605"
+    },
+    "peer_render_followup": {
+      "bytes": 1183,
+      "mtime_unix": 1789699776.5544538,
+      "mtime_utc": "2026-09-18T02:49:36.554454+00:00",
+      "path": "research_loop/workers/rohin202_environment_audit_20260917/PEER_RENDER_FOLLOWUP.json",
+      "sha256": "32d2b2758c41ec47040fcfaef237e2912a834e38fcce89f130171ec732a53518"
+    },
+    "peer_service_export": {
+      "bytes": 59865,
+      "mtime_unix": 1789609980.365611,
+      "mtime_utc": "2026-09-17T01:53:00.365611+00:00",
+      "path": "research_loop/workers/r153_service_v4_20260917/ACTUAL_SERVICE_RECEIPTS_LATER.json",
+      "sha256": "cae55f2965e485982f38b7c987be4efd308627390fb5eecc154de845cfeb81e2"
+    },
+    "plain_presentation_source": {
+      "bytes": 3236,
+      "mtime_unix": 1789555060.6154163,
+      "mtime_utc": "2026-09-16T10:37:40.615416+00:00",
+      "path": "organism_v6/orch_r125_plain_context.py",
+      "sha256": "dcfd1f7f5584867e39356f336f53bb7222aeb535da87d5ecb8f1f0bb59f72feb"
+    },
+    "repo_render_scan": {
+      "bytes": 1633,
+      "mtime_unix": 1789699604.9672482,
+      "mtime_utc": "2026-09-18T02:46:44.967248+00:00",
+      "path": "research_loop/workers/rohin202_environment_audit_20260917/REPO_CHILD_RENDER.json",
+      "sha256": "551c1a62411c87a0e9f0562cc1264b704714de5fcb0dacee3bb138057aa91a5a"
+    }
+  }
+}

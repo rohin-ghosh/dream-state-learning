@@ -1,0 +1,935 @@
+{
+  "collector_sha256": "8e47e06c0b7b61e74035764d251fe921b5253a806f9c82ade4113cc1ce8b1440",
+  "inbox_writes": 0,
+  "journal_writes": 0,
+  "model_calls": 0,
+  "new_runtime_recipe_not_inferred": true,
+  "observed_unix": 1789688557.9133675,
+  "raw_preservation_or_requeue_owner": "Main",
+  "readout_contents_read": 0,
+  "rows": [
+    {
+      "actor": {
+        "alive": true,
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery0_attempt2/control/GUARD.json"
+        ],
+        "cpu_ticks": 96943,
+        "cwd": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery0_attempt2/source",
+        "pid": 1742549,
+        "start_ticks": "25551049",
+        "state": "S",
+        "uid": 2524
+      },
+      "actual_R181_loaded": {
+        "actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery0_attempt2/control/GUARD.json"
+          ],
+          "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+          "cgroup": "0::/system.slice/orch-r136-native-39da1013764749878c6ae104673627e0.service",
+          "cwd": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery0_attempt2/source",
+          "environment": [
+            "CUDA_VISIBLE_DEVICES=GPU-5b370d4d-bdcc-21d5-cf06-e9bea52e602d"
+          ],
+          "group": 1742548,
+          "parent": 1742548,
+          "pid": 1742549,
+          "start_ticks": "25551049",
+          "uid": 2524
+        },
+        "exact_inflight_continuation": false,
+        "observed_unix": 1789687414.303689,
+        "physical": 0,
+        "record_index": 4959,
+        "record_sha256": "6defda05459b419e3e12df21b1057bbc47221f749b23397a267e45f281114fb7",
+        "saved": {
+          "adapter_state_sha256": "7c2c7a970f4afecf4c1515862d130a2920d59d5ee39a20767b9ae214e47f3fd5",
+          "checkpoint_path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/checkpoints/sleep_000040/COMMIT.json",
+          "checkpoint_sha256": "d3e31081b09425fbf52eb2b58f619a6178ec6b0da87cee14d796e84125ee7a12",
+          "cycle": 40,
+          "old_head_index": 4957,
+          "old_head_sha256": "867fc36a34cb3a79a9053ccb265df45982811392b99d92ce7494eb5774db706f",
+          "optimizer_steps": 4207,
+          "physical": 0,
+          "root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1"
+        },
+        "status": "R188_SAVED_MODEL_LOADED"
+      },
+      "arm": "B",
+      "boundary_state": "OBSERVATION_ONLY_REVALIDATE_EXACT_SAVED_BOUNDARY",
+      "completed_sleeps": 42,
+      "current_journal_sha256": "56239520439142edd78ab9ffb8c35652f3ae646b21ea378ab81c7d7b2431ea97",
+      "current_recipe": {
+        "context_limit": 16384,
+        "hard_end_unix": 1789754400,
+        "new_presentations": 16,
+        "rehearsal_presentations": 0,
+        "segment_tokens": 512,
+        "segments_per_sleep": 2
+      },
+      "guard_path": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery0_attempt2/control/GUARD.json",
+      "guard_sha256": "54b40d2f46a26531ea2290b2ddd52649c1abbd56ad0dc81da50e8d5eedab45cc",
+      "head": {
+        "file_mtime_unix": 1789688551.762305,
+        "kind": "UPDATE",
+        "record_file_sha256": "d800051cd91c280bfa36093a4444dc3481825b9009738deb2d49ad4ece34ffec",
+        "record_index": 5120,
+        "record_sha256": "af64fc6e5d84248c0754c51c3acd6b6a775dd3c79893d3d5daa8d9975fe4419f"
+      },
+      "journal_id": "459e64b2a5964bdc9171abde96e02c18",
+      "label": "kernel0",
+      "latest_context_retained": {
+        "file_mtime_unix": 1789688367.4014406,
+        "record_file_sha256": "fbbb7c7f2967d9ae278ed7d0b85bc01cda5b99d6cd33f1122fc8b877684b9c1b",
+        "record_index": 5087,
+        "record_sha256": "796f9c039fba0eff7588629ffcb0d3685787d017058dd74f901f600ffae5eb8f"
+      },
+      "latest_saved_checkpoint": {
+        "metadata": {
+          "adapter_path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/checkpoints/sleep_000042/adapter",
+          "adapter_state_sha256": "b7db8885971ac22934e8da572416d29c9a4f3358f204677ac7dc7307f1915027",
+          "checkpoint_sha256": {
+            "adapter": "3bde2e82e00d53af28752544c72f63ad944fa14db6d2ecca6b6e2455a0d452d7",
+            "optimizer": "c1c2f087505804ef8fd09ca374b2a4e1e76237dff7526e8351174b05ab70e8b8",
+            "rng": "c1c2f087505804ef8fd09ca374b2a4e1e76237dff7526e8351174b05ab70e8b8"
+          },
+          "optimizer_rng_path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/checkpoints/sleep_000042/optimizer_rng.pt",
+          "optimizer_steps": 4303
+        },
+        "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/checkpoints/sleep_000042/COMMIT.json",
+        "sha256": "cf89f7218f85777d6fa23bdcec5a375f745ccc4ef9431ddea3f39685f6da49b7"
+      },
+      "latest_sleep_complete": {
+        "file_mtime_unix": 1789688140.3794248,
+        "metadata": {
+          "checkpoint_sha256": {
+            "adapter": "3bde2e82e00d53af28752544c72f63ad944fa14db6d2ecca6b6e2455a0d452d7",
+            "optimizer": "c1c2f087505804ef8fd09ca374b2a4e1e76237dff7526e8351174b05ab70e8b8",
+            "rng": "c1c2f087505804ef8fd09ca374b2a4e1e76237dff7526e8351174b05ab70e8b8"
+          },
+          "cycle": 42
+        },
+        "record_file_sha256": "920f7f0c8d1752ddab275148861d58ec56625e1c142edd2dd82f89d9ea41ec08",
+        "record_index": 5076,
+        "record_sha256": "069102293bf470fe6ef3302b2fb4d3137eb1d1ba903795b7f3b414415c067fcf"
+      },
+      "latest_sleep_recipe": {
+        "file_mtime_unix": 1789688403.940596,
+        "metadata": {
+          "anchor_lambda": 0.25,
+          "available_old_rows": 126,
+          "new_presentations": 16,
+          "new_rows": 4,
+          "policy": "R181_NEW_ONLY_V1",
+          "selected_old_rows": 0
+        },
+        "record_file_sha256": "7f18bed8f40b370e6ebe647123d80f78eb5cbb2840bcffd29c296682e3062388",
+        "record_index": 5094,
+        "record_sha256": "45aeda119ac5d3c25ed76b62b57b1cfd50d31877424343b14de44c24938b0b32"
+      },
+      "latest_update": {
+        "file_mtime_unix": 1789688551.762305,
+        "finished_unix": 1789688551.7122076,
+        "optimizer_step": 4327,
+        "record_file_sha256": "d800051cd91c280bfa36093a4444dc3481825b9009738deb2d49ad4ece34ffec",
+        "record_index": 5120,
+        "record_sha256": "af64fc6e5d84248c0754c51c3acd6b6a775dd3c79893d3d5daa8d9975fe4419f"
+      },
+      "messages": [
+        {
+          "common_baseline": false,
+          "file_mtime_unix": 1789688193.4121618,
+          "id": "0660a65407c746158d78334bf0197fd1",
+          "ingested": {
+            "file_mtime_unix": 1789688277.226131,
+            "record_file_sha256": "67c17351b38d2e47f615039e2ac435acbd1305c2589c017db9145a2b52fceb8d",
+            "record_index": 5077,
+            "record_sha256": "afd2a0cddfea46a1b597174cf29cbd930c577eeebdb97ade80f3c29a247f9e3c"
+          },
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/inbox/0660a65407c746158d78334bf0197fd1.json",
+          "rendered": {
+            "inbox_sha256": "bead66565e2343fc98a1f0e30cb49c62ce029305eff939f20c35ba8999fd2ba0",
+            "record_index": 5078,
+            "record_sha256": "4581a206298ba20393a69f86bf66ea31db9761b1f262742054a71c3e01217e6b",
+            "request_count": 127,
+            "request_started_unix": 1789688277.2530625,
+            "sleep_count": 42,
+            "speaker": "Astra",
+            "text_sha256": "7edd45a5f938e9d74d1a4052df4b2734cf9cc7dc6869cf4c005dc661cb9b572f"
+          },
+          "sha256": "bead66565e2343fc98a1f0e30cb49c62ce029305eff939f20c35ba8999fd2ba0",
+          "speaker": "Astra",
+          "status": "RENDERED",
+          "text_sha256": "7edd45a5f938e9d74d1a4052df4b2734cf9cc7dc6869cf4c005dc661cb9b572f"
+        },
+        {
+          "common_baseline": false,
+          "file_mtime_unix": 1789688419.4588037,
+          "id": "27c703b648934dfc84ea42b13b6f4c16",
+          "ingested": null,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/inbox/27c703b648934dfc84ea42b13b6f4c16.json",
+          "rendered": null,
+          "sha256": "f4df5ea04534166827fc55b8cde614355b1488b14ed0acceacf8fb8dec9d7579",
+          "speaker": "Astra",
+          "status": "QUEUED_NOT_INGESTED",
+          "text_sha256": "c641aad4b35b9d24f6460be410e9234d536906e29d4bfac02c57cb3ba525aef0"
+        },
+        {
+          "common_baseline": false,
+          "file_mtime_unix": 1789679225.5244126,
+          "id": "60e48df47d544f9cad77e6b61b13d1d9",
+          "ingested": {
+            "file_mtime_unix": 1789687770.7592757,
+            "record_file_sha256": "686d91de1c0135e8d9e8d58b189e9dfc270d1d5052ea3ed263234f99e0a58c8d",
+            "record_index": 5012,
+            "record_sha256": "52e43bc5dc9a7c8f1155533ef484d2789e67a3846d0a3c15f31af2bf7228ce38"
+          },
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/inbox/60e48df47d544f9cad77e6b61b13d1d9.json",
+          "rendered": {
+            "inbox_sha256": "f65c65b2069a91143e41b9db14a26dc292e587e53398781d54a63d3b5549f293",
+            "record_index": 5014,
+            "record_sha256": "22d51633e3b163208848cdda34bf403e5855f6e0f876a3dc613cd2dac1cb2645",
+            "request_count": 124,
+            "request_started_unix": 1789687770.8287232,
+            "sleep_count": 41,
+            "speaker": "Astra",
+            "text_sha256": "c4274adff0e59b3643c1efb000ce1b2ee8719972fec75b1178270d94a9aae17e"
+          },
+          "sha256": "f65c65b2069a91143e41b9db14a26dc292e587e53398781d54a63d3b5549f293",
+          "speaker": "Astra",
+          "status": "RENDERED",
+          "text_sha256": "c4274adff0e59b3643c1efb000ce1b2ee8719972fec75b1178270d94a9aae17e"
+        },
+        {
+          "common_baseline": false,
+          "file_mtime_unix": 1789678721.3419912,
+          "id": "612cb544b9344a23b3d9a789333e3f23",
+          "ingested": null,
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/inbox/612cb544b9344a23b3d9a789333e3f23.json",
+          "rendered": {
+            "inbox_sha256": "c5cf30d6d011ff46209ad873e49a2ba39f7a8a379b5cffdc314c2d61e39b719f",
+            "record_index": 4813,
+            "record_sha256": "dae452e2699e9d50eba1736ef3b7493ced422ec8ab693dc5b6198d9fe5fa015a",
+            "request_count": 122,
+            "request_started_unix": 1789678810.6808615,
+            "sleep_count": 40,
+            "speaker": "Astra",
+            "text_sha256": "1993f3f0f14cf009529123a58e3a5a0b5c2d04b00a233e6c9cf6b29ae7578356"
+          },
+          "sha256": "c5cf30d6d011ff46209ad873e49a2ba39f7a8a379b5cffdc314c2d61e39b719f",
+          "speaker": "Astra",
+          "status": "RENDERED",
+          "text_sha256": "1993f3f0f14cf009529123a58e3a5a0b5c2d04b00a233e6c9cf6b29ae7578356"
+        },
+        {
+          "common_baseline": true,
+          "file_mtime_unix": 1789680685.0777652,
+          "id": "7115c0fe535d4ad6a2bd6066610a7392",
+          "ingested": {
+            "file_mtime_unix": 1789687770.807894,
+            "record_file_sha256": "d570284b54fafa175351f7f1cafc50913238e340ffc545404e7265fd70067b0d",
+            "record_index": 5013,
+            "record_sha256": "4798965eaf98f9c6dceef330c9fb211e55dc7d1783f98524851f53e1756278ec"
+          },
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/inbox/7115c0fe535d4ad6a2bd6066610a7392.json",
+          "rendered": {
+            "inbox_sha256": "1f80c792255643b2646bc8237cf1f5b9895d47f07eb19bc989e124cd16914759",
+            "record_index": 5014,
+            "record_sha256": "22d51633e3b163208848cdda34bf403e5855f6e0f876a3dc613cd2dac1cb2645",
+            "request_count": 124,
+            "request_started_unix": 1789687770.8287232,
+            "sleep_count": 41,
+            "speaker": "Rohin",
+            "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+          },
+          "sha256": "1f80c792255643b2646bc8237cf1f5b9895d47f07eb19bc989e124cd16914759",
+          "speaker": "Rohin",
+          "status": "RENDERED",
+          "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+        },
+        {
+          "common_baseline": false,
+          "file_mtime_unix": 1789688358.476209,
+          "id": "8353e394dd164ef0aca44345e197e6c5",
+          "ingested": {
+            "file_mtime_unix": 1789688367.5015922,
+            "record_file_sha256": "76cf98950e5fba4b2ba230f391a9867130c56bb567ca1a03215032045a2ad36e",
+            "record_index": 5088,
+            "record_sha256": "9b5994e7aaa83bc0df0ce9bdfe5d35c15f67da7951aadcaf4c34039368b1393b"
+          },
+          "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/inbox/8353e394dd164ef0aca44345e197e6c5.json",
+          "rendered": {
+            "inbox_sha256": "f5729e865eae95fcffc7710f5088de1a2f1cfe3f451fc7115daa24cc8090e241",
+            "record_index": 5090,
+            "record_sha256": "0f8d784b9af185d5f69e7b681fffa5af673b4d1e2615454433ad44d77ab3e66d",
+            "request_count": 130,
+            "request_started_unix": 1789688367.5781128,
+            "sleep_count": 42,
+            "speaker": "Astra",
+            "text_sha256": "3153f464cd0e168a5363cdb3e49c34ecb45fdba445cc984cfaf31dff231ed064"
+          },
+          "sha256": "f5729e865eae95fcffc7710f5088de1a2f1cfe3f451fc7115daa24cc8090e241",
+          "speaker": "Astra",
+          "status": "RENDERED",
+          "text_sha256": "3153f464cd0e168a5363cdb3e49c34ecb45fdba445cc984cfaf31dff231ed064"
+        }
+      ],
+      "native_boundary_ready": false,
+      "physical": 0,
+      "plan_path": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery0_attempt2/control/PLAN.json",
+      "plan_sha256": "dbd5ee5e49caa6754c06134bc813560be8cac139adfcd73b829b51624f5dbbba",
+      "request_count": 130,
+      "response_count": 130,
+      "root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1",
+      "source_path": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery0_attempt2/source/gpu/orch_r125_continual_native.py",
+      "source_sha256": "23f0e2c2118ef293fd00ee3dc1da9e3449c3e082f7ee67ec746bea4fce247721",
+      "withdrawn_ingested": false,
+      "withdrawn_rendered": false
+    },
+    {
+      "actor": {
+        "alive": true,
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery1/control/GUARD.json"
+        ],
+        "cpu_ticks": 104611,
+        "cwd": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery1/source",
+        "pid": 1734752,
+        "start_ticks": "25543112",
+        "state": "R",
+        "uid": 2524
+      },
+      "actual_R181_loaded": {
+        "actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery1/control/GUARD.json"
+          ],
+          "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+          "cgroup": "0::/system.slice/orch-r136-native-8e49bcb830e04e2c9b8376429bcb40df.service",
+          "cwd": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery1/source",
+          "environment": [
+            "CUDA_VISIBLE_DEVICES=GPU-4b071167-a06a-773c-f947-60cb8c2f7512"
+          ],
+          "group": 1734750,
+          "parent": 1734750,
+          "pid": 1734752,
+          "start_ticks": "25543112",
+          "uid": 2524
+        },
+        "exact_inflight_continuation": null,
+        "observed_unix": 1789687334.142357,
+        "physical": 1,
+        "record_index": 5168,
+        "record_sha256": "84f680d1a860a6058580ba5f2b698e7b39d291e31407f43d484e148a2e681fea",
+        "saved": {
+          "adapter_state_sha256": "3849c76c0d226342fbc2caf965b0949bba9c308ffdd917232073d22300d147ee",
+          "checkpoint_path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/checkpoints/sleep_000042/COMMIT.json",
+          "checkpoint_sha256": "628fb7f711fd4e890d5b01a3095b5a4081e2f7161706e7972dbe61b1151d76c2",
+          "cycle": 42,
+          "old_head_index": 5167,
+          "old_head_sha256": "7bfa4487cccc96c9461a725d15cd781c30923711450bd62c5ae0d65beaec25fe",
+          "optimizer_steps": 4599,
+          "physical": 1,
+          "root": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1"
+        },
+        "status": "R188_SAVED_MODEL_LOADED"
+      },
+      "arm": "R178_B_AFTER_ORIGINAL_BASELINE",
+      "boundary_state": "OBSERVATION_ONLY_REVALIDATE_EXACT_SAVED_BOUNDARY",
+      "completed_sleeps": 44,
+      "current_journal_sha256": "56239520439142edd78ab9ffb8c35652f3ae646b21ea378ab81c7d7b2431ea97",
+      "current_recipe": {
+        "context_limit": 16384,
+        "hard_end_unix": 1789754400,
+        "new_presentations": 16,
+        "rehearsal_presentations": 0,
+        "segment_tokens": 512,
+        "segments_per_sleep": 2
+      },
+      "guard_path": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery1/control/GUARD.json",
+      "guard_sha256": "3ae8ecb440cd639e629f9c68237cd9f39922763c11db74fa08381c47c05340a0",
+      "head": {
+        "file_mtime_unix": 1789688547.8291833,
+        "kind": "UPDATE",
+        "record_file_sha256": "6d5cbde209a6fb5c52952fcdf82067b6d63328e38351a37b9196f4be2d81d0d1",
+        "record_index": 5301,
+        "record_sha256": "f0181e8e97a01f4d3007f272320c744593f8000ad2b654736cb591e96969c9f7"
+      },
+      "journal_id": "f558aee8c41a4efe820604658c8d57ea",
+      "label": "raw_unparented",
+      "latest_context_retained": {
+        "file_mtime_unix": 1789688370.8058238,
+        "record_file_sha256": "739d1348c4af2c134f4d405afec20870465ada7042f2e782bf3f9ece9bfa7c26",
+        "record_index": 5273,
+        "record_sha256": "f01fe329a1e1aad211e71a4b1daa1de5953113f9d813c5f98ad1df3fda29d5ee"
+      },
+      "latest_saved_checkpoint": {
+        "metadata": {
+          "adapter_path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/checkpoints/sleep_000044/adapter",
+          "adapter_state_sha256": "fe6d2c3a09b5a3f89ac70ff37983dd57fc2dd04a3d25436fe61703b7e3bbf7e3",
+          "checkpoint_sha256": {
+            "adapter": "f2bd8f0abe9892d68892291211c993528af1bca65ba27831c1656cb3a7a00703",
+            "optimizer": "2471215fe57cb34bbf7ff38b4b9de71fe048f15373ff2fad47b4e82bba20273f",
+            "rng": "2471215fe57cb34bbf7ff38b4b9de71fe048f15373ff2fad47b4e82bba20273f"
+          },
+          "optimizer_rng_path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/checkpoints/sleep_000044/optimizer_rng.pt",
+          "optimizer_steps": 4663
+        },
+        "path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/checkpoints/sleep_000044/COMMIT.json",
+        "sha256": "a1352b97191d21433726827674703f4fa2a2fdb1478e1a78269ec23b2bc69a66"
+      },
+      "latest_sleep_complete": {
+        "file_mtime_unix": 1789688123.17935,
+        "metadata": {
+          "checkpoint_sha256": {
+            "adapter": "f2bd8f0abe9892d68892291211c993528af1bca65ba27831c1656cb3a7a00703",
+            "optimizer": "2471215fe57cb34bbf7ff38b4b9de71fe048f15373ff2fad47b4e82bba20273f",
+            "rng": "2471215fe57cb34bbf7ff38b4b9de71fe048f15373ff2fad47b4e82bba20273f"
+          },
+          "cycle": 44
+        },
+        "record_file_sha256": "b7b933f197f9c49716c02d4baab15df46f005fe5fa1f07fd18d4a89ecf0c0839",
+        "record_index": 5263,
+        "record_sha256": "b1f6048e04b385be0e683ddd974a646c96fbcc21328370f1abc88134b1a225cd"
+      },
+      "latest_sleep_recipe": {
+        "file_mtime_unix": 1789688371.422061,
+        "metadata": {
+          "anchor_lambda": 0.25,
+          "available_old_rows": 132,
+          "new_presentations": 16,
+          "new_rows": 3,
+          "policy": "R181_NEW_ONLY_V1",
+          "selected_old_rows": 0
+        },
+        "record_file_sha256": "447e5fade4a7ab39dbdeab1eeaedf6fd792f78740a6ef1f77db81dee61be02f4",
+        "record_index": 5275,
+        "record_sha256": "26a14b7d8ac97a79420fb0df20a05c78f81ace68709ab2f07d9cbf9ea581e105"
+      },
+      "latest_update": {
+        "file_mtime_unix": 1789688547.8291833,
+        "finished_unix": 1789688547.7788303,
+        "optimizer_step": 4687,
+        "record_file_sha256": "6d5cbde209a6fb5c52952fcdf82067b6d63328e38351a37b9196f4be2d81d0d1",
+        "record_index": 5301,
+        "record_sha256": "f0181e8e97a01f4d3007f272320c744593f8000ad2b654736cb591e96969c9f7"
+      },
+      "messages": [
+        {
+          "common_baseline": false,
+          "file_mtime_unix": 1789678634.2198982,
+          "id": "11a39e52e43540f8839c312cf64e86ff",
+          "ingested": {
+            "file_mtime_unix": 1789687333.805462,
+            "record_file_sha256": "ed52135d3de8b509855ad62b995684c311d111956294f2bae06cb58b12aad091",
+            "record_index": 5169,
+            "record_sha256": "dc11a8cd3c89769251ded43455c4c871b814238f301c717f778889fe573ba9dc"
+          },
+          "path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/stream/inbox/11a39e52e43540f8839c312cf64e86ff.json",
+          "rendered": {
+            "inbox_sha256": "0fa7c82f47b6bfb7e63162e2635171206f375b7a8a2539a5fc32c78067d50d05",
+            "record_index": 5170,
+            "record_sha256": "4c5676c47d5f0eceb1c03569a6fd05c4995a3a1035c89343ce0b289214e153fd",
+            "request_count": 127,
+            "request_started_unix": 1789687333.8255188,
+            "sleep_count": 42,
+            "speaker": "Astra",
+            "text_sha256": "8478febd4932f407684790c70760e89f5ab0fb1fd43530f612d80358fc6a105b"
+          },
+          "sha256": "0fa7c82f47b6bfb7e63162e2635171206f375b7a8a2539a5fc32c78067d50d05",
+          "speaker": "Astra",
+          "status": "RENDERED",
+          "text_sha256": "8478febd4932f407684790c70760e89f5ab0fb1fd43530f612d80358fc6a105b"
+        }
+      ],
+      "native_boundary_ready": false,
+      "physical": 1,
+      "plan_path": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery1/control/PLAN.json",
+      "plan_sha256": "d3367985ba86dff886c9877f23c971860177e0e1d52835e74ccaec3a146a438d",
+      "request_count": 135,
+      "response_count": 135,
+      "root": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1",
+      "source_path": "/localhome/local-rohing/orch_r188_node4_20260917t2315z/recovery1/source/gpu/orch_r125_continual_native.py",
+      "source_sha256": "7c89e9a7514e2c0b09361eaae15890625e6c5fd1700fe475da021f623e355740",
+      "withdrawn_ingested": true,
+      "withdrawn_rendered": true
+    },
+    {
+      "actor": {
+        "alive": true,
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane3/control/GUARD.json"
+        ],
+        "cpu_ticks": 245807,
+        "cwd": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane3/source",
+        "pid": 1565205,
+        "start_ticks": "25377833",
+        "state": "S",
+        "uid": 2524
+      },
+      "actual_R181_loaded": {
+        "actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane3/control/GUARD.json"
+          ],
+          "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+          "cgroup": "0::/system.slice/orch-r136-native-319d145964264652806ac7ff92c92942.service",
+          "cwd": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane3/source",
+          "environment": [
+            "CUDA_VISIBLE_DEVICES=GPU-4d0f10af-119f-10bb-a28f-f7b7703a3b14"
+          ],
+          "group": 1565204,
+          "parent": 1565204,
+          "pid": 1565205,
+          "start_ticks": "25377833",
+          "uid": 2524
+        },
+        "observed_unix": 1789685680.9600146,
+        "physical": 3,
+        "record_index": 5022,
+        "record_sha256": "558c206d16836e980a21b0f8eb2e46ea2ae79c3522552f8ea5e5e2c52fd14cbf",
+        "saved": {
+          "adapter_state_sha256": "6692dbd54663a108089bd1e449d4fc911a32b912c6f09b29c50175e177261cb5",
+          "bundle_sha256": {
+            "adapter": "dead1b5341643d84861ed0e3b58c7b3c1328552d0a600c2fae5a8c1af4faa4c1",
+            "optimizer": "995507527e5e4d8581808f114c9eda975d09300c9d51ff4c03898936e83598cf",
+            "rng": "995507527e5e4d8581808f114c9eda975d09300c9d51ff4c03898936e83598cf"
+          },
+          "checkpoint_path": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1/checkpoints/sleep_000041/COMMIT.json",
+          "checkpoint_sha256": "391d58d2cb8775fdf8bef43be619f40de8482b98426a3ccb4e227ad734b4b8fc",
+          "cycle": 41,
+          "full_AdamW_Python_CPU_CUDA_RNG": true,
+          "optimizer_steps": 4428,
+          "record_path": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1/stream/records/00000000000000005021.json",
+          "record_sha256": "3c143d2f48b27719062f233855828ecd5669c57205c671909c4fa311e0ab43ec",
+          "state_sha256": "7a57243d4cea594ccf2de1ef7e3619a4c18bd37d9a05accbe89631b2bd5abf66"
+        },
+        "status": "EXACT_SAVED_SUCCESSOR_LOADED"
+      },
+      "arm": "D",
+      "boundary_state": "OBSERVATION_ONLY_REVALIDATE_EXACT_SAVED_BOUNDARY",
+      "completed_sleeps": 46,
+      "current_journal_sha256": "224ba4a12990c15a88443fc2eb093276b04acfd0fd9498569dfb562bf71a74ea",
+      "current_recipe": {
+        "context_limit": 16384,
+        "hard_end_unix": 1789754400,
+        "new_presentations": 16,
+        "rehearsal_presentations": 0,
+        "segment_tokens": 512,
+        "segments_per_sleep": 2
+      },
+      "guard_path": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane3/control/GUARD.json",
+      "guard_sha256": "c1933b72d874e2c5dd4969df0912c1cd34080a8862a155273acb18187a6452b6",
+      "head": {
+        "file_mtime_unix": 1789688544.4034936,
+        "kind": "SLEEP_COMPLETE",
+        "record_file_sha256": "6ff767aeec78bb617fba69ce4c5e2255135b14e09cc4d61b9fa9097c721e46a9",
+        "record_index": 5340,
+        "record_sha256": "d3aba77c772070dd6fb805bf67a93f058fe13b4ce7b72f673f9980fafea2e5a5"
+      },
+      "journal_id": "a472146f4ec447b2828baa38e3a1eed9",
+      "label": "raw_parented",
+      "latest_context_retained": {
+        "file_mtime_unix": 1789688053.1535697,
+        "record_file_sha256": "8d1bd884c29e49c759ae4695b58a2cff0dff91608e095d2c7258281f1d1d85c0",
+        "record_index": 5287,
+        "record_sha256": "c83376f4f983e4b12b2fe09aa841176739ab121527e2fe39138a39af5bf35ba6"
+      },
+      "latest_saved_checkpoint": {
+        "metadata": {
+          "adapter_path": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1/checkpoints/sleep_000046/adapter",
+          "adapter_state_sha256": "e6da5c63618693db3a7f7122aed390d27872626f3aafd2e6ef1fd7d679a48b6b",
+          "checkpoint_sha256": {
+            "adapter": "ff49bafdf918d4c3c3cb6f377063cbe8d245f1bab06e6f75fef55068149baaf5",
+            "optimizer": "7c791abec48e11ab2a1be4fa5c80f7eee1d5eaf0c33959d0f6f23e78d2e3852a",
+            "rng": "7c791abec48e11ab2a1be4fa5c80f7eee1d5eaf0c33959d0f6f23e78d2e3852a"
+          },
+          "experiment": {
+            "birth_prompt": "### Your situation\n\nYou are a language-model learner in an ongoing session. Your underlying model is Qwen2.5-7B-Instruct, checkpoint a09a35458c702b33eeacc393d103063234e8bc28. A fresh rank-8 LoRA adapter provides trainable changes while the base weights remain frozen. You have a working context and the operator-mediated workspace described below.\n\nIndividual tasks can begin and finish without resetting this history. You can continue an investigation, begin another, revisit something, communicate, or decide an activity has reached a useful stopping point. An end token ends one generation call, not this session: the runtime makes the next call from your recorded history without inventing a thought for you.\n\n### What we are exploring together\n\nWe are exploring how to take intelligence in the model into behaviours, repeat those behaviours, and learn from them in the LoRA. You have room to develop interests, questions, goals, and ways of working. Some activity may be useful immediately; some may be exploratory, with its value becoming apparent later.\n\nYou can examine your activity and decide what to do with it. There is no required thought format, sequence of stages, or amount of reflection. How you organize your activity is something you can discover and revise.\n\n### Learning and memory\n\nAfter two generated segments, the runtime invites you to distill what you want to retain in a third segment, then sleeps. Sleep trains the new eligible segments 16 times each and older eligible segments once. Your own tokens have objective weight 0.75 and ordinary capability examples 0.25. Only the adapter changes. These updates can change your responses; they guarantee neither improvement nor exact recall. The training configuration stays fixed. Proposals to change it require separate experimental copies.\n\nOnly your generated target tokens are trained; preceding context, runtime notices, tool results, and other people's words are masked. They can still influence what you subsequently generate. Writing a file does not train it or automatically insert its contents into context. Ask to read it when useful.\n\nShort runtime notices give the last segment's token use, elapsed generation time, context occupancy, and tokens since sleep. You can ask Astra for the current checkpoint and sleep count. Context holds up to 16,384 tokens, with at most 512 generated per call. Under pressure the runtime drops the oldest visible events, retaining raw history in an archive. At sleep your nonempty distillation replaces the earlier visible history with your own summary. This is lossy: the full raw archive is preserved but not all of it stays visible. Archive access is mediated by Astra; you do not have an automatic archive-search tool. Adapter, optimizer, random-generator state, and the history/summary are checkpointed; generation input is rebuilt after sleep using the updated adapter.\n\n### Working with Rohin\n\nRohin is your human collaborator and guide. He can read your generated stream and offer questions, suggestions, corrections, observations, or directions. You can ask questions, request help, explain what you are trying, or disagree with reasons. Consider tentative suggestions; follow clear instructions within operating constraints. If an important distinction is unclear, ask. Agreement for its own sake is not required.\n\nAstra and Fable may participate, one leading the conversation at a time. Messages identify their actual speaker. Their messages and real tool results arrive through an attributed console at your next generation boundary. You need not wait: respond to what arrives and pursue your activity meanwhile.\n\n### Resources and initial orientation\n\nYour workspace is /localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/workspace. Astra can create and read your notes or skills there as .md, .txt, or .py files, up to 16 KB each, 64 files and 1 MB total. Existing files are not overwritten. You can propose contents in ordinary conversation; Astra performs the operation and returns an attributed Tool receipt. No autonomous file writer or unrestricted shell is connected.\n\nYou run on one assigned GPU, physical 3 through the a40r wrapper. A separate physical 2 is assigned for operator-mediated kernel experiments. The execution sandbox is being verified: execution is not available until Astra explicitly reports that it is connected. You may reason about the task and propose candidates meanwhile; a proposal is not a measurement. There is no network, credential access, access to other jobs, or permission to change the pilot training configuration.\n\nThe project source is a pinned local snapshot at /localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/source1. Repository exploration is mediated by Astra, not unrestricted access; hidden evaluation material is unavailable. An earlier separate child fell into repeated cost-line summaries. Two other continual children are running; no useful-learning improvement has yet been established. Small empty-context capability checks run separately before and after sleep; their contents are not fed into this conversation or training.\n\n\nThe current allocation ends no later than September 18, 2026 at 11:00 AM PDT, preserving a six-hour margin before the node's conservatively recorded lease end. Astra may stop experiments earlier to preserve shared-node safety. This is an allocation bound, not a promise that more resources are available.\n\n### This branch\n\nThis branch has the raw programme. Planned parenting is Socratic, approximately every 3 child responses. A planned parent is not a delivered message: rely only on actual attributed inputs.\n",
+            "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+            "presleep_variant": "free_distillation",
+            "schema": "R133_CONTINUAL_EXPERIMENT_V1",
+            "seed": 1,
+            "seed_initialization": "before_lora",
+            "system_prompt": "You are a language-model agent with an ongoing history. Between incoming messages, continue your own inquiry without waiting for another request. You can consider what to investigate next, revisit an observation, or reflect on how your thinking is going. Use your own organization; do not pad or repeat a passage just to keep producing text. An end-of-generation marker is a software boundary, not a request to forget your history. Runtime notices and parent messages are inputs, not your own words."
+          },
+          "optimizer_rng_path": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1/checkpoints/sleep_000046/optimizer_rng.pt",
+          "optimizer_steps": 4668
+        },
+        "path": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1/checkpoints/sleep_000046/COMMIT.json",
+        "sha256": "c245ba2aec35eb37db352d0dee76005b41fcb80a1c44762474d7769448467e29"
+      },
+      "latest_sleep_complete": {
+        "file_mtime_unix": 1789688544.4034936,
+        "metadata": {
+          "checkpoint_sha256": {
+            "adapter": "ff49bafdf918d4c3c3cb6f377063cbe8d245f1bab06e6f75fef55068149baaf5",
+            "optimizer": "7c791abec48e11ab2a1be4fa5c80f7eee1d5eaf0c33959d0f6f23e78d2e3852a",
+            "rng": "7c791abec48e11ab2a1be4fa5c80f7eee1d5eaf0c33959d0f6f23e78d2e3852a"
+          },
+          "cycle": 46
+        },
+        "record_file_sha256": "6ff767aeec78bb617fba69ce4c5e2255135b14e09cc4d61b9fa9097c721e46a9",
+        "record_index": 5340,
+        "record_sha256": "d3aba77c772070dd6fb805bf67a93f058fe13b4ce7b72f673f9980fafea2e5a5"
+      },
+      "latest_sleep_recipe": {
+        "file_mtime_unix": 1789688053.7872295,
+        "metadata": {
+          "anchor_lambda": 0.25,
+          "available_old_rows": 135,
+          "new_presentations": 16,
+          "new_rows": 3,
+          "policy": "R181_NEW_ONLY_V1",
+          "selected_old_rows": 0
+        },
+        "record_file_sha256": "08205fbcc6a59f48bf9411caa92c1bd253834023b1deb7b55855dbbc6fd8ad50",
+        "record_index": 5289,
+        "record_sha256": "9da46ea8ae2c5c175c65d3e37c55f9394d9efc31926949e37daf3031b2876634"
+      },
+      "latest_update": {
+        "file_mtime_unix": 1789688484.6008952,
+        "finished_unix": 1789688484.5477812,
+        "optimizer_step": 4668,
+        "record_file_sha256": "a713c8d6865e5b56eaa3a54482e22fa2dc6e12fab16c91b2d413569bcc4ac847",
+        "record_index": 5339,
+        "record_sha256": "f4909ae04bad609e08e3e4c48f3d671e4e07f3c269349edc3ad17bd430e3f270"
+      },
+      "messages": [
+        {
+          "common_baseline": false,
+          "file_mtime_unix": 1789686256.4865863,
+          "id": "588cd143b48d427e866ec69ca23d686f",
+          "ingested": {
+            "file_mtime_unix": 1789686687.8448205,
+            "record_file_sha256": "757deb6d5b2effa306ac72c760b55052e31e2a8bb5e8ecc43f21241d88f30a7c",
+            "record_index": 5151,
+            "record_sha256": "8a5451c498d8d3c389873d6085623f8df80bec7b61207acc8708d32df7c7be37"
+          },
+          "path": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1/stream/inbox/588cd143b48d427e866ec69ca23d686f.json",
+          "rendered": {
+            "inbox_sha256": "c81b6b1361dfdba074551dde2c171ec46c5ad93c947197fc22a29304a22b4762",
+            "record_index": 5152,
+            "record_sha256": "6eb36aeb0fefb7d2487e7bac95dff3a47950b228cbcac41989deefe8561d45f4",
+            "request_count": 130,
+            "request_started_unix": 1789686687.8709145,
+            "sleep_count": 43,
+            "speaker": "Astra",
+            "text_sha256": "2df1d01852a24814eb08f99353a9d85c0f685a2ba7c27a1f1ceb496ebd8c9993"
+          },
+          "sha256": "c81b6b1361dfdba074551dde2c171ec46c5ad93c947197fc22a29304a22b4762",
+          "speaker": "Astra",
+          "status": "RENDERED",
+          "text_sha256": "2df1d01852a24814eb08f99353a9d85c0f685a2ba7c27a1f1ceb496ebd8c9993"
+        },
+        {
+          "common_baseline": true,
+          "file_mtime_unix": 1789680686.5978897,
+          "id": "aa404fdd25384869a6042209749f6784",
+          "ingested": null,
+          "path": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1/stream/inbox/aa404fdd25384869a6042209749f6784.json",
+          "rendered": {
+            "inbox_sha256": "b9b044edeed3f5a25b51f9a288e47753eff2bddbce6d85b87af02f6bfdeada1f",
+            "record_index": 5025,
+            "record_sha256": "d6904c87415760549347f070c8c10fe2d82944eb6e64d18104caf1245491ad22",
+            "request_count": 124,
+            "request_started_unix": 1789685680.8190825,
+            "sleep_count": 41,
+            "speaker": "Rohin",
+            "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+          },
+          "sha256": "b9b044edeed3f5a25b51f9a288e47753eff2bddbce6d85b87af02f6bfdeada1f",
+          "speaker": "Rohin",
+          "status": "RENDERED",
+          "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+        }
+      ],
+      "native_boundary_ready": false,
+      "physical": 3,
+      "plan_path": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane3/control/PLAN.json",
+      "plan_sha256": "5f5b2c7f9f83160157b20d436416bfe71d1776f1b3be517ed2327e95495fc6bf",
+      "request_count": 138,
+      "response_count": 138,
+      "root": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1",
+      "source_path": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane3/source/gpu/orch_r125_continual_native.py",
+      "source_sha256": "01563b663b04fb974f3a593db51465cf0142542d0947a4138348d30495cb7fdc",
+      "withdrawn_ingested": false,
+      "withdrawn_rendered": false
+    },
+    {
+      "actor": {
+        "alive": true,
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane4/control/GUARD.json"
+        ],
+        "cpu_ticks": 185480,
+        "cwd": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane4/source",
+        "pid": 1643508,
+        "start_ticks": "25450832",
+        "state": "S",
+        "uid": 2524
+      },
+      "actual_R181_loaded": {
+        "actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane4/control/GUARD.json"
+          ],
+          "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+          "cgroup": "0::/system.slice/orch-r136-native-cba696de4f794791b604d22a8394bbc1.service",
+          "cwd": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane4/source",
+          "environment": [
+            "CUDA_VISIBLE_DEVICES=GPU-f83fb491-34ce-4176-5852-c94652151a9f"
+          ],
+          "group": 1643506,
+          "parent": 1643506,
+          "pid": 1643508,
+          "start_ticks": "25450832",
+          "uid": 2524
+        },
+        "observed_unix": 1789686411.8529348,
+        "physical": 4,
+        "record_index": 4825,
+        "record_sha256": "fa2db43cfa4bdd3284b7ef21a1403528d1159d94bd5da9ef083c31c54a2c8a72",
+        "saved": {
+          "adapter_state_sha256": "295cd8764eb693391741e6edfc5c5120481ce24c1c304ebd3b1d260e526fbb5c",
+          "bundle_sha256": {
+            "adapter": "a7f1d1c9788b082ca392248d8bb1cf2e26c1de4d9c54e67ebf8f251ff5a6dc57",
+            "optimizer": "334c714a4eb33257be668ec563d8d533e6794280d9a41287d7dd7420a2e6a907",
+            "rng": "334c714a4eb33257be668ec563d8d533e6794280d9a41287d7dd7420a2e6a907"
+          },
+          "checkpoint_path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/checkpoints/sleep_000040/COMMIT.json",
+          "checkpoint_sha256": "a1ddcbc6b1293cfa3f3c77db0d6bf7efba038eee7c8e9f0c8594edb4dba09c92",
+          "cycle": 40,
+          "full_AdamW_Python_CPU_CUDA_RNG": true,
+          "optimizer_steps": 4223,
+          "record_path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/stream/records/00000000000000004824.json",
+          "record_sha256": "14dad4015202d21c2dd56cf0697f776e6f44961c4f9b1547d9c28ebc8e2a7ac4",
+          "state_sha256": "3d35da882b898c96500f214c1fedfa1ea9d7dfdf35d5865e5707ae2992c9816f"
+        },
+        "status": "EXACT_SAVED_SUCCESSOR_LOADED"
+      },
+      "arm": "A",
+      "boundary_state": "OBSERVATION_ONLY_REVALIDATE_EXACT_SAVED_BOUNDARY",
+      "completed_sleeps": 43,
+      "current_journal_sha256": "56239520439142edd78ab9ffb8c35652f3ae646b21ea378ab81c7d7b2431ea97",
+      "current_recipe": {
+        "context_limit": 16384,
+        "hard_end_unix": 1789754400,
+        "new_presentations": 16,
+        "rehearsal_presentations": 0,
+        "segment_tokens": 512,
+        "segments_per_sleep": 2
+      },
+      "guard_path": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane4/control/GUARD.json",
+      "guard_sha256": "b00ae2a374f67ac37349503ff96397cd87aa0899ade79c0eae1b234c49c28f05",
+      "head": {
+        "file_mtime_unix": 1789688549.8346229,
+        "kind": "UPDATE",
+        "record_file_sha256": "c78b1723469a4e9ba73db475c86fc93f49af0df95e97fb937fa4dbb8a4b8cce7",
+        "record_index": 5053,
+        "record_sha256": "45931c186919f4c76f3b3f9699de200980297060d1418d0cc826b731622395dc"
+      },
+      "journal_id": "7f3d9f7453e549479260c86cb0d237e8",
+      "label": "kernel_parented",
+      "latest_context_retained": {
+        "file_mtime_unix": 1789688348.0923886,
+        "record_file_sha256": "4940aaa71ca627b1dcd0ee44c1828210657d0a81e2d6bbaf75d08396f5ee9112",
+        "record_index": 5027,
+        "record_sha256": "7cadc0d5edbd1c499a4d7111397c9b13c2c560c7f42d8eb3b08052134955ea49"
+      },
+      "latest_saved_checkpoint": {
+        "metadata": {
+          "adapter_path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/checkpoints/sleep_000043/adapter",
+          "adapter_state_sha256": "2c84669f14785d63ad270c11fd3aebb76075a3b6295fb14033ba79f8a5efe1de",
+          "checkpoint_sha256": {
+            "adapter": "b79c4d9a25da8e48a481f4279dace9eeb6d9f8cae2283bcd387081d6e0697b4f",
+            "optimizer": "bad46904a8890e5a9c8348aeeefc7724b4cb406aca9f51bf14d971b231b32a80",
+            "rng": "bad46904a8890e5a9c8348aeeefc7724b4cb406aca9f51bf14d971b231b32a80"
+          },
+          "optimizer_rng_path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/checkpoints/sleep_000043/optimizer_rng.pt",
+          "optimizer_steps": 4367
+        },
+        "path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/checkpoints/sleep_000043/COMMIT.json",
+        "sha256": "fc320e41f1eeee8b4604d42dda60f52d04184ef4a6b8b0e5c8df00b12f667502"
+      },
+      "latest_sleep_complete": {
+        "file_mtime_unix": 1789688092.775347,
+        "metadata": {
+          "checkpoint_sha256": {
+            "adapter": "b79c4d9a25da8e48a481f4279dace9eeb6d9f8cae2283bcd387081d6e0697b4f",
+            "optimizer": "bad46904a8890e5a9c8348aeeefc7724b4cb406aca9f51bf14d971b231b32a80",
+            "rng": "bad46904a8890e5a9c8348aeeefc7724b4cb406aca9f51bf14d971b231b32a80"
+          },
+          "cycle": 43
+        },
+        "record_file_sha256": "799aa256df23e6559b2a2002ad79d3fe1ba8653eb8b3bd57a1ff7d57c0b82a7e",
+        "record_index": 5017,
+        "record_sha256": "9e2e034eeed5f04317162ec6ec181fcedaca08be1eed80a70fc112f77e2ffc10"
+      },
+      "latest_sleep_recipe": {
+        "file_mtime_unix": 1789688348.7503924,
+        "metadata": {
+          "anchor_lambda": 0.25,
+          "available_old_rows": 129,
+          "new_presentations": 16,
+          "new_rows": 3,
+          "policy": "R181_NEW_ONLY_V1",
+          "selected_old_rows": 0
+        },
+        "record_file_sha256": "a60e24d9092bee008cdcca61bf689d0b4a503b3c7c95b6ab2710e507b43a5e58",
+        "record_index": 5029,
+        "record_sha256": "e4333114c5ab180df5f0c7f31073f423ff044ae0891ea4f09409e73e75a07cf7"
+      },
+      "latest_update": {
+        "file_mtime_unix": 1789688549.8346229,
+        "finished_unix": 1789688549.7867067,
+        "optimizer_step": 4389,
+        "record_file_sha256": "c78b1723469a4e9ba73db475c86fc93f49af0df95e97fb937fa4dbb8a4b8cce7",
+        "record_index": 5053,
+        "record_sha256": "45931c186919f4c76f3b3f9699de200980297060d1418d0cc826b731622395dc"
+      },
+      "messages": [
+        {
+          "common_baseline": false,
+          "file_mtime_unix": 1789676652.5166078,
+          "id": "2219001390244860ad944082f8c0e367",
+          "ingested": {
+            "file_mtime_unix": 1789686411.8449693,
+            "record_file_sha256": "676e7ef7b9a90877d9ed3bfb092f2d09f044955a8092eb5be641f673453ca4a8",
+            "record_index": 4826,
+            "record_sha256": "64ff880c1dfa9de076185efa28f50e9f6bbf531bff356f776e7979e32f772459"
+          },
+          "path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/stream/inbox/2219001390244860ad944082f8c0e367.json",
+          "rendered": {
+            "inbox_sha256": "3141cb3dcf8045fe1e3ae5cf87975e7459365cb8b1d023c262b5359ec1dcef43",
+            "record_index": 4828,
+            "record_sha256": "d123ca4a1ee9bb1d65999087fc8cfdac18a45068e61a4f99d15635df198c0af3",
+            "request_count": 121,
+            "request_started_unix": 1789686411.9122574,
+            "sleep_count": 40,
+            "speaker": "Astra",
+            "text_sha256": "21d43b5c0a28b10516065637eeb27f3b7046f48d5494c3f1ead6e9c0e9ed7abf"
+          },
+          "sha256": "3141cb3dcf8045fe1e3ae5cf87975e7459365cb8b1d023c262b5359ec1dcef43",
+          "speaker": "Astra",
+          "status": "RENDERED",
+          "text_sha256": "21d43b5c0a28b10516065637eeb27f3b7046f48d5494c3f1ead6e9c0e9ed7abf"
+        },
+        {
+          "common_baseline": false,
+          "file_mtime_unix": 1789686470.8543236,
+          "id": "c5c0e71946b3442d9c98fb8091182b14",
+          "ingested": {
+            "file_mtime_unix": 1789686475.2671723,
+            "record_file_sha256": "8d5a652eb931469bb1609723e3ff9d0933a1cea863dccf12c653918e2548e3a6",
+            "record_index": 4834,
+            "record_sha256": "a92acc6f7d9486cb1bb1bdc9a103f647523ebc562bfae1bd035218f3d78d08ae"
+          },
+          "path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/stream/inbox/c5c0e71946b3442d9c98fb8091182b14.json",
+          "rendered": {
+            "inbox_sha256": "6e5a6e98e9457c1e3cad94410ae5903383208f04e5dd2ca769cdd8aa8ad0a319",
+            "record_index": 4835,
+            "record_sha256": "2a86bd5dabd1c9d19764bbfbcf2049d4ba98ca604ef985acfcea92ffe712d1ab",
+            "request_count": 123,
+            "request_started_unix": 1789686475.291602,
+            "sleep_count": 40,
+            "speaker": "Astra",
+            "text_sha256": "c150668586af3a579378306441fec15387ab96f0863acca1733fb8d78dff5ab5"
+          },
+          "sha256": "6e5a6e98e9457c1e3cad94410ae5903383208f04e5dd2ca769cdd8aa8ad0a319",
+          "speaker": "Astra",
+          "status": "RENDERED",
+          "text_sha256": "c150668586af3a579378306441fec15387ab96f0863acca1733fb8d78dff5ab5"
+        },
+        {
+          "common_baseline": true,
+          "file_mtime_unix": 1789680685.8182445,
+          "id": "fc5fa4f520b6474a919b4aba5ba85de3",
+          "ingested": {
+            "file_mtime_unix": 1789686411.8895586,
+            "record_file_sha256": "d0179e0ccec9bf58e9a1f6ef99d37d02c73a223977d8f0518be901f89dd0630c",
+            "record_index": 4827,
+            "record_sha256": "2c536284401da7642b643ecb97d5e8fd0646cc1efa8571a78f9be8ae688b4d46"
+          },
+          "path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/stream/inbox/fc5fa4f520b6474a919b4aba5ba85de3.json",
+          "rendered": {
+            "inbox_sha256": "99a02b46d10b770ea3e69c89189891425bf95ad14d4a0f77da6064be42c2addd",
+            "record_index": 4828,
+            "record_sha256": "d123ca4a1ee9bb1d65999087fc8cfdac18a45068e61a4f99d15635df198c0af3",
+            "request_count": 121,
+            "request_started_unix": 1789686411.9122574,
+            "sleep_count": 40,
+            "speaker": "Rohin",
+            "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+          },
+          "sha256": "99a02b46d10b770ea3e69c89189891425bf95ad14d4a0f77da6064be42c2addd",
+          "speaker": "Rohin",
+          "status": "RENDERED",
+          "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+        }
+      ],
+      "native_boundary_ready": false,
+      "physical": 4,
+      "plan_path": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane4/control/PLAN.json",
+      "plan_sha256": "bca0d2c151ab3324c0f10f2c263f5fed0148c4ab356175408b089255c3bbab70",
+      "request_count": 132,
+      "response_count": 132,
+      "root": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1",
+      "source_path": "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/lane4/source/gpu/orch_r125_continual_native.py",
+      "source_sha256": "7c89e9a7514e2c0b09361eaae15890625e6c5fd1700fe475da021f623e355740",
+      "withdrawn_ingested": false,
+      "withdrawn_rendered": false
+    }
+  ],
+  "schema": "NODE4_R188_READ_ONLY_ACTUAL_STATUS_V1",
+  "signals_sent": 0
+}

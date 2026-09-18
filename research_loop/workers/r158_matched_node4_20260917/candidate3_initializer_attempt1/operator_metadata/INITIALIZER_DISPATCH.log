@@ -1,0 +1,18 @@
+SSH_TEARDOWN_OBSERVED 2026-09-17T04:49:10Z
+SUPERVISE_EXEC 2026-09-17T04:49:15Z
+{"error": "native_failed_preserve_no_retry", "error_type": "ValueError", "finished_unix": 1789620621.031677, "no_retry": true, "stage": "EXIT_PROOF", "status": "FAILED"}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt3/source/gpu/orch_r158_matched_node4.py", line 463, in <module>
+    main()
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt3/source/gpu/orch_r158_matched_node4.py", line 459, in main
+    execute(args.action, args.config, args.receipt_dir, args.main_go, args.main_go_sha256)
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt3/source/gpu/orch_r158_matched_node4.py", line 432, in execute
+    return compiled.supervise(config_path, receipt_dir=receipt_dir,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt3/source/gpu/orch_r151_matched_containment.py", line 448, in supervise
+    require(status == 0 and (attempt / 'NATIVE_EXIT.json').exists()
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt3/source/gpu/orch_r151_matched_containment.py", line 58, in require
+    raise ValueError(reason)
+ValueError: native_failed_preserve_no_retry

@@ -1,0 +1,22 @@
+{
+  "schema": "R166_ACTIVATION5_MAIN_CONDITIONAL_EVENT_AUTHORITY_V1",
+  "issuer": "Main",
+  "decision": "CONDITIONAL_EVENT_GO",
+  "verbatim": "MAIN CONDITIONAL EVENT GO for activation5 C1/C4: READY C1 11c3c6cd6be1b0cd008f2e2c445e871541be74d2976c25659ba452516abbe604, C4 87e5ca710f611281e5f84ce359ad4a93180155bfc05bdd7f60583cb2b4f2c2fb. Only after existing boundedpassive observer records ACTUAL saved/readout boundary with exact original owner unchanged, before its stateddeadline1789638142.7106981: persist perchild newschemaR166_SAVED_BOUNDARY_MAIN_GO_V1 issuerMain decisionGO required_binding copiedexactly from that READY; not_before actualdispatch, expiry+1800 cappedwall, run execute ONCE. No activepause while waiting/no helperruntime change/no3rd attempt on uncertainty; if noevent deadline expires, preserve originalsandreport. This is explicit now-issued event-triggered operational authority, not retrospectiveratification. Keep original600s activewait/pause; actualCPU/admission gates remain. Persist this condition withexecutionreceipts beforestartingeventdispatcher.",
+  "ready_sha256": {
+    "C1": "11c3c6cd6be1b0cd008f2e2c445e871541be74d2976c25659ba452516abbe604",
+    "C4": "87e5ca710f611281e5f84ce359ad4a93180155bfc05bdd7f60583cb2b4f2c2fb"
+  },
+  "event_deadline_unix": 1789638142.7106981,
+  "event_max_age_seconds": 5,
+  "observer_sha256": "248242a1d5ba70486449b2e23d526810149b36597c8e7fbc91c16aa9fe468d48",
+  "event_status": "WINDOW_OPEN_REQUEST_MAIN_GO_NO_AUTOMATIC_ACTION",
+  "max_dispatches_per_life": 1,
+  "max_wait_seconds": 600,
+  "max_pause_seconds": 600,
+  "go_valid_seconds": 1800,
+  "hard_end_unix": 1789776000,
+  "no_uncertain_retry": true,
+  "no_signals_while_waiting": true,
+  "excluded": ["C2", "C3", "C5", "parents", "targeted_replay"]
+}

@@ -1,0 +1,106 @@
+{
+  "children": [
+    {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/readmission2/control/GUARD.json"
+      ],
+      "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/source",
+      "exact_pid_start_live": true,
+      "guard_path": "/localhome/local-rohing/orch_r144_target_rollout_a40r_suffix_20260916t1643z/lane0/readmission2/control/GUARD.json",
+      "guard_sha256": "e47e13822653cc01edc81ae203f5594654d7a6861577081e4b63095fd22db221",
+      "label": "kernel0",
+      "physical": 0,
+      "pid": 2709461,
+      "process_state": "R",
+      "root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1",
+      "start_ticks": "14646722",
+      "uid": 2524
+    },
+    {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/control/GUARD.json"
+      ],
+      "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/source",
+      "exact_pid_start_live": true,
+      "guard_path": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/control/GUARD.json",
+      "guard_sha256": "934ea06e2b4e07533eb0326f21c01d1313884840a1107964b133c5ae36173874",
+      "label": "raw_unparented",
+      "physical": 1,
+      "pid": 294158,
+      "process_state": "R",
+      "root": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1",
+      "start_ticks": "24386173",
+      "uid": 2524
+    },
+    {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r179_node4_recovery_20260917t2000z/lane3/control/GUARD.json"
+      ],
+      "cwd": "/localhome/local-rohing/orch_r179_node4_recovery_20260917t2000z/lane3/source",
+      "exact_pid_start_live": true,
+      "guard_path": "/localhome/local-rohing/orch_r179_node4_recovery_20260917t2000z/lane3/control/GUARD.json",
+      "guard_sha256": "60cc1cf84d281f47cab45ab66011427ef568000fa1b61e94577f160de82a1a6a",
+      "label": "raw_parented",
+      "physical": 3,
+      "pid": 259097,
+      "process_state": "R",
+      "root": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1",
+      "start_ticks": "24359775",
+      "uid": 2524
+    },
+    {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/control/GUARD.json"
+      ],
+      "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/source",
+      "exact_pid_start_live": true,
+      "guard_path": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/control/GUARD.json",
+      "guard_sha256": "551c8608b3d8028161f7025b853ff19f379f5a3b2f6e1742ce9527c42d9cb082",
+      "label": "kernel_parented",
+      "physical": 4,
+      "pid": 310254,
+      "process_state": "R",
+      "root": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1",
+      "start_ticks": "24398138",
+      "uid": 2524
+    }
+  ],
+  "historical_kernel_supervisor_and_workers_exist": {
+    "4042560": false,
+    "4048159": false,
+    "4048160": false
+  },
+  "journal_reads": 0,
+  "journal_writes": 0,
+  "kernel_process_scan_scope": "Known R132/R141/R148/R155/R158 executor and service argv paths; no claim about arbitrary unrecognized processes.",
+  "matching_kernel_service_processes": [],
+  "model_calls": 0,
+  "observed_unix": 1789676851.6424327,
+  "schema": "R175_NODE4_CURRENT_NATIVE_AND_KERNEL_SERVICE_CENSUS_V1",
+  "sealed_output_reads": 0,
+  "signals_sent": 0
+}

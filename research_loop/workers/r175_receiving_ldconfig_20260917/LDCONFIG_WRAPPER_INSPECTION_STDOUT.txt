@@ -1,0 +1,15 @@
+{
+  "binary_executed": false,
+  "remote_writes": false,
+  "script_path": "/usr/sbin/ldconfig",
+  "script_sha256": "bfd5df90c7f070feab584435f106f254ffffaa268a04de5b5c3bd61d59c092f3",
+  "script_text": "#!/bin/sh\n\nif  test $# = 0\t\t\t\t\t\t\t\\\n    && test x\"$LDCONFIG_NOTRIGGER\" = x\t\t\t\t\\\n && test x\"$DPKG_MAINTSCRIPT_PACKAGE\" != x\t\t\t\\\n && dpkg-trigger --check-supported 2>/dev/null\nthen\n\tif dpkg-trigger --no-await ldconfig; then\n\t\tif test x\"$LDCONFIG_TRIGGER_DEBUG\" != x; then\n\t\t\techo \"ldconfig: wrapper deferring update (trigger activated)\"\n\t\tfi\n\t\texit 0\n\tfi\t\nfi\n\nexec /sbin/ldconfig.real \"$@\"\n",
+  "target": {
+    "bytes": 1051280,
+    "elf": true,
+    "mode": "0o755",
+    "path": "/usr/sbin/ldconfig.real",
+    "sha256": "aa6de6d24c9223de013f6294c1db270c0c5247741a35127a0e058bf386725666",
+    "uid": 0
+  }
+}

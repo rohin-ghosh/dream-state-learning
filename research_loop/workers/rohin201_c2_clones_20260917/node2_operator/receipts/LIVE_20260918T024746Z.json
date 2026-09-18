@@ -1,0 +1,130 @@
+{
+  "observed_utc": "2026-09-18T02:47:46.826055+00:00",
+  "actors": {
+    "cpu_bridge2": {
+      "pid": 2127856,
+      "state": "S",
+      "start_ticks": "92798435",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "parent": {
+      "pid": 2128727,
+      "state": "R",
+      "start_ticks": "92801141",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "supervisor": {
+      "pid": 2128728,
+      "state": "S",
+      "start_ticks": "92801141",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "native": {
+      "pid": 2128807,
+      "state": "R",
+      "start_ticks": "92801327",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 2128806
+    }
+  },
+  "receipts": {
+    "LAUNCH.json": {
+      "admission_sha256": "8dae2e25c18c7db8f89cef71210a2bc088331e0eda5e65a11122aafac44c518c",
+      "admission_verified_unix": 1789699574.1295693,
+      "command_sha256": "a805633e21653234ece336f64af9424422568d1ea8b2540af12ce6621e5fa2a4",
+      "gpu_uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4",
+      "guard_sha256": "e0943940ddce3014bd1fb80e6bb42f2cb46e4459b5f28b2362edcb0476efbff8",
+      "hard_end_unix": 1789776000,
+      "no_retry": true,
+      "parent_start_ticks": "92801326",
+      "pid": 2128806,
+      "plan_sha256": "5b45d461c8e0c1e75a12a1e0b0a9c1437be82c8762a22b1a12cf7ecde8ae6df3",
+      "started_unix": 1789699574.130642
+    },
+    "PRE_SERVICE_ADMISSION.json": {
+      "verified_unix": 1789699573.8616252,
+      "clear": true,
+      "blocking_reasons": []
+    },
+    "CONFINEMENT_CHILD.json": {
+      "observed_unix": 1789699574.1101568,
+      "pid": 2128755,
+      "gpu_uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4",
+      "target_minor": 1,
+      "checks": {
+        "allowed_open_close": [
+          "/dev/nvidia1",
+          "/dev/nvidiactl",
+          "/dev/nvidia-uvm"
+        ],
+        "denied_foreign_minors": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "index": 5847,
+      "kind": "LOADED",
+      "sha256": "ce8a5c6291c6427bb02862d367b8c841f845d05a92a71c8a0467d635116c3704",
+      "mtime_utc": "2026-09-18T02:47:30.434921+00:00",
+      "pid": 2128807,
+      "optimizer_steps": 4908,
+      "adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+      "loaded_unix": 1789699650.4031322,
+      "resume": true
+    },
+    {
+      "index": 5848,
+      "kind": "INBOX",
+      "sha256": "86bc609588c34ea94948ca072f97feb7a9d31203579bda8e4569c81b0fe6cf52",
+      "mtime_utc": "2026-09-18T02:47:30.506867+00:00",
+      "speaker": "Rohin",
+      "message_id": "r202_000_rohin_part_one",
+      "text_sha256": "48921afaf6c1a7dec7fbe7cbb79c3be8c52bd9612cbcdad3ff6da64fc7469e30"
+    },
+    {
+      "index": 5849,
+      "kind": "INBOX",
+      "sha256": "8920160c5fae591d253a357a95fb1afda31390a3440e25692b25ca7d792a4c20",
+      "mtime_utc": "2026-09-18T02:47:30.539733+00:00",
+      "speaker": "Astra",
+      "message_id": "r202_001_astra_math_d_introduction",
+      "text_sha256": "e49638647a0b55e62f328ef016f40219693eec6a9ab4e2596e3e4e77be8142d0"
+    },
+    {
+      "index": 5850,
+      "kind": "REQUEST",
+      "sha256": "a6a7b2c7149a54f743086980afd42e3193937a7323fdd427eaa6b43ef380551c",
+      "mtime_utc": "2026-09-18T02:47:31.175989+00:00",
+      "segment": 153,
+      "started_unix": 1789699650.6013174
+    }
+  ],
+  "nvml_processes": [
+    "1849630, GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, 41118 MiB",
+    "2128807, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4, 20228 MiB",
+    "1815204, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 402 MiB",
+    "2129978, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 15150 MiB",
+    "1849923, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 38836 MiB",
+    "1849180, GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed, 38758 MiB"
+  ],
+  "read_only": true
+}

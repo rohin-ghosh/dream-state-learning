@@ -1,0 +1,1142 @@
+{
+  "observed_unix": 1789703244.337425,
+  "slots": [
+    {
+      "physical": 0,
+      "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical0",
+      "dispatch": {
+        "bridge_pid": 3531572,
+        "physical": 0,
+        "started_unix": 1789702343.5914426,
+        "supervisor_pid": 3531801,
+        "withdrawal_pid": 3531802
+      },
+      "withdrawn_dispatch": null,
+      "reload_dispatch": null,
+      "loaded": [
+        {
+          "index": 4,
+          "record_sha256": "d50b6d13922e58d0ed5abcd4446172b34f5e1f320b7faa779eb6505f9e5b2d7a",
+          "mtime": 1789702374.9571447,
+          "pid": 3532101,
+          "loaded_unix": 1789702374.9552598,
+          "optimizer_steps": 4908,
+          "resume": true,
+          "alive": true,
+          "start_ticks": "27051602",
+          "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical0/source"
+        }
+      ],
+      "completed": [
+        {
+          "index": 86,
+          "record_sha256": "7cbc852f851d081d93143ea3693564f3b32db78c7938981fd523f5256eafee0d",
+          "mtime": 1789702762.4710965,
+          "cycle": 52,
+          "status": "COMPLETE",
+          "optimizer_steps": 48,
+          "total_optimizer_steps": 4956
+        },
+        {
+          "index": 133,
+          "record_sha256": "a311df4351df5a57037d65864c21145818968f73cbc930fbe344ccdaba158d62",
+          "mtime": 1789703128.2700639,
+          "cycle": 53,
+          "status": "COMPLETE",
+          "optimizer_steps": 16,
+          "total_optimizer_steps": 4972
+        }
+      ],
+      "requests": [
+        {
+          "index": 96,
+          "record_sha256": "0fe23995da61a12da192652e741b65085040a2039d104d437655f35c325e8f7f",
+          "mtime": 1789702913.3804405,
+          "segment": 157,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 8492
+          }
+        },
+        {
+          "index": 106,
+          "record_sha256": "71258ba8eda37981256b5ccec84a2a5d473b7c17ada2c2d4106ed94f604a52cd",
+          "mtime": 1789702934.6252608,
+          "segment": 158,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 9703
+          }
+        }
+      ],
+      "terminal": [],
+      "compaction": [
+        {
+          "index": 8,
+          "record_sha256": "ab38b303174a9ca1746dab8d271c386e887900c81aab119c3e826f8a0c785ee3",
+          "mtime": 1789702376.3850436,
+          "kind": "COMPACTION",
+          "document_keys": [
+            "after_tokens",
+            "before_tokens",
+            "carry_source_kind",
+            "child_notice_event_id",
+            "kind",
+            "new_child_distillation",
+            "protected_from",
+            "raw_history_preserved",
+            "source_event_id",
+            "source_sha256",
+            "state",
+            "threshold_tokens",
+            "through_event_count",
+            "working_state_preserved"
+          ]
+        }
+      ],
+      "latest": [
+        {
+          "index": 132,
+          "kind": "UPDATE",
+          "mtime": 1789703068.807147
+        },
+        {
+          "index": 133,
+          "kind": "SLEEP_COMPLETE",
+          "mtime": 1789703128.2700639
+        },
+        {
+          "index": 134,
+          "kind": "R184_LEARN_COMPLETE",
+          "mtime": 1789703128.3441362
+        }
+      ],
+      "errors": [],
+      "retired": {
+        "cycle": 64,
+        "status": "EXACT_COMPLETE_PRESERVED_RETIRED",
+        "retired_unix": 1789702342.2700393
+      },
+      "retire_errors": [],
+      "plan_options": {
+        "context_limit": 16384,
+        "max_sleeps": 54,
+        "think_act_learn": {
+          "code_policy": "R194_FIRST_CODE_BLOCK_NFKC_V1",
+          "continuity_policy": "R193_CONTINUITY_V1",
+          "correction_ledger": "R197_CORRECTION_LEDGER_V1",
+          "cpu_gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0238z/gate",
+          "cpu_gate_sha256": "fb30bc739ef64c08ba34ed04884a8f4f5ee181d46fa3ac6efcc2e7fa774e48e0",
+          "effort_policy": "R201_OUTCOME_EFFORT_V1",
+          "environment_facts": "Actual isolated Python3.12.3 has SymPy1.14.0 and mpmath1.3.0, plus the Python standard library. No Torch, GPU execution, network, home access or external repository route is provided by this Python tool. Only returned tool receipts establish execution, not a proposed computation. Verify an algorithm with actual confined Python correctness checks. No GPU kernel execution is connected.",
+          "judgment_policy": "R198_JUDGMENT_FIRST_V1",
+          "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+          "outcome_policy": "R189_OUTCOME_ALLOCATION_V1",
+          "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+          "reflection_policy": "explicit",
+          "schema": "R184_THINK_ACT_LEARN_V1",
+          "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+          "think_continuation_policy": "R204_EXPLICIT_THINK_CONTINUATION_V1",
+          "think_segments": 3,
+          "trial_id": "R203_NODE4_0_KERNEL_VERIFY_A"
+        }
+      }
+    },
+    {
+      "physical": 1,
+      "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical1",
+      "dispatch": {
+        "bridge_pid": 3496307,
+        "fresh_unchanged_admission_required": true,
+        "physical": 1,
+        "previous_pre_native_attempt": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical1/pre_native_admission_1789702428717114242",
+        "started_unix": 1789702428.7193763,
+        "supervisor_pid": 3543780,
+        "withdrawal_pid": 3496550
+      },
+      "withdrawn_dispatch": null,
+      "reload_dispatch": null,
+      "loaded": [
+        {
+          "index": 4,
+          "record_sha256": "38cb9c78f94729d76c28b66006794e58aad66894d925b329f1b93c482b7c4390",
+          "mtime": 1789702460.8311923,
+          "pid": 3544079,
+          "loaded_unix": 1789702460.8293452,
+          "optimizer_steps": 4908,
+          "resume": true,
+          "alive": true,
+          "start_ticks": "27060119",
+          "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical1/source"
+        }
+      ],
+      "completed": [
+        {
+          "index": 53,
+          "record_sha256": "9bda4f012f37a49e550b09d52af010189a0c3e50c73141d1fda3c5b5989f73f2",
+          "mtime": 1789702692.8301146,
+          "cycle": 52,
+          "status": "COMPLETE",
+          "optimizer_steps": 16,
+          "total_optimizer_steps": 4924
+        }
+      ],
+      "requests": [
+        {
+          "index": 63,
+          "record_sha256": "b234dec1c34a9626bc21b5c0e8a96c316e1b4c028c98544537923d18fc14179a",
+          "mtime": 1789702847.3464305,
+          "segment": 157,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 9320
+          }
+        },
+        {
+          "index": 72,
+          "record_sha256": "e6e7153437be76799b1098a2ed0793b0e5bf56a33df1657802947eb63819a5ad",
+          "mtime": 1789702885.4906921,
+          "segment": 158,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 10749
+          }
+        }
+      ],
+      "terminal": [],
+      "compaction": [
+        {
+          "index": 8,
+          "record_sha256": "a734aabeb1d7b892830cba71c993bbe11ef87ad1312c393a300e705cf7711ea1",
+          "mtime": 1789702462.255795,
+          "kind": "COMPACTION",
+          "document_keys": [
+            "after_tokens",
+            "before_tokens",
+            "carry_source_kind",
+            "child_notice_event_id",
+            "kind",
+            "new_child_distillation",
+            "protected_from",
+            "raw_history_preserved",
+            "source_event_id",
+            "source_sha256",
+            "state",
+            "threshold_tokens",
+            "through_event_count",
+            "working_state_preserved"
+          ]
+        }
+      ],
+      "latest": [
+        {
+          "index": 112,
+          "kind": "UPDATE",
+          "mtime": 1789703170.9263885
+        },
+        {
+          "index": 113,
+          "kind": "UPDATE",
+          "mtime": 1789703178.6691918
+        },
+        {
+          "index": 114,
+          "kind": "UPDATE",
+          "mtime": 1789703187.501296
+        }
+      ],
+      "errors": [],
+      "retired": {
+        "cycle": 65,
+        "status": "EXACT_COMPLETE_PRESERVED_RETIRED",
+        "retired_unix": 1789702101.071327
+      },
+      "retire_errors": [],
+      "plan_options": {
+        "context_limit": 16384,
+        "max_sleeps": 54,
+        "think_act_learn": {
+          "code_policy": "R194_FIRST_CODE_BLOCK_NFKC_V1",
+          "continuity_policy": "R193_CONTINUITY_V1",
+          "correction_ledger": "R197_CORRECTION_LEDGER_V1",
+          "cpu_gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0238z/gate",
+          "cpu_gate_sha256": "fb30bc739ef64c08ba34ed04884a8f4f5ee181d46fa3ac6efcc2e7fa774e48e0",
+          "effort_policy": "R201_OUTCOME_EFFORT_V1",
+          "environment_facts": "Actual isolated Python3.12.3 has SymPy1.14.0 and mpmath1.3.0, plus the Python standard library. No Torch, GPU execution, network, home access or external repository route is provided by this Python tool. Only returned tool receipts establish execution, not a proposed computation. Prefer concise evidence-linked mathematical progress; ask light correction questions, not supplied answers.",
+          "judgment_policy": "R198_JUDGMENT_FIRST_V1",
+          "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+          "outcome_policy": "R189_OUTCOME_ALLOCATION_V1",
+          "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+          "reflection_policy": "explicit",
+          "schema": "R184_THINK_ACT_LEARN_V1",
+          "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+          "think_continuation_policy": "R204_EXPLICIT_THINK_CONTINUATION_V1",
+          "think_segments": 3,
+          "trial_id": "R203_NODE4_1_MATH_SHORT_D"
+        }
+      }
+    },
+    {
+      "physical": 2,
+      "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2",
+      "dispatch": {
+        "bridge_pid": 3429089,
+        "physical": 2,
+        "started_unix": 1789701642.9472053,
+        "supervisor_pid": 3429252,
+        "withdrawal_pid": 3429253
+      },
+      "withdrawn_dispatch": null,
+      "reload_dispatch": null,
+      "loaded": [
+        {
+          "index": 4,
+          "record_sha256": "4e2c1cdac094fe7d2ae4a2745f9bd49e3061d7fbb7c231a7c3b216ec89b09d0d",
+          "mtime": 1789701674.1072845,
+          "pid": 3429712,
+          "loaded_unix": 1789701674.1056018,
+          "optimizer_steps": 4908,
+          "resume": true,
+          "alive": true,
+          "start_ticks": "26981543",
+          "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical2/source"
+        }
+      ],
+      "completed": [
+        {
+          "index": 106,
+          "record_sha256": "3528272ddce21bb53097a69cfacbde56a5a8a142341c21e2a518b1c22d9e3899",
+          "mtime": 1789702204.980432,
+          "cycle": 52,
+          "status": "COMPLETE",
+          "optimizer_steps": 64,
+          "total_optimizer_steps": 4972
+        },
+        {
+          "index": 206,
+          "record_sha256": "d90fdc6d754c240997bbcd7940adc28da895302f6ad99959b4553e277787ace0",
+          "mtime": 1789703039.7114768,
+          "cycle": 53,
+          "status": "COMPLETE",
+          "optimizer_steps": 64,
+          "total_optimizer_steps": 5036
+        }
+      ],
+      "requests": [
+        {
+          "index": 223,
+          "record_sha256": "b06abd2064ed518b92102fe0275ab967ac9cd0a17b3f6a7eda58a5c6f3527a1d",
+          "mtime": 1789703204.2223809,
+          "segment": 163,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 5422
+          }
+        },
+        {
+          "index": 232,
+          "record_sha256": "46cf1f75990150f711fa8a99dd007675b205074a139bbbfc46b38a7bc1b2baf7",
+          "mtime": 1789703235.5190766,
+          "segment": 164,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 6846
+          }
+        }
+      ],
+      "terminal": [],
+      "compaction": [
+        {
+          "index": 7,
+          "record_sha256": "2d8d7717ed583e24ff808f2436a8ffb61fcc8d40940cc3ebdbfceb7d158257e7",
+          "mtime": 1789701675.0881083,
+          "kind": "COMPACTION",
+          "document_keys": [
+            "after_tokens",
+            "before_tokens",
+            "kind",
+            "new_child_distillation",
+            "protected_from",
+            "raw_history_preserved",
+            "source_event_id",
+            "source_sha256",
+            "state",
+            "threshold_tokens",
+            "through_event_count",
+            "working_state_preserved"
+          ]
+        },
+        {
+          "index": 215,
+          "record_sha256": "7696b8304d92a81333764c61f54c632723fd65dd18ff680351cdbb221555cdad",
+          "mtime": 1789703192.871984,
+          "kind": "COMPACTION",
+          "document_keys": [
+            "after_tokens",
+            "before_tokens",
+            "kind",
+            "new_child_distillation",
+            "protected_from",
+            "raw_history_preserved",
+            "source_event_id",
+            "source_sha256",
+            "state",
+            "threshold_tokens",
+            "through_event_count",
+            "working_state_preserved"
+          ]
+        }
+      ],
+      "latest": [
+        {
+          "index": 230,
+          "kind": "R191_DATASET_ROW",
+          "mtime": 1789703234.4278572
+        },
+        {
+          "index": 231,
+          "kind": "CONTEXT_INPUT",
+          "mtime": 1789703234.9612596
+        },
+        {
+          "index": 232,
+          "kind": "REQUEST",
+          "mtime": 1789703235.5190766
+        }
+      ],
+      "errors": [],
+      "retired": null,
+      "retire_errors": [],
+      "plan_options": {
+        "context_limit": 16384,
+        "max_sleeps": 54,
+        "think_act_learn": {
+          "code_policy": "R194_FIRST_CODE_BLOCK_NFKC_V1",
+          "continuity_policy": "R193_CONTINUITY_V1",
+          "correction_ledger": "R197_CORRECTION_LEDGER_V1",
+          "cpu_gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0238z/gate",
+          "cpu_gate_sha256": "fb30bc739ef64c08ba34ed04884a8f4f5ee181d46fa3ac6efcc2e7fa774e48e0",
+          "effort_policy": "R201_OUTCOME_EFFORT_V1",
+          "environment_facts": "Actual isolated Python3.12.3 has SymPy1.14.0 and mpmath1.3.0, plus the Python standard library. No Torch, GPU execution, network, home access or external repository route is provided by this Python tool. Only returned tool receipts establish execution, not a proposed computation. Develop mathematical arguments in prose and check claims with actual calculation where useful.",
+          "judgment_policy": "R198_JUDGMENT_FIRST_V1",
+          "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+          "outcome_policy": "R189_OUTCOME_ALLOCATION_V1",
+          "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+          "reflection_policy": "explicit",
+          "schema": "R184_THINK_ACT_LEARN_V1",
+          "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+          "think_segments": 3,
+          "trial_id": "R203_NODE4_2_MATH_PROSE_B"
+        }
+      }
+    },
+    {
+      "physical": 3,
+      "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3",
+      "dispatch": {
+        "bridge_pid": 3577873,
+        "physical": 3,
+        "started_unix": 1789702671.9894524,
+        "supervisor_pid": 3577998,
+        "withdrawal_pid": 3577999
+      },
+      "withdrawn_dispatch": null,
+      "reload_dispatch": null,
+      "loaded": [
+        {
+          "index": 4,
+          "record_sha256": "9d95f90da508cd6935a0024f0a3d312de0bc80780cda66e1eae729d3fc9edc37",
+          "mtime": 1789702703.27036,
+          "pid": 3578364,
+          "loaded_unix": 1789702703.2683675,
+          "optimizer_steps": 4908,
+          "resume": true,
+          "alive": true,
+          "start_ticks": "27084446",
+          "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/source"
+        }
+      ],
+      "completed": [
+        {
+          "index": 86,
+          "record_sha256": "f88c078408be5f1aee1439c9192a44223332ff70a12eb26bec87f54d12b5d689",
+          "mtime": 1789703104.6990895,
+          "cycle": 52,
+          "status": "COMPLETE",
+          "optimizer_steps": 48,
+          "total_optimizer_steps": 4956
+        }
+      ],
+      "requests": [
+        {
+          "index": 27,
+          "record_sha256": "e0cfa09d63bf67b653f3e8614bfee266ba51251f95593e267b7965ce21952c6a",
+          "mtime": 1789702745.6380734,
+          "segment": 155,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 7114
+          }
+        },
+        {
+          "index": 89,
+          "record_sha256": "af4c6a6a5114b2bdffbb46143d3559bcafee985cc69d707b173120e43c1dc558",
+          "mtime": 1789703242.3776283,
+          "segment": 156,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 7991
+          }
+        }
+      ],
+      "terminal": [],
+      "compaction": [
+        {
+          "index": 8,
+          "record_sha256": "bf0c6aedd6bd30a04fe3424ca919fcbb16023da81ff82cde269d085457ac948e",
+          "mtime": 1789702704.6795995,
+          "kind": "COMPACTION",
+          "document_keys": [
+            "after_tokens",
+            "before_tokens",
+            "carry_source_kind",
+            "child_notice_event_id",
+            "kind",
+            "new_child_distillation",
+            "protected_from",
+            "raw_history_preserved",
+            "source_event_id",
+            "source_sha256",
+            "state",
+            "threshold_tokens",
+            "through_event_count",
+            "working_state_preserved"
+          ]
+        }
+      ],
+      "latest": [
+        {
+          "index": 87,
+          "kind": "R184_LEARN_COMPLETE",
+          "mtime": 1789703104.7690134
+        },
+        {
+          "index": 88,
+          "kind": "CONTEXT_INPUT",
+          "mtime": 1789703241.8568163
+        },
+        {
+          "index": 89,
+          "kind": "REQUEST",
+          "mtime": 1789703242.3776283
+        }
+      ],
+      "errors": [],
+      "retired": {
+        "cycle": 71,
+        "status": "EXACT_COMPLETE_PRESERVED_RETIRED",
+        "retired_unix": 1789702670.6644783
+      },
+      "retire_errors": [],
+      "plan_options": {
+        "context_limit": 16384,
+        "max_sleeps": 54,
+        "think_act_learn": {
+          "code_policy": "R194_FIRST_CODE_BLOCK_NFKC_V1",
+          "continuity_policy": "R193_CONTINUITY_V1",
+          "correction_ledger": "R197_CORRECTION_LEDGER_V1",
+          "cpu_gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0238z/gate",
+          "cpu_gate_sha256": "fb30bc739ef64c08ba34ed04884a8f4f5ee181d46fa3ac6efcc2e7fa774e48e0",
+          "effort_policy": "R201_OUTCOME_EFFORT_V1",
+          "environment_facts": "Actual isolated Python3.12.3 has SymPy1.14.0 and mpmath1.3.0, plus the Python standard library. No Torch, GPU execution, network, home access or external repository route is provided by this Python tool. Only returned tool receipts establish execution, not a proposed computation. Reflect on predicted versus observed algorithm behavior using actual confined Python correctness checks; no GPU execution.",
+          "judgment_policy": "R198_JUDGMENT_FIRST_V1",
+          "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+          "outcome_policy": "R189_OUTCOME_ALLOCATION_V1",
+          "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+          "reflection_policy": "explicit",
+          "schema": "R184_THINK_ACT_LEARN_V1",
+          "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+          "think_continuation_policy": "R204_EXPLICIT_THINK_CONTINUATION_V1",
+          "think_segments": 3,
+          "trial_id": "R203_NODE4_3_KERNEL_REFLECT_B"
+        }
+      }
+    },
+    {
+      "physical": 5,
+      "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical5",
+      "dispatch": null,
+      "withdrawn_dispatch": null,
+      "reload_dispatch": null,
+      "loaded": [],
+      "completed": [],
+      "requests": [
+        {
+          "index": 1,
+          "record_sha256": "b1cd7e56698e51b68250fa994852bfc25bb085eaf1ae8901f68fd39c37970162",
+          "mtime": 1789701357.1364627,
+          "segment": 153,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix",
+            "training_eligible"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 13003
+          }
+        }
+      ],
+      "terminal": [],
+      "compaction": [],
+      "latest": [
+        {
+          "index": 1,
+          "kind": "REQUEST",
+          "mtime": 1789701357.1364627
+        },
+        {
+          "index": 2,
+          "kind": "RESPONSE",
+          "mtime": 1789701357.1423793
+        },
+        {
+          "index": 3,
+          "kind": "CONTEXT_COMMITTED",
+          "mtime": 1789701357.5324848
+        }
+      ],
+      "errors": [],
+      "retired": null,
+      "retire_errors": [],
+      "plan_options": {
+        "context_limit": 16384,
+        "max_sleeps": 57,
+        "think_act_learn": {
+          "code_policy": "R194_FIRST_CODE_BLOCK_NFKC_V1",
+          "continuity_policy": "R193_CONTINUITY_V1",
+          "correction_ledger": "R197_CORRECTION_LEDGER_V1",
+          "cpu_gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0238z/gate",
+          "cpu_gate_sha256": "fb30bc739ef64c08ba34ed04884a8f4f5ee181d46fa3ac6efcc2e7fa774e48e0",
+          "effort_policy": "R201_OUTCOME_EFFORT_V1",
+          "environment_facts": "This actual confined Python tool reports SymPy 1.14.0 and mpmath 1.3.0. It has no Torch, GPU, network, or home access. A proposed computation is not a verified result; use the actual returned receipt.",
+          "judgment_policy": "R198_JUDGMENT_FIRST_V1",
+          "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+          "outcome_policy": "R189_OUTCOME_ALLOCATION_V1",
+          "reflection_policy": "explicit",
+          "schema": "R184_THINK_ACT_LEARN_V1",
+          "think_segments": 3,
+          "trial_id": "R203_NODE4_5_REPO_TRACE_B"
+        }
+      }
+    },
+    {
+      "physical": 6,
+      "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C",
+      "dispatch": {
+        "bridge_pid": 3358426,
+        "command": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r188_node4_rehome_containment",
+          "contained-supervise",
+          "--config",
+          "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/control/GUARD.json"
+        ],
+        "old_cycle": 58,
+        "started_unix": 1789701087.321502,
+        "supervisor_pid": 3358591
+      },
+      "withdrawn_dispatch": null,
+      "reload_dispatch": null,
+      "loaded": [
+        {
+          "index": 4,
+          "record_sha256": "1eeb845fde8080c813b672f29319401addd41eb7e5d4f62f4ed60ad2b94e9584",
+          "mtime": 1789701118.5012069,
+          "pid": 3358885,
+          "loaded_unix": 1789701118.4992094,
+          "optimizer_steps": 4908,
+          "resume": true,
+          "alive": true,
+          "start_ticks": "26925973",
+          "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/source"
+        }
+      ],
+      "completed": [
+        {
+          "index": 92,
+          "record_sha256": "353c6828592a15ed4deae493388718f3182ca7f63dfc277bb9adc603a89df2cd",
+          "mtime": 1789702034.742535,
+          "cycle": 52,
+          "status": "COMPLETE",
+          "optimizer_steps": 48,
+          "total_optimizer_steps": 4956
+        },
+        {
+          "index": 173,
+          "record_sha256": "2314a180ad6bcffaab9ac36019e92aecf8540c9f5bf61af50322b4a666446f5c",
+          "mtime": 1789702501.39443,
+          "cycle": 53,
+          "status": "COMPLETE",
+          "optimizer_steps": 48,
+          "total_optimizer_steps": 5004
+        }
+      ],
+      "requests": [
+        {
+          "index": 191,
+          "record_sha256": "1cafcdb0acda905fc2e19217b9d4faf71a14b9ba9d2a289900c8834ba8ce99de",
+          "mtime": 1789702742.8210409,
+          "segment": 165,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 9871
+          }
+        },
+        {
+          "index": 200,
+          "record_sha256": "ea3e14039bdfc5a9d4b4c22c8f54b25e5bed64613dad98147935776d1c03bd2c",
+          "mtime": 1789702757.6653013,
+          "segment": 166,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 10962
+          }
+        }
+      ],
+      "terminal": [],
+      "compaction": [
+        {
+          "index": 38,
+          "record_sha256": "08b405869d29a46eddedf02340a568f83f5489484d4e0af929a193afee9bafea",
+          "mtime": 1789701295.600269,
+          "kind": "COMPACTION",
+          "document_keys": [
+            "kind",
+            "reviewed_reflection_ids",
+            "state",
+            "working_state_preserved"
+          ]
+        }
+      ],
+      "latest": [
+        {
+          "index": 256,
+          "kind": "UPDATE",
+          "mtime": 1789703164.0749965
+        },
+        {
+          "index": 257,
+          "kind": "UPDATE",
+          "mtime": 1789703172.449389
+        },
+        {
+          "index": 258,
+          "kind": "UPDATE",
+          "mtime": 1789703182.4865627
+        }
+      ],
+      "errors": [],
+      "retired": {
+        "cycle": 58,
+        "status": "EXACT_COMPLETE_PRESERVED_RETIRED",
+        "retired_unix": 1789701085.373257
+      },
+      "retire_errors": [],
+      "plan_options": {
+        "context_limit": 16384,
+        "max_sleeps": 54,
+        "think_act_learn": {
+          "code_policy": "R194_FIRST_CODE_BLOCK_NFKC_V1",
+          "continuity_policy": "R193_CONTINUITY_V1",
+          "correction_ledger": "R197_CORRECTION_LEDGER_V1",
+          "cpu_gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0238z/gate",
+          "cpu_gate_sha256": "fb30bc739ef64c08ba34ed04884a8f4f5ee181d46fa3ac6efcc2e7fa774e48e0",
+          "effort_policy": "R201_OUTCOME_EFFORT_V1",
+          "environment_facts": "This actual confined Python tool reports SymPy 1.14.0 and mpmath 1.3.0. It has no Torch, GPU, network, or home access. A proposed computation is not a verified result; use the actual returned receipt.",
+          "judgment_policy": "R198_JUDGMENT_FIRST_V1",
+          "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+          "outcome_policy": "R189_OUTCOME_ALLOCATION_V1",
+          "reflection_policy": "explicit",
+          "schema": "R184_THINK_ACT_LEARN_V1",
+          "structured_think_policy": "R202_WIDE_NARROW_WIDE_V1",
+          "think_segments": 3,
+          "trial_id": "R201_MATH_C_node4_6"
+        }
+      }
+    },
+    {
+      "physical": 7,
+      "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7",
+      "dispatch": {
+        "bridge_pid": 3429324,
+        "physical": 7,
+        "started_unix": 1789701644.3220592,
+        "supervisor_pid": 3429536,
+        "withdrawal_pid": 3429537
+      },
+      "withdrawn_dispatch": null,
+      "reload_dispatch": null,
+      "loaded": [
+        {
+          "index": 4,
+          "record_sha256": "a351cb86d89b3de04c468387e205945f36f7c9af143dd0d84027631fd86d2e92",
+          "mtime": 1789701675.4840548,
+          "pid": 3429844,
+          "loaded_unix": 1789701675.4816427,
+          "optimizer_steps": 4908,
+          "resume": true,
+          "alive": true,
+          "start_ticks": "26981678",
+          "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/source"
+        }
+      ],
+      "completed": [
+        {
+          "index": 107,
+          "record_sha256": "97ef7e542677a15a2013010ac0443efa685301e127fdc8c42d68899827957a55",
+          "mtime": 1789702166.8046215,
+          "cycle": 52,
+          "status": "COMPLETE",
+          "optimizer_steps": 64,
+          "total_optimizer_steps": 4972
+        },
+        {
+          "index": 207,
+          "record_sha256": "d1f7ecff383cd1471d67cd4ca9ad9f99268960f78faf205e3c7d2bbbaa221f54",
+          "mtime": 1789702939.2663145,
+          "cycle": 53,
+          "status": "COMPLETE",
+          "optimizer_steps": 64,
+          "total_optimizer_steps": 5036
+        }
+      ],
+      "requests": [
+        {
+          "index": 224,
+          "record_sha256": "3429cbe0344d9025912a7e46baffd735ad89d506263c71116ad5dad51a73a301",
+          "mtime": 1789703102.273201,
+          "segment": 163,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 4393
+          }
+        },
+        {
+          "index": 233,
+          "record_sha256": "1c2dd0865cd2ed82415380ff4bdb2b02ab005b2251d625616fb644bbbf1b142b",
+          "mtime": 1789703111.9136038,
+          "segment": 164,
+          "context_tokens": null,
+          "request_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "render_receipt": {
+            "all_history_tokens_masked": true,
+            "token_count": 5448
+          }
+        }
+      ],
+      "terminal": [],
+      "compaction": [
+        {
+          "index": 7,
+          "record_sha256": "f6e4ba15a4ab271a40482485cc986487ec33880c66ad26dfcc27ed0f2161a378",
+          "mtime": 1789701676.458314,
+          "kind": "COMPACTION",
+          "document_keys": [
+            "after_tokens",
+            "before_tokens",
+            "kind",
+            "new_child_distillation",
+            "protected_from",
+            "raw_history_preserved",
+            "source_event_id",
+            "source_sha256",
+            "state",
+            "threshold_tokens",
+            "through_event_count",
+            "working_state_preserved"
+          ]
+        },
+        {
+          "index": 223,
+          "record_sha256": "f36237ddd5ba1e4baf6596eb4d111f50e336b2d4c44b1dd2207e5cead708443d",
+          "mtime": 1789703101.7441947,
+          "kind": "COMPACTION",
+          "document_keys": [
+            "after_tokens",
+            "before_tokens",
+            "kind",
+            "new_child_distillation",
+            "protected_from",
+            "raw_history_preserved",
+            "source_event_id",
+            "source_sha256",
+            "state",
+            "threshold_tokens",
+            "through_event_count",
+            "working_state_preserved"
+          ]
+        }
+      ],
+      "latest": [
+        {
+          "index": 257,
+          "kind": "UPDATE",
+          "mtime": 1789703230.2086816
+        },
+        {
+          "index": 258,
+          "kind": "UPDATE",
+          "mtime": 1789703234.736734
+        },
+        {
+          "index": 259,
+          "kind": "UPDATE",
+          "mtime": 1789703240.2274294
+        }
+      ],
+      "errors": [],
+      "retired": null,
+      "retire_errors": [],
+      "plan_options": {
+        "context_limit": 16384,
+        "max_sleeps": 54,
+        "think_act_learn": {
+          "code_policy": "R194_FIRST_CODE_BLOCK_NFKC_V1",
+          "continuity_policy": "R193_CONTINUITY_V1",
+          "correction_ledger": "R197_CORRECTION_LEDGER_V1",
+          "cpu_gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260918t0238z/gate",
+          "cpu_gate_sha256": "fb30bc739ef64c08ba34ed04884a8f4f5ee181d46fa3ac6efcc2e7fa774e48e0",
+          "effort_policy": "R201_OUTCOME_EFFORT_V1",
+          "environment_facts": "Actual isolated Python3.12.3 has SymPy1.14.0 and mpmath1.3.0, plus the Python standard library. No Torch, GPU execution, network, home access or external repository route is provided by this Python tool. Only returned tool receipts establish execution, not a proposed computation. Explore and revise the child's own creative object through questions; do not supply the original C2 story test.",
+          "judgment_policy": "R198_JUDGMENT_FIRST_V1",
+          "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+          "outcome_policy": "R189_OUTCOME_ALLOCATION_V1",
+          "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+          "reflection_policy": "explicit",
+          "schema": "R184_THINK_ACT_LEARN_V1",
+          "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+          "think_segments": 3,
+          "trial_id": "R203_NODE4_7_CREATIVE_OPEN_C"
+        }
+      }
+    }
+  ]
+}

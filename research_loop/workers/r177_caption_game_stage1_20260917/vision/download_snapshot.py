@@ -48,7 +48,7 @@ def main():
         blob = hashlib.sha1(('blob ' + str(entry['size']) + '\0').encode())
         partial = arguments.output / (name + '.part')
         size = 0
-        url = 'https://huggingface.co/' + MODEL_ID + '/resolve/' + REVISION + '/' + name
+        url = 'https://[REDACTED_HOST]/' + MODEL_ID + '/resolve/' + REVISION + '/' + name
         with urlopen(url, timeout=90) as response, partial.open('xb') as handle:
             while chunk := response.read(4 * 1024 * 1024):
                 size += len(chunk)

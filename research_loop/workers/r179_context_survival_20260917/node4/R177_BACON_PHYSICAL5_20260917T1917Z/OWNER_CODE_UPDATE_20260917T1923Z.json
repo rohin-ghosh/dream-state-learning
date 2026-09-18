@@ -1,0 +1,31 @@
+{
+  "schema": "R177_BACON_OWNER_FIX_OBSERVATION_V1",
+  "addressed_to": ["Bacon", "Main", "Gauss"],
+  "observed_utc": "2026-09-17T19:23:00Z",
+  "supplements_not_replaces_historical_evidence": ["HANDOFF.json", "LATEST_STATUS_20260917T1921Z.json"],
+  "allocation_and_receipts_ready_no_generic_review": true,
+  "owner_local_source": {
+    "path": "gpu/ny_caption_vision.py",
+    "sha256": "b6170ddf186860ae5bf3d4aa8db2d7f0816b1b52b7703efc31a00f443b466e9f",
+    "observed_fix": "GPU_MINOR=6; validates actual UUID-to-kernel-minor and denies all other minors; accepts existing slot5 service only with exact outer_slot_config binding and cleanup margin.",
+    "CPU_pass_or_receiving_deployment_not_inferred_from_code": true
+  },
+  "last_actual_receiving_source": {
+    "path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/cpu_stage2/source/gpu/ny_caption_vision.py",
+    "sha256": "30fe8ac5404c44408f1784c4ccfb08b180b2a8806e5e4d491f04281014470846",
+    "still_old_at_observation": true
+  },
+  "updated_owner_admission_contract": {
+    "kernel_minor": 6,
+    "outer_slot_config_required_for_orch_r177_slot5_units": "Exact path/sha256 reference to the actual prepared CONFIG.json; do not use a placeholder.",
+    "outer_config_seconds_maximum_with_one_hour_allocation": 3570,
+    "max_gpu_seconds": 3600,
+    "outer_config_and_admission_hard_end_unix": 1789754400,
+    "existing_3600_second_generic_Bacon_template_still_needs_budget_adjustment": true,
+    "source_CPU_packet_snapshot_and_service_bindings_remain_required": true
+  },
+  "scanner_status": "Last original scanner report remains the unfiltered19:20 process-drift failure; no retry or manufactured clear. Use supplied fresh_scanner_receipt.sh inline at the actual ready launch, preserving every blocker.",
+  "this_worker_modified_Bacon_source_or_receiving_source": false,
+  "this_worker_model_launches": 0,
+  "safe_boundary_learner_transfer_policy_unchanged": true
+}

@@ -1,0 +1,488 @@
+{
+  "observed_utc": "2026-09-18T02:58:24.975267+00:00",
+  "actors": {
+    "cpu_bridge2": {
+      "pid": 2127856,
+      "state": "S",
+      "start_ticks": "92798435",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "parent": {
+      "pid": 2128727,
+      "state": "S",
+      "start_ticks": "92801141",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "supervisor": {
+      "pid": 2128728,
+      "state": "S",
+      "start_ticks": "92801141",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "native": {
+      "pid": 2128807,
+      "state": "S",
+      "start_ticks": "92801327",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 2128806
+    }
+  },
+  "receipts": {
+    "LAUNCH.json": {
+      "admission_sha256": "8dae2e25c18c7db8f89cef71210a2bc088331e0eda5e65a11122aafac44c518c",
+      "admission_verified_unix": 1789699574.1295693,
+      "command_sha256": "a805633e21653234ece336f64af9424422568d1ea8b2540af12ce6621e5fa2a4",
+      "gpu_uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4",
+      "guard_sha256": "e0943940ddce3014bd1fb80e6bb42f2cb46e4459b5f28b2362edcb0476efbff8",
+      "hard_end_unix": 1789776000,
+      "no_retry": true,
+      "parent_start_ticks": "92801326",
+      "pid": 2128806,
+      "plan_sha256": "5b45d461c8e0c1e75a12a1e0b0a9c1437be82c8762a22b1a12cf7ecde8ae6df3",
+      "started_unix": 1789699574.130642
+    },
+    "PRE_SERVICE_ADMISSION.json": {
+      "verified_unix": 1789699573.8616252,
+      "clear": true,
+      "blocking_reasons": []
+    },
+    "CONFINEMENT_CHILD.json": {
+      "observed_unix": 1789699574.1101568,
+      "pid": 2128755,
+      "gpu_uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4",
+      "target_minor": 1,
+      "checks": {
+        "allowed_open_close": [
+          "/dev/nvidia1",
+          "/dev/nvidiactl",
+          "/dev/nvidia-uvm"
+        ],
+        "denied_foreign_minors": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "index": 5863,
+      "kind": "R184_STAGE",
+      "sha256": "b0cf65be624f7f4950d33be3af10deb5b348a5bfcc906105c63d04de43281c33",
+      "mtime_utc": "2026-09-18T02:49:12.178458+00:00",
+      "stage": "THINK",
+      "segment": 155
+    },
+    {
+      "index": 5865,
+      "kind": "R184_TRANSITION",
+      "sha256": "269fd21a831adf9a51b2e0d82414b93c4db08a6b524cbda92254c392bc56db37",
+      "mtime_utc": "2026-09-18T02:49:12.238550+00:00",
+      "segment": 155
+    },
+    {
+      "index": 5866,
+      "kind": "REQUEST",
+      "sha256": "3eb2df7f4a1585a8bcae227a59cecc508c4a42900c256c2c8bee81f087132e48",
+      "mtime_utc": "2026-09-18T02:49:12.972861+00:00",
+      "segment": 156,
+      "started_unix": 1789699752.4924529
+    },
+    {
+      "index": 5867,
+      "kind": "RESPONSE",
+      "sha256": "1db59c04d46d5c402358c2a3a53750b4cb64fe07e84c3db0217ac30e5ac3aa5b",
+      "mtime_utc": "2026-09-18T02:49:27.426409+00:00",
+      "finished_unix": 1789699767.395416,
+      "raw_response_present": true,
+      "raw_characters": 553
+    },
+    {
+      "index": 5869,
+      "kind": "R184_STAGE",
+      "sha256": "21c2b9d0da665f8bba1788a3d9c164cedcb81b4b031660203d7fe4eaed7a2913",
+      "mtime_utc": "2026-09-18T02:49:27.991370+00:00",
+      "stage": "ACT",
+      "segment": 156
+    },
+    {
+      "index": 5874,
+      "kind": "INBOX",
+      "sha256": "d3c209e82e6f3dab5064d79a03d04dd94d5e8b7c484c505b0b50ed8853ce48c6",
+      "mtime_utc": "2026-09-18T02:49:40.695689+00:00",
+      "speaker": "Tool",
+      "message_id": "f06fc9b6bb2c4cfd8def5fbea9ad2086",
+      "text_sha256": "c9183b4da8079efa409c38e078ad6bc39177a3cbb85bf8b6af404f392a4b9fba"
+    },
+    {
+      "index": 5875,
+      "kind": "REQUEST",
+      "sha256": "6585894afb56cc693316d0bf95c3517c758b8e4a09022ac44e96f3e8e647951e",
+      "mtime_utc": "2026-09-18T02:49:41.673693+00:00",
+      "segment": 157,
+      "started_unix": 1789699781.111579
+    },
+    {
+      "index": 5876,
+      "kind": "RESPONSE",
+      "sha256": "07faaf51f3442368897f0a6c43d61895030c7674cc77cbb3c3eb4d3711a29e9d",
+      "mtime_utc": "2026-09-18T02:50:13.446826+00:00",
+      "finished_unix": 1789699813.414083,
+      "raw_response_present": true,
+      "raw_characters": 1668
+    },
+    {
+      "index": 5878,
+      "kind": "R184_STAGE",
+      "sha256": "b81bdfc25c2196d6d06e15749a4aab6e5fb00a32e6da7e74e7816733e886af6d",
+      "mtime_utc": "2026-09-18T02:50:14.093125+00:00",
+      "stage": "LEARN",
+      "segment": 157
+    },
+    {
+      "index": 5885,
+      "kind": "SLEEP_RECIPE",
+      "sha256": "a343525393177d7d0238ef45c71fb88834614b617dff12fe6501e5019e94f928",
+      "mtime_utc": "2026-09-18T02:50:15.418485+00:00",
+      "new_rows": 5,
+      "new_presentations": 16,
+      "selected_old_rows": 0,
+      "available_old_rows": 153
+    },
+    {
+      "index": 5886,
+      "kind": "TARGET_ELIGIBILITY",
+      "sha256": "25b6432d06bc9fef66fb2112310d47c20680e570f7d1111715bbd025aeb695ad",
+      "mtime_utc": "2026-09-18T02:50:15.636904+00:00",
+      "excluded_count": 2,
+      "learn_review_filter": {
+        "retained_counts": {
+          "NEW": 5,
+          "REHEARSAL": 0
+        },
+        "excluded_counts": {
+          "NEW": 0,
+          "REHEARSAL": 0
+        },
+        "policy": "R195_CHILD_ROW_REVIEW_V1"
+      },
+      "fields": [
+        "code_target_filter",
+        "code_target_filter_counts",
+        "code_target_filter_presentations",
+        "excluded",
+        "learn_review_filter",
+        "learn_review_filter_counts",
+        "learn_review_filter_presentations",
+        "new_row_sha256",
+        "raw_modified",
+        "rehearsal_row_sha256",
+        "runtime_policy",
+        "version"
+      ]
+    },
+    {
+      "index": 5887,
+      "kind": "UPDATE",
+      "sha256": "1ca56ef26b067a00a98ef3ec32ac30b785a93f1c45d78410c048dfdb54fb7bbb",
+      "mtime_utc": "2026-09-18T02:50:28.609465+00:00",
+      "optimizer_step": 4909,
+      "finished_unix": 1789699828.5772548
+    },
+    {
+      "index": 5888,
+      "kind": "UPDATE",
+      "sha256": "c4f009bd869ff302cabb55a4582615697fb33524d54be2b620e5bae3c803cc7a",
+      "mtime_utc": "2026-09-18T02:50:42.400519+00:00",
+      "optimizer_step": 4910,
+      "finished_unix": 1789699842.368887
+    },
+    {
+      "index": 5889,
+      "kind": "UPDATE",
+      "sha256": "bc0c2776007db6cc4cc033d3669715905b8be8885ce7b32efacc06d7bf588b4c",
+      "mtime_utc": "2026-09-18T02:50:56.456518+00:00",
+      "optimizer_step": 4911,
+      "finished_unix": 1789699856.4239435
+    },
+    {
+      "index": 5890,
+      "kind": "UPDATE",
+      "sha256": "46f5c48733a7701258bc1fc9684e461ebc077264190f6835deff929ac351f398",
+      "mtime_utc": "2026-09-18T02:51:09.585528+00:00",
+      "optimizer_step": 4912,
+      "finished_unix": 1789699869.5536482
+    },
+    {
+      "index": 5891,
+      "kind": "UPDATE",
+      "sha256": "576fbb72e8e011533a9cfeae2f953806399b5fd2875a83b066a0f9b7b14ba117",
+      "mtime_utc": "2026-09-18T02:51:23.487767+00:00",
+      "optimizer_step": 4913,
+      "finished_unix": 1789699883.456905
+    },
+    {
+      "index": 5892,
+      "kind": "UPDATE",
+      "sha256": "46904de5a0001f73d8e01eae29b9e305e933109b5c53ba45adb644f396949868",
+      "mtime_utc": "2026-09-18T02:51:37.620713+00:00",
+      "optimizer_step": 4914,
+      "finished_unix": 1789699897.5878897
+    },
+    {
+      "index": 5893,
+      "kind": "UPDATE",
+      "sha256": "ad540c5b31cceea81c04c137815b45c77a0514c80fe8a43d4c2a6af963b058db",
+      "mtime_utc": "2026-09-18T02:51:50.558736+00:00",
+      "optimizer_step": 4915,
+      "finished_unix": 1789699910.527621
+    },
+    {
+      "index": 5894,
+      "kind": "UPDATE",
+      "sha256": "918ce827d4a136aa63a425abf75237541c73b9d58905e3d3e936a2b304768c43",
+      "mtime_utc": "2026-09-18T02:52:04.699104+00:00",
+      "optimizer_step": 4916,
+      "finished_unix": 1789699924.512534
+    },
+    {
+      "index": 5895,
+      "kind": "UPDATE",
+      "sha256": "5b38184c98d013c89297cad872f55487558abbe78c2c49e880d1150c5915c12a",
+      "mtime_utc": "2026-09-18T02:52:18.865737+00:00",
+      "optimizer_step": 4917,
+      "finished_unix": 1789699938.8338714
+    },
+    {
+      "index": 5896,
+      "kind": "UPDATE",
+      "sha256": "932dfe7c8c40e7c19f8225e3a9ef05bfafb97e111674d494fa439abd317d1bc8",
+      "mtime_utc": "2026-09-18T02:52:31.808068+00:00",
+      "optimizer_step": 4918,
+      "finished_unix": 1789699951.7764175
+    },
+    {
+      "index": 5897,
+      "kind": "UPDATE",
+      "sha256": "332bbb6f7a1e9899b462e43dba2f720666762b589b398e3abf618e326e0d4c2e",
+      "mtime_utc": "2026-09-18T02:52:45.749872+00:00",
+      "optimizer_step": 4919,
+      "finished_unix": 1789699965.7180946
+    },
+    {
+      "index": 5898,
+      "kind": "UPDATE",
+      "sha256": "efe0cfe96bdd9531cb61e2554dcef78f033031a0aef3fe9876294e5d1040c702",
+      "mtime_utc": "2026-09-18T02:52:59.906065+00:00",
+      "optimizer_step": 4920,
+      "finished_unix": 1789699979.8749921
+    },
+    {
+      "index": 5899,
+      "kind": "UPDATE",
+      "sha256": "046738e8525b6413cdf35be01b0c110524db9a5cb3c72317fe62e41ae7992060",
+      "mtime_utc": "2026-09-18T02:53:12.995628+00:00",
+      "optimizer_step": 4921,
+      "finished_unix": 1789699992.9654264
+    },
+    {
+      "index": 5900,
+      "kind": "UPDATE",
+      "sha256": "db0739a3ed94a634ca20d13fc556f6d7653aeee1f3509bc1b0df89cf870e344c",
+      "mtime_utc": "2026-09-18T02:53:26.919721+00:00",
+      "optimizer_step": 4922,
+      "finished_unix": 1789700006.8882565
+    },
+    {
+      "index": 5901,
+      "kind": "UPDATE",
+      "sha256": "ae5d47f14e247a847c87aaa38a9f08e98b22a48aab35a67d6763fde9ed303ae7",
+      "mtime_utc": "2026-09-18T02:53:41.069753+00:00",
+      "optimizer_step": 4923,
+      "finished_unix": 1789700021.0384197
+    },
+    {
+      "index": 5902,
+      "kind": "UPDATE",
+      "sha256": "e2ff6e71d27000a5b3a2330db656e006ff9bd55006bf2455df2930c8d3665bb8",
+      "mtime_utc": "2026-09-18T02:53:54.030138+00:00",
+      "optimizer_step": 4924,
+      "finished_unix": 1789700033.9986567
+    },
+    {
+      "index": 5903,
+      "kind": "UPDATE",
+      "sha256": "781b0a351817bab61713b5084421a170f8db5144e1e01c529eeb95bf529b9652",
+      "mtime_utc": "2026-09-18T02:54:08.106142+00:00",
+      "optimizer_step": 4925,
+      "finished_unix": 1789700048.07542
+    },
+    {
+      "index": 5904,
+      "kind": "UPDATE",
+      "sha256": "91f25ee0dfa44e6dfd30a10e11c7faf55d2ee915eaf2556d0e3d461a77be617b",
+      "mtime_utc": "2026-09-18T02:54:22.290060+00:00",
+      "optimizer_step": 4926,
+      "finished_unix": 1789700062.2578487
+    },
+    {
+      "index": 5905,
+      "kind": "UPDATE",
+      "sha256": "58db5f1ba3c3df5e0f0e7a161a7d7019c26bef81fd69cf98bd1cdd5fa697a193",
+      "mtime_utc": "2026-09-18T02:54:35.267927+00:00",
+      "optimizer_step": 4927,
+      "finished_unix": 1789700075.233959
+    },
+    {
+      "index": 5906,
+      "kind": "UPDATE",
+      "sha256": "de4c1e146d3847b75d4d48cb8e79ffda7022a473ec4bfd4857b855b4ccfb2f43",
+      "mtime_utc": "2026-09-18T02:54:49.226400+00:00",
+      "optimizer_step": 4928,
+      "finished_unix": 1789700089.1923306
+    },
+    {
+      "index": 5907,
+      "kind": "UPDATE",
+      "sha256": "4c123e6d4b90781333e2dc30b6ee488287ff991cda30abe9e906c25cf3d39995",
+      "mtime_utc": "2026-09-18T02:55:03.417590+00:00",
+      "optimizer_step": 4929,
+      "finished_unix": 1789700103.3842833
+    },
+    {
+      "index": 5908,
+      "kind": "UPDATE",
+      "sha256": "5bdad17d6304f1619bf8e2163ca3339cb83db8cb39499b7b70c39c1deb2f4d51",
+      "mtime_utc": "2026-09-18T02:55:16.402127+00:00",
+      "optimizer_step": 4930,
+      "finished_unix": 1789700116.3703785
+    },
+    {
+      "index": 5909,
+      "kind": "UPDATE",
+      "sha256": "3846f8708413220b29f467faf8436eaa387b78fdb0b6c2fc1d68a4988ec23779",
+      "mtime_utc": "2026-09-18T02:55:30.346067+00:00",
+      "optimizer_step": 4931,
+      "finished_unix": 1789700130.3149028
+    },
+    {
+      "index": 5910,
+      "kind": "UPDATE",
+      "sha256": "8a68d9952a2bf0d3152f0a6ca919dfa863d82968a9194dc93d5619919e3453c0",
+      "mtime_utc": "2026-09-18T02:55:44.532328+00:00",
+      "optimizer_step": 4932,
+      "finished_unix": 1789700144.5007095
+    },
+    {
+      "index": 5911,
+      "kind": "UPDATE",
+      "sha256": "44ab9ca69b581a3cfaebb963b6832fd0d3d5a295d51375c42d4519d10fc7b83d",
+      "mtime_utc": "2026-09-18T02:55:57.491318+00:00",
+      "optimizer_step": 4933,
+      "finished_unix": 1789700157.4599106
+    },
+    {
+      "index": 5912,
+      "kind": "UPDATE",
+      "sha256": "0e6e4391b931db7795021d50b99bed3a0052450f52f90f7fb0360ad9db0658ba",
+      "mtime_utc": "2026-09-18T02:56:11.579108+00:00",
+      "optimizer_step": 4934,
+      "finished_unix": 1789700171.5475152
+    },
+    {
+      "index": 5913,
+      "kind": "UPDATE",
+      "sha256": "f7480338ff20d85263d71efda6a02bdb6e34309161739b7c9b85a3094beb04d9",
+      "mtime_utc": "2026-09-18T02:56:25.749866+00:00",
+      "optimizer_step": 4935,
+      "finished_unix": 1789700185.7180383
+    },
+    {
+      "index": 5914,
+      "kind": "UPDATE",
+      "sha256": "61266a64c746c17c4c5a23909f453b4e1eb2dbbe8e54316e779f7596267825fb",
+      "mtime_utc": "2026-09-18T02:56:38.738454+00:00",
+      "optimizer_step": 4936,
+      "finished_unix": 1789700198.7066126
+    },
+    {
+      "index": 5915,
+      "kind": "UPDATE",
+      "sha256": "b345f35faaab5126f09d79658fb1511a43b2ad950abaefa2bb3e9ec49d6e5c07",
+      "mtime_utc": "2026-09-18T02:56:52.718071+00:00",
+      "optimizer_step": 4937,
+      "finished_unix": 1789700212.6861064
+    },
+    {
+      "index": 5916,
+      "kind": "UPDATE",
+      "sha256": "268206256b6607457ea45c7914e7165b555d2b7491363a9736664394958d9ade",
+      "mtime_utc": "2026-09-18T02:57:07.082141+00:00",
+      "optimizer_step": 4938,
+      "finished_unix": 1789700227.051712
+    },
+    {
+      "index": 5917,
+      "kind": "UPDATE",
+      "sha256": "5575d136b4ae3c00775a67f5c318294936914ba9db9a632d0e12f8cd36644c9b",
+      "mtime_utc": "2026-09-18T02:57:20.018091+00:00",
+      "optimizer_step": 4939,
+      "finished_unix": 1789700239.9869754
+    },
+    {
+      "index": 5918,
+      "kind": "UPDATE",
+      "sha256": "08970587eda8d7461b4feca4298ade4e938d3f1eeaf85082d08e9166df8be32b",
+      "mtime_utc": "2026-09-18T02:57:33.947670+00:00",
+      "optimizer_step": 4940,
+      "finished_unix": 1789700253.916545
+    },
+    {
+      "index": 5919,
+      "kind": "UPDATE",
+      "sha256": "5216996856de20501ccfe20450abc9040fe0053c9d0f49112a4c5556a71ea7f6",
+      "mtime_utc": "2026-09-18T02:57:48.112936+00:00",
+      "optimizer_step": 4941,
+      "finished_unix": 1789700268.0816112
+    },
+    {
+      "index": 5920,
+      "kind": "UPDATE",
+      "sha256": "5a69a6084ab48099e02b891d5316a6228df262c0d4e30bfb2ef43570ef1facc9",
+      "mtime_utc": "2026-09-18T02:58:01.060121+00:00",
+      "optimizer_step": 4942,
+      "finished_unix": 1789700281.029709
+    },
+    {
+      "index": 5921,
+      "kind": "UPDATE",
+      "sha256": "6e1281711d4920c92c85b3aa827618cc15a54dbc47863df8787c4e71da7958dd",
+      "mtime_utc": "2026-09-18T02:58:15.113445+00:00",
+      "optimizer_step": 4943,
+      "finished_unix": 1789700295.082466
+    }
+  ],
+  "nvml_processes": [
+    "1849630, GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, 44174 MiB",
+    "2128807, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4, 30602 MiB",
+    "1815204, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 20562 MiB",
+    "1849923, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 33846 MiB",
+    "1849180, GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed, 19012 MiB"
+  ],
+  "read_only": true
+}

@@ -1,0 +1,319 @@
+{
+  "new_lease": false,
+  "observed_unix": 1789690425.8576941,
+  "oldsource_publication_frozen": true,
+  "rows": [
+    {
+      "arm": "A",
+      "cadence": 1,
+      "console": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188/receiving_parents/physical0/CONSOLE.json",
+        "sha256": "40f48b5db516a6be44d709b7c5e204340287d25ca6b2467cf9ccd4b489bb45e8"
+      },
+      "first_publication": null,
+      "first_rendered": null,
+      "life": "support_free",
+      "new_attempts": [
+        {
+          "attempt": "parent_000000000145",
+          "error": "object_delivered_budget_exhausted",
+          "result": {
+            "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/manual_baseline_v1/parents/physical0/parent/parent_000000000145/RESULT.json",
+            "sha256": "eacb2232d7853dafaa8c801c6763ebdb3a419db324e63ee8a74cbd77e28bafe7"
+          },
+          "status": "VALIDATION_FAILED"
+        }
+      ],
+      "parent_identity": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/receiving_parent.py",
+          "serve",
+          "--physical",
+          "0"
+        ],
+        "pid": 1607566,
+        "state": "S",
+        "ticks": "179737962",
+        "uid": 158984
+      },
+      "physical": 0,
+      "root": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving0v2/run1",
+      "status": {
+        "actual_tick": "gpu.orch_r166_parent_policy.tick",
+        "cadence": 1,
+        "caught_up": true,
+        "head_sha256": "14410bf2fcb7131858d531520eeceefc580bab97d7a503a53884c34808e3287d",
+        "observed_unix": 1789690425.3669238,
+        "physical": 0,
+        "request_count": 145,
+        "response_count": 145,
+        "sleep_count": 47,
+        "status": "WAITING_FOR_NEW_CHILD_BOUNDARY"
+      },
+      "target_gpu": 7,
+      "target_node": "node4"
+    },
+    {
+      "arm": "B",
+      "cadence": 2,
+      "console": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188/receiving_parents/physical1/CONSOLE.json",
+        "sha256": "2ac8b6a63b919f3bbb6b389d2ce7c0d5ecefcb8036fec2a72f4f11ed9282b118"
+      },
+      "first_publication": null,
+      "first_rendered": null,
+      "life": "creative_reread",
+      "new_attempts": [],
+      "parent_identity": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/receiving_parent.py",
+          "serve",
+          "--physical",
+          "1"
+        ],
+        "pid": 1594796,
+        "state": "S",
+        "ticks": "179722369",
+        "uid": 158984
+      },
+      "physical": 1,
+      "root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving1/root",
+      "status": {
+        "actual_tick": "gpu.orch_r166_parent_policy.tick",
+        "cadence": 2,
+        "caught_up": true,
+        "head_sha256": "8b31e3cf8d795b99e12ef757910323340386b6e57173d92adb9bc0e81ab811e8",
+        "observed_unix": 1789690424.5700457,
+        "physical": 1,
+        "request_count": 154,
+        "response_count": 154,
+        "sleep_count": 47,
+        "status": "ONE_COMPLETED_SLEEP_PARENT_WITHDRAWAL"
+      },
+      "target_gpu": 0,
+      "target_node": "node2"
+    },
+    {
+      "arm": "C",
+      "cadence": 3,
+      "console": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188/receiving_parents/physical2/CONSOLE.json",
+        "sha256": "23fe0ee3ee94420651162ff651de26aa4e3df40d0746f036ca426ec5ba076bd6"
+      },
+      "first_publication": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188/receiving_parents/physical2/FIRST_PUBLICATION.json",
+        "sha256": "4c329bd2adbbb2d4c407872c5274963e28e58fa98b242dd734d732195d8bd895"
+      },
+      "first_rendered": null,
+      "life": "brain_free",
+      "new_attempts": [
+        {
+          "attempt": "parent_000000000144",
+          "error": null,
+          "result": {
+            "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/brain_baseline_v1/parents/physical2/parent/parent_000000000144/RESULT.json",
+            "sha256": "f6a9778353824321f13a4100989e3f0d1c8991af0b92fe03cd80c55308a5ed10"
+          },
+          "status": "PUBLISHED"
+        }
+      ],
+      "parent_identity": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/receiving_parent.py",
+          "serve",
+          "--physical",
+          "2"
+        ],
+        "pid": 1607574,
+        "state": "S",
+        "ticks": "179737965",
+        "uid": 158984
+      },
+      "physical": 2,
+      "root": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving2v2/run1",
+      "status": {
+        "actual_tick": "gpu.orch_r166_parent_policy.tick",
+        "cadence": 3,
+        "caught_up": true,
+        "head_sha256": "f43e341bb69391524a21595a1f732c462f4078f36be366829d951ebaf3ff337d",
+        "observed_unix": 1789690422.4090445,
+        "physical": 2,
+        "request_count": 144,
+        "response_count": 144,
+        "sleep_count": 44,
+        "status": "AWAITING_RENDER"
+      },
+      "target_gpu": 5,
+      "target_node": "node4"
+    },
+    {
+      "arm": "D",
+      "cadence": 3,
+      "console": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188/receiving_parents/physical3/CONSOLE.json",
+        "sha256": "0233d4b96a85bcda1f8fca8260acbaee8b826d5638203f774af1bc8a232dcccd"
+      },
+      "first_publication": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188/receiving_parents/physical3/FIRST_PUBLICATION.json",
+        "sha256": "1df33a204ceb191973391f1560a2c9cc258139c1b786f30888325250cb224b7a"
+      },
+      "first_rendered": null,
+      "life": "brain_guided",
+      "new_attempts": [
+        {
+          "attempt": "parent_000000000133",
+          "error": null,
+          "result": {
+            "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/receipt_repair_v1/parents/physical3/parent/parent_000000000133/RESULT.json",
+            "sha256": "6e3c2b1cf9714e17c265bdbd4e2b61e2c08af7a5105cf959256e849785a9e662"
+          },
+          "status": "PUBLISHED"
+        }
+      ],
+      "parent_identity": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/receiving_parent.py",
+          "serve",
+          "--physical",
+          "3"
+        ],
+        "pid": 1607579,
+        "state": "S",
+        "ticks": "179737968",
+        "uid": 158984
+      },
+      "physical": 3,
+      "root": "/localhome/local-rohing/orch_r188_node4_relocated_20260917t2349z/receiving3v2/run1",
+      "status": {
+        "actual_tick": "gpu.orch_r166_parent_policy.tick",
+        "cadence": 3,
+        "caught_up": true,
+        "head_sha256": "26fbad1741b10eaf4ddf8fc85e985df5d0586e7cc7479a5a98ae9dccb795d5c6",
+        "observed_unix": 1789690423.696958,
+        "physical": 3,
+        "request_count": 133,
+        "response_count": 133,
+        "sleep_count": 42,
+        "status": "AWAITING_RENDER"
+      },
+      "target_gpu": 6,
+      "target_node": "node4"
+    },
+    {
+      "arm": "A",
+      "cadence": 1,
+      "console": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188/receiving_parents/physical4/CONSOLE.json",
+        "sha256": "a76c4d4cf84ef087d45fbde32b96506e47d0d01cac6682dad6fff2fd4b332b7c"
+      },
+      "first_publication": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188/receiving_parents/physical4/FIRST_PUBLICATION.json",
+        "sha256": "8dd2bb328cf899e4aca278605c773a43d600969a19eb0b3ebc89bf59293b5c38"
+      },
+      "first_rendered": null,
+      "life": "creative_free",
+      "new_attempts": [
+        {
+          "attempt": "parent_000000000139",
+          "error": null,
+          "result": {
+            "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/receipt_repair_v1/parents/physical4/parent/parent_000000000139/RESULT.json",
+            "sha256": "e948ddda9723991c8a6314f9ba4d83f6027e0479d5ad7f9922ac1a81228dee52"
+          },
+          "status": "PUBLISHED"
+        }
+      ],
+      "parent_identity": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/receiving_parent.py",
+          "serve",
+          "--physical",
+          "4"
+        ],
+        "pid": 1591283,
+        "state": "S",
+        "ticks": "179717766",
+        "uid": 158984
+      },
+      "physical": 4,
+      "root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving4/root",
+      "status": {
+        "actual_tick": "gpu.orch_r166_parent_policy.tick",
+        "cadence": 1,
+        "caught_up": true,
+        "head_sha256": "f8a593a428c82ce17a937ea6315ad6d82323310137a4c73cf58fb949d3c83ada",
+        "observed_unix": 1789690425.0758433,
+        "physical": 4,
+        "request_count": 139,
+        "response_count": 139,
+        "sleep_count": 44,
+        "status": "AWAITING_RENDER"
+      },
+      "target_gpu": 7,
+      "target_node": "node2"
+    },
+    {
+      "arm": "C",
+      "cadence": 3,
+      "console": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188/receiving_parents/physical7/CONSOLE.json",
+        "sha256": "44aa217682f8d75acd9211e10eab34052543db6200009d911d1c581520675095"
+      },
+      "first_publication": null,
+      "first_rendered": null,
+      "life": "creative_select",
+      "new_attempts": [
+        {
+          "attempt": "parent_000000000144",
+          "error": "object_delivered_budget_exhausted",
+          "result": {
+            "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/receipt_repair_v1/parents/physical7/parent/parent_000000000144/RESULT.json",
+            "sha256": "db66faf7d378ec2319f933de0155f7034b3ebdb45538f6b8e27953bed9b4e6d4"
+          },
+          "status": "VALIDATION_FAILED"
+        }
+      ],
+      "parent_identity": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/receiving_parent.py",
+          "serve",
+          "--physical",
+          "7"
+        ],
+        "pid": 1594801,
+        "state": "S",
+        "ticks": "179722371",
+        "uid": 158984
+      },
+      "physical": 7,
+      "root": "/localhome/local-rohing/orch_r188_node2_rehome_20260917t2344z/receiving7/root",
+      "status": {
+        "actual_tick": "gpu.orch_r166_parent_policy.tick",
+        "cadence": 3,
+        "caught_up": true,
+        "head_sha256": "c495dcb6ff1edb2ca4019d181f8c14f40348cb815207760e31c5dce2b01f9f9f",
+        "observed_unix": 1789690424.1926403,
+        "physical": 7,
+        "request_count": 144,
+        "response_count": 144,
+        "sleep_count": 45,
+        "status": "WAITING_FOR_NEW_CHILD_BOUNDARY"
+      },
+      "target_gpu": 5,
+      "target_node": "node2"
+    }
+  ],
+  "source_gpu_actions": 0
+}

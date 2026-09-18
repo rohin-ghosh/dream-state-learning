@@ -1,0 +1,37 @@
+SOURCE LINES 12-30
+def pick_bon(row, reward_df, sentiment_pipe, n = 10): 
+    '''
+    Pick the top n captions given a row of the dataframe
+    '''
+    contest_number = row['contest_number']
+    print(contest_number)
+    captions = row[2:].to_list() 
+    prompt = reward_df[reward_df['contest_number'] == contest_number]['prompt'].tolist()[0]
+    texts = [ prompt + str(caption) for caption in captions]
+    sent_kwargs = {"return_all_scores": True, "function_to_apply": "none", "batch_size": 16}
+    pipe_outputs = sentiment_pipe(texts, **sent_kwargs)
+    rewards = np.array([torch.tensor(output[0]["score"]) for output in pipe_outputs])
+    
+    top_captions = []
+    orders = np.argsort(rewards)
+    for (i,order) in enumerate(orders): 
+        if order in np.arange(len(orders)-n, len(orders)): 
+            top_captions.append(captions[i])
+    return top_captions
+
+SOURCE LINES 44-58
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name)
+    tokenizer.pad_token = tokenizer.eos_token
+    tokenizer.padding_side = "left"
+
+    reward_model = AutoModelForSequenceClassification.from_pretrained(
+        args.reward_model,
+        device_map="cuda",
+        num_labels=1,
+    )
+    reward_model.config.pad_token_id = reward_model.config.eos_token_id
+    sentiment_pipe = pipeline(
+        "sentiment-analysis",
+        model=reward_model,
+        tokenizer=tokenizer,
+    )

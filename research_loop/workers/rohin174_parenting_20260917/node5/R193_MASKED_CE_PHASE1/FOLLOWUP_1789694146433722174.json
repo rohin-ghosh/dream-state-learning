@@ -1,0 +1,126 @@
+{
+  "observed_local_unix": 1789694146.433632,
+  "result": {
+    "dataset": {
+      "complete_row_count": 0,
+      "exists": false,
+      "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/exploration/C2_R188_same_life_recovery.jsonl",
+      "rows": []
+    },
+    "head": {
+      "index": 5683,
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "kind": "UPDATE",
+      "previous_sha256": "274e0ba751cf4a498db48ef5e91aa8eca7ae07b778539754f526061ac13d6fc1",
+      "schema": "R125_STREAM_JOURNAL_V1",
+      "sha256": "9d44e549d6e490c091030ac406d2f0041b00c70119679844dc84e328437f30ba"
+    },
+    "head_fields": {
+      "finished_unix": 1789694099.505019,
+      "optimizer_step": 4812
+    },
+    "latest_complete": {
+      "cycle": 48,
+      "index": 5615,
+      "record_mtime_ns": 1789693664947868128,
+      "record_sha256": "9a2c833dbb690344345574282f2aae34be90bf47347e40bbb1afeeeec722d078",
+      "total_optimizer_steps": 4764,
+      "updates": 48
+    },
+    "live_changes": 0,
+    "loaded": null,
+    "observed_unix": 1789694146.3182638,
+    "pids": {
+      "original_math_bridge": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/r193_c2_bridge.py",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/BRIDGE.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1",
+        "parent": 1,
+        "pid": 2930020,
+        "start_ticks": "22767768",
+        "state": "S"
+      },
+      "original_native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/source",
+        "parent": 2930122,
+        "pid": 2930123,
+        "start_ticks": "22768040",
+        "state": "R"
+      },
+      "original_outer": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r188_node5_confinement",
+          "dispatch",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/source",
+        "parent": 1,
+        "pid": 2930061,
+        "start_ticks": "22767888",
+        "state": "S"
+      },
+      "waiter": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1/memory_handoff.py",
+          "execute"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1",
+        "parent": 1,
+        "pid": 2981108,
+        "start_ticks": "22945285",
+        "state": "R"
+      }
+    },
+    "preservation": {},
+    "publications": 0,
+    "receipts": {
+      "ARMED.json": {
+        "document": {
+          "phase": "R193_C2_MASKED_CAUSAL_CE_V1",
+          "pid": 2981108,
+          "signals": 0,
+          "time": 1789693892.7243009,
+          "wait_seconds": 1200
+        },
+        "path": "/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1/ARMED.json",
+        "sha256": "6eb909a9c9e602284b2dbd0f6950e1e208b398a461713914fe071e790a68b379"
+      },
+      "WAITER_START.json": {
+        "document": {
+          "no_retry": true,
+          "operator": "/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1/memory_handoff.py",
+          "pid": 2981108,
+          "ready_sha256": "098f4b91ba300ba7659303274f936ccdcc8806f731782997f33ff2e6415c2b2b",
+          "start_ticks": "22945285",
+          "started_unix": 1789693892.662968
+        },
+        "path": "/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1/WAITER_START.json",
+        "sha256": "47bab85328bacfb774e4b62ef8bf61331d8342a824e075ac73613ba831b0f642"
+      }
+    },
+    "recipe": null,
+    "signals": 0
+  },
+  "returncode": 0,
+  "stderr": ""
+}

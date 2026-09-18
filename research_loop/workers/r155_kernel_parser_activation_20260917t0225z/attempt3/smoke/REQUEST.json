@@ -1,0 +1,12 @@
+{
+  "origin": {
+    "kind": "BUILDER_TEST",
+    "record_index": 0,
+    "record_sha256": "697d7466d9075aaa2a71abc2c270824ff736c970f551417d2aca5705f8f5a9db"
+  },
+  "request_id": "332a19390413b6764834a3b5ddf4132f108ba3b8a52389c3e7121f755df91516",
+  "schema": "R132_KERNEL_REQUEST_V1",
+  "source": "@triton.jit\ndef add_kernel(left, right, output, size: tl.constexpr, BLOCK: tl.constexpr):\n    offsets = tl.program_id(0) * BLOCK + tl.arange(0, BLOCK)\n    mask = offsets < size\n    result = tl.load(left + offsets, mask=mask) + tl.load(right + offsets, mask=mask)\n    tl.store(output + offsets, result, mask=mask)\n",
+  "source_sha256": "0002410963c35d59f2ad79a81430598e51ebabd4cb304f368139a1d6c6d19a88",
+  "task": "triton_add_f32_v1"
+}

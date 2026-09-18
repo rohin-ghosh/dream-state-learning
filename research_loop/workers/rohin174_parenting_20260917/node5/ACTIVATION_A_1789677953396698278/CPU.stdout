@@ -1,0 +1,24 @@
+
+==================================== ERRORS ====================================
+________________________ ERROR collecting test session _________________________
+ImportError while importing test module '/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789677953396698278/source/tests/test_node5_r175_activation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_node5_r175_activation.py:15: in <module>
+    from gpu import orch_r166_parent_policy as policy
+gpu/orch_r166_parent_policy.py:12: in <module>
+    from gpu import orch_r133_programme_parent as parent
+gpu/orch_r133_programme_parent.py:13: in <module>
+    from gpu.orch_route_parent_campaign_providers import STRONG, strong
+gpu/orch_route_parent_campaign_providers.py:16: in <module>
+    from gpu import orch_l2_long_backend as backend
+gpu/orch_l2_long_backend.py:12: in <module>
+    from organism_v6.orch_l2_long_parent import PARENT_SYSTEM, digest, validate_request
+E   ModuleNotFoundError: No module named 'organism_v6.orch_l2_long_parent'
+=========================== short test summary info ============================
+ERROR ../../../../../../../../../../dev
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.23s

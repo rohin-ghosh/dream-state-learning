@@ -1,0 +1,64 @@
+{
+  "observed_utc": "2026-09-18T04:01:55Z",
+  "status": "EXISTING_NATIVE_TWO_GPU_PATH_UNSUPPORTED",
+  "scope": "Frozen C2 source engine and released R205/R206 byte-identical native continual generation/training/resume path, not a claim about all possible implementations",
+  "hardware_update": {
+    "source": "Rohin R206 update attributing completed setup to Fable",
+    "hostname": "[REDACTED_HOST]",
+    "count": 8,
+    "gpu_model": "NVIDIA A10G",
+    "memory_gb_per_gpu": 24,
+    "reported_setup_done_utc": "2026-09-18T03:54:00Z",
+    "reported_imports": "torch/vllm/peft with eight CUDA devices; Qwen cached",
+    "operator_remote_confirmation": false,
+    "remote_confirmation_blocker": "Host key verification failed; second wrapper-only read probe also exited255"
+  },
+  "verified_release": {
+    "ready_manifest": "research_loop/workers/rohin201_c2_clones_20260917/r205_ready/READY.json",
+    "ready_sha256": "d84363c937db4e085e5129e616fffa4dedd0882a7ac5f871357b6f3aabe1357e",
+    "archive_sha256": "72531868c065ecb518c4bac589303085a315e80a15df7c2de59c0925a5a25231",
+    "archive_bytes_verified": true,
+    "native_archive_member": "gpu/orch_r125_continual_native.py",
+    "native_sha256": "256a1c1ac20a9ed6faf8cd6193182bb010c7f5d36385a45612704a5b66ed0331",
+    "declared_application_cli_flags": ["--plan", "--resume"],
+    "tensor_parallel_or_model_sharding_flag": false
+  },
+  "engine": {
+    "path": "gpu/astra_experienced_event_microloop.py",
+    "sha256": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70",
+    "exact_match_in_fixed_snapshot": true,
+    "exact_match_in_current_node1_private_source": true,
+    "device_map": null,
+    "placement": "Whole model.to(options.device); NativeChild passes cuda:0 on resume",
+    "explicit_assertion": "torch.cuda.device_count() == 1: exactly_one_visible_gpu_required",
+    "not_vllm_native_life": true
+  },
+  "actual_current_plan_checked": {
+    "path": "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_comm_b2_r204/control/PLAN.json",
+    "schema": "R125_NATIVE_CONTINUITY_V1",
+    "physical": 2,
+    "gpu_uuid": "GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296",
+    "context_limit": 16384,
+    "segment_tokens": 512,
+    "new_presentations": 16,
+    "rehearsal_presentations": 0,
+    "anchor_lambda": 0.25,
+    "distributed_config_keys": [],
+    "native_binding": "CUDA_VISIBLE_DEVICES equals scalar plan.gpu_uuid",
+    "training_and_generation_tensor_device": "cuda:0",
+    "containment": "Current node1 launcher admits one GPU minor and explicitly denies foreign minors; not reusable as a two-device configuration"
+  },
+  "decision": {
+    "Main_accepted_fallback": "Conversational C2 goes to node3 A40/Copernicus; ovx4 reserved lighter inference, no unsupported two-GPU life",
+    "R206_ready_verified_sha256": "77c98baa295964118caeb58e7a0b6a2ad1f1c52c6703d3cb15f989cfed38b2ad",
+    "R206_archive_verified_sha256": "ab7c3ada0780d8414aba30e59721df1bb8c51fdee747105359682bae3c144f84",
+    "do_not_launch_36gb_life_on_24gb_device": true,
+    "do_not_invent_tp_or_change_quantization_base_dose": true,
+    "do_not_weaken_device_containment": true,
+    "proposed_allowed_alternative": "Move conversational C2 to node3 A40 through Main/node3 owner; keep ovx4 for explicitly assigned lighter score/game work",
+    "node3_launch_or_reallocation_performed": false,
+    "r206_full_message_pin_release_pending": false,
+    "native_dispatches_on_ovx4": 0,
+    "actual_loaded_on_ovx4": 0
+  }
+}

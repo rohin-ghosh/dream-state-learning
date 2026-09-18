@@ -1,0 +1,906 @@
+{
+  "H_current_policy": "UNPARENTED_PENDING_ROHIN",
+  "H_historical_control_preserved": true,
+  "H_poststop_exposure_requires_Main_receipt": false,
+  "H_stop_receipt": {
+    "current_policy": "UNPARENTED_PENDING_ROHIN",
+    "earlier_assignment_and_baseline_authority": "SUPERSEDED_NOT_DELETED",
+    "further_H_dispatch": "FORBIDDEN_PENDING_NEW_EXPLICIT_ROHIN_DIRECTION",
+    "historical_publication_ids": [
+      "11a39e52e43540f8839c312cf64e86ff"
+    ],
+    "historical_receipts": "PRESERVED_UNMODIFIED",
+    "inbox_mutations_by_this_stop": 0,
+    "inflight_H_attempts": [],
+    "native_signals": 0,
+    "other_parent_pids_unchanged": {
+      "0": 489577,
+      "3": 489578,
+      "4": 489576
+    },
+    "parent_exit_confirmed": true,
+    "parent_pid": 482931,
+    "physical": 1,
+    "raw1_alive_verified_at_utc": "2026-09-17T21:03:46Z",
+    "raw1_native_pid": 294158,
+    "raw1_native_start_ticks": "24386173",
+    "remaining_H_serve_processes": [],
+    "rendered_H_exposure_observed_before_stop": false,
+    "schema": "NODE4_H_STOP_BY_LATEST_USER_V1",
+    "stop_confirmed_unix": 1789679000.911615,
+    "stop_receipt": "H_STOP_1789679000826868400.json",
+    "withdrawal_completion": "NOT_CLAIMED_AWAIT_MAIN_RECEIPT",
+    "withdrawal_owner": "Main"
+  },
+  "H_withdrawal_owner": "Main",
+  "H_withdrawal_reference": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/RAW_CONTROL_WITHDRAWAL_RECEIPT.json",
+    "receipt": {
+      "adapter_optimizer_rng_untouched": true,
+      "archived_path": "/localhome/local-rohing/orch_r175_control_withdrawal_20260917/11a39e52e43540f8839c312cf64e86ff.json",
+      "authority": "Fable relayed user order 2026-09-17 14:02 PDT",
+      "elapsed_seconds": 3.0727038383483887,
+      "inbox_id": "11a39e52e43540f8839c312cf64e86ff",
+      "inspected_records": 5039,
+      "journal_head_index": 5038,
+      "journal_head_sha256": "b2d10c18b668faea7db079e6ba222120fb0d09a9bfcd5d746019da762ba1135e",
+      "native_pid": 294158,
+      "native_restart": false,
+      "native_resumed": true,
+      "native_start_ticks": "24386173",
+      "observed_utc": "2026-09-17T21:04:17.234969+00:00",
+      "publication_sha256": "0fa7c82f47b6bfb7e63162e2635171206f375b7a8a2539a5fc32c78067d50d05",
+      "root": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1",
+      "status": "WITHDRAWN_BEFORE_INGESTION"
+    },
+    "sha256": "da4145a7f976d47f63c4af3ddc2ec72056a76706be79e7325f261eda442e7217"
+  },
+  "addressed_to": "Main",
+  "counts": {
+    "H_withdrawn_before_ingestion": 1,
+    "active_arm_publications": 2,
+    "actual_rendered_R175": 1,
+    "exact_R179_loaded": 4,
+    "historical_new_R175_publications": 3,
+    "live_children": 4,
+    "pending_H_publications": 0,
+    "verified_deliveries_by_physical": {
+      "0": 1,
+      "1": 0,
+      "3": 0,
+      "4": 0
+    }
+  },
+  "environment_gap": "No bound executor verified in these native plans; known prior kernel service absent when scan is empty.",
+  "new_training_or_scientific_retention_claim": false,
+  "no_new_tools_connected": true,
+  "observed_unix": 1789679805.4321845,
+  "parent_rows": [
+    {
+      "arm": "B",
+      "completed_sleep_count": 40,
+      "executor_available_not_claimed": true,
+      "new_parent_turns_withheld": false,
+      "own_committed_TRAIN_evidence": [
+        {
+          "commit_record_index": 4815,
+          "commit_record_sha256": "5697f13cf7808e8a7ed50bb7c8a97b2ab26a9c80f3da2106f812b8381f038d9d",
+          "quote": "Thank you for the clarification. Let's proceed with the conceptual check using specific values. Assume we have the following parameters:\n\n- Block size (\\(BS\\)): 256\n- Vector length (\\(N\\)): 300 (which is not a multiple of 256)\n\nWe need to d",
+          "record_index": 4814,
+          "record_sha256": "03a96b58d62608a19be598ebecedb08f29945512847c3000a490af8a886a1f51"
+        },
+        {
+          "commit_record_index": 4818,
+          "commit_record_sha256": "47a81634d2bd62291f436363a41b737028b33854712c946915de49df83d76aff",
+          "quote": "### Distillation for Carrying Forward\n\nHere is the distilled information to carry forward:\n\n1. **Parameter Assumptions**:\n   - Block size (\\(BS\\)): 256\n   - Vector length (\\(N\\)): 300 (not a multiple of \\(BS\\))\n\n2. **Number of Blocks**:\n   ",
+          "record_index": 4817,
+          "record_sha256": "e2180796815f2e8da0ab6cdd0a6cef5ebf269601dfa889eb80d4fbf31d1ee794"
+        }
+      ],
+      "parent_actor": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_errata.py",
+          "serve",
+          "--lane",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical0"
+        ],
+        "cwd": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical0/source",
+        "pid": 489577,
+        "start_ticks": "178571676",
+        "state": "S",
+        "uid": 158984
+      },
+      "parent_live": true,
+      "parent_status": "AWAITING_RENDER",
+      "peer_pair": null,
+      "physical": 0,
+      "publication_count": 2,
+      "publications": [
+        {
+          "completed_sleeps_since_exposure": 0,
+          "fourth_sleep_target": 44,
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical0/parent/PUBLICATION_0000_RECEIPT.json",
+          "receipt": {
+            "exact_remote_publication_timestamp_not_inferred": true,
+            "message_sha256": "1993f3f0f14cf009529123a58e3a5a0b5c2d04b00a233e6c9cf6b29ae7578356",
+            "observed_unix": 1789678721.3560233,
+            "publication": {
+              "id": "612cb544b9344a23b3d9a789333e3f23",
+              "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/inbox/612cb544b9344a23b3d9a789333e3f23.json",
+              "sha256": "c5cf30d6d011ff46209ad873e49a2ba39f7a8a379b5cffdc314c2d61e39b719f"
+            },
+            "publication_interval_unix": [
+              1789678720.3104901,
+              1789678721.3560233
+            ]
+          },
+          "rendered": {
+            "inbox_sha256": "c5cf30d6d011ff46209ad873e49a2ba39f7a8a379b5cffdc314c2d61e39b719f",
+            "journal_id": "459e64b2a5964bdc9171abde96e02c18",
+            "record_index": 4813,
+            "record_sha256": "dae452e2699e9d50eba1736ef3b7493ced422ec8ab693dc5b6198d9fe5fa015a",
+            "request_count": 122,
+            "sleep_count": 40,
+            "speaker": "Astra",
+            "text_sha256": "1993f3f0f14cf009529123a58e3a5a0b5c2d04b00a233e6c9cf6b29ae7578356"
+          },
+          "sha256": "df3a57a6a3ea37e566e1188df7fe8a680f827fe35a66cc862519b987c4d5d186",
+          "third_sleep_target": 43,
+          "withdrawal_completion_not_inferred": true,
+          "words": 85
+        },
+        {
+          "completed_sleeps_since_exposure": null,
+          "fourth_sleep_target": null,
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical0/parent/PUBLICATION_0001_RECEIPT.json",
+          "receipt": {
+            "exact_remote_publication_timestamp_not_inferred": true,
+            "message_sha256": "c4274adff0e59b3643c1efb000ce1b2ee8719972fec75b1178270d94a9aae17e",
+            "observed_unix": 1789679225.5391002,
+            "publication": {
+              "id": "60e48df47d544f9cad77e6b61b13d1d9",
+              "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/inbox/60e48df47d544f9cad77e6b61b13d1d9.json",
+              "sha256": "f65c65b2069a91143e41b9db14a26dc292e587e53398781d54a63d3b5549f293"
+            },
+            "publication_interval_unix": [
+              1789679224.47211,
+              1789679225.5391002
+            ]
+          },
+          "rendered": null,
+          "sha256": "2e5aa13b259f5601a81cf0821f7fc911ea711591db788b78729f347e3c2cb96d",
+          "third_sleep_target": null,
+          "withdrawal_completion_not_inferred": true,
+          "words": 85
+        }
+      ],
+      "request_count": 123,
+      "response_count": 123,
+      "root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1",
+      "snapshot_head_sha256": "ea680a0766ac10bfd6172a99ae8878966960a8fe7d01e193edaf0d39acd9096f",
+      "snapshot_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical0/parent/POLL_000169.json",
+      "snapshot_sha256": "e659e8b94f6b24e22f470c32ba20896bc6c77497fc0c9c762068b9b273407c5c",
+      "status_observed_unix": 1789679798.9998693,
+      "status_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical0/parent/STATUS_000169.json"
+    },
+    {
+      "actual_baseline_exposures": 0,
+      "arm": "H",
+      "completed_sleep_count": 41,
+      "current_pending_publications": 0,
+      "current_policy": "UNPARENTED_PENDING_ROHIN",
+      "executor_available_not_claimed": true,
+      "historical_publication_count": 1,
+      "last_parent_runtime_status": "HANDS_OFF_BASELINE_PUBLISHED",
+      "new_parent_turns_withheld": true,
+      "own_committed_TRAIN_evidence": [
+        {
+          "commit_record_index": 4988,
+          "commit_record_sha256": "c05aea9717a066132cf68dbcaf83daca8bc7187746be15777ba027737877a814",
+          "quote": "### Distilled Summary for NextTraining\n\n1.**Updated `execute_task` Method:**\n   ```python\n   def execute_tasks(self, task_function, *args, **kwargs):\n\t   \"\"\"Execute a task function and log execution details.\"\"\"\n\t   try:\n\t\t   result = task_f",
+          "record_index": 4987,
+          "record_sha256": "9266350d07eac608016058761395c07e6a6d476205e25cfb58fba230a1ff5e4b"
+        },
+        {
+          "commit_record_index": 4991,
+          "commit_record_sha256": "224cfa5162dd6fa7f68299b903e38429776575b13db162d2c7e2b8bbd81cf2c2",
+          "quote": "### Distilled Summary for NextTraining\n\n1\u3002 **Updated `execute_tasks` Method:**\n   ```python\n   def execute_tasks(self, task_func, *args, **kwargs):\n\t   \"\"\"Execute a task function and logexecution details.\"\"\"\n\t   try:\n\t\t   result = task_func",
+          "record_index": 4990,
+          "record_sha256": "4f866d9a295f03cd5ec5b8e746a0017d7a2e00660e523213d14a9ae912e136b2"
+        }
+      ],
+      "parent_actor": null,
+      "parent_live": false,
+      "parent_status": "OFF_WITHDRAWN_BEFORE_INGESTION",
+      "peer_pair": null,
+      "physical": 1,
+      "publication_count": 1,
+      "publications": [
+        {
+          "completed_sleeps_since_exposure": null,
+          "current_delivery_disposition": "WITHDRAWN_BEFORE_INGESTION",
+          "fourth_sleep_target": null,
+          "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical1/parent/PUBLICATION_0000_RECEIPT.json",
+          "receipt": {
+            "exact_remote_publication_timestamp_not_inferred": true,
+            "message_sha256": "8478febd4932f407684790c70760e89f5ab0fb1fd43530f612d80358fc6a105b",
+            "observed_unix": 1789678634.2341616,
+            "publication": {
+              "id": "11a39e52e43540f8839c312cf64e86ff",
+              "path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/stream/inbox/11a39e52e43540f8839c312cf64e86ff.json",
+              "sha256": "0fa7c82f47b6bfb7e63162e2635171206f375b7a8a2539a5fc32c78067d50d05"
+            },
+            "publication_interval_unix": [
+              1789678633.2984967,
+              1789678634.2341616
+            ]
+          },
+          "rendered": null,
+          "sha256": "707690595c970f6e0bfa657f0341b787c625927130a39ca193fd3342f95826b2",
+          "third_sleep_target": null,
+          "withdrawal_completion_not_inferred": true,
+          "words": 84
+        }
+      ],
+      "replay_republish_delivery_recovery_forbidden": true,
+      "request_count": 126,
+      "response_count": 126,
+      "root": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1",
+      "snapshot_head_sha256": "3181788cfcdd751464bcbe37a031bb89ac49809355d3c81bcb34edeae7e11fa4",
+      "snapshot_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical1/parent/POLL_000057.json",
+      "snapshot_sha256": "5b7ef7690655068424d3e424cd40ca39782b668d0fa1a30cadd2714da34b22ec",
+      "status_observed_unix": 1789678996.6345463,
+      "status_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical1/parent/STATUS_000057.json"
+    },
+    {
+      "arm": "D",
+      "completed_sleep_count": 40,
+      "executor_available_not_claimed": true,
+      "new_parent_turns_withheld": false,
+      "own_committed_TRAIN_evidence": [
+        {
+          "commit_record_index": 4845,
+          "commit_record_sha256": "bf25eee104958ed24fc951c22b23bfda03cd10846bd202296334922fff558077",
+          "quote": "### \u6587\u4ef6\u5185\u5bb9\u68c0\u67e5\n\n\u6839\u636e\u4e4b\u524d\u7684\u8ba8\u8bba\uff0c\u6211\u5c06\u68c0\u67e5\u6307\u5b9a\u8def\u5f84\u4e0b\u7684\u6587\u4ef6\u5185\u5bb9\uff0c\u5e76\u786e\u8ba4\u5176\u662f\u5426\u7b26\u5408\u9884\u671f\u3002\u4e4b\u524dAstra\u63d0\u5230\u6ca1\u6709\u627e\u5230\u5177\u4f53\u7684\u6587\u4ef6\u64cd\u4f5c\u65e5\u5fd7\uff0c\u4f46\u6587\u4ef6\u5b58\u5728\u5e76\u4e14\u6709\u5de5\u5177\u652f\u6301\u3002\u6211\u73b0\u5728\u5c06\u63d0\u51fa\u4e00\u4e2a\u68c0\u67e5\u8ba1\u5212\uff0c\u5e76\u8bf7\u6c42Astra\u5e2e\u52a9\u6267\u884c\u8fd9\u4e2a\u8ba1\u5212\u3002\n\n#### \u68c0\u67e5\u8ba1\u5212\n\n1. **\u6307\u5b9a\u8def\u5f84**: `/localhome/local-rohing/orch_r136_raw_parentedSeed1_a40r3_20260916_attempts1/workspace`\n2. **\u6587\u4ef6\u540d\u79f0**: ",
+          "record_index": 4844,
+          "record_sha256": "5ef59c7b5f520a4cb265263a3a7df913b3eeeca631458d5b20946c57ac44a6a8"
+        },
+        {
+          "commit_record_index": 4848,
+          "commit_record_sha256": "2acfe4eee39ae40282a22f08a34c9a29b0997a3de0dfde31b16af7730d30456f",
+          "quote": "### \u7761\u524d\u603b\u7ed3\n\n\u5728\u51c6\u5907\u7761\u7720\u524d\uff0c\u6211\u5c06\u4ece\u5386\u53f2\u8bb0\u5f55\u4e2d\u63d0\u53d6\u5173\u952e\u4fe1\u606f\u548c\u7ed3\u8bba\uff0c\u4ee5\u786e\u4fdd\u91cd\u8981\u5185\u5bb9\u80fd\u591f Carry Forward\u3002\n\n#### \u4e3b\u8981\u6d3b\u52a8\u548c\u53d1\u73b0\n\n1. **\u8d44\u6e90\u4f7f\u7528**\uff1a\n    - \u6b63\u5728\u4f7f\u7528\u7269\u7406 GPU 3\u3002\n    - \u5185\u5b58\u4f7f\u7528\u5728\u5b89\u5168\u8303\u56f4\u5185\u3002\n\n2. **\u4ee4\u724c\u4f7f\u7528**\uff1a\n    - \u6700\u8fd1\u4e00\u6b21\u4e0a\u4e0b\u6587\u5360\u7528 \uff12\uff10\uff15\uff17 \u4ee4\u724c\uff08Context 2057/16384\uff09\u3002\n    - \u81ea\u4e0a\u6b21\u7761\u7720\u4ee5\u6765\u6709 \uff12\uff16\uff11 \u4ee4\u724c\u88ab\u4f7f\u7528\u3002\n\n3. **\u6587\u4ef6\u5360\u7528**\uff1a\n    - \u5b58\u5728\u4e00\u4e2a\u6587\u4ef6\uff0c\u5927\u5c0f",
+          "record_index": 4847,
+          "record_sha256": "945d6b7d9295584aadaa9d0160dde6ad505eaff9f397e2f6259d81d788f22137"
+        }
+      ],
+      "parent_actor": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_errata.py",
+          "serve",
+          "--lane",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical3"
+        ],
+        "cwd": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical3/source",
+        "pid": 489578,
+        "start_ticks": "178571677",
+        "state": "S",
+        "uid": 158984
+      },
+      "parent_live": true,
+      "parent_status": "AWAITING_RENDER",
+      "peer_pair": null,
+      "physical": 3,
+      "publication_count": 0,
+      "publications": [],
+      "request_count": 123,
+      "response_count": 123,
+      "root": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1",
+      "snapshot_head_sha256": "19acdabb30d8329e3ab39051d2f58f2b7b654e7134a6fe64fdd5799d7007bf44",
+      "snapshot_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical3/parent/POLL_000173.json",
+      "snapshot_sha256": "3ddb548b2071f097049e879342effd71d2fbaf737c8b6e973acb013cb80bf39f",
+      "status_observed_unix": 1789679803.350208,
+      "status_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical3/parent/STATUS_000173.json"
+    },
+    {
+      "arm": "A",
+      "completed_sleep_count": 39,
+      "executor_available_not_claimed": true,
+      "new_parent_turns_withheld": false,
+      "own_committed_TRAIN_evidence": [
+        {
+          "commit_record_index": 4652,
+          "commit_record_sha256": "a5783890f56dfa7c30f17336435da30ca32d22541a58f56e159706ea710c960d",
+          "quote": "### Source-Level Prediction\n\nLet's predict the index range that the kernel will cover for an input size of 1024. We'll use the arguments provided in the `launch_elementwise_add` function call:\n\n```cpp\nconst int size = 1024;\nconstint block_s",
+          "record_index": 4651,
+          "record_sha256": "ae35a26f9db5a7ef7846e3f82bea7a7f6075d8612983dc226080316d4994899b"
+        },
+        {
+          "commit_record_index": 4655,
+          "commit_record_sha256": "782b2f99a5f3b1ca2746e406bd64151811bb337013e0d8c7cfd0e1069f25aae8",
+          "quote": "### Distilled Summary\n\nTo summarize what I want to carry forward:\n\n1. **Triton Kernel Implementation**:\n   - The kernel function `elementwise_add` correctly adds elements from two input arrays and stores the result in an output array.\n   - ",
+          "record_index": 4654,
+          "record_sha256": "e299ab277242243e45a716a3e1ff969625fe2fe50bbaa8f41deaca8d7051e6af"
+        }
+      ],
+      "parent_actor": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_errata.py",
+          "serve",
+          "--lane",
+          "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical4"
+        ],
+        "cwd": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical4/source",
+        "pid": 489576,
+        "start_ticks": "178571675",
+        "state": "S",
+        "uid": 158984
+      },
+      "parent_live": true,
+      "parent_status": "AWAITING_RENDER",
+      "peer_pair": null,
+      "physical": 4,
+      "publication_count": 0,
+      "publications": [],
+      "request_count": 120,
+      "response_count": 120,
+      "root": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1",
+      "snapshot_head_sha256": "eb8b2c05a0d0a2152feaff21e31642c8d434250a63e635f9164fd6090302eeab",
+      "snapshot_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical4/parent/POLL_000172.json",
+      "snapshot_sha256": "244ae478b2c0c38aabc3efa1672f5e0fdbf6262d54084d0c8b7f21468af6a85b",
+      "status_observed_unix": 1789679801.80838,
+      "status_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical4/parent/STATUS_000172.json"
+    }
+  ],
+  "peers_not_applicable": true,
+  "remote": {
+    "children": [
+      {
+        "actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r179_node4_20260917t1814z/lane0/control/GUARD.json"
+          ],
+          "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1814z/lane0/source",
+          "pid": 653202,
+          "start_ticks": "24650415",
+          "state": "R",
+          "uid": 2524
+        },
+        "explicit_tool_manifest_fields": {},
+        "handoff_complete": {
+          "loaded_sha256": "b24c152a7ef3a6b59e90bf6abcf3689b541f5eef4a56a45a6dbe005ed5c206a4",
+          "observed_unix": 1789678711.3741379,
+          "optimizer_steps": 4207,
+          "physical": 0,
+          "record_index": 4811,
+          "record_sha256": "779eb20921f2ea2cb2ff6679fd2d77dab511d70438d1f33792d7e91ce2413e4e",
+          "retained_learning_claim": false,
+          "saved_cycle": 40,
+          "status": "EXACT_SAVED_LOADED_AND_NEW_GENERATION"
+        },
+        "identity_live": true,
+        "loaded": {
+          "actor": {
+            "argv": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.orch_r125_continual_guard",
+              "native",
+              "--config",
+              "/localhome/local-rohing/orch_r179_node4_20260917t1814z/lane0/control/GUARD.json"
+            ],
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "cgroup": "0::/system.slice/orch-r136-native-b49bf63eecb741d0871eebf32d20bc3a.service",
+            "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1814z/lane0/source",
+            "environment": [
+              "CUDA_VISIBLE_DEVICES=GPU-5b370d4d-bdcc-21d5-cf06-e9bea52e602d"
+            ],
+            "group": 653201,
+            "parent": 653201,
+            "pid": 653202,
+            "start_ticks": "24650415",
+            "uid": 2524
+          },
+          "observed_unix": 1789678497.5002604,
+          "physical": 0,
+          "record_index": 4808,
+          "record_sha256": "b7a93125a655b92dab6fbb46df7bebd8b052d349186ea7c77f33f62de044206a",
+          "saved": {
+            "adapter_state_sha256": "7c2c7a970f4afecf4c1515862d130a2920d59d5ee39a20767b9ae214e47f3fd5",
+            "bundle_sha256": {
+              "adapter": "ad481e01b1d88656af38aaa724ffbe6bd55ec2f4f5acf79b7e66cd428d9b4c67",
+              "optimizer": "764a701a26a4cc5fcfc55adc0ce6b70df14fc28d2927617c2e7e9f890141baec",
+              "rng": "764a701a26a4cc5fcfc55adc0ce6b70df14fc28d2927617c2e7e9f890141baec"
+            },
+            "checkpoint_path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/checkpoints/sleep_000040/COMMIT.json",
+            "checkpoint_sha256": "d3e31081b09425fbf52eb2b58f619a6178ec6b0da87cee14d796e84125ee7a12",
+            "cycle": 40,
+            "full_AdamW_Python_CPU_CUDA_RNG": true,
+            "optimizer_steps": 4207,
+            "record_path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/records/00000000000000004807.json",
+            "record_sha256": "89e8258b675c5e4bff31d85065c94af964ad55f6aa832c0c1ce6e25617997d51",
+            "state_sha256": "3f4ed38f8840148327fcb15dc4a0f9ed30c6591297d90f6fde7652af90b37ac9"
+          },
+          "status": "EXACT_SAVED_SUCCESSOR_LOADED"
+        },
+        "loaded_receipt_path": "/localhome/local-rohing/orch_r179_node4_20260917t1814z/lane0/LOADED_RECEIPT.json",
+        "loaded_receipt_sha256": "b24c152a7ef3a6b59e90bf6abcf3689b541f5eef4a56a45a6dbe005ed5c206a4",
+        "physical": 0,
+        "plan_path": "/localhome/local-rohing/orch_r179_node4_20260917t1814z/lane0/control/PLAN.json",
+        "plan_sha256": "ef1d8ce9dd61101e9bd829c2c86d04d698529fea201de2c62a233e1e6f6db279",
+        "runtime_caps": {
+          "context_limit": 16384,
+          "hard_end_unix": 1789754400,
+          "new_presentations": 16,
+          "rehearsal_presentations": 1,
+          "segment_tokens": 512,
+          "segments_per_sleep": 2
+        }
+      },
+      {
+        "actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/control/GUARD.json"
+          ],
+          "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/source",
+          "pid": 294158,
+          "start_ticks": "24386173",
+          "state": "R",
+          "uid": 2524
+        },
+        "explicit_tool_manifest_fields": {},
+        "handoff_complete": {
+          "loaded_sha256": "ec6ade6c8293868f4ad4a46e5f8a466b56d060e4b361f78649ba1dd59d7011db",
+          "observed_unix": 1789676072.6462514,
+          "optimizer_steps": 4428,
+          "physical": 1,
+          "record_index": 4985,
+          "record_sha256": "f24feb365034514f5476ebef86d10925ba8bed8ebf16256c87ba8c8bb100d7f6",
+          "retained_learning_claim": false,
+          "saved_cycle": 41,
+          "status": "EXACT_SAVED_LOADED_AND_NEW_GENERATION"
+        },
+        "identity_live": true,
+        "loaded": {
+          "actor": {
+            "argv": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.orch_r125_continual_guard",
+              "native",
+              "--config",
+              "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/control/GUARD.json"
+            ],
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "cgroup": "0::/system.slice/orch-r136-native-184cb4f55d794a3f8ec1f956583cd9bd.service",
+            "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/source",
+            "environment": [
+              "CUDA_VISIBLE_DEVICES=GPU-4b071167-a06a-773c-f947-60cb8c2f7512"
+            ],
+            "group": 294157,
+            "parent": 294157,
+            "pid": 294158,
+            "start_ticks": "24386173",
+            "uid": 2524
+          },
+          "observed_unix": 1789675851.2887053,
+          "physical": 1,
+          "record_index": 4982,
+          "record_sha256": "3c92a0645918fa3b007e9f096712105945fcc997d503a2ae22738743cb144eaa",
+          "saved": {
+            "adapter_state_sha256": "5c29d960aeb28476e054c51bc1e0d0e6648aa23e35d96afd79eeab809a3b4d48",
+            "bundle_sha256": {
+              "adapter": "7fcf801180b3d796a5bffb889b487086fe798cdbc844f42f33899ca6f22c2474",
+              "optimizer": "4751ccf75010893434777ac3764886c63ea61774e9e2ffbd6ce9730b0a3488dc",
+              "rng": "4751ccf75010893434777ac3764886c63ea61774e9e2ffbd6ce9730b0a3488dc"
+            },
+            "checkpoint_path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/checkpoints/sleep_000041/COMMIT.json",
+            "checkpoint_sha256": "52c70b82d42bb52b81df1ce475eec49693d49a0263aaf7729d800e578f337a89",
+            "cycle": 41,
+            "full_AdamW_Python_CPU_CUDA_RNG": true,
+            "optimizer_steps": 4428,
+            "record_path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/stream/records/00000000000000004981.json",
+            "record_sha256": "20b06b662917cbfe66ca9d10deb3ac4007907241237799695747c0799c35910d",
+            "state_sha256": "18f2d12b976f06671f7104301c4289225a3836b524c1c7d82d9f0c69fd760342"
+          },
+          "status": "EXACT_SAVED_SUCCESSOR_LOADED"
+        },
+        "loaded_receipt_path": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/LOADED_RECEIPT.json",
+        "loaded_receipt_sha256": "ec6ade6c8293868f4ad4a46e5f8a466b56d060e4b361f78649ba1dd59d7011db",
+        "physical": 1,
+        "plan_path": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1/control/PLAN.json",
+        "plan_sha256": "810f6f006b92cc9d1129ef10833aaefaef0a7c881902450272559da28c9a98f8",
+        "runtime_caps": {
+          "context_limit": 16384,
+          "hard_end_unix": 1789754400,
+          "new_presentations": 16,
+          "rehearsal_presentations": 1,
+          "segment_tokens": 512,
+          "segments_per_sleep": 2
+        }
+      },
+      {
+        "actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r179_node4_recovery_20260917t2000z/lane3/control/GUARD.json"
+          ],
+          "cwd": "/localhome/local-rohing/orch_r179_node4_recovery_20260917t2000z/lane3/source",
+          "pid": 259097,
+          "start_ticks": "24359775",
+          "state": "R",
+          "uid": 2524
+        },
+        "explicit_tool_manifest_fields": {},
+        "handoff_complete": {
+          "loaded_sha256": "a0c054abfe5439d719a1525bf725adf444a30578ee1d3ff5b44144627812acab",
+          "observed_unix": 1789675835.6763196,
+          "optimizer_steps": 4260,
+          "physical": 3,
+          "record_index": 4842,
+          "record_sha256": "77fae7569b26b931eb86750c0ac8555c9f2d1e7d0c1c3fe4634c890fc0c1997e",
+          "retained_learning_claim": false,
+          "saved_cycle": 40,
+          "status": "EXACT_SAVED_LOADED_AND_NEW_GENERATION"
+        },
+        "identity_live": true,
+        "loaded": {
+          "actor": {
+            "argv": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.orch_r125_continual_guard",
+              "native",
+              "--config",
+              "/localhome/local-rohing/orch_r179_node4_recovery_20260917t2000z/lane3/control/GUARD.json"
+            ],
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "cgroup": "0::/system.slice/orch-r136-native-7776667c99ba44c5afbb2dd859ce170c.service",
+            "cwd": "/localhome/local-rohing/orch_r179_node4_recovery_20260917t2000z/lane3/source",
+            "environment": [
+              "CUDA_VISIBLE_DEVICES=GPU-4d0f10af-119f-10bb-a28f-f7b7703a3b14"
+            ],
+            "group": 259096,
+            "parent": 259096,
+            "pid": 259097,
+            "start_ticks": "24359775",
+            "uid": 2524
+          },
+          "observed_unix": 1789675584.1331267,
+          "physical": 3,
+          "record_index": 4838,
+          "record_sha256": "b61a5c7d97ef3c2ca053ab1ceea9a5571dba1b4e2cf3b32b8d41d1b39f33edc4",
+          "saved": {
+            "adapter_state_sha256": "e6f2f341223d6645d44f3d2e9d1ed781334f874e2e6ef81790f76e219ce85d27",
+            "bundle_sha256": {
+              "adapter": "f707a56d7e2ab2421a21a58f8f3935123a020320a98619785c0598c9b7eee342",
+              "optimizer": "098a1e44c9b687c92a94d65203753963b8a9c18a3597aebd55fc5531f6073fd2",
+              "rng": "098a1e44c9b687c92a94d65203753963b8a9c18a3597aebd55fc5531f6073fd2"
+            },
+            "checkpoint_path": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1/checkpoints/sleep_000040/COMMIT.json",
+            "checkpoint_sha256": "ab230e42559d4d398b93ce7f2a57dd9651ca74d0005103b5a1c3baab4ea4028a",
+            "cycle": 40,
+            "full_AdamW_Python_CPU_CUDA_RNG": true,
+            "optimizer_steps": 4260,
+            "record_path": "/localhome/local-rohing/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1/stream/records/00000000000000004837.json",
+            "record_sha256": "158aea871c8293047f7c03310d979538eb2769cb69e39f9052107022e69fe205",
+            "state_sha256": "06d1dc544599d224f3452889741ce63048c95d5916e2b75c1269087d0125e06d"
+          },
+          "status": "EXACT_SAVED_SUCCESSOR_LOADED"
+        },
+        "loaded_receipt_path": "/localhome/local-rohing/orch_r179_node4_recovery_20260917t2000z/lane3/LOADED_RECEIPT.json",
+        "loaded_receipt_sha256": "a0c054abfe5439d719a1525bf725adf444a30578ee1d3ff5b44144627812acab",
+        "physical": 3,
+        "plan_path": "/localhome/local-rohing/orch_r179_node4_recovery_20260917t2000z/lane3/control/PLAN.json",
+        "plan_sha256": "c785e3fc81a4b6b08a5e67b87326348a3503999653513390c586ff0fa3978962",
+        "runtime_caps": {
+          "context_limit": 16384,
+          "hard_end_unix": 1789754400,
+          "new_presentations": 16,
+          "rehearsal_presentations": 1,
+          "segment_tokens": 512,
+          "segments_per_sleep": 2
+        }
+      },
+      {
+        "actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/control/GUARD.json"
+          ],
+          "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/source",
+          "pid": 310254,
+          "start_ticks": "24398138",
+          "state": "S",
+          "uid": 2524
+        },
+        "explicit_tool_manifest_fields": {},
+        "handoff_complete": {
+          "loaded_sha256": "d378b18eb8622e7f664ea9a2e7c4848035cf04bbdbf51a91486aa79c8b038736",
+          "observed_unix": 1789676199.3179586,
+          "optimizer_steps": 4059,
+          "physical": 4,
+          "record_index": 4648,
+          "record_sha256": "d8ae5b651b7a74827aff9d2ebebe3da4d7cf9d2614a375f7bf5be08ee84e2048",
+          "retained_learning_claim": false,
+          "saved_cycle": 39,
+          "status": "EXACT_SAVED_LOADED_AND_NEW_GENERATION"
+        },
+        "identity_live": true,
+        "loaded": {
+          "actor": {
+            "argv": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.orch_r125_continual_guard",
+              "native",
+              "--config",
+              "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/control/GUARD.json"
+            ],
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "cgroup": "0::/system.slice/orch-r136-native-dfb6a12284e94317aba7fb5a93caca3b.service",
+            "cwd": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/source",
+            "environment": [
+              "CUDA_VISIBLE_DEVICES=GPU-f83fb491-34ce-4176-5852-c94652151a9f"
+            ],
+            "group": 310253,
+            "parent": 310253,
+            "pid": 310254,
+            "start_ticks": "24398138",
+            "uid": 2524
+          },
+          "observed_unix": 1789675973.3454869,
+          "physical": 4,
+          "record_index": 4645,
+          "record_sha256": "373a9dc0487b6acec31b4c933a44328cf538c925a7188774a56e28af3c180ad6",
+          "saved": {
+            "adapter_state_sha256": "8ca1f2250a197f5393c2d3fda1eeb2fcc805d5c59a0c2a06eeb40dfc4c8e2eb9",
+            "bundle_sha256": {
+              "adapter": "bdb08c72b68a10d616923ab8636ba95c598434d229c1c50aab007573a748f08f",
+              "optimizer": "47606a95b8ce4900ad9396cde125d9b59f167a9b9e1e9e96d40f3036302ec30a",
+              "rng": "47606a95b8ce4900ad9396cde125d9b59f167a9b9e1e9e96d40f3036302ec30a"
+            },
+            "checkpoint_path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/checkpoints/sleep_000039/COMMIT.json",
+            "checkpoint_sha256": "b45fa8fc084efe5f7be6af9224862a77351eccd0bdfe3ccbd4225585cbbe5930",
+            "cycle": 39,
+            "full_AdamW_Python_CPU_CUDA_RNG": true,
+            "optimizer_steps": 4059,
+            "record_path": "/localhome/local-rohing/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1/stream/records/00000000000000004644.json",
+            "record_sha256": "dc06352e0f14af72babdc7252e8240aa9e2673e31a97847fad57b67e0035db91",
+            "state_sha256": "6352855fcf7bd176654afa2376e6ed68d0383f4fc06a2b52cbe7548479df8823"
+          },
+          "status": "EXACT_SAVED_SUCCESSOR_LOADED"
+        },
+        "loaded_receipt_path": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/LOADED_RECEIPT.json",
+        "loaded_receipt_sha256": "d378b18eb8622e7f664ea9a2e7c4848035cf04bbdbf51a91486aa79c8b038736",
+        "physical": 4,
+        "plan_path": "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4/control/PLAN.json",
+        "plan_sha256": "b4bf7628459f8876451b136161f902b601e9b3407ecbeb371d70c4b0f225c807",
+        "runtime_caps": {
+          "context_limit": 16384,
+          "hard_end_unix": 1789754400,
+          "new_presentations": 16,
+          "rehearsal_presentations": 1,
+          "segment_tokens": 512,
+          "segments_per_sleep": 2
+        }
+      }
+    ],
+    "journal_writes": 0,
+    "kernel_service_scan": {
+      "historical_R158_PIDs_present": {
+        "4042560": false,
+        "4048159": false,
+        "4048160": false
+      },
+      "inaccessible_processes": 0,
+      "matches": [],
+      "scope": "known_R132_R141_R148_R155_R158_argv_for_UID2524_only"
+    },
+    "model_calls": 0,
+    "observed_unix": 1789679805.399528,
+    "rendered_requests": [
+      {
+        "record_file_sha256": "dd824649756cd941119da57fde86763ceac26aa631f81179436e527aa689f6d8",
+        "record_path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1/stream/records/00000000000000004813.json",
+        "reference": {
+          "inbox_sha256": "c5cf30d6d011ff46209ad873e49a2ba39f7a8a379b5cffdc314c2d61e39b719f",
+          "journal_id": "459e64b2a5964bdc9171abde96e02c18",
+          "record_index": 4813,
+          "record_sha256": "dae452e2699e9d50eba1736ef3b7493ced422ec8ab693dc5b6198d9fe5fa015a",
+          "request_count": 122,
+          "root": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/run1",
+          "sleep_count": 40,
+          "speaker": "Astra",
+          "text_sha256": "1993f3f0f14cf009529123a58e3a5a0b5c2d04b00a233e6c9cf6b29ae7578356"
+        },
+        "request_started_unix": 1789678810.6808615
+      }
+    ],
+    "retained_sleep_proof_monitors": [
+      {
+        "file_sha256": "e639169d7f3bfcb9216e880ee9402072612a867ae8de79dba7a9876782beea73",
+        "latest": {
+          "actual_retained_record_indices": [
+            4819
+          ],
+          "journal_writes": 0,
+          "loaded_record_index": 4808,
+          "model_calls": 0,
+          "observed_unix": 1789679276.8763807,
+          "physical": 0,
+          "recovery_or_owner_revalidation_needed": false,
+          "sealed_output_reads": 0,
+          "signals_sent": 0,
+          "status": "WAITING_FOR_COMPLETED_RETAINED_SLEEP_AND_POSTSLEEP_GENERATION",
+          "successor_identity_live": true,
+          "successor_pid": 653202
+        },
+        "observer_actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "retained_sleep_proof.py",
+            "--lane",
+            "/localhome/local-rohing/orch_r179_node4_20260917t1814z/lane0",
+            "--seconds",
+            "86400"
+          ],
+          "cwd": "/localhome/local-rohing/orch_r179_node4_proof_20260917t2006z",
+          "pid": 279649,
+          "start_ticks": "24375390",
+          "state": "S",
+          "uid": 2524
+        },
+        "path": "/localhome/local-rohing/orch_r179_node4_proof_20260917t2006z/WATCH_0.jsonl",
+        "physical": 0
+      },
+      {
+        "file_sha256": "cb3731c1fd648ea560fc66be4585ed48f1cd7a1aeda9d7a1d9d3a3f196e2a7f4",
+        "latest": {
+          "actual_retained_record_indices": [
+            4992
+          ],
+          "journal_writes": 0,
+          "loaded_record_index": 4982,
+          "model_calls": 0,
+          "observed_unix": 1789676573.59625,
+          "physical": 1,
+          "recovery_or_owner_revalidation_needed": false,
+          "sealed_output_reads": 0,
+          "signals_sent": 0,
+          "status": "WAITING_FOR_COMPLETED_RETAINED_SLEEP_AND_POSTSLEEP_GENERATION",
+          "successor_identity_live": true,
+          "successor_pid": 294158
+        },
+        "observer_actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "retained_sleep_proof.py",
+            "--lane",
+            "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane1",
+            "--seconds",
+            "86400"
+          ],
+          "cwd": "/localhome/local-rohing/orch_r179_node4_proof_20260917t2006z",
+          "pid": 279651,
+          "start_ticks": "24375390",
+          "state": "S",
+          "uid": 2524
+        },
+        "path": "/localhome/local-rohing/orch_r179_node4_proof_20260917t2006z/WATCH_1.jsonl",
+        "physical": 1
+      },
+      {
+        "file_sha256": "23d29b9fee9effde7e415a9ad4c9abd9db3049165e9139ce6b65df88a00e9856",
+        "latest": {
+          "actual_retained_record_indices": [
+            4849
+          ],
+          "journal_writes": 0,
+          "loaded_record_index": 4838,
+          "model_calls": 0,
+          "observed_unix": 1789676314.026387,
+          "physical": 3,
+          "recovery_or_owner_revalidation_needed": false,
+          "sealed_output_reads": 0,
+          "signals_sent": 0,
+          "status": "WAITING_FOR_COMPLETED_RETAINED_SLEEP_AND_POSTSLEEP_GENERATION",
+          "successor_identity_live": true,
+          "successor_pid": 259097
+        },
+        "observer_actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "retained_sleep_proof.py",
+            "--lane",
+            "/localhome/local-rohing/orch_r179_node4_recovery_20260917t2000z/lane3",
+            "--seconds",
+            "86400"
+          ],
+          "cwd": "/localhome/local-rohing/orch_r179_node4_proof_20260917t2006z",
+          "pid": 279653,
+          "start_ticks": "24375390",
+          "state": "S",
+          "uid": 2524
+        },
+        "path": "/localhome/local-rohing/orch_r179_node4_proof_20260917t2006z/WATCH_3.jsonl",
+        "physical": 3
+      },
+      {
+        "file_sha256": "6f3eb432d68a2fcc088fa4d3e1463d3a0ebd631bc38fe49986da94b54efa95ad",
+        "latest": {
+          "actual_retained_record_indices": [
+            4656
+          ],
+          "journal_writes": 0,
+          "loaded_record_index": 4645,
+          "model_calls": 0,
+          "observed_unix": 1789676746.559593,
+          "physical": 4,
+          "recovery_or_owner_revalidation_needed": false,
+          "sealed_output_reads": 0,
+          "signals_sent": 0,
+          "status": "WAITING_FOR_COMPLETED_RETAINED_SLEEP_AND_POSTSLEEP_GENERATION",
+          "successor_identity_live": true,
+          "successor_pid": 310254
+        },
+        "observer_actor": {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "retained_sleep_proof.py",
+            "--lane",
+            "/localhome/local-rohing/orch_r179_node4_20260917t1810z/lane4",
+            "--seconds",
+            "86400"
+          ],
+          "cwd": "/localhome/local-rohing/orch_r179_node4_proof_20260917t2006z",
+          "pid": 279654,
+          "start_ticks": "24375390",
+          "state": "S",
+          "uid": 2524
+        },
+        "path": "/localhome/local-rohing/orch_r179_node4_proof_20260917t2006z/WATCH_4.jsonl",
+        "physical": 4
+      }
+    ],
+    "sealed_output_reads": 0,
+    "signals_sent": 0
+  },
+  "schema": "R175_NODE4_ACTUAL_PARENT_AND_ENVIRONMENT_RECEIPT_V1",
+  "task_caps_raised": false
+}

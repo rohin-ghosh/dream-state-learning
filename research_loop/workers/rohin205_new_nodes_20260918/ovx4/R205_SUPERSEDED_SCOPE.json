@@ -1,0 +1,105 @@
+{
+  "status": "LOCAL_PREPARATION_NOT_DISPATCHED",
+  "authorization": "[REDACTED_SECRET]",
+  "hostname": "[REDACTED_HOST]",
+  "helper": "gpu/ovx4_ssh.sh",
+  "helper_source_commit": "88f49919b426d7ca757e6cbe8c3e7a562be8a708",
+  "helper_sha256": "687bea95dc55f3cfa14f01ac79f521c1778438b7cdbe8f15bc8b6a381b8ce87f",
+  "scp_helper_sha256": "30c0045eb4eab3661ebe1a27dba7e33f44d6c69d01950b2c3c0cad76ea6c4dfb",
+  "node1_health_receipt": "research_loop/workers/rohin174_parenting_20260917/node1/R195_FLEET/R204_LIVE_VERIFIED_20260918T035243Z.json",
+  "assigned_physical": [0, 1, 2, 3, 4],
+  "reserved_physical_do_not_use": [5, 6, 7],
+  "reserved_purpose": "caption game",
+  "no_lease_changes": true,
+  "do_not_interrupt_fable_provisioning": true,
+  "source": {
+    "manifest": "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/C2_SNAPSHOT_20260918T021847Z/MANIFEST.json",
+    "manifest_sha256": "29ca04c2c51671c7df922a4b05448586e74eec35da45b03009877baccbccce84",
+    "archive": "research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/C2_SNAPSHOT_20260918T021847Z/SNAPSHOT.tar",
+    "archive_sha256": "9beaf7a79063c5cf4af2868e1f3122dfea7f4fa5ce3f7d3f2f51716676cdee34",
+    "complete": 51,
+    "optimizer_steps": 4908,
+    "masked_console_cut": 5846,
+    "source_adapter_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+    "no_future_original_inbox": true,
+    "no_original_c2_creative_test_input": true,
+    "no_original_life_calls_or_changes": true
+  },
+  "inputs": {
+    "first_new_console_file": "research_notes/analysis/R202_CLONE_PART_ONE_2026-09-17.txt",
+    "first_new_console_sha256": "48921afaf6c1a7dec7fbe7cbb79c3be8c52bd9612cbcdad3ff6da64fc7469e30",
+    "parent_reference_file": "research_notes/analysis/ROHIN_C2_CONVERSATION_2026-09-17.md",
+    "parent_reference_sha256": "3d0d9dc7fbdefc7ccc24c2625b56b05a6a8c07baea41e3753038813f86da541d",
+    "parent_reference_is_not_bulk_child_input": true,
+    "fresh_parent_opening_after_part_one": true,
+    "external_text_masked": true,
+    "historical_held_responses_not_retrotrained": true,
+    "peer_treatment": false
+  },
+  "common_recipe": {
+    "new_presentations": 16,
+    "rehearsal_presentations": 0,
+    "learning_rate": 0.00003,
+    "anchor_lambda": 0.25,
+    "base_model": "Qwen2.5-7B-Instruct",
+    "frozen_base": true,
+    "lora_rank": 8,
+    "same_checkpoint_optimizer_rng_history": true,
+    "runtime_baseline": "R204",
+    "runtime_baseline_archive_sha256": "b0f148c92172af9d1525fda79a97bebfb31337e312e26c0f6bc805b3c687f8fc",
+    "compact_at_birth_and_stage_boundaries": true,
+    "strict_prompt_threshold_tokens": 12288,
+    "think_continuation_policy": "R204_EXPLICIT_THINK_CONTINUATION_V1",
+    "stage_boundary_policy": "R203_STAGE_BOUNDARIES_V1",
+    "prose_target_filter": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+    "new_dose_or_peer_factor": false,
+    "r205_console_overlay": "AWAIT_MAIN_RELEASE"
+  },
+  "runtime_bindings_not_yet_observed": {
+    "provider_exact_lease_end_unix": null,
+    "hard_end_unix": null,
+    "uid": null,
+    "gid": null,
+    "gpu_uuid_by_physical": null,
+    "device_minor_by_physical": null,
+    "driver_runtime_model_receipt": null,
+    "ovx4_local_cpu_confinement_receipt": null,
+    "kernel_capability_receipt": null
+  },
+  "arms": [
+    {
+      "physical": 0,
+      "name": "MATH-RECEIPT-B",
+      "factor_tag": "math_receipt_grounding",
+      "task": "Answer a small mathematical question using actual obtained results. Separate derivation, executable proposal, returned tool receipt, and conclusion. Never report an execution that lacks a receipt."
+    },
+    {
+      "physical": 1,
+      "name": "REPO-TRACE-D",
+      "factor_tag": "readonly_repo_trace",
+      "task": "Trace one falsifiable repository hypothesis through explicitly source-bound read-only excerpts. Distinguish source inference from actual tests and executions; no invented repository access, edit, or test result."
+    },
+    {
+      "physical": 2,
+      "name": "KERNEL-VERIFY-B",
+      "factor_tag": "kernel_receipt_verification",
+      "task": "Examine a kernel claim against supplied implementation and actual verification receipts. Describe only capabilities established by the current bound environment. Do not claim GPU-kernel execution or correctness without the corresponding real receipt."
+    },
+    {
+      "physical": 3,
+      "name": "CREATIVE-REVISION-C",
+      "factor_tag": "creative_revision",
+      "task": "Choose a new scene or dialogue, retain its substantive draft, and revise from genuine attributed parent feedback. Parent judgment is not an objective creative-quality score. Do not reenact the original C2 story test."
+    },
+    {
+      "physical": 4,
+      "name": "CAPTION-TEXT-A",
+      "factor_tag": "unjudged_caption_language",
+      "tau": null,
+      "objective_score": null,
+      "task": "Explore concise descriptive language grounded only in supplied text. While tau is null this is unjudged language exploration, not a scored caption game. Do not invent image observations, perceptual access, correctness, or quality scores."
+    }
+  ],
+  "remote_dispatch_count": 0,
+  "actual_loaded_count": 0
+}

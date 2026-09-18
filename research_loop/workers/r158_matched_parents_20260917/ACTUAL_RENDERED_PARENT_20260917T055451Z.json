@@ -1,0 +1,31 @@
+{
+  "schema": "R158_ACTUAL_RENDERED_PARENT_OBSERVATION_V1",
+  "observed_unix": 1789624491.7799773,
+  "root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning",
+  "records": 205,
+  "bytes": 2666886,
+  "head_sha256": "ef4a33c0995a79dc224b060882b97b17e73a2db0dd85a1f7f254b5289c12aa48",
+  "requests": 9,
+  "parent_inbox_count": 6,
+  "rendered_parent_count": 6,
+  "verification": "Validated journal predecessor chain after genesis, request resume/history hashes, original history rendering equality, and exact parent event message membership in REQUEST.messages using the immutable candidate5 source.",
+  "first_rendered": {
+    "be4cc80e308b44268880e38842d3eaad": {
+      "inbox_index": 8,
+      "inbox_record_sha256": "147f0fbc34a37c159b79fc0ca47eb2c3691d52a48ed85f9162001ede6a41e35c",
+      "request_index": 9,
+      "request_sha256": "457ca0d9c4a00311ef8d7e577a7a887f6c29813979e3d3d06797b831652e77e5",
+      "started_unix": 1789623584.4636116
+    },
+    "4d4bfb1dc4974e879ffb8231db3c22c3": {"request_index": 74, "request_sha256": "20f9b32e2e831ac20d7176bc3b8d0da35bffeabb9e148917d5304ba2247fac82"},
+    "3430ba3147ce436dad4dd4b52df31301": {"request_index": 135, "request_sha256": "e54aee625f1b12a3a2eec2b9285309fd8d98b647ad52db4f3d7738f48e6e8938"},
+    "7d8e11aef78245b882c8a7c01ae41326": {"request_index": 135, "request_sha256": "e54aee625f1b12a3a2eec2b9285309fd8d98b647ad52db4f3d7738f48e6e8938"},
+    "74e7c3d238d64a7ab78e3c4b86b47041": {"request_index": 139, "request_sha256": "19f6603098978818e6179f4e850eb6cb4d1172bece9c16173051ed6777f3a685"},
+    "b0c3258a077e4d178e2f05226a6367bb": {"request_index": 143, "request_sha256": "b4aab8e8e6e039c113bab831c28a8a5c044b29786a38e2439ca4e79f42db89cb"}
+  },
+  "limitations": [
+    "Counts distinct parent messages actually rendered, not parented generation boundaries or completed responses",
+    "No scientific improvement or one-hour persistent coverage established",
+    "Initial read-only observation failed on an incorrect zero-valued genesis assumption; corrected observation uses the existing reader's record validation and predecessor joins after genesis"
+  ]
+}

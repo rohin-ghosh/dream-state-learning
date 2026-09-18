@@ -1,0 +1,39 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--with",
+    "pytest",
+    "--with",
+    "pytest-subtests",
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_orch_r168_parent_rollout.py",
+    "tests/test_orch_r167_parent_takeover.py",
+    "tests/test_orch_r167_parent_watchdog.py",
+    "tests/test_orch_r168_manual_parent_turn.py",
+    "tests/test_orch_r168_community_prompt_patch.py"
+  ],
+  "execution_kind": "CPU_ONLY",
+  "finished_unix": 1789634455.1028311,
+  "output": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r168_community_prompt_final_20260917/ROLLOUT/CPU_OUTPUT.txt",
+    "sha256": "73f107f8698eb245860a72006e0f7371847721c216930bd64cba6ef6c2a8b12a"
+  },
+  "pins": {
+    "/data/home/rohing/dream-state-orch/research_loop/workers/r168_community_prompt_final_20260917/ROLLOUT/EXECUTE.py": "bfaf5d4d72c66074c0fc7bee5b0958771940eb920b421057cbcaf6ecfa67433b",
+    "gpu/orch_r167_parent_takeover.py": "e878fc97fb55d414030ef5f1570e072c6073bc7d01e6ce8eed5c26f73ecd17e9",
+    "gpu/orch_r167_parent_watchdog.py": "bfeed1439c8218ac45a0db26d4cfc4908fec37436a7579d0baab5bc3de13d356",
+    "gpu/orch_r168_community_prompt_patch.py": "07797c9c4518d276a495c27b90ea99eda7130454e0bae19311dffb6deb967cf2",
+    "gpu/orch_r168_manual_parent_turn.py": "20408c76b877bcda3a5e9ce56af520bf8164845c246cf4022c12bd4edbd5691b",
+    "gpu/orch_r168_parent_rollout.py": "2ef8be195e1340cb99d40e8d6f27ef0a1615faa7d8024c35bb2f3ed4ef3dec12",
+    "tests/test_orch_r167_parent_takeover.py": "8650011a96c7d6e85995a7f17ec8ef48d5097ead7ff08486fd5bae61bae1e47c",
+    "tests/test_orch_r167_parent_watchdog.py": "ae039b797f2182b487adf2d29b36acc4b5ce2e45e744aa10058527fd4d1eb403",
+    "tests/test_orch_r168_community_prompt_patch.py": "ec816af171103b0526c4a4f419e226e24ba68cbf0ef16cf7b445dff63d50223e",
+    "tests/test_orch_r168_manual_parent_turn.py": "6e50ddc650c18923220bfc91df4bd8e32d8034bd78a33183a75a389daa485ce9",
+    "tests/test_orch_r168_parent_rollout.py": "7c643a97b0239c183af733bba439821651a1336e03a992af5d03db1a072c8639"
+  },
+  "status": "PASS"
+}

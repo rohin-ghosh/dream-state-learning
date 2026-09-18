@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_operator.py", line 379, in <module>
+    result = bootstrap(selected) if options.action == 'bootstrap' else (activate(selected) if options.action == 'activate' else serve(selected, options.preflight))
+             ^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_operator.py", line 120, in bootstrap
+    result = snapshot(lane, reference)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_operator.py", line 114, in snapshot
+    return ssh(script)
+           ^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_operator.py", line 99, in ssh
+    require(completed.returncode == 0, 'bounded_remote_metadata_failed:' + completed.stderr[-500:])
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_operator.py", line 36, in require
+    raise ValueError(reason)
+ValueError: bounded_remote_metadata_failed:NG, strong
+  File "/localhome/local-rohing/orch_r175_node4_20260917t2040z/physical1/source/gpu/orch_route_parent_campaign_providers.py", line 16, in <module>
+    from gpu import orch_l2_long_backend as backend
+  File "/localhome/local-rohing/orch_r175_node4_20260917t2040z/physical1/source/gpu/orch_l2_long_backend.py", line 12, in <module>
+    from organism_v6.orch_l2_long_parent import PARENT_SYSTEM, digest, validate_request
+ModuleNotFoundError: No module named 'organism_v6.orch_l2_long_parent'
+

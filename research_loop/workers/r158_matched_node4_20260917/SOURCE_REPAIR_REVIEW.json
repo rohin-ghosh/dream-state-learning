@@ -1,0 +1,64 @@
+{
+  "Main_GPU_promotion": false,
+  "capacity_consumer_fixed": true,
+  "deadline_cleanup_fixed": true,
+  "failure_receipts_fixed": true,
+  "files": {
+    "gpu/orch_r150_matched_native.py": "9e901662f3e76dd282b610b87210e824e2ac99c7b91768823f087d9b4e842b71",
+    "gpu/orch_r151_matched_containment.py": "cbef4a98de3f230c8a50f4ec2d54b02200e6f835477bb39e8b9b60f24691bf70",
+    "gpu/orch_r151_matched_stage.py": "cc3b80e9b7ca5f71f9a953feb5f2216318b86af40aa8edc730ef7836fa7bf94f",
+    "gpu/orch_r151_memory_probe.py": "6c47e9f49b696f036e2ab8d990bcdb5872c9ad3dcdf02c09913aefce0762b619",
+    "gpu/orch_r158_matched_node4.py": "2b0b1ee2de89414b4eb2210a24053fd43252fa4e90f205436e3947302dcef098",
+    "gpu/orch_r158_train_gym.py": "6905ade5bcfa019c1278b4590058a670875175c01ccab362d344ec89d9158a97",
+    "organism_v6/reasoning_gym_families.json": "220071c8783ed4d608b04015c188e8b22fc5745c10f250c7fbd724dd854649ea",
+    "tests/test_orch_r150_matched_native.py": "ae43b9a2ed9ff5c1cb9b6640dbc80bf1a4d7bad80fc7b881b935899caab10a38",
+    "tests/test_orch_r151_matched_containment.py": "18ce1de94ac57f93235195e5123cf8e9b88b3c56a9ab62e67ef78de12b141643",
+    "tests/test_orch_r151_memory_probe.py": "68a15210f8d0bfeacf2af0202603d46b61637acf238a98e6170d4713dc2bf734",
+    "tests/test_orch_r158_matched_node4.py": "35425d60d9b37dafff96a7c035ddb61a6b70aa5e0599ca1c3c2dc9e555e37527",
+    "tests/test_orch_r158_train_gym.py": "58eee3853663cefa921e92061760d63e35bccd32a767aa50484d5d77b803f946"
+  },
+  "freeze_allowed": true,
+  "independent_review_claimed": false,
+  "issuer": "Builder",
+  "observed_utc": "2026-09-17T04:18:11.127055+00:00",
+  "schema": "R158_MATCHED_REPAIR_REVIEW_V1",
+  "source_authority": "User R158: stage after repaired files/tests land; Main reviews initializer before promotion",
+  "source_staging_only": true,
+  "status": "PASS",
+  "tests": {
+    "command": [
+      "uv",
+      "run",
+      "--with",
+      "pytest",
+      "python",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "tests/test_orch_r158_matched_node4.py",
+      "tests/test_orch_r150_matched_native.py",
+      "tests/test_orch_r150_matched_journal.py",
+      "tests/test_orch_r150_matched_stream.py",
+      "tests/test_orch_r151_memory_probe.py",
+      "tests/test_orch_r151_matched_containment.py",
+      "tests/test_orch_r151_matched_stage.py",
+      "tests/test_orch_r158_train_gym.py"
+    ],
+    "exit_code": 0,
+    "logs": [
+      {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/LOCAL_CPU_TESTS_V3.log",
+        "sha256": "4e58d52027569ec28afb0e7af5547e89ad5ad369aca1ffe61b0692aac0280dc1"
+      }
+    ],
+    "passed": 847
+  },
+  "train_environment_authority": "Main relayed tested helper164 combined PASS +34subtests; own combined regression includes helper tests",
+  "upstream_repair_report": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/R158_MATCHED_CAPACITY_REPAIR.md",
+    "sha256": "724f63bcc63106820e347476c4b99038a2be0d37d492feb4ff8c739b71ca2de2"
+  }
+}

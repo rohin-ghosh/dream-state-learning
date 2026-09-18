@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/C5_EXECUTE.py", line 128, in <module>
+    main()
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/C5_EXECUTE.py", line 115, in main
+    transaction.handoff(operations)
+  File "/data/home/rohing/dream-state-orch/gpu/orch_r168_parent_rollout.py", line 10, in handoff
+    manifest = operations.settled()
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/r168_parent_execution_20260917/ROLLOUT/EXECUTE.py", line 258, in settled
+    return manual.settled_and_rendered(self.old_output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/gpu/orch_r168_manual_parent_turn.py", line 24, in settled_and_rendered
+    delivered = json.loads(takeover.read_file(directory/'DELIVERED.json'))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/gpu/orch_r167_parent_takeover.py", line 22, in read_file
+    descriptor = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/r167_parent_policy_candidates_20260917/R154_ATTENTION_V2/ROLLOUT/C5/parent/parent_000000000087/DELIVERED.json'

@@ -1,0 +1,204 @@
+{
+  "schema": "R201_CAPTION_READINESS_SIDECAR_V1",
+  "status": "NOT_USABLE_REAL_ACCEPTANCE",
+  "candidate": "bt_widegap_v2",
+  "node": "node4",
+  "physical_gpu": 2,
+  "owner_worker": "research_loop/workers/r177_caption_game_stage1_20260917/data_judge",
+  "observed_at_utc": "2026-09-18T02:28:49.496589Z",
+  "observed_at_pdt": "2026-09-17T19:28:49.496589-07:00",
+  "observed_unix": 1789698529.4965894,
+  "local_checks_completed_at_utc": "2026-09-18T02:29:51.999110Z",
+  "observation_method": "Read-only SSH through existing node4 wrapper; explicit allowlist of public aggregate reports and operational receipts; no model imports or GPU queries",
+  "real_acceptance_usable": false,
+  "loader_only_blocker": false,
+  "completed_evidence_not_estimate": true,
+  "superseded_local_observation": {
+    "path": "research_loop/workers/r177_caption_game_stage1_20260917/data_judge/evidence/WIDEGAP_V2_OBSERVATION_1789694532888414451.json",
+    "observed_at_pdt": "2026-09-17T18:22:12.854018-07:00",
+    "public_report_present_then": false
+  },
+  "completion": {
+    "public_report_completed_unix": 1789695036.9679217,
+    "public_report_completed_at_pdt": "2026-09-17T18:30:36.967922-07:00",
+    "task_completed_unix": 1789695037.388718,
+    "task_completed_at_pdt": "2026-09-17T18:30:37.388718-07:00",
+    "task_status": "PROVISIONAL_WIDEGAP_TRAINED_NOT_ACCEPTANCE_CLAIM",
+    "report_status": "PROVISIONAL_REUSED_DEVELOPMENT_ONLY",
+    "required_pair_target_completed": true,
+    "actual_comparisons": 100000,
+    "actual_caption_draws": 200000,
+    "completed_updates": 6250,
+    "selected_step": 6250,
+    "selected_checkpoint_comparisons": 100000,
+    "known_dispatch_pid": 1055569,
+    "known_dispatch_pid_present_at_observation": false,
+    "process_state_changed_by_sidecar": false
+  },
+  "public_acceptance_evidence": {
+    "calibration_examples": 3328,
+    "q_meaning": "EXPECTED_SOMEWHAT_OR_FUNNY_VOTE_MASS",
+    "tau": null,
+    "tau_status": "NO_FEASIBLE_HELDOUT_THRESHOLD",
+    "rank200_quality_threshold": null,
+    "rank200_quality_threshold_status": "BLOCKED_NO_REGISTERED_RANK200_QUALITY_OPERATING_POINT",
+    "development_audit": {
+      "accepted_count": 0,
+      "examples": 1536,
+      "coverage": 0.0,
+      "accepted_expected_positive_vote_mass": null,
+      "interpretation": "VOTE_MASS_PROXY_NOT_ACCEPTANCE_PRECISION"
+    },
+    "rank200_quality_audit": {
+      "accepted": 0,
+      "examples": 1536,
+      "coverage": 0.0,
+      "precision": null,
+      "precision_wilson95_lower": 0.0,
+      "status": "BLOCKED_RANK200_QUALITY_POINT",
+      "full_judge_usable": false,
+      "reused_development_only": true
+    },
+    "locked_validation_used": false,
+    "FINAL_used": false,
+    "human_validated": false,
+    "second_blind_comparator_complete": false,
+    "captions_included": false,
+    "contest_ids_included": false
+  },
+  "runtime_readiness": {
+    "legacy_loader": "gpu.ny_caption_judge.load_cpu_judge",
+    "legacy_schema": "NY_TRAINED_JUDGE_CONFIG_V1",
+    "scalar_schema_declared_by_producer_source": "NY_WIDEGAP100K_SCALAR_JUDGE_CONFIG_V2",
+    "actual_private_config_body_read": false,
+    "synthetic_scalar_schema_rejection": "provisional_trained_judge_only",
+    "schema_rejected_before_model_imports": true,
+    "game_null_tau_rejection": "tau must be an explicit numeric threshold",
+    "synthetic_legacy_judge_with_null_tau_accepted": false,
+    "synthetic_game_roundtrip": {
+      "PARENTED": "PASS_SYNTHETIC_SUBMIT_JSON_RESTORE_CACHED_REPLAY_CONTINUE",
+      "UNPARENTED": "PASS_SYNTHETIC_SUBMIT_JSON_RESTORE_CACHED_REPLAY_CONTINUE",
+      "synthetic_fixture_tau_not_candidate_tau": 0.7,
+      "restore_and_cached_replay_callbacks": 0,
+      "continued_submission_accounting_verified": true,
+      "private_judge_data_used": false
+    },
+    "real_scalar_model_loaded": false,
+    "real_scalar_to_game_roundtrip": "NOT_DEMONSTRATED_BLOCKED",
+    "actual_model_calls": 0,
+    "torch_imported_by_direct_checks": false,
+    "transformers_imported_by_direct_checks": false,
+    "pytest_attempt": {
+      "status": "NOT_RUN_DEPENDENCY_ABSENT",
+      "interpreter": "/usr/bin/python3",
+      "exit_code": 1,
+      "stderr": "/usr/bin/python3: No module named pytest\n",
+      "targets": [
+        "tests/test_ny_caption_game.py::test_caps_cannot_be_increased_and_tau_is_explicit",
+        "tests/test_ny_caption_game.py::test_acceptance_requires_scene_fit_and_q_at_explicit_tau",
+        "tests/test_ny_caption_game.py::test_game_stop_json_reload_continue_restores_exact_responses_cache_and_budget"
+      ],
+      "dependencies_installed": false,
+      "fallback": "Direct standard-library synthetic assertions passed; not a pytest-suite pass"
+    }
+  },
+  "disposition": {
+    "to": "Main",
+    "action": "Keep real acceptance disabled for this candidate; no loader-only fix can supply the missing registered operating point",
+    "conditional_loader_patch_prerequisite_satisfied": false,
+    "implementation_patch_made": false,
+    "do_not": [
+      "Invent or reuse a threshold",
+      "Substitute rank200 quality for vote-mass q",
+      "Treat training completion or synthetic game tests as real acceptance readiness",
+      "Relax acceptance gates",
+      "Alter the owning judge task"
+    ]
+  },
+  "remote_root": "/localhome/local-rohing/orch_r177_ampere_judge_20260917/bt_widegap_v2",
+  "remote_receipts": [
+    {
+      "relative_path": "training/PUBLIC_SCORING_REPORT.json",
+      "bytes": 5397,
+      "sha256": "11f0daccc968e6c453638c89be97a0360bfa5685f25e1a74a0e5be608f9ae896",
+      "mtime_unix": 1789695036.968404,
+      "read_and_hashed": true
+    },
+    {
+      "relative_path": "COMPLETED.json",
+      "bytes": 331,
+      "sha256": "95e4f84bc591a0856d6271ad13efe784ca87aea09c2d3207fa307c6270f71f4c",
+      "mtime_unix": 1789695037.3895538,
+      "read_and_hashed": true
+    },
+    {
+      "relative_path": "training/FULL_POOL_SELECTION_REPORT.json",
+      "bytes": 714,
+      "sha256": "ee0fecf39fdc58ae7df6b4e08ebbb20f0f6a7e373fa27259c83dff56ed7e4ab3",
+      "mtime_unix": 1789694906.301285,
+      "read_and_hashed": true
+    },
+    {
+      "relative_path": "training/throughput/006250.json",
+      "bytes": 341,
+      "sha256": "3da7e3e5d004fcd50762af70929e1bd9c8a69b033442808ba0280b6fdcb54f30",
+      "mtime_unix": 1789693054.9378605,
+      "read_and_hashed": true
+    },
+    {
+      "relative_path": "DISPATCH_STARTED.json",
+      "bytes": 324,
+      "sha256": "7102eacf8da28e47a00b0b218a1dfb755992f181037480dbf8aecea56aba83ff",
+      "mtime_unix": 1789681172.1561823,
+      "read_and_hashed": true,
+      "retained_fields": "Process existence only; command/admission contents not exported"
+    }
+  ],
+  "judge_config_reference_from_completion": {
+    "path": "/localhome/local-rohing/orch_r177_ampere_judge_20260917/bt_widegap_v2/training/judge_config.json",
+    "bytes": 11791,
+    "sha256": "5c3fb5fd35a26fb0585c09ee91ebc457c31871f591aabfb7a9f53fb05dbc86a8",
+    "exists_and_size_verified_by_stat": true,
+    "content_read": false,
+    "sha256_independently_recomputed": false
+  },
+  "local_source_receipts": {
+    "gpu/ny_caption_judge.py": {
+      "sha256": "b1f24eff4e575ec0aaf6678cf59833b934f77ecbda0d181716ba5548d5e9cbef",
+      "bytes": 65711,
+      "validator_line": 920,
+      "loader_line": 943
+    },
+    "gpu/ny_caption_game.py": {
+      "sha256": "055c492a1796b686a2de75920de958fdb16b86fb902b8d69f3b075e7c3f33776",
+      "bytes": 43255
+    },
+    "tests/test_ny_caption_game.py": {
+      "sha256": "3445bce4a13e6cd73d713367ba0c8c853cc5cf273088c3a113ce5032bf692867",
+      "bytes": 30126
+    },
+    "research_loop/workers/r177_caption_game_stage1_20260917/data_judge/bt_widegap_v2.py": {
+      "sha256": "e90cd2ef2cd1bd67aa13c5125d05725d1cf08718329edc6f89ec0595bf5ad435",
+      "bytes": 25702
+    }
+  },
+  "boundaries": {
+    "public_aggregate_metadata_only_for_candidate": true,
+    "private_contest_or_heldout_rows_read": false,
+    "sealed_or_FINAL_content_read": false,
+    "calibration_curves_or_reference_scores_read": false,
+    "child_or_parent_access_to_judge_information": false,
+    "gpu_calls": 0,
+    "training_calls": 0,
+    "process_stops": 0,
+    "credential_output": false,
+    "subagents": 0,
+    "judge_task_altered": false,
+    "runtime_or_test_source_edits": false,
+    "COORDINATION_edits": false,
+    "writes": [
+      "research_loop/workers/rohin201_c2_clones_20260917/caption_readiness/STATUS.md",
+      "research_loop/workers/rohin201_c2_clones_20260917/caption_readiness/STATUS.json"
+    ]
+  }
+}

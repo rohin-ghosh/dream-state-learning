@@ -1,0 +1,1183 @@
+{
+  "budgets": {
+    "TRAIN_content_bytes_read_by_stat": 0,
+    "budgets_changed": false,
+    "overhead_and_growth_not_included": true,
+    "proposed_per_life_bytes": 335544320,
+    "total_completed_prefix_bytes": 5422533335,
+    "total_full_observed_bytes": 5696039234
+  },
+  "counts": {
+    "completed_prefix_exceeds_320MiB": 12,
+    "historical_birth_differs": 12,
+    "identical_original_and_current": 1,
+    "registered_matches_current_native_plan": 13
+  },
+  "no_gpu_or_source_copy_authority": true,
+  "observed_unix": 1789636187.5547106,
+  "queue_disposition": "The existing registry is not proven corrupt: its birth_plan field names current native plans. Resolve the semantic ambiguity explicitly. If original birth PLAN is required for enrollment, use a new immutable batch generation with these historical refs plus separate current-native/guard provenance; do not relabel refs or overwrite generation1.",
+  "queue_or_shared_code_modified": false,
+  "rows": [
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 344714,
+          "path": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/control3/GUARD.json",
+          "sha256": "21b71c9e8c8803ffa27cbaaff8a0b91b3f2b94c6893c5a8bc158d64d990558e6"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/control/PLAN.json",
+          "sha256": "9357f2c195d386e6a90952fb41fbc290954aabf0d44a8bccaf45712fcfe61e91"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 345276,
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/control/GUARD.json",
+        "sha256": "730bea50f6cb070ad9f0a8ac83a1778b550086e7f443e9175385ccbbdaba9259"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/control3/PLAN.json",
+        "sha256": "98d3b5e5583f7bf657dcc6b55feba0cb2e21b4a8f2aaa6bc1824732874c1f891"
+      },
+      "life_id": "classroom_brain",
+      "node": "a100",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/a100_classroom_brain.json",
+        "sha256": "0509fe33b289f7af608b11e72cb994be85c2639fb83e1d36826b08cab916449f"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/control/PLAN.json",
+        "sha256": "9357f2c195d386e6a90952fb41fbc290954aabf0d44a8bccaf45712fcfe61e91"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1018610,
+          "last_index": 3847,
+          "record_bytes": 439286401,
+          "record_files": 3848,
+          "total_bytes": 440305095
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -104760775,
+        "directory_changed_during_scan": false,
+        "directory_entries": 7990,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1057565,
+          "record_bytes": 463414139,
+          "total_bytes": 464471788
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 3995,
+        "journal_header_bytes": 84,
+        "life_id": "classroom_brain",
+        "maximum_record_index": 3994,
+        "native_identity": {
+          "argv_sha256": "5954a898078536bd95ad235eef178c396074b4f7e23c234727f18204c0537272",
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane5/source",
+          "pid": 1072657,
+          "start_ticks": "29930996",
+          "state": "R",
+          "uid": 1395
+        },
+        "node": "a100",
+        "observed_end_unix": 1789636146.354406,
+        "observed_start_unix": 1789636146.31009,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 3995,
+        "source_root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/A100_TRAIN_STAT.json",
+        "sha256": "b8274a73f456213b5b6a7fe8859e19eac1d5394c3b82b376b6e342ab01a0a1b5"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 344726,
+          "path": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/control3/GUARD.json",
+          "sha256": "5f66a017ef1f46dbcd156a42e3d177fd614cda0853d961b7bbaaa1ebf2af9359"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/control/PLAN.json",
+          "sha256": "77a236b7b6606b07e93dd1b8ad62b6a25db6d439d9433566ec1744b225180cfa"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 345292,
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/readmission1/control/GUARD.json",
+        "sha256": "88286346124b502ef64de3cdddc40641aa43007d65be08c8edb46bde9745a8af"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/control3/PLAN.json",
+        "sha256": "8f63129543150d1b8260dda758b1919db42d186f1c4ada540286eb8351ec5890"
+      },
+      "life_id": "classroom_creative",
+      "node": "a100",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/a100_classroom_creative.json",
+        "sha256": "2641f5ca34bb38575d57a472661e257e8aebc2d7472e7b88271a6b737b432472"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/control/PLAN.json",
+        "sha256": "77a236b7b6606b07e93dd1b8ad62b6a25db6d439d9433566ec1744b225180cfa"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1063130,
+          "last_index": 4015,
+          "record_bytes": 459241586,
+          "record_files": 4016,
+          "total_bytes": 460304800
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -124760480,
+        "directory_changed_during_scan": false,
+        "directory_entries": 8300,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1098640,
+          "record_bytes": 482622369,
+          "total_bytes": 483721093
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 4150,
+        "journal_header_bytes": 84,
+        "life_id": "classroom_creative",
+        "maximum_record_index": 4149,
+        "native_identity": {
+          "argv_sha256": "5e7de9b80a6c3049bfa75c350a96c18c060e05d4b6bb3a422312fc6cafc17c05",
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane6/source",
+          "pid": 1316795,
+          "start_ticks": "30086561",
+          "state": "R",
+          "uid": 1395
+        },
+        "node": "a100",
+        "observed_end_unix": 1789636146.399219,
+        "observed_start_unix": 1789636146.354409,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 4150,
+        "source_root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/A100_TRAIN_STAT.json",
+        "sha256": "b8274a73f456213b5b6a7fe8859e19eac1d5394c3b82b376b6e342ab01a0a1b5"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 344722,
+          "path": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/control3/GUARD.json",
+          "sha256": "e27b4e063e002b4d7676f155d2e1ec3f0d5d0499ad8f2b21bb27eb2df7e4175b"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/control/PLAN.json",
+          "sha256": "afdbddbe2fbe2ce02488fd316c7f13a90a63d3fe932ad68a8d6a3fd65f368985"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 345269,
+        "path": "/localhome/local-rohing/orch_r147_a1007_recovery_20260916t1834z/attempt2/control/GUARD.json",
+        "sha256": "4340dc243fbe359ef884c00a2d1866bc7a316e3ef5edb793044cd94843514f6a"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/control3/PLAN.json",
+        "sha256": "c7abc01c053a7a643e6c1fee5841b077ecbf6523a2fd30aff19c9a13f9688d41"
+      },
+      "life_id": "classroom_support",
+      "node": "a100",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/a100_classroom_support.json",
+        "sha256": "3040f08700cfd26b508dd255e11d9fe8a5ba6af013703d8628b75e4832550733"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/control/PLAN.json",
+        "sha256": "afdbddbe2fbe2ce02488fd316c7f13a90a63d3fe932ad68a8d6a3fd65f368985"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 816415,
+          "last_index": 3084,
+          "record_bytes": 747728294,
+          "record_files": 3085,
+          "total_bytes": 748544793
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -413000473,
+        "directory_changed_during_scan": false,
+        "directory_entries": 6290,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 832315,
+          "record_bytes": 785547774,
+          "total_bytes": 786380173
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 3145,
+        "journal_header_bytes": 84,
+        "life_id": "classroom_support",
+        "maximum_record_index": 3144,
+        "native_identity": {
+          "argv_sha256": "f1146ba78e057f7821d751a49f31e1f86cf2eac58e7f1f4d8eed970ff6aa19b9",
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane7/source",
+          "pid": 1997023,
+          "start_ticks": "30523369",
+          "state": "R",
+          "uid": 1395
+        },
+        "node": "a100",
+        "observed_end_unix": 1789636146.4341643,
+        "observed_start_unix": 1789636146.3992212,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 3145,
+        "source_root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/A100_TRAIN_STAT.json",
+        "sha256": "b8274a73f456213b5b6a7fe8859e19eac1d5394c3b82b376b6e342ab01a0a1b5"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 344346,
+          "path": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/control1/GUARD.json",
+          "sha256": "3653369fab7b6b31eb7426ee9c171249f505d6195ceeff7bc78efd3906810ead"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/control/PLAN.json",
+          "sha256": "22ca67b931ca2fd2ef119d333468521ac3fb411a75b3676dbbf0f45ee2fae36d"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 345063,
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/control/GUARD.json",
+        "sha256": "3d3e7634f741fecd00fd8744dabf16250f472e58c202a6674320261195f3800b"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/control1/PLAN.json",
+        "sha256": "6a27b5d051c55f2fb810894e3c1acc79ce0a99cdf95e59207c00faf04c35614e"
+      },
+      "life_id": "teach_parenting",
+      "node": "a100",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/a100_teach_parenting.json",
+        "sha256": "76da5d725ee4bd3b62a2ad1b51d67f94a24b5eadac89a155d07d1e4d12e68e6d"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/control/PLAN.json",
+        "sha256": "22ca67b931ca2fd2ef119d333468521ac3fb411a75b3676dbbf0f45ee2fae36d"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1140245,
+          "last_index": 4306,
+          "record_bytes": 399049854,
+          "record_files": 4307,
+          "total_bytes": 400190183
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -64645863,
+        "directory_changed_during_scan": false,
+        "directory_entries": 8754,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1158795,
+          "record_bytes": 418651504,
+          "total_bytes": 419810383
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 4377,
+        "journal_header_bytes": 84,
+        "life_id": "teach_parenting",
+        "maximum_record_index": 4376,
+        "native_identity": {
+          "argv_sha256": "f2c470ab7d04f7be1d5e4bda4e2d8b8767c6b2c06f0117b190761245cc5ef599",
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane4/source",
+          "pid": 1025183,
+          "start_ticks": "29900700",
+          "state": "R",
+          "uid": 1395
+        },
+        "node": "a100",
+        "observed_end_unix": 1789636146.4810326,
+        "observed_start_unix": 1789636146.4341657,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 4377,
+        "source_root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/A100_TRAIN_STAT.json",
+        "sha256": "b8274a73f456213b5b6a7fe8859e19eac1d5394c3b82b376b6e342ab01a0a1b5"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 344350,
+          "path": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/control1/GUARD.json",
+          "sha256": "bc6e9934234d2ec7e8dc586a94b58de66582b0e538c01b8fe2578e9348f6d0b0"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/control/PLAN.json",
+          "sha256": "8c6654d6d8822f6cdb1d661ed7a4e8332eee52d5be7cb41fc8696304c76e72c6"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 346035,
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/control/GUARD.json",
+        "sha256": "ee15e5e6d8b571ecefc8980249255a988fd64556de3d7d8f3d713d7ff78c08b3"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/control1/PLAN.json",
+        "sha256": "6b68bc0f7efdef9914e95207e7655aa00794640eef80932ab15f318e6ab1ddfb"
+      },
+      "life_id": "teach_perception",
+      "node": "a100",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/a100_teach_perception.json",
+        "sha256": "764009fb456e742c68b1565ef4f00813fab62421e59c5acd147dcb45c4b55f05"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/control/PLAN.json",
+        "sha256": "8c6654d6d8822f6cdb1d661ed7a4e8332eee52d5be7cb41fc8696304c76e72c6"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1133090,
+          "last_index": 4279,
+          "record_bytes": 340525444,
+          "record_files": 4280,
+          "total_bytes": 341658618
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -6114298,
+        "directory_changed_during_scan": false,
+        "directory_entries": 8898,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1177875,
+          "record_bytes": 357980782,
+          "total_bytes": 359158741
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 4449,
+        "journal_header_bytes": 84,
+        "life_id": "teach_perception",
+        "maximum_record_index": 4448,
+        "native_identity": {
+          "argv_sha256": "2032ed6c241ec17bc6cdffa25e3f23ddf714d6a3113d3f81b86b2fb580ea05d7",
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane3/source",
+          "pid": 2409681,
+          "start_ticks": "30796516",
+          "state": "R",
+          "uid": 1395
+        },
+        "node": "a100",
+        "observed_end_unix": 1789636146.5315065,
+        "observed_start_unix": 1789636146.4810345,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 4449,
+        "source_root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/A100_TRAIN_STAT.json",
+        "sha256": "b8274a73f456213b5b6a7fe8859e19eac1d5394c3b82b376b6e342ab01a0a1b5"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 344334,
+          "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/control1/GUARD.json",
+          "sha256": "964cb84e82e665d57cbef7137b52694df2f74869562cb6826c3878ac81636b6b"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/PLAN.json",
+          "sha256": "827829405ae62b518c50d71bdd0d686c7e2b193d9ecf4785c00c2f6a584b59ed"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 345050,
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/GUARD.json",
+        "sha256": "dc7920c79c8141f82cd5473579564c71370a7a811912c0cb42c19d8b6403718c"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/control1/PLAN.json",
+        "sha256": "df476e937d077575396aa187cd302767996016757aa3bbee8cb25950876f44d2"
+      },
+      "life_id": "teach_replay",
+      "node": "a100",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/a100_teach_replay.json",
+        "sha256": "79d76f06140e2f815ecc4d74e6d0fa8ea15590e6f11992d2ec660589f108cfe7"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/control/PLAN.json",
+        "sha256": "827829405ae62b518c50d71bdd0d686c7e2b193d9ecf4785c00c2f6a584b59ed"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1075055,
+          "last_index": 4060,
+          "record_bytes": 372041223,
+          "record_files": 4061,
+          "total_bytes": 373116362
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -37572042,
+        "directory_changed_during_scan": false,
+        "directory_entries": 8446,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1117985,
+          "record_bytes": 390151258,
+          "total_bytes": 391269327
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 4223,
+        "journal_header_bytes": 84,
+        "life_id": "teach_replay",
+        "maximum_record_index": 4222,
+        "native_identity": {
+          "argv_sha256": "a7fe310783a8250e58223593f614d025011ed04cb15720cabd7142d0fd1d012e",
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "cwd": "/localhome/local-rohing/orch_r144_target_rollout_a100_suffix_20260916t1643z/lane2/source",
+          "pid": 2197976,
+          "start_ticks": "30656088",
+          "state": "R",
+          "uid": 1395
+        },
+        "node": "a100",
+        "observed_end_unix": 1789636146.5788176,
+        "observed_start_unix": 1789636146.531508,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 4223,
+        "source_root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/A100_TRAIN_STAT.json",
+        "sha256": "b8274a73f456213b5b6a7fe8859e19eac1d5394c3b82b376b6e342ab01a0a1b5"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 249227,
+          "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/control/run-parented_learning/GUARD.json",
+          "sha256": "c9d77bccdcb0d92a6dfaa4532d72d06d92e64de4d31813fba8b5f96c669d825f"
+        },
+        "kind": "MATCHED_INITIAL_BIRTH_STATE_AND_EXPERIMENT_SAME_REGISTERED_RUN_PLAN",
+        "same_root_plan": [
+          {
+            "bytes": 4496,
+            "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning.PLAN.json",
+            "sha256": "0e857b2c39e04e13683d429717315cfb2b4e1aa87b3570e4de796a0638081789"
+          }
+        ]
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning.PLAN.json",
+          "sha256": "0e857b2c39e04e13683d429717315cfb2b4e1aa87b3570e4de796a0638081789"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 249227,
+        "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/control/run-parented_learning/GUARD.json",
+        "sha256": "c9d77bccdcb0d92a6dfaa4532d72d06d92e64de4d31813fba8b5f96c669d825f"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning.PLAN.json",
+        "sha256": "0e857b2c39e04e13683d429717315cfb2b4e1aa87b3570e4de796a0638081789"
+      },
+      "life_id": "R158_parented_learning",
+      "node": "a40r",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/a40r_R158_parented_learning.json",
+        "sha256": "df18ad53f8ceeafb6d70d8803c6a57f4b4885492f7363cf32bfcd59151e9edad"
+      },
+      "original_and_current_bytes_identical": true,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning.PLAN.json",
+        "sha256": "0e857b2c39e04e13683d429717315cfb2b4e1aa87b3570e4de796a0638081789"
+      },
+      "registry_is_historical_birth_plan": true,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 260194,
+          "last_index": 985,
+          "record_bytes": 32355111,
+          "record_files": 986,
+          "total_bytes": 32615389
+        },
+        "completed_prefix_exceeds_320MiB": false,
+        "completed_prefix_remaining_320MiB": 302928931,
+        "directory_changed_during_scan": false,
+        "directory_entries": 2176,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 287210,
+          "record_bytes": 37925671,
+          "total_bytes": 38212965
+        },
+        "full_observed_exceeds_320MiB": false,
+        "intent_files": 1088,
+        "journal_header_bytes": 84,
+        "life_id": "R158_parented_learning",
+        "maximum_record_index": 1087,
+        "native_identity": {
+          "argv_sha256": "c4d3aead607adbeca11e08a88b6d313b5a08c55158c5155641f7f3b03dfd9bb2",
+          "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+          "cwd": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/source",
+          "pid": 530635,
+          "start_ticks": "19154269",
+          "state": "R",
+          "uid": 2524
+        },
+        "node": "a40r",
+        "observed_end_unix": 1789636147.6737099,
+        "observed_start_unix": 1789636147.6609108,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 1088,
+        "source_root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/A40R_TRAIN_STAT.json",
+        "sha256": "54148e1a6dd58a892ba2afb75c1372464995c283efaabd56d3ae23c6ab0374f5"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 213491,
+          "path": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/control1/GUARD.json",
+          "sha256": "a71ac12aacb2a52a0836b4bf0bbf806ec7b0082d2c2226fc2ded9706aa4995fe"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/PROPOSED_PLAN.json",
+          "sha256": "3ed70172ee87eb8082235cda012acdc42d1ec5ee5d55b42ca23a2e33dff1c1f0"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 213757,
+        "path": "/localhome/local-rohing/orch_r144_node3_target_physical2_20260916t1541z_5/GUARD.json",
+        "sha256": "26dd2d2b3120135fdc5929988b95d18e75ba3f844d76b9bc096c5f0d72940b63"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/control1/PLAN.json",
+        "sha256": "4e489c6d5b7c0b453599abeb80c4b9cbe36fce664323bf8405bde5868085cb4c"
+      },
+      "life_id": "brain_free",
+      "node": "ovx2",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/ovx2_brain_free.json",
+        "sha256": "5f95eec964ffe1e49fe03fcbf0d16204058c888fb7706ff1f6e5bf4454986843"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/PROPOSED_PLAN.json",
+        "sha256": "3ed70172ee87eb8082235cda012acdc42d1ec5ee5d55b42ca23a2e33dff1c1f0"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1138920,
+          "last_index": 4301,
+          "record_bytes": 423321592,
+          "record_files": 4302,
+          "total_bytes": 424460596
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -88916276,
+        "directory_changed_during_scan": false,
+        "directory_entries": 8860,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1172840,
+          "record_bytes": 443610429,
+          "total_bytes": 444783353
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 4430,
+        "journal_header_bytes": 84,
+        "life_id": "brain_free",
+        "maximum_record_index": 4429,
+        "native_identity": {
+          "argv_sha256": "ce8d2eb571de0b97975f162372ff21df9f1f19f667ddb04f6e2206c59a30cf07",
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "cwd": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical2/source",
+          "pid": 1172314,
+          "start_ticks": "27956809",
+          "state": "R",
+          "uid": 2524
+        },
+        "node": "ovx2",
+        "observed_end_unix": 1789636145.0016937,
+        "observed_start_unix": 1789636144.9606774,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 4430,
+        "source_root": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/OVX2_TRAIN_STAT.json",
+        "sha256": "cac79453e9c304fd52ee393152547e208b2df94fbaf6a540078b20df49bca6dc"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r133_brain_free_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 213961,
+          "path": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/control1/GUARD.json",
+          "sha256": "5cfba7e4832844e5065fbaaaa4f29b0975175452d1eb467f95b17990f5466aa2"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/PROPOSED_PLAN.json",
+          "sha256": "ba3b4cc2dadaee3b870e543da74a3651c1d0128d71a982fd945e8aa6d179cf7a"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 214202,
+        "path": "/localhome/local-rohing/orch_r144_node3_target_physical3_20260916t1520z_1/GUARD.json",
+        "sha256": "4f6c959ab466b9178b14235ca3b52bfd73705c3adb37dd6b60348a1ebaa0556c"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/control1/PLAN.json",
+        "sha256": "5c25727979140438a2388ce40e96a590d9fd739cd3ed42fcceddafca84a61f46"
+      },
+      "life_id": "brain_guided",
+      "node": "ovx2",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/ovx2_brain_guided.json",
+        "sha256": "6071b3f250be4e964b29bf2780c7e9fb74e8c104c3e4aabd240bca092e92ca1d"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/PROPOSED_PLAN.json",
+        "sha256": "ba3b4cc2dadaee3b870e543da74a3651c1d0128d71a982fd945e8aa6d179cf7a"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1052530,
+          "last_index": 3975,
+          "record_bytes": 429212771,
+          "record_files": 3976,
+          "total_bytes": 430265385
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -94721065,
+        "directory_changed_during_scan": false,
+        "directory_entries": 8212,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1086980,
+          "record_bytes": 451266950,
+          "total_bytes": 452354014
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 4106,
+        "journal_header_bytes": 84,
+        "life_id": "brain_guided",
+        "maximum_record_index": 4105,
+        "native_identity": {
+          "argv_sha256": "57be2176501745b068dd7b57ec29704365ef12444377805d22f46a495a87d588",
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "cwd": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical3/source",
+          "pid": 1029925,
+          "start_ticks": "27821045",
+          "state": "R",
+          "uid": 2524
+        },
+        "node": "ovx2",
+        "observed_end_unix": 1789636145.0372975,
+        "observed_start_unix": 1789636145.0016963,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 4106,
+        "source_root": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/OVX2_TRAIN_STAT.json",
+        "sha256": "cac79453e9c304fd52ee393152547e208b2df94fbaf6a540078b20df49bca6dc"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r133_node3_brain_guided_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 213964,
+          "path": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/control1/GUARD.json",
+          "sha256": "081bada2a5661640e2d24a14920734d75d1a0da73f8aa7110155bcf31f7ec0a3"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/PROPOSED_PLAN.json",
+          "sha256": "5c7f4a952dbc57bd9f0d1bf5e21831e0e6d12d49b06007df4faf6768fa8c8cd4"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 214202,
+        "path": "/localhome/local-rohing/orch_r144_node3_target_physical4_20260916t1520z_1/GUARD.json",
+        "sha256": "b0c2b9be2eeb133f01a3933157027953a955a70b51027596292062c97931ede0"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/control1/PLAN.json",
+        "sha256": "649b7a9b9a9917edde5e5e9c7f1f9511b8478f84c2947219ca922f4a14f76b53"
+      },
+      "life_id": "creative_free",
+      "node": "ovx2",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/ovx2_creative_free.json",
+        "sha256": "b6c76a2ca54ea0db76dcead89995628577c795b18fe240a47faaea7b6008a746"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/PROPOSED_PLAN.json",
+        "sha256": "5c7f4a952dbc57bd9f0d1bf5e21831e0e6d12d49b06007df4faf6768fa8c8cd4"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1096785,
+          "last_index": 4142,
+          "record_bytes": 495037502,
+          "record_files": 4143,
+          "total_bytes": 496134371
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -160590051,
+        "directory_changed_during_scan": false,
+        "directory_entries": 8516,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1127260,
+          "record_bytes": 519827203,
+          "total_bytes": 520954547
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 4258,
+        "journal_header_bytes": 84,
+        "life_id": "creative_free",
+        "maximum_record_index": 4257,
+        "native_identity": {
+          "argv_sha256": "d123b8c57213a82d2e71b68d041459a7ccbd5b0602f9b65bf4a267e5c0e77eba",
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "cwd": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical4/source",
+          "pid": 1098298,
+          "start_ticks": "27886072",
+          "state": "S",
+          "uid": 2524
+        },
+        "node": "ovx2",
+        "observed_end_unix": 1789636145.0739865,
+        "observed_start_unix": 1789636145.0372994,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 4258,
+        "source_root": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/OVX2_TRAIN_STAT.json",
+        "sha256": "cac79453e9c304fd52ee393152547e208b2df94fbaf6a540078b20df49bca6dc"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 213727,
+          "path": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/control1/GUARD.json",
+          "sha256": "351ad4b3eaefa135c2b92ba7ebc9c9c3cf43fc3ec85de17cc11aa46ddd2bb033"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/PROPOSED_PLAN.json",
+          "sha256": "cde51871c4ebb8e0b95b484c79f6a6bab0cb7ac424fd3c893a477ff8d68b1413"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 214306,
+        "path": "/localhome/local-rohing/orch_r144_node3_target_physical1_20260916t1545z_5/GUARD.json",
+        "sha256": "8bbb6c007083884574b427b318ef3e466f26e514452b5ee5e7972801aca8ce9d"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/control1/PLAN.json",
+        "sha256": "1ef38405d33b3fc6ba9a8ac1fcf220f3cff9a15f5db01a3c40ee6e33b400c7a3"
+      },
+      "life_id": "creative_reread",
+      "node": "ovx2",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/ovx2_creative_reread.json",
+        "sha256": "c28c1d00ccbc638521e19c9f19cc4ea6070c80b2646c7150538e65fdb4c906f3"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/PROPOSED_PLAN.json",
+        "sha256": "cde51871c4ebb8e0b95b484c79f6a6bab0cb7ac424fd3c893a477ff8d68b1413"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1234585,
+          "last_index": 4662,
+          "record_bytes": 440740068,
+          "record_files": 4663,
+          "total_bytes": 441974737
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -106430417,
+        "directory_changed_during_scan": false,
+        "directory_entries": 9472,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1253930,
+          "record_bytes": 462812829,
+          "total_bytes": 464066843
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 4736,
+        "journal_header_bytes": 84,
+        "life_id": "creative_reread",
+        "maximum_record_index": 4735,
+        "native_identity": {
+          "argv_sha256": "627faeb22fcce3f51576bea2deaaec6b3e0bd274be3993dd88a3854014ca3eec",
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "cwd": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/source",
+          "pid": 1266769,
+          "start_ticks": "28048014",
+          "state": "R",
+          "uid": 2524
+        },
+        "node": "ovx2",
+        "observed_end_unix": 1789636145.1146655,
+        "observed_start_unix": 1789636145.0739887,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 4736,
+        "source_root": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/OVX2_TRAIN_STAT.json",
+        "sha256": "cac79453e9c304fd52ee393152547e208b2df94fbaf6a540078b20df49bca6dc"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r133_creative_reread_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 213970,
+          "path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/control1/GUARD.json",
+          "sha256": "51bf972a67f534d68396c642cbf23bc33d6f341002af743d9b71ef13ff0a77a6"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/PROPOSED_PLAN.json",
+          "sha256": "797e8dc0ac541f40e7390a7ca164180f90def3584fad0f7a4828036bc8d79078"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 214202,
+        "path": "/localhome/local-rohing/orch_r144_node3_target_physical7_20260916t1545z_5/GUARD.json",
+        "sha256": "4d377f53d809a71f8c4c636a7b0862a593223309f52466e8fad41e8ffe5c87af"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/control1/PLAN.json",
+        "sha256": "191ab50b4e062ff4e26ea31d74e82300ecb15860cee3792dba7829eadbfc1271"
+      },
+      "life_id": "creative_select",
+      "node": "ovx2",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/ovx2_creative_select.json",
+        "sha256": "703ce7120cc779413714b963bc2dd70abbafe9501525d59f233f837853387432"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/PROPOSED_PLAN.json",
+        "sha256": "797e8dc0ac541f40e7390a7ca164180f90def3584fad0f7a4828036bc8d79078"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1137065,
+          "last_index": 4294,
+          "record_bytes": 465826137,
+          "record_files": 4295,
+          "total_bytes": 466963286
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -131418966,
+        "directory_changed_during_scan": false,
+        "directory_entries": 8770,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1160915,
+          "record_bytes": 487182424,
+          "total_bytes": 488343423
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 4385,
+        "journal_header_bytes": 84,
+        "life_id": "creative_select",
+        "maximum_record_index": 4384,
+        "native_identity": {
+          "argv_sha256": "e594a3b58f25098085017302a5736247a16bedba43805929300e26b2b6d2d502",
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "cwd": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical7/source",
+          "pid": 1202149,
+          "start_ticks": "27985431",
+          "state": "R",
+          "uid": 2524
+        },
+        "node": "ovx2",
+        "observed_end_unix": 1789636145.1531963,
+        "observed_start_unix": 1789636145.114667,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 4385,
+        "source_root": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/OVX2_TRAIN_STAT.json",
+        "sha256": "cac79453e9c304fd52ee393152547e208b2df94fbaf6a540078b20df49bca6dc"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1"
+    },
+    {
+      "birth_evidence": {
+        "guard": {
+          "bytes": 213497,
+          "path": "/localhome/local-rohing/orch_r133_support_free_20260916_attempt1/control1/GUARD.json",
+          "sha256": "29738a686b961b404e1f9379ef5aae4e234366065e7d5c7b63acf15555133490"
+        },
+        "kind": "UNIQUE_ORIGINAL_NONRESUME_GUARD_WITH_EXACT_BIRTH_CONTEXT"
+      },
+      "current_native_plans": [
+        {
+          "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/PROPOSED_PLAN.json",
+          "sha256": "7307bafb877987bf9895fec2a3cf98121952718ea637bcb823fb3799e56f626c"
+        }
+      ],
+      "guard_configuration": {
+        "bytes": 213757,
+        "path": "/localhome/local-rohing/orch_r144_node3_target_physical0_20260916t1551z_5/GUARD.json",
+        "sha256": "c9aa38760054820648882db052d0063194f6be5cdfe875a19688b8cd2563e42b"
+      },
+      "historical_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r133_support_free_20260916_attempt1/control1/PLAN.json",
+        "sha256": "a34ee2015280fb07412b562081b9e4a85ef7617d3aa87d1ac1596d07661cbe49"
+      },
+      "life_id": "support_free",
+      "node": "ovx2",
+      "observation": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/observations/ovx2_support_free.json",
+        "sha256": "7691b7702889708e1b8dade3efb25668dcc78882de18e56408744c902b7d5f09"
+      },
+      "original_and_current_bytes_identical": false,
+      "registry_field_birth_plan": {
+        "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/PROPOSED_PLAN.json",
+        "sha256": "7307bafb877987bf9895fec2a3cf98121952718ea637bcb823fb3799e56f626c"
+      },
+      "registry_is_historical_birth_plan": false,
+      "registry_matches_current_native_plan_exactly": true,
+      "stats": {
+        "TRAIN_content_bytes_read": 0,
+        "allocated_budget_changed": false,
+        "completed_prefix": {
+          "intent_bytes": 1249160,
+          "last_index": 4717,
+          "record_bytes": 364750476,
+          "record_files": 4718,
+          "total_bytes": 365999720
+        },
+        "completed_prefix_exceeds_320MiB": true,
+        "completed_prefix_remaining_320MiB": -30455400,
+        "directory_changed_during_scan": false,
+        "directory_entries": 9666,
+        "excludes": "PLAN/COMMIT metadata, future growth, repeated reads and all adapter/model/optimizer bytes",
+        "full_observed": {
+          "intent_bytes": 1279635,
+          "record_bytes": 381232865,
+          "total_bytes": 382512584
+        },
+        "full_observed_exceeds_320MiB": true,
+        "intent_files": 4833,
+        "journal_header_bytes": 84,
+        "life_id": "support_free",
+        "maximum_record_index": 4832,
+        "native_identity": {
+          "argv_sha256": "c9685a380cb66ce3bb6fb881422796a6ed8d17decd4badde7b13069c2789d8b0",
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "cwd": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical0/source",
+          "pid": 1347090,
+          "start_ticks": "28124205",
+          "state": "R",
+          "uid": 2524
+        },
+        "node": "ovx2",
+        "observed_end_unix": 1789636145.1939607,
+        "observed_start_unix": 1789636145.1531975,
+        "other_name_count": 0,
+        "proposed_budget_bytes": 335544320,
+        "record_files": 4833,
+        "source_root": "/localhome/local-rohing/orch_r133_support_free_20260916_attempt1/run1",
+        "status": "STAT_ONLY_COMPLETE",
+        "unpaired_intent_count": 0,
+        "unpaired_record_count": 0
+      },
+      "stats_reference": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/OVX2_TRAIN_STAT.json",
+        "sha256": "cac79453e9c304fd52ee393152547e208b2df94fbaf6a540078b20df49bca6dc"
+      },
+      "storage_root": "/localhome/local-rohing/orch_r133_support_free_20260916_attempt1/run1"
+    }
+  ],
+  "schema": "R167_PLAN_REFERENCE_DISAMBIGUATION_V1",
+  "semantic_distinction": {
+    "current_native_plan": "Actual plan_path/plan_sha256 referenced by the observed native GUARD; exact source bytes independently read and pinned.",
+    "guard_configuration": "Supervisor GUARD JSON containing plan_path and plan_sha256; not itself a learner PLAN.",
+    "historical_birth_plan": "Unique non-resume PLAN with exact initial BIRTH context; classroom control3, other node3/A100 control1, R158 original matched run PLAN."
+  },
+  "source_index": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_legacy_custody_20260917/INDEX.json",
+    "sha256": "e4380e6ccb29d8ac7e55a722dd1ed734408d725102075c2b9a027ea8405e424a"
+  }
+}

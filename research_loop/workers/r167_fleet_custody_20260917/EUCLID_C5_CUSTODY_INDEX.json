@@ -1,0 +1,135 @@
+{
+  "acquisition": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_fleet_custody_20260917/c5_recovery_attempt2/ACQUISITION.json",
+    "sha256": "4320368b89691b5b47a6f610aa5464243fae696a767d14e259a4e218c9c15d5a"
+  },
+  "actual_committed_generation_segments": [
+    84,
+    85,
+    86
+  ],
+  "actual_invitation_committed_record": 2910,
+  "actual_invitation_record": 2907,
+  "all_checked_source_pins_match": true,
+  "canonical_queue_refs": {
+    "birth_plan": {
+      "path": "/localhome/local-rohing/orch_r157_community_C5_20260917_attempt1/control/PLAN.json",
+      "sha256": "486fafdc7958b9da3449ca4f096de56bdd59760a14656daa7374816d459bd75a"
+    },
+    "journal": {
+      "path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/JOURNAL.json",
+      "sha256": "3c7c8507de6b1d89acff1b01eba7f3beb773bbf30034e74c8e3cda860819b541"
+    },
+    "recovery_release": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_fleet_custody_20260917/c5_recovery_attempt2/RECOVERY_RELEASE.json",
+      "sha256": "9cb862cc4171e2e9e63f820acdf6d35b49d1b3db48f2d124ed2eec536739e2e0"
+    },
+    "registration_observation": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_fleet_custody_20260917/c5_recovery_attempt2/REGISTRATION_OBSERVATION.json",
+      "sha256": "7afdfc72ba3b6934123f08070af5668bda7537b8f4c6da96a50318605fe0ff26"
+    },
+    "source_root": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life"
+  },
+  "checked_static_runtime_files": 122,
+  "completed_checkpoint": {
+    "bytes": 6838,
+    "path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/checkpoints/sleep_000028/COMMIT.json",
+    "sha256": "948721092756e429c0ca808720a14d8aa27c113ec4bbf8e0f3e5077437d39a88"
+  },
+  "completed_sleep_record": {
+    "chain_sha256": "7059249253b8b21ff4ded221eaf8765bfcfb2307e801bf3ba0c4cec63afaf767",
+    "index": 2899,
+    "intent": {
+      "bytes": 265,
+      "path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/records/00000000000000002899.intent.json",
+      "sha256": "1be9821089c4bd408b05ac27254194e218f76af8240d40afdfda7efb4d1fc139"
+    },
+    "kind": "SLEEP_COMPLETE",
+    "previous_sha256": "9fb0fa2e8e9f73cdeee56b533d89d948a6893548d44b2978991ffff0f64d3cd6",
+    "record": {
+      "bytes": 2026867,
+      "path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/records/00000000000000002899.json",
+      "sha256": "82f540efda67a3766b87339d21172c146f2b3cfef376498127d66aab726c4c61"
+    }
+  },
+  "cpu_tests": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_fleet_custody_20260917/c5_recovery_attempt2/CPU.log",
+    "sha256": "118be220783ac4f7678bdd4b18613c6e5bae02e13467b430d2038e1bca386655"
+  },
+  "cpu_tests_passed": 8,
+  "cumulative_reads": {
+    "journal_bytes": 32907996,
+    "metadata_bytes": 3602039,
+    "record_count": 102
+  },
+  "fleet_disposition": "Supersedes C5 pending-release row only. Repo_reader remains explicit partial; do not make it a fleet-wide gate. Other lives retain their own evidence/ownership requirements.",
+  "frontier_observed_unix": 1789637224.7234871,
+  "frontier_observed_utc": "2026-09-17T09:27:04.723487+00:00",
+  "held_or_evaluation_access": false,
+  "initial_checkpoint": {
+    "bytes": 6825,
+    "path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/checkpoints/initial/COMMIT.json",
+    "sha256": "7292788715e73977d8de94d4cb02a97ce8dd805c7b80e302887bd8abbecd9aab"
+  },
+  "initial_checkpoint_state_bound": true,
+  "last_completed_sleep": 28,
+  "latest_captured_tail_index": 2987,
+  "latest_captured_tail_kind": "UPDATE",
+  "life_id": "C5",
+  "model_calls": 0,
+  "native_identity": {
+    "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+    "pid": 4018497,
+    "start_ticks": "17068304"
+  },
+  "no_new_sleep_needed_for_release": true,
+  "original_birth_fields_match": true,
+  "original_birth_record": {
+    "chain_sha256": "52c41b12abc760b70038a07b4e42e9bf48f82b0624c54d458934d00be9c8e245",
+    "index": 0,
+    "intent": {
+      "bytes": 262,
+      "path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/records/00000000000000000000.intent.json",
+      "sha256": "bd092ae464906479173346c39b8e694a1d504be24efa45ca2f41657d26ae104b"
+    },
+    "kind": "COMMITTED",
+    "previous_sha256": "a68ab41ac2e703fff73bdb0901a8f91ccbded1665a4bf0ad0860a8609c77b6c9",
+    "record": {
+      "bytes": 17877,
+      "path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/records/00000000000000000000.json",
+      "sha256": "d1e1198b8b981e30ad8041e44baa2df9cbabe5889c031c5af91cbbaad9729aaa"
+    }
+  },
+  "preserved_first_check": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_fleet_custody_20260917/c5_recovery_attempt1/RECOVERY_RELEASE.json",
+    "sha256": "f0162624a60bd65ff60c6c1371724a95336facb69ad310a900a5a3fb6ffd2511"
+  },
+  "prospective_first_sleep": 29,
+  "prospective_sleep_count": 3,
+  "prospective_sleep_ids": [
+    29,
+    30,
+    31
+  ],
+  "queue_or_registry_writes": 0,
+  "recipient": "Euclid",
+  "registry": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_object_survival/fleet_generation1/BATCH_PLAN.json",
+    "sha256": "5d73091fa467d24ec595f7f6adce8ce9f99e07d1569d2a97795302702e003b97"
+  },
+  "release_observed_unix": 1789637223.843555,
+  "remaining_scope": "Main source-owner read/copy authority and exact plan freeze/receiving custody remain separate.",
+  "remote_writes": 0,
+  "restored_optimizer_steps": 2478,
+  "restored_saved_sleep": 28,
+  "runtime_source_custody": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_fleet_custody_20260917/c5_recovery_attempt2/RUNTIME_SOURCE.json",
+    "sha256": "39938b1ffebb4ca71fdfa887eab963b711b072d90e095cba4024f48fba9149c7"
+  },
+  "runtime_source_root": "/localhome/local-rohing/orch_r166_retelling_C5_20260917_recovery2/source",
+  "schema": "R167_C5_EUCLID_CUSTODY_INDEX_V1",
+  "semantic_correctness_or_retention_claim": false,
+  "signals": 0,
+  "source_copy_or_GPU_authority_issued": false,
+  "status": "RECOVERY_RELEASE_AND_COMPLETED_FRONTIER_VERIFIED"
+}

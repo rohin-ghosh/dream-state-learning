@@ -1,0 +1,20 @@
+
+==================================== ERRORS ====================================
+________________________ ERROR collecting test session _________________________
+research_loop/workers/rohin174_parenting_20260917/node5/ROUTE_repo_reader_1789681561290273373/source/test_console_baseline.py:20: in <module>
+    MANIFEST = read(ROOT / 'run1_MANIFEST.json')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research_loop/workers/rohin174_parenting_20260917/node5/ROUTE_repo_reader_1789681561290273373/source/console_baseline.py:21: in read
+    return json.loads(Path(path).read_bytes())
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1021: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1015: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ROUTE_repo_reader_1789681561290273373/source/ACTIVATION_A_1789678829928180897/run1_MANIFEST.json'
+=========================== short test summary info ============================
+ERROR ../../../../dev - FileNotFoundError: [Errno 2] No such file or director...
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.27s

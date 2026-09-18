@@ -1,0 +1,293 @@
+{
+  "observed_local_unix": 1789694657.540856,
+  "result": {
+    "all_21_preexisting_parent_bytes_unchanged": true,
+    "dataset": {
+      "complete_row_count": 0,
+      "exists": false,
+      "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/exploration/C2_R188_same_life_recovery.jsonl",
+      "rows": []
+    },
+    "dataset_journal_records": [],
+    "head": {
+      "index": 5750,
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "kind": "UPDATE",
+      "previous_sha256": "e174a92920945af020b024646e8d1061eae1f6d88c0863b074b8ce55dbb747e1",
+      "schema": "R125_STREAM_JOURNAL_V1",
+      "sha256": "60b0582165a1328055e7266125df79563ba252376a01be37f1960158d62500ce"
+    },
+    "head_fields": {
+      "finished_unix": 1789694652.1267748,
+      "optimizer_step": 4858
+    },
+    "latest_complete": {
+      "cycle": 49,
+      "index": 5684,
+      "record_mtime_ns": 1789694151657241082,
+      "record_sha256": "023fbbb3c4fd933bc7de4375f582b48586e256a36256e4ff6adf944b322184b0",
+      "total_optimizer_steps": 4812,
+      "updates": 48
+    },
+    "live_changes": 0,
+    "loaded": null,
+    "observed_unix": 1789694657.0373328,
+    "pids": {
+      "original_math_bridge": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/r193_c2_bridge.py",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/BRIDGE.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1",
+        "parent": 1,
+        "pid": 2930020,
+        "start_ticks": "22767768",
+        "state": "S"
+      },
+      "original_native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/source",
+        "parent": 2930122,
+        "pid": 2930123,
+        "start_ticks": "22768040",
+        "state": "S"
+      },
+      "original_outer": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r188_node5_confinement",
+          "dispatch",
+          "--config",
+          "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/control/GUARD.json"
+        ],
+        "cwd": "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/source",
+        "parent": 1,
+        "pid": 2930061,
+        "start_ticks": "22767888",
+        "state": "S"
+      },
+      "waiter": {
+        "alive": false,
+        "pid": 2981108
+      }
+    },
+    "preservation": {
+      "adapter_files_match": true,
+      "boundary_index": 5684,
+      "boundary_record_unchanged": true,
+      "checkpoint_optimizer_steps": 4812,
+      "cycle": 49,
+      "exact_saved_state_digest": true,
+      "first_post_boundary_commit_index": 5688,
+      "first_post_boundary_commit_sha256": "b92c627085c7a9d0a1b7f50f1972df3ecbc3fca7f6d9546a99313f4bb98b9387",
+      "full_saved_history_events": 483,
+      "full_saved_rows": 147,
+      "head_index": 5685,
+      "head_record_unchanged": true,
+      "optimizer_rng_bytes_match": true,
+      "optimizer_rng_file_sha256": "e7855ebfd6888884468fcf7d75cc8bcdce9f81c3c02d66452c52a0c5dfe74b46",
+      "pending": null,
+      "post_boundary_commit_origin": "original_runtime_no_successor_load",
+      "post_boundary_history_events_prefix_exact": true,
+      "post_boundary_rows_prefix_exact": true,
+      "post_boundary_saved_context_limit_unchanged": true,
+      "saved_history_sha256": "b296af337edc7a753fb256f41298d090b94a48e3bdba8f6afde2f5114166c315",
+      "saved_rows_sha256": "43e801f7f91cedcc7c256cddac5ce2491c06d35c10e5c76377d7bb6a2e0ae24b",
+      "sleep_frontier": 147
+    },
+    "preserved_parent_inventory": [
+      {
+        "id": "00bfc710af3542d19b1910d0e45acdcb",
+        "sha256": "4e2cd7e8dd1b43f6b13eadfd892067c0b48ad3b35a8c1d085925dade6120aa93",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "04b65337c67e461f986f3a0144b02e42",
+        "sha256": "7bc8c2d843bf26a65a9812bfa9c13b1e558e540800f839a8673f7a2657410ec9",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "065eb181adad4bb7a0601afb95204232",
+        "sha256": "5bb6edb9e77703484d235143865643c7feaaf94df3a5454a97569ac1957aa7b9",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "2c412fd3705c419b86ec898022fe3643",
+        "sha256": "6e978b43fa71833b256cbf8a70ed951664d903aec842cb96600375cb2ab96de4",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "3078c29c7f70428da03ba284e247206c",
+        "sha256": "a7465481b9d7e4c31fd8a3ff2db84267d94263a20f752ecf449e0cb3b3775d50",
+        "speaker": "Rohin",
+        "unchanged": true
+      },
+      {
+        "id": "44df8b3a01b6446da5f441ccbda8d2b8",
+        "sha256": "5927685e9aa1c8bb3103f28e7488d99629f0409bb69098c3a80178ce00f987a4",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "4bc137e6d9f342d3b63137eb2fb848cf",
+        "sha256": "4d569a7c253180eb8e8269b8e8374687624cac4206be7df5e84638fba4b75fcc",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "4d57080d61204584ab5fbfa9312a6e12",
+        "sha256": "4a8e906ee363a1ca6d3e4cc12a85f37fa750585696877b5ff09dab9fc00c64d8",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "5e5ce7b828344f73b47b5a7c985b1785",
+        "sha256": "737d8148be14190d2d7b679b426fb5ec97c35e8bd6e825cb5be4dfc8f9e8af29",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "63f7efb07e8448c4ad6466b00ca88de1",
+        "sha256": "ef074d67bb567c3d337796c5c01d5ccbf8fe81998c25c30cd62511e79841c4ad",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "64b995a45be243a88728a3940158ed1a",
+        "sha256": "37156c703f3261875e16a89c2fa31d42fa1cbd7b845de23af6409e310f5320af",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "707cdd4ec2d74a63a258b873a2a2f9fe",
+        "sha256": "6ef0d5051fba3c831d72ae0ba299653aea7ab297ca632e5a73c30c24a0bc038e",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "78ba00706570418e95f13d9184b968f8",
+        "sha256": "30341d58f5d53e5e6f382acb395f9150e959a392c9149118274a85722cb7555c",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "7cef18eda77349aeae9b0eb0eeadea73",
+        "sha256": "e74e426efe8432d274f5fd668a01f51ab1dae17f378613e7b1fe121a0a09f09d",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "870f6b0405034c32b83a089a8b7bae00",
+        "sha256": "3de98a08f64fcbb6745155195232e61542011b5eb942dd40ec9f4dc7a8b389b2",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "a8f395026c1442db8b7638745a30f556",
+        "sha256": "5eeebd240eb083dfa0533a7a6c29846a6b878ace599578cd072af029213e0e03",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "a990aff585554b77834a0398135dc713",
+        "sha256": "e4265bf7268619ea430d44872f01883de861cdd98e88e8d669f1145710721575",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "b2be260c2c884acf96c64cbc70a95745",
+        "sha256": "6991b31d23e60be041501c78638715331e84f43e48d00d4b43314bd4926141d4",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "cb20da04ed1c406ea8f89095582035c2",
+        "sha256": "47819919c29c2f62ce537d3c65bda000ef2f63a3bfb2aa529d22bd24e263be80",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "fe599794f4e949719fb6c74ff32036a8",
+        "sha256": "264668ea6048e3cfd66c70c57fb12bd7774c2963351eb38ede01eb1076f3ceac",
+        "speaker": "Astra",
+        "unchanged": true
+      },
+      {
+        "id": "311ae25be2484fccbcd8af839c4fa025",
+        "sha256": "a625f9635a87e79f65cfe480dde22c4e1a98076dc8c6b49a9669b2e0ed532390",
+        "speaker": "Astra",
+        "unchanged": true
+      }
+    ],
+    "publications": 0,
+    "receipts": {
+      "ARMED.json": {
+        "document": {
+          "phase": "R193_C2_MASKED_CAUSAL_CE_V1",
+          "pid": 2981108,
+          "signals": 0,
+          "time": 1789693892.7243009,
+          "wait_seconds": 1200
+        },
+        "path": "/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1/ARMED.json",
+        "sha256": "6eb909a9c9e602284b2dbd0f6950e1e208b398a461713914fe071e790a68b379"
+      },
+      "FAILED.json": {
+        "document": {
+          "error_type": "CalledProcessError",
+          "native_stop_intent": false,
+          "no_retry": true,
+          "reason": "Command '['/localhome/local-rohing/v2/venv/bin/python', '-B', '-c', \"import json,sys,random\\nfrom pathlib import Path\\nfrom gpu import orch_r125_continual_native as native\\nimport torch\\nplan=native.read(sys.argv[1]); boundary=native.read(sys.argv[2])\\nenvelope=boundary['record']['document']['resume_state']\\nstream=native.ContinualStream.restore(envelope,expected_sha256=envelope['sha256'])\\ncommit_path=Path(plan['root'])/'checkpoints'/('sleep_%06d'%boundary['cycle'])/'COMMIT.json'\\ncheckpoint=native.read(commit_path)\\nnative.require(checkpoint==boundary['record']['document']['checkpoint'],'record_checkpoint_exact')\\nnative.NativeChild.verify_checkpoint(checkpoint)\\nnative.require(native.digest(checkpoint['checkpoint_sha256'])==stream.model_state_sha256,'model_history_RNG_binding')\\npayload=torch.load(checkpoint['optimizer_rng_path'],map_location='cpu',weights_only=False)\\nnative.require(payload['optimizer_steps']==checkpoint['optimizer_steps']>0 and payload['optimizer']['state'] and payload['optimizer']['param_groups'] and payload['parameter_names'],'full_AdamW_not_reset')\\nnative.require(len(payload['cuda_rng'])==1 and payload['cuda_rng'][0].device.type=='cpu','saved_single_device_RNG')\\ntorch.Generator(device='cpu').set_state(payload['cpu_rng']); random.Random().setstate(payload['python_rng'])\\nextension=native.prepare_wall_extension(plan,stream,resume=True,plan_sha256=native.sha(sys.argv[1]))\\nnative.require(not torch.cuda.is_initialized(),'CPU_only_validation')\\nprint(json.dumps(dict(checkpoint_path=str(commit_path),checkpoint_sha256=native.sha(commit_path),optimizer_steps=checkpoint['optimizer_steps'],adapter_state_sha256=checkpoint['adapter_state_sha256'],bundle_sha256=checkpoint['checkpoint_sha256'],wall_record=extension)))\\n\", '/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1/control/PLAN.json', '/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1/BOUNDARY.json']' returned non-zero exit status 1.",
+          "retired": false,
+          "time": 1789694270.2615461
+        },
+        "path": "/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1/FAILED.json",
+        "sha256": "a8d2c4812817c5e0fd5356bf1cc13d2cb7ca007f63b3920ef21bb245d951dcd2"
+      },
+      "WAITER_START.json": {
+        "document": {
+          "no_retry": true,
+          "operator": "/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1/memory_handoff.py",
+          "pid": 2981108,
+          "ready_sha256": "098f4b91ba300ba7659303274f936ccdcc8806f731782997f33ff2e6415c2b2b",
+          "start_ticks": "22945285",
+          "started_unix": 1789693892.662968
+        },
+        "path": "/localhome/local-rohing/orch_r153_r193_C2_masked_ce_20260917_phase1/WAITER_START.json",
+        "sha256": "47bab85328bacfb774e4b62ef8bf61331d8342a824e075ac73613ba831b0f642"
+      }
+    },
+    "recipe": {
+      "document": {
+        "anchor_lambda": 0.25,
+        "available_old_rows": 147,
+        "new_presentations": 16,
+        "new_rows": 3,
+        "policy": "R181_NEW_ONLY_V1",
+        "selected_old_rows": 0
+      },
+      "index": 5703,
+      "record_sha256": "82c44cd4da1fa80ff59ec3daf4c4318134aa91fdecf4d00aea1c8dfd3cbf11da"
+    },
+    "signals": 0
+  },
+  "returncode": 0,
+  "stderr": ""
+}

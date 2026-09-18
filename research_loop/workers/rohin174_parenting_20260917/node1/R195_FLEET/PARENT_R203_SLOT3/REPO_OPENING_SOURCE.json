@@ -1,0 +1,9 @@
+{
+  "end_line": 74,
+  "observed_unix": 1789702019.0431983,
+  "path": "gpu/orch_r153_community_transport.py",
+  "read_only": true,
+  "sha256": "54b04f8528c9cd15284b97826d00928fe4e267e833accbdb3e34ebfded661dea",
+  "start_line": 55,
+  "text": "def code_route(raw, *, code_policy=blocks.POLICY):\n    report = blocks.extract(raw, policy=code_policy)\n    if report['source'] is None:\n        return 'NONE', report\n    kernel = report.get('language') in ('triton', 'cuda', 'c++', 'cpp') or re.search(\n            r'(?m)^\\s*(?:import\\s+triton\\b|from\\s+triton\\b)', report['source'])\n    if kernel:\n        return 'KERNEL', report\n    try:\n        tree = ast.parse(report['source'])\n    except SyntaxError:\n        return 'CPU', report\n    for node in ast.walk(tree):\n        if isinstance(node, ast.Import) and any(alias.name.split('.')[0] == 'triton' for alias in node.names):\n            return 'KERNEL', report\n        if isinstance(node, ast.ImportFrom) and (node.module or '').split('.')[0] == 'triton':\n            return 'KERNEL', report\n        if isinstance(node, ast.Attribute) and isinstance(node.value, ast.Name) and node.value.id in ('triton', 'tl'):\n            return 'KERNEL', report\n    return 'CPU', report"
+}

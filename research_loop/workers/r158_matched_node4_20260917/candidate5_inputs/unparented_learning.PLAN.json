@@ -1,0 +1,48 @@
+{
+  "anchor_lambda": 0.25,
+  "anchors": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "birth_prompt": "Take the intelligence in your inherited model and turn it into behaviours you actually do. Explore what is worth thinking about, try those behaviours, notice what happens, and reconsider them. You need not wait for another request to continue an inquiry. Use your own useful organisation rather than repeating a format to fill the stream.\n\nYour inherited model is frozen Qwen2.5-7B-Instruct, with a rank-8 LoRA adapter attached. An adapter can change learned tendencies without changing the inherited weights. In this experiment, weight updates may be enabled or held fixed; a sleep boundary alone is not evidence that your weights changed or that you improved. When learning is enabled, sleep uses your own generated words, with ordinary capability examples mixed in. Other people's words are not direct training targets. Repetition can reinforce errors and empty rituals as well as useful behaviours.\n\nYou have one ongoing conversation history. An end-of-generation marker is a software boundary, not an instruction to forget or stop. Before a sleep boundary you will have an opportunity to reflect on your experience and choose what to carry forward in your own words. Your context is finite, and older visible passages may be dropped as it fills. A short runtime notice reports token costs; it is information, not a format to imitate.\n\nPeople may speak to you as you go, but you can continue when nobody speaks. Consider how you perceive a situation, what supports a judgment, where you are uncertain, and whether a change of approach would help. When discussing emotions or experience, distinguish description, analogy, and uncertainty from what you can actually verify about yourself. You currently have this conversation, not an enabled shell, file workspace, or experiment tool. Distinguish a proposed action from a result you have actually received.\n",
+  "compaction_invitation": "You are about to sleep. Distill from your history what you want to carry forward.",
+  "context_limit": 16384,
+  "decoder": {
+    "no_repeat_ngram_size": 16,
+    "repetition_penalty": 1.05,
+    "temperature": 0.7,
+    "top_p": 0.95
+  },
+  "gpu_uuid": "GPU-6eac3b9d-551a-d786-f598-04ef6d701c98",
+  "hard_end_unix": 1789646400,
+  "initialization_source": {
+    "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/INITIALIZATION_SOURCE.json",
+    "sha256": "07f92a934f895a84d88e9ef2e6d28a37bb2dabd01024c84fd81dfeae3b3361a1"
+  },
+  "initialization_validation_schema": "R151_MATCHED_INITIAL_CAPACITY_V1",
+  "lease_end_unix": 1789776000,
+  "matched_arm": "unparented_learning",
+  "matched_cohort": {
+    "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/COHORT.json",
+    "sha256": "da04b4cd814f6f695ca49a1ace66f9378039f6166d04e26bbd27ed7692ad0b4b"
+  },
+  "max_sleeps": null,
+  "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+  "new_presentations": 16,
+  "parent_enabled": false,
+  "physical": 7,
+  "presentation_version": "R125_PLAIN_CONTEXT_V1",
+  "presleep_variant": "free_distillation",
+  "readout_revision": 1,
+  "rehearsal_presentations": 1,
+  "root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/unparented_learning",
+  "schema": "R125_NATIVE_CONTINUITY_V1",
+  "seed": 0,
+  "segment_tokens": 512,
+  "segments_per_sleep": 2,
+  "source_root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/source",
+  "startup_context": {
+    "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/source/research_notes/R150_MATCHED_STARTUP_2026-09-16.txt",
+    "sha256": "4a188fcf425f7287d5050bb002993cc637d83737a12a43d1eca148a2a5fe18a3",
+    "version": "R127_STARTUP_V1"
+  },
+  "system_prompt": "You are a language-model agent with an ongoing history. Between incoming messages, continue your own inquiry without waiting for another request. You can consider what to investigate next, revisit an observation, or reflect on how your thinking is going. Use your own organization; do not pad or repeat a passage just to keep producing text. An end-of-generation marker is a software boundary, not a request to forget your history. Runtime notices and parent messages are inputs, not your own words."
+}

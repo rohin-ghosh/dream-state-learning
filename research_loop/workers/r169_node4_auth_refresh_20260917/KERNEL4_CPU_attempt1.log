@@ -1,0 +1,23 @@
+F..................................................                      [100%]
+=================================== FAILURES ===================================
+________________ test_settled_old_schema_without_schedule_count ________________
+
+fixture_output = PosixPath('/data/home/rohing/.tmp/pytest-of-rohing/pytest-6/test_settled_old_schema_withou0/old')
+
+    def test_settled_old_schema_without_schedule_count(fixture_output):
+        ledger = kernel.terminal_ledger(fixture_output)
+        assert ledger['reserved'] == 106
+>       assert ledger['statuses'] == {'PUBLISHED': 1, 'SILENT': 1, 'MISSING': 1}
+E       AssertionError: assert {'PUBLISHED': 2, 'MISSING': 1} == {'PUBLISHED':... 'MISSING': 1}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Differing items:
+E         {'PUBLISHED': 2} != {'PUBLISHED': 1}
+E         Right contains 1 more item:
+E         {'SILENT': 1}
+E         Use -v to get more diff
+
+research_loop/workers/r169_node4_auth_refresh_20260917/test_kernel4_prospective.py:33: AssertionError
+=========================== short test summary info ============================
+FAILED research_loop/workers/r169_node4_auth_refresh_20260917/test_kernel4_prospective.py::test_settled_old_schema_without_schedule_count
+1 failed, 50 passed in 0.30s

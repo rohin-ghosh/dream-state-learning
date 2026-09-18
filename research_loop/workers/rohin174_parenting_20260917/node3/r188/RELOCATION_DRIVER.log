@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188_transfer.py", line 63, in <module>
+    list(executor.map(transfer, (0, 1, 2, 3, 4, 7)))
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/r188_transfer.py", line 30, in transfer
+    base.require(result.returncode == 0, 'actual_packet_capture_and_transfer_failed')
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/takeover.py", line 31, in require
+    raise ValueError(reason)
+ValueError: actual_packet_capture_and_transfer_failed

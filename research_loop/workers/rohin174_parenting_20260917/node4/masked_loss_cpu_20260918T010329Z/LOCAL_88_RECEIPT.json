@@ -1,0 +1,46 @@
+{
+  "GPU_deployment": false,
+  "checks": {
+    "expected_test_count": true,
+    "no_skips": true,
+    "success_returncode": true,
+    "unittest_OK": true
+  },
+  "code_edits": false,
+  "command": [
+    "/data/home/rohing/vm_tmp_archive/astra_preservation_cpu_20260912/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "tests.test_orch_r125_masked_causal_loss",
+    "tests.test_orch_r145_suffix_loss",
+    "tests.test_orch_r125_continual_native",
+    "-q"
+  ],
+  "command_shell": "/data/home/rohing/vm_tmp_archive/astra_preservation_cpu_20260912/bin/python -B -m unittest tests.test_orch_r125_masked_causal_loss tests.test_orch_r145_suffix_loss tests.test_orch_r125_continual_native -q",
+  "cwd": "/data/home/rohing/dream-state-orch",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "final_source_pins": {
+    "gpu/orch_r125_continual_native.py": "dd2f413ed8617b819400306dd966a636d0ed0b5cee6209096fab4601c41b9def",
+    "gpu/orch_r145_suffix_loss.py": "d5e69655fd30f3317d114bd4aab2025024fdfb1521664b536d54ad61069bf026",
+    "tests/test_orch_r125_masked_causal_loss.py": "df67adc8881037edad57798627ab1b1fe230826fe7db52ac0feb716483bc0832",
+    "tests/test_orch_r125_masked_causal_loss_qwen_cpu.py": "626ace1d0b99ab4ea372ff965fae4985eff19bd7eaf840cdb4fa84c46201e958"
+  },
+  "finished_utc": "2026-09-18T01:04:40.405045+00:00",
+  "log_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/masked_loss_cpu_20260918T010329Z/LOCAL_88.log",
+  "log_sha256": "2ca6d16b99fcd1b01fddaf9615c2b916067395ddca704da9bae4f0a68401ad43",
+  "prior_unpersisted_run": "Tool transcript only; this is a fresh durable reproduction, not a backdated receipt.",
+  "returncode": 0,
+  "skipped": 0,
+  "source_immutable_edits": false,
+  "started_utc": "2026-09-18T01:04:27.007785+00:00",
+  "status": "PASS",
+  "stdin_payload_path": null,
+  "stdin_payload_sha256": null,
+  "tests_run": 88
+}

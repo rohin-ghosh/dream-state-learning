@@ -1,0 +1,38 @@
+........................................................................ [ 20%]
+...............FF....................................................... [ 41%]
+........................................................................ [ 61%]
+........................................................................ [ 82%]
+..............................................................           [100%]
+=================================== FAILURES ===================================
+______________ test_ambiguous_enrollment_timestamps_refused[nan] _______________
+
+fixture = namespace(root=PosixPath('/tmp/pytest-of-rohing/pytest-804/test_ambiguous_enrollment_time2/campaign'), plan={'schema':...campaign/inputs/checkpoint/COMMIT.json', 'sha256': '4471b9b0cee4418c2f621f689dd9c739c8df9d25e41243e8694457a12d903c0d'})
+value = nan
+
+    @pytest.mark.parametrize('value', [None, True, float('nan'), float('inf'), '1789620776', 0])
+    def test_ambiguous_enrollment_timestamps_refused(fixture, value):
+        timing = subject.bound(install_predating_recovery(fixture))
+        timing['enrollment_unix'] = value
+        if type(value) is float and not subject.math.isfinite(value):
+>           with pytest.raises(ValueError):
+E           Failed: DID NOT RAISE ValueError
+
+tests/test_orch_r159_matched_evaluation.py:753: Failed
+______________ test_ambiguous_enrollment_timestamps_refused[inf] _______________
+
+fixture = namespace(root=PosixPath('/tmp/pytest-of-rohing/pytest-804/test_ambiguous_enrollment_time3/campaign'), plan={'schema':...campaign/inputs/checkpoint/COMMIT.json', 'sha256': 'e3f3d0da55fc3aad8654b3c19412f1497f096586e4a0d6b08a1ba56050254187'})
+value = inf
+
+    @pytest.mark.parametrize('value', [None, True, float('nan'), float('inf'), '1789620776', 0])
+    def test_ambiguous_enrollment_timestamps_refused(fixture, value):
+        timing = subject.bound(install_predating_recovery(fixture))
+        timing['enrollment_unix'] = value
+        if type(value) is float and not subject.math.isfinite(value):
+>           with pytest.raises(ValueError):
+E           Failed: DID NOT RAISE ValueError
+
+tests/test_orch_r159_matched_evaluation.py:753: Failed
+=========================== short test summary info ============================
+FAILED tests/test_orch_r159_matched_evaluation.py::test_ambiguous_enrollment_timestamps_refused[nan]
+FAILED tests/test_orch_r159_matched_evaluation.py::test_ambiguous_enrollment_timestamps_refused[inf]
+2 failed, 348 passed in 6.11s

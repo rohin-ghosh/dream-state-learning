@@ -1,0 +1,5 @@
+{
+  "error": "The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=\"torchvision\"` instead of `use_fast=True`, or `backend=\"pil\"` instead of `use_fast=False`.\nTraceback (most recent call last):\n  File \"<string>\", line 21, in <module>\n  File \"/usr/lib/python3.12/json/__init__.py\", line 179, in dump\n    for chunk in iterable:\n  File \"/usr/lib/python3.12/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/usr/lib/python3.12/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/usr/lib/python3.12/json/encoder.py\", line 439, in _iterencode\n    o = _default(o)\n        ^^^^^^^^^^^\n  File \"/usr/lib/python3.12/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type SizeDict is not JSON serializable\n",
+  "observed_unix": 1789671161.4877121,
+  "returncode": 1
+}

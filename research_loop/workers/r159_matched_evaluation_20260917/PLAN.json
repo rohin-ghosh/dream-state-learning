@@ -1,0 +1,112 @@
+{
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "calls_per_checkpoint": 56,
+  "cohort": null,
+  "conditions": [
+    "LORA_ON",
+    "LORA_OFF"
+  ],
+  "decoder": {
+    "do_sample": false,
+    "max_new_tokens": 512,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "temperature": 0.0
+  },
+  "evaluation_to_inbox": false,
+  "evaluation_to_sleep": false,
+  "failed_keys_retry": false,
+  "file_tools": false,
+  "freeze": {
+    "path": "/localhome/local-rohing/orch_r159_matched_evaluation_20260917_attempt1/preparation/generation2/sealed/FREEZE.json",
+    "sha256": "1515341fd0c8d1336cbea6728aa5ba3c27c638752964575affda2400002c81b6"
+  },
+  "general_battery": "NOT_SCHEDULED_SEPARATE_INSTRUMENT_EXCEEDS_THIS_BUDGET",
+  "history_shared": false,
+  "instrument": "existing_reasoning_gym_fixed_split_panel",
+  "max_checkpoints": 12,
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "parent_access": false,
+  "physical_slots": [
+    0,
+    1
+  ],
+  "rank": 8,
+  "schema": "R159_MATCHED_EVALUATION_V1",
+  "scores_gate_selection": false,
+  "slots": [
+    {
+      "arm": "parented_learning",
+      "key": "parented_learning_0",
+      "milestone": 0,
+      "weight_control": "saved_adapter"
+    },
+    {
+      "arm": "parented_frozen",
+      "key": "parented_frozen_0",
+      "milestone": 0,
+      "weight_control": "step0_repeated"
+    },
+    {
+      "arm": "unparented_learning",
+      "key": "unparented_learning_0",
+      "milestone": 0,
+      "weight_control": "saved_adapter"
+    },
+    {
+      "arm": "parented_learning",
+      "key": "parented_learning_1",
+      "milestone": 1,
+      "weight_control": "saved_adapter"
+    },
+    {
+      "arm": "parented_frozen",
+      "key": "parented_frozen_1",
+      "milestone": 1,
+      "weight_control": "step0_repeated"
+    },
+    {
+      "arm": "unparented_learning",
+      "key": "unparented_learning_1",
+      "milestone": 1,
+      "weight_control": "saved_adapter"
+    },
+    {
+      "arm": "parented_learning",
+      "key": "parented_learning_2",
+      "milestone": 2,
+      "weight_control": "saved_adapter"
+    },
+    {
+      "arm": "parented_frozen",
+      "key": "parented_frozen_2",
+      "milestone": 2,
+      "weight_control": "step0_repeated"
+    },
+    {
+      "arm": "unparented_learning",
+      "key": "unparented_learning_2",
+      "milestone": 2,
+      "weight_control": "saved_adapter"
+    },
+    {
+      "arm": "parented_learning",
+      "key": "parented_learning_4",
+      "milestone": 4,
+      "weight_control": "saved_adapter"
+    },
+    {
+      "arm": "parented_frozen",
+      "key": "parented_frozen_4",
+      "milestone": 4,
+      "weight_control": "step0_repeated"
+    },
+    {
+      "arm": "unparented_learning",
+      "key": "unparented_learning_4",
+      "milestone": 4,
+      "weight_control": "saved_adapter"
+    }
+  ],
+  "total_call_cap": 672
+}

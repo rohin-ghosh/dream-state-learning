@@ -1,0 +1,58 @@
+{
+  "schema": "R205_CURRENT_INCARNATION_OVERFLOW_RECHECK_V1",
+  "observed_utc": "2026-09-18T03:50:00.700776+00:00",
+  "source_snapshot": "2026-09-18T03:48:02.281315+00:00",
+  "results": {
+    "node2": [
+      {
+        "pid": 2170067,
+        "physical": 3,
+        "identity_verified": true,
+        "loaded_index": 5847,
+        "rejections": [
+          {
+            "index": 5931,
+            "record_sha256": "a4e6f1b9969fcd87176e85caf2acee234677739227e3d9e628fe782730e65821",
+            "path": "/proc/2170067/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005931.json",
+            "source": "child:segment:156",
+            "reason_code": "working_state_overflow",
+            "bytes": 2969,
+            "budget": 2048
+          }
+        ],
+        "bytes_read": 542944
+      }
+    ],
+    "node5": [
+      {
+        "pid": 3179563,
+        "physical": 1,
+        "identity_verified": true,
+        "loaded_index": 6057,
+        "rejections": [
+          {
+            "index": 6065,
+            "record_sha256": "36d0271108bdaddc3dbdf22349a794def43bb95c8a9d47f5d4b7dbfe4be5325b",
+            "path": "/proc/3179563/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006065.json",
+            "source": "child:segment:161",
+            "reason_code": "working_state_overflow",
+            "bytes": 2539,
+            "budget": 2048
+          },
+          {
+            "index": 6136,
+            "record_sha256": "977bb80179623d93bd12a44febfe19337eeb0a80f57f6ba982f159e160f0a221",
+            "path": "/proc/3179563/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006136.json",
+            "source": "child:segment:165",
+            "reason_code": "working_state_overflow",
+            "bytes": 2477,
+            "budget": 2048
+          }
+        ],
+        "bytes_read": 262763
+      }
+    ]
+  },
+  "remote_writes": 0,
+  "gpu_calls": 0
+}

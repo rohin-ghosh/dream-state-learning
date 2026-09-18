@@ -1,0 +1,767 @@
+{
+  "schema": "R207_FRESH_MAINTENANCE_AND_ACTUAL_NEW_HOST_AUTH_V1",
+  "recorded_utc": "2026-09-18T04:27:55.226684+00:00",
+  "source_pass": "research_loop/workers/rohin204_maintenance_20260917/PASS_20260918T042607Z.json",
+  "source_pass_sha256": "7cc9e0a7f4d3ab0a3ceb4d3f6b86dc104330ea8ebce5455440d7e0dacf4741c9",
+  "started_utc": "2026-09-18T04:26:07.110422+00:00",
+  "finished_utc": "2026-09-18T04:26:09.694611+00:00",
+  "observed_native_count": 19,
+  "observed_state_counts": {
+    "R": 9,
+    "S": 10,
+    "T": 0,
+    "D": 0,
+    "Z": 0
+  },
+  "counts_by_node": {
+    "node1": 1,
+    "node2": 5,
+    "node4": 6,
+    "node5": 7
+  },
+  "selected_current_incarnations": [
+    {
+      "node": "node2",
+      "physical": 5,
+      "pid": 1849923,
+      "state_at_end": "S",
+      "trial_id": null,
+      "current_loaded": {
+        "reference": {
+          "index": 5443,
+          "kind": "LOADED",
+          "record_sha256": "d3ed191406fec8bdf514ef0da153ee1f24291d59681f5680c54aeb28c38c50e5",
+          "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000005443.json",
+          "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000005443.json",
+          "mtime_unix": 1789689547.1319141
+        },
+        "pid": 1849923,
+        "loaded_unix": 1789689547.0991442,
+        "trial_id": null,
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 212,
+        "split": "TRAIN",
+        "started_unix": 1789705439.076661,
+        "reference": {
+          "index": 7083,
+          "kind": "REQUEST",
+          "record_sha256": "4077764c79037078bfdbea699d333e741f5bbea3ea5c40cec02d029818a193ca",
+          "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007083.json",
+          "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007083.json",
+          "mtime_unix": 1789705439.6864629
+        },
+        "prompt_tokens": 13536,
+        "after_current_process_start": true
+      },
+      "compactions": [
+        {
+          "reference": {
+            "index": 5703,
+            "kind": "COMPACTION",
+            "record_sha256": "0d1e28ac72298e9b2360a6b10847a6e08e55b34fd6f56c0a2d0b069c3cf0a13b",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000005703.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000005703.json",
+            "mtime_unix": 1789692208.9034219
+          },
+          "fields": {
+            "kind": "CHILD_COMPACTION"
+          }
+        },
+        {
+          "reference": {
+            "index": 6204,
+            "kind": "COMPACTION",
+            "record_sha256": "8c951dd09fefea146cba109eb5bc03f06b1459219b79825533cda71b6f266807",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006204.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006204.json",
+            "mtime_unix": 1789696788.0539243
+          },
+          "fields": {
+            "kind": "CHILD_COMPACTION"
+          }
+        },
+        {
+          "reference": {
+            "index": 6645,
+            "kind": "COMPACTION",
+            "record_sha256": "8732633b081afceb5ece86aad50d8c8e6316050c5cb1a095071185e4ae32e1c5",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006645.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006645.json",
+            "mtime_unix": 1789701101.4885607
+          },
+          "fields": {
+            "kind": "CHILD_COMPACTION"
+          }
+        },
+        {
+          "reference": {
+            "index": 7086,
+            "kind": "COMPACTION",
+            "record_sha256": "07b0a8f974e55749722145c97a31e7d8c00fd701ea17abbdd947b4a8b11d0b6d",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007086.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007086.json",
+            "mtime_unix": 1789705476.6530135
+          },
+          "fields": {
+            "kind": "CHILD_COMPACTION"
+          }
+        }
+      ],
+      "head": {
+        "index": 7096,
+        "kind": "UPDATE",
+        "record_sha256": "8b2fa15e2bfc4005a0374c20201f72863feb0526c2256928ee7ea0192d879c18",
+        "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007096.json",
+        "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007096.json",
+        "mtime_unix": 1789705562.8317628,
+        "age_seconds": 5.569769382476807,
+        "timestamp_unix": 1789705562.8317628,
+        "timestamp_source": "mtime"
+      },
+      "think_runs": [],
+      "parent_messages_hour": [
+        {
+          "reference": {
+            "index": 6761,
+            "kind": "INBOX",
+            "record_sha256": "1255a9c1c8eb830f0559cf8a230ca54ba5a4f325296c69a74c29584ad500a6de",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006761.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006761.json",
+            "mtime_unix": 1789702237.1353047
+          },
+          "speaker": "Astra"
+        },
+        {
+          "reference": {
+            "index": 6824,
+            "kind": "INBOX",
+            "record_sha256": "b7af340f7fd940e466745327af407180739681c47589c35c245af552298f8960",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006824.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006824.json",
+            "mtime_unix": 1789702705.184002
+          },
+          "speaker": "Astra"
+        },
+        {
+          "reference": {
+            "index": 6887,
+            "kind": "INBOX",
+            "record_sha256": "e9a786c1c82d2bb050c38a7cf58b7108e400b5edfbc2d814cb25d915bd380c0f",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006887.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006887.json",
+            "mtime_unix": 1789703247.4661465
+          },
+          "speaker": "Astra"
+        },
+        {
+          "reference": {
+            "index": 6950,
+            "kind": "INBOX",
+            "record_sha256": "9f25572cdc236f236d777cec688d109ee119d1207f52eae3c2e6bfb25f70ec20",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006950.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000006950.json",
+            "mtime_unix": 1789703869.2480452
+          },
+          "speaker": "Astra"
+        },
+        {
+          "reference": {
+            "index": 7013,
+            "kind": "INBOX",
+            "record_sha256": "f6e9ca2ef4d32559fef5b36d8d94a8e13e9b71c11b0713eb5e5e39578bf01da0",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007013.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007013.json",
+            "mtime_unix": 1789704576.1814957
+          },
+          "speaker": "Astra"
+        },
+        {
+          "reference": {
+            "index": 7076,
+            "kind": "INBOX",
+            "record_sha256": "ec0e13355cb786a966dc3e87620547bc88337d85c62c516bd6188f37fbe43077",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007076.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007076.json",
+            "mtime_unix": 1789705366.4620454
+          },
+          "speaker": "Astra"
+        }
+      ],
+      "working_state_statuses": {}
+    },
+    {
+      "node": "node4",
+      "physical": 7,
+      "pid": 3856866,
+      "state_at_end": "R",
+      "trial_id": "R203_NODE4_7_CREATIVE_OPEN_C",
+      "current_loaded": {
+        "reference": {
+          "index": 452,
+          "kind": "LOADED",
+          "record_sha256": "a1984ba90d2b5a497749f900a15e492a7300760980556d589b095ca04d30c0d7",
+          "path": "/proc/3856866/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000452.json",
+          "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000452.json",
+          "mtime_unix": 1789705144.760498
+        },
+        "pid": 3856866,
+        "loaded_unix": 1789705144.7548466,
+        "trial_id": "R203_NODE4_7_CREATIVE_OPEN_C",
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 173,
+        "split": "TRAIN",
+        "started_unix": 1789705170.8448732,
+        "reference": {
+          "index": 473,
+          "kind": "REQUEST",
+          "record_sha256": "9ebfa0c4b394a61e3637770dcae105012df0ad2fde409ad2f3134496c6e9b133",
+          "path": "/proc/3856866/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000473.json",
+          "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000473.json",
+          "mtime_unix": 1789705171.385346
+        },
+        "prompt_tokens": 6110,
+        "after_current_process_start": true
+      },
+      "compactions": [
+        {
+          "reference": {
+            "index": 463,
+            "kind": "COMPACTION",
+            "record_sha256": "897a7fa09c8458853ceb27d7f8881f48ee28a23aef0fa466632537d95d927326",
+            "path": "/proc/3856866/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000463.json",
+            "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000463.json",
+            "mtime_unix": 1789705163.5464666
+          },
+          "fields": {
+            "kind": "R203_PRE_GENERATION_CHILD_SOURCE_CARRY",
+            "before_tokens": 12662,
+            "after_tokens": 5070
+          }
+        }
+      ],
+      "head": {
+        "index": 531,
+        "kind": "UPDATE",
+        "record_sha256": "3ed959d1a8da2156da5d70cd14edcc6885f25d1da07b68168a27c0cc36a0288f",
+        "path": "/proc/3856866/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000531.json",
+        "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000000531.json",
+        "mtime_unix": 1789705523.8013036,
+        "age_seconds": 44.89064931869507,
+        "timestamp_unix": 1789705523.8013036,
+        "timestamp_source": "mtime"
+      },
+      "think_runs": [
+        1
+      ],
+      "parent_messages_hour": [],
+      "working_state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 3
+      }
+    },
+    {
+      "node": "node5",
+      "physical": 1,
+      "pid": 3262787,
+      "state_at_end": "S",
+      "trial_id": "C2_R206_saved_boundary_resume",
+      "current_loaded": {
+        "reference": {
+          "index": 6366,
+          "kind": "LOADED",
+          "record_sha256": "970dd436d7826d23671df7a0625c6d23d4500987d13d8c86c2ba22888a93dc2f",
+          "path": "/proc/3262787/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006366.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006366.json",
+          "mtime_unix": 1789705172.4960601
+        },
+        "pid": 3262787,
+        "loaded_unix": 1789705172.460296,
+        "trial_id": "C2_R206_saved_boundary_resume",
+        "record_hash_verified": true
+      },
+      "latest_request": {
+        "segment": 175,
+        "split": "TRAIN",
+        "started_unix": 1789705203.7924693,
+        "reference": {
+          "index": 6389,
+          "kind": "REQUEST",
+          "record_sha256": "fe59c36275428bb0b74c0096b638ff7dd710fdd2d20b2220231b5dfc6554137f",
+          "path": "/proc/3262787/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006389.json",
+          "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006389.json",
+          "mtime_unix": 1789705204.5457935
+        },
+        "prompt_tokens": 11095,
+        "after_current_process_start": true
+      },
+      "compactions": [
+        {
+          "reference": {
+            "index": 6372,
+            "kind": "COMPACTION",
+            "record_sha256": "b8c009bb9d3111c175e8614a1d76fcbeda0153c97b04a965831e57c389761a50",
+            "path": "/proc/3262787/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006372.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006372.json",
+            "mtime_unix": 1789705175.6375115
+          },
+          "fields": {
+            "kind": "R203_PRE_GENERATION_CHILD_SOURCE_CARRY",
+            "before_tokens": 16055,
+            "after_tokens": 8636
+          }
+        }
+      ],
+      "head": {
+        "index": 6433,
+        "kind": "R184_LEARN_COMPLETE",
+        "record_sha256": "56b2b4c100be774d6acfbe9e7b3840c319e26547d64289eff2eb8f79236b5e4d",
+        "path": "/proc/3262787/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006433.json",
+        "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006433.json",
+        "mtime_unix": 1789705554.564082,
+        "age_seconds": 14.959951400756836,
+        "timestamp_unix": 1789705554.564082,
+        "timestamp_source": "mtime"
+      },
+      "think_runs": [
+        1
+      ],
+      "parent_messages_hour": [
+        {
+          "reference": {
+            "index": 6368,
+            "kind": "INBOX",
+            "record_sha256": "c4fd63e6ea0f111c093944db533e127174fe81dff8aada12e4e59bcfb3176e2a",
+            "path": "/proc/3262787/root/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006368.json",
+            "configured_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000006368.json",
+            "mtime_unix": 1789705172.598178
+          },
+          "speaker": "Astra"
+        }
+      ],
+      "working_state_statuses": {
+        "NO_EXPLICIT_STATE_DELTA": 3
+      }
+    }
+  ],
+  "changes_since_0414": [
+    {
+      "node": "node1",
+      "physical": 4,
+      "prior_pid": 2634733,
+      "current_pid": null,
+      "interpretation": "NOT_OBSERVED_REASON_UNVERIFIED_NOT_DEAD_OR_FREE"
+    },
+    {
+      "node": "node1",
+      "physical": 3,
+      "prior_pid": 2701436,
+      "current_pid": null,
+      "interpretation": "NOT_OBSERVED_REASON_UNVERIFIED_NOT_DEAD_OR_FREE"
+    },
+    {
+      "node": "node2",
+      "physical": 6,
+      "prior_pid": 2204538,
+      "current_pid": null,
+      "interpretation": "NOT_OBSERVED_REASON_UNVERIFIED_NOT_DEAD_OR_FREE"
+    },
+    {
+      "node": "node2",
+      "physical": 2,
+      "prior_pid": 2263935,
+      "current_pid": null,
+      "interpretation": "NOT_OBSERVED_REASON_UNVERIFIED_NOT_DEAD_OR_FREE"
+    },
+    {
+      "node": "node2",
+      "physical": 3,
+      "prior_pid": 2303751,
+      "current_pid": null,
+      "interpretation": "NOT_OBSERVED_REASON_UNVERIFIED_NOT_DEAD_OR_FREE"
+    },
+    {
+      "node": "node4",
+      "physical": 1,
+      "prior_pid": 3710748,
+      "current_pid": null,
+      "interpretation": "NOT_OBSERVED_REASON_UNVERIFIED_NOT_DEAD_OR_FREE"
+    },
+    {
+      "node": "node4",
+      "physical": 0,
+      "prior_pid": 3719354,
+      "current_pid": null,
+      "interpretation": "NOT_OBSERVED_REASON_UNVERIFIED_NOT_DEAD_OR_FREE"
+    },
+    {
+      "node": "node4",
+      "physical": 2,
+      "prior_pid": 3735657,
+      "current_pid": 3861690,
+      "interpretation": "SUPERSEDED_PROCESS_CURRENT_INCARNATION_SEPARATE"
+    },
+    {
+      "node": "node4",
+      "physical": 7,
+      "prior_pid": 3737619,
+      "current_pid": 3856866,
+      "interpretation": "SUPERSEDED_PROCESS_CURRENT_INCARNATION_SEPARATE"
+    },
+    {
+      "node": "node4",
+      "physical": 3,
+      "prior_pid": 3768519,
+      "current_pid": 3849600,
+      "interpretation": "SUPERSEDED_PROCESS_CURRENT_INCARNATION_SEPARATE"
+    },
+    {
+      "node": "node4",
+      "physical": 6,
+      "prior_pid": 3798685,
+      "current_pid": 3869579,
+      "interpretation": "SUPERSEDED_PROCESS_CURRENT_INCARNATION_SEPARATE"
+    },
+    {
+      "node": "node5",
+      "physical": 7,
+      "prior_pid": 2761360,
+      "current_pid": null,
+      "interpretation": "NOT_OBSERVED_REASON_UNVERIFIED_NOT_DEAD_OR_FREE"
+    }
+  ],
+  "parent_rows": [
+    {
+      "node": "node1",
+      "physical": 6,
+      "pid": 183848,
+      "observed_utc": "2026-09-18T04:26:08.442929+00:00",
+      "inbox_5min": 1,
+      "recent_receipts": [
+        {
+          "reference": {
+            "index": 7773,
+            "kind": "INBOX",
+            "record_sha256": "d8b5e5f25ed5ceffabd438f4895036fe16aa1a9a1ea1f4a2b8d5bdc66719d7d0",
+            "path": "/proc/183848/root/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/records/00000000000000007773.json",
+            "configured_path": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/records/00000000000000007773.json",
+            "mtime_unix": 1789705397.6060324
+          },
+          "speaker": "Astra"
+        }
+      ],
+      "incarnation_or_hour_inbox": 9,
+      "request_opportunities": 27,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node2",
+      "physical": 7,
+      "pid": 1849180,
+      "observed_utc": "2026-09-18T04:26:08.737433+00:00",
+      "inbox_5min": 4,
+      "recent_receipts": [
+        {
+          "reference": {
+            "index": 7117,
+            "kind": "INBOX",
+            "record_sha256": "f542dfdb8cd851b186731e2d527bfb22f061b2230393124a6c141f511649fcf6",
+            "path": "/proc/1849180/root/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000007117.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000007117.json",
+            "mtime_unix": 1789705297.6868763
+          },
+          "speaker": "Astra"
+        },
+        {
+          "reference": {
+            "index": 7121,
+            "kind": "INBOX",
+            "record_sha256": "6e865025e1f4b185f1d92cb7b96793593e8fdfbfd7b5606899566d2544d72b37",
+            "path": "/proc/1849180/root/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000007121.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000007121.json",
+            "mtime_unix": 1789705327.7497282
+          },
+          "speaker": "Astra"
+        },
+        {
+          "reference": {
+            "index": 7125,
+            "kind": "INBOX",
+            "record_sha256": "28da3cea01dba219c80389e6518f74f582eace8fc0efb246c79feb182eb4d0be",
+            "path": "/proc/1849180/root/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000007125.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000007125.json",
+            "mtime_unix": 1789705359.044002
+          },
+          "speaker": "Astra"
+        },
+        {
+          "reference": {
+            "index": 7130,
+            "kind": "INBOX",
+            "record_sha256": "5d21a88e58fb7e284fc243ea9b2d3a4b11590fa720d70c9da6d5d091c5da5bc7",
+            "path": "/proc/1849180/root/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000007130.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_free_20260916_attempt1/run1/stream/records/00000000000000007130.json",
+            "mtime_unix": 1789705391.3547435
+          },
+          "speaker": "Astra"
+        }
+      ],
+      "incarnation_or_hour_inbox": 20,
+      "request_opportunities": 20,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node2",
+      "physical": 0,
+      "pid": 1849630,
+      "observed_utc": "2026-09-18T04:26:08.737433+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 6,
+      "request_opportunities": 16,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node2",
+      "physical": 5,
+      "pid": 1849923,
+      "observed_utc": "2026-09-18T04:26:08.737433+00:00",
+      "inbox_5min": 1,
+      "recent_receipts": [
+        {
+          "reference": {
+            "index": 7076,
+            "kind": "INBOX",
+            "record_sha256": "ec0e13355cb786a966dc3e87620547bc88337d85c62c516bd6188f37fbe43077",
+            "path": "/proc/1849923/root/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007076.json",
+            "configured_path": "/localhome/local-rohing/orch_r133_node3_creative_select_20260916_attempt1/run1/stream/records/00000000000000007076.json",
+            "mtime_unix": 1789705366.4620454
+          },
+          "speaker": "Astra"
+        }
+      ],
+      "incarnation_or_hour_inbox": 6,
+      "request_opportunities": 18,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node2",
+      "physical": 4,
+      "pid": 2204408,
+      "observed_utc": "2026-09-18T04:26:08.737433+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 5,
+      "request_opportunities": 21,
+      "exposure_seconds": 3485.857400894165
+    },
+    {
+      "node": "node2",
+      "physical": 1,
+      "pid": 2308366,
+      "observed_utc": "2026-09-18T04:26:08.737433+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 6,
+      "exposure_seconds": 550.2575964927673
+    },
+    {
+      "node": "node4",
+      "physical": 4,
+      "pid": 1643508,
+      "observed_utc": "2026-09-18T04:26:08.734751+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 17,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node4",
+      "physical": 5,
+      "pid": 3763994,
+      "observed_utc": "2026-09-18T04:26:08.734751+00:00",
+      "inbox_5min": 1,
+      "recent_receipts": [
+        {
+          "reference": {
+            "index": 166,
+            "kind": "INBOX",
+            "record_sha256": "33335e8acbe0c075144c8f82f7078305f87b5042e724d3454c91424bd15e85b9",
+            "path": "/proc/3763994/root/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical5/life/stream/records/00000000000000000166.json",
+            "configured_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical5/life/stream/records/00000000000000000166.json",
+            "mtime_unix": 1789705347.8890264
+          },
+          "speaker": "Astra"
+        }
+      ],
+      "incarnation_or_hour_inbox": 4,
+      "request_opportunities": 9,
+      "exposure_seconds": 1356.7105526924133
+    },
+    {
+      "node": "node4",
+      "physical": 3,
+      "pid": 3849600,
+      "observed_utc": "2026-09-18T04:26:08.734751+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 6,
+      "exposure_seconds": 500.0672392845154
+    },
+    {
+      "node": "node4",
+      "physical": 7,
+      "pid": 3856866,
+      "observed_utc": "2026-09-18T04:26:08.734751+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 3,
+      "exposure_seconds": 423.9371063709259
+    },
+    {
+      "node": "node4",
+      "physical": 2,
+      "pid": 3861690,
+      "observed_utc": "2026-09-18T04:26:08.734751+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 3,
+      "exposure_seconds": 374.2668387889862
+    },
+    {
+      "node": "node4",
+      "physical": 6,
+      "pid": 3869579,
+      "observed_utc": "2026-09-18T04:26:08.734751+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 3,
+      "exposure_seconds": 292.223917722702
+    },
+    {
+      "node": "node5",
+      "physical": 2,
+      "pid": 2495635,
+      "observed_utc": "2026-09-18T04:26:09.544410+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 15,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node5",
+      "physical": 4,
+      "pid": 2606742,
+      "observed_utc": "2026-09-18T04:26:09.544410+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 18,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node5",
+      "physical": 3,
+      "pid": 2668022,
+      "observed_utc": "2026-09-18T04:26:09.544410+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 19,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node5",
+      "physical": 0,
+      "pid": 2707975,
+      "observed_utc": "2026-09-18T04:26:09.544410+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 18,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node5",
+      "physical": 6,
+      "pid": 2757295,
+      "observed_utc": "2026-09-18T04:26:09.544410+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 21,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node5",
+      "physical": 5,
+      "pid": 2761060,
+      "observed_utc": "2026-09-18T04:26:09.544410+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 0,
+      "request_opportunities": 33,
+      "exposure_seconds": 3600
+    },
+    {
+      "node": "node5",
+      "physical": 1,
+      "pid": 3262787,
+      "observed_utc": "2026-09-18T04:26:09.544410+00:00",
+      "inbox_5min": 0,
+      "recent_receipts": [],
+      "incarnation_or_hour_inbox": 1,
+      "request_opportunities": 3,
+      "exposure_seconds": 397.06373739242554
+    }
+  ],
+  "parent_active_last5min": [
+    {
+      "node": "node1",
+      "physical": 6,
+      "count": 1
+    },
+    {
+      "node": "node2",
+      "physical": 7,
+      "count": 4
+    },
+    {
+      "node": "node2",
+      "physical": 5,
+      "count": 1
+    },
+    {
+      "node": "node4",
+      "physical": 5,
+      "count": 1
+    }
+  ],
+  "new_host_direct_receipt": "research_loop/workers/rohin204_maintenance_20260917/R207_NEW_HOST_AUTH_CURRENT.json",
+  "new_host_direct_receipt_sha256": "fcf908e5dcfbfe338748c3b2892bb2c92f8c03e50742d383b9d3aa9b18ca7b2b",
+  "watcher_future_timestamps_not_used": true,
+  "timeline_report_complete": "research_notes/analysis/R206_JUDGE_TIMELINE_2026-09-18.md",
+  "legacy_tau_is_R207_gate": false,
+  "Main_contrast_inference_started_by_this_audit": false,
+  "maintenance_service": {
+    "pid": 2656637,
+    "uid": 158984,
+    "start_ticks": "180945900",
+    "cmdline_sha256": "c5e6103370c0ae078a090c7be5caf0e94cca7e9e674505d7053f73fce1e4f801",
+    "interval_seconds": 1200,
+    "control": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin204_maintenance_20260917/STOP",
+    "stop_command": "python3 -B research_loop/workers/rohin204_maintenance_20260917/audit.py stop",
+    "identity_alive": true
+  },
+  "gpu_model_calls": 0,
+  "learner_controls": 0
+}

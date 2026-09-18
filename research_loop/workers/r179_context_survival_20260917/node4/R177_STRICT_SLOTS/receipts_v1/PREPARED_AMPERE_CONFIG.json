@@ -1,0 +1,66 @@
+{
+  "attempt": "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/attempts/launch_2_1789671689211770505",
+  "bundle": {
+    "path": "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/BUNDLE.json",
+    "sha256": "d26f808fcce89c9d5674d69484bcbac614608761b1f2602d04ee6e5935b49aec"
+  },
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/localhome/local-rohing/orch_r177_ampere_judge_20260917/released_all_v4/research_loop/workers/r177_caption_game_stage1_20260917/data_judge/released_receiving.py",
+    "train",
+    "--root",
+    "/localhome/local-rohing/orch_r177_ampere_judge_20260917/released_all_v4",
+    "--inventory-sha256",
+    "ae63319aa8ce8a81968985b32632f9ade7c5ff8d832b835b8819ed0ff6138a01"
+  ],
+  "created_unix": 1789671689.211766,
+  "end_unix": 1789678989.211766,
+  "entrypoint": "/localhome/local-rohing/orch_r177_ampere_judge_20260917/released_all_v4/research_loop/workers/r177_caption_game_stage1_20260917/data_judge/released_receiving.py",
+  "gid": 2524,
+  "gpu_uuid": "GPU-35dcea35-12bc-f2f3-d5d2-d2eaa8bacdd8",
+  "hard_end_unix": 1789754400,
+  "host_sha256": "e376292376f9f56a83e1255021f5b1a4249f1afdff42b5aed3cad36a9635834b",
+  "lease": {
+    "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/LEASE_BUDGET.json",
+    "sha256": "ca4ead20b2b772c09e4d30e271c24988f0bbcc5f625665e6b63a441fe0e112a2"
+  },
+  "metadata_pins": [
+    {
+      "path": "/localhome/local-rohing/orch_r177_ampere_judge_20260917/released_all_v4/INVENTORY.json",
+      "sha256": "ae63319aa8ce8a81968985b32632f9ade7c5ff8d832b835b8819ed0ff6138a01"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r177_ampere_judge_20260917/released_all_v4/TRAIN_CONFIG.json",
+      "sha256": "3cb51788f8bfbb94805d5bc967fe633c8ffee994a3a5c7edd49e8a7f271cc1a3"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r177_ampere_judge_20260917/released_all_v4/CPU_GATE.json",
+      "sha256": "3b6c993ca23c1d8824dea9aa0b93eb0d194ca693cb09de5993616c186537c385"
+    }
+  ],
+  "minor": 1,
+  "mode": "launch",
+  "owner": "Ampere",
+  "physical": 2,
+  "probe": {
+    "path": "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/attempts/probe_2_1789671506809013676/CONTAINMENT.json",
+    "sha256": "dfcd7f16cb5df2a8e670c478d466ec1958c7c74299053f9b492598a576f1bf92"
+  },
+  "pythonpath": "/localhome/local-rohing/orch_r177_ampere_judge_20260917/released_all_v4",
+  "schema": "R177_NODE4_STRICT_SLOT_V1",
+  "seconds": 7300,
+  "uid": 2524,
+  "unit": "orch-r177-slot2-1eb7146ccc4649e89e4bdbc8955803f7",
+  "workload_python_files": {
+    "gpu/ny_caption_data.py": "f9feb57ee6698d95fb1f88fcfe34104244ad1cfd85ca2db625cf403cfe7e184b",
+    "gpu/ny_caption_judge.py": "42ba07396de8f3ecf813822453f860948e86b3a74487bf93a0e7a2415f35e235",
+    "research_loop/workers/r177_caption_game_stage1_20260917/data_judge/physical2_confinement.py": "1663d9148ff0a6d0321800c4c7afdc772eb30fbca3ae7cb44981067acff0d147",
+    "research_loop/workers/r177_caption_game_stage1_20260917/data_judge/receiving_cpu.py": "0e4d02e6ce43f907cfe2d8f7e6972ee54ab992cf48a6c6247b460047ffad385e",
+    "research_loop/workers/r177_caption_game_stage1_20260917/data_judge/released_receiving.py": "833c3e5e876c39c0bf3ff07a2533b6f03a9759cb5c825f5692c2c6d519a97da9",
+    "research_loop/workers/r177_caption_game_stage1_20260917/data_judge/stage_released.py": "c779c956adf614ef3937c002abbeea66cad6a7db18092dba0396c96fb535dcb1",
+    "tests/test_ny_caption_data.py": "79829669d0ba327de64d86a9fe4dc436deff2d75ce22ceaf1362c8572d1c9317",
+    "tests/test_ny_caption_judge.py": "055ecc720e686cf163acb1e74ed9ec96a7261afa06af8de5d0261e908f23fc7b"
+  },
+  "workload_root": "/localhome/local-rohing/orch_r177_ampere_judge_20260917/released_all_v4"
+}

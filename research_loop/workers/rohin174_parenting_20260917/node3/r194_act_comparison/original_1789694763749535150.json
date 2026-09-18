@@ -1,0 +1,1531 @@
+{
+  "bytes_read": 22801415,
+  "code_executions": 0,
+  "collector": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/act_journal_compare.py",
+    "sha256": "b2e804c7633a91518f710a2a0555eb5cb8cbb202de241a05463bb482772af543"
+  },
+  "elapsed_seconds": 0.2955224339966662,
+  "host": "[REDACTED_HOST]",
+  "live_changes": 0,
+  "lives": [
+    {
+      "act_stage_count": 9,
+      "acts": [
+        {
+          "cycle": 42,
+          "cycle_basis": "following_R184_SLEEP_NOTICE",
+          "execution_source": "from sympy import symbols, Eq, solve\n\n# Define the symbol\nn, V = symbols('n V')\n\n# Known sum for S_3\nS_3_correct = 98\n\n# Express S_n and S_(n+1) using the given formula\nS_n = n*(n+1)*(2*n + 1)*(3*n**2 + V*n - 1)/30\nS_n_plus_1 = (n + 1)*(n + 2)*(2*(n + 1) + 1)*(3*(n + 1)**2 + V*(n + 1) - 1)/30\n\n# Telescoping sum: S_(n+1) - S_n = (n + 1)^4\ntelescoping_sum = S_n_plus_1 - S_n - (n + 1)**4\n\n# Solve for V using the telescoping sum and the correct S_3\nequation = Eq(telescoping_sum.subs(n, 2), 0)  # Using n=2 for S_3 calculation\nV_value = solve(equation, V)[0]\nV_value\n",
+          "execution_syntax": {
+            "bare_name_statements": [
+              {
+                "line": 19,
+                "name": "V_value"
+              }
+            ],
+            "status": "PARSES"
+          },
+          "extraction": {
+            "attempted": true,
+            "language": "python",
+            "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+            "raw_source_sha256": "eb28ed40de1018546fb6ff8a085f29c45101c09cefc6492309a7fd0321c7f0e7",
+            "raw_text_sha256": "a3de58ada3fad43cf2707433cce6d20d2c7d0832735e6ef88fe0b32768fa1163",
+            "reason": "FIRST_CODE_BLOCK",
+            "source_sha256": "eb28ed40de1018546fb6ff8a085f29c45101c09cefc6492309a7fd0321c7f0e7",
+            "span_end": 1262,
+            "span_start": 695,
+            "transformations": []
+          },
+          "fullwidth_syntactic_candidates": [],
+          "generation_metadata": {
+            "terminal": true
+          },
+          "leading_dot_assignments": [],
+          "outcome": {
+            "artifact_link": null,
+            "executed": true,
+            "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260916t2245z/gate",
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "origin": {
+              "child_generated": true,
+              "code_transformation": {
+                "attempted": true,
+                "language": "python",
+                "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+                "raw_source_sha256": "eb28ed40de1018546fb6ff8a085f29c45101c09cefc6492309a7fd0321c7f0e7",
+                "raw_text_sha256": "a3de58ada3fad43cf2707433cce6d20d2c7d0832735e6ef88fe0b32768fa1163",
+                "reason": "FIRST_CODE_BLOCK",
+                "source_sha256": "eb28ed40de1018546fb6ff8a085f29c45101c09cefc6492309a7fd0321c7f0e7",
+                "span_end": 1262,
+                "span_start": 695,
+                "transformations": []
+              },
+              "commit_record_sha256": "f43fe06f17c8f1791390504d3a97d93ebabbdf1a719487331a7ecf78f0c42117",
+              "journal_id": "260be8b8710a42559b291797c6e14983",
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_sha256": "74660ff53eb3bd8e22ff6433ab824cbd2866e94a87fa46009aedd6c410103848",
+              "request_record_sha256": "7869cf7ff42c6d60f2c2eaf61806de7258fa3106e16a10dd0ad71d3c234aa478"
+            },
+            "publication": {
+              "id": "ce14bdfc686148e191e8382b584f22e2",
+              "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/ce14bdfc686148e191e8382b584f22e2.json",
+              "sha256": "bee873335aa0738a3680c78ba00bb8561ea998216efdf158a30364906c196603"
+            },
+            "request_id": "9be0b6967523ea7b7e5a1c538313558b9a3304c17d541532d1d5e6aa4d895806",
+            "result_sha256": "39db240103e433d5dc2c1e77f8aa3e9892ecd7de20bb50b4e1280b9908667c19",
+            "result_status": "PROCESS_FAILED",
+            "schema": "R153_CPU_DELIVERY_V1",
+            "source_sha256": "eb28ed40de1018546fb6ff8a085f29c45101c09cefc6492309a7fd0321c7f0e7",
+            "status": "PUBLISHED"
+          },
+          "outcome_record": {
+            "file_sha256": "59163af7935e78204c4cc5c04a7c36ebbd951e11f47255ecbb51e0437d28cd35",
+            "index": 5141,
+            "kind": "R184_ACT",
+            "mtime_unix": 1789687291.1828213,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005141.json",
+            "record_sha256": "510b56b6115d0079fbbe6337a5d6cd7b4f5c05c767a813d926ce3308683b8a94"
+          },
+          "raw_code": "from sympy import symbols, Eq, solve\n\n# Define the symbol\nn, V = symbols('n V')\n\n# Known sum for S_3\nS_3_correct = 98\n\n# Express S_n and S_(n+1) using the given formula\nS_n = n*(n+1)*(2*n + 1)*(3*n**2 + V*n - 1)/30\nS_n_plus_1 = (n + 1)*(n + 2)*(2*(n + 1) + 1)*(3*(n + 1)**2 + V*(n + 1) - 1)/30\n\n# Telescoping sum: S_(n+1) - S_n = (n + 1)^4\ntelescoping_sum = S_n_plus_1 - S_n - (n + 1)**4\n\n# Solve for V using the telescoping sum and the correct S_3\nequation = Eq(telescoping_sum.subs(n, 2), 0)  # Using n=2 for S_3 calculation\nV_value = solve(equation, V)[0]\nV_value\n",
+          "raw_syntax": {
+            "bare_name_statements": [
+              {
+                "line": 19,
+                "name": "V_value"
+              }
+            ],
+            "status": "PARSES"
+          },
+          "raw_text_sha256": "a3de58ada3fad43cf2707433cce6d20d2c7d0832735e6ef88fe0b32768fa1163",
+          "response": {
+            "file_sha256": "e4b00fd3142dedde979d470c9ce2575c12162a42386f82e5d8eaf185f104aef4",
+            "index": 5138,
+            "kind": "RESPONSE",
+            "mtime_unix": 1789687290.2684562,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005138.json",
+            "record_sha256": "74660ff53eb3bd8e22ff6433ab824cbd2866e94a87fa46009aedd6c410103848"
+          },
+          "segment": 124,
+          "stage": {
+            "file_sha256": "bdc306f652f8c98a63f423ddd87e768a64952f93952a7a8e992071e4f008716c",
+            "index": 5140,
+            "kind": "R184_STAGE",
+            "mtime_unix": 1789687290.6671371,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005140.json",
+            "record_sha256": "8657604b16a7c065c48753af605677022f4fed8ec66563d37c63eb95c9393400"
+          },
+          "tool_receipt": {
+            "feedback_excerpt": "Tool result status: PROCESS_FAILED\nreturncode: 1\nstderr: Traceback (most recent call last):\n  File \"/job.py\", line 1, in <module>\n    from sympy import symbols, Eq, solve\nModuleNotFoundError: No module named 'sympy'\n",
+            "fields": {
+              "launch_attempted": true,
+              "returncode": 1,
+              "source_sha256": "eb28ed40de1018546fb6ff8a085f29c45101c09cefc6492309a7fd0321c7f0e7",
+              "status": "PROCESS_FAILED"
+            },
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/9be0b6967523ea7b7e5a1c538313558b9a3304c17d541532d1d5e6aa4d895806/RESULT.json",
+            "result_keys": [
+              "GPU_access",
+              "cgroup_removed_after_stop",
+              "command",
+              "elapsed_seconds",
+              "environment_injected",
+              "finished_utc",
+              "gate",
+              "launch_attempted",
+              "limit_reason",
+              "observed_bytes",
+              "origin",
+              "output_is_untrusted",
+              "raw_request_sha256",
+              "request_id",
+              "requested_origin",
+              "retained_bytes",
+              "returncode",
+              "schema",
+              "source_closure_sha256",
+              "source_sha256",
+              "started_utc",
+              "status",
+              "stderr",
+              "stdout",
+              "teardown_called",
+              "teardown_error"
+            ],
+            "sha256": "39db240103e433d5dc2c1e77f8aa3e9892ecd7de20bb50b4e1280b9908667c19"
+          },
+          "trial_id": "C2_R188_same_life_recovery",
+          "truncated": false
+        },
+        {
+          "cycle": 43,
+          "cycle_basis": "following_R184_SLEEP_NOTICE",
+          "execution_source": "from sympy import symbols, Eq, solve\n\n# Definethe symbol\nV = symbols('V')\n\n# Correct sum for S_3\nS_3_correct = 98\n\n// Calculate S_3 using the formula and solve for V\nS_3 = (3 * (3 + 1) * (2 * 3**2 + V *3 - 1)) / 30\nequation = Eq(S_3, S_3_correct)\n\n# Solve for V\nV_value = solve(equation, V)[0]\nV_value\n\n",
+          "execution_syntax": {
+            "column": 1,
+            "line": 9,
+            "message": "invalid syntax",
+            "status": "SYNTAX_ERROR",
+            "text": "// Calculate S_3 using the formula and solve for V"
+          },
+          "extraction": {
+            "attempted": true,
+            "language": "python",
+            "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+            "raw_source_sha256": "b2df1caa9bd2588f33a8139ea69713e95b706447fd0a72b15f8ed385870b543f",
+            "raw_text_sha256": "97ae5905d0b5001f945b5358cded7f80ad17cbe95538cbea7b4c379fab5c8ec2",
+            "reason": "FIRST_CODE_BLOCK",
+            "source_sha256": "b2df1caa9bd2588f33a8139ea69713e95b706447fd0a72b15f8ed385870b543f",
+            "span_end": 942,
+            "span_start": 639,
+            "transformations": []
+          },
+          "fullwidth_syntactic_candidates": [],
+          "generation_metadata": {
+            "terminal": true
+          },
+          "leading_dot_assignments": [],
+          "outcome": {
+            "artifact_link": null,
+            "executed": true,
+            "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260916t2245z/gate",
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "origin": {
+              "child_generated": true,
+              "code_transformation": {
+                "attempted": true,
+                "language": "python",
+                "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+                "raw_source_sha256": "b2df1caa9bd2588f33a8139ea69713e95b706447fd0a72b15f8ed385870b543f",
+                "raw_text_sha256": "97ae5905d0b5001f945b5358cded7f80ad17cbe95538cbea7b4c379fab5c8ec2",
+                "reason": "FIRST_CODE_BLOCK",
+                "source_sha256": "b2df1caa9bd2588f33a8139ea69713e95b706447fd0a72b15f8ed385870b543f",
+                "span_end": 942,
+                "span_start": 639,
+                "transformations": []
+              },
+              "commit_record_sha256": "43cc675fbff7cdf1574ee30d1eb52a25f6ba84eb7cb84be7ff866fb2e2669e5e",
+              "journal_id": "260be8b8710a42559b291797c6e14983",
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_sha256": "e4a2d8c43d437e328c55a31cc2a2a625084b9440ec1987fdfabf5a157b7e6033",
+              "request_record_sha256": "6c66ca8ebc37585fca6735d109d3e56be3f41228c6f599c8612665a11a4a914a"
+            },
+            "publication": {
+              "id": "b66c9f6678b24431a1191d695ede5593",
+              "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/b66c9f6678b24431a1191d695ede5593.json",
+              "sha256": "649d27efd17254a22e339309786634dae2d339c2f17101f929f1b123f077c66c"
+            },
+            "request_id": "4d508884af509b5a5bae217d82b5efabb64fcccfe6accf5dc4d4ed86a33c85a5",
+            "result_sha256": "ef77811645d52acbdbe24eec191b2d60c63507974b5dfd43be1eee9e7d13f934",
+            "result_status": "PROCESS_FAILED",
+            "schema": "R153_CPU_DELIVERY_V1",
+            "source_sha256": "b2df1caa9bd2588f33a8139ea69713e95b706447fd0a72b15f8ed385870b543f",
+            "status": "PUBLISHED"
+          },
+          "outcome_record": {
+            "file_sha256": "a5db5031d4346046d5fcc57b39586a64b6dee826c5bda131ea46fd3738fd87ca",
+            "index": 5210,
+            "kind": "R184_ACT",
+            "mtime_unix": 1789687825.969015,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005210.json",
+            "record_sha256": "b279a828b8b5b71f9bcb7e3f5754caf5178d2858a3df9fb5fc43c1dbf0dd7afa"
+          },
+          "raw_code": "from sympy import symbols, Eq, solve\n\n# Definethe symbol\nV = symbols('V')\n\n# Correct sum for S_3\nS_3_correct = 98\n\n// Calculate S_3 using the formula and solve for V\nS_3 = (3 * (3 + 1) * (2 * 3**2 + V *3 - 1)) / 30\nequation = Eq(S_3, S_3_correct)\n\n# Solve for V\nV_value = solve(equation, V)[0]\nV_value\n\n",
+          "raw_syntax": {
+            "column": 1,
+            "line": 9,
+            "message": "invalid syntax",
+            "status": "SYNTAX_ERROR",
+            "text": "// Calculate S_3 using the formula and solve for V"
+          },
+          "raw_text_sha256": "97ae5905d0b5001f945b5358cded7f80ad17cbe95538cbea7b4c379fab5c8ec2",
+          "response": {
+            "file_sha256": "cbe86e5f9abc5fd3d5eb355f3683ed3cf85835072f5c68462c9375d9300ceb06",
+            "index": 5207,
+            "kind": "RESPONSE",
+            "mtime_unix": 1789687824.919444,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005207.json",
+            "record_sha256": "e4a2d8c43d437e328c55a31cc2a2a625084b9440ec1987fdfabf5a157b7e6033"
+          },
+          "segment": 127,
+          "stage": {
+            "file_sha256": "d45c89ad53a3a576af9cd1f17d12d5bdb13d147e9b7384cb45dac9c7fa800da1",
+            "index": 5209,
+            "kind": "R184_STAGE",
+            "mtime_unix": 1789687825.4708943,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005209.json",
+            "record_sha256": "99a3898da4d658b5188d4398ebff9e927de67f1ecdfa846e53a41660a7dc5171"
+          },
+          "tool_receipt": {
+            "feedback_excerpt": "Tool result status: PROCESS_FAILED\nreturncode: 1\nstderr:   File \"/job.py\", line 9\n    // Calculate S_3 using the formula and solve for V\n    ^^\nSyntaxError: invalid syntax\n",
+            "fields": {
+              "launch_attempted": true,
+              "returncode": 1,
+              "source_sha256": "b2df1caa9bd2588f33a8139ea69713e95b706447fd0a72b15f8ed385870b543f",
+              "status": "PROCESS_FAILED"
+            },
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/4d508884af509b5a5bae217d82b5efabb64fcccfe6accf5dc4d4ed86a33c85a5/RESULT.json",
+            "result_keys": [
+              "GPU_access",
+              "cgroup_removed_after_stop",
+              "command",
+              "elapsed_seconds",
+              "environment_injected",
+              "finished_utc",
+              "gate",
+              "launch_attempted",
+              "limit_reason",
+              "observed_bytes",
+              "origin",
+              "output_is_untrusted",
+              "raw_request_sha256",
+              "request_id",
+              "requested_origin",
+              "retained_bytes",
+              "returncode",
+              "schema",
+              "source_closure_sha256",
+              "source_sha256",
+              "started_utc",
+              "status",
+              "stderr",
+              "stdout",
+              "teardown_called",
+              "teardown_error"
+            ],
+            "sha256": "ef77811645d52acbdbe24eec191b2d60c63507974b5dfd43be1eee9e7d13f934"
+          },
+          "trial_id": "C2_R188_same_life_recovery",
+          "truncated": false
+        },
+        {
+          "cycle": 44,
+          "cycle_basis": "following_R184_SLEEP_NOTICE",
+          "execution_source": "# Defining the symbol\nV = symbols('V')\n\n# Correct sum for S_3\r\nS_3_correct = 98\n\n# Calculate S_3 using the formula and solve for V\nS_3 =\n\n",
+          "execution_syntax": {
+            "column": 6,
+            "line": 8,
+            "message": "invalid syntax",
+            "status": "SYNTAX_ERROR",
+            "text": "S_3 ="
+          },
+          "extraction": {
+            "attempted": true,
+            "language": "python",
+            "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+            "raw_source_sha256": "9b06cc328c4d882385dac73b91cbda3cc36aacdf14a2a70d93b7f4e073699575",
+            "raw_text_sha256": "8fbe361844aeebb1bfeefdf6d006faaaee05965f9959e8330b667e92af1d31b4",
+            "reason": "FIRST_CODE_BLOCK",
+            "source_sha256": "9b06cc328c4d882385dac73b91cbda3cc36aacdf14a2a70d93b7f4e073699575",
+            "span_end": 148,
+            "span_start": 10,
+            "transformations": []
+          },
+          "fullwidth_syntactic_candidates": [],
+          "generation_metadata": {
+            "terminal": true
+          },
+          "leading_dot_assignments": [],
+          "outcome": {
+            "artifact_link": null,
+            "executed": true,
+            "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260916t2245z/gate",
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "origin": {
+              "child_generated": true,
+              "code_transformation": {
+                "attempted": true,
+                "language": "python",
+                "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+                "raw_source_sha256": "9b06cc328c4d882385dac73b91cbda3cc36aacdf14a2a70d93b7f4e073699575",
+                "raw_text_sha256": "8fbe361844aeebb1bfeefdf6d006faaaee05965f9959e8330b667e92af1d31b4",
+                "reason": "FIRST_CODE_BLOCK",
+                "source_sha256": "9b06cc328c4d882385dac73b91cbda3cc36aacdf14a2a70d93b7f4e073699575",
+                "span_end": 148,
+                "span_start": 10,
+                "transformations": []
+              },
+              "commit_record_sha256": "6143b41bbc8a6ee5d516055bf6e2e2fceccc8b1d3e21efd44a11d04ea3418522",
+              "journal_id": "260be8b8710a42559b291797c6e14983",
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_sha256": "39c398d0c448dcaf0771eee29d11ea94378fdf5710e52cbea1d7d6daac0b8f08",
+              "request_record_sha256": "0430db6cd7eab2ccc615b895d715845a68714220ecdec1be1bfd3f19b570cda1"
+            },
+            "publication": {
+              "id": "e45eb2c6605843c58ed83c2ae73560df",
+              "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/e45eb2c6605843c58ed83c2ae73560df.json",
+              "sha256": "9a247864758142a6a73a2ae42cb4db70ba5ae79dc92ab29cdeeea53adf55558c"
+            },
+            "request_id": "5d31b45e952d12ae0a4572ff514dccbe2db34f257f82674fec16b35e65f0eb49",
+            "result_sha256": "03e33cb906fa108a7f816e947e7066d31c3466544ca4d77cdf73cd271887f599",
+            "result_status": "PROCESS_FAILED",
+            "schema": "R153_CPU_DELIVERY_V1",
+            "source_sha256": "9b06cc328c4d882385dac73b91cbda3cc36aacdf14a2a70d93b7f4e073699575",
+            "status": "PUBLISHED"
+          },
+          "outcome_record": {
+            "file_sha256": "3ce5d81329aa06c0fe912a1775185d28d04be61586a1286c511b8b7af3cbd009",
+            "index": 5279,
+            "kind": "R184_ACT",
+            "mtime_unix": 1789688415.535707,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005279.json",
+            "record_sha256": "82e0e90493216aa06a5cc549a6acb61420324db31195d3de017cd84c72d4c714"
+          },
+          "raw_code": "# Defining the symbol\nV = symbols('V')\n\n# Correct sum for S_3\r\nS_3_correct = 98\n\n# Calculate S_3 using the formula and solve for V\nS_3 =\n\n",
+          "raw_syntax": {
+            "column": 6,
+            "line": 8,
+            "message": "invalid syntax",
+            "status": "SYNTAX_ERROR",
+            "text": "S_3 ="
+          },
+          "raw_text_sha256": "8fbe361844aeebb1bfeefdf6d006faaaee05965f9959e8330b667e92af1d31b4",
+          "response": {
+            "file_sha256": "1f85ebde0f5c33281b16b4a1155ab7d7c88756e7d550f0f6688ddc4c3f0b162c",
+            "index": 5276,
+            "kind": "RESPONSE",
+            "mtime_unix": 1789688414.5124493,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005276.json",
+            "record_sha256": "39c398d0c448dcaf0771eee29d11ea94378fdf5710e52cbea1d7d6daac0b8f08"
+          },
+          "segment": 130,
+          "stage": {
+            "file_sha256": "df1cbe0bf2c591a62daf5edcb6b555d70e6d558ca48a7e9fb2ab6e8c1cda4919",
+            "index": 5278,
+            "kind": "R184_STAGE",
+            "mtime_unix": 1789688414.9340026,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005278.json",
+            "record_sha256": "08f5a57e283a875b57edf634d9eca3d06f72283bbc30aeca323db21eececdf32"
+          },
+          "tool_receipt": {
+            "feedback_excerpt": "Tool result status: PROCESS_FAILED\nreturncode: 1\nstderr:   File \"/job.py\", line 8\n    S_3 =\n         ^\nSyntaxError: invalid syntax\n",
+            "fields": {
+              "launch_attempted": true,
+              "returncode": 1,
+              "source_sha256": "9b06cc328c4d882385dac73b91cbda3cc36aacdf14a2a70d93b7f4e073699575",
+              "status": "PROCESS_FAILED"
+            },
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/5d31b45e952d12ae0a4572ff514dccbe2db34f257f82674fec16b35e65f0eb49/RESULT.json",
+            "result_keys": [
+              "GPU_access",
+              "cgroup_removed_after_stop",
+              "command",
+              "elapsed_seconds",
+              "environment_injected",
+              "finished_utc",
+              "gate",
+              "launch_attempted",
+              "limit_reason",
+              "observed_bytes",
+              "origin",
+              "output_is_untrusted",
+              "raw_request_sha256",
+              "request_id",
+              "requested_origin",
+              "retained_bytes",
+              "returncode",
+              "schema",
+              "source_closure_sha256",
+              "source_sha256",
+              "started_utc",
+              "status",
+              "stderr",
+              "stdout",
+              "teardown_called",
+              "teardown_error"
+            ],
+            "sha256": "03e33cb906fa108a7f816e947e7066d31c3466544ca4d77cdf73cd271887f599"
+          },
+          "trial_id": "C2_R188_same_life_recovery",
+          "truncated": false
+        },
+        {
+          "cycle": 45,
+          "cycle_basis": "following_R184_SLEEP_NOTICE",
+          "execution_source": "# Define the symbol\nV = symbols('V')\n\n# Correct sum for S_\uff13\nS_3_correct = 98\n\n# Calculate S_\uff13 using the formula and solve for V\nS_3 = (3 * 2 * (2*3**2 + V*3 - 1))/30\nequation = Eq(S_3, S_3_correct)\r\n\r\n# Solve for V\nV_value = solve(equa\n",
+          "execution_syntax": {
+            "column": 16,
+            "line": 12,
+            "message": "'(' was never closed",
+            "status": "SYNTAX_ERROR",
+            "text": "V_value = solve(equa"
+          },
+          "extraction": {
+            "attempted": true,
+            "language": "python",
+            "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+            "raw_source_sha256": "ea4d02f465741e263bacdbe80b460db8c828ed0fafe3b16510076cfd1ea931ec",
+            "raw_text_sha256": "2e01d2f9523405bab2661c7992d4e88b0101eef4623474faf58814b41d6f70f1",
+            "reason": "FIRST_CODE_BLOCK",
+            "source_sha256": "a53347cceb28a74fe784d7877eb452f947a03cd6abe6c53165968f4f62893e8e",
+            "span_end": 247,
+            "span_start": 11,
+            "transformations": [
+              {
+                "offset": 162,
+                "original": "\uff0f",
+                "replacement": "/"
+              }
+            ]
+          },
+          "fullwidth_syntactic_candidates": [
+            {
+              "codepoint": "U+FF0F",
+              "column": 35,
+              "line": 8,
+              "line_text": "S_3 = (3 * 2 * (2*3**2 + V*3 - 1))\uff0f30",
+              "offset": 162,
+              "original": "\uff0f",
+              "replacement": "/"
+            }
+          ],
+          "generation_metadata": {
+            "terminal": true
+          },
+          "leading_dot_assignments": [],
+          "outcome": {
+            "artifact_link": null,
+            "executed": true,
+            "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260916t2245z/gate",
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "origin": {
+              "child_generated": true,
+              "code_transformation": {
+                "attempted": true,
+                "language": "python",
+                "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+                "raw_source_sha256": "ea4d02f465741e263bacdbe80b460db8c828ed0fafe3b16510076cfd1ea931ec",
+                "raw_text_sha256": "2e01d2f9523405bab2661c7992d4e88b0101eef4623474faf58814b41d6f70f1",
+                "reason": "FIRST_CODE_BLOCK",
+                "source_sha256": "a53347cceb28a74fe784d7877eb452f947a03cd6abe6c53165968f4f62893e8e",
+                "span_end": 247,
+                "span_start": 11,
+                "transformations": [
+                  {
+                    "offset": 162,
+                    "original": "\uff0f",
+                    "replacement": "/"
+                  }
+                ]
+              },
+              "commit_record_sha256": "fc67cf2184a468d814931ef9d072bf096a768cfba8627b1ccf845a3aae0da32e",
+              "journal_id": "260be8b8710a42559b291797c6e14983",
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_sha256": "ceb5d9656af34e6bb2170e0defaa6d441ccd114acafcfc39bc88e88c50769000",
+              "request_record_sha256": "87330b2b225c112335ab80f9b79189582e54439c0c7cc86594ed18a80a587544"
+            },
+            "publication": {
+              "id": "811498099d9d4428b8bba2f72460b67d",
+              "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/811498099d9d4428b8bba2f72460b67d.json",
+              "sha256": "1de89c7efcf2c0bb92fa84029bb3cbc7fb3fda2ab72ca4634e91de90b0bdec83"
+            },
+            "request_id": "042627b1286af235da2555351f6f63d77df402e45cb7492bfb6426b77da9139e",
+            "result_sha256": "3203e22bb1f5f9e4115a87e52704e02cf093a8dd33370e9e1d206406cec7f296",
+            "result_status": "PROCESS_FAILED",
+            "schema": "R153_CPU_DELIVERY_V1",
+            "source_sha256": "a53347cceb28a74fe784d7877eb452f947a03cd6abe6c53165968f4f62893e8e",
+            "status": "PUBLISHED"
+          },
+          "outcome_record": {
+            "file_sha256": "235948abaff532ac0bdcb713232bb67eecf13405952f7b5b99a150716e6a9853",
+            "index": 5348,
+            "kind": "R184_ACT",
+            "mtime_unix": 1789689067.7767432,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005348.json",
+            "record_sha256": "a8a6031fa60d2cdd0ccac9844457977d39a76ea15c3515fdb19999cc26bf8a90"
+          },
+          "raw_code": "# Define the symbol\nV = symbols('V')\n\n# Correct sum for S_\uff13\nS_3_correct = 98\n\n# Calculate S_\uff13 using the formula and solve for V\nS_3 = (3 * 2 * (2*3**2 + V*3 - 1))\uff0f30\nequation = Eq(S_3, S_3_correct)\r\n\r\n# Solve for V\nV_value = solve(equa\n",
+          "raw_syntax": {
+            "column": 35,
+            "line": 8,
+            "message": "invalid character '\uff0f' (U+FF0F)",
+            "status": "SYNTAX_ERROR",
+            "text": "S_3 = (3 * 2 * (2*3**2 + V*3 - 1))\uff0f30"
+          },
+          "raw_text_sha256": "2e01d2f9523405bab2661c7992d4e88b0101eef4623474faf58814b41d6f70f1",
+          "response": {
+            "file_sha256": "adfc182f0ee5150af0c0255e64cafa8ac94a87aec9b8e990ecddc43d90191066",
+            "index": 5345,
+            "kind": "RESPONSE",
+            "mtime_unix": 1789689066.8298306,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005345.json",
+            "record_sha256": "ceb5d9656af34e6bb2170e0defaa6d441ccd114acafcfc39bc88e88c50769000"
+          },
+          "segment": 133,
+          "stage": {
+            "file_sha256": "fc8e7ce6a95dd9961d76702dffe31522a713dcae360b72d607378bc4838dfe06",
+            "index": 5347,
+            "kind": "R184_STAGE",
+            "mtime_unix": 1789689067.2576802,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005347.json",
+            "record_sha256": "fad5d4a10e9cb2091f838c086622f1538f7eef51024c2c4c10aa41dd4d90cab7"
+          },
+          "tool_receipt": {
+            "feedback_excerpt": "Tool result status: PROCESS_FAILED\nreturncode: 1\nstderr:   File \"/job.py\", line 12\n    V_value = solve(equa\n                   ^\nSyntaxError: '(' was never closed\n",
+            "fields": {
+              "launch_attempted": true,
+              "returncode": 1,
+              "source_sha256": "a53347cceb28a74fe784d7877eb452f947a03cd6abe6c53165968f4f62893e8e",
+              "status": "PROCESS_FAILED"
+            },
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/042627b1286af235da2555351f6f63d77df402e45cb7492bfb6426b77da9139e/RESULT.json",
+            "result_keys": [
+              "GPU_access",
+              "cgroup_removed_after_stop",
+              "command",
+              "elapsed_seconds",
+              "environment_injected",
+              "finished_utc",
+              "gate",
+              "launch_attempted",
+              "limit_reason",
+              "observed_bytes",
+              "origin",
+              "output_is_untrusted",
+              "raw_request_sha256",
+              "request_id",
+              "requested_origin",
+              "retained_bytes",
+              "returncode",
+              "schema",
+              "source_closure_sha256",
+              "source_sha256",
+              "started_utc",
+              "status",
+              "stderr",
+              "stdout",
+              "teardown_called",
+              "teardown_error"
+            ],
+            "sha256": "3203e22bb1f5f9e4115a87e52704e02cf093a8dd33370e9e1d206406cec7f296"
+          },
+          "trial_id": "C2_R188_same_life_recovery",
+          "truncated": false
+        },
+        {
+          "cycle": 46,
+          "cycle_basis": "following_R184_SLEEP_NOTICE",
+          "execution_source": "from sympy import symbols, Eq, solve\n\n# Define thesymbol\nV = symbols('V')\n\n# Correct sum for S_3\n.S_3_correct = 98\n\n# Calculate S_3 using theformula and solve for V\nS_3 = (3*2*(2*(3**2) + V*3 - 1))/30\nequation = Eq[S_(3), S_3_correct]\n\n# Solve for V\nV_value = solve(equa\n",
+          "execution_syntax": {
+            "column": 1,
+            "line": 7,
+            "message": "invalid syntax",
+            "status": "SYNTAX_ERROR",
+            "text": ".S_3_correct = 98"
+          },
+          "extraction": {
+            "attempted": true,
+            "language": "python",
+            "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+            "raw_source_sha256": "8265005dfa13cfccf9a0209fa9e5a22031c96dc360d85b717cfb22413b46aee7",
+            "raw_text_sha256": "67a585fa93ded468c68c96637a3688d2dc5193c3d479c8af8b06dbb4b1356234",
+            "reason": "FIRST_CODE_BLOCK",
+            "source_sha256": "8265005dfa13cfccf9a0209fa9e5a22031c96dc360d85b717cfb22413b46aee7",
+            "span_end": 282,
+            "span_start": 11,
+            "transformations": []
+          },
+          "fullwidth_syntactic_candidates": [],
+          "generation_metadata": {
+            "terminal": true
+          },
+          "leading_dot_assignments": [
+            {
+              "line": 7,
+              "text": ".S_3_correct = 98"
+            }
+          ],
+          "outcome": {
+            "artifact_link": null,
+            "executed": true,
+            "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/gate",
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "origin": {
+              "child_generated": true,
+              "code_transformation": {
+                "attempted": true,
+                "language": "python",
+                "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+                "raw_source_sha256": "8265005dfa13cfccf9a0209fa9e5a22031c96dc360d85b717cfb22413b46aee7",
+                "raw_text_sha256": "67a585fa93ded468c68c96637a3688d2dc5193c3d479c8af8b06dbb4b1356234",
+                "reason": "FIRST_CODE_BLOCK",
+                "source_sha256": "8265005dfa13cfccf9a0209fa9e5a22031c96dc360d85b717cfb22413b46aee7",
+                "span_end": 282,
+                "span_start": 11,
+                "transformations": []
+              },
+              "commit_record_sha256": "8ac1c8c8d7885d12f322c791c15c1c08b17fcb6b311f7bf36e3fc3a8dc074a82",
+              "journal_id": "260be8b8710a42559b291797c6e14983",
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_sha256": "c6394bf76bd62688803e6933095c2841b86c377ecf57f370e0f9a77e569a636e",
+              "request_record_sha256": "0924250fd6f33bbb0c03eac8069efd2d598f93f16a89c496362ba723613dfa5a"
+            },
+            "publication": {
+              "id": "dd9511a5fe5b44c18a268696db6645a5",
+              "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/dd9511a5fe5b44c18a268696db6645a5.json",
+              "sha256": "c2e8774a31a3c20f69c93e82053a4ab0c1b994adea3b1dbc5b2c2fee4d044d18"
+            },
+            "request_id": "4bc3f83f4011febf58a4ba91acffcc6c8a054fce61d61a8e48a9d7939af99bfb",
+            "result_sha256": "735f488d6876d1607c830a016e2aa8a7ce63e4852cd99f03902b08b062f71ef7",
+            "result_status": "PROCESS_FAILED",
+            "schema": "R153_CPU_DELIVERY_V1",
+            "source_sha256": "8265005dfa13cfccf9a0209fa9e5a22031c96dc360d85b717cfb22413b46aee7",
+            "status": "PUBLISHED"
+          },
+          "outcome_record": {
+            "file_sha256": "744e21d534e75249407a55ffef6a814dea408bfe3d2bf0036fae1080f84d0e24",
+            "index": 5417,
+            "kind": "R184_ACT",
+            "mtime_unix": 1789692234.4753444,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005417.json",
+            "record_sha256": "58728aadb210cf62e54238b67a33f7a5fcc75f7f021f2af5fae0f59628784946"
+          },
+          "raw_code": "from sympy import symbols, Eq, solve\n\n# Define thesymbol\nV = symbols('V')\n\n# Correct sum for S_3\n.S_3_correct = 98\n\n# Calculate S_3 using theformula and solve for V\nS_3 = (3*2*(2*(3**2) + V*3 - 1))/30\nequation = Eq[S_(3), S_3_correct]\n\n# Solve for V\nV_value = solve(equa\n",
+          "raw_syntax": {
+            "column": 1,
+            "line": 7,
+            "message": "invalid syntax",
+            "status": "SYNTAX_ERROR",
+            "text": ".S_3_correct = 98"
+          },
+          "raw_text_sha256": "67a585fa93ded468c68c96637a3688d2dc5193c3d479c8af8b06dbb4b1356234",
+          "response": {
+            "file_sha256": "dff64531e9a37e30e6bd87b3ec1be0e00abe4a4573bf2a26da211a3da810da5e",
+            "index": 5414,
+            "kind": "RESPONSE",
+            "mtime_unix": 1789692230.9551117,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005414.json",
+            "record_sha256": "c6394bf76bd62688803e6933095c2841b86c377ecf57f370e0f9a77e569a636e"
+          },
+          "segment": 136,
+          "stage": {
+            "file_sha256": "d1e6e1f66acba0312396bcf7a1e6223a0c86b429e478bb7908f7a79c55333d92",
+            "index": 5416,
+            "kind": "R184_STAGE",
+            "mtime_unix": 1789692231.381815,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005416.json",
+            "record_sha256": "a345fac8930aa9c2e661ab1f75352d0e778e1c1ddb327135a5897adacc17c664"
+          },
+          "tool_receipt": {
+            "feedback_excerpt": "Tool result status: PROCESS_FAILED\nreturncode: 1\nstderr: Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 285, in run_path\n  File \"<frozen runpy>\", line 259, in _get_code_from_file\n  File \"/job.py\", line 7\n    .S_3_correct = 98\n    ^\nSyntaxError: invalid syntax\n",
+            "fields": {
+              "launch_attempted": true,
+              "returncode": 1,
+              "source_sha256": "8265005dfa13cfccf9a0209fa9e5a22031c96dc360d85b717cfb22413b46aee7",
+              "status": "PROCESS_FAILED"
+            },
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/4bc3f83f4011febf58a4ba91acffcc6c8a054fce61d61a8e48a9d7939af99bfb/RESULT.json",
+            "result_keys": [
+              "GPU_access",
+              "cgroup_removed_after_stop",
+              "command",
+              "elapsed_seconds",
+              "environment_injected",
+              "finished_utc",
+              "gate",
+              "launch_attempted",
+              "limit_reason",
+              "observed_bytes",
+              "origin",
+              "output_is_untrusted",
+              "raw_request_sha256",
+              "request_id",
+              "requested_origin",
+              "retained_bytes",
+              "returncode",
+              "schema",
+              "source_closure_sha256",
+              "source_sha256",
+              "started_utc",
+              "status",
+              "stderr",
+              "stdout",
+              "teardown_called",
+              "teardown_error"
+            ],
+            "sha256": "735f488d6876d1607c830a016e2aa8a7ce63e4852cd99f03902b08b062f71ef7"
+          },
+          "trial_id": "C2_R188_same_life_recovery",
+          "truncated": false
+        },
+        {
+          "cycle": 47,
+          "cycle_basis": "following_R184_SLEEP_NOTICE",
+          "execution_source": "from sympy import symbols, Eq, solve\n\n# Definethe symbol\nV = symbols('V')\n\n# Correct setup for S_3 using the formula and the known sum S_3 = 98\nS_3_correct = Eq((3*2*(2*3**2 + V*3 - 1))/30, 98)\n\n# Solve for V\nsolution_V = solve(S_3_correct, V)\nsolution_V\n",
+          "execution_syntax": {
+            "bare_name_statements": [
+              {
+                "line": 11,
+                "name": "solution_V"
+              }
+            ],
+            "status": "PARSES"
+          },
+          "extraction": {
+            "attempted": true,
+            "language": "python",
+            "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+            "raw_source_sha256": "41b7e0ad58fe6c823de890b8ce2d45c7c3146965bf9284cd97dd3bf2817a433d",
+            "raw_text_sha256": "05da7d14abf9135fcda6613383f96b95c69ebe99cd1362061e3b5d707dc9cf4f",
+            "reason": "FIRST_CODE_BLOCK",
+            "source_sha256": "41b7e0ad58fe6c823de890b8ce2d45c7c3146965bf9284cd97dd3bf2817a433d",
+            "span_end": 265,
+            "span_start": 10,
+            "transformations": []
+          },
+          "fullwidth_syntactic_candidates": [],
+          "generation_metadata": {
+            "terminal": true
+          },
+          "leading_dot_assignments": [],
+          "outcome": {
+            "artifact_link": null,
+            "executed": true,
+            "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/gate",
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "origin": {
+              "child_generated": true,
+              "code_transformation": {
+                "attempted": true,
+                "language": "python",
+                "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+                "raw_source_sha256": "41b7e0ad58fe6c823de890b8ce2d45c7c3146965bf9284cd97dd3bf2817a433d",
+                "raw_text_sha256": "05da7d14abf9135fcda6613383f96b95c69ebe99cd1362061e3b5d707dc9cf4f",
+                "reason": "FIRST_CODE_BLOCK",
+                "source_sha256": "41b7e0ad58fe6c823de890b8ce2d45c7c3146965bf9284cd97dd3bf2817a433d",
+                "span_end": 265,
+                "span_start": 10,
+                "transformations": []
+              },
+              "commit_record_sha256": "46c70918cd7dbd06c8840cf25068c57ef437e38fc41d3db6e563d6f519c8d505",
+              "journal_id": "260be8b8710a42559b291797c6e14983",
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_sha256": "c5a9420ca8b4759eaf6b62051c65733a0108a464fba7f2b551d6fac1cc7e9ab7",
+              "request_record_sha256": "9ea14e5b2ed54242aaa9f03e80647c1cf8b81c983f5ba7aec2919ab106577710"
+            },
+            "publication": {
+              "id": "69c33ffa5d3641faa69de31a85529510",
+              "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/69c33ffa5d3641faa69de31a85529510.json",
+              "sha256": "170f658f934d2c94ac4bcd950d2f4471329801b83494f742b9a4d3bcdacc566c"
+            },
+            "request_id": "a7f6a77d9b00742aa7a48f8a416109bec24902729774e17ac4534f0ba77c4cd1",
+            "result_sha256": "babd5abafe72c20e7cdf53c1ad7244299da36dac14cd7040fe14d6ffd05591dc",
+            "result_status": "COMPLETE",
+            "schema": "R153_CPU_DELIVERY_V1",
+            "source_sha256": "41b7e0ad58fe6c823de890b8ce2d45c7c3146965bf9284cd97dd3bf2817a433d",
+            "status": "PUBLISHED"
+          },
+          "outcome_record": {
+            "file_sha256": "1d4d55dbb7dc97a05ff2fe17559258441ca4d6ce57ce8ecc525cce3908ed2f38",
+            "index": 5487,
+            "kind": "R184_ACT",
+            "mtime_unix": 1789693027.008959,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005487.json",
+            "record_sha256": "0dc0455ffeed5e8a77ac0b681ee5b8a4de1703829f8c5a6c557937ae08ff9524"
+          },
+          "raw_code": "from sympy import symbols, Eq, solve\n\n# Definethe symbol\nV = symbols('V')\n\n# Correct setup for S_3 using the formula and the known sum S_3 = 98\nS_3_correct = Eq((3*2*(2*3**2 + V*3 - 1))/30, 98)\n\n# Solve for V\nsolution_V = solve(S_3_correct, V)\nsolution_V\n",
+          "raw_syntax": {
+            "bare_name_statements": [
+              {
+                "line": 11,
+                "name": "solution_V"
+              }
+            ],
+            "status": "PARSES"
+          },
+          "raw_text_sha256": "05da7d14abf9135fcda6613383f96b95c69ebe99cd1362061e3b5d707dc9cf4f",
+          "response": {
+            "file_sha256": "c67f8fad4d7480741f643c5a51efea36dec50002d7593bb658ee93b8d0544284",
+            "index": 5484,
+            "kind": "RESPONSE",
+            "mtime_unix": 1789693014.5838583,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005484.json",
+            "record_sha256": "c5a9420ca8b4759eaf6b62051c65733a0108a464fba7f2b551d6fac1cc7e9ab7"
+          },
+          "segment": 139,
+          "stage": {
+            "file_sha256": "dc210b68e6d5605d6002c83310b2b1e0ec5a414d75563b9de0923ff81cc111c5",
+            "index": 5486,
+            "kind": "R184_STAGE",
+            "mtime_unix": 1789693015.0342076,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005486.json",
+            "record_sha256": "aec377c3b61a9916adebb124da7464686a6d4389fa2903a8de2f6b3de8b10fa5"
+          },
+          "tool_receipt": {
+            "feedback_excerpt": "Tool result status: COMPLETE\nreturncode: 0",
+            "fields": {
+              "launch_attempted": true,
+              "returncode": 0,
+              "source_sha256": "41b7e0ad58fe6c823de890b8ce2d45c7c3146965bf9284cd97dd3bf2817a433d",
+              "status": "COMPLETE"
+            },
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/a7f6a77d9b00742aa7a48f8a416109bec24902729774e17ac4534f0ba77c4cd1/RESULT.json",
+            "result_keys": [
+              "GPU_access",
+              "cgroup_removed_after_stop",
+              "command",
+              "elapsed_seconds",
+              "environment_injected",
+              "finished_utc",
+              "gate",
+              "launch_attempted",
+              "limit_reason",
+              "observed_bytes",
+              "origin",
+              "output_is_untrusted",
+              "raw_request_sha256",
+              "request_id",
+              "requested_origin",
+              "retained_bytes",
+              "returncode",
+              "schema",
+              "source_closure_sha256",
+              "source_sha256",
+              "started_utc",
+              "status",
+              "stderr",
+              "stdout",
+              "teardown_called",
+              "teardown_error"
+            ],
+            "sha256": "babd5abafe72c20e7cdf53c1ad7244299da36dac14cd7040fe14d6ffd05591dc"
+          },
+          "trial_id": "C2_R188_same_life_recovery",
+          "truncated": false
+        },
+        {
+          "cycle": 48,
+          "cycle_basis": "following_R184_SLEEP_NOTICE",
+          "execution_source": "from sympy import symbols, Eq, solve\n\nV = symbols 'V')\nS_3_correct = Eq((3*2*(2*\uff13**2 + V*3 - 1))/30, 9\uff18)\nsolution_V = solve(S_3_correct, V)\n\n# Printing thesolution for V\nprintsolution_V\n",
+          "execution_syntax": {
+            "column": 16,
+            "line": 3,
+            "message": "unmatched ')'",
+            "status": "SYNTAX_ERROR",
+            "text": "V = symbols 'V')"
+          },
+          "extraction": {
+            "attempted": true,
+            "language": "python",
+            "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+            "raw_source_sha256": "b471ab840a9c99c40fc1d589ee73433982dce89d8bb811eadac74a475fd35265",
+            "raw_text_sha256": "6423ee70eba35d8ce7015bc6c72b3c5522c7353c16a25cda43e29dbaaa720160",
+            "reason": "FIRST_CODE_BLOCK",
+            "source_sha256": "b471ab840a9c99c40fc1d589ee73433982dce89d8bb811eadac74a475fd35265",
+            "span_end": 197,
+            "span_start": 11,
+            "transformations": []
+          },
+          "fullwidth_syntactic_candidates": [],
+          "generation_metadata": {
+            "terminal": true
+          },
+          "leading_dot_assignments": [],
+          "outcome": {
+            "artifact_link": null,
+            "executed": true,
+            "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/gate",
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "origin": {
+              "child_generated": true,
+              "code_transformation": {
+                "attempted": true,
+                "language": "python",
+                "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+                "raw_source_sha256": "b471ab840a9c99c40fc1d589ee73433982dce89d8bb811eadac74a475fd35265",
+                "raw_text_sha256": "6423ee70eba35d8ce7015bc6c72b3c5522c7353c16a25cda43e29dbaaa720160",
+                "reason": "FIRST_CODE_BLOCK",
+                "source_sha256": "b471ab840a9c99c40fc1d589ee73433982dce89d8bb811eadac74a475fd35265",
+                "span_end": 197,
+                "span_start": 11,
+                "transformations": []
+              },
+              "commit_record_sha256": "d56f13c2f3ab64babdc9497694fb04d85b97d975a5042199e644f5fb37e0a4e2",
+              "journal_id": "260be8b8710a42559b291797c6e14983",
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_sha256": "c20a023f226fc80fce4f89d877377336f28367754e41a5e17fee91de3f1b1eff",
+              "request_record_sha256": "bb9c4666ee6949107fbdcc168e44c7a49667380199ae6c65262c69b5681db030"
+            },
+            "publication": {
+              "id": "a5624b8d77aa448fa5d7f60da7549424",
+              "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/a5624b8d77aa448fa5d7f60da7549424.json",
+              "sha256": "f9ffff146469ccd2a4b0c2d6a0a2774b73e83b5dab077903f3525c3d59633716"
+            },
+            "request_id": "a09edc7bc13361b6f515fb8676fe3fd7c5c4f4a06fdac8d6dfdb98f5080186b7",
+            "result_sha256": "d1945999d7aa0fe171c1ea14c65317b54008477b9110a67a7de9636e857a681d",
+            "result_status": "PROCESS_FAILED",
+            "schema": "R153_CPU_DELIVERY_V1",
+            "source_sha256": "b471ab840a9c99c40fc1d589ee73433982dce89d8bb811eadac74a475fd35265",
+            "status": "PUBLISHED"
+          },
+          "outcome_record": {
+            "file_sha256": "8d99de566689006e2116b2928260a91f368ab62ed54cf89b8195381723045900",
+            "index": 5557,
+            "kind": "R184_ACT",
+            "mtime_unix": 1789693385.5515642,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005557.json",
+            "record_sha256": "8a288442c1bc73238df2dcdb111fdbcbd2061f832e5e954452329d4a3149d998"
+          },
+          "raw_code": "from sympy import symbols, Eq, solve\n\nV = symbols 'V')\nS_3_correct = Eq((3*2*(2*\uff13**2 + V*3 - 1))/30, 9\uff18)\nsolution_V = solve(S_3_correct, V)\n\n# Printing thesolution for V\nprintsolution_V\n",
+          "raw_syntax": {
+            "column": 16,
+            "line": 3,
+            "message": "unmatched ')'",
+            "status": "SYNTAX_ERROR",
+            "text": "V = symbols 'V')"
+          },
+          "raw_text_sha256": "6423ee70eba35d8ce7015bc6c72b3c5522c7353c16a25cda43e29dbaaa720160",
+          "response": {
+            "file_sha256": "afbd062122539ba2f1869450e611bcb47b0996ab77fc63a42e7b36505d2ed6f9",
+            "index": 5554,
+            "kind": "RESPONSE",
+            "mtime_unix": 1789693382.4714577,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005554.json",
+            "record_sha256": "c20a023f226fc80fce4f89d877377336f28367754e41a5e17fee91de3f1b1eff"
+          },
+          "segment": 142,
+          "stage": {
+            "file_sha256": "d78be002d56707781006c9557ebc80a68ee5bb2d9bb91e4d3f7b005b1dd3e580",
+            "index": 5556,
+            "kind": "R184_STAGE",
+            "mtime_unix": 1789693382.9298248,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005556.json",
+            "record_sha256": "42a1d2034ac467f7039a6f420aaf1a362a1405b776b783c8fbf69e0896540d7f"
+          },
+          "tool_receipt": {
+            "feedback_excerpt": "Tool result status: PROCESS_FAILED\nreturncode: 1\nstderr: Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 285, in run_path\n  File \"<frozen runpy>\", line 259, in _get_code_from_file\n  File \"/job.py\", line 3\n    V = symbols 'V')\n                   ^\nSyntaxError: unmatched ')'\n",
+            "fields": {
+              "launch_attempted": true,
+              "returncode": 1,
+              "source_sha256": "b471ab840a9c99c40fc1d589ee73433982dce89d8bb811eadac74a475fd35265",
+              "status": "PROCESS_FAILED"
+            },
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/a09edc7bc13361b6f515fb8676fe3fd7c5c4f4a06fdac8d6dfdb98f5080186b7/RESULT.json",
+            "result_keys": [
+              "GPU_access",
+              "cgroup_removed_after_stop",
+              "command",
+              "elapsed_seconds",
+              "environment_injected",
+              "finished_utc",
+              "gate",
+              "launch_attempted",
+              "limit_reason",
+              "observed_bytes",
+              "origin",
+              "output_is_untrusted",
+              "raw_request_sha256",
+              "request_id",
+              "requested_origin",
+              "retained_bytes",
+              "returncode",
+              "schema",
+              "source_closure_sha256",
+              "source_sha256",
+              "started_utc",
+              "status",
+              "stderr",
+              "stdout",
+              "teardown_called",
+              "teardown_error"
+            ],
+            "sha256": "d1945999d7aa0fe171c1ea14c65317b54008477b9110a67a7de9636e857a681d"
+          },
+          "trial_id": "C2_R188_same_life_recovery",
+          "truncated": false
+        },
+        {
+          "cycle": 49,
+          "cycle_basis": "following_R184_SLEEP_NOTICE",
+          "execution_source": "from sympy import symbols, Eq, solve\n\nV =\n",
+          "execution_syntax": {
+            "column": 4,
+            "line": 3,
+            "message": "invalid syntax",
+            "status": "SYNTAX_ERROR",
+            "text": "V ="
+          },
+          "extraction": {
+            "attempted": true,
+            "language": "python",
+            "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+            "raw_source_sha256": "0f14fa6e0e974ee9e2d6171413897cea8913a82b8879e9a9e72f43275140a082",
+            "raw_text_sha256": "aee92c81d1e9f4f9c1b2c85b7bfcf907552b823d129e253346cf449bac461dc0",
+            "reason": "FIRST_CODE_BLOCK",
+            "source_sha256": "0f14fa6e0e974ee9e2d6171413897cea8913a82b8879e9a9e72f43275140a082",
+            "span_end": 114,
+            "span_start": 72,
+            "transformations": []
+          },
+          "fullwidth_syntactic_candidates": [],
+          "generation_metadata": {
+            "terminal": true
+          },
+          "leading_dot_assignments": [],
+          "outcome": {
+            "artifact_link": null,
+            "executed": true,
+            "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/gate",
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "origin": {
+              "child_generated": true,
+              "code_transformation": {
+                "attempted": true,
+                "language": "python",
+                "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+                "raw_source_sha256": "0f14fa6e0e974ee9e2d6171413897cea8913a82b8879e9a9e72f43275140a082",
+                "raw_text_sha256": "aee92c81d1e9f4f9c1b2c85b7bfcf907552b823d129e253346cf449bac461dc0",
+                "reason": "FIRST_CODE_BLOCK",
+                "source_sha256": "0f14fa6e0e974ee9e2d6171413897cea8913a82b8879e9a9e72f43275140a082",
+                "span_end": 114,
+                "span_start": 72,
+                "transformations": []
+              },
+              "commit_record_sha256": "31ab6024be1cd468005112c08b1a29e7629f2474a00c963394d02a04afc6ad80",
+              "journal_id": "260be8b8710a42559b291797c6e14983",
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_sha256": "b408d183354af50bcd1d1e7e2b988262ef22db8686d04db5257f9e54f21d8537",
+              "request_record_sha256": "2dec5d84cc087a823a9d720e15cb52dfe7caf9d255956e1fcfd21db04c43f090"
+            },
+            "publication": {
+              "id": "6ed8bc4e52f4445b8bc3788d32d86c13",
+              "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/6ed8bc4e52f4445b8bc3788d32d86c13.json",
+              "sha256": "b78d4b3dec0a3d441d3effe05ba7d3d4bb4cb3fd1017d5ede10cfcb170dd325a"
+            },
+            "request_id": "f10525625ef4e7f353373b92d30bee8fd2ac6be972387c707ed0f0d29138f07e",
+            "result_sha256": "1ddbde7427da3eca5d2d4433e69ff9e84682dc2eb2184a4aff6d1578983be11e",
+            "result_status": "PROCESS_FAILED",
+            "schema": "R153_CPU_DELIVERY_V1",
+            "source_sha256": "0f14fa6e0e974ee9e2d6171413897cea8913a82b8879e9a9e72f43275140a082",
+            "status": "PUBLISHED"
+          },
+          "outcome_record": {
+            "file_sha256": "472082867725b182dc1c0628f681036a030bb43011d11729849d92a2d8867e7c",
+            "index": 5626,
+            "kind": "R184_ACT",
+            "mtime_unix": 1789693809.1777706,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005626.json",
+            "record_sha256": "901ae964a470369b5ae370e4bc8e2190112d7d8e4b64235d76ffb3bf0df4ac2c"
+          },
+          "raw_code": "from sympy import symbols, Eq, solve\n\nV =\n",
+          "raw_syntax": {
+            "column": 4,
+            "line": 3,
+            "message": "invalid syntax",
+            "status": "SYNTAX_ERROR",
+            "text": "V ="
+          },
+          "raw_text_sha256": "aee92c81d1e9f4f9c1b2c85b7bfcf907552b823d129e253346cf449bac461dc0",
+          "response": {
+            "file_sha256": "6ea411e60f52cfb2268c9962a290dc115192aff52e3720589de571a19bf9cd84",
+            "index": 5623,
+            "kind": "RESPONSE",
+            "mtime_unix": 1789693805.6646554,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005623.json",
+            "record_sha256": "b408d183354af50bcd1d1e7e2b988262ef22db8686d04db5257f9e54f21d8537"
+          },
+          "segment": 145,
+          "stage": {
+            "file_sha256": "932ebdd4ab2fca18f1934ef565cd175b7e07f6fcf3fce1f188a1593c51ff307a",
+            "index": 5625,
+            "kind": "R184_STAGE",
+            "mtime_unix": 1789693806.1283615,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005625.json",
+            "record_sha256": "48b5976360f1c7489888a24fb7956c775a318402624cd104679e8bb6be725d8c"
+          },
+          "tool_receipt": {
+            "feedback_excerpt": "Tool result status: PROCESS_FAILED\nreturncode: 1\nstderr: Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 285, in run_path\n  File \"<frozen runpy>\", line 259, in _get_code_from_file\n  File \"/job.py\", line 3\n    V =\n       ^\nSyntaxError: invalid syntax\n",
+            "fields": {
+              "launch_attempted": true,
+              "returncode": 1,
+              "source_sha256": "0f14fa6e0e974ee9e2d6171413897cea8913a82b8879e9a9e72f43275140a082",
+              "status": "PROCESS_FAILED"
+            },
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/f10525625ef4e7f353373b92d30bee8fd2ac6be972387c707ed0f0d29138f07e/RESULT.json",
+            "result_keys": [
+              "GPU_access",
+              "cgroup_removed_after_stop",
+              "command",
+              "elapsed_seconds",
+              "environment_injected",
+              "finished_utc",
+              "gate",
+              "launch_attempted",
+              "limit_reason",
+              "observed_bytes",
+              "origin",
+              "output_is_untrusted",
+              "raw_request_sha256",
+              "request_id",
+              "requested_origin",
+              "retained_bytes",
+              "returncode",
+              "schema",
+              "source_closure_sha256",
+              "source_sha256",
+              "started_utc",
+              "status",
+              "stderr",
+              "stdout",
+              "teardown_called",
+              "teardown_error"
+            ],
+            "sha256": "1ddbde7427da3eca5d2d4433e69ff9e84682dc2eb2184a4aff6d1578983be11e"
+          },
+          "trial_id": "C2_R188_same_life_recovery",
+          "truncated": false
+        },
+        {
+          "cycle": 50,
+          "cycle_basis": "following_R184_SLEEP_NOTICE",
+          "execution_source": "from sympy import symbols, Eq, solve\n\n\uff36 =symbols('V')\nS_3_correct = Eq((3*2 *(2 *3**2 + V *3 - 1))/30, 9\uff18)\nsolution_V =solve(S_3_correct, V)\n\n\\ # Printthe solution for V\nprint(solution_V)\n",
+          "execution_syntax": {
+            "column": 51,
+            "line": 4,
+            "message": "invalid character '\uff18' (U+FF18)",
+            "status": "SYNTAX_ERROR",
+            "text": "S_3_correct = Eq((3*2 *(2 *3**2 + V *3 - 1))/30, 9\uff18)"
+          },
+          "extraction": {
+            "attempted": true,
+            "language": "python",
+            "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+            "raw_source_sha256": "d85532de37713e2a55e49651fa92ca1aaa7772d059ad1a5de5eb4e1ad5938198",
+            "raw_text_sha256": "0b832d4a2a269c540aa6f8ce4ecb230cb858d66b23e920238bc7ed062883f1e8",
+            "reason": "FIRST_CODE_BLOCK",
+            "source_sha256": "d85532de37713e2a55e49651fa92ca1aaa7772d059ad1a5de5eb4e1ad5938198",
+            "span_end": 289,
+            "span_start": 101,
+            "transformations": []
+          },
+          "fullwidth_syntactic_candidates": [],
+          "generation_metadata": {
+            "terminal": true
+          },
+          "leading_dot_assignments": [],
+          "outcome": {
+            "artifact_link": null,
+            "executed": true,
+            "gate_root": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/gate",
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "origin": {
+              "child_generated": true,
+              "code_transformation": {
+                "attempted": true,
+                "language": "python",
+                "policy": "R153_FIRST_CODE_BLOCK_ASCII_PUNCTUATION_V1",
+                "raw_source_sha256": "d85532de37713e2a55e49651fa92ca1aaa7772d059ad1a5de5eb4e1ad5938198",
+                "raw_text_sha256": "0b832d4a2a269c540aa6f8ce4ecb230cb858d66b23e920238bc7ed062883f1e8",
+                "reason": "FIRST_CODE_BLOCK",
+                "source_sha256": "d85532de37713e2a55e49651fa92ca1aaa7772d059ad1a5de5eb4e1ad5938198",
+                "span_end": 289,
+                "span_start": 101,
+                "transformations": []
+              },
+              "commit_record_sha256": "e27d666e5f8bdf9ca02c13e2fba49d67538d4e0f99b1c123c00895f7e1b9cdac",
+              "journal_id": "260be8b8710a42559b291797c6e14983",
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_sha256": "836394f96f42a7a3b4a574626187ac1460f7b02043a6da356b01a21ae48b771e",
+              "request_record_sha256": "dea23db0d8d3eb6f6d537c8d49e1313d4842f6104a4765a0af47021a98268e3e"
+            },
+            "publication": {
+              "id": "92d0a09c64224811aa665921d4e450f0",
+              "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/92d0a09c64224811aa665921d4e450f0.json",
+              "sha256": "f7591dcc600d31593a94fa66ddac773075cf3e0d19674f9798debb16a94275b8"
+            },
+            "request_id": "92b09b253eda5ee6fd9f53d29676c64e4597c38269c977fa4815268d82a14681",
+            "result_sha256": "c32f42ff3242d6ac7056eaa336ca64eb20bc296948e881d6c0c9b32fcdfb6970",
+            "result_status": "PROCESS_FAILED",
+            "schema": "R153_CPU_DELIVERY_V1",
+            "source_sha256": "d85532de37713e2a55e49651fa92ca1aaa7772d059ad1a5de5eb4e1ad5938198",
+            "status": "PUBLISHED"
+          },
+          "outcome_record": {
+            "file_sha256": "a051059241c8a56fa726bc77cc0affdaf69785e9e81ad92dc0c9f63cf9e8afa6",
+            "index": 5695,
+            "kind": "R184_ACT",
+            "mtime_unix": 1789694302.6684256,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005695.json",
+            "record_sha256": "69c46e3ae5e6fab2cdb8c596b3b9e9d2d602cc120e0f7ab7cd344419915ea009"
+          },
+          "raw_code": "from sympy import symbols, Eq, solve\n\n\uff36 =symbols('V')\nS_3_correct = Eq((3*2 *(2 *3**2 + V *3 - 1))/30, 9\uff18)\nsolution_V =solve(S_3_correct, V)\n\n\\ # Printthe solution for V\nprint(solution_V)\n",
+          "raw_syntax": {
+            "column": 51,
+            "line": 4,
+            "message": "invalid character '\uff18' (U+FF18)",
+            "status": "SYNTAX_ERROR",
+            "text": "S_3_correct = Eq((3*2 *(2 *3**2 + V *3 - 1))/30, 9\uff18)"
+          },
+          "raw_text_sha256": "0b832d4a2a269c540aa6f8ce4ecb230cb858d66b23e920238bc7ed062883f1e8",
+          "response": {
+            "file_sha256": "576afd489c10f64d43f787b8c0d51cbbd607922e6e42f0929d01ab308f954fc7",
+            "index": 5692,
+            "kind": "RESPONSE",
+            "mtime_unix": 1789694299.1926916,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005692.json",
+            "record_sha256": "836394f96f42a7a3b4a574626187ac1460f7b02043a6da356b01a21ae48b771e"
+          },
+          "segment": 148,
+          "stage": {
+            "file_sha256": "72e0280838ac59c70ee95d00ea84be66b9fe35b8efecf403dff179314c3c822c",
+            "index": 5694,
+            "kind": "R184_STAGE",
+            "mtime_unix": 1789694299.6626556,
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005694.json",
+            "record_sha256": "43788eb582b84f0c18184f611ed7c2769cef946aa2e425efbce1c1d21b225164"
+          },
+          "tool_receipt": {
+            "feedback_excerpt": "Tool result status: PROCESS_FAILED\nreturncode: 1\nstderr: Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 285, in run_path\n  File \"<frozen runpy>\", line 259, in _get_code_from_file\n  File \"/job.py\", line 4\n    S_3_correct = Eq((3*2 *(2 *3**2 + V *3 - 1))/30, 9\uff18)\n                                                      ^\nSyntaxError: invalid character '\uff18' (U+FF18)\n",
+            "fields": {
+              "launch_attempted": true,
+              "returncode": 1,
+              "source_sha256": "d85532de37713e2a55e49651fa92ca1aaa7772d059ad1a5de5eb4e1ad5938198",
+              "status": "PROCESS_FAILED"
+            },
+            "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_cpu/spool/92b09b253eda5ee6fd9f53d29676c64e4597c38269c977fa4815268d82a14681/RESULT.json",
+            "result_keys": [
+              "GPU_access",
+              "cgroup_removed_after_stop",
+              "command",
+              "elapsed_seconds",
+              "environment_injected",
+              "finished_utc",
+              "gate",
+              "launch_attempted",
+              "limit_reason",
+              "observed_bytes",
+              "origin",
+              "output_is_untrusted",
+              "raw_request_sha256",
+              "request_id",
+              "requested_origin",
+              "retained_bytes",
+              "returncode",
+              "schema",
+              "source_closure_sha256",
+              "source_sha256",
+              "started_utc",
+              "status",
+              "stderr",
+              "stdout",
+              "teardown_called",
+              "teardown_error"
+            ],
+            "sha256": "c32f42ff3242d6ac7056eaa336ca64eb20bc296948e881d6c0c9b32fcdfb6970"
+          },
+          "trial_id": "C2_R188_same_life_recovery",
+          "truncated": false
+        }
+      ],
+      "completed_cycles": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "cutoff": 5751,
+      "generation_truncation_unknown_count": 0,
+      "head": {
+        "index": 5751,
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "UPDATE",
+        "previous_sha256": "60b0582165a1328055e7266125df79563ba252376a01be37f1960158d62500ce",
+        "schema": "R125_STREAM_JOURNAL_V1",
+        "sha256": "1dd0cb5ab16a3533fea27495b2913a19403447a280063e63eee93e7d99b3f6b3"
+      },
+      "label": "original_C2",
+      "loaded": [
+        {
+          "document": {
+            "adapter_sha256": "04d089898655ac0d88d8337fb1dc3f176f525a01c74a9efd719167c31a965b43",
+            "anchors": {
+              "adapter": null,
+              "artifact_hashes": {
+                "ADMISSION.json": "e35295f88dfe04bccb06d1630aa3ac46e6f10ef2a80af7d0bb1b9a9f03199b0d",
+                "LAUNCH.json": "f4e3e251bcbf99d2165136e430b8bd437f6132b3cd29b854d41220fa16d534f6",
+                "PLAN.json": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+                "PUBLICATION.json": "df62b91c1ee2bac7ff09be31e11ef46020cb5fe1d0f9ed5f60f04eee4bb5f190",
+                "READY.json": "41899d13b57b250a8cecf406e645ff132e19f1c36fec6ae6e0e98ab2d3e5cc76",
+                "readout/AFTER.json": "a01dc627777cd8dab313c48d423385fca00b02a64c01b4fdee1e4b54ed378d66",
+                "readout/BEFORE.json": "b0dab498e1f35ed649a0a4f565e1bc433d700bc37b0091047c3330cbabbd0177",
+                "readout/COMPLETE.json": "7d4c672a279aac5427428d0c05a4ad0115bc60317a1a34db8614fba41b03ee90"
+              },
+              "automatic_fit": false,
+              "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+              "completed_calls": 64,
+              "completion_categories": {
+                "correct": 42,
+                "exact_constraint_failure": 5,
+                "invalid_json": 4,
+                "invalid_numeric_format": 1,
+                "unsafe_or_invalid_expression": 3,
+                "wrong_answer": 9
+              },
+              "context_limit": 16384,
+              "encoded_anchors": 42,
+              "families": {
+                "code": 9,
+                "concise_answer": 11,
+                "math": 6,
+                "simulated_tools": 16
+              },
+              "native_target_ids_preserved": true,
+              "new_model_calls": 0,
+              "parent_calls": 0,
+              "prompt_labels_masked": true,
+              "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+              "schema": "R107_BASE_ANCHOR_NATIVE_TOKEN_INVENTORY_V1",
+              "semantic_richness": "NOT_CLAIMED",
+              "shortfalls": {
+                "code": 0,
+                "concise_answer": 0,
+                "math": 0,
+                "simulated_tools": 0
+              },
+              "source_condition": "PURE_BASE",
+              "source_finished_unix": 1789461513.0626216,
+              "source_fit_ready": false,
+              "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+              "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+              "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+              "source_training_allowed": false,
+              "split": "TRAIN",
+              "status": "ENCODED_INVENTORY_READY",
+              "suite_sha256": "dd0cd5b2bfcef830e95bc406f9d601c6f8f861354fae5ba1d5d8395ba0df8196",
+              "training_updates": 0
+            },
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "loaded_unix": 1789687251.5420284,
+            "optimizer_steps": 4428,
+            "pid": 2718196,
+            "resume": true,
+            "runtime": {
+              "distributions": {
+                "peft": "0.20.0",
+                "tokenizers": "0.22.2",
+                "torch": "2.13.0",
+                "transformers": "5.5.3"
+              },
+              "imported": {
+                "peft": "0.20.0",
+                "tokenizers": "0.22.2",
+                "torch": "2.13.0+cu130",
+                "transformers": "5.5.3"
+              }
+            }
+          },
+          "file_sha256": "26eebac59404820dea19279ca454fd6b0dc39271714a797a465e6a73dd813f00",
+          "index": 5129,
+          "kind": "LOADED",
+          "mtime_unix": 1789687251.5711856,
+          "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005129.json",
+          "record_sha256": "14bb2c8d9f64d1ab6bf67fab4dde3f1c13e6dc268b14d2f650c62f34b71c2b59"
+        },
+        {
+          "document": {
+            "adapter_sha256": "3f818c167b837496b1d4e76521ad1ee282aa21685561b3cce3a9292726d000e9",
+            "anchors": {
+              "adapter": null,
+              "artifact_hashes": {
+                "ADMISSION.json": "e35295f88dfe04bccb06d1630aa3ac46e6f10ef2a80af7d0bb1b9a9f03199b0d",
+                "LAUNCH.json": "f4e3e251bcbf99d2165136e430b8bd437f6132b3cd29b854d41220fa16d534f6",
+                "PLAN.json": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+                "PUBLICATION.json": "df62b91c1ee2bac7ff09be31e11ef46020cb5fe1d0f9ed5f60f04eee4bb5f190",
+                "READY.json": "41899d13b57b250a8cecf406e645ff132e19f1c36fec6ae6e0e98ab2d3e5cc76",
+                "readout/AFTER.json": "a01dc627777cd8dab313c48d423385fca00b02a64c01b4fdee1e4b54ed378d66",
+                "readout/BEFORE.json": "b0dab498e1f35ed649a0a4f565e1bc433d700bc37b0091047c3330cbabbd0177",
+                "readout/COMPLETE.json": "7d4c672a279aac5427428d0c05a4ad0115bc60317a1a34db8614fba41b03ee90"
+              },
+              "automatic_fit": false,
+              "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+              "completed_calls": 64,
+              "completion_categories": {
+                "correct": 42,
+                "exact_constraint_failure": 5,
+                "invalid_json": 4,
+                "invalid_numeric_format": 1,
+                "unsafe_or_invalid_expression": 3,
+                "wrong_answer": 9
+              },
+              "context_limit": 16384,
+              "encoded_anchors": 42,
+              "families": {
+                "code": 9,
+                "concise_answer": 11,
+                "math": 6,
+                "simulated_tools": 16
+              },
+              "native_target_ids_preserved": true,
+              "new_model_calls": 0,
+              "parent_calls": 0,
+              "prompt_labels_masked": true,
+              "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+              "schema": "R107_BASE_ANCHOR_NATIVE_TOKEN_INVENTORY_V1",
+              "semantic_richness": "NOT_CLAIMED",
+              "shortfalls": {
+                "code": 0,
+                "concise_answer": 0,
+                "math": 0,
+                "simulated_tools": 0
+              },
+              "source_condition": "PURE_BASE",
+              "source_finished_unix": 1789461513.0626216,
+              "source_fit_ready": false,
+              "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+              "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+              "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+              "source_training_allowed": false,
+              "split": "TRAIN",
+              "status": "ENCODED_INVENTORY_READY",
+              "suite_sha256": "dd0cd5b2bfcef830e95bc406f9d601c6f8f861354fae5ba1d5d8395ba0df8196",
+              "training_updates": 0
+            },
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "loaded_unix": 1789692183.8178334,
+            "optimizer_steps": 4620,
+            "pid": 2930123,
+            "resume": true,
+            "runtime": {
+              "distributions": {
+                "peft": "0.20.0",
+                "tokenizers": "0.22.2",
+                "torch": "2.13.0",
+                "transformers": "5.5.3"
+              },
+              "imported": {
+                "peft": "0.20.0",
+                "tokenizers": "0.22.2",
+                "torch": "2.13.0+cu130",
+                "transformers": "5.5.3"
+              }
+            }
+          },
+          "file_sha256": "1da8de46e32bffd46535dba1932fa539673c3ce18cd34dcff16c999269f3abfd",
+          "index": 5407,
+          "kind": "LOADED",
+          "mtime_unix": 1789692183.8548489,
+          "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000005407.json",
+          "record_sha256": "f5407edb4fc1e53a8d774a3c81d30f63812e127533ceaeccc11c88de967b0e24"
+        }
+      ],
+      "outcome_count": 9,
+      "parser_sha256": "a7bd5a92be9937845f3653687af710a9a26d0276c3317e7c5c4c291ad117bdf1",
+      "root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+      "source": "/localhome/local-rohing/orch_r153_r193_C2_20260917_recovery1/source",
+      "source_pin_scope": "current source only; historical origin bound separately by RESPONSE/R184_STAGE/R184_ACT hashes",
+      "source_pins": {
+        "gpu/orch_r153_community_transport.py": "b798199a10508164de724631fc8a81bf28fb3500db5bc0048ec486cb7707905a",
+        "gpu/orch_r184_think_act_learn.py": "3b973372c6ecf929beda48acb21a83e1fdee66d54701aec8daed1859d075a57e"
+      },
+      "start_record": 5129
+    }
+  ],
+  "observed_unix": 1789694763.3877873,
+  "publications": 0,
+  "signals": 0,
+  "static_python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]"
+}

@@ -1,0 +1,99 @@
+{
+  "agent": "C1",
+  "committed": [],
+  "exposure": null,
+  "failures": {
+    "ACTIVATION_FAILED.json": {
+      "error_type": "TimeoutError",
+      "no_retry": true,
+      "original_exit_confirmed": false,
+      "reason": "no_boundary_old_native_left_running",
+      "recovery_disposition": "VERIFY_EXACT_OWNER_AND_SAVED_BOUNDARY_NO_AUTOMATIC_RETRY",
+      "termination_intent_recorded": false
+    }
+  },
+  "files": {
+    "ACTIVATION_FAILED.json": {
+      "path": "/localhome/local-rohing/orch_r166_retelling_C1_20260917_activation4/ACTIVATION_FAILED.json",
+      "sha256": "643dbc73532d49f1f361c838e7a30410dc799a04a6f0c29ee29a79659965272f"
+    },
+    "MAIN_DISPATCH.json": {
+      "path": "/localhome/local-rohing/orch_r166_retelling_C1_20260917_activation4/MAIN_DISPATCH.json",
+      "sha256": "3d0d4352d3366eccf28711239cb674ae63b7c3af71271424d18a136b74493ba5"
+    }
+  },
+  "invocation": null,
+  "last_kind": null,
+  "last_record_index": null,
+  "loaded": null,
+  "no_parent_action": true,
+  "no_retry": true,
+  "no_signals": true,
+  "observed_unix": 1789636570.4391108,
+  "operator": null,
+  "originals": {
+    "actor": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/control/GUARD.json"
+      ],
+      "cgroup": "0::/system.slice/orch-r157-native-003b5f8bc75a49f9bc3a55a2f5520701.service",
+      "cwd": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/source",
+      "group": 2578596,
+      "parent": 2578596,
+      "pid": 2578597,
+      "start_ticks": "14835459",
+      "state": "S",
+      "uid": 2524
+    },
+    "supervisor": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r157_community_wall_extension",
+        "contained-native",
+        "--config",
+        "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/control/GUARD.json"
+      ],
+      "cgroup": "0::/system.slice/orch-r157-native-003b5f8bc75a49f9bc3a55a2f5520701.service",
+      "cwd": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/source",
+      "group": 2578522,
+      "parent": 1,
+      "pid": 2578522,
+      "start_ticks": "14835399",
+      "state": "S",
+      "uid": 2524
+    },
+    "timer": {
+      "argv": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "163195s",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/control/GUARD.json"
+      ],
+      "cgroup": "0::/system.slice/orch-r157-native-003b5f8bc75a49f9bc3a55a2f5520701.service",
+      "cwd": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/source",
+      "group": 2578596,
+      "parent": 2578522,
+      "pid": 2578596,
+      "start_ticks": "14835458",
+      "state": "S",
+      "uid": 2524
+    }
+  },
+  "remaining_read_bytes": 55994702,
+  "root": "/localhome/local-rohing/orch_r166_retelling_C1_20260917_activation4"
+}

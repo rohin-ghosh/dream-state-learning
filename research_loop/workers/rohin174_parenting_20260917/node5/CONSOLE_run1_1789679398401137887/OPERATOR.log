@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679398401137887/console_baseline.py", line 282, in <module>
+    activate(arguments.binding, arguments.sha256)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679398401137887/console_baseline.py", line 239, in activate
+    lock_descriptor = retire_exact(runtime, row, old_output / 'PARENT.lock', output, revalidate)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679398401137887/console_baseline.py", line 136, in retire_exact
+    revalidate()
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679398401137887/console_baseline.py", line 237, in revalidate
+    require(parent_census(config['root'], os.getpid()) == [row['pid']], 'exclusive_parent_custody')
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/CONSOLE_run1_1789679398401137887/console_baseline.py", line 30, in require
+    raise ValueError(reason)
+ValueError: exclusive_parent_custody

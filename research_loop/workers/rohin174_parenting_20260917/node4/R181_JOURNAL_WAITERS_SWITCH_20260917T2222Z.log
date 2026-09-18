@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/switch_r181_waiters.py", line 92, in <module>
+    print(json.dumps(main(), sort_keys=True))
+                     ^^^^^^
+  File "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/switch_r181_waiters.py", line 38, in main
+    require(operator.selected(physical, helpers)[-1] == stage['processes'], 'unchanged_current_owner')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/node4_rollout.py", line 110, in selected
+    config, plan, original = helpers.originals(config_path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/r144_helpers.py", line 234, in originals
+    require(Path(module.__file__).resolve() == source/(name.replace('.', '/')+'.py'), 'fresh_original_imports')
+  File "/localhome/local-rohing/orch_r179_node4_r181journal_20260917t2220z/r144_helpers.py", line 68, in require
+    raise ValueError(reason)
+ValueError: fresh_original_imports

@@ -1,0 +1,185 @@
+{
+  "observed_utc": "2026-09-18T05:52:55.819362+00:00",
+  "private_references_read": false,
+  "child_signals": [],
+  "lives": [
+    {
+      "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life",
+      "parent_renders": [
+        {
+          "message_id": "02931fd2254f4651b3b820120755fd3d",
+          "inbox": {
+            "index": 370,
+            "kind": "INBOX",
+            "sha256": "c09b51442025770f235fa2690c11a55aee81059ae415a7774140caf0bc52bfb5",
+            "unix": 1789710666.878613
+          },
+          "request": {
+            "index": 375,
+            "kind": "REQUEST",
+            "sha256": "85ef0cc4fd2a03875647dd8e681bc17fdbd8d5b6bd6f3b551beae0ca86094758",
+            "unix": 1789710669.2716405
+          },
+          "all_history_tokens_masked": true
+        },
+        {
+          "message_id": "1c392851b8484f03a5a04557a1c7cd54",
+          "inbox": {
+            "index": 371,
+            "kind": "INBOX",
+            "sha256": "892397b76a4d0454992d3a130a83308b731fe76f06e468a8926741a326ee2f5b",
+            "unix": 1789710666.8826132
+          },
+          "request": {
+            "index": 375,
+            "kind": "REQUEST",
+            "sha256": "85ef0cc4fd2a03875647dd8e681bc17fdbd8d5b6bd6f3b551beae0ca86094758",
+            "unix": 1789710669.2716405
+          },
+          "all_history_tokens_masked": true
+        },
+        {
+          "message_id": "b693b9abbb7c4a09815df0f19aa4bd8c",
+          "inbox": {
+            "index": 397,
+            "kind": "INBOX",
+            "sha256": "b870aa23989bcadfd96cb29eecb7430e261f10efb0940f23a1c62c3b8778c20d",
+            "unix": 1789710718.617903
+          },
+          "request": null,
+          "all_history_tokens_masked": null
+        }
+      ],
+      "stages": [
+        {
+          "index": 378,
+          "kind": "R184_STAGE",
+          "sha256": "111e1425502e3f86f4d2b6d02b79a7773ca322398b6492fc8e5e15e00e97af68",
+          "unix": 1789710686.7256489,
+          "stage": "THINK",
+          "source_sha256": "fadb361452e443c4524667b2fa0c3157eab018952fc661200b4c141631085e20"
+        },
+        {
+          "index": 385,
+          "kind": "R184_STAGE",
+          "sha256": "34b48a7a72effca9949ddf590f483639b47c0eda0ddba0de3fb7c19e1ab7fca2",
+          "unix": 1789710701.5411634,
+          "stage": "ACT",
+          "source_sha256": "032664e4883f919a472176ba5315f5cbae0aea8a9aa4a6d20003b82d76807209"
+        },
+        {
+          "index": 394,
+          "kind": "R184_STAGE",
+          "sha256": "db1aa08415466532fec14ff6dee29e8b2cb43432bdce96c9dd6c37f551172266",
+          "unix": 1789710718.5940866,
+          "stage": "LEARN",
+          "source_sha256": "cc2fae05612a0995ab06aa6de1675d2908bf56d2713c69420345ad7006a3d1ee"
+        }
+      ],
+      "outcomes": [
+        {
+          "index": 386,
+          "kind": "R184_ACT",
+          "sha256": "d4c25b64e4cbc83259a617848d8c480d852c5af1117bf1152084426e46c783b6",
+          "unix": 1789710701.8165176,
+          "origin": {
+            "kind": "TRAIN_CHILD_RESPONSE",
+            "record_index": 383,
+            "record_sha256": "47becec743b23c9a75d9e1261222d0aa3b9e4da1b534ebac10b8fb534dcdd1da"
+          },
+          "receipt_sha256": "6e9a42584afc8a459ec315b9b5df99a41006546d1729e4df66bc912b5413bdf8",
+          "executed": true,
+          "feedback": [
+            {
+              "ordinal": 1,
+              "rank": 62,
+              "accepted": false,
+              "top_k": 50,
+              "status": "rejected"
+            },
+            {
+              "ordinal": 2,
+              "rank": 50,
+              "accepted": true,
+              "top_k": 50,
+              "status": "new_pixel"
+            }
+          ],
+          "format_fault": true,
+          "think_candidates_submitted": false
+        }
+      ],
+      "loaded": {
+        "index": 369,
+        "kind": "LOADED",
+        "sha256": "c33db8f7d8d7c9d4b918d0235ad1127d3dbc959b51e4fd5de163b53ac4b79c20",
+        "unix": 1789710666.866613,
+        "pid": 237705,
+        "resume": true,
+        "optimizer_steps": 5068,
+        "adapter_sha256": "5a375416cd1cd849232f9d2c09383bc2c3b3f8fa28a8a7cf14904c7e8e14b627",
+        "loaded_unix": 1789710666.861315
+      },
+      "latest": {
+        "index": 409,
+        "kind": "UPDATE",
+        "sha256": "e67eef837a78b3ea81dde2db45e7344797aeb4d1cbecd466c17343e6f40210c5",
+        "unix": 1789710768.886326
+      }
+    },
+    {
+      "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life",
+      "parent_renders": [
+        {
+          "message_id": "5afd6f5278384993967594446a3b4d41",
+          "inbox": {
+            "index": 781,
+            "kind": "INBOX",
+            "sha256": "cca66d97ced9a12568d069a77caf2b3dde5eaf4dd44ab93d2a37c1c8cf909934",
+            "unix": 1789710619.2659385
+          },
+          "request": {
+            "index": 785,
+            "kind": "REQUEST",
+            "sha256": "51cc0859113e8614d4f3dd4139b4ce0aad7790a982acd837d302ce3e544bd165",
+            "unix": 1789710623.1171365
+          },
+          "all_history_tokens_masked": true
+        }
+      ],
+      "stages": [
+        {
+          "index": 788,
+          "kind": "R184_STAGE",
+          "sha256": "948e72d4d51d313c1f92cd98513c0b172aae629ed5faca9b962c2bb35ac083ac",
+          "unix": 1789710625.817141,
+          "stage": "THINK",
+          "source_sha256": "5f7d74bdc8d523747e2d64c2957b6b8bf745aae47323fbe62fc19705a78a1785"
+        },
+        {
+          "index": 795,
+          "kind": "R184_STAGE",
+          "sha256": "fc2f6fb8c98f88921f36bf463620e91f8db30b60018b00aaa51d71ae2f600ff5",
+          "unix": 1789710633.0781322,
+          "stage": "ACT",
+          "source_sha256": "0f9be25ce78eb2a1804e2dd871179c57d3e786292ec73b9bbcc0747fc5a2607c"
+        },
+        {
+          "index": 804,
+          "kind": "R184_STAGE",
+          "sha256": "56b805dd4976e8a44549f42588b48d60457c54d4fa0525d2fb8595e7f0027a0a",
+          "unix": 1789710640.3190591,
+          "stage": "LEARN",
+          "source_sha256": "c033afe4060bd2f7ffec8d98a80798c6a7a47d9e0841036344c47b4b4fe9180e"
+        }
+      ],
+      "outcomes": [],
+      "latest": {
+        "index": 813,
+        "kind": "R184_LEARN_COMPLETE",
+        "sha256": "5e34402f1385274269aec81df744a3d98d3cf1c8ca12d98114e5227a46dbecff",
+        "unix": 1789710703.14803
+      }
+    }
+  ]
+}

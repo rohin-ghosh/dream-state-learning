@@ -1,0 +1,1 @@
+R175 raw1 prospective baseline only. Preserve the entire historical unparented life unchanged. Give one invitation grounded in its own visible TRAIN object, then no parent follow-ups. No external executable task channel is bound; no result is not execution. Do not call this treated segment a never-parented control.

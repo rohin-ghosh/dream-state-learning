@@ -1,0 +1,41 @@
+    return config, plan
+
+
+def scan(config_path):
+    config, plan = validate(config_path)
+    child.require(os.geteuid() == 0 and os.environ.get('CUDA_VISIBLE_DEVICES') == '', 'privileged_CPU_scan')
+    from gpu import orch_rich_hot_a100_minor_scan as minor
+    from gpu import orch_r111_route_admission as admission
+    def allocation(index):
+        child.require(index == plan['physical'], 'only_allocated_device')
+    minor.pinned.policy = SimpleNamespace(HOST_SHA=config['host_sha256'],
+        DEVICES={plan['physical']:plan['gpu_uuid']}, require=child.require, allocation=allocation)
+    service = Path(config['attempt_dir'])/'SERVICE_IDENTITY.json'
+    if not service.exists():
+        minor.pinned.service(service)
+    return admission.scan(plan['physical'], service)
+
+
+def native_entry(config_path):
+    config, plan = validate(config_path)
+    await_startup(config, sys.stdin)
+    attempt = Path(config['attempt_dir'])
+    launch = child.read(attempt/'LAUNCH.json')
+    child.require((attempt/'DISPATCH_ONCE').is_dir() and launch['pid'] == os.getppid(), 'actual_timeout_parent')
+    ticks = Path('/proc',str(os.getppid()),'stat').read_text().rsplit(')',1)[1].split()[19]
+/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source/gpu/orch_r133_code_feedback_collection.py
+/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source/gpu/orch_r133_code_feedback_guard.py
+/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source/gpu/orch_r133_code_feedback_reduce.py
+/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source/gpu/orch_r133_node3_creative.py
+/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source/gpu/orch_r133_node3_programmes.py
+/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source/gpu/orch_r133_programme_parent.py
+/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source/gpu/orch_r133_stage_child.py
+cpuset cpu io memory hugetlb pids rdma misc dmem
+MainPID=2725
+User=
+Group=
+ActiveState=active
+SubState=running
+/usr/bin/systemd-run
+crw-rw-rw- 1 root root 195, 5 Sep 13 10:02 /dev/nvidia5
+crw-rw-rw- 1 root root 195, 6 Sep 13 10:02 /dev/nvidia6

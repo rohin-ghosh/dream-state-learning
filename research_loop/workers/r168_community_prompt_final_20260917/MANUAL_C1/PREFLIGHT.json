@@ -1,0 +1,68 @@
+{
+  "binding": {
+    "argv": [
+      "/usr/bin/python3",
+      "-m",
+      "gpu.orch_r153_community_parents",
+      "--config",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/r167_parent_policy_candidates_20260917/R154_ATTENTION_V2/C1_2417126/CONFIG.json",
+      "--repository",
+      "/data/home/rohing/dream-state-orch",
+      "--output",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/r167_parent_policy_candidates_20260917/R154_ATTENTION_V2/ROLLOUT/C1/parent",
+      "--gate",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/r167_parent_policy_candidates_20260917/R154_ATTENTION_V2/ROLLOUT/PARENT_GATE.json",
+      "--gate-sha256",
+      "d87b7cc9db9f4aa8d4199e170694d9b65a9cae0787d476767d76ad6cfc6623dd"
+    ],
+    "branch": "C1",
+    "config": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_parent_policy_candidates_20260917/R154_ATTENTION_V2/C1_2417126/CONFIG.json",
+      "sha256": "9709661295ab279d9d7dcad724221f4b964dea22d7e9a4a6810af88584e9df1f"
+    },
+    "output": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_parent_policy_candidates_20260917/R154_ATTENTION_V2/ROLLOUT/C1/parent",
+    "pid": 349597,
+    "root": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life",
+    "source": {
+      "path": "/data/home/rohing/dream-state-orch/gpu/orch_r153_community_parents.py",
+      "sha256": "d2ac945fdaaf3a5613d103e53c5c31c7e6c5cbe9d4133b2dfdb296aca49bb661"
+    },
+    "start_ticks": "173953514"
+  },
+  "child_and_source": {
+    "basis": {
+      "bytes": 1368933,
+      "path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/stream/records/00000000000000003423.json",
+      "sha256": "277edaaff897b8dea93dd8e57b211b23c08792c18cf9250471d8febdf4629d37"
+    },
+    "child": {
+      "config_ref": {
+        "bytes": 220042,
+        "path": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/control/GUARD.json",
+        "sha256": "53fb878f3899c4208941caf3e3336b26a9f5debc988a32d1d46a916f4445036b"
+      },
+      "observed_unix": 1789632512.4462261,
+      "pid": 2578597,
+      "plan_ref": {
+        "bytes": 7268,
+        "path": "/localhome/local-rohing/orch_r157_community_C1_20260917_attempt1/control/PLAN.json",
+        "sha256": "078df2c0239ea8ef0670a29bd3ba044ef1cb65b7011596dc82c84681018ea9c5"
+      },
+      "root": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life",
+      "start_ticks": "14835459",
+      "state": "R"
+    },
+    "observed_unix": 1789633549.485661,
+    "source_verified": true
+  },
+  "observed_unix": 1789633550.7771015,
+  "original_start": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r167_parent_policy_candidates_20260917/R154_ATTENTION_V2/ROLLOUT/C1/STARTED.json",
+    "sha256": "ed63993d31389756b1beca3d57f03df4c0f3991cc5c0a81bc101056d74f58534"
+  },
+  "same_executable_restart_checked": true,
+  "sourcebasis": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r168_targeted_replay/C1_EARLIER_TRAIN_SAMPLE.json",
+    "sha256": "a6908911c43b163c72c0178f9172dcf486111ec1c607315a202b2ac5ea3b0fdd"
+  }
+}

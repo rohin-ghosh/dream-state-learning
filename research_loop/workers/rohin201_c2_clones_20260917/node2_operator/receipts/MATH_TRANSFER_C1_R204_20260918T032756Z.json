@@ -1,0 +1,93 @@
+{
+  "observed_utc": "2026-09-18T03:27:56.448995+00:00",
+  "actors": {
+    "math_bridge_r204": {
+      "pid": 2204403,
+      "state": "S",
+      "start_ticks": "93044464",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "parent": {
+      "pid": 2196052,
+      "state": "S",
+      "start_ticks": "93018637",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "supervisor_r204": {
+      "pid": 2204409,
+      "state": "S",
+      "start_ticks": "93044584",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "native": {
+      "pid": 2204538,
+      "state": "R",
+      "start_ticks": "93044773",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source",
+      "ppid": 2204537
+    }
+  },
+  "receipts": {
+    "LAUNCH.json": {
+      "admission_sha256": "34b1a7bc055808f0829c40cef13f5dc90ed63d7ccf87733ba0c5d2ec360acc6c",
+      "admission_verified_unix": 1789702008.5961206,
+      "command_sha256": "76b35c5e41f5e83328b66a4ff9b9d21088f0b7ab38eb6c59526bc25e52f4de67",
+      "gpu_uuid": "GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf",
+      "guard_sha256": "fd428735bd13ac1db010f1af9e5a216aa10bb14cf63be836dc4c5f13dd374899",
+      "hard_end_unix": 1789776000,
+      "no_retry": true,
+      "parent_start_ticks": "93044773",
+      "pid": 2204537,
+      "plan_sha256": "9436851af6288be73e208986279f152aae0aca2a81a60cb185fbc7436b5bb4f1",
+      "started_unix": 1789702008.5972352
+    },
+    "PRE_SERVICE_ADMISSION.json": {
+      "verified_unix": 1789702008.324863,
+      "clear": true,
+      "blocking_reasons": []
+    },
+    "CONFINEMENT_CHILD.json": {
+      "observed_unix": 1789702008.5758548,
+      "pid": 2204488,
+      "gpu_uuid": "GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf",
+      "target_minor": 6,
+      "checks": {
+        "allowed_open_close": [
+          "/dev/nvidia6",
+          "/dev/nvidiactl",
+          "/dev/nvidia-uvm"
+        ],
+        "denied_foreign_minors": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7
+        ]
+      }
+    }
+  },
+  "events": [],
+  "nvml_processes": [
+    "1849630, GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, 33114 MiB",
+    "2128807, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4, 376 MiB",
+    "2202971, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4, 15154 MiB",
+    "1815204, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 402 MiB",
+    "2170067, GPU-c9450d3d-0455-f034-b9bf-7f8956e44733, 18404 MiB",
+    "1849923, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 22274 MiB",
+    "1849180, GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed, 32934 MiB"
+  ],
+  "read_only": true
+}

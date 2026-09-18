@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/r168_community_prompt_final_20260917/MANUAL_C1.py", line 195, in <module>
+    main()
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/r168_community_prompt_final_20260917/MANUAL_C1.py", line 183, in main
+    manual.execute_once(Operations())
+  File "/data/home/rohing/dream-state-orch/gpu/orch_r168_manual_parent_turn.py", line 41, in execute_once
+    with operations.quiesce() as handle:
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/gpu/orch_r167_parent_watchdog.py", line 111, in quiesce
+    operations.stopped_and_childless(binding['pid'])
+  File "/data/home/rohing/dream-state-orch/gpu/orch_r167_parent_takeover.py", line 79, in stopped_and_childless
+    require(not (task/'children').read_text().strip(), 'owned_task_has_child_defer')
+  File "/data/home/rohing/dream-state-orch/gpu/orch_r125_stream_journal.py", line 43, in require
+    raise ValueError(reason)
+ValueError: owned_task_has_child_defer

@@ -1,0 +1,36 @@
+{
+  "no_GO": true,
+  "no_signals": true,
+  "observed_unix": 1789632171.1248157,
+  "reason_for_new_attempt": "Previous stage refused before output creation; separately observed exact clear process tree; new source-only output namespace",
+  "result": {
+    "actor": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/control/GUARD.json"
+      ],
+      "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+      "cgroup": "0::/system.slice/orch-r157-native-3e5cef193d794a4cbdc365ed9bb6cbc4.service",
+      "cwd": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source",
+      "group": 2525435,
+      "parent": 2525435,
+      "pid": 2525436,
+      "start_ticks": "14761894",
+      "uid": 2524
+    },
+    "native_sha256": "c25f15715c7594e2649cf6f781a1a2dd171c594453b1fae31488b252d6a402c3",
+    "policy_sha256": "9277b09ca3f312bd7afa8bbcfc94f883940652c4199fe686c2ed47d73a992bcc",
+    "request": {
+      "path": "/localhome/local-rohing/orch_r166_retelling_C3_20260917_r154_attempt2/REQUEST.json",
+      "sha256": "7a9656db252fca216f7b278c3e0547c98acea29188f6b5c5ab8214db0a5ecff8"
+    },
+    "source_files": 1910,
+    "source_manifest_sha256": "a82b53634bd88d5c6aa5ddf1bb23df752fbcfe7028158c37f18fa49b8b544e6e",
+    "status": "STAGED_VERIFIED_ORIGINAL_OWNER_ALIVE"
+  }
+}

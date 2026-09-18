@@ -1,0 +1,545 @@
+{
+  "observed_utc": "2026-09-18T03:31:40.802462+00:00",
+  "actors": {
+    "cpu_bridge2": {
+      "pid": 2127856,
+      "state": "S",
+      "start_ticks": "92798435",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "parent": {
+      "pid": 2128727,
+      "present": false,
+      "same_start_ticks": false
+    },
+    "supervisor": {
+      "pid": 2128728,
+      "state": "S",
+      "start_ticks": "92801141",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "native": {
+      "pid": 2128807,
+      "state": "S",
+      "start_ticks": "92801327",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_d1/source",
+      "ppid": 2128806
+    }
+  },
+  "receipts": {
+    "LAUNCH.json": {
+      "admission_sha256": "8dae2e25c18c7db8f89cef71210a2bc088331e0eda5e65a11122aafac44c518c",
+      "admission_verified_unix": 1789699574.1295693,
+      "command_sha256": "a805633e21653234ece336f64af9424422568d1ea8b2540af12ce6621e5fa2a4",
+      "gpu_uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4",
+      "guard_sha256": "e0943940ddce3014bd1fb80e6bb42f2cb46e4459b5f28b2362edcb0476efbff8",
+      "hard_end_unix": 1789776000,
+      "no_retry": true,
+      "parent_start_ticks": "92801326",
+      "pid": 2128806,
+      "plan_sha256": "5b45d461c8e0c1e75a12a1e0b0a9c1437be82c8762a22b1a12cf7ecde8ae6df3",
+      "started_unix": 1789699574.130642
+    },
+    "PRE_SERVICE_ADMISSION.json": {
+      "verified_unix": 1789699573.8616252,
+      "clear": true,
+      "blocking_reasons": []
+    },
+    "CONFINEMENT_CHILD.json": {
+      "observed_unix": 1789699574.1101568,
+      "pid": 2128755,
+      "gpu_uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4",
+      "target_minor": 1,
+      "checks": {
+        "allowed_open_close": [
+          "/dev/nvidia1",
+          "/dev/nvidiactl",
+          "/dev/nvidia-uvm"
+        ],
+        "denied_foreign_minors": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "index": 6140,
+      "kind": "INBOX",
+      "sha256": "e25039a9fb242a3986d75624b626ab577e8df440dd9ce207a9e6cfe429d9af90",
+      "mtime_utc": "2026-09-18T03:28:53.561436+00:00",
+      "speaker": "Tool",
+      "message_id": "068458750b324281b918590766a84ab0",
+      "text_sha256": "36d873a7f7dddc84b83ef5f93ef7e72bb35108895f09fd96aedbb0647b550e72"
+    },
+    {
+      "index": 6141,
+      "kind": "REQUEST",
+      "sha256": "74e82b74d9f1e233e584812d949b64e485e339fe2a2d274b6c5d5ee40f5829e4",
+      "mtime_utc": "2026-09-18T03:28:54.398176+00:00",
+      "segment": 177,
+      "started_unix": 1789702133.592262
+    },
+    {
+      "index": 6142,
+      "kind": "RESPONSE",
+      "sha256": "5bba1fd1a3718586092e4894e2f1a2ab370e0e7dd77a3fa3aacbc265459c1c61",
+      "mtime_utc": "2026-09-18T03:29:07.915840+00:00",
+      "finished_unix": 1789702147.8808234,
+      "raw_response_present": true,
+      "raw_characters": 849
+    },
+    {
+      "index": 6144,
+      "kind": "R184_STAGE",
+      "sha256": "c6acd87f2bd1401e8d61565c7e54de3be0106dc3cb6467299c598f16722a77f9",
+      "mtime_utc": "2026-09-18T03:29:08.663543+00:00",
+      "stage": "LEARN",
+      "segment": 177
+    },
+    {
+      "index": 6150,
+      "kind": "SLEEP_RECIPE",
+      "sha256": "f868a6631dde71728bbeabbf2178b5e80533715873e37c1dd5129b00bee3c059",
+      "mtime_utc": "2026-09-18T03:29:09.482674+00:00",
+      "new_rows": 5,
+      "new_presentations": 16,
+      "selected_old_rows": 0,
+      "available_old_rows": 173
+    },
+    {
+      "index": 6151,
+      "kind": "TARGET_ELIGIBILITY",
+      "sha256": "532aa3347ec3f28253b0e17bf54d80b9a8f4895bed44cb8f9f78d713de37b47b",
+      "mtime_utc": "2026-09-18T03:29:09.631711+00:00",
+      "excluded_count": 2,
+      "learn_review_filter": {
+        "retained_counts": {
+          "NEW": 5,
+          "REHEARSAL": 0
+        },
+        "excluded_counts": {
+          "NEW": 0,
+          "REHEARSAL": 0
+        },
+        "policy": "R195_CHILD_ROW_REVIEW_V1"
+      },
+      "fields": [
+        "code_target_filter",
+        "code_target_filter_counts",
+        "code_target_filter_presentations",
+        "excluded",
+        "learn_review_filter",
+        "learn_review_filter_counts",
+        "learn_review_filter_presentations",
+        "new_row_sha256",
+        "raw_modified",
+        "rehearsal_row_sha256",
+        "runtime_policy",
+        "version"
+      ]
+    },
+    {
+      "index": 6152,
+      "kind": "UPDATE",
+      "sha256": "2f7af103bf5b58fcf438b0259af9694d1dc87ccce8b835b3600388db2bd61692",
+      "mtime_utc": "2026-09-18T03:29:12.394469+00:00",
+      "optimizer_step": 5021,
+      "finished_unix": 1789702152.360138
+    },
+    {
+      "index": 6153,
+      "kind": "UPDATE",
+      "sha256": "4547b8a26e551c23f8da29ff09c50428cbc7d0ea52b05d9ade6484e54c044869",
+      "mtime_utc": "2026-09-18T03:29:15.524728+00:00",
+      "optimizer_step": 5022,
+      "finished_unix": 1789702155.4915133
+    },
+    {
+      "index": 6154,
+      "kind": "UPDATE",
+      "sha256": "6759bf4de10a75db37547a76ee5a631e5b5d75d09c9f246c6281fc94f1f6f583",
+      "mtime_utc": "2026-09-18T03:29:19.382016+00:00",
+      "optimizer_step": 5023,
+      "finished_unix": 1789702159.3480134
+    },
+    {
+      "index": 6155,
+      "kind": "UPDATE",
+      "sha256": "dd08ee8007c7dcbc508859b53510f4e2da0ecfcfa0d40d63b939f0e3727c1a17",
+      "mtime_utc": "2026-09-18T03:29:21.994045+00:00",
+      "optimizer_step": 5024,
+      "finished_unix": 1789702161.9606357
+    },
+    {
+      "index": 6156,
+      "kind": "UPDATE",
+      "sha256": "35cb8ab05e5f6032e2fb09fac8c2fd8bd35de27781346a8d5f9cca4c21e69a79",
+      "mtime_utc": "2026-09-18T03:29:25.141314+00:00",
+      "optimizer_step": 5025,
+      "finished_unix": 1789702165.1087925
+    },
+    {
+      "index": 6157,
+      "kind": "UPDATE",
+      "sha256": "ccf69d95751cc56ad95baab32d75277b295d5962204a884bb49d8a5eeab8ba08",
+      "mtime_utc": "2026-09-18T03:29:28.846907+00:00",
+      "optimizer_step": 5026,
+      "finished_unix": 1789702168.813449
+    },
+    {
+      "index": 6158,
+      "kind": "UPDATE",
+      "sha256": "5b9357cfb2895a8d3c1e8bdd390ed9ab14ab8e03cb81014a44c4279616d8ceb0",
+      "mtime_utc": "2026-09-18T03:29:31.444499+00:00",
+      "optimizer_step": 5027,
+      "finished_unix": 1789702171.4113092
+    },
+    {
+      "index": 6159,
+      "kind": "UPDATE",
+      "sha256": "ae4f61056a63920172439db32a30ab0f7e79a8305beb0f740175de23a410a864",
+      "mtime_utc": "2026-09-18T03:29:34.741645+00:00",
+      "optimizer_step": 5028,
+      "finished_unix": 1789702174.7075207
+    },
+    {
+      "index": 6160,
+      "kind": "UPDATE",
+      "sha256": "13dc23941e9103c6ed06192ce80818edf03e0982cb95b60c484a779e200f72ae",
+      "mtime_utc": "2026-09-18T03:29:38.470190+00:00",
+      "optimizer_step": 5029,
+      "finished_unix": 1789702178.4363961
+    },
+    {
+      "index": 6161,
+      "kind": "UPDATE",
+      "sha256": "6b9a0d81f6b6660da056c9b57e1b49a93f169dd619a485a6d710ae8b08a0063b",
+      "mtime_utc": "2026-09-18T03:29:41.059620+00:00",
+      "optimizer_step": 5030,
+      "finished_unix": 1789702181.026849
+    },
+    {
+      "index": 6162,
+      "kind": "UPDATE",
+      "sha256": "95c3713ba42f5de4bcd6f0bd525427d2e50fa5b97826d96d74146ad6091e311e",
+      "mtime_utc": "2026-09-18T03:29:44.208070+00:00",
+      "optimizer_step": 5031,
+      "finished_unix": 1789702184.1744115
+    },
+    {
+      "index": 6163,
+      "kind": "UPDATE",
+      "sha256": "1efc5f64bc26ba018f4c4a6bff5cc54afa336dca8d800c08bb2dd3134295f962",
+      "mtime_utc": "2026-09-18T03:29:48.057241+00:00",
+      "optimizer_step": 5032,
+      "finished_unix": 1789702188.024373
+    },
+    {
+      "index": 6164,
+      "kind": "UPDATE",
+      "sha256": "cd8c3f618fea9f35d33017695be63d26d97e45f8030659b45a4373940171882d",
+      "mtime_utc": "2026-09-18T03:29:50.656484+00:00",
+      "optimizer_step": 5033,
+      "finished_unix": 1789702190.623552
+    },
+    {
+      "index": 6165,
+      "kind": "UPDATE",
+      "sha256": "379728a801b49bf474c234e8bbf6257b4df55b3593ac095667a5b6ec26dba5f3",
+      "mtime_utc": "2026-09-18T03:29:53.802615+00:00",
+      "optimizer_step": 5034,
+      "finished_unix": 1789702193.769551
+    },
+    {
+      "index": 6166,
+      "kind": "UPDATE",
+      "sha256": "b53814ebe41eaafdabf61cd6c28f075c102adab4461f8cb4d9e124eac2cad05b",
+      "mtime_utc": "2026-09-18T03:29:57.525716+00:00",
+      "optimizer_step": 5035,
+      "finished_unix": 1789702197.4923167
+    },
+    {
+      "index": 6167,
+      "kind": "UPDATE",
+      "sha256": "8328a53bd35a206f205f2ca9ab577bc159594acf5158d4455c2ab2f814d9c223",
+      "mtime_utc": "2026-09-18T03:30:00.125745+00:00",
+      "optimizer_step": 5036,
+      "finished_unix": 1789702200.0928438
+    },
+    {
+      "index": 6168,
+      "kind": "UPDATE",
+      "sha256": "9a11731df0d62ee3cc46144cf7e1ba4fda8b62e27be9887871472d527cb1a1cd",
+      "mtime_utc": "2026-09-18T03:30:03.338376+00:00",
+      "optimizer_step": 5037,
+      "finished_unix": 1789702203.3041294
+    },
+    {
+      "index": 6169,
+      "kind": "UPDATE",
+      "sha256": "d7bbea748381ec2062fdb68938b967928ca4e605c98b0e0e3889596d076ea999",
+      "mtime_utc": "2026-09-18T03:30:07.047116+00:00",
+      "optimizer_step": 5038,
+      "finished_unix": 1789702207.0145357
+    },
+    {
+      "index": 6170,
+      "kind": "UPDATE",
+      "sha256": "a7bffdd83e091bf5ad81c9ecff5ea871c2025f23ed8bf3b40354f7026a019518",
+      "mtime_utc": "2026-09-18T03:30:09.647588+00:00",
+      "optimizer_step": 5039,
+      "finished_unix": 1789702209.612249
+    },
+    {
+      "index": 6171,
+      "kind": "UPDATE",
+      "sha256": "d5cdbf9c6cb5fdd827ff970d8728957950a3d74e5ce581487189ed1e78aca939",
+      "mtime_utc": "2026-09-18T03:30:12.776868+00:00",
+      "optimizer_step": 5040,
+      "finished_unix": 1789702212.7442126
+    },
+    {
+      "index": 6172,
+      "kind": "UPDATE",
+      "sha256": "154c137a57b137b67374168803d882d99aea573828fdd029941912e9780fbfb2",
+      "mtime_utc": "2026-09-18T03:30:16.598273+00:00",
+      "optimizer_step": 5041,
+      "finished_unix": 1789702216.5644174
+    },
+    {
+      "index": 6173,
+      "kind": "UPDATE",
+      "sha256": "22fb8562cabd9ff627f257a5692bcba066675535393dc73c16bbba3e1e1df899",
+      "mtime_utc": "2026-09-18T03:30:19.179929+00:00",
+      "optimizer_step": 5042,
+      "finished_unix": 1789702219.1469016
+    },
+    {
+      "index": 6174,
+      "kind": "UPDATE",
+      "sha256": "d775d99189d234762349ce9fcaa11c37ee87d94da4e08572125eb71e06c56354",
+      "mtime_utc": "2026-09-18T03:30:22.296387+00:00",
+      "optimizer_step": 5043,
+      "finished_unix": 1789702222.26333
+    },
+    {
+      "index": 6175,
+      "kind": "UPDATE",
+      "sha256": "0adfe65686b0386ff5adcc23256b559cf103a666b84a0655e23978e57deef770",
+      "mtime_utc": "2026-09-18T03:30:26.009972+00:00",
+      "optimizer_step": 5044,
+      "finished_unix": 1789702225.9770699
+    },
+    {
+      "index": 6176,
+      "kind": "UPDATE",
+      "sha256": "c6ed8cce3765d21df8fa351e88305e6d365ea16b8c771aaa4b77b7e0af918b2c",
+      "mtime_utc": "2026-09-18T03:30:28.589868+00:00",
+      "optimizer_step": 5045,
+      "finished_unix": 1789702228.5569046
+    },
+    {
+      "index": 6177,
+      "kind": "UPDATE",
+      "sha256": "2fd27a463d4e5b8e100f8b6f88f11357d984487e2169c6ae3ef44816ee84c286",
+      "mtime_utc": "2026-09-18T03:30:31.727611+00:00",
+      "optimizer_step": 5046,
+      "finished_unix": 1789702231.6951237
+    },
+    {
+      "index": 6178,
+      "kind": "UPDATE",
+      "sha256": "982631e0a3ff8e43586a9dc0f4fd907e7d693e83474ee9432c30ce5e6d8b26b9",
+      "mtime_utc": "2026-09-18T03:30:35.424781+00:00",
+      "optimizer_step": 5047,
+      "finished_unix": 1789702235.391314
+    },
+    {
+      "index": 6179,
+      "kind": "UPDATE",
+      "sha256": "1a1038b8436470535c2852c088a3ae800ad5f84bdf0d8bc8e58da15fdafd2437",
+      "mtime_utc": "2026-09-18T03:30:38.019000+00:00",
+      "optimizer_step": 5048,
+      "finished_unix": 1789702237.9862487
+    },
+    {
+      "index": 6180,
+      "kind": "UPDATE",
+      "sha256": "b6666d14979671573fb9a2f95206b008ac0bd3bba6f9d641561129a98fe9ce4c",
+      "mtime_utc": "2026-09-18T03:30:41.144688+00:00",
+      "optimizer_step": 5049,
+      "finished_unix": 1789702241.1118476
+    },
+    {
+      "index": 6181,
+      "kind": "UPDATE",
+      "sha256": "a5776159473e5a89244adeb0acf0e18177e2ac54ccfa1a042d87c9343da6ba21",
+      "mtime_utc": "2026-09-18T03:30:44.972413+00:00",
+      "optimizer_step": 5050,
+      "finished_unix": 1789702244.9395604
+    },
+    {
+      "index": 6182,
+      "kind": "UPDATE",
+      "sha256": "ea558c327d4098841d24fa71b3eca9027a7017b64a81aa2a783098232d1c0893",
+      "mtime_utc": "2026-09-18T03:30:47.556806+00:00",
+      "optimizer_step": 5051,
+      "finished_unix": 1789702247.5238404
+    },
+    {
+      "index": 6183,
+      "kind": "UPDATE",
+      "sha256": "2781071a3f0f1dbd72bad9c10715602295e9304c80e102892c0d5348cafd2b0e",
+      "mtime_utc": "2026-09-18T03:30:50.678869+00:00",
+      "optimizer_step": 5052,
+      "finished_unix": 1789702250.6458437
+    },
+    {
+      "index": 6184,
+      "kind": "UPDATE",
+      "sha256": "35552e21c7320955839606a367bf5e886a353e192c6cf21244a040f2730feada",
+      "mtime_utc": "2026-09-18T03:30:54.391144+00:00",
+      "optimizer_step": 5053,
+      "finished_unix": 1789702254.3584015
+    },
+    {
+      "index": 6185,
+      "kind": "UPDATE",
+      "sha256": "e8e2f2df95afb9196af7f01e47b48ce1116da23653102dc83a8c9219e80840c8",
+      "mtime_utc": "2026-09-18T03:30:56.991603+00:00",
+      "optimizer_step": 5054,
+      "finished_unix": 1789702256.9578424
+    },
+    {
+      "index": 6186,
+      "kind": "UPDATE",
+      "sha256": "1b6485a6172b340f728575f3764ba460f2be1d581f93e7f04497642c4f8f897a",
+      "mtime_utc": "2026-09-18T03:31:00.241802+00:00",
+      "optimizer_step": 5055,
+      "finished_unix": 1789702260.2088225
+    },
+    {
+      "index": 6187,
+      "kind": "UPDATE",
+      "sha256": "dd04e3998c7a922fb3840be103c0dabbff63cf28dda2685d2402224acde2d499",
+      "mtime_utc": "2026-09-18T03:31:03.967562+00:00",
+      "optimizer_step": 5056,
+      "finished_unix": 1789702263.934112
+    },
+    {
+      "index": 6188,
+      "kind": "UPDATE",
+      "sha256": "87993c464f45a914f8448eeba4d12f79d8a71a545b30ac9e55b5c67796fd11c3",
+      "mtime_utc": "2026-09-18T03:31:06.553630+00:00",
+      "optimizer_step": 5057,
+      "finished_unix": 1789702266.5204954
+    },
+    {
+      "index": 6189,
+      "kind": "UPDATE",
+      "sha256": "8546514ac80147cf43b8de3a05bac5dd1e62d8f36835e56f0bba360ec22d5f1f",
+      "mtime_utc": "2026-09-18T03:31:09.694781+00:00",
+      "optimizer_step": 5058,
+      "finished_unix": 1789702269.6624844
+    },
+    {
+      "index": 6190,
+      "kind": "UPDATE",
+      "sha256": "38ba95685a41d50d1ccb39053b73d8a5c17382f52f55954e27879d6534a552cb",
+      "mtime_utc": "2026-09-18T03:31:13.530798+00:00",
+      "optimizer_step": 5059,
+      "finished_unix": 1789702273.497788
+    },
+    {
+      "index": 6191,
+      "kind": "UPDATE",
+      "sha256": "cb8a2c9fa3d69e6a18c135c071f9cbf542f97a54db7fe15c98d91d1697de6270",
+      "mtime_utc": "2026-09-18T03:31:16.132618+00:00",
+      "optimizer_step": 5060,
+      "finished_unix": 1789702276.0992634
+    },
+    {
+      "index": 6192,
+      "kind": "UPDATE",
+      "sha256": "b840ab581cb45bcc79631a17282f3b053441a944d887e5213fbce44d08767190",
+      "mtime_utc": "2026-09-18T03:31:19.299015+00:00",
+      "optimizer_step": 5061,
+      "finished_unix": 1789702279.265171
+    },
+    {
+      "index": 6193,
+      "kind": "UPDATE",
+      "sha256": "e395288a319d62f147a79e12821cced76f6a34e5fe1e08ee5f9994057085bf20",
+      "mtime_utc": "2026-09-18T03:31:23.029785+00:00",
+      "optimizer_step": 5062,
+      "finished_unix": 1789702282.9967055
+    },
+    {
+      "index": 6194,
+      "kind": "UPDATE",
+      "sha256": "a8d189b83d91efd9cf4639605f9b973ea09bf30eb8ce689a91fa7d7608e513eb",
+      "mtime_utc": "2026-09-18T03:31:25.791659+00:00",
+      "optimizer_step": 5063,
+      "finished_unix": 1789702285.7583394
+    },
+    {
+      "index": 6195,
+      "kind": "UPDATE",
+      "sha256": "ba769ff1db84dc96bb3e51ae51f713d7e7cc9e1fcdf259c162109b06ff5b8c62",
+      "mtime_utc": "2026-09-18T03:31:28.951615+00:00",
+      "optimizer_step": 5064,
+      "finished_unix": 1789702288.91761
+    },
+    {
+      "index": 6196,
+      "kind": "UPDATE",
+      "sha256": "d0ea1b7eda0d08d697181c78e3828626eda1dd651ea96e6b6219b058997757f1",
+      "mtime_utc": "2026-09-18T03:31:32.671767+00:00",
+      "optimizer_step": 5065,
+      "finished_unix": 1789702292.6386235
+    },
+    {
+      "index": 6197,
+      "kind": "UPDATE",
+      "sha256": "db37875714807fac43c90ebd8273446a3cff54bf9acf708e2dc9927978123fdc",
+      "mtime_utc": "2026-09-18T03:31:35.289896+00:00",
+      "optimizer_step": 5066,
+      "finished_unix": 1789702295.255722
+    },
+    {
+      "index": 6198,
+      "kind": "UPDATE",
+      "sha256": "f6d6d936205c783cfc9d2eef4c5e608b3be39b66b8dacd9a63bb2f50732ca470",
+      "mtime_utc": "2026-09-18T03:31:38.598462+00:00",
+      "optimizer_step": 5067,
+      "finished_unix": 1789702298.5653334
+    }
+  ],
+  "nvml_processes": [
+    "1849630, GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, 376 MiB",
+    "2212463, GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, 14880 MiB",
+    "2128807, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4, 18332 MiB",
+    "1815204, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 20562 MiB",
+    "2170067, GPU-c9450d3d-0455-f034-b9bf-7f8956e44733, 22182 MiB",
+    "2204408, GPU-d304a15c-516a-16a0-a926-a560304077cc, 21850 MiB",
+    "1849923, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 16552 MiB",
+    "2204538, GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf, 22664 MiB",
+    "1849180, GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed, 416 MiB",
+    "2210635, GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed, 14996 MiB"
+  ],
+  "read_only": true
+}

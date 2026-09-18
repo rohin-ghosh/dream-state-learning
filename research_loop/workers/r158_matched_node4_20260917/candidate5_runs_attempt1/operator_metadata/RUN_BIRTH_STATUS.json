@@ -1,0 +1,152 @@
+{
+  "arms": {
+    "parented_frozen": {
+      "FAILED.json": {
+        "error": "fresh_exclusive_admission",
+        "error_type": "ValueError",
+        "finished_unix": 1789623370.768995,
+        "no_retry": true,
+        "stage": "ADMISSION",
+        "status": "FAILED"
+      },
+      "LIFECYCLE.json": {
+        "binding_sha256": "8137eb9437d1d26364b7916060af9d0fd296d0551bd99a57c0ec71919e6db120",
+        "cgroup_empty_verified": null,
+        "no_retry": true,
+        "observed": null,
+        "status": "NOT_STARTED"
+      },
+      "admission_clear": false,
+      "admission_observations": 1,
+      "birth": null,
+      "blocking_reasons": [
+        "minor_scan_identity_changed:530040",
+        "minor_scan_process_drift:530040",
+        "process_identity_drift:530215"
+      ],
+      "loaded": null,
+      "native_started": false,
+      "physical": 6,
+      "root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_frozen",
+      "root_exists": false
+    },
+    "parented_learning": {
+      "LAUNCH.json": {
+        "admission_sha256": "d413673d9826ebf9831a2f34a5884c20208fe858c0539efbe85365e51a126af8",
+        "admission_verified_unix": 1789623368.6293418,
+        "cgroup": "/system.slice/orch-r136-native-2424198aaf93420c9ee2e16687ade664.service",
+        "command_sha256": "3b5c194e9f7a4da71fee63fb75cc4cd7ab2bc6010cda84fac7730b9203c8c2dd",
+        "gpu_uuid": "GPU-2e7eb3b8-9b0b-3729-f5ff-2bbdad6a4a30",
+        "guard_sha256": "c9d77bccdcb0d92a6dfaa4532d72d06d92e64de4d31813fba8b5f96c669d825f",
+        "hard_end_unix": 1789646400,
+        "invocation_id": "ed885f121f48498f99fcb8e7a75d7737",
+        "no_retry": true,
+        "parent_start_ticks": "19154269",
+        "pid": 530634,
+        "plan_sha256": "0e857b2c39e04e13683d429717315cfb2b4e1aa87b3570e4de796a0638081789",
+        "started_unix": 1789623372.4535892,
+        "unit": "orch-r136-native-2424198aaf93420c9ee2e16687ade664"
+      },
+      "PRE_NATIVE.json": {
+        "checked_unix": 1789623374.0303752,
+        "model_loaded_claimed": false,
+        "pid": 530635,
+        "status": "ENTERING_GUARD"
+      },
+      "admission_clear": true,
+      "admission_observations": 1,
+      "birth": {
+        "index": 0,
+        "journal_record_sha256": "7c5784818f5e1e9a380b3fa0f898a10d69b091bf022fa0270a3425934ea94d99",
+        "observed_mtime_unix": 1789623402.0102935,
+        "record": {
+          "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning/stream/records/00000000000000000000.json",
+          "sha256": "a69941a09ffc98680d911534a94563ed788663f8154353d6c08f61493bcf77a1"
+        }
+      },
+      "blocking_reasons": [],
+      "initial_state_verified": {
+        "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning/INITIAL_STATE_VERIFIED.json",
+        "sha256": "ed767470ba9038ac39800aff7ff3e3f7e57d55cb7b6fe2cf8933b95c7e24f161"
+      },
+      "loaded": {
+        "cohort_sha256": "da04b4cd814f6f695ca49a1ace66f9378039f6166d04e26bbd27ed7692ad0b4b",
+        "journal_record_sha256": "c678554060035f22c03f77fc7c80267ee249c95c9e96c7037399792dcbf026a3",
+        "loaded_unix": 1789623402.3584585,
+        "matched_arm": "parented_learning",
+        "optimizer_steps": 0,
+        "pid": 530635,
+        "record": {
+          "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning/stream/records/00000000000000000001.json",
+          "sha256": "9da232a9d7ee7c127a0398a3555e2b6a01ce597cfa39e26e6434896bf039aa9c"
+        }
+      },
+      "native_pid": 530635,
+      "native_pid_currently_exists": true,
+      "native_started": true,
+      "physical": 5,
+      "root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_learning",
+      "root_exists": true
+    },
+    "unparented_learning": {
+      "LAUNCH.json": {
+        "admission_sha256": "e3e2881fcbf640578d1385ac7cc9dd616a6bd007416ff58ac86219b620bfb5cc",
+        "admission_verified_unix": 1789623368.6632848,
+        "cgroup": "/system.slice/orch-r136-native-899f88980a9d06f2ca3655d3854700b4.service",
+        "command_sha256": "a0101f51a2fddcfd5503df8b6f1b4fe539f8e70a80dc9a05481cf8b20914fbe1",
+        "gpu_uuid": "GPU-6eac3b9d-551a-d786-f598-04ef6d701c98",
+        "guard_sha256": "68c1acd855de263981ed20cc0a39e5d698d993e9df7ee41f4a2db7940c33ddcf",
+        "hard_end_unix": 1789646400,
+        "invocation_id": "3a6eab3b43a34758b271c5c1bbd7fcab",
+        "no_retry": true,
+        "parent_start_ticks": "19154485",
+        "pid": 530901,
+        "plan_sha256": "59753f66e2348ac5001444192ffef14f4d44542a8883784b265e9704fdfd3917",
+        "started_unix": 1789623374.621082,
+        "unit": "orch-r136-native-899f88980a9d06f2ca3655d3854700b4"
+      },
+      "PRE_NATIVE.json": {
+        "checked_unix": 1789623376.169941,
+        "model_loaded_claimed": false,
+        "pid": 530905,
+        "status": "ENTERING_GUARD"
+      },
+      "admission_clear": true,
+      "admission_observations": 2,
+      "birth": {
+        "index": 0,
+        "journal_record_sha256": "28bd4f68097e39ebe0f096f83d803a5b22f15137013e094ef8fd95820e1c252a",
+        "observed_mtime_unix": 1789623404.4303977,
+        "record": {
+          "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/unparented_learning/stream/records/00000000000000000000.json",
+          "sha256": "fe9e9afd700a8e7e95ab8d1f6088b9239470c91b3f69a9d6d08b5d3b527803fc"
+        }
+      },
+      "blocking_reasons": [],
+      "initial_state_verified": {
+        "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/unparented_learning/INITIAL_STATE_VERIFIED.json",
+        "sha256": "6d853b2d6b03ee4e4a771c504af2df7a961b76b9fa2897b4ef4d608b70dd5f51"
+      },
+      "loaded": {
+        "cohort_sha256": "da04b4cd814f6f695ca49a1ace66f9378039f6166d04e26bbd27ed7692ad0b4b",
+        "journal_record_sha256": "49f6a9087221e8747d42f389e824f20cdea43bea92284b8d6e5d04b063e34210",
+        "loaded_unix": 1789623404.7937908,
+        "matched_arm": "unparented_learning",
+        "optimizer_steps": 0,
+        "pid": 530905,
+        "record": {
+          "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/unparented_learning/stream/records/00000000000000000001.json",
+          "sha256": "919bb5b5f2aee71d23aba1adb6bbe99b38d3cbd6f3552b9e5b5d8712578f41fa"
+        }
+      },
+      "native_pid": 530905,
+      "native_pid_currently_exists": true,
+      "native_started": true,
+      "physical": 7,
+      "root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/unparented_learning",
+      "root_exists": true
+    }
+  },
+  "held_readout_contents_read": false,
+  "observed_unix": 1789623456.769451
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "R165_MAIN_GO_PROPOSAL_ONLY_V1",
+  "authorization_issued": false,
+  "boundary_completion_ready": true,
+  "GPU_readmission_ready": false,
+  "required_boundary_GO": {
+    "schema": "R165_BOUNDARY_COMPLETION_MAIN_GO_V1",
+    "prepared": {
+      "path": "/localhome/local-rohing/orch_r165_frozen_boundary_recovery_20260917/candidate1/PREPARED_BOUNDARY.json",
+      "sha256": "1c393cb7db1564a18faa67aada40e1cdc5210d595887f3d3cee7a821e90b6822"
+    },
+    "action": "COMPLETE_MISSING_SLEEP1_ONLY_NO_GPU",
+    "host": "[REDACTED_HOST]",
+    "not_before": "MAIN_SETS_CURRENT_UNIX_SECONDS",
+    "expires": "MAIN_SETS_FUTURE_UNIX_SECONDS_NO_LATER_THAN_1789646400"
+  },
+  "proposed_new_completion_receipt_directory": "/localhome/local-rohing/orch_r165_frozen_boundary_recovery_20260917/candidate1/boundary_attempt1",
+  "resume_proposal": {
+    "phase": "run",
+    "resume": true,
+    "physical": 6,
+    "gpu_uuid": "GPU-06b31c8f-7a96-d812-23f3-df3444d95397",
+    "observed_historical_minor": 5,
+    "minor_requires_fresh_scan": true,
+    "host": "[REDACTED_HOST]",
+    "host_sha256": "e376292376f9f56a83e1255021f5b1a4249f1afdff42b5aed3cad36a9635834b",
+    "root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_frozen",
+    "plan": {
+      "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/parented_frozen.PLAN.json",
+      "sha256": "3ad87461ea05a9893cca1ad4ca0b6e4a927c17e757e7e3a1263085fb85eb1c44"
+    },
+    "cohort": {
+      "path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/COHORT.json",
+      "sha256": "da04b4cd814f6f695ca49a1ace66f9378039f6166d04e26bbd27ed7692ad0b4b"
+    },
+    "checkpoint_commit_sha256": "1aa0ab173c105e880c5b8da7ce697d57113c49d6c6536255b15cd4a3d443b977",
+    "optimizer_rng_sha256": "ac936284676923e264bfa5d12fbb0eb39f7f584231ce0ff3a30ce4705809915c",
+    "original_source_root": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/source",
+    "proposed_execution_source_root": "/localhome/local-rohing/orch_r165_frozen_boundary_recovery_20260917/candidate1/source",
+    "source_manifest_sha256": "4cea74e84b136049976221d09bd06b4c39975a5d4a8be9cc33c0c4e638e9244b",
+    "native_sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6",
+    "hard_end_unix": 1789646400,
+    "new_control_proposal": "/localhome/local-rohing/orch_r165_frozen_boundary_recovery_20260917/candidate1/resume_control/GUARD.json",
+    "new_attempt_proposal": "/localhome/local-rohing/orch_r165_frozen_boundary_recovery_20260917/candidate1/resume_attempt1",
+    "new_GO_required": true,
+    "automatic_native_retry": false,
+    "old_markers_preserved": true,
+    "sleep1_readout": "NOT_STARTED; unchanged fresh-readout dispatch before next generation",
+    "blockers": [
+      "Original R158 validate_extra enforces resume=False (exact_node4_arm_assignment_fresh_only).",
+      "Original guard binds __file__ root to plan.source_root; execution source differs while original plan/cohort must stay exact.",
+      "A separately reviewed recovery-aware source/admission binding is required, plus read-only source freeze, new allocation/intake/CPU/Main GO receipts, and a fresh unchanged strict-device scan. Do not bypass the two original failures."
+    ]
+  }
+}

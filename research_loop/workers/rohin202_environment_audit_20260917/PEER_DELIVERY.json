@@ -1,0 +1,90 @@
+{
+  "body_text_exported": false,
+  "database_metadata_stable": true,
+  "database_mtime_unix": 1789638647.38633,
+  "database_path": "/data/home/rohing/courier/r153_community_20260916/broker/state.sqlite3",
+  "deliveries": [
+    {
+      "actor": "C1",
+      "delivered": 1,
+      "handle": "f3e402e55134d97aea8a5258cddbdfca06cb2e771b5b6713c31c50ef7cbf94bc",
+      "installation": {
+        "actor": "C1",
+        "executed": false,
+        "handle": "f3e402e55134d97aea8a5258cddbdfca06cb2e771b5b6713c31c50ef7cbf94bc",
+        "journal_id": "4af2ce0f428c43e6b0f846703f0d2853",
+        "packet_sha256": "e0919b0f812d495641ab0e98b324d99f42a5c00cd4fc2961246d35086fd574ce",
+        "path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/stream/inbox/f3e402e55134d97aea8a5258cddbdfca06cb2e771b5b6713c31c50ef7cbf94bc.json",
+        "rendered": false,
+        "schema": "R153_DELIVERY_INSTALL_V1",
+        "sha256": "7e2875a30508e18c6df0bdc8006e25139fb336c5266511b6de503e1968003e61",
+        "source_path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/community_receipts/f3e402e55134d97aea8a5258cddbdfca06cb2e771b5b6713c31c50ef7cbf94bc.json",
+        "source_sha256": "467bd81315f9785f488292afa53c64e8a67d9563d6d9c30cd4245dd0f9fe4606",
+        "status": "INBOX_PUBLISHED"
+      }
+    },
+    {
+      "actor": "C2",
+      "delivered": 1,
+      "handle": "e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b",
+      "installation": {
+        "actor": "C2",
+        "executed": false,
+        "handle": "e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b",
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "packet_sha256": "beb03836de13c4104695b25de9581f387e4770d1361e0d00a64f1dc2e3dada9b",
+        "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b.json",
+        "rendered": false,
+        "schema": "R153_DELIVERY_INSTALL_V1",
+        "sha256": "11c3518b20721468fce79571675cc6db3dbd8d1ff321d786f6a329da55c134a1",
+        "source_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/community_receipts/e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b.json",
+        "source_sha256": "d60871044497c26a79aa153b521ae966bbddc873b38302788d1f2ecff25b55e2",
+        "status": "INBOX_PUBLISHED"
+      }
+    }
+  ],
+  "effect_row_sha256": "3f651e63099eb7885d8186a9594ef7a4924d0cfd21f5d1d27d1629e63b93a02a",
+  "message_metadata": {
+    "actor": "C1",
+    "id": "07dff1541d2b36aa5dd617293ddb9f2396eeaa8308700cfa08cfea91f2650288",
+    "open_requested": 0,
+    "recipient": "C2",
+    "sequence": 1
+  },
+  "observed_unix": 1789699745.5277216,
+  "query_mode": "mode=ro&immutable=1; query_only=ON",
+  "remote_join": {
+    "exit_code": 1,
+    "status": "UNVERIFIED_READ_FAILED"
+  },
+  "send_effect": {
+    "actor": "C1",
+    "created_unix": 1789601895.9682257,
+    "delivery_handles": [
+      "f3e402e55134d97aea8a5258cddbdfca06cb2e771b5b6713c31c50ef7cbf94bc",
+      "e2dea83660a3e3662803c83c0166698cf951b5d2628f9ddd1b2fb5649b289c9b"
+    ],
+    "effect_id": "07dff1541d2b36aa5dd617293ddb9f2396eeaa8308700cfa08cfea91f2650288",
+    "executed": false,
+    "operation": "send_message",
+    "origin": {
+      "actor": "C1",
+      "committed_sha256": "931dcce5e396c4a7d9ab42ae5740a05f8d246e5f68240a7d64ba0a0f3b432ea3",
+      "generated_sha256": "19ce5d51876e94d78a012e721864aae153e0bfde9255921257c572d5808f68e0",
+      "journal_id": "4af2ce0f428c43e6b0f846703f0d2853",
+      "kind": "TRAIN_CHILD_RESPONSE",
+      "record_index": 203,
+      "record_sha256": "36c672a4b8c0091e633a1df4914184e23edac07fc2e8b7fafae3abe2d3a8fa63",
+      "request_sha256": "647c44c1ee42a4a406226ac88fb9a8b305e5f72bc37ced036df339dbed271c1a"
+    },
+    "result": {
+      "message_id": "07dff1541d2b36aa5dd617293ddb9f2396eeaa8308700cfa08cfea91f2650288",
+      "recipient": "C2",
+      "sender": "C1",
+      "status": "QUEUED"
+    },
+    "schema": "R153_COMMUNITY_EXCHANGE_V1",
+    "status": "RECORDED",
+    "training_target": false
+  }
+}

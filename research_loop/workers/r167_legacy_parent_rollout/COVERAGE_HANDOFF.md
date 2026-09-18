@@ -1,0 +1,10 @@
+# Existing-parent coverage — 2026-09-17 08:44:10 UTC
+
+- Owned non-community rollout: **18/18 successor parents live**, **5 actual PUBLISHED replies across 4 successors**, **1 verified rendered child REQUEST**. All current result files counted; none exceeds the delivery monitor's three-attempt limit.
+- Publications: creative_reread 2, creative_select 1, PILOT 1, teach_parenting 1. Only creative_reread first reply has verified REQUEST text exposure; not retention or unique-ID causal attribution.
+- Reader508091 and kernel0508573 are successful parent handoffs, **not yet new publications**. RUN1 and other zero-result successors likewise have no new publication claimed.
+- **Three still-original live-parented gaps**, all node4: raw3 parent1399872 → native2941297; kernel4 parent716608 → native3496993; R158 parented_learning parent3603888 → native530635. Config roots, source paths, exact PID/startticks and plan hashes are in the JSON receipt. Raw3/kernel4 use the separate R136 node4 parent entrypoint; R158 was outside completed legacy scope. No takeover performed here.
+- Community: five R154-policy successor processes observed (Mendel-owned), four matching current natives; C5 is down and Banach owns recovery. Combined observed policy-successor processes:23, **not23livechildren**. R168 rollout may change these identities after the snapshot.
+- R158 frozen parent3693784 is alive but no matching native; excluded from live-child gap total. Retired support_none1299298/creative_none1299299 and unmatched historical grid wrappers excluded; unparented controls remain unparented.
+- R137 stale alert: current brain parent448299/start174053178 alive; old976259 intentionally retired. See separate `R137_SUCCESSOR_COVERAGE_POINTER_20260917T0844Z.json`. Original monitor/historical misses unchanged.
+- Exact report: `COVERAGE_20260917T0845Z.json`, SHAed6996c2d442c103c7b05c1162b8ac60af3e0aba000ff8178cf1375e57b24e34. Read-only metadata only; no signals, provider calls, recovery, or source changes.

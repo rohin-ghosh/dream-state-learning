@@ -1,0 +1,75 @@
+{
+  "lanes": {
+    "5": {
+      "containment_command_source": "def containment_command(plan, policy, command, lifetime):\n    lane = spec(plan['physical'])\n    native.require(plan['gpu_uuid'] == lane['gpu_uuid'], 'exact_owned_UUID')\n    native.require(type(policy['minor']) is int and 0 <= policy['minor'] <= 255, 'verified_minor')\n    native.require(type(policy['uid']) is int and policy['uid'] > 0\n                   and type(policy['gid']) is int and policy['gid'] > 0, 'nonroot_identity')\n    native.require(re.fullmatch(r'orch-r133-node3-[a-f0-9]{32}', policy['unit']), 'unique_own_unit')\n    source = Path(plan['source_root'])\n    native.require(source.is_absolute() and '..' not in source.parts, 'absolute_source')\n    native.require(type(lifetime) is int and lifetime > 0, 'bounded_service_lifetime')\n    properties = dict(User=str(policy['uid']), Group=str(policy['gid']), NoNewPrivileges='yes',\n        DevicePolicy='strict', CapabilityBoundingSet='', AmbientCapabilities='',\n        ProtectControlGroups='yes', RuntimeMaxSec=str(lifetime), TimeoutStopSec='5',\n        KillMode='control-group', WorkingDirectory=str(source))\n    devices = ['/dev/null rw', '/dev/zero rw', '/dev/random r', '/dev/urandom r',\n               f\"/dev/nvidia{policy['minor']} rw\", '/dev/nvidiactl rw', '/dev/nvidia-uvm rw']\n    return ['sudo', '-n', 'systemd-run', '--quiet', '--wait', '--pipe', '--unit='+policy['unit'],\n        *['--property='+key+'='+value for key, value in properties.items()], '--property=DeviceAllow=',\n        *['--property=DeviceAllow='+entry for entry in devices], '/usr/bin/env', '-i',\n        'PATH=/usr/bin:/bin', 'HOME='+str(BASE), 'CUDA_VISIBLE_DEVICES='+lane['gpu_uuid'],\n        'PYTHONDONTWRITEBYTECODE=1', 'PYTHONPATH='+str(source), 'HF_HUB_OFFLINE=1',\n        'TRANSFORMERS_OFFLINE=1', 'OMP_NUM_THREADS=1', 'MKL_NUM_THREADS=1',\n        'TOKENIZERS_PARALLELISM=false', *command]\n\n",
+      "helper_bound_by_guard": true,
+      "helper_path": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source/gpu/orch_r133_node3_programmes.py",
+      "helper_sha256": "9f78c7983e4cc0c6142f9500ee0f95af2878120639db4557074a932742373e0c",
+      "historical_containment_receipt": {
+        "document": {
+          "checked_unix": 1789578204.098916,
+          "denied_devices": [
+            "nvidia7",
+            "nvidia6",
+            "nvidia4",
+            "nvidia3",
+            "nvidia2",
+            "nvidia1",
+            "nvidia0"
+          ],
+          "pid": 1679371,
+          "policy": {
+            "gid": 2524,
+            "minor": 5,
+            "uid": 2524,
+            "unit": "orch-r133-node3-b47a8ce2a067406eadc8e214f1dc8068"
+          }
+        },
+        "exists": true,
+        "path": "/localhome/local-rohing/orch_r144_node3_target_r145_5_20260916t1650z/CONTAINMENT_VERIFIED.json",
+        "sha256": "70c2c001dd5f6d6be627114c0efc3e2a9977a72587bba9548b41cc7b28935b45"
+      },
+      "old_unit_current_state": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "MainPID=0\nControlGroup=\nDevicePolicy=strict\nDeviceAllow=/dev/nvidia-uvm rw\nDeviceAllow=/dev/nvidiactl rw\nDeviceAllow=/dev/nvidia5 rw\nDeviceAllow=/dev/urandom r\nDeviceAllow=/dev/random r\nDeviceAllow=/dev/zero rw\nDeviceAllow=/dev/null rw\nUser=2524\nGroup=2524\nLoadState=loaded\nActiveState=failed\nSubState=failed\n"
+      }
+    },
+    "6": {
+      "containment_command_source": "def containment_command(plan, policy, command, lifetime):\n    lane = spec(plan['physical'])\n    native.require(plan['gpu_uuid'] == lane['gpu_uuid'], 'exact_owned_UUID')\n    native.require(type(policy['minor']) is int and 0 <= policy['minor'] <= 255, 'verified_minor')\n    native.require(type(policy['uid']) is int and policy['uid'] > 0\n                   and type(policy['gid']) is int and policy['gid'] > 0, 'nonroot_identity')\n    native.require(re.fullmatch(r'orch-r133-node3-[a-f0-9]{32}', policy['unit']), 'unique_own_unit')\n    source = Path(plan['source_root'])\n    native.require(source.is_absolute() and '..' not in source.parts, 'absolute_source')\n    native.require(type(lifetime) is int and lifetime > 0, 'bounded_service_lifetime')\n    properties = dict(User=str(policy['uid']), Group=str(policy['gid']), NoNewPrivileges='yes',\n        DevicePolicy='strict', CapabilityBoundingSet='', AmbientCapabilities='',\n        ProtectControlGroups='yes', RuntimeMaxSec=str(lifetime), TimeoutStopSec='5',\n        KillMode='control-group', WorkingDirectory=str(source))\n    devices = ['/dev/null rw', '/dev/zero rw', '/dev/random r', '/dev/urandom r',\n               f\"/dev/nvidia{policy['minor']} rw\", '/dev/nvidiactl rw', '/dev/nvidia-uvm rw']\n    return ['sudo', '-n', 'systemd-run', '--quiet', '--wait', '--pipe', '--unit='+policy['unit'],\n        *['--property='+key+'='+value for key, value in properties.items()], '--property=DeviceAllow=',\n        *['--property=DeviceAllow='+entry for entry in devices], '/usr/bin/env', '-i',\n        'PATH=/usr/bin:/bin', 'HOME='+str(BASE), 'CUDA_VISIBLE_DEVICES='+lane['gpu_uuid'],\n        'PYTHONDONTWRITEBYTECODE=1', 'PYTHONPATH='+str(source), 'HF_HUB_OFFLINE=1',\n        'TRANSFORMERS_OFFLINE=1', 'OMP_NUM_THREADS=1', 'MKL_NUM_THREADS=1',\n        'TOKENIZERS_PARALLELISM=false', *command]\n\n",
+      "helper_bound_by_guard": true,
+      "helper_path": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical6/source/gpu/orch_r133_node3_programmes.py",
+      "helper_sha256": "9f78c7983e4cc0c6142f9500ee0f95af2878120639db4557074a932742373e0c",
+      "historical_containment_receipt": {
+        "document": {
+          "checked_unix": 1789577989.0931087,
+          "denied_devices": [
+            "nvidia7",
+            "nvidia5",
+            "nvidia4",
+            "nvidia3",
+            "nvidia2",
+            "nvidia1",
+            "nvidia0"
+          ],
+          "pid": 1657276,
+          "policy": {
+            "gid": 2524,
+            "minor": 6,
+            "uid": 2524,
+            "unit": "orch-r133-node3-81ea8cff00d94119af93a589fe17362c"
+          }
+        },
+        "exists": true,
+        "path": "/localhome/local-rohing/orch_r144_node3_target_r145_6_20260916t1650z_readmit1/CONTAINMENT_VERIFIED.json",
+        "sha256": "6261ae32fde94d0ce9c64504004b9d00ff152eb3da4f91fb8568bc7a05dde5b5"
+      },
+      "old_unit_current_state": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "MainPID=0\nControlGroup=\nDevicePolicy=strict\nDeviceAllow=/dev/nvidia-uvm rw\nDeviceAllow=/dev/nvidiactl rw\nDeviceAllow=/dev/nvidia6 rw\nDeviceAllow=/dev/urandom r\nDeviceAllow=/dev/random r\nDeviceAllow=/dev/zero rw\nDeviceAllow=/dev/null rw\nUser=2524\nGroup=2524\nLoadState=loaded\nActiveState=failed\nSubState=failed\n"
+      }
+    }
+  },
+  "observed_unix": 1789625443.7896504
+}

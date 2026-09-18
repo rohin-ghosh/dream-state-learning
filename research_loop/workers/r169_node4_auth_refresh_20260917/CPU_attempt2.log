@@ -1,0 +1,47 @@
+........................................F............................... [ 76%]
+......................                                                   [100%]
+=================================== FAILURES ===================================
+________ test_actual_original_runner_startup_without_provider[3603888] _________
+
+tmp_path = PosixPath('/data/home/rohing/.tmp/pytest-of-rohing/pytest-3/test_actual_original_runner_st1')
+pid = 3603888
+
+    @pytest.mark.parametrize('pid', [1399872, 3603888])
+    def test_actual_original_runner_startup_without_provider(tmp_path, pid):
+        expected = binding(pid)
+        original = json.loads(legacy.bound(expected['original_config']))
+        expected.update(python='/usr/bin/python3.12', successor_cwd=expected['parent']['cwd'])
+        source = Path(expected['successor_cwd']) / 'gpu/orch_r133_programme_parent.py'
+        previous = legacy.ledger(expected['old_output'], original, legacy.ref(source)['sha256'])
+        principles = legacy.INDEX.parent / 'KERNEL0_RESUMED_SPARSE2_1045188/PRINCIPLES.md'
+        candidate = dict(original, principles_path=str(principles), principles_sha256=legacy.ref(principles)['sha256'])
+        proposed = legacy.successor_config(original, candidate, previous, expected['old_output'])
+        path = tmp_path / 'CONFIG.json'
+        path.write_text(json.dumps(proposed))
+>       result = rollout.cpu_preflight(expected, path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research_loop/workers/r167_legacy_parent_rollout/test_node4_rollout.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research_loop/workers/r167_legacy_parent_rollout/node4_rollout.py:95: in cpu_preflight
+    require(result.returncode == 0, 'actual_runner_CPU_preflight_failed:' + result.stderr.decode()[-1500:])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+reason = 'actual_runner_CPU_preflight_failed:Traceback (most recent call last):\n  File "<string>", line 7, in <module>\n  File...orch/gpu/orch_r133_programme_parent.py", line 21, in require\n    raise ValueError(message)\nValueError: parent_wall\n'
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: actual_runner_CPU_preflight_failed:Traceback (most recent call last):
+E             File "<string>", line 7, in <module>
+E             File "/data/home/rohing/dream-state-orch/gpu/orch_r133_programme_parent.py", line 67, in validate
+E               require(type(config.get('hard_end_unix')) in (int, float)
+E             File "/data/home/rohing/dream-state-orch/gpu/orch_r133_programme_parent.py", line 21, in require
+E               raise ValueError(message)
+E           ValueError: parent_wall
+
+research_loop/workers/r167_legacy_parent_rollout/legacy_takeover.py:35: ValueError
+=========================== short test summary info ============================
+FAILED research_loop/workers/r167_legacy_parent_rollout/test_node4_rollout.py::test_actual_original_runner_startup_without_provider[3603888]
+1 failed, 93 passed in 1.62s

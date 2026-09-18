@@ -1,0 +1,49 @@
+{
+  "schema": "R205_REPORTED_LEASE_PROVENANCE_V1",
+  "recorded_utc": "2026-09-18T03:42:01Z",
+  "source_type": "USER_REPORT",
+  "directive_verbatim": "Userextensionconfirmation node5nowSep21 21:04PDT=Sep22 04:04UTC; cancelemergencyinterpretation. Auditread-onlypersists. Recordreportedexpiryprovenance distinctCLIverifiedanddo not autonomouslyextendleases. Node3activeuserSep25 20:03PDT Copernicusverifies; optionaladdtoaudituponboundreceipt. Mainoffnodecopiesinsurance.",
+  "emergency_interpretation": "CANCELLED_BY_USER_CONFIRMATION",
+  "nodes": {
+    "node5": {
+      "reported_expiry_local": "2026-09-21T21:04:00-07:00",
+      "reported_expiry_utc": "2026-09-22T04:04:00Z",
+      "timezone": "America/Los_Angeles",
+      "source_type": "USER_EXTENSION_CONFIRMATION",
+      "cli_verified": false,
+      "authoritative_provider_receipt": null,
+      "extension_purchased_by_this_audit": false,
+      "sole_operator": "Descartes",
+      "read_only_audit_enabled": true
+    },
+    "node3": {
+      "reported_active": true,
+      "reported_expiry_local": "2026-09-25T20:03:00-07:00",
+      "reported_expiry_utc": "2026-09-26T03:03:00Z",
+      "timezone": "America/Los_Angeles",
+      "source_type": "USER_REPORT",
+      "cli_verified": false,
+      "authoritative_host_bound_receipt": null,
+      "verification_owner": "Copernicus",
+      "receiving_reservation": "All eight GPUs per Main's stated coordination; not independently verified here",
+      "read_only_audit_enabled": false,
+      "enable_condition": "Verified authoritative lease receipt bound to the actual node supplied first"
+    }
+  },
+  "audit": {
+    "pid": 2656637,
+    "uid": 158984,
+    "start_ticks": "180945900",
+    "cmdline_sha256": "c5e6103370c0ae078a090c7be5caf0e94cca7e9e674505d7053f73fce1e4f801",
+    "identity_verified_utc": "2026-09-18T03:42:01Z",
+    "identity_alive": true,
+    "interval_seconds": 1200,
+    "allowlist": ["node1", "node2", "node4", "node5"],
+    "hardwalls_changed": false,
+    "reported_expiries_promoted_to_provider_verified": false,
+    "node3_contacted": false,
+    "lease_mutations": 0,
+    "process_signals": 0,
+    "learner_mutations": 0
+  }
+}

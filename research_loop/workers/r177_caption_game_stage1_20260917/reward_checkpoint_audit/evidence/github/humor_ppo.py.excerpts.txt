@@ -1,0 +1,24 @@
+SOURCE LINES 139-150
+    # We load the reward model into CPU, as fitting both the PPO and reward model on GPU can sometimes cause CUDA memory issues.
+    reward_model = AutoModelForSequenceClassification.from_pretrained(
+        args.reward_model,
+        device_map="cpu",
+        num_labels=1,
+    )
+    reward_model.config.pad_token_id = reward_model.config.eos_token_id
+    sentiment_pipe = pipeline(
+        "sentiment-analysis",
+        model=reward_model,
+        tokenizer=tokenizer,
+    )
+
+SOURCE LINES 170-178
+        # Compute sentiment score
+        texts = [q + r for q, r in zip(batch["query"], batch["response"])]
+        pipe_outputs = sentiment_pipe(texts, **sent_kwargs)
+        rewards = [torch.tensor(output[0]["score"]) for output in pipe_outputs]
+        ref_texts = [q + r for q, r in zip(batch["query"], batch["ref_response"])]
+        ref_pipe_outputs = sentiment_pipe(ref_texts, **sent_kwargs)
+        ref_rewards = [torch.tensor(output[0]["score"]) for output in ref_pipe_outputs]
+        batch["ref_rewards"] = ref_rewards
+        batch["rewards"] = rewards

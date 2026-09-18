@@ -1,0 +1,90 @@
+{
+  "schema": "R177_BACON_ACTUAL_PHYSICAL5_SCANNER_DEVICE_LEASE_HANDOFF_V1",
+  "addressed_to": ["Bacon", "Main", "Gauss"],
+  "status": "ACTUAL_SCANNER_DEVICE_LEASE_READY_CORRECT_LOADER_MINOR_BEFORE_LOAD",
+  "allocation": {
+    "authority_verbatim": "Physical5 Qwen1GPU-hour has Main allocation; within existing lease no extra generic review.",
+    "already_authorized": true,
+    "physical": 5,
+    "gpu_uuid": "GPU-2e7eb3b8-9b0b-3729-f5ff-2bbdad6a4a30",
+    "maximum_GPU_seconds_including_cleanup": 3600,
+    "generic_review_or_new_Main_permission_needed": false,
+    "lease_extension": false
+  },
+  "host_sha256": "e376292376f9f56a83e1255021f5b1a4249f1afdff42b5aed3cad36a9635834b",
+  "physical5_actual_kernel_minor": 6,
+  "physical5_actual_character_device": "/dev/nvidia6",
+  "kernel_information": {
+    "path": "/proc/driver/nvidia/gpus/0000:a1:00.0/information",
+    "sha256": "4b92e2e6af2ca579a2367bce6d2842e95d46c7e5f9c533da2e667c2c3fdcad49",
+    "major": 195,
+    "minor": 6,
+    "local_exact_copy": "receipts/KERNEL_INFORMATION.txt"
+  },
+  "device_receipt": {
+    "path": "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/attempts/check_5_1789672609491742224/ORIGINAL_ADMISSION.json",
+    "sha256": "d356e07949eae9efb609415f87bc5323e147331bb14472965b3bbdb3c947fefb"
+  },
+  "device_checked_unix": 1789672611.2092535,
+  "scanner_created_utc": "2026-09-17T19:16:50.201276+00:00",
+  "original_report_clear": true,
+  "original_report_scanner_euid": 0,
+  "original_report_blocking_reasons": [],
+  "original_report_and_reconciliation_unchanged": true,
+  "strict_device_probe": {
+    "path": "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/attempts/probe_5_1789672639003541770/CONTAINMENT.json",
+    "sha256": "67fef9f1c008d1d297198bfc538a0bd14cc78cf1409328715363df9e46541e22",
+    "observed_unix": 1789672639.1222181,
+    "physical": 5,
+    "minor": 6,
+    "uid": 2524,
+    "gid": 2524,
+    "denied_foreign_minors": [0, 1, 2, 3, 4, 5, 7],
+    "target_open_close": true,
+    "model_calls": 0
+  },
+  "lease_receipt": {
+    "path": "/localhome/local-rohing/orch_r132_kernel_child_20260916_attempt1/control1/LEASE_BUDGET.json",
+    "sha256": "ca4ead20b2b772c09e4d30e271c24988f0bbcc5f625665e6b63a441fe0e112a2"
+  },
+  "existing_lease_hard_end_unix": 1789754400,
+  "existing_lease_hard_end_utc": "2026-09-18T18:00:00Z",
+  "current_Bacon_CPU_receipt": {
+    "path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/cpu_stage2/CPU_RECEIPT.json",
+    "sha256": "837c9aa208c35b7f4716869491e767ee2e2453fb1766718ae6776425aa94672f",
+    "status": "PASS",
+    "code_sha256": "30fe8ac5404c44408f1784c4ccfb08b180b2a8806e5e4d491f04281014470846",
+    "gpu_model_loaded": false,
+    "validates_correct_physical5_kernel_minor": false,
+    "must_be_replaced_by_new_bound_CPU_receipt_after_owner_code_repair": true
+  },
+  "snapshot_manifest_receipt": {
+    "path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/snapshot/SNAPSHOT_MANIFEST.json",
+    "sha256": "761c106a4ff5f61f7ac86eb31e588fa8b651c38021d757e425817e85a008d53c"
+  },
+  "concrete_owner_repairs_not_permission_gates": [
+    "Current gpu/ny_caption_vision.py validate_admission lines346-353 checks minor5. Exact physical5 UUID maps to minor6. Preserve physical=5 and UUID; check target minor6 and deny [0,1,2,3,4,5,7]. Never allow foreign minor5 to satisfy the wrong comparison.",
+    "Bacon's DEVICE_SERVICE_CPU_1789671774507616770.json excludes minor5 from its foreign-denial list and includes target minor6. It therefore does not prove physical5 confinement. Replace with a corrected actual-source probe and source-bound CPU receipt.",
+    "The updated loader requires orch-r177-vision-*.service and runtime+cleanup<=3600. Earlier generic R177_STRICT_SLOTS/bacon_launch.sh uses orch-r177-slot5-* and can exceed the hour including cleanup; it is not directly compatible. Use Bacon's vision-scoped service with only /dev/nvidia6 and unchanged strict guards, accounting for cleanup."
+  ],
+  "freshness": {
+    "saved_report_is_historical_not_reusable_GPU_admission": true,
+    "required_inline_device_report_age_seconds": 60,
+    "refresh_command_argv": ["bash", "/localhome/local-rohing/orch_r177_bacon_admission_handoff_20260917t1917z/fresh_scanner_receipt.sh"],
+    "helper_emits_exact_device_receipt_device_checked_unix_and_lease_receipt": true,
+    "automatic_retries": false
+  },
+  "final_admission": {
+    "not_created_from_missing_source_or_packet_fields": true,
+    "schema_to_fill_inline_by_Bacon": "R177_LOCAL_VISION_ADMISSION_V1",
+    "bind_actual_corrected_code_packet_snapshot_CPU_and_actual_service_unit": true,
+    "maximum_GPU_seconds": 3600,
+    "external_runtime_and_cleanup_example_seconds": [3570, 5],
+    "no_extra_architecture_review": true
+  },
+  "model_launches_by_this_worker": 0,
+  "learner_transfers": "Existing0/1/3/4 exact saved-boundary operators unchanged; no new signals or early retirement.",
+  "Ampere_physical2_allocation_changed": false,
+  "remote_handoff_root": "/localhome/local-rohing/orch_r177_bacon_admission_handoff_20260917t1917z",
+  "delivery": "Shared addressed repository and receiving-node handoff; no claimed recipient acknowledgment"
+}

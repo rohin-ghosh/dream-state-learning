@@ -1,0 +1,50 @@
+{
+  "schema": "ROHIN174_NODE3_UNASSIGNED_ARMS_V1",
+  "status": "STAGED_NOT_BOUND_NOT_SWITCHED",
+  "node": "node3",
+  "main_binding": null,
+  "common_policy_helper": null,
+  "assignments": null,
+  "arms": {
+    "A": {
+      "structure": "strict dense guidance in a long message",
+      "cadence_clock": "response",
+      "cadence": 1,
+      "operations": ["identify the next operation", "explain its procedure and checks", "request the learner's execution"]
+    },
+    "B": {
+      "structure": "walk through the actual permitted training transcript",
+      "cadence_clock": "response",
+      "cadence": 2,
+      "operations": ["use actual transcript evidence", "walk through the reasoning operations", "avoid invented observations or success claims"]
+    },
+    "C": {
+      "structure": "questions-only self-derivation",
+      "cadence_clock": "response",
+      "cadence": 3,
+      "operations": ["ask questions that elicit the learner's derivation", "do not supply declarative solutions"]
+    },
+    "D": {
+      "structure": "three-question light steering",
+      "cadence_clock": "response",
+      "cadence": 3,
+      "operations": ["ask exactly three light-steering questions", "leave execution and derivation to the learner"]
+    },
+    "control": {
+      "structure": "one unchanged R166 control where Main verifies it is possible",
+      "cadence_clock": "unchanged",
+      "cadence": "unchanged",
+      "operations": ["preserve the verified existing parent policy and cadence"]
+    }
+  },
+  "exact_parent_text": null,
+  "excluded": ["C2", "exact success propagation", "claims that proposed structure has been learned"],
+  "model": "openai/openai/gpt-6-astra",
+  "credential_policy": "inherit privately sourced ~/.codex/nvidia.env; never print keys or environments",
+  "hard_end_unix": 1789689000,
+  "machine_ceiling_unix": 1789689600,
+  "child_restart": false,
+  "first_new_policy_turn_receipt": null,
+  "rendered_request_proof": null,
+  "scientific_claim": false
+}

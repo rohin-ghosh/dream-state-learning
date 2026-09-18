@@ -1,0 +1,77 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 6676.63it/s]
+[W917 23:22:00.381712407 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 4525654016 bytes (free: 1621819392, total: 47695331328).
+[W917 23:30:47.470059666 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 5140119552 bytes (free: 4169859072, total: 47695331328).
+[W917 23:30:55.799495807 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 5416943616 bytes (free: 3077242880, total: 47695331328).
+[W917 23:40:38.768170007 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 5897191424 bytes (free: 4702535680, total: 47695331328).
+[W917 23:40:47.131596505 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 6140461056 bytes (free: 4924833792, total: 47695331328).
+[W917 23:51:35.484394247 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 6687817728 bytes (free: 1267400704, total: 47695331328).
+[W917 23:51:46.301600308 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 6954156032 bytes (free: 1399521280, total: 47695331328).
+[W918 00:05:51.979412935 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 7207911424 bytes (free: 1422589952, total: 47695331328).
+[W918 00:06:03.238813643 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 7639924736 bytes (free: 2139815936, total: 47695331328).
+[W918 00:06:04.948714521 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 7639924736 bytes (free: 4991942656, total: 47695331328).
+[W918 00:06:15.758163298 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 8214544384 bytes (free: 4448780288, total: 47695331328).
+[W918 00:06:17.504903380 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 8214544384 bytes (free: 3410690048, total: 47695331328).
+[W918 00:06:28.707986890 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 8518631424 bytes (free: 2724921344, total: 47695331328).
+[W918 00:06:30.549376126 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 8518631424 bytes (free: 2225799168, total: 47695331328).
+[W918 00:06:42.254741009 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 8954839040 bytes (free: 1808465920, total: 47695331328).
+[W918 00:06:44.195358767 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 8954839040 bytes (free: 1053491200, total: 47695331328).
+[W918 00:06:56.609370137 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 9527361536 bytes (free: 504037376, total: 47695331328).
+[W918 00:06:58.594686553 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 9527361536 bytes (free: 8997502976, total: 47695331328).
+[W918 00:06:58.595953692 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 9527361536 bytes (free: 8997502976, total: 47695331328).
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/source/gpu/orch_r125_continual_guard.py", line 135, in <module>
+    native_entry(arguments.config)
+  File "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/source/gpu/orch_r125_continual_guard.py", line 78, in native_entry
+    child.run(config['plan_path'], resume=config['resume'])
+  File "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/source/gpu/orch_r125_continual_native.py", line 634, in run
+    return run_loop(child, stream, journal, anchors, plan, root, plan_path, completed_sleeps)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/source/gpu/orch_r184_think_act_learn.py", line 252, in run_loop
+    checkpoint = finish_sleep(child, stream, journal, anchors, root, cycle)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/source/gpu/orch_r125_continual_native.py", line 519, in finish_sleep
+    receipt = child.sleep(new_rows, stream.rows[:stream.sleep_frontier], anchors, journal.record)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r153_r188_C2_20260917_recovery1/source/gpu/orch_r125_continual_native.py", line 448, in sleep
+    loss = self.engine.model(input_ids=inputs, labels=labels,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1884, in _call_impl
+    return inner()
+           ^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1832, in inner
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/peft/peft_model.py", line 2101, in forward
+    return self.base_model(
+           ^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 333, in forward
+    return self.model.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 876, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 479, in forward
+    loss = self.loss_function(logits=logits, labels=labels, vocab_size=self.config.vocab_size, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/transformers/loss/loss_utils.py", line 66, in ForCausalLMLoss
+    loss = fixed_cross_entropy(logits, shift_labels, num_items_in_batch, ignore_index, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/transformers/loss/loss_utils.py", line 36, in fixed_cross_entropy
+    loss = nn.functional.cross_entropy(source, target, ignore_index=ignore_index, reduction=reduction)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/torch/nn/functional.py", line 3555, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 8.87 GiB. GPU 0 has a total capacity of 44.42 GiB of which 8.38 GiB is free. Including non-PyTorch memory, this process has 36.03 GiB memory in use. Of the allocated memory 31.07 GiB is allocated by PyTorch, and 4.64 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://[REDACTED_HOST]/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

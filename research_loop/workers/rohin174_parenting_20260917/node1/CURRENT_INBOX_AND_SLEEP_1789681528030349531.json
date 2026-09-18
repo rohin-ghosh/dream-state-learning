@@ -1,0 +1,946 @@
+{
+  "observed_unix": 1789681528.030369,
+  "rows": [
+    {
+      "charged_bytes": 20235178,
+      "coverage": "latest256 TRAIN records, inbox mtime>=13:55PDT or exact common phrase; no full-journal assertion",
+      "eta": "UNKNOWN_NO_TOTAL_WORK_PROOF",
+      "exposures": {},
+      "inbox": [
+        {
+          "actor": "parent",
+          "common_baseline_match": true,
+          "filesystem_mtime_ns": 1789680722224624395,
+          "id": "341844b9338744d39794eb64d3430f59",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/stream/inbox/341844b9338744d39794eb64d3430f59.json",
+          "source_sha256": "0c6efb51a5b9c646a4e04c0847d5d58adbe5d270e876b797f2bd57519fab0c21",
+          "speaker": "Rohin",
+          "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+        },
+        {
+          "actor": "parent",
+          "common_baseline_match": false,
+          "filesystem_mtime_ns": 1789678716339960765,
+          "id": "ab18f65ee27147c2a6fdd71595efabb0",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1/stream/inbox/ab18f65ee27147c2a6fdd71595efabb0.json",
+          "source_sha256": "69c383d9b1cc0fecc4db2d5d1333118ce66611b6b9b8aff430bfe735454b1c6a",
+          "speaker": "Astra",
+          "text_sha256": "26ea6384a84fedf4452f5bd65a863ab795bf347e0fcfac855eb956e0163382ed"
+        }
+      ],
+      "label": "teach_replay",
+      "latest": {
+        "COMMITTED": {
+          "available_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "filesystem_mtime_ns": 1789672079686208069,
+          "index": 4946,
+          "kind": "COMMITTED",
+          "numeric_fields": {},
+          "sha256": "6d7b68f3defcd1399c0021cbc649554c9a484f6f05c2890480eacc6a72e7d12c"
+        },
+        "CONTEXT_RETAINED": {
+          "available_keys": [
+            "action",
+            "context_limit",
+            "cycle",
+            "history_sha256_after",
+            "history_sha256_before",
+            "optimizer_recipe_changed",
+            "raw_event_count",
+            "retelling_event_id",
+            "retelling_source_sha256",
+            "schema",
+            "targets_rewritten",
+            "threshold_tokens",
+            "visible_frontier_before",
+            "visible_prompt_tokens"
+          ],
+          "filesystem_mtime_ns": 1789672132765586435,
+          "index": 4947,
+          "kind": "CONTEXT_RETAINED",
+          "numeric_fields": {
+            "cycle": 42
+          },
+          "sha256": "2d97ff32fd136a4fbe3448a886724f57804d27ef89ac0dd1c315007b8302da06"
+        },
+        "REQUEST": {
+          "available_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "filesystem_mtime_ns": 1789671969525327894,
+          "index": 4944,
+          "kind": "REQUEST",
+          "numeric_fields": {},
+          "sha256": "526bab102b48725414e07bbb86a0e4be3c5f9a4eacca686689c23b5f93984ce6"
+        },
+        "SLEEP_COMPLETE": {
+          "available_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "cycle",
+            "excluded_rows",
+            "frozen_base_verified",
+            "mix_kind",
+            "new_row_sha256",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "filesystem_mtime_ns": 1789670933745220093,
+          "index": 4934,
+          "kind": "SLEEP_COMPLETE",
+          "numeric_fields": {
+            "cycle": 41,
+            "optimizer_steps": 166
+          },
+          "sha256": "cf7cafb301379b7db41de681f516f067c7ecd18464c46dd2acb9d98d829e932f"
+        },
+        "SLEEP_REQUEST": {
+          "available_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "filesystem_mtime_ns": 1789672185783547750,
+          "index": 4948,
+          "kind": "SLEEP_REQUEST",
+          "numeric_fields": {
+            "cycle": 42
+          },
+          "sha256": "745b04f4b3e7f9c22b8c4f730fa050aa8d799995ad903dda2b09c78c3c5c21ee"
+        },
+        "UPDATE": {
+          "available_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "filesystem_mtime_ns": 1789681517330991536,
+          "index": 5117,
+          "kind": "UPDATE",
+          "numeric_fields": {},
+          "sha256": "9a22d3fd8ca9f34ecf3db9855afd85013c8f3adc492a50540e47240dfa8aa715"
+        }
+      },
+      "observed_unix": 1789681527.5043068,
+      "operator_source_sha256": "0e01050923b5ee506b36ab0cbbfdd281355d4717b6201da921f2d6c8208b8f79",
+      "raw_text_exported": false,
+      "root": "/localhome/local-rohing/orch_r136_a100_teach_replay_20260916_attempt1/run1",
+      "scanned_records": 256,
+      "tail": {
+        "filesystem_mtime_ns": 1789681517330991536,
+        "index": 5117,
+        "kind": "UPDATE",
+        "sha256": "9a22d3fd8ca9f34ecf3db9855afd85013c8f3adc492a50540e47240dfa8aa715"
+      }
+    },
+    {
+      "charged_bytes": 40474698,
+      "coverage": "latest256 TRAIN records, inbox mtime>=13:55PDT or exact common phrase; no full-journal assertion",
+      "eta": "UNKNOWN_NO_TOTAL_WORK_PROOF",
+      "exposures": {},
+      "inbox": [
+        {
+          "actor": "parent",
+          "common_baseline_match": true,
+          "filesystem_mtime_ns": 1789680721466922250,
+          "id": "418996ebe29d4862b876528332c546b6",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1/stream/inbox/418996ebe29d4862b876528332c546b6.json",
+          "source_sha256": "ade3fcb5d5ae78dd44b1ca18057beae8c7e934ab6a47eb67f1ffff7bf9dad5b2",
+          "speaker": "Rohin",
+          "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+        },
+        {
+          "actor": "parent",
+          "common_baseline_match": false,
+          "filesystem_mtime_ns": 1789680085043437867,
+          "id": "ffd66125c9784f3088d20fb4dc5dd239",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1/stream/inbox/ffd66125c9784f3088d20fb4dc5dd239.json",
+          "source_sha256": "63af2756b97779f5f1f4ff52c63a6aa3893d204cc2be12bc6e7c7870e435eeea",
+          "speaker": "Astra",
+          "text_sha256": "d1b66536258f3b8296b2aeddf8f613dbb0747c991f02cfb81a7014ab42c69449"
+        }
+      ],
+      "label": "teach_perception",
+      "latest": {
+        "COMMITTED": {
+          "available_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "filesystem_mtime_ns": 1789678890764602704,
+          "index": 5373,
+          "kind": "COMMITTED",
+          "numeric_fields": {},
+          "sha256": "4a04307712fdc3b64fe5789912841315e318108d4eb143ea6038e606f2384ed0"
+        },
+        "CONTEXT_RETAINED": {
+          "available_keys": [
+            "action",
+            "context_limit",
+            "cycle",
+            "history_sha256_after",
+            "history_sha256_before",
+            "optimizer_recipe_changed",
+            "raw_event_count",
+            "retelling_event_id",
+            "retelling_source_sha256",
+            "schema",
+            "targets_rewritten",
+            "threshold_tokens",
+            "visible_frontier_before",
+            "visible_prompt_tokens"
+          ],
+          "filesystem_mtime_ns": 1789678940311024901,
+          "index": 5374,
+          "kind": "CONTEXT_RETAINED",
+          "numeric_fields": {
+            "cycle": 44
+          },
+          "sha256": "7e610448273b08b02410f27eb265298aed0bea3ecc4adc5cee994dc75dc3f158"
+        },
+        "REQUEST": {
+          "available_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "filesystem_mtime_ns": 1789678788420396344,
+          "index": 5371,
+          "kind": "REQUEST",
+          "numeric_fields": {},
+          "sha256": "77aacc8dd406c8ecfaf3ae7d4fe88e66a514187b9f3e9b5da63a645b100b16d9"
+        },
+        "SLEEP_COMPLETE": {
+          "available_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "cycle",
+            "excluded_rows",
+            "frozen_base_verified",
+            "mix_kind",
+            "new_row_sha256",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "filesystem_mtime_ns": 1789678102587274639,
+          "index": 5363,
+          "kind": "SLEEP_COMPLETE",
+          "numeric_fields": {
+            "cycle": 43,
+            "optimizer_steps": 172
+          },
+          "sha256": "db0385aa3fc46ea626622358fbbf643e59899dab229c083f042cdcfdbbfad5ba"
+        },
+        "SLEEP_REQUEST": {
+          "available_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "filesystem_mtime_ns": 1789678989754541439,
+          "index": 5375,
+          "kind": "SLEEP_REQUEST",
+          "numeric_fields": {
+            "cycle": 44
+          },
+          "sha256": "9b61c1f1dcc8b4ed2af5426049b494b73b6c24fbd88663236dd784e636364987"
+        },
+        "UPDATE": {
+          "available_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "filesystem_mtime_ns": 1789681509729362928,
+          "index": 5424,
+          "kind": "UPDATE",
+          "numeric_fields": {},
+          "sha256": "470aac0c4bd74e4dbd7dd8b0e1b64ca5fc2332ab17a55f54036e396ceca19460"
+        }
+      },
+      "observed_unix": 1789681527.652697,
+      "operator_source_sha256": "aa6b6667adb40fb9c90d6dd1ed27e867f8d820b600f60c7fb59db97ccd46f3ec",
+      "raw_text_exported": false,
+      "root": "/localhome/local-rohing/orch_r136_a100_teach_perception_20260916_attempt1/run1",
+      "scanned_records": 256,
+      "tail": {
+        "filesystem_mtime_ns": 1789681509729362928,
+        "index": 5424,
+        "kind": "UPDATE",
+        "sha256": "470aac0c4bd74e4dbd7dd8b0e1b64ca5fc2332ab17a55f54036e396ceca19460"
+      }
+    },
+    {
+      "charged_bytes": 22722883,
+      "coverage": "latest256 TRAIN records, inbox mtime>=13:55PDT or exact common phrase; no full-journal assertion",
+      "eta": "UNKNOWN_NO_TOTAL_WORK_PROOF",
+      "exposures": {},
+      "inbox": [
+        {
+          "actor": "parent",
+          "common_baseline_match": false,
+          "filesystem_mtime_ns": 1789680103677230389,
+          "id": "9d6a703a56a0497185fbd08da65f8093",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1/stream/inbox/9d6a703a56a0497185fbd08da65f8093.json",
+          "source_sha256": "283858e346e51c664a177536d667256c70164237aa2573803bb0d49c61c5ca5c",
+          "speaker": "Astra",
+          "text_sha256": "84f3386ea1e9732f6512a29069678002733a01641cfbe2496c33ba3874dcf317"
+        },
+        {
+          "actor": "parent",
+          "common_baseline_match": true,
+          "filesystem_mtime_ns": 1789680720730086686,
+          "id": "a7f54004335d4355823d4223003a0162",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1/stream/inbox/a7f54004335d4355823d4223003a0162.json",
+          "source_sha256": "a5a676ad2b3230abb8d58a825feaeddf9cdbbc057139290ca70bda9ffbb7bbb3",
+          "speaker": "Rohin",
+          "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+        }
+      ],
+      "label": "teach_parenting",
+      "latest": {
+        "COMMITTED": {
+          "available_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "filesystem_mtime_ns": 1789676314787673461,
+          "index": 5215,
+          "kind": "COMMITTED",
+          "numeric_fields": {},
+          "sha256": "3f528c8339a342e4a37d547ddfd7ba93cd849dd4272a7408c70b1a2f0e26df17"
+        },
+        "CONTEXT_RETAINED": {
+          "available_keys": [
+            "action",
+            "context_limit",
+            "cycle",
+            "history_sha256_after",
+            "history_sha256_before",
+            "optimizer_recipe_changed",
+            "raw_event_count",
+            "retelling_event_id",
+            "retelling_source_sha256",
+            "schema",
+            "targets_rewritten",
+            "threshold_tokens",
+            "visible_frontier_before",
+            "visible_prompt_tokens"
+          ],
+          "filesystem_mtime_ns": 1789676364868736307,
+          "index": 5216,
+          "kind": "CONTEXT_RETAINED",
+          "numeric_fields": {
+            "cycle": 43
+          },
+          "sha256": "afdb80dfb38a3af2096b7e5501b2786b417960acd501e503db7e254c0dd73a13"
+        },
+        "REQUEST": {
+          "available_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "filesystem_mtime_ns": 1789676198675285312,
+          "index": 5213,
+          "kind": "REQUEST",
+          "numeric_fields": {},
+          "sha256": "ec169e40d6741ff60ba573ccb339025646b5b74250795ae67e12e38800156014"
+        },
+        "SLEEP_COMPLETE": {
+          "available_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "cycle",
+            "excluded_rows",
+            "frozen_base_verified",
+            "mix_kind",
+            "new_row_sha256",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "filesystem_mtime_ns": 1789675493142634905,
+          "index": 5205,
+          "kind": "SLEEP_COMPLETE",
+          "numeric_fields": {
+            "cycle": 42,
+            "optimizer_steps": 171
+          },
+          "sha256": "095356060e9fe48fb80f95e6ec3bc71c86512dd2a700fac3e235dc0d8ff38dc3"
+        },
+        "SLEEP_REQUEST": {
+          "available_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "filesystem_mtime_ns": 1789676415349651398,
+          "index": 5217,
+          "kind": "SLEEP_REQUEST",
+          "numeric_fields": {
+            "cycle": 43
+          },
+          "sha256": "8a5c47e640e43c60f013324347b6363430b594b8011d7bfc80883ca9d001674b"
+        },
+        "UPDATE": {
+          "available_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "filesystem_mtime_ns": 1789681479706940105,
+          "index": 5315,
+          "kind": "UPDATE",
+          "numeric_fields": {},
+          "sha256": "e9f0415162158b5333a4aed93c7af99460b9313a417e683eb1c7e22563fbe6be"
+        }
+      },
+      "observed_unix": 1789681527.3139338,
+      "operator_source_sha256": "407692be3b277a0777855242aee906c30fa6317032ae08bc55c46810baa75d1d",
+      "raw_text_exported": false,
+      "root": "/localhome/local-rohing/orch_r136_a100_teach_parenting_20260916_attempt1/run1",
+      "scanned_records": 256,
+      "tail": {
+        "filesystem_mtime_ns": 1789681479706940105,
+        "index": 5315,
+        "kind": "UPDATE",
+        "sha256": "e9f0415162158b5333a4aed93c7af99460b9313a417e683eb1c7e22563fbe6be"
+      }
+    },
+    {
+      "charged_bytes": 27980480,
+      "coverage": "latest256 TRAIN records, inbox mtime>=13:55PDT or exact common phrase; no full-journal assertion",
+      "eta": "UNKNOWN_NO_TOTAL_WORK_PROOF",
+      "exposures": {},
+      "inbox": [
+        {
+          "actor": "parent",
+          "common_baseline_match": false,
+          "filesystem_mtime_ns": 1789680097980329834,
+          "id": "ad6fb570e6884c3587b2888731014ba2",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1/stream/inbox/ad6fb570e6884c3587b2888731014ba2.json",
+          "source_sha256": "f60ac0e99b0080dbc569e62ec88ef43be9cb19d0a6fd6b735513403dc32386e6",
+          "speaker": "Astra",
+          "text_sha256": "3edd7e41e9e2e0ac6564b8bc70c70bd45a7aa96ace7b3df160eb64c92572b073"
+        },
+        {
+          "actor": "parent",
+          "common_baseline_match": true,
+          "filesystem_mtime_ns": 1789680717395680127,
+          "id": "cb530b0e113440bb8d834d8ef3ade5ce",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1/stream/inbox/cb530b0e113440bb8d834d8ef3ade5ce.json",
+          "source_sha256": "70118206a7a59062650e4ada096850a18e84aabcaf730ac7aab4f1f0bb5cb9a2",
+          "speaker": "Rohin",
+          "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+        }
+      ],
+      "label": "classroom_brain",
+      "latest": {
+        "COMMITTED": {
+          "available_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "filesystem_mtime_ns": 1789673805442075308,
+          "index": 4718,
+          "kind": "COMMITTED",
+          "numeric_fields": {},
+          "sha256": "e37d09d80e36dcfce754fa5e26fde2a7ee87585f810965819d058be95690ce42"
+        },
+        "CONTEXT_RETAINED": {
+          "available_keys": [
+            "action",
+            "context_limit",
+            "cycle",
+            "history_sha256_after",
+            "history_sha256_before",
+            "optimizer_recipe_changed",
+            "raw_event_count",
+            "retelling_event_id",
+            "retelling_source_sha256",
+            "schema",
+            "targets_rewritten",
+            "threshold_tokens",
+            "visible_frontier_before",
+            "visible_prompt_tokens"
+          ],
+          "filesystem_mtime_ns": 1789673858373324265,
+          "index": 4719,
+          "kind": "CONTEXT_RETAINED",
+          "numeric_fields": {
+            "cycle": 40
+          },
+          "sha256": "9f1bed83ee1227d755fb825e368ed68894d04c1a994154b93776cd4f00cf4e02"
+        },
+        "REQUEST": {
+          "available_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "filesystem_mtime_ns": 1789673681090589770,
+          "index": 4716,
+          "kind": "REQUEST",
+          "numeric_fields": {},
+          "sha256": "3ba18c7f2f24df1c1abd40e2bac4d432703714e55fa5334df29325984df82b14"
+        },
+        "SLEEP_COMPLETE": {
+          "available_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "cycle",
+            "excluded_rows",
+            "frozen_base_verified",
+            "mix_kind",
+            "new_row_sha256",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "filesystem_mtime_ns": 1789672629502338046,
+          "index": 4706,
+          "kind": "SLEEP_COMPLETE",
+          "numeric_fields": {
+            "cycle": 39,
+            "optimizer_steps": 162
+          },
+          "sha256": "16b2bae5a064389e411b3b455a4c21ebe136e41363d0f801e83ae15217f2bcfe"
+        },
+        "SLEEP_REQUEST": {
+          "available_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "filesystem_mtime_ns": 1789673911274942223,
+          "index": 4720,
+          "kind": "SLEEP_REQUEST",
+          "numeric_fields": {
+            "cycle": 40
+          },
+          "sha256": "a414078c1ebdf0673a296545e5de1bc1ee5a0f71ead643e9470032f2ef405f8c"
+        },
+        "UPDATE": {
+          "available_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "filesystem_mtime_ns": 1789681478333532432,
+          "index": 4857,
+          "kind": "UPDATE",
+          "numeric_fields": {},
+          "sha256": "a951d6ed043539059a2e84c643fc630e8a5cfaca2cc72b0386fa7e04d39f0f11"
+        }
+      },
+      "observed_unix": 1789681527.57544,
+      "operator_source_sha256": "a495c367b085104bd398e3a02ea9fbfee65e08c10f3c48b303f76da04b4fd660",
+      "raw_text_exported": false,
+      "root": "/localhome/local-rohing/orch_r136_a100_classroom_brain_20260916_attempt1/run1",
+      "scanned_records": 256,
+      "tail": {
+        "filesystem_mtime_ns": 1789681478333532432,
+        "index": 4857,
+        "kind": "UPDATE",
+        "sha256": "a951d6ed043539059a2e84c643fc630e8a5cfaca2cc72b0386fa7e04d39f0f11"
+      }
+    },
+    {
+      "charged_bytes": 27047038,
+      "coverage": "latest256 TRAIN records, inbox mtime>=13:55PDT or exact common phrase; no full-journal assertion",
+      "eta": "UNKNOWN_NO_TOTAL_WORK_PROOF",
+      "exposures": {},
+      "inbox": [
+        {
+          "actor": "parent",
+          "common_baseline_match": true,
+          "filesystem_mtime_ns": 1789680719358826452,
+          "id": "5363604112a44522a70a76938adf3d85",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/inbox/5363604112a44522a70a76938adf3d85.json",
+          "source_sha256": "2e41b2da9276e7fffdbfc6b3032c904ed5b41969bd168ade23c87e2a46b27c47",
+          "speaker": "Rohin",
+          "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+        },
+        {
+          "actor": "parent",
+          "common_baseline_match": false,
+          "filesystem_mtime_ns": 1789680098508045572,
+          "id": "d33c1c022719466c84fae810e3dd2b3d",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1/stream/inbox/d33c1c022719466c84fae810e3dd2b3d.json",
+          "source_sha256": "6ae1b7c4099fd3512aefc9b8212b27db307c04153b18210a70af7178de559c95",
+          "speaker": "Astra",
+          "text_sha256": "35997bdd3047378b24560023c535d27caaeebb8afd44f4eb106ad0490576a134"
+        }
+      ],
+      "label": "classroom_creative",
+      "latest": {
+        "COMMITTED": {
+          "available_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "filesystem_mtime_ns": 1789673039493515585,
+          "index": 4902,
+          "kind": "COMMITTED",
+          "numeric_fields": {},
+          "sha256": "61d2b26c09b1899fe9f442eede6d854ed0902aa6ecbaec1b8d2c8dd3f9bfe1da"
+        },
+        "CONTEXT_RETAINED": {
+          "available_keys": [
+            "action",
+            "context_limit",
+            "cycle",
+            "history_sha256_after",
+            "history_sha256_before",
+            "optimizer_recipe_changed",
+            "raw_event_count",
+            "retelling_event_id",
+            "retelling_source_sha256",
+            "schema",
+            "targets_rewritten",
+            "threshold_tokens",
+            "visible_frontier_before",
+            "visible_prompt_tokens"
+          ],
+          "filesystem_mtime_ns": 1789673089664038750,
+          "index": 4903,
+          "kind": "CONTEXT_RETAINED",
+          "numeric_fields": {
+            "cycle": 41
+          },
+          "sha256": "cd87f928ca51e68930372a0d1061ae9cba6c2bac3bb3d017c48f8933141068c0"
+        },
+        "REQUEST": {
+          "available_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "filesystem_mtime_ns": 1789672923519851275,
+          "index": 4900,
+          "kind": "REQUEST",
+          "numeric_fields": {},
+          "sha256": "573d8f74465f3a7efd1ce9f37e9ef5a9d20b2086be5d2688455dc5c2ff5be9ae"
+        },
+        "SLEEP_COMPLETE": {
+          "available_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "cycle",
+            "excluded_rows",
+            "frozen_base_verified",
+            "mix_kind",
+            "new_row_sha256",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "filesystem_mtime_ns": 1789671863945540442,
+          "index": 4889,
+          "kind": "SLEEP_COMPLETE",
+          "numeric_fields": {
+            "cycle": 40,
+            "optimizer_steps": 165
+          },
+          "sha256": "e9d945bf6409c0ba780770aeea6e667c2d994e9abf26f2f1be7134ab56e01752"
+        },
+        "SLEEP_REQUEST": {
+          "available_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "filesystem_mtime_ns": 1789673139722622239,
+          "index": 4904,
+          "kind": "SLEEP_REQUEST",
+          "numeric_fields": {
+            "cycle": 41
+          },
+          "sha256": "15578350badf0d02db597258579a1e9138696b8fdbb1a0037a6d2a8afe5eb6b3"
+        },
+        "UPDATE": {
+          "available_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "filesystem_mtime_ns": 1789681513254474046,
+          "index": 5063,
+          "kind": "UPDATE",
+          "numeric_fields": {},
+          "sha256": "8bc89fae68b8084af9c84ac9946a69531d5af3670197c1a9cc6854443b7f45cc"
+        }
+      },
+      "observed_unix": 1789681527.3164043,
+      "operator_source_sha256": "8b1b84af2bb2e59aa6260a959573ec1a4e394868985e9e5d7a4e996b312b7614",
+      "raw_text_exported": false,
+      "root": "/localhome/local-rohing/orch_r136_a100_classroom_creative_20260916_attempt1/run1",
+      "scanned_records": 256,
+      "tail": {
+        "filesystem_mtime_ns": 1789681513254474046,
+        "index": 5063,
+        "kind": "UPDATE",
+        "sha256": "8bc89fae68b8084af9c84ac9946a69531d5af3670197c1a9cc6854443b7f45cc"
+      }
+    },
+    {
+      "charged_bytes": 94885721,
+      "coverage": "latest256 TRAIN records, inbox mtime>=13:55PDT or exact common phrase; no full-journal assertion",
+      "eta": "UNKNOWN_NO_TOTAL_WORK_PROOF",
+      "exposures": {},
+      "inbox": [
+        {
+          "actor": "parent",
+          "common_baseline_match": true,
+          "filesystem_mtime_ns": 1789680719956499295,
+          "id": "333679ea0f3949ffa3d9a1be7aeaa5fa",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1/stream/inbox/333679ea0f3949ffa3d9a1be7aeaa5fa.json",
+          "source_sha256": "f3f180397af2bb84bb60ed900cca45c780365ee435bbee456dc4a9c36d4338da",
+          "speaker": "Rohin",
+          "text_sha256": "b7ea067a14b0b082fbe2a3a314ef30cd75f86f7fc3a93b6cb8ef899d31157acf"
+        },
+        {
+          "actor": "parent",
+          "common_baseline_match": false,
+          "filesystem_mtime_ns": 1789680106411354463,
+          "id": "7ae94f1d67f4467a8ffa303616637e1d",
+          "source_path": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1/stream/inbox/7ae94f1d67f4467a8ffa303616637e1d.json",
+          "source_sha256": "4c86d2b89ed70174f79bb00460550e37c09f50b1a94acef141852af9d1073f9d",
+          "speaker": "Astra",
+          "text_sha256": "0006b520777951641256501a1269820c671518a61b9dcd48d7e26398f7b3a106"
+        }
+      ],
+      "label": "classroom_support",
+      "latest": {
+        "COMMITTED": {
+          "available_keys": [
+            "continue_after_EOS",
+            "cost",
+            "segment",
+            "sleep_due",
+            "source_sha256",
+            "state",
+            "stopped_only_by_wall"
+          ],
+          "filesystem_mtime_ns": 1789674511837861659,
+          "index": 3703,
+          "kind": "COMMITTED",
+          "numeric_fields": {},
+          "sha256": "95d983d9bae2235be6fc7c7a09eeb2f7cfe563f99fcad8a9297f5d92ee8d6b16"
+        },
+        "REQUEST": {
+          "available_keys": [
+            "deadline_unix",
+            "history_sha256",
+            "max_new_tokens",
+            "messages",
+            "model_state_sha256",
+            "parent_wait_seconds",
+            "prompt_tokens",
+            "render_receipt",
+            "resume_state",
+            "retry_allowed",
+            "schema",
+            "segment",
+            "split",
+            "started_unix"
+          ],
+          "filesystem_mtime_ns": 1789674357444452112,
+          "index": 3701,
+          "kind": "REQUEST",
+          "numeric_fields": {},
+          "sha256": "b2adbf9931c786b792d6914a7a1b923f81dd37e5e9278f9ba8dfdc9dc29ccb56"
+        },
+        "SLEEP_COMPLETE": {
+          "available_keys": [
+            "after_adapter_sha256",
+            "anchor_lambda",
+            "anchor_token_exposures",
+            "before_adapter_sha256",
+            "checkpoint",
+            "checkpoint_sha256",
+            "child_token_exposures",
+            "cycle",
+            "excluded_rows",
+            "frozen_base_verified",
+            "mix_kind",
+            "new_row_sha256",
+            "optimizer_steps",
+            "presentations",
+            "resume_state",
+            "status",
+            "total_optimizer_steps"
+          ],
+          "filesystem_mtime_ns": 1789673649373796904,
+          "index": 3695,
+          "kind": "SLEEP_COMPLETE",
+          "numeric_fields": {
+            "cycle": 44,
+            "optimizer_steps": 115
+          },
+          "sha256": "e3a9f887c70dc6b8bea22be9d60d2aeaf3c49c7ed18639fbb355ae4c46705706"
+        },
+        "SLEEP_REQUEST": {
+          "available_keys": [
+            "cycle",
+            "resume_state"
+          ],
+          "filesystem_mtime_ns": 1789674584056453229,
+          "index": 3704,
+          "kind": "SLEEP_REQUEST",
+          "numeric_fields": {
+            "cycle": 45
+          },
+          "sha256": "cbc88f5c1e5097cb27663a030a5ed3e5edcbfc01ba9043c588b3137ae798f9cf"
+        },
+        "UPDATE": {
+          "available_keys": [
+            "finished_unix",
+            "losses",
+            "optimizer_step",
+            "source_sha256"
+          ],
+          "filesystem_mtime_ns": 1789681461518405195,
+          "index": 3792,
+          "kind": "UPDATE",
+          "numeric_fields": {},
+          "sha256": "8b29116b12fb5d9710214e0f44832fb728a9fca0f69175a09c6a6d5f27af230b"
+        }
+      },
+      "observed_unix": 1789681527.9912453,
+      "operator_source_sha256": "085ed9b6d7bd6b7401766ba7703d4f7b8b8461f0b257470bcf8b1c9a17b99d45",
+      "raw_text_exported": false,
+      "root": "/localhome/local-rohing/orch_r136_a100_classroom_support_20260916_attempt1/run1",
+      "scanned_records": 223,
+      "tail": {
+        "filesystem_mtime_ns": 1789681461518405195,
+        "index": 3792,
+        "kind": "UPDATE",
+        "sha256": "8b29116b12fb5d9710214e0f44832fb728a9fca0f69175a09c6a6d5f27af230b"
+      }
+    }
+  ]
+}

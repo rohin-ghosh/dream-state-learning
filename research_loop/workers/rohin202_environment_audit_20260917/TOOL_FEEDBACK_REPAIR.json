@@ -1,0 +1,99 @@
+{
+  "schema": "R202_TOOL_FEEDBACK_REPAIR_V1",
+  "recorded_utc": "2026-09-18T03:02:11Z",
+  "classification": "non_material_repair",
+  "status": "READY_FOR_MAIN_REVIEW_NOT_DEPLOYED",
+  "root_cause": "source_sha256 scaffolding marker drops genuine repo Tool JSON from live and replay plain-context prefixes",
+  "changed_code_paths": [
+    "organism_v6/orch_r125_plain_context.py",
+    "tests/test_orch_r125_plain_context.py"
+  ],
+  "recognition": {
+    "prefix": "Tool: ",
+    "schema": "R183_ACTUAL_TOOL_RESULT_V1",
+    "status": "COMPLETE",
+    "origin_actor": "child",
+    "origin_split": "TRAIN",
+    "live_actor": "environment",
+    "live_phase": "feedback",
+    "plain_replay_role": "user",
+    "allowed_existing_markers": ["source_sha256", "receipt_sha256"],
+    "other_existing_markers_still_rejected": true,
+    "loss_and_target_filtering_unchanged": true
+  },
+  "preserved_prior_modifications": [
+    "MARKERS includes <|im_start|>",
+    "test_generated_role_header_is_preserved_raw_but_not_replayed_or_trained"
+  ],
+  "files": [
+    {
+      "path": "organism_v6/orch_r125_plain_context.py",
+      "before_sha256": "dcfd1f7f5584867e39356f336f53bb7222aeb535da87d5ecb8f1f0bb59f72feb",
+      "after_sha256": "009e2994d1221a86e6029104576c64352572d894e7ebbe0d8ddedeb097690976"
+    },
+    {
+      "path": "tests/test_orch_r125_plain_context.py",
+      "before_sha256": "d25a61989c4b12880a514ccda1ff8706b59e20abb4d036f32b849643bf1c521d",
+      "after_sha256": "9adeae73bfbbbae7886c4c35946eb4d056ba84f52ab9d4e638bede06c8dc2aca"
+    }
+  ],
+  "retained_observation": {
+    "path": "research_loop/workers/rohin202_environment_audit_20260917/REPO_CHILD_FIRST_FEEDBACK_FILTER.json",
+    "sha256": "806f6f5eb0ad774dd7fa5abc18c3d3e1af0632b0dc5e8ad0d7e4f2b8a3c4d68b",
+    "observed_unix": 1789699722.5781298,
+    "inbox_record_index": 8,
+    "request_record_index": 9,
+    "request_started_unix": 1789684074.3000474,
+    "full_tool_text_rendered": false,
+    "tool_source_sha256_rendered": false,
+    "remote_source_matched_before_sha256": true
+  },
+  "validation": {
+    "interpreter": "/data/home/rohing/.cache/uv/builds-v0/.tmpSWv1MH/bin/python",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+      "CUDA_VISIBLE_DEVICES": ""
+    },
+    "combined_arguments": [
+      "-B", "-m", "pytest", "-q", "-p", "no:cacheprovider",
+      "tests/test_orch_r124_train_history.py",
+      "tests/test_orch_r125_plain_context.py",
+      "-k", "not all_scaffolding_rows_skip_training_without_fabricating_progress"
+    ],
+    "combined_result": {
+      "passed": 71,
+      "deselected": 1,
+      "subtests_passed": 120,
+      "elapsed_seconds": 0.66
+    },
+    "full_plain_context_result": {
+      "passed": 29,
+      "failed": 1,
+      "elapsed_seconds": 0.61
+    },
+    "preexisting_failure": {
+      "test": "test_all_scaffolding_rows_skip_training_without_fabricating_progress",
+      "error": "KeyError: 'new_presentations'",
+      "location": "gpu/orch_r125_continual_native.py:501",
+      "baseline_plain_context_passed": 13,
+      "baseline_plain_context_failed": 1,
+      "fixed": false
+    },
+    "positive_regressions_failed_before_source_fix": 2,
+    "git_diff_check": "PASS"
+  },
+  "boundaries": {
+    "deployment_performed": false,
+    "live_repaired_delivery_verified": false,
+    "gpu_or_model_calls": 0,
+    "new_training_runs": 0,
+    "process_control_actions": 0,
+    "new_remote_reads_for_repair": 0,
+    "sealed_or_final_content_read": false,
+    "scores_passed_to_parent": false,
+    "stream_console_native_or_r184_edited": false,
+    "coordination_or_main_arm_table_edited": false
+  },
+  "next_owner": "Main: review and publish immutable receiving overlay for pending REPO-C; separately apply saved-boundary repair to existing repo child"
+}

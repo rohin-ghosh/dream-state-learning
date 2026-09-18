@@ -19,7 +19,7 @@ def main():
     root.mkdir(mode=0o700, exist_ok=False)
     (root / 'PRE_IO_SCOPE.json').write_text(json.dumps(dict(public_download_cap_bytes=128 * 1024 * 1024,
         model=MODEL, metadata_cap_bytes=1024 * 1024, files=FILES, private_inputs_sent=False, retries=0)))
-    with urllib.request.urlopen('https://huggingface.co/api/models/' + MODEL, timeout=30) as response:
+    with urllib.request.urlopen('https://[REDACTED_HOST]/api/models/' + MODEL, timeout=30) as response:
         raw = response.read(1024 * 1024 + 1)
     assert len(raw) <= 1024 * 1024
     (root / 'PUBLIC_MODEL_METADATA.json').write_bytes(raw)
@@ -32,7 +32,7 @@ def main():
     total = len(raw)
     for index, name in enumerate(FILES):
         cap = 96 * 1024 * 1024 if name == 'model.safetensors' else 2 * 1024 * 1024
-        url = 'https://huggingface.co/' + MODEL + '/resolve/' + revision + '/' + name
+        url = 'https://[REDACTED_HOST]/' + MODEL + '/resolve/' + revision + '/' + name
         (root / (str(index) + '.RESERVED.json')).write_text(json.dumps(dict(path=name, url=url, cap_bytes=cap)))
         target = model_root / name
         target.parent.mkdir(parents=True, mode=0o700, exist_ok=True)

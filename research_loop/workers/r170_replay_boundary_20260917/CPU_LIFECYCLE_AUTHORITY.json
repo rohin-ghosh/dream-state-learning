@@ -1,0 +1,89 @@
+{
+  "actual_receiving_cpu_ref": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r175_receiving_ldconfig_20260917/ACTUAL_RECEIVING_CPU.json",
+    "sha256": "8f60e4ae3d9e21766b46f816822852285b2f757a0cb952089184d38f1df9b1b3"
+  },
+  "api_sha256": "f128becb34d95b6875e4283baa49b3504e2c6c589e67b93e858e07c98f593e60",
+  "authority": "Existing scoped experiment authorization; not human ratification",
+  "compatibility_explanation": "These are inherited FAMILY.stage receipt keys, not a claim that the old target-exclusion patch ran. The pinned OPERATOR.verify_source override verifies the actual R168 driver/guard delta and three replay helper pins. No old patch utility is applied.",
+  "compatibility_labels_only": [
+    "patch_sha256",
+    "helper_sha256"
+  ],
+  "conditional_limit": "A separately explicit bound Main scope and actual same-cycle clean boundary are required. Observation and CPU PASS alone do not authorize learner signals. Missed cycles refuse; no retry or rebind; no wall change.",
+  "deployed_dependency_pins": {
+    "BOUNDARY_API.py": "f128becb34d95b6875e4283baa49b3504e2c6c589e67b93e858e07c98f593e60",
+    "FAMILY.py": "014e23e330db36f0ef6a8da23f75084a7685e7e0663a1e9540759dac7fc0da5c",
+    "LIFECYCLE_READY.py": "4ecd0343921c6380a072b480b3d365859d1080d58c5cc7a68a2dce615ba129e6",
+    "OPERATOR.py": "e2c0307936d8be5cde38633464641e921761369bf5c2ca3f65f960f69dbdd69f",
+    "OPERATOR_RECOVERY_V2.py": "1a9b78c6044014ad1b69929e9a65cd34bbdc79130c77861a4152491f072f0dd4",
+    "RECOVERY.py": "4864af9e8e21aa3fa5fc0b141bddbb09900908aabf52d8141a730375b3c7553a"
+  },
+  "helper_sha256": "8070e8047dd7d795df727204d2e79a2b2f7d906d88c095ac07777a8e566ed9a9",
+  "inherited_tests_ref": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r170_replay_boundary_20260917/CPU_MAIN_ASSEMBLY_V2_FINAL.json",
+    "sha256": "f3e2cbc67e4b72ce66104f7806c09b5201572467ed0fad0fb5573c69b1694436"
+  },
+  "issuer": "Main/Astra Builder",
+  "learner_handoff_authorized": false,
+  "lifecycle_preparation_ref": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r170_replay_boundary_20260917/LIFECYCLE_PREPARATION_RECEIPT.json",
+    "sha256": "4eb7d8dbe1028858e0f32e4e7c0e90c7317df8b327bb121c9cdfb6e219d84d68"
+  },
+  "local_CPU": {
+    "expected_xfail_scope": "Historical V1 failures and pre-STOP setup descriptor leak, preserved; not passes",
+    "expected_xfailed": 4,
+    "log_ref": {
+      "path": "/tmp/r170-main-lifecycle-20260917t1620z.log",
+      "sha256": "9691a8c3bca0f3680dfce058b6699eb8ad0dca796b8fcaff0aee50e2b371eee4"
+    },
+    "passed": 203,
+    "subtests_passed": 86,
+    "xml_ref": {
+      "path": "/tmp/r170-main-lifecycle-20260917t1620z.xml",
+      "sha256": "729c4aabc263cbfe814ef8f6b9f13baee6695511fcea6fb1d08fcfb539d421c6"
+    }
+  },
+  "main_go_created": false,
+  "model_calls": 0,
+  "operator_sha256": "1a9b78c6044014ad1b69929e9a65cd34bbdc79130c77861a4152491f072f0dd4",
+  "patch_sha256": "3036dfd7b749f76d328f05330ef3b7afd664a0da599e80fc57d3e5d3e9876c1b",
+  "preparation_source_refs": {
+    "BOUNDARY_FREEZE.py": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r170_replay_boundary_20260917/BOUNDARY_FREEZE.py",
+      "sha256": "34d8a82e6dd5cf15493b2a838baa66806dcf25b96cdbe91586c83ce924d489c0"
+    },
+    "LIFECYCLE_READY.py": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r170_replay_boundary_20260917/LIFECYCLE_READY.py",
+      "sha256": "4ecd0343921c6380a072b480b3d365859d1080d58c5cc7a68a2dce615ba129e6"
+    },
+    "test_boundary_freeze.py": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r170_replay_boundary_20260917/test_boundary_freeze.py",
+      "sha256": "c2fe6c26a8ab1584aa78a1ec2337f15363aa125287e83a22311910c2ab6a77f3"
+    },
+    "test_lifecycle_ready.py": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r170_replay_boundary_20260917/test_lifecycle_ready.py",
+      "sha256": "115eb5b68f71518cbee1eb8ab20b6dc3350f82ccf2a1cb857633e61dece51a20"
+    }
+  },
+  "receiving_binding_ref": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r170_replay_boundary_20260917/APPROVED_RECEIVING_CPU.json",
+    "sha256": "870d9a17b5e95c2b69f654904b2a6630dcc327e80884282a3bdf505c00708a7a"
+  },
+  "recorded_utc": "2026-09-17T16:20:44.764054+00:00",
+  "recovery_review_ref": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r170_replay_boundary_20260917/REVIEW_V2.md",
+    "sha256": "f297293851df55aa7c287db4bf8f494b7c4054ec089b826ab5a2fa73677dad7a"
+  },
+  "schema": "R170_COMPOSED_LIFECYCLE_CPU_AUTHORITY_V1",
+  "signals_sent": 0,
+  "source_only_review_ref": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r170_replay_boundary_20260917/REVIEW_ASSEMBLY_V2.md",
+    "sha256": "af9d60e96a035b5363e3eaf7c179e010a9e44b4d58eb83b1692bf2d3b19510ce"
+  },
+  "source_scaffold_ref": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r170_replay_boundary_20260917/SOURCE_STAGE_V2_RECEIPT.json",
+    "sha256": "5ac8151e99b6b37de8a79f0ced79bef66bc0708dc3d8f5df56f03af02fdb7f97"
+  },
+  "status": "PASS"
+}

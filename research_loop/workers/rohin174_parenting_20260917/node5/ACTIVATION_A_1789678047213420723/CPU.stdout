@@ -1,0 +1,88 @@
+.FFF.....                                                                [100%]
+=================================== FAILURES ===================================
+________________ test_actual_configured_cap_and_response_clock _________________
+
+tmp_path = PosixPath('/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678047213420723/CPU_TMP/test_actual_configured_cap_and0')
+
+    def test_actual_configured_cap_and_response_clock(tmp_path):
+>       document = config(tmp_path)
+                   ^^^^^^^^^^^^^^^^
+
+tests/test_node5_r175_activation.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_node5_r175_activation.py:42: in config
+    original = policy.community.build_config(template, learner_id='C3', node='ovx3',
+gpu/orch_r153_community_parents.py:76: in build_config
+    return validate(config)
+           ^^^^^^^^^^^^^^^^
+gpu/orch_r153_community_parents.py:83: in validate
+    parent.require('r153' in config['root'].lower() and 'r127' not in config['root'].lower(),
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'R127_protected_new_R153_root'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: R127_protected_new_R153_root
+
+gpu/orch_r133_programme_parent.py:21: ValueError
+_________ test_request_clock_cannot_dispatch_and_pending_cannot_replay _________
+
+tmp_path = PosixPath('/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678047213420723/CPU_TMP/test_request_clock_cannot_disp0')
+
+    def test_request_clock_cannot_dispatch_and_pending_cannot_replay(tmp_path):
+>       document = config(tmp_path)
+                   ^^^^^^^^^^^^^^^^
+
+tests/test_node5_r175_activation.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_node5_r175_activation.py:42: in config
+    original = policy.community.build_config(template, learner_id='C3', node='ovx3',
+gpu/orch_r153_community_parents.py:76: in build_config
+    return validate(config)
+           ^^^^^^^^^^^^^^^^
+gpu/orch_r153_community_parents.py:83: in validate
+    parent.require('r153' in config['root'].lower() and 'r127' not in config['root'].lower(),
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'R127_protected_new_R153_root'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: R127_protected_new_R153_root
+
+gpu/orch_r133_programme_parent.py:21: ValueError
+_____________________ test_wrong_arm_fails_before_provider _____________________
+
+tmp_path = PosixPath('/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ACTIVATION_A_1789678047213420723/CPU_TMP/test_wrong_arm_fails_before_pr0')
+
+    def test_wrong_arm_fails_before_provider(tmp_path):
+>       document = config(tmp_path)
+                   ^^^^^^^^^^^^^^^^
+
+tests/test_node5_r175_activation.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_node5_r175_activation.py:42: in config
+    original = policy.community.build_config(template, learner_id='C3', node='ovx3',
+gpu/orch_r153_community_parents.py:76: in build_config
+    return validate(config)
+           ^^^^^^^^^^^^^^^^
+gpu/orch_r153_community_parents.py:83: in validate
+    parent.require('r153' in config['root'].lower() and 'r127' not in config['root'].lower(),
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'R127_protected_new_R153_root'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: R127_protected_new_R153_root
+
+gpu/orch_r133_programme_parent.py:21: ValueError
+=========================== short test summary info ============================
+FAILED ../../../../../../../../../../dev::test_actual_configured_cap_and_response_clock
+FAILED ../../../../../../../../../../dev::test_request_clock_cannot_dispatch_and_pending_cannot_replay
+FAILED ../../../../../../../../../../dev::test_wrong_arm_fails_before_provider
+3 failed, 6 passed in 0.42s

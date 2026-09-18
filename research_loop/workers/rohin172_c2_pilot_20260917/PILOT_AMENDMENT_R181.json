@@ -1,0 +1,19 @@
+{
+  "schema": "R172_PROSPECTIVE_RECIPE_AMENDMENT_R181",
+  "authority": "Rohin message 181: old-row rehearsal off on all main lives at the next boundary",
+  "original_config": "PILOT_CONFIG_V1.json",
+  "original_config_sha256": "ee32ad40a7867c378ecd1f3e3b7885739c10a7f0d06f434f5308ba50dfa9ad97",
+  "original_config_preserved": true,
+  "live_effective_boundary": "next exact completed-checkpoint handoff; actual cycle/time pending receipt",
+  "new_presentations": 16,
+  "rehearsal_presentations": 0,
+  "anchor_lambda": 0.25,
+  "old_rows_and_history": "preserved, not selected for training",
+  "guidance": "existing bound Rohin message is not duplicated; original guided response count and first eligible completed-sleep rule are unchanged",
+  "pretraining_inbox": "one additional response for newly arrived parent input after the pre-sleep response; record it, preserve masks and train its own tokens; no unbounded draining",
+  "matched_copies": "updates-ON uses new own rows only at 16 presentations; updates-OFF logs the same new-row eligibility and boundaries without optimizer updates; both use the same amended source and carry rules",
+  "no_new_reminders_in_withdrawal": true,
+  "checkpoint_selection_changed": false,
+  "success_selection_or_reset_allowed": false,
+  "caveat": "Any guided interval spanning old and new recipes is reported as a mixed-regimen interval; it is not silently relabelled as the original fixed recipe."
+}

@@ -1,0 +1,19 @@
+setUpClass (test_r175_node4_errata.ErrataTests) ... ERROR
+
+======================================================================
+ERROR: setUpClass (test_r175_node4_errata.ErrataTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/test_r175_node4_errata.py", line 23, in setUpClass
+    cls.policy, cls.parent = errata.ORIGINAL_IMPORT(FIXTURE)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_operator.py", line 173, in import_owned
+    require(all(Path(module.__file__).resolve().is_relative_to(source) for module in (policy, parent, provider)), 'owned_bundle_imports_only')
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_operator.py", line 36, in require
+    raise ValueError(reason)
+ValueError: owned_bundle_imports_only
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.069s
+
+FAILED (errors=1)

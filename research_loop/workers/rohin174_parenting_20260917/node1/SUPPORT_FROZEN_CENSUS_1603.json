@@ -1,0 +1,65 @@
+{
+  "observed_unix": 1789686192.5779421,
+  "observed_local": "2026-09-17T16:03:12-07:00",
+  "method": "Read-only /proc cmdline + twice-matched stat start ticks; exact --config GUARD -> hash-matching PLAN. No environment/key reads, signals, training-config edits or sealed reads.",
+  "frozen_controls": [
+    {
+      "life": "frozen_rank8_no_sleep",
+      "pid": 2258434,
+      "start_ticks": "28070412",
+      "state": "R",
+      "expected_ticks_match": true,
+      "mode": "control-native",
+      "config": "/localhome/local-rohing/orch_r139_a100_frozen_rank8_no_sleep_20260916_attempt1/control5/GUARD.json",
+      "config_sha256": "9bc337542152f337131edd361c6bcdb8784dd22d0f60b773bc682e2cd0edbd26",
+      "plan_path": "/localhome/local-rohing/orch_r139_a100_frozen_rank8_no_sleep_20260916_attempt1/control2/PLAN.json",
+      "plan_sha_matches": true,
+      "sleep_enabled": false,
+      "learning_steps": 0,
+      "optimizer_steps": 0,
+      "adapter": "seeded_rank8"
+    },
+    {
+      "life": "frozen_base_no_adapter",
+      "pid": 2245391,
+      "start_ticks": "28062062",
+      "state": "R",
+      "expected_ticks_match": true,
+      "mode": "control-native",
+      "config": "/localhome/local-rohing/orch_r139_a100_frozen_base_no_adapter_20260916_attempt1/control3/GUARD.json",
+      "config_sha256": "100908ed1fc9913fb2c8f615081f80120ebdc6f93ebb172b745070186ac2a764",
+      "plan_path": "/localhome/local-rohing/orch_r139_a100_frozen_base_no_adapter_20260916_attempt1/control2/PLAN.json",
+      "plan_sha_matches": true,
+      "sleep_enabled": false,
+      "learning_steps": 0,
+      "optimizer_steps": 0,
+      "adapter": null
+    }
+  ],
+  "support": {
+    "status": "DOWN_PRE_NATIVE_ADMISSION_FAILED",
+    "saved_cycle": 45,
+    "optimizer_steps": 3325,
+    "latest_blocker": "process_identity_drift:58131",
+    "failed_admissions": 3,
+    "launch_exists": false,
+    "guard_unchanged": true,
+    "latest_receipt": "SUPPORT_STABLE_DISPATCH_READMISSION.json",
+    "remote_admission": "/localhome/local-rohing/orch_r181_node1_20260917/journal_overlay/lanes/lane7/stable_dispatch_readmission/control/ADMISSION.json",
+    "dispatcher_lifetime_hypothesis": "Keeping dispatcher alive did not eliminate failure; actual drift cause under investigation. No native launched."
+  },
+  "parenting": {
+    "pid": 43557,
+    "start_ticks": "40702162",
+    "state": "R",
+    "expected_ticks_match": true,
+    "loaded_observed_unix": 1789685942.414999,
+    "saved_cycle": 43,
+    "optimizer_steps": 4773,
+    "record_sha256": "b8f005bde1db5535be950ed20cfaf354880f67ea70f6f179efe74441a7deccb3",
+    "source": "/localhome/local-rohing/orch_r181_node1_20260917/journal_overlay/lanes/lane4/source",
+    "config_sha256": "9519e326fbef8bfe2da557c2790ef1b222e6e99aa3cc5458e099ff3e952b3688",
+    "plan_sha_matches": true,
+    "receipt": "JOURNAL_OVERLAY_PROGRESS/OBSERVATION_1789685975312632759.json"
+  }
+}

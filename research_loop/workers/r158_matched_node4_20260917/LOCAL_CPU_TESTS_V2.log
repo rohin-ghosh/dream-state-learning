@@ -1,0 +1,64 @@
+...............................................................F........ [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 25%]
+........................................................................ [ 34%]
+........................................................................ [ 42%]
+........................................................................ [ 51%]
+........................................................................ [ 59%]
+........................................................................ [ 68%]
+........................................................................ [ 76%]
+........................................................................ [ 85%]
+........................................................................ [ 93%]
+.......................................................                  [100%]
+=================================== FAILURES ===================================
+_ test_staged_inventory_includes_split_ledger_and_preserved_original_manifest __
+
+repairs = (PosixPath('/tmp/pytest-of-rohing/pytest-760/test_staged_inventory_includes0/repository'), PosixPath('/tmp/pytest-of-r...json'), {'schema': 'R158_MATCHED_REPAIR_REVIEW_V1', 'status': 'PASS', 'issuer': 'Banach', 'freeze_allowed': True, ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x786b603a0410>
+tmp_path = PosixPath('/tmp/pytest-of-rohing/pytest-760/test_staged_inventory_includes0')
+
+    def test_staged_inventory_includes_split_ledger_and_preserved_original_manifest(repairs, monkeypatch, tmp_path):
+        from gpu import orch_r151_matched_stage as staging
+        repository, path, proof = repairs
+        (repository / 'gpu/orch_r158_matched_node4.py').write_text('helper = True\n')
+    
+        def fake_original_stage(repository, destination, runtime, proof_path):
+            destination.mkdir()
+            for source in repository.rglob('*.py'):
+                target = destination / source.relative_to(repository)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(source.read_bytes())
+            node4.write(destination / 'STAGED_SOURCE.json', dict(files=node4.inventory(destination)))
+            return {'status': 'test_fixture_original_stage'}
+    
+        monkeypatch.setattr(staging, 'stage_source', fake_original_stage)
+        destination = tmp_path / 'candidate/source'
+        destination.parent.mkdir()
+>       node4.stage_source(repository, destination, tmp_path / 'runtime', tmp_path / 'proof', CAPSULE, path)
+
+tests/test_orch_r158_matched_node4.py:291: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_r158_matched_node4.py:219: in stage_source
+    with (destination / ledger_relative).open('xb') as stream:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/tmp/pytest-of-rohing/pytest-760/test_staged_inventory_includes0/candidate/source/organism_v6/reasoning_gym_families.json')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-rohing/pytest-760/test_staged_inventory_includes0/candidate/source/organism_v6/reasoning_gym_families.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_orch_r158_matched_node4.py::test_staged_inventory_includes_split_ledger_and_preserved_original_manifest
+1 failed, 846 passed in 24.21s

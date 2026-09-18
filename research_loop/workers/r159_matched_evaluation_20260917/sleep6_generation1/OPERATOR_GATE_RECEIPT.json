@@ -1,0 +1,56 @@
+{
+  "operator_gate": {
+    "path": "/localhome/local-rohing/orch_r159_matched_evaluation_20260917_attempt1/control/candidate5_sleep6_runtime3_generation1/PROSPECTIVE_OPERATOR_CPU_GATE.json",
+    "sha256": "67e626bee9b1a5c6ff5ee8f35db7853cdb3fe38d034d0628a21ae3db950896ce"
+  },
+  "receipt": {
+    "dispatch_requires_new_Main_GO": true,
+    "hard_end_unix": 1789646400,
+    "latest_dispatch_strictly_before_unix": 1789642785,
+    "model_calls": 0,
+    "observed_unix": 1789630094.5265367,
+    "old_wrappers_unchanged_and_expired": true,
+    "operator_tests": 8,
+    "required_outer_launcher_checks": [
+      "new exclusive once marker",
+      "exact Main GO/config pins",
+      "selected key unreserved and attempt-free",
+      "own previous slot terminal and exact identities gone",
+      "record INITIATOR identity then detach transport",
+      "full fresh unchanged admission by wrapper"
+    ],
+    "retained_interval_tests": 7,
+    "runtime_cpu_gate": {
+      "path": "/localhome/local-rohing/orch_r159_matched_evaluation_20260917_attempt1/preparation/runtime_generation3/CPU_GATE.json",
+      "sha256": "7028f84e33e91dbe6fcda183e858ea728a3e9b290220687b1b00439b9813a9a9"
+    },
+    "runtime_helper_sha256": "100e952409e9e76eb143db2d8f5a504ea8120593e52f85b56f19b07fd7d0bafc",
+    "source_files": {
+      "admission_wrapper.py": {
+        "path": "/localhome/local-rohing/orch_r159_matched_evaluation_20260917_attempt1/control/candidate5_sleep6_runtime3_generation1/prospective_operator1/admission_wrapper.py",
+        "sha256": "7990def61757f12cbb95d1e558845408dbe9b3698ab0cb633a2d60169014ea39"
+      },
+      "copy_sleep6.py": {
+        "path": "/localhome/local-rohing/orch_r159_matched_evaluation_20260917_attempt1/control/candidate5_sleep6_runtime3_generation1/prospective_operator1/copy_sleep6.py",
+        "sha256": "b45a5fa81da6ceabe8843923dd03155cf0692b91a452d5d67a46498835363a1a"
+      },
+      "test_admission_wrapper.py": {
+        "path": "/localhome/local-rohing/orch_r159_matched_evaluation_20260917_attempt1/control/candidate5_sleep6_runtime3_generation1/prospective_operator1/test_admission_wrapper.py",
+        "sha256": "ca4604a0bb7afd957fa4a26ee46f38da7b3ac7168374835b4d54d3774c193563"
+      },
+      "test_copy_sleep6.py": {
+        "path": "/localhome/local-rohing/orch_r159_matched_evaluation_20260917_attempt1/control/candidate5_sleep6_runtime3_generation1/prospective_operator1/test_copy_sleep6.py",
+        "sha256": "f9440471fb04319890fcacb2d2790bb3e38f5a28584fcee42f0e57ab2579ed55"
+      },
+      "test_window.py": {
+        "path": "/localhome/local-rohing/orch_r159_matched_evaluation_20260917_attempt1/control/candidate5_sleep6_runtime3_generation1/prospective_operator1/test_window.py",
+        "sha256": "3b337dc86f3fee4e361dbf383f73f21c44f56a5795b34184515962c3d723b36b"
+      }
+    },
+    "status": "PASS_NO_ENROLLMENT_NO_GPU",
+    "wrapper": {
+      "path": "/localhome/local-rohing/orch_r159_matched_evaluation_20260917_attempt1/control/candidate5_sleep6_runtime3_generation1/prospective_operator1/admission_wrapper.py",
+      "sha256": "7990def61757f12cbb95d1e558845408dbe9b3698ab0cb633a2d60169014ea39"
+    }
+  }
+}

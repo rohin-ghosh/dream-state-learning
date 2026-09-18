@@ -1,0 +1,84 @@
+{
+  "observed_utc": "2026-09-18T03:27:55.474260+00:00",
+  "actors": {
+    "parent": {
+      "pid": 2195733,
+      "state": "S",
+      "start_ticks": "93017983",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/creative_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "supervisor_r204": {
+      "pid": 2204209,
+      "state": "S",
+      "start_ticks": "93044299",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/creative_d1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "native": {
+      "pid": 2204408,
+      "state": "R",
+      "start_ticks": "93044490",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/creative_d1/source",
+      "ppid": 2204407
+    }
+  },
+  "receipts": {
+    "LAUNCH.json": {
+      "admission_sha256": "1a7d12dc54bad2b0c36e3ecea92d7c0f376702fafec725b148bb83f03cef6a65",
+      "admission_verified_unix": 1789702005.766463,
+      "command_sha256": "f305f938b30783d05925d212e066821cb1154fc69c8f2f2958a1bc143282416f",
+      "gpu_uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+      "guard_sha256": "241c5c4d76fd3fd626896dea35095302ca6fa64955bd65e4c1682be2ff506a4a",
+      "hard_end_unix": 1789776000,
+      "no_retry": true,
+      "parent_start_ticks": "93044490",
+      "pid": 2204407,
+      "plan_sha256": "bdfc11359bc979fcaab915b09afea75dcb0b87cc87e4229670ca1c65e630bd87",
+      "started_unix": 1789702005.767729
+    },
+    "PRE_SERVICE_ADMISSION.json": {
+      "verified_unix": 1789702005.47969,
+      "clear": true,
+      "blocking_reasons": []
+    },
+    "CONFINEMENT_CHILD.json": {
+      "observed_unix": 1789702005.746519,
+      "pid": 2204406,
+      "gpu_uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+      "target_minor": 4,
+      "checks": {
+        "allowed_open_close": [
+          "/dev/nvidia4",
+          "/dev/nvidiactl",
+          "/dev/nvidia-uvm"
+        ],
+        "denied_foreign_minors": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6,
+          7
+        ]
+      }
+    }
+  },
+  "events": [],
+  "nvml_processes": [
+    "1849630, GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, 33114 MiB",
+    "2128807, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4, 376 MiB",
+    "2202971, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4, 15154 MiB",
+    "1815204, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 402 MiB",
+    "2170067, GPU-c9450d3d-0455-f034-b9bf-7f8956e44733, 18404 MiB",
+    "1849923, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 22274 MiB",
+    "1849180, GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed, 32934 MiB"
+  ],
+  "read_only": true
+}

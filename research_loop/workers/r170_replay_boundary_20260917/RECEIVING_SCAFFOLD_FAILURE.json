@@ -1,0 +1,43 @@
+{
+  "schema": "R170_RECEIVING_SCAFFOLD_REFUSAL_V1",
+  "status": "REFUSED_BEFORE_SUCCESSOR_SOURCE_CREATION",
+  "failure": "source_candidate_matches_native_CPU_evidence",
+  "command_exit_code": 1,
+  "failure_clock_limit": "Exact exception time was not separately recorded; mismatch and no-source observations follow it",
+  "mismatch_observed_unix": 1789657121.1385014,
+  "bootstrap_reverified_unix": 1789657378.6271465,
+  "bootstrap_manifest_sha256": "8b3d495922b851fdd0c3defc70daba7ded19c2206b01769eee1b3662c6206cf0",
+  "all_eight_bootstrap_files_matched": true,
+  "remote_bootstrap": "/localhome/local-rohing/orch_r170_creative_replay_20260917_attempt1/bootstrap",
+  "physical1_source_created": false,
+  "mismatches": [
+    {
+      "name": "gpu/orch_r145_suffix_boundary.py",
+      "CPU_recorded_sha256": "632c519fd4c5a840d13b1e9503e61f512340ee9361ef95dcd43cbaf704ee0ce5",
+      "resident_source_pin": null
+    },
+    {
+      "name": "gpu/orch_r145_suffix_loss.py",
+      "CPU_recorded_sha256": "d5e69655fd30f3317d114bd4aab2025024fdfb1521664b536d54ad61069bf026",
+      "resident_source_pin": null
+    },
+    {
+      "name": "organism_v6/orch_r125_plain_context.py",
+      "CPU_recorded_sha256": "dcfd1f7f5584867e39356f336f53bb7222aeb535da87d5ecb8f1f0bb59f72feb",
+      "resident_source_pin": "b3859e4a45d53fc67c51add5dad8431985ca0adda901389e0206819a56245d92"
+    }
+  ],
+  "disposition": "Preserve this bootstrap and failure. Obtain actual receiving CPU proof against the unchanged resident full-label native/dependency closure; do not insert R145 suffix code or newer plain_context to make the manifest pass.",
+  "learner_signals_sent": 0,
+  "GPU_or_model_calls": 0,
+  "targeted_extra_updates": 0,
+  "same_native_confirmed_before_attempt": {
+    "pid": 1266769,
+    "start_ticks": "28048014",
+    "observed_unix": 1789656720.167758,
+    "state": "R",
+    "journal_head_index": 5246,
+    "journal_head_kind": "UPDATE",
+    "last_saved_cycle": 42
+  }
+}

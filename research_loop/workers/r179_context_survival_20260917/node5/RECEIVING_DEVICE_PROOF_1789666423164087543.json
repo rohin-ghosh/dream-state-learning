@@ -1,0 +1,146 @@
+{
+  "probe_sha256": "b6798cc4c66484f6f63da4e253cec86c0be01163bc54d4378fddcee51ae02922",
+  "rows": [
+    {
+      "error": "Traceback (most recent call last):\n  File \"<string>\", line 102, in <module>\n  File \"<string>\", line 78, in main\n  File \"<string>\", line 37, in check\n  File \"/localhome/local-rohing/orch_r179_context_pilot_20260917_attempt3/rollout_operator.py\", line 95, in unchanged_containment_check\n    return namespace['verify_containment'](config, plan)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/localhome/local-rohing/orch_r179_context_pilot_20260917_attempt3/containment_primitives.py\", line 99, in verify_containment\n    from gpu.orch_r137_node4_containment import gpu_descriptors\nModuleNotFoundError: No module named 'gpu.orch_r137_node4_containment'\n",
+      "label": "pilot",
+      "output": "/localhome/local-rohing/orch_r179_context_pilot_20260917_attempt3",
+      "returncode": 1
+    },
+    {
+      "error": "Traceback (most recent call last):\n  File \"<string>\", line 102, in <module>\n  File \"<string>\", line 78, in main\n  File \"<string>\", line 37, in check\n  File \"/localhome/local-rohing/orch_r179_context_run1_20260917_attempt2/rollout_operator.py\", line 95, in unchanged_containment_check\n    return namespace['verify_containment'](config, plan)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/localhome/local-rohing/orch_r179_context_run1_20260917_attempt2/containment_primitives.py\", line 99, in verify_containment\n    from gpu.orch_r137_node4_containment import gpu_descriptors\nModuleNotFoundError: No module named 'gpu.orch_r137_node4_containment'\n",
+      "label": "run1",
+      "output": "/localhome/local-rohing/orch_r179_context_run1_20260917_attempt2",
+      "returncode": 1
+    },
+    {
+      "label": "C1",
+      "output": "/localhome/local-rohing/orch_r179_context_C1_20260917_attempt2",
+      "result": {
+        "guard_sha256": "6b9359f6d880dea4a58b097a272d5e2cbe9bef811366ecd9bae03e84f860ace0",
+        "model_loaded": false,
+        "observed_unix": 1789666422.4211059,
+        "operator_sha256": "c113e59cea8a7b2c40b0e76804bc0b9c850cf5c0b822c3e4b3523f20c9a21439",
+        "proof": {
+          "checked_unix": 1789666422.4203906,
+          "denied_foreign_minors": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "pid": 1502941,
+          "policy": {
+            "gid": 2524,
+            "minor": 0,
+            "uid": 2524,
+            "unit": "orch-r179-context-C1-20260917-attempt2-cpu-proof-1789666422232201752"
+          }
+        },
+        "status": "PASS",
+        "torch_imported": false
+      },
+      "returncode": 0
+    },
+    {
+      "label": "C3",
+      "output": "/localhome/local-rohing/orch_r179_context_C3_20260917_attempt2",
+      "result": {
+        "guard_sha256": "b29710c42248ffbc2b21fb1a33b9a9cda8898e504965ffe1b326e569fcd39644",
+        "model_loaded": false,
+        "observed_unix": 1789666422.674623,
+        "operator_sha256": "c113e59cea8a7b2c40b0e76804bc0b9c850cf5c0b822c3e4b3523f20c9a21439",
+        "proof": {
+          "checked_unix": 1789666422.673961,
+          "denied_foreign_minors": [
+            0,
+            1,
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "pid": 1502987,
+          "policy": {
+            "gid": 2524,
+            "minor": 3,
+            "uid": 2524,
+            "unit": "orch-r179-context-C3-20260917-attempt2-cpu-proof-1789666422485414988"
+          }
+        },
+        "status": "PASS",
+        "torch_imported": false
+      },
+      "returncode": 0
+    },
+    {
+      "label": "C4",
+      "output": "/localhome/local-rohing/orch_r179_context_C4_20260917_attempt2",
+      "result": {
+        "guard_sha256": "295284242e49c8d606488210603247e61dffed7767a8cc5625f310346572782d",
+        "model_loaded": false,
+        "observed_unix": 1789666422.9235642,
+        "operator_sha256": "c113e59cea8a7b2c40b0e76804bc0b9c850cf5c0b822c3e4b3523f20c9a21439",
+        "proof": {
+          "checked_unix": 1789666422.9228542,
+          "denied_foreign_minors": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "pid": 1502998,
+          "policy": {
+            "gid": 2524,
+            "minor": 4,
+            "uid": 2524,
+            "unit": "orch-r179-context-C4-20260917-attempt2-cpu-proof-1789666422726102569"
+          }
+        },
+        "status": "PASS",
+        "torch_imported": false
+      },
+      "returncode": 0
+    },
+    {
+      "label": "repo_reader",
+      "output": "/localhome/local-rohing/orch_r179_context_repo_reader_20260917_attempt2",
+      "result": {
+        "guard_sha256": "c12bdcca5d4d79b841052bd07ab964bc242b46ec9f177e660eb4d6d4a0fce159",
+        "model_loaded": false,
+        "observed_unix": 1789666423.1045523,
+        "operator_sha256": "26f32674fd9489713b8a70b41970b9116d63df48b6d111b04715124755c57854",
+        "proof": {
+          "checked_unix": 1789666423.1040764,
+          "denied_foreign_minors": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "existing_processes_modified": false,
+          "pid": 1503042,
+          "policy": {
+            "gid": 2524,
+            "minor": 7,
+            "uid": 2524,
+            "unit": "orch-r136-native-624f3b2882b74278b70465a1cbdb1987"
+          }
+        },
+        "status": "PASS",
+        "torch_imported": false
+      },
+      "returncode": 0
+    }
+  ]
+}

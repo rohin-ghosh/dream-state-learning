@@ -1,0 +1,21 @@
+# R168 — await fresh C1 own evidence
+
+September 17, 2026. Main's 08:24 UTC direction supersedes any suggestion that historical candidates might be clean positive targets: **rows17/33 (sleep-command scaffolds), row43 (unexecuted print), row80 (unsupported created-Python claim), empty/sleep-only rows are not admitted.** No old target is promoted, cropped or relabeled as good behavior.
+
+## Bounded observation at 08:26 UTC
+
+- At **08:26:23 UTC**, C1 successor-parent metadata still has attempt96 as its newest attempt: `RESULT.status=SILENT`, `speak=false`, empty message. Its SOURCE reports96 responses and31 completed sleeps at that earlier source capture. Attempt93 is retained predecessor-ledger material, not proof of a new-policy delivery. New parent STARTED/config/source preparation must not be confused with actual child-rendered exposure. This observation does not exclude a separately delivered Main message; such a delivery needs its own bound receipt.
+- At **08:26:48 UTC**, exact original C1 native PID2578597/start14835459/argv/cwd matched before and after the read. Newest observed journal record3483 is `UPDATE`, optimizer_step2927, not `SLEEP_COMPLETE` or a new retelling. Only that one959-byte remote record was read, after bounded own-record filename enumeration. No backward journal scan or child-text extraction was performed in this pass.
+- Separately, activation2's preserved execution notebook/status reports failure before native handoff due to missing `source/tests/test_orch_r166_corrected_retelling.py`. The observed original native remains under the R157 source cwd. Thus this pass does not establish adoption of the new invitation. Main/Mendel's parent delivery, invitation adoption, own generation and successful replay eligibility remain distinct milestones.
+
+Receipts: `C1_PARENT_OBSERVATION_0827Z.json` and `C1_NATIVE_HEAD_OBSERVATION_0827Z.json`. Filename labels are rounded; embedded `observed_unix` records the exact times above. Parent receipt includes hash-bound SOURCE/RESULT/STARTED metadata; it is not independent authentication of rendered delivery. The single latest-record read verifies its own content hash, not full journal ancestry or checkpoint payloads. No fleet-wide liveness refresh is claimed.
+
+## Next observation / admission criteria
+
+1. Obtain Mendel/Main's actual parent publication **and rendered TRAIN delivery** references, text hashes and source/config pins. Find the subsequent child event, not merely a new parent PID or prepared prompt. Do not send a replacement parent message or advance the child.
+2. Inspect only a bounded fresh own TRAIN state/row after that delivery. A candidate must contain a clean substantive object or an evidence-backed discriminating attention action, with exact child event/source/row hashes, original prefix/token IDs/masks and native eligibility. Reflective wording or an asserted execution success is insufficient. Do not use held/eval evidence or repair the child's target.
+3. Distinguish OBJECT replay from supported attention behavior; do not claim Elara/maze continuity without the actual content. No qualifying row has yet been established in this pass. Freeze no executable selection or dose readiness until provenance and eligibility are established.
+4. Only then prepare **one row × four extra presentations in one future authorized sleep**, with unchanged baseline/anchors and automatic expiry. Historical sleep31 is not an active boundary. Bind the later exact saved state and any separately approved hook closure; never silently add R168 to invitation activation2 sources/GO or alter the other retelling stages.
+5. Still require integrated CPU evidence, fresh independent review and explicit Main hook/dose GO. Existing helper CPU passes are development evidence only. The author does not self-approve and does not override any failure or uncertainty.
+
+**Current state: WAITING_FOR_FRESH_DELIVERY_AND_ELIGIBLE_OWN_ROW. Selected rows0; live extra presentations0; live extra updates0; no hook/dose GO.** No process signals, model/GPU execution, source edits, parent changes or sealed reads. This was a bounded observation, not a background monitor; subsequent observations must retain their own timestamps and limits. Parent rollout remains independent.

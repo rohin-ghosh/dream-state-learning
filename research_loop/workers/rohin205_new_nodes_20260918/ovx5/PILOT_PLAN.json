@@ -1,0 +1,328 @@
+{
+  "arms": [
+    {
+      "contrast_execution_metadata": {
+        "selected_step_000008": {
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "cases": 600,
+          "contests": 20,
+          "file_mtime_unix": 1789707012.8972569,
+          "scored": 600
+        }
+      },
+      "diagnostic_dispatch": {
+        "DIAGNOSTIC_ADMISSION.json": {
+          "candidate_pids": [
+            63223,
+            63224,
+            63225,
+            63226
+          ],
+          "deliberate_same_candidate_sharing": true,
+          "free_MiB": 26472,
+          "memory_fraction_limit": 0.42,
+          "no_training_mutation": true,
+          "observed_unix": 1789706981.1164858,
+          "physical": 0,
+          "source": "/localhome/local-rohing/r209_diagnostics_20260918t0449z"
+        },
+        "checkpoint_diagnostics/WATCH_STARTED.json": {
+          "all_saved_checkpoints": true,
+          "exact_case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "observed_unix": 1789706981.3923457,
+          "pid": 64751,
+          "runtime_seconds_budget": 65418,
+          "training_mutated": false,
+          "unsaved_non_improving_selection_evaluations_are_not_saved_checkpoints": true
+        }
+      },
+      "diagnostics": {},
+      "rank": 8,
+      "receipts": {
+        "ADMISSION.json": {
+          "blockers": [],
+          "clear": true,
+          "observed_unix": 1789706522.9537566,
+          "privileged": true,
+          "target_physical": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "CONFINEMENT_CPU.json": {
+          "allowed": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "config_sha256": "fa6b51e43d25c0f51bac8635a7fef03aa400f09702ab5fc4bd90359cb28d26a8",
+          "denied": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "observed_unix": 1789706522.7085893,
+          "passed": true
+        },
+        "DISPATCH_ATTEMPT.json": {
+          "candidate_count": 1,
+          "config_sha256": "fa6b51e43d25c0f51bac8635a7fef03aa400f09702ab5fc4bd90359cb28d26a8",
+          "no_retry": true,
+          "started_unix": 1789706522.5826616
+        },
+        "training/LOADED.json": {
+          "config_sha256": "fa6b51e43d25c0f51bac8635a7fef03aa400f09702ab5fc4bd90359cb28d26a8",
+          "device_uuids": [
+            "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82",
+            "GPU-3aaf4dfd-b6c9-a56d-3ca7-ee7748ee5f4d",
+            "GPU-6d1c0d5e-d7b6-e9a4-183d-dedfadabfefa",
+            "GPU-9dba6108-a040-2cd0-4ea1-274bc6a99e47"
+          ],
+          "global_batch": 64,
+          "learning_rate": 3e-05,
+          "loaded_unix": 1789706568.647771,
+          "packet_sha256": "43d90b0530324b554d216c648d93e677aa02eaf4e19b9bcda815c9b4a06a5d91",
+          "rank": 8,
+          "status": "ACTUAL_FOUR_GPU_DDP_LOADED",
+          "target_comparisons": 1000000,
+          "trainable_parameter_count": 2526720,
+          "warmstart_step": 6250,
+          "world_size": 4
+        },
+        "training/PILOT_COMPLETE.json": {
+          "actual_pilot_comparisons": 9280,
+          "aggregate_pairs_per_second": 30.736629788974252,
+          "checkpoint": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank8_20260918_candidate1/training/pilot_checkpoint",
+          "comparison_cursor": 9280,
+          "completed_updates": 145,
+          "completion_receipt": false,
+          "conservative_remaining_seconds": 41297.44742152472,
+          "elapsed_seconds": 301.91989374608966,
+          "fitting_remaining_seconds": 32232.551415099777,
+          "measured_at_utc": "2026-09-18T04:48:30.840997+00:00",
+          "measured_four_gpu_rate": true,
+          "observed_unix": 1789706910.84105,
+          "predicted_finish_utc": "2026-09-18T13:47:08.798974+00:00",
+          "predicted_fit_finish_utc": "2026-09-18T13:45:43.392412+00:00",
+          "remaining_comparisons": 990720,
+          "selection_additional_seconds": 85.40652211999986,
+          "status": "ACTUAL_FIVE_MINUTE_PILOT_SAME_CANDIDATE_CONTINUES"
+        },
+        "training/PROGRESS_000001.json": {
+          "aggregate_comparisons": 64,
+          "completed_updates": 1,
+          "elapsed_seconds": 3.833534180012066,
+          "full_five_minute_pilot": false,
+          "observed_unix": 1789706591.2977448,
+          "pairs_per_second": 16.694777454625058
+        },
+        "training/PROGRESS_000220.json": {
+          "aggregate_comparisons": 14080,
+          "completed_updates": 220,
+          "elapsed_seconds": 517.4710008431575,
+          "full_five_minute_pilot": true,
+          "observed_unix": 1789707126.5383284,
+          "pairs_per_second": 27.20925419406752
+        },
+        "training/SUSTAINED_STARTED.json": {
+          "hard_end_unix": 1789772400.0,
+          "next_update": 146,
+          "no_optimizer_or_rng_reset": true,
+          "predicted_finish_utc": "2026-09-18T13:47:08.798974+00:00",
+          "started_unix": 1789706910.8411884
+        }
+      },
+      "root": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank8_20260918_candidate1"
+    },
+    {
+      "contrast_execution_metadata": {
+        "selected_step_000008": {
+          "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "cases": 600,
+          "contests": 20,
+          "file_mtime_unix": 1789707012.5422552,
+          "scored": 600
+        }
+      },
+      "diagnostic_dispatch": {
+        "DIAGNOSTIC_ADMISSION.json": {
+          "candidate_pids": [
+            63232,
+            63231,
+            63229,
+            63230
+          ],
+          "deliberate_same_candidate_sharing": true,
+          "free_MiB": 26386,
+          "memory_fraction_limit": 0.42,
+          "no_training_mutation": true,
+          "observed_unix": 1789706981.1083922,
+          "physical": 4,
+          "source": "/localhome/local-rohing/r209_diagnostics_20260918t0449z"
+        },
+        "checkpoint_diagnostics/WATCH_STARTED.json": {
+          "all_saved_checkpoints": true,
+          "exact_case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+          "observed_unix": 1789706981.383785,
+          "pid": 64750,
+          "runtime_seconds_budget": 65418,
+          "training_mutated": false,
+          "unsaved_non_improving_selection_evaluations_are_not_saved_checkpoints": true
+        }
+      },
+      "diagnostics": {},
+      "rank": 16,
+      "receipts": {
+        "ADMISSION.json": {
+          "blockers": [],
+          "clear": true,
+          "observed_unix": 1789706522.9659152,
+          "privileged": true,
+          "target_physical": [
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        "CONFINEMENT_CPU.json": {
+          "allowed": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "config_sha256": "b22436944783798a4075151399afca70a270d4884db1ce52f0e2bb799c9a3d8b",
+          "denied": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "observed_unix": 1789706522.712564,
+          "passed": true
+        },
+        "DISPATCH_ATTEMPT.json": {
+          "candidate_count": 1,
+          "config_sha256": "b22436944783798a4075151399afca70a270d4884db1ce52f0e2bb799c9a3d8b",
+          "no_retry": true,
+          "started_unix": 1789706522.582353
+        },
+        "training/LOADED.json": {
+          "config_sha256": "b22436944783798a4075151399afca70a270d4884db1ce52f0e2bb799c9a3d8b",
+          "device_uuids": [
+            "GPU-967bc219-6586-d50f-c774-eb4426f3af97",
+            "GPU-11c058aa-f9ac-0a2b-5016-6c817e2e5b2f",
+            "GPU-ff82fd85-f324-35e5-5db3-4b6274a3f11e",
+            "GPU-6e850dab-3d57-cf83-1929-3a0f1efe46b6"
+          ],
+          "global_batch": 64,
+          "learning_rate": 3e-05,
+          "loaded_unix": 1789706568.889361,
+          "packet_sha256": "43d90b0530324b554d216c648d93e677aa02eaf4e19b9bcda815c9b4a06a5d91",
+          "rank": 16,
+          "status": "ACTUAL_FOUR_GPU_DDP_LOADED",
+          "target_comparisons": 1000000,
+          "trainable_parameter_count": 5049856,
+          "warmstart_step": 6250,
+          "world_size": 4
+        },
+        "training/PILOT_COMPLETE.json": {
+          "actual_pilot_comparisons": 9216,
+          "aggregate_pairs_per_second": 30.651436381243876,
+          "checkpoint": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank16_20260918_candidate1/training/pilot_checkpoint",
+          "comparison_cursor": 9216,
+          "completed_updates": 144,
+          "completion_receipt": false,
+          "conservative_remaining_seconds": 41412.0177605472,
+          "elapsed_seconds": 300.6710643302649,
+          "fitting_remaining_seconds": 32324.227409005773,
+          "measured_at_utc": "2026-09-18T04:48:29.351831+00:00",
+          "measured_four_gpu_rate": true,
+          "observed_unix": 1789706909.3518841,
+          "predicted_finish_utc": "2026-09-18T13:48:38.966079+00:00",
+          "predicted_fit_finish_utc": "2026-09-18T13:47:13.579241+00:00",
+          "remaining_comparisons": 990784,
+          "selection_additional_seconds": 85.38679943198804,
+          "status": "ACTUAL_FIVE_MINUTE_PILOT_SAME_CANDIDATE_CONTINUES"
+        },
+        "training/PROGRESS_000001.json": {
+          "aggregate_comparisons": 64,
+          "completed_updates": 1,
+          "elapsed_seconds": 3.5217193579883315,
+          "full_five_minute_pilot": false,
+          "observed_unix": 1789706590.7134278,
+          "pairs_per_second": 18.17294153630627
+        },
+        "training/PROGRESS_000220.json": {
+          "aggregate_comparisons": 14080,
+          "completed_updates": 220,
+          "elapsed_seconds": 521.3038428543659,
+          "full_five_minute_pilot": true,
+          "observed_unix": 1789707130.135873,
+          "pairs_per_second": 27.00920047492046
+        },
+        "training/SUSTAINED_STARTED.json": {
+          "hard_end_unix": 1789772400.0,
+          "next_update": 145,
+          "no_optimizer_or_rng_reset": true,
+          "predicted_finish_utc": "2026-09-18T13:48:38.966079+00:00",
+          "started_unix": 1789706909.352017
+        }
+      },
+      "root": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank16_20260918_candidate1"
+    }
+  ],
+  "baseline_rank": 8,
+  "candidate_count": 2,
+  "comparisons_per_candidate": 1000000,
+  "contrast_case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+  "contrast_no_training_or_parent_writes": true,
+  "contrast_scope": "every_saved_adapter_step8_pilot_any_new_best_and_final_nonimproving_selection_evaluations_not_exported_by_running_writer",
+  "contrast_suite": "exact_Main_R207_600_cases_20_contests_same_scenes_rows",
+  "global_batch": 64,
+  "hard_end_utc": "2026-09-18T23:00:00Z",
+  "higher_rank": 16,
+  "host": "[REDACTED_HOST]",
+  "learning_rate": 3e-05,
+  "local_batch": 16,
+  "observed_utc": "2026-09-18T04:52:47.597959+00:00",
+  "old_R207_zero_update_failure_preserved": true,
+  "optimizer_reset": "only_at_candidate_birth_not_after_pilot",
+  "physical": {
+    "rank16": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "rank8": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "private_selection_panel": "frozen_model_selection_partition_seed218_256_eligible_rows_per_contest",
+  "rank16_expansion": "alpha32_scale2_original_A_B_prefixes_preserved_56pairs_added_B_zero_added_A_seed209_Kaiming_scalar_head_unchanged",
+  "reliability": "min_votes_capped100_no_gap_weighting",
+  "sampling": "180_contests_balanced_then_uniform_distinct_rows_with_replacement_across_draws_no_gap_cutoff",
+  "schema": "R209_TWO_CANDIDATE_ALLPAIR_1M_V1",
+  "selection": "maximum_macro_within_contest_Spearman_against_empirical_mean_rating_earliest_tie",
+  "selection_steps": [
+    8,
+    3907,
+    7813,
+    11719,
+    15625
+  ],
+  "source_observation": "research_loop/workers/rohin205_new_nodes_20260918/ovx5/R209_OBSERVATION_20260918T045247Z.json",
+  "status": "BOTH_ACTUAL_PILOTS_COMPLETE_SAME_CANDIDATES_CONTINUE",
+  "tau_gate": false,
+  "ties": 0.5,
+  "warmstart_step": 6250
+}

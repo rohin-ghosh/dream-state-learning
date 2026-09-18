@@ -1,0 +1,83 @@
+{
+  "actors_absent": true,
+  "exit": {
+    "exit_code": 124,
+    "finished_unix": 1789688989.8479543
+  },
+  "final": {
+    "actors": [
+      {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r188/physical2/GUARD.json"
+        ],
+        "cgroup": "0::/system.slice/orch-r188-node3-7def0437bee1464aaa19e77d35785c5c.service\n",
+        "cwd": "/localhome/local-rohing/orch_r179_node3_context_20260917t1715z_1/physical2/source",
+        "parent": 1667249,
+        "pid": 1667250,
+        "ticks": "39368482",
+        "uid": 2524
+      },
+      {
+        "argv": [
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=5s",
+          "1567s",
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r188/physical2/GUARD.json"
+        ],
+        "cgroup": "0::/system.slice/orch-r188-node3-7def0437bee1464aaa19e77d35785c5c.service\n",
+        "cwd": "/localhome/local-rohing/orch_r179_node3_context_20260917t1715z_1/physical2/source",
+        "parent": 1665880,
+        "pid": 1667249,
+        "ticks": "39368482",
+        "uid": 2524
+      },
+      {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/research_loop/workers/rohin174_parenting_20260917/node3/r188_recovery.py",
+          "contained",
+          "--physical",
+          "2"
+        ],
+        "cgroup": "0::/system.slice/orch-r188-node3-7def0437bee1464aaa19e77d35785c5c.service\n",
+        "cwd": "/localhome/local-rohing/orch_r179_node3_context_20260917t1715z_1/physical2/source",
+        "parent": 1,
+        "pid": 1665880,
+        "ticks": "39364330",
+        "uid": 2524
+      }
+    ],
+    "clean_saved_boundary": false,
+    "current_suffix_accounting": {
+      "discarded_REQUEST": 3,
+      "discarded_RESPONSE": 3,
+      "discarded_records": 62,
+      "last_logged_step": 4676,
+      "logged_discarded_updates": 48,
+      "unknown_inflight_update": "UNKNOWN_NOT_COUNTED"
+    },
+    "latest_complete_cycle": 44,
+    "latest_complete_index": 5321,
+    "observed_unix": 1789688992.730813,
+    "original_actors_exited": true,
+    "partial_files_preserved": [],
+    "source_full_stream_archived": "final_live_stream",
+    "source_hard_end_unix": 1789689000,
+    "source_machine_ceiling_unix": 1789689600
+  },
+  "physical": 2
+}

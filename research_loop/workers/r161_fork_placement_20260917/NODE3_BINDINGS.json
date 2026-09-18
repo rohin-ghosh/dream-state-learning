@@ -1,0 +1,213 @@
+{
+  "device_mapping": {
+    "/proc/driver/nvidia/gpus/0000:4f:00.0/information": {
+      "Bus Location": "0000:4f:00.0",
+      "Device Minor": "0",
+      "GPU UUID": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939",
+      "Model": "NVIDIA A40"
+    },
+    "/proc/driver/nvidia/gpus/0000:52:00.0/information": {
+      "Bus Location": "0000:52:00.0",
+      "Device Minor": "1",
+      "GPU UUID": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821",
+      "Model": "NVIDIA A40"
+    },
+    "/proc/driver/nvidia/gpus/0000:56:00.0/information": {
+      "Bus Location": "0000:56:00.0",
+      "Device Minor": "2",
+      "GPU UUID": "GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1",
+      "Model": "NVIDIA A40"
+    },
+    "/proc/driver/nvidia/gpus/0000:57:00.0/information": {
+      "Bus Location": "0000:57:00.0",
+      "Device Minor": "3",
+      "GPU UUID": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e",
+      "Model": "NVIDIA A40"
+    },
+    "/proc/driver/nvidia/gpus/0000:ce:00.0/information": {
+      "Bus Location": "0000:ce:00.0",
+      "Device Minor": "4",
+      "GPU UUID": "GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4",
+      "Model": "NVIDIA A40"
+    },
+    "/proc/driver/nvidia/gpus/0000:d1:00.0/information": {
+      "Bus Location": "0000:d1:00.0",
+      "Device Minor": "5",
+      "GPU UUID": "GPU-bc211959-642d-664b-3581-42a0dbe434e9",
+      "Model": "NVIDIA A40"
+    },
+    "/proc/driver/nvidia/gpus/0000:d5:00.0/information": {
+      "Bus Location": "0000:d5:00.0",
+      "Device Minor": "6",
+      "GPU UUID": "GPU-1a83d900-1e95-c7b4-9b12-8117399697f8",
+      "Model": "NVIDIA A40"
+    },
+    "/proc/driver/nvidia/gpus/0000:d6:00.0/information": {
+      "Bus Location": "0000:d6:00.0",
+      "Device Minor": "7",
+      "GPU UUID": "GPU-319224de-e668-1822-d80b-4b24d15968ae",
+      "Model": "NVIDIA A40"
+    }
+  },
+  "gpu_metadata": "0, GPU-0ee6f753-c61e-e18a-8aea-acccd3042939, 00000000:4F:00.0, 15289 MiB, 46068 MiB, 3 %\n1, GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821, 00000000:52:00.0, 23002 MiB, 46068 MiB, 0 %\n2, GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1, 00000000:56:00.0, 22622 MiB, 46068 MiB, 0 %\n3, GPU-e1277146-04f2-c38f-d1ae-1a98132f907e, 00000000:57:00.0, 15900 MiB, 46068 MiB, 100 %\n4, GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4, 00000000:CE:00.0, 23082 MiB, 46068 MiB, 0 %\n5, GPU-bc211959-642d-664b-3581-42a0dbe434e9, 00000000:D1:00.0, 1 MiB, 46068 MiB, 0 %\n6, GPU-1a83d900-1e95-c7b4-9b12-8117399697f8, 00000000:D5:00.0, 1 MiB, 46068 MiB, 0 %\n7, GPU-319224de-e668-1822-d80b-4b24d15968ae, 00000000:D6:00.0, 23042 MiB, 46068 MiB, 0 %\n",
+  "lanes": {
+    "5": {
+      "config": {
+        "path": "/localhome/local-rohing/orch_r144_node3_target_r145_5_20260916t1650z/GUARD.json",
+        "sha256": "507ab15980d3566a938b5b7a0707423d56668b1e1d9a445f57d23d72eeba7687"
+      },
+      "historical_label": "creative_none",
+      "plan": {
+        "path": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/PROPOSED_PLAN.json",
+        "sha256": "724db23b25b7f040b93cec0db84afbc1268b464c41df616273be532840be8827"
+      },
+      "release": {
+        "document": {
+          "boundary_sha256": "25395866d897cbba1cad435890bcef350d24094b7e65a0f63b91fe0ba89a2509",
+          "free_GPU_proof": {
+            "compute_pids": [],
+            "memory_used_MiB": 1,
+            "observed_unix": 1789597691.2405984,
+            "physical": 5,
+            "utilization_percent": 0,
+            "uuid": "GPU-bc211959-642d-664b-3581-42a0dbe434e9"
+          },
+          "launch_authorized": false,
+          "observed_unix": 1789597691.2409697,
+          "physical": 5,
+          "resume_status": "PREPARED_NOT_LAUNCHED_REQUIRES_NEW_AUTHORIZATION_AND_FRESH_ADMISSION",
+          "status": "RELEASED",
+          "uuid": "GPU-bc211959-642d-664b-3581-42a0dbe434e9"
+        },
+        "path": "/localhome/local-rohing/orch_r153_node3_retire_creative5_20260916t2210z/RELEASED.json",
+        "sha256": "ac68bc49bd95228672d8db524175c175f4d59cb61b916216aaf73235af2e8901"
+      },
+      "request_keys": [
+        "api_sha256",
+        "authority",
+        "config",
+        "cpu",
+        "created_unix",
+        "launch_authorized",
+        "operator_sha256",
+        "pair",
+        "physical",
+        "plan",
+        "resume_command",
+        "resume_config",
+        "resume_environment",
+        "resume_status",
+        "root",
+        "schema",
+        "source_pins",
+        "source_root",
+        "training_source_changed"
+      ],
+      "request_path": "/localhome/local-rohing/orch_r153_node3_retire_creative5_20260916t2210z/REQUEST.json",
+      "request_sha256": "0237701080c8ca980d7d5a44d8a6c9abfaf8f59137a5a7a0cd6a93cdd31c229d",
+      "resume_config": {
+        "path": "/localhome/local-rohing/orch_r153_node3_retire_creative5_20260916t2210z/resume/GUARD.json",
+        "sha256": "ac3a723a0f22588a16ae51a472624f764b820fe954f4baf3d573e5596316571a"
+      },
+      "source_root": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source"
+    },
+    "6": {
+      "config": {
+        "path": "/localhome/local-rohing/orch_r144_node3_target_r145_6_20260916t1650z_readmit1/GUARD.json",
+        "sha256": "97feb3141fabd0833486de68d47090f0fa3f33a37a1ef270b8509ff6c387e9be"
+      },
+      "historical_label": "support_none",
+      "plan": {
+        "path": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical6/PROPOSED_PLAN.json",
+        "sha256": "1831002012fd60fbf1d395426d24ba40846a71f9bde7cbf595a736c9ef259d31"
+      },
+      "release": {
+        "document": {
+          "boundary_sha256": "4e433ad8c0df46fb4262c85e785c84c2b2643b48a7a3ba470809ee727a6a7e70",
+          "free_GPU_proof": {
+            "compute_pids": [],
+            "memory_used_MiB": 1,
+            "observed_unix": 1789598018.7091851,
+            "physical": 6,
+            "utilization_percent": 0,
+            "uuid": "GPU-1a83d900-1e95-c7b4-9b12-8117399697f8"
+          },
+          "launch_authorized": false,
+          "observed_unix": 1789598018.7095933,
+          "physical": 6,
+          "resume_status": "PREPARED_NOT_LAUNCHED_REQUIRES_NEW_AUTHORIZATION_AND_FRESH_ADMISSION",
+          "status": "RELEASED",
+          "uuid": "GPU-1a83d900-1e95-c7b4-9b12-8117399697f8"
+        },
+        "path": "/localhome/local-rohing/orch_r153_node3_retire_support6_20260916t2210z/RELEASED.json",
+        "sha256": "4711686a5e6f42c4ad77bd767914c53c9b5923a32226ad63eb17f64bf93efb06"
+      },
+      "request_keys": [
+        "api_sha256",
+        "authority",
+        "config",
+        "cpu",
+        "created_unix",
+        "launch_authorized",
+        "operator_sha256",
+        "pair",
+        "physical",
+        "plan",
+        "resume_command",
+        "resume_config",
+        "resume_environment",
+        "resume_status",
+        "root",
+        "schema",
+        "source_pins",
+        "source_root",
+        "training_source_changed"
+      ],
+      "request_path": "/localhome/local-rohing/orch_r153_node3_retire_support6_20260916t2210z/REQUEST.json",
+      "request_sha256": "9da3ba4c40157b6ba59137078c85ae8aa01de08b355d70b4928dd2d5b125806b",
+      "resume_config": {
+        "path": "/localhome/local-rohing/orch_r153_node3_retire_support6_20260916t2210z/resume/GUARD.json",
+        "sha256": "81e4b857b005c4f1c4a487f5e924e78257a7272a5c2fddf61fbf157571cb57ae"
+      },
+      "source_root": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical6/source"
+    }
+  },
+  "lease": {
+    "document": {
+      "authorized_unix": 1789494285.03069,
+      "config_sha256": "d59d9b178dfed9ca61532ec191b92de5dbac5861dab05f0158d14d60f0379595",
+      "counter_reset": false,
+      "cumulative_used": {
+        "NATIVE": 1236,
+        "PARENT": 90
+      },
+      "directive": "only crash/lease wall ends life; explicitly logged prospective lease-budget headroom; cumulative used unchanged, no replay/reset",
+      "final_calls_added": 0,
+      "hard_end_unix": 1789668000.0,
+      "headroom_is_not_target_dose": true,
+      "headroom_rate_per_second": {
+        "NATIVE": 16,
+        "PARENT": 4
+      },
+      "historical_caps": {
+        "NATIVE": 1858,
+        "PARENT": 298
+      },
+      "lease_end_unix": 1789689600.0,
+      "ledger_prefix_bytes": 238959,
+      "ledger_prefix_sha256": "71f8496b1b818588a7356f34a10ef6b92aef7966ef9ef7a82e8d9fd6bbb5b985",
+      "lifetime_cycle_limit": null,
+      "optimizer_reset": false,
+      "policy": "continue_until_crash_or_lease_wall_no_budget_dose_target",
+      "prospective_caps": {
+        "NATIVE": 2782322,
+        "PARENT": 696182
+      },
+      "root": "/localhome/local-rohing/orch_r118_node3_7_grid_20260915_attempt1",
+      "schema": "R119_GRID_LEASE_BUDGET_V1"
+    },
+    "path": "/localhome/local-rohing/orch_r118_node3_7_grid_20260915_attempt1/lease_budget_r119_learned/LEASE_BUDGET.json",
+    "sha256": "919e9fb3f9cfd6cadb57af90844319e50eb114068eb52cd75aa3ab715f9c3770"
+  },
+  "observed_unix": 1789625341.9903846
+}

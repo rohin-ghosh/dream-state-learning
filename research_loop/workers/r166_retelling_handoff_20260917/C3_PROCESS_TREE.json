@@ -1,0 +1,120 @@
+{
+  "metadata_only": true,
+  "observed_unix": 1789632142.8833568,
+  "process_tree": {
+    "actor": {
+      "identity": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/control/GUARD.json"
+        ],
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "cgroup": "0::/system.slice/orch-r157-native-3e5cef193d794a4cbdc365ed9bb6cbc4.service",
+        "cwd": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source",
+        "group": 2525435,
+        "parent": 2525435,
+        "pid": 2525436,
+        "start_ticks": "14761894",
+        "uid": 2524
+      },
+      "live_children": []
+    },
+    "supervisor": {
+      "identity": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r157_community_wall_extension",
+          "contained-native",
+          "--config",
+          "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/control/GUARD.json"
+        ],
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "cgroup": "0::/system.slice/orch-r157-native-3e5cef193d794a4cbdc365ed9bb6cbc4.service",
+        "cwd": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source",
+        "group": 2525358,
+        "parent": 1,
+        "pid": 2525358,
+        "start_ticks": "14761831",
+        "uid": 2524
+      },
+      "live_children": [
+        {
+          "argv": [
+            "timeout",
+            "--signal=TERM",
+            "--kill-after=5s",
+            "163931s",
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/control/GUARD.json"
+          ],
+          "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          "cgroup": "0::/system.slice/orch-r157-native-3e5cef193d794a4cbdc365ed9bb6cbc4.service",
+          "cwd": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source",
+          "group": 2525435,
+          "parent": 2525358,
+          "pid": 2525435,
+          "start_ticks": "14761894",
+          "uid": 2524
+        }
+      ]
+    },
+    "timer": {
+      "identity": {
+        "argv": [
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=5s",
+          "163931s",
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/control/GUARD.json"
+        ],
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "cgroup": "0::/system.slice/orch-r157-native-3e5cef193d794a4cbdc365ed9bb6cbc4.service",
+        "cwd": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source",
+        "group": 2525435,
+        "parent": 2525358,
+        "pid": 2525435,
+        "start_ticks": "14761894",
+        "uid": 2524
+      },
+      "live_children": [
+        {
+          "argv": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-m",
+            "gpu.orch_r125_continual_guard",
+            "native",
+            "--config",
+            "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/control/GUARD.json"
+          ],
+          "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          "cgroup": "0::/system.slice/orch-r157-native-3e5cef193d794a4cbdc365ed9bb6cbc4.service",
+          "cwd": "/localhome/local-rohing/orch_r157_community_C3_20260917_attempt1/source",
+          "group": 2525435,
+          "parent": 2525435,
+          "pid": 2525436,
+          "start_ticks": "14761894",
+          "uid": 2524
+        }
+      ]
+    }
+  }
+}

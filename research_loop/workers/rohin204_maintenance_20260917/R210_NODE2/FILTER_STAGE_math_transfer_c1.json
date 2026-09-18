@@ -1,0 +1,8 @@
+{
+  "arm": "math_transfer_c1",
+  "finished_utc": "2026-09-18T05:13:10.813869+00:00",
+  "returncode": 1,
+  "started_utc": "2026-09-18T05:13:08.178631+00:00",
+  "stderr": "Traceback (most recent call last):\n  File \"/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/r210_enrichment_20260918/filter_stage.py\", line 316, in <module>\n    globals()[arguments.mode](arguments.arm)\n  File \"/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/r210_enrichment_20260918/filter_stage.py\", line 96, in stage\n    require(checked.returncode == 0, 'receiving_CPU:' + checked.stderr[-1200:])\n  File \"/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/r210_enrichment_20260918/saved_primitives.py\", line 45, in require\n    raise ValueError(reason)\nValueError: receiving_CPU:Traceback (most recent call last):\n  File \"/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/r210_enrichment_20260918/filter_stage.py\", line 316, in <module>\n    globals()[arguments.mode](arguments.arm)\n  File \"/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/r210_enrichment_20260918/filter_stage.py\", line 151, in cpu\n    require(checked.returncode == 0, 'released_R209_regressions')\n  File \"/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/r210_enrichment_20260918/saved_primitives.py\", line 45, in require\n    raise ValueError(reason)\nValueError: released_R209_regressions\n\n",
+  "stdout": ""
+}

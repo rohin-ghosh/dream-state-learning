@@ -1,0 +1,90 @@
+{
+  "observed_unix": 1789619877.9326444,
+  "artifacts": {
+    "phase:COMPLETE.json": {
+      "path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/successor_phase_r158_20260917t0416z/COMPLETE.json",
+      "sha256": "41b6edb4f1aed1b338251489d8844935a54d34185fca471bdeec474337ca84bf",
+      "metadata": {
+        "status": "BOUNDED_PHASE_FINISHED",
+        "observed_unix": 1789619773.5783494,
+        "phase_sha256": "657c8b797c59b2cee21927cd8d010f87237ec8626b16e32b053ff9d6f9c66127",
+        "failed_attempts": 0,
+        "completed_checkpoint_count": 64,
+        "reserved_checkpoint_count": 67,
+        "phase_charged": 55,
+        "remaining_jobs": 3,
+        "remaining_total_call_budget": 780,
+        "own_admitted": 2,
+        "next_dispatch_unix": null
+      }
+    },
+    "phase:STATUS_000036.json": {
+      "path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/successor_phase_r158_20260917t0416z/STATUS_000036.json",
+      "sha256": "353788b5d0e9b717397e4dc2f46af5f722b06e1ed6bf7ee58917437ff1db4bea",
+      "metadata": {
+        "status": "SEGMENT_RUNNING",
+        "observed_unix": 1789619743.5772493,
+        "phase_sha256": "657c8b797c59b2cee21927cd8d010f87237ec8626b16e32b053ff9d6f9c66127",
+        "completed_checkpoint_count": 64,
+        "reserved_checkpoint_count": 67,
+        "phase_charged": 55,
+        "remaining_jobs": 3,
+        "remaining_total_call_budget": 780,
+        "own_admitted": 2,
+        "next_dispatch_unix": null,
+        "active_physical": [
+          1
+        ],
+        "pending_unique_checkpoints": 1
+      }
+    },
+    "scheduler:COMPLETE.json": {
+      "path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/scheduler_run_r158_20260917t0416z/COMPLETE.json",
+      "sha256": "ec8389f42b541df8aed2c96c041db39d5d130ecf34eb3a375259a5ed43031146",
+      "metadata": {
+        "status": "BOUNDED_SCHEDULER_FINISHED",
+        "observed_unix": 1789619746.251794,
+        "config_sha256": "fb9281e6a0c90f26b2ef30c1a4ba2215e419b0029e87b0cfa794e97b96bc8a0e",
+        "failed_attempts": 0,
+        "completed_checkpoint_count": 64,
+        "next_dispatch_unix": null
+      }
+    },
+    "scheduler:STATUS_000031.json": {
+      "path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/scheduler_run_r158_20260917t0416z/STATUS_000031.json",
+      "sha256": "aef516a435a9c299a7ed3aa60d0be61c34f017381eaa67477525ef2d9a556bd4",
+      "metadata": {
+        "status": "BOUNDED_POLLING",
+        "observed_unix": 1789619746.2290003,
+        "config_sha256": "fb9281e6a0c90f26b2ef30c1a4ba2215e419b0029e87b0cfa794e97b96bc8a0e",
+        "failed_attempts": 0,
+        "completed_checkpoint_count": 64,
+        "next_dispatch_unix": null,
+        "active_physical": [],
+        "pending_unique_checkpoints": 1
+      }
+    }
+  },
+  "identities": {
+    "controller": {
+      "pid": 1688939,
+      "start_ticks": "84709817",
+      "same_identity_alive": false
+    },
+    "scheduler": {
+      "pid": 1688949,
+      "start_ticks": "84709839",
+      "same_identity_alive": false
+    },
+    "kernel": {
+      "pid": 1690510,
+      "start_ticks": "84786801",
+      "same_identity_alive": false
+    },
+    "legacy": {
+      "pid": 1690518,
+      "start_ticks": "84786890",
+      "same_identity_alive": false
+    }
+  }
+}

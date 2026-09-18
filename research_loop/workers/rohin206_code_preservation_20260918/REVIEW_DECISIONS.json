@@ -1,0 +1,51 @@
+{
+  "scope": "Bounded caption-code snapshot only; no private data or referenced files followed",
+  "withheld_paths": {
+    "research_loop/workers/r177_caption_game_stage1_20260917/similarity_runtime/encoder_acquisition1/PUBLIC_MODEL_METADATA.json": "Not necessary for code preservation: raw provider model metadata includes config/widget structures. Keep its existing source receipt reference, not this metadata payload."
+  },
+  "approved_findings": [
+    {
+      "finding": {
+        "path": "research_loop/workers/r177_caption_game_stage1_20260917/data_judge/portable_judge.py",
+        "rule": "review_large_string_literal_collection",
+        "line": 16
+      },
+      "sha256": "4806b6aa468803d3d10f72574dbe6271df131535db6fb6f6faf2a1e4a31a6157",
+      "reason": "JUDGE_KEYS schema allowlist: all26 strings are Python identifiers, not captions, panel contents, or credentials."
+    },
+    {
+      "finding": {
+        "path": "research_loop/workers/r177_caption_game_stage1_20260917/data_judge/portable_judge.py",
+        "rule": "review_large_string_literal_collection",
+        "line": 23
+      },
+      "sha256": "4806b6aa468803d3d10f72574dbe6271df131535db6fb6f6faf2a1e4a31a6157",
+      "reason": "TRAIN_KEYS schema allowlist: all31 strings are Python identifiers, not captions, panel contents, or credentials."
+    },
+    {
+      "finding": {
+        "path": "tests/test_ny_caption_vision.py",
+        "rule": "url_user_password",
+        "line": 222
+      },
+      "sha256": "158b960bc990d8b99c6483dfda258603fbcf67178c35148c68befe0ea64f2880",
+      "reason": "test_no_hosted_gateway_or_redirect_url rejects a synthetic user-info URL under assertRaises; both credentials are explicit four-character placeholders, not real credentials."
+    }
+  ],
+  "additional_review": [
+    {
+      "path": "research_loop/workers/r177_caption_game_stage1_20260917/data_judge/test_portable.py",
+      "sha256": "68bd10bb14ea96f4a17205bf5be7627316643cd06580cf9f90696b46616a05b4",
+      "reason": "Literal caption fields are single-token synthetic sentinels in test_portable_rebase_preserves_weights_and_omits_private_cases; no private dataset is loaded or copied."
+    },
+    {
+      "path": "research_loop/workers/r177_caption_game_stage1_20260917/data_judge/rank200_reference_v3/PUBLIC_DIAGNOSTIC.json",
+      "reason": "Panel and contest fields are scalar counts; private_panel contains only path, bytes, and SHA256. No captions, panel members, IDs, or referenced private files are included."
+    },
+    {
+      "path": "research_loop/workers/r177_caption_game_stage1_20260917/similarity_runtime",
+      "reason": "Selected PUBLIC reports carry aggregate counts/metrics and path/bytes/SHA references only; referenced pixel/runtime configs, label rows, model contents, and private data are not followed."
+    }
+  ],
+  "limitations": "Static pattern/structure review cannot guarantee absence of every possible encoding or undisclosed data provenance. No candidate code or model was executed."
+}

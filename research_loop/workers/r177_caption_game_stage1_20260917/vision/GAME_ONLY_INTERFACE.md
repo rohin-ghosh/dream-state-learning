@@ -55,11 +55,11 @@ visual = provider(image_handle, factual_question)
 
 The return is exactly `gpu.ny_caption_game.VisualResult(observations, uncertainty)`.
 Only `image` and `question` are sent to `POST /v1/inspect`. The configured endpoint
-is `http://127.0.0.1:8177`; a sanctioned SSH local forward is required from another
+is `http://[REDACTED_ADDRESS]:8177`; a sanctioned SSH local forward is required from another
 machine. The bounded forward is now running; its exact launch receipt is
 `runtime1_client/FORWARD_STARTED.json`. Do not create a duplicate forward on the
 occupied port or stop its owner. An approved forward on another client can use
-`bash gpu/a40r_ssh.sh -N -o ExitOnForwardFailure=yes -L 127.0.0.1:8177:127.0.0.1:8177`
+`bash gpu/a40r_ssh.sh -N -o ExitOnForwardFailure=yes -L [REDACTED_ADDRESS]:8177:[REDACTED_ADDRESS]:8177`
 after the actual bounded service is listening; do not claim reachability from
 the configured address alone. If that local port is occupied, bind a distinct
 loopback port and report its actual endpoint without interrupting its owner.

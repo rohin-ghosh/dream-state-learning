@@ -1,0 +1,20 @@
+SSH_TEARDOWN_OBSERVED 2026-09-17T05:15:46Z
+SUPERVISE_EXEC 2026-09-17T05:15:51Z
+{"error": "fresh_exclusive_admission", "error_type": "ValueError", "finished_unix": 1789622155.0416524, "no_retry": true, "stage": "ADMISSION", "status": "FAILED"}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt4/source/gpu/orch_r158_matched_node4.py", line 481, in <module>
+    main()
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt4/source/gpu/orch_r158_matched_node4.py", line 477, in main
+    execute(args.action, args.config, args.receipt_dir, args.main_go, args.main_go_sha256)
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt4/source/gpu/orch_r158_matched_node4.py", line 448, in execute
+    return compiled.supervise(config_path, receipt_dir=receipt_dir,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt4/source/gpu/orch_r151_matched_containment.py", line 420, in supervise
+    check_admission(report, config, plan, scan_started)
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt4/source/gpu/orch_r151_matched_containment.py", line 293, in check_admission
+    require(report['scanner_euid'] == 0 and report['clear'] is True and not report['blocking_reasons'],
+  File "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt4/source/gpu/orch_r151_matched_containment.py", line 58, in require
+    raise ValueError(reason)
+ValueError: fresh_exclusive_admission

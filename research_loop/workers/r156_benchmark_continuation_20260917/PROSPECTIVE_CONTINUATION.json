@@ -1,0 +1,112 @@
+{
+  "budget_snapshot": {
+    "aggregate_call_cap": 4800,
+    "charged_keys_including_seeds": 64,
+    "charged_predecessor_and_current_jobs": 52,
+    "failed_reservations_remain_charged": true,
+    "maximum_jobs_this_two_hour_proposal_at_snapshot": 4,
+    "must_recompute_at_admission": true,
+    "no_reservation_reset": true,
+    "observed_unix": 1789611978.540832,
+    "phase_job_cap": 58,
+    "remaining_call_slots": 960,
+    "remaining_phase_jobs": 6
+  },
+  "first_copy_unix": 1789617420,
+  "first_dispatch_unix": 1789617600,
+  "full_budget_dispatch_slots_utc": [
+    "2026-09-17T04:00:00+00:00",
+    "2026-09-17T04:30:00+00:00"
+  ],
+  "gpu_uuids": [
+    "GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0",
+    "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4"
+  ],
+  "launch_authorized_by_this_document": false,
+  "metadata_evidence_path": "/tmp/r156-sealed-refresh-20260917T0224Z/CONTINUATION_METADATA.json",
+  "metadata_evidence_sha256": "32f4721a670a310aedb08c2df863a1b93b55f6836e27a6edea5652bd93563c0e",
+  "missing_scope_if_requested_later": [
+    "No aggregate-call or phase-job budget increase is authorized; exhausted caps require separate scope.",
+    "No enrollment of frozen-schema controls, new R137 polling roots, recovery-root rebinding, source-node write/action, or new benchmark items is authorized by a wall-only change.",
+    "This preparation does not start a future benchmark/copier; deployment requires a separate concrete handoff with bound executable artifacts."
+  ],
+  "node": "node2",
+  "node2_resource_evidence": {
+    "forks_metadata": {
+      "hard_deadline_unix": 1789958580.0,
+      "lease_end_unix": 1789980180.0,
+      "node": "ovx"
+    },
+    "forks_path": "/localhome/local-rohing/orch_r119_l1_generation_20260915_attempt2/FORKS.json",
+    "forks_sha256": "621e1391285bcad9ee075106b4afab28970616b663876dc4ebeba7834e7b81e3",
+    "reservation_path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/BENCHMARK_RESERVATION_R137.json",
+    "reservation_sha256": "20af093e2b3572903c2eafc85f59b242f968d16d61983a30958c2839d2f8a4ee"
+  },
+  "node5_authorization_used_for_node2": false,
+  "old_wall_unix": 1789617240,
+  "operator_root": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1",
+  "physical_devices": [
+    0,
+    1
+  ],
+  "predecessor_copy_path": "/data/home/rohing/dream-state-orch/research_loop/workers/r146_controller_handoff_20260916t1818z/COPY_CONFIG.json",
+  "predecessor_copy_sha256": "4e3f13e6dc8a6eeee386484e26d5f3b4b97cff5ed81077b8ab00dca4fae679fb",
+  "predecessor_phase_path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/SUCCESSOR_PHASE_R146_20260916T1820Z.json",
+  "predecessor_phase_sha256": "02f6fa655ef77f920c700ca973112535424b8ef36ca68d804e99e1b3eb8dab4b",
+  "preserved_devices": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "proposed_end_unix": 1789624440,
+  "proposed_end_utc": "2026-09-17T05:54:00+00:00",
+  "proposed_start_unix": 1789617240,
+  "prospective_outputs": {
+    "copier": "research_notes/analysis/r156_wall_copy_20260917_attempt1",
+    "phase": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/successor_phase_r156_wall_20260917_attempt1",
+    "scheduler": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/scheduler_run_r156_wall_20260917_attempt1"
+  },
+  "provider_booking_independently_reverified": false,
+  "required_before_admission": [
+    "Do not edit or stop the live R146 phase/copier, frozen source, or their historical configs.",
+    "Require terminal predecessor controller/copier receipts, exact identities gone, no active benchmark jobs, and exclusive ownership/device locks. No child signals.",
+    "Implement and test an append-only wall-only successor/controller/copier adapter: existing validators bind WALL=1789617240, predecessor equality, and the prior R146 remote-phase schema. This proposal is deliberately not an accepted config.",
+    "Bind fresh successor/CPU/Builder artifacts and preserve all original benchmark source/configuration fields except wall, successor ownership, provenance and fresh output paths.",
+    "Recompute BOTH total4800-call and shared58-job remaining budgets across all predecessor/current/successor reservations, including failures and ambiguous reservations. Abort at zero.",
+    "Validate new admission-time config timestamps (maximum7200s), full3615s runway, current node2 reservation/lease pins and any actual conflicting booking. No node5 authority substitution.",
+    "Reconfirm immutable original copier roots and custody/read ceilings with their owners; do not follow a recovered child into an unregistered root or treat copying a retired root as current-life coverage.",
+    "Independently validate frozen-source closure, config/hash gates, no duplicate checkpoint keys, and GPU0/1 vacancy at actual admission."
+  ],
+  "schema": "R156_BENCHMARK_WALL_CONTINUATION_PROPOSAL_V1",
+  "source_read_ceiling_unix": 1789689600.0,
+  "source_read_evidence_is_existing_operator_annotation": true,
+  "source_read_evidence_path": "/tmp/r130-deploy-20260916/SOURCE_READ_LEASE_BOUNDS_V2.json",
+  "source_read_evidence_sha256": "75a6ca0188f63a61eb222918e9bd352e463aed81b2342d316b9ea1f86a5e6a8d",
+  "status": "PREPARED_NOT_EXECUTABLE_NOT_ADMITTED",
+  "unchanged": {
+    "copy_lead_seconds": 180,
+    "copy_sources": [
+      "legacy",
+      "pilot",
+      "kernel"
+    ],
+    "corpus_sha256": "47e2f4780ff44aeb9312d1f5a9b5bcc4712d3ccfe70cdd1c771994daf0d2c3a8",
+    "dispatch_seconds": 1800,
+    "job_max_seconds": 3600,
+    "ledger_root": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/scheduler_ledger",
+    "poll_seconds": 30,
+    "registered_lineages_sha256": "36c052c009cf8c6e643a180829d2f9c8c08224a9b380c3f11ea20b30ac338bf1",
+    "registry_sha256": "41bb6acbd4a65fa1158d7720b5be801a1fa247b9d4e84f0efc1ddd96e023a3fc",
+    "segment_seconds": 7200,
+    "selection": "existing_metadata_only_no_score_gating",
+    "source_commit": "7c9c25da6819ff462465619fb3d6c13dd579ff4d",
+    "source_inventory_digest": "a23303e36c5ed1792f14039ce54db5609c11e06f087bf27b9a3c2aea7b10a8f5",
+    "source_root": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/source_r146_20260916t1820z",
+    "source_root_rebind": false,
+    "template_plan_sha256": "6fe0c9e9635f1c5fa27d7aa11bb009aa12a00f32ae1c81b2069a22b1e6217c89"
+  },
+  "wrapper": "gpu/ovx_ssh.sh"
+}

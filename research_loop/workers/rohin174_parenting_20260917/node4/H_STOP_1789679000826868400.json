@@ -1,0 +1,69 @@
+{
+  "actor_after_stop": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_errata.py",
+      "serve",
+      "--lane",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical1"
+    ],
+    "cwd": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical1/source",
+    "pid": 482931,
+    "start_ticks": "178564216",
+    "state": "T",
+    "uid": 158984
+  },
+  "authorization": "[REDACTED_SECRET]",
+  "children_after_stop": [],
+  "exit_confirmed": true,
+  "expected": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/r175_node4_errata.py",
+      "serve",
+      "--lane",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical1"
+    ],
+    "cwd": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical1/source",
+    "pid": 482931,
+    "start_ticks": "178564216",
+    "state": "R",
+    "uid": 158984
+  },
+  "inbox_mutations": 0,
+  "inflight_attempts": [],
+  "native_signals": 0,
+  "observed_unix": 1789679000.826866,
+  "other_arm_signals": 0,
+  "publication_intents": [
+    "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical1/parent/PUBLICATION_0000_INTENT.json"
+  ],
+  "publications": [
+    {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/activation_20260917T2057Z/physical1/parent/PUBLICATION_0000_RECEIPT.json",
+      "receipt": {
+        "exact_remote_publication_timestamp_not_inferred": true,
+        "message_sha256": "8478febd4932f407684790c70760e89f5ab0fb1fd43530f612d80358fc6a105b",
+        "observed_unix": 1789678634.2341616,
+        "publication": {
+          "id": "11a39e52e43540f8839c312cf64e86ff",
+          "path": "/localhome/local-rohing/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1/stream/inbox/11a39e52e43540f8839c312cf64e86ff.json",
+          "sha256": "0fa7c82f47b6bfb7e63162e2635171206f375b7a8a2539a5fc32c78067d50d05"
+        },
+        "publication_interval_unix": [
+          1789678633.2984967,
+          1789678634.2341616
+        ]
+      }
+    }
+  ],
+  "receipt_observed_unix": 1789679000.911615,
+  "signals": [
+    "SIGSTOP",
+    "SIGTERM",
+    "SIGCONT"
+  ],
+  "status": "H_PARENT_TERMINATED"
+}

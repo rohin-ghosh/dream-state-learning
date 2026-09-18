@@ -2,7 +2,7 @@
 
 - Actual node4 physical1 combined VLM LOADED04:40:24.065UTC; listening04:40:29.746UTC; PID3987161. Physical0 verified empty and released to Main04:41:02UTC. No old learner signaled.
 - Three real HTTP image→scene calls completed04:40:52.048UTC, generated73/84/149 tokens. Exact game/image/evidence paths and hashes are in `API.md`; receiving root is `/localhome/local-rohing/rohin206_games_20260918/vision_node4_r209`.
-- Vision endpoint `http://127.0.0.1:8178/v1/inspect`; exact client source SHA256 `aa49c3e2bf7c7495e8629b7a3fe16f830afc6e48d77042fe9f7eec110dde3f18`. Private comparator socket is listening on the same model, separately from game integration; no real caption comparison claimed yet.
+- Vision endpoint `http://[REDACTED_ADDRESS]:8178/v1/inspect`; exact client source SHA256 `aa49c3e2bf7c7495e8629b7a3fe16f830afc6e48d77042fe9f7eec110dde3f18`. Private comparator socket is listening on the same model, separately from game integration; no real caption comparison claimed yet.
 - 41 focused local and receiving tests PASS. Actual startup partial-JSON failure preserved in previous `vision_node4` runtime. The repaired prompt requests plain factual prose; canonicalization preserves raw output and does not invent syntax or facts. No independent accuracy claim.
 - Main scalar export hash verified read-only: `0bcd17e266defc772855501a1da02286ce83c80b975e081eb0acfa9e67239c3f`. No scalar/judge/game source, private panels, frozen bundles or COORDINATION edited.
 - All ovx5 GPU allocation is paused under R209. Existing node4 cached Qwen weights used; finite lease cutoff18:00UTC unchanged. Persistent supervision, exact device confinement and receipt bindings retained.

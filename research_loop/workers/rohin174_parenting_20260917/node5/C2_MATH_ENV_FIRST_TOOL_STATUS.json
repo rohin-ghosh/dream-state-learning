@@ -1,0 +1,76 @@
+{
+  "schema": "R188_C2_MATH_ENV_DEPLOYMENT_OBSERVATION_V1",
+  "phase": "R188_C2_MATH_ENV_V1",
+  "scope": "ORIGINAL_C2_ONLY",
+  "pure_matched_arm_result": false,
+  "effective": {
+    "unix": 1789689689.8877697,
+    "local_time": "2026-09-17T17:01:29.887770-07:00",
+    "after_completed_cycle": 45,
+    "journal_index": 5407,
+    "journal_kind": "R184_LEARN_COMPLETE",
+    "journal_record_sha256": "c6353d84ffd8d05710feabd79cfef2bd4ed5162b2dd60460fbc9b887412fdec3",
+    "receipt": "C2_MATH_ENV_PHASE1_RECEIPTS/receipts/EFFECTIVE_1789689689887775321.json",
+    "receipt_sha256": "00adc9d498adcb425968021036b0ba62f4e2cce3208244b4f858791043e998c5"
+  },
+  "active_cpu_bridge": {
+    "pid": 2849330,
+    "start_ticks": 22524815,
+    "remote_root": "/localhome/local-rohing/orch_r153_r188_C2_math_env_20260917_phase1",
+    "config_sha256": "6d82c73289b05a5c3c6c1929d3118c15d10b65020547d71fb0be136f2cceb21e",
+    "helper_sha256": "f7b7e10d5ee58d0d1aa736b2a9e0c92ed029c3a8ed3ac868cbcb6cbdd0e94071",
+    "profile_sha256": "81408d62fb926f4c61411084c56a7e08db842095dfc2b0d354b9b1cd95caa474",
+    "gate_sha256": "c7821ed5b02651ed624c6dbe29a488bd15496440b59364e98e52ff2afe705e82"
+  },
+  "preservation": {
+    "native_pid": 2718196,
+    "native_start_ticks": 22275637,
+    "supervisor_pid": 2718170,
+    "supervisor_start_ticks": 22275473,
+    "verified_unchanged_files": 350,
+    "native_signals": 0,
+    "model_native_resets": 0,
+    "parent_publications": 0,
+    "frozen_copy_changes": 0,
+    "recovered_cycles_42_44_unchanged": true,
+    "original_bridge_config_sha256": "f1cfaebe88240ee7e7016e62b6d8a1eb6ee5471837b4528eb586aba3c86fe796"
+  },
+  "first_post_phase_tool_reply": {
+    "unix": 1789689793.9188178,
+    "local_time": "2026-09-17T17:03:13.918818-07:00",
+    "origin_record_index": 5414,
+    "origin_record_sha256": "aa0cb5aeac843983b8446d1d14475a314042b1ee3412fc6027baf97cc0ad6ce8",
+    "status": "TOOL_OUTCOME_UNKNOWN_NO_RETRY",
+    "executed": null,
+    "error_type": "ValueError",
+    "receipt": "C2_MATH_ENV_PHASE1_RECEIPTS/receipts/TOOL_OUTCOME_1789689793918833382.json",
+    "receipt_sha256": "7d9eee98b5841d06bca24c7afc733b897002ad06bc13fd63d5270aab7bbe36d2",
+    "native_ACT_record": 5417,
+    "native_ACT_record_sha256": "19ff5e104edc7791c25a9726cd6966cc0cf3f1d07eb9656da0ea22b020d9ca0c",
+    "unknown_notice_rendered_REQUEST": 5418,
+    "unknown_notice_REQUEST_record_sha256": "a377161838391459ed1a46be1d7f00ed4125365f85bae26eb08ffcd9cdd20dc9"
+  },
+  "subsequent_read_only_diagnosis": {
+    "unix": 1789689855.137974,
+    "dispatch_calls": 0,
+    "terminal": false,
+    "truncated": true,
+    "failure_callsite": "/localhome/local-rohing/orch_r153_cpu_smoke_20260917t2350z/source/gpu/orch_r125_cpu_experiment.py:109",
+    "failure_reason": "complete_source_generation",
+    "request_id": "33bcc0a505fee85d3a83a73c3b2a789426c32120109b2539bf2c8eb4f86d73e4",
+    "source_sha256": "a380226a975b859666e5b0b09bac6a4b782eb232b5d8c0c6ce1b8fe1da8abe94",
+    "attempt_directory_exists": false,
+    "spool_directory_exists": false,
+    "actual_gate_digest_verified": true,
+    "interpretation": "Unchanged origin validator rejected incomplete generation before request intent or CPU launch. No gate weakening, repair, or redispatch."
+  },
+  "validation": {
+    "combined_local_unittest_passed": 14,
+    "receiving_bridge_unittest_passed": 8,
+    "actual_prior_confinement_modes_passed": 5,
+    "synthetic_math_only": "SymPy1.14.0/mpmath1.3.0 real confined test passed before deployment",
+    "additional_canonical_pytest": "Not run: local python3 has no pytest module"
+  },
+  "learner_sympy_execution_verified": false,
+  "next_state": "Live bridge accepts only future original-C2 ACT requests; first request is retained and never redispatched. No successful learner CPU result yet."
+}

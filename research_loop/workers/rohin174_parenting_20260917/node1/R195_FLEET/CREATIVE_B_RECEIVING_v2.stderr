@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1/prepare_creative_b_v2.py", line 193, in <module>
+    stage() if arguments.action == 'stage' else remote_prepare(arguments.action == 'remote-finish')
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1/prepare_creative_b_v2.py", line 98, in remote_prepare
+    unpack(OWN / 'runtime_overlay.tar.gz', source, ready['files'])
+  File "/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1/prepare_creative_b_v2.py", line 66, in unpack
+    archive.extractall(destination, filter='data')
+  File "/usr/lib/python3.12/tarfile.py", line 2350, in extractall
+    self._extract_one(tarinfo, path, set_attrs=not tarinfo.isdir(),
+  File "/usr/lib/python3.12/tarfile.py", line 2460, in _extract_one
+    self._handle_fatal_error(e)
+  File "/usr/lib/python3.12/tarfile.py", line 2454, in _extract_one
+    self._extract_member(tarinfo, os.path.join(path, tarinfo.name),
+  File "/usr/lib/python3.12/tarfile.py", line 2543, in _extract_member
+    self.makefile(tarinfo, targetpath)
+  File "/usr/lib/python3.12/tarfile.py", line 2592, in makefile
+    with bltn_open(targetpath, "wb") as target:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1/source/gpu/orch_r153_code_blocks.py'

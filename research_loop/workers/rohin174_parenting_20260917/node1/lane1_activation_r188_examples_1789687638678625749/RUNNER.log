@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/r188_examples_parent.py", line 67, in <module>
+    main()
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/r188_examples_parent.py", line 63, in main
+    parent['serve'](Path(spec['config']), Path(spec['repository']), Path(spec['output']))
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/frozen1_parenting_1789682407594992877/LEGACY_PARENT.py", line 14, in serve
+    
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/frozen1_parenting_1789682407594992877/LEGACY_PARENT.py", line 86, in snapshot
+    return remote(repository, config, script)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node1/frozen1_parenting_1789682407594992877/LEGACY_PARENT.py", line 57, in remote
+    result = subprocess.run(['bash', str(wrapper), command], capture_output=True, text=True, timeout=45)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2116, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.12/subprocess.py", line 1253, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['bash', '/data/home/rohing/dream-state-orch/gpu/a100_ssh.sh', 'PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/localhome/local-rohing/orch_r139_node1_controls_20260916_attempt2/source python3 -c \'import json,re\nfrom pathlib import Path\nfrom gpu.orch_r125_stream_console import _open_stream_directory,_read_record\nroot=\'"\'"\'/localhome/local-rohing/orch_r139_a100_frozen_base_no_adapter_20260916_attempt1/run1\'"\'"\'\nevents=[]; consumed={}; response_count=0; previous=\'"\'"\'0\'"\'"\'*64\nwith _open_stream_directory(root,\'"\'"\'records\'"\'"\') as (directory,unused):\n index=0\n while True:\n  record=_read_record(directory,index)\n  if record is None: break\n  if index: assert record[\'"\'"\'previous_sha256\'"\'"\']==previous\n  previous=record[\'"\'"\'sha256\'"\'"\']; document=record[\'"\'"\'document\'"\'"\']\n  if record[\'"\'"\'kind\'"\'"\']==\'"\'"\'RESPONSE\'"\'"\':\n   response_count+=1\n   events.append(dict(actor=\'"\'"\'child\'"\'"\',text=document[\'"\'"\'response\'"\'"\'][\'"\'"\'raw\'"\'"\'],record_index=index,record_sha256=record[\'"\'"\'sha256\'"\'"\']))\n  elif record[\'"\'"\'kind\'"\'"\']==\'"\'"\'INBOX\'"\'"\':\n   message=document[\'"\'"\'message\'"\'"\']\n   consumed[message[\'"\'"\'id\'"\'"\']]=dict(record_index=index,record_sha256=record[\'"\'"\'sha256\'"\'"\'])\n   events.append(dict(actor=message[\'"\'"\'actor\'"\'"\'],speaker=message.get(\'"\'"\'speaker\'"\'"\'),text=message[\'"\'"\'text\'"\'"\'],record_index=index,record_sha256=record[\'"\'"\'sha256\'"\'"\']))\n  index+=1\nprint(json.dumps(dict(schema=\'"\'"\'R133_TRAIN_PARENT_SNAPSHOT_V1\'"\'"\',response_count=response_count,\n record_count=index,head_sha256=previous,events=events[-8:],consumed_inbox=consumed)))\n\'']' timed out after 45 seconds

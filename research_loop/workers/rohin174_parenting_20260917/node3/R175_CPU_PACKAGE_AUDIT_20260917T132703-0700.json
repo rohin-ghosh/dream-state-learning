@@ -1,0 +1,139 @@
+{
+  "command": "/localhome/local-rohing/v2/venv/bin/python -B -",
+  "cpu_execution_tested": false,
+  "environment_mutations": 0,
+  "executables": {
+    "bash": "/usr/bin/bash",
+    "git": "/usr/bin/git",
+    "node": null,
+    "python3": "/usr/bin/python3"
+  },
+  "finished_unix": 1789676823.2310402,
+  "gpu_operations": 0,
+  "heavy_package_imports": 0,
+  "host": "[REDACTED_HOST]",
+  "installations": 0,
+  "interpreter": "/localhome/local-rohing/v2/venv/bin/python",
+  "learner_tool_exposure": "NOT_AUDITED",
+  "no_scientific_claim": true,
+  "observed_unix": 1789676823.2173212,
+  "packages": [
+    {
+      "discoverable": true,
+      "distribution": "numpy",
+      "installed_metadata": true,
+      "module": "numpy",
+      "module_origin": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/numpy/__init__.py",
+      "version": "2.3.5"
+    },
+    {
+      "discoverable": false,
+      "distribution": "scipy",
+      "installed_metadata": false,
+      "module": "scipy",
+      "module_origin": null,
+      "version": null
+    },
+    {
+      "discoverable": true,
+      "distribution": "sympy",
+      "installed_metadata": true,
+      "module": "sympy",
+      "module_origin": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/sympy/__init__.py",
+      "version": "1.14.0"
+    },
+    {
+      "discoverable": false,
+      "distribution": "pandas",
+      "installed_metadata": false,
+      "module": "pandas",
+      "module_origin": null,
+      "version": null
+    },
+    {
+      "discoverable": true,
+      "distribution": "networkx",
+      "installed_metadata": true,
+      "module": "networkx",
+      "module_origin": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/networkx/__init__.py",
+      "version": "3.6.1"
+    },
+    {
+      "discoverable": false,
+      "distribution": "scikit-learn",
+      "installed_metadata": false,
+      "module": "sklearn",
+      "module_origin": null,
+      "version": null
+    },
+    {
+      "discoverable": true,
+      "distribution": "Pillow",
+      "installed_metadata": true,
+      "module": "PIL",
+      "module_origin": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/PIL/__init__.py",
+      "version": "12.3.0"
+    },
+    {
+      "discoverable": true,
+      "distribution": "matplotlib",
+      "installed_metadata": true,
+      "module": "matplotlib",
+      "module_origin": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/matplotlib/__init__.py",
+      "version": "3.11.1"
+    },
+    {
+      "discoverable": false,
+      "distribution": "pytest",
+      "installed_metadata": false,
+      "module": "pytest",
+      "module_origin": null,
+      "version": null
+    },
+    {
+      "discoverable": true,
+      "distribution": "requests",
+      "installed_metadata": true,
+      "module": "requests",
+      "module_origin": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/requests/__init__.py",
+      "version": "2.34.2"
+    },
+    {
+      "discoverable": true,
+      "distribution": "torch",
+      "installed_metadata": true,
+      "module": "torch",
+      "module_origin": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/torch/__init__.py",
+      "version": "2.13.0"
+    },
+    {
+      "discoverable": true,
+      "distribution": "transformers",
+      "installed_metadata": true,
+      "module": "transformers",
+      "module_origin": "/localhome/local-rohing/v2/venv/lib/python3.12/site-packages/transformers/__init__.py",
+      "version": "5.5.3"
+    }
+  ],
+  "parent_policy_priority": "parent baseline and pairing staging completed before this read-only audit; audit does not gate a Main-bound switch",
+  "prefix": "/localhome/local-rohing/v2/venv",
+  "probe_source": "\nimport importlib.metadata\nimport importlib.util\nimport json\nfrom pathlib import Path\nimport shutil\nimport socket\nimport sys\nimport time\n\ncandidates = (('numpy', 'numpy'), ('scipy', 'scipy'), ('sympy', 'sympy'), ('pandas', 'pandas'), ('networkx', 'networkx'), ('scikit-learn', 'sklearn'), ('Pillow', 'PIL'), ('matplotlib', 'matplotlib'), ('pytest', 'pytest'), ('requests', 'requests'), ('torch', 'torch'), ('transformers', 'transformers'))\npackages = []\nfor distribution, module in candidates:\n    try:\n        version = importlib.metadata.version(distribution)\n    except importlib.metadata.PackageNotFoundError:\n        version = None\n    specification = importlib.util.find_spec(module)\n    packages.append(dict(distribution=distribution, module=module, installed_metadata=version is not None, version=version, discoverable=specification is not None, module_origin=specification.origin if specification else None))\nstandard_library = {module: importlib.util.find_spec(module) is not None for module in ('ast', 'decimal', 'fractions', 'json', 'math', 'sqlite3', 'statistics')}\nprint(json.dumps(dict(host=socket.gethostname(), observed_unix=time.time(), interpreter=sys.executable, python_version=sys.version.split()[0], prefix=sys.prefix, packages=packages, standard_library=standard_library, executables={executable: shutil.which(executable) for executable in ('bash', 'python3', 'node', 'git')}, cpu_execution_tested=False, learner_tool_exposure='NOT_AUDITED', heavy_package_imports=0, installations=0, environment_mutations=0, gpu_operations=0), sort_keys=True))\n",
+  "python_version": "3.12.3",
+  "schema": "ROHIN175_NODE3_CPU_PACKAGE_AVAILABILITY_V1",
+  "scope": "shared interpreter used by six verified child argv; no child or parent mutation",
+  "standard_library": {
+    "ast": true,
+    "decimal": true,
+    "fractions": true,
+    "json": true,
+    "math": true,
+    "sqlite3": true,
+    "statistics": true
+  },
+  "started_unix": 1789676822.2021892,
+  "status": "READ_ONLY_AVAILABILITY_ONLY_NOT_TOOL_FEEDBACK_PROOF",
+  "wrapper": {
+    "path": "/data/home/rohing/dream-state-orch/gpu/ovx2_ssh.sh",
+    "sha256": "4250e4a8886a24e27bc38a8310f704359a71ee938dcd5a28e13beeebba2d8eac"
+  }
+}

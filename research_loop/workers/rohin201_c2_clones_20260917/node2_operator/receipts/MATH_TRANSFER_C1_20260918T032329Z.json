@@ -1,0 +1,48 @@
+{
+  "observed_utc": "2026-09-18T03:23:29.161719+00:00",
+  "actors": {
+    "math_bridge": {
+      "pid": 2196049,
+      "state": "S",
+      "start_ticks": "93018517",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "parent": {
+      "pid": 2196052,
+      "state": "R",
+      "start_ticks": "93018637",
+      "uid": 2524,
+      "cwd": "/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source",
+      "ppid": 1,
+      "same_start_ticks": true
+    },
+    "supervisor": {
+      "pid": 2196053,
+      "present": false,
+      "same_start_ticks": false
+    }
+  },
+  "receipts": {
+    "OUTER_FAILED.json": {
+      "error": "Command '['sudo', '-n', '/usr/bin/systemd-run', '--quiet', '--wait', '--pipe', '--unit=orch-r203-math-transfer-c1-probe-782e94d01b6049d7', '--property=User=2524', '--property=Group=2524', '--property=NoNewPrivileges=yes', '--property=DevicePolicy=strict', '--property=CapabilityBoundingSet=', '--property=AmbientCapabilities=', '--property=ProtectControlGroups=yes', '--property=RuntimeMaxSec=60', '--property=TimeoutStopSec=5', '--property=KillMode=control-group', '--property=WorkingDirectory=/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source', '--property=MemoryMax=68719476736', '--property=TasksMax=256', '--property=BindPaths=/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/raw:/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life', '--property=DeviceAllow=', '--property=DeviceAllow=/dev/null rw', '--property=DeviceAllow=/dev/zero rw', '--property=DeviceAllow=/dev/random r', '--property=DeviceAllow=/dev/urandom r', '--property=DeviceAllow=/dev/nvidia6 rw', '--property=DeviceAllow=/dev/nvidiactl rw', '--property=DeviceAllow=/dev/nvidia-uvm rw', '/usr/bin/env', '-i', 'PATH=/usr/bin:/bin', 'HOME=/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1', 'TMPDIR=/tmp', 'CUDA_VISIBLE_DEVICES=GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf', 'PYTHONDONTWRITEBYTECODE=1', 'PYTHONPATH=/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/source', 'HF_HUB_OFFLINE=1', 'TRANSFORMERS_OFFLINE=1', 'OMP_NUM_THREADS=1', 'MKL_NUM_THREADS=1', 'TOKENIZERS_PARALLELISM=false', '/localhome/local-rohing/v2/venv/bin/python', '-B', '-m', 'gpu.r184_node2_confinement', 'probe', '--config', '/localhome/local-rohing/orch_r153_r201_node2_clones_20260917_operator1/math_transfer_c1/control/GUARD.json', '--unit', 'orch-r203-math-transfer-c1-probe-782e94d01b6049d7']' returned non-zero exit status 1.",
+      "error_type": "CalledProcessError",
+      "finished_unix": 1789701747.6672103,
+      "no_retry": true
+    }
+  },
+  "events": [],
+  "nvml_processes": [
+    "1849630, GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, 31592 MiB",
+    "2128807, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4, 29634 MiB",
+    "1815204, GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, 20562 MiB",
+    "2170067, GPU-c9450d3d-0455-f034-b9bf-7f8956e44733, 374 MiB",
+    "2196050, GPU-c9450d3d-0455-f034-b9bf-7f8956e44733, 15152 MiB",
+    "1849923, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 416 MiB",
+    "2196252, GPU-0cc84073-37a0-4f7a-e555-11671425bd03, 14994 MiB",
+    "1849180, GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed, 32934 MiB"
+  ],
+  "read_only": true
+}

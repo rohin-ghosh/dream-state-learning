@@ -1,0 +1,66 @@
+{
+  "candidate_count": 2,
+  "checkpoint_rule": "full_model_AdamW_RNG_first_new_update_each1000_plus3907_7813_11719_15625_and_STOP_AT_SAFE_BOUNDARY",
+  "checkpoint_interval_hot_reload_supported": false,
+  "current_jobs_interrupted_for_status_refresh": false,
+  "checkpoint_selection": "highest_macro_within_contest_mean_rating_Spearman_among_R210_checkpoints_earliest_tie; R209_baselines_retained_separately",
+  "contrast_case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+  "crossed_rule": "uniform_recipient_TRAIN_contest; positive_from_top20pct_empirical_mean_then_votes; uniform_donor_TRAIN_contest_with_different_original_scene_group; donor_from_its_top20pct; donor_caption_presented_in_recipient_scene; matched_positive_target1",
+  "diagnostics": "fixed600cases20DEVELOPMENTcontests_and_same_modelselection_panel_every_full_checkpoint_including_nonimprovements",
+  "eligibility": "source_export_at_most50_words_and_actual_presented_input_at_most512_tokens_no_truncation",
+  "first_R210_optimizer_update": {
+    "rank16": 145,
+    "rank8": 146
+  },
+  "fraction_scope": "25pct_of_each_new_R210_batch_not25pct_of_total_including_retained_allwithin_R209_prefix",
+  "game_and_vision_node4_untouched": true,
+  "global_batch": 64,
+  "hard_end_utc": "2026-09-18T23:00:00Z",
+  "learning_rate": 3e-05,
+  "local_batch": 16,
+  "loss": "same_source_vote_reliability_global_normalization_25pct_is_pair_fraction_not_guaranteed_loss_weight_fraction",
+  "model": "frozen_Qwen2.5-7B-Instruct",
+  "negative_label": "constructed_relevance_assumption_not_proof_every_cross_caption_is_invalid",
+  "no_private_rows_to_parents": true,
+  "node2_operations_by_this_operator": 0,
+  "node2_owner": "Jason",
+  "observed_utc": "2026-09-18T05:46:35.627532+00:00",
+  "planned_R210_suffix": {
+    "rank16": {
+      "crossed": 247696,
+      "updates": 15481,
+      "within": 743088
+    },
+    "rank8": {
+      "crossed": 247680,
+      "updates": 15480,
+      "within": 743040
+    }
+  },
+  "post_transition_pairs": {
+    "crossed_fraction": 0.25,
+    "crossed_scene": 16,
+    "per_rank_crossed": 4,
+    "per_rank_within": 12,
+    "within_contest": 48,
+    "within_fraction": 0.75
+  },
+  "rank16_alpha": 32,
+  "rank8_alpha": 16,
+  "representation": "existing_canonical_scene_text_plus_caption_not_new_pixel_or_VLM_input",
+  "retained_prefix_updates": {
+    "rank16": 144,
+    "rank8": 145
+  },
+  "schema": "R210_COMMON_TRAIN_RECIPE_V1",
+  "state_restore": "exact_R209_pilot_model_AdamW_all4_rank_Python_Torch_CUDA_RNG_and_sampler_states",
+  "state_restore_scope": "SAME_CHECKPOINT_restoration_with_explicit_rewind_not_uninterrupted_continuity_or_no_rollback",
+  "discarded_documented_R209_updates": {"rank8": 485, "rank16": 486},
+  "additional_unlogged_completed_R209_updates_each_bounds": [0, 10],
+  "additional_partial_inflight_R209_work_possible": true,
+  "strength_not_universal_quality_claim": true,
+  "tau_gate": false,
+  "total_retained_target_comparisons_each": 1000000,
+  "training_source": "same_hash_bound_original180_TRAIN_contest_packet_no_DEVELOPMENT_or_FINAL_rows",
+  "within_rule": "uniform_two_distinct_rows_full_gap_range_positive_votes_ties0.5_no_gap_cutoff"
+}

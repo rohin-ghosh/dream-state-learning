@@ -1,0 +1,65 @@
+{
+  "schema": "R159_MATCHED_EVALUATION_V1",
+  "status": "DESCRIPTIVE_NOT_EXECUTION_CONFIG",
+  "execution_exact_fields": [
+    "schema",
+    "campaign",
+    "campaign_root",
+    "candidate",
+    "physical",
+    "gpu_uuid",
+    "source_root",
+    "sources",
+    "model_dir",
+    "python",
+    "python_sha256",
+    "hard_end_unix",
+    "lease_end_unix",
+    "source_owner_authority",
+    "source_read_end_unix",
+    "old_terminal",
+    "old_terminal_identity",
+    "cpu_gate",
+    "builder",
+    "node2_authority",
+    "service_path"
+  ],
+  "candidate_exact_fields": [
+    "schema",
+    "arm",
+    "milestone",
+    "cohort",
+    "initialized",
+    "capacity",
+    "initial_commit",
+    "source_commit_path",
+    "manifest",
+    "source_custody"
+  ],
+  "reference_fields": [
+    "path",
+    "sha256"
+  ],
+  "first_exposure_interval_variant": {
+    "schema": "R159_FIRST_EXPOSURE_V1",
+    "status": "OBSERVED_INTERVAL",
+    "common_fields": ["schema", "cohort_sha256", "arm", "kind", "coverage_complete", "observed_unix", "status"],
+    "variant_fields": ["first_earliest_unix", "first_latest_unix", "source_evidence"],
+    "bound": "original_freeze < first_earliest_unix <= first_latest_unix <= common_observed_unix; finite non-boolean numbers",
+    "source_evidence": "1..16 unique regular local inputs metadata references, each exact path/sha256; rechecked throughout evaluation",
+    "unchanged_exact_variants": ["OBSERVED", "NOT_OCCURRED"],
+    "required_kinds_each_arm": ["birth", "train", "evaluation"]
+  },
+  "main_go": {
+    "schema": "R159_MATCHED_EVALUATION_V1",
+    "status": "MAIN_GO",
+    "execution": {
+      "path": "EXACT_CONFIG_PATH",
+      "sha256": "EXACT_CONFIG_HASH"
+    }
+  },
+  "missing": [
+    "exact_Main_GPU_GO_adopting_actual_runtime3_configs_and_proposed_node2_wall",
+    "fresh_dispatch_lock_and_privileged_admission_at_execution"
+  ]
+}

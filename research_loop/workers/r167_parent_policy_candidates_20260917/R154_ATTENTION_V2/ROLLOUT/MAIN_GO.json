@@ -1,0 +1,21 @@
+{
+  "authorization": "[REDACTED_SECRET]",
+  "branches": [
+    "C1",
+    "C3",
+    "C2",
+    "C4",
+    "C5"
+  ],
+  "confirmed_by": "Main",
+  "monitor_deadline_unix": 1789634854,
+  "observed_unix": 1789632506.1462226,
+  "permitted_signals": "verified parent pidfd SIGSTOP; busy/uncertain SIGCONT; clean SIGTERM then SIGCONT",
+  "policy_sha256": "2874e7eb436459c207f48c218a267e86e3877d270aba830e3e465c1db382deee",
+  "prohibited": "native/provider signals, SIGKILL, expiry changes, hot edits, uncertain replay",
+  "schema": "R167_SCOPED_PARENT_ROLLOUT_GO_V1",
+  "stage_pins": {
+    "CPU_GATE.json": "2687c787d90fdcec33ce2389263a9b3f3c0a201cf4be8ff443a60357c6a60289",
+    "INDEX.json": "ad3e80d1a29fe7187fa2b77d30fa3397a5b8d38f7b845ec9a865f3182c24f4ba"
+  }
+}

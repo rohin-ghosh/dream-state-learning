@@ -1,0 +1,73 @@
+{
+  "binding_sha256": "dcab4750e4723c76dba03680697252257e3c7cf7d68d8b645e707a07881090b7",
+  "cgroup_empty_verified": true,
+  "checked_unix": 1789624603.712078,
+  "evaluation_success_claimed": false,
+  "evidence": {
+    "kind": "removed_after_bound_observation",
+    "parent_inode": [
+      32,
+      75
+    ]
+  },
+  "observed": {
+    "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+    "cgroup": "/system.slice/orch-r136-native-2d7095b600baf298ec1fde9429f3f757.service",
+    "cgroup_inode": [
+      32,
+      21942894
+    ],
+    "checked_unix": 1789624338.060418,
+    "invocation_id": "671656d1806043eeb1190167c2572a1a",
+    "parent_inode": [
+      32,
+      75
+    ],
+    "pid": 681067,
+    "start_ticks": "19250660",
+    "state": {
+      "ActiveState": "active",
+      "AmbientCapabilities": "",
+      "CapabilityBoundingSet": "",
+      "ControlGroup": "/system.slice/orch-r136-native-2d7095b600baf298ec1fde9429f3f757.service",
+      "DevicePolicy": "strict",
+      "ExecMainCode": "0",
+      "ExecMainStatus": "0",
+      "Group": "2524",
+      "Id": "orch-r136-native-2d7095b600baf298ec1fde9429f3f757.service",
+      "InvocationID": "671656d1806043eeb1190167c2572a1a",
+      "KillMode": "control-group",
+      "LoadState": "loaded",
+      "MainPID": "681067",
+      "NoNewPrivileges": "yes",
+      "ProtectControlGroups": "yes",
+      "Result": "success",
+      "SubState": "running",
+      "User": "2524"
+    },
+    "unit": "orch-r136-native-2d7095b600baf298ec1fde9429f3f757"
+  },
+  "readout_cleanup_adopted": false,
+  "service_returncode": 1,
+  "status": "SERVICE_EXIT_VERIFIED",
+  "terminal_state": {
+    "ActiveState": "failed",
+    "AmbientCapabilities": "",
+    "CapabilityBoundingSet": "",
+    "ControlGroup": "",
+    "DevicePolicy": "strict",
+    "ExecMainCode": "1",
+    "ExecMainStatus": "1",
+    "Group": "2524",
+    "Id": "orch-r136-native-2d7095b600baf298ec1fde9429f3f757.service",
+    "InvocationID": "671656d1806043eeb1190167c2572a1a",
+    "KillMode": "control-group",
+    "LoadState": "loaded",
+    "MainPID": "0",
+    "NoNewPrivileges": "yes",
+    "ProtectControlGroups": "yes",
+    "Result": "exit-code",
+    "SubState": "failed",
+    "User": "2524"
+  }
+}

@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/localhome/local-rohing/orch_r155_kernel_parser_20260917t0225z_attempt2/source/gpu/orch_r155_kernel_parser_activate.py", line 366, in <module>
+    main()
+  File "/localhome/local-rohing/orch_r155_kernel_parser_20260917t0225z_attempt2/source/gpu/orch_r155_kernel_parser_activate.py", line 359, in main
+    result = activate(options.directory)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r155_kernel_parser_20260917t0225z_attempt2/source/gpu/orch_r155_kernel_parser_activate.py", line 284, in activate
+    result = smoke.run(directory / 'smoke', old['runtime_root'], old['lease_receipt_path'])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_r155_kernel_parser_20260917t0225z_attempt2/source/gpu/orch_r153_kernel_smoke.py", line 65, in run
+    cpu.require(probe.get('passed') is True and probe.get('checks') == 26, 'complete_kernel_profile_gate')
+  File "/localhome/local-rohing/orch_r155_kernel_parser_20260917t0225z_attempt2/source/gpu/orch_r125_cpu_experiment.py", line 40, in require
+    raise ValueError(message)
+ValueError: complete_kernel_profile_gate

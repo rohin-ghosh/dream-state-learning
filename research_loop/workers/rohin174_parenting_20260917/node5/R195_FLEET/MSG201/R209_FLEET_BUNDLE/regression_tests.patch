@@ -1,0 +1,114 @@
+--- a/tests/test_orch_r184_think_act_learn.py
++++ b/tests/test_orch_r184_think_act_learn.py
+@@ -207,6 +207,59 @@
+         driver.wake()
+         self.assertEqual([item['stage'] for item in self.records('R184_STAGE')], ['THINK', 'ACT'])
+         self.assertEqual(self.records('R184_TRANSITION')[0]['cause'], 'default_action_boundary')
++
++    def test_r209_separate_replies_before_learn_and_corrupt_reply_veto(self):
++        from gpu.orch_r127_pilot_console import publish_parent
++        from gpu.orch_r184_think_act_learn import CONSOLE_REPLY_POLICY, STAGE_BOUNDARY_POLICY
++        from organism_v6 import orch_r194_code_target_filter as filters
++        from organism_v6 import orch_r203_prose_target_filter as prose
++        self.config.update(stage_boundary_policy=STAGE_BOUNDARY_POLICY,
++            console_reply_policy=CONSOLE_REPLY_POLICY,
++            pinned_messages_policy='R206_VERBATIM_ROHIN_MESSAGES_V1',
++            prose_target_filter=prose.POLICY, learn_review_filter=filters.REVIEW_POLICY)
++        publish_parent(self.root, 'Rohin', 'First distinct question.')
++        publish_parent(self.root, 'Rohin', 'Second distinct question.')
++        driver = self.driver(['First own answer. 中文', 'Second own answer.', 'My review.'])
++        driver.generate_stage('LEARN')
++        replies = self.records('R205_CONSOLE_REPLY')
++        self.assertEqual(len(replies), 2)
++        self.assertTrue(all(len(reply['source_inbox_events']) == 1 for reply in replies))
++        self.assertEqual(len({reply['source_inbox_events'][0]['event_id'] for reply in replies}), 2)
++        self.assertEqual([entry['stage'] for entry in self.records('R184_STAGE')], ['ACT', 'ACT', 'LEARN'])
++        self.assertTrue(all(not reply['outcome']['tool_execution_allowed'] for reply in replies))
++        proof = self.records('R195_LEARN_REVIEW')[-1]['proof']
++        self.assertEqual(proof['excluded'][0]['source_sha256'], self.stream.rows[0]['source_sha256'])
++        self.assertEqual(self.stream.rows[0]['target'], 'First own answer. 中文')
++        driver.child.outputs = iter(['Another normal thought.'])
++        driver.generate_stage('THINK')
++        self.assertEqual(len(self.records('R205_CONSOLE_REPLY')), 2)
++
++    def test_r209_message_during_review_is_answered_before_training(self):
++        from gpu.orch_r127_pilot_console import publish_parent
++        from gpu.orch_r184_think_act_learn import CONSOLE_REPLY_POLICY, STAGE_BOUNDARY_POLICY
++        from organism_v6 import orch_r194_code_target_filter as filters
++        from organism_v6 import orch_r203_prose_target_filter as prose
++        self.config.update(stage_boundary_policy=STAGE_BOUNDARY_POLICY,
++            console_reply_policy=CONSOLE_REPLY_POLICY,
++            pinned_messages_policy='R206_VERBATIM_ROHIN_MESSAGES_V1',
++            prose_target_filter=prose.POLICY, learn_review_filter=filters.REVIEW_POLICY)
++        driver = self.driver(['First review.', 'My actual answer.', 'Review including my answer.'])
++        generate = driver.child.generate
++        published = False
++
++        def arrive_during_review(messages, **limits):
++            nonlocal published
++            result = generate(messages, **limits)
++            if not published:
++                publish_parent(self.root, 'Rohin', 'Arrived while LEARN was generating.')
++                published = True
++            return result
++
++        driver.child.generate = arrive_during_review
++        driver.prepare_sleep(1)
++        self.assertEqual([entry['stage'] for entry in self.records('R184_STAGE')], ['LEARN', 'ACT', 'LEARN'])
++        self.assertEqual(len(self.records('R205_CONSOLE_REPLY')), 1)
++        self.assertEqual(self.records('R184_SLEEP_NOTICE')[-1]['new_rows'], 3)
+ 
+     def test_r205_console_reply_precedes_each_stage_and_never_executes_its_code(self):
+         from gpu.orch_r127_pilot_console import publish_parent
+--- a/tests/test_orch_r203_prose_target_filter.py
++++ b/tests/test_orch_r203_prose_target_filter.py
+@@ -212,7 +212,9 @@
+         self.assertEqual(bound['raw_target_sha256'], hashlib.sha256(rows[0]['target'].encode()).hexdigest())
+         self.assertEqual((bound['segment'], bound['cohort'], bound['row_index']), (0, 'NEW', 0))
+         self.assertEqual(bound['policy'], prose.POLICY)
+-        self.assertEqual(bound['evidence'], prose.scan_target(rows[0]['target']))
++        self.assertEqual(bound['evidence'], dict(prose.scan_target(rows[0]['target']),
++            fullwidth_characters=0, cjk_characters=0, english_target_scope=True,
++            language_detection_claimed=False))
+         self.assertEqual(len(proof['prose_target_filter']['checks']), 2)
+         self.assertFalse(proof['prose_target_filter']['corruption_cause_claimed'])
+         self.assertFalse(proof['prose_target_filter']['general_quality_detection_claimed'])
+@@ -283,5 +285,38 @@
+             filters.validate_filter_zero_update_receipt(receipt, rows, old)
+ 
+ 
++class EnglishProseQuarantineTests(unittest.TestCase):
++    def test_scripts_preserve_raw_and_exclude_only_the_child_target(self):
++        for text in ('I choose C2. 我会继续思考。', 'I choose C2. Ｔｈｉｓ is a fullwidth sentence.',
++                'I choose C2. カタカナ', 'I choose C2. 한글'):
++            with self.subTest(text=text):
++                candidate = row(0, text)
++                before = deepcopy(candidate)
++                retained, retained_old, proof = apply([candidate], [])
++                self.assertEqual((retained, retained_old), ([], []))
++                self.assertEqual(candidate, before)
++                self.assertEqual(proof['excluded'][0]['source_sha256'], candidate['source_sha256'])
++                self.assertEqual(proof['excluded'][0]['reason'],
++                    'provisional_english_target_script_quarantine')
++                self.assertFalse(proof['raw_modified'])
++                self.assertFalse(proof['targets_normalized'])
++
++    def test_english_names_math_punctuation_and_external_prefix_are_unchanged(self):
++        candidate = row(0, 'C2 and Byte can disagree. LoRA, Astra, NASA, café, α + β — all remain.')
++        candidate['prefix'] = [{'role': 'user', 'content': 'Rohin: 中文 ＡＢＣ'}]
++        before = deepcopy(candidate)
++        retained, unused_old, proof = apply([candidate])
++        self.assertEqual(retained, [before])
++        self.assertEqual(candidate, before)
++        self.assertFalse(proof['excluded'])
++
++    def test_legacy_policy_and_unannotated_rows_keep_previous_semantics(self):
++        legacy = dict(row(0, 'Unchanged 中文'), prose_target_filter=prose.LEGACY_POLICY)
++        unannotated = row(1, 'Unchanged 中文', annotated=False)
++        retained, unused_old, proof = apply([legacy, unannotated])
++        self.assertEqual(retained, [legacy, unannotated])
++        self.assertFalse(proof['excluded'])
++
++
+ if __name__ == '__main__':
+     unittest.main()

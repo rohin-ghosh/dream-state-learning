@@ -1,0 +1,50 @@
+{
+  "observed_unix": 1789618716.46783,
+  "phase_sha256": "657c8b797c59b2cee21927cd8d010f87237ec8626b16e32b053ff9d6f9c66127",
+  "identities": [
+    {
+      "label": "controller",
+      "identity": {
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "pid": 1688939,
+        "start_ticks": "84709817",
+        "uid": 2524
+      },
+      "matches": true,
+      "cmdline": "/localhome/local-rohing/v2/venv/bin/python -B -m gpu.orch_r158_benchmark_continuation node --config /localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/CONTINUATION_R158_20260917T0416Z.json "
+    },
+    {
+      "label": "scheduler",
+      "identity": {
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "pid": 1688949,
+        "start_ticks": "84709839",
+        "uid": 2524
+      },
+      "matches": true,
+      "cmdline": "/localhome/local-rohing/v2/venv/bin/python -B -m gpu.orch_r146_checkpoint_scheduler run --config /localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/SCHEDULER_R158_20260917T0416Z.json "
+    }
+  ],
+  "status_path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/successor_phase_r158_20260917t0416z/STATUS_000001.json",
+  "status": {
+    "active_config_path": "/localhome/local-rohing/orch_r130_checkpoint_benchmark_20260916_attempt1/SCHEDULER_R158_20260917T0416Z.json",
+    "active_config_sha256": "fb9281e6a0c90f26b2ef30c1a4ba2215e419b0029e87b0cfa794e97b96bc8a0e",
+    "active_physical": [],
+    "completed_checkpoint_count": 62,
+    "future_completed_checkpoints": 56,
+    "hard_end_unix": 1789624440,
+    "next_dispatch_unix": 1789619400,
+    "observed_unix": 1789618689.502964,
+    "own_admitted": 0,
+    "pending_unique_checkpoints": 0,
+    "phase_charged": 53,
+    "phase_sha256": "657c8b797c59b2cee21927cd8d010f87237ec8626b16e32b053ff9d6f9c66127",
+    "registered_lineages": 5,
+    "remaining_jobs": 5,
+    "remaining_total_call_budget": 900,
+    "reserved_checkpoint_count": 65,
+    "status": "SEGMENT_RUNNING"
+  },
+  "historical_files_checked": 125,
+  "historical_hashes_unchanged": true
+}

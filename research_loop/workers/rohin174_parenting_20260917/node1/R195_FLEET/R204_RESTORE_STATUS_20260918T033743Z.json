@@ -1,0 +1,124 @@
+{
+  "arms": [
+    {
+      "failures": [],
+      "markers": [
+        "ARMED.json"
+      ],
+      "name": "creative_b1",
+      "original_pid": 2204208,
+      "original_present": true,
+      "original_start_ticks": "42144998",
+      "original_state": "T",
+      "restore_log_tail": null,
+      "same_identity": true
+    },
+    {
+      "failures": [
+        {
+          "error_type": "AssertionError",
+          "no_automatic_retry": true,
+          "observed_unix": 1789702546.788113,
+          "reason": "handoff_not_complete_no_dispatch",
+          "retired": false
+        },
+        {
+          "error_type": "ValueError",
+          "no_automatic_retry": true,
+          "observed_unix": 1789702545.9432893,
+          "reason": "one_GPU_contained_environment",
+          "retired": false
+        },
+        {
+          "error_type": "AssertionError",
+          "no_automatic_retry": true,
+          "observed_unix": 1789702546.3328905,
+          "reason": "same_life_R204_restore_failed_original_resumes",
+          "retired": false
+        }
+      ],
+      "markers": [
+        "ARMED.json",
+        "HANDOFF_SERVICE_EXIT.json"
+      ],
+      "name": "r203_math_comm_b2",
+      "original_pid": 2474769,
+      "original_present": true,
+      "original_start_ticks": "42313144",
+      "original_state": "S",
+      "restore_log_tail": "/r203_math_comm_b2_r204/source/gpu/orch_r136_node1_launcher.py\", line 620, in verify_device_containment\n    require(os.environ.get('CUDA_VISIBLE_DEVICES') == plan['gpu_uuid'], 'one_GPU_contained_environment')\n  File \"/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_comm_b2_r204/source/gpu/orch_r136_node1_launcher.py\", line 87, in require\n    native.require(condition, reason)\n  File \"/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_comm_b2_r204/source/organism_v6/orch_r125_continual_stream.py\", line 35, in require\n    raise ValueError(reason)\nValueError: one_GPU_contained_environment\n",
+      "same_identity": true
+    },
+    {
+      "failures": [
+        {
+          "error_type": "ValueError",
+          "no_automatic_retry": true,
+          "observed_unix": 1789702524.6571412,
+          "reason": "one_GPU_contained_environment",
+          "retired": false
+        },
+        {
+          "error_type": "AssertionError",
+          "no_automatic_retry": true,
+          "observed_unix": 1789702525.517918,
+          "reason": "handoff_not_complete_no_dispatch",
+          "retired": false
+        },
+        {
+          "error_type": "AssertionError",
+          "no_automatic_retry": true,
+          "observed_unix": 1789702525.0812767,
+          "reason": "same_life_R204_restore_failed_original_resumes",
+          "retired": false
+        }
+      ],
+      "markers": [
+        "ARMED.json",
+        "HANDOFF_SERVICE_EXIT.json"
+      ],
+      "name": "r203_repo_evidence_c3",
+      "original_pid": 2464226,
+      "original_present": true,
+      "original_start_ticks": "42307222",
+      "original_state": "R",
+      "restore_log_tail": "vidence_c3_r204/source/gpu/orch_r136_node1_launcher.py\", line 620, in verify_device_containment\n    require(os.environ.get('CUDA_VISIBLE_DEVICES') == plan['gpu_uuid'], 'one_GPU_contained_environment')\n  File \"/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_repo_evidence_c3_r204/source/gpu/orch_r136_node1_launcher.py\", line 87, in require\n    native.require(condition, reason)\n  File \"/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET/r203_repo_evidence_c3_r204/source/organism_v6/orch_r125_continual_stream.py\", line 35, in require\n    raise ValueError(reason)\nValueError: one_GPU_contained_environment\n",
+      "same_identity": true
+    },
+    {
+      "failures": [
+        {
+          "error_type": "AssertionError",
+          "no_automatic_retry": true,
+          "observed_unix": 1789702378.2243938,
+          "reason": "",
+          "retired": false
+        }
+      ],
+      "markers": [
+        "ARMED.json"
+      ],
+      "name": "r203_creative_structured_a4",
+      "original_pid": 2519932,
+      "original_present": true,
+      "original_start_ticks": "42335471",
+      "original_state": "T",
+      "restore_log_tail": null,
+      "same_identity": true
+    },
+    {
+      "failures": [],
+      "markers": [
+        "ARMED.json"
+      ],
+      "name": "r203_math_self_derive_c5",
+      "original_pid": 2492641,
+      "original_present": true,
+      "original_start_ticks": "42321640",
+      "original_state": "T",
+      "restore_log_tail": "",
+      "same_identity": true
+    }
+  ],
+  "observed_unix": 1789702663.033178
+}

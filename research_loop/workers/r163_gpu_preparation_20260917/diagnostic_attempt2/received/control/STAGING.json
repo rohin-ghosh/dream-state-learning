@@ -1,0 +1,68 @@
+{
+  "hostname": "[REDACTED_HOST]",
+  "lease": {
+    "path": "/localhome/local-rohing/orch_r118_node3_7_grid_20260915_attempt1/lease_budget_r119_learned/LEASE_BUDGET.json",
+    "sha256": "919e9fb3f9cfd6cadb57af90844319e50eb114068eb52cd75aa3ab715f9c3770",
+    "value": {
+      "authorized_unix": 1789494285.03069,
+      "config_sha256": "d59d9b178dfed9ca61532ec191b92de5dbac5861dab05f0158d14d60f0379595",
+      "counter_reset": false,
+      "cumulative_used": {
+        "NATIVE": 1236,
+        "PARENT": 90
+      },
+      "directive": "only crash/lease wall ends life; explicitly logged prospective lease-budget headroom; cumulative used unchanged, no replay/reset",
+      "final_calls_added": 0,
+      "hard_end_unix": 1789668000.0,
+      "headroom_is_not_target_dose": true,
+      "headroom_rate_per_second": {
+        "NATIVE": 16,
+        "PARENT": 4
+      },
+      "historical_caps": {
+        "NATIVE": 1858,
+        "PARENT": 298
+      },
+      "lease_end_unix": 1789689600.0,
+      "ledger_prefix_bytes": 238959,
+      "ledger_prefix_sha256": "71f8496b1b818588a7356f34a10ef6b92aef7966ef9ef7a82e8d9fd6bbb5b985",
+      "lifetime_cycle_limit": null,
+      "optimizer_reset": false,
+      "policy": "continue_until_crash_or_lease_wall_no_budget_dose_target",
+      "prospective_caps": {
+        "NATIVE": 2782322,
+        "PARENT": 696182
+      },
+      "root": "/localhome/local-rohing/orch_r118_node3_7_grid_20260915_attempt1",
+      "schema": "R119_GRID_LEASE_BUDGET_V1"
+    }
+  },
+  "manifest_files_including_operator": 2158,
+  "no_cuda_allocation": true,
+  "no_dispatch": true,
+  "no_old_writes": true,
+  "observed_unix": 1789630069.9188266,
+  "physical5": "5, GPU-bc211959-642d-664b-3581-42a0dbe434e9, NVIDIA A40, 46068 MiB, 1 MiB, 0 %\n",
+  "physical5_minor": 5,
+  "predecessor_bytes": 28408890,
+  "predecessor_files_verified": true,
+  "predecessor_manifest": {
+    "path": "/localhome/local-rohing/orch_r163_numerical_preparation_20260917_attempt1/control_candidate3/SOURCE_PINS.json",
+    "sha256": "71ea6c8b9a878f81e753e09869122ca60eb493b1e3f7c48cc4de18aa957718e9"
+  },
+  "provider_booking_verified": false,
+  "remote_preparation_limit_bytes": 1073741824,
+  "replacements": {
+    "gpu/orch_r163_executor_probe.py": {
+      "new_sha256": "b8ab9d80cd415de914116000d71c513001bec11a1fc62ae26bc064ada3b00f9e",
+      "old_sha256": "99c114f4cd68dbff86afb16ec39544460cacb68fdbff60a513b59eb801227422"
+    },
+    "tests/test_orch_r163_executor_probe.py": {
+      "new_sha256": "43c1d340941611c9fafbd290a3b2c2131f7163740a77c56eaabd1211aa8ed90b",
+      "old_sha256": "4a2b2f7a4f833e5c232ca7fda7d7259ab1de94278d5aa6313c100a2830d66e41"
+    }
+  },
+  "schema": "R163_ATTEMPT2_STAGING_V1",
+  "source_copy_read_write_upper_bound_bytes": 58914932,
+  "source_files": 2157
+}

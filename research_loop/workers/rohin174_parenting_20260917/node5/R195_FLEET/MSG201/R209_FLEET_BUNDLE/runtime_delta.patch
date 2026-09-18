@@ -1,0 +1,113 @@
+--- a/gpu/orch_r184_think_act_learn.py
++++ b/gpu/orch_r184_think_act_learn.py
+@@ -396,25 +396,32 @@
+ 
+     def generate_stage(self, stage, *, extra='', think_remaining=1):
+         incoming = list(self.journal.read_inbox())
+-        if self.config.get('console_reply_policy') == CONSOLE_REPLY_POLICY:
++        while self.config.get('console_reply_policy') == CONSOLE_REPLY_POLICY:
+             from gpu.orch_r206_pinned_messages import pin_messages, rohin_events
+             seen = {event.event_id for event in self.stream.history.events}
+             human_events = rohin_events(incoming)
+             questions = [event for event in human_events if event.event_id not in seen]
++            deferred = {event.event_id for event in questions[1:]}
+             if 'pinned_messages_policy' in self.config:
+-                pin_messages(self.stream, self.journal, human_events, include_new=True)
++                pin_messages(self.stream, self.journal,
++                    [event for event in human_events if event.event_id not in deferred], include_new=True)
+             if questions:
+-                result = self._generate_stage('ACT', incoming=incoming, console_events=questions)
++                question = questions[0]
++                result = self._generate_stage('ACT',
++                    incoming=[event for event in incoming if event.event_id not in deferred],
++                    console_events=[question])
+                 outcome = dict(status='CONSOLE_REPLY_RECORDED', executed=False,
+                     tool_execution_allowed=False, human_read_confirmed=False)
+                 self.journal.record('R205_CONSOLE_REPLY', dict(schema=CONSOLE_REPLY_POLICY,
+                     interrupted_stage=stage, stage='ACT', source_inbox_events=[dict(event_id=event.event_id,
+-                        source_id=event.source_id, source_sha256=event.source_sha256) for event in questions],
++                        source_id=event.source_id, source_sha256=event.source_sha256) for event in [question]],
+                     response_origin=deepcopy(self.last_response), segment=result['segment'],
+                     source_sha256=result['source_sha256'], outcome=outcome))
+                 if self.dataset is not None:
+                     self.export_stage(*self.last_stage_export, outcome=outcome, committed=True)
+-                incoming = []
++                incoming = list(self.journal.read_inbox())
++            else:
++                break
+         return self._generate_stage(stage, incoming=incoming, extra=extra, think_remaining=think_remaining)
+ 
+     def _generate_stage(self, stage, *, incoming, extra='', think_remaining=1, console_events=()):
+@@ -710,7 +717,14 @@
+                 self.generate_stage('THINK', extra='\nCompaction review: revisit this exact earlier reflection '
+                     'before distilling what must survive. No tool is executed in this review.\n' + event.text)
+                 reviewed.append(event.event_id)
+-        self.generate_stage('LEARN')
++        while True:
++            self.generate_stage('LEARN')
++            if self.config.get('console_reply_policy') != CONSOLE_REPLY_POLICY:
++                break
++            from gpu.orch_r206_pinned_messages import rohin_events
++            seen = {event.event_id for event in self.stream.history.events}
++            if not any(event.event_id not in seen for event in rohin_events(self.journal.read_inbox())):
++                break
+         source = next(event for event in reversed(self.stream.history.events) if event.actor == 'child')
+         if should_compact:
+             summary = replace(source, event_id=f'r184:summary:{cycle}', phase='compaction')
+--- a/organism_v6/orch_r203_prose_target_filter.py
++++ b/organism_v6/orch_r203_prose_target_filter.py
+@@ -1,4 +1,9 @@
+ """Non-material, opt-in NEW-target quarantine; never rewrite source targets.
++
++R209 adds bounded fullwidth/CJK/Kana/Hangul exclusion for this English child's
++own new targets, including console ACT. External prefixes are not scanned or
++changed. This is a provisional script check, not general language detection.
++Legacy R203 row annotations retain the original capitalization-only behavior.
+ 
+ R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1 provisionally excludes only when a
+ prose paragraph has at least 20 sentence-internal common-word opportunities,
+@@ -19,9 +24,11 @@
+ 
+ import hashlib
+ import re
++import unicodedata
+ 
+ 
+-POLICY = 'R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1'
++LEGACY_POLICY = 'R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1'
++POLICY = 'R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1'
+ EXCLUSION_REASON = 'provisional_internal_common_word_capitalization_quarantine'
+ MIN_ELIGIBLE_COMMON_WORDS = 20
+ MIN_CAPITALIZED_COMMON_WORDS = 10
+@@ -126,16 +133,27 @@
+     for index, row in enumerate(new_rows):
+         if 'prose_target_filter' not in row:
+             continue
+-        if type(row['prose_target_filter']) is not str or row['prose_target_filter'] != POLICY:
++        if type(row['prose_target_filter']) is not str or row['prose_target_filter'] not in (POLICY, LEGACY_POLICY):
+             raise ValueError('known_prose_target_filter_policy')
+         evidence = scan_target(row['target'])
++        reason = EXCLUSION_REASON
++        if row['prose_target_filter'] == POLICY:
++            characters = row['target'][:MAX_SCAN_CHARACTERS]
++            fullwidth = sum(unicodedata.east_asian_width(character) == 'F' for character in characters)
++            cjk = sum(any(script in unicodedata.name(character, '')
++                for script in ('CJK', 'HIRAGANA', 'KATAKANA', 'HANGUL')) for character in characters)
++            evidence.update(fullwidth_characters=fullwidth, cjk_characters=cjk,
++                english_target_scope=True, language_detection_claimed=False)
++            if fullwidth or cjk:
++                evidence['quarantined'] = True
++                reason = 'provisional_english_target_script_quarantine'
+         check = dict(source_sha256=row['source_sha256'], segment=row['segment'], cohort='NEW',
+             row_index=index, raw_target_sha256=hashlib.sha256(row['target'].encode()).hexdigest(),
+-            policy=POLICY, evidence=evidence)
++            policy=row['prose_target_filter'], evidence=evidence)
+         checks.append(check)
+         if evidence['quarantined']:
+-            excluded.append(dict(check, reason=EXCLUSION_REASON))
++            excluded.append(dict(check, reason=reason))
+     return dict(policy=POLICY, checks=checks, excluded=excluded, raw_modified=False,
+         targets_normalized=False, provisional=True, corruption_cause_claimed=False,
+         general_quality_detection_claimed=False,
+-        claim_scope='BOUNDED_INTERNAL_COMMON_WORD_CAPITALIZATION_ONLY')
++        claim_scope='OPT_IN_ENGLISH_CHILD_TARGETS_BOUNDED_SCRIPT_AND_INTERNAL_CAPITALIZATION')

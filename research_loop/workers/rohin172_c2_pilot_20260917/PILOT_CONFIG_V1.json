@@ -1,0 +1,92 @@
+{
+  "schema": "ROHIN172_C2_FIXED_PILOT_V1",
+  "status": "FIXED_BEFORE_ACTIVATION_NOT_LAUNCHED",
+  "authority": "Rohin172; C2 reference preserved under Rohin173/174",
+  "source_commit": "042722cb836635aef8e2a0173c98035178554dd2",
+  "source_life": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+  "source_journal_id": "260be8b8710a42559b291797c6e14983",
+  "pre_intervention_checkpoint": {
+    "cycle": 40,
+    "optimizer_steps": 4260,
+    "sleep_record_index": 4943,
+    "sleep_record_sha256": "9aef056e123b99e5fa5bbb9ce5e446391313a94b8d64acf342faf9aab1c34fee",
+    "adapter_state_sha256": "0e681b076d9ee6e3ef04f88a11b941f7542c3dcedb980d320798b809f138f267",
+    "optimizer_rng_sha256": "45cafa5a43f5975c9148b57329cdf9e5b43618b6fd0a4d77db829eb15fc6b4fb",
+    "directory": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/checkpoints/sleep_000040"
+  },
+  "already_published_guidance": {
+    "rohin_inbox_id": "3078c29c7f70428da03ba284e247206c",
+    "queued_prior_astra_inbox_id": "5e5ce7b828344f73b47b5a7c985b1785",
+    "duplicate_rohin_message_forbidden": true,
+    "exposure_requires_rendered_request_not_inbox": true
+  },
+  "guided_phase": {
+    "start": "first committed response to a REQUEST rendering the bound Rohin message",
+    "minimum_committed_child_responses": 4,
+    "end": "first completed sleep at or after the fourth committed child response from start",
+    "maximum_generated_tokens": 4096,
+    "maximum_elapsed_seconds_after_first_exposure": 14400,
+    "additional_astra_turns_maximum": 1,
+    "astra_turn_after": "first committed response after start; no duplicate if any pilot-attributed turn is already published or uncertain",
+    "astra_question": "What did your actual attempt show, or is there no result yet? What, specifically, will you do differently on your next attempt? Choose one step and carry it out.",
+    "additional_parent_message_word_limit": 90,
+    "other_automatic_parent_turns": "defer prospectively after activation; preserve and audit any already in flight",
+    "unexpected_exposure": "record protocol deviation; never silently restart the window or select a better episode"
+  },
+  "task": {
+    "object": "C2's existing mathematical investigation; no supplied new formula or solution",
+    "accessible_feedback": "auditable numerical or algebraic calculations and real tool results if requested and delivered",
+    "feedback_provenance": "distinguish child-written calculation, independently checked calculation, and actual environment execution",
+    "offline_check": "check explicit finite arithmetic independently; never relabel offline scoring as feedback the child saw"
+  },
+  "carry_forward": {
+    "semantic_fields": ["actual_observation_or_no_result", "tentative_judgment_and_uncertainty", "unfinished_next_action"],
+    "visible_format": "ordinary child-authored prose; no mandatory stage headers or machine metadata",
+    "invitation": "What decision and unfinished work must survive for you to continue? Preserve the actual observation, your tentative judgment and the unfinished next action. No result obtained is valid.",
+    "target_authorship": "only an actual child response; no operator-written corrected target",
+    "evidence": "exact relevant returned values as attributed masked environment content; no invented outcome",
+    "protected_carry_and_evidence_maximum_tokens": 2048,
+    "raw_history": "preserve complete immutable history and provenance outside the bounded visible carry",
+    "copy_transition": "one explicit matched context compaction at withdrawal entry on the two experimental copies; birth plus identical child carry and real evidence, no Rohin/Astra reminder",
+    "overflow": "protect the bounded carry; log omitted older context; preserve and stop a copy if safe fit cannot be achieved without inventing state",
+    "empty_or_inadequate_carry": "record failure; do not invent a carry or choose another successful episode"
+  },
+  "continuation": {
+    "source_checkpoint_selection": "first completed guided-phase sleep; bind exact checkpoint, optimizer, RNG, history and workspace manifest before copy admission",
+    "arms": ["C2_UPDATES_ON", "C2_UPDATES_OFF"],
+    "hardware": "two isolated A40 slots on node4, physical6 and physical7, only after profiler release and fresh strict admission",
+    "matched": ["initial_adapter", "initial_optimizer", "initial_generation_rng", "initial_history_and_carry", "workspace_snapshot", "base_and_rank", "decoder", "tool_limits", "token_limits", "wake_sleep_schedule", "runtime_source"],
+    "generation_rng": "independent of training RNG consumption; identical initial generation RNG in both copies",
+    "on": "registered own-token sleep updates with inherited anchor and rehearsal recipe",
+    "off": "identical sleep boundaries and row logging, optimizer updates disabled and adapter unchanged",
+    "completed_wake_sleep_cycles": 3,
+    "ordinary_segments_per_cycle": 2,
+    "presleep_own_segments_per_cycle": 1,
+    "maximum_tokens_per_segment": 512,
+    "maximum_generated_tokens_per_arm": 4608,
+    "maximum_wall_seconds_per_arm": 14400,
+    "maximum_total_copy_gpu_hours": 8,
+    "budget_exhaustion": "save and mark incomplete if three cycles did not complete; no automatic extension",
+    "new_parent_or_peer_messages": "none; keep deferred arrivals outside the copied visible context",
+    "presleep_during_withdrawal": "ordinary child continuation for the third segment, with no added parent/reflection/retelling invitation; preserve segment count and ON update dose",
+    "first_wake": "continue from the carried state without any new reminder",
+    "source_life": "preserve original C2 and its complete state; it is the guided source, not an extra independently matched arm",
+    "no_claim": "this contrast isolates incremental withdrawal-period updates, not installation during shared guided sleeps"
+  },
+  "evidence_columns": [
+    "cycle_and_record_refs", "actual_attempt", "chosen_next_action", "action_occurred",
+    "feedback_source_and_exact_result", "feedback_was_visible", "next_choice_used_feedback",
+    "carry_field_presence", "carry_to_wake_survival", "eligible_row_hashes_and_exclusions",
+    "actual_presentations_and_optimizer_steps", "new_reminder_or_peer_exposure", "failure_or_uncertainty"
+  ],
+  "success": "a specific useful decision is preserved through the explicit context transition and enacted before any new reminder; later choices use actual observed results",
+  "failure": ["intention repeated without action", "invented outcome", "parent needed to initiate each step", "unsupported carry", "no completed continuation within fixed budget"],
+  "measurement": {
+    "agreement_or_phrase_overlap_is_not_success": true,
+    "living_context_trace": true,
+    "existing_empty_history_adapter_on_off_probes": "retain separately; no parent access to sealed results",
+    "scope": "one exploratory lineage, not replicated evidence or proof of broad transfer"
+  },
+  "propagation": "stage only; activation on other lives requires Rohin's call after C2 evidence; R174 parenting variants are separately labelled treatments, not propagation of a proven C2 result",
+  "change_control": "no silent changes after publication; any amendment gets a new version, reason and prospective boundary before new execution"
+}

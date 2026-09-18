@@ -1,0 +1,133 @@
+{
+  "id": "weqweasdas/RM-Mistral-7B",
+  "sha": "70e252672fdd640083505e2ca1da8547e0e6d478",
+  "author": "weqweasdas",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "library_name": "transformers",
+  "pipeline_tag": "text-classification",
+  "createdAt": "2024-03-22T14:02:42.000Z",
+  "lastModified": "2024-03-31T19:06:43.000Z",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "mistral",
+    "text-classification",
+    "arxiv:2304.06767",
+    "arxiv:2312.11456",
+    "text-embeddings-inference",
+    "endpoints_compatible",
+    "deploy:azure",
+    "region:us"
+  ],
+  "config": {
+    "architectures": [
+      "MistralForSequenceClassification"
+    ],
+    "model_type": "mistral",
+    "tokenizer_config": {
+      "bos_token": "<s>",
+      "chat_template": "{{ bos_token }}{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + message['content'] + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ message['content'] + eos_token}}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}",
+      "eos_token": "</s>",
+      "pad_token": "[PAD]",
+      "unk_token": "<unk>",
+      "use_default_system_prompt": false
+    }
+  },
+  "safetensors": {
+    "parameters": {
+      "BF16": 7110668288
+    },
+    "total": 7110668288
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "3274d74667a188c79fb8f3df29544dcaabfdbf3b",
+      "size": 4593
+    },
+    {
+      "rfilename": "added_tokens.json",
+      "blobId": "e41416ddd79948246ea2dced6800ea3cd531c424",
+      "size": 21
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "d9597ec2b7088204594e16c75db34a017a9e7bee",
+      "size": 818
+    },
+    {
+      "rfilename": "model-00001-of-00003.safetensors",
+      "blobId": "05c57a25f1b41e551301e2b4e9d19094d20fcde3",
+      "size": 4943170528,
+      "lfs": {
+        "sha256": "107b9b8dbaf6b3719f60480634bdc048c2ab241fc26f8feb57eeadab2d9855ab",
+        "size": 4943170528,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00002-of-00003.safetensors",
+      "blobId": "b0d5ada58c567ceb5182b7082057f6f24ea0614a",
+      "size": 4999819336,
+      "lfs": {
+        "sha256": "375926b27cbc28f1e082fab807c84b05d257010b0becdf8dc5d7bc8d062aecba",
+        "size": 4999819336,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00003-of-00003.safetensors",
+      "blobId": "7728e384aa75ff6eb8e9370c4e23591bd8896407",
+      "size": 4278380512,
+      "lfs": {
+        "sha256": "419d395a14957aae7447f2fd4a7202dca34c9b909f092eb1f9b0e9349e51e39c",
+        "size": 4278380512,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model.safetensors.index.json",
+      "blobId": "821791f7d7ade6ee35e2ac95962b55872728a0a0",
+      "size": 23948
+    },
+    {
+      "rfilename": "special_tokens_map.json",
+      "blobId": "0fe0f752d4bc23aad8903dfc5e8815fa90b34646",
+      "size": 552
+    },
+    {
+      "rfilename": "tokenizer.json",
+      "blobId": "739f5ae685f88ac9d7e16656bbde109dd6f2b53c",
+      "size": 1795484
+    },
+    {
+      "rfilename": "tokenizer.model",
+      "blobId": "8b443ef19c2a19acc3ac64fb9c3db4a72921dff6",
+      "size": 493443,
+      "lfs": {
+        "sha256": "dadfd56d766715c61d2ef780a525ab43b8e6da4de6865bda3d95fdef5e134055",
+        "size": 493443,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "c62dae81340551683caafa9cb8c546cf30d6ca3d",
+      "size": 1635
+    }
+  ],
+  "transformersInfo": {
+    "auto_model": "AutoModelForSequenceClassification",
+    "pipeline_tag": "text-classification",
+    "processor": "AutoTokenizer"
+  },
+  "cardData_allowed_fields": {},
+  "omissions": "All widgets, examples, model-index, spaces and other fields omitted."
+}

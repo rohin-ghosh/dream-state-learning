@@ -1,0 +1,185 @@
+{
+  "arms": [
+    {
+      "rank": 8,
+      "receipts": {
+        "ADMISSION.json": {
+          "blockers": [],
+          "clear": true,
+          "observed_unix": 1789706522.9537566,
+          "privileged": true,
+          "target_physical": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "CONFINEMENT_CPU.json": {
+          "allowed": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "config_sha256": "fa6b51e43d25c0f51bac8635a7fef03aa400f09702ab5fc4bd90359cb28d26a8",
+          "denied": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "observed_unix": 1789706522.7085893,
+          "passed": true
+        },
+        "DISPATCH_ATTEMPT.json": {
+          "candidate_count": 1,
+          "config_sha256": "fa6b51e43d25c0f51bac8635a7fef03aa400f09702ab5fc4bd90359cb28d26a8",
+          "no_retry": true,
+          "started_unix": 1789706522.5826616
+        },
+        "training/LOADED.json": {
+          "config_sha256": "fa6b51e43d25c0f51bac8635a7fef03aa400f09702ab5fc4bd90359cb28d26a8",
+          "device_uuids": [
+            "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82",
+            "GPU-3aaf4dfd-b6c9-a56d-3ca7-ee7748ee5f4d",
+            "GPU-6d1c0d5e-d7b6-e9a4-183d-dedfadabfefa",
+            "GPU-9dba6108-a040-2cd0-4ea1-274bc6a99e47"
+          ],
+          "global_batch": 64,
+          "learning_rate": 3e-05,
+          "loaded_unix": 1789706568.647771,
+          "packet_sha256": "43d90b0530324b554d216c648d93e677aa02eaf4e19b9bcda815c9b4a06a5d91",
+          "rank": 8,
+          "status": "ACTUAL_FOUR_GPU_DDP_LOADED",
+          "target_comparisons": 1000000,
+          "trainable_parameter_count": 2526720,
+          "warmstart_step": 6250,
+          "world_size": 4
+        },
+        "training/PROGRESS_000001.json": {
+          "aggregate_comparisons": 64,
+          "completed_updates": 1,
+          "elapsed_seconds": 3.833534180012066,
+          "full_five_minute_pilot": false,
+          "observed_unix": 1789706591.2977448,
+          "pairs_per_second": 16.694777454625058
+        },
+        "training/PROGRESS_000050.json": {
+          "aggregate_comparisons": 3200,
+          "completed_updates": 50,
+          "elapsed_seconds": 107.24122534398339,
+          "full_five_minute_pilot": false,
+          "observed_unix": 1789706716.0659668,
+          "pairs_per_second": 29.839271136037343
+        }
+      },
+      "root": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank8_20260918_candidate1"
+    },
+    {
+      "rank": 16,
+      "receipts": {
+        "ADMISSION.json": {
+          "blockers": [],
+          "clear": true,
+          "observed_unix": 1789706522.9659152,
+          "privileged": true,
+          "target_physical": [
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        "CONFINEMENT_CPU.json": {
+          "allowed": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "config_sha256": "b22436944783798a4075151399afca70a270d4884db1ce52f0e2bb799c9a3d8b",
+          "denied": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "observed_unix": 1789706522.712564,
+          "passed": true
+        },
+        "DISPATCH_ATTEMPT.json": {
+          "candidate_count": 1,
+          "config_sha256": "b22436944783798a4075151399afca70a270d4884db1ce52f0e2bb799c9a3d8b",
+          "no_retry": true,
+          "started_unix": 1789706522.582353
+        },
+        "training/LOADED.json": {
+          "config_sha256": "b22436944783798a4075151399afca70a270d4884db1ce52f0e2bb799c9a3d8b",
+          "device_uuids": [
+            "GPU-967bc219-6586-d50f-c774-eb4426f3af97",
+            "GPU-11c058aa-f9ac-0a2b-5016-6c817e2e5b2f",
+            "GPU-ff82fd85-f324-35e5-5db3-4b6274a3f11e",
+            "GPU-6e850dab-3d57-cf83-1929-3a0f1efe46b6"
+          ],
+          "global_batch": 64,
+          "learning_rate": 3e-05,
+          "loaded_unix": 1789706568.889361,
+          "packet_sha256": "43d90b0530324b554d216c648d93e677aa02eaf4e19b9bcda815c9b4a06a5d91",
+          "rank": 16,
+          "status": "ACTUAL_FOUR_GPU_DDP_LOADED",
+          "target_comparisons": 1000000,
+          "trainable_parameter_count": 5049856,
+          "warmstart_step": 6250,
+          "world_size": 4
+        },
+        "training/PROGRESS_000001.json": {
+          "aggregate_comparisons": 64,
+          "completed_updates": 1,
+          "elapsed_seconds": 3.5217193579883315,
+          "full_five_minute_pilot": false,
+          "observed_unix": 1789706590.7134278,
+          "pairs_per_second": 18.17294153630627
+        },
+        "training/PROGRESS_000050.json": {
+          "aggregate_comparisons": 3200,
+          "completed_updates": 50,
+          "elapsed_seconds": 107.20556252103415,
+          "full_five_minute_pilot": false,
+          "observed_unix": 1789706715.7527874,
+          "pairs_per_second": 29.849197418017813
+        }
+      },
+      "root": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank16_20260918_candidate1"
+    }
+  ],
+  "nvml": [
+    "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82, 63223, 18172 MiB",
+    "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82, 63224, 272 MiB",
+    "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82, 63225, 272 MiB",
+    "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82, 63226, 272 MiB",
+    "GPU-3aaf4dfd-b6c9-a56d-3ca7-ee7748ee5f4d, 63224, 17560 MiB",
+    "GPU-3aaf4dfd-b6c9-a56d-3ca7-ee7748ee5f4d, 63225, 262 MiB",
+    "GPU-3aaf4dfd-b6c9-a56d-3ca7-ee7748ee5f4d, 63226, 262 MiB",
+    "GPU-6d1c0d5e-d7b6-e9a4-183d-dedfadabfefa, 63224, 262 MiB",
+    "GPU-6d1c0d5e-d7b6-e9a4-183d-dedfadabfefa, 63225, 18190 MiB",
+    "GPU-6d1c0d5e-d7b6-e9a4-183d-dedfadabfefa, 63226, 262 MiB",
+    "GPU-9dba6108-a040-2cd0-4ea1-274bc6a99e47, 63224, 262 MiB",
+    "GPU-9dba6108-a040-2cd0-4ea1-274bc6a99e47, 63225, 262 MiB",
+    "GPU-9dba6108-a040-2cd0-4ea1-274bc6a99e47, 63226, 18768 MiB",
+    "GPU-967bc219-6586-d50f-c774-eb4426f3af97, 63232, 282 MiB",
+    "GPU-967bc219-6586-d50f-c774-eb4426f3af97, 63231, 282 MiB",
+    "GPU-967bc219-6586-d50f-c774-eb4426f3af97, 63229, 18228 MiB",
+    "GPU-967bc219-6586-d50f-c774-eb4426f3af97, 63230, 282 MiB",
+    "GPU-11c058aa-f9ac-0a2b-5016-6c817e2e5b2f, 63232, 262 MiB",
+    "GPU-11c058aa-f9ac-0a2b-5016-6c817e2e5b2f, 63231, 262 MiB",
+    "GPU-11c058aa-f9ac-0a2b-5016-6c817e2e5b2f, 63230, 18108 MiB",
+    "GPU-ff82fd85-f324-35e5-5db3-4b6274a3f11e, 63232, 262 MiB",
+    "GPU-ff82fd85-f324-35e5-5db3-4b6274a3f11e, 63231, 18238 MiB",
+    "GPU-ff82fd85-f324-35e5-5db3-4b6274a3f11e, 63230, 262 MiB",
+    "GPU-6e850dab-3d57-cf83-1929-3a0f1efe46b6, 63232, 19196 MiB",
+    "GPU-6e850dab-3d57-cf83-1929-3a0f1efe46b6, 63231, 262 MiB",
+    "GPU-6e850dab-3d57-cf83-1929-3a0f1efe46b6, 63230, 262 MiB"
+  ],
+  "observed_utc": "2026-09-18T04:45:20.936930+00:00"
+}

@@ -1,0 +1,206 @@
+{
+  "GPU_signals_authorized": false,
+  "approved_intake_sha256": "20743f990b673875241023681d811b4e24eefb32a1546174065353648928356b",
+  "assembly_v1_sha256": "32ac4f130e58ba852f3c74f9c5000137065f335f1306df0094d49309b3d5afb1",
+  "assembly_v2_sha256": "3e9da0d121cb53b76ad1411f9c6e942923892363cb5dcde591674c7ac881347e",
+  "authority": "BUILDER_CPU_EVIDENCE_BINDING_NOT_HUMAN_RATIFICATION",
+  "candidate_source_manifest_sha256": "0148d734ad436e189829cc946028e4d04fdccd081ca6375211a6905291f6ac9d",
+  "created_utc": "2026-09-17T15:57:33.336712+00:00",
+  "historical_cpu_ref": {
+    "path": "/localhome/local-rohing/orch_r170_creative_replay_20260917_attempt1/bootstrap/research_loop/workers/r168_replay_candidates_20260917/NATIVE_CPU_FINAL.json",
+    "sha256": "fbf830c6fc398a863296fe79aed9d587bc7393c2b9f76675604ba52177e5225c"
+  },
+  "human_ratification_created": false,
+  "independent_review_ref": {
+    "path": "/localhome/local-rohing/orch_r170_creative_replay_20260917_attempt1/bootstrap/research_loop/workers/r170_replay_boundary_20260917/REVIEW_ASSEMBLY_V2.md",
+    "sha256": "af9d60e96a035b5363e3eaf7c179e010a9e44b4d58eb83b1692bf2d3b19510ce"
+  },
+  "learner_handoff_authorized": false,
+  "old_guard_ref": {
+    "path": "/localhome/local-rohing/orch_r144_node3_target_physical1_20260916t1545z_5/GUARD.json",
+    "sha256": "8bbb6c007083884574b427b318ef3e466f26e514452b5ee5e7972801aca8ce9d"
+  },
+  "old_plan_ref": {
+    "path": "/localhome/local-rohing/orch_r144_node3_targets_20260916t1515z_2/physical1/PROPOSED_PLAN.json",
+    "sha256": "cde51871c4ebb8e0b95b484c79f6a6bab0cb7ac424fd3c893a477ff8d68b1413"
+  },
+  "original_test_sha256": {
+    "tests/test_orch_r168_targeted_replay.py": "07d105f3bfd8ea366edeb55746e2856ee0d04004b6ffb71fbdb6320685f118e3",
+    "tests/test_orch_r168_targeted_replay_driver.py": "afabb2774f8fb1afcb6c674799a693b176fc303d3769b11dd11e1f94f77c1b4e",
+    "tests/test_orch_r168_targeted_replay_driver_review.py": "96f5cd24f6600317fcb4b90996b7a34439a49ab3721f6105b22cd7791a72606c",
+    "tests/test_orch_r168_targeted_replay_native.py": "787fa8387a23792f57951289f3571211fbe439b0b69c5eed768ecd2845d552d8"
+  },
+  "receiving_cpu_ref": {
+    "path": "/localhome/local-rohing/orch_r175_actual_replay_cpu_20260917_attempt1/RECEIVING_CPU.json",
+    "sha256": "8f60e4ae3d9e21766b46f816822852285b2f757a0cb952089184d38f1df9b1b3"
+  },
+  "receiving_runner_sha256": "a4314df92c8aa5c75156d3085bc7c5d698152d6f15a9c93ba5d53193fd8da38c",
+  "requested_action": "IMMUTABLE_SOURCE_SCAFFOLD_ONLY",
+  "required_test_ids": [
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_actual_receipt_reconciles_baseline_and_experimental_exposures",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_actual_torch_CPU_applies_exact_baseline_then_four_extra_updates",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_admission_needs_exact_GO_intake_and_current_time",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_baseline_cannot_be_reordered_repeated_or_silently_reweighted",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_clean_state_and_record_hashes_cannot_be_spoofed",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_consumed_sleep_cannot_retry_with_new_GO_or_filename",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_crash_before_consumed_json_still_latches_sleep",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_dose_and_selection_caps_reject_bool_zero_excess_duplicates",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_encoded_mapping_mutation_before_extra_fails",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_excluded_selected_row_is_fatal_not_silently_replaced",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_existing_orphan_target_checkpoint_refuses_replay",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_expiry_after_preparation_does_not_admit",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_expiry_cannot_reset_via_earlier_cycle",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_failed_admission_cannot_reset_or_continue_baseline",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_foreign_boundary_or_checkpoint_rejected_before_payload_reads",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_full_anchor_families_required_not_own_only_extra",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_manifest_contains_selectors_not_reconstructed_targets",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_manifest_tampering_and_wrong_target_cycle_rejected",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_missed_target_expires_and_never_catches_up",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_mutation_during_iteration_fails_without_retry",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_native_schedule_and_full_anchor_indices_preserved",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_nonfinite_duplicate_symlink_and_foreign_metadata_fail_closed",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_object_not_correctness_and_strategy_requires_discriminating_support",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_parent_conditioning_remains_masked_and_native_targets_exact",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_parent_eval_and_invented_rows_rejected_even_if_rehashed",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_pending_nonboundary_and_zero_step_controls_rejected",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_replacement_after_hash_does_not_change_decoded_bytes",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_selected_prefix_tokens_or_masks_cannot_change",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_selected_row_must_match_actual_child_event",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_single_sleep_arm_automatically_expires_without_restart",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_special_token_exclusion_is_never_bypassed",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_two_rows_four_each_is_bounded_eight_extra",
+    "tests.test_orch_r168_targeted_replay.TargetedReplayTests.test_unfinished_or_failed_iteration_cannot_expire_into_baseline",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_actual_allowed_root_is_not_a_caller_option",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_binding_creation_is_exclusive_and_input_not_mutated",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_changed_metadata_and_self_hash_refused",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_checkpoint_failure_propagates_without_second_readout_or_retry",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_expired_GO_refused_before_child_construction",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_foreign_root_and_control_binding_refused_before_native_run",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_foreign_selection_rejected_before_foreign_boundary_read",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_full_original_run_reaches_real_bridge_and_four_updates",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_full_run_no_arm_has_only_original_baseline",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_no_arm_calls_original_run_exactly_without_reads",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_plan_argument_and_resume_must_match_binding",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_two_cycles_reuse_one_bridge_and_expire_after_target",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayDriverTests.test_unknown_native_source_and_replaced_run_refused",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayGuardPatchTests.test_all_guard_failures_prevent_driver_entry",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayGuardPatchTests.test_only_exact_run_call_changes_and_original_bytes_remain",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayGuardPatchTests.test_staged_entry_checks_guards_then_passes_exact_binding_to_driver",
+    "tests.test_orch_r168_targeted_replay_driver.NativeReplayGuardPatchTests.test_unknown_or_already_patched_guard_and_bad_refs_refused",
+    "tests.test_orch_r168_targeted_replay_driver_review.IndependentDriverReviewTests.test_GO_expiring_after_driver_admission_refuses_before_updates",
+    "tests.test_orch_r168_targeted_replay_driver_review.IndependentDriverReviewTests.test_binding_in_source_tree_refuses_before_selection_or_GO_reads",
+    "tests.test_orch_r168_targeted_replay_driver_review.IndependentDriverReviewTests.test_extra_update_failure_and_failure_receipt_failure_never_replay",
+    "tests.test_orch_r168_targeted_replay_driver_review.IndependentDriverReviewTests.test_journal_commit_uncertainty_after_checkpoint_never_replays",
+    "tests.test_orch_r168_targeted_replay_driver_review.IndependentDriverReviewTests.test_native_run_defaults_and_global_identity_are_bound",
+    "tests.test_orch_r168_targeted_replay_driver_review.IndependentDriverReviewTests.test_private_run_preserves_code_globals_and_checkpoint_commit_readout_order",
+    "tests.test_orch_r168_targeted_replay_driver_review.IndependentGuardDispatchReviewTests.test_patched_supervisor_retains_dispatch_after_scan_failure",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_actual_suffix_helper_still_rejects_EXTRA_and_unknown_kinds",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_base_verification_failure_after_updates_is_not_finished",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_before_and_after_target_run_original_loop_and_auto_expire",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_changed_own_prefix_is_not_reencoded_as_a_new_target",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_checkpoint_failure_after_updates_latches",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_existing_target_checkpoint_refuses_before_any_update",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_expired_GO_refuses_before_any_update",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_finish_sleep_rejects_foreign_checkpoint_root",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_finished_receipt_binding_does_not_alias_mutable_configuration",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_finished_receipt_write_failure_keeps_operation_consumed",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_full_label_anchors_required",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_missed_cycle_does_not_catch_up",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_missing_new_rows_cannot_bypass_hook_into_rehearsal",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_native_R144_exclusion_refuses_selected_row_before_updates",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_new_instance_cannot_replay_consumed_target",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_no_arm_empty_sleep_keeps_original_no_update_receipt",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_no_arm_finish_sleep_uses_original_baseline_without_binding_reads",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_no_arm_is_identical_and_needs_no_cycle_or_authority",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_optimizer_failure_latches_and_never_reports_finished",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_pinned_finish_sleep_preserves_checkpoint_then_completion_order",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_plain_context_machine_scaffolding_refuses_before_updates",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_plan_runtime_and_cycle_binding_before_updates",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_real_pinned_loop_preserves_baseline_and_finishes_four_extra_updates",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_recorder_failure_after_real_step_latches",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_recorder_mutation_cannot_fabricate_accounting",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_replaced_live_native_method_is_not_admitted",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_sleep_journal_failure_after_updates_latches",
+    "tests.test_orch_r168_targeted_replay_native.NativeReplayIntegrationTests.test_suffix_patched_source_is_refused_not_silently_run"
+  ],
+  "reviewed_runtime_probes": [
+    {
+      "binary_references": [
+        {
+          "mode": "0o755",
+          "path": "/usr/sbin/ldconfig",
+          "requested_path": "/sbin/ldconfig",
+          "sha256": "bfd5df90c7f070feab584435f106f254ffffaa268a04de5b5c3bd61d59c092f3",
+          "uid": 0
+        },
+        {
+          "mode": "0o755",
+          "path": "/usr/sbin/ldconfig.real",
+          "requested_path": "/sbin/ldconfig.real",
+          "sha256": "aa6de6d24c9223de013f6294c1db270c0c5247741a35127a0e058bf386725666",
+          "uid": 0
+        }
+      ],
+      "command": [
+        "/sbin/ldconfig",
+        "-p"
+      ],
+      "cwd": null,
+      "environment": {
+        "LANG": "C",
+        "LC_ALL": "C",
+        "PATH": "/usr/bin:/bin"
+      },
+      "event": "subprocess.Popen",
+      "executable": "/sbin/ldconfig",
+      "purpose": "READ_ONLY_LIBRARY_CACHE_PRINT"
+    }
+  ],
+  "reviewed_test_records": {
+    "tests/test_orch_r168_targeted_replay.py": {
+      "adapted_path": "/localhome/local-rohing/orch_r175_actual_replay_cpu_20260917_attempt1/harness/tests/test_orch_r168_targeted_replay.py",
+      "adapted_sha256": "07d105f3bfd8ea366edeb55746e2856ee0d04004b6ffb71fbdb6320685f118e3",
+      "original_sha256": "07d105f3bfd8ea366edeb55746e2856ee0d04004b6ffb71fbdb6320685f118e3",
+      "path_only_changes": []
+    },
+    "tests/test_orch_r168_targeted_replay_driver.py": {
+      "adapted_path": "/localhome/local-rohing/orch_r175_actual_replay_cpu_20260917_attempt1/harness/tests/test_orch_r168_targeted_replay_driver.py",
+      "adapted_sha256": "3c82542efb2542521ce71417afb77d4155a22e9faf5f8c0bcfa3b247c38f30cb",
+      "original_sha256": "afabb2774f8fb1afcb6c674799a693b176fc303d3769b11dd11e1f94f77c1b4e",
+      "path_only_changes": [
+        {
+          "occurrences": 1,
+          "original": "Path(__file__).resolve().parents[1] / 'gpu/orch_r125_continual_guard.py'",
+          "replacement": "Path('/localhome/local-rohing/orch_r175_actual_replay_cpu_20260917_attempt1/source/gpu/orch_r125_continual_guard.py')"
+        }
+      ]
+    },
+    "tests/test_orch_r168_targeted_replay_driver_review.py": {
+      "adapted_path": "/localhome/local-rohing/orch_r175_actual_replay_cpu_20260917_attempt1/harness/tests/test_orch_r168_targeted_replay_driver_review.py",
+      "adapted_sha256": "96f5cd24f6600317fcb4b90996b7a34439a49ab3721f6105b22cd7791a72606c",
+      "original_sha256": "96f5cd24f6600317fcb4b90996b7a34439a49ab3721f6105b22cd7791a72606c",
+      "path_only_changes": []
+    },
+    "tests/test_orch_r168_targeted_replay_native.py": {
+      "adapted_path": "/localhome/local-rohing/orch_r175_actual_replay_cpu_20260917_attempt1/harness/tests/test_orch_r168_targeted_replay_native.py",
+      "adapted_sha256": "d32e11084a30647e147b6b7e2307d30bd3756f080c99cb0dfaca574b8161de01",
+      "original_sha256": "787fa8387a23792f57951289f3571211fbe439b0b69c5eed768ecd2845d552d8",
+      "path_only_changes": [
+        {
+          "occurrences": 1,
+          "original": "Path(__file__).resolve().parents[1] / 'research_loop/workers/r168_replay_candidates_20260917'",
+          "replacement": "Path('/localhome/local-rohing/orch_r175_actual_replay_cpu_20260917_attempt1/harness/fixtures')"
+        },
+        {
+          "occurrences": 2,
+          "original": "FIXTURES / 'NATIVE_cdb542.py'",
+          "replacement": "Path('/localhome/local-rohing/orch_r175_actual_replay_cpu_20260917_attempt1/source/gpu/orch_r125_continual_native.py')"
+        }
+      ]
+    }
+  },
+  "scaffold_operator_sha256": "aa35ef1f559dcd180e7a440597dc467a7962d2d8f13a1bde24bb90a5d702ee0c",
+  "schema": "R170_MAIN_REVIEWED_RECEIVING_BINDING_V1",
+  "targeted_dose_authorized": false,
+  "train_fixture_sha256": "1b046cc2fff07b793386d51d90ede5e4e17b0c630956c1cd5e6cee2418390c28"
+}

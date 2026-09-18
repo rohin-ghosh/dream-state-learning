@@ -20,7 +20,7 @@ REWARD_BASE_ID = "weqweasdas/RM-Mistral-7B"
 REWARD_BASE_REVISION = "70e252672fdd640083505e2ca1da8547e0e6d478"
 UPSTREAM_ID = "mistralai/Mistral-7B-Instruct-v0.2"
 UPSTREAM_REVISION = "63a8b081895390a26e140280378bc85ec8bce07a"
-PAPER_URL = "https://arxiv.org/html/2406.10522v2"
+PAPER_URL = "https://[REDACTED_HOST]/html/2406.10522v2"
 ARTIFACTS = []
 PENDING = {}
 FETCHES = {}
@@ -133,7 +133,7 @@ def metadata_projection(metadata):
     return result
 
 
-github_api = "https://api.github.com/repos/yguooo/cartoon-caption-generation"
+github_api = "https://[REDACTED_HOST]/repos/yguooo/cartoon-caption-generation"
 tree_url = github_api + f"/git/trees/{GITHUB_REVISION}?recursive=1"
 tree = json.loads(fetch(tree_url)[0])
 assert not tree.get("truncated")
@@ -151,7 +151,7 @@ artifact("evidence/github/repository.metadata.json", json_text({
         if path in {"README.md", "LICENSE"} or path.startswith("finetuning/")],
     "scope": "Filename metadata only; no examples directory or data files retrieved.",
 }), [github_api, commit_url, tree_url], "Allowlisted repository, commit and source-filename metadata")
-raw_base = f"https://raw.githubusercontent.com/yguooo/cartoon-caption-generation/{GITHUB_REVISION}/"
+raw_base = f"https://[REDACTED_HOST]/yguooo/cartoon-caption-generation/{GITHUB_REVISION}/"
 for path in ["LICENSE", "finetuning/humor_reward_modeling.py", "finetuning/custom_trainer.py"]:
     url = raw_base + path
     artifact("evidence/github/" + path.rsplit("/", 1)[-1] + ".txt",
@@ -176,7 +176,7 @@ for filename, ranges in [
              [url], {"original_line_ranges": ranges, "source_not_executed": True},
              tree_entries["finetuning/" + filename]["sha"])
 
-abstract_url = "https://arxiv.org/abs/2406.10522v2"
+abstract_url = "https://[REDACTED_HOST]/abs/2406.10522v2"
 abstract = BeautifulSoup(fetch(abstract_url)[0], "html.parser")
 citation = {"citation_author": []}
 for node in abstract.select('meta[name^="citation_"]'):
@@ -201,7 +201,7 @@ for identifier in paragraph_ids:
         excluded.decompose()
     paragraphs.append(identifier + "\n" + paragraph.get_text(" ", strip=True))
 resource_links = sorted({node.get("href") for node in paper.find_all("a", href=True)
-    if node.get("href", "").startswith(("https://huggingface.co/", "https://github.com/yguooo/"))})
+    if node.get("href", "").startswith(("https://[REDACTED_HOST]/", "https://[REDACTED_HOST]/yguooo/"))})
 artifact("evidence/arxiv/methods.aggregate_excerpts.txt", "\n\n".join(paragraphs), [PAPER_URL],
          {"paragraph_ids": paragraph_ids, "excluded": "figures/tables/images/notes/math; all other paragraphs incl. prompt/examples appendices"})
 artifact("evidence/arxiv/resource_urls.json", json_text(resource_links), [PAPER_URL],
@@ -218,7 +218,7 @@ search_queries = [
 discovery = []
 search_urls = []
 for query in search_queries:
-    url = "https://huggingface.co/api/models?" + query
+    url = "https://[REDACTED_HOST]/api/models?" + query
     search_urls.append(url)
     models = json.loads(fetch(url)[0])
     discovery.append({"query": query, "returned_count": len(models), "limit": 100,
@@ -228,13 +228,13 @@ for query in search_queries:
 artifact("evidence/hf/discovery.metadata.json", json_text(discovery), search_urls,
          "Model IDs/revisions/base-model tags only; bounded discovery is not proof of global nonexistence")
 
-reward_url = f"https://huggingface.co/api/models/{REWARD_BASE_ID}/revision/{REWARD_BASE_REVISION}?blobs=true"
+reward_url = f"https://[REDACTED_HOST]/api/models/{REWARD_BASE_ID}/revision/{REWARD_BASE_REVISION}?blobs=true"
 reward_metadata = json.loads(fetch(reward_url)[0])
 assert reward_metadata["sha"] == REWARD_BASE_REVISION
 artifact("evidence/hf/rm_mistral_7b/model.metadata.json", json_text(metadata_projection(reward_metadata)),
          [reward_url], "Model metadata projection; LFS hashes/sizes advertised by server, not independently hashed weights")
 siblings = {entry["rfilename"]: entry for entry in reward_metadata["siblings"]}
-resolve_base = f"https://huggingface.co/{REWARD_BASE_ID}/resolve/{REWARD_BASE_REVISION}/"
+resolve_base = f"https://[REDACTED_HOST]/{REWARD_BASE_ID}/resolve/{REWARD_BASE_REVISION}/"
 for filename in ["config.json", "tokenizer_config.json", "special_tokens_map.json", "added_tokens.json", "model.safetensors.index.json"]:
     url = resolve_base + filename
     source = fetch(url)[0].decode()
@@ -245,7 +245,7 @@ reward_card_url = resolve_base + "README.md"
 reward_card = fetch(reward_card_url)[0].decode()
 artifact("evidence/hf/rm_mistral_7b/README.provenance.excerpt.md", reward_card[:reward_card.index("## Uses")],
          [reward_card_url], "Only provenance/training documentation before Uses; usage examples excluded", siblings["README.md"]["blobId"])
-upstream_url = f"https://huggingface.co/api/models/{UPSTREAM_ID}/revision/{UPSTREAM_REVISION}"
+upstream_url = f"https://[REDACTED_HOST]/api/models/{UPSTREAM_ID}/revision/{UPSTREAM_REVISION}"
 upstream = json.loads(fetch(upstream_url)[0])
 assert upstream["sha"] == UPSTREAM_REVISION
 artifact("evidence/hf/mistral_instruct_v0_2.metadata.json", json_text({

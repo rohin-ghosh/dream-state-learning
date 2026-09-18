@@ -1,0 +1,52 @@
+{
+  "schema": "R159_TRUSTED_TIMESTAMP_CUSTODY_V1",
+  "status": "DESCRIPTIVE_SCHEMA_NOT_ADMISSION",
+  "exact_fields": [
+    "schema",
+    "status",
+    "campaign_sha256",
+    "freeze",
+    "cohort_sha256",
+    "initial_commit_sha256",
+    "initialized_sha256",
+    "initializer_lifecycle_sha256",
+    "initial_created_unix",
+    "initialized_unix",
+    "enrollment_unix",
+    "observed_unix",
+    "saved_initial_generation_calls",
+    "saved_initial_optimizer_updates",
+    "saved_initial_training_exposure",
+    "saved_initial_evaluation_exposure",
+    "arm_exposures"
+  ],
+  "required_status": "TRUSTED_SOURCE_OWNER_ATTESTED",
+  "first_exposure_exact_fields": [
+    "schema",
+    "cohort_sha256",
+    "arm",
+    "kind",
+    "coverage_complete",
+    "observed_unix",
+    "status",
+    "first_unix"
+  ],
+  "first_exposure_schema": "R159_FIRST_EXPOSURE_V1",
+  "first_exposure_statuses": [
+    "OBSERVED",
+    "NOT_OCCURRED"
+  ],
+  "arms": [
+    "parented_learning",
+    "parented_frozen",
+    "unparented_learning"
+  ],
+  "kinds": [
+    "birth",
+    "train",
+    "evaluation"
+  ],
+  "original_freeze_sha256": "1515341fd0c8d1336cbea6728aa5ba3c27c638752964575affda2400002c81b6",
+  "original_plan_sha256": "c2f32b5390f4d9a06ab30de1cd64eb91858055ca4944c6328edbad52125fed86",
+  "no_actual_enrollment": true
+}

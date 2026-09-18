@@ -1,6 +1,6 @@
 # CLIP
 
-[[Blog]](https://openai.com/blog/clip/) [[Paper]](https://arxiv.org/abs/2103.00020) [[Model Card]](model-card.md) [[Colab]](https://colab.research.google.com/github/openai/clip/blob/master/notebooks/Interacting_with_CLIP.ipynb)
+[[Blog]](https://[REDACTED_HOST]/blog/clip/) [[Paper]](https://[REDACTED_HOST]/abs/2103.00020) [[Model Card]](model-card.md) [[Colab]](https://[REDACTED_HOST]/github/openai/clip/blob/master/notebooks/Interacting_with_CLIP.ipynb)
 
 CLIP (Contrastive Language-Image Pre-Training) is a neural network trained on a variety of (image, text) pairs. It can be instructed in natural language to predict the most relevant text snippet, given an image, without directly optimizing for the task, similarly to the zero-shot capabilities of GPT-2 and 3. We found CLIP matches the performance of the original ResNet50 on ImageNet “zero-shot” without using any of the original 1.28M labeled examples, overcoming several major challenges in computer vision.
 
@@ -14,12 +14,12 @@ CLIP (Contrastive Language-Image Pre-Training) is a neural network trained on a 
 
 ## Usage
 
-First, [install PyTorch 1.7.1](https://pytorch.org/get-started/locally/) (or later) and torchvision, as well as small additional dependencies, and then install this repo as a Python package. On a CUDA GPU machine, the following will do the trick:
+First, [install PyTorch 1.7.1](https://[REDACTED_HOST]/get-started/locally/) (or later) and torchvision, as well as small additional dependencies, and then install this repo as a Python package. On a CUDA GPU machine, the following will do the trick:
 
 ```bash
 $ conda install --yes -c pytorch pytorch=1.7.1 torchvision cudatoolkit=11.0
 $ pip install ftfy regex tqdm
-$ pip install git+https://github.com/openai/CLIP.git
+$ pip install git+https://[REDACTED_HOST]/openai/CLIP.git
 ```
 
 Replace `cudatoolkit=11.0` above with the appropriate CUDA version on your machine or `cpuonly` when installing on a machine without a GPU.
@@ -86,7 +86,7 @@ Given a batch of images and a batch of text tokens, returns two Tensors, contain
 
 ### Zero-Shot Prediction
 
-The code below performs zero-shot prediction using CLIP, as shown in Appendix B in the paper. This example takes an image from the [CIFAR-100 dataset](https://www.cs.toronto.edu/~kriz/cifar.html), and predicts the most likely labels among the 100 textual labels from the dataset.
+The code below performs zero-shot prediction using CLIP, as shown in Appendix B in the paper. This example takes an image from the [CIFAR-100 dataset](https://[REDACTED_HOST]/~kriz/cifar.html), and predicts the most likely labels among the 100 textual labels from the dataset.
 
 ```python
 import os
@@ -140,7 +140,7 @@ Note that this example uses the `encode_image()` and `encode_text()` methods tha
 
 ### Linear-probe evaluation
 
-The example below uses [scikit-learn](https://scikit-learn.org/) to perform logistic regression on image features.
+The example below uses [scikit-learn](https://[REDACTED_HOST]/) to perform logistic regression on image features.
 
 ```python
 import os
@@ -195,5 +195,5 @@ Note that the `C` value should be determined via a hyperparameter sweep using a 
 
 ## See Also
 
-* [OpenCLIP](https://github.com/mlfoundations/open_clip): includes larger and independently trained CLIP models up to ViT-G/14
-* [Hugging Face implementation of CLIP](https://huggingface.co/docs/transformers/model_doc/clip): for easier integration with the HF ecosystem
+* [OpenCLIP](https://[REDACTED_HOST]/mlfoundations/open_clip): includes larger and independently trained CLIP models up to ViT-G/14
+* [Hugging Face implementation of CLIP](https://[REDACTED_HOST]/docs/transformers/model_doc/clip): for easier integration with the HF ecosystem

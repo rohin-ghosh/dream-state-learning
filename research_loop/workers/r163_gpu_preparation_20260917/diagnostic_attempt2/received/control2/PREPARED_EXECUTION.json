@@ -1,0 +1,321 @@
+{
+  "attempt_exists": false,
+  "checkpoint_loaded": false,
+  "config": {
+    "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/control2/GUARD.json",
+    "sha256": "0b67718bdfce0b6a0ed457752a4ecd15a6f2628130e108658efb80fc88e85009"
+  },
+  "containment_command_CPU_constructed_not_executed": [
+    "sudo",
+    "-n",
+    "systemd-run",
+    "--quiet",
+    "--wait",
+    "--pipe",
+    "--unit=orch-r133-node3-b833bce031e940a5bac5050844eb3db0",
+    "--property=User=2524",
+    "--property=Group=2524",
+    "--property=NoNewPrivileges=yes",
+    "--property=DevicePolicy=strict",
+    "--property=CapabilityBoundingSet=",
+    "--property=AmbientCapabilities=",
+    "--property=ProtectControlGroups=yes",
+    "--property=RuntimeMaxSec=1800",
+    "--property=TimeoutStopSec=5",
+    "--property=KillMode=control-group",
+    "--property=WorkingDirectory=/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source",
+    "--property=DeviceAllow=",
+    "--property=DeviceAllow=/dev/null rw",
+    "--property=DeviceAllow=/dev/zero rw",
+    "--property=DeviceAllow=/dev/random r",
+    "--property=DeviceAllow=/dev/urandom r",
+    "--property=DeviceAllow=/dev/nvidia5 rw",
+    "--property=DeviceAllow=/dev/nvidiactl rw",
+    "--property=DeviceAllow=/dev/nvidia-uvm rw",
+    "/usr/bin/env",
+    "-i",
+    "PATH=/usr/bin:/bin",
+    "HOME=/localhome/local-rohing",
+    "CUDA_VISIBLE_DEVICES=GPU-bc211959-642d-664b-3581-42a0dbe434e9",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONPATH=/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "OMP_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/control2/admitted_probe.py",
+    "native",
+    "--main-go",
+    "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/control2/MAIN_GO.json",
+    "--main-go-sha256",
+    "MAIN_SUPPLIED_EXACT_GO_SHA256"
+  ],
+  "cuda_initialized": false,
+  "earliest_dispatch_unix": 1789630200,
+  "guard_replacement": {
+    "origin": "/localhome/local-rohing/orch_r145_combined_targets_20260916t1645z_2/physical5/source/gpu/orch_r125_continual_guard.py",
+    "reason": "standalone native plan, not R150 matched cohort",
+    "sha256": "4be0fd5ac06bf447e9ae425ad940efbd203a1d6c3cfb88ad8b4dec0db449bea3"
+  },
+  "guard_validate_actual": "PASS",
+  "import_origins": {
+    "gpu.astra_experienced_event_cue_collect": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/astra_experienced_event_cue_collect.py",
+      "sha256": "bcce157dfb6c40fa4845f7f0c59b1f821d61aa370d50f0569ab549e999ea3fb5"
+    },
+    "gpu.astra_experienced_event_cue_sleep": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/astra_experienced_event_cue_sleep.py",
+      "sha256": "a0cd9b92a636d14218482e7e7cbf3f2b417d9e25324307a08ca2a48dcc11fd1a"
+    },
+    "gpu.astra_experienced_event_microloop": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/astra_experienced_event_microloop.py",
+      "sha256": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70"
+    },
+    "gpu.astra_experienced_event_read_route": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/astra_experienced_event_read_route.py",
+      "sha256": "21c8e824b1523e822167b1b756e148d89923cb9fa389677735960bcd7c0d999d"
+    },
+    "gpu.astra_pchain2_native": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/astra_pchain2_native.py",
+      "sha256": "7fc071bf8d614eb2374d812f23e4488a0a719f5f7eafa1ee39f350d81fc4165d"
+    },
+    "gpu.astra_pchain2_nulls": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/astra_pchain2_nulls.py",
+      "sha256": "b026fa1561c267d2fff1fdf09a4874255673b42896f3b4f6baa786843d4a9a0d"
+    },
+    "gpu.astra_pchain2_prepare": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/astra_pchain2_prepare.py",
+      "sha256": "46d39129a79ecdf4eae12c512db34b9dca25420b5617d323d221ec3d4997d84a"
+    },
+    "gpu.astra_reader_audit_lesson_train": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/astra_reader_audit_lesson_train.py",
+      "sha256": "1e22ba8609b32266e1302762ad3f1e0420ecdf3a4beae609a7ee613892f1864b"
+    },
+    "gpu.orch_guided_native": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_guided_native.py",
+      "sha256": "559d8e6ea7002f2651748ba192a57c5cf627381f6a3994d93cb02d63011a3157"
+    },
+    "gpu.orch_r107_base_anchors_inventory": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r107_base_anchors_inventory.py",
+      "sha256": "335f0a01afb595d3c87d58ca9211e8e2219014afdf433fa297a3deafe69b5fbc"
+    },
+    "gpu.orch_r108_guided_native": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r108_guided_native.py",
+      "sha256": "df88511d8ff24170cdbb3739040a75c8788d7cce9157f270fe7ae89d0839187c"
+    },
+    "gpu.orch_r109_l1_public_feedback": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r109_l1_public_feedback.py",
+      "sha256": "7460e322ddf5b09a96f1fb4a9dde78f4c0d21fb48109eac1810dcb6791abea82"
+    },
+    "gpu.orch_r119_public_feedback": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r119_public_feedback.py",
+      "sha256": "c109057608b66879f11f3661a6b17d2fc479fd10acc03f4dfea65cedd15743ba"
+    },
+    "gpu.orch_r125_continual_guard": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r125_continual_guard.py",
+      "sha256": "4be0fd5ac06bf447e9ae425ad940efbd203a1d6c3cfb88ad8b4dec0db449bea3"
+    },
+    "gpu.orch_r125_continual_native": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r125_continual_native.py",
+      "sha256": "bcd716db469665d6c2070ed46d4b910d619b7366b66af2891c9ed71a5e069af6"
+    },
+    "gpu.orch_r133_code_feedback_collection": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r133_code_feedback_collection.py",
+      "sha256": "79b93767ed022c4aebb91f3d6aada480998effe2a07331e86ad59c5ad56dd4dd"
+    },
+    "gpu.orch_r133_code_feedback_guard": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r133_code_feedback_guard.py",
+      "sha256": "094fe8dfc80f51d0048bf12d3b998f9393d1b5ef981a9082cdf28af5523d8261"
+    },
+    "gpu.orch_r133_node3_creative": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r133_node3_creative.py",
+      "sha256": "3a910325c22db68c0d5185204e19bc42595e6c8a316e0b229edfe3931314d832"
+    },
+    "gpu.orch_r133_node3_programmes": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r133_node3_programmes.py",
+      "sha256": "9f78c7983e4cc0c6142f9500ee0f95af2878120639db4557074a932742373e0c"
+    },
+    "gpu.orch_r133_stage_child": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r133_stage_child.py",
+      "sha256": "93924211d5941498ce8ab031b4173fdf9bf3576b7e12673a461b68afbef926ff"
+    },
+    "gpu.orch_r145_suffix_boundary": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r145_suffix_boundary.py",
+      "sha256": "632c519fd4c5a840d13b1e9503e61f512340ee9361ef95dcd43cbaf704ee0ce5"
+    },
+    "gpu.orch_r145_suffix_loss": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r145_suffix_loss.py",
+      "sha256": "d5e69655fd30f3317d114bd4aab2025024fdfb1521664b536d54ad61069bf026"
+    },
+    "gpu.orch_r161_native_executor": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r161_native_executor.py",
+      "sha256": "b033fbe4f1e8db5fa071e6c47678706f6e2b054d54a505947d8e4161075bea15"
+    },
+    "gpu.orch_r163_executor_probe": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r163_executor_probe.py",
+      "sha256": "b8ab9d80cd415de914116000d71c513001bec11a1fc62ae26bc064ada3b00f9e"
+    },
+    "gpu.orch_r163_probe_driver": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/gpu/orch_r163_probe_driver.py",
+      "sha256": "01c1ab05546a5c808aa140ac4e53c53ca0c3d3f96ce776e49581ec8d037fbc3f"
+    },
+    "organism_v6.composition_birth_stage2a_primitives": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/composition_birth_stage2a_primitives.py",
+      "sha256": "f1fd8597ea83a3c31f3bff039a40b4553e82a55fefe96796a7e59930a04b7781"
+    },
+    "organism_v6.experienced_event_cue_collection": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/experienced_event_cue_collection.py",
+      "sha256": "c3a90bb22cc69721c750e4ca2bf7d5c4353aaf25e7347ba2eaaa16fd3c571b39"
+    },
+    "organism_v6.experienced_event_cue_sleep": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/experienced_event_cue_sleep.py",
+      "sha256": "02c9e41b4a0382aa4c831ccd127532a885052fdc2937fbbf63a98797ad432846"
+    },
+    "organism_v6.experienced_event_goal_replay_layout": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/experienced_event_goal_replay_layout.py",
+      "sha256": "e3fc9f05dd968f4973f9d371e8d9be6470d00e8c764def108d7364cab2f1451b"
+    },
+    "organism_v6.experienced_event_microloop": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/experienced_event_microloop.py",
+      "sha256": "e882d4fba9480beccc15b0c5324366eea872dc609e83a19c12e7b2a4d4963f85"
+    },
+    "organism_v6.experienced_event_read_route": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/experienced_event_read_route.py",
+      "sha256": "b6ca95525ddd5af5f8c775bf3287693865d01d7e1ba8d1c5f9b0ffbcee022aaa"
+    },
+    "organism_v6.orch_code_bounded": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_code_bounded.py",
+      "sha256": "b8cffeb779d394cc5f2f96a6d70cadeb8da3a3d2054ecaccb513239815bc5a2d"
+    },
+    "organism_v6.orch_guided_bridge": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_guided_bridge.py",
+      "sha256": "f7915100d7c9e5b171b8e3bc9af23e6cee00fc09612bb947d5e3c1ea777ee652"
+    },
+    "organism_v6.orch_math_feedback_uptake": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_math_feedback_uptake.py",
+      "sha256": "f977b2f1b6137e168b2d35f1218d87b678c879daee36d93b953cd20468f8f7cc"
+    },
+    "organism_v6.orch_math_pipeline_l2": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_math_pipeline_l2.py",
+      "sha256": "b8bdf2ac782e2accddb8aa3f2b4ac528a151c83c4ae79cd121b0ee18eedf0296"
+    },
+    "organism_v6.orch_math_rich": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_math_rich.py",
+      "sha256": "e317ea0b220305e98194e168c10147221d6f1c125ab08f71ae78d94d9813193a"
+    },
+    "organism_v6.orch_persist_code": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_persist_code.py",
+      "sha256": "2f4a15f4538f707391716cb89d594a292278ed036572386a5dbed340a2db81a2"
+    },
+    "organism_v6.orch_r107_base_anchors": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_r107_base_anchors.py",
+      "sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "organism_v6.orch_r107_capability": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_r107_capability.py",
+      "sha256": "f8398dbf755c041508ee9268a46f7411c09146ccbe02b8bee254c027a85ebbc9"
+    },
+    "organism_v6.orch_r107_parented_replay": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_r107_parented_replay.py",
+      "sha256": "222d1dc3fd1cf4f53502b9f61d6e65075f5cce40b40fd5e0f05c7822e1d24f37"
+    },
+    "organism_v6.orch_r108_guided": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_r108_guided.py",
+      "sha256": "d2a0d231923d31fe89989d4a0957ad94452b28bf053f60ef986c736f9031d04e"
+    },
+    "organism_v6.orch_r124_train_history": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_r124_train_history.py",
+      "sha256": "0c336e3c9d3f5fbcfa3446287b24f554052cd57ec5330fb1d4a84f5e0894dd91"
+    },
+    "organism_v6.orch_r125_continual_stream": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_r125_continual_stream.py",
+      "sha256": "617e3ecd0bb45b35f0193ecd391bee21d0d86b2b32024ac5fe178fee13884c09"
+    },
+    "organism_v6.orch_r125_plain_context": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/orch_r125_plain_context.py",
+      "sha256": "dcfd1f7f5584867e39356f336f53bb7222aeb535da87d5ecb8f1f0bb59f72feb"
+    },
+    "organism_v6.pcfl_vertical_dev": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/pcfl_vertical_dev.py",
+      "sha256": "ed1b8c5f1d866e8e036a33c3fbeb278551021413cb63e5b3a35bb72934dae04e"
+    },
+    "organism_v6.pcfl_vertical_prepare": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/pcfl_vertical_prepare.py",
+      "sha256": "c07ba9b684299a8d6cf6c7b45bbdbb95ed6f3e04db9e8de6e926791610b55c61"
+    },
+    "organism_v6.pcfl_vertical_train": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/pcfl_vertical_train.py",
+      "sha256": "9a392dc17eab4db77416b81642def0842c5b353c5ff9aca5fcdf94a04474b078"
+    },
+    "organism_v6.train_adapter_v3": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/organism_v6/train_adapter_v3.py",
+      "sha256": "7bbf165fcb4b8ae3a1180328bcd19f57382c30516daddc95fd61e8a2c749fad7"
+    }
+  },
+  "manifest": {
+    "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/control2/SOURCE_PINS.json",
+    "sha256": "c2ff1378082b72242021d024508657e6343395ac43c07f14cf2c2553f68adde4"
+  },
+  "model_loaded": false,
+  "native_seed": 0,
+  "not_R163_science_training_admission": true,
+  "observed_unix": 1789630188.4978514,
+  "operator": {
+    "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/control2/admitted_probe.py",
+    "sha256": "696e3ce336a62dbf604eda1ebe5a870582cd612121260fc7bbd7e9388259e1eb"
+  },
+  "other_candidate5_files_unchanged": true,
+  "physical5_gpu_metadata": "5, GPU-bc211959-642d-664b-3581-42a0dbe434e9, 1 MiB, 46068 MiB, 0 %\n",
+  "plan": {
+    "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/control2/PLAN.json",
+    "sha256": "5db8da2aec53bf269d00a4d4dcedf0438eed2422d8137a50587562d18435a805"
+  },
+  "proposed_runtime_seconds": 1800,
+  "remaining_lease_hardwall_seconds": 37811.50121116638,
+  "required_GO_binding": {
+    "attempt_dir": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/attempt1",
+    "config": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/control2/GUARD.json",
+      "sha256": "0b67718bdfce0b6a0ed457752a4ecd15a6f2628130e108658efb80fc88e85009"
+    },
+    "gpu_uuid": "GPU-bc211959-642d-664b-3581-42a0dbe434e9",
+    "hard_end_unix": 1789632000,
+    "lease": {
+      "path": "/localhome/local-rohing/orch_r118_node3_7_grid_20260915_attempt1/lease_budget_r119_learned/LEASE_BUDGET.json",
+      "sha256": "919e9fb3f9cfd6cadb57af90844319e50eb114068eb52cd75aa3ab715f9c3770"
+    },
+    "manifest": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/control2/SOURCE_PINS.json",
+      "sha256": "c2ff1378082b72242021d024508657e6343395ac43c07f14cf2c2553f68adde4"
+    },
+    "operator": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/control2/admitted_probe.py",
+      "sha256": "696e3ce336a62dbf604eda1ebe5a870582cd612121260fc7bbd7e9388259e1eb"
+    },
+    "physical": 5,
+    "plan": {
+      "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/control2/PLAN.json",
+      "sha256": "5db8da2aec53bf269d00a4d4dcedf0438eed2422d8137a50587562d18435a805"
+    }
+  },
+  "required_GO_schema": "R163_NODE3_NUMERICAL_GO_V1",
+  "root_exists": false,
+  "selected_additions": {
+    "gpu/orch_r161_native_executor.py": "b033fbe4f1e8db5fa071e6c47678706f6e2b054d54a505947d8e4161075bea15",
+    "gpu/orch_r163_executor_probe.py": "b8ab9d80cd415de914116000d71c513001bec11a1fc62ae26bc064ada3b00f9e",
+    "gpu/orch_r163_probe_driver.py": "01c1ab05546a5c808aa140ac4e53c53ca0c3d3f96ce776e49581ec8d037fbc3f",
+    "tests/test_orch_r161_native_executor.py": "aa4cc193749b63c10252fdb70c93817c1d30c01192138c7940ef842b75a61d00",
+    "tests/test_orch_r163_executor_probe.py": "43c1d340941611c9fafbd290a3b2c2131f7163740a77c56eaabd1211aa8ed90b",
+    "tests/test_orch_r163_probe_driver.py": "28b7360410d57a74eac65abab304161a276412e76a4fbb2416213bb53775de11"
+  },
+  "six_hour_margin_preserved": true,
+  "source_files_pinned": 2158,
+  "source_origin": {
+    "path": "/localhome/local-rohing/orch_r163_numerical_diagnostic_20260917_attempt2/selected_source/STAGED_SOURCE.json",
+    "sha256": "044746077805b5a461970acd8e9c066de71e170996a5f919cb32746754453cce"
+  },
+  "status": "CPU_PREPARED_PENDING_MAIN_REVIEW_AND_GO"
+}

@@ -1,0 +1,708 @@
+{
+  "arms": [
+    {
+      "V_parent_judgment": null,
+      "V_repair_publications": 0,
+      "dispatch_failure": null,
+      "environment_object": "Explain the sum of the first five odd positive integers, with your own calculation and a check, to a learner who asks why the pattern holds.",
+      "exit": null,
+      "filter_live": true,
+      "filter_sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "first_request": {
+        "index": 6245,
+        "mtime_unix": 1789708377.7075539,
+        "prompt_tokens": 3676,
+        "sha256": "43d5673e7536306a2764713680026f735ecd234db76f2712acd71dfabd39d7c1",
+        "started_unix": 1789708377.069293
+      },
+      "latest_complete": 57,
+      "loaded": {
+        "document": {
+          "adapter_sha256": "4fd7189028fc17326c3411f54b14559f8cb440a3f6e3f80ef5ec1df41a982511",
+          "anchors": {
+            "adapter": null,
+            "artifact_hashes": {
+              "ADMISSION.json": "e35295f88dfe04bccb06d1630aa3ac46e6f10ef2a80af7d0bb1b9a9f03199b0d",
+              "LAUNCH.json": "f4e3e251bcbf99d2165136e430b8bd437f6132b3cd29b854d41220fa16d534f6",
+              "PLAN.json": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+              "PUBLICATION.json": "df62b91c1ee2bac7ff09be31e11ef46020cb5fe1d0f9ed5f60f04eee4bb5f190",
+              "READY.json": "41899d13b57b250a8cecf406e645ff132e19f1c36fec6ae6e0e98ab2d3e5cc76",
+              "readout/AFTER.json": "a01dc627777cd8dab313c48d423385fca00b02a64c01b4fdee1e4b54ed378d66",
+              "readout/BEFORE.json": "b0dab498e1f35ed649a0a4f565e1bc433d700bc37b0091047c3330cbabbd0177",
+              "readout/COMPLETE.json": "7d4c672a279aac5427428d0c05a4ad0115bc60317a1a34db8614fba41b03ee90"
+            },
+            "automatic_fit": false,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "completed_calls": 64,
+            "completion_categories": {
+              "correct": 42,
+              "exact_constraint_failure": 5,
+              "invalid_json": 4,
+              "invalid_numeric_format": 1,
+              "unsafe_or_invalid_expression": 3,
+              "wrong_answer": 9
+            },
+            "context_limit": 16384,
+            "encoded_anchors": 42,
+            "families": {
+              "code": 9,
+              "concise_answer": 11,
+              "math": 6,
+              "simulated_tools": 16
+            },
+            "native_target_ids_preserved": true,
+            "new_model_calls": 0,
+            "parent_calls": 0,
+            "prompt_labels_masked": true,
+            "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+            "schema": "R107_BASE_ANCHOR_NATIVE_TOKEN_INVENTORY_V1",
+            "semantic_richness": "NOT_CLAIMED",
+            "shortfalls": {
+              "code": 0,
+              "concise_answer": 0,
+              "math": 0,
+              "simulated_tools": 0
+            },
+            "source_condition": "PURE_BASE",
+            "source_finished_unix": 1789461513.0626216,
+            "source_fit_ready": false,
+            "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+            "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+            "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+            "source_training_allowed": false,
+            "split": "TRAIN",
+            "status": "ENCODED_INVENTORY_READY",
+            "suite_sha256": "dd0cd5b2bfcef830e95bc406f9d601c6f8f861354fae5ba1d5d8395ba0df8196",
+            "training_updates": 0
+          },
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "loaded_unix": 1789708375.5839138,
+          "optimizer_steps": 5100,
+          "pid": 3504267,
+          "resume": true,
+          "runtime": {
+            "distributions": {
+              "peft": "0.20.0",
+              "tokenizers": "0.22.2",
+              "torch": "2.13.0",
+              "transformers": "5.5.3"
+            },
+            "imported": {
+              "peft": "0.20.0",
+              "tokenizers": "0.22.2",
+              "torch": "2.13.0+cu130",
+              "transformers": "5.5.3"
+            }
+          }
+        },
+        "index": 6241,
+        "mtime_unix": 1789708375.642726,
+        "sha256": "7cf6e92acbddc11b624897b23b1a1f4eb56f6d0e7e04063ffc5bcf8b8daa165e"
+      },
+      "loaded_matches_preserved_adapter_optimizer": true,
+      "move_on_published": false,
+      "move_on_rendered": false,
+      "name": "MATH-COMM-B",
+      "native": {
+        "pid": 3504267,
+        "start_ticks": "42941139",
+        "state": "R"
+      },
+      "own_current_state_entries": 0,
+      "parent_turns": [
+        {
+          "id": "221dc4d68f20469e9b0426e6665352bc",
+          "inbox": {
+            "index": 6242,
+            "mtime_unix": 1789708375.7729466,
+            "sha256": "3897827b2a29636288df36c926862740e476d25511712605b381e7be93c50bc2"
+          },
+          "kind": "OPENING",
+          "published_unix": 1789708253.7023094,
+          "render": {
+            "index": 6245,
+            "messages_sha256": "e3f5c25a0c6b786e0eb5c04c46757f84fa4c1155520c0d7e0700c43b339c73cd",
+            "mtime_unix": 1789708377.7075539,
+            "sha256": "43d5673e7536306a2764713680026f735ecd234db76f2712acd71dfabd39d7c1",
+            "started_unix": 1789708377.069293
+          }
+        }
+      ],
+      "peer_first_renders": 0,
+      "peer_publications": 0,
+      "physical": 2,
+      "preserved": true,
+      "restore_pass": true,
+      "status": "LIVE"
+    },
+    {
+      "V_parent_judgment": null,
+      "V_repair_publications": 0,
+      "dispatch_failure": null,
+      "environment_object": "Use the supplied read-only routing-function excerpt as the object: state one falsifiable input-routing hypothesis, cite exact lines, and distinguish source inference from a returned execution result.",
+      "exit": null,
+      "filter_live": true,
+      "filter_sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "first_request": {
+        "index": 6320,
+        "mtime_unix": 1789708383.6684134,
+        "prompt_tokens": 7437,
+        "sha256": "6ee188b3edafe7280c4df601a587b664eeb1d423d2897ecf98c32b961a7ec7eb",
+        "started_unix": 1789708383.0174928
+      },
+      "latest_complete": 57,
+      "loaded": {
+        "document": {
+          "adapter_sha256": "6982edb088cd815d4152ba14f83eff71b1b8151dac0d7e4ba2eed7c94a746852",
+          "anchors": {
+            "adapter": null,
+            "artifact_hashes": {
+              "ADMISSION.json": "e35295f88dfe04bccb06d1630aa3ac46e6f10ef2a80af7d0bb1b9a9f03199b0d",
+              "LAUNCH.json": "f4e3e251bcbf99d2165136e430b8bd437f6132b3cd29b854d41220fa16d534f6",
+              "PLAN.json": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+              "PUBLICATION.json": "df62b91c1ee2bac7ff09be31e11ef46020cb5fe1d0f9ed5f60f04eee4bb5f190",
+              "READY.json": "41899d13b57b250a8cecf406e645ff132e19f1c36fec6ae6e0e98ab2d3e5cc76",
+              "readout/AFTER.json": "a01dc627777cd8dab313c48d423385fca00b02a64c01b4fdee1e4b54ed378d66",
+              "readout/BEFORE.json": "b0dab498e1f35ed649a0a4f565e1bc433d700bc37b0091047c3330cbabbd0177",
+              "readout/COMPLETE.json": "7d4c672a279aac5427428d0c05a4ad0115bc60317a1a34db8614fba41b03ee90"
+            },
+            "automatic_fit": false,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "completed_calls": 64,
+            "completion_categories": {
+              "correct": 42,
+              "exact_constraint_failure": 5,
+              "invalid_json": 4,
+              "invalid_numeric_format": 1,
+              "unsafe_or_invalid_expression": 3,
+              "wrong_answer": 9
+            },
+            "context_limit": 16384,
+            "encoded_anchors": 42,
+            "families": {
+              "code": 9,
+              "concise_answer": 11,
+              "math": 6,
+              "simulated_tools": 16
+            },
+            "native_target_ids_preserved": true,
+            "new_model_calls": 0,
+            "parent_calls": 0,
+            "prompt_labels_masked": true,
+            "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+            "schema": "R107_BASE_ANCHOR_NATIVE_TOKEN_INVENTORY_V1",
+            "semantic_richness": "NOT_CLAIMED",
+            "shortfalls": {
+              "code": 0,
+              "concise_answer": 0,
+              "math": 0,
+              "simulated_tools": 0
+            },
+            "source_condition": "PURE_BASE",
+            "source_finished_unix": 1789461513.0626216,
+            "source_fit_ready": false,
+            "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+            "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+            "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+            "source_training_allowed": false,
+            "split": "TRAIN",
+            "status": "ENCODED_INVENTORY_READY",
+            "suite_sha256": "dd0cd5b2bfcef830e95bc406f9d601c6f8f861354fae5ba1d5d8395ba0df8196",
+            "training_updates": 0
+          },
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "loaded_unix": 1789708380.2168212,
+          "optimizer_steps": 5164,
+          "pid": 3504161,
+          "resume": true,
+          "runtime": {
+            "distributions": {
+              "peft": "0.20.0",
+              "tokenizers": "0.22.2",
+              "torch": "2.13.0",
+              "transformers": "5.5.3"
+            },
+            "imported": {
+              "peft": "0.20.0",
+              "tokenizers": "0.22.2",
+              "torch": "2.13.0+cu130",
+              "transformers": "5.5.3"
+            }
+          }
+        },
+        "index": 6314,
+        "mtime_unix": 1789708380.2722437,
+        "sha256": "29576583fd9a99aaa1f03cb32d2eb1f241fd84ab97943cc46c99d7a2de3aff1d"
+      },
+      "loaded_matches_preserved_adapter_optimizer": true,
+      "move_on_published": false,
+      "move_on_rendered": false,
+      "name": "REPO-EVIDENCE-C",
+      "native": {
+        "pid": 3504161,
+        "start_ticks": "42941132",
+        "state": "R"
+      },
+      "own_current_state_entries": 0,
+      "parent_turns": [
+        {
+          "id": "fe0b043d0d064e5c8dd4b7485e5abbe5",
+          "inbox": {
+            "index": 6315,
+            "mtime_unix": 1789708380.3974984,
+            "sha256": "0e41dcf23dca1df617eb6b0b41c9cb8890c2ddc9f6b0166174ba7794cefccc2f"
+          },
+          "kind": "OPENING",
+          "published_unix": 1789708253.396811,
+          "render": {
+            "index": 6320,
+            "messages_sha256": "1dd19caa5e9f744d00327d09f7276c02606e972d33f03ec299d49e38e2fe2af8",
+            "mtime_unix": 1789708383.6684134,
+            "sha256": "6ee188b3edafe7280c4df601a587b664eeb1d423d2897ecf98c32b961a7ec7eb",
+            "started_unix": 1789708383.0174928
+          }
+        }
+      ],
+      "peer_first_renders": 0,
+      "peer_publications": 0,
+      "physical": 3,
+      "preserved": true,
+      "restore_pass": true,
+      "status": "LIVE"
+    },
+    {
+      "V_parent_judgment": null,
+      "V_repair_publications": 0,
+      "dispatch_failure": null,
+      "environment_object": "Draft a short two-character dialogue in which their intentions conflict; choose the setting, then revise one line after actual reader feedback.",
+      "exit": null,
+      "filter_live": true,
+      "filter_sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "first_request": {
+        "index": 6321,
+        "mtime_unix": 1789708380.4161522,
+        "prompt_tokens": 9932,
+        "sha256": "67c934ae335a4193a19dceb9fc9a37e0a38500802bb6d280cf37481fecb5e07c",
+        "started_unix": 1789708379.805998
+      },
+      "latest_complete": 57,
+      "loaded": {
+        "document": {
+          "adapter_sha256": "b4c324038eb84afee3e386feddaf976f96b4911af1d7e16aad73a9e5a9cd8c96",
+          "anchors": {
+            "adapter": null,
+            "artifact_hashes": {
+              "ADMISSION.json": "e35295f88dfe04bccb06d1630aa3ac46e6f10ef2a80af7d0bb1b9a9f03199b0d",
+              "LAUNCH.json": "f4e3e251bcbf99d2165136e430b8bd437f6132b3cd29b854d41220fa16d534f6",
+              "PLAN.json": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+              "PUBLICATION.json": "df62b91c1ee2bac7ff09be31e11ef46020cb5fe1d0f9ed5f60f04eee4bb5f190",
+              "READY.json": "41899d13b57b250a8cecf406e645ff132e19f1c36fec6ae6e0e98ab2d3e5cc76",
+              "readout/AFTER.json": "a01dc627777cd8dab313c48d423385fca00b02a64c01b4fdee1e4b54ed378d66",
+              "readout/BEFORE.json": "b0dab498e1f35ed649a0a4f565e1bc433d700bc37b0091047c3330cbabbd0177",
+              "readout/COMPLETE.json": "7d4c672a279aac5427428d0c05a4ad0115bc60317a1a34db8614fba41b03ee90"
+            },
+            "automatic_fit": false,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "completed_calls": 64,
+            "completion_categories": {
+              "correct": 42,
+              "exact_constraint_failure": 5,
+              "invalid_json": 4,
+              "invalid_numeric_format": 1,
+              "unsafe_or_invalid_expression": 3,
+              "wrong_answer": 9
+            },
+            "context_limit": 16384,
+            "encoded_anchors": 42,
+            "families": {
+              "code": 9,
+              "concise_answer": 11,
+              "math": 6,
+              "simulated_tools": 16
+            },
+            "native_target_ids_preserved": true,
+            "new_model_calls": 0,
+            "parent_calls": 0,
+            "prompt_labels_masked": true,
+            "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+            "schema": "R107_BASE_ANCHOR_NATIVE_TOKEN_INVENTORY_V1",
+            "semantic_richness": "NOT_CLAIMED",
+            "shortfalls": {
+              "code": 0,
+              "concise_answer": 0,
+              "math": 0,
+              "simulated_tools": 0
+            },
+            "source_condition": "PURE_BASE",
+            "source_finished_unix": 1789461513.0626216,
+            "source_fit_ready": false,
+            "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+            "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+            "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+            "source_training_allowed": false,
+            "split": "TRAIN",
+            "status": "ENCODED_INVENTORY_READY",
+            "suite_sha256": "dd0cd5b2bfcef830e95bc406f9d601c6f8f861354fae5ba1d5d8395ba0df8196",
+            "training_updates": 0
+          },
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "loaded_unix": 1789708378.33175,
+          "optimizer_steps": 5180,
+          "pid": 3504447,
+          "resume": true,
+          "runtime": {
+            "distributions": {
+              "peft": "0.20.0",
+              "tokenizers": "0.22.2",
+              "torch": "2.13.0",
+              "transformers": "5.5.3"
+            },
+            "imported": {
+              "peft": "0.20.0",
+              "tokenizers": "0.22.2",
+              "torch": "2.13.0+cu130",
+              "transformers": "5.5.3"
+            }
+          }
+        },
+        "index": 6317,
+        "mtime_unix": 1789708378.3952632,
+        "sha256": "c2fde4cc1b4066024b07926672d906ccaabfb3908b64e308268691dd1a190456"
+      },
+      "loaded_matches_preserved_adapter_optimizer": true,
+      "move_on_published": false,
+      "move_on_rendered": false,
+      "name": "CREATIVE-STRUCTURED-A",
+      "native": {
+        "pid": 3504447,
+        "start_ticks": "42941232",
+        "state": "R"
+      },
+      "own_current_state_entries": 0,
+      "parent_turns": [
+        {
+          "id": "12d192c89d9241cb9811ab46f887fd42",
+          "inbox": {
+            "index": 6318,
+            "mtime_unix": 1789708378.5235605,
+            "sha256": "288f8cf93e93289dfc85b589dac3cbfe410b97870fff9fb2a80ab542160e387c"
+          },
+          "kind": "OPENING",
+          "published_unix": 1789708254.0175128,
+          "render": {
+            "index": 6321,
+            "messages_sha256": "7843f16309e26ecba69345deec84277bc2bf2f5be58f07e049f9216f6805518f",
+            "mtime_unix": 1789708380.4161522,
+            "sha256": "67c934ae335a4193a19dceb9fc9a37e0a38500802bb6d280cf37481fecb5e07c",
+            "started_unix": 1789708379.805998
+          }
+        }
+      ],
+      "peer_first_renders": 0,
+      "peer_publications": 0,
+      "physical": 4,
+      "preserved": true,
+      "restore_pass": true,
+      "status": "LIVE"
+    },
+    {
+      "V_parent_judgment": "V_NOT_LANDED: My parent judgment is that the displayed formula and truncated n=3 equation do not establish arithmetic self-consistency. The returned outcomes are empty. This final repair turn closes with a direct transition to the new object.",
+      "V_repair_publications": 2,
+      "dispatch_failure": null,
+      "environment_object": "Choose a small pattern in sums of consecutive integers; derive examples in plain digits and try one countercheck before stating a rule.",
+      "exit": null,
+      "filter_live": true,
+      "filter_sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "first_request": {
+        "index": 6298,
+        "mtime_unix": 1789708380.8533995,
+        "prompt_tokens": 7276,
+        "sha256": "11e3f742021c4ace43ef395748902147e9a3971e2ab79bc478840888fceba51c",
+        "started_unix": 1789708380.2181873
+      },
+      "latest_complete": 57,
+      "loaded": {
+        "document": {
+          "adapter_sha256": "7cd325e0bdc89582c1f4b98b70ec7205b949349f0c95936ef275ecde864fb705",
+          "anchors": {
+            "adapter": null,
+            "artifact_hashes": {
+              "ADMISSION.json": "e35295f88dfe04bccb06d1630aa3ac46e6f10ef2a80af7d0bb1b9a9f03199b0d",
+              "LAUNCH.json": "f4e3e251bcbf99d2165136e430b8bd437f6132b3cd29b854d41220fa16d534f6",
+              "PLAN.json": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+              "PUBLICATION.json": "df62b91c1ee2bac7ff09be31e11ef46020cb5fe1d0f9ed5f60f04eee4bb5f190",
+              "READY.json": "41899d13b57b250a8cecf406e645ff132e19f1c36fec6ae6e0e98ab2d3e5cc76",
+              "readout/AFTER.json": "a01dc627777cd8dab313c48d423385fca00b02a64c01b4fdee1e4b54ed378d66",
+              "readout/BEFORE.json": "b0dab498e1f35ed649a0a4f565e1bc433d700bc37b0091047c3330cbabbd0177",
+              "readout/COMPLETE.json": "7d4c672a279aac5427428d0c05a4ad0115bc60317a1a34db8614fba41b03ee90"
+            },
+            "automatic_fit": false,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "completed_calls": 64,
+            "completion_categories": {
+              "correct": 42,
+              "exact_constraint_failure": 5,
+              "invalid_json": 4,
+              "invalid_numeric_format": 1,
+              "unsafe_or_invalid_expression": 3,
+              "wrong_answer": 9
+            },
+            "context_limit": 16384,
+            "encoded_anchors": 42,
+            "families": {
+              "code": 9,
+              "concise_answer": 11,
+              "math": 6,
+              "simulated_tools": 16
+            },
+            "native_target_ids_preserved": true,
+            "new_model_calls": 0,
+            "parent_calls": 0,
+            "prompt_labels_masked": true,
+            "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+            "schema": "R107_BASE_ANCHOR_NATIVE_TOKEN_INVENTORY_V1",
+            "semantic_richness": "NOT_CLAIMED",
+            "shortfalls": {
+              "code": 0,
+              "concise_answer": 0,
+              "math": 0,
+              "simulated_tools": 0
+            },
+            "source_condition": "PURE_BASE",
+            "source_finished_unix": 1789461513.0626216,
+            "source_fit_ready": false,
+            "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+            "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+            "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+            "source_training_allowed": false,
+            "split": "TRAIN",
+            "status": "ENCODED_INVENTORY_READY",
+            "suite_sha256": "dd0cd5b2bfcef830e95bc406f9d601c6f8f861354fae5ba1d5d8395ba0df8196",
+            "training_updates": 0
+          },
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "loaded_unix": 1789708378.7122893,
+          "optimizer_steps": 5148,
+          "pid": 3504215,
+          "resume": true,
+          "runtime": {
+            "distributions": {
+              "peft": "0.20.0",
+              "tokenizers": "0.22.2",
+              "torch": "2.13.0",
+              "transformers": "5.5.3"
+            },
+            "imported": {
+              "peft": "0.20.0",
+              "tokenizers": "0.22.2",
+              "torch": "2.13.0+cu130",
+              "transformers": "5.5.3"
+            }
+          }
+        },
+        "index": 6294,
+        "mtime_unix": 1789708378.7735624,
+        "sha256": "e05b8fa0c7266364cb79fd9fca2aa9582e1c7b82a657ac1ba7e7ffe3c1b1c026"
+      },
+      "loaded_matches_preserved_adapter_optimizer": true,
+      "move_on_published": false,
+      "move_on_rendered": false,
+      "name": "MATH-SELF-DERIVE-C",
+      "native": {
+        "pid": 3504215,
+        "start_ticks": "42941135",
+        "state": "R"
+      },
+      "own_current_state_entries": 0,
+      "parent_turns": [
+        {
+          "id": "1689aeb799cf4e1d9f9d611379140315",
+          "inbox": {
+            "index": 6295,
+            "mtime_unix": 1789708378.907952,
+            "sha256": "302af4613e547f7df5a854be2f2e03193a730bee2110e799633a5ce4b074da99"
+          },
+          "kind": "OPENING",
+          "published_unix": 1789708253.7675438,
+          "render": {
+            "index": 6298,
+            "messages_sha256": "a3df5435fc7bc5b30f862b7aa050a18dac6a71e5a8fb388c5400df5c93ec4fda",
+            "mtime_unix": 1789708380.8533995,
+            "sha256": "11e3f742021c4ace43ef395748902147e9a3971e2ab79bc478840888fceba51c",
+            "started_unix": 1789708380.2181873
+          }
+        },
+        {
+          "id": "242d7475b0494505a4b831023b273094",
+          "inbox": {
+            "index": 6313,
+            "mtime_unix": 1789708433.6405182,
+            "sha256": "6d2fef657ba262ba0d9eef7907ca97d59c884b33141ceb31728b9c1018120b7e"
+          },
+          "kind": "V_TURN2",
+          "published_unix": 1789708418.6808107,
+          "render": null
+        }
+      ],
+      "peer_first_renders": 0,
+      "peer_publications": 0,
+      "physical": 5,
+      "preserved": true,
+      "restore_pass": true,
+      "status": "LIVE"
+    },
+    {
+      "V_parent_judgment": null,
+      "V_repair_publications": 1,
+      "dispatch_failure": null,
+      "environment_object": "Draft a new short scene in which both characters need the same ordinary object; choose their motives, then revise from actual reader feedback.",
+      "exit": null,
+      "filter_live": true,
+      "filter_sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "first_request": {
+        "index": 6289,
+        "mtime_unix": 1789708399.3864675,
+        "prompt_tokens": 11620,
+        "sha256": "44e7921f0af3dcebeb3bb124ab194eae2016b9bf7504d54513fa0e90fd0d9de1",
+        "started_unix": 1789708398.4301326
+      },
+      "latest_complete": 57,
+      "loaded": {
+        "document": {
+          "adapter_sha256": "34535829a6dc7152eb3599c659964c474f60cc5ba644f3eee386a28876ff7a25",
+          "anchors": {
+            "adapter": null,
+            "artifact_hashes": {
+              "ADMISSION.json": "e35295f88dfe04bccb06d1630aa3ac46e6f10ef2a80af7d0bb1b9a9f03199b0d",
+              "LAUNCH.json": "f4e3e251bcbf99d2165136e430b8bd437f6132b3cd29b854d41220fa16d534f6",
+              "PLAN.json": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+              "PUBLICATION.json": "df62b91c1ee2bac7ff09be31e11ef46020cb5fe1d0f9ed5f60f04eee4bb5f190",
+              "READY.json": "41899d13b57b250a8cecf406e645ff132e19f1c36fec6ae6e0e98ab2d3e5cc76",
+              "readout/AFTER.json": "a01dc627777cd8dab313c48d423385fca00b02a64c01b4fdee1e4b54ed378d66",
+              "readout/BEFORE.json": "b0dab498e1f35ed649a0a4f565e1bc433d700bc37b0091047c3330cbabbd0177",
+              "readout/COMPLETE.json": "7d4c672a279aac5427428d0c05a4ad0115bc60317a1a34db8614fba41b03ee90"
+            },
+            "automatic_fit": false,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "completed_calls": 64,
+            "completion_categories": {
+              "correct": 42,
+              "exact_constraint_failure": 5,
+              "invalid_json": 4,
+              "invalid_numeric_format": 1,
+              "unsafe_or_invalid_expression": 3,
+              "wrong_answer": 9
+            },
+            "context_limit": 16384,
+            "encoded_anchors": 42,
+            "families": {
+              "code": 9,
+              "concise_answer": 11,
+              "math": 6,
+              "simulated_tools": 16
+            },
+            "native_target_ids_preserved": true,
+            "new_model_calls": 0,
+            "parent_calls": 0,
+            "prompt_labels_masked": true,
+            "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+            "schema": "R107_BASE_ANCHOR_NATIVE_TOKEN_INVENTORY_V1",
+            "semantic_richness": "NOT_CLAIMED",
+            "shortfalls": {
+              "code": 0,
+              "concise_answer": 0,
+              "math": 0,
+              "simulated_tools": 0
+            },
+            "source_condition": "PURE_BASE",
+            "source_finished_unix": 1789461513.0626216,
+            "source_fit_ready": false,
+            "source_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+            "source_plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+            "source_rows_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+            "source_training_allowed": false,
+            "split": "TRAIN",
+            "status": "ENCODED_INVENTORY_READY",
+            "suite_sha256": "dd0cd5b2bfcef830e95bc406f9d601c6f8f861354fae5ba1d5d8395ba0df8196",
+            "training_updates": 0
+          },
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "loaded_unix": 1789708396.2871478,
+          "optimizer_steps": 5132,
+          "pid": 3504375,
+          "resume": true,
+          "runtime": {
+            "distributions": {
+              "peft": "0.20.0",
+              "tokenizers": "0.22.2",
+              "torch": "2.13.0",
+              "transformers": "5.5.3"
+            },
+            "imported": {
+              "peft": "0.20.0",
+              "tokenizers": "0.22.2",
+              "torch": "2.13.0+cu130",
+              "transformers": "5.5.3"
+            }
+          }
+        },
+        "index": 6285,
+        "mtime_unix": 1789708396.3485906,
+        "sha256": "8673eaaa65aaa24a862048c326821c7e4ca02c415042f3e3f0a9051fd24f434f"
+      },
+      "loaded_matches_preserved_adapter_optimizer": true,
+      "move_on_published": false,
+      "move_on_rendered": false,
+      "name": "CREATIVE-B",
+      "native": {
+        "pid": 3504375,
+        "start_ticks": "42941176",
+        "state": "R"
+      },
+      "own_current_state_entries": 0,
+      "parent_turns": [
+        {
+          "id": "ebc7609a78454a04a1b69134895c782c",
+          "inbox": {
+            "index": 6286,
+            "mtime_unix": 1789708396.4720118,
+            "sha256": "1cfdb5012b542b6d575a198f1bf76227fa1b3d77b96fd44f748bbee5680bc3b1"
+          },
+          "kind": "OPENING",
+          "published_unix": 1789708253.4800067,
+          "render": {
+            "index": 6289,
+            "messages_sha256": "7a1da1adf05c3aed1bfb377d971d43cf49bc2737cb70cc03a67f25ea240dd90d",
+            "mtime_unix": 1789708399.3864675,
+            "sha256": "44e7921f0af3dcebeb3bb124ab194eae2016b9bf7504d54513fa0e90fd0d9de1",
+            "started_unix": 1789708398.4301326
+          }
+        }
+      ],
+      "peer_first_renders": 0,
+      "peer_publications": 0,
+      "physical": 7,
+      "preserved": true,
+      "restore_pass": true,
+      "status": "LIVE"
+    }
+  ],
+  "caption_followup_handoff": "research_loop/workers/rohin209_first_game_20260918/followup_c2.py",
+  "hard_end_utc": "2026-09-26T17:05:00Z",
+  "no_withdrawn_suffix_claim": true,
+  "observed_unix": 1789708431.2702484,
+  "peer_groups": [
+    [
+      2,
+      3,
+      4
+    ],
+    [
+      5,
+      7
+    ]
+  ],
+  "phase": "R210_PARENTED_ENRICHMENT",
+  "physical_lease_end_utc": "2026-09-26T23:05:00Z",
+  "prior_phase": "COMPLETE57_SCREEN_ENDED_PRESERVED"
+}

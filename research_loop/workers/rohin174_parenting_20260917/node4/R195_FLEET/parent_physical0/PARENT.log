@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/fleet_parent.py", line 63, in <module>
+    {'prepare': prepare, 'serve': serve}[options.action](options.physical)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/fleet_parent.py", line 55, in serve
+    base.serve(output)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/parent_c.py", line 162, in serve
+    status = policy.tick(REPO, config, attempts, seed, state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/source_A/gpu/orch_r166_parent_policy.py", line 389, in tick
+    directory.mkdir(mode=0o700)
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/parent_physical0/turns/parent_000000000006'

@@ -1,0 +1,48 @@
+{
+  "cleanup_max_seconds": 30,
+  "code": {
+    "path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/cpu_stage3/source/gpu/ny_caption_vision.py",
+    "sha256": "b6170ddf186860ae5bf3d4aa8db2d7f0816b1b52b7703efc31a00f443b466e9f"
+  },
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/slot_policy.py",
+    "launch",
+    "--config",
+    "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/attempts/launch_5_1789673455211788743/CONFIG.json"
+  ],
+  "cpu_receipt": {
+    "path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/cpu_stage3/CPU_RECEIPT.json",
+    "sha256": "c94df7a13bece1772fe22dd29e92d8208bee4e23f3362e43c8b1f1f7f950c946"
+  },
+  "entrypoint": {
+    "path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/cpu_stage3/owner_entry.py",
+    "sha256": "e4751daccd8dc9dcc3e01a7d49cc5733d33b33f6c9bb772fd5b82ea2bc3c5c72"
+  },
+  "hard_end_unix": 1789754400,
+  "max_gpu_seconds": 3600,
+  "metadata": {
+    "path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/cpu_stage3/OWNER_METADATA_RUNTIME1.json",
+    "sha256": "601b430b4720015fa844e228f9c8f2d4ce67eb452e2867454022fc8e58c7eba4"
+  },
+  "nvml_mapping": {
+    "path": "/localhome/local-rohing/orch_r177_local_qwen_vision_20260917/cpu_stage3/NVML_MAPPING_RUNTIME1.json",
+    "sha256": "4347e633bd88f83492057b0b0f2a368bab4a6683a5cd5ca1dc7bb88763fee426"
+  },
+  "observed_unix": 1789673455.2248733,
+  "packet": {
+    "path": "/localhome/local-rohing/orch_r177_main_game_images_20260917_v1/IMAGE_PACKET.json",
+    "sha256": "b897b91143f18212ff280f2773c84cd01dfecab25e89b13e9ce0b6b7b2aae211"
+  },
+  "pid": 4191659,
+  "prepared": {
+    "action": "prepare",
+    "attempt": "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/attempts/launch_5_1789673455211788743",
+    "config": "/localhome/local-rohing/orch_r177_strict_slots_20260917_v1/attempts/launch_5_1789673455211788743/CONFIG.json"
+  },
+  "runtime_seconds": 3570,
+  "schema": "R177_LOCAL_VISION_OPERATOR_STARTED_V1",
+  "start_ticks": "24162546",
+  "status": "OUTER_STARTED_NOT_MODEL_LOADED"
+}

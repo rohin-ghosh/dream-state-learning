@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent.py", line 116, in <module>
+    if status['status'] not in ('WAITING_FOR_NEW_CHILD_BOUNDARY', 'EXISTING_BOUNDARY_ATTEMPT_PRESERVED'):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent.py", line 105, in serve
+    publication = remote(physical, dict(op='opening', message=message))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/parent_repairs.py", line 21, in tick_once
+    return policy.tick(repository, config, attempts, seed, state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/source_B/gpu/orch_r166_parent_policy.py", line 379, in tick
+    memory_state = memory(seed, local_attempts(output), state)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/source_B/gpu/orch_r166_parent_policy.py", line 137, in memory
+    require(receipt['status'] in ('PUBLISHED', 'SILENT', 'PROVIDER_FAILED', 'VALIDATION_FAILED'), 'uncertain_publication')
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node3/source_B/gpu/orch_r125_stream_journal.py", line 43, in require
+    raise ValueError(reason)
+ValueError: uncertain_publication

@@ -1,0 +1,442 @@
+{
+  "schema": "R203_NODE5_ARM_ASSIGNMENT_V1",
+  "prepared_unix": 1789701346.8576589,
+  "authority": "R203 user explicitly assigns six node5 slots and authorizes resource reallocation",
+  "node5_sole_operator": true,
+  "inventory_reference": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/INVENTORY_20260918T031402Z.json",
+    "sha256": "bdd8411fd5b08d1331711219d67662e4a6e28fe81fee2de6514fa1b6f64773f7",
+    "observed_utc": "2026-09-18T03:14:02.815060+00:00"
+  },
+  "reserved_slots": [
+    {
+      "physical": 1,
+      "life": "original C2",
+      "status": "PAUSED_COMPLETE52_RECORD5975",
+      "parent": "FROZEN"
+    },
+    {
+      "physical": 7,
+      "life": "repo_reader",
+      "status": "LIVE_UNCHANGED",
+      "receipt_native_pid": 2761360,
+      "receipt_storage_root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1"
+    }
+  ],
+  "source_checkpoint": 51,
+  "source_optimizer_steps": 4908,
+  "common_console_cut": 5846,
+  "common_console_record_sha256": "3c8c45a6bfef9bb7d5a36dd9ddaf1e0a2293c6a83c718cbe2bca8e0ed6d16b48",
+  "shared_snapshot_manifest_sha256": "29ca04c2c51671c7df922a4b05448586e74eec35da45b03009877baccbccce84",
+  "shared_snapshot_archive_sha256": "9beaf7a79063c5cf4af2868e1f3122dfea7f4fa5ce3f7d3f2f51716676cdee34",
+  "original_C2_receives_own_latest52": true,
+  "original52_never_used_as_clone_source": true,
+  "first_launch_physical": 3,
+  "independent_slots_need_not_wait_for_other_clones": true,
+  "required_native_recipe": {
+    "new_presentations": 16,
+    "rehearsal_presentations": 0,
+    "anchor_lambda": 0.25,
+    "learning_rate": 3e-05
+  },
+  "screen_guided_complete_cycles": 3,
+  "screen_withdrawn_complete_cycles": 3,
+  "screen_success_contingent": false,
+  "hard_end_unix": 1789776000,
+  "lease_end_unix": 1789776600,
+  "rollout_dependency": "Main tested R203 overlay and existing receiving CPU/provenance, after original C2 priority",
+  "arms": [
+    {
+      "physical": 0,
+      "arm": "MATH-STRUCTURED-A",
+      "control_root": "/localhome/local-rohing/orch_r203_math_structured_a_node5_20260918_attempt1",
+      "new_life_root": "/localhome/local-rohing/orch_r203_math_structured_a_node5_20260918_attempt1/life",
+      "gpu_uuid": "GPU-f237c5b5-c2a3-b377-92ee-46cf2658db9a",
+      "old_life_label": "C1",
+      "old_logical_root": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life",
+      "old_storage_root": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life",
+      "old_native": {
+        "argv_sha256": "6149d3ed61df93879394d7c092e3191a589d2358a4bfa605a2af5e5438eee0c4",
+        "cwd": "/localhome/local-rohing/orch_r181_node5_c1_1789683715568589680/source",
+        "pid": 2707975,
+        "ppid": 2707974,
+        "start_ticks": "22260069",
+        "state": "R",
+        "uid": 2524
+      },
+      "old_guard": {
+        "path": "/localhome/local-rohing/orch_r181_node5_c1_1789683715568589680/GUARD.json",
+        "sha256": "359312c92086393bcd03581b4b4217bfe4f417b315aa2eac9ad379f3ff9d1b75"
+      },
+      "old_plan": {
+        "path": "/localhome/local-rohing/orch_r181_node5_c1_1789683715568589680/PLAN.json",
+        "sha256": "2f20a5e7b7d7bcda372ff9ea9d70e61491c501a58c850716bd2750b195049cda"
+      },
+      "observed_complete": {
+        "checkpoint": {
+          "adapter_state_sha256": "53d8549eefa4cff13bc7d27c2696d69333f496426917cae62ce12171071cf0a6",
+          "checkpoint_sha256": {
+            "adapter": "96bdc5d0da07f90f1920d8866c62e729c4ca0dac605edd5da785fec2a7d17ed4",
+            "optimizer": "f5b4e05e891661f4f716af81e0bc737b5b5930dc8f2e537dd85c58ab51da57c9",
+            "rng": "f5b4e05e891661f4f716af81e0bc737b5b5930dc8f2e537dd85c58ab51da57c9"
+          },
+          "optimizer_steps": 5863
+        },
+        "fields": {
+          "cycle": 69,
+          "optimizer_steps": 48,
+          "status": "COMPLETE"
+        },
+        "file": {
+          "path": "/localhome/local-rohing/orch_r153_community_C1_20260916_attempt1/life/stream/records/00000000000000006976.json",
+          "sha256": "19f19dd2f4af71895647eaf2404e90f8bf0e87f01f3eeda36af7f2f705e44300"
+        },
+        "index": 6976,
+        "kind": "SLEEP_COMPLETE",
+        "mtime_unix": 1789701048.0482473,
+        "previous_sha256": "4b0a516d7816ab550314cc8f3e993f6053fc33bec13a3896560f3ea2d13c37ed",
+        "resume_state": {
+          "sha256": "e3a03398c86669f29ac95eb3a51efd201b3334ffe30aa90bfc048f9624dbded2"
+        },
+        "sha256": "5f7807758cc0b16dc62ce3c075d9141df7edb2aa769dd18c2dab8100d372853c"
+      },
+      "observed_head": {
+        "index": 6994,
+        "kind": "UPDATE",
+        "previous_sha256": "8121368ad74c8cea9af6342b44743d84369ef46da297a10352d71c225c236f3c",
+        "sha256": "e98189df044a0698fc579293c39a5fbb1f67fd8f9c368251ec23c423ab0f18a9"
+      },
+      "retirement_reason": "R203 authorized resource reallocation; not a failed-science claim",
+      "retirement_state": "NOT_RETIRED",
+      "actual_free_now": false,
+      "requires_preserve_next_exact_complete": true
+    },
+    {
+      "physical": 2,
+      "arm": "CREATIVE-COMM-B",
+      "control_root": "/localhome/local-rohing/orch_r203_creative_comm_b_node5_20260918_attempt1",
+      "new_life_root": "/localhome/local-rohing/orch_r203_creative_comm_b_node5_20260918_attempt1/life",
+      "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+      "old_life_label": "run1",
+      "old_logical_root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+      "old_storage_root": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1",
+      "old_native": {
+        "argv_sha256": "38f2152714b08dd9c40bdb1aa56c97fcfddcd467dd56b1aa77d68a9f1dc2ce2a",
+        "cwd": "/localhome/local-rohing/orch_r181_node5_run1_1789684076650332578/source",
+        "pid": 2495635,
+        "ppid": 2495634,
+        "start_ticks": "21970327",
+        "state": "R",
+        "uid": 2524
+      },
+      "old_guard": {
+        "path": "/localhome/local-rohing/orch_r181_node5_run1_1789684076650332578/GUARD.json",
+        "sha256": "96f9d6bce0944c9a1c1f585c03cb91f7834ef7bac7abec8a3a7bee6fbba2a8a9"
+      },
+      "old_plan": {
+        "path": "/localhome/local-rohing/orch_r181_node5_run1_1789684076650332578/PLAN.json",
+        "sha256": "d9331ac8e40a65b126f0299bb0456bd3474a3351b7344637ed81034c88e4801d"
+      },
+      "observed_complete": {
+        "checkpoint": {
+          "adapter_state_sha256": "3784be0941e4a874c1bcc28970e590763bd86b0450c8fe448f4408b2bf5c480c",
+          "checkpoint_sha256": {
+            "adapter": "41d3faef7c0a749815ea6a1afdec10b2d2a9a75b0e51e55b75bcd9b56c9cb48b",
+            "optimizer": "5c8ddeefb97c095b039752723cf665196b56b6c64f19d059a1f284a8f1278e02",
+            "rng": "5c8ddeefb97c095b039752723cf665196b56b6c64f19d059a1f284a8f1278e02"
+          },
+          "optimizer_steps": 6826
+        },
+        "fields": {
+          "cycle": 81,
+          "optimizer_steps": 48,
+          "status": "COMPLETE"
+        },
+        "file": {
+          "path": "/localhome/local-rohing/orch_r125_continual_20260916_attempt1/run1/stream/records/00000000000000008003.json",
+          "sha256": "29eccd5edfe52c7f84a3fa7a899e0906e515813443121d3b00822a0a0170a553"
+        },
+        "index": 8003,
+        "kind": "SLEEP_COMPLETE",
+        "mtime_unix": 1789701052.518437,
+        "previous_sha256": "7b51661048d39837ee11dadff1590c84c902eea89de32752016b922b91e2d1a2",
+        "resume_state": {
+          "sha256": "d7c1f52972ea4e167c3b385b3b56e5d507d6028374a048abedb4a9364c38f2b9"
+        },
+        "sha256": "22612049f012e72a7e383180bc6923f69ff8686b8ee06785aef35fd7197ff2f9"
+      },
+      "observed_head": {
+        "index": 8022,
+        "kind": "UPDATE",
+        "previous_sha256": "385c60312267f147f9c0565fe239846fd7c53b0575cb2fac5ea09484c2c2eb26",
+        "sha256": "5e09d0619381eb57903c6c69a3c7d964444f563c5ac373a1dcac14c0616e68be"
+      },
+      "retirement_reason": "R203 authorized resource reallocation; not a failed-science claim",
+      "retirement_state": "NOT_RETIRED",
+      "actual_free_now": false,
+      "requires_preserve_next_exact_complete": true
+    },
+    {
+      "physical": 3,
+      "arm": "MATH-B",
+      "control_root": "/localhome/local-rohing/orch_r201_math_b_node5_20260918_attempt1",
+      "new_life_root": "/localhome/local-rohing/orch_r201_math_b_node5_20260918_attempt1/life",
+      "gpu_uuid": "GPU-d23c9369-39cf-51fd-833e-13292f173006",
+      "old_life_label": "C3",
+      "old_logical_root": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life",
+      "old_storage_root": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life",
+      "old_native": {
+        "argv_sha256": "24d00ff5180ee6ff0e97289f7fae87cd7311db86de2090bc4a908682c1aa27cf",
+        "cwd": "/localhome/local-rohing/orch_r181_node5_c3_1789683881443707769/source",
+        "pid": 2668022,
+        "ppid": 2668021,
+        "start_ticks": "22198740",
+        "state": "S",
+        "uid": 2524
+      },
+      "old_guard": {
+        "path": "/localhome/local-rohing/orch_r181_node5_c3_1789683881443707769/GUARD.json",
+        "sha256": "0a0f43591b8d228f0c2c9c00cc574a8a4974413f4eaeb801e3bc49a063891f2a"
+      },
+      "old_plan": {
+        "path": "/localhome/local-rohing/orch_r181_node5_c3_1789683881443707769/PLAN.json",
+        "sha256": "b83be3fcba7d253ad9d27fccb9e53975c3c9f2682f43950c1a4683d374247077"
+      },
+      "observed_complete": {
+        "checkpoint": {
+          "adapter_state_sha256": "b2f93360350cebd9b192a7f6cc2802d82e9d0efd0a6a02caa700e81ce7fb5af0",
+          "checkpoint_sha256": {
+            "adapter": "d8bee21042534fd1d8642594095c9f5ba5a0f12b41e3c4a9dda082a9df7916c4",
+            "optimizer": "fcaccad2834a92b5d0755147f86234b2d21e4d346de49ca74641b26d6dd32284",
+            "rng": "fcaccad2834a92b5d0755147f86234b2d21e4d346de49ca74641b26d6dd32284"
+          },
+          "optimizer_steps": 5263
+        },
+        "fields": {
+          "cycle": 65,
+          "optimizer_steps": 48,
+          "status": "COMPLETE"
+        },
+        "file": {
+          "path": "/localhome/local-rohing/orch_r153_community_C3_20260916_attempt1/life/stream/records/00000000000000006314.json",
+          "sha256": "f415210bc6015996137cc55873f9fbdda088aebc2c43e67c6e62cdf4ff68fb92"
+        },
+        "index": 6314,
+        "kind": "SLEEP_COMPLETE",
+        "mtime_unix": 1789701004.0053155,
+        "previous_sha256": "bbb05e2834a951a969b0d22ee8065e428360cac3c5d93b8978f4f2f88a121d50",
+        "resume_state": {
+          "sha256": "60c2b1d4c63e43c3a1401b341aa5d50167f1f335f6a86bf5e4a477bbfc6c265e"
+        },
+        "sha256": "4c52a0ef13b5487971c269e8957977ae21633a4c267d3a3d92a9402ddf40748c"
+      },
+      "observed_head": {
+        "index": 6337,
+        "kind": "UPDATE",
+        "previous_sha256": "87327c63ccbbfec078bff83dbaed8df2ce3f056ce0c496d73052bcb18f75f1ba",
+        "sha256": "4270d305bcaf05fc2ba5ace67a20d5ff184bc4cb9ab1940c89b661f1da465c1c"
+      },
+      "retirement_reason": "R203 authorized resource reallocation; not a failed-science claim",
+      "retirement_state": "NOT_RETIRED",
+      "actual_free_now": false,
+      "requires_preserve_next_exact_complete": true
+    },
+    {
+      "physical": 4,
+      "arm": "MATH-VERIFY-D",
+      "control_root": "/localhome/local-rohing/orch_r203_math_verify_d_node5_20260918_attempt1",
+      "new_life_root": "/localhome/local-rohing/orch_r203_math_verify_d_node5_20260918_attempt1/life",
+      "gpu_uuid": "GPU-94c9a79c-8b13-5679-ad35-8dda3fe5c94d",
+      "old_life_label": "C4",
+      "old_logical_root": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life",
+      "old_storage_root": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life",
+      "old_native": {
+        "argv_sha256": "cacdee59eaaa25824ce6e1dc321760e55beb1e55399cb2af2069179b60c4797a",
+        "cwd": "/localhome/local-rohing/orch_r181_node5_c4_1789683881443639417/source",
+        "pid": 2606742,
+        "ppid": 2606741,
+        "start_ticks": "22116734",
+        "state": "R",
+        "uid": 2524
+      },
+      "old_guard": {
+        "path": "/localhome/local-rohing/orch_r181_node5_c4_1789683881443639417/GUARD.json",
+        "sha256": "57077cdbb29f5b29e3dd21ed9e469ce9e8b121f62d0023e5b69653f0e2e7b4d7"
+      },
+      "old_plan": {
+        "path": "/localhome/local-rohing/orch_r181_node5_c4_1789683881443639417/PLAN.json",
+        "sha256": "bb33b6c22595ce5301180937a140e7557e8d3098a38ec0c1c7bab977597b2a53"
+      },
+      "observed_complete": {
+        "checkpoint": {
+          "adapter_state_sha256": "3dcd7392b4a75d1e7c1b3e7476b8a86b7cbe45c964f64e09de588f4f1f01910b",
+          "checkpoint_sha256": {
+            "adapter": "a5784d7ee5eee7c3d938fa8410376d3a473145d806228a79c23101d0fe124388",
+            "optimizer": "2e322eff1fe091c7b4b2097d1ca3eb07f18a48131191ef363a31331cf57e295c",
+            "rng": "2e322eff1fe091c7b4b2097d1ca3eb07f18a48131191ef363a31331cf57e295c"
+          },
+          "optimizer_steps": 5229
+        },
+        "fields": {
+          "cycle": 66,
+          "optimizer_steps": 48,
+          "status": "COMPLETE"
+        },
+        "file": {
+          "path": "/localhome/local-rohing/orch_r153_community_C4_20260916_attempt1/life/stream/records/00000000000000006249.json",
+          "sha256": "4424cfad9d89be4472594673567a29546105023f97c0ba44df4704f6bbdbe779"
+        },
+        "index": 6249,
+        "kind": "SLEEP_COMPLETE",
+        "mtime_unix": 1789700868.1578796,
+        "previous_sha256": "8b08d234d9ce9588eb73a4e272f63addbdb9d57efb8d8fcd19fa6b7c0d41caf7",
+        "resume_state": {
+          "sha256": "bae564d1f02e3a009df9c6a7d9cc3d4ef504730c12d9c2a64d1adf539c8d9214"
+        },
+        "sha256": "bc031d02e82b44f005bb7ba5b2033d02b583b0759d9e40e1ddb868b965dd2dec"
+      },
+      "observed_head": {
+        "index": 6283,
+        "kind": "UPDATE",
+        "previous_sha256": "7642b4d639e1e67da395426bd5bba1f1990ff3b0040d527e9f8f4011a1b62d05",
+        "sha256": "713f5840005a9558bb5308dca7fd444bd5acdede045f6aafc2c8259673070d45"
+      },
+      "retirement_reason": "R203 authorized resource reallocation; not a failed-science claim",
+      "retirement_state": "NOT_RETIRED",
+      "actual_free_now": false,
+      "requires_preserve_next_exact_complete": true
+    },
+    {
+      "physical": 5,
+      "arm": "CREATIVE-REVISION-C",
+      "control_root": "/localhome/local-rohing/orch_r203_creative_revision_c_node5_20260918_attempt1",
+      "new_life_root": "/localhome/local-rohing/orch_r203_creative_revision_c_node5_20260918_attempt1/life",
+      "gpu_uuid": "GPU-65595cff-c6c2-c798-bc62-427168079270",
+      "old_life_label": "C5",
+      "old_logical_root": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life",
+      "old_storage_root": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life",
+      "old_native": {
+        "argv_sha256": "fad44e5efc9038918e4d23c0a80d0d59d80e53b08aa5c7332c8613fa3a473fdb",
+        "cwd": "/localhome/local-rohing/orch_r181_node5_c5_1789683715577507372/source",
+        "pid": 2761060,
+        "ppid": 2761059,
+        "start_ticks": "22343823",
+        "state": "S",
+        "uid": 2524
+      },
+      "old_guard": {
+        "path": "/localhome/local-rohing/orch_r181_node5_c5_1789683715577507372/GUARD.json",
+        "sha256": "efc9a6e6f7b980270c260543319f68c0a8742f3b9bd4cd248c144d2d1e209db8"
+      },
+      "old_plan": {
+        "path": "/localhome/local-rohing/orch_r181_node5_c5_1789683715577507372/PLAN.json",
+        "sha256": "e32b28611fd35bbdc0c3abbfb51998212582b4f57f9e55aeab1daac9637cfa06"
+      },
+      "observed_complete": {
+        "checkpoint": {
+          "adapter_state_sha256": "fd5e6131b8fc8179b2b5c4d02b595a9436a19c32981cbe0f0394b82d687e4565",
+          "checkpoint_sha256": {
+            "adapter": "f1ddf4570721575064c51e01443e769d441e7086ccd316101ed565bada3e64e9",
+            "optimizer": "5ffadd7309fb6aa6d8fe0c72aec5e7cf593ff4e30b081ca8cd030e38fb9d3675",
+            "rng": "5ffadd7309fb6aa6d8fe0c72aec5e7cf593ff4e30b081ca8cd030e38fb9d3675"
+          },
+          "optimizer_steps": 5693
+        },
+        "fields": {
+          "cycle": 75,
+          "optimizer_steps": 48,
+          "status": "COMPLETE"
+        },
+        "file": {
+          "path": "/localhome/local-rohing/orch_r153_community_C5_20260916_attempt1/life/stream/records/00000000000000006863.json",
+          "sha256": "07367f50c239263cd89c34a20a284ed28464bd0ca5771960bd8902adb6d9b12d"
+        },
+        "index": 6863,
+        "kind": "SLEEP_COMPLETE",
+        "mtime_unix": 1789700994.537895,
+        "previous_sha256": "b46431ee003aa177f62cdd7532f88424d1217663616805f1784f59763ede97b9",
+        "resume_state": {
+          "sha256": "1404d0109d209e42d4b9a841444bb286c0fe2d8fb92e4b391b764312188c2105"
+        },
+        "sha256": "3cc1a7901bbb729dbe63179d0fb4b2e0134cec5ed642eefaafc401cee6fd73d0"
+      },
+      "observed_head": {
+        "index": 6917,
+        "kind": "UPDATE",
+        "previous_sha256": "b94fc8876ca0e801a2c50af96eaeac4e60a61d376cd5900d66b423205e016441",
+        "sha256": "e40cf5ac712c7ba1c754e7d14def84d3163fcbb00f7f0763c6799ad9460b024d"
+      },
+      "retirement_reason": "R203 authorized resource reallocation; not a failed-science claim",
+      "retirement_state": "NOT_RETIRED",
+      "actual_free_now": false,
+      "requires_preserve_next_exact_complete": true
+    },
+    {
+      "physical": 6,
+      "arm": "REPO-PROPOSAL-A",
+      "control_root": "/localhome/local-rohing/orch_r203_repo_proposal_a_node5_20260918_attempt1",
+      "new_life_root": "/localhome/local-rohing/orch_r203_repo_proposal_a_node5_20260918_attempt1/life",
+      "gpu_uuid": "GPU-67a989f7-2660-a76b-40e8-3619b9fa2987",
+      "old_life_label": "pilot",
+      "old_logical_root": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1",
+      "old_storage_root": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1",
+      "old_native": {
+        "argv_sha256": "6827bc5f41877856934ebd049f411d64805cb97072a4d662bd12938e0fd6d242",
+        "cwd": "/localhome/local-rohing/orch_r181_node5_pilot_r188_readmit_1789687810659483047/source",
+        "pid": 2757295,
+        "ppid": 2757293,
+        "start_ticks": "22337732",
+        "state": "S",
+        "uid": 2524
+      },
+      "old_guard": {
+        "path": "/localhome/local-rohing/orch_r181_node5_pilot_r188_readmit_1789687810659483047/GUARD.json",
+        "sha256": "f58814d256b212d2af00d85013b86972b9fc922a53545b583e48d6b84dfa9c00"
+      },
+      "old_plan": {
+        "path": "/localhome/local-rohing/orch_r181_node5_pilot_r188_readmit_1789687810659483047/PLAN.json",
+        "sha256": "a01cb198f85190c18280f48496eb0617e81f6aabbfb5a6122d304432ddbe863b"
+      },
+      "observed_complete": {
+        "checkpoint": {
+          "adapter_state_sha256": "caa9336f8960bcd91af182e4a553af66e9de51e3f214fd2facfd902e673b923d",
+          "checkpoint_sha256": {
+            "adapter": "fd9eb978c19ee1d0e566894aaaba6a94f290742537347887c133031486dcf315",
+            "optimizer": "0f39ba8514936ca2b125000177a9a681ea80cd35c130b53064045d0375edfbd5",
+            "rng": "0f39ba8514936ca2b125000177a9a681ea80cd35c130b53064045d0375edfbd5"
+          },
+          "optimizer_steps": 6183
+        },
+        "fields": {
+          "cycle": 68,
+          "optimizer_steps": 48,
+          "status": "COMPLETE"
+        },
+        "file": {
+          "path": "/localhome/local-rohing/orch_r127_pilot_20260916_attempt1/run1/stream/records/00000000000000007197.json",
+          "sha256": "d6e0fbca7da70e864881bcc76e7ba79ff9cba2b447b0ac854035a9bc20ab52b5"
+        },
+        "index": 7197,
+        "kind": "SLEEP_COMPLETE",
+        "mtime_unix": 1789700706.5122106,
+        "previous_sha256": "42bb79b7200d7e8fa871fe869463aca092e944bf6e5b6939381b70f9e75c8c03",
+        "resume_state": {
+          "sha256": "ca93c4db86119d1c406a81d2d0c29684683c8c02ade35ae8a75c08ee99ed4365"
+        },
+        "sha256": "310f0e7c8c51c91605b2d956bdc8f10cdb579b5fd3976cbf3c10786d7b0a0597"
+      },
+      "observed_head": {
+        "index": 7240,
+        "kind": "UPDATE",
+        "previous_sha256": "ce9f46da32f7ca073e1179f3bb0c03dfcb2f65d0a6888f9e3e9f3a342a8de69a",
+        "sha256": "20c16bb9d03d218d2bf19e69348c8c15de8f219df3ed6d5b0b8269b547cf5ced"
+      },
+      "retirement_reason": "R203 authorized resource reallocation; not a failed-science claim",
+      "retirement_state": "NOT_RETIRED",
+      "actual_free_now": false,
+      "requires_preserve_next_exact_complete": true
+    }
+  ],
+  "retirements": 0,
+  "launches": 0
+}

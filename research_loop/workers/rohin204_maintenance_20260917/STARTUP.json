@@ -1,0 +1,48 @@
+{
+  "schema": "R204_MAINTENANCE_STARTUP_V1",
+  "verified_utc": "2026-09-18T03:35:20.812702+00:00",
+  "service": {
+    "pid": 2656637,
+    "uid": 158984,
+    "start_ticks": "180945900",
+    "cmdline_sha256": "c5e6103370c0ae078a090c7be5caf0e94cca7e9e674505d7053f73fce1e4f801",
+    "interval_seconds": 1200,
+    "control": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin204_maintenance_20260917/STOP",
+    "stop_command": "python3 -B research_loop/workers/rohin204_maintenance_20260917/audit.py stop"
+  },
+  "identity_alive": true,
+  "ppid": 1,
+  "process_group": 2656637,
+  "session": 2656637,
+  "first_persistent_pass": "2026-09-18T03:34:01.011950+00:00",
+  "observed_native_count": 30,
+  "nodes": {
+    "node1": {
+      "observed": 6,
+      "verified": 6
+    },
+    "node2": {
+      "observed": 8,
+      "verified": 8
+    },
+    "node4": {
+      "observed": 8,
+      "verified": 8
+    },
+    "node5": {
+      "observed": 8,
+      "verified": 8
+    }
+  },
+  "tests": {
+    "passed": 10,
+    "elapsed_seconds": 0.12
+  },
+  "no_learner_mutation": true,
+  "code_sha256": {
+    "audit.py": "cca15265c61816da6aab38213c5fc565cd15c9a51f029d008726844d40295331",
+    "remote.py": "9ca23f4931bb39e641b2be3cc03dc97ae53ac5a578b737195d57640f68d15fe3",
+    "R195_HELPERS.json": "6fb5870cdcd1146629880ee2c595780b212fa49a6548b312089f874222e45c25",
+    "test_audit.py": "59305ec07582ce3169e4ea649e1b4826870e9a6bebf565feac398220811f516e"
+  }
+}

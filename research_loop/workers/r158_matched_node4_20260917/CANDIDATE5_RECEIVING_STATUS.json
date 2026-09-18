@@ -1,0 +1,82 @@
+{
+  "GPU_calls": 0,
+  "Main_release_pending": true,
+  "checkpoint_copy_performed": false,
+  "independent_review": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/R158_TRANSIENT_SCAN_RECHECK_REVIEW.md",
+    "sha256": "c10f7c4b2a29c9b79656387858ea96c3f827614640478c69b810b5944c21a5dd"
+  },
+  "limitations": [
+    "Observation stdout is create-only and hash-bound, not OS-read-only or fsynced.",
+    "60-second cap bounds scanner scheduling, not every I/O operation under an independent hard watchdog."
+  ],
+  "local_tests": {
+    "log": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/CANDIDATE5_LOCAL_CPU_TESTS_FINAL.log",
+      "sha256": "258c08a0ee54cbb48f3c7c438ca1d71c90a18aaf2e2ad49df3c15634f8f2af4b"
+    },
+    "passed": 965,
+    "skipped": 4
+  },
+  "old_state_modified": false,
+  "owned_files": {
+    "gpu/orch_r150_matched_native.py": "f8919b47e63c759d2a15a89eaaa1e28b4c16a7c1d4dcf0fd5efa320227e3fed9",
+    "gpu/orch_r158_matched_node4.py": "4e21fe3b72f823b9b26ba2edd08e8442ac68c3ea0fe3cdfea1590a2a5cd085d7",
+    "tests/test_orch_r150_matched_native.py": "3460cbc1ecfb85bb783719645d4e10db701f6e42f0f1b31b853d7f9e3efb841a",
+    "tests/test_orch_r158_matched_node4.py": "9eaa615d76dd7475e5ab79cc3a82fe66234a55f8214050a21247d6ff64cbac3c"
+  },
+  "prepare_extra_args": [
+    "--initialization-source",
+    "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/INITIALIZATION_SOURCE.json"
+  ],
+  "prepared": false,
+  "receiving_tests": {
+    "actual_profile_and_installed_passed": 4,
+    "passed": 827,
+    "receipts": {
+      "ACTUAL_PROFILE_AND_INSTALLED_TESTS.log": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/candidate5_inputs/ACTUAL_PROFILE_AND_INSTALLED_TESTS.log",
+        "remote_path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/ACTUAL_PROFILE_AND_INSTALLED_TESTS.log",
+        "sha256": "89a1d9bbe39cb723c3552a68bf43551ff9a1f947f030a0e90a0e6ad15488d7d1"
+      },
+      "ACTUAL_PROFILE_PREFLIGHT.json": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/candidate5_inputs/ACTUAL_PROFILE_PREFLIGHT.json",
+        "remote_path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/ACTUAL_PROFILE_PREFLIGHT.json",
+        "sha256": "b4b494e1396865ddeb627238a0df1a1e9a17e7ba9b652eacc97e6e369956484f"
+      },
+      "CPU.json": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/candidate5_inputs/CPU.json",
+        "remote_path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/CPU.json",
+        "sha256": "db9fb028b4b37d9122842de6651da0e00ae4c6dc66c0ae7747a9282d080a1d9b"
+      },
+      "CPU_TESTS.log": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/candidate5_inputs/CPU_TESTS.log",
+        "remote_path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/CPU_TESTS.log",
+        "sha256": "6daa2be2edd9a9b2c451a3ecf2d6f090ee1404da992a2792726c295380908de7"
+      },
+      "INITIALIZATION_SOURCE.json": {
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/candidate5_inputs/INITIALIZATION_SOURCE.json",
+        "remote_path": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5/INITIALIZATION_SOURCE.json",
+        "sha256": "07f92a934f895a84d88e9ef2e6d28a37bb2dabd01024c84fd81dfeae3b3361a1"
+      }
+    },
+    "skipped": 5
+  },
+  "remote_base": "/localhome/local-rohing/orch_r158_matched_node4_20260917_attempt5",
+  "source_delta_from_candidate4": [
+    "R151_STAGED_SOURCE_ORIGINAL.json",
+    "R158_REPAIRS.json",
+    "R158_SOURCE_PROFILE.json",
+    "STAGED_SOURCE.json",
+    "gpu/orch_r158_matched_node4.py",
+    "tests/test_orch_r158_matched_node4.py"
+  ],
+  "source_files": 2151,
+  "source_frozen": false,
+  "source_recipe": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/r158_matched_node4_20260917/CANDIDATE5_SOURCE_RECIPE.json",
+    "sha256": "d3ace5d7cb3524625d262fdc46236e49f3b52b300935d28a752cef3026c68217"
+  },
+  "staged_manifest_sha256": "044746077805b5a461970acd8e9c066de71e170996a5f919cb32746754453cce",
+  "status": "CANDIDATE5_CPU_STAGED_UNFROZEN_NO_PREPARE_NO_GPU"
+}

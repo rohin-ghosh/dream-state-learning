@@ -1,0 +1,152 @@
+{
+  "arms": [
+    {
+      "actual_sustained_started": {
+        "hard_end_unix": 1789772400.0,
+        "next_update": 146,
+        "no_optimizer_or_rng_reset": true,
+        "predicted_finish_utc": "2026-09-18T13:47:08.798974+00:00",
+        "started_unix": 1789706910.8411884
+      },
+      "eta_assumptions": "pilot fitting rate resumes after finite sidecars; includes full pilot-checkpoint diagnostic plus five possible future saved-adapter contrast passes as additive wall cost, reusing actual existing Spearman at selection checkpoints; not a completion guarantee",
+      "expected_finish_utc_if_postdiagnostic_fitting_returns_to_measured_pilot_rate": "2026-09-18T13:55:32.825321+00:00",
+      "first_checkpoint_diagnostics": {
+        "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+        "cases": 600,
+        "completed_utc": "2026-09-18T04:53:39.459681+00:00",
+        "contests": 20,
+        "contrast_with_load_seconds": 30.30357575416565,
+        "diagnostic_gpu_shared_with_own_candidate": true,
+        "optimizer_step": 8,
+        "private_scores_only": true,
+        "rank": 8,
+        "same_checkpoint_contrast_and_Spearman": true,
+        "selection_seconds": 206.57215023040771,
+        "total_seconds": 236.87572622299194,
+        "training_updates": 0
+      },
+      "latest_progress": {
+        "aggregate_comparisons": 16000,
+        "completed_updates": 250,
+        "elapsed_seconds": 631.2559339260624,
+        "full_five_minute_pilot": true,
+        "observed_unix": 1789707240.4341247,
+        "pairs_per_second": 25.346296391209915
+      },
+      "loaded": {
+        "config_sha256": "fa6b51e43d25c0f51bac8635a7fef03aa400f09702ab5fc4bd90359cb28d26a8",
+        "device_uuids": [
+          "GPU-af3fceb0-9735-4dd8-dc76-df3ae9502c82",
+          "GPU-3aaf4dfd-b6c9-a56d-3ca7-ee7748ee5f4d",
+          "GPU-6d1c0d5e-d7b6-e9a4-183d-dedfadabfefa",
+          "GPU-9dba6108-a040-2cd0-4ea1-274bc6a99e47"
+        ],
+        "global_batch": 64,
+        "learning_rate": 3e-05,
+        "loaded_unix": 1789706568.647771,
+        "packet_sha256": "43d90b0530324b554d216c648d93e677aa02eaf4e19b9bcda815c9b4a06a5d91",
+        "rank": 8,
+        "status": "ACTUAL_FOUR_GPU_DDP_LOADED",
+        "target_comparisons": 1000000,
+        "trainable_parameter_count": 2526720,
+        "warmstart_step": 6250,
+        "world_size": 4
+      },
+      "physical": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rank": 8,
+      "remaining_diagnostic_wall_seconds_conservatively_added": 388.3936049938202,
+      "rolling_eta_if_current_diagnostic_contention_persisted": {
+        "aggregate_pairs_per_second": 25.346296391209915,
+        "baseline_pilot_finish_utc": "2026-09-18T13:47:08.798974+00:00",
+        "predicted_finish_if_current_contention_persisted_utc": "2026-09-18T15:42:28.080583+00:00",
+        "remaining_diagnostic_cost_not_separately_predicted": true,
+        "temporary_diagnostic_contention_included": true
+      },
+      "root": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank8_20260918_candidate1",
+      "source_receipt": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank8_20260918_candidate1/training/SUSTAINED_STARTED.json"
+    },
+    {
+      "actual_sustained_started": {
+        "hard_end_unix": 1789772400.0,
+        "next_update": 145,
+        "no_optimizer_or_rng_reset": true,
+        "predicted_finish_utc": "2026-09-18T13:48:38.966079+00:00",
+        "started_unix": 1789706909.352017
+      },
+      "eta_assumptions": "pilot fitting rate resumes after finite sidecars; includes full pilot-checkpoint diagnostic plus five possible future saved-adapter contrast passes as additive wall cost, reusing actual existing Spearman at selection checkpoints; not a completion guarantee",
+      "expected_finish_utc_if_postdiagnostic_fitting_returns_to_measured_pilot_rate": "2026-09-18T13:57:19.835773+00:00",
+      "first_checkpoint_diagnostics": {
+        "case_ids_sha256": "6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba",
+        "cases": 600,
+        "completed_utc": "2026-09-18T04:53:39.371023+00:00",
+        "contests": 20,
+        "contrast_with_load_seconds": 29.787516117095947,
+        "diagnostic_gpu_shared_with_own_candidate": true,
+        "optimizer_step": 8,
+        "private_scores_only": true,
+        "rank": 16,
+        "same_checkpoint_contrast_and_Spearman": true,
+        "selection_seconds": 206.83841824531555,
+        "total_seconds": 236.62593460083008,
+        "training_updates": 0
+      },
+      "latest_progress": {
+        "aggregate_comparisons": 15360,
+        "completed_updates": 240,
+        "elapsed_seconds": 604.6729611123737,
+        "full_five_minute_pilot": true,
+        "observed_unix": 1789707213.5869167,
+        "pairs_per_second": 25.402161147975434
+      },
+      "loaded": {
+        "config_sha256": "b22436944783798a4075151399afca70a270d4884db1ce52f0e2bb799c9a3d8b",
+        "device_uuids": [
+          "GPU-967bc219-6586-d50f-c774-eb4426f3af97",
+          "GPU-11c058aa-f9ac-0a2b-5016-6c817e2e5b2f",
+          "GPU-ff82fd85-f324-35e5-5db3-4b6274a3f11e",
+          "GPU-6e850dab-3d57-cf83-1929-3a0f1efe46b6"
+        ],
+        "global_batch": 64,
+        "learning_rate": 3e-05,
+        "loaded_unix": 1789706568.889361,
+        "packet_sha256": "43d90b0530324b554d216c648d93e677aa02eaf4e19b9bcda815c9b4a06a5d91",
+        "rank": 16,
+        "status": "ACTUAL_FOUR_GPU_DDP_LOADED",
+        "target_comparisons": 1000000,
+        "trainable_parameter_count": 5049856,
+        "warmstart_step": 6250,
+        "world_size": 4
+      },
+      "physical": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "rank": 16,
+      "remaining_diagnostic_wall_seconds_conservatively_added": 385.5635151863098,
+      "rolling_eta_if_current_diagnostic_contention_persisted": {
+        "aggregate_pairs_per_second": 25.402161147975434,
+        "baseline_pilot_finish_utc": "2026-09-18T13:48:38.966079+00:00",
+        "predicted_finish_if_current_contention_persisted_utc": "2026-09-18T15:41:01.029994+00:00",
+        "remaining_diagnostic_cost_not_separately_predicted": true,
+        "temporary_diagnostic_contention_included": true
+      },
+      "root": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank16_20260918_candidate1",
+      "source_receipt": "/localhome/local-rohing/orch_r209_ovx5_allpair1m_rank16_20260918_candidate1/training/SUSTAINED_STARTED.json"
+    }
+  ],
+  "both_pilots_completed": true,
+  "comparisons_per_candidate": 1000000,
+  "no_optimizer_or_rng_reset": true,
+  "no_tau_gate": true,
+  "no_wait_for_Main_selection": true,
+  "observed_utc": "2026-09-18T04:54:05.105426+00:00",
+  "schema": "R209_FULL_RUN_ACTIVE_RECEIPT_V1",
+  "state": "FULL_RUN_ACTIVE_NOT_COMPLETE"
+}

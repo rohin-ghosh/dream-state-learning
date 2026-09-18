@@ -1,0 +1,347 @@
+FFFFFFF........................                                          [100%]
+=================================== FAILURES ===================================
+______ OperatorTests.test_actual_cli_contains_inherited_entry_transitions ______
+
+self = <test_operator.OperatorTests testMethod=test_actual_cli_contains_inherited_entry_transitions>
+
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.bootstrap = Path(self.directory.name) / 'bootstrap'
+        self.bootstrap.mkdir()
+        package = json.loads((HERE / 'SOURCE_PACKAGE.json').read_text())
+        import base64
+        for name, item in package['files'].items():
+            (self.bootstrap / name).write_bytes(base64.b64decode(item['base64']))
+        self.patcher = patch.object(operator, 'HERE', self.bootstrap)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+>       self.family = operator.family_namespace()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research_loop/workers/r179_context_survival_20260917/node3/test_operator.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:208: in family_namespace
+    helper = family['api']()
+             ^^^^^^^^^^^^^^^
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:61: in api
+    def lane_for(physical):
+                            
+/usr/lib/python3.12/pathlib.py:1021: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+________ OperatorTests.test_current_contained_direct_argv_and_ownership ________
+
+self = <test_operator.OperatorTests testMethod=test_current_contained_direct_argv_and_ownership>
+
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.bootstrap = Path(self.directory.name) / 'bootstrap'
+        self.bootstrap.mkdir()
+        package = json.loads((HERE / 'SOURCE_PACKAGE.json').read_text())
+        import base64
+        for name, item in package['files'].items():
+            (self.bootstrap / name).write_bytes(base64.b64decode(item['base64']))
+        self.patcher = patch.object(operator, 'HERE', self.bootstrap)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+>       self.family = operator.family_namespace()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research_loop/workers/r179_context_survival_20260917/node3/test_operator.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:208: in family_namespace
+    helper = family['api']()
+             ^^^^^^^^^^^^^^^
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:61: in api
+    def lane_for(physical):
+                            
+/usr/lib/python3.12/pathlib.py:1021: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+________ OperatorTests.test_dependency_poison_refused_before_lifecycle _________
+
+self = <test_operator.OperatorTests testMethod=test_dependency_poison_refused_before_lifecycle>
+
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.bootstrap = Path(self.directory.name) / 'bootstrap'
+        self.bootstrap.mkdir()
+        package = json.loads((HERE / 'SOURCE_PACKAGE.json').read_text())
+        import base64
+        for name, item in package['files'].items():
+            (self.bootstrap / name).write_bytes(base64.b64decode(item['base64']))
+        self.patcher = patch.object(operator, 'HERE', self.bootstrap)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+>       self.family = operator.family_namespace()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research_loop/workers/r179_context_survival_20260917/node3/test_operator.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:208: in family_namespace
+    helper = family['api']()
+             ^^^^^^^^^^^^^^^
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:61: in api
+    def lane_for(physical):
+                            
+/usr/lib/python3.12/pathlib.py:1021: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+____ OperatorTests.test_exact_plan_scope_rejects_recipe_source_wall_changes ____
+
+self = <test_operator.OperatorTests testMethod=test_exact_plan_scope_rejects_recipe_source_wall_changes>
+
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.bootstrap = Path(self.directory.name) / 'bootstrap'
+        self.bootstrap.mkdir()
+        package = json.loads((HERE / 'SOURCE_PACKAGE.json').read_text())
+        import base64
+        for name, item in package['files'].items():
+            (self.bootstrap / name).write_bytes(base64.b64decode(item['base64']))
+        self.patcher = patch.object(operator, 'HERE', self.bootstrap)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+>       self.family = operator.family_namespace()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research_loop/workers/r179_context_survival_20260917/node3/test_operator.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:208: in family_namespace
+    helper = family['api']()
+             ^^^^^^^^^^^^^^^
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:61: in api
+    def lane_for(physical):
+                            
+/usr/lib/python3.12/pathlib.py:1021: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_____ OperatorTests.test_frozen_functions_unchanged_and_namespaces_private _____
+
+self = <test_operator.OperatorTests testMethod=test_frozen_functions_unchanged_and_namespaces_private>
+
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.bootstrap = Path(self.directory.name) / 'bootstrap'
+        self.bootstrap.mkdir()
+        package = json.loads((HERE / 'SOURCE_PACKAGE.json').read_text())
+        import base64
+        for name, item in package['files'].items():
+            (self.bootstrap / name).write_bytes(base64.b64decode(item['base64']))
+        self.patcher = patch.object(operator, 'HERE', self.bootstrap)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+>       self.family = operator.family_namespace()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research_loop/workers/r179_context_survival_20260917/node3/test_operator.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:208: in family_namespace
+    helper = family['api']()
+             ^^^^^^^^^^^^^^^
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:61: in api
+    def lane_for(physical):
+                            
+/usr/lib/python3.12/pathlib.py:1021: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_________ OperatorTests.test_handoff_exact_recovery_AST_reverse_parity _________
+
+self = <test_operator.OperatorTests testMethod=test_handoff_exact_recovery_AST_reverse_parity>
+
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.bootstrap = Path(self.directory.name) / 'bootstrap'
+        self.bootstrap.mkdir()
+        package = json.loads((HERE / 'SOURCE_PACKAGE.json').read_text())
+        import base64
+        for name, item in package['files'].items():
+            (self.bootstrap / name).write_bytes(base64.b64decode(item['base64']))
+        self.patcher = patch.object(operator, 'HERE', self.bootstrap)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+>       self.family = operator.family_namespace()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research_loop/workers/r179_context_survival_20260917/node3/test_operator.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:208: in family_namespace
+    helper = family['api']()
+             ^^^^^^^^^^^^^^^
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:61: in api
+    def lane_for(physical):
+                            
+/usr/lib/python3.12/pathlib.py:1021: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+________ OperatorTests.test_legacy_saved_state_only_native_pin_changes _________
+
+self = <test_operator.OperatorTests testMethod=test_legacy_saved_state_only_native_pin_changes>
+
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.bootstrap = Path(self.directory.name) / 'bootstrap'
+        self.bootstrap.mkdir()
+        package = json.loads((HERE / 'SOURCE_PACKAGE.json').read_text())
+        import base64
+        for name, item in package['files'].items():
+            (self.bootstrap / name).write_bytes(base64.b64decode(item['base64']))
+        self.patcher = patch.object(operator, 'HERE', self.bootstrap)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+>       self.family = operator.family_namespace()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research_loop/workers/r179_context_survival_20260917/node3/test_operator.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:208: in family_namespace
+    helper = family['api']()
+             ^^^^^^^^^^^^^^^
+research_loop/workers/r179_context_survival_20260917/node3/OPERATOR.py:61: in api
+    def lane_for(physical):
+                            
+/usr/lib/python3.12/pathlib.py:1021: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/r179_context_survival_20260917/node3/BOUNDARY_API.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+=========================== short test summary info ============================
+FAILED research_loop/workers/r179_context_survival_20260917/node3/test_operator.py::OperatorTests::test_actual_cli_contains_inherited_entry_transitions
+FAILED research_loop/workers/r179_context_survival_20260917/node3/test_operator.py::OperatorTests::test_current_contained_direct_argv_and_ownership
+FAILED research_loop/workers/r179_context_survival_20260917/node3/test_operator.py::OperatorTests::test_dependency_poison_refused_before_lifecycle
+FAILED research_loop/workers/r179_context_survival_20260917/node3/test_operator.py::OperatorTests::test_exact_plan_scope_rejects_recipe_source_wall_changes
+FAILED research_loop/workers/r179_context_survival_20260917/node3/test_operator.py::OperatorTests::test_frozen_functions_unchanged_and_namespaces_private
+FAILED research_loop/workers/r179_context_survival_20260917/node3/test_operator.py::OperatorTests::test_handoff_exact_recovery_AST_reverse_parity
+FAILED research_loop/workers/r179_context_survival_20260917/node3/test_operator.py::OperatorTests::test_legacy_saved_state_only_native_pin_changes
+7 failed, 24 passed in 2.66s

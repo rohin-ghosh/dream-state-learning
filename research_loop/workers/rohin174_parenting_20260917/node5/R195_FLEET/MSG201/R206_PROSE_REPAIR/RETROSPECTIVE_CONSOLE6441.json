@@ -1,0 +1,234 @@
+{
+  "observed_at_utc": "2026-09-18T04:40:44.323513+00:00",
+  "mode": "READ_ONLY_RETROSPECTIVE_RECLASSIFICATION_NOT_LIVE_EXCLUSION",
+  "source_response_index": 6441,
+  "source_commit_index": 6442,
+  "source_commit_sha256": "c906f12f9382d7acb217137c4bee699a9b59dde920521b4d90763922acc88eb5",
+  "source_sha256": "84ee5e296b34e268bd837b4e45b0170975a01c36823c88fd8d5e8bbbabb18a45",
+  "raw_target_sha256": "f308dec0115c83d8687f8117a998eed6f8836b27f6863e8e9420df1db8495238",
+  "original_row_policy": "R203_INTERNAL_COMMON_WORD_CAPITALIZATION_V1",
+  "evaluated_policy": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+  "original_row_unchanged": true,
+  "retained_count": 0,
+  "proof": {
+    "policy": "R195_CHILD_ROW_REVIEW_V1",
+    "input_row_sha256": {
+      "NEW": [
+        "84ee5e296b34e268bd837b4e45b0170975a01c36823c88fd8d5e8bbbabb18a45"
+      ],
+      "REHEARSAL": []
+    },
+    "retained_row_sha256": {
+      "NEW": [],
+      "REHEARSAL": []
+    },
+    "retained_counts": {
+      "NEW": 0,
+      "REHEARSAL": 0
+    },
+    "excluded_counts": {
+      "NEW": 1,
+      "REHEARSAL": 0
+    },
+    "reviews": [],
+    "excluded": [
+      {
+        "source_sha256": "84ee5e296b34e268bd837b4e45b0170975a01c36823c88fd8d5e8bbbabb18a45",
+        "segment": 176,
+        "cohort": "NEW",
+        "row_index": 0,
+        "raw_target_sha256": "f308dec0115c83d8687f8117a998eed6f8836b27f6863e8e9420df1db8495238",
+        "policy": "R195_CHILD_ROW_REVIEW_V1",
+        "reason": "provisional_english_target_script_quarantine",
+        "prose_exclusions": [
+          {
+            "source_sha256": "84ee5e296b34e268bd837b4e45b0170975a01c36823c88fd8d5e8bbbabb18a45",
+            "segment": 176,
+            "cohort": "NEW",
+            "row_index": 0,
+            "raw_target_sha256": "f308dec0115c83d8687f8117a998eed6f8836b27f6863e8e9420df1db8495238",
+            "policy": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+            "evidence": {
+              "eligible_common_word_opportunities": 85,
+              "capitalized_common_words": 0,
+              "capitalized_rate": 0.0,
+              "quarantined": true,
+              "qualifying_paragraphs": [],
+              "decision_scope": "ANY_PROSE_PARAGRAPH",
+              "thresholds": {
+                "min_eligible_common_words": 20,
+                "min_capitalized_common_words": 10,
+                "min_capitalized_rate": 0.35
+              },
+              "scanned_characters": 1929,
+              "scan_character_limit": 65536,
+              "scan_truncated": false,
+              "fullwidth_characters": 4,
+              "cjk_characters": 97,
+              "english_target_scope": true,
+              "language_detection_claimed": false
+            },
+            "reason": "provisional_english_target_script_quarantine"
+          }
+        ]
+      }
+    ],
+    "raw_modified": false,
+    "targets_normalized": false,
+    "exclusion_basis": "CHILD_REQUEST_OR_PROVISIONAL_TARGET_QUARANTINE",
+    "prose_target_filter": {
+      "policy": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+      "checks": [
+        {
+          "source_sha256": "84ee5e296b34e268bd837b4e45b0170975a01c36823c88fd8d5e8bbbabb18a45",
+          "segment": 176,
+          "cohort": "NEW",
+          "row_index": 0,
+          "raw_target_sha256": "f308dec0115c83d8687f8117a998eed6f8836b27f6863e8e9420df1db8495238",
+          "policy": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+          "evidence": {
+            "eligible_common_word_opportunities": 85,
+            "capitalized_common_words": 0,
+            "capitalized_rate": 0.0,
+            "quarantined": true,
+            "qualifying_paragraphs": [],
+            "decision_scope": "ANY_PROSE_PARAGRAPH",
+            "thresholds": {
+              "min_eligible_common_words": 20,
+              "min_capitalized_common_words": 10,
+              "min_capitalized_rate": 0.35
+            },
+            "scanned_characters": 1929,
+            "scan_character_limit": 65536,
+            "scan_truncated": false,
+            "fullwidth_characters": 4,
+            "cjk_characters": 97,
+            "english_target_scope": true,
+            "language_detection_claimed": false
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "source_sha256": "84ee5e296b34e268bd837b4e45b0170975a01c36823c88fd8d5e8bbbabb18a45",
+          "segment": 176,
+          "cohort": "NEW",
+          "row_index": 0,
+          "raw_target_sha256": "f308dec0115c83d8687f8117a998eed6f8836b27f6863e8e9420df1db8495238",
+          "policy": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+          "evidence": {
+            "eligible_common_word_opportunities": 85,
+            "capitalized_common_words": 0,
+            "capitalized_rate": 0.0,
+            "quarantined": true,
+            "qualifying_paragraphs": [],
+            "decision_scope": "ANY_PROSE_PARAGRAPH",
+            "thresholds": {
+              "min_eligible_common_words": 20,
+              "min_capitalized_common_words": 10,
+              "min_capitalized_rate": 0.35
+            },
+            "scanned_characters": 1929,
+            "scan_character_limit": 65536,
+            "scan_truncated": false,
+            "fullwidth_characters": 4,
+            "cjk_characters": 97,
+            "english_target_scope": true,
+            "language_detection_claimed": false
+          },
+          "reason": "provisional_english_target_script_quarantine"
+        }
+      ],
+      "raw_modified": false,
+      "targets_normalized": false,
+      "provisional": true,
+      "corruption_cause_claimed": false,
+      "general_quality_detection_claimed": false,
+      "claim_scope": "OPT_IN_ENGLISH_CHILD_TARGETS_BOUNDED_SCRIPT_AND_INTERNAL_CAPITALIZATION"
+    }
+  },
+  "actual_prior_updates": [
+    {
+      "record_index": 6479,
+      "optimizer_step": 5245,
+      "finished_unix": 1789705779.858827
+    },
+    {
+      "record_index": 6483,
+      "optimizer_step": 5249,
+      "finished_unix": 1789705818.814754
+    },
+    {
+      "record_index": 6487,
+      "optimizer_step": 5253,
+      "finished_unix": 1789705858.0238283
+    },
+    {
+      "record_index": 6491,
+      "optimizer_step": 5257,
+      "finished_unix": 1789705897.2287595
+    },
+    {
+      "record_index": 6495,
+      "optimizer_step": 5261,
+      "finished_unix": 1789705936.5607338
+    },
+    {
+      "record_index": 6499,
+      "optimizer_step": 5265,
+      "finished_unix": 1789705975.9998841
+    },
+    {
+      "record_index": 6503,
+      "optimizer_step": 5269,
+      "finished_unix": 1789706015.4215403
+    },
+    {
+      "record_index": 6507,
+      "optimizer_step": 5273,
+      "finished_unix": 1789706054.865113
+    },
+    {
+      "record_index": 6511,
+      "optimizer_step": 5277,
+      "finished_unix": 1789706094.208923
+    },
+    {
+      "record_index": 6515,
+      "optimizer_step": 5281,
+      "finished_unix": 1789706133.6129167
+    },
+    {
+      "record_index": 6519,
+      "optimizer_step": 5285,
+      "finished_unix": 1789706172.9972923
+    },
+    {
+      "record_index": 6523,
+      "optimizer_step": 5289,
+      "finished_unix": 1789706212.4598095
+    },
+    {
+      "record_index": 6527,
+      "optimizer_step": 5293,
+      "finished_unix": 1789706251.935206
+    },
+    {
+      "record_index": 6531,
+      "optimizer_step": 5297,
+      "finished_unix": 1789706291.5720372
+    },
+    {
+      "record_index": 6535,
+      "optimizer_step": 5301,
+      "finished_unix": 1789706330.9576724
+    },
+    {
+      "record_index": 6539,
+      "optimizer_step": 5305,
+      "finished_unix": 1789706370.3979926
+    }
+  ],
+  "prior_training_undone": false,
+  "no_inbox_or_journal_writes": true
+}

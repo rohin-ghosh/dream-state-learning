@@ -1,0 +1,275 @@
+{
+  "batch_plan_sha256": "5d73091fa467d24ec595f7f6adce8ce9f99e07d1569d2a97795302702e003b97",
+  "caps": {
+    "directory_entries": 16384,
+    "envelope_bytes": 512,
+    "envelope_count": 256,
+    "file_bytes": 8388608,
+    "life_bytes": 33554432,
+    "proc_entries": 4096
+  },
+  "collector_sha256": "8fd4490fb89b045016ab6e41f1604c26151768ff8128160dabcef586406573e2",
+  "file_receipts": [
+    {
+      "bytes": 8519,
+      "path": "/localhome/local-rohing/orch_r157_repo_reader_wall_20260917_attempt2/PLAN.json",
+      "sha256": "cfef30fca28965930adad12e49f45df0364dc77cf3079e9db0801edd979263af",
+      "stat": [
+        66307,
+        42209723,
+        8519,
+        1789613217234017982,
+        1789613217234017982
+      ]
+    },
+    {
+      "bytes": 213600,
+      "path": "/localhome/local-rohing/orch_r157_repo_reader_wall_20260917_attempt2/GUARD.json",
+      "sha256": "2ac571f677df246b9a123d12cf9cea12d0b287a788518486b9da7eb7e7b58e8e",
+      "stat": [
+        66307,
+        42209725,
+        213600,
+        1789613217235879654,
+        1789613217235879654
+      ]
+    },
+    {
+      "bytes": 8519,
+      "path": "/localhome/local-rohing/orch_r157_repo_reader_wall_20260917_attempt2/PLAN.json",
+      "sha256": "cfef30fca28965930adad12e49f45df0364dc77cf3079e9db0801edd979263af",
+      "stat": [
+        66307,
+        42209723,
+        8519,
+        1789613217234017982,
+        1789613217234017982
+      ]
+    },
+    {
+      "bytes": 84,
+      "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/stream/JOURNAL.json",
+      "sha256": "6c115791b67490f726b8e3e44855c6f841a4bd92b9b644a0aba73f2e3f877be4",
+      "stat": [
+        66307,
+        40503112,
+        84,
+        1789600483990493227,
+        1789600483990493227
+      ]
+    },
+    {
+      "bytes": 265,
+      "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/stream/records/00000000000000004314.intent.json",
+      "sha256": "e11ddba6ff93fefca25e3b333f35a76c996194d2b1a976c8eeab7d228b86de36",
+      "stat": [
+        66307,
+        40513275,
+        265,
+        1789635392465414689,
+        1789635392465414689
+      ]
+    },
+    {
+      "bytes": 1130,
+      "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/checkpoints/sleep_000037/COMMIT.json",
+      "sha256": "24ab345f93ae028ce10d2ae3447ded55653d7637fe6145434a5a4c52fab42126",
+      "stat": [
+        66307,
+        43394870,
+        1130,
+        1789635360130468742,
+        1789635360130468742
+      ]
+    }
+  ],
+  "findings": {
+    "birth_plan": {
+      "birth_context_present": false,
+      "historical_registry_plan_not_independently_proven_original_birth": true,
+      "path": "/localhome/local-rohing/orch_r157_repo_reader_wall_20260917_attempt2/PLAN.json",
+      "plan_root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/run1",
+      "plan_root_matches": true,
+      "registry_sha256_matches": true,
+      "sha256": "cfef30fca28965930adad12e49f45df0364dc77cf3079e9db0801edd979263af",
+      "source_root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/source"
+    },
+    "frontier_metadata": {
+      "checkpoint_and_sleep_record_causal_binding_verified": false,
+      "full_journal_and_resume_state_not_read": true,
+      "highest_record": 4319,
+      "indices_contiguous": true,
+      "journal_header": {
+        "journal_id": "985e539aacd9455a9a0d314033793043",
+        "schema": "R125_STREAM_JOURNAL_V1"
+      },
+      "latest_commit": {
+        "adapter_declared_files": {
+          "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+          "adapter_config.json": "34a9c9e4b4abd9457f5c88e6165c1c0824bc999badf97397aede72bae05ff0d3",
+          "adapter_model.safetensors": "a9e2e2c3cb02c7407b510877176497c844dca8d443480638864db8e1b8fdd673"
+        },
+        "adapter_path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/run1/checkpoints/sleep_000037/adapter",
+        "adapter_path_matches": false,
+        "checkpoint_sha256": {
+          "adapter": "35c7b6fd516de2eeb160bcbf74036436a3a4c52bbab74456b3d2d93d9d395adf",
+          "optimizer": "b8038d8975f2d3265527b8f823d091228b310c7dc88f5e64808631bb24bc5186",
+          "rng": "b8038d8975f2d3265527b8f823d091228b310c7dc88f5e64808631bb24bc5186"
+        },
+        "files": [
+          {
+            "bytes": 1263,
+            "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/checkpoints/sleep_000037/adapter/adapter_config.json",
+            "payload_read": false,
+            "present": true
+          },
+          {
+            "bytes": 80792096,
+            "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/checkpoints/sleep_000037/adapter/adapter_model.safetensors",
+            "payload_read": false,
+            "present": true
+          }
+        ],
+        "optimizer_steps": 3774,
+        "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/checkpoints/sleep_000037/COMMIT.json",
+        "schema": "R125_NATIVE_CONTINUITY_V1",
+        "sha256": "24ab345f93ae028ce10d2ae3447ded55653d7637fe6145434a5a4c52fab42126",
+        "tensor_optimizer_rng_payloads_read": false
+      },
+      "latest_sleep_directory": "sleep_000037",
+      "observed_sleep_complete": {
+        "declared_record_digest_not_recomputed": true,
+        "envelope": {
+          "index": 4314,
+          "journal_id": "985e539aacd9455a9a0d314033793043",
+          "kind": "SLEEP_COMPLETE",
+          "previous_sha256": "e4391730a2bb354970c27891e8ec10c54cc99ec5738cf044fdfdf72735ddbaa9",
+          "schema": "R125_STREAM_JOURNAL_V1",
+          "sha256": "41ad17b9dba3ba8c9f07843f7182d307d9756eb7e1bcaf09212ac167be26ee67"
+        },
+        "file_bytes": 2186155,
+        "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/stream/records/00000000000000004314.json",
+        "suffix_bytes": 282,
+        "suffix_sha256": "89ce8d0cdb76af0144aafbab5dd354a422289f565f0c700917303d9e89cc6106"
+      },
+      "record_count": 4320,
+      "tail_envelopes": [
+        {
+          "declared_record_digest_not_recomputed": true,
+          "envelope": {
+            "index": 4319,
+            "journal_id": "985e539aacd9455a9a0d314033793043",
+            "kind": "REQUEST",
+            "previous_sha256": "ce03c8e30cddfd4ea331fe7e170cab396ba3237962c70dbae62479b3199bee2c",
+            "schema": "R125_STREAM_JOURNAL_V1",
+            "sha256": "e10fd07355319baf1f8e38a23628cf8e100d9563041433ac7cea9dcf84b29026"
+          },
+          "file_bytes": 2202081,
+          "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/stream/records/00000000000000004319.json",
+          "suffix_bytes": 275,
+          "suffix_sha256": "52c91802282724ce940be2fda1167c030aa6528b311a109f80c8449abb0a0d3a"
+        },
+        {
+          "declared_record_digest_not_recomputed": true,
+          "envelope": {
+            "index": 4318,
+            "journal_id": "985e539aacd9455a9a0d314033793043",
+            "kind": "COMMITTED",
+            "previous_sha256": "ad6055a60d9d563f6c3c74be3dbf67838a9347c49ec16cb0928b8c87ccc9dcc5",
+            "schema": "R125_STREAM_JOURNAL_V1",
+            "sha256": "ce03c8e30cddfd4ea331fe7e170cab396ba3237962c70dbae62479b3199bee2c"
+          },
+          "file_bytes": 2191454,
+          "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/stream/records/00000000000000004318.json",
+          "suffix_bytes": 277,
+          "suffix_sha256": "f9534097aaaa995e9d9affe0e3ffb4f20b13e6c58207c42d89e4b4426897bc80"
+        },
+        {
+          "declared_record_digest_not_recomputed": true,
+          "envelope": {
+            "index": 4317,
+            "journal_id": "985e539aacd9455a9a0d314033793043",
+            "kind": "RESPONSE",
+            "previous_sha256": "71970a9cbef2394d25ec07180d08cd8629dd5e2877c4652bf7264fb1bc254ffa",
+            "schema": "R125_STREAM_JOURNAL_V1",
+            "sha256": "ad6055a60d9d563f6c3c74be3dbf67838a9347c49ec16cb0928b8c87ccc9dcc5"
+          },
+          "file_bytes": 3231,
+          "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/stream/records/00000000000000004317.json",
+          "suffix_bytes": 276,
+          "suffix_sha256": "82a4609d14332ff1f16cae9539eb088f73dae37846d655b3883a1c906afeacad"
+        },
+        {
+          "declared_record_digest_not_recomputed": true,
+          "envelope": {
+            "index": 4316,
+            "journal_id": "985e539aacd9455a9a0d314033793043",
+            "kind": "REQUEST",
+            "previous_sha256": "31324b49ab074083261428f97a9bc8ab238e6217482e9308f4f93d62c70bfa63",
+            "schema": "R125_STREAM_JOURNAL_V1",
+            "sha256": "71970a9cbef2394d25ec07180d08cd8629dd5e2877c4652bf7264fb1bc254ffa"
+          },
+          "file_bytes": 2187047,
+          "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/stream/records/00000000000000004316.json",
+          "suffix_bytes": 275,
+          "suffix_sha256": "b76e5a2905f5100b2f84060962a43c888ed5f0d269c67b78ce5ce6a112cee6d5"
+        },
+        {
+          "declared_record_digest_not_recomputed": true,
+          "envelope": {
+            "index": 4315,
+            "journal_id": "985e539aacd9455a9a0d314033793043",
+            "kind": "INBOX",
+            "previous_sha256": "41ad17b9dba3ba8c9f07843f7182d307d9756eb7e1bcaf09212ac167be26ee67",
+            "schema": "R125_STREAM_JOURNAL_V1",
+            "sha256": "31324b49ab074083261428f97a9bc8ab238e6217482e9308f4f93d62c70bfa63"
+          },
+          "file_bytes": 1126,
+          "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/stream/records/00000000000000004315.json",
+          "suffix_bytes": 273,
+          "suffix_sha256": "aa95091bc53e7f61dc9b4a3b26999699a9a8fa25f8f64516e77733e0906c1271"
+        },
+        {
+          "declared_record_digest_not_recomputed": true,
+          "envelope": {
+            "index": 4314,
+            "journal_id": "985e539aacd9455a9a0d314033793043",
+            "kind": "SLEEP_COMPLETE",
+            "previous_sha256": "e4391730a2bb354970c27891e8ec10c54cc99ec5738cf044fdfdf72735ddbaa9",
+            "schema": "R125_STREAM_JOURNAL_V1",
+            "sha256": "41ad17b9dba3ba8c9f07843f7182d307d9756eb7e1bcaf09212ac167be26ee67"
+          },
+          "file_bytes": 2186155,
+          "path": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/stream/records/00000000000000004314.json",
+          "suffix_bytes": 282,
+          "suffix_sha256": "89ce8d0cdb76af0144aafbab5dd354a422289f565f0c700917303d9e89cc6106"
+        }
+      ]
+    }
+  },
+  "gpu_calls": 0,
+  "held_or_readout_files_opened": 0,
+  "inventory_identity": {
+    "boot_id": null,
+    "pid": 2611440,
+    "start_ticks": "14880066"
+  },
+  "life_id": "repo_reader",
+  "metadata_bytes_read": 233775,
+  "missing_reasons": [
+    "current_native:ValueError:source_file_count_cap",
+    "initial_checkpoint:FileNotFoundError:[Errno 2] No such file or directory: '/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1/checkpoints/initial/COMMIT.json'",
+    "Full TRAIN journal/resume-state and original birth-context linkage not acquired: raw response/loss payloads excluded.",
+    "Latest COMMIT directory is not itself a verified completed frontier; SLEEP_COMPLETE declared digest is not a recomputed payload digest.",
+    "Source-owner authority and exact queue registration remain separate; no verified registration_observation emitted."
+  ],
+  "observed_end_unix": 1789635769.602394,
+  "observed_start_unix": 1789635769.5835502,
+  "proc_entries_scanned": 1551,
+  "process_plan_root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/run1",
+  "remote_writes": 0,
+  "schema": "R167_FLEET_METADATA_CUSTODY_V1",
+  "signals": 0,
+  "source_root": "/localhome/local-rohing/orch_r136_repo_reader_20260916_attempt1/recovery_r154_saved30_20260916_attempt2/run1",
+  "status": "METADATA_ONLY_PARTIAL_CUSTODY_NOT_QUEUE_ADMISSION"
+}

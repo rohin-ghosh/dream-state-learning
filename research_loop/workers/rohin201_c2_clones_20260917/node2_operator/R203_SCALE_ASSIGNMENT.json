@@ -1,0 +1,68 @@
+{
+  "schema": "R203_NODE2_SCALE_ASSIGNMENT_V1",
+  "source": "Explicit Main/Rohin R203 assignment in current conversation",
+  "shared_snapshot_cycle": 51,
+  "shared_optimizer_steps": 4908,
+  "shared_context_record": 5846,
+  "first_input": "R202_CLONE_PART_ONE_2026-09-17.txt",
+  "protected_gpus": [
+    0,
+    2,
+    5,
+    7
+  ],
+  "arms": [
+    {
+      "gpu": 1,
+      "name": "MATH-D",
+      "status": "LIVE_NATIVE_LOADED_REQUEST_ACT",
+      "native_pid": 2128807,
+      "loaded_pdt": "2026-09-17T19:47:30.403132-07:00",
+      "runtime": "MAIN_READY",
+      "receipt": "research_loop/workers/rohin201_c2_clones_20260917/node2_operator/receipts/DISPATCH_REPAIR_AND_ACT_20260918T033613Z.json"
+    },
+    {
+      "gpu": 3,
+      "name": "REPO-C",
+      "status": "LIVE_NATIVE_LOADED_REQUEST_ACT",
+      "first_ACT": "Inline-backtick command not dispatched; masked non-dispatch feedback rendered",
+      "native_pid": 2170067,
+      "loaded_pdt": "2026-09-17T20:09:50.453237-07:00",
+      "runtime": "MAIN_READY_PLUS_JASON_FEEDBACK_REPAIR",
+      "receipt": "research_loop/workers/rohin201_c2_clones_20260917/node2_operator/receipts/DISPATCH_REPAIR_AND_ACT_20260918T033613Z.json",
+      "subsequent_ACT": "Actual repository list COMPLETE at5938; full Tool result rendered and masked in REQUEST5943"
+    },
+    {
+      "gpu": 4,
+      "name": "CREATIVE-D",
+      "status": "LIVE_NATIVE_LOADED_REQUEST_ACT",
+      "think": "open",
+      "parent": "light steering with actual qualitative parent receipt",
+      "native_pid": 2204408,
+      "loaded_pdt": "2026-09-17T20:28:02.732154-07:00",
+      "runtime": "R204",
+      "receipt": "research_loop/workers/rohin201_c2_clones_20260917/node2_operator/receipts/DISPATCH_REPAIR_AND_ACT_20260918T033613Z.json",
+      "parent_receipt": "research_loop/workers/rohin201_c2_clones_20260917/node2_operator/receipts/R204_CREATIVE_QUALITATIVE_REVIEW.json"
+    },
+    {
+      "gpu": 6,
+      "name": "MATH-TRANSFER-C",
+      "status": "LIVE_NATIVE_LOADED_REQUEST_ACT",
+      "think": "open",
+      "parent": "questions only",
+      "environment": "modular/divisibility puzzles with real sandbox results",
+      "native_pid": 2204538,
+      "loaded_pdt": "2026-09-17T20:28:05.558742-07:00",
+      "runtime": "R204",
+      "receipt": "research_loop/workers/rohin201_c2_clones_20260917/node2_operator/receipts/DISPATCH_REPAIR_AND_ACT_20260918T033613Z.json"
+    }
+  ],
+  "r203_overlay": "R204 exact release live on GPU4/6; GPU1/3 saved-boundary update pending",
+  "peer_exchange": "DEFERRED_UNSTARTED_UNTIL_BOTH_INITIAL_3_GUIDED_PLUS_3_WITHDRAWN_SCREENS_COMPLETE",
+  "human_inputs_masked": true,
+  "retroactive_hold_targets_created": false,
+  "parent_reference_sha256": "3d0d9dc7fbdefc7ccc24c2625b56b05a6a8c07baea41e3753038813f86da541d",
+  "observed_utc": "2026-09-18T03:36:12.124503+00:00",
+  "live_clone_count": 4,
+  "free_candidate_gpus": []
+}

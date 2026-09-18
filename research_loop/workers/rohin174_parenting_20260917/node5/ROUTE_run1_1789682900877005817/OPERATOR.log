@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ROUTE_run1_1789682900877005817/source/rebind_parent.py", line 236, in <module>
+    serve(arguments.binding, arguments.sha256)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ROUTE_run1_1789682900877005817/source/rebind_parent.py", line 221, in serve
+    status = policy.tick(source, config, output, seed, state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ROUTE_run1_1789682900877005817/source/gpu/orch_r166_parent_policy.py", line 389, in tick
+    directory.mkdir(mode=0o700)
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/ROUTE_run1_1789682900877005817/parent/parent_000000000148'
