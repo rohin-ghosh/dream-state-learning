@@ -91,3 +91,22 @@ def test_plain_caption_active_scene_source_spans_and_no_count_gate():
     assert sum(len(action['captions']) for action in actions) == 12
     for source, caption in zip(receipt['caption_sources'], actions[0]['captions']):
         assert text[source['start']:source['end']] == caption
+
+
+def test_receipt_not_visible_until_complete_and_never_overwritten(tmp_path, monkeypatch):
+    import json
+    from research_loop.workers.rohin232_age_probe_20260918 import runtime
+    original = runtime.data.private_write
+    target = tmp_path/'ready.json'
+    def checked(path, value):
+        assert not target.exists()
+        result = original(path, value)
+        assert not target.exists()
+        return result
+    monkeypatch.setattr(runtime.data, 'private_write', checked)
+    runtime.write(target, dict(complete=True))
+    assert json.loads(target.read_bytes()) == dict(complete=True)
+    monkeypatch.setattr(runtime.data, 'private_write', original)
+    with pytest.raises(FileExistsError):
+        runtime.write(target, dict(complete=False))
+    assert json.loads(target.read_bytes()) == dict(complete=True)

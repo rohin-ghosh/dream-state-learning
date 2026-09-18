@@ -20,7 +20,14 @@ def read(path):
 
 
 def write(path, value):
-    return data.private_write(Path(path), value)
+    path = Path(path)
+    temporary = path.with_name(path.name + f'.{os.getpid()}.{time.time_ns()}.tmp')
+    data.private_write(temporary, value)
+    try:
+        os.link(temporary, path)
+    finally:
+        temporary.unlink()
+    return data.file_ref(path)
 
 
 def wait(path, deadline):
