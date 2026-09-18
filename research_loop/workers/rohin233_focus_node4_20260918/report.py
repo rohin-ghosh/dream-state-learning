@@ -147,6 +147,7 @@ def main():
         P7_overseer=overseer_status(), P7_Astra7=direction_metrics(route),
         route_source=ref(route_path), P3_owner='Main; no P3 signals or source changes here.',
         bounded_guidance_review=ref(OWN / 'GUIDANCE_REVIEW.md'),
+        current_varied_overseer_evidence=ref(OWN / 'OVERSEER_CURRENT.json'),
         recurring_semantic_maintenance=False)
     output = OWN / 'STATUS.json'
     temporary = output.with_suffix('.next')

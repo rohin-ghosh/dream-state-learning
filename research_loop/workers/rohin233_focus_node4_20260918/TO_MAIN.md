@@ -32,7 +32,7 @@ was signaled. MATH_C's shared CPU-support namespace remains for P7's services.
 ## P7/Astra7: delivered intervention, not convergence success
 
 - Sole overseer405221, coordinator442474 and reader493471 remain running,
-  verified12:02:08UTC. No additional publisher, parent restart, native restart
+  verified12:13:22UTC. No additional publisher, parent restart, native restart
   or native-policy change. P3 remains exclusively Main-owned.
 - R233's changed brief is present in actual overseer model input. Sequence24
   publication11:50:06.778563 rendered exact/masked in REQUEST3888 at11:55:09.386555
@@ -42,12 +42,18 @@ was signaled. MATH_C's shared CPU-support namespace remains for P7's services.
 - ACT3896 still gives a monitoring-variable plan. **First adoption failed**;
   no resolved convergence, learning improvement or language repair is claimed.
 - Sequence25 changed to a smaller falsifying-observation question, published
-  11:58:05.419738, inbox `a2499b10688740439cf3b98478bf5033`. Rendering remained
-  pending at12:02:08UTC. Existing parent continues from actual child returns.
-- Route cut12:01:26UTC:14 distinct P7 ACTs forwarded;36 child stage outputs
-  returned;32 parent-conditioned stage returns rendered back to P7. These are
-  **not32 independent conversations**. ACT-only forward limitation remains.
-  `GUIDANCE_REVIEW.md` contains the bounded manual artifact-vs-plan review.
+  11:58:05.419738, inbox `a2499b10688740439cf3b98478bf5033`. Its exact text
+  rendered masked in REQUEST3972 at12:07:19.831416UTC, message25.
+- Sequence26 changed to rewriting an actual causal claim so its certainty
+  matches supplied evidence, published12:10:20.124248UTC, inbox
+  `9f94c04eaf5945c98e2ccf5f66ae1316`. Rendering remains unobserved at12:13:22UTC.
+  This is a pending receipt, not a reason to pause or wait for behavioral success.
+- `OVERSEER_CURRENT.json` binds all three distinct interventions to actual
+  model-input/publication hashes and observed rendering. Current route counts
+  are in `STATUS.json`; returned stage outputs are **not independent
+  conversations**. ACT-only forward limitation remains. `GUIDANCE_REVIEW.md`
+  contains the bounded manual artifact-vs-plan review; no resolved language
+  alert, convergence or learning improvement is claimed.
 
 ## Main-owned service observation
 
@@ -68,4 +74,6 @@ No new broad test gate or classifier was added.
 Preceding R232 semantic review is already pushed at
 `3ff40e06bf54aa1d1e4927ed8f77120e204cef34`; no audit/queue/annotation files
 were changed by this R233 worker. The R233 commit ID is returned separately
-after safe publication of this worker only.
+after safe publication of this worker only. Initial R233 publication was
+`cb78bab102925760210853621ff9bbba9ddf982a`; this follow-up refreshes receipts
+without changing any live parent, learner, route, policy or shared endpoint.

@@ -85,3 +85,24 @@ Its rendering remained pending at12:00:31UTC. No native/parent restart,
 second publisher, language exclusion or direct overseer-to-Astra7 message
 was introduced. This report does not call the continuing convergence alerts
 resolved.
+
+## Final receipt refresh, 2026-09-18 12:13:22 UTC
+
+Sequence25 is now **actually rendered**, not merely dispatched:
+REQUEST3972, SHA
+`ed77b015d7830c09d44d9bea8bff773294ca9fba76ef295855a448bcaca05a44`,
+recorded12:07:19.831416UTC, message25, exact text and all history tokens masked.
+This verifies delivery of the changed falsification question, not its adoption.
+
+The existing overseer subsequently published sequence26 at12:10:20.124248UTC,
+inbox `9f94c04eaf5945c98e2ccf5f66ae1316`, SHA
+`03398102f5ceb2bc0f85aff421b6ef986bc803b7833b18e3c140f937e1e6cd1e`.
+It changes the activity again: ask the child to select an actual causal claim
+and rewrite it so certainty matches evidence supplied. This is distinct from
+the earlier loop trace and falsifying-observation question. Its rendering is
+not yet observed at the cut; no behavioral-success claim is added.
+
+`OVERSEER_CURRENT.json` contains source-input, publication and text hashes for
+all three turns and exact process identities for the still-running sole
+overseer, bidirectional coordinator and read-only reader. This follow-up only
+reads receipts and writes safe reports; no control action or extra message.
