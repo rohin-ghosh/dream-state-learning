@@ -58,12 +58,18 @@ def merge(prior, chunk, anchor):
 
 def actual_parent_attempts(started_unix):
     result = []
+    preload_path = HERE / 'P3_RETRY_PRELOAD_RESULT.json'
+    preload = observer.read(preload_path) if preload_path.is_file() else None
     for path in sorted(previous.p3_receipts.PARENT.glob('parent_*/RESULT.json')):
-        if path.stat().st_mtime < started_unix:
+        is_preload = bool(preload and preload.get('status') == 'PUBLISHED' and preload['attempt'] == path.parent.name)
+        if path.stat().st_mtime < started_unix and not is_preload:
             continue
+        if is_preload:
+            observer.require(observer.digest(path) == preload['result_sha256'], 'same_original_preload_ledger_result')
         row = observer.read(path)
         evidence = dict(attempt=path.parent.name, status=row['status'],
-            result_sha256=observer.digest(path), provider_request=False, provider_response=False)
+            result_sha256=observer.digest(path), provider_request=False, provider_response=False,
+            generation_phase='PRELOAD_PARENT_QUEUE' if is_preload else 'POST_LOAD_PARENT')
         request_path, response_path = path.parent / 'API_REQUEST.json', path.parent / 'stdout.json'
         if request_path.is_file():
             request = observer.read(request_path)
@@ -123,7 +129,7 @@ def main():
     loaded = dict(original_journal_id=binding['journal_id'], loaded=dict(index=binding['loaded_index']))
     started_path = HERE / 'P3_RETRY_PARENT_STARTED.json'
     started = observer.read(started_path) if started_path.is_file() else None
-    parents = actual_parent_attempts(started['started_unix']) if started else []
+    parents = actual_parent_attempts(started['started_unix'] if started else float('inf'))
     for parent in parents:
         if 'publication' in parent:
             parent['delivery'] = previous.proof(parent.pop('publication'), 'parent', evidence, frames, loaded)

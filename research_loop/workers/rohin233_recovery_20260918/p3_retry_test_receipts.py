@@ -1,6 +1,11 @@
+import json
+from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import patch
 
 from p3_retry_receipts import learning_projection, merge
+import p3_retry_receipts as receipts
 from p3_renewed_receipts import proof
 
 
@@ -67,6 +72,23 @@ class RetryReadinessTests(unittest.TestCase):
         evidence = dict(journal_id='same', records=[])
         self.assertEqual(proof(publication, 'parent', evidence, [], loaded)['status'],
             'PUBLISHED_NOT_YET_RENDERED_IN_WINDOW')
+
+    def test_authenticated_preload_turn_counts_even_before_live_parent_start(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            attempt = root / 'turns/parent_000000000315'
+            attempt.mkdir(parents=True)
+            row = dict(status='PUBLISHED', message='Historical source; recovery is not feedback.',
+                publication=dict(id='own-parent', sha256='source'))
+            (attempt / 'RESULT.json').write_text(json.dumps(row))
+            (attempt / 'PUBLISH_INTENT.json').write_text(json.dumps(dict(speaker='Astra', message=row['message'])))
+            (root / 'P3_RETRY_PRELOAD_RESULT.json').write_text(json.dumps(dict(status='PUBLISHED',
+                attempt=attempt.name, result_sha256=receipts.observer.digest(attempt / 'RESULT.json'))))
+            with patch.object(receipts, 'HERE', root), patch.object(receipts.previous.p3_receipts, 'PARENT', root / 'turns'):
+                evidence = receipts.actual_parent_attempts(float('inf'))
+            self.assertEqual(evidence[0]['generation_phase'], 'PRELOAD_PARENT_QUEUE')
+            self.assertEqual(evidence[0]['publication'], row['publication'])
+            self.assertFalse(evidence[0]['provider_request'])
 
 
 if __name__ == '__main__':

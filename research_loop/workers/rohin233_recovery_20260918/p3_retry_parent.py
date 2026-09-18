@@ -1,6 +1,7 @@
 """Resume the sole original xhigh parent ledger after verified retry1 LOAD."""
 
 import argparse
+import fcntl
 import json
 import os
 from pathlib import Path
@@ -9,6 +10,7 @@ import time
 
 import p3_lease_parent
 import p3_retry_observe as observer
+import p3_retry_publication_resolution as resolution
 
 
 HERE = Path(__file__).resolve().parent
@@ -39,6 +41,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('action', choices=('validate', 'serve'))
     options = parser.parse_args()
+    preload = HERE / 'P3_RETRY_PRELOAD_STARTED.json'
+    if options.action == 'serve' and preload.is_file() and not (HERE / 'P3_RETRY_PRELOAD_FINISHED.json').is_file():
+        started = observer.read(preload)
+        while time.time() < started['deadline_unix']:
+            process = Path('/proc') / str(started['pid'])
+            if not process.exists() or (HERE / 'P3_RETRY_PRELOAD_FINISHED.json').is_file():
+                break
+            observer.require(process.joinpath('stat').read_text().rsplit(') ', 1)[1].split()[19] == started['start_ticks'],
+                'exact_preload_parent_identity')
+            time.sleep(1)
+        observer.require((HERE / 'P3_RETRY_PRELOAD_FINISHED.json').is_file(), 'preload_attempt_requires_reconciliation')
     module, policy, original, predecessor = p3_lease_parent.load_on_renewed_wall()
     config = p3_lease_parent.bind(policy, original)
     policy.validate(config)
@@ -49,14 +62,21 @@ def main():
         'verified_retry_only_binding')
     bind_recovery_context(policy, binding)
     output = module.base.OWN / 'r210_parent3'
+    resolution_sha = resolution.bind(policy, output / 'turns')
+    if options.action == 'serve' and preload.is_file():
+        with (output / 'PARENT_OPERATOR.lock').open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            fcntl.flock(lock, fcntl.LOCK_UN)
     observer.require((output / 'SEED.json').is_file() and (output / 'turns').is_dir(), 'original_parent_ledger_required')
     manifest = dict(policy='R233_P3_RETRY1_ORIGINAL_PARENT_LEDGER_V1', hard_end_unix=observer.END_UNIX,
         requested_scope='CPU_PARENT_OBSERVER_RETRY1_NO_NATIVE_CONTROL',
         intake_sha256=observer.digest(HERE / 'P3_RETRY_INTAKE.md'), predecessor_manifest=predecessor,
         binding=binding, binding_sha256=observer.digest(binding_path), original_seed_sha256=observer.digest(output / 'SEED.json'),
         source_pins={name: observer.digest(HERE / name) for name in ('p3_retry_parent.py','p3_retry_endpoint.py',
-            'p3_retry_observe.py','p3_lease_parent.py','p3_recovery.py','p3_incremental.py','p3_endpoint.py')},
+            'p3_retry_observe.py','p3_retry_publication_resolution.py','p3_lease_parent.py',
+            'p3_recovery.py','p3_incremental.py','p3_endpoint.py')},
         preserved_ledger=True, existing_single_parent_lock=True, reasoning_effort='xhigh', cadence_responses=1,
+        historical_publication_resolution_sha256=resolution_sha,
         learner_signals=[], new_seed_or_opener=False, provider_policy_changed=False)
     if options.action == 'validate':
         print(json.dumps(manifest, sort_keys=True, indent=2))
