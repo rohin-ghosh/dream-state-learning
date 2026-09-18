@@ -1,0 +1,154 @@
+[
+  {
+    "admission": {
+      "blocking_reasons": [],
+      "clear": true,
+      "receipt_sha256": "ad0eb8deeb576dc633694b433b3320ca4189d80c43cb50be4f9eebd5f5f1c9da",
+      "scanner_euid": 0,
+      "verified_utc": "2026-09-18T17:58:05.997641+00:00"
+    },
+    "bound_complete": {
+      "adapter_state_sha256": "04341ab86f5f98718bc53218166537ecc20fc7d5053f3ed47cc0fcdda918f5d0",
+      "checkpoint_sha256": {
+        "adapter": "8034b05eb7ace1f1e213f758eaa3ac073b0d365f265d43cd6f4514064103789e",
+        "optimizer": "a67e969498f28978f26758dbb9870c65dccafe59037cbf911fa931c650091e91",
+        "rng": "a67e969498f28978f26758dbb9870c65dccafe59037cbf911fa931c650091e91"
+      },
+      "cycle": 53,
+      "index": 1760,
+      "optimizer_steps": 0,
+      "record_sha256": "1d70ac5772da67ecc64f70e70b9eefb24c1c6e8b78add3e1eceb008f7c2ac1f9",
+      "saved_state_sha256": "10f490fbb5560834f4ae71699cfa82c241308f336b16fd2f3966f2c154e34665"
+    },
+    "dispatched": {
+      "dispatched_unix": 1789754284.4392333,
+      "fresh_privileged_admission_required": true,
+      "loaded": false,
+      "no_rebirth_or_rollback": true,
+      "old_native_exit_unix": 1789754283.3866408,
+      "pid": 471714,
+      "start_ticks": "9986883"
+    },
+    "eligibility": [],
+    "exit_boundary": {
+      "exact_head_preserved": true,
+      "final_head_index": 1761,
+      "last_old_complete_index": 1760,
+      "observed_exit_unix": 1789754283.3866408
+    },
+    "head_index": 1761,
+    "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+    "last_old_response": {
+      "finished_unix": 1789754170.4767191,
+      "finished_utc": "2026-09-18T17:56:10.476719+00:00",
+      "index": 1749,
+      "record_sha256": "c82c5e5eeab9c271dc717303aa13163f93f79c7b4a5c71503cb531b277fa4b1f"
+    },
+    "launch": {
+      "admission_sha256": "39d4b570ed6cc45f28c5bb19396457e765ef1e56f79c9a454480b4560fbf4a8f",
+      "admission_verified_unix": 1789754286.3358314,
+      "command_sha256": "d1bf552e0d3acbb19bbb94c7f2bef8ff603e73b7af30500d3349f126da37971e",
+      "gpu_uuid": "GPU-02917283-de83-a2c7-db03-272dca482162",
+      "guard_sha256": "197463ab56dab2b04a88797c28dffd854a56bd1a8756cdfa611f0995690d7a0b",
+      "hard_end_unix": 1790791200,
+      "no_retry": true,
+      "parent_start_ticks": "9987073",
+      "pid": 471736,
+      "plan_sha256": "2c574529940bde834591e94897640510b24219f57d2004d906d9c0aa4d33f43f",
+      "started_unix": 1789754286.336903
+    },
+    "loaded": [],
+    "native_processes": [
+      {
+        "pid": 471737,
+        "read_characters": 404927383,
+        "start_ticks": "9987073",
+        "state": "R",
+        "system_ticks": 62,
+        "user_ticks": 9824
+      }
+    ],
+    "observed_utc": "2026-09-18T17:59:45.185261+00:00",
+    "outer_started": {
+      "pid": 471714,
+      "started_unix": 1789754284.5903955
+    },
+    "physical": 1,
+    "raw_text_exported": false,
+    "recipes": [],
+    "requests": [],
+    "resident_unsaved_sampling_RNG_continuation_claim": false,
+    "responses": [],
+    "service": {
+      "ActiveEnterTimestamp": "Fri 2026-09-18 17:58:06 UTC",
+      "ActiveState": "active",
+      "RuntimeMaxUSec": "1w 5d 1min 38s",
+      "TimeoutStopUSec": "5s",
+      "unit": "orch-r184-c2-explicit-child-197463ab56dab2b0"
+    },
+    "sleep_complete": [],
+    "sleep_notices": [],
+    "status": "REPLACEMENT_DISPATCHED_LOAD_PENDING",
+    "term": {
+      "complete_index": 1760,
+      "head_index": 1761,
+      "no_SIGSTOP": true,
+      "pid": 412570,
+      "ready_guard_sha256": "197463ab56dab2b04a88797c28dffd854a56bd1a8756cdfa611f0995690d7a0b",
+      "sent_unix": 1789754282.5451047,
+      "signal": "SIGTERM",
+      "start_ticks": "9735357"
+    },
+    "waiting_boundary": {
+      "cpu_passed": true,
+      "dispatch_module": "gpu.r232_recovery",
+      "native_pid": 412570,
+      "native_start_ticks": "9735357",
+      "no_native_signal_yet": true,
+      "pid": 471603,
+      "source_pins_verified": true,
+      "started_unix": 1789754282.084818
+    },
+    "wall_extended": [],
+    "wrapper_command": [
+      "timeout",
+      "--signal=TERM",
+      "--kill-after=5s",
+      "1036903s",
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "-m",
+      "gpu.r232_recovery",
+      "native",
+      "--config",
+      "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/extension_oct01_preview_20260918T1742Z/authorized_continuation_1754Z/GUARD.json",
+      ""
+    ]
+  },
+  {
+    "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+    "observed_utc": "2026-09-18T17:59:45.385521+00:00",
+    "old_native": {
+      "pid": 399101,
+      "read_characters": 15535688016,
+      "start_ticks": "9637168",
+      "state": "S",
+      "system_ticks": 83902,
+      "user_ticks": 197479
+    },
+    "physical": 0,
+    "raw_text_exported": false,
+    "resident_unsaved_sampling_RNG_continuation_claim": false,
+    "status": "WAITING_COMPLETE_NATIVE_CONTINUES",
+    "waiting_boundary": {
+      "cpu_passed": true,
+      "dispatch_module": "gpu.r232_recovery",
+      "native_pid": 399101,
+      "native_start_ticks": "9637168",
+      "no_native_signal_yet": true,
+      "pid": 472531,
+      "source_pins_verified": true,
+      "started_unix": 1789754315.3933237
+    }
+  }
+]

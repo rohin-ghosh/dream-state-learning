@@ -1,4 +1,8 @@
-# Pair live — finite process/journal check 2026-09-18 17:48 UTC
+# Pair continuation explicitly authorized — 2026-09-18 17:59 UTC
+
+The latest user execution order supersedes pending-permission statements below. CONTINUATION_STATUS.md is the current transition receipt: frozen old412570 exited at exact completed53/optimizer0/head1761 after successor readiness; new471737/start9987073 dispatched with fresh root-clear admission and September30 wrapper/systemd bounds. Actual new LOAD/WALL_EXTENDED are pending journal replay, not claimed. Learner399101 remains running while its controller waits for a coherent boundary. Parents unchanged; no SIGSTOP/hold/rollback. Earlier receipts below remain historical.
+
+## Finite process/journal check 17:48 UTC
 
 Fresh read-only check: learner399101/start9637168 running, head2324, latest COMPLETE2258/sleep28/optimizer1328; recipe2287/eligibility2288 R227 all-authentic,3NEW, exclusions[]. Frozen412570/start9735357 alive, head1695, latest COMPLETE1694/sleep51/optimizer0 at17:46:41.958477UTC; recipe1692/eligibility1693 R227,3NEW, exclusions[], weight_updates_enabled=false, adapter unchanged. LIVE_CHECK_1748.json binds the finite observation and hashes. CPU parents2946721/2946722 also alive. No native signals or new starts.
 
