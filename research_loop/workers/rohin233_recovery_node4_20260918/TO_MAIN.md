@@ -1,5 +1,24 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 19:35UTC C2 discarded-tail correction-cache audit: no collision at this boundary
+
+`C2_CORRECTION_BOUNDARY_AUDIT.json` independently checks canonical hashes and
+rechecks a stable boundary. COMPLETE11502/sleep114/optimizer7756 matches the
+preserved boundary; the only suffix is R184_LEARN_COMPLETE11503. There is no
+post-COMPLETE ACT or correction-ledger record in that suffix. Cache points to
+canonical R197_CORRECTION_CYCLE11420 SHA9b8f76cd...,47ledger entries ending
+cycle114/completed_sleeps113. Its source event exists in saved own rows.
+Saved stream has114completed sleeps, so first new ACT cycle115 is absent
+from the ledger. Disposition: NO_CURRENT_DISCARDED_TAIL_LEDGER_COLLISION.
+
+Latent source risk remains: old restore_corrections verifies cache/record/life
+but does not bound the cache to recovered COMPLETE. This is not a general
+recovery-safety certification. The four-file R227 port leaves that method
+unchanged; preserve Main's separate P3 fix when porting its own copied source.
+No cache edits, source changes, signals, or replay interruption for this audit.
+P3 is Main-owned and user-reported exited19:26:21 afterLOAD5299; not counted
+alive here and no P3 repair duplicated.
+
 ## 19:28UTC sole CPU waiter now bound to node5 horizon; ownership remains active
 
 `C2_WAITER_LEASE.public.json`: exact idle waiter3574413 retired without any
