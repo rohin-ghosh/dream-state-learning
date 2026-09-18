@@ -1,5 +1,29 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 19:22UTC measured C2 replay blocker and CPU waiter renewal
+
+`C2_REPLAY_PROGRESS_1922.json`: same native829798/start29168595, started
+18:28:45.770, remains CPU replay with no WALL/LOAD.19:21:16–19:21:26 samples
+advance9.138GB→9.154GB cumulative reads,16.171MB/10.001seconds(1.617MB/s),
+1000CPUticks, runnable, no physical-disk reads. Stream files total16.687GB.
+The remaining byte difference divided by this rate is77.6minutes, but this
+is not a LOAD ETA or unique-coverage percentage: rereads/additional passes
+and model initialization are unmeasured. The one-hour renewal target is missed.
+No replacement replay, native source edit, or native signal.
+
+Old CPU parent471781 remains alive, still actually bound Sep19 00UTC. New
+Sep20 18UTC attachment is armed, not claimed live: it requires canonical new
+LOAD/WALL, then drains only the exact idle predecessor and preserves provider,
+brief, cadence, cursor, ledger and inboxes. The90min waiter could expire first;
+replaced only that exact idle owned CPU waiter via pidfd at19:22:18.640.
+New waiter3574413/start186635670 has a finite6h wait untilSep19 01:22:18UTC.
+No parent/native signals occurred in this waiter renewal. Existing prior
+complete11502/sleep114/optimizer7756 remains the continuation boundary.
+
+R227 copied-source port already published as63d818149f3e0b8a40b6b9571e3ca03ff5e19467;
+it is receiving-tested, not resident. Main can reuse the four-file hunks and
+root-neutral plan helper without overwriting P3 custom continuation guards.
+
 ## 19:19UTC R227 port handoff; C2 replay untouched
 
 Reusable helper: `r227_plan.py:proposed_plan` is root-neutral and prospective

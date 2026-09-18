@@ -1,10 +1,13 @@
 {
   "ADOPTION_public_scope": "OVERSEER_BRIEF_NOT_NATIVE_OR_JUDGE",
   "P3": "MAIN_EXCLUSIVE_UNTOUCHED",
+  "P7_continued_roundtrip_receipt": "FIRST_CONTINUED_ROUNDTRIP.json",
+  "R227_receiving_manifest": "r227_port/MANIFEST.json",
+  "R227_receiving_status": "CPU_RECEIVING_TESTED_NOT_LIVE",
   "actual_WALL_LOADED_pending": [
-    "P7",
     "C2"
   ],
+  "component_observation_note": "Mixed explicit component observation times; only C2 replay and local CPU services refreshed at this cut.",
   "components": [
     {
       "SIGSTOP": false,
@@ -173,7 +176,7 @@
         "pid": 829798,
         "start_ticks": "29168595"
       },
-      "observed_utc": "2026-09-18T18:48:22.263456+00:00",
+      "observed_utc": "2026-09-18T19:22:51.621363+00:00",
       "old_exit_unix": 1789756101.421838,
       "old_exit_utc": "2026-09-18T18:28:21.421838+00:00",
       "optimizer_steps": 7756,
@@ -204,6 +207,27 @@
       ],
       "training_policy_changed": false,
       "wall_extended_pending": true
+    },
+    {
+      "alive": true,
+      "component": "C2_CPU_PARENT",
+      "hard_end_unix": 1789776000,
+      "hard_end_utc": "2026-09-19T00:00:00+00:00",
+      "new_native_bound": false,
+      "pid": 471781,
+      "renewal": "C2_REPLAY_PROGRESS_1922.json",
+      "start_ticks": "183179491",
+      "status": "PREDECESSOR_ALIVE_NEW_NATIVE_LOAD_PENDING",
+      "verified_utc": "2026-09-18T19:23:20.425343+00:00"
+    },
+    {
+      "component": "C2_PARENT_REBIND_WAITER",
+      "hard_end_utc": "2026-09-19T01:22:18.638980+00:00",
+      "native_signals": [],
+      "pid": 3574413,
+      "start_ticks": "186635670",
+      "status": "ARMED_NOT_PARENT_RENDER_PROOF",
+      "verified_utc": "2026-09-18T19:22:18.639729+00:00"
     }
   ],
   "eligibility_receipts": {
@@ -223,7 +247,7 @@
     "R227 source port and focused receiving tests needed before later fresh COMPLETE adoption; not policy-live"
   ],
   "no_staged_source_claimed_as_loaded": true,
-  "observed_utc": "2026-09-18T18:48:57.607763+00:00",
+  "observed_utc": "2026-09-18T19:23:20.425343+00:00",
   "policy_completion_plan": "R227_POLICY_COMPLETION.md",
   "state_preservation": "SAME_CURRENT_COMPLETE_SAME_ROOT_JOURNAL_ADAPTER_ADAMW_RNG_INBOXES"
 }
