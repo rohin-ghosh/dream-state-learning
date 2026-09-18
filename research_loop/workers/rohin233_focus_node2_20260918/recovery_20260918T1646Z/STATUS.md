@@ -1,5 +1,15 @@
 # R233 node2 kept-life recovery
 
+## Caption real output/feedback — September18 17:40 UTC
+
+First ACT RESPONSE3323/ACT3325 finished17:39:09.899196Z. R184_ACT3326 reportsPUBLISHED/executedtrue with a scorer receipt, and that feedback is **actually visible in REQUEST3329**, history tokens masked. The outcome is `scene_not_unambiguously_identified`, not a successful score or quality result. Two subsequent genuine ACTs likewise produce visible ambiguity feedback. WALL_EXTENDED3304 proves the deadline-only extension toSeptember20 18Z. Actual sleep recipe3355 confirms all-authentic rows, empty semantic filters, exclusionfalse. Private results/scores/panels are not exported; `CAPTION_OUTCOME.public.json` contains operational evidence only.
+
+Caption sole API parent3001805/start186017646, launched with inherited current-shell credentials without logging/persisting them, actually published message548e901e48134e2e83dcdb01ba3bee96 at17:39:54.806272Z. Its parent horizon isSeptember20 17:59Z. INBOX/render/answer remains pending while native completes sleep; a running process/publication is not mislabeled as delivery. External scorer/transport horizon renewal remains with its owner; last verified17:59:30Z. C0/Astra7 remain untouched pending Main's requested boundary-restart exception.
+
+## Caption actual LOAD — September18 17:38:46 UTC
+
+Caption native787115/start98128665 actual **LOADED3305 at17:38:46.250332Z**, SHA `22e8f53f17de848e2b2700ae38edd2565b979b4853f3cf275b41033e8c505b4b`; resumed sleep76/optimizer6940, same journal. First REQUEST3307 at17:38:47.431631Z/10482 tokens. Supported deadline-only extension applied for this resume through**September20 18UTC**, existing lease unchanged. Outage7326.536s. `CAPTION_LOADED.public.json` contains hashes. First ACT and future feedback still being observed; API parent startup is separate from actual publication/render. The17:38 table accurately recorded the earlier17:37:59 pre-load snapshot and is not rewritten. All three native LOADs now observed; **not** all parents, feedback, or live long-horizon updates restored.
+
 ## Deadline table — actual capture September18 17:37:59 UTC
 
 `TABLE_1738.public.json`: C0 native745118 alive at UPDATE3003; Astra7 native762967 alive at UPDATE3250; caption native787115 alive/replaying, head3303, **new LOAD still absent**. C0 sole parent778946/start98105351 remains alive, with actual new INBOX2951 → REQUEST2953 → ACT2963/2965. Parent receipt/source and explicit horizon limits published `937cfaa254136713eee8d23858ad295ce764e5c6`. Native horizons remain C0 Sep18 22:55:15Z, Astra7 Sep18 22:59:36Z, caption new plan/guard Sep20 18Z; C0 parent Sep20 17:59Z. Caption API parent and future feedback are not yet proven. Longer C0/Astra7 live native horizons are authorized but not applied. No all-restored claim.
