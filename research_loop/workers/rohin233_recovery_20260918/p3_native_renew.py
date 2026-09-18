@@ -92,7 +92,7 @@ def stage():
     print('P3_SOURCE_STAGED', flush=True)
 
 
-def continue_life():
+def continue_life(*, plan_transform=None, correction_recovery=None):
     require((CONTROL / 'STAGED.json').is_file(), 'source_staged_first')
     os.environ['CUDA_VISIBLE_DEVICES'] = ''
     sys.path.insert(0, str(SOURCE))
@@ -133,7 +133,7 @@ def continue_life():
     native.NativeChild.verify_checkpoint(checkpoint)
     previous_guard = read(OLD / 'control/GUARD.json')
     previous = read(previous_guard['plan_path'])
-    plan = deepcopy(previous)
+    plan = deepcopy(previous) if plan_transform is None else plan_transform(previous)
     plan.update(source_root=str(SOURCE), hard_end_unix=END_UNIX, lease_end_unix=LEASE_UNIX,
         authorized_wall_extension=dict(schema='R131_SAVED_STATE_WALL_EXTENSION_V1',
             previous_deadline_unix=saved['state']['deadline_unix'], previous_stream_sha256=saved['sha256'],
@@ -167,6 +167,8 @@ def continue_life():
                 path.rename(destination)
                 moved.append(dict(original=str(path), preserved=str(destination), sha256=sha(destination)))
     write(CONTROL / 'TAIL_ARTIFACTS_PRESERVED.json', dict(moved=moved, deleted=False))
+    if correction_recovery is not None:
+        correction_recovery(complete)
     journal_class = activate()
     with journal_class(ROOT / 'life/stream', create=False) as journal:
         proof = journal.record(KIND, dict(receipt_path=str(CONTROL / 'RECOVERY.json'),

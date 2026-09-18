@@ -39,14 +39,17 @@ def activate():
             if kind != KIND:
                 return super()._advance(state, kind, document)
             receipt_path = Path(document['receipt_path'])
-            expected_directory = Path('/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/r233_lease_continuation/control')
-            require(receipt_path.parent == expected_directory, 'exact_P3_operator_receipt')
+            root = Path('/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3')
+            allowed = {root / 'r233_lease_continuation/control': (237705, '27878033'),
+                root / 'r233_lease_continuation_retry1/control': (598987, '32509102')}
+            require(receipt_path.parent in allowed, 'exact_P3_operator_receipt')
+            old_pid, old_ticks = allowed[receipt_path.parent]
             data = receipt_path.read_bytes()
             require(hashlib.sha256(data).hexdigest() == document['receipt_sha256'],
                 'immutable_recovery_receipt')
             receipt = json.loads(data)
-            require(receipt['old_native_absent'] and receipt['old_native_pid'] == 237705
-                and receipt['old_native_start_ticks'] == '27878033'
+            require(receipt['old_native_absent'] and receipt['old_native_pid'] == old_pid
+                and receipt['old_native_start_ticks'] == old_ticks
                 and receipt['journal_id'] == '0727d448bca644bfa64f1a1f65c1f21f'
                 and not receipt['uninterrupted_resident_continuity_claimed']
                 and state['index'] == receipt['old_head_index'] + 1

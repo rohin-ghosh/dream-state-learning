@@ -1,9 +1,15 @@
 import unittest
 
-from fleet_deadlines import annotate_support, support_row, verified
+from fleet_deadlines import annotate_support, runtime_status, support_row, verified
 
 
 class DeadlineEvidenceTests(unittest.TestCase):
+    def test_dead_process_cannot_reuse_a_historical_alive_label(self):
+        row = dict(pid=17, source_status='LOADED_ALIVE', alive_now=False, renewal_verified=False)
+        self.assertTrue(runtime_status(row).startswith('NOT ALIVE;'))
+        row['alive_now'] = None
+        self.assertTrue(runtime_status(row).startswith('CURRENT PROCESS NOT VERIFIED;'))
+
     def test_support_preserves_actual_execution_node_and_bound(self):
         row = support_row(dict(name='bridge', actual_host_alias='operator_vm', pid=17,
             start_ticks=100, actual_deadline='2026-09-20T18:00:00Z'), dict(sha256='receipt'))

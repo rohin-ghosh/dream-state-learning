@@ -1,0 +1,166 @@
+--- a/gpu/orch_r125_continual_native.py
++++ b/gpu/orch_r125_continual_native.py
+@@ -36,6 +36,9 @@
+     ContinualStream, PRESLEEP_INVITATIONS, digest, experiment_binding, require,
+     validate_experiment, verify_experiment_resume,
+ )
++
++
++from organism_v6.orch_r227_learning_policy import all_child_rows, recipe_fields
+ 
+ 
+ SCHEMA = 'R125_NATIVE_CONTINUITY_V1'
+@@ -167,6 +170,10 @@
+ 
+ def validate_plan(plan):
+     require(plan['schema'] == SCHEMA and plan['base_sha256'] == BASE_SHA256, 'frozen_native_contract')
++    all_child_rows(plan)
++    if plan.get('think_act_learn') is not None:
++        require(plan.get('learn_row_policy') == plan['think_act_learn'].get('learn_row_policy'),
++            'same_learn_row_policy_in_driver_and_trainer')
+     sleep_loss_implementation(plan)
+     if 'code_target_filter' in plan:
+         from organism_v6.orch_r194_code_target_filter import validate_policy
+@@ -265,6 +272,12 @@
+     return old_rows if presentations else []
+ 
+ 
++def candidate_row_filter_policies(new_rows, old_rows):
++    fields = ('content_target_filter', 'question_target_filter', 'fabricated_speaker_filter')
++    return {cohort: {field: sorted({row[field] for row in rows if field in row})
++        for field in fields} for cohort, rows in (('NEW', new_rows), ('REHEARSAL', old_rows))}
++
++
+ def readout_name(plan, cycle):
+     revision = plan.get('readout_revision', 1)
+     require(type(revision) is int and revision >= 1, 'positive_readout_revision')
+@@ -482,14 +495,15 @@
+ 
+     def sleep(self, new_rows, old_rows, anchors, record):
+         loss_implementation = sleep_loss_implementation(self.plan)
++        retain_all = all_child_rows(self.plan)
+         code_target_policy = None
+-        if 'code_target_filter' in self.plan:
++        if not retain_all and 'code_target_filter' in self.plan:
+             from organism_v6.orch_r194_code_target_filter import (
+                 CODE_FILTER_SUBREASON, filter_sleep_targets, validate_policy, zero_update_authorization,
+             )
+             code_target_policy = validate_policy(self.plan)
+         review_policy = None
+-        if 'learn_review_filter' in self.plan:
++        if not retain_all and 'learn_review_filter' in self.plan:
+             from organism_v6.orch_r194_code_target_filter import (
+                 REVIEW_FILTER_SUBREASON, filter_learn_review_targets,
+                 review_zero_update_authorization, validate_review_policy,
+@@ -501,6 +515,8 @@
+             else 'LEGACY_FULL_REHEARSAL', new_presentations=self.plan['new_presentations'],
+             new_rows=len(new_rows), available_old_rows=available_old_rows,
+             selected_old_rows=len(old_rows), anchor_lambda=0.25,
++            candidate_row_filter_policies=candidate_row_filter_policies(new_rows, old_rows),
++            **recipe_fields(self.plan),
+             **(dict(plasticity=self.plasticity) if self.plasticity is not None else {}),
+             **(dict(sleep_loss_impl=loss_implementation) if loss_implementation != MODEL_DEFAULT else {}),
+             **(dict(code_target_filter=code_target_policy) if code_target_policy is not None else {}),
+@@ -524,15 +540,15 @@
+             from organism_v6.orch_r125_plain_context import eligible_rows
+             presentation = dict(version=self.plan['presentation_version'],
+                 system_prompt=self.plan['system_prompt'], birth_prompt=self.plan['birth_prompt'])
+-            new_rows, rejected_new = eligible_rows(new_rows, presentation)
+-            old_rows, rejected_old = eligible_rows(old_rows, presentation)
++            new_rows, rejected_new = eligible_rows(new_rows, presentation, exclude_scaffolding=not retain_all)
++            old_rows, rejected_old = eligible_rows(old_rows, presentation, exclude_scaffolding=not retain_all)
+             exclusions.extend([dict(row, cohort='NEW') for row in rejected_new] + [
+                 dict(row, cohort='REHEARSAL') for row in rejected_old])
+         from gpu.orch_r144_sleep_targets import POLICY, encode_sleep_targets
+         new_rows, old_rows, encoded, rejected_targets = encode_sleep_targets(
+             new_rows, old_rows, self.tokenizer, self.plan['context_limit'], encode_own)
+         exclusions.extend(rejected_targets)
+-        code_filter_fields = {}
++        code_filter_fields = recipe_fields(self.plan)
+         if code_filter_proof is not None or review_proof is not None:
+             scheduled = {}
+             for rows, dose in ((new_rows, self.plan['new_presentations']), (old_rows, 1)):
+--- a/gpu/orch_r184_think_act_learn.py
++++ b/gpu/orch_r184_think_act_learn.py
+@@ -12,6 +12,7 @@
+ 
+ from organism_v6.orch_r124_train_history import CompactionRequired, TrainEvent, WorkingStateSpan
+ from organism_v6.orch_r125_continual_stream import digest, require
++from organism_v6.orch_r227_learning_policy import all_child_rows, effective_config
+ from gpu.orch_r189_outcome_allocation import (
+     SCHEMA as OUTCOME_SCHEMA, OutcomeAllocation, counts, validate_counts,
+ )
+@@ -63,11 +64,13 @@
+ 
+ 
+ def validate_config(config):
++    all_child_rows(config)
++    config = effective_config(config)
+     fields = {'schema', 'trial_id', 'reflection_policy', 'think_segments', 'cpu_gate_root', 'cpu_gate_sha256'}
+     optional = {'outcome_policy', 'continuity_policy', 'environment_facts', 'console_reflection', 'code_policy',
+         'judgment_policy', 'learn_review_filter', 'correction_ledger', 'effort_policy',
+         'structured_think_policy', 'stage_boundary_policy', 'prose_target_filter',
+-        'think_continuation_policy', 'console_reply_policy', 'pinned_messages_policy'}
++        'think_continuation_policy', 'console_reply_policy', 'pinned_messages_policy', 'learn_row_policy'}
+     require(type(config) is dict and fields <= set(config) <= fields | optional,
+         'exact_think_act_learn_config')
+     require(config['schema'] == SCHEMA and config['reflection_policy'] in ('explicit', 'brief'),
+@@ -757,7 +760,10 @@
+ def run_loop(child, stream, journal, anchors, plan, root, plan_path, completed_sleeps):
+     from gpu.orch_r125_continual_native import finish_sleep, fresh_readout
+     require(plan['rehearsal_presentations'] == 0, 'R184_new_rows_only')
+-    require(plan.get('learn_review_filter') == plan['think_act_learn'].get('learn_review_filter'),
++    require(plan.get('learn_row_policy') == plan['think_act_learn'].get('learn_row_policy'),
++        'same_learn_row_policy_in_driver_and_trainer')
++    require(all_child_rows(plan) or
++        plan.get('learn_review_filter') == plan['think_act_learn'].get('learn_review_filter'),
+         'same_learn_review_policy_in_driver_and_trainer')
+     driver = ThinkActLearn(child, stream, journal, plan['think_act_learn'],
+         new_presentations=plan['new_presentations'])
+--- a/organism_v6/orch_r125_plain_context.py
++++ b/organism_v6/orch_r125_plain_context.py
+@@ -81,10 +81,10 @@
+     return result
+ 
+ 
+-def eligible_rows(rows, presentation):
++def eligible_rows(rows, presentation, *, exclude_scaffolding=True):
+     accepted, excluded = [], []
+     for row in rows:
+-        if has_scaffolding(row['target']):
++        if exclude_scaffolding and has_scaffolding(row['target']):
+             excluded.append(dict(source_sha256=row['source_sha256'], reason='journal_scaffolding_target'))
+             continue
+         clean = deepcopy(row)
+--- /dev/null
++++ b/organism_v6/orch_r227_learning_policy.py
+@@ -0,0 +1,29 @@
++"""Prospective R227 policy; preserves historical rows and provenance checks."""
++
++POLICY = 'R227_ALL_AUTHENTIC_CHILD_ROWS_V1'
++SEMANTIC_FILTER_FIELDS = (
++    'code_target_filter', 'learn_review_filter', 'prose_target_filter',
++    'content_target_filter', 'question_target_filter', 'fabricated_speaker_filter',
++)
++
++
++def all_child_rows(config):
++    if 'learn_row_policy' not in config:
++        return False
++    if config['learn_row_policy'] != POLICY:
++        raise ValueError('known_learn_row_policy')
++    return True
++
++
++def effective_config(config):
++    if not all_child_rows(config):
++        return config
++    return {key: value for key, value in config.items() if key not in SEMANTIC_FILTER_FIELDS}
++
++
++def recipe_fields(config):
++    if not all_child_rows(config):
++        return {}
++    return dict(learn_row_policy=POLICY, active_semantic_filters=[],
++        semantic_row_exclusion=False, historical_row_annotations='PRESERVED_NOT_APPLIED',
++        technical_provenance_and_encoding_checks=True)

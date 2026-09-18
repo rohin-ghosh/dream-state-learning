@@ -34,12 +34,25 @@ def verified(row):
         and row.get('identity_matches') is True)
 
 
+def runtime_status(row):
+    if row.get('renewal_verified'):
+        return 'LOADED; alive'
+    if row.get('alive_now') is False:
+        return 'NOT ALIVE; prior receipt: ' + row['source_status']
+    if row.get('alive_now') is True:
+        return 'PROCESS ALIVE; renewal identity/bound unverified'
+    if row.get('pid'):
+        return 'CURRENT PROCESS NOT VERIFIED; prior receipt: ' + row['source_status']
+    return row['source_status']
+
+
 def support_row(entry, reference):
     return dict(component=entry['name'], node='local' if entry['actual_host_alias'] == 'operator_vm'
         else entry['actual_host_alias'], pid=entry.get('pid'), start_ticks=entry.get('start_ticks'),
         command_sha256=entry.get('command_sha256'), status=entry.get('status', 'OWNER_OBSERVED_LIVE'),
         deadline_utc=entry.get('actual_deadline'), execution_proof=entry.get('proof', []),
-        deadline_mechanism=entry.get('deadline_mechanism'), evidence=reference)
+        deadline_mechanism=entry.get('deadline_mechanism'), source_admission=entry.get('source_admission'),
+        evidence=reference)
 
 
 def annotate_support(row, observation, observed_unix):
@@ -172,6 +185,41 @@ def collect():
         supports.append(dict(component=name + '_scorer', node='node4' if name == 'P3' else 'ovx4',
             pid=entry['pid'], status=value['status'], deadline_utc=utc(entry['deadline_unix']),
             primary_step=entry['primary_step'], primary_rank=entry['primary_rank'], evidence=reference))
+    parent_deliveries = {}
+    parent_path = WORKERS / 'rohin233_focus_node3_20260918/FOLLOWUP_CURRENT.json'
+    if parent_path.is_file():
+        followup, reference = read(parent_path)
+        for entry in followup['rows']:
+            chain = entry.get('latest_completed_model_parent', {})
+            act = chain.get('actual_ACT_after_parent', {})
+            if act:
+                parent_deliveries[entry['life']] = dict(status='MODEL_PARENT_REQUEST_TO_ACT',
+                    loaded_index=entry['LOADED']['index'], request_index=act['ACT_REQUEST']['index'],
+                    act_index=act['ACT']['index'], observed_utc=followup['parent_cut_utc'], evidence=reference)
+    pair_path = WORKERS / 'rohin231_curriculum_birth_20260918/recovery_20260918T1646Z/CURRENT_CONTINUATION.json'
+    pair, reference = read(pair_path)
+    for name, entry in pair.get('post_LOAD_parent_bindings', {}).items():
+        life = 'curriculum_frozen_sibling' if name == 'frozen' else 'curriculum_learner'
+        parent_deliveries[life] = dict(status='MODEL_PARENT_REQUEST_TO_ACT',
+            request_index=entry['render_request_index'], act_index=entry['act_response_index'],
+            observed_utc=entry['observed_utc'], evidence=reference)
+    node2_table, reference = read(node2 / 'RENEWAL_TABLE.public.json')
+    for entry in node2_table['lives'].values():
+        parent = entry.get('parent', {})
+        if entry['arm'] == 'C0' and parent.get('fresh_post_renewal_turn'):
+            turn = parent['fresh_post_renewal_turn']
+            parent_deliveries['C0'] = dict(status='SCRIPTED_CURRICULUM_REQUEST_TO_RESPONSE',
+                request_index=turn['render']['index'], act_index=turn['actual_response']['index'], evidence=reference)
+        elif entry['arm'] == 'CAPTION' and parent.get('render') and parent.get('answer'):
+            parent_deliveries['caption_node2'] = dict(status='MODEL_PARENT_RENDER_AND_FOLLOWING_ACT',
+                detail=parent['answer'], evidence=reference)
+    parent_path = WORKERS / 'rohin233_recovery_node4_20260918/CONTINUED_PARENT_RENDER.json'
+    if parent_path.is_file():
+        parent, reference = read(parent_path)
+        parent_deliveries['P7'] = dict(status=parent['status'], loaded_index=parent['loaded_index'],
+            request_index=parent['request']['index'], response_index=parent['response']['index'], evidence=reference)
+    for row in rows:
+        row['parent_delivery'] = parent_deliveries.get(row['life'], dict(status='NOT_ESTABLISHED_IN_THIS_AGGREGATE'))
     support_path = services / 'SUPPORT_COMPONENT_TABLE.json'
     if support_path.is_file():
         table, reference = read(support_path)
@@ -227,18 +275,23 @@ def main():
     path = HERE / f'DEADLINES_{stamp}.json'
     path.write_text(json.dumps(result, sort_keys=True, indent=2) + '\n')
     lines = [f'# Kept-fleet deadline evidence — {result["observed_utc"]}', '',
-        '| Life | Node / GPU | Current process | Renewed native bound UTC | LOAD / WALL |',
-        '| --- | --- | --- | --- | --- |']
+        '| Life | Node / GPU | Current process | Renewed native bound UTC | LOAD / WALL | Parent receipt |',
+        '| --- | --- | --- | --- | --- | --- |']
     for row in rows:
-        state = 'LOADED; alive' if row['renewal_verified'] else row['source_status']
+        state = runtime_status(row)
         bound = row['resident_deadline_utc'] or 'PENDING; target ' + row['target_deadline_utc']
-        lines.append(f'| {row["life"]} | {row["node"]} / {row["gpu"]} | {state} | {bound} | {row["loaded_index"]} / {row["wall_index"]} |')
+        parent = row['parent_delivery']
+        parent_summary = parent['status']
+        if parent.get('request_index') is not None:
+            parent_summary += f' {parent["request_index"]} → {parent.get("act_index", parent.get("response_index", "pending"))}'
+        lines.append(f'| {row["life"]} | {row["node"]} / {row["gpu"]} | {state} | {bound} | {row["loaded_index"]} / {row["wall_index"]} | {parent_summary} |')
     lines.extend(['', '## Supporting components', '',
         '| Component | Execution node | Process identity | Observed deadline UTC |',
         '| --- | --- | --- | --- |'])
     for row in supports:
         state = 'alive; identity matched' if row['identity_matches'] else (
-            'alive; identity unbound' if row['alive_now'] else row['status'])
+            'alive; identity unbound' if row['alive_now'] else (
+                'NOT ALIVE; prior: ' + row['status'] if row['alive_now'] is False else row['status']))
         lines.append(f'| {row["component"]} | {row["node"]} | {state} | {row["deadline_utc"] or "not established"} |')
     lines.extend(['', 'Dispatch/replay is not restoration. Actual reload gaps and source hashes are in the JSON.',
         'A running parent process is not proof of a rendered parent turn. Supporting-component coverage is explicitly incomplete.',

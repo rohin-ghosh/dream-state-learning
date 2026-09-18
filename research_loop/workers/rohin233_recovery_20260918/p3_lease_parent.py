@@ -27,6 +27,33 @@ def renewed_config(original, deadline):
     return result
 
 
+def authorized_wall_validator(validator, original):
+    historical = copy.deepcopy(original)
+    renewed = renewed_config(historical, END_UNIX)
+
+    def validate(candidate):
+        if candidate != historical and candidate != renewed:
+            raise ValueError('only_exact_P3_historical_or_renewed_config')
+        return validator(renewed)
+
+    return validate
+
+
+def load_on_renewed_wall():
+    repair = p3_incremental.previous.previous.repair
+    previous_adapt = repair.adapt
+
+    def adapt(frozen, original):
+        frozen.parent.validate = authorized_wall_validator(frozen.parent.validate, original)
+        return previous_adapt(frozen, original)
+
+    repair.adapt = adapt
+    try:
+        return p3_incremental.previous.load()
+    finally:
+        repair.adapt = previous_adapt
+
+
 def bind(policy, original):
     expected = renewed_config(original, END_UNIX)
     prior_validate, prior_prompt = policy.validate, policy.prompt

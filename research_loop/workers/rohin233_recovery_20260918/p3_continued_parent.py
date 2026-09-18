@@ -20,7 +20,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=('validate', 'serve'))
     options = parser.parse_args()
-    module, policy, original, predecessor = p3_incremental.previous.load()
+    module, policy, original, predecessor = p3_lease_parent.load_on_renewed_wall()
     config = p3_lease_parent.bind(policy, original)
     policy.validate(config)
     binding_path = HERE / 'P3_CONTINUED_BINDING.json'
