@@ -16,6 +16,11 @@ SUPPORT = Path('/localhome/local-rohing/orch_r230_c0_operator_20260918/receipt_c
 SERVICE = HERE / 'C0_CURRICULUM'
 
 
+def parent_identity(observed, root):
+    return dict(observed['native'], loaded=observed['loaded'], physical_gpu=4, root=str(root),
+        journal_id=observed['original_journal_id'])
+
+
 def replacements(source, floor):
     changes = {
         "require((legacy_directory/'EXIT.json').is_file() and (legacy_directory/control_name).is_file(), 'supported_old_reading_handoff_complete')":
@@ -84,7 +89,7 @@ def serve():
         require(int(fields[19]) == native['start_ticks'] and fields[0] not in ('T', 'Z', 'X')
             and b'native' in arguments and str(control / 'GUARD.json').encode() in arguments,
             'same_recovered_C0_native_no_pause_or_PID_reuse')
-        return dict(native, loaded=observed['loaded'], physical_gpu=4, root=str(root))
+        return parent_identity(observed, root)
 
     parent.identity = identity
     parent.run(SERVICE, previous, Path(__file__), resume_directory=previous)

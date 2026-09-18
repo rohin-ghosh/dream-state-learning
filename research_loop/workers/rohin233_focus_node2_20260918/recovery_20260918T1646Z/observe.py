@@ -47,6 +47,20 @@ def native_command(arguments, guard_path):
         and str(guard_path).encode() in arguments)
 
 
+def current_loaded(paths, native, started):
+    if native is None:
+        return None
+    for path in reversed(paths):
+        metadata = header(path)
+        if metadata['kind'] != 'LOADED':
+            continue
+        record = checked(path)
+        if (record['document']['pid'] == native['pid']
+                and record['document']['loaded_unix'] >= started - 2):
+            return record
+    return None
+
+
 def observation(name):
     root, _, control, _ = locations(name)
     plan = read(control / 'PLAN.json')
@@ -66,13 +80,9 @@ def observation(name):
         except (FileNotFoundError, PermissionError, ProcessLookupError):
             continue
     require(len(matches) <= 1, 'no_duplicate_native_for_recovery_guard')
-    loaded = None
-    for metadata in reversed(heads):
-        if metadata['kind'] == 'LOADED':
-            record = checked(directory / f'{metadata["index"]:020d}.json')
-            if matches and record['document']['pid'] == matches[0]['pid']:
-                loaded = record
-                break
+    boot = next(int(line.split()[1]) for line in Path('/proc/stat').read_text().splitlines() if line.startswith('btime '))
+    started = boot + matches[0]['start_ticks'] / os.sysconf('SC_CLK_TCK') if matches else 0
+    loaded = current_loaded(paths, matches[0] if matches else None, started)
     result = dict(observed_utc=utc(time.time()), arm=name, physical_gpu=plan['physical'], gpu_uuid=plan['gpu_uuid'],
         native=matches[0] if matches else None, status='LOADED' if loaded else 'STARTING' if matches else 'NOT_RUNNING',
         original_journal_id=TARGETS[name][4], head=heads[-1],
@@ -82,8 +92,6 @@ def observation(name):
     if not loaded:
         return result
     doc = loaded['document']
-    boot = next(int(line.split()[1]) for line in Path('/proc/stat').read_text().splitlines() if line.startswith('btime '))
-    started = boot + matches[0]['start_ticks'] / os.sysconf('SC_CLK_TCK')
     require(loaded['journal_id'] == TARGETS[name][4] and doc['loaded_unix'] >= started - 2,
         'same_journal_current_native_loaded_after_start')
     recovery = read(control / 'RECOVERY.json')
@@ -91,7 +99,10 @@ def observation(name):
         adapter_sha256=doc['adapter_sha256'], optimizer_steps=doc['optimizer_steps'], resume=doc['resume']),
         outage_seconds=doc['loaded_unix'] - recovery['old_outer_exit']['finished_unix'],
         checkpoint_cycle=recovery['complete_cycle'], saved_state_sha256=recovery['saved_state_sha256'])
-    current = [item for item in heads if item['index'] > loaded['index']]
+    first_paths = [path for path in paths if int(path.stem) > loaded['index']][:256]
+    receipt_paths = sorted(set(first_paths + paths[-256:]))
+    current = [metadata for path in receipt_paths
+        if (metadata := header(path))['index'] > loaded['index']]
     requests = [checked(directory / f'{item["index"]:020d}.json') for item in current if item['kind'] == 'REQUEST']
     result['requests'] = [dict(index=record['index'], sha256=record['sha256'],
         started_utc=utc(record['document']['started_unix']), prompt_tokens=record['document']['prompt_tokens'])

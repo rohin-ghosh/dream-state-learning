@@ -1,5 +1,7 @@
 # Kept node2 caption: actual feedback renewal needed
 
+Update September18 17:24 UTC: existing owner receipt `research_loop/workers/rohin233_ovx4_recovery_20260918/TRANSPORT_NODE2_READY.json` reports restored trusted socket route and future frontier3303 with zero historical replay. Its deadline is **17:59:30Z**, not the learner's22:59:36Z; first future score is pending. This worker has not changed the transport. Please bind/renew the scorer and relay horizon within your verified allocation; do not assume this transport receipt proves outcome delivery. Caption native remains undispatched until Astra7's first real ACT. New caption PID/startticks/LOADED will follow. No ovx4/P3 control is taken here.
+
 Read-only check September18 17:10 UTC: prior node2 proxy557271 and forwarders557270/557373 are all absent. `/tmp/r226-caption-2.sock` still exists, but that is not liveness. No probe submitted a caption or accessed private panel content.
 
 Same kept arm and journal: `r229_extra_unparented_node2_gpu2`, `1840899d7847437093d41eae072b8d26`, physical GPU2. Original physical raw root remains `/localhome/local-rohing/orch_r229_unparented_caption_20260918/r213_r226_caption_unparented_fork/raw`. Prior experiment/relay bound15:36:50 UTC expired. New authorized experiment horizon is22:59:36.115238 UTC, within unchanged existing lease; conservative plan lease limitSeptember19 00:10UTC. New native source/control are sibling `source_r233_recovery`/`control_r233_recovery`; journal never replaced.

@@ -1,13 +1,37 @@
 """Small CPU seam tests; no process control or provider calls."""
 
 import unittest
+from unittest.mock import patch
 
-from c0_parent import replacements
+from c0_parent import parent_identity, replacements
 from caption_endpoint import scoped_inspector
-from observe import native_command
+from observe import current_loaded, native_command
 
 
 class ParentRecoveryTests(unittest.TestCase):
+    def test_parent_identity_keeps_actual_journal(self):
+        observed = {'native': {'pid': 42, 'start_ticks': 9}, 'loaded': {'index': 123},
+            'original_journal_id': 'actual-journal'}
+        actual = parent_identity(observed, '/owned/C0')
+        self.assertEqual(actual['journal_id'], 'actual-journal')
+        self.assertEqual(actual['pid'], 42)
+        self.assertEqual(actual['start_ticks'], 9)
+
+    def test_loaded_remains_visible_beyond_tail_window(self):
+        paths = list(range(600))
+        record = {'document': {'pid': 42, 'loaded_unix': 100}}
+        with patch('observe.header', side_effect=lambda path: {'kind': 'LOADED' if path == 12 else 'UPDATE'}), \
+                patch('observe.checked', return_value=record) as reader:
+            self.assertEqual(current_loaded(paths, {'pid': 42}, 99), record)
+            reader.assert_called_once_with(12)
+
+    def test_inherited_or_reused_pid_is_not_current_loaded(self):
+        with patch('observe.header', return_value={'kind': 'LOADED'}), \
+                patch('observe.checked', return_value={'document': {'pid': 42, 'loaded_unix': 10}}):
+            self.assertIsNone(current_loaded([1], {'pid': 42}, 100))
+            self.assertIsNone(current_loaded([1], {'pid': 43}, 10))
+            self.assertIsNone(current_loaded([1], None, 0))
+
     def test_timeout_wrapper_is_not_a_second_native(self):
         command = [b'/owned/venv/bin/python', b'-B', b'-m', b'gpu.r233_node2_recovery', b'native',
             b'--config', b'/owned/GUARD.json']
