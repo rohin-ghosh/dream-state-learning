@@ -17,6 +17,12 @@ def configure(physical):
     root = root_for(physical)
     target = root / 'r210'
     source = target / 'source'
+    if physical == 7 and (root / 'r224_language_v3/DISPATCHED.json').exists():
+        current = root / 'r224_language_v3'
+        require(read(current / 'DISPATCHED.json')['new_phase'] == 'R224_P7_LANGUAGE_POLICY', 'exact_P7_language_phase')
+        require(sha(current / 'control/GUARD.json') == read(current / 'RECEIVING_READY.json')['guard_sha256'],
+            'exact_P7_language_receiving_guard')
+        source = current / 'source'
     if physical == 3 and (root / 'r212/DISPATCHED.json').exists():
         current = root / 'r212'
         require(read(current / 'DISPATCHED.json')['new_phase'] == 'R212_CAPTION_HUMOUR', 'exact_P3_caption_phase')
@@ -32,6 +38,8 @@ def configure(physical):
 def poll(physical, reference=None):
     root, target, source = configure(physical)
     snapshot = load('r210_read_snapshot', HOME / 'read_snapshot.py')
+    if physical in (2, 3, 5, 6):
+        reference = resume_verified_cursor(root, target, reference)
     result = snapshot.stored_poll(root / 'life', target / 'parent_cursor', reference)
     frontier = read(target / 'PRESERVED.json')['last_record_index']
     current = [entry for entry in records(root) if entry['index'] > frontier]
@@ -52,6 +60,32 @@ def poll(physical, reference=None):
     result.update(receipts=receipts, opening_published=publication is not None, opening_rendered=delivered,
         console_replied=any(entry['kind'] == 'R205_CONSOLE_REPLY' for entry in current))
     return result
+
+
+def resume_verified_cursor(root, target, reference):
+    marker = target / 'R230_BOOTSTRAP_CURSOR.json'
+    if not marker.exists():
+        return reference
+    candidate = read(marker)['reference']
+    store = target / 'parent_cursor'
+    states = []
+    for selected in (candidate, reference):
+        if selected is None:
+            states.append(None)
+            continue
+        path = Path(selected['path'])
+        require(path.parent == store and not path.is_symlink()
+            and path.stat().st_size <= 16 * 1024 * 1024
+            and sha(path) == selected['sha256'], 'pinned_operator_cursor')
+        state = read(path)
+        require(state['root'] == str((root / 'life').resolve()), 'same_cursor_life')
+        states.append(state)
+    newer, current = states
+    if current is not None:
+        require(newer['journal_id'] == current['journal_id'], 'same_cursor_journal')
+        if newer['next_index'] <= current['next_index']:
+            return reference
+    return candidate
 
 
 def publish(physical, message, opening=False):

@@ -1,4 +1,6 @@
 import os
+import hashlib
+import json
 from pathlib import Path
 import re
 import sys
@@ -12,6 +14,26 @@ import r210_parent_endpoint as endpoint
 
 
 class R210ParentTests(unittest.TestCase):
+    def test_verified_prior_cursor_avoids_replaying_the_whole_journal(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            target = root / 'r210'
+            store = target / 'parent_cursor'
+            store.mkdir(parents=True)
+            refs = []
+            for index in (80, 120):
+                path = store / (str(index) + '.json')
+                path.write_text(json.dumps(dict(root=str((root / 'life').resolve()), journal_id='same', next_index=index)))
+                refs.append(dict(path=str(path), sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
+            marker = target / 'R230_BOOTSTRAP_CURSOR.json'
+            marker.write_text(json.dumps(dict(reference=refs[1])))
+            self.assertEqual(endpoint.resume_verified_cursor(root, target, refs[0]), refs[1])
+            self.assertEqual(endpoint.resume_verified_cursor(root, target, refs[1]), refs[1])
+            self.assertEqual(endpoint.resume_verified_cursor(root, target, None), refs[1])
+            Path(refs[1]['path']).write_text('{}')
+            with self.assertRaisesRegex(ValueError, 'pinned_operator_cursor'):
+                endpoint.resume_verified_cursor(root, target, refs[0])
+
     def publication(self, physical, words, isolated=False):
         with tempfile.TemporaryDirectory() as temporary:
             target = Path(temporary)
