@@ -1,0 +1,235 @@
+{
+  "authority": {
+    "lease_extension": false,
+    "node5_source_cutoff_utc": "2026-09-20T18:00:00Z",
+    "ovx4_preparation_conservative_cutoff_utc": "2026-09-30T00:00:00Z"
+  },
+  "context_optimizer_rng_loaded": false,
+  "existing_attempt3_modified": false,
+  "exposure": {
+    "baseline": {
+      "baseline_capture_sha256": "c71d888e31ae71e679aee3bbb80fccadba8d0b036793038ee4aff241f37588de",
+      "bounded_header_bytes": 6853,
+      "canonical_record_counts": {
+        "INBOX": 0,
+        "LOADED": 1,
+        "REQUEST": 0,
+        "SLEEP_COMPLETE": 1
+      },
+      "canonical_record_manifest_sha256": "b3d8eb2c4b5462ebfa63ae87c7ee9b151d0b9a2885b37eb5f217d099d4ab9732",
+      "eligible": true,
+      "explicit_initial_LOADED_and_selected_COMPLETE": true,
+      "full_canonical_bytes": 3411563,
+      "header_only_noninput_records": 0,
+      "identifier_matches": {
+        "agentdev_621cb5d0bdea9584dc9f": [],
+        "agentdev_769e881d85fc5d27cb4c": [],
+        "agentdev_92a6a32f99def322d70e": []
+      },
+      "incremental_range": null,
+      "limits": "Reuses hash-bound original prefix audit; not a new full-body verification of prefix/UPDATE/RESPONSE records. Recorded source and inherited context only, not unseen pretraining or exhaustive paraphrase detection.",
+      "maximum_shared_fivegrams": {
+        "agentdev_621cb5d0bdea9584dc9f": 0,
+        "agentdev_769e881d85fc5d27cb4c": 0,
+        "agentdev_92a6a32f99def322d70e": 0
+      },
+      "parent_tokens": 0,
+      "prior_audit_cut": 8875,
+      "prior_audit_sha256": "456f9f05f74a81b108c44ebd0e2e9a5b8a7fdab02d4f024fa8dc0b7131bb2b0a",
+      "reused_prefix_requests": 300,
+      "schema": "C2_BOUNDED_INCREMENTAL_EXPOSURE_V1",
+      "semantic_matches": {
+        "agentdev_621cb5d0bdea9584dc9f": [],
+        "agentdev_769e881d85fc5d27cb4c": [],
+        "agentdev_92a6a32f99def322d70e": []
+      },
+      "semantic_threshold": {
+        "connective": "OR",
+        "minimum_fraction": 0.15,
+        "minimum_shared_fivegrams": 3
+      },
+      "source_context_loaded": false,
+      "source_cut_index": 5823,
+      "source_cut_sha256": "7c6cf68593c1d1f6c1ec56dd02f09e927b7ef4cd6a04e33ba8f2e40bc6894657",
+      "unresolved_requests": []
+    },
+    "current": {
+      "baseline_capture_sha256": "c71d888e31ae71e679aee3bbb80fccadba8d0b036793038ee4aff241f37588de",
+      "bounded_header_bytes": 5324550,
+      "canonical_record_counts": {
+        "INBOX": 95,
+        "LOADED": 2,
+        "REQUEST": 120,
+        "SLEEP_COMPLETE": 30
+      },
+      "canonical_record_manifest_sha256": "a9d42104320e26b4286974c8069db9fe12cbb9eacd105f9e586b2ff3c3539369",
+      "eligible": true,
+      "explicit_initial_LOADED_and_selected_COMPLETE": true,
+      "full_canonical_bytes": 2728750773,
+      "header_only_noninput_records": 2710,
+      "identifier_matches": {
+        "agentdev_621cb5d0bdea9584dc9f": [],
+        "agentdev_769e881d85fc5d27cb4c": [],
+        "agentdev_92a6a32f99def322d70e": []
+      },
+      "incremental_range": [
+        8876,
+        11831
+      ],
+      "limits": "Reuses hash-bound original prefix audit; not a new full-body verification of prefix/UPDATE/RESPONSE records. Recorded source and inherited context only, not unseen pretraining or exhaustive paraphrase detection.",
+      "maximum_shared_fivegrams": {
+        "agentdev_621cb5d0bdea9584dc9f": 0,
+        "agentdev_769e881d85fc5d27cb4c": 0,
+        "agentdev_92a6a32f99def322d70e": 0
+      },
+      "parent_tokens": 0,
+      "prior_audit_cut": 8875,
+      "prior_audit_sha256": "456f9f05f74a81b108c44ebd0e2e9a5b8a7fdab02d4f024fa8dc0b7131bb2b0a",
+      "reused_prefix_requests": 300,
+      "schema": "C2_BOUNDED_INCREMENTAL_EXPOSURE_V1",
+      "semantic_matches": {
+        "agentdev_621cb5d0bdea9584dc9f": [],
+        "agentdev_769e881d85fc5d27cb4c": [],
+        "agentdev_92a6a32f99def322d70e": []
+      },
+      "semantic_threshold": {
+        "connective": "OR",
+        "minimum_fraction": 0.15,
+        "minimum_shared_fivegrams": 3
+      },
+      "source_context_loaded": false,
+      "source_cut_index": 11831,
+      "source_cut_sha256": "e6ae76769b29b2ae43d056f3ef6ee832f35960b2a7190ad605236031704c0539",
+      "unresolved_requests": []
+    }
+  },
+  "future_eval_contract": {
+    "new_batch_admission_required": true,
+    "optimizer_loaded": false,
+    "parent_tokens": 0,
+    "rng_loaded": false,
+    "scenes": 3,
+    "seeds": [
+      23201,
+      23202
+    ],
+    "source_context_loaded": false,
+    "token_budget": 6144,
+    "training_updates": 0
+  },
+  "judge_epoch": {
+    "actual_gpu_epoch_loaded_by_this_task": false,
+    "adapter_sha256": "a070b28ef0bf1f57ad994e5bd715db77e2649d196960cea422971523696be3c4",
+    "name": "judge15625-base-v1",
+    "primary_config_sha256": "382cff58b32ca9fca80534e776809fa78735f5521502a654a55dbf648076a418",
+    "rank": 8,
+    "step": 15625
+  },
+  "learner_signals": [],
+  "no_gpu_dispatch": true,
+  "original_scene_pins": {
+    "FRESHNESS_VERIFIED.json": "456f9f05f74a81b108c44ebd0e2e9a5b8a7fdab02d4f024fa8dc0b7131bb2b0a",
+    "GAME_MANIFEST.json": "31e3c9919524deacc1d8255caa65f5121744ef6f0465988576b2d1b7ad281274",
+    "SELECTION.json": "a5caffc1a1b474bec2a805c4e305ef5ac2441054347fb5f72aeb0822456daa25",
+    "images/IMAGE_PACKET.json": "19fd75d1166293851b045cf22ef0db42af113e1c3374be14122f805037697d7e",
+    "sources/CAPTURE.json": "c71d888e31ae71e679aee3bbb80fccadba8d0b036793038ee4aff241f37588de"
+  },
+  "prepared_unix": 1789768972.4122877,
+  "raw_records_or_panels_published": false,
+  "receiver_alias": "ovx4",
+  "receiving_root_relative": "orch_post_recovery_c2_age_sources_20260918",
+  "schema": "C2_AGE_ADAPTER_ONLY_SOURCES_READY_V1",
+  "selection": {
+    "record_index": 11831,
+    "record_sha256": "e6ae76769b29b2ae43d056f3ef6ee832f35960b2a7190ad605236031704c0539",
+    "selected_unix": 1789768727.607578,
+    "selection_head": {
+      "index": 11833,
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "kind": "INBOX",
+      "previous_sha256": "3e6cc22509ad7f7a3e3cede837d56fa3e8d9d5833e750cfee31af9461b11170e",
+      "sha256": "c53969c582d5cbd4c93d3d48478383fdd500e4e7b4a1cbb5e7d2459808ab5d62"
+    },
+    "sleep": 117
+  },
+  "sources": [
+    {
+      "absolute_sleep": 117,
+      "adapter_file_sha256": "740a732dde0ac7f9f2c61ce9e64b4a9e0db118cdb18be46694088fd36dc56f86",
+      "adapter_only": true,
+      "adapter_relative": "sources/C2_NOW_sleep_000117_e6ae76769b29b2ae/adapter",
+      "adapter_state_sha256": "351b8148f815b77d6d193c1a44477cec2be03a90296a118584bade3db60099fc",
+      "copy_files": {
+        "COMMIT.json": {
+          "bytes": 6861,
+          "sha256": "1cf2a92b1eb1120a0c699fe5ec191a20dddbc27b489a9b6fae5ad6abbf2c4961"
+        },
+        "adapter/README.md": {
+          "bytes": 5416,
+          "sha256": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+        },
+        "adapter/adapter_config.json": {
+          "bytes": 1263,
+          "sha256": "c2d2873baf6785b135e184acde4cd3f489eac307c57602060a0f02dcabf5088d"
+        },
+        "adapter/adapter_model.safetensors": {
+          "bytes": 80792096,
+          "sha256": "740a732dde0ac7f9f2c61ce9e64b4a9e0db118cdb18be46694088fd36dc56f86"
+        }
+      },
+      "existing_archive_reused": false,
+      "exposure_sha256": "51a98e4dd8dea244f38cb27acab7e7d06a7409ca4da24093919cdbc6165da1eb",
+      "label": "C2_NOW",
+      "optimizer_rng_loaded": false,
+      "optimizer_steps": 7948,
+      "parent_tokens": 0,
+      "sleep_complete_index": 11831,
+      "sleep_complete_sha256": "e6ae76769b29b2ae43d056f3ef6ee832f35960b2a7190ad605236031704c0539",
+      "source_context_loaded": false,
+      "source_relative": "sources/C2_NOW_sleep_000117_e6ae76769b29b2ae",
+      "source_sha256": "35441b13ce30ad261a749287a53c064b6363654fc8a902cbd300c1fff8bd4441",
+      "source_status": "CPU_SOURCE_READY_NOT_ENROLLED_NOT_EVALUATED"
+    },
+    {
+      "absolute_sleep": 51,
+      "adapter_file_sha256": "3c0622810dd279fb7e3a59be9fcff691585c5b1acaeb5053ae21e26571ed8d30",
+      "adapter_only": true,
+      "adapter_relative": "sources/C2_SLEEP51_sleep_000051_7c6cf68593c1d1f6/adapter",
+      "adapter_state_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+      "copy_files": {
+        "COMMIT.json": {
+          "bytes": 6859,
+          "mtime_ns": 1789695373091129580,
+          "sha256": "70ec4d1d033cc280538a4d37c4eeffc995cdc7323cdbd38ecabfe8fc0c7b0ddb"
+        },
+        "adapter/README.md": {
+          "bytes": 5416,
+          "mtime_ns": 1789695372296251587,
+          "sha256": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+        },
+        "adapter/adapter_config.json": {
+          "bytes": 1263,
+          "mtime_ns": 1789695372378238400,
+          "sha256": "24d56ad9487d2e056f5d69dddc718174cb8c48ec431a815c6d967acf32be7101"
+        },
+        "adapter/adapter_model.safetensors": {
+          "bytes": 80792096,
+          "mtime_ns": 1789695372376238380,
+          "sha256": "3c0622810dd279fb7e3a59be9fcff691585c5b1acaeb5053ae21e26571ed8d30"
+        }
+      },
+      "existing_archive_reused": true,
+      "exposure_sha256": "e88e208f5813b02ee3a3d86fdc61f697f7961f2af4ab9d8a9e3ac21f1d2ccb9c",
+      "label": "C2_SLEEP51",
+      "optimizer_rng_loaded": false,
+      "optimizer_steps": 4908,
+      "parent_tokens": 0,
+      "sleep_complete_index": 5823,
+      "sleep_complete_sha256": "7c6cf68593c1d1f6c1ec56dd02f09e927b7ef4cd6a04e33ba8f2e40bc6894657",
+      "source_context_loaded": false,
+      "source_relative": "sources/C2_SLEEP51_sleep_000051_7c6cf68593c1d1f6",
+      "source_sha256": "8ab84bc8379db9e94307ae69d6fc9306e33085992a45ff16154ee52d34e76039",
+      "source_status": "CPU_SOURCE_READY_NOT_ENROLLED_NOT_EVALUATED"
+    }
+  ]
+}
