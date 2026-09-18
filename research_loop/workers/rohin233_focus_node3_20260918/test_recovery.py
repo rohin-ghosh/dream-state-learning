@@ -21,7 +21,7 @@ class RecoveryTests(unittest.TestCase):
     def test_serial_order_is_only_eight_kept_lives(self):
         self.assertEqual(set(recovery_serial.ORDER), set(recovery.PROTECTED))
         self.assertEqual(len(recovery_serial.ORDER), 8)
-        self.assertEqual(recovery_serial.ORDER[0], 'r213_r226_caption_observation_fork')
+        self.assertEqual(recovery_serial.ORDER[0], 'r213_math_c')
 
     def test_serial_requires_policy_at_both_levels(self):
         policy = 'R227_ALL_AUTHENTIC_CHILD_ROWS_V1'
@@ -41,6 +41,31 @@ class RecoveryTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'native_alive'):
                 recovery.retry_policy(Path('/owned'), 'r213_math_a', '/python')
             adopt.assert_not_called()
+
+    def test_conservative_user_date_ceiling_and_existing_reservation(self):
+        observed = recovery.datetime(2026, 9, 18, tzinfo=recovery.timezone.utc).timestamp()
+        receipt = recovery.datetime(2026, 9, 26, 3, 3, tzinfo=recovery.timezone.utc).timestamp()
+        expected = recovery.datetime(2026, 9, 24, 18, tzinfo=recovery.timezone.utc).timestamp()
+        self.assertEqual(recovery.conservative_ceiling(dict(lease_end_unix=receipt),
+            dict(next_reserved_unix=receipt), observed), expected)
+        self.assertEqual(recovery.conservative_ceiling(dict(lease_end_unix=receipt),
+            dict(next_reserved_unix=observed + 86400), observed), observed + 64800)
+        with patch('recovery.inactive', side_effect=ValueError('native_alive')):
+            with self.assertRaisesRegex(ValueError, 'native_alive'):
+                recovery.extend_prepared(Path('/owned'), 'r213_math_c', '/python')
+
+    def test_derived_operator_budget_preserves_original_lease_evidence(self):
+        original = dict(lease_end_unix=100000, hard_end_unix=20000,
+            operator_screen_cap_seconds=43200, evidence=dict(source='unchanged'))
+        snapshot = deepcopy(original)
+        extended = recovery.derived_budget_lease(original, 70000, 'prior-sha')
+        self.assertEqual(original, snapshot)
+        self.assertEqual(extended['evidence'], original['evidence'])
+        self.assertEqual(extended['lease_end_unix'], original['lease_end_unix'])
+        self.assertFalse(extended['actual_physical_lease_changed'])
+        self.assertIsNone(extended['operator_screen_cap_seconds'])
+        with self.assertRaisesRegex(ValueError, 'physical_lease_margin'):
+            recovery.derived_budget_lease(original, 90000, 'prior-sha')
 
     def test_services_do_not_duplicate_existing_attachment(self):
         with patch('pathlib.Path.exists', return_value=True), patch('recovery_services.subprocess.Popen') as process:

@@ -1,43 +1,27 @@
-# Node3 kept-life recovery — actual cut September18 17:25:11UTC
+# Node3 recovery — actual cut 2026-09-18T17:36:18.726378+00:00
 
-**3/8 natives actually LOADED.** This supersedes the historical live-status
-claims below, without rewriting their historical parent/child receipts.
+**4/8 actual LOADED and alive.** Prepared/dispatched is not live. Math A/B have no new LOADED; reports that they are currently live are not supported by this cut.
 
-|GPU|Kept life|Actual recovery status|Native / records|
-|---|---|---|---|
-|0|caption observation|LOADED17:08:31UTC|PID1941202; LOAD3111, REQUEST3114, ACT3125|
-|1|Math A|Reconciled, not dispatched|No new LOADED|
-|2|Math B|Reconciled, not dispatched|No new LOADED|
-|3|caption perspective|LOADED17:15:56UTC|PID1944402; LOAD3361, REQUEST3364, ACT3381|
-|4|Math C|Coherent checkpoint verified; journal reconciliation running|No new LOADED|
-|5|caption revision|LOADED17:20:07UTC|PID1946892; LOAD2878, REQUEST2881, ACT2892|
-|6|caption selfderive|Dispatched17:20:16UTC; native startup|No new LOADED|
-|7|caption historical-unparented|Reconciled, not dispatched|No new LOADED|
+|GPU|Life|Actual status / native PID|LOADED / ACT|New parent INBOX → REQUEST → RESPONSE|Deadline adoption|
+|---|---|---|---|---|---|
+|0|`r213_r226_caption_observation_fork`|LOADED_ALIVE / 1941202|3111 / 3125|3301 → 3303 → 3304|2026-09-19T04:51:09.675802+00:00 — resident, still latched|
+|1|`r213_math_a`|RECONCILED_NOT_LAUNCHED / none|none / none|No post-recovery uptake|2026-09-24T18:00:00+00:00 — configured only|
+|2|`r213_math_b_fork`|RECONCILED_NOT_LAUNCHED / none|none / none|No post-recovery uptake|2026-09-24T18:00:00+00:00 — configured only|
+|3|`r213_r226_caption_perspective_fork`|LOADED_ALIVE / 1944402|3361 / 3381|3510 → 3512 → 3513|2026-09-19T04:54:40.704853+00:00 — resident, still latched|
+|4|`r213_math_c`|DISPATCHED_NOT_LOADED / none|none / none|No post-recovery uptake|2026-09-24T18:00:00+00:00 — configured only|
+|5|`r213_r226_caption_revision_fork`|LOADED_ALIVE / 1946892|2878 / 2892|3005 → 3007 → 3008|2026-09-19T04:54:40.710867+00:00 — resident, still latched|
+|6|`r213_r226_caption_selfderive_fork`|LOADED_ALIVE / 1948574|3036 / 3050|3118 → 3120 → 3121|2026-09-19T04:54:40.727050+00:00 — resident, still latched|
+|7|`r213_r226_caption_unparented_fork`|RECONCILED_NOT_LAUNCHED / none|none / none|No post-recovery uptake|2026-09-24T18:00:00+00:00 — configured only|
 
-Perspective's actual SLEEP_RECIPE3410, SHA
-`85adb5af7b09498cf2ea364c8f54b0c0583c6ce8a692b999edbdbadcf9cec330`,
-confirms `R227_ALL_AUTHENTIC_CHILD_ROWS_V1`, no active semantic filters and
-`semantic_row_exclusion=false`. Revision also has an actual R227 recipe2921.
-Observation had already started before policy
-adoption: actual recipe3233 lacks R227, and the default scaffold-exclusion gap
-remains. No live learner is restarted to toggle policy.
-
-Source-bound manifest/checkpoint/tail-gap proofs: `RECOVERY_CURRENT.json`.
-Guarded serial launches run independently of parent/classroom attachment.
-Existing Tool relay resumed with original dedup cursors; actual observation
-ACT3125 has a transport ConnectionResetError, not a score. Leibniz repair is
-requested; no authenticated new score or new feedback render is claimed.
-Classroom CPU1949315/startticks45836730 is attached at17:21:44UTC, with each
-not-yet-recovered member explicitly inactive rather than blocking the ready
-children. Observation's new parent31df98f2bc40412a9eb5ce0545394ce2 was actually
-published17:21:46UTC; its new INBOX/REQUEST/RESPONSE is still pending at this cut.
-Other shown historical parent renders are not relabelled as post-recovery input.
-The pending math phase4/exchange3 parents are authenticated and will be reused,
-not resent; no new shared conclusion or resolved-training claim exists.
-The feedback CPU1945863 remains the sole original-cursor relay. Only the
-wait-for-all CPU1945860 was handed off; no native or feedback process was stopped.
-The independent serial native worker continues one verified LOADED at a time.
-Budget ends September19 04:51–04:54UTC, within the unchanged verified lease.
+## Current Boundaries
+- Math C dispatched at **17:32:30.142631UTC**, outer PID1957334. Fresh admission and native LAUNCH exist; actual LOADED remains pending. The serial worker waits for that actual LOADED before starting A, B, then GPU7.
+- September24 18:00UTC is the latest user-authorized date-only conservative operational ceiling, not a newly verified provider expiry or a lease extension. A/B/C/GPU7 passed the existing R131 saved-boundary extension/provenance gate with that configured ceiling.
+- GPU7's previous attempt failed `fresh_privileged_admission` before native start. The failure is preserved; a later root scan was clear. Its new ceiling-bound control is prepared, not dispatched.
+- The four already-running natives still have startup-latched native SIGALRM, GNU timeout, and systemd budgets ending September19 04:51–04:54UTC. GNU timeout acts roughly ten seconds earlier. **No tested live renewal hook exists in these resident sources; no native was held, paused, signalled, or restarted to change it.**
+- New parent uptake is verified for all four live captions. Parent CPU1949315 is an actual scripted Astra publisher, not a model-provider request. Math parents rebind each verified recovery; the separate bounded debate waits for all three actual natives. Prior phase4/exchange3 parent receipts are authenticated for reuse, not duplicate publication. No new shared-conclusion claim.
+- CPU parent/Tool service horizons remain at their earlier September19 limits until a source-bound successor adopts the new ceiling; shared scorer extension is requested from Leibniz, not claimed completed. The original Tool relay remains sole and retains its dedup cursors.
+- Observation retains the explicit R227 adoption gap. Perspective/revision/selfderive have actual R227 no-semantic-exclusion SLEEP_RECIPE receipts. This does not rewrite old receipts or claim policy adoption on other nodes.
+- Tests: **50 owned CPU tests PASS**; prior receiving parent suite32PASS. Current source/record hashes and checkpoint/tail-gap proofs are in `SOURCE_PINS.json`, `RECOVERY_CURRENT.json`, and `RECOVERY_PARENTS_CURRENT.json`. Full private states and old failed attempts remain off publication.
 
 ## Historical R233 parented epochs — September18 12:09UTC
 

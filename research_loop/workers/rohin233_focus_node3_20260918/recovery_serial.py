@@ -11,9 +11,10 @@ from recovery import PHASE, current_control, utc
 from recovery_proof import project
 
 
-ORDER = ('r213_r226_caption_observation_fork', 'r213_r226_caption_perspective_fork',
-    'r213_r226_caption_revision_fork', 'r213_r226_caption_selfderive_fork',
-    'r213_r226_caption_unparented_fork', 'r213_math_a', 'r213_math_b_fork', 'r213_math_c')
+ORDER = ('r213_math_c', 'r213_math_a', 'r213_math_b_fork',
+    'r213_r226_caption_unparented_fork', 'r213_r226_caption_observation_fork',
+    'r213_r226_caption_perspective_fork', 'r213_r226_caption_revision_fork',
+    'r213_r226_caption_selfderive_fork')
 
 
 def require_policy(control):
@@ -37,12 +38,14 @@ def run(root, python):
             row = next(item for item in project(root)['lives'] if item['life'] == name)
             if row['status'] == 'LOADED_ALIVE':
                 continue
-            raise ValueError('no_implicit_retry_or_duplicate_dispatch:' + name)
-        require_policy(control)
-        subprocess.run([python, '-B', str(Path(__file__).with_name('recovery.py')), 'launch',
-            '--root', str(root), '--name', name, '--python', python], check=True)
-        print(json.dumps(dict(observed_utc=utc(), life=name, status='DISPATCHED_WAITING_ACTUAL_LOADED')), flush=True)
-        end = time.time() + 900
+            print(json.dumps(dict(observed_utc=utc(), life=name,
+                status='WAITING_EXISTING_DISPATCH_NO_NEW_START')), flush=True)
+        else:
+            require_policy(control)
+            subprocess.run([python, '-B', str(Path(__file__).with_name('recovery.py')), 'launch',
+                '--root', str(root), '--name', name, '--python', python], check=True)
+            print(json.dumps(dict(observed_utc=utc(), life=name, status='DISPATCHED_WAITING_ACTUAL_LOADED')), flush=True)
+        end = time.time() + 3600
         while time.time() < end:
             row = next(item for item in project(root)['lives'] if item['life'] == name)
             if row['status'] == 'LOADED_ALIVE':

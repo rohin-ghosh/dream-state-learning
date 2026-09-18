@@ -212,7 +212,8 @@ def current_control(arm):
     default = arm / ('control_' + PHASE)
     active = read(arm / 'ACTIVE_RUNTIME.json')
     selected = Path(active['control'])
-    if selected.parent == arm and selected.name in (default.name, default.name + '_admission_retry1', default.name + '_policy'):
+    if selected.parent == arm and selected.name in (default.name, default.name + '_admission_retry1',
+            default.name + '_policy', default.name + '_policy_lease_ceiling'):
         return selected
     return default
 
@@ -352,6 +353,96 @@ def retry_admission(root, name, python):
         fresh_admission_sha256=sha(control / 'FRESH_ADMISSION.json'))))
 
 
+def conservative_ceiling(plan, guard, observed):
+    ceiling = datetime(2026, 9, 24, 18, tzinfo=timezone.utc).timestamp()
+    deadline = min(ceiling, plan['lease_end_unix'] - 21600, guard['next_reserved_unix'] - 21600)
+    require(deadline > observed + 3600, 'lease_aware_remaining_budget_not_new_short_experiment')
+    return deadline
+
+
+def derived_budget_lease(previous, deadline, prior_sha256):
+    require(deadline <= previous['lease_end_unix'] - 21600, 'unchanged_existing_physical_lease_margin')
+    lease = deepcopy(previous)
+    lease.update(hard_end_unix=deadline, operator_screen_cap_seconds=None,
+        operator_budget_basis='USER_20260918_DATE_ONLY_SEP25_MINUS_SIX_HOURS',
+        previous_operator_budget_receipt_sha256=prior_sha256,
+        actual_physical_lease_changed=False, new_provider_expiry_claimed=False)
+    return lease
+
+
+def extend_prepared(root, name, python):
+    inactive(root, name)
+    arm = root / name
+    old = current_control(arm)
+    previous = read(old / 'PLAN.json')
+    require(read(old / 'POLICY_READY.json')['policy'] == 'R227_ALL_AUTHENTIC_CHILD_ROWS_V1',
+        'stopped_R227_receiving_gate_required')
+    if (old / 'DISPATCHED.json').exists():
+        require(read(old / 'OUTER_FAILED.json')['error'] == 'fresh_privileged_admission'
+            and not (old / 'LAUNCH.json').exists() and not (old / 'NATIVE.log').exists(),
+            'only_pre_native_failed_attempt_may_get_new_authorized_budget')
+        require(not Path('/proc', str(read(old / 'DISPATCHED.json')['pid'])).exists(), 'old_outer_absent')
+    verify_reconciled(arm, old)
+    source = Path(previous['source_root'])
+    require(manifest_python(source) == read(old / 'GUARD.json')['source_pins'], 'unchanged_tested_receiving_source')
+    plan = deepcopy(previous)
+    require(not plan.get('authorized_wall_extension'), 'one_new_supported_wall_extension')
+    reference = read(old / 'RECONCILED.json')['recovery_record']
+    saved = record(arm / 'raw/stream/records' / f"{reference['index']:020d}.json")['document']['state']
+    plan['hard_end_unix'] = conservative_ceiling(plan, read(old / 'GUARD.json'), time.time())
+    plan['authorized_wall_extension'] = dict(schema='R131_SAVED_STATE_WALL_EXTENSION_V1',
+        previous_deadline_unix=saved['state']['deadline_unix'], previous_stream_sha256=saved['sha256'],
+        new_deadline_unix=plan['hard_end_unix'], lease_end_unix=plan['lease_end_unix'], safety_margin_seconds=21600)
+    control = arm / (old.name + '_lease_ceiling')
+    control.mkdir(mode=0o700)
+    for filename in ('READY.json', 'RECOVERY.json', 'RECONCILED.json',
+            'RECOVERY_APPENDED.json', 'ARCHIVE_REPLAY.json', 'CORRECTION_CACHE_RECOVERY.json',
+            'TAIL_ARTIFACTS_PRESERVED.json', 'POLICY_READY.json'):
+        shutil.copy2(old / filename, control / filename)
+    save(control / 'LEASE.json', derived_budget_lease(read(old / 'LEASE.json'),
+        plan['hard_end_unix'], sha(old / 'LEASE.json')))
+    save(control / 'PLAN.json', plan)
+    code = ('import json,sys; from pathlib import Path; '
+        'from organism_v6.orch_r125_continual_stream import ContinualStream,digest; '
+        'from gpu.orch_r125_continual_native import prepare_wall_extension; '
+        'plan=json.loads(Path(sys.argv[1]).read_bytes()); '
+        'saved=json.loads(Path(sys.argv[2]).read_bytes())["document"]["state"]; '
+        'stream=ContinualStream.restore(saved,expected_sha256=saved["sha256"]); '
+        'proof=prepare_wall_extension(plan,stream,resume=True,plan_sha256=sys.argv[3]); '
+        'assert stream.deadline_unix==saved["state"]["deadline_unix"]; '
+        'print(json.dumps(dict(passed=True,proof_sha256=digest(proof),prior_state_unchanged=True)))')
+    result = subprocess.run([python, '-B', '-c', code, str(control / 'PLAN.json'),
+        str(arm / 'raw/stream/records' / f"{reference['index']:020d}.json"), sha(control / 'PLAN.json')],
+        cwd=source, env=environment(source, root), capture_output=True, text=True, timeout=60)
+    save(control / 'WALL_CPU.json', dict(returncode=result.returncode, stdout=result.stdout, stderr=result.stderr))
+    require(result.returncode == 0, 'existing_R131_saved_boundary_wall_gate')
+    cpu = read(old / 'RECEIVING_CPU.json')
+    cpu.update(prior_receiving_sha256=sha(old / 'RECEIVING_CPU.json'), wall_cpu_sha256=sha(control / 'WALL_CPU.json'))
+    save(control / 'RECEIVING_CPU.json', cpu)
+    save(control / 'LEASE_CEILING_AUTHORIZATION.json', dict(observed_utc=utc(),
+        user_date_only='2026-09-25', conservative_finish_utc=utc(plan['hard_end_unix']),
+        new_provider_expiry_claimed=False, lease_extended=False, native_source_unchanged=True,
+        stopped_life_only=True, actual_WALL_EXTENDED_pending=True))
+    allocation = read(old / 'ALLOCATION.json')
+    allocation.update(declared_unix=time.time(), plan_sha256=sha(control / 'PLAN.json'),
+        cpu_receipt_path=str(control / 'RECEIVING_CPU.json'), cpu_receipt_sha256=sha(control / 'RECEIVING_CPU.json'))
+    save(control / 'ALLOCATION.json', allocation)
+    guard = read(old / 'GUARD.json')
+    guard.update(attempt_dir=str(control), plan_path=str(control / 'PLAN.json'),
+        plan_sha256=sha(control / 'PLAN.json'), hard_end_unix=plan['hard_end_unix'],
+        lease_path=str(control / 'LEASE.json'), lease_sha256=sha(control / 'LEASE.json'),
+        allocation_path=str(control / 'ALLOCATION.json'),
+        allocation_sha256=sha(control / 'ALLOCATION.json'))
+    save(control / 'GUARD.json', guard)
+    subprocess.run([python, '-B', '-c', 'from gpu.orch_r125_continual_guard import validate; import sys; validate(sys.argv[1])',
+        str(control / 'GUARD.json')], cwd=source, env=environment(source, root), check=True, timeout=40)
+    active = arm / 'ACTIVE_RUNTIME.r233.ceiling.tmp'
+    save(active, dict(source=str(source), control=str(control), module='gpu.r233_recovery_runtime',
+        recovery_receipt=str(control / 'RECOVERY.json')))
+    os.replace(active, arm / 'ACTIVE_RUNTIME.json')
+    print(json.dumps(dict(life=name, status='LEASE_CEILING_READY_NOT_LAUNCHED', deadline_utc=utc(plan['hard_end_unix']))))
+
+
 def reconcile(root, name, python):
     inactive(root, name)
     arm = root / name
@@ -419,7 +510,7 @@ def launch(root, name, python):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('mode', choices=('audit', 'prepare', 'reconcile', 'launch', 'retry_admission', 'adopt_policy', 'retry_policy'))
+    parser.add_argument('mode', choices=('audit', 'prepare', 'reconcile', 'launch', 'retry_admission', 'adopt_policy', 'retry_policy', 'extend_prepared'))
     parser.add_argument('--root', required=True, type=Path)
     parser.add_argument('--name', choices=tuple(PROTECTED))
     parser.add_argument('--python', default=sys.executable)

@@ -17,6 +17,9 @@ def project(root):
         row = dict(life=name, gpu=gpu, status='PREPARING', actual_native=None, LOADED=None, REQUEST=None, ACT=None)
         if (control / 'PLAN.json').exists():
             plan = read(control / 'PLAN.json')
+            row['configured_deadline_utc'] = utc(plan['hard_end_unix'])
+            row['deadline_utc'] = row['configured_deadline_utc']
+            row['resident_deadline_utc'] = None
             row['configured_learning_policy'] = plan.get('learn_row_policy')
             row['configured_think_learning_policy'] = plan['think_act_learn'].get('learn_row_policy')
             row['new_sleep_recipe_verified'] = False
@@ -27,7 +30,7 @@ def project(root):
                 checkpoint_sha256=receipt['checkpoint_sha256'], lost_tail_updates=receipt['lost_tail_updates'],
                 tail_response_count=len(receipt['tail_responses']), tail_inbox_count=len(receipt['tail_inbox_ids']),
                 preservation_manifest_sha256=receipt['preservation_manifest_sha256'],
-                deadline_utc=utc(receipt['new_deadline_unix']), exact_resident_continuity_claimed=False)
+                initial_recovery_deadline_utc=utc(receipt['new_deadline_unix']), exact_resident_continuity_claimed=False)
             original = arm / PHASE / 'stream/JOURNAL.json'
             row['same_journal_manifest'] = sha(original) == sha(arm / 'raw/stream/JOURNAL.json')
         if (control / 'READY.json').exists():
@@ -67,6 +70,7 @@ def project(root):
                         if str(control / 'GUARD.json') in actual['args'] and actual['state'] not in ('Z', 'X'):
                             row['actual_native'] = public_identity(actual)
                             row['status'] = 'LOADED_ALIVE'
+                            row['resident_deadline_utc'] = row['configured_deadline_utc']
                     except (FileNotFoundError, ProcessLookupError):
                         row['status'] = 'LOADED_BUT_EXITED'
                 elif kind == 'REQUEST':
