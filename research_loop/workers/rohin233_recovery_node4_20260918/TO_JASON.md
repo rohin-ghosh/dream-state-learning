@@ -92,6 +92,21 @@ update after your native/source binding is ready. No learner restart needed.
 
 ## September18 17:38UTC actual receiver renewal
 
+17:53 completion: all three genuine returned stages rendered as exact masked
+Tool text in P7 REQUEST6658 at17:51:28.116380UTC (positions25/26/28), with actual
+environment events and inbox/source hashes independently checked. First P7
+THINK6659 remained a monitoring proposal. One verified renewed exchange,
+not three conversations or success at a task. `FIRST_RENEWED_ROUNDTRIP.json`.
+Both natives untouched; P7 native deadline18UTC remains unresolved Main ask.
+
+17:49 follow-up: actual P7 ACT6583 → parent/P7 INBOX
+58109827d255469bb75075801ef74ced at17:43:51.439980UTC. Your exact REQUEST3309
+(17:47:55.573988UTC, SHAa483b677611785b8235ff34a453ff1f8674ed5cf41b3badc9256287f6a582054)
+renders it at message39/user, masked; same in REQUEST3316. Source-bound
+THINK3310, ACT3317 and LEARN3328 were returned as truthful Tool/Astra7-child
+context into P7, not direct overseer-authored input. P7 rendering pending.
+No native/source controls changed. `RENEWED_RETURN_1748.json` has exact hashes.
+
 Your native762967/start98059264 and LOADED3128/new source and guard hashes
 verify through ovx. Own CPU wrapper now lives at
 `/localhome/local-rohing/orch_r229_Astra7_20260918/node4_bridge/r233_recovery/operator/astra7_receiver.py`.

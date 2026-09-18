@@ -1,5 +1,42 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 17:53UTC renewed exchange complete; first P7 output still a proposal
+
+`FIRST_RENEWED_ROUNDTRIP.json`: P7 ACT6583 → new Astra7 INBOX58109827... →
+actual masked child REQUEST3309/3316 → committed child THINK3310, ACT3317,
+LEARN3328 → three attributed Tool inboxes → P7 REQUEST6658 at17:51:28.116380UTC,
+SHA98f8c47f418773a755fd38d5dd72a3f007055349728a597bb42e75e124b0d5d6.
+Independently re-read actual message25/26/28 exact Tool text plus environment
+history events/source hashes; all masked. This is one renewed exchange with
+three returned stages, not three independent conversations.
+
+First P7 response6659 at17:51:39.256218UTC, committed6660/THINK6661, is another
+Chinese hypothetical monitoring-parameter proposal, not the requested English
+artifact or evidence of improvement. Exact own output and source hashes saved.
+Recommendation remains preserved retirement versus a bounded real-child trial,
+pending Rohin; no retirement action, native signals or exclusions.
+
+`OVERSEER_CURRENT_CHILD_1752.json`: parent62 actually published17:52:00.947329,
+uses verified returned ACT3317 as its concrete object and asks P7 for its own
+next English question; no direct message to Astra7. CPU-only input projection
+now supersedes the old expired-receiver statement while preserving the old
+brief; model input verified loaded, not merely staged. Seventeen focused tests
+pass. Current overseer2996247/bridge2996246/reader3018354 remain running. CPU
+overseer bound September25 18UTC; P7 native1100592 still18UTC today, no native
+deadline renewal. Its boundary-restart exception remains Main's pending ask.
+
+## 17:49UTC actual child REQUEST and attributed returns; P7 render pending
+
+`RENEWED_RETURN_1748.json`: independently checked exact child REQUEST3309
+at17:47:55.573988UTC and REQUEST3316 at17:48:02.722101UTC, both user-message39
+equal the new P7 publication verbatim, `all_history_tokens_masked=true`.
+Actual THINK3310/ACT3317/LEARN3328 returned to P7 via Tool at17:48:04/13/later;
+they are three stages, not three conversations. Their brief outputs repeat
+a performance/uncertainty fragment, not measured improvement. P7 rendering
+still pending, so complete renewed roundtrip is not claimed yet. New CPU
+overseer2996247 is already lease-bound September25 18UTC; native deadlines
+unchanged, recommendation still pending Rohin and no retirement action.
+
 ## 17:44UTC first renewed authentic P7 forward published
 
 `FIRST_RENEWED_FORWARD.json`: exact committed P7 ACT6583/commit6584/stage6585

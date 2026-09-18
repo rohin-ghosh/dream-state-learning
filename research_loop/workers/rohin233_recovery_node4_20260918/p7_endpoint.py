@@ -10,6 +10,7 @@ import time
 
 from receipt_window import linked_reply, read_record
 from lease_horizon import cpu_horizon
+from route_truth import overlay
 
 
 OPERATOR = Path('/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C')
@@ -35,9 +36,22 @@ def install():
         original_live(source)
         fields = Path('/proc/1100592/stat').read_text().rsplit(') ', 1)[1].split()
         engine.require(fields[19] == '28670738', 'same_P7_native_start_ticks')
+        plan = Path(source).parent / 'control/PLAN.json'
+        engine.require(hashlib.sha256(plan.read_bytes()).hexdigest() ==
+            '6ac1502f85b1e0cba8a9870e9ed083c6afdc621a7ee451522ba8b19af0604d87'
+            and time.time() < json.loads(plan.read_bytes())['hard_end_unix'],
+            'CPU_renewal_does_not_extend_resident_native_budget')
 
     endpoint.host = host
     endpoint.live = live
+    original_observe = endpoint.observe
+
+    def observe(reference=None):
+        observation = original_observe(reference)
+        proof = Path(__file__).with_name('RENEWED_RETURN_1748.json')
+        return overlay(observation, json.loads(proof.read_bytes())) if proof.exists() else observation
+
+    endpoint.observe = observe
 
     def poll(reference=None):
         root, previous, source, output = engine.paths()
