@@ -1,5 +1,22 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 19:58UTC current ownership/progress, still not C2 ready
+
+`CONTINUATION_PROGRESS_1958.json`: C2 same829798/start29168595 is runnable,
+CPU5365seconds over about89minutes elapsed,12.414GB cumulative reads.
+No WALL/LOAD or new CPU-parent binding/render. Sole waiter3590563 remains
+bound September20 18UTC; old parent471781 remains alive under its old bound.
+No native signals/replay duplication. The correction cache still points to
+11420 with the audited SHA, consistent with f568ca6c7's no-current-collision
+finding at COMPLETE11502; this is not a general source repair or live R227.
+
+P7 overseer2996247, bridge3232118, reader3275809 are alive with fresh polls.
+Both route directions caught up; reader has19linked continued-native return
+stages, not19conversations. Latest recorded delivered return is Astra7
+response4271/commit4272/LEARN4273 to P7 REQUEST7258, Tool-attributed.
+The receipt is a source-bound reader projection, not a new full raw-REQUEST
+audit. No new parent intervention or direct parenting of Astra7 here.
+
 ## 19:35UTC C2 discarded-tail correction-cache audit: no collision at this boundary
 
 `C2_CORRECTION_BOUNDARY_AUDIT.json` independently checks canonical hashes and

@@ -1,0 +1,155 @@
+{
+  "C2": {
+    "cache_audit": "C2_CORRECTION_BOUNDARY_AUDIT.json",
+    "cache_audit_commit": "f568ca6c74e6f4598ee8121f003b801f3f436d18",
+    "cache_record_index": 11420,
+    "cache_record_sha256": "9b8f76cd8e7a9ec615dc94a7ae7b187edcf8d9dae20155355348e652766eabb7",
+    "cpu_seconds": 5365.17,
+    "no_new_parent_render_claim": true,
+    "process_state": "R",
+    "progress_sample_utc": "2026-09-18T19:58:11.612339+00:00",
+    "rchar": 12414118801,
+    "status": {
+      "SIGSTOP": false,
+      "actual_native_signals": [
+        "EXACT_PIDFD_SIGTERM_AT_DURABLE_COMPLETE"
+      ],
+      "all_exclusions_off_claim": false,
+      "checkpoint_cycle": 114,
+      "complete_index": 11502,
+      "complete_sha256": "9c59fe6c59a01948b6ffe894aaa681010346ccc671c2f774a10fe7399a49080f",
+      "component": "C2",
+      "deliberate_hold": false,
+      "guard_path": "/localhome/local-rohing/orch_r233_C2_deadline_20260918/control/GUARD.json",
+      "guard_sha256": "5f8a471647972138f7429d6cafd962241a5363ca1c4f0fa447bfbadcb2de1ded",
+      "hard_end_unix": 1789927200,
+      "hard_end_utc": "2026-09-20T18:00:00+00:00",
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "launch_utc": "2026-09-18T18:28:45.770218+00:00",
+      "lease_authority": "USER_REPORTED_CONSERVATIVE_DATE_ONLY_SIX_HOUR_MARGIN",
+      "lease_end_utc": "2026-09-21T00:00:00+00:00",
+      "model_LOAD_pending": true,
+      "native": {
+        "pid": 829798,
+        "start_ticks": "29168595"
+      },
+      "observed_utc": "2026-09-18T19:58:56.158428+00:00",
+      "old_exit_unix": 1789756101.421838,
+      "old_exit_utc": "2026-09-18T18:28:21.421838+00:00",
+      "optimizer_steps": 7756,
+      "plan_sha256": "3296caba7dbfc523ef534ce0d7ed9b5d338eb11d38e331b435a2376d9db7c65f",
+      "retirement": false,
+      "root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+      "source_root": "/localhome/local-rohing/orch_r222_C2_20260918_discussion2/source",
+      "source_unchanged": true,
+      "status": "NATIVE_REPLAY_NOT_LOADED",
+      "systemd": {
+        "ActiveState": "active",
+        "ExecMainStartTimestamp": "Fri 2026-09-18 18:28:45 UTC",
+        "RuntimeMaxUSec": "1d 23h 30min 59s",
+        "SubState": "running"
+      },
+      "timeout_argv": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "171064s",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r233_C2_deadline_20260918/control/GUARD.json"
+      ],
+      "training_policy_changed": false,
+      "wall_extended_pending": true
+    }
+  },
+  "P3_not_counted_alive": true,
+  "P3_owner": "Main",
+  "P7_Astra7": {
+    "continued_native_roundtrip_stage_count": 19,
+    "count_is_not_independent_conversations": true,
+    "forward_stage_limit": "ACT_ONLY_NO_RELABEL; old queues preserved, unsupported current stages not retried",
+    "latest_rendered_return": {
+      "P7_REQUEST_render": {
+        "inbox_sha256": "08525b0ba2a621d9fbf1e20f478ffcb85b3bbdcf4e0289a158e9761c62183871",
+        "record_index": 7258,
+        "record_sha256": "95da58befedaebc0f375cf52050be44ba786178eeeef1c9e03d09a9a0baaa6b6",
+        "request_count": 347,
+        "sleep_count": 112,
+        "speaker": "Tool",
+        "text_sha256": "8c37b2bec7cc9926b5e5d8ae57c2815b27c9116063277ea4e1db8f9c5738162e"
+      },
+      "origin": {
+        "commit_index": 4272,
+        "commit_sha256": "9837b737c8da0a036750242e739bde28d2976143a00c63b94aa03e55d4f3b9f3",
+        "journal_id": "6a2fa591a1304fd8b3eff24f65e5caff",
+        "request_sha256": "dd5ba0368e20403f961d3da6cccf08d8c1a525edd7f05439afed9bc77e572982",
+        "response_document_sha256": "cbed970b8334374fdf4611801676a03383bf22e7d3de5c12573ee85180d20fe3",
+        "response_index": 4271,
+        "response_sha256": "d995392c80bc79fb8577c2215bf90acbc7228101d5f4cfe15841df27aa33b4f0",
+        "stage": "LEARN",
+        "stage_index": 4273,
+        "stage_sha256": "ecb45a64ed1d445254a40976443f7e3b09406cb6e440fc56400de28855a31ee1",
+        "text_sha256": "71a194d0200c3ea6497a7ee9c51e2fb3081c63f3d94330e64c8d0b5928419014"
+      },
+      "publication_id": "5b8491dab7a64535b0f19c278bc24b81"
+    },
+    "observed_utc": "2026-09-18T19:59:02.602147+00:00",
+    "parent_poll_age_seconds": 6.575104713439941,
+    "phases": {
+      "ASTRA7_TO_P7": {
+        "caught_up": true,
+        "cursor": 4456,
+        "last_record_kind": "UPDATE",
+        "poll_age_seconds": 7.0435919761657715
+      },
+      "P7_TO_ASTRA7": {
+        "caught_up": true,
+        "cursor": 7379,
+        "last_record_kind": "UPDATE",
+        "poll_age_seconds": 0.43246984481811523
+      }
+    },
+    "source_bound_reader_receipt_not_new_raw_request_audit": true
+  },
+  "R227_status": "CPU_RECEIVING_TESTED_NOT_LIVE",
+  "native_signals": [],
+  "observed_utc": "2026-09-18T19:59:04.754887+00:00",
+  "resident_source_edits": [],
+  "services": [
+    {
+      "component": "P7_OVERSEER",
+      "pid": 2996247,
+      "start_ticks": "186012013",
+      "state": "S"
+    },
+    {
+      "component": "P7_ASTRA7_BRIDGE",
+      "pid": 3232118,
+      "start_ticks": "186271164",
+      "state": "S"
+    },
+    {
+      "component": "ROUTE_READER",
+      "pid": 3275809,
+      "start_ticks": "186318496",
+      "state": "S"
+    },
+    {
+      "component": "C2_LOAD_WAITER",
+      "pid": 3590563,
+      "start_ticks": "186658124",
+      "state": "S"
+    },
+    {
+      "component": "C2_PREDECESSOR_PARENT",
+      "pid": 471781,
+      "start_ticks": "183179491",
+      "state": "S"
+    }
+  ],
+  "task_state": "ACTIVE_C2_WALL_LOAD_AND_PARENT_RENDER_PENDING"
+}
