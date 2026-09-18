@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import shlex
 import subprocess
+import sys
 import time
 
 
@@ -31,6 +32,29 @@ def verified(row):
     return bool(0 <= target - actual <= 60 and row.get('loaded_index') is not None and row.get('wall_index') is not None
         and row.get('resident_deadline_utc') and row.get('alive_now') is True
         and row.get('identity_matches') is True)
+
+
+def support_row(entry, reference):
+    return dict(component=entry['name'], node='local' if entry['actual_host_alias'] == 'operator_vm'
+        else entry['actual_host_alias'], pid=entry.get('pid'), start_ticks=entry.get('start_ticks'),
+        command_sha256=entry.get('command_sha256'), status=entry.get('status', 'OWNER_OBSERVED_LIVE'),
+        deadline_utc=entry.get('actual_deadline'), execution_proof=entry.get('proof', []),
+        deadline_mechanism=entry.get('deadline_mechanism'), evidence=reference)
+
+
+def annotate_support(row, observation, observed_unix):
+    process = observation.get('processes', {}).get(str(row.get('pid')), {})
+    row['alive_now'] = process.get('alive')
+    ticks_match = row.get('start_ticks') is not None and str(row['start_ticks']) == process.get('start_ticks')
+    command_match = not row.get('command_sha256') or row['command_sha256'] == process.get('command_sha256')
+    row['identity_matches'] = bool(process.get('alive') and ticks_match and command_match)
+    try:
+        deadline = datetime.fromisoformat(row['deadline_utc']).timestamp()
+    except (KeyError, TypeError, ValueError):
+        deadline = None
+    row['future_bound_observed'] = deadline is not None and deadline > observed_unix
+    row['runtime_identity_and_bound_verified'] = row['identity_matches'] and row['future_bound_observed']
+    row['parent_delivery_inferred'] = False
 
 
 def collect():
@@ -58,7 +82,8 @@ def collect():
     for name in ('Tool_feedback_projection', 'fifth_caption_parent', 'local_model_parent', 'math_debate', 'parent_classroom'):
         component = node3[name]
         supports.append(dict(component=name, node='local' if name == 'local_model_parent' else 'node3',
-            pid=component.get('pid'), status=component.get('status'),
+            pid=component.get('pid'), start_ticks=component.get('start_ticks'),
+            command_sha256=component.get('command_sha256'), status=component.get('status'),
             deadline_utc=component.get('end_utc'), evidence=reference))
 
     node2 = WORKERS / 'rohin233_focus_node2_20260918/recovery_20260918T1646Z'
@@ -146,6 +171,10 @@ def collect():
         supports.append(dict(component=name + '_scorer', node='node4' if name == 'P3' else 'ovx4',
             pid=entry['pid'], status=value['status'], deadline_utc=utc(entry['deadline_unix']),
             primary_step=entry['primary_step'], primary_rank=entry['primary_rank'], evidence=reference))
+    support_path = services / 'SUPPORT_COMPONENT_TABLE.json'
+    if support_path.is_file():
+        table, reference = read(support_path)
+        supports.extend(support_row(entry, reference) for entry in table['rows'])
     return rows, supports, sources
 
 
@@ -163,8 +192,9 @@ for pid in json.load(__import__('sys').stdin):
     except FileNotFoundError:
         results[str(pid)]=dict(alive=False)
 print(json.dumps(dict(observed_unix=time.time(),processes=results)))'''
-    result = subprocess.run(['bash', str(REPO / f'gpu/{WRAPPERS[node]}_ssh.sh'),
-        'python3 -c ' + shlex.quote(code)], input=json.dumps(identifiers), capture_output=True,
+    command = [sys.executable, '-c', code] if node == 'local' else [
+        'bash', str(REPO / f'gpu/{WRAPPERS[node]}_ssh.sh'), 'python3 -c ' + shlex.quote(code)]
+    result = subprocess.run(command, input=json.dumps(identifiers), capture_output=True,
         text=True, timeout=40)
     if result.returncode:
         return node, dict(error='READ_ONLY_PROCESS_CENSUS_FAILED')
@@ -173,8 +203,9 @@ print(json.dumps(dict(observed_unix=time.time(),processes=results)))'''
 
 def main():
     rows, supports, sources = collect()
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        observations = dict(executor.map(lambda node: census(node, rows + supports), WRAPPERS))
+    with ThreadPoolExecutor(max_workers=6) as executor:
+        observations = dict(executor.map(lambda node: census(node, rows + supports), [*WRAPPERS, 'local']))
+    observed_unix = time.time()
     for row in rows:
         process = observations[row['node']].get('processes', {}).get(str(row['pid']), {})
         row['alive_now'] = process.get('alive')
@@ -182,11 +213,13 @@ def main():
             row.get('loaded_unix') is not None and process.get('started_unix', float('inf')) <= row['loaded_unix'] + 1)
         row['identity_matches'] = bool(process.get('alive') and identity)
         row['renewal_verified'] = verified(row)
+    for row in supports:
+        annotate_support(row, observations.get(row['node'], {}), observed_unix)
     stamp = datetime.now(timezone.utc).strftime('%H%M%S')
     result = dict(observed_utc=utc(time.time()), schema='R233_KEPT_FLEET_DEADLINES_V1',
         all_native_bounds_verified=all(row['renewal_verified'] for row in rows),
         all_support_components_verified=False,
-        support_scope_note='Detailed supporting-component receipts linked; this aggregate does not infer unlisted support or fresh parent renders.',
+        support_scope_note='Native, parent and service process identities are censused separately; on-demand endpoints and absent age dispatch are not running daemons. Process liveness never proves rendered parent guidance.',
         lives=rows, supporting_components=supports, source_receipts=sources, process_observations=observations,
         provider_expiry_independently_verified=False, lease_purchase_or_extension=False,
         uninterrupted_resident_continuity_claimed=False)
@@ -199,6 +232,13 @@ def main():
         state = 'LOADED; alive' if row['renewal_verified'] else row['source_status']
         bound = row['resident_deadline_utc'] or 'PENDING; target ' + row['target_deadline_utc']
         lines.append(f'| {row["life"]} | {row["node"]} / {row["gpu"]} | {state} | {bound} | {row["loaded_index"]} / {row["wall_index"]} |')
+    lines.extend(['', '## Supporting components', '',
+        '| Component | Execution node | Process identity | Observed deadline UTC |',
+        '| --- | --- | --- | --- |'])
+    for row in supports:
+        state = 'alive; identity matched' if row['identity_matches'] else (
+            'alive; identity unbound' if row['alive_now'] else row['status'])
+        lines.append(f'| {row["component"]} | {row["node"]} | {state} | {row["deadline_utc"] or "not established"} |')
     lines.extend(['', 'Dispatch/replay is not restoration. Actual reload gaps and source hashes are in the JSON.',
         'A running parent process is not proof of a rendered parent turn. Supporting-component coverage is explicitly incomplete.',
         'Existing user-reported lease dates, conservative safety margins; no lease purchase or provider-expiry assertion.'])
