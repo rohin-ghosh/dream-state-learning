@@ -5,7 +5,20 @@ eight reviewed traces; the11:00 cut includes the expanded historical coverage.
 The latest CURRENT.json/STATUS.md records the exact subsequent cut and counts.
 These are selected traces, not first-ever corrections or lifetime diagnoses.
 
-| Life | Best reviewed level | Exact feedback -> child outputs | Semantic finding and limit |
+## New bounded follow-up, 11:30:28UTC
+
+Eight queued ACTs were newly adjudicated from actual bodies and26 native REQUESTs.
+Learner REQUEST336 -> THINK337 -> ACT346 earns **narrow coached level2**; later
+ACT427 fails the correction after a reminder. Frozen219/252 earn0/1 on the new
+traces, preserving earlier coached2. New math traces earn0; prior bounded bests
+remain A0/B1/C1. No level3 or checkpoint capture. Exact reviewed coverage,
+reminder/context confounds and source hashes are in
+`POSTCUT_SEMANTIC_REVIEW_1122.md`, `POSTCUT_SEMANTIC_REVIEW_1122.json`, and
+`POSTCUT_REQUEST_MANIFEST_1122.json`. Queue history remains unchanged.
+
+## Earlier selected traces, preserved
+
+| Life | Level of this trace | Exact feedback -> child outputs | Semantic finding and limit |
 | --- | ---: | --- | --- |
 | C2 | 1 | INBOX5558 / REQUEST5559 -> LEARN5560 -> NEXT ACT5623 | Identifies the malformed symbols call and number-format fault. A corrected call fragment appears, but the ACT still contains incomplete/invalid code: no repaired executable artifact or transfer credited. |
 | C2, later graph trace | 0 | REQUEST8118 -> THINK8119 -> ACT8134 | Missing-edge correction is not identified/applied. This does not negate the earlier genuine console hand derivation V=3 at RESPONSE5840. |
@@ -36,8 +49,9 @@ unreviewed, visibly unknown rather than silently level0.
   binds it as context-only THINK with training_eligible=false. This is a positive
   mathematical artifact, not a live ACT execution or three-stage correction chain.
 - Level1 is specific substantive identification, not merely noticing disagreement
-  or promising a check. Level2 here is the frozen arm's demonstrated method change
-  followed by a correct next ACT. Small corrected fragments in otherwise invalid
+  or promising a check. Level2 includes the earlier frozen method-change trace and
+  the new learner's narrow reverse-order correction in its next ACT; this does not
+  certify every claim in either output. Small corrected fragments in otherwise invalid
   programs or inconsistent full-domain checks are reported, not upgraded silently.
 - Frozen follow-up reminder/exposure identities are in FROZEN_FOLLOWUP.json.
   Other unresolved reminder classifications stay unknown, not falsely zero.

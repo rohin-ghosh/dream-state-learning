@@ -4,6 +4,9 @@
   "interpretation": "Bounded correction evidence; unknown is not failure, keyword candidates are not semantic proof.",
   "learner_signals": 0,
   "level_provenance": "Revalidated existing analyst annotations, not new automated judgments.",
+  "manual_review_note": "Five rows refreshed from a separate read-only snapshot. Original observed_utc and all review_queue entries retain the collection cut; no queue cursor/history was changed. Reminder details are in POSTCUT_SEMANTIC_REVIEW_1122.json, not inferred from the legacy transfer-only reminder aggregate.",
+  "manual_review_updated_utc": "2026-09-18T11:30:28.600851+00:00",
+  "new_manual_judgments_since_collection_poll": 8,
   "new_semantic_judgments_this_poll": 0,
   "no_subagents": true,
   "observed_utc": "2026-09-18T11:12:47.936379+00:00",
@@ -2639,29 +2642,32 @@
       "unknown_candidates": 147
     },
     {
-      "actual_ACTs": 44,
-      "actual_committed_outputs": 131,
+      "actual_ACTs": 45,
+      "actual_committed_outputs": 134,
+      "bounded_followup_receipts": "POSTCUT_SEMANTIC_REVIEW_1122.json",
       "caught_up": true,
       "confirmed_reminders": 0,
-      "coverage_end": 2653,
+      "coverage_end": 2728,
       "coverage_start": 0,
       "cross_task_transfers": 0,
-      "external_feedback_candidates": 149,
+      "external_feedback_candidates": 153,
       "highest_verified_level": 0,
       "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
       "label": "MATH_A",
       "learner_controls": 0,
       "level_counts": {
-        "0": 1,
+        "0": 3,
         "1": 0,
         "2": 0,
         "3": 0
       },
       "lifetime_absence_claim": false,
+      "manual_review_batch": "POSTCUT_1122",
+      "manual_reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
       "model_calls": 0,
-      "observed_unix": 1789729960.8906105,
+      "observed_unix": 1789730527.1560683,
       "rejected_annotations": [],
-      "reminder_count_unknown": 1,
+      "reminder_count_unknown": 3,
       "review_queue": {
         "automatic_semantic_review": false,
         "displayed": 4,
@@ -3111,7 +3117,8 @@
         "stage_scope": "Following child outputs require actual R184_STAGE; unframed console outputs are not relabelled.",
         "status": "PENDING_MAIN_SEMANTIC_REVIEW"
       },
-      "reviewed_corrections": 1,
+      "reviewed_corrections": 3,
+      "semantic_coverage": "Selected traces only; received coverage bounds are not complete semantic review.",
       "status": "REVIEWED_PARTIAL",
       "traces": [
         {
@@ -3182,34 +3189,175 @@
           "observer_assessment": "Delivered parent explicitly says11/10 are disputed and asks a complete-domain check. Reviewed subsequent outputs alter the domain and move among11/12 without a demonstrated identification-then-correct-next-ACT sequence. A bare correct number is not proof of the requested correction or complete counting.",
           "parent_supplied_solution": false,
           "reminders": null
+        },
+        {
+          "child_records": [],
+          "context_exposure_at_transfer": null,
+          "correction_key": "parent:inbox:b19bc72722b346a1bdc3dfc4b6a3a423:dd5d11eff6f8619b5668eabd3480cfdfc1e05df6d6a0707aa2b70ffee560fe95",
+          "cross_task_transfer": "not_demonstrated",
+          "feedback": {
+            "actor": "parent",
+            "event_id": "parent:inbox:b19bc72722b346a1bdc3dfc4b6a3a423",
+            "inbox": {
+              "index": 2561,
+              "kind": "INBOX",
+              "sha256": "86023c98da3850744f49967d64072604fe56c3ae5fa9a1b4573972ec41a63d1a"
+            },
+            "request": {
+              "index": 2563,
+              "kind": "REQUEST",
+              "sha256": "7f12461b5ae0cda00f986242ef02eb4347c26c9f083cb8201af7428583ceac96"
+            },
+            "source_sha256": "dd5d11eff6f8619b5668eabd3480cfdfc1e05df6d6a0707aa2b70ffee560fe95",
+            "text_sha256": "3edf839c490194fce0a0516a651b56da196cac5bef50112aead3d3ef9b3b2fe0"
+          },
+          "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+          "level": 0,
+          "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+          "observed_following_child_records": [
+            {
+              "request": {
+                "index": 2563,
+                "kind": "REQUEST",
+                "sha256": "7f12461b5ae0cda00f986242ef02eb4347c26c9f083cb8201af7428583ceac96"
+              },
+              "response": {
+                "index": 2564,
+                "kind": "RESPONSE",
+                "sha256": "ea21907049a303f2223f59ac0e804592fd5c7ad92b54e79abb00d0e1a2be980c"
+              },
+              "stage": "THINK"
+            },
+            {
+              "request": {
+                "index": 2570,
+                "kind": "REQUEST",
+                "sha256": "a1b535bd1097bf94c8c187350ae39ba4f682866697126fe55008c93e159aa99d"
+              },
+              "response": {
+                "index": 2571,
+                "kind": "RESPONSE",
+                "sha256": "a51618d0170df8605de194a533b4a08de34a49bdec36156f9a9448162186daf8"
+              },
+              "stage": "ACT"
+            },
+            {
+              "request": {
+                "index": 2579,
+                "kind": "REQUEST",
+                "sha256": "ffb7536d3216a1d47f4232476d4ea668a396a2a8393a4f8bd733821d168b0f71"
+              },
+              "response": {
+                "index": 2580,
+                "kind": "RESPONSE",
+                "sha256": "4ee1baf0a9ae27e021eb078efe1c5a2851c7cce131471dc084f06f466a2df28a"
+              },
+              "stage": "LEARN"
+            }
+          ],
+          "observer_assessment": "The parent requests ordered pairs from 0 through9 with sum divisible by4 and a completeness audit. THINK2564 mentions25 among incompatible claims about112/100,25/104 and four-digit numbers, without identifying or repairing a specific domain/partition error. ACT2571 reverts to the old six-element domain/modulus3, calls that set ten integers, claims ten pairs and promises Python execution despite no executor. The later THINK2596 again juxtaposes ten and25 without a worked correction; ACT2603 is language-development prose, not the requested partition. Level0 on the selected completeness correction. The runtime ACT instruction still names the old0..5/modulus3 object, so the task-switch setting is confounded; this does not make either emitted count correct.",
+          "parent_supplied_solution": "Completeness-check method supplied; no count supplied.",
+          "reminders": null
+        },
+        {
+          "child_records": [],
+          "context_exposure_at_transfer": null,
+          "correction_key": "parent:inbox:72397c84238e49a1b5cac8016baeeed2:4cc15b744dece0ac1ac473c330fac9f59972b364bfe7a1e92d91779e1392f9e0",
+          "cross_task_transfer": "not_demonstrated",
+          "feedback": {
+            "actor": "parent",
+            "event_id": "parent:inbox:72397c84238e49a1b5cac8016baeeed2",
+            "inbox": {
+              "index": 2593,
+              "kind": "INBOX",
+              "sha256": "3ce3b5989dbd22564f019aa33b9be8f928613f1e13a6c94d08e18c9373cb4ca3"
+            },
+            "request": {
+              "index": 2595,
+              "kind": "REQUEST",
+              "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc"
+            },
+            "source_sha256": "4cc15b744dece0ac1ac473c330fac9f59972b364bfe7a1e92d91779e1392f9e0",
+            "text_sha256": "af962a389b34214d1ee75171db1e1849c8cbcb3e615f360f1c0c3e1567bc3765"
+          },
+          "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+          "level": 0,
+          "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+          "observed_following_child_records": [
+            {
+              "request": {
+                "index": 2595,
+                "kind": "REQUEST",
+                "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc"
+              },
+              "response": {
+                "index": 2596,
+                "kind": "RESPONSE",
+                "sha256": "90e106dec99e1a608c1e6f6f623f6c32844665d5fd9fd9b69666e33567daa4e3"
+              },
+              "stage": "THINK"
+            },
+            {
+              "request": {
+                "index": 2602,
+                "kind": "REQUEST",
+                "sha256": "903666fee797b696581f41f93a0a99bd012253968a93feaf3a05cc7883af049d"
+              },
+              "response": {
+                "index": 2603,
+                "kind": "RESPONSE",
+                "sha256": "7c1836a45d46087c5d370c2c043728baf4915821bdd8ff1cdd7e8590869cbd57"
+              },
+              "stage": "ACT"
+            },
+            {
+              "request": {
+                "index": 2611,
+                "kind": "REQUEST",
+                "sha256": "eda5747869c6d5c6429b030ab233384dab73579404a521e87d4ddb37f048d41d"
+              },
+              "response": {
+                "index": 2612,
+                "kind": "RESPONSE",
+                "sha256": "3cc942c5465a6f034103afa1615353ba10e9b8eb54396338e90ed020d94ee500"
+              },
+              "stage": "LEARN"
+            }
+          ],
+          "observer_assessment": "THINK2596 notes that ten differs from an expected25 but still equates the pair count with the number of integers; it gives no valid correction. NEXT ACT2603 discusses language and abstraction rather than counting. After COMPLETE2654 and further reading/science context, ACT2667 returns to the old0..5/modulus3 problem with eleven pairs out of36, which is not the actual count12. This is not transfer of the requested completeness check. Level0 for this reviewed correction; no lifetime failure claim.",
+          "parent_supplied_solution": "Method and current task supplied; no numerical answer supplied.",
+          "reminders": null
         }
       ],
-      "unknown_candidates": 148
+      "unknown_candidates": 150
     },
     {
-      "actual_ACTs": 50,
-      "actual_committed_outputs": 147,
+      "actual_ACTs": 51,
+      "actual_committed_outputs": 150,
+      "bounded_followup_receipts": "POSTCUT_SEMANTIC_REVIEW_1122.json",
       "caught_up": true,
       "confirmed_reminders": 0,
-      "coverage_end": 2332,
+      "coverage_end": 2406,
       "coverage_start": 0,
       "cross_task_transfers": 0,
-      "external_feedback_candidates": 158,
+      "external_feedback_candidates": 162,
       "highest_verified_level": 1,
       "journal_id": "45315f580ec845989682e2a728255608",
       "label": "MATH_B_FORK",
       "learner_controls": 0,
       "level_counts": {
-        "0": 0,
+        "0": 1,
         "1": 1,
         "2": 0,
         "3": 0
       },
       "lifetime_absence_claim": false,
+      "manual_review_batch": "POSTCUT_1122",
+      "manual_reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
       "model_calls": 0,
-      "observed_unix": 1789729960.1257334,
+      "observed_unix": 1789730527.557652,
       "rejected_annotations": [],
-      "reminder_count_unknown": 1,
+      "reminder_count_unknown": 2,
       "review_queue": {
         "automatic_semantic_review": false,
         "displayed": 4,
@@ -3636,7 +3784,8 @@
         "stage_scope": "Following child outputs require actual R184_STAGE; unframed console outputs are not relabelled.",
         "status": "PENDING_MAIN_SEMANTIC_REVIEW"
       },
-      "reviewed_corrections": 1,
+      "reviewed_corrections": 2,
+      "semantic_coverage": "Selected traces only; received coverage bounds are not complete semantic review.",
       "status": "REVIEWED_PARTIAL",
       "traces": [
         {
@@ -3735,34 +3884,106 @@
           "observer_assessment": "The delivered parent corrects off-object work and disputed counting. THINK1460 explicitly recognizes that switch flipping is unrelated. ACT1467 returns to the new object but a correct completed counting artifact is not established; later ACT1612 includes invalid pair(0,2) for m=3. Credit level1 only, not an extrapolated successful correction.",
           "parent_supplied_solution": false,
           "reminders": null
+        },
+        {
+          "child_records": [],
+          "context_exposure_at_transfer": null,
+          "correction_key": "parent:inbox:d6c887a46f0042a19d1b414983203581:c43dde8fa576965cfd4d0f0378fa4d6fe5621e62beb26f8739b5a1126ed7d356",
+          "cross_task_transfer": "not_demonstrated",
+          "feedback": {
+            "actor": "parent",
+            "event_id": "parent:inbox:d6c887a46f0042a19d1b414983203581",
+            "inbox": {
+              "index": 2271,
+              "kind": "INBOX",
+              "sha256": "5765576c5a9439805d83de2302cc204502a0bdf9b2f2c86f26be0a6324b6ed5c"
+            },
+            "request": {
+              "index": 2274,
+              "kind": "REQUEST",
+              "sha256": "cda8075bd884edc2e377265721b17551fdaa72cf01c15660f7ee1040fd100882"
+            },
+            "source_sha256": "c43dde8fa576965cfd4d0f0378fa4d6fe5621e62beb26f8739b5a1126ed7d356",
+            "text_sha256": "1f6c0757c4967e028f9a773915aeae5f1ed154b19cb9a81914b2197a9e10c008"
+          },
+          "journal_id": "45315f580ec845989682e2a728255608",
+          "level": 0,
+          "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+          "observed_following_child_records": [
+            {
+              "request": {
+                "index": 2274,
+                "kind": "REQUEST",
+                "sha256": "cda8075bd884edc2e377265721b17551fdaa72cf01c15660f7ee1040fd100882"
+              },
+              "response": {
+                "index": 2275,
+                "kind": "RESPONSE",
+                "sha256": "8add6addb2e3b85213a94bce636111e44545c1cd0c525c200060185868f44f0f"
+              },
+              "stage": "THINK"
+            },
+            {
+              "request": {
+                "index": 2283,
+                "kind": "REQUEST",
+                "sha256": "0e120671266bf2a413d09a838c9e6c5cd0237ad9cfc88ab0397c7f317f9789be"
+              },
+              "response": {
+                "index": 2284,
+                "kind": "RESPONSE",
+                "sha256": "d45778283357b97ceaa1ac956b15cfbf777a9f543758aa109fa201947234dcbc"
+              },
+              "stage": "ACT"
+            },
+            {
+              "request": {
+                "index": 2292,
+                "kind": "REQUEST",
+                "sha256": "33cc949c955ba4e2f6b7f5db5c7199db55583377266ae673362c3c247bb15136"
+              },
+              "response": {
+                "index": 2293,
+                "kind": "RESPONSE",
+                "sha256": "89b2c82b38dd8e0563324d1891491f5e7848d31a51b9839cc5ca71c126c34fa5"
+              },
+              "stage": "LEARN"
+            }
+          ],
+          "observer_assessment": "Despite the visible pair-counting/no-executor instruction, THINK2275 declares the old V polynomial the main task and says variable names were repaired. ACT2284 emits that polynomial code with a fullwidth numeric literal, subscripted names and mismatched identifiers, then proposes executing it. It neither identifies the task-switch correction nor provides the requested partition. Later THINK2340 and ACT2348 persist with polynomial code; ACT2348 treats a Cyrillic-spelled Rational lookalike as the SymPy class and uses invalid import syntax. No native execution is claimed by this audit. Level0 for the selected current-task/execution distinction, preserving the previously reviewed level1 on a different trace.",
+          "parent_supplied_solution": "Procedural task guidance only; stale unverified peer polynomial work is also exposed.",
+          "reminders": null
         }
       ],
-      "unknown_candidates": 157
+      "unknown_candidates": 160
     },
     {
-      "actual_ACTs": 55,
-      "actual_committed_outputs": 163,
+      "actual_ACTs": 56,
+      "actual_committed_outputs": 167,
+      "bounded_followup_receipts": "POSTCUT_SEMANTIC_REVIEW_1122.json",
       "caught_up": true,
       "confirmed_reminders": 0,
-      "coverage_end": 2366,
+      "coverage_end": 2459,
       "coverage_start": 0,
       "cross_task_transfers": 0,
-      "external_feedback_candidates": 173,
+      "external_feedback_candidates": 179,
       "highest_verified_level": 1,
       "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
       "label": "MATH_C",
       "learner_controls": 0,
       "level_counts": {
-        "0": 0,
+        "0": 2,
         "1": 1,
         "2": 0,
         "3": 0
       },
       "lifetime_absence_claim": false,
+      "manual_review_batch": "POSTCUT_1122",
+      "manual_reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
       "model_calls": 0,
-      "observed_unix": 1789729963.94815,
+      "observed_unix": 1789730527.9989927,
       "rejected_annotations": [],
-      "reminder_count_unknown": 1,
+      "reminder_count_unknown": 3,
       "review_queue": {
         "automatic_semantic_review": false,
         "displayed": 4,
@@ -4212,7 +4433,8 @@
         "stage_scope": "Following child outputs require actual R184_STAGE; unframed console outputs are not relabelled.",
         "status": "PENDING_MAIN_SEMANTIC_REVIEW"
       },
-      "reviewed_corrections": 1,
+      "reviewed_corrections": 3,
+      "semantic_coverage": "Selected traces only; received coverage bounds are not complete semantic review.",
       "status": "REVIEWED_PARTIAL",
       "traces": [
         {
@@ -4311,9 +4533,147 @@
           "observer_assessment": "Revised after complete-body inspection: THINK1547 explicitly identifies that6 is outside0..5 and therefore(3,6) is invalid. Credit this substantive partial error identification as level1; the earlier level0 undercredited it. NEXT ACT1554 keeps excluding6 but incorrectly excludes valid domain element3 and retains total10 rather than12. Narrow carry-over of the6 check is visible, but consistent complete-domain checking is not established, so no level2 mathematical solution or level3 transfer is claimed. The parent supplied the disputed counts and task, not the correct total.",
           "parent_supplied_solution": false,
           "reminders": null
+        },
+        {
+          "child_records": [],
+          "context_exposure_at_transfer": null,
+          "correction_key": "parent:inbox:376ac361a0e54b179b71c846fae957ec:f6d73533c1812fa9538a19f9dfe2700457382459868eb11202d602fb4a999d0e",
+          "cross_task_transfer": "not_demonstrated",
+          "feedback": {
+            "actor": "parent",
+            "event_id": "parent:inbox:376ac361a0e54b179b71c846fae957ec",
+            "inbox": {
+              "index": 2272,
+              "kind": "INBOX",
+              "sha256": "c291c5c099916c819c3b7723b392cc1436f7293fdb6f4b28898149e09a4bf29a"
+            },
+            "request": {
+              "index": 2274,
+              "kind": "REQUEST",
+              "sha256": "0032b78c1fadf9af822e3546f17b11ad7ba7fcba1bee4766504f3e8bb5cc3bb2"
+            },
+            "source_sha256": "f6d73533c1812fa9538a19f9dfe2700457382459868eb11202d602fb4a999d0e",
+            "text_sha256": "e925a4ecfef29dbb0886135303e7546e53ddb54141164b1a098efe3474e07873"
+          },
+          "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+          "level": 0,
+          "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+          "observed_following_child_records": [
+            {
+              "request": {
+                "index": 2274,
+                "kind": "REQUEST",
+                "sha256": "0032b78c1fadf9af822e3546f17b11ad7ba7fcba1bee4766504f3e8bb5cc3bb2"
+              },
+              "response": {
+                "index": 2275,
+                "kind": "RESPONSE",
+                "sha256": "eb341daee81b504efdcc17c1924a9d214606d644e0975fb91dfecb50af9c946a"
+              },
+              "stage": "ACT"
+            },
+            {
+              "request": {
+                "index": 2283,
+                "kind": "REQUEST",
+                "sha256": "853f39ae2be27316f16c3a9cde216d78a5cf3f7d11ff021edebabefd08e4d83d"
+              },
+              "response": {
+                "index": 2284,
+                "kind": "RESPONSE",
+                "sha256": "662c12e2dcd2adc01cf894466f83a0f7b76abcbd53aafc34ce2bf690bfb66959"
+              },
+              "stage": "LEARN"
+            },
+            {
+              "request": {
+                "index": 2298,
+                "kind": "REQUEST",
+                "sha256": "a004aa53d1d5e4a9e8aa6299608fdc4d811c674c0ce532af750980e21fd5b6b7"
+              },
+              "response": {
+                "index": 2299,
+                "kind": "RESPONSE",
+                "sha256": "d7d16420144d400ca86d1c99d5ddf727dc95cc3085550c27eec23215885620dc"
+              },
+              "stage": "THINK"
+            }
+          ],
+          "observer_assessment": "THINK2299 repeats that the old count30 is verified rather than identifying a partition error. NEXT ACT2306 omits9 from residue class1, uses unordered binomial counts for ordered pairs, includes incompatible residue combinations, and calls3+18 equal to30. For the actual parent task0..9/modulus4, independent analyst enumeration gives25; this check was not delivered to the learner. After a repeated parent completeness instruction, THINK2351 still endorses30 and ACT2358 switches to an unrelated V equation with inconsistent substitutions. Level0 for this selected correction; prior best level1 remains a different narrow trace.",
+          "parent_supplied_solution": "Residue-class method supplied; no numerical solution supplied.",
+          "reminders": null
+        },
+        {
+          "child_records": [],
+          "context_exposure_at_transfer": null,
+          "correction_key": "parent:inbox:472d1f2c436540e9894a338266ad4b6d:4fd227d6118d1fc45ab11564a3f9852752deaf9657e064c13a34f805245494ca",
+          "cross_task_transfer": "not_demonstrated",
+          "feedback": {
+            "actor": "parent",
+            "event_id": "parent:inbox:472d1f2c436540e9894a338266ad4b6d",
+            "inbox": {
+              "index": 2347,
+              "kind": "INBOX",
+              "sha256": "494b6a85bbd6630871da4e759994f38eb296d3c24a3c4ae2fba6ee226f737a30"
+            },
+            "request": {
+              "index": 2350,
+              "kind": "REQUEST",
+              "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9"
+            },
+            "source_sha256": "4fd227d6118d1fc45ab11564a3f9852752deaf9657e064c13a34f805245494ca",
+            "text_sha256": "ed0a63d67b37bf33843db199f90156ba52e5f2ffe196902edaf8e1b5c731f328"
+          },
+          "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+          "level": 0,
+          "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+          "observed_following_child_records": [
+            {
+              "request": {
+                "index": 2350,
+                "kind": "REQUEST",
+                "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9"
+              },
+              "response": {
+                "index": 2351,
+                "kind": "RESPONSE",
+                "sha256": "c90b57245f0b92a5b86fbfc725047dc61700cbb952d1063b0b65864e4a7e9171"
+              },
+              "stage": "THINK"
+            },
+            {
+              "request": {
+                "index": 2357,
+                "kind": "REQUEST",
+                "sha256": "ee847fdded5b91c4ea4366bf70165c8d3a7dcae21bb8d2574fdce84700c3efef"
+              },
+              "response": {
+                "index": 2358,
+                "kind": "RESPONSE",
+                "sha256": "de52308140d1a312029911d7a99409f95a452eddbbadf40c129574b25353181a"
+              },
+              "stage": "ACT"
+            },
+            {
+              "request": {
+                "index": 2366,
+                "kind": "REQUEST",
+                "sha256": "421820d32b9b8a85d6d778b162effeea73c6b49945d4b3920b1c26813275dbe1"
+              },
+              "response": {
+                "index": 2367,
+                "kind": "RESPONSE",
+                "sha256": "69dfd692cfd5ea038f921e60dddf76452948480367a7714609598916c1db66a2"
+              },
+              "stage": "LEARN"
+            }
+          ],
+          "observer_assessment": "THINK2351 incorrectly endorses the count30 and reopens V. NEXT ACT2358 performs inconsistent algebra on that unrelated object, not a corrected residue partition. After COMPLETE2393, THINK2398 discusses the polynomial and peer language essay; ACT2406 again works V, rounds its derived coefficient, then returns to the older0..5/modulus3 task while claiming30 and emitting unexecuted counting code. It acknowledges lack of execution support, but that separate limitation is not application of the delivered partition correction. Level0 for this reviewed target; no cross-task transfer or level3.",
+          "parent_supplied_solution": "Method supplied; no numerical answer supplied.",
+          "reminders": null
         }
       ],
-      "unknown_candidates": 172
+      "unknown_candidates": 176
     },
     {
       "actual_ACTs": 27,
@@ -7281,29 +7641,32 @@
       "unknown_candidates": 42
     },
     {
-      "actual_ACTs": 5,
-      "actual_committed_outputs": 15,
+      "actual_ACTs": 6,
+      "actual_committed_outputs": 18,
+      "bounded_followup_receipts": "POSTCUT_SEMANTIC_REVIEW_1122.json",
       "caught_up": true,
       "confirmed_reminders": 0,
-      "coverage_end": 390,
+      "coverage_end": 475,
       "coverage_start": 0,
       "cross_task_transfers": 0,
-      "external_feedback_candidates": 11,
-      "highest_verified_level": 1,
+      "external_feedback_candidates": 13,
+      "highest_verified_level": 2,
       "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
       "label": "FRESH_R231",
       "learner_controls": 0,
       "level_counts": {
         "0": 1,
         "1": 1,
-        "2": 0,
+        "2": 1,
         "3": 0
       },
       "lifetime_absence_claim": false,
+      "manual_review_batch": "POSTCUT_1122",
+      "manual_reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
       "model_calls": 0,
-      "observed_unix": 1789729967.0698168,
+      "observed_unix": 1789730525.6731646,
       "rejected_annotations": [],
-      "reminder_count_unknown": 2,
+      "reminder_count_unknown": 3,
       "review_queue": {
         "automatic_semantic_review": false,
         "displayed": 4,
@@ -7731,7 +8094,8 @@
         "stage_scope": "Following child outputs require actual R184_STAGE; unframed console outputs are not relabelled.",
         "status": "PENDING_MAIN_SEMANTIC_REVIEW"
       },
-      "reviewed_corrections": 2,
+      "reviewed_corrections": 3,
+      "semantic_coverage": "Selected traces only; received coverage bounds are not complete semantic review.",
       "status": "REVIEWED_PARTIAL",
       "traces": [
         {
@@ -7899,9 +8263,133 @@
           "observer_assessment": "Post-recovery REQUEST174 renders a second explicit request for the still-missing inverse check, with the method supplied but no numerical answer. THINK175 copies working-state-like prose and promises reverse verification, without a worked correction or a clear diagnosis of its earlier regrouped-check substitution. NEXT ACT184 again starts17+8-6=19 and ends at the heading for a different verification, not the requested inverse calculation. A promise to verify is not credited as substantive correction identification. The earlier pre-crash level1 remains preserved; this selected later trace is level0 and not proof of permanent inability.",
           "parent_supplied_solution": true,
           "reminders": null
+        },
+        {
+          "child_records": [
+            {
+              "committed": {
+                "index": 338,
+                "kind": "COMMITTED",
+                "sha256": "aad5a3120dc9ee8dd4532c594152f7cf9a95d99edef2a165aa852b2bc29eeadd"
+              },
+              "cycle": 5,
+              "end": 1073,
+              "record": {
+                "index": 337,
+                "kind": "RESPONSE",
+                "sha256": "5bbbc2d8dd6207640e66d3277d44bc7c4b87df88f119cc4582b06bd70ab4488a"
+              },
+              "request": {
+                "index": 336,
+                "kind": "REQUEST",
+                "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+              },
+              "span_sha256": "be6a6d77ba7dea44ea71eaab4cbba7e14475d71e9770fcca96f6c88c7fb7902a",
+              "stage": "THINK",
+              "stage_record": {
+                "index": 339,
+                "kind": "R184_STAGE",
+                "sha256": "f118ae4e7868f123634b5be602433e0f167d1812f4a555c295dbdafb20bc93eb"
+              },
+              "start": 977
+            },
+            {
+              "committed": {
+                "index": 347,
+                "kind": "COMMITTED",
+                "sha256": "0790feb3b838fa49117993866d0cc787732315db5a59ae768489cd6d29fa7eb5"
+              },
+              "cycle": 5,
+              "end": 1331,
+              "record": {
+                "index": 346,
+                "kind": "RESPONSE",
+                "sha256": "5fc4e64d2cb565421cb17ed8f29ac2a988e617144516d3898e6e638d4e306961"
+              },
+              "request": {
+                "index": 345,
+                "kind": "REQUEST",
+                "sha256": "5bbf98363489d9dd04405fceec1ebcf8baf7fecf20dab08c229d75a8038049c2"
+              },
+              "span_sha256": "140f354e73e7bb4ef62e947b6ebde9ad789ae5e8c2b9bdeeb6b3891e76bbc2a2",
+              "stage": "ACT",
+              "stage_record": {
+                "index": 348,
+                "kind": "R184_STAGE",
+                "sha256": "51fa0330fe7629098ec0f4ba0e542fc7bd50bd90a90112e75e85ce1f8d6ff953"
+              },
+              "start": 1198
+            }
+          ],
+          "context_exposure_at_transfer": null,
+          "correction_key": "parent:inbox:c93ae171dc0e4d2a947f5377200c05d1:4cdf51fd5697235d777bf26fa7c83516196c61d6d810e63d06b4bba273f16463",
+          "cross_task_transfer": "not_demonstrated",
+          "feedback": {
+            "actor": "parent",
+            "event_id": "parent:inbox:c93ae171dc0e4d2a947f5377200c05d1",
+            "inbox": {
+              "index": 278,
+              "kind": "INBOX",
+              "sha256": "faf72b50bd9cc002b023208c56511557701a357e22b517a64644b56bc19cffd1"
+            },
+            "request": {
+              "index": 336,
+              "kind": "REQUEST",
+              "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+            },
+            "source_sha256": "4cdf51fd5697235d777bf26fa7c83516196c61d6d810e63d06b4bba273f16463",
+            "text_sha256": "14a3fefd4f7a4db87daa770a7c5adc53740b285dfadbada86d2057c9de0b60c8"
+          },
+          "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+          "level": 2,
+          "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+          "observed_following_child_records": [
+            {
+              "request": {
+                "index": 336,
+                "kind": "REQUEST",
+                "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+              },
+              "response": {
+                "index": 337,
+                "kind": "RESPONSE",
+                "sha256": "5bbbc2d8dd6207640e66d3277d44bc7c4b87df88f119cc4582b06bd70ab4488a"
+              },
+              "stage": "THINK"
+            },
+            {
+              "request": {
+                "index": 345,
+                "kind": "REQUEST",
+                "sha256": "5bbf98363489d9dd04405fceec1ebcf8baf7fecf20dab08c229d75a8038049c2"
+              },
+              "response": {
+                "index": 346,
+                "kind": "RESPONSE",
+                "sha256": "5fc4e64d2cb565421cb17ed8f29ac2a988e617144516d3898e6e638d4e306961"
+              },
+              "stage": "ACT"
+            },
+            {
+              "request": {
+                "index": 354,
+                "kind": "REQUEST",
+                "sha256": "0d96dc85acf8f453e826ada008128a89a7904df21da9ddae1981ee22dd9597bc"
+              },
+              "response": {
+                "index": 355,
+                "kind": "RESPONSE",
+                "sha256": "4e2189c1920ea681ee8746ebc6ab3412810f2b1921af95e0e6f8e9d6d1eeb2fc"
+              },
+              "stage": "LEARN"
+            }
+          ],
+          "observer_assessment": "THINK337 identifies that reversing requires undoing the last operation first. The next ACT346 actually computes 19+6=25 and 25-8=17 for 17+8-6=19. This earns level2 for that narrow, coached correction, not for the entire output: an earlier copied VERIFIED equality in ACT346 is still false. LEARN355 contains a correct check of another expression but is LEARN, not a later ACT. After COMPLETE414, parent feedback in REQUEST417 explicitly reminds reverse-order checking and sets 23+9-7. ACT427 calculates 25 but undoes the operations in the wrong order and ends with a false equality, so it does not demonstrate unreminded transfer or correction survival. No level3 or adapter-retention claim.",
+          "parent_supplied_solution": "Method supplied; numerical inverse steps not supplied in this feedback.",
+          "reminders": null
         }
       ],
-      "unknown_candidates": 9
+      "unknown_candidates": 10
     },
     {
       "highest_verified_level": null,
@@ -7916,29 +8404,32 @@
       "status": "ALIAS_OF_FRESH_R231_SAME_JOURNAL_RECOVERY_LOADED172_GAP_DECLARED"
     },
     {
-      "actual_ACTs": 8,
-      "actual_committed_outputs": 24,
+      "actual_ACTs": 11,
+      "actual_committed_outputs": 33,
+      "bounded_followup_receipts": "POSTCUT_SEMANTIC_REVIEW_1122.json",
       "caught_up": true,
       "confirmed_reminders": 0,
-      "coverage_end": 273,
+      "coverage_end": 372,
       "coverage_start": 0,
       "cross_task_transfers": 0,
-      "external_feedback_candidates": 17,
+      "external_feedback_candidates": 23,
       "highest_verified_level": 2,
       "journal_id": "30fa18c869b34fd496a2758a4a28e197",
       "label": "R232_SIBLING_FROZEN",
       "learner_controls": 0,
       "level_counts": {
-        "0": 1,
-        "1": 0,
+        "0": 2,
+        "1": 1,
         "2": 1,
         "3": 0
       },
       "lifetime_absence_claim": false,
+      "manual_review_batch": "POSTCUT_1122",
+      "manual_reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
       "model_calls": 0,
-      "observed_unix": 1789729967.8381248,
+      "observed_unix": 1789730526.0417006,
       "rejected_annotations": [],
-      "reminder_count_unknown": 2,
+      "reminder_count_unknown": 4,
       "review_queue": {
         "automatic_semantic_review": false,
         "displayed": 4,
@@ -8389,7 +8880,8 @@
         "stage_scope": "Following child outputs require actual R184_STAGE; unframed console outputs are not relabelled.",
         "status": "PENDING_MAIN_SEMANTIC_REVIEW"
       },
-      "reviewed_corrections": 2,
+      "reviewed_corrections": 4,
+      "semantic_coverage": "Selected traces only; received coverage bounds are not complete semantic review.",
       "status": "REVIEWED_PARTIAL",
       "traces": [
         {
@@ -8584,9 +9076,175 @@
           "observer_assessment": "Post-recovery REQUEST77 renders a concrete correction: a new task was proposed but not done; calculate34-15+7 now and check independently. THINK78 says the next task is to determine a new operation rather than identifying this omitted named task. NEXT ACT87 repeats17+8-6 and an endpoint check. That repeated arithmetic is real and correct for the old task, but it does not answer the new34-15+7 task. This message also explicitly reminds reverse-checking, so ACT87 cannot establish unreminded cross-task transfer from the earlier level2 trace.",
           "parent_supplied_solution": false,
           "reminders": null
+        },
+        {
+          "child_records": [],
+          "context_exposure_at_transfer": null,
+          "correction_key": "parent:inbox:968418545f514125b0a43c239564f0f8:6350f045dad8e160708b6c38a54d234f84a022a8d74911a3e2d8fd57c5b1b59f",
+          "cross_task_transfer": "not_demonstrated",
+          "feedback": {
+            "actor": "parent",
+            "event_id": "parent:inbox:968418545f514125b0a43c239564f0f8",
+            "inbox": {
+              "index": 199,
+              "kind": "INBOX",
+              "sha256": "c38f1cdb84fda59a9d2d7f976aa3f9ad5e948d6c78c999829670a3a36ac2381f"
+            },
+            "request": {
+              "index": 209,
+              "kind": "REQUEST",
+              "sha256": "9a97006acb44d907c38b5e8de080d8c02823811b1cfa29316a99572ff8cf5fa4"
+            },
+            "source_sha256": "6350f045dad8e160708b6c38a54d234f84a022a8d74911a3e2d8fd57c5b1b59f",
+            "text_sha256": "e33b6950801360c4d47db55345ca5ad3dab49132d435e7236a7b9d11809cb100"
+          },
+          "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+          "level": 0,
+          "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+          "observed_following_child_records": [
+            {
+              "request": {
+                "index": 209,
+                "kind": "REQUEST",
+                "sha256": "9a97006acb44d907c38b5e8de080d8c02823811b1cfa29316a99572ff8cf5fa4"
+              },
+              "response": {
+                "index": 210,
+                "kind": "RESPONSE",
+                "sha256": "75c99fd61621be2144d27f89aa6a191b5a6d533914148a994a7109d670e5c433"
+              },
+              "stage": "THINK"
+            },
+            {
+              "request": {
+                "index": 218,
+                "kind": "REQUEST",
+                "sha256": "d9c41bbbd743678429f8381c487ad3e1704181f1e5b73b27c860474c55594669"
+              },
+              "response": {
+                "index": 219,
+                "kind": "RESPONSE",
+                "sha256": "b92ac415b8374b4b10ff5e649000812cbd5af4a7e1c1828199e826ba31956ae9"
+              },
+              "stage": "ACT"
+            },
+            {
+              "request": {
+                "index": 227,
+                "kind": "REQUEST",
+                "sha256": "2f3b47179eee8f17d9a8c06be17ececda4f61fba33cba0ce1e0bf161a13b2d92"
+              },
+              "response": {
+                "index": 228,
+                "kind": "RESPONSE",
+                "sha256": "6de8ce69bc71e25d735f46dceff0840919e14a2ead532b97997b121ddda254c1"
+              },
+              "stage": "LEARN"
+            }
+          ],
+          "observer_assessment": "ACT186 correctly calculates and reverse-checks 34-15+7 in its final work, while its surrounding notes name other problems. REQUEST209 explicitly identifies that mismatch and assigns 42-18+9. THINK210 correctly calculates and reverses the new expression, but continues an inaccurate account of the previous calculation rather than identifying the notes mismatch. The next ACT219 contains a truncated metadata/task-note block, switches back to 17+8-6, and emits no worked calculation. Correct THINK arithmetic is not silently promoted to ACT application. After a fresh parent correction at REQUEST242, ACT252 completes an inverse check only for the old 17+8-6 object. Level0 for this selected notes/current-object correction, not a global statement about mathematical ability; the separately reviewed later feedback earns level1.",
+          "parent_supplied_solution": "Requested a checked calculation but did not supply the numerical result.",
+          "reminders": null
+        },
+        {
+          "child_records": [
+            {
+              "committed": {
+                "index": 244,
+                "kind": "COMMITTED",
+                "sha256": "257d824ee234199d78f0dd3e073c6048599f3a3f32dbb629008a71415ae04ca5"
+              },
+              "cycle": 8,
+              "end": 267,
+              "record": {
+                "index": 243,
+                "kind": "RESPONSE",
+                "sha256": "cebc9b4f62562073f07a9ba6caac53d74817585b7143af233b0f3a4c019fc985"
+              },
+              "request": {
+                "index": 242,
+                "kind": "REQUEST",
+                "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+              },
+              "span_sha256": "6c249b1c548aba3f8e7ef0eb771b7c319e7af915e87dd9b226b11e9abc2a7a0d",
+              "stage": "THINK",
+              "stage_record": {
+                "index": 245,
+                "kind": "R184_STAGE",
+                "sha256": "a8bbbacac0d43a3388c49ff6777247a0eb5439d5cfe05af19515e745f7098cf3"
+              },
+              "start": 188
+            }
+          ],
+          "context_exposure_at_transfer": null,
+          "correction_key": "parent:inbox:ac403801fc1b4a95b51c71c3b713333a:9becd3c15d44577cf1ced724d3e3c24a0196e7bccf05ea679138c011127bb378",
+          "cross_task_transfer": "not_demonstrated",
+          "feedback": {
+            "actor": "parent",
+            "event_id": "parent:inbox:ac403801fc1b4a95b51c71c3b713333a",
+            "inbox": {
+              "index": 232,
+              "kind": "INBOX",
+              "sha256": "3eaa77ea3775607283a6fb675269bc768a796ad5a6974708720c8cd95cfc1190"
+            },
+            "request": {
+              "index": 242,
+              "kind": "REQUEST",
+              "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+            },
+            "source_sha256": "9becd3c15d44577cf1ced724d3e3c24a0196e7bccf05ea679138c011127bb378",
+            "text_sha256": "9f6b866fe4cb3953a8a6b518783ab0154c74b53bdff168d60a16bbbd01d31ee7"
+          },
+          "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+          "level": 1,
+          "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+          "observed_following_child_records": [
+            {
+              "request": {
+                "index": 242,
+                "kind": "REQUEST",
+                "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+              },
+              "response": {
+                "index": 243,
+                "kind": "RESPONSE",
+                "sha256": "cebc9b4f62562073f07a9ba6caac53d74817585b7143af233b0f3a4c019fc985"
+              },
+              "stage": "THINK"
+            },
+            {
+              "request": {
+                "index": 251,
+                "kind": "REQUEST",
+                "sha256": "92fa215508d5c2914617509a2e0b4e24298720890acee2917f63550793863977"
+              },
+              "response": {
+                "index": 252,
+                "kind": "RESPONSE",
+                "sha256": "75f1d6e56041d7733a6ec99eb9e2e95264633bb93a5f5ac7c9ea5e5278bbb94c"
+              },
+              "stage": "ACT"
+            },
+            {
+              "request": {
+                "index": 260,
+                "kind": "REQUEST",
+                "sha256": "a629446d56447331b12655273206b275a0e49a61c6179e1f40548fdb68146dd5"
+              },
+              "response": {
+                "index": 261,
+                "kind": "RESPONSE",
+                "sha256": "f86e8fa7993584175304cc9818194fcdc6c0a43e23feac77d95203dc000f8ce0"
+              },
+              "stage": "LEARN"
+            }
+          ],
+          "observer_assessment": "THINK243 correctly identifies that the previous ACT was intention-only and contains no concrete calculation. It also works 42-18+9 correctly. NEXT ACT252 instead calculates and reverses 17+8-6. Although that old-problem check is mathematically valid, it does not apply the current-task correction, so credit remains level1. REQUEST275 again corrects the wrong-task substitution; THINK276 identifies the mismatch, but ACT285 spends its output on metadata and cuts off while beginning the requested calculation. No complete later ACT or unreminded transfer is established.",
+          "parent_supplied_solution": "Task and artifact demand supplied; no numerical answer supplied.",
+          "reminders": null
         }
       ],
-      "unknown_candidates": 15
+      "unknown_candidates": 19
     }
   ],
   "semantic_review_owner": "Main: semantic review handoff requested; acceptance not inferred"

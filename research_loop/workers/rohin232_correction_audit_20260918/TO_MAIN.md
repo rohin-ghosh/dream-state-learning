@@ -1,5 +1,20 @@
 # Final R232 observer/semantic-review ownership handoff
 
+## New manual follow-up, 11:30:28UTC
+
+Eight queued post-cut ACTs were newly reviewed across the recovered pair and math
+trio, including actual feedback/context and later attempts. See
+`public/POSTCUT_SEMANTIC_REVIEW_1122.md` and its source-bound JSON plus
+`public/POSTCUT_REQUEST_MANIFEST_1122.json`. Learner346 now earns narrow coached
+level2; later427 fails the correction despite a reminder. Frozen219/252 earn0/1
+on these new traces, preserving its earlier coached2. New math traces earn0,
+preserving prior bests A0/B1/C1. No level3/checkpoint capture. Queue/cursor history
+is unchanged; these are manual sidecar dispositions, not daemon judgments.
+
+Actual REQUEST inspection also finds stale runtime task wording and plain-body
+source aliases. Reminder counts use real rendered message slots, not multiplied
+history IDs. No parent, learner or policy changes accompany this review.
+
 This daemon is **not recurring semantic maintenance**. It collects actual native
 receipts, revalidates existing analyst annotations, publishes their bounded best
 levels, and queues new inputs/ACT windows. It performs zero new semantic judgments,

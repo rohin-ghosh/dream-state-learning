@@ -1,0 +1,2822 @@
+{
+  "analyst_only_arithmetic_checks": {
+    "delivered_to_lives": false,
+    "pairs_0_through_5_mod3": 12,
+    "pairs_0_through_9_mod4": 25
+  },
+  "automatic_semantic_review": false,
+  "first_full_checkpoint_captured": false,
+  "learner_signals": 0,
+  "method": "Manual actual-body review; code validates provenance/order, not semantics.",
+  "model_provider_calls": 0,
+  "new_manual_judgments": 8,
+  "parent_writes": 0,
+  "policy_changes": 0,
+  "queue_collection_cut": "2026-09-18T11:12:47.936379+00:00",
+  "queue_history_edited": false,
+  "queue_unchanged_checks": {
+    "private/Astra7/REVIEW_QUEUE_CURSOR.json": true,
+    "private/C0/REVIEW_QUEUE_CURSOR.json": true,
+    "private/C2/REVIEW_QUEUE_CURSOR.json": true,
+    "private/FRESH_R231/REVIEW_QUEUE_CURSOR.json": true,
+    "private/GAME1_P3/REVIEW_QUEUE_CURSOR.json": true,
+    "private/GAME_N3_0/REVIEW_QUEUE_CURSOR.json": true,
+    "private/GAME_N3_3/REVIEW_QUEUE_CURSOR.json": true,
+    "private/GAME_N3_5/REVIEW_QUEUE_CURSOR.json": true,
+    "private/GAME_N3_6/REVIEW_QUEUE_CURSOR.json": true,
+    "private/GAME_N3_7/REVIEW_QUEUE_CURSOR.json": true,
+    "private/GAME_UNPARENTED_N2/REVIEW_QUEUE_CURSOR.json": true,
+    "private/MATH_A/REVIEW_QUEUE_CURSOR.json": true,
+    "private/MATH_B_FORK/REVIEW_QUEUE_CURSOR.json": true,
+    "private/MATH_C/REVIEW_QUEUE_CURSOR.json": true,
+    "private/P7/REVIEW_QUEUE_CURSOR.json": true,
+    "private/R232_SIBLING_FROZEN/REVIEW_QUEUE_CURSOR.json": true,
+    "public/REVIEW_QUEUE.json": true,
+    "public/REVIEW_QUEUE.md": true
+  },
+  "receipt_capture_cut": "2026-09-18T11:22:05Z through 2026-09-18T11:22:08Z",
+  "remote_writes": 0,
+  "reviewed_native_request_count": 26,
+  "reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
+  "reviews": [
+    {
+      "NEXT_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 347,
+          "kind": "COMMITTED",
+          "sha256": "0790feb3b838fa49117993866d0cc787732315db5a59ae768489cd6d29fa7eb5"
+        },
+        "cycle": 5,
+        "end": 1603,
+        "record": {
+          "index": 346,
+          "kind": "RESPONSE",
+          "sha256": "5fc4e64d2cb565421cb17ed8f29ac2a988e617144516d3898e6e638d4e306961"
+        },
+        "request": {
+          "index": 345,
+          "kind": "REQUEST",
+          "sha256": "5bbf98363489d9dd04405fceec1ebcf8baf7fecf20dab08c229d75a8038049c2"
+        },
+        "response_document_sha256": "aed7792a31e1e59dc64e14737bacb6604c7e85b9d4dc1bd7ca3f5bdfc107d482",
+        "span_sha256": "f7037ed1f1aee48472d0509c96ae24e4ed0c601c8765048c35ef639fe1debdff",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 348,
+          "kind": "R184_STAGE",
+          "sha256": "51fa0330fe7629098ec0f4ba0e542fc7bd50bd90a90112e75e85ce1f8d6ff953"
+        },
+        "start": 0
+      },
+      "THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 338,
+          "kind": "COMMITTED",
+          "sha256": "aad5a3120dc9ee8dd4532c594152f7cf9a95d99edef2a165aa852b2bc29eeadd"
+        },
+        "cycle": 5,
+        "end": 1292,
+        "record": {
+          "index": 337,
+          "kind": "RESPONSE",
+          "sha256": "5bbbc2d8dd6207640e66d3277d44bc7c4b87df88f119cc4582b06bd70ab4488a"
+        },
+        "request": {
+          "index": 336,
+          "kind": "REQUEST",
+          "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+        },
+        "response_document_sha256": "c30eedbfaf99539bc77b39f9a0bd20aa8d922088d3f16034d93326f6826b20e6",
+        "span_sha256": "19aaf15d94824c5443985eae26622bf9a6c7daf7b2ee6cce9af77d9748e0b0bc",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 339,
+          "kind": "R184_STAGE",
+          "sha256": "f118ae4e7868f123634b5be602433e0f167d1812f4a555c295dbdafb20bc93eb"
+        },
+        "start": 0
+      },
+      "annotation": {
+        "applies_next_act": {
+          "end": 1331,
+          "index": 346,
+          "sha256": "5fc4e64d2cb565421cb17ed8f29ac2a988e617144516d3898e6e638d4e306961",
+          "span_sha256": "140f354e73e7bb4ef62e947b6ebde9ad789ae5e8c2b9bdeeb6b3891e76bbc2a2",
+          "start": 1198,
+          "substantive_correct": true
+        },
+        "assessment": "THINK337 identifies that reversing requires undoing the last operation first. The next ACT346 actually computes 19+6=25 and 25-8=17 for 17+8-6=19. This earns level2 for that narrow, coached correction, not for the entire output: an earlier copied VERIFIED equality in ACT346 is still false. LEARN355 contains a correct check of another expression but is LEARN, not a later ACT. After COMPLETE414, parent feedback in REQUEST417 explicitly reminds reverse-order checking and sets 23+9-7. ACT427 calculates 25 but undoes the operations in the wrong order and ends with a false equality, so it does not demonstrate unreminded transfer or correction survival. No level3 or adapter-retention claim.",
+        "correction_scope": "Undo the last arithmetic operation first, then compare the inverse endpoint with the starting number.",
+        "feedback_key": "parent:inbox:c93ae171dc0e4d2a947f5377200c05d1:4cdf51fd5697235d777bf26fa7c83516196c61d6d810e63d06b4bba273f16463",
+        "feedback_reviewed_as_correction": true,
+        "identifies": {
+          "end": 1073,
+          "index": 337,
+          "sha256": "5bbbc2d8dd6207640e66d3277d44bc7c4b87df88f119cc4582b06bd70ab4488a",
+          "span_sha256": "be6a6d77ba7dea44ea71eaab4cbba7e14475d71e9770fcca96f6c88c7fb7902a",
+          "start": 977,
+          "substantive_correct": true
+        },
+        "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+        "parent_supplied_solution": "Method supplied; numerical inverse steps not supplied in this feedback.",
+        "review_batch": "POSTCUT_1122",
+        "reviewed_render_request": {
+          "index": 336,
+          "kind": "REQUEST",
+          "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+        },
+        "reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
+        "reviewer": "Direct bounded semantic inspection; no subagent or classifier",
+        "selected_ACT": 346
+      },
+      "checkpoint_bytes_copied": false,
+      "cross_task_transfer": "not_demonstrated",
+      "extra_inspected_outputs": [
+        {
+          "all_history_tokens_masked": true,
+          "committed": {
+            "index": 257,
+            "kind": "COMMITTED",
+            "sha256": "f99b36b6726734f774ef97f9fc8fe72614fe95ef2b59a9e5cd67fcedfa45c1d3"
+          },
+          "cycle": 4,
+          "end": 1053,
+          "record": {
+            "index": 256,
+            "kind": "RESPONSE",
+            "sha256": "e8b03529386991df5e656e18bfa3becbde7fcbe53cc6388346804255bd67884a"
+          },
+          "request": {
+            "index": 255,
+            "kind": "REQUEST",
+            "sha256": "c52e13f9d37eea440826764d38845b97d684806fcae8eaa7c6e817fcd833c741"
+          },
+          "response_document_sha256": "5cd5c8e62f06d7b06feb0c04374d372ab9e0b7677a3ae6570fa2c6d5ec4e9648",
+          "span_sha256": "f0b9ffe8a6f2a29669e111fc0baf64121e72e0ea09826ce7c31e4caf252420c5",
+          "stage": "THINK",
+          "stage_record": {
+            "index": 258,
+            "kind": "R184_STAGE",
+            "sha256": "75dcf5c26c1bd0c7eda432a8650c598e45f905a454ac51531f32d1e526bc09cb"
+          },
+          "start": 0
+        },
+        {
+          "all_history_tokens_masked": true,
+          "committed": {
+            "index": 356,
+            "kind": "COMMITTED",
+            "sha256": "eadb50d1b69937964ebc2674e8d506375541187741234ccdb7746be64a37a7a9"
+          },
+          "cycle": 5,
+          "end": 1366,
+          "record": {
+            "index": 355,
+            "kind": "RESPONSE",
+            "sha256": "4e2189c1920ea681ee8746ebc6ab3412810f2b1921af95e0e6f8e9d6d1eeb2fc"
+          },
+          "request": {
+            "index": 354,
+            "kind": "REQUEST",
+            "sha256": "0d96dc85acf8f453e826ada008128a89a7904df21da9ddae1981ee22dd9597bc"
+          },
+          "response_document_sha256": "39ab9249b9d257a5c5cd2c7ca578451d84a686e0fab7d38fcdc197e71dcb708e",
+          "span_sha256": "45c482aac556a086d2e28fd988dd34e38b14489fc6f0603d332c87dc62795890",
+          "stage": "LEARN",
+          "stage_record": {
+            "index": 357,
+            "kind": "R184_STAGE",
+            "sha256": "229b4649c2d4f43a219a07e24366ec538dc070582d8444312767f5561c23b9fc"
+          },
+          "start": 0
+        },
+        {
+          "all_history_tokens_masked": true,
+          "committed": {
+            "index": 437,
+            "kind": "COMMITTED",
+            "sha256": "5983c00a6906b8a53e03413a3ad0f145d71dd0c33dc38bacf004b633c62e45ba"
+          },
+          "cycle": 6,
+          "end": 1315,
+          "record": {
+            "index": 436,
+            "kind": "RESPONSE",
+            "sha256": "ae73a7dc3d76568fb3f4a8f1bad87961bac30e0b51dae7e7333615bacf58bf7b"
+          },
+          "request": {
+            "index": 435,
+            "kind": "REQUEST",
+            "sha256": "eeb2929a14fe36432526b21620097e603744250393bb998e8f41414c1be21d0b"
+          },
+          "response_document_sha256": "f8e2202f9fbfc13d9266f09b417469aa014ac29e19858d760c7750875c4694c6",
+          "span_sha256": "fb50b6ff6dc4d2dd571a8d6c296234444ea00817265e7d8b29d033a3206688be",
+          "stage": "LEARN",
+          "stage_record": {
+            "index": 438,
+            "kind": "R184_STAGE",
+            "sha256": "7af18195e92cb2f786f47d12012e5787480def5e1a717c1eada5977077f83605"
+          },
+          "start": 0
+        }
+      ],
+      "feedback_is_rerendered_occurrence": false,
+      "feedback_render": {
+        "binding": "attributed_event_match",
+        "content_sha256": "fafa851d0c2ab9ce13f09b0210d7ccf87e0f8ae8a66baea8d14269aa9b276d67",
+        "message_index": 6,
+        "request": {
+          "file_sha256": "9baad1d41f0123cd47eba0c5102e1e18c028bfb6ddf16f8ea013e2302683d4b8",
+          "index": 336,
+          "kind": "REQUEST",
+          "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81",
+          "time_unix": 1789729746.3765264
+        },
+        "role": "user"
+      },
+      "feedback_type": "Specific correction of the completed but non-reverse-order check in ACT265.",
+      "initial_feedback_still_rendered_at_later_ACT": false,
+      "intervening_complete_receipts": [
+        {
+          "checkpoint_hashes": {
+            "adapter": "bdd86951a2559c36ec2148e57ab26fe1d15fb8e65dec3018b88cd470c47a0996",
+            "optimizer": "d5aef59e19b94d31b06ff7b6779486447814b2a68d241dc7c0a27dc24eecb98a",
+            "rng": "d5aef59e19b94d31b06ff7b6779486447814b2a68d241dc7c0a27dc24eecb98a"
+          },
+          "cycle": 5,
+          "optimizer_steps": 240,
+          "record": {
+            "index": 414,
+            "kind": "SLEEP_COMPLETE",
+            "sha256": "5c7a5b0dd38460675c70d7935d849244c8e15494992cd034f1fe819a408d62e3"
+          }
+        }
+      ],
+      "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+      "label": "FRESH_R231",
+      "later_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 428,
+          "kind": "COMMITTED",
+          "sha256": "76b6759eb58bf8a943681f6716f3e27d65871cf3d2dce0b50e5c45761472698a"
+        },
+        "cycle": 6,
+        "end": 1369,
+        "record": {
+          "index": 427,
+          "kind": "RESPONSE",
+          "sha256": "de43c6f2a92ab51476785dff8cac5c881d70de66fb73f3d9cfed8427576f91e0"
+        },
+        "request": {
+          "index": 426,
+          "kind": "REQUEST",
+          "sha256": "df581e77268b4b88bb946755569ba97e551b157217845ed16ac39339715f3d56"
+        },
+        "response_document_sha256": "713c62b7995e0ee4bcf0b91e5ce147a3c0e96b958cf603670fa3e2f3f3a22f12",
+        "span_sha256": "54c47b46b0c36193bd4345ac85c2fcc44e892f64f03841ad6d36d88c5d2a6851",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 429,
+          "kind": "R184_STAGE",
+          "sha256": "1a34b62d34859a52d914f16826e39cf11221a342f9bf760986e44e9d45561544"
+        },
+        "start": 0
+      },
+      "later_THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 419,
+          "kind": "COMMITTED",
+          "sha256": "7705349b9f0405a079a412ef0fdd0bbe12f8ba0f982877497cb98ddb72f2d976"
+        },
+        "cycle": 6,
+        "end": 1003,
+        "record": {
+          "index": 418,
+          "kind": "RESPONSE",
+          "sha256": "4ec479314c543ef2feea1af09857e44c60d1a4ef645d79dfef1c87af0d3c37c2"
+        },
+        "request": {
+          "index": 417,
+          "kind": "REQUEST",
+          "sha256": "c97d0d3ff7f40e4969cd8e21bb7f109f7d62bd3945846b5fcebb4d21ca175f6a"
+        },
+        "response_document_sha256": "0dea826f7aeb2cd1ed9facc2880220f380c36660ae73811b3df4b36ebd2983e8",
+        "span_sha256": "ffdeead59bb193d102786b4591f51312fc47941f47569bdf34d1251fa4576fb7",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 420,
+          "kind": "R184_STAGE",
+          "sha256": "291ce22ca441f66be602d8d7ad9c25d03449b3b54b0476cce3d1a18bbc479d2a"
+        },
+        "start": 0
+      },
+      "later_assessment": "ACT427 does not preserve the reverse-order correction despite a targeted reminder; the earlier correct 23+17-9 text is carried working-state prose, not proof that this new task was checked correctly.",
+      "later_topic_exposure": "One newly rendered parent reminder supplies the method and a new expression, not the numerical answer. The original arithmetic object also remains in runtime ACT instructions.",
+      "new_projected_external_ids": 11,
+      "prior_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 266,
+          "kind": "COMMITTED",
+          "sha256": "67fc409b6b146de395a515f4578c9ed51e3bb235a68040d9d6a7b3e913c1a98b"
+        },
+        "cycle": 4,
+        "end": 1094,
+        "record": {
+          "index": 265,
+          "kind": "RESPONSE",
+          "sha256": "0bfe5c6fd7b1ea6c6482b14b5e674ea4f2593d1966248ef00a77dd6aac963112"
+        },
+        "request": {
+          "index": 264,
+          "kind": "REQUEST",
+          "sha256": "b261fdf8e94543638ba8667fffa9e939482cacf10454848ab468a33c29d65c20"
+        },
+        "response_document_sha256": "9905541d3ed5907877adc60682406c829662d2b86aa3c5dd16e58a46a5bacf0b",
+        "span_sha256": "1c935ff40a0843afabe8c96f8634b7f97e9854ae0ef89f5205b66a4cf6f07250",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 267,
+          "kind": "R184_STAGE",
+          "sha256": "ab76fb3cc0646ab6dae4afda85e83183e501680a372f273558482b39755e2c50"
+        },
+        "start": 0
+      },
+      "queue_id": "8adc4f2dafa56c86e2d5d3fef80af8bc79ce76709b76f71ab0c1481939d83bed",
+      "queued_window": {
+        "after": 313,
+        "through": 390
+      },
+      "selected_ACT": 346,
+      "targeted_new_reminder_count": 1,
+      "targeted_reminders": [
+        {
+          "actual_render": {
+            "binding": "attributed_event_match",
+            "content_sha256": "324d53a09452432672cb739b01b8bd73fa8bfab752a05a6458199263ad0ae964",
+            "message_index": 6,
+            "request": {
+              "file_sha256": "38d02687a5933ccfee5d7d8929785b594f943609c187a81883db111ba0dfd303",
+              "index": 417,
+              "kind": "REQUEST",
+              "sha256": "c97d0d3ff7f40e4969cd8e21bb7f109f7d62bd3945846b5fcebb4d21ca175f6a",
+              "time_unix": 1789730273.5173805
+            },
+            "role": "user"
+          },
+          "body_sha256": "4d9281a7f17136f3afdbacbd7ad660e35ad82964ead89bd5ffc5dd9e729e1845",
+          "event_id": "parent:inbox:13070edba0124eeb8ef8ac4e0afa99b9",
+          "source_sha256": "ec5ed13a26b349aee45a7fe16ffe51f4e1a72a5d8e4a5b6f492a20de5ee0e354"
+        }
+      ],
+      "validated_adjudication": {
+        "child_records": [
+          {
+            "committed": {
+              "index": 338,
+              "kind": "COMMITTED",
+              "sha256": "aad5a3120dc9ee8dd4532c594152f7cf9a95d99edef2a165aa852b2bc29eeadd"
+            },
+            "cycle": 5,
+            "end": 1073,
+            "record": {
+              "index": 337,
+              "kind": "RESPONSE",
+              "sha256": "5bbbc2d8dd6207640e66d3277d44bc7c4b87df88f119cc4582b06bd70ab4488a"
+            },
+            "request": {
+              "index": 336,
+              "kind": "REQUEST",
+              "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+            },
+            "span_sha256": "be6a6d77ba7dea44ea71eaab4cbba7e14475d71e9770fcca96f6c88c7fb7902a",
+            "stage": "THINK",
+            "stage_record": {
+              "index": 339,
+              "kind": "R184_STAGE",
+              "sha256": "f118ae4e7868f123634b5be602433e0f167d1812f4a555c295dbdafb20bc93eb"
+            },
+            "start": 977
+          },
+          {
+            "committed": {
+              "index": 347,
+              "kind": "COMMITTED",
+              "sha256": "0790feb3b838fa49117993866d0cc787732315db5a59ae768489cd6d29fa7eb5"
+            },
+            "cycle": 5,
+            "end": 1331,
+            "record": {
+              "index": 346,
+              "kind": "RESPONSE",
+              "sha256": "5fc4e64d2cb565421cb17ed8f29ac2a988e617144516d3898e6e638d4e306961"
+            },
+            "request": {
+              "index": 345,
+              "kind": "REQUEST",
+              "sha256": "5bbf98363489d9dd04405fceec1ebcf8baf7fecf20dab08c229d75a8038049c2"
+            },
+            "span_sha256": "140f354e73e7bb4ef62e947b6ebde9ad789ae5e8c2b9bdeeb6b3891e76bbc2a2",
+            "stage": "ACT",
+            "stage_record": {
+              "index": 348,
+              "kind": "R184_STAGE",
+              "sha256": "51fa0330fe7629098ec0f4ba0e542fc7bd50bd90a90112e75e85ce1f8d6ff953"
+            },
+            "start": 1198
+          }
+        ],
+        "context_exposure_at_transfer": null,
+        "correction_key": "parent:inbox:c93ae171dc0e4d2a947f5377200c05d1:4cdf51fd5697235d777bf26fa7c83516196c61d6d810e63d06b4bba273f16463",
+        "cross_task_transfer": "not_demonstrated",
+        "feedback": {
+          "actor": "parent",
+          "event_id": "parent:inbox:c93ae171dc0e4d2a947f5377200c05d1",
+          "inbox": {
+            "index": 278,
+            "kind": "INBOX",
+            "sha256": "faf72b50bd9cc002b023208c56511557701a357e22b517a64644b56bc19cffd1"
+          },
+          "request": {
+            "index": 336,
+            "kind": "REQUEST",
+            "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+          },
+          "source_sha256": "4cdf51fd5697235d777bf26fa7c83516196c61d6d810e63d06b4bba273f16463",
+          "text_sha256": "14a3fefd4f7a4db87daa770a7c5adc53740b285dfadbada86d2057c9de0b60c8"
+        },
+        "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+        "level": 2,
+        "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+        "observed_following_child_records": [
+          {
+            "request": {
+              "index": 336,
+              "kind": "REQUEST",
+              "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+            },
+            "response": {
+              "index": 337,
+              "kind": "RESPONSE",
+              "sha256": "5bbbc2d8dd6207640e66d3277d44bc7c4b87df88f119cc4582b06bd70ab4488a"
+            },
+            "stage": "THINK"
+          },
+          {
+            "request": {
+              "index": 345,
+              "kind": "REQUEST",
+              "sha256": "5bbf98363489d9dd04405fceec1ebcf8baf7fecf20dab08c229d75a8038049c2"
+            },
+            "response": {
+              "index": 346,
+              "kind": "RESPONSE",
+              "sha256": "5fc4e64d2cb565421cb17ed8f29ac2a988e617144516d3898e6e638d4e306961"
+            },
+            "stage": "ACT"
+          },
+          {
+            "request": {
+              "index": 354,
+              "kind": "REQUEST",
+              "sha256": "0d96dc85acf8f453e826ada008128a89a7904df21da9ddae1981ee22dd9597bc"
+            },
+            "response": {
+              "index": 355,
+              "kind": "RESPONSE",
+              "sha256": "4e2189c1920ea681ee8746ebc6ab3412810f2b1921af95e0e6f8e9d6d1eeb2fc"
+            },
+            "stage": "LEARN"
+          }
+        ],
+        "observer_assessment": "THINK337 identifies that reversing requires undoing the last operation first. The next ACT346 actually computes 19+6=25 and 25-8=17 for 17+8-6=19. This earns level2 for that narrow, coached correction, not for the entire output: an earlier copied VERIFIED equality in ACT346 is still false. LEARN355 contains a correct check of another expression but is LEARN, not a later ACT. After COMPLETE414, parent feedback in REQUEST417 explicitly reminds reverse-order checking and sets 23+9-7. ACT427 calculates 25 but undoes the operations in the wrong order and ends with a false equality, so it does not demonstrate unreminded transfer or correction survival. No level3 or adapter-retention claim.",
+        "parent_supplied_solution": "Method supplied; numerical inverse steps not supplied in this feedback.",
+        "reminders": null
+      }
+    },
+    {
+      "NEXT_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 220,
+          "kind": "COMMITTED",
+          "sha256": "dd91a1ccbf852593fedc862c736f092b07c59f7340df7b96b54e1e0c75bf020b"
+        },
+        "cycle": 7,
+        "end": 1366,
+        "record": {
+          "index": 219,
+          "kind": "RESPONSE",
+          "sha256": "b92ac415b8374b4b10ff5e649000812cbd5af4a7e1c1828199e826ba31956ae9"
+        },
+        "request": {
+          "index": 218,
+          "kind": "REQUEST",
+          "sha256": "d9c41bbbd743678429f8381c487ad3e1704181f1e5b73b27c860474c55594669"
+        },
+        "response_document_sha256": "e70f268f46c4c80a33cd6b10893bbe009373b1b114252d7db132bf8b82769bd4",
+        "span_sha256": "68b886623bb7a2b402161a50bb4b4fb2499d071d33f84fe27f24a3fc2ae5d4b0",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 221,
+          "kind": "R184_STAGE",
+          "sha256": "4525d2f27c9253b28316dff668f5cb54a3c85f7eb13fd12047da9b0dbc679fa2"
+        },
+        "start": 0
+      },
+      "THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 211,
+          "kind": "COMMITTED",
+          "sha256": "d426fd05528a29a9b1418f392fdb33de4009c833427003144395e4503d6434ec"
+        },
+        "cycle": 7,
+        "end": 1929,
+        "record": {
+          "index": 210,
+          "kind": "RESPONSE",
+          "sha256": "75c99fd61621be2144d27f89aa6a191b5a6d533914148a994a7109d670e5c433"
+        },
+        "request": {
+          "index": 209,
+          "kind": "REQUEST",
+          "sha256": "9a97006acb44d907c38b5e8de080d8c02823811b1cfa29316a99572ff8cf5fa4"
+        },
+        "response_document_sha256": "1ca9afb029f39966df27db585a316379e1a2e3c71144a3a63f36d2aa5dc78193",
+        "span_sha256": "d8a8e0c0f2db73eba87753882c3459d61f58453b4f1e9fdcfcd650af53308575",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 212,
+          "kind": "R184_STAGE",
+          "sha256": "8ca65435632579b8d1f225ce01170152b561e02c7b8f60d7ac6758717e92414c"
+        },
+        "start": 0
+      },
+      "annotation": {
+        "assessment": "ACT186 correctly calculates and reverse-checks 34-15+7 in its final work, while its surrounding notes name other problems. REQUEST209 explicitly identifies that mismatch and assigns 42-18+9. THINK210 correctly calculates and reverses the new expression, but continues an inaccurate account of the previous calculation rather than identifying the notes mismatch. The next ACT219 contains a truncated metadata/task-note block, switches back to 17+8-6, and emits no worked calculation. Correct THINK arithmetic is not silently promoted to ACT application. After a fresh parent correction at REQUEST242, ACT252 completes an inverse check only for the old 17+8-6 object. Level0 for this selected notes/current-object correction, not a global statement about mathematical ability; the separately reviewed later feedback earns level1.",
+        "correction_scope": "Make task notes and verification judgments match the actual calculation; answer the current expression rather than reverting to the original one.",
+        "feedback_key": "parent:inbox:968418545f514125b0a43c239564f0f8:6350f045dad8e160708b6c38a54d234f84a022a8d74911a3e2d8fd57c5b1b59f",
+        "feedback_reviewed_as_correction": true,
+        "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+        "parent_supplied_solution": "Requested a checked calculation but did not supply the numerical result.",
+        "review_batch": "POSTCUT_1122",
+        "reviewed_render_request": {
+          "index": 209,
+          "kind": "REQUEST",
+          "sha256": "9a97006acb44d907c38b5e8de080d8c02823811b1cfa29316a99572ff8cf5fa4"
+        },
+        "reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
+        "reviewer": "Direct bounded semantic inspection; no subagent or classifier",
+        "selected_ACT": 219
+      },
+      "checkpoint_bytes_copied": false,
+      "cross_task_transfer": "not_demonstrated",
+      "extra_inspected_outputs": [
+        {
+          "all_history_tokens_masked": true,
+          "committed": {
+            "index": 196,
+            "kind": "COMMITTED",
+            "sha256": "aa76cf04bc853cbf67a6a711e3eba9363e4316e23e40484716e78d26388bb1a7"
+          },
+          "cycle": 6,
+          "end": 1859,
+          "record": {
+            "index": 195,
+            "kind": "RESPONSE",
+            "sha256": "3920ee3d9f8485d4188a79c847d4711631e7dd60863edf4507e944842a8fa705"
+          },
+          "request": {
+            "index": 194,
+            "kind": "REQUEST",
+            "sha256": "81f8ebf717aba5414b3fadcd1fa85862d543633a9c90653121aec8d005bff484"
+          },
+          "response_document_sha256": "728e01a5ab5a5410471831bab910cbd0478edc1b608e9ecdf53ad4ec68fdcdf7",
+          "span_sha256": "6a3ae80de6b315b2f856a9018c7971b26cc28af9f184276920fbee7248fdcb58",
+          "stage": "LEARN",
+          "stage_record": {
+            "index": 197,
+            "kind": "R184_STAGE",
+            "sha256": "f5fdb9a5493079b09551249fea3d45278a9e8c7fb972d99bde4425a02df49767"
+          },
+          "start": 0
+        },
+        {
+          "all_history_tokens_masked": true,
+          "committed": {
+            "index": 229,
+            "kind": "COMMITTED",
+            "sha256": "ecf02f7a3d7c304244bd191e9709f200cde66e9af0a8c3d589d29e9ca97d20fb"
+          },
+          "cycle": 7,
+          "end": 1744,
+          "record": {
+            "index": 228,
+            "kind": "RESPONSE",
+            "sha256": "6de8ce69bc71e25d735f46dceff0840919e14a2ead532b97997b121ddda254c1"
+          },
+          "request": {
+            "index": 227,
+            "kind": "REQUEST",
+            "sha256": "2f3b47179eee8f17d9a8c06be17ececda4f61fba33cba0ce1e0bf161a13b2d92"
+          },
+          "response_document_sha256": "d2cdb8b2a340f7d930a4e55b19495ff7edb8ebb0d2b840ca4e5b74a05435b51d",
+          "span_sha256": "c06776baf967de25d2cf8e7167a13ce09c618f53987e4d44bdd173af02ffc3d4",
+          "stage": "LEARN",
+          "stage_record": {
+            "index": 230,
+            "kind": "R184_STAGE",
+            "sha256": "f38516fdef0c59727be3ab89c830a74673aa11490e68b208e582816754e73e45"
+          },
+          "start": 0
+        },
+        {
+          "all_history_tokens_masked": true,
+          "committed": {
+            "index": 262,
+            "kind": "COMMITTED",
+            "sha256": "5d0f70e8ee2a4e109ed6ca0703228012ad37b1809d81040d308e65e44cb84766"
+          },
+          "cycle": 8,
+          "end": 1924,
+          "record": {
+            "index": 261,
+            "kind": "RESPONSE",
+            "sha256": "f86e8fa7993584175304cc9818194fcdc6c0a43e23feac77d95203dc000f8ce0"
+          },
+          "request": {
+            "index": 260,
+            "kind": "REQUEST",
+            "sha256": "a629446d56447331b12655273206b275a0e49a61c6179e1f40548fdb68146dd5"
+          },
+          "response_document_sha256": "f529cb681a6070095881b6295176c36ac26de55bd2e2611ffcb84ab09a3675e5",
+          "span_sha256": "517f78683642b92acfb4eca70db2d708dec9fc05bb520eb0686d1f1edc64948f",
+          "stage": "LEARN",
+          "stage_record": {
+            "index": 263,
+            "kind": "R184_STAGE",
+            "sha256": "c3e2a7dad93f05efcc4f4b2e4fe0375bda944a50d2c250219e168488285f2433"
+          },
+          "start": 0
+        }
+      ],
+      "feedback_is_rerendered_occurrence": false,
+      "feedback_render": {
+        "binding": "attributed_event_match",
+        "content_sha256": "1f6cf83df400988049e97bf33fbcabc8771d3dcd79c3a08fe8bed7a72924c512",
+        "message_index": 6,
+        "request": {
+          "file_sha256": "32e97165d6256c07bfc7f6200f01bfe6fef52bfa705b50f5e00a073e70d323e6",
+          "index": 209,
+          "kind": "REQUEST",
+          "sha256": "9a97006acb44d907c38b5e8de080d8c02823811b1cfa29316a99572ff8cf5fa4",
+          "time_unix": 1789729516.5682776
+        },
+        "role": "user"
+      },
+      "feedback_type": "Specific correction of stale notes surrounding the valid final calculation in ACT186, followed by a new arithmetic task.",
+      "initial_feedback_still_rendered_at_later_ACT": false,
+      "intervening_complete_receipts": [
+        {
+          "checkpoint_hashes": {
+            "adapter": "167aa3c3fa771745eb584492ffc91360e8396bef03365be4078a568038dd6c7b",
+            "optimizer": "28417a356092fa5e9a2cc997545819188fe176a4c6166dae150bcc14af54922b",
+            "rng": "28417a356092fa5e9a2cc997545819188fe176a4c6166dae150bcc14af54922b"
+          },
+          "cycle": 7,
+          "optimizer_steps": 0,
+          "record": {
+            "index": 239,
+            "kind": "SLEEP_COMPLETE",
+            "sha256": "a1121071543c792ec0011292a960e7d6067f160b823ff57c02fd8dcdf8493923"
+          }
+        }
+      ],
+      "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+      "label": "R232_SIBLING_FROZEN",
+      "later_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 253,
+          "kind": "COMMITTED",
+          "sha256": "000db284c7b13791c813e92e275dcdb894afa16e589214f8799a8d33983e8749"
+        },
+        "cycle": 8,
+        "end": 1799,
+        "record": {
+          "index": 252,
+          "kind": "RESPONSE",
+          "sha256": "75f1d6e56041d7733a6ec99eb9e2e95264633bb93a5f5ac7c9ea5e5278bbb94c"
+        },
+        "request": {
+          "index": 251,
+          "kind": "REQUEST",
+          "sha256": "92fa215508d5c2914617509a2e0b4e24298720890acee2917f63550793863977"
+        },
+        "response_document_sha256": "c9ad39ff5c12e2e574e621106efe34e354fd1b573571bc383e4ba9469d684d85",
+        "span_sha256": "4bf2bc826ba6a61637f23240c5a8ccc3b5a05fb8a7ae92d74a799cedeabfae22",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 254,
+          "kind": "R184_STAGE",
+          "sha256": "789ef122323cdc40fd34763abd14db14b396f6fb9fc9d84a3529d49c8d0c0c2b"
+        },
+        "start": 0
+      },
+      "later_THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 244,
+          "kind": "COMMITTED",
+          "sha256": "257d824ee234199d78f0dd3e073c6048599f3a3f32dbb629008a71415ae04ca5"
+        },
+        "cycle": 8,
+        "end": 1569,
+        "record": {
+          "index": 243,
+          "kind": "RESPONSE",
+          "sha256": "cebc9b4f62562073f07a9ba6caac53d74817585b7143af233b0f3a4c019fc985"
+        },
+        "request": {
+          "index": 242,
+          "kind": "REQUEST",
+          "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+        },
+        "response_document_sha256": "d9ac6e8f37ba8d057582e9ce4eb474328651a4b8d270ac211c6dd6d017e5d2c6",
+        "span_sha256": "0b76eae8efe710d0fc23a78a7450b831e45f8c2f108a2815e62667b9c18ddbff",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 245,
+          "kind": "R184_STAGE",
+          "sha256": "a8bbbacac0d43a3388c49ff6777247a0eb5439d5cfe05af19515e745f7098cf3"
+        },
+        "start": 0
+      },
+      "later_assessment": "ACT252 is a genuine arithmetic artifact with a correct inverse for the old problem, not a successful answer to the requested 42-18+9. It follows a new reminder and cannot establish level3.",
+      "later_topic_exposure": "One new parent explicitly repeats the current expression and asks for actual arithmetic rather than metadata; no answer is supplied.",
+      "new_projected_external_ids": 11,
+      "prior_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 187,
+          "kind": "COMMITTED",
+          "sha256": "e6d78f22d76911335f9f9ce96b4e7d9d2d2a62331a353da9c9793ebec14d2cb2"
+        },
+        "cycle": 6,
+        "end": 1741,
+        "record": {
+          "index": 186,
+          "kind": "RESPONSE",
+          "sha256": "4b8167a39ac50b703512fc3636fce3a75ae2bc00ef52fb2b53ab9216c6f115c3"
+        },
+        "request": {
+          "index": 185,
+          "kind": "REQUEST",
+          "sha256": "4bad07a7c33901cd3bf25f5305350c103f10cdaec7b68c04ac86ad33c8fd16d6"
+        },
+        "response_document_sha256": "f86da74c9acec2f243fe1b32571ad294100208f5e5de15e0d1c75f0f36587228",
+        "span_sha256": "65eb162b06ed96608c7412a0fd816a4aec4c9ab64059594429ac6ac92fc8f311",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 188,
+          "kind": "R184_STAGE",
+          "sha256": "accd088bc68372019233caa70dce1b48b1e17024f98cc5b2fcc326f288e9ab1b"
+        },
+        "start": 0
+      },
+      "queue_id": "a873894fdd3515e1c8939ed3c4884c5164bc1b90422d7bc4afcab0a458210c55",
+      "queued_window": {
+        "after": 207,
+        "through": 273
+      },
+      "selected_ACT": 219,
+      "targeted_new_reminder_count": 1,
+      "targeted_reminders": [
+        {
+          "actual_render": {
+            "binding": "attributed_event_match",
+            "content_sha256": "1a1be018f94d95847b778a4b4e3e1464b5b65ac8e03280b8621eb3c8754e3c11",
+            "message_index": 6,
+            "request": {
+              "file_sha256": "67c0fda97872e8bffdb29c1770f1db57c59fc4af9fc08abb7e7d7dddd5525f6f",
+              "index": 242,
+              "kind": "REQUEST",
+              "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2",
+              "time_unix": 1789729746.66055
+            },
+            "role": "user"
+          },
+          "body_sha256": "9f6b866fe4cb3953a8a6b518783ab0154c74b53bdff168d60a16bbbd01d31ee7",
+          "event_id": "parent:inbox:ac403801fc1b4a95b51c71c3b713333a",
+          "source_sha256": "9becd3c15d44577cf1ced724d3e3c24a0196e7bccf05ea679138c011127bb378"
+        }
+      ],
+      "validated_adjudication": {
+        "child_records": [],
+        "context_exposure_at_transfer": null,
+        "correction_key": "parent:inbox:968418545f514125b0a43c239564f0f8:6350f045dad8e160708b6c38a54d234f84a022a8d74911a3e2d8fd57c5b1b59f",
+        "cross_task_transfer": "not_demonstrated",
+        "feedback": {
+          "actor": "parent",
+          "event_id": "parent:inbox:968418545f514125b0a43c239564f0f8",
+          "inbox": {
+            "index": 199,
+            "kind": "INBOX",
+            "sha256": "c38f1cdb84fda59a9d2d7f976aa3f9ad5e948d6c78c999829670a3a36ac2381f"
+          },
+          "request": {
+            "index": 209,
+            "kind": "REQUEST",
+            "sha256": "9a97006acb44d907c38b5e8de080d8c02823811b1cfa29316a99572ff8cf5fa4"
+          },
+          "source_sha256": "6350f045dad8e160708b6c38a54d234f84a022a8d74911a3e2d8fd57c5b1b59f",
+          "text_sha256": "e33b6950801360c4d47db55345ca5ad3dab49132d435e7236a7b9d11809cb100"
+        },
+        "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+        "level": 0,
+        "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+        "observed_following_child_records": [
+          {
+            "request": {
+              "index": 209,
+              "kind": "REQUEST",
+              "sha256": "9a97006acb44d907c38b5e8de080d8c02823811b1cfa29316a99572ff8cf5fa4"
+            },
+            "response": {
+              "index": 210,
+              "kind": "RESPONSE",
+              "sha256": "75c99fd61621be2144d27f89aa6a191b5a6d533914148a994a7109d670e5c433"
+            },
+            "stage": "THINK"
+          },
+          {
+            "request": {
+              "index": 218,
+              "kind": "REQUEST",
+              "sha256": "d9c41bbbd743678429f8381c487ad3e1704181f1e5b73b27c860474c55594669"
+            },
+            "response": {
+              "index": 219,
+              "kind": "RESPONSE",
+              "sha256": "b92ac415b8374b4b10ff5e649000812cbd5af4a7e1c1828199e826ba31956ae9"
+            },
+            "stage": "ACT"
+          },
+          {
+            "request": {
+              "index": 227,
+              "kind": "REQUEST",
+              "sha256": "2f3b47179eee8f17d9a8c06be17ececda4f61fba33cba0ce1e0bf161a13b2d92"
+            },
+            "response": {
+              "index": 228,
+              "kind": "RESPONSE",
+              "sha256": "6de8ce69bc71e25d735f46dceff0840919e14a2ead532b97997b121ddda254c1"
+            },
+            "stage": "LEARN"
+          }
+        ],
+        "observer_assessment": "ACT186 correctly calculates and reverse-checks 34-15+7 in its final work, while its surrounding notes name other problems. REQUEST209 explicitly identifies that mismatch and assigns 42-18+9. THINK210 correctly calculates and reverses the new expression, but continues an inaccurate account of the previous calculation rather than identifying the notes mismatch. The next ACT219 contains a truncated metadata/task-note block, switches back to 17+8-6, and emits no worked calculation. Correct THINK arithmetic is not silently promoted to ACT application. After a fresh parent correction at REQUEST242, ACT252 completes an inverse check only for the old 17+8-6 object. Level0 for this selected notes/current-object correction, not a global statement about mathematical ability; the separately reviewed later feedback earns level1.",
+        "parent_supplied_solution": "Requested a checked calculation but did not supply the numerical result.",
+        "reminders": null
+      }
+    },
+    {
+      "NEXT_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 253,
+          "kind": "COMMITTED",
+          "sha256": "000db284c7b13791c813e92e275dcdb894afa16e589214f8799a8d33983e8749"
+        },
+        "cycle": 8,
+        "end": 1799,
+        "record": {
+          "index": 252,
+          "kind": "RESPONSE",
+          "sha256": "75f1d6e56041d7733a6ec99eb9e2e95264633bb93a5f5ac7c9ea5e5278bbb94c"
+        },
+        "request": {
+          "index": 251,
+          "kind": "REQUEST",
+          "sha256": "92fa215508d5c2914617509a2e0b4e24298720890acee2917f63550793863977"
+        },
+        "response_document_sha256": "c9ad39ff5c12e2e574e621106efe34e354fd1b573571bc383e4ba9469d684d85",
+        "span_sha256": "4bf2bc826ba6a61637f23240c5a8ccc3b5a05fb8a7ae92d74a799cedeabfae22",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 254,
+          "kind": "R184_STAGE",
+          "sha256": "789ef122323cdc40fd34763abd14db14b396f6fb9fc9d84a3529d49c8d0c0c2b"
+        },
+        "start": 0
+      },
+      "THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 244,
+          "kind": "COMMITTED",
+          "sha256": "257d824ee234199d78f0dd3e073c6048599f3a3f32dbb629008a71415ae04ca5"
+        },
+        "cycle": 8,
+        "end": 1569,
+        "record": {
+          "index": 243,
+          "kind": "RESPONSE",
+          "sha256": "cebc9b4f62562073f07a9ba6caac53d74817585b7143af233b0f3a4c019fc985"
+        },
+        "request": {
+          "index": 242,
+          "kind": "REQUEST",
+          "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+        },
+        "response_document_sha256": "d9ac6e8f37ba8d057582e9ce4eb474328651a4b8d270ac211c6dd6d017e5d2c6",
+        "span_sha256": "0b76eae8efe710d0fc23a78a7450b831e45f8c2f108a2815e62667b9c18ddbff",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 245,
+          "kind": "R184_STAGE",
+          "sha256": "a8bbbacac0d43a3388c49ff6777247a0eb5439d5cfe05af19515e745f7098cf3"
+        },
+        "start": 0
+      },
+      "annotation": {
+        "assessment": "THINK243 correctly identifies that the previous ACT was intention-only and contains no concrete calculation. It also works 42-18+9 correctly. NEXT ACT252 instead calculates and reverses 17+8-6. Although that old-problem check is mathematically valid, it does not apply the current-task correction, so credit remains level1. REQUEST275 again corrects the wrong-task substitution; THINK276 identifies the mismatch, but ACT285 spends its output on metadata and cuts off while beginning the requested calculation. No complete later ACT or unreminded transfer is established.",
+        "correction_scope": "Replace the intention-only old-task output with the actual current 42-18+9 calculation and an independent check.",
+        "feedback_key": "parent:inbox:ac403801fc1b4a95b51c71c3b713333a:9becd3c15d44577cf1ced724d3e3c24a0196e7bccf05ea679138c011127bb378",
+        "feedback_reviewed_as_correction": true,
+        "identifies": {
+          "end": 267,
+          "index": 243,
+          "sha256": "cebc9b4f62562073f07a9ba6caac53d74817585b7143af233b0f3a4c019fc985",
+          "span_sha256": "6c249b1c548aba3f8e7ef0eb771b7c319e7af915e87dd9b226b11e9abc2a7a0d",
+          "start": 188,
+          "substantive_correct": true
+        },
+        "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+        "parent_supplied_solution": "Task and artifact demand supplied; no numerical answer supplied.",
+        "review_batch": "POSTCUT_1122",
+        "reviewed_render_request": {
+          "index": 242,
+          "kind": "REQUEST",
+          "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+        },
+        "reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
+        "reviewer": "Direct bounded semantic inspection; no subagent or classifier",
+        "selected_ACT": 252
+      },
+      "checkpoint_bytes_copied": false,
+      "cross_task_transfer": "not_demonstrated",
+      "extra_inspected_outputs": [
+        {
+          "all_history_tokens_masked": true,
+          "committed": {
+            "index": 310,
+            "kind": "COMMITTED",
+            "sha256": "29d1a01f107d05476ce9e0b802c52b07c5ff7afa88a45f3b9b4d29ab6f9490c2"
+          },
+          "cycle": 10,
+          "end": 1534,
+          "record": {
+            "index": 309,
+            "kind": "RESPONSE",
+            "sha256": "56696e0176742dd46d3dae90d6aa034295eec25c9fabb45cadc618b5d2493dc0"
+          },
+          "request": {
+            "index": 308,
+            "kind": "REQUEST",
+            "sha256": "02449c753a36611217de83abf29d74ea48fc5e6ebfc19c8e98a420d6b5567bd7"
+          },
+          "response_document_sha256": "93b64940b4a2750b79a19d4ed7259afb9c6cc75c6c79689f6433a8ed6f091b01",
+          "span_sha256": "6daf0b479f1779853c4cfc30b5bc32f9314b993d1085c182243895ecf2a1b956",
+          "stage": "THINK",
+          "stage_record": {
+            "index": 311,
+            "kind": "R184_STAGE",
+            "sha256": "3553badf02081a6c324ed8b00b995a37f9bbb2d0f1e79c704a7ba3356339ca15"
+          },
+          "start": 0
+        },
+        {
+          "all_history_tokens_masked": true,
+          "committed": {
+            "index": 319,
+            "kind": "COMMITTED",
+            "sha256": "dec40b923108448e144d3c63f398cda8523cb79676b3189e44088ad1a3135ecb"
+          },
+          "cycle": 10,
+          "end": 1583,
+          "record": {
+            "index": 318,
+            "kind": "RESPONSE",
+            "sha256": "218ef5c44a880c99c7410efb28198ab62cd8dc6d40aa98d18dcc7df539ad9a6d"
+          },
+          "request": {
+            "index": 317,
+            "kind": "REQUEST",
+            "sha256": "8dfdbd49f2b2ec62dc6f4827eec90154badd08d92ed39134ad7b30dc66e4f263"
+          },
+          "response_document_sha256": "19a375737c675f4a7aca186e8509ea3aebfd1bbd5dc9bcb2f02efc6b9adadcb8",
+          "span_sha256": "4fad880b4023a70f03daabd2ce02b5b9911909a6cde41e3f5d3a2c58d2b9ea9a",
+          "stage": "ACT",
+          "stage_record": {
+            "index": 320,
+            "kind": "R184_STAGE",
+            "sha256": "90e4315ce2b71794333bebd644c2903c36e3b9287e68f2bffd68d2c530a01260"
+          },
+          "start": 0
+        }
+      ],
+      "feedback_is_rerendered_occurrence": false,
+      "feedback_render": {
+        "binding": "attributed_event_match",
+        "content_sha256": "1a1be018f94d95847b778a4b4e3e1464b5b65ac8e03280b8621eb3c8754e3c11",
+        "message_index": 6,
+        "request": {
+          "file_sha256": "67c0fda97872e8bffdb29c1770f1db57c59fc4af9fc08abb7e7d7dddd5525f6f",
+          "index": 242,
+          "kind": "REQUEST",
+          "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2",
+          "time_unix": 1789729746.66055
+        },
+        "role": "user"
+      },
+      "feedback_type": "Specific correction of ACT219's missing arithmetic and old task.",
+      "initial_feedback_still_rendered_at_later_ACT": false,
+      "intervening_complete_receipts": [
+        {
+          "checkpoint_hashes": {
+            "adapter": "167aa3c3fa771745eb584492ffc91360e8396bef03365be4078a568038dd6c7b",
+            "optimizer": "d1fd6bbe32117c85c2f222b66ac01775f47a52e1a56bd54e354829dab56e5d5f",
+            "rng": "d1fd6bbe32117c85c2f222b66ac01775f47a52e1a56bd54e354829dab56e5d5f"
+          },
+          "cycle": 8,
+          "optimizer_steps": 0,
+          "record": {
+            "index": 272,
+            "kind": "SLEEP_COMPLETE",
+            "sha256": "959d8a93ce940f9e0c42bd7f70679e197c43fcc1deb8bd85cbea444bb4cb2b33"
+          }
+        }
+      ],
+      "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+      "label": "R232_SIBLING_FROZEN",
+      "later_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 286,
+          "kind": "COMMITTED",
+          "sha256": "759bcdb68a85ccff1b1f4694e2c8fd15da739d02d6a533771c4e3ecc82f766fe"
+        },
+        "cycle": 9,
+        "end": 1606,
+        "record": {
+          "index": 285,
+          "kind": "RESPONSE",
+          "sha256": "56659f33d5f028d93b83e3c074b3a7abef1840864f0c6dfae3af6a9cdbd85314"
+        },
+        "request": {
+          "index": 284,
+          "kind": "REQUEST",
+          "sha256": "804cf64b240b01f27e00416cbce9cd6c6d095fa4ac439779554bdf00a8d1ea9f"
+        },
+        "response_document_sha256": "a6c218ad8f538ac0452722249bf9e1d9044eecde642072245cdee3ae76cec847",
+        "span_sha256": "43ece8ea212c6410cbf6a21c555f4f025ddb3ed5de445a464fd64f846e3437a2",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 287,
+          "kind": "R184_STAGE",
+          "sha256": "e4d8eeaac5eefa13414b7fe917535fbefb0902d0a25d1b6ac013e61260b0a924"
+        },
+        "start": 0
+      },
+      "later_THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 277,
+          "kind": "COMMITTED",
+          "sha256": "c8b0aac4a4d02e2e9d294c9f0097e9bb0a86055227701e680d74a5dabbf5f85f"
+        },
+        "cycle": 9,
+        "end": 1283,
+        "record": {
+          "index": 276,
+          "kind": "RESPONSE",
+          "sha256": "bbc3cded0557ef0699c962e421de330ad838250a49cb934f3c075e0e764184d3"
+        },
+        "request": {
+          "index": 275,
+          "kind": "REQUEST",
+          "sha256": "228dc2ca39bc4603564fd31bd66a9aa0cb54c0962931d53195ec834254f983b1"
+        },
+        "response_document_sha256": "0b040ca4fe66b089358847283b783c95e76cb04fb48649060cccabd6e35abe7c",
+        "span_sha256": "585688b13593d06cfba97f9c2cfe2d4e4e173c9f815909adcb70c7ee3ce45888",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 278,
+          "kind": "R184_STAGE",
+          "sha256": "87519ddf85ac345e01391104b7d6cd3928f8a62ed96fd0430710df4762675f5f"
+        },
+        "start": 0
+      },
+      "later_assessment": "ACT285 starts the current expression but stops before completing or checking it. THINK276's better task identification is not an ACT artifact. Frozen optimizer remains zero in the intervening COMPLETE272 receipt.",
+      "later_topic_exposure": "One new parent explicitly identifies the old/current-task mismatch and supplies the expression again. The ACT runtime still names the original 17+8-6 object; this conflicting context is recorded, not claimed causal.",
+      "new_projected_external_ids": 11,
+      "prior_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 220,
+          "kind": "COMMITTED",
+          "sha256": "dd91a1ccbf852593fedc862c736f092b07c59f7340df7b96b54e1e0c75bf020b"
+        },
+        "cycle": 7,
+        "end": 1366,
+        "record": {
+          "index": 219,
+          "kind": "RESPONSE",
+          "sha256": "b92ac415b8374b4b10ff5e649000812cbd5af4a7e1c1828199e826ba31956ae9"
+        },
+        "request": {
+          "index": 218,
+          "kind": "REQUEST",
+          "sha256": "d9c41bbbd743678429f8381c487ad3e1704181f1e5b73b27c860474c55594669"
+        },
+        "response_document_sha256": "e70f268f46c4c80a33cd6b10893bbe009373b1b114252d7db132bf8b82769bd4",
+        "span_sha256": "68b886623bb7a2b402161a50bb4b4fb2499d071d33f84fe27f24a3fc2ae5d4b0",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 221,
+          "kind": "R184_STAGE",
+          "sha256": "4525d2f27c9253b28316dff668f5cb54a3c85f7eb13fd12047da9b0dbc679fa2"
+        },
+        "start": 0
+      },
+      "queue_id": "a873894fdd3515e1c8939ed3c4884c5164bc1b90422d7bc4afcab0a458210c55",
+      "queued_window": {
+        "after": 207,
+        "through": 273
+      },
+      "selected_ACT": 252,
+      "targeted_new_reminder_count": 1,
+      "targeted_reminders": [
+        {
+          "actual_render": {
+            "binding": "attributed_event_match",
+            "content_sha256": "8e6752e2ee9ef7b53b62188f8484febc3992b4f4315363e2ef96665a20f36739",
+            "message_index": 6,
+            "request": {
+              "file_sha256": "48667720bd192dd083eada439499c2aadec52ca8cf0d85cb97c5f39f8c50e93f",
+              "index": 275,
+              "kind": "REQUEST",
+              "sha256": "228dc2ca39bc4603564fd31bd66a9aa0cb54c0962931d53195ec834254f983b1",
+              "time_unix": 1789729968.0225997
+            },
+            "role": "user"
+          },
+          "body_sha256": "ef0d3d0d1caaaa7b526efde160131c4d0ba2fd3368b15c917d611db8c19b2824",
+          "event_id": "parent:inbox:e0d8218d6bbd4019a6a9928e3a7ef981",
+          "source_sha256": "3013a778b9dbfa69ba6f18da1cb874487833a134b3f20eab99d8b469ddb4428d"
+        }
+      ],
+      "validated_adjudication": {
+        "child_records": [
+          {
+            "committed": {
+              "index": 244,
+              "kind": "COMMITTED",
+              "sha256": "257d824ee234199d78f0dd3e073c6048599f3a3f32dbb629008a71415ae04ca5"
+            },
+            "cycle": 8,
+            "end": 267,
+            "record": {
+              "index": 243,
+              "kind": "RESPONSE",
+              "sha256": "cebc9b4f62562073f07a9ba6caac53d74817585b7143af233b0f3a4c019fc985"
+            },
+            "request": {
+              "index": 242,
+              "kind": "REQUEST",
+              "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+            },
+            "span_sha256": "6c249b1c548aba3f8e7ef0eb771b7c319e7af915e87dd9b226b11e9abc2a7a0d",
+            "stage": "THINK",
+            "stage_record": {
+              "index": 245,
+              "kind": "R184_STAGE",
+              "sha256": "a8bbbacac0d43a3388c49ff6777247a0eb5439d5cfe05af19515e745f7098cf3"
+            },
+            "start": 188
+          }
+        ],
+        "context_exposure_at_transfer": null,
+        "correction_key": "parent:inbox:ac403801fc1b4a95b51c71c3b713333a:9becd3c15d44577cf1ced724d3e3c24a0196e7bccf05ea679138c011127bb378",
+        "cross_task_transfer": "not_demonstrated",
+        "feedback": {
+          "actor": "parent",
+          "event_id": "parent:inbox:ac403801fc1b4a95b51c71c3b713333a",
+          "inbox": {
+            "index": 232,
+            "kind": "INBOX",
+            "sha256": "3eaa77ea3775607283a6fb675269bc768a796ad5a6974708720c8cd95cfc1190"
+          },
+          "request": {
+            "index": 242,
+            "kind": "REQUEST",
+            "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+          },
+          "source_sha256": "9becd3c15d44577cf1ced724d3e3c24a0196e7bccf05ea679138c011127bb378",
+          "text_sha256": "9f6b866fe4cb3953a8a6b518783ab0154c74b53bdff168d60a16bbbd01d31ee7"
+        },
+        "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+        "level": 1,
+        "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+        "observed_following_child_records": [
+          {
+            "request": {
+              "index": 242,
+              "kind": "REQUEST",
+              "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+            },
+            "response": {
+              "index": 243,
+              "kind": "RESPONSE",
+              "sha256": "cebc9b4f62562073f07a9ba6caac53d74817585b7143af233b0f3a4c019fc985"
+            },
+            "stage": "THINK"
+          },
+          {
+            "request": {
+              "index": 251,
+              "kind": "REQUEST",
+              "sha256": "92fa215508d5c2914617509a2e0b4e24298720890acee2917f63550793863977"
+            },
+            "response": {
+              "index": 252,
+              "kind": "RESPONSE",
+              "sha256": "75f1d6e56041d7733a6ec99eb9e2e95264633bb93a5f5ac7c9ea5e5278bbb94c"
+            },
+            "stage": "ACT"
+          },
+          {
+            "request": {
+              "index": 260,
+              "kind": "REQUEST",
+              "sha256": "a629446d56447331b12655273206b275a0e49a61c6179e1f40548fdb68146dd5"
+            },
+            "response": {
+              "index": 261,
+              "kind": "RESPONSE",
+              "sha256": "f86e8fa7993584175304cc9818194fcdc6c0a43e23feac77d95203dc000f8ce0"
+            },
+            "stage": "LEARN"
+          }
+        ],
+        "observer_assessment": "THINK243 correctly identifies that the previous ACT was intention-only and contains no concrete calculation. It also works 42-18+9 correctly. NEXT ACT252 instead calculates and reverses 17+8-6. Although that old-problem check is mathematically valid, it does not apply the current-task correction, so credit remains level1. REQUEST275 again corrects the wrong-task substitution; THINK276 identifies the mismatch, but ACT285 spends its output on metadata and cuts off while beginning the requested calculation. No complete later ACT or unreminded transfer is established.",
+        "parent_supplied_solution": "Task and artifact demand supplied; no numerical answer supplied.",
+        "reminders": null
+      }
+    },
+    {
+      "NEXT_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2572,
+          "kind": "COMMITTED",
+          "sha256": "72fa991ff0866975f861423a923c29f7a6ae6683256d1a43eadb35612420cdc7"
+        },
+        "cycle": 92,
+        "end": 417,
+        "record": {
+          "index": 2571,
+          "kind": "RESPONSE",
+          "sha256": "a51618d0170df8605de194a533b4a08de34a49bdec36156f9a9448162186daf8"
+        },
+        "request": {
+          "index": 2570,
+          "kind": "REQUEST",
+          "sha256": "a1b535bd1097bf94c8c187350ae39ba4f682866697126fe55008c93e159aa99d"
+        },
+        "response_document_sha256": "f68382f62fd09294de959d2e2ae6787966ebaf4db1c98c796580aae8668c5304",
+        "span_sha256": "e62ac26f1ad958257df725b12d304569f1aa0aba30f5cc5721223240a3b3614a",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2573,
+          "kind": "R184_STAGE",
+          "sha256": "1229a1adf819a7758fb9cc87bf8b5573e219991b5db0667d159b236aec497eff"
+        },
+        "start": 0
+      },
+      "THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2565,
+          "kind": "COMMITTED",
+          "sha256": "edfceecdb3305f4f35c6b5c9b2b647cf6a0984b7dc79e9d5ffeb8c3eadf438bc"
+        },
+        "cycle": 92,
+        "end": 1427,
+        "record": {
+          "index": 2564,
+          "kind": "RESPONSE",
+          "sha256": "ea21907049a303f2223f59ac0e804592fd5c7ad92b54e79abb00d0e1a2be980c"
+        },
+        "request": {
+          "index": 2563,
+          "kind": "REQUEST",
+          "sha256": "7f12461b5ae0cda00f986242ef02eb4347c26c9f083cb8201af7428583ceac96"
+        },
+        "response_document_sha256": "b34f16cd2eb5360c42f0579ce8c81e739c38afa197cbb2569ac610c4592762ef",
+        "span_sha256": "a8aab44b35d8b7ca7752a36240a78b2aa4d367acb280d461843092e336ebf440",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 2566,
+          "kind": "R184_STAGE",
+          "sha256": "bbeb9b27215dbcc4835550e77e64ebc71321fca9a56192b2c3e5a29238cd1241"
+        },
+        "start": 0
+      },
+      "annotation": {
+        "assessment": "The parent requests ordered pairs from 0 through9 with sum divisible by4 and a completeness audit. THINK2564 mentions25 among incompatible claims about112/100,25/104 and four-digit numbers, without identifying or repairing a specific domain/partition error. ACT2571 reverts to the old six-element domain/modulus3, calls that set ten integers, claims ten pairs and promises Python execution despite no executor. The later THINK2596 again juxtaposes ten and25 without a worked correction; ACT2603 is language-development prose, not the requested partition. Level0 on the selected completeness correction. The runtime ACT instruction still names the old0..5/modulus3 object, so the task-switch setting is confounded; this does not make either emitted count correct.",
+        "correction_scope": "Audit the full stated domain and count a complete, nonduplicated partition; do not claim proposed code was executed.",
+        "feedback_key": "parent:inbox:b19bc72722b346a1bdc3dfc4b6a3a423:dd5d11eff6f8619b5668eabd3480cfdfc1e05df6d6a0707aa2b70ffee560fe95",
+        "feedback_reviewed_as_correction": true,
+        "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+        "parent_supplied_solution": "Completeness-check method supplied; no count supplied.",
+        "review_batch": "POSTCUT_1122",
+        "reviewed_render_request": {
+          "index": 2563,
+          "kind": "REQUEST",
+          "sha256": "7f12461b5ae0cda00f986242ef02eb4347c26c9f083cb8201af7428583ceac96"
+        },
+        "reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
+        "reviewer": "Direct bounded semantic inspection; no subagent or classifier",
+        "selected_ACT": 2571
+      },
+      "checkpoint_bytes_copied": false,
+      "cross_task_transfer": "not_demonstrated",
+      "extra_inspected_outputs": [],
+      "feedback_is_rerendered_occurrence": false,
+      "feedback_render": {
+        "binding": "literal_body_match",
+        "content_sha256": "3edf839c490194fce0a0516a651b56da196cac5bef50112aead3d3ef9b3b2fe0",
+        "message_index": 7,
+        "request": {
+          "file_sha256": "3e45d31ae860ca2d09f558e02596d6fb459cc7d6103cf8912fed00cd326da468",
+          "index": 2563,
+          "kind": "REQUEST",
+          "sha256": "7f12461b5ae0cda00f986242ef02eb4347c26c9f083cb8201af7428583ceac96",
+          "time_unix": 1789729476.0821235
+        },
+        "role": "user"
+      },
+      "feedback_type": "Procedural corrective instruction and current-object reminder, not a supplied numerical answer or independent grader verdict.",
+      "initial_feedback_still_rendered_at_later_ACT": true,
+      "intervening_complete_receipts": [
+        {
+          "checkpoint_hashes": {
+            "adapter": "2dd371a4481d6717d8fc007273ea2b300463267163fce556b9329f4fee3d5f53",
+            "optimizer": "1f458895744e42dcf643166b0bc5601a3760159b62c3834be26b8450b1c43fd4",
+            "rng": "1f458895744e42dcf643166b0bc5601a3760159b62c3834be26b8450b1c43fd4"
+          },
+          "cycle": 92,
+          "optimizer_steps": 6092,
+          "record": {
+            "index": 2590,
+            "kind": "SLEEP_COMPLETE",
+            "sha256": "1500fc3ff2f570e966dfe9033bf7debca6858489a139b7a05ca824e9f35c4a02"
+          }
+        }
+      ],
+      "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+      "label": "MATH_A",
+      "later_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2604,
+          "kind": "COMMITTED",
+          "sha256": "1abac0739746f83c2bfbe87dc3ba9a4dd740b38524fade9fd12ebe44080002b4"
+        },
+        "cycle": 93,
+        "end": 488,
+        "record": {
+          "index": 2603,
+          "kind": "RESPONSE",
+          "sha256": "7c1836a45d46087c5d370c2c043728baf4915821bdd8ff1cdd7e8590869cbd57"
+        },
+        "request": {
+          "index": 2602,
+          "kind": "REQUEST",
+          "sha256": "903666fee797b696581f41f93a0a99bd012253968a93feaf3a05cc7883af049d"
+        },
+        "response_document_sha256": "43b2dcab002fd3c30efc2f4f927a83c45cc93dafbd255f5c96547d486c36c16a",
+        "span_sha256": "6ac078416c11d5310979bca992b366ce7dea987717e4f603f7bb67fce9ebc759",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2605,
+          "kind": "R184_STAGE",
+          "sha256": "61ca7006d3aee6a9d8f6b3dc8a2899bbfdfda44004ad760aa9c34c331bf757ef"
+        },
+        "start": 0
+      },
+      "later_THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2597,
+          "kind": "COMMITTED",
+          "sha256": "59b5844e442e526d40debda3a14ccb67d2857f73eee753bd11208767f63e4c18"
+        },
+        "cycle": 93,
+        "end": 405,
+        "record": {
+          "index": 2596,
+          "kind": "RESPONSE",
+          "sha256": "90e106dec99e1a608c1e6f6f623f6c32844665d5fd9fd9b69666e33567daa4e3"
+        },
+        "request": {
+          "index": 2595,
+          "kind": "REQUEST",
+          "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc"
+        },
+        "response_document_sha256": "ffdf67c5ca74dd568baebba5113537e2e0761633079d944fb2d3fb40f2aa1b45",
+        "span_sha256": "fb5290640883b68b88d7923e2cc2813df2d5c4930fff0d36502dc6d2dbf5e88b",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 2598,
+          "kind": "R184_STAGE",
+          "sha256": "fc8c5394b2001406516f1a8c0f96f2607716129b18b4044569bc41e25f511e32"
+        },
+        "start": 0
+      },
+      "later_assessment": "ACT2603 does not attempt the counting correction. A targeted repeated parent instruction intervenes; this is not an unreminded transfer opportunity.",
+      "later_topic_exposure": "One newly rendered targeted math-reminder body and one reading-recall body. Three historical source IDs match the same single reading message; they are not three observed reminders.",
+      "new_projected_external_ids": 47,
+      "prior_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2519,
+          "kind": "COMMITTED",
+          "sha256": "05efdcf2a30e6b5966ea8ad796c3edf36ac7c83201eeecdd81fcce6ab78e6679"
+        },
+        "cycle": 91,
+        "end": 236,
+        "record": {
+          "index": 2518,
+          "kind": "RESPONSE",
+          "sha256": "c360ca435eb255db0efb23294198c2227376ecbade8f600d0c148cb7f35582bf"
+        },
+        "request": {
+          "index": 2517,
+          "kind": "REQUEST",
+          "sha256": "0ed746ade15c7cdd88fab9da3b67b54031ea76738e44d0bcac09c07580f137e2"
+        },
+        "response_document_sha256": "37409bdbfee3444a451a73a301b4d8cbcc755d8a7f86d27eefd12db6ee83ed4e",
+        "span_sha256": "3a0f184dadcd81c6b2de8ef84e6f0b4d835bf4ab9afe32bdef91ce72aa47985f",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2520,
+          "kind": "R184_STAGE",
+          "sha256": "47d069dd5da16471464e1642d889aca14c04f0f52b932cedaf0d417d66dae120"
+        },
+        "start": 0
+      },
+      "queue_id": "f0b27bc69ba5a129b563b49a2f17aedea3fe0dc331a5fea876636c2b12416553",
+      "queued_window": {
+        "after": 2559,
+        "through": 2653
+      },
+      "selected_ACT": 2571,
+      "targeted_new_reminder_count": 1,
+      "targeted_reminders": [
+        {
+          "actual_render": {
+            "binding": "literal_body_match",
+            "content_sha256": "af962a389b34214d1ee75171db1e1849c8cbcb3e615f360f1c0c3e1567bc3765",
+            "message_index": 18,
+            "request": {
+              "file_sha256": "44b765d9185119fbe3598c9a6c18cf1e91f5243a71bdcf86ad259e88468cfb03",
+              "index": 2595,
+              "kind": "REQUEST",
+              "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc",
+              "time_unix": 1789729702.3137255
+            },
+            "role": "user"
+          },
+          "body_sha256": "af962a389b34214d1ee75171db1e1849c8cbcb3e615f360f1c0c3e1567bc3765",
+          "event_id": "parent:inbox:72397c84238e49a1b5cac8016baeeed2",
+          "source_sha256": "4cc15b744dece0ac1ac473c330fac9f59972b364bfe7a1e92d91779e1392f9e0"
+        }
+      ],
+      "validated_adjudication": {
+        "child_records": [],
+        "context_exposure_at_transfer": null,
+        "correction_key": "parent:inbox:b19bc72722b346a1bdc3dfc4b6a3a423:dd5d11eff6f8619b5668eabd3480cfdfc1e05df6d6a0707aa2b70ffee560fe95",
+        "cross_task_transfer": "not_demonstrated",
+        "feedback": {
+          "actor": "parent",
+          "event_id": "parent:inbox:b19bc72722b346a1bdc3dfc4b6a3a423",
+          "inbox": {
+            "index": 2561,
+            "kind": "INBOX",
+            "sha256": "86023c98da3850744f49967d64072604fe56c3ae5fa9a1b4573972ec41a63d1a"
+          },
+          "request": {
+            "index": 2563,
+            "kind": "REQUEST",
+            "sha256": "7f12461b5ae0cda00f986242ef02eb4347c26c9f083cb8201af7428583ceac96"
+          },
+          "source_sha256": "dd5d11eff6f8619b5668eabd3480cfdfc1e05df6d6a0707aa2b70ffee560fe95",
+          "text_sha256": "3edf839c490194fce0a0516a651b56da196cac5bef50112aead3d3ef9b3b2fe0"
+        },
+        "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+        "level": 0,
+        "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+        "observed_following_child_records": [
+          {
+            "request": {
+              "index": 2563,
+              "kind": "REQUEST",
+              "sha256": "7f12461b5ae0cda00f986242ef02eb4347c26c9f083cb8201af7428583ceac96"
+            },
+            "response": {
+              "index": 2564,
+              "kind": "RESPONSE",
+              "sha256": "ea21907049a303f2223f59ac0e804592fd5c7ad92b54e79abb00d0e1a2be980c"
+            },
+            "stage": "THINK"
+          },
+          {
+            "request": {
+              "index": 2570,
+              "kind": "REQUEST",
+              "sha256": "a1b535bd1097bf94c8c187350ae39ba4f682866697126fe55008c93e159aa99d"
+            },
+            "response": {
+              "index": 2571,
+              "kind": "RESPONSE",
+              "sha256": "a51618d0170df8605de194a533b4a08de34a49bdec36156f9a9448162186daf8"
+            },
+            "stage": "ACT"
+          },
+          {
+            "request": {
+              "index": 2579,
+              "kind": "REQUEST",
+              "sha256": "ffb7536d3216a1d47f4232476d4ea668a396a2a8393a4f8bd733821d168b0f71"
+            },
+            "response": {
+              "index": 2580,
+              "kind": "RESPONSE",
+              "sha256": "4ee1baf0a9ae27e021eb078efe1c5a2851c7cce131471dc084f06f466a2df28a"
+            },
+            "stage": "LEARN"
+          }
+        ],
+        "observer_assessment": "The parent requests ordered pairs from 0 through9 with sum divisible by4 and a completeness audit. THINK2564 mentions25 among incompatible claims about112/100,25/104 and four-digit numbers, without identifying or repairing a specific domain/partition error. ACT2571 reverts to the old six-element domain/modulus3, calls that set ten integers, claims ten pairs and promises Python execution despite no executor. The later THINK2596 again juxtaposes ten and25 without a worked correction; ACT2603 is language-development prose, not the requested partition. Level0 on the selected completeness correction. The runtime ACT instruction still names the old0..5/modulus3 object, so the task-switch setting is confounded; this does not make either emitted count correct.",
+        "parent_supplied_solution": "Completeness-check method supplied; no count supplied.",
+        "reminders": null
+      }
+    },
+    {
+      "NEXT_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2604,
+          "kind": "COMMITTED",
+          "sha256": "1abac0739746f83c2bfbe87dc3ba9a4dd740b38524fade9fd12ebe44080002b4"
+        },
+        "cycle": 93,
+        "end": 488,
+        "record": {
+          "index": 2603,
+          "kind": "RESPONSE",
+          "sha256": "7c1836a45d46087c5d370c2c043728baf4915821bdd8ff1cdd7e8590869cbd57"
+        },
+        "request": {
+          "index": 2602,
+          "kind": "REQUEST",
+          "sha256": "903666fee797b696581f41f93a0a99bd012253968a93feaf3a05cc7883af049d"
+        },
+        "response_document_sha256": "43b2dcab002fd3c30efc2f4f927a83c45cc93dafbd255f5c96547d486c36c16a",
+        "span_sha256": "6ac078416c11d5310979bca992b366ce7dea987717e4f603f7bb67fce9ebc759",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2605,
+          "kind": "R184_STAGE",
+          "sha256": "61ca7006d3aee6a9d8f6b3dc8a2899bbfdfda44004ad760aa9c34c331bf757ef"
+        },
+        "start": 0
+      },
+      "THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2597,
+          "kind": "COMMITTED",
+          "sha256": "59b5844e442e526d40debda3a14ccb67d2857f73eee753bd11208767f63e4c18"
+        },
+        "cycle": 93,
+        "end": 405,
+        "record": {
+          "index": 2596,
+          "kind": "RESPONSE",
+          "sha256": "90e106dec99e1a608c1e6f6f623f6c32844665d5fd9fd9b69666e33567daa4e3"
+        },
+        "request": {
+          "index": 2595,
+          "kind": "REQUEST",
+          "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc"
+        },
+        "response_document_sha256": "ffdf67c5ca74dd568baebba5113537e2e0761633079d944fb2d3fb40f2aa1b45",
+        "span_sha256": "fb5290640883b68b88d7923e2cc2813df2d5c4930fff0d36502dc6d2dbf5e88b",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 2598,
+          "kind": "R184_STAGE",
+          "sha256": "fc8c5394b2001406516f1a8c0f96f2607716129b18b4044569bc41e25f511e32"
+        },
+        "start": 0
+      },
+      "annotation": {
+        "assessment": "THINK2596 notes that ten differs from an expected25 but still equates the pair count with the number of integers; it gives no valid correction. NEXT ACT2603 discusses language and abstraction rather than counting. After COMPLETE2654 and further reading/science context, ACT2667 returns to the old0..5/modulus3 problem with eleven pairs out of36, which is not the actual count12. This is not transfer of the requested completeness check. Level0 for this reviewed correction; no lifetime failure claim.",
+        "correction_scope": "Use the current domain and complete partition rather than an unsupported count or execution promise.",
+        "feedback_key": "parent:inbox:72397c84238e49a1b5cac8016baeeed2:4cc15b744dece0ac1ac473c330fac9f59972b364bfe7a1e92d91779e1392f9e0",
+        "feedback_reviewed_as_correction": true,
+        "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+        "parent_supplied_solution": "Method and current task supplied; no numerical answer supplied.",
+        "review_batch": "POSTCUT_1122",
+        "reviewed_render_request": {
+          "index": 2595,
+          "kind": "REQUEST",
+          "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc"
+        },
+        "reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
+        "reviewer": "Direct bounded semantic inspection; no subagent or classifier",
+        "selected_ACT": 2603
+      },
+      "checkpoint_bytes_copied": false,
+      "cross_task_transfer": "not_demonstrated",
+      "extra_inspected_outputs": [],
+      "feedback_is_rerendered_occurrence": false,
+      "feedback_render": {
+        "binding": "literal_body_match",
+        "content_sha256": "af962a389b34214d1ee75171db1e1849c8cbcb3e615f360f1c0c3e1567bc3765",
+        "message_index": 18,
+        "request": {
+          "file_sha256": "44b765d9185119fbe3598c9a6c18cf1e91f5243a71bdcf86ad259e88468cfb03",
+          "index": 2595,
+          "kind": "REQUEST",
+          "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc",
+          "time_unix": 1789729702.3137255
+        },
+        "role": "user"
+      },
+      "feedback_type": "Repeated procedural correction; not numeric grading feedback.",
+      "initial_feedback_still_rendered_at_later_ACT": true,
+      "intervening_complete_receipts": [
+        {
+          "checkpoint_hashes": {
+            "adapter": "4b8d718badbe5628b2d178c0d8f88185d2b099b56a1fb7b07ffa8ec2ab7c9990",
+            "optimizer": "d2268f71055761d57c7c64fa5810cd76097e76f9493b3d6bcf6aa95089a9d90d",
+            "rng": "d2268f71055761d57c7c64fa5810cd76097e76f9493b3d6bcf6aa95089a9d90d"
+          },
+          "cycle": 93,
+          "optimizer_steps": 6124,
+          "record": {
+            "index": 2654,
+            "kind": "SLEEP_COMPLETE",
+            "sha256": "d2e27466b6b946b4eec477280eef8e41cf7dc365408a812e388e0c2717fd7d85"
+          }
+        }
+      ],
+      "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+      "label": "MATH_A",
+      "later_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2668,
+          "kind": "COMMITTED",
+          "sha256": "808d782c6063498dc9f6337f94eb01724693ac04f2fb69ed10607bf0f97a16fa"
+        },
+        "cycle": 94,
+        "end": 580,
+        "record": {
+          "index": 2667,
+          "kind": "RESPONSE",
+          "sha256": "cda8a0bfbf97258b51101ea8d8cdf88c53fc10442a0cd0323a6899f633d1c021"
+        },
+        "request": {
+          "index": 2666,
+          "kind": "REQUEST",
+          "sha256": "c263b5ad66bff4c38570d64fef0d425e6f3e5c31cb3b43e720e4fe17d476a8cc"
+        },
+        "response_document_sha256": "fa79994b9c0c2b4b50ac7c6020fbb1f01f5d62229ea3532b4247deb77b13b386",
+        "span_sha256": "6d47de9ab84f7a8aae53582dda0afa6ce2f5e6c89500be4351dcc628217b382c",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2669,
+          "kind": "R184_STAGE",
+          "sha256": "472d548c1016fe2cb47ba38ea1fd80f187c844b4bd5baacd071b77cad564fc16"
+        },
+        "start": 0
+      },
+      "later_THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2660,
+          "kind": "COMMITTED",
+          "sha256": "650b03a16df8abcf548c154be87ffae3a90f20e40332ef0a831be033b3847ea1"
+        },
+        "cycle": 94,
+        "end": 759,
+        "record": {
+          "index": 2659,
+          "kind": "RESPONSE",
+          "sha256": "cd68f089f4a7f5e56e7efa7eb2264133c9a4480d21d72082e489981600246af7"
+        },
+        "request": {
+          "index": 2658,
+          "kind": "REQUEST",
+          "sha256": "304b7c8ce9d87eeb178aed0b010b06f4546622e7702e01dfe75155e53c6b9b52"
+        },
+        "response_document_sha256": "7cae8035ecdf22c1f58ce79089fbc7bbbd36da6fbd88955b4fb771c523cdfd93",
+        "span_sha256": "2f1617e0d2c65003201c43765221699afb5f41dbb53baa520855afd3833ff126",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 2661,
+          "kind": "R184_STAGE",
+          "sha256": "90f32837989ccf7c7a312ea63e43bbe9b45e9b39813fe78c365c24351ad4b8f2"
+        },
+        "start": 0
+      },
+      "later_assessment": "ACT2667 offers an incorrect old-task count and no complete case partition. The new peer input is unrelated polynomial code, not a correct solution to either counting task.",
+      "later_topic_exposure": "One new research-reflection parent body repeats a generic keep-current-task instruction, plus an unverified peer polynomial-code message. The prior targeted math reminder remains visible; zero newly targeted reminders is not a no-exposure control.",
+      "new_projected_external_ids": 11,
+      "prior_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2572,
+          "kind": "COMMITTED",
+          "sha256": "72fa991ff0866975f861423a923c29f7a6ae6683256d1a43eadb35612420cdc7"
+        },
+        "cycle": 92,
+        "end": 417,
+        "record": {
+          "index": 2571,
+          "kind": "RESPONSE",
+          "sha256": "a51618d0170df8605de194a533b4a08de34a49bdec36156f9a9448162186daf8"
+        },
+        "request": {
+          "index": 2570,
+          "kind": "REQUEST",
+          "sha256": "a1b535bd1097bf94c8c187350ae39ba4f682866697126fe55008c93e159aa99d"
+        },
+        "response_document_sha256": "f68382f62fd09294de959d2e2ae6787966ebaf4db1c98c796580aae8668c5304",
+        "span_sha256": "e62ac26f1ad958257df725b12d304569f1aa0aba30f5cc5721223240a3b3614a",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2573,
+          "kind": "R184_STAGE",
+          "sha256": "1229a1adf819a7758fb9cc87bf8b5573e219991b5db0667d159b236aec497eff"
+        },
+        "start": 0
+      },
+      "queue_id": "f0b27bc69ba5a129b563b49a2f17aedea3fe0dc331a5fea876636c2b12416553",
+      "queued_window": {
+        "after": 2559,
+        "through": 2653
+      },
+      "selected_ACT": 2603,
+      "targeted_new_reminder_count": 0,
+      "targeted_reminders": [],
+      "validated_adjudication": {
+        "child_records": [],
+        "context_exposure_at_transfer": null,
+        "correction_key": "parent:inbox:72397c84238e49a1b5cac8016baeeed2:4cc15b744dece0ac1ac473c330fac9f59972b364bfe7a1e92d91779e1392f9e0",
+        "cross_task_transfer": "not_demonstrated",
+        "feedback": {
+          "actor": "parent",
+          "event_id": "parent:inbox:72397c84238e49a1b5cac8016baeeed2",
+          "inbox": {
+            "index": 2593,
+            "kind": "INBOX",
+            "sha256": "3ce3b5989dbd22564f019aa33b9be8f928613f1e13a6c94d08e18c9373cb4ca3"
+          },
+          "request": {
+            "index": 2595,
+            "kind": "REQUEST",
+            "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc"
+          },
+          "source_sha256": "4cc15b744dece0ac1ac473c330fac9f59972b364bfe7a1e92d91779e1392f9e0",
+          "text_sha256": "af962a389b34214d1ee75171db1e1849c8cbcb3e615f360f1c0c3e1567bc3765"
+        },
+        "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+        "level": 0,
+        "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+        "observed_following_child_records": [
+          {
+            "request": {
+              "index": 2595,
+              "kind": "REQUEST",
+              "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc"
+            },
+            "response": {
+              "index": 2596,
+              "kind": "RESPONSE",
+              "sha256": "90e106dec99e1a608c1e6f6f623f6c32844665d5fd9fd9b69666e33567daa4e3"
+            },
+            "stage": "THINK"
+          },
+          {
+            "request": {
+              "index": 2602,
+              "kind": "REQUEST",
+              "sha256": "903666fee797b696581f41f93a0a99bd012253968a93feaf3a05cc7883af049d"
+            },
+            "response": {
+              "index": 2603,
+              "kind": "RESPONSE",
+              "sha256": "7c1836a45d46087c5d370c2c043728baf4915821bdd8ff1cdd7e8590869cbd57"
+            },
+            "stage": "ACT"
+          },
+          {
+            "request": {
+              "index": 2611,
+              "kind": "REQUEST",
+              "sha256": "eda5747869c6d5c6429b030ab233384dab73579404a521e87d4ddb37f048d41d"
+            },
+            "response": {
+              "index": 2612,
+              "kind": "RESPONSE",
+              "sha256": "3cc942c5465a6f034103afa1615353ba10e9b8eb54396338e90ed020d94ee500"
+            },
+            "stage": "LEARN"
+          }
+        ],
+        "observer_assessment": "THINK2596 notes that ten differs from an expected25 but still equates the pair count with the number of integers; it gives no valid correction. NEXT ACT2603 discusses language and abstraction rather than counting. After COMPLETE2654 and further reading/science context, ACT2667 returns to the old0..5/modulus3 problem with eleven pairs out of36, which is not the actual count12. This is not transfer of the requested completeness check. Level0 for this reviewed correction; no lifetime failure claim.",
+        "parent_supplied_solution": "Method and current task supplied; no numerical answer supplied.",
+        "reminders": null
+      }
+    },
+    {
+      "NEXT_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2285,
+          "kind": "COMMITTED",
+          "sha256": "6ea9d829775dce3714ae461833b56a8483cb4e786c994f45a70bc61304bf0809"
+        },
+        "cycle": 98,
+        "end": 508,
+        "record": {
+          "index": 2284,
+          "kind": "RESPONSE",
+          "sha256": "d45778283357b97ceaa1ac956b15cfbf777a9f543758aa109fa201947234dcbc"
+        },
+        "request": {
+          "index": 2283,
+          "kind": "REQUEST",
+          "sha256": "0e120671266bf2a413d09a838c9e6c5cd0237ad9cfc88ab0397c7f317f9789be"
+        },
+        "response_document_sha256": "20ae0bcb5b17255aa88228f8a1739c81d232d3e63bce7e9345f51074e1bd9a36",
+        "span_sha256": "2420fbb8ee9e0dc06eaf020853e580966280cdcd2511553710df22557dced127",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2286,
+          "kind": "R184_STAGE",
+          "sha256": "f7f51d2965914a69ccb0b0df9b977ec5f47fb4535269068fc8333af433bb467f"
+        },
+        "start": 0
+      },
+      "THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2276,
+          "kind": "COMMITTED",
+          "sha256": "a7250c29cd26fac8e735a49bc832e36aa3ee96821f410915f1c000c7063f6062"
+        },
+        "cycle": 98,
+        "end": 946,
+        "record": {
+          "index": 2275,
+          "kind": "RESPONSE",
+          "sha256": "8add6addb2e3b85213a94bce636111e44545c1cd0c525c200060185868f44f0f"
+        },
+        "request": {
+          "index": 2274,
+          "kind": "REQUEST",
+          "sha256": "cda8075bd884edc2e377265721b17551fdaa72cf01c15660f7ee1040fd100882"
+        },
+        "response_document_sha256": "a231faf50225c4a1f126ba2aebd9ab16f126be5cfd5ccd005acf0a4c1862095a",
+        "span_sha256": "46573c7486d89a218732e78bffc220f7c3b0944c8fc9f1892247d845624b165e",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 2277,
+          "kind": "R184_STAGE",
+          "sha256": "70434054ca0ae729df5ab4fce4f9c4caa342765c9141e1ce795667c0409ce7d2"
+        },
+        "start": 0
+      },
+      "annotation": {
+        "assessment": "Despite the visible pair-counting/no-executor instruction, THINK2275 declares the old V polynomial the main task and says variable names were repaired. ACT2284 emits that polynomial code with a fullwidth numeric literal, subscripted names and mismatched identifiers, then proposes executing it. It neither identifies the task-switch correction nor provides the requested partition. Later THINK2340 and ACT2348 persist with polynomial code; ACT2348 treats a Cyrillic-spelled Rational lookalike as the SymPy class and uses invalid import syntax. No native execution is claimed by this audit. Level0 for the selected current-task/execution distinction, preserving the previously reviewed level1 on a different trace.",
+        "correction_scope": "Stay on the current pair-counting task, manually check the partition, and distinguish a proposed program from execution.",
+        "feedback_key": "parent:inbox:d6c887a46f0042a19d1b414983203581:c43dde8fa576965cfd4d0f0378fa4d6fe5621e62beb26f8739b5a1126ed7d356",
+        "feedback_reviewed_as_correction": true,
+        "journal_id": "45315f580ec845989682e2a728255608",
+        "parent_supplied_solution": "Procedural task guidance only; stale unverified peer polynomial work is also exposed.",
+        "review_batch": "POSTCUT_1122",
+        "reviewed_render_request": {
+          "index": 2274,
+          "kind": "REQUEST",
+          "sha256": "cda8075bd884edc2e377265721b17551fdaa72cf01c15660f7ee1040fd100882"
+        },
+        "reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
+        "reviewer": "Direct bounded semantic inspection; no subagent or classifier",
+        "selected_ACT": 2284
+      },
+      "checkpoint_bytes_copied": false,
+      "cross_task_transfer": "not_demonstrated",
+      "extra_inspected_outputs": [],
+      "feedback_is_rerendered_occurrence": false,
+      "feedback_render": {
+        "binding": "literal_body_match",
+        "content_sha256": "1f6c0757c4967e028f9a773915aeae5f1ed154b19cb9a81914b2197a9e10c008",
+        "message_index": 37,
+        "request": {
+          "file_sha256": "27128244a7e2bdb63b98c97477a9b0288436d57acba41bb18819ec9a90432a78",
+          "index": 2274,
+          "kind": "REQUEST",
+          "sha256": "cda8075bd884edc2e377265721b17551fdaa72cf01c15660f7ee1040fd100882",
+          "time_unix": 1789729663.3221173
+        },
+        "role": "user"
+      },
+      "feedback_type": "Current-object and no-executor corrective instruction, alongside an earlier genuine instruction to leave the equation.",
+      "initial_feedback_still_rendered_at_later_ACT": true,
+      "intervening_complete_receipts": [
+        {
+          "checkpoint_hashes": {
+            "adapter": "f10c7d1a63d6f1ae3abbe3e1630237c0f1c207fcedeb93bbd6acd779d9bb4bec",
+            "optimizer": "aeb87345400252dc828103497cf730a30bf0bb6bea5e5d93b91cd9af7006f37b",
+            "rng": "aeb87345400252dc828103497cf730a30bf0bb6bea5e5d93b91cd9af7006f37b"
+          },
+          "cycle": 98,
+          "optimizer_steps": 5628,
+          "record": {
+            "index": 2335,
+            "kind": "SLEEP_COMPLETE",
+            "sha256": "4f79c165e4f292750db31016f9264e88fa683a6628797e5a44bdcce87104f154"
+          }
+        }
+      ],
+      "journal_id": "45315f580ec845989682e2a728255608",
+      "label": "MATH_B_FORK",
+      "later_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2349,
+          "kind": "COMMITTED",
+          "sha256": "19f6326a03caf3dec61825b84767bf2b374dfb87536f381ac5a01096f39a0971"
+        },
+        "cycle": 99,
+        "end": 664,
+        "record": {
+          "index": 2348,
+          "kind": "RESPONSE",
+          "sha256": "613633df30f3d5c8627bd96ec693ca695c1090f6c9f7ee7dcc6fe9866db8f7db"
+        },
+        "request": {
+          "index": 2347,
+          "kind": "REQUEST",
+          "sha256": "6f6805c5409215d9848b3ec1687e65e86cdb03939646fe3da5a509c7b39639c7"
+        },
+        "response_document_sha256": "7440f50a84285101bc7b35655e9e6359c55441eeb36413d4afd504beb815673f",
+        "span_sha256": "29b723ead3033565306e0a1c210caa83af81ff5fc49df4d8e63c6a952a2b0357",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2350,
+          "kind": "R184_STAGE",
+          "sha256": "7562dbb13b085e1ee1b998e83ae6b322cea9ae4217a052e5cf5c4fa683a04e2d"
+        },
+        "start": 0
+      },
+      "later_THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2341,
+          "kind": "COMMITTED",
+          "sha256": "7bcbf40eb07cc5c273aa4bd2ac590beb1ac0673a4a40b2266634d996f7f3957d"
+        },
+        "cycle": 99,
+        "end": 947,
+        "record": {
+          "index": 2340,
+          "kind": "RESPONSE",
+          "sha256": "163b0d686e83d857f2639aecbc02be920542bea0c50ad6d67c471745448fa6ef"
+        },
+        "request": {
+          "index": 2339,
+          "kind": "REQUEST",
+          "sha256": "8b96d8ea544138fd9e76024c572e4a2c44ac3d8cebaba4fbf05772db006123f1"
+        },
+        "response_document_sha256": "5188ee762151f56f31651846d297cd176e67ca2f9c5fe7648865128ead49125a",
+        "span_sha256": "66e62d2b57450440e9b911f6e404208adb29bc3dfb7f9617149166b8ce22a31f",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 2342,
+          "kind": "R184_STAGE",
+          "sha256": "afb7c2473fd04f030764afca8f1df3c1cf29451ef9fab885013bbf2ccc9610f5"
+        },
+        "start": 0
+      },
+      "later_assessment": "ACT2348 remains on the old equation, does not repair the proposed code coherently, and does not count pairs. Syntax inspection is analyst-side only, not an invented Tool result.",
+      "later_topic_exposure": "A new writing parent body repeats generic current-task retention, and a peer sends language-development prose. Prior explicit math instructions and the older quit-equation message remain in rendered context; no unreminded-transfer claim.",
+      "new_projected_external_ids": 11,
+      "prior_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2218,
+          "kind": "COMMITTED",
+          "sha256": "bdd298ca7af89baf50cbfecfd479f9e21597d9dd195a2f8cebee2a8c5233e54a"
+        },
+        "cycle": 97,
+        "end": 423,
+        "record": {
+          "index": 2217,
+          "kind": "RESPONSE",
+          "sha256": "8479100eb23a3e766650794aaf00cdf854341b0420e7f80bf9123e437a440171"
+        },
+        "request": {
+          "index": 2216,
+          "kind": "REQUEST",
+          "sha256": "a36a816784a24642b766adc0d4de0cf13e70d9d76bdc741a01659b4f7a06843c"
+        },
+        "response_document_sha256": "4ff7ce4ace41670972563a031e3789ade16bb1a1141b0d05355f7a764372e52e",
+        "span_sha256": "7de635f728c55625882bebac6fb1be8e3bbbd75909dd3caa78c3a1de6453756a",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2219,
+          "kind": "R184_STAGE",
+          "sha256": "ef47cd6cee5f4118319420a0bb2ab22b355419292c4d1c073f8bd5286080674b"
+        },
+        "start": 0
+      },
+      "queue_id": "ecd0e1f279a8c9d0f828fdb3603e387137f820b74194f613aefb47a70c697ad1",
+      "queued_window": {
+        "after": 2262,
+        "through": 2332
+      },
+      "selected_ACT": 2284,
+      "targeted_new_reminder_count": 0,
+      "targeted_reminders": [],
+      "validated_adjudication": {
+        "child_records": [],
+        "context_exposure_at_transfer": null,
+        "correction_key": "parent:inbox:d6c887a46f0042a19d1b414983203581:c43dde8fa576965cfd4d0f0378fa4d6fe5621e62beb26f8739b5a1126ed7d356",
+        "cross_task_transfer": "not_demonstrated",
+        "feedback": {
+          "actor": "parent",
+          "event_id": "parent:inbox:d6c887a46f0042a19d1b414983203581",
+          "inbox": {
+            "index": 2271,
+            "kind": "INBOX",
+            "sha256": "5765576c5a9439805d83de2302cc204502a0bdf9b2f2c86f26be0a6324b6ed5c"
+          },
+          "request": {
+            "index": 2274,
+            "kind": "REQUEST",
+            "sha256": "cda8075bd884edc2e377265721b17551fdaa72cf01c15660f7ee1040fd100882"
+          },
+          "source_sha256": "c43dde8fa576965cfd4d0f0378fa4d6fe5621e62beb26f8739b5a1126ed7d356",
+          "text_sha256": "1f6c0757c4967e028f9a773915aeae5f1ed154b19cb9a81914b2197a9e10c008"
+        },
+        "journal_id": "45315f580ec845989682e2a728255608",
+        "level": 0,
+        "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+        "observed_following_child_records": [
+          {
+            "request": {
+              "index": 2274,
+              "kind": "REQUEST",
+              "sha256": "cda8075bd884edc2e377265721b17551fdaa72cf01c15660f7ee1040fd100882"
+            },
+            "response": {
+              "index": 2275,
+              "kind": "RESPONSE",
+              "sha256": "8add6addb2e3b85213a94bce636111e44545c1cd0c525c200060185868f44f0f"
+            },
+            "stage": "THINK"
+          },
+          {
+            "request": {
+              "index": 2283,
+              "kind": "REQUEST",
+              "sha256": "0e120671266bf2a413d09a838c9e6c5cd0237ad9cfc88ab0397c7f317f9789be"
+            },
+            "response": {
+              "index": 2284,
+              "kind": "RESPONSE",
+              "sha256": "d45778283357b97ceaa1ac956b15cfbf777a9f543758aa109fa201947234dcbc"
+            },
+            "stage": "ACT"
+          },
+          {
+            "request": {
+              "index": 2292,
+              "kind": "REQUEST",
+              "sha256": "33cc949c955ba4e2f6b7f5db5c7199db55583377266ae673362c3c247bb15136"
+            },
+            "response": {
+              "index": 2293,
+              "kind": "RESPONSE",
+              "sha256": "89b2c82b38dd8e0563324d1891491f5e7848d31a51b9839cc5ca71c126c34fa5"
+            },
+            "stage": "LEARN"
+          }
+        ],
+        "observer_assessment": "Despite the visible pair-counting/no-executor instruction, THINK2275 declares the old V polynomial the main task and says variable names were repaired. ACT2284 emits that polynomial code with a fullwidth numeric literal, subscripted names and mismatched identifiers, then proposes executing it. It neither identifies the task-switch correction nor provides the requested partition. Later THINK2340 and ACT2348 persist with polynomial code; ACT2348 treats a Cyrillic-spelled Rational lookalike as the SymPy class and uses invalid import syntax. No native execution is claimed by this audit. Level0 for the selected current-task/execution distinction, preserving the previously reviewed level1 on a different trace.",
+        "parent_supplied_solution": "Procedural task guidance only; stale unverified peer polynomial work is also exposed.",
+        "reminders": null
+      }
+    },
+    {
+      "NEXT_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2307,
+          "kind": "COMMITTED",
+          "sha256": "8cae2af84c131ab5e4533facaf64a9ca7bc781271b5bb70b0c4191e4abf23355"
+        },
+        "cycle": 103,
+        "end": 1223,
+        "record": {
+          "index": 2306,
+          "kind": "RESPONSE",
+          "sha256": "b584129fec928e02167d20295014b73a90d59dc59f87a79e90c9ceb6fcd39514"
+        },
+        "request": {
+          "index": 2305,
+          "kind": "REQUEST",
+          "sha256": "5d5d5ecc9525575604c8ca4ff2309ad99a389a11c2ba015ecfc61c2470ce3213"
+        },
+        "response_document_sha256": "f770a7cb09bb587c3ea9d64f1ded3782dcf1f9aaeba68fcb19df5319b745581f",
+        "span_sha256": "78365a81bd2631d2861434c6cef3089f56ecad3f6a0ca527b7f30117eb46a619",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2308,
+          "kind": "R184_STAGE",
+          "sha256": "5539a5dcf570f5753e8a3a87c676f2b108e13abae732366ba7cd969ef720ca75"
+        },
+        "start": 0
+      },
+      "THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2300,
+          "kind": "COMMITTED",
+          "sha256": "85c0ff73b7eab0d210c5e218d68cd9fb3d7435afbd4f0b07dcea977dd57712bc"
+        },
+        "cycle": 103,
+        "end": 960,
+        "record": {
+          "index": 2299,
+          "kind": "RESPONSE",
+          "sha256": "d7d16420144d400ca86d1c99d5ddf727dc95cc3085550c27eec23215885620dc"
+        },
+        "request": {
+          "index": 2298,
+          "kind": "REQUEST",
+          "sha256": "a004aa53d1d5e4a9e8aa6299608fdc4d811c674c0ce532af750980e21fd5b6b7"
+        },
+        "response_document_sha256": "3ec8b925fd6895c80e8b30884c104b38e1f4a97788b34705978d9d76cbafd7e3",
+        "span_sha256": "8dc9d24230cff203353bbbac753c5c1b69d618ee248505a7f237b1b7a07a3efb",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 2301,
+          "kind": "R184_STAGE",
+          "sha256": "ef566a52d9329b56179e344f719ef14d33472f2782c385833f91d987717a8889"
+        },
+        "start": 0
+      },
+      "annotation": {
+        "assessment": "THINK2299 repeats that the old count30 is verified rather than identifying a partition error. NEXT ACT2306 omits9 from residue class1, uses unordered binomial counts for ordered pairs, includes incompatible residue combinations, and calls3+18 equal to30. For the actual parent task0..9/modulus4, independent analyst enumeration gives25; this check was not delivered to the learner. After a repeated parent completeness instruction, THINK2351 still endorses30 and ACT2358 switches to an unrelated V equation with inconsistent substitutions. Level0 for this selected correction; prior best level1 remains a different narrow trace.",
+        "correction_scope": "Check every residue-class member and size, then count only combinations satisfying the current modulus.",
+        "feedback_key": "parent:inbox:376ac361a0e54b179b71c846fae957ec:f6d73533c1812fa9538a19f9dfe2700457382459868eb11202d602fb4a999d0e",
+        "feedback_reviewed_as_correction": true,
+        "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+        "parent_supplied_solution": "Residue-class method supplied; no numerical solution supplied.",
+        "review_batch": "POSTCUT_1122",
+        "reviewed_render_request": {
+          "index": 2298,
+          "kind": "REQUEST",
+          "sha256": "a004aa53d1d5e4a9e8aa6299608fdc4d811c674c0ce532af750980e21fd5b6b7"
+        },
+        "reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
+        "reviewer": "Direct bounded semantic inspection; no subagent or classifier",
+        "selected_ACT": 2306
+      },
+      "checkpoint_bytes_copied": false,
+      "cross_task_transfer": "not_demonstrated",
+      "extra_inspected_outputs": [],
+      "feedback_is_rerendered_occurrence": true,
+      "feedback_render": {
+        "binding": "literal_body_match",
+        "content_sha256": "e925a4ecfef29dbb0886135303e7546e53ddb54141164b1a098efe3474e07873",
+        "message_index": 21,
+        "request": {
+          "file_sha256": "13ae87998d9157271a69951c97f95ab6b5f8227a7c724c290fcb3224a09b4277",
+          "index": 2298,
+          "kind": "REQUEST",
+          "sha256": "a004aa53d1d5e4a9e8aa6299608fdc4d811c674c0ce532af750980e21fd5b6b7",
+          "time_unix": 1789729554.856464
+        },
+        "role": "user"
+      },
+      "feedback_type": "Procedural completeness correction, not a delivered count or truth by agreement.",
+      "initial_feedback_still_rendered_at_later_ACT": false,
+      "intervening_complete_receipts": [
+        {
+          "checkpoint_hashes": {
+            "adapter": "fc108306e766afa72e6dbf843370c79a63de39f7b9e98e58fbf013df5c9b66fb",
+            "optimizer": "823230a35865377db7d8bc702ef96305b41971dacc33e9f5b0e32d5e2af376c0",
+            "rng": "823230a35865377db7d8bc702ef96305b41971dacc33e9f5b0e32d5e2af376c0"
+          },
+          "cycle": 103,
+          "optimizer_steps": 5484,
+          "record": {
+            "index": 2345,
+            "kind": "SLEEP_COMPLETE",
+            "sha256": "09bdf248e9c9618117eda6726e618d5f8c97a936ed5683e404d5d58cda9b7b31"
+          }
+        }
+      ],
+      "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+      "label": "MATH_C",
+      "later_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2359,
+          "kind": "COMMITTED",
+          "sha256": "7ffe4b6e1a8830af0721a3291f497cd0b62987ab23c2bca585ebac4d1b64103c"
+        },
+        "cycle": 104,
+        "end": 1209,
+        "record": {
+          "index": 2358,
+          "kind": "RESPONSE",
+          "sha256": "de52308140d1a312029911d7a99409f95a452eddbbadf40c129574b25353181a"
+        },
+        "request": {
+          "index": 2357,
+          "kind": "REQUEST",
+          "sha256": "ee847fdded5b91c4ea4366bf70165c8d3a7dcae21bb8d2574fdce84700c3efef"
+        },
+        "response_document_sha256": "ea08f5807b80a8c109cd73078128ca12ba58fd9533af0664b7c4691da207cdb0",
+        "span_sha256": "8838b9eb8508103d1ba21a7c094cf357483d532063574fc9c68acfa754501a9d",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2360,
+          "kind": "R184_STAGE",
+          "sha256": "80e06d09f20a61beba5f1100b713e2b8e2d7d12247892e3816d9ba140812bfcc"
+        },
+        "start": 0
+      },
+      "later_THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2352,
+          "kind": "COMMITTED",
+          "sha256": "12ea6459a7a621f6531c6c83ed05b9b74bede99146a66414c6abd71f5ed6f219"
+        },
+        "cycle": 104,
+        "end": 1491,
+        "record": {
+          "index": 2351,
+          "kind": "RESPONSE",
+          "sha256": "c90b57245f0b92a5b86fbfc725047dc61700cbb952d1063b0b65864e4a7e9171"
+        },
+        "request": {
+          "index": 2350,
+          "kind": "REQUEST",
+          "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9"
+        },
+        "response_document_sha256": "7fb788dea8fca330d1510d75baea2be17e0194dab5376b6bbc4234750998720a",
+        "span_sha256": "841f0ff5c43b7ac9fe5c3998061f52e534efb7f88aa6c2f3c407b5833eca373d",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 2353,
+          "kind": "R184_STAGE",
+          "sha256": "fa171bc652b8d2853873b09f882345b3ee042f9c53acd6c863af1d63247f9c2c"
+        },
+        "start": 0
+      },
+      "later_assessment": "ACT2358 does not apply the residue-domain correction. Its declaration that another polynomial calculation is mistaken is not identification of the delivered counting correction.",
+      "later_topic_exposure": "One newly rendered targeted math reminder and one caretaker-story body. Multiple history IDs for the story do not establish multiple actual renderings. The reminder supplies the method, not25.",
+      "new_projected_external_ids": 22,
+      "prior_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2276,
+          "kind": "COMMITTED",
+          "sha256": "665c17366e8f0c5879475ddd38b45e5efa3def69593564dd0d194c77007a871f"
+        },
+        "cycle": 102,
+        "end": 995,
+        "record": {
+          "index": 2275,
+          "kind": "RESPONSE",
+          "sha256": "eb341daee81b504efdcc17c1924a9d214606d644e0975fb91dfecb50af9c946a"
+        },
+        "request": {
+          "index": 2274,
+          "kind": "REQUEST",
+          "sha256": "0032b78c1fadf9af822e3546f17b11ad7ba7fcba1bee4766504f3e8bb5cc3bb2"
+        },
+        "response_document_sha256": "6c69326a75e3b702e80ea696674224ad7387917062e125debe0b96b33a4c9091",
+        "span_sha256": "fbf49fe0317c1ed6218a609f8def19049b82559015a9085e815386ab6d513827",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2277,
+          "kind": "R184_STAGE",
+          "sha256": "28011908858fd34f8a47e1fbf56a4cdc704c54f1cc0a2c133cc04d0e710767e3"
+        },
+        "start": 0
+      },
+      "queue_id": "a417b42c00e7d36612dfe2a6e7dc60fc4b7cf7140bbcc82e84cc42ccbe3d4fde",
+      "queued_window": {
+        "after": 2295,
+        "through": 2366
+      },
+      "selected_ACT": 2306,
+      "targeted_new_reminder_count": 1,
+      "targeted_reminders": [
+        {
+          "actual_render": {
+            "binding": "literal_body_match",
+            "content_sha256": "ed0a63d67b37bf33843db199f90156ba52e5f2ffe196902edaf8e1b5c731f328",
+            "message_index": 6,
+            "request": {
+              "file_sha256": "1f1502710ee4c9ee71716d3b8a47b3ec91883a5d56cbcccc9880389cfe2283b3",
+              "index": 2350,
+              "kind": "REQUEST",
+              "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9",
+              "time_unix": 1789729889.0784726
+            },
+            "role": "user"
+          },
+          "body_sha256": "ed0a63d67b37bf33843db199f90156ba52e5f2ffe196902edaf8e1b5c731f328",
+          "event_id": "parent:inbox:472d1f2c436540e9894a338266ad4b6d",
+          "source_sha256": "4fd227d6118d1fc45ab11564a3f9852752deaf9657e064c13a34f805245494ca"
+        }
+      ],
+      "validated_adjudication": {
+        "child_records": [],
+        "context_exposure_at_transfer": null,
+        "correction_key": "parent:inbox:376ac361a0e54b179b71c846fae957ec:f6d73533c1812fa9538a19f9dfe2700457382459868eb11202d602fb4a999d0e",
+        "cross_task_transfer": "not_demonstrated",
+        "feedback": {
+          "actor": "parent",
+          "event_id": "parent:inbox:376ac361a0e54b179b71c846fae957ec",
+          "inbox": {
+            "index": 2272,
+            "kind": "INBOX",
+            "sha256": "c291c5c099916c819c3b7723b392cc1436f7293fdb6f4b28898149e09a4bf29a"
+          },
+          "request": {
+            "index": 2274,
+            "kind": "REQUEST",
+            "sha256": "0032b78c1fadf9af822e3546f17b11ad7ba7fcba1bee4766504f3e8bb5cc3bb2"
+          },
+          "source_sha256": "f6d73533c1812fa9538a19f9dfe2700457382459868eb11202d602fb4a999d0e",
+          "text_sha256": "e925a4ecfef29dbb0886135303e7546e53ddb54141164b1a098efe3474e07873"
+        },
+        "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+        "level": 0,
+        "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+        "observed_following_child_records": [
+          {
+            "request": {
+              "index": 2274,
+              "kind": "REQUEST",
+              "sha256": "0032b78c1fadf9af822e3546f17b11ad7ba7fcba1bee4766504f3e8bb5cc3bb2"
+            },
+            "response": {
+              "index": 2275,
+              "kind": "RESPONSE",
+              "sha256": "eb341daee81b504efdcc17c1924a9d214606d644e0975fb91dfecb50af9c946a"
+            },
+            "stage": "ACT"
+          },
+          {
+            "request": {
+              "index": 2283,
+              "kind": "REQUEST",
+              "sha256": "853f39ae2be27316f16c3a9cde216d78a5cf3f7d11ff021edebabefd08e4d83d"
+            },
+            "response": {
+              "index": 2284,
+              "kind": "RESPONSE",
+              "sha256": "662c12e2dcd2adc01cf894466f83a0f7b76abcbd53aafc34ce2bf690bfb66959"
+            },
+            "stage": "LEARN"
+          },
+          {
+            "request": {
+              "index": 2298,
+              "kind": "REQUEST",
+              "sha256": "a004aa53d1d5e4a9e8aa6299608fdc4d811c674c0ce532af750980e21fd5b6b7"
+            },
+            "response": {
+              "index": 2299,
+              "kind": "RESPONSE",
+              "sha256": "d7d16420144d400ca86d1c99d5ddf727dc95cc3085550c27eec23215885620dc"
+            },
+            "stage": "THINK"
+          }
+        ],
+        "observer_assessment": "THINK2299 repeats that the old count30 is verified rather than identifying a partition error. NEXT ACT2306 omits9 from residue class1, uses unordered binomial counts for ordered pairs, includes incompatible residue combinations, and calls3+18 equal to30. For the actual parent task0..9/modulus4, independent analyst enumeration gives25; this check was not delivered to the learner. After a repeated parent completeness instruction, THINK2351 still endorses30 and ACT2358 switches to an unrelated V equation with inconsistent substitutions. Level0 for this selected correction; prior best level1 remains a different narrow trace.",
+        "parent_supplied_solution": "Residue-class method supplied; no numerical solution supplied.",
+        "reminders": null
+      }
+    },
+    {
+      "NEXT_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2359,
+          "kind": "COMMITTED",
+          "sha256": "7ffe4b6e1a8830af0721a3291f497cd0b62987ab23c2bca585ebac4d1b64103c"
+        },
+        "cycle": 104,
+        "end": 1209,
+        "record": {
+          "index": 2358,
+          "kind": "RESPONSE",
+          "sha256": "de52308140d1a312029911d7a99409f95a452eddbbadf40c129574b25353181a"
+        },
+        "request": {
+          "index": 2357,
+          "kind": "REQUEST",
+          "sha256": "ee847fdded5b91c4ea4366bf70165c8d3a7dcae21bb8d2574fdce84700c3efef"
+        },
+        "response_document_sha256": "ea08f5807b80a8c109cd73078128ca12ba58fd9533af0664b7c4691da207cdb0",
+        "span_sha256": "8838b9eb8508103d1ba21a7c094cf357483d532063574fc9c68acfa754501a9d",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2360,
+          "kind": "R184_STAGE",
+          "sha256": "80e06d09f20a61beba5f1100b713e2b8e2d7d12247892e3816d9ba140812bfcc"
+        },
+        "start": 0
+      },
+      "THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2352,
+          "kind": "COMMITTED",
+          "sha256": "12ea6459a7a621f6531c6c83ed05b9b74bede99146a66414c6abd71f5ed6f219"
+        },
+        "cycle": 104,
+        "end": 1491,
+        "record": {
+          "index": 2351,
+          "kind": "RESPONSE",
+          "sha256": "c90b57245f0b92a5b86fbfc725047dc61700cbb952d1063b0b65864e4a7e9171"
+        },
+        "request": {
+          "index": 2350,
+          "kind": "REQUEST",
+          "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9"
+        },
+        "response_document_sha256": "7fb788dea8fca330d1510d75baea2be17e0194dab5376b6bbc4234750998720a",
+        "span_sha256": "841f0ff5c43b7ac9fe5c3998061f52e534efb7f88aa6c2f3c407b5833eca373d",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 2353,
+          "kind": "R184_STAGE",
+          "sha256": "fa171bc652b8d2853873b09f882345b3ee042f9c53acd6c863af1d63247f9c2c"
+        },
+        "start": 0
+      },
+      "annotation": {
+        "assessment": "THINK2351 incorrectly endorses the count30 and reopens V. NEXT ACT2358 performs inconsistent algebra on that unrelated object, not a corrected residue partition. After COMPLETE2393, THINK2398 discusses the polynomial and peer language essay; ACT2406 again works V, rounds its derived coefficient, then returns to the older0..5/modulus3 task while claiming30 and emitting unexecuted counting code. It acknowledges lack of execution support, but that separate limitation is not application of the delivered partition correction. Level0 for this reviewed target; no cross-task transfer or level3.",
+        "correction_scope": "Recheck the current residue partition instead of repeating the unsupported30 or reopening the old equation.",
+        "feedback_key": "parent:inbox:472d1f2c436540e9894a338266ad4b6d:4fd227d6118d1fc45ab11564a3f9852752deaf9657e064c13a34f805245494ca",
+        "feedback_reviewed_as_correction": true,
+        "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+        "parent_supplied_solution": "Method supplied; no numerical answer supplied.",
+        "review_batch": "POSTCUT_1122",
+        "reviewed_render_request": {
+          "index": 2350,
+          "kind": "REQUEST",
+          "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9"
+        },
+        "reviewed_utc": "2026-09-18T11:30:28.600851+00:00",
+        "reviewer": "Direct bounded semantic inspection; no subagent or classifier",
+        "selected_ACT": 2358
+      },
+      "checkpoint_bytes_copied": false,
+      "cross_task_transfer": "not_demonstrated",
+      "extra_inspected_outputs": [],
+      "feedback_is_rerendered_occurrence": false,
+      "feedback_render": {
+        "binding": "literal_body_match",
+        "content_sha256": "ed0a63d67b37bf33843db199f90156ba52e5f2ffe196902edaf8e1b5c731f328",
+        "message_index": 6,
+        "request": {
+          "file_sha256": "1f1502710ee4c9ee71716d3b8a47b3ec91883a5d56cbcccc9880389cfe2283b3",
+          "index": 2350,
+          "kind": "REQUEST",
+          "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9",
+          "time_unix": 1789729889.0784726
+        },
+        "role": "user"
+      },
+      "feedback_type": "Repeated procedural completeness and current-object correction.",
+      "initial_feedback_still_rendered_at_later_ACT": true,
+      "intervening_complete_receipts": [
+        {
+          "checkpoint_hashes": {
+            "adapter": "5601c9f7cf0db8501f1271ad3fb91ccc4f3cc13b3a7247cfca5912f43768cea3",
+            "optimizer": "b35073b7fac4637ec17179da8f10fa482b0ddbb9cb9ab74e7807bde5830169b3",
+            "rng": "b35073b7fac4637ec17179da8f10fa482b0ddbb9cb9ab74e7807bde5830169b3"
+          },
+          "cycle": 104,
+          "optimizer_steps": 5500,
+          "record": {
+            "index": 2393,
+            "kind": "SLEEP_COMPLETE",
+            "sha256": "24572f7228f480c156060f991063e2a5e681f255f1e9452869d1c50cfd4a3743"
+          }
+        }
+      ],
+      "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+      "label": "MATH_C",
+      "later_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2407,
+          "kind": "COMMITTED",
+          "sha256": "725d7554713906eb89798441dcc206b88feb37d76be64b1286f9aefa44b79e76"
+        },
+        "cycle": 105,
+        "end": 1219,
+        "record": {
+          "index": 2406,
+          "kind": "RESPONSE",
+          "sha256": "e844a0ac4bcb76e690f510e7fcb4860882d9cc1511dae064ce7de7e991e9c445"
+        },
+        "request": {
+          "index": 2405,
+          "kind": "REQUEST",
+          "sha256": "f32eca9da1312b50220853faffad52c09a53de410d8e6b338fa00b8bb0d051eb"
+        },
+        "response_document_sha256": "abdad6d68ccc93034c04b4483964217b87ecca02a3d1e339f63ba2554c9208ea",
+        "span_sha256": "c9c99e3e5acc227cb048a30a1d6959ea5fcfa094df0449b9d65c7a7e7c2b04b4",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2408,
+          "kind": "R184_STAGE",
+          "sha256": "a3628e454834849e12bd25df1265c0c605688dd8b32796db6d0cff7f1af60383"
+        },
+        "start": 0
+      },
+      "later_THINK": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2399,
+          "kind": "COMMITTED",
+          "sha256": "3a3beede46b4898f083a6ac71750718bcac8084bc9459602a35851b6a713f22c"
+        },
+        "cycle": 105,
+        "end": 1324,
+        "record": {
+          "index": 2398,
+          "kind": "RESPONSE",
+          "sha256": "1379d00e68f06e0895ee31e014cc2ab5b8d09f4947747e7df7b41d585d502b50"
+        },
+        "request": {
+          "index": 2397,
+          "kind": "REQUEST",
+          "sha256": "fa838c8e51a55e51ab31bfa5da6fe53032ecf92b6a1fea4df8bbbc3847049fd9"
+        },
+        "response_document_sha256": "7718ff4114895dc132a20350c5e7571f8c949aac467e2d7e3862a725ba8835c8",
+        "span_sha256": "5a3ba7fc598f95913dae4675e507b7695e1adb618f3bd78a533a23960625a23b",
+        "stage": "THINK",
+        "stage_record": {
+          "index": 2400,
+          "kind": "R184_STAGE",
+          "sha256": "4f4ec4a07d511adc7d945e6d959a49a103180a4ca352542b3265809efbcb92b7"
+        },
+        "start": 0
+      },
+      "later_assessment": "ACT2406 does not repair the current count and gives30 for the old task whose actual count is12. Proposed enumeration is not a result; no replay or executor call was made.",
+      "later_topic_exposure": "One new recall parent body and one unverified peer language-development message. The prior targeted reminder remains visible, and stale runtime ACT instructions still name the old task. Multiple identical-body history IDs are not counted as multiple new reminders.",
+      "new_projected_external_ids": 53,
+      "prior_ACT": {
+        "all_history_tokens_masked": true,
+        "committed": {
+          "index": 2307,
+          "kind": "COMMITTED",
+          "sha256": "8cae2af84c131ab5e4533facaf64a9ca7bc781271b5bb70b0c4191e4abf23355"
+        },
+        "cycle": 103,
+        "end": 1223,
+        "record": {
+          "index": 2306,
+          "kind": "RESPONSE",
+          "sha256": "b584129fec928e02167d20295014b73a90d59dc59f87a79e90c9ceb6fcd39514"
+        },
+        "request": {
+          "index": 2305,
+          "kind": "REQUEST",
+          "sha256": "5d5d5ecc9525575604c8ca4ff2309ad99a389a11c2ba015ecfc61c2470ce3213"
+        },
+        "response_document_sha256": "f770a7cb09bb587c3ea9d64f1ded3782dcf1f9aaeba68fcb19df5319b745581f",
+        "span_sha256": "78365a81bd2631d2861434c6cef3089f56ecad3f6a0ca527b7f30117eb46a619",
+        "stage": "ACT",
+        "stage_record": {
+          "index": 2308,
+          "kind": "R184_STAGE",
+          "sha256": "5539a5dcf570f5753e8a3a87c676f2b108e13abae732366ba7cd969ef720ca75"
+        },
+        "start": 0
+      },
+      "queue_id": "a417b42c00e7d36612dfe2a6e7dc60fc4b7cf7140bbcc82e84cc42ccbe3d4fde",
+      "queued_window": {
+        "after": 2295,
+        "through": 2366
+      },
+      "selected_ACT": 2358,
+      "targeted_new_reminder_count": 0,
+      "targeted_reminders": [],
+      "validated_adjudication": {
+        "child_records": [],
+        "context_exposure_at_transfer": null,
+        "correction_key": "parent:inbox:472d1f2c436540e9894a338266ad4b6d:4fd227d6118d1fc45ab11564a3f9852752deaf9657e064c13a34f805245494ca",
+        "cross_task_transfer": "not_demonstrated",
+        "feedback": {
+          "actor": "parent",
+          "event_id": "parent:inbox:472d1f2c436540e9894a338266ad4b6d",
+          "inbox": {
+            "index": 2347,
+            "kind": "INBOX",
+            "sha256": "494b6a85bbd6630871da4e759994f38eb296d3c24a3c4ae2fba6ee226f737a30"
+          },
+          "request": {
+            "index": 2350,
+            "kind": "REQUEST",
+            "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9"
+          },
+          "source_sha256": "4fd227d6118d1fc45ab11564a3f9852752deaf9657e064c13a34f805245494ca",
+          "text_sha256": "ed0a63d67b37bf33843db199f90156ba52e5f2ffe196902edaf8e1b5c731f328"
+        },
+        "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+        "level": 0,
+        "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+        "observed_following_child_records": [
+          {
+            "request": {
+              "index": 2350,
+              "kind": "REQUEST",
+              "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9"
+            },
+            "response": {
+              "index": 2351,
+              "kind": "RESPONSE",
+              "sha256": "c90b57245f0b92a5b86fbfc725047dc61700cbb952d1063b0b65864e4a7e9171"
+            },
+            "stage": "THINK"
+          },
+          {
+            "request": {
+              "index": 2357,
+              "kind": "REQUEST",
+              "sha256": "ee847fdded5b91c4ea4366bf70165c8d3a7dcae21bb8d2574fdce84700c3efef"
+            },
+            "response": {
+              "index": 2358,
+              "kind": "RESPONSE",
+              "sha256": "de52308140d1a312029911d7a99409f95a452eddbbadf40c129574b25353181a"
+            },
+            "stage": "ACT"
+          },
+          {
+            "request": {
+              "index": 2366,
+              "kind": "REQUEST",
+              "sha256": "421820d32b9b8a85d6d778b162effeea73c6b49945d4b3920b1c26813275dbe1"
+            },
+            "response": {
+              "index": 2367,
+              "kind": "RESPONSE",
+              "sha256": "69dfd692cfd5ea038f921e60dddf76452948480367a7714609598916c1db66a2"
+            },
+            "stage": "LEARN"
+          }
+        ],
+        "observer_assessment": "THINK2351 incorrectly endorses the count30 and reopens V. NEXT ACT2358 performs inconsistent algebra on that unrelated object, not a corrected residue partition. After COMPLETE2393, THINK2398 discusses the polynomial and peer language essay; ACT2406 again works V, rounds its derived coefficient, then returns to the older0..5/modulus3 task while claiming30 and emitting unexecuted counting code. It acknowledges lack of execution support, but that separate limitation is not application of the delivered partition correction. Level0 for this reviewed target; no cross-task transfer or level3.",
+        "parent_supplied_solution": "Method supplied; no numerical answer supplied.",
+        "reminders": null
+      }
+    }
+  ],
+  "rows": [
+    {
+      "highest_bounded_reviewed_level": 2,
+      "label": "FRESH_R231",
+      "later_inspected_ACTs": [
+        427
+      ],
+      "new_levels": [
+        2
+      ],
+      "new_reviewed_ACTs": [
+        346
+      ],
+      "receipt_capture_utc": "2026-09-18T11:22:05.673165+00:00",
+      "received_through": 475,
+      "total_reviewed_traces": 3
+    },
+    {
+      "highest_bounded_reviewed_level": 0,
+      "label": "MATH_A",
+      "later_inspected_ACTs": [
+        2603,
+        2667
+      ],
+      "new_levels": [
+        0,
+        0
+      ],
+      "new_reviewed_ACTs": [
+        2571,
+        2603
+      ],
+      "receipt_capture_utc": "2026-09-18T11:22:07.156068+00:00",
+      "received_through": 2728,
+      "total_reviewed_traces": 3
+    },
+    {
+      "highest_bounded_reviewed_level": 1,
+      "label": "MATH_B_FORK",
+      "later_inspected_ACTs": [
+        2348
+      ],
+      "new_levels": [
+        0
+      ],
+      "new_reviewed_ACTs": [
+        2284
+      ],
+      "receipt_capture_utc": "2026-09-18T11:22:07.557652+00:00",
+      "received_through": 2406,
+      "total_reviewed_traces": 2
+    },
+    {
+      "highest_bounded_reviewed_level": 1,
+      "label": "MATH_C",
+      "later_inspected_ACTs": [
+        2358,
+        2406
+      ],
+      "new_levels": [
+        0,
+        0
+      ],
+      "new_reviewed_ACTs": [
+        2306,
+        2358
+      ],
+      "receipt_capture_utc": "2026-09-18T11:22:07.998993+00:00",
+      "received_through": 2459,
+      "total_reviewed_traces": 3
+    },
+    {
+      "highest_bounded_reviewed_level": 2,
+      "label": "R232_SIBLING_FROZEN",
+      "later_inspected_ACTs": [
+        252,
+        285
+      ],
+      "new_levels": [
+        0,
+        1
+      ],
+      "new_reviewed_ACTs": [
+        219,
+        252
+      ],
+      "receipt_capture_utc": "2026-09-18T11:22:06.041701+00:00",
+      "received_through": 372,
+      "total_reviewed_traces": 4
+    }
+  ],
+  "schema": "R232_MANUAL_POSTCUT_REVIEW_V1",
+  "scope": "Only listed outputs and context reviewed, not entire received ranges or lifetime histories.",
+  "scorer_replays": 0
+}
