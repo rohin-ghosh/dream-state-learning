@@ -1,9 +1,27 @@
 import unittest
 
-from fleet_deadlines import actual_parent_delivery, annotate_support, checkpoint_tail_entry, runtime_status, support_row, verified
+from fleet_deadlines import actual_parent_delivery, annotate_support, checkpoint_tail_entry, checkpoint_tail_parent_support, runtime_status, support_row, verified
 
 
 class DeadlineEvidenceTests(unittest.TestCase):
+    def test_successor_parent_requires_START_and_matching_native(self):
+        native = dict(native=dict(pid=17, start_ticks='100'), loaded=dict(index=12, sha256='load'),
+            guard_sha256='guard', hard_end_unix=1789927200)
+        binding = dict(schema='R233_C2_PARENT_ACTUAL_CONTINUATION_V1', native=native['native'],
+            native_loaded=native['loaded'], guard_sha256='guard', hard_end_unix=1789927200,
+            parent=dict(pid=29, start_ticks='200'), parent_started_utc='2026-09-18T21:11:44Z',
+            parent_started_receipt_sha256='a' * 64)
+        support = checkpoint_tail_parent_support(binding, native, {})
+        self.assertEqual(support['pid'], 29)
+        self.assertEqual(support['start_ticks'], '200')
+        self.assertNotIn('parent_delivery', support)
+        for change in (dict(native=dict(pid=18, start_ticks='100')),
+                dict(native_loaded=dict(index=13, sha256='other')),
+                dict(guard_sha256='other'), dict(parent_started_receipt_sha256=''),
+                dict(parent_started_utc=None), dict(parent=dict(pid=29))):
+            with self.assertRaisesRegex(ValueError, 'actual_C2_parent_START'):
+                checkpoint_tail_parent_support(dict(binding, **change), native, {})
+
     def test_parent_publication_is_not_render_or_ACT(self):
         delivery=dict(status='REQUEST_TO_COMMITTED_ACT_OBSERVED',request_index=12,act_index=14,
             committed_index=15,inbox_id='confirmed')

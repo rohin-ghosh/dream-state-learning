@@ -32,10 +32,45 @@ Tool notice rendered in REQUEST5321 at20:59:03.289UTC, followed by ACT
 REQUEST5328 → RESPONSE5329 → COMMITTED5330 at21:00:57.529UTC. This establishes
 delivery, not correction uptake or caption quality. Parent318 is also published.
 
-**DEADLINES_210329.json/.md verifies all17 kept native bounds and current
-incarnations.** It does not assert every support process or every parenting
+**DEADLINES_212301.json/.md verifies all17 kept native bounds and current
+incarnations at21:23:01 UTC.** It does not assert every support process or every parenting
 delivery is verified. C2's bound is September20 18:00UTC, within node5's reported
 allocation; node3's September24 bound does not authorize using node5 that long.
+
+### Verified follow-through
+
+C2's current responsive parent is **4145645/start187292176**, with actual START
+at21:11:44.989UTC, one completed-response cadence and the same September20
+18:00UTC bound as its child. The fleet reporter now binds that successor's START
+and exact native LOAD/guard, rather than reusing the retired471781 parent and
+3590563 waiter. Eleven CPU reporting regressions pass; this is a non-material
+evidence repair, with no native signal or source change.
+
+The V correction is **actually ingested as INBOX11614 and rendered in
+REQUEST11617 at21:15:43.060UTC**, with all parent-history tokens masked from
+learning. This is not just a queued file. The two following THINK
+outputs11618/11625 still claim adequacy rather than performing the supplied
+calculation. The first subsequent ACT is **REQUEST11633 → RESPONSE11635 at
+21:19:40.865UTC → COMMITTED11636 → ACT-stage11637**. It prints assertions of
+correctness, not arithmetic: **no math-correction uptake is demonstrated**.
+Compaction11632 removed the original correction before ACT; the authenticated
+provider follow-up is what rendered in REQUEST11633. An older conflicting story
+request was also present, and the new parent explicitly acknowledged that
+conflict. This trace is not a clean test of retention or unaided recall.
+`CHECKPOINT_TAIL_PARENT_DELIVERY_FINAL.public.json` binds these separate steps.
+
+P3's post-LOAD xhigh turn318 also rendered: **REQUEST5400 at21:12:20.587UTC →
+ACT5410 at21:14:04.735UTC → COMMITTED5411**. Its first resumed sleep is durably
+complete as **SLEEP_COMPLETE5396, cycle154, optimizer6796**, after48 updates.
+The R227 recipe keeps all3 authenticated new rows, zero semantic exclusions.
+These are delivery/training-completion receipts, not proof of useful learning.
+
+The collector4091776 is still alive after its first successful publication;
+its next scheduled cut is22:00UTC. All17 natives are verified, but the report
+does not claim every support component or every life has a current parent-render
+receipt. The future trusted-writer checkpoint-plus-tail path is still CPU-only
+and not deployed fleet-wide; the current C2 repair avoids semantic replay but
+still hashes the historical prefix. It is not a universal constant-time resume.
 
 ## Hourly collector restored
 
@@ -84,7 +119,7 @@ or mixed into this table.
 
 Wins out of100 per type, same adopted rank8 / step15625:
 
-| Contrast | Widegap6250 historical | Retained15625 | Fresh serving15625 |
+| Contrast | Widegap6250 historical | Retained15625 | Fresh receiving-process15625 |
 | --- | ---: | ---: | ---: |
 | Word shuffled | 100 | 97 | 97 |
 | Scene description | 100 | 97 | 97 |
@@ -94,7 +129,9 @@ Wins out of100 per type, same adopted rank8 / step15625:
 | Other contest | 51 | 90 | 90 |
 
 Source: rohin233_ovx4_recovery_20260918/JUDGE_FRESH_CONTRAST.json and the
-retained diagnostic receipts. The retained/fresh difference remains unexplained;
+retained diagnostic receipts. The fresh battery used a separate receiving
+process with the adopted source and artifacts, not the live game RPC;600 cases
+across20 contests. The retained/fresh difference remains unexplained;
 neither result is silently substituted for the other.
 
 ## P3 rescoring correction

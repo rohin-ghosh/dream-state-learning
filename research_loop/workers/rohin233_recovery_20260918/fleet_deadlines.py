@@ -71,6 +71,22 @@ def support_row(entry, reference):
         evidence=reference)
 
 
+def checkpoint_tail_parent_support(binding, native_binding, reference):
+    parent = binding.get('parent', {})
+    if (binding.get('schema') != 'R233_C2_PARENT_ACTUAL_CONTINUATION_V1'
+            or binding.get('native') != native_binding.get('native')
+            or binding.get('native_loaded') != native_binding.get('loaded')
+            or binding.get('guard_sha256') != native_binding.get('guard_sha256')
+            or binding.get('hard_end_unix') != native_binding.get('hard_end_unix')
+            or not parent.get('pid') or not parent.get('start_ticks')
+            or not binding.get('parent_started_utc')
+            or len(binding.get('parent_started_receipt_sha256', '')) != 64):
+        raise ValueError('actual_C2_parent_START_and_native_binding_required')
+    return dict(component='C2_CPU_PARENT', node='local', pid=parent['pid'],
+        start_ticks=parent['start_ticks'], status='ACTUAL_SUCCESSOR_START_OBSERVED',
+        deadline_utc=utc(binding['hard_end_unix']), evidence=reference)
+
+
 def actual_parent_delivery(delivery, loaded_index, reference):
     if (delivery.get('status') != 'REQUEST_TO_COMMITTED_ACT_OBSERVED'
             or not loaded_index < delivery.get('request_index', 0)
@@ -163,8 +179,21 @@ def collect():
             deadline_utc=utc(entry['expiry_unix']), evidence=reference))
 
     node4, reference = read(WORKERS / 'rohin233_recovery_node4_20260918/DEADLINES.json')
+    parent_path = WORKERS / 'rohin233_recovery_node4_20260918/CHECKPOINT_TAIL_PARENT_LIVE.public.json'
+    c2_parent = None
+    if parent_path.is_file():
+        parent_binding, parent_reference = read(parent_path)
+        native_binding, _ = read(WORKERS / 'rohin233_recovery_node4_20260918/C2_CHECKPOINT_TAIL_LOADED.json')
+        c2_parent = checkpoint_tail_parent_support(parent_binding, native_binding, parent_reference)
     for entry in node4['components']:
         name = entry['component']
+        if name == 'C2_CPU_PARENT' and c2_parent:
+            supports.append(c2_parent)
+            continue
+        if (name == 'C2_PARENT_REBIND_WAITER' and c2_parent
+                and parent_binding.get('old_cpu_waiter', {}).get('pid') == entry.get('pid')
+                and parent_binding['old_cpu_waiter'].get('exact_idle_pidfd_exit_utc')):
+            continue
         if name in ('P7', 'C2'):
             live_reference = reference
             fast_path = WORKERS / 'rohin233_recovery_node4_20260918/C2_CHECKPOINT_TAIL_LOADED.json'
@@ -267,11 +296,19 @@ def collect():
             if delivery is not None:
                 parent_deliveries['P3'] = delivery
     c2_delivery = WORKERS/'rohin233_recovery_node4_20260918/CHECKPOINT_TAIL_V_DELIVERY.json'
+    c2_final = WORKERS/'rohin233_recovery_node4_20260918/CHECKPOINT_TAIL_PARENT_DELIVERY_FINAL.public.json'
+    if c2_final.is_file():
+        c2_delivery = c2_final
     if c2_delivery.is_file():
         parent, reference = read(c2_delivery)
         if parent.get('first_render') is not None:
             parent_deliveries['C2'] = dict(status='SOURCE_GROUNDED_PARENT_REQUEST_RENDERED',
                 loaded_index=parent['native']['loaded_index'],detail=parent['first_render'],
+                request_index=parent['first_render']['index'],
+                act_index=(parent.get('first_ACT') or {}).get('record', {}).get('index'),
+                first_ACT_proof_basis=parent.get('first_ACT_proof_basis'),
+                original_correction_verbatim_in_ACT_request=parent.get('original_correction_verbatim_in_ACT_request'),
+                semantic_disposition=parent.get('semantic_disposition'),
                 following_ACT=parent.get('first_ACT'),evidence=reference)
     for row in rows:
         row['parent_delivery'] = parent_deliveries.get(row['life'], dict(status='NOT_ESTABLISHED_IN_THIS_AGGREGATE'))
@@ -344,7 +381,7 @@ def main():
         parent = row['parent_delivery']
         parent_summary = parent['status']
         if parent.get('request_index') is not None:
-            parent_summary += f' {parent["request_index"]} → {parent.get("act_index", parent.get("response_index", "pending"))}'
+            parent_summary += f' {parent["request_index"]} → {parent.get("act_index") or parent.get("response_index") or "pending"}'
         lines.append(f'| {row["life"]} | {row["node"]} / {row["gpu"]} | {state} | {bound} | {row["loaded_index"]} / {row["wall_index"]} | {parent_summary} |')
     lines.extend(['', '## Supporting components', '',
         '| Component | Execution node | Process identity | Observed deadline UTC |',
