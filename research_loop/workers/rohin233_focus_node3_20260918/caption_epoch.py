@@ -98,7 +98,17 @@ def open_epochs(root, output, config):
             published_utc=publication['published_utc'], rendered_not_inferred=True)), flush=True)
 
 
-def serve_former_control(root, output, config):
+def attachment_path(output, resume, pid):
+    started = output / 'FORMER_CONTROL_PARENT_STARTED.json'
+    if not resume:
+        return started
+    previous = json.loads(started.read_bytes())
+    if Path('/proc', str(previous['pid'])).exists():
+        raise ValueError('old_parent_must_be_absent_before_explicit_resume')
+    return output / 'former_control_attachments' / (str(pid) + '.json')
+
+
+def serve_former_control(root, output, config, resume=False):
     helper, bound = helpers(root, config)
     lock = (root / 'R233_FORMER_CONTROL_PARENT.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -110,7 +120,8 @@ def serve_former_control(root, output, config):
     humans = {path.stem for path in (root / name / 'raw/stream/inbox').glob('*.json')
         if json.loads(path.read_bytes()).get('speaker') == 'Rohin'}
     own = identity(os.getpid())
-    save(output / 'FORMER_CONTROL_PARENT_STARTED.json', dict(pid=os.getpid(), start_ticks=own['start_ticks'],
+    started_path = attachment_path(output, resume, os.getpid())
+    save(started_path, dict(pid=os.getpid(), start_ticks=own['start_ticks'],
         code_sha256=sha(Path(__file__)), started_utc=stamp(), sole_life=name,
         previous_unparented_epoch_preserved=True, parented_epoch_policy=POLICY, native_signals=0,
         other_four_parents_unchanged=True, actual_new_native_launch=False))
@@ -173,12 +184,13 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--config', type=Path, required=True)
     parser.add_argument('--receipt', type=Path)
+    parser.add_argument('--resume', action='store_true')
     options = parser.parse_args()
     configuration = json.loads(options.config.read_bytes())
     if options.mode == 'open':
         open_epochs(options.root, options.output, configuration)
     elif options.mode == 'serve-former-control':
-        serve_former_control(options.root, options.output, configuration)
+        serve_former_control(options.root, options.output, configuration, options.resume)
     else:
         result = projection(options.root, options.output, configuration)
         save(options.receipt, result)

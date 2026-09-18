@@ -1,12 +1,59 @@
 from copy import deepcopy
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
 import recovery
+import recovery_serial
+import recovery_services
 from recovery_runtime import entrypoint, CAPTIONS, MATH
 
 
 class RecoveryTests(unittest.TestCase):
+    def test_current_control_never_selects_retired_or_other_life(self):
+        arm = Path('/owned/r213_math_a')
+        with patch('recovery.read', return_value=dict(control='/owned/frozen_c2/control')):
+            self.assertEqual(recovery.current_control(arm), arm / ('control_' + recovery.PHASE))
+        selected = arm / ('control_' + recovery.PHASE + '_admission_retry1')
+        with patch('recovery.read', return_value=dict(control=str(selected))):
+            self.assertEqual(recovery.current_control(arm), selected)
+
+    def test_serial_order_is_only_eight_kept_lives(self):
+        self.assertEqual(set(recovery_serial.ORDER), set(recovery.PROTECTED))
+        self.assertEqual(len(recovery_serial.ORDER), 8)
+        self.assertEqual(recovery_serial.ORDER[0], 'r213_r226_caption_observation_fork')
+
+    def test_serial_requires_policy_at_both_levels(self):
+        policy = 'R227_ALL_AUTHENTIC_CHILD_ROWS_V1'
+        with patch('pathlib.Path.read_bytes', side_effect=[
+                b'{"policy":"R227_ALL_AUTHENTIC_CHILD_ROWS_V1"}',
+                b'{"learn_row_policy":"R227_ALL_AUTHENTIC_CHILD_ROWS_V1","think_act_learn":{}}']):
+            with self.assertRaisesRegex(ValueError, 'R227_policy_required'):
+                recovery_serial.require_policy(Path('/owned/control'))
+        with patch('recovery_serial.json.loads', side_effect=[dict(policy=policy),
+                dict(learn_row_policy=policy, think_act_learn=dict(learn_row_policy=policy))]), \
+                patch('pathlib.Path.read_bytes', return_value=b'{}'):
+            recovery_serial.require_policy(Path('/owned/control'))
+
+    def test_policy_retry_refuses_active_life(self):
+        with patch('recovery.inactive', side_effect=ValueError('native_alive')), \
+                patch('recovery.adopt_policy') as adopt:
+            with self.assertRaisesRegex(ValueError, 'native_alive'):
+                recovery.retry_policy(Path('/owned'), 'r213_math_a', '/python')
+            adopt.assert_not_called()
+
+    def test_services_do_not_duplicate_existing_attachment(self):
+        with patch('pathlib.Path.exists', return_value=True), patch('recovery_services.subprocess.Popen') as process:
+            with self.assertRaisesRegex(ValueError, 'no_duplicate_service_attachment'):
+                recovery_services.start(Path('/owned'), 'feedback', [], Path('/source'), {})
+            process.assert_not_called()
+
+    def test_reconcile_and_launch_are_separate_operations(self):
+        with patch('recovery.inactive', side_effect=ValueError('not_inactive')), patch('recovery.subprocess.Popen') as process:
+            with self.assertRaisesRegex(ValueError, 'not_inactive'):
+                recovery.launch(Path('/owned'), 'r213_math_a', '/python')
+            process.assert_not_called()
+
     def test_offline_replay_preserves_confined_inbox_namespace(self):
         self.assertEqual(recovery.offline_inbox(dict(root='/original/confined/life')),
             Path('/original/confined/life/stream/inbox'))

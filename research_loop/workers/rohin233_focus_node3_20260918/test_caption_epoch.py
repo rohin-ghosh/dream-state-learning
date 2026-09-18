@@ -3,9 +3,20 @@ from unittest.mock import patch
 
 import caption_epoch
 import classroom
+from pathlib import Path
 
 
 class CaptionEpochTests(unittest.TestCase):
+    def test_resume_preserves_started_and_refuses_live_parent(self):
+        with patch('pathlib.Path.read_bytes', return_value=b'{"pid":100}'), \
+                patch('pathlib.Path.exists', return_value=True):
+            with self.assertRaisesRegex(ValueError, 'old_parent_must_be_absent'):
+                caption_epoch.attachment_path(Path('/owned'), True, 200)
+        with patch('pathlib.Path.read_bytes', return_value=b'{"pid":100}'), \
+                patch('pathlib.Path.exists', return_value=False):
+            self.assertEqual(caption_epoch.attachment_path(Path('/owned'), True, 200),
+                Path('/owned/former_control_attachments/200.json'))
+
     def test_requires_explicit_new_all_five_policy(self):
         with self.assertRaises(ValueError):
             caption_epoch.helpers(None, {})

@@ -208,7 +208,151 @@ def manifest_python(source):
     return {str(path.relative_to(source)): sha(path) for path in source.rglob('*.py')}
 
 
-def launch(root, name, python):
+def current_control(arm):
+    default = arm / ('control_' + PHASE)
+    active = read(arm / 'ACTIVE_RUNTIME.json')
+    selected = Path(active['control'])
+    if selected.parent == arm and selected.name in (default.name, default.name + '_admission_retry1', default.name + '_policy'):
+        return selected
+    return default
+
+
+def adopt_policy(root, name, python):
+    inactive(root, name)
+    arm = root / name
+    old = arm / ('control_' + PHASE)
+    require(read(old / 'READY.json')['passed'] and not (old / 'DISPATCHED.json').exists(), 'stopped_unlaunched_policy_adoption_only')
+    source = arm / ('source_' + PHASE + '_policy')
+    control = arm / (old.name + '_policy')
+    control.mkdir(mode=0o700)
+    shutil.copytree(Path(read(old / 'PLAN.json')['source_root']), source,
+        ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+    overlay = root / 'r227_policy_overlay'
+    pins = read(overlay / 'MANIFEST.json')
+    for relative, digest in pins.items():
+        require(sha(overlay / relative) == digest, 'exact_already_tested_Main_R227_overlay')
+        target = source / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(overlay / relative, target)
+    reference = root / 'r213_r226_caption_observation_fork/source_r227_policy_ready'
+    for relative in ('tests/test_orch_r205_reading_policy.py',
+            'organism_v6/orch_r225_content_target_filter.py'):
+        if not (source / relative).exists():
+            shutil.copy2(reference / relative, source / relative)
+    sys.path[:0] = [str(root), str(source), str(source / 'gpu')]
+    from r227_policy_stage import policy_plan
+    from gpu.orch_r125_continual_native import validate_plan
+    from gpu.orch_r184_think_act_learn import validate_config
+    from organism_v6.orch_r125_continual_stream import verify_experiment_resume
+    previous = read(old / 'PLAN.json')
+    plan = policy_plan(previous, source)
+    validate_plan(plan)
+    validate_config(plan['think_act_learn'])
+    receipt = read(old / 'RECOVERY.json')
+    verify_experiment_resume(plan, record(Path(receipt['complete_path']))['document']['resume_state']['state']['experiment'])
+    tests = ['test_orch_r227_learning_policy', 'test_orch_r184_think_act_learn',
+        'test_orch_r205_reading_policy', 'test_orch_r194_code_target_filter', 'test_orch_r195_learn_review_filter']
+    with (control / 'CPU.log').open('x') as output:
+        result = subprocess.run([python, '-B', '-m', 'unittest', '-q', *tests], cwd=source,
+            env=environment(source, root), stdout=output, stderr=subprocess.STDOUT, timeout=180)
+    require(result.returncode == 0, 'R227_actual_receiving_tests_and_provenance')
+    end = time.time() + 900
+    while not (old / 'RECONCILED.json').exists():
+        require(time.time() < end, 'prior_reconciliation_must_finish_without_native_launch')
+        time.sleep(5)
+    inactive(root, name)
+    require(not (old / 'DISPATCHED.json').exists(), 'not_started_during_policy_gate')
+    verify_reconciled(arm, old)
+    for filename in ('LEASE.json', 'READY.json', 'RECOVERY.json', 'RECONCILED.json',
+            'RECOVERY_APPENDED.json', 'ARCHIVE_REPLAY.json', 'CORRECTION_CACHE_RECOVERY.json',
+            'TAIL_ARTIFACTS_PRESERVED.json'):
+        shutil.copy2(old / filename, control / filename)
+    save(control / 'PLAN.json', plan)
+    source_pins = manifest_python(source)
+    save(control / 'RECEIVING_CPU.json', dict(passed=True, tests=tests, source_pins=source_pins,
+        log_sha256=sha(control / 'CPU.log'), overlay=pins, learn_row_policy=plan['learn_row_policy'],
+        source_bound_prior_replay_sha256=sha(old / 'ARCHIVE_REPLAY.json'),
+        historical_rows_unchanged=True, actual_sleep_recipe_pending=True))
+    allocation = read(old / 'ALLOCATION.json')
+    allocation.update(declared_unix=time.time(), plan_sha256=sha(control / 'PLAN.json'),
+        cpu_receipt_path=str(control / 'RECEIVING_CPU.json'), cpu_receipt_sha256=sha(control / 'RECEIVING_CPU.json'))
+    save(control / 'ALLOCATION.json', allocation)
+    guard = read(old / 'GUARD.json')
+    guard.update(source_pins=source_pins, attempt_dir=str(control), plan_path=str(control / 'PLAN.json'),
+        plan_sha256=sha(control / 'PLAN.json'), lease_path=str(control / 'LEASE.json'),
+        allocation_path=str(control / 'ALLOCATION.json'), allocation_sha256=sha(control / 'ALLOCATION.json'))
+    save(control / 'GUARD.json', guard)
+    subprocess.run([python, '-B', '-c', 'from gpu.orch_r125_continual_guard import validate; import sys; validate(sys.argv[1])',
+        str(control / 'GUARD.json')], cwd=source, env=environment(source, root), check=True, timeout=40)
+    active = arm / 'ACTIVE_RUNTIME.r233.policy.tmp'
+    save(active, dict(source=str(source), control=str(control), module='gpu.r233_recovery_runtime',
+        recovery_receipt=str(old / 'RECOVERY.json')))
+    os.replace(active, arm / 'ACTIVE_RUNTIME.json')
+    save(control / 'POLICY_READY.json', dict(policy=plan['learn_row_policy'], native_launched=False,
+        same_checkpoint=True, actual_sleep_recipe_pending=True))
+    print(json.dumps(dict(life=name, status='POLICY_READY_NOT_LAUNCHED', policy=plan['learn_row_policy'])))
+
+
+def retry_policy(root, name, python):
+    inactive(root, name)
+    arm = root / name
+    control = arm / ('control_' + PHASE + '_policy')
+    source = arm / ('source_' + PHASE + '_policy')
+    require(not any((control / filename).exists() for filename in
+        ('POLICY_READY.json', 'DISPATCHED.json', 'PLAN.json')), 'only_unlaunched_failed_policy_gate')
+    require("No module named 'organism_v6.orch_r225_content_target_filter'" in
+        (control / 'CPU.log').read_text(), 'exact_missing_dependency_failure')
+    for path in (control, source):
+        destination = path.with_name(path.name + '_missing_dependency_preserved')
+        require(not destination.exists(), 'failed_source_preservation_destination_unused')
+    for path in (control, source):
+        path.rename(path.with_name(path.name + '_missing_dependency_preserved'))
+    adopt_policy(root, name, python)
+
+
+def retry_admission(root, name, python):
+    inactive(root, name)
+    arm = root / name
+    old = arm / ('control_' + PHASE)
+    source = arm / ('source_' + PHASE)
+    require(read(old / 'OUTER_FAILED.json')['error'] == 'fresh_privileged_admission'
+        and not (old / 'LAUNCH.json').exists() and not (old / 'NATIVE.log').exists(),
+        'only_proven_pre_native_admission_rejection')
+    require(not Path('/proc', str(read(old / 'DISPATCHED.json')['pid'])).exists(), 'failed_outer_absent')
+    verify_reconciled(arm, old)
+    report = json.loads(subprocess.check_output(['sudo', '-n', 'env', 'CUDA_VISIBLE_DEVICES=',
+        'PYTHONDONTWRITEBYTECODE=1', 'PYTHONPATH=' + str(source), python, '-B', '-m',
+        'gpu.r233_recovery_runtime', 'scan', '--config', str(old / 'GUARD.json')], cwd=source,
+        text=True, timeout=100))
+    require(report['scanner_euid'] == 0 and report['clear'] and not report['blocking_reasons'],
+        'fresh_clear_privileged_admission_before_separate_attempt')
+    control = arm / (old.name + '_admission_retry1')
+    control.mkdir(mode=0o700)
+    for filename in ('PLAN.json', 'LEASE.json', 'RECEIVING_CPU.json', 'READY.json', 'RECOVERY.json',
+            'RECONCILED.json', 'RECOVERY_APPENDED.json', 'ARCHIVE_REPLAY.json',
+            'CORRECTION_CACHE_RECOVERY.json', 'TAIL_ARTIFACTS_PRESERVED.json'):
+        shutil.copy2(old / filename, control / filename)
+    save(control / 'FRESH_ADMISSION.json', report)
+    save(control / 'PREVIOUS_REJECTED_ATTEMPT.json', dict(previous_relative=old.name,
+        failed_sha256=sha(old / 'OUTER_FAILED.json'), native_was_not_started=True,
+        unknown_original_scan_details_not_invented=True, observed_utc=utc()))
+    allocation = read(old / 'ALLOCATION.json')
+    allocation.update(declared_unix=time.time(), cpu_receipt_path=str(control / 'RECEIVING_CPU.json'))
+    save(control / 'ALLOCATION.json', allocation)
+    guard = read(old / 'GUARD.json')
+    guard.update(attempt_dir=str(control), plan_path=str(control / 'PLAN.json'),
+        lease_path=str(control / 'LEASE.json'), allocation_path=str(control / 'ALLOCATION.json'),
+        allocation_sha256=sha(control / 'ALLOCATION.json'))
+    save(control / 'GUARD.json', guard)
+    active = arm / 'ACTIVE_RUNTIME.r233.admission.tmp'
+    save(active, dict(source=str(source), control=str(control), module='gpu.r233_recovery_runtime',
+        recovery_receipt=str(old / 'RECOVERY.json')))
+    os.replace(active, arm / 'ACTIVE_RUNTIME.json')
+    print(json.dumps(dict(life=name, status='SEPARATE_ATTEMPT_READY_NOT_LAUNCHED',
+        fresh_admission_sha256=sha(control / 'FRESH_ADMISSION.json'))))
+
+
+def reconcile(root, name, python):
     inactive(root, name)
     arm = root / name
     control, source = arm / ('control_' + PHASE), arm / ('source_' + PHASE)
@@ -238,6 +382,29 @@ def launch(root, name, python):
     cache = arm / 'raw/stream/correction_ledger.r233.tmp'
     save(cache, read(control / 'CORRECTION_CACHE_RECOVERY.json')['after'])
     os.replace(cache, arm / 'raw/stream/correction_ledger.json')
+    save(control / 'RECONCILED.json', dict(recovery_record=reference, native_launched=False,
+        observed_utc=utc(), cache_sha256=sha(arm / 'raw/stream/correction_ledger.json')))
+    print(json.dumps(dict(life=name, status='RECONCILED_NOT_LAUNCHED', recovery_record=reference)))
+
+
+def verify_reconciled(arm, control):
+    expected = read(control / 'RECONCILED.json')['recovery_record']
+    paths = sorted((arm / 'raw/stream/records').glob('[0-9]' * 20 + '.json'))
+    actual = record(paths[-1])
+    require(actual['index'] == expected['index'] and actual['sha256'] == expected['sha256']
+        and actual['kind'] == 'R213_SAVED_BOUNDARY_RECOVERY', 'exact_reconciled_head_no_new_native_activity')
+    require(sha(arm / 'raw/stream/correction_ledger.json') == read(control / 'RECONCILED.json')['cache_sha256'],
+        'reconciled_correction_cache_unchanged')
+
+
+def launch(root, name, python):
+    inactive(root, name)
+    arm = root / name
+    control = current_control(arm)
+    source = Path(read(control / 'PLAN.json')['source_root'])
+    require(read(control / 'READY.json')['passed'] and not (control / 'DISPATCHED.json').exists(), 'ready_once_only')
+    require(time.time() < read(control / 'PLAN.json')['hard_end_unix'] - 3600, 'fresh_remaining_budget')
+    verify_reconciled(arm, control)
     with (control / 'supervisor.log').open('x') as output:
         process = subprocess.Popen([python, '-B', '-m', 'gpu.r233_recovery_runtime', 'dispatch',
             '--config', str(control / 'GUARD.json')], cwd=source, env=environment(source, root),
@@ -252,7 +419,7 @@ def launch(root, name, python):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('mode', choices=('audit', 'prepare', 'launch'))
+    parser.add_argument('mode', choices=('audit', 'prepare', 'reconcile', 'launch', 'retry_admission', 'adopt_policy', 'retry_policy'))
     parser.add_argument('--root', required=True, type=Path)
     parser.add_argument('--name', choices=tuple(PROTECTED))
     parser.add_argument('--python', default=sys.executable)

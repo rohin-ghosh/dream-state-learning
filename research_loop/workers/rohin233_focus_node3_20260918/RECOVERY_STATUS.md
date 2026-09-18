@@ -1,5 +1,28 @@
 # Node3 kept-life recovery — 2026-09-18
 
+## Actual recovery cut, 17:15 UTC
+
+- Observation GPU0: LOADED3111 at17:08:31UTC, native1941202/startticks45731595,
+  REQUEST3114, ACT3125, SLEEP_RECIPE3140. Actual legacy recipe has no R227 key;
+  default scaffold exclusion remains a disclosed gap, not “no exclusions live.”
+- Perspective GPU3: dispatched17:11:02UTC; native startup/replay underway,
+  no LOADED at17:14:40 cut. Other six are not launched at that cut.
+- Four caption R227 receiving gates passed. All three math R227 receiving suites
+  now pass122 tests each after the missing existing dependency was copied into
+  new isolated sources; failed source/gate artifacts remain preserved.
+- Dispatch is serial and requires an actual live LOADED before the next launch;
+  every remaining dispatch requires R227 at both plan and THINK configuration.
+- Original journals/checkpoints and failed tails remain preserved. Native horizons
+  are September19 04:51:09UTC (GPU0) and04:54:40UTC (others), not a lease extension.
+- The resumed plain Tool relay uses original dedup cursors. GPU0 ACT3125 received
+  `ConnectionResetError`/`ENVIRONMENT_OUTCOME_UNKNOWN_NO_RETRY`, not a score;
+  shared scorer/transport repair is requested from its owner Leibniz.
+- Classroom/GPU7/debate CPU attachment gates are ready and waiting for the exact
+  required natives. Scripted Astra publishers do not invoke a model provider;
+  new parent publication/render is pending, not inferred from daemon startup.
+- Owned CPU tests:46PASS; receiving parent-only suite31PASS. No live learner
+  was stopped, no retired root was revived, and no existing publication was reset.
+
 Initial diagnosis cut16:50:11UTC. The eight kept lives exited with code124,
 5–20 seconds before their own configured operator hard walls. The guarded
 launcher runs `timeout` with a ten-second margin; its subsequent
