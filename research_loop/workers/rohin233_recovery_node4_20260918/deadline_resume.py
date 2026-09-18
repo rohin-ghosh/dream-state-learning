@@ -108,11 +108,12 @@ def prepare(name, commit):
     target, source = Path(settings['target']), Path(old['source_root'])
     target.mkdir(exist_ok=True)
     control = target / 'control'
-    control.mkdir()
+    control.mkdir(exist_ok=True)
+    require(not (control / 'READY.json').exists() and not (control / 'DISPATCHED.json').exists(),
+        'no_duplicate_preparation_or_dispatch')
     complete, saved, tail = boundary(old['root'], settings['journal'])
     sys.path.insert(0, str(source))
     from gpu import orch_r125_continual_native as native
-    from gpu.orch_r125_stream_journal import StreamJournal
     checkpoint = complete['document']['checkpoint']
     native.NativeChild.verify_checkpoint(checkpoint)
     import torch
@@ -121,12 +122,15 @@ def prepare(name, commit):
         and all(key in payload for key in ('cpu_rng', 'cuda_rng', 'python_rng')) and not torch.cuda.is_initialized(),
         'full_adapter_AdamW_RNG_CPU_verified')
     plan = deadline_plan(old, saved['sha256'], settings['wall'], settings['ceiling'])
-    write(control / 'PLAN.json', plan)
+    if (control / 'PLAN.json').exists():
+        require(read(control / 'PLAN.json') == plan, 'same_preserved_preflight_plan')
+    else:
+        write(control / 'PLAN.json', plan)
     stream = native.ContinualStream.restore(saved, expected_sha256=saved['sha256'])
     extension = native.prepare_wall_extension(plan, stream, resume=True, plan_sha256=sha(control / 'PLAN.json'))
-    with StreamJournal(Path(old['root']) / 'stream') as journal:
-        latest = journal.latest_checkpoint()
-        require(latest['expected_sha256'] == saved['sha256'], 'actual_replayed_head_is_exact_latest_COMPLETE')
+    checked_complete, checked_saved, checked_tail = boundary(old['root'], settings['journal'])
+    require(checked_complete['sha256'] == complete['sha256'] and checked_saved == saved
+        and checked_tail == tail, 'stable_latest_COMPLETE_after_full_checkpoint_verification')
     require(sha(old_guard['plan_path']) == old_guard['plan_sha256'], 'old_source_plan_unchanged')
     write(control / 'PRESERVED.json', dict(checkpoint=checkpoint, complete_index=complete['index'],
         complete_sha256=complete['sha256'], state_sha256=saved['sha256'], tail=tail,
@@ -137,7 +141,8 @@ def prepare(name, commit):
     write(control / 'CPU.json', dict(passed=True, deadline_only=True, unchanged_source_pins=old_guard['source_pins'],
         optimizer_steps=checkpoint['optimizer_steps'], full_AdamW_Python_CPU_CUDA_RNG=True,
         before_state_sha256=saved['sha256'], proposed_after_state_sha256=extension['state']['sha256'],
-        full_replay_verified=True, source_hashes_validated_by_guard=True))
+        full_replay_verified=False, unchanged_native_full_replay_required=True,
+        source_hashes_validated_by_guard=True))
     lease = read(old_guard['lease_path'])
     lease.update(hard_end_unix=settings['wall'], lease_end_unix=settings['ceiling'],
         authority='Rohin September18 explicit deadline renewal with six-hour date-only lease margin',
