@@ -23,6 +23,14 @@ limitation: this is an hourly receipt-and-candidate publisher with validated
 analyst adjudications, not an autonomous general semantic judge. New candidates
 remain visibly pending direct review. No extra model/agent is invoked.
 
+The hourly process now publishes an explicit bounded `public/REVIEW_QUEUE.json`
+and `.md`, with exact source references, fresh ACT windows, rotated backlog and
+omitted counts. It considers rendered external inputs structurally, not through
+a semantic or lexical classifier. **It still does not perform new semantic
+review.** Main's requested review handoff and lifecycle are in `TO_MAIN.md`;
+owner acceptance and an actual hourly reviewer session are not assumed. Existing
+levels are revalidated manual annotations, never automatic new-hour judgments.
+
 `public/STATUS.md` is the bounded best-partial table, not a lifetime leaderboard.
 `public/MAINTENANCE_CONTEXT.json` records owner-reported treatment changes,
 recall contamination and recovery exclusions separately from native proof.

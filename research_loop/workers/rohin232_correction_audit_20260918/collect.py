@@ -9,6 +9,7 @@ import subprocess
 import time
 
 from audit import report
+from review_queue import OWNER, build_queue
 
 
 OWN = Path(__file__).resolve().parent
@@ -67,6 +68,13 @@ def one(target):
     annotations_path = private / 'ANNOTATIONS.json'
     annotations = json.loads(annotations_path.read_bytes()) if annotations_path.exists() else []
     result = report(batch, label, annotations)
+    queue_path = private / 'REVIEW_QUEUE_CURSOR.json'
+    previous_queue = json.loads(queue_path.read_bytes()) if queue_path.exists() else None
+    if previous_queue is None and old is not None:
+        previous_queue = dict(journal_id=old['journal_id'], through_index=old['through']['index'])
+    queue, cursor = build_queue(batch, label, result['traces'], previous_queue)
+    save(queue_path, cursor)
+    result['review_queue'] = queue
     for trace in result['traces']:
         if trace['level'] != 3 or trace['checkpoint_pending']:
             continue
@@ -93,12 +101,33 @@ def run_once():
         rows = list(executor.map(checked, targets))
     result = dict(observed_utc=datetime.now(timezone.utc).isoformat(), rows=rows,
         interpretation='Bounded correction evidence; unknown is not failure, keyword candidates are not semantic proof.',
+        automatic_semantic_review=False, new_semantic_judgments_this_poll=0,
+        semantic_review_owner=OWNER,
+        level_provenance='Revalidated existing analyst annotations, not new automated judgments.',
         no_subagents=True, remote_writes=0, inbox_changes=0, learner_signals=0, rescoring=0)
     save(OWN / 'public/CURRENT.json', result)
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     save(OWN / 'public/cuts' / (stamp + '.json'), result)
-    lines = ['# R232 correction-sequence audit', '', 'Cut: ' + result['observed_utc'], '',
+    queues = [row['review_queue'] for row in rows if 'review_queue' in row]
+    queue_report = dict(observed_utc=result['observed_utc'], owner=OWNER,
+        automatic_semantic_review=False, new_semantic_judgments=0,
+        pending_total=sum(queue['pending_total'] for queue in queues),
+        displayed=sum(queue['displayed'] for queue in queues), per_life_limit=4, rows=queues,
+        lifecycle='Collect/publish each UTC hour before2026-09-18T14:00:00Z; Main must perform semantic review.',
+        no_model_calls=True, no_parent_writes=True, no_learner_controls=True)
+    save(OWN / 'public/REVIEW_QUEUE.json', queue_report)
+    queue_lines = ['# Pending semantic review — Main handoff', '', 'Cut: ' + result['observed_utc'], '',
+        '**No new semantic judgments are performed by this daemon.** Existing levels are static analyst adjudications.',
+        'Inputs may be tasks, telemetry or genuine corrections. Queue inclusion makes no semantic claim.',
+        'At most4 items per life are displayed; omitted backlog stays explicitly pending. Source references are in REVIEW_QUEUE.json.', '',
+        '| Life | Pending inputs | Pending ACT windows | New ACTs this poll | Displayed |',
+        '| --- | ---: | ---: | ---: | ---: |']
+    for queue in queues:
+        queue_lines.append(f'| {queue["label"]} | {queue["pending_rendered_input_count"]} | {queue["pending_output_windows"]} | {queue["new_ACT_count"]} | {queue["displayed"]} |')
+    (OWN / 'public/REVIEW_QUEUE.md').write_text('\n'.join(queue_lines) + '\n')
+    lines = ['# R232 correction evidence and pending review', '', 'Cut: ' + result['observed_utc'], '',
         'Levels: feedback only0 → own correction identified1 → applied in the NEXT ACT2 → another relevant ACT without reminder3.',
+        '**New semantic review is NOT automatic. Levels below revalidate existing analyst annotations; new cases await Main in REVIEW_QUEUE.json.**',
         'Unknown is not level0 failure. Initial windows are bounded, not lifetime-negative claims. No lives modified.', '',
         '| Life | Covered records | Caught up | ACTs | Feedback candidates | Reviewed | Highest proved level | Status |',
         '| --- | --- | --- | ---: | ---: | ---: | --- | --- |']

@@ -12,7 +12,8 @@ REPO = OWN.parents[2]
 RELATIVE = OWN.relative_to(REPO)
 CHECKOUT = OWN / '.publication'
 CODE = ('.gitignore', 'reader.py', 'audit.py', 'collect.py', 'publish.py', 'service.py',
-        'test_audit.py', 'test_reader.py', 'README.md', 'TO_OWNERS.md')
+        'review_queue.py', 'test_review_queue.py', 'test_audit.py', 'test_reader.py',
+        'README.md', 'TO_OWNERS.md', 'TO_MAIN.md')
 
 
 def git(*arguments):

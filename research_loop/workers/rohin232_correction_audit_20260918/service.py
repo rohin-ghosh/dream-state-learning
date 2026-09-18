@@ -11,6 +11,7 @@ import time
 
 from collect import OWN, run_once, save
 from publish import publish
+from review_queue import OWNER
 
 
 END = datetime(2026, 9, 18, 14, 0, tzinfo=timezone.utc).timestamp()
@@ -25,6 +26,7 @@ def serve(publishing=False):
         start_ticks = int(Path(f'/proc/{os.getpid()}/stat').read_text().rsplit(')', 1)[1].split()[19])
         next_due = time.time()
         loops = 0
+        loaded_source_hashes = {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in OWN.glob('*.py')}
         while time.time() < END:
             if time.time() < next_due:
                 time.sleep(min(5, next_due - time.time()))
@@ -32,7 +34,9 @@ def serve(publishing=False):
             state = dict(pid=os.getpid(), start_ticks=start_ticks, started_unix=started,
                 expires_utc=datetime.fromtimestamp(END, timezone.utc).isoformat(),
                 interval_seconds=3600, publishing=publishing, remote_writes=0, learner_controls=0,
-                source_sha256={path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in OWN.glob('*.py')},
+                source_sha256=loaded_source_hashes,
+                mode='hourly_evidence_and_pending_review_queue_not_semantic_maintenance',
+                automatic_semantic_review=False, semantic_review_owner=OWNER,
                 successful_polls=loops, observed_unix=time.time())
             save(operator / 'PROCESS.json', state)
             try:
@@ -42,7 +46,9 @@ def serve(publishing=False):
                         break
                     result = run_once()
                 loops += 1
-                state.update(successful_polls=loops, last_success_utc=result['observed_utc'])
+                state.update(successful_polls=loops, last_success_utc=result['observed_utc'],
+                    next_due_utc=datetime.fromtimestamp((int(time.time()) // 3600 + 1) * 3600, timezone.utc).isoformat(),
+                    new_semantic_judgments_this_poll=0)
                 save(OWN / 'public/SERVICE.json', state)
                 if publishing:
                     save(operator / 'LAST_PUSH.json', publish())
