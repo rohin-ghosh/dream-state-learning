@@ -35,6 +35,16 @@ lookup() {  # prints "node root"
     kernel_parented)  echo "a40r $L/orch_r136_kernel_parented_a40r4_20260916_attempt1/run1" ;;
     raw_parented)     echo "a40r $L/orch_r136_raw_parented_seed1_a40r3_20260916_attempt1/run1" ;;
     raw_unparented)   echo "a40r $L/orch_r136_raw_unparented_a40r1_20260916_attempt1/run1" ;;
+    # C2 clones (R195/R201 fleet, 2026-09-17 evening)
+    P0|P1|P2|P3|P5|P7) echo "a40r $L/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical${1#P}/life" ;;
+    MATH_C)           echo "a40r $L/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/life" ;;
+    creative_b1)      echo "a100 $L/rohin174_parenting_20260917/node1/R195_FLEET/creative_b1/life" ;;
+    creative_a4)      echo "a100 $L/rohin174_parenting_20260917/node1/R195_FLEET/r203_creative_structured_a4/life" ;;
+    math_b2)          echo "a100 $L/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_comm_b2/life" ;;
+    math_c5)          echo "a100 $L/rohin174_parenting_20260917/node1/R195_FLEET/r203_math_self_derive_c5/life" ;;
+    repo_c3)          echo "a100 $L/rohin174_parenting_20260917/node1/R195_FLEET/r203_repo_evidence_c3/life" ;;
+    creative_d1|math_d1|math_transfer_c1|repo_c1)
+                      echo "ovx $L/orch_r153_r201_node2_clones_20260917_operator1/$1/raw" ;;
     *) return 1 ;;
   esac
 }
