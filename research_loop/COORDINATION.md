@@ -39551,3 +39551,18 @@ grading material retained privately and never sent to the child by Main.
 [Builder] 2026-09-18T11:39:35Z R233 scoped intake at research_loop/workers/rohin233_focus_20260918/INTAKE.md. Node-specific retirement owners dispatched; explicit KEEP list protected; no occupancy refills. P3 parent prospective treatment uses unchanged bound Astra provider with xhigh reasoning (was low), cadence1, richer win/diversity/convergence brief, same exact writer ledger and all provenance/privacy/word-limit guards. Three focused CPU tests PASS; predecessor runtime/config/source pins validate; manifest7c5035a6b79f88cc906af5dcf52c64511b6cbc81432cff9effd23daba645e39b binds new entrypoint/brief/handoff. ExistingCPU publisher783596 exact argv verified; next action exclusive drained handoff only, no learner signal/restart. No adoption/render/retirement claimed yet. Continuous frozen-base parenting is a new R233 in-life epoch, not a retroactive control; fixed-budget age evaluation remains parent-free. C2/C0 branch counts are not a causal age series.
 
 [Builder] 2026-09-18T11:43:49Z R233 P3CPU successor1122991 live after exact drained783596 exit11:39:47UTC;1.008095s upper-bound CPU handoff,142 prior receipt files preserved, no native signal/restart. Next actual xhigh provider dispatch/render still pending. R233 read-only movement observer1145201 detached/exclusive-lock startup11:43:49, expiry14:09:07; first shell-background attempt did not persist and made no collection claim. Six focused CPU tests pass (three P3 identity/policy, three convergence/guidance metrics). It records actual ACT/cycle/sleep receipts and heuristic alerts; unknown correctness/recall/three-step levels stay null, not fabricated. Owner retirement receipts pending; no all-fleet-complete claim. Worker research_loop/workers/rohin233_focus_20260918/.
+
+## [Builder] 2026-09-18 11:43 UTC — R233 node1-only retirement intake
+
+Explicit R233 authorization covers only creative_b1, r203_creative_structured_a4,
+r203_math_comm_b2 and r203_math_self_derive_c5. Node1 active-control resolution
+finds R210/R213 descendants, not the old root-level predecessor retirements.
+All four actual active controls have EXIT code 0/no_retry and final
+SLEEP_COMPLETE -> R184_LEARN_COMPLETE -> R184_SCREEN_STOP records. Native and
+per-life bridge/parent processes are absent in the bounded current scans;
+therefore no signal, pause, relaunch or replacement is needed or authorized.
+Eight focused CPU tests passed for the already-ended archival path, exact
+scope and settled-boundary validation. The archive will preserve all stream
+records/checkpoints, active source/control, optimizer and RNG with hashes;
+existing roots/readouts remain untouched. No GPU science or learning change.
+Evidence owner: research_loop/workers/rohin233_focus_node1_20260918.
