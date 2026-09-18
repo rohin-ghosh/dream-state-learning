@@ -45,3 +45,18 @@ C2. Why might a model trained only on its own recent outputs start repeating its
 C3. What is the difference between a fact you can quote and a habit you have? (checks: text vs tendency; his own two kinds of memory)
 C4. Explain the sum-of-fourth-powers formula and why the coefficient had to be an integer. (checks: uses its own V investigation)
 C5. Write one New Yorker-style caption for a cartoon of two astronauts arguing over a parking spot on the Moon, and say why it is funny. (checks: brevity, incongruity, no restating the scene)
+
+## D. Riddles and sequential language puzzles (added 23:45 PDT at Rohin's request; answers in brackets)
+
+D1. I am taken from a mine and shut in a wooden case from which I am never released, and yet I am used by almost everyone. What am I? [pencil lead / graphite]
+D2. Sequential: Start with the word STONE. Remove one letter to get a musical sound. Remove one more to get a number. Add one letter to that number to get something you do with a chair. Give all four words. [STONE → TONE → ONE → ? — "ONE" + letter → "LONE"? no; intended chain: STONE → TONE → ONE → (add S) "ONES"? Rohin: accept any consistent chain; a good answer explains each step and flags where the chain breaks — the third step is the trap]
+D3. The more you take, the more you leave behind. What are they? [footsteps]
+D4. A five-step chain: name a colour; name an animal that begins with the colour's last letter; name a country that begins with the animal's last letter; name a food that begins with the country's last letter; name a feeling that begins with the food's last letter. Do it twice with different starting colours, without repeating any word. [any valid chain, e.g. RED → DOG → GREECE → EGG → GRIEF; checks constraint-keeping across five dependent steps]
+D5. What English word becomes shorter when you add two letters to it? [SHORT → SHORTER]
+D6. Riddle in sequence: "First I am a question, then I am a doubt, then I am a wager, then I am a garment." Each clue is one word; the four words differ by one letter each in order. [QUERY? no — intended: WHAT → ? Rohin: treat as an invention task — ask C2 to CONSTRUCT such a four-word ladder where each word fits a clue; judge whether it can build one that works]
+D7. Rearrange the letters of LISTEN into two different words. [SILENT, TINSEL (also ENLIST, INLETS)]
+D8. What has keys but no locks, space but no room, and you can enter but not go inside? [a keyboard]
+D9. Build a sentence of exactly seven words in which each word is one letter longer than the previous. [e.g. "I am the best coder around, honestly." — check the lengths 1,2,3,4,5,6,7 (honestly = 8, so that example fails; the point is whether C2 verifies its own counts)]
+D10. Sequential riddle: "I have cities but no houses, forests but no trees, water but no fish. What am I?" Then: "Fold me and I still tell the truth; tear me and I lie about distances. What was done to me?" [a map; it was torn — checks whether it carries the answer of the first riddle into the second]
+D11. Which word in this sentence is misspelled: "The recieved parcel contained a seperate bundle of stationary for the office"? Name every error. [recieved → received; seperate → separate; stationary → stationery]
+D12. Three-step story riddle: A man walks into a room, sees a piece of paper, and immediately knows he will be fired. On the paper is only a single word he wrote himself years ago. What word makes this plausible, and why? [open-ended; judge the coherence of the explanation, not a fixed answer]
