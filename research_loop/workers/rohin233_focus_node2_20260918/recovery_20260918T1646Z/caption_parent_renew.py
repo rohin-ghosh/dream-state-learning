@@ -10,6 +10,13 @@ sys.path.insert(0, str(HERE.parent))
 import caption_parent as previous
 
 
+def renewed_source(source):
+    seam = "deadline = min(epoch['baseline']['identity']['hard_end_unix'] - 60, time.time() + 10800)"
+    if source.count(seam) != 1:
+        raise ValueError('exact_existing_finite_parent_deadline_seam')
+    return source.replace(seam, "deadline = epoch['baseline']['identity']['hard_end_unix'] - 60")
+
+
 def main():
     previous.PRIVATE = HERE / 'caption_parent.private'
     previous.PUBLIC = HERE / 'caption_parent_public'
@@ -19,11 +26,7 @@ def main():
         'not a new birth or a fresh unparented control. Address only actual post-recovery output. '
         'Earlier incomplete sleep updates were archived, not claimed retained. Missing judge feedback '
         'is a service absence, not a caption verdict. No score or private judge content is available to you.')
-    source = inspect.getsource(previous.serve)
-    seam = "deadline = min(epoch['baseline']['identity']['hard_end_unix'] - 60, time.time() + 10800)"
-    if source.count(seam) != 1:
-        raise ValueError('exact_existing_finite_parent_deadline_seam')
-    source = source.replace(seam, seam.replace('10800', '21600'))
+    source = renewed_source(inspect.getsource(previous.serve))
     namespace = dict(previous.serve.__globals__)
     exec(compile(source, __file__ + ':renewed_finite_epoch', 'exec'), namespace)
     namespace['serve']()

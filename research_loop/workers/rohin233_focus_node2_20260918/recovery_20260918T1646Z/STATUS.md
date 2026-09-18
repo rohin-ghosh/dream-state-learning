@@ -1,5 +1,15 @@
 # R233 node2 kept-life recovery
 
+## Current table — September18 17:35 UTC
+
+| Arm | Actual alive/LOAD/first ACT | Parent delivery | Effective deadline |
+| --- | --- | --- | --- |
+| C0 GPU4 | PID745118/start98001699; LOAD2871 17:21:10Z; ACT2883/2885 17:22:07Z; continuing training | **New** publication0021 17:30:21Z → INBOX2951 → REQUEST2953 → ACT2963/2965 17:33:48.940358Z. Sole parent778946, no duplicate. | Resident native stillSep18 22:55Z; renewed CPU parentSep20 17:59Z. |
+| Astra7 GPU1 | PID762967/start98059264; LOAD3128 17:26:46Z; ACT3140/3142 17:27:10Z; continuing training | Turing owns authentic P7 bridge; no renewal/render claim from this worker. | Resident native stillSep18 22:59Z; long-horizon live extension unresolved. |
+| Kept caption GPU2 | PID787115/start98128665 starting/replaying; LOAD pending17:34:23Z | API parent not yet started before actual LOAD; scorer owner reports transport onlythrough17:59:30Z, future result pending. | New tested plan/guardSep20 18Z; actual LOAD and service horizons separately tracked. |
+
+`C0_NEW_PARENT_0021.public.json` proves new parent visibility and subsequent output, **not recall correctness/retention**. `LIVE_1735.public.json` is current-incarnation metadata only. User's longer existing allocation does not retroactively mutate C0/Astra7 resident alarm/loop/timeout values: see `DEADLINE_EXTENSION_LIMITS.md`. Caption's failed pre-native attempt was preserved, fixed and retested125 CPU tests; repaired gate/source pushed `b94415f46926e1e548cde28af18a699e3c139837` before its one-shot retry. No all-restored claim.
+
 ## Update — September18 17:27 UTC
 
 Astra7 actual LOADED3128 at17:26:46.873724Z, native762967/start98059264, completed sleep87/optimizer6796; first REQUEST3130 at17:26:47.915813Z/12175 tokens. Outage7018.849s. Turing handoff contains exact new identity/source/guard/journal and22:59:36Z horizon; no P7 bridge success is inferred. Caption one-shot dispatch started immediately after this verified LOAD; no ACT dependency. Both original roots/devices remain separate; no duplicate starts. `ASTRA7_LOADED.public.json` contains source hashes. C0 continues running with verified empty semantic filters and sole curriculum writer.

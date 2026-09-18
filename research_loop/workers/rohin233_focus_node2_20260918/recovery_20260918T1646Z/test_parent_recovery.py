@@ -5,10 +5,17 @@ from unittest.mock import patch
 
 from c0_parent import parent_identity, priority_chooser, replacements
 from caption_endpoint import scoped_inspector
+from caption_parent_renew import renewed_source
 from observe import current_loaded, native_command
 
 
 class ParentRecoveryTests(unittest.TestCase):
+    def test_caption_parent_uses_actual_guard_horizon_not_short_epoch(self):
+        source = "deadline = min(epoch['baseline']['identity']['hard_end_unix'] - 60, time.time() + 10800)"
+        self.assertEqual(renewed_source(source), "deadline = epoch['baseline']['identity']['hard_end_unix'] - 60")
+        with self.assertRaises(ValueError):
+            renewed_source(source + '\n' + source)
+
     def test_urgent_parent_turn_is_once_without_overlapping_pending(self):
         choose = priority_chooser(lambda state: 'normal', 'recall')
         state = {'pending': {'id': 'actual'}}
