@@ -1,0 +1,175 @@
+{
+  "ADOPTION_public_scope": "OVERSEER_BRIEF_NOT_NATIVE_OR_JUDGE",
+  "P3": "MAIN_EXCLUSIVE_UNTOUCHED",
+  "actual_WALL_LOADED_pending": [
+    "P7",
+    "C2"
+  ],
+  "components": [
+    {
+      "SIGSTOP": false,
+      "actual_native_signals": [],
+      "all_exclusions_off_claim": false,
+      "checkpoint_cycle": 157,
+      "complete_index": 6734,
+      "complete_sha256": "cbc703e3e070b75826a32146b017206815a987cd9b68bbe08b0792ffcc22c8d5",
+      "component": "P7",
+      "deliberate_hold": false,
+      "guard_path": "/localhome/local-rohing/orch_r233_p7_deadline_20260918/control/GUARD.json",
+      "guard_sha256": "9e98fbbe00081c9c6fe5047c74a2be8a4b10d77e1c38120a86ce8494fdf6f640",
+      "hard_end_unix": 1790359200,
+      "hard_end_utc": "2026-09-25T18:00:00+00:00",
+      "journal_id": "e9d22d1e26234c4bbac761922929365f",
+      "launch_utc": "2026-09-18T18:12:18.738470+00:00",
+      "lease_authority": "USER_REPORTED_CONSERVATIVE_DATE_ONLY_SIX_HOUR_MARGIN",
+      "lease_end_utc": "2026-09-26T00:00:00+00:00",
+      "model_LOAD_pending": true,
+      "native": {
+        "pid": 563796,
+        "start_ticks": "32330897"
+      },
+      "observed_utc": "2026-09-18T18:30:32.615958+00:00",
+      "old_exit_unix": 1789754389.7327127,
+      "old_exit_utc": "2026-09-18T17:59:49.732713+00:00",
+      "optimizer_steps": 8076,
+      "plan_sha256": "d701076654515520b9f2762f4693b1d0e0bec28dd7f1484f474ae4ca2a28f888",
+      "retirement": false,
+      "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life",
+      "source_root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/r224_language_v3/source",
+      "source_unchanged": true,
+      "status": "NATIVE_REPLAY_NOT_LOADED",
+      "systemd": {
+        "ActiveState": "active",
+        "ExecMainStartTimestamp": "Fri 2026-09-18 18:12:18 UTC",
+        "RuntimeMaxUSec": "6d 23h 47min 41s",
+        "SubState": "running"
+      },
+      "timeout_argv": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "604051s",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r233_p7_deadline_20260918/control/GUARD.json"
+      ],
+      "training_policy_changed": false,
+      "wall_extended_pending": true
+    },
+    {
+      "alive": true,
+      "component": "P7_OVERSEER",
+      "hard_end_unix": 1790359200,
+      "hard_end_utc": "2026-09-25T18:00:00+00:00",
+      "pid": 2996247,
+      "source_receipt": "private/overseer/STARTED_1789753388260222218.json",
+      "source_receipt_sha256": "5f43f20786d2376e2a899be3534a389d082aa3a1e440b05e0e4cdfeeb7fb012c",
+      "start_ticks": "186012013",
+      "status": "ALIVE_WAITING_FOR_ACTUAL_NEW_P7_LOAD"
+    },
+    {
+      "alive": true,
+      "component": "P7_ASTRA7_BRIDGE",
+      "hard_end_unix": 1789927200.0,
+      "hard_end_utc": "2026-09-20T18:00:00+00:00",
+      "pid": 3232118,
+      "source_receipt": "private/bridge/STARTED_1789755693608121266.json",
+      "source_receipt_sha256": "e3049f9ff78898dde1d1036b94e52c80272e652dae5a291182f09febc48e91c7",
+      "start_ticks": "186271164",
+      "status": "ALIVE_CURRENT_ASTRA7_BOUND_WAITING_FOR_NEW_P7_LOAD"
+    },
+    {
+      "alive": true,
+      "component": "ROUTE_READER",
+      "hard_end_unix": 1789927200.0,
+      "hard_end_utc": "2026-09-20T18:00:00+00:00",
+      "pid": 3275809,
+      "source_receipt": "private/route_reader/STARTED_1789756166931070468.json",
+      "source_receipt_sha256": "b2329cc2d55fa22792dc38b63eb2e4672b32a424515969f7be69386d58290395",
+      "start_ticks": "186318496",
+      "status": "ALIVE_READ_ONLY_NO_CURRENT_NEW_ROUNDTRIP_CLAIM"
+    },
+    {
+      "component": "ASTRA7_TRANSPORT",
+      "hard_end_unix": 1789927200.0,
+      "hard_end_utc": "2026-09-20T18:00:00+00:00",
+      "loaded_index": 3545,
+      "loaded_sha256": "02af6cdb281ff43a1f6040146ec9fb37a54340ea944ff40d8220eff090e851a3",
+      "loaded_utc": "2026-09-18T18:15:05.943992+00:00",
+      "native_pid": 886059,
+      "native_start_ticks": "98343651",
+      "owner": "Jason_native_Turing_CPU_route",
+      "status": "ACTUAL_LOADED_RECEIVER_VERIFIED",
+      "verified_utc": "2026-09-18T18:31:25.467436+00:00"
+    },
+    {
+      "SIGSTOP": false,
+      "actual_native_signals": [
+        "EXACT_PIDFD_SIGTERM_AT_DURABLE_COMPLETE"
+      ],
+      "all_exclusions_off_claim": false,
+      "checkpoint_cycle": 114,
+      "complete_index": 11502,
+      "complete_sha256": "9c59fe6c59a01948b6ffe894aaa681010346ccc671c2f774a10fe7399a49080f",
+      "component": "C2",
+      "deliberate_hold": false,
+      "guard_path": "/localhome/local-rohing/orch_r233_C2_deadline_20260918/control/GUARD.json",
+      "guard_sha256": "5f8a471647972138f7429d6cafd962241a5363ca1c4f0fa447bfbadcb2de1ded",
+      "hard_end_unix": 1789927200,
+      "hard_end_utc": "2026-09-20T18:00:00+00:00",
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "launch_utc": "2026-09-18T18:28:45.770218+00:00",
+      "lease_authority": "USER_REPORTED_CONSERVATIVE_DATE_ONLY_SIX_HOUR_MARGIN",
+      "lease_end_utc": "2026-09-21T00:00:00+00:00",
+      "model_LOAD_pending": true,
+      "native": {
+        "pid": 829798,
+        "start_ticks": "29168595"
+      },
+      "observed_utc": "2026-09-18T18:30:33.980119+00:00",
+      "old_exit_unix": 1789756101.421838,
+      "old_exit_utc": "2026-09-18T18:28:21.421838+00:00",
+      "optimizer_steps": 7756,
+      "plan_sha256": "3296caba7dbfc523ef534ce0d7ed9b5d338eb11d38e331b435a2376d9db7c65f",
+      "retirement": false,
+      "root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+      "source_root": "/localhome/local-rohing/orch_r222_C2_20260918_discussion2/source",
+      "source_unchanged": true,
+      "status": "NATIVE_REPLAY_NOT_LOADED",
+      "systemd": {
+        "ActiveState": "active",
+        "ExecMainStartTimestamp": "Fri 2026-09-18 18:28:45 UTC",
+        "RuntimeMaxUSec": "1d 23h 30min 59s",
+        "SubState": "running"
+      },
+      "timeout_argv": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "171064s",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r125_continual_guard",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r233_C2_deadline_20260918/control/GUARD.json"
+      ],
+      "training_policy_changed": false,
+      "wall_extended_pending": true
+    }
+  ],
+  "existing_policy_mismatch": "P7_R224_and_C2_R222_still_name_earlier_filters; deadline-only_continuation_not_all-exclusions-off",
+  "next_actions": [
+    "Await existing native replays, no further native signals or duplicate launches",
+    "Bind P7 CPU endpoint only to actual new WALL/LOAD; existing sole parent and coordinator resume",
+    "Capture actual reload gaps and parent/render/bridge receipts; report pending separately"
+  ],
+  "no_staged_source_claimed_as_loaded": true,
+  "observed_utc": "2026-09-18T18:31:25.522720+00:00",
+  "state_preservation": "SAME_CURRENT_COMPLETE_SAME_ROOT_JOURNAL_ADAPTER_ADAMW_RNG_INBOXES"
+}

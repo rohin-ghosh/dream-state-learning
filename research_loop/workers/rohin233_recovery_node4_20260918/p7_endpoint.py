@@ -16,7 +16,6 @@ from native_binding import verify as verify_native
 
 OPERATOR = Path('/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C')
 JOURNAL = 'e9d22d1e26234c4bbac761922929365f'
-LOADED_SHA = '68cbee223e0ba397c970209dee232ec49bc83be8ceabe358835364fa40f9b076'
 
 
 def install():

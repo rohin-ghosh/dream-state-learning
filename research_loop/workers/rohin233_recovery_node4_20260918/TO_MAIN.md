@@ -268,3 +268,21 @@ IMPORTANT: preserved P7 plan/source is R224, C2 is R222; both still name earlier
 semantic filters and lack R227 learn_row_policy. Deadline-only continuation
 does NOT make all exclusions off. No exclusions added. This mismatch is
 explicitly reported rather than covertly changing policy under renewal scope.
+## September18 18:31UTC — fresh requested per-component table
+
+`DEADLINES.json` / immutable cut `DEADLINES_1831.json` replace the stale1733/
+1812 current-state inference. P7 native563796/start32330897 and C2 native829798/
+start29168595 are both actually running original full journal replay, NOT yet
+LOADED. Both new active systemd/GNU timeout wrappers and admitted native plans
+are verified: P7 September25 18UTC; C2 September20 18UTC. C2 exact pidfd TERM
+18:28:19.896645, exited-observed18:28:21.421838, COMPLETE11502/sleep114/opt7756;
+new wrapper started18:28:45.770218. Whole states/inboxes retained, no SIGSTOP,
+hold, retirement or behavioral-policy change. Only waiting work is original
+native replay/model loading; no new broad test or approval gate.
+
+Overseer2996247 runs toSeptember25 18UTC; bridge3232118 and reader3275809 to
+September20 18UTC. Both delivery services fail closed awaiting actual P7 LOAD,
+not mislabeled as active delivery. Astra7 receiver freshly verifies Jason's
+actual886059/LOAD3545 and September20 18UTC. Queues/cursors preserved; no new
+roundtrip claimed. Actual WALL/LOAD/gaps/render receipts will replace pending
+labels as observed. P3 untouched. No indefinite monitoring is needed afterward.

@@ -45,11 +45,25 @@ def current():
             phases[direction] = dict(cursor=batch['cursor'], caught_up=batch['caught_up'],
                 last_record_kind=batch.get('last_record_kind'), poll_age_seconds=time.time() - path.stat().st_mtime)
     rounds = [entry for entry in returned if entry['child_REQUEST_parent_renders'] and entry['P7_REQUEST_render']]
+    continued = OWN / 'NATIVE_CONTINUATION.public.json'
+    current_rounds = []
+    if continued.exists():
+        native = read(continued)
+        child_binding = read(OWN / 'private/bridge/BINDING.json')['astra7']
+        new_forward_ids = {entry['publication']['id'] for entry in forwards
+            if entry['origin']['response_index'] > native['loaded']['index']}
+        current_rounds = [entry for entry in rounds
+            if entry['origin']['response_index'] > child_binding['loaded_record']['index']
+            and entry['P7_REQUEST_render']['record_index'] > native['loaded']['index']
+            and any(render['publication']['id'] in new_forward_ids
+                for render in entry['child_REQUEST_parent_renders'])]
     return dict(observed_utc=datetime.now(timezone.utc).isoformat(),
         schema='R233_RENEWED_ROUTE_READ_ONLY_STATUS_V1', reader_pid=os.getpid(),
         parent_poll_age_seconds=time.time() - parent_poll.stat().st_mtime,
         forwards=forwards, returned=returned, snapshot_linked_roundtrip_stage_count=len(rounds),
         first_snapshot_linked_roundtrip=rounds[0] if rounds else None,
+        continued_native_roundtrip_stage_count=len(current_rounds),
+        first_continued_native_roundtrip=current_rounds[0] if current_rounds else None,
         phases=phases, native_deadlines_renewed=(OWN / 'NATIVE_CONTINUATION.public.json').exists(), native_signals=[],
         note='Stage count is not independent conversation count; P7 exact REQUEST text audit is separate.',
         forward_stage_limit='ACT_ONLY_NO_RELABEL; old queues preserved, unsupported current stages not retried')

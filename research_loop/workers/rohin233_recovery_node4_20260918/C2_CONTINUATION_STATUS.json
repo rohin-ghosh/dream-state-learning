@@ -1,0 +1,56 @@
+{
+  "component": "C2",
+  "observed_utc": "2026-09-18T18:30:33.980119+00:00",
+  "status": "NATIVE_REPLAY_NOT_LOADED",
+  "native": {
+    "pid": 829798,
+    "start_ticks": "29168595"
+  },
+  "hard_end_unix": 1789927200,
+  "hard_end_utc": "2026-09-20T18:00:00+00:00",
+  "lease_end_utc": "2026-09-21T00:00:00+00:00",
+  "lease_authority": "USER_REPORTED_CONSERVATIVE_DATE_ONLY_SIX_HOUR_MARGIN",
+  "systemd": {
+    "RuntimeMaxUSec": "1d 23h 30min 59s",
+    "ExecMainStartTimestamp": "Fri 2026-09-18 18:28:45 UTC",
+    "ActiveState": "active",
+    "SubState": "running"
+  },
+  "timeout_argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "171064s",
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "-m",
+    "gpu.orch_r125_continual_guard",
+    "native",
+    "--config",
+    "/localhome/local-rohing/orch_r233_C2_deadline_20260918/control/GUARD.json"
+  ],
+  "root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+  "source_root": "/localhome/local-rohing/orch_r222_C2_20260918_discussion2/source",
+  "guard_path": "/localhome/local-rohing/orch_r233_C2_deadline_20260918/control/GUARD.json",
+  "guard_sha256": "5f8a471647972138f7429d6cafd962241a5363ca1c4f0fa447bfbadcb2de1ded",
+  "plan_sha256": "3296caba7dbfc523ef534ce0d7ed9b5d338eb11d38e331b435a2376d9db7c65f",
+  "journal_id": "260be8b8710a42559b291797c6e14983",
+  "complete_index": 11502,
+  "complete_sha256": "9c59fe6c59a01948b6ffe894aaa681010346ccc671c2f774a10fe7399a49080f",
+  "checkpoint_cycle": 114,
+  "optimizer_steps": 7756,
+  "old_exit_utc": "2026-09-18T18:28:21.421838+00:00",
+  "old_exit_unix": 1789756101.421838,
+  "launch_utc": "2026-09-18T18:28:45.770218+00:00",
+  "source_unchanged": true,
+  "training_policy_changed": false,
+  "all_exclusions_off_claim": false,
+  "model_LOAD_pending": true,
+  "wall_extended_pending": true,
+  "actual_native_signals": [
+    "EXACT_PIDFD_SIGTERM_AT_DURABLE_COMPLETE"
+  ],
+  "SIGSTOP": false,
+  "deliberate_hold": false,
+  "retirement": false
+}
