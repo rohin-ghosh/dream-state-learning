@@ -1,5 +1,16 @@
 # Kept-fleet recovery — September 18, 2026
 
+## Exact-COMPLETE continuation authorized — 17:59:12 UTC
+
+The user explicitly authorizes each kept life and supporting component to
+resume from its latest coherent COMPLETE at the conservative existing-lease
+bound below. This supersedes the earlier request for a reload-gap exception;
+no further authorization is pending. Preserve the original journal, checkpoint,
+optimizer, RNG, working state, and interrupted tail. Record actual downtime
+and distinguish dispatch/replay from WALL_EXTENDED and LOADED. P7 stays alive
+pending Rohin's disposition, English requested rather than enforced, no row
+exclusions. Exact process ownership and confinement/admission checks remain.
+
 ## Horizon update — 17:25 UTC directive
 
 The latest user directive supersedes short experiment horizons and old date-only
