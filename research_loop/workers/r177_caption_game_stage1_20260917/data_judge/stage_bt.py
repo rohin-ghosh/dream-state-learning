@@ -1,0 +1,79 @@
+"""Stage one immutable R171 BT candidate, retaining all previous attempts."""
+
+import json
+from pathlib import Path
+import shutil
+import tarfile
+import time
+
+from gpu import ny_caption_data as data
+from research_loop.workers.r177_caption_game_stage1_20260917.data_judge import bt_ranker as ranker
+from research_loop.workers.r177_caption_game_stage1_20260917.data_judge import bt_receiving as receiving
+
+
+def build():
+    work = Path(__file__).resolve().parent
+    repo = work.parents[3]
+    prior = work/'private/released_all_receiving_v9/PAYLOAD'
+    old = data.bound(data.file_ref(prior/'INVENTORY.json'))
+    data.require(time.time()+2500 < old['allocation_end_unix'], 'BT_preparation_within_remaining_allocation')
+    root = work/'private/bt_qwen_v1'
+    remote = Path('/localhome/local-rohing/orch_r177_ampere_judge_20260917/bt_qwen_v1')
+    data.require(shutil.disk_usage(work).free > 3*1024**3, 'bounded_local_BT_staging_disk')
+    root.mkdir(mode=0o700, exist_ok=False)
+    payload, entries = root/'PAYLOAD', {}
+    def add(name, value):
+        reference = data.private_write(payload/name, value)
+        entries[name] = dict(path=str(remote/name), sha256=reference['sha256'], bytes=reference['bytes'])
+        return entries[name]
+    for name, reference in old['files'].items():
+        if name.startswith(('support/', 'data/')) and name != 'data/DATA_MANIFEST.private.json':
+            local = data.file_ref(prior/name)
+            data.require(local['sha256'] == reference['sha256'] and local['bytes'] == reference['bytes'], 'preserved_data_support_pin')
+            add(name, (prior/name).read_bytes())
+    manifest = data.bound(data.file_ref(prior/'data/DATA_MANIFEST.private.json'))
+    plan = data.bound(data.file_ref(prior/'data/DEVELOPMENT_PLAN.private.json'))
+    for names in plan['subsets'].values():
+        for name in names:
+            manifest['contests'][name]['rows'] = dict(manifest['contests'][name]['rows'], **entries['data/rows/'+name+'.jsonl'])
+    manifest['judge_scene_catalog'] = entries['data/SCENE_CATALOG.private.json']
+    manifest_ref = add('data/DATA_MANIFEST.private.json', manifest)
+    base = data.bound(data.file_ref(work/'QWEN_BT_BASE_MANIFEST_RECEIPT.json'))['reference']
+    config = dict(schema='NY_R171_BT_TRAIN_CONFIG_V1', objective='BRADLEY_TERRY_WEIGHTED_LOGISTIC',
+        label_policy=ranker.LABEL_POLICY, pair_policy=ranker.PAIR_POLICY, reliability_policy=ranker.RELIABILITY_POLICY,
+        base_model=base, data_manifest=manifest_ref, development_plan=entries['data/DEVELOPMENT_PLAN.private.json'],
+        development_source_manifest=entries['data/ORIGINAL_MANIFEST.private.json'],
+        frozen_scene_fit=dict(path='/localhome/local-rohing/orch_r177_ampere_judge_20260917/released_all_v6/training/judge_config.json',
+            sha256='b6cdc59274d9e5ec6d1bf1b1adc073346cf35e31bc1e1e93115d2d80421cd0e7'),
+        max_updates=1000, batch_pairs=2, gradient_accumulation=4, max_seconds=2400,
+        calibration_reserve_seconds=600, max_length=512, heldout_per_contest=64, seed=177, vote_cap=100,
+        evaluation_interval=100, inference_batch=4, learning_rate=0.0001, humor_soft_CE_used=False,
+        image_judge_training=False, development_reuse_provisional=True)
+    receiving.validate_config(config)
+    config_ref = add('TRAIN_CONFIG.json', config)
+    sources = ['gpu/ny_caption_data.py', 'gpu/ny_caption_judge.py']+[str((work/name).relative_to(repo)) for name in
+        ('bt_ranker.py', 'bt_receiving.py', 'test_bt_ranker.py', 'stage_bt.py', 'physical2_confinement.py', 'released_receiving.py',
+         'R171_REGISTERED_TEXT_BT.md', 'R171_SUPERSESSION.json')]
+    for name in sources:
+        add(name, (repo/name).read_bytes())
+    gate = add('LOCAL_CPU_TESTS.json', (work/'evidence/CPU_R171_BT_v1.json').read_bytes())
+    inventory = dict(schema='NY_R167_RELEASED_RECEIVING_V1', root=str(remote), files=entries, config=config_ref,
+        local_CPU_gate=gate, test_support_directory='support', hostname_sha256=old['hostname_sha256'], lease=old['lease'],
+        lease_safe_end_unix=old['lease_safe_end_unix'], allocation_end_unix=old['allocation_end_unix'],
+        selected_contests=old['selected_contests'], permitted_caption_pools=['judge_train', 'judge_dev'],
+        locked_validation_files_copied=False, FINAL_files_copied=False, images_copied=False, no_automatic_retry=True,
+        objective='BRADLEY_TERRY_WEIGHTED_LOGISTIC', scoped_device='NODE4_PHYSICAL2_ONLY')
+    inventory_ref = data.private_write(payload/'INVENTORY.json', inventory)
+    archive = root/'PAYLOAD.tar.gz'
+    with tarfile.open(archive, 'x:gz') as stream:
+        for name in sorted(entries):
+            stream.add(payload/name, arcname=name, recursive=False)
+        stream.add(payload/'INVENTORY.json', arcname='INVENTORY.json', recursive=False)
+    reference = data.private_write(root/'TRANSPORT.json', dict(remote_root=str(remote), archive=data.file_ref(archive),
+        inventory=inventory_ref, config=config_ref, files=len(entries), declared_bytes=sum(row['bytes'] for row in entries.values())))
+    print(json.dumps(dict(transport=reference, inventory_sha256=inventory_ref['sha256'], config=config_ref,
+        archive=data.file_ref(archive), remote_root=str(remote))))
+
+
+if __name__ == '__main__':
+    build()

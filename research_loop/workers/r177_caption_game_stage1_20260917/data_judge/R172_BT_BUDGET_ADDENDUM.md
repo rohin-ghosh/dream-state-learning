@@ -1,0 +1,7 @@
+# R172 fresh Builder BT budget — September 17, 2026
+
+Authority is Main/Astra Builder under user standing directives and the explicit internal-budget clarification, not new human ratification. This is a fresh experiment allocation inside the existing pinned machine lease; it is not a lease extension. Every prior source, payload, CPU result, allocation and consumed attempt remains unchanged. The CPU-passed bt_qwen_v1 is not GPU-launched.
+
+Fresh bt_qwen_v2 permits node4 physical2 only. A pinned experiment-budget receipt records an absolute 7200-second allocation starting at preparation, exact source hashes, unchanged machine lease reference, and a 60-second machine/launch margin. Run wall is 6600 seconds including a 1200-second calibration reserve. Late admission refuses rather than shortening, restarting, or extending a frozen candidate. Strict systemd target-minor1 open/close and seven foreign-device denials, fresh capacity, CPU provenance and shared-device lock remain mandatory.
+
+BT ranker source, pretrained base, empirical-positive-mass pair labels/reliability, pair count, selection criterion, calibration/tau, whole-contest boundaries and no-image contract are unchanged. Distribution labels remain calibration/evaluation only. No reference panel or new objective is added; no historical caption text or identities are released. Calibration/dev reuse stays provisional, locked validation and FINAL untouched. CPU-gated budget changes do not claim GPU start or effectiveness.
