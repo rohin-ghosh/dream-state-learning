@@ -28,3 +28,16 @@ Jason owns actual node2/GPU1 Astra7 native recovery and receiver renewal.
 No bridge revival before current binding verification. Old route/queue and
 interrupted journal history remain preserved. P7 remains bound18:00UTC with
 outer timeout approximately17:59:49UTC; longer allocation not established.
+# September18 17:38UTC CPU-only bridge/lease repair
+
+Thirteen focused local regressions pass, including same canonical Unicode
+record links, no historical-context false renewed roundtrip, ACT-only forward
+admission without stage relabelling, expired CPU authority and false native
+renewal rejection. Actual receiving status verifies Jason native762967/start
+98059264, LOADED3128, source receiver SHAa829156e... and guard/plan hashes.
+Renewed P7 export verified caught-up frontier6555. New CPU bridge2996246 holds
+old lock and preserves old queue/cursor history. CPU successor2996247 waits
+for exact existing parent2805259 to exit naturally. New CPU lease authority
+does NOT change resident native deadline; no native signals, pauses, training
+policy changes, P3 actions or retirement. This is an operational repair under
+latest explicit user scope, not a new scientific claim.

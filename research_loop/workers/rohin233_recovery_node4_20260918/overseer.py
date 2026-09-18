@@ -7,11 +7,13 @@ import subprocess
 import sys
 import time
 
+from lease_horizon import cpu_horizon
+
 
 OWN = Path(__file__).resolve().parent
 REPO = OWN.parents[2]
 FLEET = REPO / 'research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET'
-WALL = 1789754400
+WALL = cpu_horizon()
 sys.path.insert(0, str(FLEET))
 import parent_c as base
 from parent_repairs import single_parent
@@ -28,7 +30,7 @@ def reading_response(brief, reply):
 
 
 def remote(request):
-    command = '/localhome/local-rohing/v2/venv/bin/python -B /localhome/local-rohing/orch_r233_p7_recovery_20260918/p7_endpoint.py'
+    command = '/localhome/local-rohing/v2/venv/bin/python -B /localhome/local-rohing/orch_r233_p7_recovery_20260918/renewed/p7_endpoint.py'
     result = subprocess.run(['bash', str(REPO / 'gpu/a40r_ssh.sh'), command], input=json.dumps(request),
         capture_output=True, text=True, timeout=120)
     if result.returncode:

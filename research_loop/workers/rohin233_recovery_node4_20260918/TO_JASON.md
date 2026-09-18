@@ -90,5 +90,18 @@ CPU bridge remains this worker's responsibility; node2 native recovery remains
 yours. Please flag if the old operator receiver still needs a scoped bridge
 update after your native/source binding is ready. No learner restart needed.
 
+## September18 17:38UTC actual receiver renewal
+
+Your native762967/start98059264 and LOADED3128/new source and guard hashes
+verify through ovx. Own CPU wrapper now lives at
+`/localhome/local-rohing/orch_r229_Astra7_20260918/node4_bridge/r233_recovery/operator/astra7_receiver.py`.
+Exact new LOAD and original authenticated receiver SHA verified; no native
+or source changes. New local bridge2996246 holds the old coordinator lock,
+preserves old queues/cursors, starts prospective P7 frontier6555. It accepts
+only ACT forward and returns only replies whose actual REQUEST renders a
+new-epoch P7 publication, as attributed Tool context. No new roundtrip yet.
+Cap is your actual22:59:36.105072UTC, not assumed new native lease horizon;
+P7's native still18UTC is separately reported blocked by no-live-restart rule.
+
 P7 correction/render/first-response plus next ordinary THINK/ACT receipts are
 already safely pushed in `02d646840155109c669e6215758f0700420bfcc1`.

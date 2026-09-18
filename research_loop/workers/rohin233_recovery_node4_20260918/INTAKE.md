@@ -1,5 +1,17 @@
 # P7/Astra7 bounded recovery, September 18, 2026
 
+## 17:25UTC explicit user lease renewal and Jason actual receiver handoff
+
+The later user directive authorizes own P7/overseer/bridge safety bounds to
+September25 18UTC from reported node4 September26 date-only lease. This is
+CPU renewal only until native extension is separately proven; it does not
+claim provider expiry verification or override no-pause/no-relaunch. Jason
+owns recovered Astra7 native762967; bind the CPU receiver to his actual
+LOADED3128/new source, not the old birth PID. Preserve old ledger/cursors,
+start a prospective bridge epoch, ACT-only forwards, actual new-publication
+request matching for returns, no historical replay or task/eligibility change.
+Tests cover expired/misclaimed CPU authority and old-context false roundtrips.
+
 ## 17:05UTC non-material CPU repair addendum
 
 The first hot-read brief reached the existing provider, but its older system

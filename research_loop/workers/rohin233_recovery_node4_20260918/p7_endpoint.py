@@ -3,10 +3,13 @@
 import json
 import os
 from pathlib import Path
+import hashlib
+import socket
 import sys
 import time
 
 from receipt_window import linked_reply, read_record
+from lease_horizon import cpu_horizon
 
 
 OPERATOR = Path('/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C')
@@ -18,6 +21,23 @@ def install():
     sys.path.insert(0, str(OPERATOR))
     import r229_node4_endpoint as endpoint
     engine = endpoint.parent.engine
+    import math_c
+    endpoint.WALL = cpu_horizon()
+
+    def host():
+        engine.require(hashlib.sha256(socket.gethostname().encode()).hexdigest() == math_c.HOST_SHA
+            and os.getuid() == 2524, 'same_node4_host_and_user')
+        cpu_horizon()
+
+    original_live = endpoint.live
+
+    def live(source):
+        original_live(source)
+        fields = Path('/proc/1100592/stat').read_text().rsplit(') ', 1)[1].split()
+        engine.require(fields[19] == '28670738', 'same_P7_native_start_ticks')
+
+    endpoint.host = host
+    endpoint.live = live
 
     def poll(reference=None):
         root, previous, source, output = engine.paths()
@@ -71,6 +91,13 @@ if __name__ == '__main__':
     endpoint = install()
     endpoint.host()
     request = json.loads(sys.stdin.read())
-    if request['op'] not in ('poll', 'advance', 'return'):
+    if request['op'] not in ('poll', 'advance', 'return', 'export'):
         raise ValueError('existing_P7_operations_only_no_rebind')
-    print(json.dumps(endpoint.main(request), ensure_ascii=False))
+    if request['op'] == 'export':
+        from r229_journal_export import export
+        root, previous, source, publications, output = endpoint.paths()
+        endpoint.live(source)
+        result = export(root / 'life', JOURNAL, request['cursor'], request['cutoff_index'], 'P7_TO_ASTRA7')
+    else:
+        result = endpoint.main(request)
+    print(json.dumps(result, ensure_ascii=False))
