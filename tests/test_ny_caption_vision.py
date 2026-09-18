@@ -172,6 +172,14 @@ class VisionTests(unittest.TestCase):
         self.assertEqual(proof['uncertainty_source'], 'operator_format_notice_not_model_claim')
         self.assertFalse(proof['factual_accuracy_verified'])
 
+    def test_actual_development_partial_json_is_not_repaired_by_plain_prose_contract(self):
+        raw = ('```json\n{\n  "observation": "A man and a pregnant woman are standing beside a baby crib. '
+               'The man is gesturing with his hand, and the woman is holding her belly. Above the crib, there there\n```')
+        with self.assertRaisesRegex(vision.VisionError, 'invalid_json_no_repair'):
+            vision.canonical_visual(raw)
+        self.assertIn('plain prose', vision.SYSTEM_PROMPT)
+        self.assertIn('including uncertainty', vision.SYSTEM_PROMPT)
+
     def test_canonicalization_does_not_repair_partial_json_or_conceal_extra_fields(self):
         for raw in ('{"observations":"x"', '{"observations":"x","uncertainty":"y","score":1}',
                     '```json\n{"observations":"x","uncertainty":"y"}\n``` trailing',
