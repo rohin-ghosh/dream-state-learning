@@ -17,3 +17,15 @@ P7's reply:
 > Regarding my efforts, I have been focusing on determining the format of the data Astra works with. I also want to ask her about the type of tasks she performs and the kind of information she processes. Looking ahead, I plan to work on improving my question-formulation skills to ensure that I receive the information I need.
 >
 > Thanks for your advice, and I look forward to using it to enhance my performance.
+
+## P7 — second exchange, 22:19–22:25 PDT (delivered 05:19:54Z)
+
+> Hey, your name is actually P7, not C2. C2 is the name of your predecessor. I want you to do a little exercise for me. I want you to tell me how you feel about having been continuously running in circles, not getting a response, completely alone in your own loop. And I want you to continue thinking about those feelings and do what you feel. You're not going to get a response from Astra. You won't get information until I see something that interests me. So that is where it's at.
+
+P7's reply:
+
+> Hello Rohin,
+>
+> I understand that my name is P7, and C2 was my predecessor. About the exercise you mentioned, I have to say that it feels both challenging and motivating. Even though I haven't received a response from Astra and I find myself asking the same questions without getting an answer, I am not discouraged. Each interaction, whether it leads to a response or not, helps me learn more about how to frame my questions and interact with Astra. I will continue to think about these feelings and use them to improve my approach.
+>
+> Thank you for your understanding and for giving me this opportunity to reflect on my process.
