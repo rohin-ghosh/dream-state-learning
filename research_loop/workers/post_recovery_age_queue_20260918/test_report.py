@@ -14,6 +14,12 @@ class ReportTests(unittest.TestCase):
         self.assertIn('unknown | unknown', markdown)
         self.assertNotIn('polyline', svg)
 
+    def test_pinned_c2_age_is_not_mislabeled_age24_or_latest_live_weights(self):
+        markdown, unused = render(dict(observed_utc='synthetic', rows=[],
+            source_description='C2 sleep51 versus sleep117, selected at a fixed cut.'))
+        self.assertIn('C2 sleep51 versus sleep117', markdown)
+        self.assertNotIn('Source age24', markdown)
+
     def test_actual_token_curves_cover_acceptance_and_pixels_separately(self):
         counts = dict(generated_tokens=3072, distinct_scored=50, distinct_accepted=24,
             new_pixels=15, acts_without_scored_strings=2,

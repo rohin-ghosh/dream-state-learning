@@ -6,7 +6,8 @@ from pathlib import Path
 
 
 HERE = Path(__file__).resolve().parent
-COLORS = dict(base='#334155', learner24='#2563eb', frozen24='#d97706')
+COLORS = dict(base='#334155', learner24='#2563eb', frozen24='#d97706',
+    c2sleep51='#15803d', c2sleep117='#dc2626')
 
 
 def render(document):
@@ -15,7 +16,8 @@ def render(document):
         raise ValueError('one_adopted_epoch_per_comparison')
     lines = ['# Adopted-judge age block', '', 'Observed: ' + document['observed_utc'], '',
         'Parent-free, all parameters frozen, three DEVELOPMENT scenes, two independent seeds.',
-        'Fixed budget:3072 actual generated tokens per seed;6144 per source. Source age24 is not current age.', '',
+        'Fixed budget:3072 actual generated tokens per seed;6144 per source.',
+        document.get('source_description', 'Source age24 is not current age.'), '',
         '| Source | Seed | State | Actual tokens | Distinct scored strings | Accepted | New pixels | ACTs without scored strings | Source optimizer steps |',
         '| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |']
     for row in document['rows']:

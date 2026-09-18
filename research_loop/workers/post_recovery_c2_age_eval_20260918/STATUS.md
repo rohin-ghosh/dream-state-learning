@@ -1,19 +1,17 @@
 # Adopted-judge age block
 
-Observed: 2026-09-18T22:03:23.073962+00:00
+Observed: 2026-09-18T22:12:32.328693+00:00
 
 Parent-free, all parameters frozen, three DEVELOPMENT scenes, two independent seeds.
 Fixed budget:3072 actual generated tokens per seed;6144 per source.
-Source age24 is not current age.
+C2 sleep51 versus sleep117 captured at21:58:47UTC; not a claim of current live weights.
 
 | Source | Seed | State | Actual tokens | Distinct scored strings | Accepted | New pixels | ACTs without scored strings | Source optimizer steps |
 | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| base | 23201 | COMPLETE_FIXED_6144_TOKENS | 3072 | 50 | 24 | 15 | 0 | not applicable |
-| base | 23202 | COMPLETE_FIXED_6144_TOKENS | 3072 | 51 | 36 | 24 | 0 | not applicable |
-| learner24 | 23201 | COMPLETE_FIXED_6144_TOKENS | 3072 | 35 | 10 | 6 | 6 | 1152 |
-| learner24 | 23202 | COMPLETE_FIXED_6144_TOKENS | 3072 | 75 | 44 | 19 | 4 | 1152 |
-| frozen24 | 23201 | COMPLETE_FIXED_6144_TOKENS | 3072 | 50 | 24 | 15 | 0 | 0 |
-| frozen24 | 23202 | COMPLETE_FIXED_6144_TOKENS | 3072 | 51 | 36 | 24 | 0 | 0 |
+| base | 23201 | LOADED_EVALUATION_INCOMPLETE | 1024 | 14 | 9 | 6 | 0 | not applicable |
+| base | 23202 | LOADED_EVALUATION_INCOMPLETE | 128 | 0 | 0 | 0 | 0 | not applicable |
+| c2sleep51 | — | LOAD_NOT_OBSERVED | unknown | unknown | unknown | unknown | unknown | unknown |
+| c2sleep117 | — | LOAD_NOT_OBSERVED | unknown | unknown | unknown | unknown | unknown | unknown |
 
 Judge epoch: `216f34224e27a2ced6671026c482041c3e6024aecbabd105341a365d2935268a`.
 

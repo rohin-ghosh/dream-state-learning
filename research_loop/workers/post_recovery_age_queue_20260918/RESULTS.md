@@ -28,6 +28,11 @@ These are source update counts, not training FLOPs or full compute cost.
 Sleep24 is not the current age. The 1,146+ enrolled ages have not all been
 evaluated. C2 snapshot/current source preparation is a separate pending block.
 
+`INITIAL_PAIR_ORIGIN.json` separately re-verifies both original LOADED1 records:
+the initial base and adapter hashes match, with zero optimizer steps in both.
+This is a parameter-origin receipt, not a claim that all contexts or corrective
+parent messages were identical.
+
 `AGE_BLOCK_CURRENT.json` binds each CONFIG, LOADED, COMPLETE, unchanged
 parameter identity and actual-token curve. `TOKEN_CURVES.svg` separately plots
 accepted strings and new pixels against cumulative generated tokens for each
