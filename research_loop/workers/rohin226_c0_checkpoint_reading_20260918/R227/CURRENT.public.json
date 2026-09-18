@@ -1,0 +1,431 @@
+{
+  "actions": {
+    "deployments": 0,
+    "gpu_calls": 0,
+    "model_calls": 0,
+    "new_parents": 0,
+    "remote_writes": 0,
+    "restarts": 0,
+    "signals": 0
+  },
+  "bounded_tail": {
+    "first_index": 752,
+    "last_index": 943,
+    "non_atomic_live_observation": true,
+    "records": 192,
+    "sha_checked": true
+  },
+  "credentials_or_host_addresses_published": false,
+  "current_semantic_exclusions_off": false,
+  "driver_filters": {
+    "content_target_filter": "R213_CONTENT_BEARING_TARGETS_V1",
+    "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+    "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+  },
+  "finished_utc": "2026-09-18T08:38:58.020041+00:00",
+  "first_reading": {
+    "849": {
+      "file_mtime_utc": "2026-09-18T08:27:36.750876+00:00",
+      "index": 849,
+      "kind": "REQUEST",
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000849.json",
+      "render_receipt": {
+        "all_history_tokens_masked": true
+      },
+      "sha256": "c3754ea7b857d095db99859fe3709646990595a0e1a0c601e1ef2f8b12a803ac",
+      "started_utc": "2026-09-18T08:27:36.072316+00:00"
+    },
+    "857": {
+      "file_mtime_utc": "2026-09-18T08:28:02.595992+00:00",
+      "finished_utc": "2026-09-18T08:28:02.588876+00:00",
+      "index": 857,
+      "kind": "RESPONSE",
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000857.json",
+      "sha256": "bfc84e0a9ce1f8188a5abc315ca8384130fec08b0e2c0c188fc0ee39445d2a41"
+    },
+    "859": {
+      "file_mtime_utc": "2026-09-18T08:28:03.353623+00:00",
+      "index": 859,
+      "kind": "R184_STAGE",
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000859.json",
+      "sha256": "7c9a399c1e0ea36955a459d75469e4da1fe2b860658f86a627125d6db3d096f1"
+    }
+  },
+  "guard_sha256": "46b88748175a5750ec1de9f6e9b1e30fa1d49f38b4a4f8f7395de1275d137016",
+  "identities": [
+    {
+      "command_sha256": "dea609d8d7d8474ca7446709d88e14152e74ec7f6af3a57ecea9cb2b77621d56",
+      "pid": 2561156,
+      "role": "native",
+      "start_ticks": 94173182,
+      "state": "S"
+    },
+    {
+      "command_sha256": "0c8c8a7a38f1e42393d8b5eca987cc72d0052939ffed3cab176a1630f1ba1d98",
+      "pid": 2561001,
+      "role": "original_parent",
+      "start_ticks": 94172764,
+      "state": "S"
+    },
+    {
+      "command_sha256": "ef462b6f72be27cff99f5466100eba5235f7078bb7ec999705d120c2c5bf4962",
+      "pid": 2729920,
+      "role": "additive_reading_publisher",
+      "start_ticks": 94773801,
+      "state": "S"
+    }
+  ],
+  "latest_by_kind": {
+    "R184_STAGE": {
+      "exclusions": [],
+      "file_mtime_utc": "2026-09-18T08:32:42.348768+00:00",
+      "index": 901,
+      "kind": "R184_STAGE",
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000901.json",
+      "sha256": "faad3abf3260f67690e0184916e8a51ee946e6552cb77cf87716e94707924907",
+      "stage": "LEARN"
+    },
+    "REQUEST": {
+      "exclusions": [],
+      "file_mtime_utc": "2026-09-18T08:32:09.360801+00:00",
+      "index": 898,
+      "kind": "REQUEST",
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000898.json",
+      "render_receipt": {
+        "all_history_tokens_masked": true
+      },
+      "sha256": "41d20893c152e3ff1cd677a940a82f992d36bfca51af28d5ed97a3fb7a2c5a36",
+      "started_utc": "2026-09-18T08:32:08.649741+00:00"
+    },
+    "RESPONSE": {
+      "exclusions": [],
+      "file_mtime_utc": "2026-09-18T08:32:41.528214+00:00",
+      "finished_utc": "2026-09-18T08:32:41.520765+00:00",
+      "index": 899,
+      "kind": "RESPONSE",
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000899.json",
+      "sha256": "b1f9a7c6d4553a0576c8a2b8f43041d3f1946a3ad2fce8e12300206d4ff580fd"
+    },
+    "SLEEP_COMPLETE": {
+      "code_target_filter": {
+        "excluded_counts": {
+          "NEW": 0,
+          "REHEARSAL": 0
+        },
+        "excluded_reasons": {},
+        "input_row_counts": {
+          "NEW": 2,
+          "REHEARSAL": 0
+        },
+        "policy": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+        "raw_modified": false,
+        "retained_counts": {
+          "NEW": 2,
+          "REHEARSAL": 0
+        },
+        "targets_normalized": false
+      },
+      "cycle": 66,
+      "exclusions": [
+        {
+          "cohort": "NEW",
+          "policy": "R195_CHILD_ROW_REVIEW_V1",
+          "raw_target_sha256": "b2e73cd6c685786a68505bf04b5373a93a6b579b8a70b951fd501729991f2664",
+          "reason": "provisional_english_target_script_quarantine",
+          "segment": 197,
+          "source_sha256": "2ed6a00e10041539963a7e89c24e2315f668730634d192dd6c3bf1e244bd2601"
+        }
+      ],
+      "file_mtime_utc": "2026-09-18T08:38:21.086841+00:00",
+      "index": 942,
+      "kind": "SLEEP_COMPLETE",
+      "learn_review_filter": {
+        "content_target_filter": {
+          "excluded_reasons": {},
+          "existing_logged_readonly_metric": {
+            "content_units": 23,
+            "meta_units": 1,
+            "unknown_units": 27
+          },
+          "input_row_counts": {},
+          "metric_rows": 3,
+          "policy": "R213_CONTENT_BEARING_TARGETS_V1",
+          "raw_modified": false,
+          "targets_normalized": false
+        },
+        "excluded_counts": {
+          "NEW": 1,
+          "REHEARSAL": 0
+        },
+        "excluded_reasons": {
+          "provisional_english_target_script_quarantine": 1
+        },
+        "input_row_counts": {
+          "NEW": 3,
+          "REHEARSAL": 0
+        },
+        "policy": "R195_CHILD_ROW_REVIEW_V1",
+        "prose_target_filter": {
+          "excluded_reasons": {
+            "provisional_english_target_script_quarantine": 1
+          },
+          "input_row_counts": {},
+          "policy": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+          "raw_modified": false,
+          "targets_normalized": false
+        },
+        "raw_modified": false,
+        "retained_counts": {
+          "NEW": 2,
+          "REHEARSAL": 0
+        },
+        "targets_normalized": false
+      },
+      "new_row_count": 3,
+      "optimizer_steps": 32,
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000942.json",
+      "sha256": "3f09a24d0856ef36692d5795cfb0dda4b98d37644657f5b08efb39403868f223",
+      "status": "COMPLETE",
+      "total_optimizer_steps": 5356
+    },
+    "SLEEP_RECIPE": {
+      "available_old_rows": 195,
+      "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+      "exclusions": [],
+      "file_mtime_utc": "2026-09-18T08:32:43.135916+00:00",
+      "index": 908,
+      "kind": "SLEEP_RECIPE",
+      "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+      "new_presentations": 16,
+      "new_rows": 3,
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000908.json",
+      "policy": "R181_NEW_ONLY_V1",
+      "selected_old_rows": 0,
+      "sha256": "059986c7bd5021926215e340841260a8a365971c788a52fffffa45a44485f56e"
+    },
+    "TARGET_ELIGIBILITY": {
+      "code_target_filter": {
+        "excluded_counts": {
+          "NEW": 0,
+          "REHEARSAL": 0
+        },
+        "excluded_reasons": {},
+        "input_row_counts": {
+          "NEW": 2,
+          "REHEARSAL": 0
+        },
+        "policy": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+        "raw_modified": false,
+        "retained_counts": {
+          "NEW": 2,
+          "REHEARSAL": 0
+        },
+        "targets_normalized": false
+      },
+      "exclusions": [
+        {
+          "cohort": "NEW",
+          "policy": "R195_CHILD_ROW_REVIEW_V1",
+          "raw_target_sha256": "b2e73cd6c685786a68505bf04b5373a93a6b579b8a70b951fd501729991f2664",
+          "reason": "provisional_english_target_script_quarantine",
+          "segment": 197,
+          "source_sha256": "2ed6a00e10041539963a7e89c24e2315f668730634d192dd6c3bf1e244bd2601"
+        }
+      ],
+      "file_mtime_utc": "2026-09-18T08:32:43.280913+00:00",
+      "index": 909,
+      "kind": "TARGET_ELIGIBILITY",
+      "learn_review_filter": {
+        "content_target_filter": {
+          "excluded_reasons": {},
+          "existing_logged_readonly_metric": {
+            "content_units": 23,
+            "meta_units": 1,
+            "unknown_units": 27
+          },
+          "input_row_counts": {},
+          "metric_rows": 3,
+          "policy": "R213_CONTENT_BEARING_TARGETS_V1",
+          "raw_modified": false,
+          "targets_normalized": false
+        },
+        "excluded_counts": {
+          "NEW": 1,
+          "REHEARSAL": 0
+        },
+        "excluded_reasons": {
+          "provisional_english_target_script_quarantine": 1
+        },
+        "input_row_counts": {
+          "NEW": 3,
+          "REHEARSAL": 0
+        },
+        "policy": "R195_CHILD_ROW_REVIEW_V1",
+        "prose_target_filter": {
+          "excluded_reasons": {
+            "provisional_english_target_script_quarantine": 1
+          },
+          "input_row_counts": {},
+          "policy": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+          "raw_modified": false,
+          "targets_normalized": false
+        },
+        "raw_modified": false,
+        "retained_counts": {
+          "NEW": 2,
+          "REHEARSAL": 0
+        },
+        "targets_normalized": false
+      },
+      "new_row_count": 2,
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000909.json",
+      "runtime_policy": "R144_SPECIAL_TOKEN_TARGET_EXCLUSION_V1",
+      "sha256": "811161e361a87d492230dbcbbea81b49973698f3a3e6aa144e53fc0269d46711"
+    },
+    "UPDATE": {
+      "exclusions": [],
+      "file_mtime_utc": "2026-09-18T08:37:28.046474+00:00",
+      "finished_utc": "2026-09-18T08:37:28.040171+00:00",
+      "index": 941,
+      "kind": "UPDATE",
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000941.json",
+      "sha256": "b7acd287a546534a2ba0fc2a814659dd81cd2664aa7a670bb9d8f9150ed098c1"
+    }
+  },
+  "latest_record": {
+    "file_mtime_utc": "2026-09-18T08:38:21.191496+00:00",
+    "index": 943,
+    "kind": "R184_LEARN_COMPLETE",
+    "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000943.json",
+    "sha256": "5db0379e21f0de5b63927c2f67e5e63471a35792fb6adc6a643dbe4ba591b9b7"
+  },
+  "live_filter_toggle_verified": false,
+  "loaded": {
+    "file_mtime_utc": "2026-09-18T06:35:20.589070+00:00",
+    "index": 1,
+    "kind": "LOADED",
+    "loaded_utc": "2026-09-18T06:35:20.587470+00:00",
+    "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000000001.json",
+    "sha256": "bfd5c0cce84abe72354adbe87de1916906be968db9c75ce108e7383c3834f1f9"
+  },
+  "matching_processes": [
+    {
+      "kind": "original_parent_verified_identity",
+      "pid": 2561001
+    },
+    {
+      "kind": "c0_runtime_dispatch",
+      "pid": 2561002
+    },
+    {
+      "kind": "c0_runtime_child",
+      "pid": 2561098
+    },
+    {
+      "kind": "c0_runtime_native",
+      "pid": 2561156
+    }
+  ],
+  "node": "node2",
+  "physical_gpu": 4,
+  "plan_recipe": {
+    "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+    "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+    "new_presentations": 16,
+    "presentation_version": "R125_PLAIN_CONTEXT_V1",
+    "rehearsal_presentations": 0,
+    "sleep_loss_impl": "MASKED_CAUSAL_CE_V1"
+  },
+  "plan_sha256": "f45ff013614aa12f905e8767d310001ca3da482b13cce794469e1b3708f739b2",
+  "raw_child_text_published": false,
+  "reading": {
+    "cycle_receipts": [
+      {
+        "path": "/localhome/local-rohing/orch_r226_c0_operator_20260918/reading/CYCLE_000064.json",
+        "sha256": "58ec0df31adb935dab69ebd29118ed034bda9c4125f222fd05b8556c9523bfec"
+      },
+      {
+        "path": "/localhome/local-rohing/orch_r226_c0_operator_20260918/reading/CYCLE_000065.json",
+        "sha256": "0642904a2e9d55dff15767880013b63204241d681f18420a6f7d7a24a7d5ce03"
+      },
+      {
+        "path": "/localhome/local-rohing/orch_r226_c0_operator_20260918/reading/CYCLE_000066.json",
+        "sha256": "1e18a7bf968c1ae69b5f059d0b23cac55f58d3b098dc775f9b3576ba9b29661b"
+      }
+    ],
+    "service": {
+      "first_reading_after_completed_cycle": 64,
+      "model_calls": 0,
+      "original_math_parent_kept": true,
+      "pid": 2729920,
+      "signals": 0,
+      "sleep_spacing": 3,
+      "start_ticks": 94773801,
+      "started_utc": "2026-09-18T08:14:58.951649+00:00"
+    },
+    "service_path": "/localhome/local-rohing/orch_r226_c0_operator_20260918/reading/SERVICE.json",
+    "state": {
+      "completed_cycle": 66,
+      "excerpt": 0,
+      "last_publication_cycle": 64,
+      "memory_after_cycle": null,
+      "next_reading_after_cycle": 67,
+      "publications": 1,
+      "record_cursor": 944,
+      "retry_reason": "non_English_script_observed",
+      "step": 0
+    },
+    "state_path": "/localhome/local-rohing/orch_r226_c0_operator_20260918/reading/STATE.json",
+    "state_sha256": "4ba7c124dce3b664e9e7fc4abfabe22d92fd665d44b02341c06d8f8bf6e69b27",
+    "turn_receipts": [
+      {
+        "path": "/localhome/local-rohing/orch_r226_c0_operator_20260918/reading/TURN_0000.json",
+        "sha256": "c5b18b3eb1603e89a7d45f1ab00beb5dedc66caeb77f97d7588e74e7f45c12cf"
+      }
+    ]
+  },
+  "schema": "R227_C0_READONLY_PUBLIC_RECEIPTS_V1",
+  "source_files": [
+    {
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/source/gpu/r216_c0_runtime.py",
+      "sha256": "cf44f69296defaf0c8a503db5176f977cdcddaeea0e232f2e45b9538b932697a",
+      "sha_found_in_guard_source_pins": true
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/source/gpu/r205_runtime.py",
+      "sha256": "14a6e7e1eab7fde393e27c9a0e1ebd44dca7c4508e98d6ba146828f63ade6ede",
+      "sha_found_in_guard_source_pins": true
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/source/gpu/orch_r125_continual_native.py",
+      "sha256": "86f6d5ec752251acf2121ef78101e809a3c8c3ee078b6eee485e7ea8ee0f5891",
+      "sha_found_in_guard_source_pins": true
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/source/gpu/orch_r184_think_act_learn.py",
+      "sha256": "227aa2f93b193b7288edbad80efb151360e8e46ecbcf79bbd337ac301a2bd2c9",
+      "sha_found_in_guard_source_pins": true
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/source/organism_v6/orch_r125_plain_context.py",
+      "sha256": "4ac0ac3197bc59e8ebb9c5f8acaaae2155fff2dd09e7baf49f0c4c161a18aaef",
+      "sha_found_in_guard_source_pins": true
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/source/organism_v6/orch_r194_code_target_filter.py",
+      "sha256": "6ae31389771786a88e96d055c53dc029222102db8d5b233481cf3834dbdda770",
+      "sha_found_in_guard_source_pins": true
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/source/organism_v6/orch_r203_prose_target_filter.py",
+      "sha256": "4bceeff13176f61b8ee32f4ae4f995ce8cce5d2aba7b2286bd13b6e48281d9ed",
+      "sha_found_in_guard_source_pins": true
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/source/organism_v6/orch_r213_content_target_filter.py",
+      "sha256": "6b20c73827f27010eb326fc80c958f24ade40540229668048c0a395696a16658",
+      "sha_found_in_guard_source_pins": true
+    }
+  ],
+  "started_utc": "2026-09-18T08:38:55.607361+00:00"
+}

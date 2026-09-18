@@ -1,0 +1,89 @@
+{
+  "cycle_ledgers": [
+    {
+      "actual_object_not_inferred_from_schedule": true,
+      "cycle": 64,
+      "events": [
+        {
+          "index": 777,
+          "kind": "actual_ACT",
+          "raw_sha256": "da5e9c6a777e4fe3e91f85db340445bee9220b1569aeb5eedcdf63178b0f1630",
+          "sha256": "085b26c7dd1aae7211740801eff94b7882c466046eafbb7bf8543ecac1dac63b"
+        }
+      ],
+      "file_sha256": "58ec0df31adb935dab69ebd29118ed034bda9c4125f222fd05b8556c9523bfec",
+      "path": "/localhome/local-rohing/orch_r226_c0_operator_20260918/reading/CYCLE_000064.json",
+      "reading_rendered": false,
+      "sleep_complete_index": 845,
+      "sleep_complete_sha256": "727154acd3fa968b64961e4955fc2399c1bfdacd9955c6f4e7861038397f0a33"
+    },
+    {
+      "actual_object_not_inferred_from_schedule": true,
+      "cycle": 65,
+      "events": [
+        {
+          "action": "reading",
+          "all_history_tokens_masked": true,
+          "index": 849,
+          "kind": "reading_request_render",
+          "prompt_tokens": 9515,
+          "sha256": "c3754ea7b857d095db99859fe3709646990595a0e1a0c601e1ef2f8b12a803ac",
+          "started_utc": "2026-09-18T08:27:36.072316+00:00"
+        },
+        {
+          "index": 857,
+          "kind": "actual_ACT",
+          "raw_sha256": "a644082ef90e0f83f78d2cdecbe00e837cd38a89637441f3fdf5ea96f5fbdded",
+          "sha256": "bfc84e0a9ce1f8188a5abc315ca8384130fec08b0e2c0c188fc0ee39445d2a41"
+        }
+      ],
+      "file_sha256": "0642904a2e9d55dff15767880013b63204241d681f18420a6f7d7a24a7d5ce03",
+      "path": "/localhome/local-rohing/orch_r226_c0_operator_20260918/reading/CYCLE_000065.json",
+      "reading_rendered": true,
+      "sleep_complete_index": 877,
+      "sleep_complete_sha256": "5472105d1e52aa6e17ae883d9c2564fb2ceadfc7a0d455dd75e146a205c1e9c7"
+    },
+    {
+      "actual_object_not_inferred_from_schedule": true,
+      "cycle": 66,
+      "events": [
+        {
+          "index": 890,
+          "kind": "actual_ACT",
+          "raw_sha256": "5618ff53ffbdaf8da0e8c46c267ab8bde2ef4d8e4a75cf1d00db0a890bd98c79",
+          "sha256": "77f3d3955e7a5b074cb0896fe84b4de88b4ae6a1fb0fb092d7fcab0731ceaf1a"
+        }
+      ],
+      "file_sha256": "1e18a7bf968c1ae69b5f059d0b23cac55f58d3b098dc775f9b3576ba9b29661b",
+      "path": "/localhome/local-rohing/orch_r226_c0_operator_20260918/reading/CYCLE_000066.json",
+      "reading_rendered": false,
+      "sleep_complete_index": 942,
+      "sleep_complete_sha256": "3f09a24d0856ef36692d5795cfb0dda4b98d37644657f5b08efb39403868f223"
+    }
+  ],
+  "observed_utc": "2026-09-18T08:39:42.136256+00:00",
+  "process_checks": [
+    {
+      "command_sha256": "0c8c8a7a38f1e42393d8b5eca987cc72d0052939ffed3cab176a1630f1ba1d98",
+      "exact_command_matching_pids": [
+        2561001
+      ],
+      "pid": 2561001,
+      "role": "original_parent",
+      "start_ticks": 94172764,
+      "state": "S"
+    },
+    {
+      "command_sha256": "ef462b6f72be27cff99f5466100eba5235f7078bb7ec999705d120c2c5bf4962",
+      "exact_command_matching_pids": [
+        2729920
+      ],
+      "pid": 2729920,
+      "role": "reading_publisher",
+      "start_ticks": 94773801,
+      "state": "S"
+    }
+  ],
+  "raw_child_text_published": false,
+  "scope": "Exact parent/publisher command matching; not a fleet-wide duplicate-parent assertion."
+}
