@@ -1,5 +1,5 @@
 {
-  "unix": 1789757783.3820004,
+  "unix": 1789758918.2995846,
   "rows": [
     {
       "pid": 459712,
@@ -606,29 +606,300 @@
       "alive": true
     },
     {
-      "pid": 3046824,
+      "pid": 3524450,
       "state": "S",
-      "ppid": 3046823,
-      "start_ticks": 186067621,
-      "start_utc": "2026-09-18T17:47:37.210000+00:00",
-      "start_unix": 1789753657.21,
+      "ppid": 3524448,
+      "start_ticks": 186568701,
+      "start_utc": "2026-09-18T19:11:08.010000+00:00",
+      "start_unix": 1789758668.01,
       "executable": "python3",
-      "command_sha256": "77668fc5e7bf3699bd86b33f344eacab08dc8ed8249f36cd9cfeed443f2fe819",
+      "command_sha256": "cd60249f529b4a1a326c038ffcef32eac8bbbd15e6e055c5b9c3d359ff15e51b",
       "name": "every_sleep_enrollment",
       "actual_host_alias": "operator_vm",
       "proof": [
         {
+          "kind": "PROCESS_CONFIG",
+          "path": "/tmp/r233-enrollment-admission-20260918T1909Z/CONFIG.private.json",
+          "sha256": "f18d1df81f564487b46c69cf868cee2fb080f39224506c29acb8e7dfa10d0c4c",
+          "deadline_unix": 1790791170
+        },
+        {
           "kind": "LIVE_OUTER_TIMEOUT",
-          "pid": 3046823,
-          "start_ticks": 186067621,
-          "seconds": 1037511.0,
-          "approximate_end_utc": "2026-09-30T17:59:28.210000+00:00",
+          "pid": 3524448,
+          "start_ticks": 186568701,
+          "seconds": 1032501.0,
+          "approximate_end_utc": "2026-09-30T17:59:29.010000+00:00",
           "clock_precision_seconds": 1,
-          "args_sha256": "5a67db3e2d5e9153ca3a59a7ec206d530b96a8c6a09f16a683c26ce447ab2f9d"
+          "args_sha256": "c47183eede7380a524692a97068015a0ae5308b5cd7953ba6d2760c902c04238"
+        },
+        {
+          "kind": "ACTUAL_ENROLLMENT_SOURCE_ADMISSION_LOADED",
+          "receipt_path": "LEASE_ADMISSION_RENEWED.json",
+          "receipt_sha256": "c7437ac822a35367e6083aaf26a2fadbaf8e2469db9077b49b9c523006993aa7",
+          "driver_sha256": "865caf819089adafb83b7748c297b675a848fab02521c0b28f3c6b70b7de630a",
+          "reader_sha256": "509f2611cb88aa54837febc093339627b3b64fd518f006988ccff0a42e7c9c4e",
+          "loaded_unix": 1789758668.991879,
+          "historical_entries_unchanged": true,
+          "cursor_regressions": 0,
+          "new_evaluations": 0
         }
       ],
-      "actual_deadline": "2026-09-30T17:59:28.210000+00:00",
-      "alive": true
+      "actual_deadline": "2026-09-30T17:59:29.010000+00:00",
+      "alive": true,
+      "observed_unix": 1789758918.2991147,
+      "source_admission": {
+        "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+        "caller_timeout_seconds": 30,
+        "receiver_alarm": true,
+        "cleanup_margin_seconds": 5,
+        "same_registered_roots": 16,
+        "registration_sha256": [
+          "1e3ce8cf7fdac1e6d9f31e6517757f649bf6acacd22aa3d1be549dbb9bc8187b",
+          "d95dfb84b2e289ff19dc5f5871a73e09e02951658229bfb26072ea5bb6ee8bfb"
+        ],
+        "targets": [
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1789927200.0,
+            "effective_cutoff_utc": "2026-09-20T18:00:00+00:00",
+            "latest_start_utc": "2026-09-20T17:59:25+00:00",
+            "life": "C2",
+            "observed_unix": 1789758668.9919112,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-20T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-20T18:00:00+00:00",
+            "source_host_alias": "node5"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790359200.0,
+            "effective_cutoff_utc": "2026-09-25T18:00:00+00:00",
+            "latest_start_utc": "2026-09-25T17:59:25+00:00",
+            "life": "P7",
+            "observed_unix": 1789758668.9919264,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-25T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-25T18:00:00+00:00",
+            "source_host_alias": "node4"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790359200.0,
+            "effective_cutoff_utc": "2026-09-25T18:00:00+00:00",
+            "latest_start_utc": "2026-09-25T17:59:25+00:00",
+            "life": "GAME1_P3",
+            "observed_unix": 1789758668.9919353,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-25T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-25T18:00:00+00:00",
+            "source_host_alias": "node4"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1789927200.0,
+            "effective_cutoff_utc": "2026-09-20T18:00:00+00:00",
+            "latest_start_utc": "2026-09-20T17:59:25+00:00",
+            "life": "C0",
+            "observed_unix": 1789758668.9919426,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-20T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-20T18:00:00+00:00",
+            "source_host_alias": "node2"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1789927200.0,
+            "effective_cutoff_utc": "2026-09-20T18:00:00+00:00",
+            "latest_start_utc": "2026-09-20T17:59:25+00:00",
+            "life": "Astra7",
+            "observed_unix": 1789758668.991951,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-20T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-20T18:00:00+00:00",
+            "source_host_alias": "node2"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790272800.0,
+            "effective_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "latest_start_utc": "2026-09-24T17:59:25+00:00",
+            "life": "MATH_A",
+            "observed_unix": 1789758668.991957,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-24T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "source_host_alias": "node3"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790272800.0,
+            "effective_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "latest_start_utc": "2026-09-24T17:59:25+00:00",
+            "life": "MATH_B_FORK",
+            "observed_unix": 1789758668.9919655,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-24T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "source_host_alias": "node3"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790272800.0,
+            "effective_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "latest_start_utc": "2026-09-24T17:59:25+00:00",
+            "life": "MATH_C",
+            "observed_unix": 1789758668.9919713,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-24T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "source_host_alias": "node3"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790272800.0,
+            "effective_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "latest_start_utc": "2026-09-24T17:59:25+00:00",
+            "life": "GAME_N3_0",
+            "observed_unix": 1789758668.991977,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-24T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "source_host_alias": "node3"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790272800.0,
+            "effective_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "latest_start_utc": "2026-09-24T17:59:25+00:00",
+            "life": "GAME_N3_3",
+            "observed_unix": 1789758668.991983,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-24T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "source_host_alias": "node3"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790272800.0,
+            "effective_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "latest_start_utc": "2026-09-24T17:59:25+00:00",
+            "life": "GAME_N3_5",
+            "observed_unix": 1789758668.9919887,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-24T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "source_host_alias": "node3"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790272800.0,
+            "effective_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "latest_start_utc": "2026-09-24T17:59:25+00:00",
+            "life": "GAME_N3_6",
+            "observed_unix": 1789758668.9919972,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-24T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "source_host_alias": "node3"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790272800.0,
+            "effective_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "latest_start_utc": "2026-09-24T17:59:25+00:00",
+            "life": "GAME_N3_7",
+            "observed_unix": 1789758668.992003,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-24T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-24T18:00:00+00:00",
+            "source_host_alias": "node3"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790791170,
+            "effective_cutoff_utc": "2026-09-30T17:59:30+00:00",
+            "latest_start_utc": "2026-09-30T17:58:55+00:00",
+            "life": "FRESH_R231",
+            "observed_unix": 1789758668.9920094,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-30T17:59:25+00:00",
+            "source_cutoff_utc": "2026-09-30T18:00:00+00:00",
+            "source_host_alias": "ovx4"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1790791170,
+            "effective_cutoff_utc": "2026-09-30T17:59:30+00:00",
+            "latest_start_utc": "2026-09-30T17:58:55+00:00",
+            "life": "R232_SIBLING_FROZEN",
+            "observed_unix": 1789758668.9920158,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-30T17:59:25+00:00",
+            "source_cutoff_utc": "2026-09-30T18:00:00+00:00",
+            "source_host_alias": "ovx4"
+          },
+          {
+            "allowed": true,
+            "caller_timeout_seconds": 30,
+            "cleanup_margin_seconds": 5,
+            "effective_cutoff_unix": 1789927200.0,
+            "effective_cutoff_utc": "2026-09-20T18:00:00+00:00",
+            "latest_start_utc": "2026-09-20T17:59:25+00:00",
+            "life": "GAME_UNPARENTED_N2",
+            "observed_unix": 1789758668.9920247,
+            "policy": "R233_PER_SOURCE_LEASE_ADMISSION_V1",
+            "receiver_alarm": true,
+            "receiver_finish_utc": "2026-09-20T17:59:55+00:00",
+            "source_cutoff_utc": "2026-09-20T18:00:00+00:00",
+            "source_host_alias": "node2"
+          }
+        ]
+      }
     },
     {
       "pid": 3044139,
@@ -1041,15 +1312,50 @@
   },
   "limitations": [
     "Remote reverse listeners inherit controlling SSH connection lifetime; no independent remote hard timer was installed.",
-    "Enrollment is an operator_vm service through Sep30, not continuous capture/evaluation. Its current source does not contain per-target lease-date admission; explicit per-target renewal/capping is still needed before the earliest source cutoff.",
     "Node3 Tool relay1970178 is externally owned by Copernicus, observed Sep24 18:00 app deadline; no owned signal/change.",
     "Node2 ordinary Tool delivery is a native-owner integration, not an observed separate owned publisher; future render not established in this census.",
-    "P3 native LOAD and correction notice rendering remain Main-owned and unproved here."
+    "P3 native LOAD and correction notice rendering remain Main-owned and unproved here.",
+    "Enrollment now enforces per-source cutoffs before every remote read and with a receiving-process alarm. This is metadata enrollment, not capture/evaluation; no backlog dispatcher was started."
   ],
   "native_signals": [],
   "new_GPU_dispatches": 0,
   "upstream_peer_coverage": {
     "expected": 2,
     "matched": 2
-  }
+  },
+  "schema": "R233_SUPPORT_COMPONENT_TABLE_V2",
+  "baseline_census_unix": 1789757783.3820004,
+  "updated_components": [
+    "every_sleep_enrollment"
+  ],
+  "update_kind": "SCOPED_ENROLLMENT_REPLACEMENT_OTHER_COMPONENTS_NOT_RESCANNED",
+  "superseded_components": [
+    {
+      "pid": 3046824,
+      "state": "S",
+      "ppid": 3046823,
+      "start_ticks": 186067621,
+      "start_utc": "2026-09-18T17:47:37.210000+00:00",
+      "start_unix": 1789753657.21,
+      "executable": "python3",
+      "command_sha256": "77668fc5e7bf3699bd86b33f344eacab08dc8ed8249f36cd9cfeed443f2fe819",
+      "name": "every_sleep_enrollment",
+      "actual_host_alias": "operator_vm",
+      "proof": [
+        {
+          "kind": "LIVE_OUTER_TIMEOUT",
+          "pid": 3046823,
+          "start_ticks": 186067621,
+          "seconds": 1037511.0,
+          "approximate_end_utc": "2026-09-30T17:59:28.210000+00:00",
+          "clock_precision_seconds": 1,
+          "args_sha256": "5a67db3e2d5e9153ca3a59a7ec206d530b96a8c6a09f16a683c26ce447ab2f9d"
+        }
+      ],
+      "actual_deadline": "2026-09-30T17:59:28.210000+00:00",
+      "alive": true,
+      "status": "REPLACED_PRESERVED_SAME_LEDGERS",
+      "replacement_pid": 3524450
+    }
+  ]
 }

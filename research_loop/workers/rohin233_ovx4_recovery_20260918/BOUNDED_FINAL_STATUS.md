@@ -1,5 +1,11 @@
 # Bounded final support and correction cut — September18, 2026
 
+> **Enrollment-only superseding update,19:11:08UTC:** the per-target lease-admission
+> gap documented in this historical cut is now repaired and actually running in
+> CPU successor3524450. See `LEASE_ADMISSION_FINAL_STATUS.md` and
+> `LEASE_ADMISSION_RENEWED.json`. Original rows/claims below remain the prior cut;
+> no new GPU science or backlog dispatcher was added.
+
 ## Actual feedback, not staging
 
 - **P3 retrospective correction is published, rendering pending:** inbox

@@ -22,7 +22,7 @@ ROLES = {
     'operator_vm': {'node3_upstream_timeout': 3044137, 'node2_upstream_timeout': 3044280,
                     'node3_proxy': 3044140, 'node2_proxy': 3044283,
                     'node2_downstream_timeout': 3334145, 'node3_downstream_timeout': 3334410,
-                    'every_sleep_enrollment': 3046824},
+                    'every_sleep_enrollment': 3524450},
     'node2': {}, 'node3': {'node3_existing_Tool_writer_Copernicus': 1970178},
 }
 SOCKET_PREFIXES = {

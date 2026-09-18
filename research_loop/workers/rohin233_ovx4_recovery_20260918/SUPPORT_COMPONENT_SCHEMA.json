@@ -1,0 +1,59 @@
+{
+  "title": "R233 support component table, version 2",
+  "type": "object",
+  "required": ["schema", "unix", "rows"],
+  "properties": {
+    "schema": {"const": "R233_SUPPORT_COMPONENT_TABLE_V2"},
+    "unix": {"type": "number"},
+    "baseline_census_unix": {"type": "number"},
+    "updated_components": {"type": "array", "items": {"type": "string"}},
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "actual_host_alias", "pid", "start_utc", "actual_deadline", "proof"],
+        "properties": {
+          "name": {"type": "string"},
+          "actual_host_alias": {"enum": ["operator_vm", "node2", "node3", "node4", "node5", "ovx4"]},
+          "pid": {"type": ["integer", "null"], "minimum": 1},
+          "start_utc": {"type": ["string", "null"], "format": "date-time"},
+          "start_ticks": {"type": "integer", "minimum": 0},
+          "observed_unix": {"type": "number"},
+          "actual_deadline": {"type": ["string", "null"], "format": "date-time"},
+          "alive": {"type": "boolean"},
+          "proof": {"type": "array", "items": {"type": "object"}},
+          "source_admission": {
+            "type": "object",
+            "required": ["policy", "caller_timeout_seconds", "receiver_alarm", "cleanup_margin_seconds", "same_registered_roots", "targets"],
+            "properties": {
+              "policy": {"const": "R233_PER_SOURCE_LEASE_ADMISSION_V1"},
+              "caller_timeout_seconds": {"const": 30},
+              "receiver_alarm": {"const": true},
+              "cleanup_margin_seconds": {"const": 5},
+              "same_registered_roots": {"const": 16},
+              "targets": {
+                "type": "array", "minItems": 16, "maxItems": 16,
+                "items": {
+                  "type": "object",
+                  "required": ["life", "source_host_alias", "source_cutoff_utc", "effective_cutoff_utc", "latest_start_utc", "receiver_finish_utc"],
+                  "properties": {
+                    "life": {"type": "string"},
+                    "source_host_alias": {"enum": ["node2", "node3", "node4", "node5", "ovx4"]},
+                    "source_cutoff_utc": {"type": "string", "format": "date-time"},
+                    "effective_cutoff_utc": {"type": "string", "format": "date-time"},
+                    "latest_start_utc": {"type": "string", "format": "date-time"},
+                    "receiver_finish_utc": {"type": "string", "format": "date-time"}
+                  },
+                  "additionalProperties": true
+                }
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
