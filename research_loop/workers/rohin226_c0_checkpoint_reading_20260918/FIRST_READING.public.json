@@ -1,0 +1,153 @@
+{
+  "adapter_retention_claim": false,
+  "cycles": [
+    {
+      "actual_object_not_inferred_from_schedule": true,
+      "configured_objects": [
+        "math_with_existing_onboarding_parent",
+        "gradual_reading_secondary"
+      ],
+      "cycle": 63,
+      "events": [
+        {
+          "actual_object": "UNCLASSIFIED_RAW_RETAINED",
+          "index": 710,
+          "kind": "actual_ACT",
+          "raw_sha256": "3ed2b448c3b99511526d1039adb9313cc3bb4b9b96ce69cec8d63d8d00daf34b",
+          "sha256": "1b2d01dd818960a4a3aebca0cb6daeec80a89aa707f095aa6380f33c52a142f2"
+        }
+      ],
+      "reading_rendered": false,
+      "sleep_complete_index": 766,
+      "sleep_complete_sha256": "9c14c77171dd4b2b8497fe5198aec077b60578b95e1fa1c9ff5d52cf0a42697d"
+    },
+    {
+      "actual_object_not_inferred_from_schedule": true,
+      "configured_objects": [
+        "math_with_existing_onboarding_parent",
+        "gradual_reading_secondary"
+      ],
+      "cycle": 64,
+      "events": [
+        {
+          "actual_object": "UNCLASSIFIED_RAW_RETAINED",
+          "index": 777,
+          "kind": "actual_ACT",
+          "raw_sha256": "da5e9c6a777e4fe3e91f85db340445bee9220b1569aeb5eedcdf63178b0f1630",
+          "sha256": "085b26c7dd1aae7211740801eff94b7882c466046eafbb7bf8543ecac1dac63b"
+        }
+      ],
+      "reading_rendered": false,
+      "sleep_complete_index": 845,
+      "sleep_complete_sha256": "727154acd3fa968b64961e4955fc2399c1bfdacd9955c6f4e7861038397f0a33"
+    }
+  ],
+  "failure_receipts_present": false,
+  "identities": [
+    {
+      "pid": 2561156,
+      "start_ticks": 94173182,
+      "state": "R"
+    },
+    {
+      "pid": 2561001,
+      "start_ticks": 94172764,
+      "state": "S"
+    },
+    {
+      "pid": 2729920,
+      "start_ticks": 94773801,
+      "state": "S"
+    }
+  ],
+  "observed_utc": "2026-09-18T08:28:24.853835+00:00",
+  "private_observation_sha256": "bde7ec3eeca0629a5aa09d2563975dcf17bf4ee47013c8b5fb732cc708fdb8a6",
+  "publications": [
+    {
+      "action": "reading",
+      "after_cycle": 64,
+      "created_utc": "2026-09-18T08:25:41.889867+00:00",
+      "excerpt": 0,
+      "number": 0,
+      "operator_authored": true,
+      "publication": {
+        "id": "d712a8fb6a5a4aac8c97ac9a8a62e716",
+        "sha256": "db1a2400cf08fec7012ed2b8711931a71f60c6edb743bacf43617b94a6b95765"
+      },
+      "published_utc": "2026-09-18T08:25:41.890952+00:00",
+      "render": null,
+      "step": 0,
+      "text_sha256": "35be41bd8bb8378a3c22e66f952dc4568061c333c3616287acb145430a5df545"
+    }
+  ],
+  "raw_child_text_published": false,
+  "schema": "R226_C0_READING_PUBLIC_OBSERVATION_V1",
+  "service": {
+    "baseline_sha256": "c46295bad37f0848b4e63204940afa56e4c700f074e91db6fb55ba0c174c8972",
+    "child_history_modified": false,
+    "deadline_unix": 1789734718.1793144,
+    "first_reading_after_completed_cycle": 64,
+    "grading": false,
+    "memory": "after first completed sleep following the actual reading ACT; ordinary context-assisted recall only",
+    "model_calls": 0,
+    "original_math_parent_kept": true,
+    "pid": 2729920,
+    "protocol_sha256": "79af72fea1847a249a0c200b872be8f259cd0db357c36089e81ff3e0d2a9bac0",
+    "signals": 0,
+    "sleep_spacing": 3,
+    "source_sha256": "5290bd6fa917aa5cfa5eb7200e05a09b6d2c6589fa4614d47cb4885ae630a558",
+    "start_ticks": 94773801,
+    "started_utc": "2026-09-18T08:14:58.951649+00:00"
+  },
+  "state": {
+    "completed_cycle": 64,
+    "excerpt": 0,
+    "last_publication_cycle": 64,
+    "memory_after_cycle": null,
+    "next_reading_after_cycle": 67,
+    "publications": 1,
+    "record_cursor": 866,
+    "retry_reason": "non_English_script_observed",
+    "step": 0
+  },
+  "story_or_answer_in_memory_prompt": false,
+  "turns": [
+    {
+      "actual_response": {
+        "awake_cycle": 65,
+        "finished_utc": "2026-09-18T08:28:02.588876+00:00",
+        "index": 857,
+        "sha256": "bfc84e0a9ce1f8188a5abc315ca8384130fec08b0e2c0c188fc0ee39445d2a41"
+      },
+      "fulfilled": false,
+      "interpretation": "Source-bound response, not proof it followed the question; no feelings/retention score.",
+      "pending": {
+        "action": "reading",
+        "after_cycle": 64,
+        "created_utc": "2026-09-18T08:25:41.889867+00:00",
+        "excerpt": 0,
+        "number": 0,
+        "operator_authored": true,
+        "publication": {
+          "id": "d712a8fb6a5a4aac8c97ac9a8a62e716",
+          "sha256": "db1a2400cf08fec7012ed2b8711931a71f60c6edb743bacf43617b94a6b95765"
+        },
+        "published_utc": "2026-09-18T08:25:41.890952+00:00",
+        "render": {
+          "adapter_memory_claim": false,
+          "all_history_tokens_masked": true,
+          "explicit_context_carryover_not_controlled": true,
+          "index": 849,
+          "prompt_tokens": 9515,
+          "sha256": "c3754ea7b857d095db99859fe3709646990595a0e1a0c601e1ef2f8b12a803ac",
+          "started_utc": "2026-09-18T08:27:36.072316+00:00",
+          "story_verbatim_in_request": true
+        },
+        "step": 0,
+        "text_sha256": "35be41bd8bb8378a3c22e66f952dc4568061c333c3616287acb145430a5df545"
+      },
+      "stage_index": 859,
+      "stage_sha256": "7c9a399c1e0ea36955a459d75469e4da1fe2b860658f86a627125d6db3d096f1"
+    }
+  ]
+}
