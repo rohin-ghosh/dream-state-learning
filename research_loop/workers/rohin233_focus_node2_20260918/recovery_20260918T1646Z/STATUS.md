@@ -1,5 +1,9 @@
 # R233 node2 kept-life recovery
 
+## Deadline table — actual capture September18 17:37:59 UTC
+
+`TABLE_1738.public.json`: C0 native745118 alive at UPDATE3003; Astra7 native762967 alive at UPDATE3250; caption native787115 alive/replaying, head3303, **new LOAD still absent**. C0 sole parent778946/start98105351 remains alive, with actual new INBOX2951 → REQUEST2953 → ACT2963/2965. Parent receipt/source and explicit horizon limits published `937cfaa254136713eee8d23858ad295ce764e5c6`. Native horizons remain C0 Sep18 22:55:15Z, Astra7 Sep18 22:59:36Z, caption new plan/guard Sep20 18Z; C0 parent Sep20 17:59Z. Caption API parent and future feedback are not yet proven. Longer C0/Astra7 live native horizons are authorized but not applied. No all-restored claim.
+
 ## Current table — September18 17:35 UTC
 
 | Arm | Actual alive/LOAD/first ACT | Parent delivery | Effective deadline |
