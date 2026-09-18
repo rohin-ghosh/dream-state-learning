@@ -10,6 +10,11 @@ COMPACTION accepts history-operation-only snapshots with no pending operation;
 ordinary COMMITTED still requires a response except for the empty birth state.
 Checksums detect retained-evidence corruption, not malicious deletion of an
 entire valid journal suffix; external evidence custody remains the caller's job.
+R133 experiment bindings are immutable across all authoritative transitions;
+legacy checkpoints without a binding remain unmodified.
+The exclusive writer caches validated state, checking retained file identities
+on use. Changed files trigger full validation; open and audit always replay the
+complete chain. No historical record is rewritten or discarded by this cache.
 """
 
 from copy import deepcopy
@@ -123,7 +128,7 @@ class StreamJournal:
                     and self._manifest['schema'] == SCHEMA
                     and re.fullmatch(r'[0-9a-f]{32}', self._manifest['journal_id']) is not None,
                     'journal_manifest')
-            self._scan()
+            self._state = self._reload_state()
         except BaseException:
             self._close_descriptors()
             raise
@@ -257,19 +262,42 @@ class StreamJournal:
             require(identifier not in state['inbox'], 'duplicate_inbox_registration')
             state['inbox'][identifier] = deepcopy(document)
             return
-        if kind == 'RESPONSE':
+        if kind in ('RESPONSE', 'GENERATION_PARTIAL'):
             require(state['request'] is not None and state['response'] is None, 'response_without_unique_request')
             require(document.get('request_sha256') == state['latest']['document']['state']['pending'],
                     'response_request_binding')
+            response = document.get('response')
+            interruption = response.get('interruption') if isinstance(response, dict) else None
+            if kind == 'GENERATION_PARTIAL':
+                require(state['request'].get('preemption_policy') == 'R205_CONSOLE_PREEMPTION_V1'
+                    and isinstance(interruption, dict)
+                    and interruption.get('policy') == 'R205_CONSOLE_PREEMPTION_V1'
+                    and interruption.get('source_inbox_events'), 'authorized_partial_generation')
+                seen = {event['event_id'] for event in state['latest']['document']['state']['history']['events']}
+                from gpu.orch_r205_reading_policy import is_reading
+                for source in interruption['source_inbox_events']:
+                    identifier = source['event_id'].removeprefix('parent:inbox:')
+                    registered = state['inbox'].get(identifier)
+                    require(registered is not None and registered['message']['actor'] == 'parent'
+                        and registered['message'].get('speaker') == 'Rohin'
+                        and source['event_id'] == 'parent:inbox:' + identifier
+                        and source['event_id'] not in seen
+                        and source['source_id'] == registered['source_id']
+                        and source['source_sha256'] == registered['source_sha256']
+                        and not is_reading(registered['message']['text']), 'fresh_genuine_ordinary_preemption_source')
+            else:
+                require(interruption is None, 'partial_attempt_never_dispatchable_response')
             state['response'] = deepcopy(document)
             return
-        if kind not in ('REQUEST', 'COMMITTED', 'COMPACTION', 'PRESENTATION', 'SLEEP_REQUEST', 'SLEEP_COMPLETE', 'WALL_EXTENDED'):
+        if kind not in ('REQUEST', 'COMMITTED', 'CONTEXT_COMMITTED', 'CONTEXT_INPUT', 'COMPACTION', 'PRESENTATION', 'SLEEP_REQUEST', 'SLEEP_COMPLETE', 'WALL_EXTENDED', 'GENERATION_ABORTED'):
             return
-        key = 'state' if kind in ('COMMITTED', 'COMPACTION', 'PRESENTATION', 'WALL_EXTENDED') else 'resume_state'
+        key = 'state' if kind in ('COMMITTED', 'CONTEXT_COMMITTED', 'CONTEXT_INPUT', 'COMPACTION', 'PRESENTATION', 'WALL_EXTENDED', 'GENERATION_ABORTED') else 'resume_state'
         require(key in document, 'authoritative_checkpoint_required')
         checkpoint = self._checkpoint(document[key])
         current = checkpoint['document']['state']
         previous = state['latest']['document']['state'] if state['latest'] else None
+        if previous is not None:
+            require(current.get('experiment') == previous.get('experiment'), 'journal_experiment_configuration_frozen')
         if kind == 'WALL_EXTENDED':
             require(set(document) == {'schema', 'authorization', 'plan_sha256', 'state'}
                 and document['schema'] == 'R131_WALL_EXTENDED_V1'
@@ -296,6 +324,17 @@ class StreamJournal:
                 require(previous['pending'] is None, 'unresolved_checkpoint')
                 self._unchanged(previous, current, {'history', 'pending'})
             state['request'], state['response'] = deepcopy(request), None
+        elif kind == 'GENERATION_ABORTED':
+            require(previous is not None and state['request'] is not None and state['response'] is not None
+                and state['sleep_request'] is None and current['pending'] is None
+                and state['request'].get('preemption_policy') == 'R205_CONSOLE_PREEMPTION_V1'
+                and state['response']['response'].get('interruption') is not None
+                and document.get('request_sha256') == previous['pending']
+                and document.get('source_sha256') == _digest(state['response'])
+                and document.get('interruption') == state['response']['response']['interruption']
+                and document.get('training_eligible') is False, 'abort_requires_bound_partial_response')
+            self._unchanged(previous, current, {'pending'})
+            state['request'], state['response'] = None, None
         elif kind == 'COMMITTED':
             require(current['pending'] is None, 'commit_must_clear_pending')
             if previous is None:
@@ -304,6 +343,10 @@ class StreamJournal:
             else:
                 require(state['request'] is not None and state['response'] is not None,
                         'commit_requires_request_and_response')
+                require(state['request'].get('training_eligible', True) is True,
+                        'context_only_response_never_training_target')
+                require(state['response']['response'].get('interruption') is None,
+                        'partial_attempt_never_training_target')
                 self._unchanged(previous, current, {'history', 'pending', 'rows'})
                 rows, prior = current['rows'], previous['rows']
                 require(len(rows) == len(prior) + 1 and rows[:-1] == prior, 'commit_child_frontier')
@@ -314,6 +357,39 @@ class StreamJournal:
                         and rows[-1]['target'] == response['response']['raw']
                         and rows[-1]['token_ids'] == response['response']['token_ids'], 'commit_response_binding')
             state['request'], state['response'] = None, None
+        elif kind == 'CONTEXT_COMMITTED':
+            require(previous is not None and state['request'] is not None and state['response'] is not None
+                    and state['sleep_request'] is None and current['pending'] is None
+                    and state['request'].get('training_eligible') is False
+                    and document.get('training_eligible') is False, 'context_commit_requires_masked_response')
+            require(state['response']['response'].get('interruption') is None,
+                    'partial_attempt_never_completed_conversation')
+            self._unchanged(previous, current, {'history', 'pending'})
+            response = state['response']
+            prior_events = previous['history']['events']
+            events = current['history']['events']
+            require(events[:len(prior_events)] == prior_events and len(events) == len(prior_events) + 2
+                    and events[-2]['actor'] == 'child'
+                    and events[-2]['event_id'] == document.get('response_event_id')
+                    and events[-2]['text'] == response['response']['raw']
+                    and events[-2]['source_sha256'] == document.get('source_sha256') == _digest(response)
+                    and events[-1]['actor'] == 'environment'
+                    and current['history']['operations'] == previous['history']['operations']
+                    and current['history'].get('working_state') == previous['history'].get('working_state'),
+                    'context_response_exact_history_append')
+            state['request'], state['response'] = None, None
+        elif kind == 'CONTEXT_INPUT':
+            require(previous is not None and previous['pending'] is None and current['pending'] is None
+                    and state['request'] is None and state['response'] is None and state['sleep_request'] is None,
+                    'context_input_requires_idle_state')
+            self._unchanged(previous, current, {'history'})
+            prior_events = previous['history']['events']
+            events = current['history']['events']
+            require(events[:len(prior_events)] == prior_events and len(events) > len(prior_events)
+                    and all(event['actor'] in ('parent', 'environment') for event in events[len(prior_events):])
+                    and current['history']['operations'] == previous['history']['operations']
+                    and current['history'].get('working_state') == previous['history'].get('working_state'),
+                    'context_input_only_external_events')
         elif kind == 'COMPACTION':
             require(previous is not None and previous['pending'] is None and current['pending'] is None
                     and state['request'] is None and state['sleep_request'] is None,
@@ -346,14 +422,24 @@ class StreamJournal:
                     and current['pending'] is None, 'sleep_cannot_bypass_request')
             self._unchanged(previous, current, {'pending', 'sleep_frontier', 'sleep_receipts', 'model_state_sha256'})
             receipt = {name: value for name, value in document.items() if name != 'resume_state'}
+            if current.get('experiment') is not None:
+                require(receipt.get('checkpoint', {}).get('experiment') == current['experiment'],
+                        'sleep_model_experiment_binding')
             if state['sleep_request'] is not None and 'cycle' in state['sleep_request']:
                 require(receipt.get('cycle') == state['sleep_request']['cycle'], 'sleep_cycle_binding')
             rows = current['rows']
+            filter_no_update = False
+            if any(name in receipt for name in ('code_target_filter', 'learn_review_filter',
+                    'code_target_filter_zero_update', 'learn_review_zero_update', 'no_update_subreason')):
+                from organism_v6.orch_r194_code_target_filter import validate_filter_zero_update_receipt
+                filter_no_update = validate_filter_zero_update_receipt(
+                    receipt, rows[previous['sleep_frontier']:], rows[:previous['sleep_frontier']])
             require(previous['sleep_frontier'] < current['sleep_frontier'] == len(rows)
                     and current['sleep_receipts'] == previous['sleep_receipts'] + [receipt]
                     and receipt.get('new_row_sha256') == [row['source_sha256'] for row in rows[previous['sleep_frontier']:]]
                     and receipt.get('status') == 'COMPLETE'
                     and type(receipt.get('optimizer_steps')) is int and (receipt['optimizer_steps'] > 0
+                    or filter_no_update
                     or current.get('presentation') is not None and receipt['optimizer_steps'] == 0
                     and receipt.get('no_update_reason') == 'no_eligible_child_rows'
                     and not receipt.get('presentations') and receipt.get('child_token_exposures') == 0
@@ -400,6 +486,41 @@ class StreamJournal:
         return state
 
     @staticmethod
+    def _file_identity(entry):
+        return (entry.st_dev, entry.st_ino, entry.st_mode, entry.st_size,
+                entry.st_mtime_ns, entry.st_ctime_ns)
+
+    def _record_snapshot(self):
+        with os.scandir(self._records_fd) as entries:
+            return {entry.name: self._file_identity(entry.stat(follow_symlinks=False))
+                    for entry in entries}
+
+    def _reload_state(self, snapshot=None):
+        self._ensure_open()
+        before = self._record_snapshot() if snapshot is None else snapshot
+        state = self._scan()
+        require(self._record_snapshot() == before, 'journal_changed_during_scan')
+        self._record_signatures = before
+        return state
+
+    def _validated_state(self):
+        self._ensure_open()
+        require(not any(name.endswith('.partial') for name in os.listdir(self._root_fd)),
+                'incomplete_journal_initialization')
+        require(self._read_json(self._root_fd, 'JOURNAL.json') == self._manifest,
+                'journal_manifest_changed')
+        snapshot = self._record_snapshot()
+        if snapshot != self._record_signatures:
+            self._state = self._reload_state(snapshot)
+        return self._state
+
+    def audit(self):
+        """Revalidate every retained byte and transition, regardless of cache."""
+        with self._mutex:
+            self._state = self._reload_state()
+            return dict(record_count=self._state['index'], head_sha256=self._state['previous'])
+
+    @staticmethod
     def _validate_entry(kind, document):
         require(type(kind) is str and re.fullmatch(r'[A-Z][A-Z0-9_]{0,63}', kind) is not None, 'journal_kind')
         require(type(document) is dict, 'journal_document_object')
@@ -415,7 +536,7 @@ class StreamJournal:
             try:
                 self._validate_entry(kind, document)
                 document = _decode(_encoded(document))
-                state = self._scan()
+                state = self._validated_state()
                 index, previous = state['index'], state['previous']
                 self._advance(state, kind, document)
                 record = dict(schema=SCHEMA, journal_id=self._manifest['journal_id'], index=index,
@@ -423,6 +544,10 @@ class StreamJournal:
                 record['sha256'] = _digest(record)
                 self._publish(self._records_fd, f'{index:020d}.intent.json', self._intent(record))
                 self._publish(self._records_fd, f'{index:020d}.json', record)
+                for name in (f'{index:020d}.intent.json', f'{index:020d}.json'):
+                    self._record_signatures[name] = self._file_identity(
+                        os.stat(name, dir_fd=self._records_fd, follow_symlinks=False))
+                state['index'], state['previous'] = index + 1, record['sha256']
                 return dict(index=index, path=str(self.root / 'records' / f'{index:020d}.json'), sha256=record['sha256'])
             except BaseException:
                 self._failed = True
@@ -430,12 +555,12 @@ class StreamJournal:
 
     def latest_checkpoint(self):
         with self._mutex:
-            return deepcopy(self._scan()['latest'])
+            return deepcopy(self._validated_state()['latest'])
 
     def read_inbox(self):
         """Return canonical, repeatable parent events; never wait or delete input."""
         with self._mutex:
-            state = self._scan()
+            state = self._validated_state()
             known = state['inbox']
             paths, candidates = {}, {}
             for name in sorted(os.listdir(self._inbox_fd)):

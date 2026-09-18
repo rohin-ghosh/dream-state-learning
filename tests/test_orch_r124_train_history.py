@@ -55,6 +55,32 @@ class TrainHistoryTest(unittest.TestCase):
         self.assertEqual(resumed.events[:3], self.history.events)
         self.assertEqual(self.render(resumed).messages[:5], rendered.messages)
 
+    def test_pinned_parent_is_verbatim_masked_once_across_compaction_eviction_and_restore(self):
+        message = event('human', actor='parent', text='Rohin: Keep this exact\nsource_sha256 wording, ３ and spaces. ')
+        self.history.append(message)
+        self.history.append(event('answer'))
+        self.assertTrue(self.history.pin_parent_event('human'))
+        self.assertFalse(self.history.pin_parent_event('human'))
+        self.history.compact(self.summary(), through=self.history.frontier())
+        restored = history_module.TrainHistory.from_json(self.history.to_json())
+        for current in (self.history, restored):
+            rendered = self.render(current)
+            self.assertEqual(sum(item['content'] == message.text for item in rendered.messages), 1)
+            self.assertEqual(rendered.messages[2], dict(role='user', content=message.text))
+            self.assertTrue(all(label == -100 for label in rendered.labels))
+            current.evict_oldest(through=current.frontier(), reason='synthetic pressure')
+            self.assertIn(message.text, [item['content'] for item in self.render(current).messages])
+
+    def test_child_cannot_be_pinned_and_pins_cannot_be_silently_truncated(self):
+        self.history.append(event('child'))
+        with self.assertRaisesRegex(ValueError, 'only_existing_parent_input_can_be_pinned'):
+            self.history.pin_parent_event('child')
+        self.history.append(event('large', actor='parent', text='Rohin: ' + 'vital ' * 100))
+        self.history.pin_parent_event('large')
+        self.history.compact(self.summary(), through=self.history.frontier())
+        with self.assertRaises(history_module.CompactionRequired):
+            self.render(budget=100)
+
     def test_split_exclusion_including_attached_readout_opens(self):
         for split in ('DEV', 'FINAL', 'PROBE', 'UNKNOWN', 'train'):
             for phase in ('experience', 'open_turn'):
@@ -389,6 +415,367 @@ class TrainHistoryTest(unittest.TestCase):
         self.assertIn('History omission notice', text)
         self.assertIn(receipt['receipt_sha256'], text)
         self.assertIn('Only the newer observation is summarized.', text)
+
+
+class WorkingStateTest(unittest.TestCase):
+    def setUp(self):
+        self.history = history_module.TrainHistory(system_prompt='System.', birth_prompt='Birth.')
+
+    def add_state(self, identifier, text, *, entry_id='work', kind='note'):
+        source = event(identifier, text=text)
+        span = history_module.WorkingStateSpan(entry_id, kind, 0, len(text))
+        self.history.append(source)
+        self.assertTrue(self.history.update_working_state(source, entries=[span]))
+        return source, span
+
+    def test_literal_span_derives_text_and_stable_source_fields(self):
+        text = '  Café\nI have no result yet.\t '
+        source = event('own', text='prefix\n' + text + '\nsuffix')
+        self.history.append(source)
+        span = history_module.WorkingStateSpan('unfinished', 'uncertainty', 7, 7 + len(text))
+        events, operations, frontier = self.history.events, self.history.operations, self.history.frontier()
+        self.assertTrue(self.history.update_working_state(source, entries=[span]))
+        self.assertEqual(self.history.working_state, dict(schema=history_module.WORKING_STATE_SCHEMA,
+            revision=1, entries=[dict(id='unfinished', kind='uncertainty', text=text, start=7,
+                end=7 + len(text), source_event_id=source.event_id, source_id=source.source_id,
+                source_sha256=source.source_sha256)]))
+        self.assertEqual((self.history.events, self.history.operations, self.history.frontier()),
+                         (events, operations, frontier))
+        rendered = self.history.render(count_tokens, 100000)
+        self.assertTrue(rendered.messages[2]['content'].endswith(text))
+        self.assertEqual(rendered.messages[2]['role'], 'assistant')
+
+    def test_json_escapes_are_literal_not_decoded_or_normalized(self):
+        source = event('json', text=r'{"state_delta":{"text":"line one\nline two\u0021"}}')
+        text = r'line one\nline two\u0021'
+        start = source.text.index(text)
+        self.history.append(source)
+        self.history.update_working_state(source, entries=[
+            history_module.WorkingStateSpan('literal', 'note', start, start + len(text))])
+        self.assertEqual(self.history.working_state['entries'][0]['text'], text)
+        self.assertNotEqual(self.history.working_state['entries'][0]['text'], 'line one\nline two!')
+
+    def test_only_actual_appended_child_source_not_forged_or_summary(self):
+        span = history_module.WorkingStateSpan('work', 'finding', 0, 1)
+        for actor in ('parent', 'environment'):
+            source = event(actor, actor=actor)
+            self.history.append(source)
+            before = self.history.to_json()
+            with self.subTest(actor=actor), self.assertRaisesRegex(ValueError, 'own_child_state_source'):
+                self.history.update_working_state(source, entries=[span])
+            self.assertEqual(self.history.to_json(), before)
+        source = event('own', text='Actual child text.')
+        with self.assertRaisesRegex(ValueError, 'source_identity'):
+            self.history.update_working_state(source, entries=[span])
+        self.history.append(source)
+        for field, value in (('source_id', 'forged'), ('source_sha256', '0' * 64),
+                             ('text', 'invented'), ('event_id', 'invented')):
+            before = self.history.to_json()
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, 'source_identity'):
+                self.history.update_working_state(replace(source, **{field: value}), entries=[span])
+            self.assertEqual(self.history.to_json(), before)
+        summary = event('summary', phase='compaction')
+        self.history.compact(summary, through=self.history.frontier())
+        with self.assertRaisesRegex(ValueError, 'committed_raw_source'):
+            self.history.update_working_state(summary, entries=[span])
+
+    def test_typed_fields_and_finite_character_bounds(self):
+        invalid = [(True, 2), (0, False), (-1, 1), (1, 1), (2, 1), (0.0, 2),
+                   (0, float('inf')), (0, float('nan')), (0, '2')]
+        for start, end in invalid:
+            with self.subTest(start=start, end=end), self.assertRaisesRegex(ValueError, 'source_span'):
+                history_module.WorkingStateSpan('work', 'note', start, end)
+        for identifier, kind in (('', 'note'), (None, 'note'), ('work', 'verified_fact'), ('work', None)):
+            with self.subTest(identifier=identifier, kind=kind), self.assertRaises(ValueError):
+                history_module.WorkingStateSpan(identifier, kind, 0, 1)
+        source = event('own', text='  text')
+        self.history.append(source)
+        for entries in ([dict(id='untyped', kind='note', start=0, end=3)],
+                        [history_module.WorkingStateSpan('past-end', 'note', 0, 7)],
+                        [history_module.WorkingStateSpan('blank', 'note', 0, 2)]):
+            before = self.history.to_json()
+            with self.subTest(entries=entries), self.assertRaises(ValueError):
+                self.history.update_working_state(source, entries=entries)
+            self.assertEqual(self.history.to_json(), before)
+        for kind in sorted(history_module.WORKING_STATE_KINDS):
+            self.assertEqual(history_module.WorkingStateSpan('id', kind, 0, 1).kind, kind)
+
+    def test_r184_kinds_persist_as_child_spans_without_visible_stage_tokens(self):
+        for kind in ('investigation', 'judgment', 'expected_consequence', 'process_adjustment'):
+            with self.subTest(kind=kind):
+                history = history_module.TrainHistory(system_prompt='System.', birth_prompt='Birth.')
+                source = event(kind, text='An actual child-authored statement.')
+                history.append(source)
+                history.update_working_state(source, entries=[
+                    history_module.WorkingStateSpan('work', kind, 0, len(source.text))])
+                restored = history_module.TrainHistory.from_json(history.to_json())
+                self.assertEqual(restored.working_state['entries'][0]['kind'], kind)
+                presentation = dict(version='R125_PLAIN_CONTEXT_V1', system_prompt='System.', birth_prompt='Birth.')
+                rendered = restored.render(count_tokens, 100000, presentation=presentation)
+                self.assertEqual(rendered.messages[2]['content'], source.text)
+                self.assertEqual(rendered.labels, (-100,) * rendered.token_count)
+
+    def test_accumulation_revision_and_only_explicit_deletion(self):
+        original, _ = self.add_state('first', 'First unfinished work.', entry_id='first')
+        self.add_state('second', 'Another open question.', entry_id='second', kind='open_question')
+        self.assertEqual([entry['id'] for entry in self.history.working_state['entries']], ['first', 'second'])
+        self.add_state('revision', 'I will try a smaller input.', entry_id='first', kind='next_intention')
+        entries = self.history.working_state['entries']
+        self.assertEqual(entries[0]['source_event_id'], 'revision')
+        self.assertEqual(entries[1]['source_event_id'], 'second')
+        source = event('delete-first', text='Remove first from my working state.')
+        self.history.append(source)
+        self.assertTrue(self.history.update_working_state(source, delete=['first']))
+        self.assertEqual([entry['id'] for entry in self.history.working_state['entries']], ['second'])
+        final = event('delete-second', text='Remove second as well.')
+        self.history.append(final)
+        self.history.update_working_state(final, delete=['second'])
+        self.assertEqual(self.history.working_state['entries'], [])
+        self.assertEqual(self.history.working_state['revision'], 5)
+        self.assertEqual(self.history.events[0], original)
+        self.assertEqual(self.history.operations, ())
+        self.assertEqual(len(self.history.working_state_updates), 5)
+        self.assertFalse(any(message['content'].startswith('Child working state')
+                             for message in self.history.render(count_tokens, 100000).messages))
+        restored = history_module.TrainHistory.from_json(self.history.to_json())
+        self.assertEqual(restored.to_json(), self.history.to_json())
+        self.assertFalse(restored.update_working_state(final, delete=['second']))
+
+    def test_exact_retry_cannot_resurrect_and_source_rebinding_fails(self):
+        older = event('older', text='Earlier unused statement.')
+        self.history.append(older)
+        source, span = self.add_state('first', 'My unfinished work.')
+        with self.assertRaisesRegex(ValueError, 'conflicting_working_state_source'):
+            self.history.update_working_state(source, entries=[replace(span, end=1)])
+        with self.assertRaisesRegex(ValueError, 'stale_working_state_source'):
+            self.history.update_working_state(older, entries=[replace(span, end=1)])
+        alias = event('alias', text=source.text, source_id=source.source_id)
+        self.history.append(alias)
+        with self.assertRaisesRegex(ValueError, 'conflicting_working_state_source'):
+            self.history.update_working_state(alias, entries=[span])
+        deletion = event('delete', text='Remove work.')
+        self.history.append(deletion)
+        self.history.update_working_state(deletion, delete=['work'])
+        before = self.history.to_json()
+        self.assertFalse(self.history.update_working_state(source, entries=[span]))
+        self.assertEqual(self.history.to_json(), before)
+        self.assertEqual(self.history.working_state['entries'], [])
+
+    def test_invalid_delta_is_atomic_and_does_not_delete_other_entries(self):
+        self.add_state('first', 'Preserve this unfinished work.')
+        source = event('next', text='The next child statement.')
+        self.history.append(source)
+        span = history_module.WorkingStateSpan('work', 'note', 0, len(source.text))
+        for entries, delete in (([span, span], []), ([], ['work', 'work']), ([span], ['work']),
+                                ([span], ['missing']), ([], 'work'), ([], [None]), ([], [])):
+            before = self.history.to_json()
+            with self.subTest(entries=entries, delete=delete), self.assertRaises(ValueError):
+                self.history.update_working_state(source, entries=entries, delete=delete)
+            self.assertEqual(self.history.to_json(), before)
+
+    def test_compaction_eviction_and_checkpoint_preserve_active_state_verbatim(self):
+        first, _ = self.add_state('first', '  First unfinished work.\n', entry_id='first')
+        self.history.compact(event('summary', text='I considered the work.', phase='compaction'),
+                             through=self.history.frontier())
+        second, _ = self.add_state('second', 'Second unfinished work.', entry_id='second')
+        expected = self.history.working_state
+        self.history.evict_oldest(self.history.frontier(), reason='explicit context threshold')
+        self.assertEqual(self.history.working_state, expected)
+        self.assertEqual(self.history.events, (first, second))
+        self.add_state('third', 'A new intention.', entry_id='second', kind='next_intention')
+        checkpoint = self.history.checkpoint()
+        restored = history_module.TrainHistory.restore(checkpoint, expected_sha256=checkpoint['state_sha256'])
+        self.assertEqual(restored.to_json(), self.history.to_json())
+        self.assertEqual(restored.events, self.history.events)
+        self.assertEqual(restored.operations, self.history.operations)
+        self.assertEqual(restored.working_state_updates, self.history.working_state_updates)
+        restored.compact(event('again', text='I still have work.', phase='compaction'),
+                         through=restored.frontier())
+        restored.evict_oldest(restored.frontier(), reason='drop summary only')
+        message = restored.render(count_tokens, 100000).messages[2]['content']
+        for entry in self.history.working_state['entries']:
+            self.assertIn(entry['text'], message)
+        self.assertEqual(restored.working_state, self.history.working_state)
+
+    def test_all_state_tokens_masked_plain_presentation_retains_literal_text(self):
+        text = 'My own note: I have not obtained a result yet.'
+        self.add_state('first', text)
+        presentation = dict(version='R125_PLAIN_CONTEXT_V1', system_prompt='Plain system.', birth_prompt='Plain birth.')
+        for style in (None, presentation):
+            rendered = self.history.render(count_tokens, 100000, presentation=style)
+            self.assertTrue(rendered.messages[2]['content'].endswith(text))
+            self.assertEqual(rendered.token_count, count_tokens(rendered.messages))
+            self.assertEqual(rendered.labels, (-100,) * rendered.token_count)
+            self.assertEqual(rendered.target_token_ids, ())
+        for split in ('DEV', 'FINAL', 'PROBE'):
+            with self.subTest(split=split), self.assertRaisesRegex(ValueError, 'forbidden_in_readout'):
+                self.history.render(count_tokens, 100000, split=split)
+        before = self.history.to_json()
+        required = self.history.render(count_tokens, 100000).token_count
+        with self.assertRaises(history_module.CompactionRequired):
+            self.history.render(count_tokens, required - 1)
+        self.assertEqual(self.history.to_json(), before)
+
+    def test_plain_state_has_no_injected_provenance_and_survives_eligible_rows(self):
+        from organism_v6.orch_r125_plain_context import eligible_rows
+        self.add_state('first', '  I need to test the boundary.\n', entry_id='boundary')
+        self.add_state('second', 'I have no result yet.', entry_id='result', kind='uncertainty')
+        self.history.compact(event('summary', text='I still have work.', phase='compaction'),
+                             through=self.history.frontier())
+        presentation = dict(version='R125_PLAIN_CONTEXT_V1', system_prompt='Plain system.', birth_prompt='Plain birth.')
+        rendered = self.history.render(count_tokens, 100000, presentation=presentation)
+        expected = '\n\n'.join(entry['text'] for entry in self.history.working_state['entries'])
+        self.assertEqual(rendered.messages[2], dict(role='assistant', content=expected))
+        for marker in ('source_sha256', 'receipt_sha256', 'TRAIN_COLLECTION', 'source_event_id',
+                       'THINK_ACT_STATE_V1', 'CHILD_ASSERTION_NOT_VERIFIED_FACT'):
+            self.assertFalse(any(marker in message['content'] for message in rendered.messages), marker)
+        row = dict(prefix=rendered.messages, target='I will run the boundary test next.', source_sha256='a' * 64)
+        accepted, excluded = eligible_rows([row], presentation)
+        self.assertEqual(excluded, [])
+        self.assertEqual(len(accepted), 1)
+        self.assertEqual(accepted[0]['prefix'][2], dict(role='assistant', content=expected))
+        self.assertEqual(rendered.labels, (-100,) * rendered.token_count)
+        restored = history_module.TrainHistory.from_json(self.history.to_json())
+        self.assertEqual(restored.render(count_tokens, 100000, presentation=presentation), rendered)
+
+    def test_state_byte_boundary_includes_metadata_and_never_truncates(self):
+        self.add_state('boundary', 'x' * 1000)
+        message = self.history.render(count_tokens, 100000).messages[2]['content']
+        capacity = 1000 + history_module.WORKING_STATE_BYTE_BUDGET - len(message.encode('utf-8'))
+        self.assertTrue(1000 <= capacity < 10000)
+        for size in (capacity, capacity + 1):
+            fresh = history_module.TrainHistory(system_prompt='System.', birth_prompt='Birth.')
+            source = event('boundary', text='x' * size)
+            fresh.append(source)
+            span = history_module.WorkingStateSpan('work', 'note', 0, size)
+            before = fresh.to_json()
+            if size == capacity:
+                self.assertTrue(fresh.update_working_state(source, entries=[span]))
+                self.assertEqual(len(fresh.render(count_tokens, 100000).messages[2]['content'].encode('utf-8')),
+                                 history_module.WORKING_STATE_BYTE_BUDGET)
+                self.assertEqual(history_module.TrainHistory.from_json(fresh.to_json()).to_json(), fresh.to_json())
+            else:
+                with self.assertRaises(history_module.WorkingStateOverflow) as failure:
+                    fresh.update_working_state(source, entries=[span])
+                self.assertEqual(failure.exception.byte_count, history_module.WORKING_STATE_BYTE_BUDGET + 1)
+                self.assertEqual(fresh.to_json(), before)
+        source = event('unicode', text='é' * 1800)
+        self.history.append(source)
+        before = self.history.to_json()
+        with self.assertRaises(history_module.WorkingStateOverflow):
+            self.history.update_working_state(source, entries=[history_module.WorkingStateSpan('work', 'note', 0, 1800)])
+        self.assertEqual(self.history.to_json(), before)
+
+    def test_cumulative_overflow_requires_explicit_removal(self):
+        self.add_state('first', 'x' * 800)
+        source = event('second', text='y' * 800)
+        self.history.append(source)
+        span = history_module.WorkingStateSpan('second', 'prediction', 0, 800)
+        before = self.history.to_json()
+        with self.assertRaises(history_module.WorkingStateOverflow):
+            self.history.update_working_state(source, entries=[span])
+        self.assertEqual(self.history.to_json(), before)
+        self.assertTrue(self.history.update_working_state(source, entries=[span], delete=['work']))
+        self.assertEqual([entry['id'] for entry in self.history.working_state['entries']], ['second'])
+        self.assertEqual(self.history.events[0].text, 'x' * 800)
+
+    def test_detached_state_receipts_and_frozen_spans(self):
+        source, span = self.add_state('first', 'My unfinished work.')
+        with self.assertRaises(FrozenInstanceError):
+            span.start = 1
+        before = self.history.to_json()
+        active = self.history.working_state
+        active['entries'][0]['text'] = 'invented'
+        updates = self.history.working_state_updates
+        updates[0]['entries'][0]['start'] = 99
+        self.history.checkpoint()['working_state']['entries'].clear()
+        rendered = self.history.render(count_tokens, 100000)
+        rendered.messages[2]['content'] = 'invented'
+        self.assertEqual(self.history.to_json(), before)
+        self.assertEqual(self.history.events[0], source)
+
+    def test_resigned_checkpoint_cannot_fake_state_or_source_mapping(self):
+        self.add_state('first', 'Actual child statement.')
+        checkpoint = self.history.checkpoint()
+        mutations = [
+            ('entries', 'text', 'invented'), ('entries', 'source_event_id', 'missing'),
+            ('entries', 'source_id', 'invented'), ('entries', 'source_sha256', '0' * 64),
+            ('entries', 'start', True), ('entries', 'end', 999),
+            ('updates', 'source_event_id', 'missing'), ('updates', 'source_id', 'invented'),
+            ('updates', 'source_sha256', '0' * 64), ('updates', 'revision', True),
+            ('updates', 'receipt_sha256', '0' * 64), ('updates', 'delete', ['missing'])]
+        for section, field, value in mutations:
+            changed = deepcopy(checkpoint)
+            changed['working_state'][section][0][field] = value
+            with self.subTest(section=section, field=field), self.assertRaises(ValueError):
+                history_module.TrainHistory.restore(resign(changed))
+        for field, value in (('schema', 'unknown'), ('revision', True), ('revision', 2),
+                             ('rendered_byte_budget', 99999), ('updates', [])):
+            changed = deepcopy(checkpoint)
+            changed['working_state'][field] = value
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                history_module.TrainHistory.restore(resign(changed))
+        changed = deepcopy(checkpoint)
+        changed['working_state']['updates'].append(deepcopy(changed['working_state']['updates'][0]))
+        with self.assertRaisesRegex(ValueError, 'update_integrity'):
+            history_module.TrainHistory.restore(resign(changed))
+        changed = deepcopy(checkpoint)
+        changed['working_state']['updates'][0]['at'] = asdict(self.history.frontier(0))
+        with self.assertRaisesRegex(ValueError, 'committed_raw_source'):
+            history_module.TrainHistory.restore(resign(changed))
+        for value in (True, 0.0, 999):
+            changed = deepcopy(checkpoint)
+            changed['working_state']['updates'][0]['entries'][0]['end'] = value
+            with self.subTest(end=value), self.assertRaises(ValueError):
+                history_module.TrainHistory.restore(resign(changed))
+
+    def test_unused_state_preserves_legacy_checkpoint_bytes(self):
+        for stage in ('empty', 'appended', 'compacted', 'evicted'):
+            if stage == 'appended':
+                self.history.append(event('first', text='Original history.'))
+            elif stage == 'compacted':
+                self.history.compact(event('summary', phase='compaction'), through=self.history.frontier())
+            elif stage == 'evicted':
+                self.history.evict_oldest(self.history.frontier(), reason='explicit')
+            legacy = dict(schema='R124_TRAIN_HISTORY_V1', system_prompt='System.', birth_prompt='Birth.',
+                          events=[asdict(item) for item in self.history.events],
+                          operations=list(self.history.operations), frontier=asdict(self.history.frontier()))
+            expected = json.dumps(resign(legacy), sort_keys=True, separators=(',', ':'), allow_nan=False)
+            self.assertEqual(self.history.working_state['entries'], [])
+            self.assertEqual(self.history.working_state_updates, ())
+            self.assertNotIn('working_state', self.history.checkpoint())
+            self.assertEqual(self.history.to_json(), expected, stage)
+            self.assertEqual(history_module.TrainHistory.from_json(expected).to_json(), expected, stage)
+
+    def test_state_follows_birth_without_displacing_raw_turns_or_latest_runtime_status(self):
+        from organism_v6.orch_r125_plain_context import eligible_rows
+        presentation = dict(version='R125_PLAIN_CONTEXT_V1', system_prompt='System.', birth_prompt='Birth.')
+        for style in (None, presentation):
+            with self.subTest(plain=style is not None):
+                history = history_module.TrainHistory(system_prompt='System.', birth_prompt='Birth.')
+                source = event('own', text='I will test the smallest input.')
+                runtime = event('runtime', actor='environment', text='ACT: execute your chosen test now.')
+                history.append(source)
+                history.append(runtime)
+                before = history.render(count_tokens, 100000, presentation=style).messages
+                history.update_working_state(source, entries=[
+                    history_module.WorkingStateSpan('next', 'next_intention', 0, len(source.text))])
+                rendered = history.render(count_tokens, 100000, presentation=style)
+                self.assertEqual(rendered.messages[:2], before[:2])
+                self.assertEqual(rendered.messages[3:], before[2:])
+                self.assertTrue(rendered.messages[2]['content'].endswith(source.text))
+                self.assertEqual(rendered.messages[-1], before[-1])
+                self.assertEqual(rendered.messages[-1]['role'], 'user')
+                self.assertEqual(history.events, (source, runtime))
+                self.assertEqual(rendered.labels, (-100,) * rendered.token_count)
+                restored = history_module.TrainHistory.from_json(history.to_json())
+                self.assertEqual(restored.render(count_tokens, 100000, presentation=style), rendered)
+                if style is not None:
+                    row = dict(prefix=rendered.messages, target='I am running that test.', source_sha256='a' * 64)
+                    accepted, excluded = eligible_rows([row], style)
+                    self.assertEqual(excluded, [])
+                    self.assertEqual(accepted[0]['prefix'][2], dict(role='assistant', content=source.text))
+                    self.assertEqual(accepted[0]['prefix'][-1], dict(role='user', content=runtime.text))
 
 
 if __name__ == '__main__':

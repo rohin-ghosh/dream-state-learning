@@ -30,7 +30,8 @@ RESOURCE_PAYLOADS = {
     'output': 'import os\nwhile True: os.write(1, b"x" * 8192)\n',
     'timeout': 'import os,time\nos.fork()\ntime.sleep(30)\n',
     'memory': 'import time\ntime.sleep(2)\nallocation = bytearray(256 * 1024 * 1024)\n',
-    'files': '''import errno,json,pathlib
+    'files': '''import errno,json,pathlib,time
+time.sleep(2)
 checks = {}
 try:
     pathlib.Path('/work/too-large').write_bytes(b'x' * (1048576 + 1))

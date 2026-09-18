@@ -7,12 +7,29 @@ import json
 VERSION = 'R125_PLAIN_CONTEXT_V1'
 MARKERS = ('Child assertion (not a verified fact)', 'CHILD_ASSERTION_NOT_VERIFIED_FACT',
            'Recorded environment observation', 'Parent advice (not an observed fact)',
-           'source_sha256', 'receipt_sha256', 'TRAIN_COLLECTION', '<|endoftext|>Human:')
+           'source_sha256', 'receipt_sha256', 'TRAIN_COLLECTION', '<|endoftext|>Human:', '<|im_start|>')
 
 
 def has_scaffolding(text):
     return (any(marker in text for marker in MARKERS)
             or sum('"'+key+'"' in text for key in ('actor', 'episode_id', 'event_id', 'source_id', 'split')) >= 3)
+
+
+def _repo_tool_feedback(text):
+    if not text.startswith('Tool: '):
+        return False
+    try:
+        result = json.loads(text[len('Tool: '):])
+    except json.JSONDecodeError:
+        return False
+    if not isinstance(result, dict):
+        return False
+    origin = result.get('origin')
+    return (result.get('schema') == 'R183_ACTUAL_TOOL_RESULT_V1'
+            and result.get('status') == 'COMPLETE' and isinstance(origin, dict)
+            and origin.get('actor') == 'child' and origin.get('split') == 'TRAIN'
+            and not any(marker in text for marker in MARKERS
+                        if marker not in ('source_sha256', 'receipt_sha256')))
 
 
 def cost_sentence(cost):
@@ -27,7 +44,8 @@ def event_message(event):
         text = cost_sentence(json.loads(text[len('[cost] '):]))
     elif event.actor == 'environment' and event.event_id == 'runtime:birth_budget' and text.startswith('[budget] {'):
         return None
-    if has_scaffolding(text):
+    if has_scaffolding(text) and not (event.actor == 'environment' and event.phase == 'feedback'
+                                     and _repo_tool_feedback(text)):
         return None
     return dict(role='assistant' if event.actor == 'child' else 'user', content=text)
 
@@ -56,7 +74,9 @@ def replay_prefix(messages, presentation):
             plain = event_message(event)
             if plain is not None:
                 result.append(plain)
-        elif not has_scaffolding(content):
+        elif (not has_scaffolding(content)
+              or (message['role'] == 'user' and content.startswith('Rohin: '))
+              or (message['role'] == 'user' and _repo_tool_feedback(content))):
             result.append(deepcopy(message))
     return result
 

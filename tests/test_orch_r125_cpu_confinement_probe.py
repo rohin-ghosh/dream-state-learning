@@ -3,6 +3,13 @@ import pytest
 from gpu import orch_r125_cpu_confinement_probe as probe
 
 
+def test_file_probe_waits_for_host_limits_observation_before_short_workload():
+    payload = probe.RESOURCE_PAYLOADS['files']
+    assert payload.index('time.sleep(2)') < payload.index("pathlib.Path('/work/too-large')")
+    assert "error.errno == errno.EFBIG" in payload
+    assert "error.errno == errno.ENOSPC" in payload
+
+
 def test_fixed_cpu_probe_never_accepts_child_command():
     command = probe.command('/localhome/test/r125', 'orch-r125-cpu-test')
     assert command[:3] == ['sudo', '-n', 'systemd-run']

@@ -18,6 +18,7 @@ import subprocess
 import sys
 
 from gpu import orch_r125_cpu_confinement_probe as profile
+from gpu import orch_r153_code_blocks as code_blocks
 from gpu.orch_r125_bounded_capture import capture
 from organism_v6.orch_r125_experiment_request import parse_request
 
@@ -68,12 +69,13 @@ def read_document(raw):
 def source_closure():
     modules = {'dispatcher': sys.modules[__name__], 'profile': profile,
         'capture': sys.modules[capture.__module__],
-        'request_parser': sys.modules[parse_request.__module__]}
+        'request_parser': sys.modules[parse_request.__module__], 'code_blocks': code_blocks}
     return {name: hashlib.sha256(read_regular(Path(module.__file__), 1048576)).hexdigest()
         for name, module in modules.items()}
 
 
-def verify_origin(request, journal_root):
+def verify_origin(request, journal_root, *, code_policy=code_blocks.LEGACY):
+    require(code_policy in (code_blocks.LEGACY, code_blocks.POLICY, code_blocks.NFKC_POLICY), 'known_code_policy')
     origin = request['origin']
     if origin['kind'] == 'BUILDER_TEST':
         require(journal_root is None, 'builder_test_cannot_claim_child_journal')
@@ -104,12 +106,24 @@ def verify_origin(request, journal_root):
     require(source_request['split'] == 'TRAIN' and response['document']['request_sha256'] == digest(source_request)
         and committed['document']['source_sha256'] == digest(response['document']), 'TRAIN_request_response_commit_join')
     generation = response['document']['response']
+    require(source_request.get('action_policy') != 'R205_CONSOLE_REPLY_ACT_V1',
+        'console_reply_is_not_a_tool_action')
     require(generation.get('terminal') is True and generation.get('truncated') is False, 'complete_source_generation')
-    blocks = re.findall(r'^```python experiment\n(.*?)^```[ \t]*$', generation['raw'], re.MULTILINE | re.DOTALL)
-    require(len(blocks) == 1 and blocks[0] == request['source'], 'one_explicit_experiment_block_matches_source')
-    return {'kind': origin['kind'], 'child_generated': True, 'journal_id': response['journal_id'],
+    if code_policy == code_blocks.LEGACY:
+        blocks = re.findall(r'^```python experiment\n(.*?)^```[ \t]*$', generation['raw'], re.MULTILINE | re.DOTALL)
+        require(len(blocks) == 1 and blocks[0] == request['source'], 'one_explicit_experiment_block_matches_source')
+        transformation = None
+    else:
+        block = code_blocks.extract(generation['raw'], policy=code_policy)
+        require(block['source'] is not None and block['source'] == request['source'],
+                'one_explicit_experiment_block_matches_source')
+        transformation = code_blocks.metadata(block)
+    result = {'kind': origin['kind'], 'child_generated': True, 'journal_id': response['journal_id'],
         'record_sha256': response['sha256'], 'request_record_sha256': previous['sha256'],
         'commit_record_sha256': committed['sha256']}
+    if transformation is not None:
+        result['code_transformation'] = transformation
+    return result
 
 
 def verify_gate(root):
@@ -166,9 +180,10 @@ def stop_owned(unit, root):
         stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=5, check=True)
 
 
-def run_request(raw, spool, gate_root, journal_root=None):
+def run_request(raw, spool, gate_root, journal_root=None, *, code_policy=code_blocks.LEGACY):
     request = parse_request(raw)
-    origin = verify_origin(request, journal_root)
+    origin = (verify_origin(request, journal_root) if code_policy == code_blocks.LEGACY
+              else verify_origin(request, journal_root, code_policy=code_policy))
     gate = verify_gate(gate_root)
     spool = Path(spool).absolute()
     require(spool.resolve() == spool and '..' not in spool.parts, 'trusted_spool_without_symlinks')

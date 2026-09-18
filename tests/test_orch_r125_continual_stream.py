@@ -45,6 +45,52 @@ class StreamTests(unittest.TestCase):
         self.assertEqual(len(self.stream.rows), 2)
         self.assertTrue(self.stream.sleep_due)
 
+    def test_threshold_compaction_precedes_generation_and_preserves_raw_input(self):
+        older = [event(f'old:{index}', 'An earlier observation. ' * 35, actor='child')
+            for index in range(14)]
+        for item in older:
+            self.stream.history.append(item)
+        incoming = event('human:current', 'Answer this actual new question, not the old task.')
+        self.step(incoming=(incoming,), compaction_threshold=400)
+        requests = [value for kind, value in self.records if kind == 'REQUEST']
+        compactions = [value for kind, value in self.records if kind == 'COMPACTION']
+        self.assertEqual(len(requests), 1)
+        self.assertLess(requests[0]['prompt_tokens'], 400)
+        self.assertEqual(compactions[0]['threshold_tokens'], 400)
+        self.assertFalse(compactions[0]['new_child_distillation'])
+        self.assertIn('Your visible context was compacted at', str(self.prompts[0]))
+        self.assertIn('Omitted passages remain in the raw journal', str(self.prompts[0]))
+        self.assertNotIn('Your visible context was compacted at', self.stream.rows[0]['target'])
+        self.assertEqual(self.stream.history.events[:len(older)], tuple(older))
+        self.assertIn(incoming.text, str(self.prompts[0]))
+        self.assertEqual(len(self.stream.rows), 1)
+        restored = ContinualStream.restore(self.stream.checkpoint(),
+            expected_sha256=self.stream.checkpoint()['sha256'])
+        self.assertEqual(restored.checkpoint(), self.stream.checkpoint())
+
+    def test_threshold_reuses_prior_child_distillation_not_later_failed_code(self):
+        from dataclasses import replace
+        first = event('chosen:child', 'Keep the observed failure separate from a guess.', actor='child')
+        self.stream.history.append(first)
+        summary = replace(first, event_id='chosen:summary', phase='compaction')
+        self.stream.history.compact(summary, through=self.stream.history.frontier(1))
+        for index in range(14):
+            self.stream.history.append(event(f'old:{index}', 'Later attempted code. ' * 35, actor='child'))
+        self.step(compaction_threshold=400)
+        compactions = [value for kind, value in self.records if kind == 'COMPACTION']
+        self.assertEqual(compactions[-1]['source_sha256'], first.source_sha256)
+        self.assertEqual(compactions[-1]['carry_source_kind'], 'PRIOR_CHILD_COMPACTION')
+        self.assertIn(first.text, str(self.prompts[-1]))
+
+    def test_threshold_never_silently_drops_oversized_fresh_input(self):
+        self.stream.history.append(event('prior:child', 'An earlier conclusion.', actor='child'))
+        incoming = event('human:large', 'fresh important words ' * 200)
+        with self.assertRaises(CompactionRequired):
+            self.step(incoming=(incoming,), compaction_threshold=300)
+        self.assertFalse(self.prompts)
+        self.assertIn(incoming, self.stream.history.events)
+        self.assertTrue(any(kind == 'R203_CONTEXT_BUDGET_BLOCKED' for kind, value in self.records))
+
     def test_incoming_parent_once_and_costs_are_never_targets(self):
         parent = event('parent:one', 'Look again at your assumption.')
         self.step(incoming=[parent])

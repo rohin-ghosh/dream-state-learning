@@ -13,7 +13,7 @@ from unittest.mock import patch
 
 from gpu.orch_r125_stream_journal import StreamJournal
 from organism_v6.orch_r124_train_history import TrainEvent, TrainHistory
-from organism_v6.orch_r125_continual_stream import ContinualStream, digest
+from organism_v6.orch_r125_continual_stream import ContinualStream, PRESLEEP_INVITATIONS, digest, experiment_binding
 from organism_v6.orch_r125_plain_context import VERSION as PLAIN_CONTEXT_VERSION
 
 
@@ -39,6 +39,68 @@ class StreamJournalTests(unittest.TestCase):
     def step(self, record=None, generate_call=generate, incoming=()):
         return self.stream.step(generate_call, tokens, self.journal.record if record is None else record,
                                 incoming=incoming, now=lambda: 100)
+
+    def bind_experiment(self):
+        self.stream.experiment = experiment_binding(dict(seed=1, presleep_variant='no_distillation',
+            compaction_invitation='', system_prompt='System.', birth_prompt='Birth.'))
+
+    def test_bound_experiment_roundtrips_and_legacy_checkpoint_remains_byte_equivalent(self):
+        legacy = self.stream.checkpoint()
+        self.assertNotIn('experiment', legacy['state'])
+        restored = ContinualStream.restore(legacy, expected_sha256=legacy['sha256'])
+        self.assertIsNone(restored.experiment)
+        self.assertEqual(restored.checkpoint(), legacy)
+        self.bind_experiment()
+        self.journal.record('COMMITTED', dict(kind='BIRTH', state=self.stream.checkpoint()))
+        self.step()
+        saved = self.journal.latest_checkpoint()
+        restored = ContinualStream.restore(**saved)
+        self.assertEqual(restored.experiment, self.stream.experiment)
+        self.assertEqual(restored.checkpoint(), self.stream.checkpoint())
+
+    def test_journal_rejects_seed_change_before_generation(self):
+        self.bind_experiment()
+        self.journal.record('COMMITTED', dict(kind='BIRTH', state=self.stream.checkpoint()))
+        before = self.journal.latest_checkpoint()
+        self.stream.experiment['seed'] = 0
+        with patch(__name__+'.generate') as generation, \
+                self.assertRaisesRegex(ValueError, 'journal_experiment_configuration_frozen'):
+            self.step(generate_call=generation)
+        generation.assert_not_called()
+        self.journal.close()
+        with StreamJournal(self.root) as journal:
+            self.assertEqual(journal.latest_checkpoint(), before)
+
+    def test_presentation_transition_cannot_change_variant_or_its_prompt(self):
+        self.bind_experiment()
+        self.journal.record('COMMITTED', dict(kind='BIRTH', state=self.stream.checkpoint()))
+        self.stream.set_presentation(dict(version=PLAIN_CONTEXT_VERSION, system_prompt='System.', birth_prompt='Birth.'), 16384)
+        self.stream.experiment.update(presleep_variant='reread_select',
+            compaction_invitation=PRESLEEP_INVITATIONS['reread_select'])
+        with self.assertRaisesRegex(ValueError, 'journal_experiment_configuration_frozen'):
+            self.journal.record('PRESENTATION', dict(state=self.stream.checkpoint()))
+
+    def test_bound_experiment_cannot_be_removed_from_saved_state(self):
+        self.bind_experiment()
+        self.journal.record('COMMITTED', dict(kind='BIRTH', state=self.stream.checkpoint()))
+        self.stream.experiment = None
+        with self.assertRaisesRegex(ValueError, 'journal_experiment_configuration_frozen'):
+            self.step()
+
+    def test_sleep_receipt_must_bind_same_experiment_as_stream(self):
+        self.bind_experiment()
+        self.step()
+        self.step()
+        receipt = self.receipt()
+        receipt['checkpoint'] = dict(experiment=dict(self.stream.experiment, seed=0))
+        with self.assertRaisesRegex(ValueError, 'sleep_model_experiment_binding'):
+            self.stream.commit_sleep(receipt, self.journal.record)
+
+    def test_legacy_checkpoint_cannot_be_relabelled_as_seeded_experiment(self):
+        self.journal.record('COMMITTED', dict(kind='BIRTH', state=self.stream.checkpoint()))
+        self.bind_experiment()
+        with self.assertRaisesRegex(ValueError, 'journal_experiment_configuration_frozen'):
+            self.step()
 
     def receipt(self):
         return dict(status='COMPLETE', optimizer_steps=2,
@@ -134,6 +196,58 @@ class StreamJournalTests(unittest.TestCase):
         self.assertEqual(first['document']['text'], 'first')
         self.assertEqual(receipt['sha256'], first['sha256'])
         self.assertEqual(len(list((self.root / 'records').iterdir())), 4)
+
+    def test_hot_path_uses_validated_state_without_replaying_old_records(self):
+        with patch.object(self.journal, '_scan', wraps=self.journal._scan) as scan:
+            self.parent()
+            self.step(incoming=self.journal.read_inbox())
+            self.journal.record('UPDATE', {'step': 1})
+            self.assertEqual(self.journal.latest_checkpoint()['document'], self.stream.checkpoint())
+            self.assertEqual(len(self.journal.read_inbox()), 1)
+            scan.assert_not_called()
+            count = self.journal.audit()['record_count']
+            self.assertEqual(count, 5)
+            scan.assert_called_once_with()
+
+    def test_reopen_always_revalidates_the_complete_chain(self):
+        self.step()
+        expected = self.journal.latest_checkpoint()
+        self.journal.close()
+        with StreamJournal(self.root) as reopened:
+            self.assertEqual(reopened.latest_checkpoint(), expected)
+            self.assertEqual(reopened.audit()['record_count'], 3)
+        document = json.loads(self.record_path(0).read_text())
+        document['previous_sha256'] = '0' * 64
+        self.record_path(0).write_text(json.dumps(document))
+        with self.assertRaisesRegex(ValueError, 'journal_chain_integrity'):
+            StreamJournal(self.root)
+
+    def test_cached_authoritative_checkpoint_is_detached_from_callers(self):
+        self.step()
+        checkpoint = self.journal.latest_checkpoint()
+        checkpoint['document']['state']['rows'].clear()
+        self.assertEqual(self.journal.latest_checkpoint()['document'], self.stream.checkpoint())
+
+    def test_old_record_rewrite_with_restored_mtime_invalidates_cache(self):
+        self.journal.record('NOTE', {'text': 'original'})
+        self.journal.record('NOTE', {'text': 'later'})
+        path = self.record_path(0)
+        before = path.stat()
+        path.write_bytes(path.read_bytes().replace(b'original', b'modified'))
+        os.utime(path, ns=(before.st_atime_ns, before.st_mtime_ns))
+        with self.assertRaisesRegex(ValueError, 'journal_chain_integrity'):
+            self.journal.read_inbox()
+
+    def test_file_change_during_full_revalidation_rejected(self):
+        self.journal.record('NOTE', {'text': 'original'})
+        original = self.journal._scan
+        def changed():
+            state = original()
+            self.record_path(0).write_text('{}')
+            return state
+        with patch.object(self.journal, '_scan', side_effect=changed):
+            with self.assertRaisesRegex(ValueError, 'journal_changed_during_scan'):
+                self.journal.audit()
 
     def test_request_tail_not_stale_previous_commit(self):
         self.step()

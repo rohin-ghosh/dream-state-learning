@@ -5,6 +5,8 @@ from copy import deepcopy
 import json
 import os
 from pathlib import Path
+import random
+import sys
 import tempfile
 import time
 from types import SimpleNamespace
@@ -48,12 +50,135 @@ class Tokenizer:
 
 
 class EncodingAndPlanTests(unittest.TestCase):
+    def plasticity_plan(self, presentations=16, multiplier=1):
+        plan = make_plan('/tmp/synthetic-r186')
+        plan.update(new_presentations=presentations, rehearsal_presentations=0,
+            plasticity=dict(schema='R186_PLASTICITY_V1', learning_rate_multiplier=multiplier),
+            think_act_learn=dict(schema='R184_THINK_ACT_LEARN_V1', trial_id='synthetic_copy',
+                reflection_policy='explicit', think_segments=1,
+                cpu_gate_root='/tmp/synthetic-r186/gate', cpu_gate_sha256='a'*64))
+        return plan
+
+    def test_copy_plasticity_is_explicit_and_bounded(self):
+        for presentations in (4, 16, 32):
+            for multiplier in (0.3, 1, 3):
+                plan = self.plasticity_plan(presentations, multiplier)
+                self.assertIs(native.validate_plan(plan), plan)
+                policy = native.plasticity_policy(plan)
+                self.assertEqual(policy['new_presentations'], presentations)
+                self.assertAlmostEqual(policy['learning_rate'], 3e-5 * multiplier)
+        for multiplier in (True, 0, -1, 2, float('nan'), float('inf'), '3'):
+            with self.subTest(multiplier=multiplier), self.assertRaisesRegex(ValueError, 'learning_rate_multiplier'):
+                native.validate_plan(self.plasticity_plan(multiplier=multiplier))
+        for presentations in (True, 0, 8, 16.0, '16', 64):
+            with self.subTest(presentations=presentations), self.assertRaisesRegex(ValueError, 'copy_presentations'):
+                native.validate_plan(self.plasticity_plan(presentations=presentations))
+        plan = self.plasticity_plan()
+        del plan['think_act_learn']
+        with self.assertRaisesRegex(ValueError, 'requires_R184'):
+            native.validate_plan(plan)
+        plan = self.plasticity_plan(presentations=4)
+        del plan['plasticity']
+        with self.assertRaisesRegex(ValueError, 'presentation_and_anchor_schedule'):
+            native.validate_plan(plan)
+
+    def test_copy_lr_applies_after_restore_without_resetting_moments_or_other_groups(self):
+        optimizer = SimpleNamespace(param_groups=[dict(lr=3e-5, betas=(0.9, 0.999),
+            weight_decay=0.01, params=['adapter'])], state={'adapter': {'step': 4428, 'exp_avg': [1.5]}})
+        before = deepcopy(optimizer)
+        receipt = native.apply_plasticity(optimizer, self.plasticity_plan(multiplier=3))
+        self.assertEqual(receipt['loaded_learning_rates'], [3e-5])
+        self.assertAlmostEqual(optimizer.param_groups[0]['lr'], 9e-5)
+        self.assertEqual(optimizer.state, before.state)
+        for name in ('betas', 'weight_decay', 'params'):
+            self.assertEqual(optimizer.param_groups[0][name], before.param_groups[0][name])
+        unchanged = deepcopy(optimizer)
+        self.assertIsNone(native.apply_plasticity(optimizer, make_plan('/tmp/synthetic-legacy')))
+        self.assertEqual(optimizer, unchanged)
+
+    def test_copy_presentations_change_only_new_row_dose(self):
+        rows = [dict(source_sha256='one'), dict(source_sha256='two'), dict(source_sha256='three')]
+        for presentations in (4, 16, 32):
+            schedule = native.presentation_schedule(rows, [], new_presentations=presentations)
+            self.assertEqual(len(schedule), 3 * presentations)
+            self.assertEqual(Counter(row['source_sha256'] for kind, row in schedule),
+                dict(one=presentations, two=presentations, three=presentations))
+            self.assertTrue(all(kind == 'NEW' for kind, row in schedule))
+
+    def test_experiment_seed_and_variant_defaults_are_explicit_in_binding(self):
+        plan = make_plan('/tmp/synthetic-r133')
+        default = native.experiment_binding(plan)
+        del plan['seed']
+        self.assertEqual(native.experiment_binding(plan), default)
+        self.assertEqual(default['seed'], 0)
+        self.assertEqual(default['presleep_variant'], 'free_distillation')
+        self.assertEqual(default['seed_initialization'], 'before_lora')
+        self.assertIs(native.validate_plan(plan), plan)
+        for variant, invitation in native.PRESLEEP_INVITATIONS.items():
+            candidate = dict(plan, seed=1, presleep_variant=variant, compaction_invitation=invitation)
+            self.assertIs(native.validate_plan(candidate), candidate)
+            self.assertEqual(native.experiment_binding(candidate)['seed'], 1)
+        self.assertEqual(len(set(native.PRESLEEP_INVITATIONS.values())), 4)
+        self.assertEqual(native.PRESLEEP_INVITATIONS['no_distillation'], '')
+
+    def test_experiment_requires_known_variant_and_exact_invitation(self):
+        plan = make_plan('/tmp/synthetic-r133')
+        for variant in ('unknown', None, [], True):
+            with self.subTest(variant=variant), self.assertRaisesRegex(ValueError, 'known_presleep_variant'):
+                native.validate_plan(dict(plan, presleep_variant=variant))
+        for variant, invitation in native.PRESLEEP_INVITATIONS.items():
+            with self.subTest(variant=variant), self.assertRaisesRegex(ValueError, 'exact_posted_prompts'):
+                native.validate_plan(dict(plan, presleep_variant=variant, compaction_invitation=invitation+' '))
+
+    def test_legacy_resumes_allow_only_seed0_free_distillation(self):
+        plan = make_plan('/tmp/synthetic-r133')
+        native.verify_experiment_resume(plan, None)
+        for change in [dict(seed=1)] + [dict(presleep_variant=variant, compaction_invitation=invitation)
+                for variant, invitation in native.PRESLEEP_INVITATIONS.items() if variant != 'free_distillation']:
+            with self.subTest(change=change), self.assertRaisesRegex(ValueError, 'legacy_experiment_configuration_frozen'):
+                native.verify_experiment_resume(dict(plan, **change), None)
+
     def test_readout_revision_uses_new_artifacts_without_replacing_old_calls(self):
         self.assertEqual(native.readout_name({}, 2), 'sleep_000002')
         self.assertEqual(native.readout_name({'readout_revision': 2}, 2), 'sleep_000002_r2')
         for revision in (0, -1, True, '2'):
             with self.subTest(revision=revision), self.assertRaisesRegex(ValueError, 'positive_readout_revision'):
                 native.readout_name({'readout_revision': revision}, 2)
+
+    def test_new_only_rehearsal_preserves_archived_rows(self):
+        old_rows = [{'source_sha256': 'old', 'actor': 'child'}]
+        before = deepcopy(old_rows)
+        self.assertEqual(native.select_rehearsal_rows({'rehearsal_presentations': 0}, old_rows), [])
+        self.assertEqual(old_rows, before)
+        self.assertIs(native.select_rehearsal_rows({'rehearsal_presentations': 1}, old_rows), old_rows)
+        self.assertEqual(len(native.presentation_schedule([{'new': 1}] * 3,
+            native.select_rehearsal_rows({'rehearsal_presentations': 0}, old_rows))), 48)
+        for invalid in (True, -1, 2, '0'):
+            with self.subTest(invalid=invalid), self.assertRaisesRegex(ValueError, 'explicit_rehearsal'):
+                native.select_rehearsal_rows({'rehearsal_presentations': invalid}, old_rows)
+
+    def test_presleep_inbox_only_replies_to_unseen_parent_once(self):
+        previous = SimpleNamespace(event_id='parent:old', actor='parent')
+        incoming = SimpleNamespace(event_id='parent:new', actor='parent')
+        child = SimpleNamespace(generate=Mock(), count_tokens=Mock())
+        stream = SimpleNamespace(pending=None, sleep_due=True,
+            history=SimpleNamespace(events=[previous]), step=Mock())
+        journal = SimpleNamespace(read_inbox=Mock(return_value=[previous, incoming]), record=Mock())
+        self.assertTrue(native.respond_to_presleep_inbox(child, stream, journal, 4))
+        self.assertEqual(stream.step.call_args.kwargs['incoming'], [incoming])
+        self.assertEqual(stream.step.call_count, 1)
+        stream.history.events.append(incoming)
+        self.assertFalse(native.respond_to_presleep_inbox(child, stream, journal, 4))
+        self.assertEqual(stream.step.call_count, 1)
+
+    def test_presleep_environment_only_does_not_add_generation(self):
+        child = SimpleNamespace(generate=Mock(), count_tokens=Mock())
+        stream = SimpleNamespace(pending=None, sleep_due=True,
+            history=SimpleNamespace(events=[]), step=Mock())
+        journal = SimpleNamespace(read_inbox=Mock(return_value=[
+            SimpleNamespace(event_id='tool:new', actor='environment')]), record=Mock())
+        self.assertFalse(native.respond_to_presleep_inbox(child, stream, journal, 4))
+        stream.step.assert_not_called()
 
     def row(self):
         return dict(split='TRAIN', actor='child', prefix_loss=False, target_loss=True,
@@ -151,7 +276,7 @@ class EncodingAndPlanTests(unittest.TestCase):
             ('new_presentations', 15, 'declared_presentation_and_anchor_schedule'),
             ('rehearsal_presentations', 2, 'declared_presentation_and_anchor_schedule'),
             ('anchor_lambda', 0.5, 'declared_presentation_and_anchor_schedule'),
-            ('seed', 1, 'initial_native_schedule'),
+            *[('seed', value, 'explicit_experiment_seed') for value in (True, -1, 2**32, 1.5, '1', None)],
             ('segments_per_sleep', 3, 'initial_native_schedule'),
             *[('segment_tokens', value, 'bounded_native_segment') for value in (True, 0, 1025, 1.5)],
             *[('context_limit', value, 'bounded_native_context') for value in (True, 16, 8193)],
@@ -265,9 +390,137 @@ class StartupContextPlanTests(unittest.TestCase):
                 native.validate_plan(dict(plan, **{field: plan[field] + ' changed'}))
 
 
+class SeedInitializationTests(unittest.TestCase):
+    def setUp(self):
+        from gpu import astra_experienced_event_microloop as source
+        self.source = source
+        self.plan = make_plan('/tmp/synthetic-r133')
+        self.events = []
+        self.generator = random.Random()
+        self.torch = Mock(float32='fp32')
+        self.parameter = Mock(dtype='fp32')
+        self.base = Mock()
+        self.model = Mock(config=SimpleNamespace(max_position_embeddings=32768, use_cache=True))
+        self.model.to.return_value = self.model
+        self.model.named_parameters.return_value = [('model.lora_A.default.weight', self.parameter)]
+        self.engine = SimpleNamespace(torch=self.torch, model=self.base, hook=Mock())
+        self.peft = SimpleNamespace(LoraConfig=Mock(), get_peft_model=Mock(side_effect=self.initialize))
+        self.initial_values = []
+        self.torch.manual_seed.side_effect = self.seed_torch
+        self.torch.cuda.manual_seed_all.side_effect = lambda seed: self.events.append(('cuda_seed', seed))
+        self.start_patch(patch.dict(sys.modules, peft=self.peft))
+        self.start_patch(patch.dict(os.environ, CUDA_VISIBLE_DEVICES=self.plan['gpu_uuid']))
+        self.start_patch(patch.object(source.native, 'load_local_tokenizer', return_value=Tokenizer()))
+        self.load = self.start_patch(patch.object(source, 'Engine', side_effect=self.load_engine))
+        self.python_seed = self.start_patch(patch.object(native.random, 'seed',
+            side_effect=lambda seed: self.events.append(('python_seed', seed))))
+        self.python_restore = self.start_patch(patch.object(native.random, 'setstate'))
+
+    def start_patch(self, patcher):
+        result = patcher.start()
+        self.addCleanup(patcher.stop)
+        return result
+
+    def seed_torch(self, seed):
+        self.events.append(('torch_seed', seed))
+        self.generator.seed(seed)
+
+    def load_engine(self, options, tokenizer, *, check):
+        self.assertEqual(options.phase, 'readout')
+        self.assertEqual(options.device, 'cuda:0' if options.adapter_dir else 'cpu')
+        self.events.append(('load', options.adapter_dir))
+        self.engine.model = self.model if options.adapter_dir else self.base
+        return self.engine
+
+    def initialize(self, base, config, **kwargs):
+        self.assertIs(base, self.base)
+        self.assertEqual(kwargs, dict(autocast_adapter_dtype=True))
+        self.events.append(('lora', None))
+        self.initial_values.append(tuple(self.generator.random() for unused in range(4)))
+        return self.model
+
+    def test_seed_applies_before_lora_for_new_lives_and_recipe_is_unchanged(self):
+        from gpu.astra_pchain2_native import TARGET_MODULES
+        for seed in (0, 1, 1):
+            self.events.clear()
+            child = NativeChild(dict(self.plan, seed=seed))
+            self.assertEqual(self.events, [('load', None), ('python_seed', seed), ('torch_seed', seed),
+                ('cuda_seed', seed), ('lora', None), ('python_seed', seed), ('torch_seed', seed), ('cuda_seed', seed)])
+            self.assertEqual(child.experiment['seed'], seed)
+        self.assertEqual(self.initial_values[1], self.initial_values[2])
+        self.assertNotEqual(self.initial_values[0], self.initial_values[1])
+        self.peft.LoraConfig.assert_called_with(r=8, lora_alpha=16, lora_dropout=0.05,
+            target_modules=list(TARGET_MODULES), bias='none', task_type='CAUSAL_LM',
+            init_lora_weights=True, use_rslora=False, use_dora=False)
+        self.assertFalse(self.model.config.use_cache)
+        self.torch.optim.AdamW.assert_called_with([self.parameter], lr=3e-5,
+            betas=(0.9, 0.999), eps=1e-8, weight_decay=0.01, foreach=False, fused=False)
+
+    def checkpoint_and_payload(self, seed, bound=True):
+        binding = native.experiment_binding(dict(self.plan, seed=seed))
+        checkpoint = dict(adapter_path='/tmp/synthetic-r133/saved-adapter',
+            optimizer_rng_path='/tmp/synthetic-r133/saved-rng', adapter_state_sha256='a'*64)
+        payload = dict(parameter_names=['model.lora_A.default.weight'], optimizer={'saved': True},
+            optimizer_steps=19, cpu_rng='saved_cpu', cuda_rng=['saved_cuda'], python_rng='saved_python')
+        if bound:
+            checkpoint['experiment'] = binding
+            payload['experiment'] = deepcopy(binding)
+        return checkpoint, payload
+
+    def test_existing_legacy_and_seeded_lineages_restore_rng_without_any_reseeding(self):
+        for seed, bound in ((0, False), (0, True), (1, True)):
+            checkpoint, payload = self.checkpoint_and_payload(seed, bound)
+            self.torch.load.return_value = payload
+            with patch.object(NativeChild, 'verify_checkpoint'), \
+                    patch.object(NativeChild, 'adapter_hash', return_value=checkpoint['adapter_state_sha256']):
+                child = NativeChild(dict(self.plan, seed=seed), checkpoint)
+            self.assertEqual(child.optimizer_steps, 19)
+            self.torch.set_rng_state.assert_called_with('saved_cpu')
+            self.torch.cuda.set_rng_state_all.assert_called_with(['saved_cuda'])
+            self.python_restore.assert_called_with('saved_python')
+            self.torch.optim.AdamW.return_value.load_state_dict.assert_called_with({'saved': True})
+        self.peft.get_peft_model.assert_not_called()
+        self.torch.manual_seed.assert_not_called()
+        self.torch.cuda.manual_seed_all.assert_not_called()
+        self.python_seed.assert_not_called()
+
+    def test_optimizer_seed_binding_mismatch_fails_before_restoring_rng(self):
+        checkpoint, payload = self.checkpoint_and_payload(1)
+        payload['experiment']['seed'] = 0
+        self.torch.load.return_value = payload
+        with patch.object(NativeChild, 'verify_checkpoint'), \
+                self.assertRaisesRegex(ValueError, 'optimizer_experiment_binding'):
+            NativeChild(dict(self.plan, seed=1), checkpoint)
+        self.torch.set_rng_state.assert_not_called()
+        self.torch.cuda.set_rng_state_all.assert_not_called()
+        self.python_restore.assert_not_called()
+        self.peft.get_peft_model.assert_not_called()
+
+    def test_seed_change_on_legacy_checkpoint_fails_before_model_load(self):
+        checkpoint, payload = self.checkpoint_and_payload(0, bound=False)
+        with self.assertRaisesRegex(ValueError, 'legacy_experiment_configuration_frozen'):
+            NativeChild(dict(self.plan, seed=1), checkpoint)
+        self.load.assert_not_called()
+        self.peft.get_peft_model.assert_not_called()
+
+    def test_checkpoint_binds_experiment_in_commit_and_hashed_rng_payload(self):
+        child = NativeChild(dict(self.plan, seed=1))
+        self.engine.verify_base = Mock()
+        self.model.save_pretrained.side_effect = lambda path, **kwargs: (path.mkdir(), (path/'weights').write_bytes(b'adapter'))
+        self.torch.save.side_effect = lambda payload, stream: stream.write(b'synthetic payload')
+        with tempfile.TemporaryDirectory() as directory, patch.object(child, 'adapter_hash', return_value='a'*64):
+            checkpoint = child.checkpoint(Path(directory)/'checkpoint')
+            payload = self.torch.save.call_args.args[0]
+            self.assertEqual(checkpoint['experiment'], native.experiment_binding(dict(self.plan, seed=1)))
+            self.assertEqual(payload['experiment'], checkpoint['experiment'])
+            self.assertEqual(checkpoint['checkpoint_sha256']['rng'], native.sha(checkpoint['optimizer_rng_path']))
+            NativeChild.verify_checkpoint(checkpoint)
+
+
 class SyntheticChild:
     def __init__(self, plan, checkpoint=None):
         self.plan = plan
+        self.experiment = deepcopy(checkpoint.get('experiment')) if checkpoint else native.experiment_binding(plan)
         self.tokenizer = Tokenizer()
         self.engine = SimpleNamespace(runtime={'synthetic': True})
         self.optimizer_steps = checkpoint['optimizer_steps'] if checkpoint else 0
@@ -276,6 +529,7 @@ class SyntheticChild:
         self.loaded_checkpoint = checkpoint
         if checkpoint:
             NativeChild.verify_checkpoint(checkpoint)
+            native.verify_experiment_resume(plan, self.experiment)
 
     def adapter_hash(self):
         return digest(['synthetic-adapter', self.optimizer_steps])
@@ -293,6 +547,8 @@ class SyntheticChild:
             optimizer_rng_path=str(optimizer_path), optimizer_steps=self.optimizer_steps,
             checkpoint_sha256=dict(adapter=digest(files), optimizer=native.sha(optimizer_path),
                                    rng=native.sha(optimizer_path)))
+        if self.experiment is not None:
+            checkpoint['experiment'] = deepcopy(self.experiment)
         native.write_once(directory/'COMMIT.json', checkpoint)
         return checkpoint
 
@@ -311,7 +567,8 @@ class SyntheticChild:
 
     def sleep(self, new_rows, old_rows, anchors, record):
         self.sleeps.append(deepcopy((new_rows, old_rows)))
-        schedule = native.presentation_schedule(new_rows, old_rows)
+        schedule = native.presentation_schedule(new_rows, old_rows,
+            new_presentations=self.plan['new_presentations'])
         self.optimizer_steps += len(schedule)
         record('UPDATE', dict(optimizer_step=self.optimizer_steps, synthetic=True))
         return dict(optimizer_steps=len(schedule), total_optimizer_steps=self.optimizer_steps)
@@ -432,6 +689,160 @@ class NativeLoopTests(unittest.TestCase):
         self.assertEqual(budget.actor, 'environment')
         self.assertIn('context_limit', budget.text)
 
+    def select_experiment(self, variant, seed=0):
+        self.plan.update(presleep_variant=variant, compaction_invitation=native.PRESLEEP_INVITATIONS[variant], seed=seed)
+        self.plan_path.write_text(json.dumps(self.plan))
+        self.start_patch(patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)))
+
+    def test_no_distillation_preserves_history_frontier_and_context_through_sleep(self):
+        self.select_experiment('no_distillation')
+        observations = []
+        original = native.prepare_sleep
+
+        def prepare(child, stream, journal, cycle):
+            before = stream.checkpoint()
+            rendered = stream.render(child.count_tokens)
+            original(child, stream, journal, cycle)
+            self.assertEqual(stream.checkpoint(), before)
+            self.assertEqual(stream.render(child.count_tokens), rendered)
+            observations.append(before)
+
+        with patch.object(native, 'prepare_sleep', side_effect=prepare):
+            native.run(self.plan_path)
+        records = self.records()
+        stream = self.restore()
+        self.assertEqual(len(observations), 2)
+        self.assertEqual(stream.sleep_frontier, 4)
+        self.assertEqual(len(stream.rows), 5)
+        self.assertEqual([len(new) for new, old in self.children[0].sleeps], [2, 2])
+        self.assertEqual([len(old) for new, old in self.children[0].sleeps], [0, 2])
+        self.assertEqual(self.children[0].optimizer_steps, 66)
+        self.assertEqual(self.readouts, [0, 1, 2])
+        self.assertEqual(stream.history.visible_frontier.event_count, 0)
+        self.assertEqual(stream.history.operations, ())
+        self.assertFalse(any(event.phase in ('presleep', 'compaction') for event in stream.history.events))
+        self.assertFalse(any(record['kind'].startswith('COMPACTION') for record in records))
+        for record in records:
+            if record['kind'] == 'SLEEP_COMPLETE':
+                cycle = record['document']['cycle']
+                self.assertEqual(record['document']['resume_state']['state']['history'],
+                                 observations[cycle-1]['state']['history'])
+        for earlier in stream.rows[:4]:
+            self.assertIn(earlier['target'], str(stream.rows[-1]['prefix']))
+        for row in stream.rows:
+            encoded = native.encode_own(row, Tokenizer(), 32768)
+            prefix_size = len(encoded.input_ids)-len(row['token_ids'])
+            self.assertEqual(encoded.labels[:prefix_size], (-100,)*prefix_size)
+            self.assertEqual(encoded.labels[prefix_size:], tuple(row['token_ids']))
+
+    def test_parent_guidance_uses_ordinary_inbox_and_masks_all_prefix_tokens(self):
+        self.select_experiment('parent_guided_distillation', seed=1)
+        original = native.prepare_sleep
+        guidance = 'PARENT_ONLY_SENTINEL select the observation rather than the prediction.'
+
+        def prepare(child, stream, journal, cycle):
+            native.write_once(journal.inbox/f'guidance-{cycle}.json',
+                dict(id=f'guide-{cycle}', actor='parent', split='TRAIN', text=guidance))
+            original(child, stream, journal, cycle)
+
+        with patch.object(native, 'prepare_sleep', side_effect=prepare):
+            native.run(self.plan_path)
+        stream = self.restore()
+        self.assertEqual(len([event for event in stream.history.events if event.actor == 'parent']), 2)
+        self.assertEqual([len(new) for new, old in self.children[0].sleeps], [3, 3])
+        self.assertEqual(self.readouts, [0, 1, 2])
+        for index in (2, 5):
+            row = stream.rows[index]
+            self.assertIn(guidance, str(row['prefix']))
+            self.assertIn(self.plan['compaction_invitation'], str(row['prefix']))
+            self.assertNotIn('PARENT_ONLY_SENTINEL', row['target'])
+            encoded = native.encode_own(row, Tokenizer(), 32768)
+            prefix_size = len(encoded.input_ids)-len(row['token_ids'])
+            self.assertEqual(encoded.labels[:prefix_size], (-100,)*prefix_size)
+            self.assertEqual(encoded.labels[prefix_size:], tuple(row['token_ids']))
+        self.assertTrue(all(row['actor'] == 'child' and row['target_loss'] is True
+                            and row['prefix_loss'] is False for row in stream.rows))
+
+    def test_reread_selection_receives_history_and_carries_child_passages(self):
+        self.select_experiment('reread_select')
+        native.run(self.plan_path)
+        stream = self.restore()
+        for index in (2, 5):
+            row = stream.rows[index]
+            self.assertIn(self.plan['compaction_invitation'], str(row['prefix']))
+            self.assertIn(stream.rows[index-2]['target'], str(row['prefix']))
+            self.assertIn(stream.rows[index-1]['target'], str(row['prefix']))
+            self.assertEqual(stream.history.operations[index//3]['summary']['text'], row['target'])
+        self.assertEqual(self.readouts, [0, 1, 2])
+
+    def test_resume_rejects_seed_variant_and_prompt_changes_before_loading(self):
+        self.stop_at_committed_sleep()
+        before = self.records()
+        source = Path(self.plan['source_root'])
+        source.mkdir()
+        startup = source/'changed-startup.md'
+        startup.write_text('Changed initial prompt.')
+        changes = [dict(seed=1), dict(birth_prompt=startup.read_text(), startup_context=dict(
+            version='R127_STARTUP_V1', path=str(startup), sha256=native.sha(startup)))]
+        changes += [dict(presleep_variant=variant, compaction_invitation=invitation)
+                    for variant, invitation in native.PRESLEEP_INVITATIONS.items() if variant != 'free_distillation']
+        for change in changes:
+            self.plan_path.write_text(json.dumps(dict(self.plan, **change)))
+            with self.subTest(change=change), patch.dict(os.environ,
+                    R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)), \
+                    self.assertRaisesRegex(ValueError, 'resume_experiment_mismatch'):
+                native.run(self.plan_path, resume=True)
+            self.assertEqual(self.records(), before)
+            self.assertEqual(len(self.children), 1)
+
+    def test_seed1_variant_resume_preserves_binding_and_does_not_rebirth(self):
+        self.select_experiment('no_distillation', seed=1)
+        self.stop_at_committed_sleep()
+        before = self.restore().checkpoint()
+        native.run(self.plan_path, resume=True)
+        stream = self.restore()
+        binding = native.experiment_binding(self.plan)
+        self.assertEqual(stream.experiment, binding)
+        self.assertEqual(stream.rows[:2], before['state']['rows'])
+        self.assertEqual(self.children[1].loaded_checkpoint['experiment'], binding)
+        self.assertEqual([len(new) for new, old in self.children[1].sleeps], [2])
+        for path in (Path(self.plan['root'])/'checkpoints').glob('*/COMMIT.json'):
+            self.assertEqual(native.read(path)['experiment'], binding)
+
+    def test_resume_rejects_model_binding_drift_before_loading(self):
+        self.stop_at_committed_sleep()
+        before = self.records()
+        checkpoint_path = Path(self.plan['root'])/'checkpoints/sleep_000001/COMMIT.json'
+        checkpoint = native.read(checkpoint_path)
+        checkpoint['experiment']['seed'] = 1
+        checkpoint_path.write_text(json.dumps(checkpoint))
+        with self.assertRaisesRegex(ValueError, 'stream_model_experiment_binding'):
+            native.run(self.plan_path, resume=True)
+        self.assertEqual(self.records(), before)
+        self.assertEqual(len(self.children), 1)
+
+    def test_legacy_run_resumes_without_relabelling_or_changing_saved_artifacts(self):
+        with patch.object(native, 'experiment_binding', return_value=None):
+            self.stop_at_committed_sleep()
+        before = self.restore().checkpoint()
+        records = self.records()
+        self.assertNotIn('experiment', before['state'])
+        files = {path: path.read_bytes() for path in (Path(self.plan['root'])/'checkpoints').rglob('*') if path.is_file()}
+        self.plan_path.write_text(json.dumps(dict(self.plan, seed=1)))
+        with patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)), \
+                self.assertRaisesRegex(ValueError, 'legacy_experiment_configuration_frozen'):
+            native.run(self.plan_path, resume=True)
+        self.assertEqual(self.records(), records)
+        self.assertEqual(len(self.children), 1)
+        self.plan_path.write_text(json.dumps(self.plan))
+        with patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)):
+            native.run(self.plan_path, resume=True)
+        self.assertEqual({path: path.read_bytes() for path in files}, files)
+        self.assertIsNone(self.restore().experiment)
+        self.assertNotIn('experiment', self.restore().checkpoint()['state'])
+        self.assertEqual(self.restore().rows[:3], before['state']['rows'])
+        self.assertNotIn('experiment', native.read(Path(self.plan['root'])/'checkpoints/sleep_000002/COMMIT.json'))
+
     def test_native_creates_missing_life_directory_before_journal(self):
         Path(self.plan['root']).rmdir()
         native.run(self.plan_path)
@@ -517,6 +928,29 @@ class NativeLoopTests(unittest.TestCase):
         self.assertEqual(len(self.children[1].sleeps), 1)
         self.assertEqual([receipt['cycle'] for receipt in stream.sleep_receipts], [1, 2])
         self.assertEqual(len(stream.rows), 7)
+
+    def test_r184_copy_loads_saved_sleep_without_backfilling_absent_history(self):
+        self.stop_at_committed_sleep()
+        saved = self.restore().checkpoint()
+        self.plan.update(rehearsal_presentations=0, think_act_learn=dict(
+            schema='R184_THINK_ACT_LEARN_V1', trial_id='synthetic_copy',
+            reflection_policy='explicit', think_segments=1,
+            cpu_gate_root=str(self.directory/'gate'), cpu_gate_sha256='a'*64))
+        self.plan_path.write_text(json.dumps(self.plan))
+        initial = Path(self.plan['root'])/'checkpoints/initial/COMMIT.json'
+        initial.unlink()
+        for marker in (Path(self.plan['root'])/'readouts').glob('*_DISPATCH.json'):
+            marker.unlink()
+        with patch.dict(os.environ, R125_ADMISSION_PLAN_SHA256=native.sha(self.plan_path)), \
+                patch('gpu.orch_r184_think_act_learn.run_loop', return_value='copy_started') as driver, \
+                patch.object(native, 'fresh_readout') as readout:
+            self.assertEqual(native.run(self.plan_path, resume=True), 'copy_started')
+        readout.assert_not_called()
+        driver.assert_called_once()
+        self.assertEqual(driver.call_args.args[-1], 1)
+        self.assertEqual(driver.call_args.args[1].checkpoint(), saved)
+        self.assertEqual(self.children[-1].loaded_checkpoint['optimizer_steps'], 48)
+        self.assertEqual(list((Path(self.plan['root'])/'readouts').glob('*_DISPATCH.json')), [])
 
     def test_plain_presentation_resume_preserves_life_and_fixed_readouts(self):
         from organism_v6.orch_r125_plain_context import VERSION, has_scaffolding
