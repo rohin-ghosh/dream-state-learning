@@ -236,7 +236,7 @@ def publish(name, commit):
     write(control / 'READY.json', dict(status='CPU_AND_ACTUAL_ARCHIVE_REPLAY_PASS_NOT_LAUNCHED', builder_commit=commit))
 
 
-def launch(name):
+def reconcile(name):
     absent(name)
     root, source, control, preserved = locations(name)
     require((control / 'READY.json').is_file() and not (control / 'RECOVERY_APPENDED.json').exists(), 'new_once_only_dispatch')
@@ -259,6 +259,19 @@ def launch(name):
             receipt_sha256=sha(control / 'RECOVERY.json'),
             state=saved_state(read(receipt['complete_path']), receipt['new_deadline_unix'])))
     write(control / 'RECOVERY_APPENDED.json', proof)
+
+
+def launch(name):
+    absent(name)
+    root, source, control, _ = locations(name)
+    require(not (control / 'DISPATCHED.json').exists(), 'no_duplicate_dispatch_or_automatic_retry')
+    if not (control / 'RECOVERY_APPENDED.json').exists():
+        reconcile(name)
+    proof = read(control / 'RECOVERY_APPENDED.json')
+    paths = sorted((root / 'raw/stream/records').glob('[0-9]' * 20 + '.json'))
+    head = read(paths[-1])
+    require(head['index'] == proof['index'] and head['sha256'] == proof['sha256']
+        and head['kind'] == 'R213_SAVED_BOUNDARY_RECOVERY', 'unchanged_reconciled_head_before_dispatch')
     write(control / 'DISPATCHED.json', dict(observed_unix=time.time(), pid=os.getpid(), status='DISPATCHED_NOT_LOADED'))
     os.chdir(source)
     os.execve(PYTHON, [PYTHON, '-B', '-m', 'gpu.r233_node2_recovery', 'dispatch',
@@ -267,7 +280,7 @@ def launch(name):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('mode', choices=('prepare', 'check', 'publish', 'launch'))
+    parser.add_argument('mode', choices=('prepare', 'check', 'publish', 'reconcile', 'launch'))
     parser.add_argument('name', choices=tuple(TARGETS))
     parser.add_argument('--commit')
     arguments = parser.parse_args()

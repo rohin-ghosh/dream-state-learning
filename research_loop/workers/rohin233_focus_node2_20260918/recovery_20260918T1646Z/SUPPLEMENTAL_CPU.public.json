@@ -1,0 +1,26 @@
+{
+  "C0_curriculum_renewal": {
+    "local_interpreter": "/usr/bin/python3",
+    "receiving_interpreter": "/usr/bin/python3",
+    "command": "python3 -B -m unittest -q test_parent_recovery",
+    "passed_local": 1,
+    "passed_receiving": 1,
+    "model_calls": 0
+  },
+  "ASTRA7_authentic_P7_capsules": {
+    "receiving_interpreter": "/localhome/local-rohing/v2/venv/bin/python",
+    "command": "python -B -m unittest -q test_r229_astra7",
+    "passed": 6,
+    "model_calls": 0
+  },
+  "CAPTION_environment": {
+    "receiving_interpreter": "/localhome/local-rohing/v2/venv/bin/python",
+    "command": "python -B -m pytest -q -p no:cacheprovider tests/test_ny_caption_life.py tests/test_ny_caption_r223_freeform.py",
+    "passed": 32,
+    "model_calls": 0,
+    "not_run": "Supplemental test_ny_caption_continuous_r223.py collection lacks its controller fixture module in the frozen receiving source. No controller production code changed; this suite is not represented as passing."
+  },
+  "CUDA_VISIBLE_DEVICES": "",
+  "pytest_dependency_path": "/localhome/local-rohing/orch_r229_unparented_caption_20260918/cpu_test_deps",
+  "private_credentials_exported": false
+}
