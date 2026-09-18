@@ -175,6 +175,48 @@ def observed_counts(report):
     return counts(**result)
 
 
+def caption_feedback_payload(result):
+    report = result.get('report', {})
+    origin = result.get('origin', {})
+    sources = report.get('caption_sources', [])
+    observations = []
+    for position, entry in enumerate(report.get('feedback', []), 1):
+        returned = entry.get('result', {})
+        index = entry.get('caption_source_index')
+        source = sources[index] if type(index) is int and 0 <= index < len(sources) else {}
+        observation = dict(item=position, source_stage=source.get('stage', 'ACT'),
+            source_span={key:source[key] for key in ('start','end','line') if key in source},
+            text_digest=source.get('text_sha256'),
+            **{key:deepcopy(returned[key]) for key in ('ok','rank','reference_count','top_k',
+                'accepted','status','replayed','rejection_reason','relevance_score','relevance_threshold',
+                'pixel_id','raw_score','q') if key in returned})
+        observations.append(observation)
+    metrics = report.get('format_metrics', {})
+    if metrics.get('no_caption_act'):
+        clarification = ('No caption found in your output—write the captions themselves, one per line, '
+                         'for the scene you choose. This is a suggestion, not a required format.')
+    elif metrics.get('ambiguous_caption_lines'):
+        clarification = 'The scorer could not identify the scene for some candidate lines. Clarify the scene in a new ACT; no fixed format or count is required.'
+    elif metrics.get('clarification_needed'):
+        clarification = 'The scorer reports unparsed lines and requests clarification. Already-scored results remain unchanged.'
+    else:
+        clarification = None
+    return dict(kind='caption game feedback; observed data, not runtime control',
+        response_record=origin.get('record_index'), response_digest=origin.get('record_sha256'),
+        scorer_receipt=result.get('receipt_sha256'), raw_result_retained=True,
+        raw_result_location='Original native action outcome and scorer result receipt',
+        ok=report.get('ok'), error=str(report['error']).replace('_',' ') if report.get('error') else None,
+        observations=observations, clarification=clarification,
+        format_status={key:metrics[key] for key in ('format_fault','no_caption_act','ambiguous_caption_lines',
+            'unparsed_line_count','recovered_count','salvaged_THINK_count') if key in metrics},
+        requested_candidates=report.get('requested_count'), not_dispatched=report.get('not_dispatched_count'),
+        projection='Per-caption outcomes and provenance digests; raw scaffolding, transport paths and caption echoes are not repeated here.')
+
+
+def attributed_tool_feedback(result):
+    return 'Tool: ' + json.dumps(caption_feedback_payload(result), ensure_ascii=False, sort_keys=True)
+
+
 def activate(socket_path, *, max_act_attempts=3):
     from gpu import orch_r184_think_act_learn as stages
     from organism_v6.orch_r124_train_history import TrainEvent
@@ -195,14 +237,17 @@ def activate(socket_path, *, max_act_attempts=3):
                           report=dict(ok=False, error='ENVIRONMENT_OUTCOME_UNKNOWN_NO_RETRY',
                                       error_type=type(error).__name__, feedback=[]))
             outcome = dict(status='ENVIRONMENT_OUTCOME_UNKNOWN_NO_RETRY', executed=None, environment=result)
-        text = json.dumps(result, ensure_ascii=False, sort_keys=True)
+        text = attributed_tool_feedback(result)
         self.stream.history.append(TrainEvent(event_id='caption:' + self.last_response['record_sha256'],
             actor='environment', text=text, split='TRAIN', phase='feedback', episode_id='caption_development',
             source_id='runtime:' + POLICY, source_sha256=stages.digest(result), origin='TRAIN_COLLECTION'))
         self.last_act_evidence = dict(act_source_sha256=generated['source_sha256'],
                                      response_origin=deepcopy(self.last_response), outcome=deepcopy(outcome))
         self.journal.record('R184_ACT', dict(schema=stages.SCHEMA, segment=generated['segment'],
-            source_sha256=generated['source_sha256'], origin=self.last_response, outcome=outcome))
+            source_sha256=generated['source_sha256'], origin=self.last_response, outcome=outcome,
+            feedback_view=dict(schema='R227_ATTRIBUTED_CAPTION_TOOL_FEEDBACK_V1',
+                text_sha256=stages.digest(text), raw_result_sha256=stages.digest(result),
+                original_raw_result_preserved=True, view_is_not_a_training_target=True)))
         self.cycle_phase = 'FEEDBACK_COMPLETE_OR_EXPLICIT_UNKNOWN'
         if self.dataset is not None:
             self.export_stage(*self.last_stage_export, outcome=outcome, committed=True)

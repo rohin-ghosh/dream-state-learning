@@ -1,0 +1,805 @@
+{
+  "collector_sources": {
+    "audit_metrics.py": "3b616f6f5e861f766018e68772fe6300fac87ed9ab0272f0f5f1060c0113af7e",
+    "freeform.py": "3e459ac7fd4dbb1e1ed9e4cfae153b41511620e3ec84cd90505489db516cf560",
+    "hourly_report.py": "0d745f6e0e604d86f8e6a3a8bae15f0baf00c4d7bfb4fa6222ca4d471164df1e",
+    "observe_fleet.py": "57df379a64ed23a0764af424dbe87a58e6e9b9c62cac6cb534dbc59b25112cff"
+  },
+  "definitions": {
+    "acceptance_rate": "Accepted noncached strings / newly scored strings; not accepted/ACTs and not a certified-literal-caption success rate.",
+    "accepted": "Rank+relevance accepted; includes semantic repeats, NOT novelty increments.",
+    "comparisons": "Budgets, start times, sampling, and source histories differ; no matched H2 or causal comparison.",
+    "dedup": "Exact replay/cache excluded from new scoring, acceptance and pixels. Native and scorer views are joined, never summed.",
+    "format_fault": "Stored parser fault; can coexist with scored/accepted strings. Routing ambiguity is separately counted and can overlap it.",
+    "literal_quality": "Raw scorer strings can be descriptions/commentary; see separate hash-bound82-span content audit. No claim that all parsed/scored strings are humorous captions.",
+    "new_pixel": "Accepted candidate assigned a new per-scene embedding cluster; provisional operational novelty, not proof of a distinct joke idea.",
+    "no_caption": "Retrospective parser diagnostic, not a judge rejection.",
+    "planned_unknown_attempts": "Optional declared cardinality absent (event.planned is None), not unknown scoring or a format fault; null means not collected for this player.",
+    "windows": "Absolute partial/full UTC windows. Counts are not extrapolated per-hour rates. Empty windows omitted; absence is not uptime proof."
+  },
+  "errors": {},
+  "historical_resubmissions": 0,
+  "observed_cut_utc": "2026-09-18T09:00:04.855544+00:00",
+  "players": [
+    {
+      "UTC_windows": [
+        {
+          "ACT_attempts": 1,
+          "ACTs_reaching_scorer": 1,
+          "acceptance_rate": {
+            "denominator": 2,
+            "fraction": 0.5,
+            "numerator": 1
+          },
+          "accepted_before_novelty": 1,
+          "accepted_semantic_repeats": 0,
+          "cached_results": 0,
+          "completed_opportunities": null,
+          "format_fault_attempts": 1,
+          "new_pixel_fraction": {
+            "denominator": 2,
+            "fraction": 0.5,
+            "numerator": 1
+          },
+          "new_pixels": 1,
+          "newly_scored_strings": 2,
+          "no_caption_attempts": 0,
+          "parsed_candidate_strings": 2,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": null,
+          "routing_ambiguity_attempts": 1,
+          "transport_failure_attempts": 0,
+          "window_end_utc": "2026-09-18T06:00:00+00:00",
+          "window_start_utc": "2026-09-18T05:00:00+00:00"
+        },
+        {
+          "ACT_attempts": 7,
+          "ACTs_reaching_scorer": 7,
+          "acceptance_rate": {
+            "denominator": 12,
+            "fraction": 0.3333333333333333,
+            "numerator": 4
+          },
+          "accepted_before_novelty": 4,
+          "accepted_semantic_repeats": 0,
+          "cached_results": 0,
+          "completed_opportunities": null,
+          "format_fault_attempts": 7,
+          "new_pixel_fraction": {
+            "denominator": 12,
+            "fraction": 0.3333333333333333,
+            "numerator": 4
+          },
+          "new_pixels": 4,
+          "newly_scored_strings": 12,
+          "no_caption_attempts": 0,
+          "parsed_candidate_strings": 12,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": null,
+          "routing_ambiguity_attempts": 2,
+          "transport_failure_attempts": 0,
+          "window_end_utc": "2026-09-18T07:00:00+00:00",
+          "window_start_utc": "2026-09-18T06:00:00+00:00"
+        },
+        {
+          "ACT_attempts": 8,
+          "ACTs_reaching_scorer": 8,
+          "acceptance_rate": {
+            "denominator": 2,
+            "fraction": 0.0,
+            "numerator": 0
+          },
+          "accepted_before_novelty": 0,
+          "accepted_semantic_repeats": 0,
+          "cached_results": 0,
+          "completed_opportunities": null,
+          "format_fault_attempts": 8,
+          "new_pixel_fraction": {
+            "denominator": 2,
+            "fraction": 0.0,
+            "numerator": 0
+          },
+          "new_pixels": 0,
+          "newly_scored_strings": 2,
+          "no_caption_attempts": 1,
+          "parsed_candidate_strings": 2,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": null,
+          "routing_ambiguity_attempts": 7,
+          "transport_failure_attempts": 0,
+          "window_end_utc": "2026-09-18T08:00:00+00:00",
+          "window_start_utc": "2026-09-18T07:00:00+00:00"
+        },
+        {
+          "ACT_attempts": 7,
+          "ACTs_reaching_scorer": 7,
+          "acceptance_rate": {
+            "denominator": 49,
+            "fraction": 0.061224489795918366,
+            "numerator": 3
+          },
+          "accepted_before_novelty": 3,
+          "accepted_semantic_repeats": 1,
+          "cached_results": 0,
+          "completed_opportunities": null,
+          "format_fault_attempts": 7,
+          "new_pixel_fraction": {
+            "denominator": 49,
+            "fraction": 0.04081632653061224,
+            "numerator": 2
+          },
+          "new_pixels": 2,
+          "newly_scored_strings": 49,
+          "no_caption_attempts": 0,
+          "parsed_candidate_strings": 49,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": null,
+          "routing_ambiguity_attempts": 7,
+          "transport_failure_attempts": 0,
+          "window_end_utc": "2026-09-18T09:00:00+00:00",
+          "window_start_utc": "2026-09-18T08:00:00+00:00"
+        }
+      ],
+      "attempts_unit": "Unique ACT origins reaching scorer across deduplicated historical/current sessions; not all native cycles.",
+      "cumulative": {
+        "ACT_attempts": 23,
+        "ACTs_reaching_scorer": 23,
+        "acceptance_rate": {
+          "denominator": 65,
+          "fraction": 0.12307692307692308,
+          "numerator": 8
+        },
+        "accepted_before_novelty": 8,
+        "accepted_semantic_repeats": 1,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "format_fault_attempts": 23,
+        "new_pixel_fraction": {
+          "denominator": 65,
+          "fraction": 0.1076923076923077,
+          "numerator": 7
+        },
+        "new_pixels": 7,
+        "newly_scored_strings": 65,
+        "no_caption_attempts": 1,
+        "parsed_candidate_strings": 65,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 17,
+        "transport_failure_attempts": 0,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T04:55:00+00:00"
+      },
+      "player": "P3_parented_C2",
+      "process": {
+        "command_sha256": "812a9987a32fae78daba68efebfba39baa7dadfed5777d1af6918befb7bf08d5",
+        "pid": 237705,
+        "present": true,
+        "start_ticks": "27878033",
+        "state": "R"
+      }
+    },
+    {
+      "UTC_windows": [
+        {
+          "ACT_attempts": 15,
+          "ACTs_reaching_scorer": 15,
+          "acceptance_rate": {
+            "denominator": 0,
+            "fraction": null,
+            "numerator": 0
+          },
+          "accepted_before_novelty": 0,
+          "accepted_semantic_repeats": 0,
+          "cached_results": 0,
+          "completed_opportunities": 5,
+          "format_fault_attempts": 15,
+          "new_pixel_fraction": {
+            "denominator": 0,
+            "fraction": null,
+            "numerator": 0
+          },
+          "new_pixels": 0,
+          "newly_scored_strings": 0,
+          "no_caption_attempts": 0,
+          "parsed_candidate_strings": 0,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": 15,
+          "routing_ambiguity_attempts": 15,
+          "transport_failure_attempts": 0,
+          "window_end_utc": "2026-09-18T08:00:00+00:00",
+          "window_start_utc": "2026-09-18T07:00:00+00:00"
+        },
+        {
+          "ACT_attempts": 100,
+          "ACTs_reaching_scorer": 100,
+          "acceptance_rate": {
+            "denominator": 267,
+            "fraction": 0.7191011235955056,
+            "numerator": 192
+          },
+          "accepted_before_novelty": 192,
+          "accepted_semantic_repeats": 148,
+          "cached_results": 98,
+          "completed_opportunities": 48,
+          "format_fault_attempts": 77,
+          "new_pixel_fraction": {
+            "denominator": 267,
+            "fraction": 0.1647940074906367,
+            "numerator": 44
+          },
+          "new_pixels": 44,
+          "newly_scored_strings": 267,
+          "no_caption_attempts": 0,
+          "parsed_candidate_strings": 365,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": 100,
+          "routing_ambiguity_attempts": 63,
+          "transport_failure_attempts": 0,
+          "window_end_utc": "2026-09-18T09:00:00+00:00",
+          "window_start_utc": "2026-09-18T08:00:00+00:00"
+        }
+      ],
+      "attempts_unit": "Completed controller ACT attempts with recorded outcomes; multiple repairs can belong to one opportunity.",
+      "cumulative": {
+        "ACT_attempts": 115,
+        "ACTs_reaching_scorer": 115,
+        "acceptance_rate": {
+          "denominator": 267,
+          "fraction": 0.7191011235955056,
+          "numerator": 192
+        },
+        "accepted_before_novelty": 192,
+        "accepted_semantic_repeats": 148,
+        "cached_results": 98,
+        "completed_opportunities": null,
+        "format_fault_attempts": 92,
+        "new_pixel_fraction": {
+          "denominator": 267,
+          "fraction": 0.1647940074906367,
+          "numerator": 44
+        },
+        "new_pixels": 44,
+        "newly_scored_strings": 267,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 365,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 78,
+        "transport_failure_attempts": 0,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T04:55:00+00:00"
+      },
+      "player": "frozen_base_no_optimizer",
+      "process": {
+        "command_sha256": "3f555a78bf858c2573cf4acf5d6b56f4b6eac9927d1797c909eb2645bd707c51",
+        "pid": 48524,
+        "present": true,
+        "start_ticks": "6596972",
+        "state": "R"
+      }
+    },
+    {
+      "UTC_windows": [
+        {
+          "ACT_attempts": 5,
+          "ACTs_reaching_scorer": 3,
+          "acceptance_rate": {
+            "denominator": 0,
+            "fraction": null,
+            "numerator": 0
+          },
+          "accepted_before_novelty": 0,
+          "accepted_semantic_repeats": 0,
+          "cached_results": 0,
+          "completed_opportunities": 3,
+          "format_fault_attempts": 3,
+          "new_pixel_fraction": {
+            "denominator": 0,
+            "fraction": null,
+            "numerator": 0
+          },
+          "new_pixels": 0,
+          "newly_scored_strings": 0,
+          "no_caption_attempts": 0,
+          "parsed_candidate_strings": 0,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": null,
+          "routing_ambiguity_attempts": 3,
+          "transport_failure_attempts": 2,
+          "window_end_utc": "2026-09-18T09:00:00+00:00",
+          "window_start_utc": "2026-09-18T08:00:00+00:00"
+        }
+      ],
+      "attempts_unit": "Actual R184_ACT outcome records, including transport failures; completion counted separately from R223_CAPTION_OPPORTUNITY. Native event times are saved file mtimes.",
+      "birth_utc": "2026-09-18T08:36:32.635521+00:00",
+      "cumulative": {
+        "ACT_attempts": 5,
+        "ACTs_reaching_scorer": 3,
+        "acceptance_rate": {
+          "denominator": 0,
+          "fraction": null,
+          "numerator": 0
+        },
+        "accepted_before_novelty": 0,
+        "accepted_semantic_repeats": 0,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "format_fault_attempts": 3,
+        "new_pixel_fraction": {
+          "denominator": 0,
+          "fraction": null,
+          "numerator": 0
+        },
+        "new_pixels": 0,
+        "newly_scored_strings": 0,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 0,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 3,
+        "transport_failure_attempts": 2,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T04:55:00+00:00"
+      },
+      "first_full_life_hour_at_utc": "2026-09-18T09:36:32.635521+00:00",
+      "first_life_hour": {
+        "ACT_attempts": 5,
+        "ACTs_reaching_scorer": 3,
+        "acceptance_rate": {
+          "denominator": 0,
+          "fraction": null,
+          "numerator": 0
+        },
+        "accepted_before_novelty": 0,
+        "accepted_semantic_repeats": 0,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "completeness_is_time_only_not_continuous_uptime_proof": true,
+        "elapsed_hour_complete": false,
+        "format_fault_attempts": 3,
+        "new_pixel_fraction": {
+          "denominator": 0,
+          "fraction": null,
+          "numerator": 0
+        },
+        "new_pixels": 0,
+        "newly_scored_strings": 0,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 0,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 3,
+        "transport_failure_attempts": 2,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T08:36:32.635521+00:00"
+      },
+      "player": "r213_r226_caption_perspective_fork",
+      "process": {
+        "command_sha256": "9d51e1f7d8ffe442c00e9fad08efffc6ee061613f71231377cd8976e05040a18",
+        "pid": 1784767,
+        "present": true,
+        "start_ticks": "42682650",
+        "state": "S"
+      }
+    },
+    {
+      "UTC_windows": [
+        {
+          "ACT_attempts": 4,
+          "ACTs_reaching_scorer": 3,
+          "acceptance_rate": {
+            "denominator": 7,
+            "fraction": 0.0,
+            "numerator": 0
+          },
+          "accepted_before_novelty": 0,
+          "accepted_semantic_repeats": 0,
+          "cached_results": 0,
+          "completed_opportunities": 2,
+          "format_fault_attempts": 3,
+          "new_pixel_fraction": {
+            "denominator": 7,
+            "fraction": 0.0,
+            "numerator": 0
+          },
+          "new_pixels": 0,
+          "newly_scored_strings": 7,
+          "no_caption_attempts": 0,
+          "parsed_candidate_strings": 7,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": null,
+          "routing_ambiguity_attempts": 2,
+          "transport_failure_attempts": 1,
+          "window_end_utc": "2026-09-18T09:00:00+00:00",
+          "window_start_utc": "2026-09-18T08:00:00+00:00"
+        }
+      ],
+      "attempts_unit": "Actual R184_ACT outcome records, including transport failures; completion counted separately from R223_CAPTION_OPPORTUNITY. Native event times are saved file mtimes.",
+      "birth_utc": "2026-09-18T08:36:32.637194+00:00",
+      "cumulative": {
+        "ACT_attempts": 4,
+        "ACTs_reaching_scorer": 3,
+        "acceptance_rate": {
+          "denominator": 7,
+          "fraction": 0.0,
+          "numerator": 0
+        },
+        "accepted_before_novelty": 0,
+        "accepted_semantic_repeats": 0,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "format_fault_attempts": 3,
+        "new_pixel_fraction": {
+          "denominator": 7,
+          "fraction": 0.0,
+          "numerator": 0
+        },
+        "new_pixels": 0,
+        "newly_scored_strings": 7,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 7,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 2,
+        "transport_failure_attempts": 1,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T04:55:00+00:00"
+      },
+      "first_full_life_hour_at_utc": "2026-09-18T09:36:32.637194+00:00",
+      "first_life_hour": {
+        "ACT_attempts": 4,
+        "ACTs_reaching_scorer": 3,
+        "acceptance_rate": {
+          "denominator": 7,
+          "fraction": 0.0,
+          "numerator": 0
+        },
+        "accepted_before_novelty": 0,
+        "accepted_semantic_repeats": 0,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "completeness_is_time_only_not_continuous_uptime_proof": true,
+        "elapsed_hour_complete": false,
+        "format_fault_attempts": 3,
+        "new_pixel_fraction": {
+          "denominator": 7,
+          "fraction": 0.0,
+          "numerator": 0
+        },
+        "new_pixels": 0,
+        "newly_scored_strings": 7,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 7,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 2,
+        "transport_failure_attempts": 1,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T08:36:32.637194+00:00"
+      },
+      "player": "r213_r226_caption_selfderive_fork",
+      "process": {
+        "command_sha256": "7e85e8a1be6e600ba3e4adc990e11d5e2b56c3fb9fb0881362a09f5a157a2dc5",
+        "pid": 1784772,
+        "present": true,
+        "start_ticks": "42682669",
+        "state": "S"
+      }
+    },
+    {
+      "UTC_windows": [
+        {
+          "ACT_attempts": 5,
+          "ACTs_reaching_scorer": 3,
+          "acceptance_rate": {
+            "denominator": 0,
+            "fraction": null,
+            "numerator": 0
+          },
+          "accepted_before_novelty": 0,
+          "accepted_semantic_repeats": 0,
+          "cached_results": 0,
+          "completed_opportunities": 3,
+          "format_fault_attempts": 3,
+          "new_pixel_fraction": {
+            "denominator": 0,
+            "fraction": null,
+            "numerator": 0
+          },
+          "new_pixels": 0,
+          "newly_scored_strings": 0,
+          "no_caption_attempts": 0,
+          "parsed_candidate_strings": 0,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": null,
+          "routing_ambiguity_attempts": 3,
+          "transport_failure_attempts": 2,
+          "window_end_utc": "2026-09-18T09:00:00+00:00",
+          "window_start_utc": "2026-09-18T08:00:00+00:00"
+        }
+      ],
+      "attempts_unit": "Actual R184_ACT outcome records, including transport failures; completion counted separately from R223_CAPTION_OPPORTUNITY. Native event times are saved file mtimes.",
+      "birth_utc": "2026-09-18T08:36:32.584850+00:00",
+      "cumulative": {
+        "ACT_attempts": 5,
+        "ACTs_reaching_scorer": 3,
+        "acceptance_rate": {
+          "denominator": 0,
+          "fraction": null,
+          "numerator": 0
+        },
+        "accepted_before_novelty": 0,
+        "accepted_semantic_repeats": 0,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "format_fault_attempts": 3,
+        "new_pixel_fraction": {
+          "denominator": 0,
+          "fraction": null,
+          "numerator": 0
+        },
+        "new_pixels": 0,
+        "newly_scored_strings": 0,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 0,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 3,
+        "transport_failure_attempts": 2,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T04:55:00+00:00"
+      },
+      "first_full_life_hour_at_utc": "2026-09-18T09:36:32.584850+00:00",
+      "first_life_hour": {
+        "ACT_attempts": 5,
+        "ACTs_reaching_scorer": 3,
+        "acceptance_rate": {
+          "denominator": 0,
+          "fraction": null,
+          "numerator": 0
+        },
+        "accepted_before_novelty": 0,
+        "accepted_semantic_repeats": 0,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "completeness_is_time_only_not_continuous_uptime_proof": true,
+        "elapsed_hour_complete": false,
+        "format_fault_attempts": 3,
+        "new_pixel_fraction": {
+          "denominator": 0,
+          "fraction": null,
+          "numerator": 0
+        },
+        "new_pixels": 0,
+        "newly_scored_strings": 0,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 0,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 3,
+        "transport_failure_attempts": 2,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T08:36:32.584850+00:00"
+      },
+      "player": "r213_r226_caption_revision_fork",
+      "process": {
+        "command_sha256": "c2ccdb861c9f049ed85efd1983316973ccd6d295134d70cac1ebd725d5fcd5a4",
+        "pid": 1784770,
+        "present": true,
+        "start_ticks": "42682659",
+        "state": "S"
+      }
+    },
+    {
+      "UTC_windows": [
+        {
+          "ACT_attempts": 4,
+          "ACTs_reaching_scorer": 3,
+          "acceptance_rate": {
+            "denominator": 9,
+            "fraction": 0.1111111111111111,
+            "numerator": 1
+          },
+          "accepted_before_novelty": 1,
+          "accepted_semantic_repeats": 0,
+          "cached_results": 0,
+          "completed_opportunities": 3,
+          "format_fault_attempts": 1,
+          "new_pixel_fraction": {
+            "denominator": 9,
+            "fraction": 0.1111111111111111,
+            "numerator": 1
+          },
+          "new_pixels": 1,
+          "newly_scored_strings": 9,
+          "no_caption_attempts": 0,
+          "parsed_candidate_strings": 9,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": null,
+          "routing_ambiguity_attempts": 1,
+          "transport_failure_attempts": 1,
+          "window_end_utc": "2026-09-18T09:00:00+00:00",
+          "window_start_utc": "2026-09-18T08:00:00+00:00"
+        }
+      ],
+      "attempts_unit": "Actual R184_ACT outcome records, including transport failures; completion counted separately from R223_CAPTION_OPPORTUNITY. Native event times are saved file mtimes.",
+      "birth_utc": "2026-09-18T08:36:32.580408+00:00",
+      "cumulative": {
+        "ACT_attempts": 4,
+        "ACTs_reaching_scorer": 3,
+        "acceptance_rate": {
+          "denominator": 9,
+          "fraction": 0.1111111111111111,
+          "numerator": 1
+        },
+        "accepted_before_novelty": 1,
+        "accepted_semantic_repeats": 0,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "format_fault_attempts": 1,
+        "new_pixel_fraction": {
+          "denominator": 9,
+          "fraction": 0.1111111111111111,
+          "numerator": 1
+        },
+        "new_pixels": 1,
+        "newly_scored_strings": 9,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 9,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 1,
+        "transport_failure_attempts": 1,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T04:55:00+00:00"
+      },
+      "first_full_life_hour_at_utc": "2026-09-18T09:36:32.580408+00:00",
+      "first_life_hour": {
+        "ACT_attempts": 4,
+        "ACTs_reaching_scorer": 3,
+        "acceptance_rate": {
+          "denominator": 9,
+          "fraction": 0.1111111111111111,
+          "numerator": 1
+        },
+        "accepted_before_novelty": 1,
+        "accepted_semantic_repeats": 0,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "completeness_is_time_only_not_continuous_uptime_proof": true,
+        "elapsed_hour_complete": false,
+        "format_fault_attempts": 1,
+        "new_pixel_fraction": {
+          "denominator": 9,
+          "fraction": 0.1111111111111111,
+          "numerator": 1
+        },
+        "new_pixels": 1,
+        "newly_scored_strings": 9,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 9,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 1,
+        "transport_failure_attempts": 1,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T08:36:32.580408+00:00"
+      },
+      "player": "r213_r226_caption_unparented_fork",
+      "process": {
+        "command_sha256": "c5e426cef9b6ee3832308155d88738473b48c196be9b805727a94da92b3e1c82",
+        "pid": 1784774,
+        "present": true,
+        "start_ticks": "42682671",
+        "state": "S"
+      }
+    },
+    {
+      "UTC_windows": [
+        {
+          "ACT_attempts": 5,
+          "ACTs_reaching_scorer": 3,
+          "acceptance_rate": {
+            "denominator": 11,
+            "fraction": 0.2727272727272727,
+            "numerator": 3
+          },
+          "accepted_before_novelty": 3,
+          "accepted_semantic_repeats": 0,
+          "cached_results": 0,
+          "completed_opportunities": 3,
+          "format_fault_attempts": 3,
+          "new_pixel_fraction": {
+            "denominator": 11,
+            "fraction": 0.2727272727272727,
+            "numerator": 3
+          },
+          "new_pixels": 3,
+          "newly_scored_strings": 11,
+          "no_caption_attempts": 0,
+          "parsed_candidate_strings": 11,
+          "partial_UTC_hour": false,
+          "planned_unknown_attempts": null,
+          "routing_ambiguity_attempts": 3,
+          "transport_failure_attempts": 2,
+          "window_end_utc": "2026-09-18T09:00:00+00:00",
+          "window_start_utc": "2026-09-18T08:00:00+00:00"
+        }
+      ],
+      "attempts_unit": "Actual R184_ACT outcome records, including transport failures; completion counted separately from R223_CAPTION_OPPORTUNITY. Native event times are saved file mtimes.",
+      "birth_utc": "2026-09-18T08:36:32.658195+00:00",
+      "cumulative": {
+        "ACT_attempts": 5,
+        "ACTs_reaching_scorer": 3,
+        "acceptance_rate": {
+          "denominator": 11,
+          "fraction": 0.2727272727272727,
+          "numerator": 3
+        },
+        "accepted_before_novelty": 3,
+        "accepted_semantic_repeats": 0,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "format_fault_attempts": 3,
+        "new_pixel_fraction": {
+          "denominator": 11,
+          "fraction": 0.2727272727272727,
+          "numerator": 3
+        },
+        "new_pixels": 3,
+        "newly_scored_strings": 11,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 11,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 3,
+        "transport_failure_attempts": 2,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T04:55:00+00:00"
+      },
+      "first_full_life_hour_at_utc": "2026-09-18T09:36:32.658195+00:00",
+      "first_life_hour": {
+        "ACT_attempts": 5,
+        "ACTs_reaching_scorer": 3,
+        "acceptance_rate": {
+          "denominator": 11,
+          "fraction": 0.2727272727272727,
+          "numerator": 3
+        },
+        "accepted_before_novelty": 3,
+        "accepted_semantic_repeats": 0,
+        "cached_results": 0,
+        "completed_opportunities": null,
+        "completeness_is_time_only_not_continuous_uptime_proof": true,
+        "elapsed_hour_complete": false,
+        "format_fault_attempts": 3,
+        "new_pixel_fraction": {
+          "denominator": 11,
+          "fraction": 0.2727272727272727,
+          "numerator": 3
+        },
+        "new_pixels": 3,
+        "newly_scored_strings": 11,
+        "no_caption_attempts": 0,
+        "parsed_candidate_strings": 11,
+        "planned_unknown_attempts": null,
+        "routing_ambiguity_attempts": 3,
+        "transport_failure_attempts": 2,
+        "window_end_utc": "2026-09-18T09:00:04.855544+00:00",
+        "window_start_utc": "2026-09-18T08:36:32.658195+00:00"
+      },
+      "player": "r213_r226_caption_observation_fork",
+      "process": {
+        "command_sha256": "7331486001d7020da7799f03731827d5c372fd0f8870fe1de62197e929d7c1f9",
+        "pid": 1784760,
+        "present": true,
+        "start_ticks": "42682638",
+        "state": "R"
+      }
+    }
+  ],
+  "private_caption_payload_included": false,
+  "private_panels_included": false,
+  "schema": "R227_SANITIZED_ABSOLUTE_WINDOW_REPORT_V1",
+  "scoring_calls_made": 0,
+  "since_utc": "2026-09-18T04:55:00Z",
+  "source_receipt": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin221_continuous_caption_20260918/R227_FLEET_COUNTS_20260918T090004Z.json",
+    "sha256": "9e420fa9a1abd94a09f117122cd3916f959de1c5d95d1ed12b1987b398f3bf5a"
+  },
+  "verified_live_counts": {
+    "frozen_base": 1,
+    "parented_C2": 5,
+    "unparented_C2": 1
+  }
+}

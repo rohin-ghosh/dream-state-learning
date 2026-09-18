@@ -56,6 +56,13 @@ REQUEST messages and emits only IDs, hashes, counts and times. Its output,
 rather than the presence of an inbox file, is authoritative for rendering.
 At09:09:37UTC rendering was still pending during the existing sleep.
 
+Verified at09:13:49UTC: all28 publications appeared verbatim as user-role Tool
+messages in REQUEST1948, started09:12:45UTC. Its canonical record SHA256 is
+`82d71568b2d66a55299241986c61aca82d84f8ae59511ecca47371155d94612e`.
+This proves actual delivery of68 ranked results and11 no-judgment notices, not
+behavioral uptake. Full per-publication bindings are in
+`DELIVERY_20260918T091349Z.json`.
+
 ## Limits
 
 This does not fix semantic scoring weaknesses, make the observation a matched

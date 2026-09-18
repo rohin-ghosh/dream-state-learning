@@ -1,0 +1,24 @@
+{
+  "API": {
+    "attributed_view": "gpu.ny_caption_life.attributed_tool_feedback(actual_result) -> Tool-prefixed str",
+    "hook": "gpu.ny_caption_life.activate: feedback TrainEvent.text now uses attributed projection; R184_ACT.outcome retains full original envelope unchanged.",
+    "payload": "gpu.ny_caption_life.caption_feedback_payload(actual_result) -> dict"
+  },
+  "P3_inboxes_published": 0,
+  "archive": {
+    "path": "research_loop/workers/rohin221_continuous_caption_20260918/R227_FUTURE_TOOL_FEEDBACK_SOURCE.tar.gz",
+    "sha256": "8d798d82a865ddd0400be9fc73757f903c1dec6c11c7a296276199efd067c6ba"
+  },
+  "created_utc": "2026-09-18T09:01:38.249584+00:00",
+  "files": {
+    "gpu/ny_caption_life.py": "9b02a6b8e685ec8d69ee3f8762c702bcd02d701f8a2147f5ebec448fb42da49b",
+    "tests/test_ny_caption_r227_feedback.py": "872ddba0877e8c5ab1817e678fc1212cbb094e71bc6b067402142d02523c19dd"
+  },
+  "learner_controls": 0,
+  "live_P3_relay_owner": "Main only; do not duplicate inboxes or hotpatch loaded native code.",
+  "live_adoption": false,
+  "plain_context_modified": false,
+  "schema": "R227_FUTURE_ATTRIBUTED_TOOL_FEEDBACK_READY_V1",
+  "semantic_LEARN_filters_modified": false,
+  "tests": "35 focused tests PASS0.62s: future Tool view retained in actual generation messages, masked prefix and replay; raw result untouched; ACT/THINK/cache/unknown semantics."
+}
