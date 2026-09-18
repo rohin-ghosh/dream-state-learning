@@ -174,7 +174,7 @@ def launch(args):
     environment = dict(os.environ, CUDA_VISIBLE_DEVICES='', PYTHONDONTWRITEBYTECODE='1', PYTHONPATH=str(source))
     processes = {}
     for label, command in (
-        ('supervisor', [sys.executable, '-B', '-m', 'gpu.r229_astra7_runtime', 'dispatch', '--config', str(root / 'control/GUARD_PUBLISHED.json')])):
+        ('supervisor', [sys.executable, '-B', '-m', 'gpu.r229_astra7_runtime', 'dispatch', '--config', str(root / 'control/GUARD_PUBLISHED.json')]),):
         with (root / (label + '.log')).open('x') as output:
             process = subprocess.Popen(command, cwd=source, env=environment, stdin=subprocess.DEVNULL,
                 stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
