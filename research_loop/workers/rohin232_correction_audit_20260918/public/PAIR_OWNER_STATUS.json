@@ -1,18 +1,187 @@
 {
-  "source": "Cicero R232 pair owner receipt",
-  "observed_utc": "2026-09-18T10:34:12.643472+00:00",
-  "learner_status": "EXITED_CONTEXT_BUDGET_BLOCKED_PRESERVED_NO_RESTART",
-  "frozen_status": "EXITED_CONTEXT_BUDGET_BLOCKED_PRESERVED_NO_RESTART",
-  "learner_epoch_rendered": false,
-  "frozen_epoch_rendered": true,
-  "learner_updates": 96,
-  "frozen_updates": 0,
-  "completed_sleeps": {
-    "learner": 2,
-    "frozen": 2
-  },
-  "no_restart_or_native_signal": true,
-  "blocker": "Protected context does not fit existing3072-token compaction guard; states preserved.",
+  "arms": [
+    {
+      "actual_downtime_seconds": 1338.8667376041412,
+      "compaction_threshold": 4608,
+      "context_limit": 6144,
+      "epoch": {
+        "evidence_sha256": "e8ea3e3c00818bf1e9a1f4e512e06a5a00a2f0d29e8ed1c18f829bfc43b9736d",
+        "index": 171,
+        "previous_sha256": "f79082c080a57bd5e9353cd8162c760261acdc22e4577ba83d506e0fb638755b",
+        "sha256": "d295d34afd05f7cb928ab2693ffde08875cb2a2d40c9415c1ffcf8b6aa1be66b",
+        "state_sha256": "8a7d2e2eab13c48ab9b53ad4cda04fb24d44cd238892cbc583a5482817cc0fe4"
+      },
+      "first_request": {
+        "index": 174,
+        "max_new_tokens": 512,
+        "original_birth_exactly_once": true,
+        "prompt_tokens": 3869,
+        "rendered_inbox_ids": [
+          "025ad711aee54e2b94d5f7d60a32a0c7",
+          "a38f4c1b263248cbb88e83696415626f"
+        ],
+        "sha256": "243b5c67566202e04b78cc1a2306f54b51c25aa72b54f4b0201a923564a960fa",
+        "started_unix": 1789728640.1325016,
+        "utc": "2026-09-18T10:50:40.132502+00:00"
+      },
+      "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+      "label": "FRESH_R231",
+      "loaded": {
+        "file_sha256": "fe8afbd8666d09a830f8cb06e8385b081904269c3a509dcc5aee514489889b80",
+        "index": 172,
+        "kind": "LOADED",
+        "sha256": "0fc2f86ea753613594aad041498c20bab02cdb688fca189b7c6d863aab4b43f6",
+        "time_unix": 1789728640.1052008
+      },
+      "no_gap_claim": false,
+      "observed_unix": 1789729109.26661,
+      "owner_completed_sleeps": [
+        {
+          "adapter_sha256": "6ece5abc79cf5331395c7a0ac4978f7e1adb29374b3affbd93ce6ad6ef63c9db",
+          "checkpoint_sha256": {
+            "adapter": "dd7ea3cb594db1119569687e1b3bab0d1e93330b31fe38e386e1a6f34bf64dc3",
+            "optimizer": "20b8ecf7e1a08b8747022e38fd2e1cba3bd01ed97eb9cc0cd9b84722f30b724d",
+            "rng": "20b8ecf7e1a08b8747022e38fd2e1cba3bd01ed97eb9cc0cd9b84722f30b724d"
+          },
+          "cycle": 1,
+          "index": 82,
+          "optimizer_steps": 48,
+          "sha256": "0eba31556d027b5b0b9dc3c2b7f160fb132a6e5de5e21ff9ca39c6e1e90d89c4"
+        },
+        {
+          "adapter_sha256": "cb4f827f6050b40ade804e205faeaf988fd1815ff0a2d34ca5bf87e06e308384",
+          "checkpoint_sha256": {
+            "adapter": "fd47c9423f991ccf696542789e5e9cecc00c12b406ba338f96cf0010e9813c83",
+            "optimizer": "9fbcab7592a393b70cbdf50d6f5194808cadaee4216be97b9315d2548d19b4f4",
+            "rng": "9fbcab7592a393b70cbdf50d6f5194808cadaee4216be97b9315d2548d19b4f4"
+          },
+          "cycle": 2,
+          "index": 164,
+          "optimizer_steps": 96,
+          "sha256": "950dd8be09e83ff99bd79b37310c944dca31ea7c01e4e9e9b6f61cb466375474"
+        }
+      ],
+      "owner_counter_cut": "2026-09-18T10:53:21.203799+00:00",
+      "owner_loaded": {
+        "adapter_sha256": "cb4f827f6050b40ade804e205faeaf988fd1815ff0a2d34ca5bf87e06e308384",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "index": 172,
+        "loaded_unix": 1789728640.1007724,
+        "optimizer_steps": 96,
+        "pid": 114112,
+        "resume": true,
+        "sha256": "0fc2f86ea753613594aad041498c20bab02cdb688fca189b7c6d863aab4b43f6",
+        "utc": "2026-09-18T10:50:40.100772+00:00"
+      },
+      "owner_post_recovery_updates": 13,
+      "process": {
+        "pid": 114112,
+        "start_ticks": 7418915,
+        "state": "S"
+      },
+      "same_original_journal": true
+    },
+    {
+      "actual_downtime_seconds": 1152.9385221004486,
+      "compaction_threshold": 4608,
+      "context_limit": 6144,
+      "epoch": {
+        "evidence_sha256": "e426561765c1da13cbc6d234cba12b65e6899a2fcee4279346c3f2cab83564fa",
+        "index": 73,
+        "previous_sha256": "ad39b1fec16d76c56a81e4ee86d23eeb1bb21ded711e6f3dd8c751dfb510514c",
+        "sha256": "c26e159d15dd3540f05f6fc34dfae6b7abc558e6067851818fc51fa1da0b7bfa",
+        "state_sha256": "59e20ad0e08a487c0d80d197d51ff6f0b3d24b1a4068fe0925abf0b2c4f43829"
+      },
+      "first_request": {
+        "index": 77,
+        "max_new_tokens": 512,
+        "original_birth_exactly_once": true,
+        "prompt_tokens": 4557,
+        "rendered_inbox_ids": [
+          "8496263ca4474017ae6cbc9b8e1375b0"
+        ],
+        "sha256": "fd9b5a8dcc4cec60a9a2d7c43c8aa14304be11702a2aca133a7f10c1a8a368aa",
+        "started_unix": 1789728586.1742036,
+        "utc": "2026-09-18T10:49:46.174204+00:00"
+      },
+      "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+      "label": "R232_SIBLING_FROZEN",
+      "loaded": {
+        "file_sha256": "01672da22aa9960ce62561d893675b3b19dc9057d4fac5fdcda412e975e5b933",
+        "index": 74,
+        "kind": "LOADED",
+        "sha256": "288851d41d94a3649e3f33b2085f768bf4bf2098c12121aa382a8a74a89f4162",
+        "time_unix": 1789728586.1215794
+      },
+      "no_gap_claim": false,
+      "observed_unix": 1789729109.440793,
+      "owner_completed_sleeps": [
+        {
+          "adapter_sha256": "04341ab86f5f98718bc53218166537ecc20fc7d5053f3ed47cc0fcdda918f5d0",
+          "checkpoint_sha256": {
+            "adapter": "f7ecca9f24dea87dfc4dc98bbb35455872d74a25e2e27771783216972576fd1a",
+            "optimizer": "9f535d52d9dc6b581a103efbb06753ef05dee22ec248c82f107e161ce63d2da2",
+            "rng": "9f535d52d9dc6b581a103efbb06753ef05dee22ec248c82f107e161ce63d2da2"
+          },
+          "cycle": 1,
+          "index": 33,
+          "optimizer_steps": 0,
+          "sha256": "7a58b176ed2554af0f1848e6daca1712471be287caf21f2eea4f36cb1fac2960"
+        },
+        {
+          "adapter_sha256": "04341ab86f5f98718bc53218166537ecc20fc7d5053f3ed47cc0fcdda918f5d0",
+          "checkpoint_sha256": {
+            "adapter": "f7ecca9f24dea87dfc4dc98bbb35455872d74a25e2e27771783216972576fd1a",
+            "optimizer": "4003c1c6b04a8a0d6380f6e12ec27a8507b51f2529f35dba8ceaf452108f49ad",
+            "rng": "4003c1c6b04a8a0d6380f6e12ec27a8507b51f2529f35dba8ceaf452108f49ad"
+          },
+          "cycle": 2,
+          "index": 67,
+          "optimizer_steps": 0,
+          "sha256": "592fbf52b9fc9e722a0849e527ee7d14ed248fc5c3f906feda3137b34523b22d"
+        },
+        {
+          "adapter_sha256": "04341ab86f5f98718bc53218166537ecc20fc7d5053f3ed47cc0fcdda918f5d0",
+          "checkpoint_sha256": {
+            "adapter": "167aa3c3fa771745eb584492ffc91360e8396bef03365be4078a568038dd6c7b",
+            "optimizer": "550643507115568873fb159ba54fa13da88314231aadfefb1faafd962b5bbb17",
+            "rng": "550643507115568873fb159ba54fa13da88314231aadfefb1faafd962b5bbb17"
+          },
+          "cycle": 3,
+          "index": 107,
+          "optimizer_steps": 0,
+          "sha256": "006e245ff4f150026d88a5a1d74a50917de281720cd003728d62a3e4b53bbfb2"
+        }
+      ],
+      "owner_counter_cut": "2026-09-18T10:53:21.203799+00:00",
+      "owner_loaded": {
+        "adapter_sha256": "04341ab86f5f98718bc53218166537ecc20fc7d5053f3ed47cc0fcdda918f5d0",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "index": 74,
+        "loaded_unix": 1789728586.1189609,
+        "optimizer_steps": 0,
+        "pid": 112804,
+        "resume": true,
+        "sha256": "288851d41d94a3649e3f33b2085f768bf4bf2098c12121aa382a8a74a89f4162",
+        "utc": "2026-09-18T10:49:46.118961+00:00"
+      },
+      "owner_post_recovery_updates": 0,
+      "process": {
+        "pid": 112804,
+        "start_ticks": 7414068,
+        "state": "R"
+      },
+      "same_original_journal": true
+    }
+  ],
+  "causal_isolation_claim": false,
+  "double_counted": false,
   "learner_alias": "FRESH_R231",
-  "do_not_double_count": true
+  "learner_controls": 0,
+  "no_gap_claim": false,
+  "observed_utc": "2026-09-18T10:58:29.450470+00:00",
+  "parent_writes": 0,
+  "schema": "R232_PAIR_RECOVERY_ENROLLMENT_V1",
+  "source": "research_loop/workers/rohin231_curriculum_birth_20260918/recovery/LATEST.json",
+  "source_sha256": "a677a58d36863526c8101bcaf11e1c2ddfc3d9bb9397af731d4a002a5a1ebee5"
 }
