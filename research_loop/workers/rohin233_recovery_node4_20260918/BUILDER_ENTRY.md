@@ -63,3 +63,20 @@ no SIGSTOP, hold, policy change, rollback or retirement. All source/history/
 inboxes remain preserved. Twenty-five focused operator tests pass including
 post-COMPLETE activity veto, latest-checkpoint selection and actual new-native
 LOAD/wall/identity binding. CPU service rebinding waits for actual new LOAD.
+
+# September18 18:46UTC actual eligibility audit and prospective R227 plan
+
+Non-material read-only receipt audit;35 focused operator tests pass. P7 actual
+WALL6740/LOAD6741 at18:40:31.323 preserved optimizer8076 and whole saved state
+apart from deadline. First new ELIGIBILITY6780 retains3/3 yet executes content
+and prose checks; UPDATE6804 is optimizer8100. Earlier completed P7 rows really
+trained Chinese; C2's bounded110–112 exclusions are real script/meta receipts.
+Do not equate a batch with no rejected rows to all filters disabled. The audit
+projects only IDs/hashes/counts/reason codes, never raw targets or judge data.
+
+R227 plan transformation is prospective and tested separately. Read-only dry
+run of the authoritative patch conflicts with both old native recipe seams
+and P7's language-specific config seam. Receiving merge and end-to-end tests
+remain pending; no new policy is loaded and no current replay is interrupted.
+Existing sole parent/bridge rebound to actual P7 LOAD; no additional native
+signals, P3 changes, hidden retirement, historical replay or shared-file edits.

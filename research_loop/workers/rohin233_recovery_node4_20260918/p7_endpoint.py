@@ -41,7 +41,7 @@ def install():
     def write_current(path, document):
         if 'actual_native_pid' in document:
             actual = live(engine.paths()[2])
-            document = dict(document, actual_native_pid=actual['pid'],
+            document.update(actual_native_pid=actual['pid'],
                 actual_native_loaded_index=actual['loaded_index'],
                 actual_native_loaded_sha256=actual['loaded_sha256'],
                 actual_native_guard_sha256=actual['guard_sha256'])

@@ -1,5 +1,43 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 18:49UTC actual P7 continuation, policy mismatch measured, C2 replay pending
+
+P7 WALL6740/LOAD6741 is actual18:40:31.323UTC, native563796/start32330897,
+same complete6734/sleep157/optimizer8076. Whole saved state differs only in
+deadline, now September25 18UTC; natural-exit-to-LOAD gap2441.590386seconds.
+`NATIVE_CONTINUATION.public.json` and refreshed `DEADLINES.json` are definitive,
+not the superseded18:31 replay-only cut. No retirement or additional signals.
+
+Actual first post-resume RECIPE6779/ELIGIBILITY6780 retains3/3 but still executes
+three content and three prose checks. UPDATE6804 reaches8100. Last completed
+P7 sleeps153–157 truly train Chinese:3/3 retained,0 rejected,48steps each.
+That is NOT all-exclusions-off. C2 sleeps110–112 actually exclude one row each
+(script quarantine, script quarantine, meta_only_target);113–114 retain4/4.
+`P7_ACTUAL_ELIGIBILITY.json` and `C2_ACTUAL_ELIGIBILITY.json` contain exact hashes,
+no raw row text. Exclusion component counts overlap and are not summed.
+
+C2 native829798/start29168595 remains alive in unchanged-source journal replay
+at18:48:22UTC, launched18:28:45 from fresh complete11502/sleep114/optimizer7756.
+Outer/plan bound September20 18UTC, but actual WALL/LOAD still pending.
+Do not interrupt it for a label or policy toggle. Prior exact boundary TERM
+and its gap remain explicit; no additional C2 signal here.
+
+Existing overseer2996247 actually rebound to LOAD6741:18:41:12.920 publication
+2e3bd89e... rendered verbatim as parent/Astra in masked REQUEST6760 at
+18:41:26.469, followed by RESPONSE6761/commit6762. `CONTINUED_PARENT_RENDER.json`
+records exact source links, not behavioral success. Bridge3232118 and
+reader3275809 are alive/caught up, bound through September20 18UTC; new P7
+ACT6761 was forwarded, but no complete new-incarnation roundtrip is yet proved.
+Jason's actual Astra7 LOAD3545 remains the verified receiving identity.
+
+`R227_POLICY_COMPLETION.md` and `R227_RECEIVING_PLAN.json`:35 focused operator
+tests pass. Both plan/THINK will opt into R227 and remove semantic selectors,
+preserving execution code policy, CPU gate, masks and exact current state.
+Read-only patch check against actual source bytes fails at both old trainer
+recipe seams and P7's language-specific config. Receiving port and focused
+driver/trainer tests are still required; no source/plan adoption claimed,
+no resident source mutation, no restart of current replays, no P3 action.
+
 ## 17:53UTC renewed exchange complete; first P7 output still a proposal
 
 `FIRST_RENEWED_ROUNDTRIP.json`: P7 ACT6583 → new Astra7 INBOX58109827... →

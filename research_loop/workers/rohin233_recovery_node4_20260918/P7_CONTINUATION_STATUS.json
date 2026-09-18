@@ -1,7 +1,7 @@
 {
   "component": "P7",
-  "observed_utc": "2026-09-18T18:30:32.615958+00:00",
-  "status": "NATIVE_REPLAY_NOT_LOADED",
+  "observed_utc": "2026-09-18T18:42:16.202456+00:00",
+  "status": "LOADED",
   "native": {
     "pid": 563796,
     "start_ticks": "32330897"
@@ -45,10 +45,32 @@
   "source_unchanged": true,
   "training_policy_changed": false,
   "all_exclusions_off_claim": false,
-  "model_LOAD_pending": true,
-  "wall_extended_pending": true,
+  "model_LOAD_pending": false,
+  "wall_extended_pending": false,
   "actual_native_signals": [],
   "SIGSTOP": false,
   "deliberate_hold": false,
-  "retirement": false
+  "retirement": false,
+  "whole_state_only_deadline_changed": true,
+  "wall_extended": {
+    "index": 6740,
+    "sha256": "63c00745b4ffa9ea11f07b27f72513c39588cf13308ec0b54b23611cae46fd22",
+    "written_utc": "2026-09-18T18:40:30.948461+00:00",
+    "authorization": {
+      "lease_end_unix": 1790380800,
+      "new_deadline_unix": 1790359200,
+      "previous_deadline_unix": 1789754400,
+      "previous_stream_sha256": "726624d362936c5e9e07ed67564ad64b8bd2aa638f37db1a4aaeaffc88786d0c",
+      "safety_margin_seconds": 21600,
+      "schema": "R131_SAVED_STATE_WALL_EXTENSION_V1"
+    }
+  },
+  "loaded": {
+    "index": 6741,
+    "sha256": "5f6f2d355c08085bec1b65060d805be34e4619f7d92806f9c0034c18ed052b13",
+    "loaded_utc": "2026-09-18T18:40:31.323098+00:00",
+    "loaded_unix": 1789756831.3230984,
+    "adapter_sha256": "55354e8dad03d56e6481583d3e79892d3fb5bc86e306adf6cea89200ebabc93b"
+  },
+  "reload_gap_seconds": 2441.5903856754303
 }
