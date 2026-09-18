@@ -15,6 +15,26 @@ HERE = Path(__file__).resolve().parent
 REMOTE_ENDPOINT = str(observer.CPU / 'p3_retry_endpoint.py')
 
 
+def bind_recovery_context(policy, binding):
+    original_prompt = policy.prompt
+    context = (
+        '\nVerified operator recovery context: this is the original P3 journal, restored from '
+        'COMPLETE5243/sleep153 after a failed native attempt. Retry1 LOAD '
+        + str(binding['loaded_index']) + ' is authenticated. During the preceding replay, '
+        'no new child inference, parent cadence or Tool judgment was verified. Preserved '
+        'earlier child output is historical evidence, not new feedback during downtime. '
+        'Continue as the same Astra parent with the same ledger and policy; briefly '
+        'acknowledge the interruption when appropriate. Do not invent observations, '
+        'judge feedback or learning success during the recovery gap.'
+    )
+
+    def prompt(*arguments, **keywords):
+        instruction, payload = original_prompt(*arguments, **keywords)
+        return instruction + context, payload
+
+    policy.prompt = prompt
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('action', choices=('validate', 'serve'))
@@ -27,6 +47,7 @@ def main():
     observer.require(binding['source'] == str(observer.SOURCE) and binding['hard_end_unix'] == observer.END_UNIX
         and binding['journal_id'] == observer.JOURNAL_ID and binding['loaded_index'] > 5299,
         'verified_retry_only_binding')
+    bind_recovery_context(policy, binding)
     output = module.base.OWN / 'r210_parent3'
     observer.require((output / 'SEED.json').is_file() and (output / 'turns').is_dir(), 'original_parent_ledger_required')
     manifest = dict(policy='R233_P3_RETRY1_ORIGINAL_PARENT_LEDGER_V1', hard_end_unix=observer.END_UNIX,
