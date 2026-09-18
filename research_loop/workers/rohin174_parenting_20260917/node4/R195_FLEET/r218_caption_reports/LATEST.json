@@ -1,0 +1,161 @@
+{
+  "caption_phase_loaded_receipt": {
+    "file_sha256": "c4bee51dc18f7c128472bc64f01fe350eb62ba48f6ff648fb70ae2b7fd8821d9",
+    "index": 369,
+    "kind": "LOADED",
+    "optimizer_steps": 5068,
+    "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/records/00000000000000000369.json",
+    "pid": 237705,
+    "resume_type": "bool",
+    "sha256": "c33db8f7d8d7c9d4b918d0235ad1127d3dbc959b51e4fd5de163b53ac4b79c20",
+    "unix": 1789710666.866613
+  },
+  "caption_phase_optimizer_step_delta": 272,
+  "caught_up": true,
+  "completed_caption_phase_sleeps": 7,
+  "dozens_of_opportunities_reached": false,
+  "first_feedback_utc": "2026-09-18T05:51:41.816518+00:00",
+  "hard_end_utc": "2026-09-18T18:00:00+00:00",
+  "last_feedback_utc": "2026-09-18T06:44:03.157043+00:00",
+  "latest_complete": {
+    "checkpoint_commit": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/checkpoints/sleep_000064/COMMIT.json",
+    "cycle": 64,
+    "file_sha256": "17ec62b97f894d04044b46e3678ec45de73de5cb3b4d682e48565202892bb2c0",
+    "index": 862,
+    "kind": "SLEEP_COMPLETE",
+    "optimizer_steps": 32,
+    "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/records/00000000000000000862.json",
+    "sha256": "44331126762618c150ce826c975b528fd99e221790c919b2d2b0fd5dc6bd690c",
+    "status": "COMPLETE",
+    "total_optimizer_steps": 5340,
+    "unix": 1789714210.8983881
+  },
+  "learner_signals": [],
+  "learner_writes": false,
+  "life_process": {
+    "live": true,
+    "pid": 237705,
+    "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/r212/source",
+    "start_ticks": "27878033",
+    "state": "R"
+  },
+  "life_root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life",
+  "metric_notes": [
+    "Opportunity = one committed P3 ACT with recorded environment outcome, including unscored outcomes.",
+    "Scored captions exclude cached/replayed replies and unknown outcomes.",
+    "Accepted and new_pixels are scorer-reported results, not independent humour/novelty truth.",
+    "Recovered candidate lines are not verified caption counts.",
+    "Generation-token denominator includes all committed native child responses since caption-phase LOADED up to each ACT.",
+    "Matched frozen base/C2 outputs are excluded; no longitudinal improvement or causal-learning claim."
+  ],
+  "native_head": {
+    "index": 874,
+    "kind": "REQUEST",
+    "utc": "2026-09-18T06:52:45.223349+00:00"
+  },
+  "native_loaded_receipt": {
+    "file_sha256": "c4bee51dc18f7c128472bc64f01fe350eb62ba48f6ff648fb70ae2b7fd8821d9",
+    "index": 369,
+    "kind": "LOADED",
+    "optimizer_steps": 5068,
+    "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/records/00000000000000000369.json",
+    "pid": 237705,
+    "resume_type": "bool",
+    "sha256": "c33db8f7d8d7c9d4b918d0235ad1127d3dbc959b51e4fd5de163b53ac4b79c20",
+    "unix": 1789710666.866613
+  },
+  "observed_unix": 1789714374.1863842,
+  "observed_utc": "2026-09-18T06:52:54.186384+00:00",
+  "ongoing": true,
+  "physical_gpu": 3,
+  "private_reference_text_read": false,
+  "scorer_is_not_the_learner": true,
+  "seconds_since_feedback": 531.0293407440186,
+  "services": [
+    {
+      "deadline_unix": 1789730034.1427162,
+      "deadline_utc": "2026-09-18T11:13:54.142716+00:00",
+      "listening_receipt": "/localhome/local-rohing/orch_r210_caption_service_20260918/session1/LISTENING.json",
+      "listening_sha256": "a5825a1edcd1f882d7e7d06f261ecaf9557182a57f856684f2e76d4163d8ede2",
+      "loaded_receipt": "/localhome/local-rohing/orch_r210_caption_service_20260918/session1/LOADED.json",
+      "loaded_sha256": "d5f341d5fe7e52c5e3747cc76f9618cf3f3f463c298c744e918426bb25618d43",
+      "loaded_utc": "2026-09-18T05:13:54.141842+00:00",
+      "process": {
+        "live": false,
+        "pid": 4180378
+      },
+      "resolved_socket": "/tmp/r210_caption_n4.sock",
+      "result_count": 0,
+      "root": "/localhome/local-rohing/orch_r210_caption_service_20260918/session1",
+      "socket": "/tmp/r210_caption_n4.sock",
+      "source": {
+        "bytes": 6775,
+        "path": "/localhome/local-rohing/orch_r210_caption_service_20260918/source/gpu/ny_caption_life_service.py",
+        "sha256": "100bf1dd8b6cf08facd2e510d9ea0b5a90fd5dd6f32780c7faa4d9233cca5d2a"
+      },
+      "top_k": 8
+    },
+    {
+      "deadline_unix": 1789731338.7800195,
+      "deadline_utc": "2026-09-18T11:35:38.780020+00:00",
+      "listening_receipt": "/localhome/local-rohing/orch_r212_caption_service_20260918/session1/LISTENING.json",
+      "listening_sha256": "02bf6c040611853a30576aa10333551a0f5ccd375527ac3d64ccadb6876982a7",
+      "loaded_receipt": "/localhome/local-rohing/orch_r212_caption_service_20260918/session1/LOADED.json",
+      "loaded_sha256": "57f6bf91d9167e062fa563efd6c1c9349e3009398206e8fd96e5a57c8af93221",
+      "loaded_utc": "2026-09-18T05:35:38.779121+00:00",
+      "process": {
+        "live": false,
+        "pid": 138619
+      },
+      "resolved_socket": "/tmp/r212_caption_n4.sock",
+      "result_count": 0,
+      "root": "/localhome/local-rohing/orch_r212_caption_service_20260918/session1",
+      "socket": "/tmp/r212_caption_n4.sock",
+      "source": {
+        "bytes": 7171,
+        "path": "/localhome/local-rohing/orch_r212_caption_service_20260918/source/gpu/ny_caption_life_service.py",
+        "sha256": "20ec463d11b4a75c48d348ba3b4e17f4a4931e74185df7d97fb4041528764a7f"
+      },
+      "top_k": 50
+    },
+    {
+      "deadline_unix": 1789732102.2589593,
+      "deadline_utc": "2026-09-18T11:48:22.258959+00:00",
+      "listening_receipt": "/localhome/local-rohing/orch_r213_caption_service_20260918/session1/LISTENING.json",
+      "listening_sha256": "82b0149b97f97873b3a4f33076a70ca90ef96216ae3537fcca8f6990414afdac",
+      "loaded_receipt": "/localhome/local-rohing/orch_r213_caption_service_20260918/session1/LOADED.json",
+      "loaded_sha256": "0522da36846f12e438bc07668bb40299b8402a405151d8c55002742ea9b143b7",
+      "loaded_utc": "2026-09-18T05:48:22.258098+00:00",
+      "process": {
+        "live": true,
+        "pid": 224224,
+        "source": "/localhome/local-rohing/orch_r213_caption_service_20260918/source",
+        "start_ticks": "27865890",
+        "state": "S"
+      },
+      "resolved_socket": "/tmp/r212_caption_n4.sock",
+      "result_count": 7,
+      "root": "/localhome/local-rohing/orch_r213_caption_service_20260918/session1",
+      "socket": "/tmp/r213_caption_n4.sock",
+      "source": {
+        "bytes": 7390,
+        "path": "/localhome/local-rohing/orch_r213_caption_service_20260918/source/gpu/ny_caption_life_service.py",
+        "sha256": "b82e74dc868c4de92e4986548a6a693d90dd60cb0cc3864bb34936ff94ac3a76"
+      },
+      "top_k": 50
+    }
+  ],
+  "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C/r218_caption_ledger.py",
+  "totals": {
+    "accepted": 5,
+    "feedback_items": 14,
+    "new_pixels": 5,
+    "opportunities": 7,
+    "repeats": 0,
+    "replayed": 0,
+    "scored_captions": 14,
+    "unknown_feedback": 0,
+    "unscored_opportunities": 2
+  },
+  "unjoined_service_results": []
+}

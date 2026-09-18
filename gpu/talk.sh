@@ -46,11 +46,13 @@ lookup() {  # prints "node root"
     creative_d1|math_d1|math_transfer_c1|repo_c1)
                       echo "ovx $L/orch_r153_r201_node2_clones_20260917_operator1/$1/raw" ;;
     # node 3 (ovx2) R213 groups, 2026-09-17 late evening: siege group and math trio
-    S_conv)           echo "ovx2 $L/orch_r205_node3_20260918/conversational/raw" ;;
-    S_lr03)           echo "ovx2 $L/orch_r205_node3_20260918/lr03/raw" ;;
-    S_lr3)            echo "ovx2 $L/orch_r205_node3_20260918/lr3/raw" ;;
-    S_p32)            echo "ovx2 $L/orch_r205_node3_20260918/p32/raw" ;;
-    S_repo)           echo "ovx2 $L/orch_r205_node3_20260918/peer_repo/raw" ;;
+    S_conv|S_lr03|S_lr3|S_p32|S_repo)
+                      echo "Retired node3 alias '$1'; use S_envoy, S_scout, S_negotiator, S_quartermaster or S_challenger for the distinct current lives." >&2
+                      return 1 ;;
+    S_envoy)          echo "ovx2 $L/orch_r205_node3_20260918/r213_siege_envoy_fork/raw" ;;
+    S_negotiator)     echo "ovx2 $L/orch_r205_node3_20260918/r213_siege_negotiator_fork/raw" ;;
+    S_quartermaster)  echo "ovx2 $L/orch_r205_node3_20260918/r213_siege_quartermaster_fork/raw" ;;
+    S_challenger)     echo "ovx2 $L/orch_r205_node3_20260918/r213_siege_challenger_fork/raw" ;;
     S_scout)          echo "ovx2 $L/orch_r205_node3_20260918/r213_siege_scout_fork/raw" ;;
     M_a)              echo "ovx2 $L/orch_r205_node3_20260918/r213_math_a/raw" ;;
     M_b)              echo "ovx2 $L/orch_r205_node3_20260918/r213_math_b_fork/raw" ;;
@@ -68,6 +70,7 @@ srcdir() {  # node-side checkout that contains gpu/orch_r127_pilot_console.py
   esac
 }
 CHILDREN="C1 C2 C3 C4 C5 run1 pilot repo_reader classroom_brain classroom_creative classroom_support teach_parenting teach_perception teach_replay frozen_base frozen_rank8 brain_free creative_reread brain_guided creative_free creative_select support_free kernel0 kernel_parented raw_parented raw_unparented"
+CHILDREN="$CHILDREN S_envoy S_scout S_negotiator S_quartermaster S_challenger M_a M_b M_c"
 
 if [ "${1:-}" = "--list" ] || [ $# -lt 2 ]; then
   echo "children (name -> node):"; for c in $CHILDREN; do set -- $(lookup $c); echo "  $c -> $1"; done; exit 0
@@ -90,17 +93,12 @@ import json,glob,sys,time
 root=sys.argv[1]; needle=sys.argv[2]; deadline=time.time()+float(sys.argv[3])
 def doc(r): return r.get("document", r) if isinstance(r,dict) else {}
 def kind(r): return doc(r).get("kind") or r.get("kind") or "?"
-def longest(d):
-    best=""
-    def w(x):
-        nonlocal best
-        if isinstance(x,str):
-            if len(x)>len(best): best=x
-        elif isinstance(x,dict):
-            for v in x.values(): w(v)
-        elif isinstance(x,list):
-            for v in x: w(v)
-    w(d); return best
+def response_text(record):
+    document=doc(record)
+    response=document.get("response")
+    if isinstance(response,dict) and isinstance(response.get("raw"),str):
+        return response["raw"]
+    return None
 def load():
     recs=[]
     for f in sorted(glob.glob(root+"/stream/records/*")):
@@ -120,7 +118,11 @@ while time.time()<deadline:
         i=idx[0]
         for j in range(i+1,len(recs)):
             if kind(recs[j])=="RESPONSE":
-                print("<< reply:\n"+longest(doc(recs[j]))); sys.exit(0)
+                text=response_text(recs[j])
+                if text is None:
+                    print("!! RESPONSE is missing document.response.raw; refusing to display metadata as a reply",file=sys.stderr)
+                    sys.exit(2)
+                print("<< reply:\n"+text); sys.exit(0)
         print("... delivered into the child's context; waiting for its reply", flush=True)
     else:
         print("... waiting for the child to read the inbox", flush=True)

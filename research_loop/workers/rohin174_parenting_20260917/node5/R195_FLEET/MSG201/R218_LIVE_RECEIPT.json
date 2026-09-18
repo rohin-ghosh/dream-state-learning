@@ -1,0 +1,129 @@
+{
+  "observed_utc": "2026-09-18T06:46:01.961685+00:00",
+  "native_pid": 3531008,
+  "native_state": "S",
+  "loaded": {
+    "index": 7365,
+    "sha256": "6dbbba76bc5274263f0dc5045e793d468ee2c346082dbf28bfb022b0e2616cc1",
+    "loaded_unix": 1789713753.9934256,
+    "optimizer_steps": 5772,
+    "adapter_sha256": "f682a2e29afe39a3acac2717b6d2405352a075d9b994e10c26d911bc2e3d9285",
+    "resume": true
+  },
+  "preserved_complete": {
+    "index": 7364,
+    "cycle": 67,
+    "sha256": "fd1ac9ac4fbc28d8a6592dd347d923ab6d2657864ba6c95d459455b2cfcd3d30",
+    "model_optimizer_verified_equal": true
+  },
+  "head": {
+    "index": 7425,
+    "kind": "UPDATE",
+    "sha256": "f07f506e305c42fb307874c1c93218a15e0d4ce7c29eb862d6f9b05c35f6ec35"
+  },
+  "policies": {
+    "console_preemption_policy": "R205_CONSOLE_PREEMPTION_V1",
+    "reading_reply_policy": "R205_READING_DISCUSSION_V1",
+    "content_target_filter": "R213_CONTENT_BEARING_TARGETS_V1",
+    "artifact_elicitation_policy": "R213_JUDGMENT_ARTIFACT_V1"
+  },
+  "reading_policy_active": {
+    "index": 7366,
+    "sha256": "766f1a479ce100f04a3abfd16dc003d1fb6089b01b31fee4e9fac3bbfdecdedb"
+  },
+  "first_request": {
+    "index": 7371,
+    "sha256": "ecfa7f2abdad54ac8c519f6d122c23133b77ace8b2ad684e962fcc48c8e0f0ba",
+    "action_policy": "R205_CONSOLE_REPLY_ACT_V1",
+    "started_unix": 1789713757.1548548,
+    "prompt_tokens": 9351
+  },
+  "reply": {
+    "index": 7375,
+    "sha256": "57303885497cf4e17b8309cf8425ce2179ce03894afdb071b3937b8470b2f4c4",
+    "response_index": 7372,
+    "response_sha256": "266b00ba4677d47ef6b641ccf07cae77430574df390d18f27a4158ba36385f38",
+    "raw_sha256": "f6641ff943e54b28c61e038049fbfc9994b98d53e0aec1bcec19a82a1226c48c",
+    "source_inbox_id": "95a5c9fa4d5740d5b4eda19965d0f3f8",
+    "published_unix": 1789713284.0236862,
+    "finished_unix": 1789713788.8932831,
+    "total_latency_seconds": 504.8695969581604,
+    "loaded_to_reply_seconds": 34.89985752105713,
+    "cjk_count": 0,
+    "code_fence": false,
+    "tool_execution_allowed": false
+  },
+  "eligibility": {
+    "index": 7415,
+    "sha256": "bd041e5c7c91e042b73e3be6e8fe9176aff966e1dccd65fd9c2e1d0a81abc16b",
+    "cycle": 68,
+    "counts": {
+      "NEW": 1,
+      "REHEARSAL": 0
+    },
+    "presentations": {
+      "6c655ead89b6077420b4994ef37440c9704efbadc05285f10a78e1dafb006758": 16
+    },
+    "excluded": [
+      {
+        "segment": 214,
+        "source_sha256": "9540cc5a4a0377987ddb7ac55bfe8e05203f91301119ed7820663eaae34ceff9",
+        "reasons": [
+          "meta_only_target"
+        ],
+        "content_classifications": [
+          "meta_only"
+        ],
+        "prose_exclusion_count": 0
+      },
+      {
+        "segment": 215,
+        "source_sha256": "772623a76c629918a297bdd998f856942287a4b14fd9c188d80a1d90d4699866",
+        "reasons": [
+          "meta_only_target"
+        ],
+        "content_classifications": [
+          "meta_only"
+        ],
+        "prose_exclusion_count": 0
+      },
+      {
+        "segment": 216,
+        "source_sha256": "736b2072b8c0c18c2362014bfdda1c16a35eb1d78f927c515cbd976c58f4314a",
+        "reasons": [
+          "labelled_prose_inside_code_fence"
+        ],
+        "content_classifications": [
+          "code_wrapped_prose"
+        ],
+        "prose_exclusion_count": 0
+      },
+      {
+        "segment": 217,
+        "source_sha256": "6b63c0a28e2bdc96f40c419039e6b3e16a120c2da1e5c48b3f3fc72685762736",
+        "reasons": [
+          "meta_only_target"
+        ],
+        "content_classifications": [
+          "meta_only"
+        ],
+        "prose_exclusion_count": 0
+      }
+    ],
+    "raw_modified": false
+  },
+  "gate_sha256": "6b20c73827f27010eb326fc80c958f24ade40540229668048c0a395696a16658",
+  "auxiliary_R197_restore": {
+    "index": 7367,
+    "correction_history_unknown": true,
+    "error_type": "ValueError",
+    "operation": "restore",
+    "prior_ledger_index": 7266,
+    "prior_history_preserved": true
+  },
+  "historical_resident_sampling_RNG_unproven": true,
+  "rollback": false,
+  "PAUSED_marker_created": false,
+  "credentials_included": false,
+  "raw_conversation_included": false
+}
