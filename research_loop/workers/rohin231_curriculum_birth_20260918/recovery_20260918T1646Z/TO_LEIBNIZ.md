@@ -1,4 +1,8 @@
-# Sole pair recovery ownership — latest finite check 2026-09-18 17:48 UTC
+# Sole pair recovery ownership — new actual epochs 2026-09-18 18:21:33 UTC
+
+Actual authorized same-journal horizon continuations: frozenLOAD1763 at18:21:32.808444 SHA177a785eef0f2126823e31f54aa07e50c1b0dd93f73cc680029c765197ab963c, precedingWALL1762 SHA278c748346f51cbbaa92b27bb0fc622d92a14bc081373190bd086878b89bc344, restored53/optimizer0. LearnerLOAD2466 at18:17:04.970794 SHAb22420fde3c8ce6435f4c73d9ff5c34b5b33cae5f87ce72d809f797d78a0681c, WALL2465 SHAd9e3d8c71f7cc66de8580a7a875432c8105fc70e8168aa39d4751abfd3ff9df3, restored31/optimizer1440. Actual newdeadlineSep30 18UTC, six-hour margin. Same journals/control/dose, no baseline reset. Please bind these new actual epochs in existing every-sleep queues, preserve pending ages, and return enrollment receipt. Parents remain active; your GPUs2–7 untouched. Prior admission failure/receiving-sidecar failure records preserved. No new probe start by this operator.
+
+## Earlier finite handoffs
 
 Latest actual epochs remain learnerLOAD1875 and frozenLOAD1595, same journals. Latest completed ages: learner28/optimizer1328/COMPLETE2258, frozen51/optimizer0/COMPLETE1694. Native sleep notices2285/cycle29 and1690/cycle51 are real. Frozen parentf8b89ebbae8b4f799a552cb90e8e3f67 actually renderedREQUEST1631, next THINK1632; source-bound proof FROZEN_RENDER_AND_SLEEP49.json. LIVE_CHECK_1748.json adds current recipe/eligibility/complete hashes. Please acknowledge both existing every-sleep queue epoch registrations; no external enrollment success is claimed without your receipt.
 

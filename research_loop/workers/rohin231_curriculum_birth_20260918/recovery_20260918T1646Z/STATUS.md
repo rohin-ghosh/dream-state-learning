@@ -1,4 +1,6 @@
-# Pair continuation explicitly authorized — 2026-09-18 18:12:34 UTC
+# BOTH pair continuations actually LOADED — 2026-09-18 18:21:33 UTC
+
+Frozen471737/start9987073: WALL1762, LOAD1763 at18:21:32.808444UTC, sleep53/optimizer0. Learner493500/start10070880: WALL2465, LOAD2466 at18:17:04.970794, sleep31/optimizer1440. Both actual futuredeadline1790791200/September30 18UTC, same journals; independent state comparison confirms all nondeadline fields unchanged. SavedRNG restored; no unsaved-resident-RNG claim. Observed oldexit->LOAD gaps1409.421803s and848.288534s. Current details CONTINUATION_STATUS.md; historical failed learner sidecar attempt remains preserved. Parents alive/same ledgers; learner pending parent message actually rendered newREQUEST2469->ACT2477, frozen first postLOAD response pending at this immediate finite cut. Earlier observations below are historical, not current pending status.
 
 Current nativePIDs: frozen471737/start9987073 stillreplays uninterrupted; learner retry493500/start10070880 after firstreceiving479359 failed beforemodelconstruction on missing PRESERVATION sidecar. Exact checkpoints/journals unchanged, artifactrepair13CPUtestsPASS, freshretry euid0clear admission18:12:04.045. No newLOAD/WALL_EXTENDED yet. Both admittedplans/wrappers/systemd and existingparents boundSeptember30 18:00 minus existing shutdown margins; details and last real parentREQUEST->ACT in CONTINUATION_STATUS.md. Firstattempt/failure remains preserved, not concealed as a latency restart. Earlier18:04 observations below are historical.
 

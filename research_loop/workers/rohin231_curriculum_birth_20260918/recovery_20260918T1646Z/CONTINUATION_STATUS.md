@@ -1,4 +1,17 @@
-# Authorized continuation — September18 2026, 18:12:34 UTC observation
+# Both continuations LOADED — September18 2026, 18:21:33 UTC observation
+
+| Life | Current native PID/startticks | Actual WALL_EXTENDED | Actual LOADED (UTC) | Restored completed state | Observed old-exit to LOAD |
+|---|---|---|---|---|---|
+| Frozen GPU1 | 471737/9987073 | 1762; filemtime18:21:32.481198 | 1763;18:21:32.808444 | sleep53/optimizer0, same adapter04341ab... | 1409.421803s |
+| Learner GPU0 | 493500/10070880 | 2465; filemtime18:17:04.642129 | 2466;18:17:04.970794 | sleep31/optimizer1440, adapterf72ce8... | 848.288534s |
+
+Both WALL_EXTENDED records actually adopt September30 18:00UTC/1790791200 with21600s margin to the conservative user-confirmed October1 allocation. Independent comparison of the WALL state with the bound saved checkpoint verifies every non-deadline field unchanged. Same journals and no pending outputs discarded. Receiving memory probes passed with0optimizer.step calls, savedRNG restored, frozen optimizer0; this does not claim unsaved resident sampling-RNG continuation. The learner gap includes its preserved failed receiving-sidecar attempt and exact-state retry. Frozen replay was never restarted for latency. No SIGSTOP/operator hold/debugger/rollback.
+
+Learner actual new REQUEST2469 at18:17:06.548974 ->RESPONSE2470 at18:17:13.173680; ACT REQUEST2476 ->RESPONSE2477 at18:17:27.984582 /ACTevent2480. Preserved pending parent0e928f4d77584d9bbcd5235e3c1836ae is independently verified as exact text in new REQUEST2469.messages[6]. Same CPU parent subsequently made a fresh provider response at18:17:43.868944; rendering of that newer publication remains separately tracked. New recipe2494 is R227 all-authentic,3NEW×16, old0, semantic filters[]. Frozen first request/response is pending only at this immediate18:21:33 cut and is not inferred from LOAD.
+
+Both CPU parents remain running on unchanged canonical journals, existing ledgers and September30 18:00 deadlines. Exact wrapper/systemd configurations appear in the historical component table below; their shutdown limits remain before the new native deadline. No remaining known short experiment timer on this owned pair. External every-sleep enrollment acknowledgment remains for Leibniz, not silently claimed here.
+
+## Earlier18:12 finite observation and preserved repair
 
 **No actual new LOAD/WALL_EXTENDED yet.** Frozen471737/start9987073 continues its original receiving replay, without another signal. Learner first receiver479359 exited1 at18:07:26.975 BEFORE model construction: the unchanged runtime requires sourceparent/control/PRESERVATION.json, which continuation packaging omitted. Exact complete31/1440 and journalhead2464 were unchanged; firstattempt/logs/guard retained. This is an actual receiving-artifact error, not a latency restart.
 

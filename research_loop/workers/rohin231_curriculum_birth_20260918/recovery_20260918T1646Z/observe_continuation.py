@@ -1,13 +1,14 @@
 """Read-only, text-free receipts for the authorized pair continuations."""
 
 from datetime import datetime, timezone
+from copy import deepcopy
 import hashlib
 import json
 from pathlib import Path
 import subprocess
 import time
 
-from extension_spec import ROOT_NAMES
+from extension_spec import ROOT_NAMES, digest
 
 
 def read(path):
@@ -58,6 +59,12 @@ def observe(physical):
             records_preserved=True, no_signal_for_latency=True)
     if (original / 'SIDECAR_REPAIR.json').exists():
         result['sidecar_repair'] = read(original / 'SIDECAR_REPAIR.json')
+    memory_path = root / 'extension_oct01_preview_20260918T1742Z/control/MEMORY.json'
+    if memory_path.exists():
+        memory = read(memory_path)
+        result['receiving_memory_probe'] = dict(receipt_sha256=sha(memory_path), **{key:memory.get(key)
+            for key in ('passed', 'optimizer_steps', 'saved_RNG_restored', 'optimizer_step_calls',
+                'synthetic_probe_not_child_training', 'adapter_sha256', 'checkpoint_sha256')})
     if (control / 'OUTER_FAILED.json').exists():
         failure = read(control / 'OUTER_FAILED.json')
         result['dispatch_error'] = dict(error_type=failure['error_type'], error_sha256=sha(control / 'OUTER_FAILED.json'))
@@ -114,11 +121,15 @@ def observe(physical):
                 loaded_unix=document['loaded_unix'], loaded_utc=utc(document['loaded_unix']),
                 optimizer_steps=document['optimizer_steps'], adapter_sha256=document['adapter_sha256']))
         elif kind == 'WALL_EXTENDED':
+            restored = deepcopy(document['state']['state'])
+            restored['deadline_unix'] = document['authorization']['previous_deadline_unix']
             result['wall_extended'].append(dict(reference, authorization=document['authorization'],
-                state_sha256=document['state']['sha256']))
+                state_sha256=document['state']['sha256'], file_published_mtime_utc=utc(path.stat().st_mtime),
+                all_non_deadline_state_exact=digest(restored) == result['bound_complete']['saved_state_sha256']))
         elif kind == 'REQUEST':
             result['requests'].append(dict(reference, started_unix=document['started_unix'],
-                started_utc=utc(document['started_unix']), prompt_tokens=document['prompt_tokens']))
+                started_utc=utc(document['started_unix']), prompt_tokens=document['prompt_tokens'],
+                actual_request_deadline_unix=document['deadline_unix']))
         elif kind == 'RESPONSE':
             result['responses'].append(dict(reference, finished_unix=document['finished_unix'],
                 finished_utc=utc(document['finished_unix']), raw_sha256=hashlib.sha256(document['response']['raw'].encode()).hexdigest()))
