@@ -39242,3 +39242,8 @@ Rohin216 authorizes a NEW C0 life from C2 snapshot51 (02:18:47 UTC September18 /
 [Builder] R216 C0 attempt2 CPU/admission repair — 2026-09-18T06:34:28.570230+00:00
 
 First dispatch failed before any LOADED: redundant sudo scan inside NoNewPrivileges service. All failed evidence preserved; only failed parent publisher stopped. Non-material repair consumes fresh privileged PRE_SERVICE_ADMISSION bound to exact guard SHA, retaining strict device confinement and non-root execution. Actual service budget matches six-hour plan within existing lease rather than hidden legacy two-hour cap. Receiving165 tests+303subtests PASS5.95s; CPU receipt SHA256 7c7687706e79046b9be69a6847b6b2aab91f95e2d64142be4dae568d8d8dec58. C0 remains separate from original C2. No LOADED claimed yet. See research_loop/workers/rohin216_c0_20260918/receipts/attempt2/.
+
+
+[Builder] R216 C0 LOADED verified — 2026-09-18T06:40:45.898866+00:00
+
+C0 is LIVE on node2GPU4, native2561156; LOADED1 at2026-09-18T06:35:20.587470Z, recordSHA bfd5c0cce84abe72354adbe87de1916906be968db9c75ce108e7383c3834f1f9, adapter82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92/optimizer4908. Snapshot working state verified verbatim through birth COMPACTION2. Historical transcript pin3 is rendered verbatim in REQUEST6 with actual Astra opener,6226tokens, all history masked. First ACT14 is a prose odd-number-sum derivation, not oldV. TARGET_ELIGIBILITY33 scans3own targets underR213content policy;2retained after all filters,1English-script quarantine; originaltargetsunchanged. Native UPDATE receipts follow. No originalC2 rollback/control change and no learning/retention success claimed. Public receipt: research_loop/workers/rohin216_c0_20260918/receipts/LOADED_AND_GATE.json.

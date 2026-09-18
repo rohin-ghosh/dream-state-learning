@@ -22,8 +22,16 @@ current C2 remains the interlocutor. This is not a rollback of original C2.
   fresh external privileged scan, bound to the exact guard bytes; device
   confinement and no-new-privileges remain enforced. Only the failed parent
   publisher was stopped; no learner was stopped or rolled back.
-- Launch not yet claimed. A `LOADED` journal record, source adapter identity,
-  actual pinned reference and parent render must be observed separately.
+- **LOADED:** September 18, 2026 06:35:20.587470 UTC, node2 GPU4,
+  native2561156, journal record1, exact adapter82a988 and optimizer4908.
+- Birth compaction record2 preserves the snapshot working state verbatim;
+  record3 pins the reference transcript. REQUEST6 contains the complete
+  transcript and actual parent opener, with all history masked, at6226 tokens.
+- First ACT14 gives a prose derivation for the sum of positive odd numbers,
+  not the inherited V investigation. No execution or learning-success claim.
+- TARGET_ELIGIBILITY33 runs the content gate on three own targets. It retains
+  two after all filters; the English-script filter excludes one. Original row
+  bytes are unchanged. `receipts/LOADED_AND_GATE.json` is the bound live receipt.
 
 This is builder-authorized implementation inside the unchanged frozen-base,
 own-words, parent-visibility, provenance and H1/H2 invariants. The content
