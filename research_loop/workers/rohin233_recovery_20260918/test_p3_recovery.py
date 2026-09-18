@@ -2,9 +2,17 @@ import subprocess
 import unittest
 
 import p3_recovery
+import p3_endpoint
 
 
 class RecoveryTests(unittest.TestCase):
+    def test_incremental_endpoint_never_opens_other_lives_or_new_birth(self):
+        for operation in ('poll', 'publish'):
+            p3_endpoint.check_request(dict(physical=3, op=operation))
+        for physical, operation in ((7, 'poll'), (3, 'opening'), (3, 'restart')):
+            with self.assertRaises(ValueError):
+                p3_endpoint.check_request(dict(physical=physical, op=operation))
+
     def test_timeout_retries_only_read_poll_with_same_reference(self):
         calls, events = [], []
         request = dict(op='poll', reference={'sha256': 'fixed'})
