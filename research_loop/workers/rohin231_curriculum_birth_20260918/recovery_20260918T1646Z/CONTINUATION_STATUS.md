@@ -1,4 +1,12 @@
-# Both continuations LOADED — September18 2026, 18:21:33 UTC observation
+# Both continuations live — September18 2026, 18:26:13 UTC observation
+
+**Post-continuation control and parent checks completed:** frozen sleep54 COMPLETE1796 SHA328c4539712ff1c71a999cea8147f80c6cc32123d015e85f5df0876b5fee4f6d has optimizer0, weight_updates_enabledfalse and identical before/after adapter04341ab... . Recipe1794 and eligibility1795 are R227 all-authentic,3NEW, exclusions[], raw_modifiedfalse; zero dose is the preserved scientific control, not semantic exclusion. Learner sleep32 COMPLETE2544 SHAea273ba62ab82aecb8a388f825bebaa29d96f08c486caf8c0331860682b48f7a reaches1488 from1440 with3NEW×16, old0, exclusions[]; next normal cycle33 has already begun. Both natives alive at the finite read.
+
+Both actual post-LOAD parent bindings are verified against exact inbox text and request/response source hashes: frozen4513316e31de48cbbc73170faa0ce30c ->REQUEST1766 at18:21:37.538757 ->ACT REQUEST1775 at18:22:30.680023 ->RESPONSE1776 at18:23:02.106606 /ACTevent1779. Learner0e928f4d77584d9bbcd5235e3c1836ae ->REQUEST2469 ->ACT REQUEST2476/RESPONSE2477 at18:17:27.984582 /ACTevent2480. Parent continuity used preserved pending messages, not recreated input. Both CPU parents also produced fresh feedback after observing the new child ACTs; publication is distinct from subsequent rendering. Native sleep notices1792/cycle54 and2492/cycle32 are actual. External age-probe enrollment remains Leibniz's scope.
+
+The table below records restoration-time counters, not the learner's newer1488 optimizer head. All original records, failed receiving attempt, checkpoint manifests and source evidence remain preserved. No remaining pair reload blocker; no more native signals planned.
+
+## Actual LOAD and exact-state continuity
 
 | Life | Current native PID/startticks | Actual WALL_EXTENDED | Actual LOADED (UTC) | Restored completed state | Observed old-exit to LOAD |
 |---|---|---|---|---|---|
