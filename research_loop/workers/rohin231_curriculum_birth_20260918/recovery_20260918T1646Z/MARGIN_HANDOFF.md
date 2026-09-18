@@ -1,5 +1,7 @@
 # Deadline ownership handoff — 2026-09-18 17:22 UTC
 
+**SUPERSEDED by actual user/Fable October1 existing-lease date:** safe bound now September30 18:00UTC, not September18. Main canceled418521 at17:30:08.832727 via pidfd, actual remote CANCELLED.json independently read17:31:19; native399101/start9637168 alive, no native signal. CPU-only2887549 cutoff canceled17:28:19.987. Former415506 COMPLETE watcher stays canceled. No short-cutoff guard remains under this worker. ParentPIDs2946721/2946722 actually renewed to newbound; native cachedtimers remain old and need separate same-state renewal (no hot adoption claim). Historical ARMED receipts below are preserved, not active.
+
 **Verified17:23:44UTC:** Main guard418521/start9776388 is actually Ss, armed17:22:59.512767. Exact admitted native399101/start9637168; guard SHA e7b8fe9f94329ca41738fb843291ba06e108ed7846cb27316c144aa56979b539. TERM17:59:40 +5s KILL fallback; source SHA19a8180170ae65c7503be2c4c09b11d91c9d9ff6ac2da1ea8fb3edffde2dfbaa. Remote `r233_main_cutoff/ARMED.json` read independently. Native23:30 latch unchanged but outer deadline now enforced prospectively. No second guard here.
 
 23:30 scheduling is withdrawn, not silently rewritten in historical evidence. Conservative allocation September19 00:00UTC minus mandatory21600seconds gives September18 18:00UTC. Exact provider expiry remains unverified.

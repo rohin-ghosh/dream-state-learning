@@ -1,5 +1,7 @@
 # R233 pair recovery — explicit user authorization
 
+**Latest supersession September18 17:25UTC user/Fable date authority:** existing ovx4 lease endsOctober1, not the earlier conservativeSeptember19. Date-only October1 00:00UTC minus21600seconds gives September30 18:00UTC. No purchase/extension/provider-CLI claim. See ALLOCATION_DATE_CORRECTION.json; native horizon renewal is not inferred from this source change. Both parents adopted; both natives continue with old cached timers pending an executable same-state renewal path. Main's obsolete learner cutoff is canceled. Earlier timing paragraphs remain historical only.
+
 **Correction September18 17:23UTC:** the23:30 scheduling paragraph below is historical and withdrawn. Section15 invariant7 requires six hours; safe finish is18:00UTC against conservative September19 00:00UTC allocation. Main owns the learner's no-pause native cutoff; this worker owns frozen restoration and pair-parent/receipt verification only. Frozen was actually dispatched17:16 with18:00 enforced. The short-lived COMPLETE watcher was canceled before any native signal; do not run it. No physical lease extension or changed scientific control is authorized.
 
 Scope: only the already-ended ovx4 learner GPU0 and frozen sibling GPU1, same identities/journals/current saved state. This is non-material recovery after the old finite14:00UTC wall, not a rebirth, rollback, new comparison or physical lease extension. Leibniz owns2–7; no controls there. Original C2 untouched.
