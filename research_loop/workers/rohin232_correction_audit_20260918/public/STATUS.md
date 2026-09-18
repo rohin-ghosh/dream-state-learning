@@ -1,29 +1,28 @@
-# R232 correction evidence and manual review
+# R232 correction evidence and pending review
 
-Collector/queue cut: 2026-09-18T11:12:47.936379+00:00
-New manual review: 2026-09-18T11:30:28.600851+00:00; separate receipt capture11:22:05–11:22:08UTC.
+Cut: 2026-09-18T12:00:50.732286+00:00
 
-Eight actual post-cut ACTs newly reviewed across five lives; see `POSTCUT_SEMANTIC_REVIEW_1122.md` and its JSON.
-The collector does NOT perform new semantic review. Received ranges are not semantic coverage. Unknown is not level0 failure.
-No level3, checkpoint capture, lifetime-negative claim, or live-control change. Queue/cursor history remains unchanged.
+Levels: feedback only0 → own correction identified1 → applied in the NEXT ACT2 → another relevant ACT without reminder3.
+**New semantic review is NOT automatic. Levels below revalidate existing analyst annotations; new cases await Main in REVIEW_QUEUE.json.**
+Unknown is not level0 failure. Initial windows are bounded, not lifetime-negative claims. No lives modified.
 
-| Life | Received records | ACTs received | Selected corrections reviewed | Highest bounded level | Status |
-| --- | --- | ---: | ---: | --- | --- |
-| C2 | 5501–9153 | 51 | 2 | 1 | REVIEWED_PARTIAL |
-| P7 | 2085–3561 | 25 | 1 | 0 | REVIEWED_PARTIAL |
-| C0 | 0–2219 | 36 | 2 | 0 | REVIEWED_PARTIAL |
-| Astra7 | 0–837 | 10 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
-| GAME1_P3 | 1390–2801 | 26 | 1 | 0 | REVIEWED_PARTIAL |
-| MATH_A | 0–2728 | 45 | 3 | 0 | REVIEWED_PARTIAL |
-| MATH_B_FORK | 0–2406 | 51 | 2 | 1 | REVIEWED_PARTIAL |
-| MATH_C | 0–2459 | 56 | 3 | 1 | REVIEWED_PARTIAL |
-| GAME_N3_0 | 0–1472 | 27 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
-| GAME_N3_3 | 5–1578 | 35 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
-| GAME_N3_5 | 0–1436 | 32 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
-| GAME_N3_6 | 0–1472 | 30 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
-| GAME_N3_7 | 0–1451 | 22 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
-| GAME_UNPARENTED_N2 | 0–875 | 17 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
-| FRESH_R231 | 0–475 | 6 | 3 | 2 | REVIEWED_PARTIAL |
-| GAME_FROZEN_BASE | ?–? | ? | 0 | unknown | NON_NATIVE_LOG_CONTRACT_PENDING_OWNER |
-| R232_SIBLING_LEARNER | ?–? | ? | 0 | unknown | ALIAS_OF_FRESH_R231_SAME_JOURNAL_RECOVERY_LOADED172_GAP_DECLARED |
-| R232_SIBLING_FROZEN | 0–372 | 11 | 4 | 2 | REVIEWED_PARTIAL |
+| Life | Covered records | Caught up | ACTs | Feedback candidates | Reviewed | Highest proved level | Status |
+| --- | --- | --- | ---: | ---: | ---: | --- | --- |
+| C2 | 5501–9452 | True | 54 | 157 | 2 | 1 | REVIEWED_PARTIAL |
+| P7 | 2085–3942 | True | 30 | 154 | 1 | 0 | REVIEWED_PARTIAL |
+| C0 | 0–2639 | True | 43 | 149 | 2 | 0 | REVIEWED_PARTIAL |
+| Astra7 | 0–1226 | True | 15 | 31 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
+| GAME1_P3 | 1390–3118 | True | 34 | 188 | 1 | 0 | REVIEWED_PARTIAL |
+| MATH_A | 0–3028 | True | 49 | 169 | 3 | 0 | REVIEWED_PARTIAL |
+| MATH_B_FORK | 0–2722 | True | 56 | 181 | 2 | 1 | REVIEWED_PARTIAL |
+| MATH_C | 0–2766 | True | 62 | 201 | 3 | 1 | REVIEWED_PARTIAL |
+| GAME_N3_0 | 0–1910 | True | 36 | 104 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
+| GAME_N3_3 | 5–2080 | True | 44 | 116 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
+| GAME_N3_5 | 0–1820 | True | 41 | 107 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
+| GAME_N3_6 | 0–1884 | True | 37 | 113 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
+| GAME_N3_7 | 0–1894 | True | 31 | 81 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
+| GAME_UNPARENTED_N2 | 0–1314 | True | 26 | 63 | 0 | unknown | SEMANTIC_REVIEW_PENDING_NOT_A_LEVEL0_FAILURE |
+| FRESH_R231 | 0–820 | True | 10 | 21 | 3 | 2 | REVIEWED_PARTIAL |
+| GAME_FROZEN_BASE | ?–? | unknown | ? | ? | 0 | unknown | NON_NATIVE_LOG_CONTRACT_PENDING_OWNER |
+| R232_SIBLING_LEARNER | ?–? | unknown | ? | ? | 0 | unknown | ALIAS_OF_FRESH_R231_SAME_JOURNAL_RECOVERY_LOADED172_GAP_DECLARED |
+| R232_SIBLING_FROZEN | 0–700 | True | 21 | 43 | 4 | 2 | REVIEWED_PARTIAL |
