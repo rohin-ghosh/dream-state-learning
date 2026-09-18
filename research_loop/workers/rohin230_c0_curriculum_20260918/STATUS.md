@@ -1,5 +1,7 @@
 # C0 R230/R231: actual persistent memory re-probe delivered
 
+**Latest cut: R232 at10:19–10:20UTC is in `R232_STATUS.md`.** It distinguishes the later invented stapler story (ACT1578) from the first non-answer, records the latest mathematical diversion (ACT1700), and hands Leibniz the hash-verified completed sleep81 adapter source. Earlier receipts below remain historical, not a claim of current recall success.
+
 **Delivered, not scheduled only.** C0 native2561156/start94173182 and its original math parent2561001/start94172764 remain unchanged. No learner pause, restart, learning-rate change, reset, or new Astra7 parent.
 
 | Evidence | Actual receipt, September 18, 2026 UTC |

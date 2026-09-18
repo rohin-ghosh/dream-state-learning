@@ -1,0 +1,136 @@
+{
+  "Astra7_identity": {
+    "journal_id": "6a2fa591a1304fd8b3eff24f65e5caff",
+    "loaded_record_sha256": "769b0e833f54bcb3e8ead1a9137396cdfb4e6c0dfbacf14cb912f09d95a6a564",
+    "pid": 2863450,
+    "process_state": "R",
+    "start_ticks": 95248943
+  },
+  "C0_curriculum_publisher": {
+    "cmdline_sha256": "5664f8b0481ee2cab2408209c8015a85fd909c4127283715a72ffa0b6859c1cb",
+    "pid": 2929240,
+    "start_ticks": 95395597,
+    "state": "S"
+  },
+  "C0_curriculum_state": {
+    "completed_cycle": 81,
+    "next_due_cycle": 81,
+    "publications": 4,
+    "reading_step": 1,
+    "record_cursor": 1758,
+    "topic_index": 4
+  },
+  "C0_identity": {
+    "adapter_at_load": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+    "gpu_uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+    "guard_sha256": "46b88748175a5750ec1de9f6e9b1e30fa1d49f38b4a4f8f7395de1275d137016",
+    "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+    "loaded_index": 1,
+    "loaded_sha256": "bfd5c0cce84abe72354adbe87de1916906be968db9c75ce108e7383c3834f1f9",
+    "loaded_utc": "2026-09-18T06:35:20.587470+00:00",
+    "node": "node2",
+    "physical_gpu": 4,
+    "pid": 2561156,
+    "process_state": "S",
+    "root": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2",
+    "start_ticks": 94173182
+  },
+  "C0_original_math_parent": {
+    "cmdline_sha256": "0c8c8a7a38f1e42393d8b5eca987cc72d0052939ffed3cab176a1630f1ba1d98",
+    "pid": 2561001,
+    "start_ticks": 94172764,
+    "state": "R"
+  },
+  "C0_publisher_failure_receipt_present": false,
+  "actions": {
+    "GPU_calls": 0,
+    "learner_restarts": 0,
+    "learner_signals": 0,
+    "model_calls": 0,
+    "new_exclusions": 0,
+    "new_parent_messages": 0,
+    "publisher_controls": 0
+  },
+  "checkpoint": {
+    "adapter_directory": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/checkpoints/sleep_000081/adapter",
+    "adapter_state_sha256": "81cede470266e8885d00bb52d3e5678844b628cf1a2b39c991437f554c088caa",
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "checkpoint_created_utc": "2026-09-18T10:18:06.772532+00:00",
+    "checkpoint_path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/checkpoints/sleep_000081",
+    "commit_path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/checkpoints/sleep_000081/COMMIT.json",
+    "commit_sha256": "f5b12f98c3ab648bd92f11eefc6eaa84a90297cf5bf3506090280a1dc0d23f13",
+    "completed_record_index": 1756,
+    "completed_record_path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000001756.json",
+    "completed_record_sha256": "b3fd04d14658b864168b1e77f5d7678c118b771a1fc60a6becd44a00e6996125",
+    "created_utc": "2026-09-18T10:19:39.791719+00:00",
+    "cycle": 81,
+    "files": {
+      "adapter/README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+      "adapter/adapter_config.json": "23d0f67452a979c2804989c475a3845cd71193d9f0e3ac8fc1d1e0eef79c0cb8",
+      "adapter/adapter_model.safetensors": "e69be77dcc82d714a7ea4770ab68f908f87efb5d280c75919e4b8212aecb4dcc",
+      "optimizer_rng.pt": "47975f5612a56247192d04f8636ac38adbf99072bdbed082758483c307083f02"
+    },
+    "files_sizes": {
+      "adapter/README.md": 5416,
+      "adapter/adapter_config.json": 1263,
+      "adapter/adapter_model.safetensors": 80792096,
+      "optimizer_rng.pt": 161853949
+    },
+    "learner_controls": 0,
+    "model_calls": 0,
+    "optimizer_rng_path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/checkpoints/sleep_000081/optimizer_rng.pt",
+    "optimizer_steps": 5660,
+    "preservation": "Existing immutable completed checkpoint; bytes verified, not a new live-process snapshot or copied payload.",
+    "resume_state_sha256": "7dcbac438f302f8b495794355736b254e891a82ae815dd902984c6a5a714569b",
+    "resume_state_source": "Exact completed-record document.resume_state; immutable record hash and state hash provided, bytes not publicly exported"
+  },
+  "native_learning_policy": {
+    "eligibility_index": 1723,
+    "eligibility_sha256": "26fed70e872515b20462f9a8eaf5da40bbb8b967e55ba3dbf68b5b8c524083fe",
+    "excluded_count": 2,
+    "excluded_reasons": {
+      "provisional_english_target_script_quarantine": 2
+    },
+    "new_exclusions_added_by_this_task": false,
+    "raw_modified": false,
+    "recipe": {
+      "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+      "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+      "new_presentations": 16,
+      "new_rows": 4,
+      "policy": "R181_NEW_ONLY_V1",
+      "selected_old_rows": 0
+    },
+    "recipe_index": 1722,
+    "recipe_sha256": "76551d40a3fe6c14788bc94203a645ebbbbd78f9ad1ca38c68850a02d0305c06"
+  },
+  "observed_utc": "2026-09-18T10:19:39.792409+00:00",
+  "omissions": [
+    "checkpoint bytes",
+    "resume working-state text",
+    "child outputs",
+    "parent outputs",
+    "hostnames",
+    "credentials"
+  ],
+  "probe_custody": {
+    "copy_only_completed_checkpoint_files": true,
+    "do_not_import_live_parent_inbox_or_working_state_as_probe_context": true,
+    "do_not_infer_model_age_causality": true,
+    "expected_hashes_must_match_after_transfer": true,
+    "optimizer_rng_is_provenance_not_instruction_to_train": true,
+    "owner": "Leibniz",
+    "adapter_only_age_inference_requires_matched_context_controls": true,
+    "registered_probe_context_and_budget_owned_by_Leibniz": true,
+    "source_life_not_stopped": true,
+    "source_node": "node2",
+    "ssh_helper": "gpu/ovx_ssh.sh"
+  },
+  "purpose": "R232 coherent completed-sleep adapter source for Leibniz-owned fixed-budget parent-free age probe; not a probe execution or result",
+  "source_optimizer_age": {
+    "completed_optimizer_steps": 5660,
+    "not_equal_to_uniform_training_budget_or_wall_age": true,
+    "optimizer_step_delta_since_C0_birth": 752,
+    "optimizer_steps_at_C0_birth": 4908
+  }
+}
