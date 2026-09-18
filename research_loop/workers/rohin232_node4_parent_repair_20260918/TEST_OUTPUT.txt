@@ -1,0 +1,157 @@
+CPU-only validation run started 2026-09-18T10:33:18.490992+00:00
+
+=== physical2 tests ===
+$ /usr/bin/python3 -B /data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/test_repair.py
+test_actor_impersonation_source_records_and_quotes_stay_strict (__main__.RepairTests.test_actor_impersonation_source_records_and_quotes_stay_strict) ... ok
+test_bad_reply_cannot_publish (__main__.RepairTests.test_bad_reply_cannot_publish) ... ok
+test_catchup_same_boundary_and_deadline_still_gate_publication (__main__.RepairTests.test_catchup_same_boundary_and_deadline_still_gate_publication) ... ok
+test_credit_and_relapse_validators_remain_active (__main__.RepairTests.test_credit_and_relapse_validators_remain_active) ... ok
+test_english_identity_schema_word_and_byte_limits_unchanged (__main__.RepairTests.test_english_identity_schema_word_and_byte_limits_unchanged) ... ok
+test_exclusive_writer_lock_and_no_unreviewed_serve (__main__.RepairTests.test_exclusive_writer_lock_and_no_unreviewed_serve) ... ok
+test_high_turn_continuation_never_resets_counts_or_ids (__main__.RepairTests.test_high_turn_continuation_never_resets_counts_or_ids) ... ok
+test_invalid_counts_and_dispositions_still_rejected (__main__.RepairTests.test_invalid_counts_and_dispositions_still_rejected) ... ok
+test_journal_rewind_final_and_wrong_life_rejected (__main__.RepairTests.test_journal_rewind_final_and_wrong_life_rejected) ... ok
+test_mutating_bound_config_revokes_adapter (__main__.RepairTests.test_mutating_bound_config_revokes_adapter) ... ok
+test_only_exact_four_configs_can_bind (__main__.RepairTests.test_only_exact_four_configs_can_bind) ... ok
+test_original_configs_and_shared_modules_are_unchanged (__main__.RepairTests.test_original_configs_and_shared_modules_are_unchanged) ... ok
+test_original_serve_integration_uses_existing_history_and_transport (__main__.RepairTests.test_original_serve_integration_uses_existing_history_and_transport) ... ok
+test_projection_fails_closed_on_unexpected_source (__main__.RepairTests.test_projection_fails_closed_on_unexpected_source) ... ok
+test_prompt_preserves_private_payload_and_style_without_forced_retirement (__main__.RepairTests.test_prompt_preserves_private_payload_and_style_without_forced_retirement) ... ok
+test_r210_late_serializer_prompt_wrapper_still_applies (__main__.RepairTests.test_r210_late_serializer_prompt_wrapper_still_applies) ... ok
+test_real_silence_remains_silent (__main__.RepairTests.test_real_silence_remains_silent) ... ok
+test_repeated_release_needs_new_real_environment_receipt (__main__.RepairTests.test_repeated_release_needs_new_real_environment_receipt) ... ok
+test_source_pin_and_loaded_source_impersonation_rejected (__main__.RepairTests.test_source_pin_and_loaded_source_impersonation_rejected) ... ok
+test_tick_new_boundary_and_render_accounting_not_synthetic_budget (__main__.RepairTests.test_tick_new_boundary_and_render_accounting_not_synthetic_budget) ... ok
+test_uncertain_and_unfinished_attempts_no_replay (__main__.RepairTests.test_uncertain_and_unfinished_attempts_no_replay) ... ok
+test_voluntary_release_retains_all_continuity_checks (__main__.RepairTests.test_voluntary_release_retains_all_continuity_checks) ... ok
+test_voluntary_release_valid_at_any_count (__main__.RepairTests.test_voluntary_release_valid_at_any_count) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.711s
+
+OK
+
+exit_code=0
+
+=== physical2 validate ===
+$ /usr/bin/python3 -B /data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/parent.py validate --physical 2
+{"arm": "B", "classification": "NON_MATERIAL_REPAIR", "config_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/physical2/CONFIG.json", "config_sha256": "75a6929c856b888898a7dd5cc1bd2e7702e458df2f931a84c0829a4f886a2cbf", "delivered_counts": "PRESERVED", "deployed": false, "effective_cadence_responses": 1, "hard_end_unix": 1789754400, "learner_signals": [], "original_cadence_responses": 2, "physical": 2, "policy": "R232_BOUND_R230_NODE4_PARENT_REPAIR_V1", "source_pins_sha256": "bd8e443746f022765d888aecaf9500b5e1ce72fa61f91a5b089354ddf43815c7", "word_limit": 160}
+
+exit_code=0
+
+=== physical3 tests ===
+$ /usr/bin/python3 -B /data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/test_repair.py
+test_actor_impersonation_source_records_and_quotes_stay_strict (__main__.RepairTests.test_actor_impersonation_source_records_and_quotes_stay_strict) ... ok
+test_bad_reply_cannot_publish (__main__.RepairTests.test_bad_reply_cannot_publish) ... ok
+test_catchup_same_boundary_and_deadline_still_gate_publication (__main__.RepairTests.test_catchup_same_boundary_and_deadline_still_gate_publication) ... ok
+test_credit_and_relapse_validators_remain_active (__main__.RepairTests.test_credit_and_relapse_validators_remain_active) ... ok
+test_english_identity_schema_word_and_byte_limits_unchanged (__main__.RepairTests.test_english_identity_schema_word_and_byte_limits_unchanged) ... ok
+test_exclusive_writer_lock_and_no_unreviewed_serve (__main__.RepairTests.test_exclusive_writer_lock_and_no_unreviewed_serve) ... ok
+test_high_turn_continuation_never_resets_counts_or_ids (__main__.RepairTests.test_high_turn_continuation_never_resets_counts_or_ids) ... ok
+test_invalid_counts_and_dispositions_still_rejected (__main__.RepairTests.test_invalid_counts_and_dispositions_still_rejected) ... ok
+test_journal_rewind_final_and_wrong_life_rejected (__main__.RepairTests.test_journal_rewind_final_and_wrong_life_rejected) ... ok
+test_mutating_bound_config_revokes_adapter (__main__.RepairTests.test_mutating_bound_config_revokes_adapter) ... ok
+test_only_exact_four_configs_can_bind (__main__.RepairTests.test_only_exact_four_configs_can_bind) ... ok
+test_original_configs_and_shared_modules_are_unchanged (__main__.RepairTests.test_original_configs_and_shared_modules_are_unchanged) ... ok
+test_original_serve_integration_uses_existing_history_and_transport (__main__.RepairTests.test_original_serve_integration_uses_existing_history_and_transport) ... ok
+test_projection_fails_closed_on_unexpected_source (__main__.RepairTests.test_projection_fails_closed_on_unexpected_source) ... ok
+test_prompt_preserves_private_payload_and_style_without_forced_retirement (__main__.RepairTests.test_prompt_preserves_private_payload_and_style_without_forced_retirement) ... ok
+test_r210_late_serializer_prompt_wrapper_still_applies (__main__.RepairTests.test_r210_late_serializer_prompt_wrapper_still_applies) ... ok
+test_real_silence_remains_silent (__main__.RepairTests.test_real_silence_remains_silent) ... ok
+test_repeated_release_needs_new_real_environment_receipt (__main__.RepairTests.test_repeated_release_needs_new_real_environment_receipt) ... ok
+test_source_pin_and_loaded_source_impersonation_rejected (__main__.RepairTests.test_source_pin_and_loaded_source_impersonation_rejected) ... ok
+test_tick_new_boundary_and_render_accounting_not_synthetic_budget (__main__.RepairTests.test_tick_new_boundary_and_render_accounting_not_synthetic_budget) ... ok
+test_uncertain_and_unfinished_attempts_no_replay (__main__.RepairTests.test_uncertain_and_unfinished_attempts_no_replay) ... ok
+test_voluntary_release_retains_all_continuity_checks (__main__.RepairTests.test_voluntary_release_retains_all_continuity_checks) ... ok
+test_voluntary_release_valid_at_any_count (__main__.RepairTests.test_voluntary_release_valid_at_any_count) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.700s
+
+OK
+
+exit_code=0
+
+=== physical3 validate ===
+$ /usr/bin/python3 -B /data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/parent.py validate --physical 3
+{"arm": "B", "classification": "NON_MATERIAL_REPAIR", "config_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/physical3/CONFIG.json", "config_sha256": "96fe552c27663324a2d9b328c3119aee41464b209c747b500b6380cb083ed4c0", "delivered_counts": "PRESERVED", "deployed": false, "effective_cadence_responses": 1, "hard_end_unix": 1789754400, "learner_signals": [], "original_cadence_responses": 2, "physical": 3, "policy": "R232_BOUND_R230_NODE4_PARENT_REPAIR_V1", "source_pins_sha256": "bd8e443746f022765d888aecaf9500b5e1ce72fa61f91a5b089354ddf43815c7", "word_limit": 160}
+
+exit_code=0
+
+=== physical5 tests ===
+$ /usr/bin/python3 -B /data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/test_repair.py
+test_actor_impersonation_source_records_and_quotes_stay_strict (__main__.RepairTests.test_actor_impersonation_source_records_and_quotes_stay_strict) ... ok
+test_bad_reply_cannot_publish (__main__.RepairTests.test_bad_reply_cannot_publish) ... ok
+test_catchup_same_boundary_and_deadline_still_gate_publication (__main__.RepairTests.test_catchup_same_boundary_and_deadline_still_gate_publication) ... ok
+test_credit_and_relapse_validators_remain_active (__main__.RepairTests.test_credit_and_relapse_validators_remain_active) ... ok
+test_english_identity_schema_word_and_byte_limits_unchanged (__main__.RepairTests.test_english_identity_schema_word_and_byte_limits_unchanged) ... ok
+test_exclusive_writer_lock_and_no_unreviewed_serve (__main__.RepairTests.test_exclusive_writer_lock_and_no_unreviewed_serve) ... ok
+test_high_turn_continuation_never_resets_counts_or_ids (__main__.RepairTests.test_high_turn_continuation_never_resets_counts_or_ids) ... ok
+test_invalid_counts_and_dispositions_still_rejected (__main__.RepairTests.test_invalid_counts_and_dispositions_still_rejected) ... ok
+test_journal_rewind_final_and_wrong_life_rejected (__main__.RepairTests.test_journal_rewind_final_and_wrong_life_rejected) ... ok
+test_mutating_bound_config_revokes_adapter (__main__.RepairTests.test_mutating_bound_config_revokes_adapter) ... ok
+test_only_exact_four_configs_can_bind (__main__.RepairTests.test_only_exact_four_configs_can_bind) ... ok
+test_original_configs_and_shared_modules_are_unchanged (__main__.RepairTests.test_original_configs_and_shared_modules_are_unchanged) ... ok
+test_original_serve_integration_uses_existing_history_and_transport (__main__.RepairTests.test_original_serve_integration_uses_existing_history_and_transport) ... ok
+test_projection_fails_closed_on_unexpected_source (__main__.RepairTests.test_projection_fails_closed_on_unexpected_source) ... ok
+test_prompt_preserves_private_payload_and_style_without_forced_retirement (__main__.RepairTests.test_prompt_preserves_private_payload_and_style_without_forced_retirement) ... ok
+test_r210_late_serializer_prompt_wrapper_still_applies (__main__.RepairTests.test_r210_late_serializer_prompt_wrapper_still_applies) ... ok
+test_real_silence_remains_silent (__main__.RepairTests.test_real_silence_remains_silent) ... ok
+test_repeated_release_needs_new_real_environment_receipt (__main__.RepairTests.test_repeated_release_needs_new_real_environment_receipt) ... ok
+test_source_pin_and_loaded_source_impersonation_rejected (__main__.RepairTests.test_source_pin_and_loaded_source_impersonation_rejected) ... ok
+test_tick_new_boundary_and_render_accounting_not_synthetic_budget (__main__.RepairTests.test_tick_new_boundary_and_render_accounting_not_synthetic_budget) ... ok
+test_uncertain_and_unfinished_attempts_no_replay (__main__.RepairTests.test_uncertain_and_unfinished_attempts_no_replay) ... ok
+test_voluntary_release_retains_all_continuity_checks (__main__.RepairTests.test_voluntary_release_retains_all_continuity_checks) ... ok
+test_voluntary_release_valid_at_any_count (__main__.RepairTests.test_voluntary_release_valid_at_any_count) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.734s
+
+OK
+
+exit_code=0
+
+=== physical5 validate ===
+$ /usr/bin/python3 -B /data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/parent.py validate --physical 5
+{"arm": "B", "classification": "NON_MATERIAL_REPAIR", "config_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/physical5/CONFIG.json", "config_sha256": "8794a0fa6b0660fc6b16966bb0ccf4fdf35b9a08a9e443e7752d6d70502e49b6", "delivered_counts": "PRESERVED", "deployed": false, "effective_cadence_responses": 1, "hard_end_unix": 1789754400, "learner_signals": [], "original_cadence_responses": 2, "physical": 5, "policy": "R232_BOUND_R230_NODE4_PARENT_REPAIR_V1", "source_pins_sha256": "bd8e443746f022765d888aecaf9500b5e1ce72fa61f91a5b089354ddf43815c7", "word_limit": 160}
+
+exit_code=0
+
+=== physical6 tests ===
+$ /usr/bin/python3 -B /data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/test_repair.py
+test_actor_impersonation_source_records_and_quotes_stay_strict (__main__.RepairTests.test_actor_impersonation_source_records_and_quotes_stay_strict) ... ok
+test_bad_reply_cannot_publish (__main__.RepairTests.test_bad_reply_cannot_publish) ... ok
+test_catchup_same_boundary_and_deadline_still_gate_publication (__main__.RepairTests.test_catchup_same_boundary_and_deadline_still_gate_publication) ... ok
+test_credit_and_relapse_validators_remain_active (__main__.RepairTests.test_credit_and_relapse_validators_remain_active) ... ok
+test_english_identity_schema_word_and_byte_limits_unchanged (__main__.RepairTests.test_english_identity_schema_word_and_byte_limits_unchanged) ... ok
+test_exclusive_writer_lock_and_no_unreviewed_serve (__main__.RepairTests.test_exclusive_writer_lock_and_no_unreviewed_serve) ... ok
+test_high_turn_continuation_never_resets_counts_or_ids (__main__.RepairTests.test_high_turn_continuation_never_resets_counts_or_ids) ... ok
+test_invalid_counts_and_dispositions_still_rejected (__main__.RepairTests.test_invalid_counts_and_dispositions_still_rejected) ... ok
+test_journal_rewind_final_and_wrong_life_rejected (__main__.RepairTests.test_journal_rewind_final_and_wrong_life_rejected) ... ok
+test_mutating_bound_config_revokes_adapter (__main__.RepairTests.test_mutating_bound_config_revokes_adapter) ... ok
+test_only_exact_four_configs_can_bind (__main__.RepairTests.test_only_exact_four_configs_can_bind) ... ok
+test_original_configs_and_shared_modules_are_unchanged (__main__.RepairTests.test_original_configs_and_shared_modules_are_unchanged) ... ok
+test_original_serve_integration_uses_existing_history_and_transport (__main__.RepairTests.test_original_serve_integration_uses_existing_history_and_transport) ... ok
+test_projection_fails_closed_on_unexpected_source (__main__.RepairTests.test_projection_fails_closed_on_unexpected_source) ... ok
+test_prompt_preserves_private_payload_and_style_without_forced_retirement (__main__.RepairTests.test_prompt_preserves_private_payload_and_style_without_forced_retirement) ... ok
+test_r210_late_serializer_prompt_wrapper_still_applies (__main__.RepairTests.test_r210_late_serializer_prompt_wrapper_still_applies) ... ok
+test_real_silence_remains_silent (__main__.RepairTests.test_real_silence_remains_silent) ... ok
+test_repeated_release_needs_new_real_environment_receipt (__main__.RepairTests.test_repeated_release_needs_new_real_environment_receipt) ... ok
+test_source_pin_and_loaded_source_impersonation_rejected (__main__.RepairTests.test_source_pin_and_loaded_source_impersonation_rejected) ... ok
+test_tick_new_boundary_and_render_accounting_not_synthetic_budget (__main__.RepairTests.test_tick_new_boundary_and_render_accounting_not_synthetic_budget) ... ok
+test_uncertain_and_unfinished_attempts_no_replay (__main__.RepairTests.test_uncertain_and_unfinished_attempts_no_replay) ... ok
+test_voluntary_release_retains_all_continuity_checks (__main__.RepairTests.test_voluntary_release_retains_all_continuity_checks) ... ok
+test_voluntary_release_valid_at_any_count (__main__.RepairTests.test_voluntary_release_valid_at_any_count) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.790s
+
+OK
+
+exit_code=0
+
+=== physical6 validate ===
+$ /usr/bin/python3 -B /data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/parent.py validate --physical 6
+{"arm": "C", "classification": "NON_MATERIAL_REPAIR", "config_path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin232_node4_parent_repair_20260918/physical6/CONFIG.json", "config_sha256": "1bd51dcf462d51f6fd3984d35ba579e9e446b25ccaddd2bbcf80eb2f059b7ae9", "delivered_counts": "PRESERVED", "deployed": false, "effective_cadence_responses": 1, "hard_end_unix": 1789754400, "learner_signals": [], "original_cadence_responses": 3, "physical": 6, "policy": "R232_BOUND_R230_NODE4_PARENT_REPAIR_V1", "source_pins_sha256": "bd8e443746f022765d888aecaf9500b5e1ce72fa61f91a5b089354ddf43815c7", "word_limit": 120}
+
+exit_code=0

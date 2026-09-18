@@ -39465,6 +39465,26 @@ behavioral uptake is claimed yet. Source/tests/receipt and failure paths are
 in `research_loop/workers/rohin228_p3_feedback_20260918/README.md` and
 `R232_RENEWAL_ARMED.json`. Leibniz remains on age probes; Main owns this relay.
 
+## [Builder] R232 persistent node4 parents adopted — 2026-09-18 10:42 UTC
+
+Root cause of several R230 parent failures: old community code still forced
+retirement after three delivered turns and old sparse cadence, despite the
+persistent-curriculum brief. A source-pinned, marker-scoped CPU adapter now
+removes only those conflicts for physical2/3/5/6. Original B/C questioning
+styles, source/actor/English/receipt validations and voluntary quitting checks
+remain; counts, IDs and histories are not reset. This is a new R230 parenting
+treatment, not the unchanged old sparse-parent control or a learner-filter fix.
+
+92 policy tests passed; Main reviewed the implementation, added2 handoff tests,
+and revalidated all4 exact configs. Drained CPU-only handoffs10:38:52–10:39:07:
+2:488830→785257; P3:491388→783596;5:488850→785190;6:488876→785217.
+Every prior source/result was hashed and retained, and each successor uses
+the same original exclusive lock/seed/evidence directory. No learner was
+signalled, paused or restarted. All4 successors alive at10:39:45; actual new
+parent rendering remains pending and is not inferred from startup.
+Code/tests/pins/configs/receipts:
+`research_loop/workers/rohin232_node4_parent_repair_20260918/README.md`.
+
 [2026-09-18T10:32:21.137055+00:00] [Builder] Leibniz R232 finite age probe: seven focused CPU tests and worker import/AST checks PASS; source51/4908 and coherent source87/6348 captured without source-life signals, adapter+COMMIT copy hashes unchanged. Independent lifetime identifier audit complete; description overlap and receiving hashes required before player generation. GPU4/5 matched pair,6 plain base,7 bounded fresh-image preparation then same6250/top50 judge, only currently empty owned devices with seven-denied confinement. Common1024 actual generated tokens per scene/seed, three fresh DEVELOPMENT cartoons/two seeds; no optimizer, parent, source context or private references in player inputs. Plan/source: research_loop/workers/rohin232_age_probe_20260918/PLAN.md. No LOADED/result claimed here; existing services preserved. Intake f067f6ddf; no H2 claim.
 
 [2026-09-18T10:35:31.152597+00:00] [Builder] R232 eight focused CPU tests PASS; non-material atomic receipt publication repair prevents partially read queue files without overwriting prior receipts. Applied only after own finite vision process naturally exited, before probe players/judge dispatch; no live source/service change. Receiving import/decoder smoke PASS (pytest absent there). Fresh DEVELOPMENT exposure audit:300 REQUESTs plus both inherited completed-source contexts, zero selected-scene identifier/hash/description-fivegram matches; source cut8875. Fixed scenes564/654/703, source51 vs87; first model evidence pending. Main owns relay renewal.
