@@ -69,6 +69,16 @@ def collect():
         add(life, 'node2', entry['physical_gpu'], entry['status'], entry.get('native'),
             entry.get('loaded'), entry.get('wall_extended'), entry.get('hard_end_utc'), reference,
             entry.get('outage_seconds'))
+    node2_table, reference = read(node2 / 'RENEWAL_TABLE.public.json')
+    for entry in node2_table['lives'].values():
+        parent = entry.get('parent', {})
+        service = parent.get('service', parent.get('capacity', {}).get('service'))
+        if service:
+            supports.append(dict(component=entry['arm'] + '_parent',
+                node='node2' if entry['arm'] == 'C0' else 'local',
+                pid=service['pid'], start_ticks=service['start_ticks'],
+                status='SCRIPTED_CURRICULUM' if entry['arm'] == 'C0' else 'MODEL_PARENT',
+                deadline_utc=utc(service['deadline_unix']), evidence=reference))
 
     pair, reference = read(WORKERS / 'rohin231_curriculum_birth_20260918/recovery_20260918T1646Z/CURRENT_CONTINUATION.json')
     for entry in pair['observations']:
@@ -92,9 +102,18 @@ def collect():
     for entry in node4['components']:
         name = entry['component']
         if name in ('P7', 'C2'):
+            live_reference = reference
+            receipt_path = WORKERS / 'rohin233_recovery_node4_20260918/NATIVE_CONTINUATION.public.json'
+            if name == 'P7' and receipt_path.is_file():
+                newer, newer_reference = read(receipt_path)
+                if newer.get('status') == 'WALL_EXTENDED_AND_LOADED' and newer['guard_sha256'] == entry['guard_sha256']:
+                    entry = dict(entry, loaded=newer['loaded'], wall_extended=newer['wall_extended'],
+                        native=newer['native'], status=newer['status'],
+                        recorded_exit_to_loaded_seconds=newer['reload_gap_seconds'])
+                    live_reference = newer_reference
             add(name, 'node4' if name == 'P7' else 'node5', 7 if name == 'P7' else 1,
                 entry['status'], entry.get('native'), entry.get('loaded'), entry.get('wall_extended'),
-                entry.get('hard_end_utc'), reference, entry.get('recorded_exit_to_loaded_seconds'))
+                entry.get('hard_end_utc'), live_reference, entry.get('recorded_exit_to_loaded_seconds'))
         else:
             supports.append(dict(component=name, node='node2' if name == 'ASTRA7_TRANSPORT' else 'local',
                 pid=entry.get('pid', entry.get('native_pid')), status=entry['status'],

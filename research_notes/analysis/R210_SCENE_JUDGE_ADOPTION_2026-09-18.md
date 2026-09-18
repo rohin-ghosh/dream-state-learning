@@ -106,3 +106,27 @@ Receipts are under
 `STATUS_ADOPTION_LIVE.md` records scope and remaining work. Fresh 600-case
 rerun, retrospective seed/P3 rescoring, and actual new-score/Tool-rendered
 outcomes are still separate receipt requirements at this cut.
+
+## Fresh serving-path battery and retrospective check
+
+The fresh 600-case run completed at 2026-09-18 18:24:37 UTC using the actually
+adopted serving weights. In the table's order it reports **97 / 97 / 96 / 95 /
+78 / 90** wins out of 100. The retained checkpoint diagnostic was **97 / 97 /
+96 / 93 / 77 / 90**. The difference of two truncated cases and one mid-tier
+case is retained explicitly; its cause is not established by this note. Scene
+contrast remains 90/100 against the historical widegap 51/100.
+
+`JUDGE_FRESH_CONTRAST.json` binds the case IDs, serving-weight receipt and exact
+execution. It contributes no player attempts. The retrospective
+`HISTORICAL_RECHECK_COMPLETE.json` contains 225 entries: 223 P3 entries and two
+source-verified base seed entries. Of P3's 26 formerly accepted entries, 19
+fail the new rank/relevance check; 14 P3 entries pass in total, including
+entries previously rejected. Both recovered seed entries still pass. These
+are entry counts, not a claim of distinct jokes. Novelty was not re-evaluated,
+no game counters were incremented, and original outcomes remain unchanged.
+
+At the diagnostic's cut, 209 P3 entries and the two seeds had verified origins
+eligible for parent correction; the diagnostic itself delivered no parent
+message. Parent delivery is a separate requirement, not implied by writing a
+correction file. The two recovered seeds are not falsely called the complete
+requested 10–12-example packet.
