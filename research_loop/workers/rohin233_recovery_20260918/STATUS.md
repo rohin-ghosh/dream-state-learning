@@ -16,7 +16,10 @@ actual LOADED and fresh output receipts are attached.
   caught up through4923 at 16:59 UTC. Xhigh turn293 actually published at
   17:06 UTC: INBOX `47d47e7a09f740b09d03a648ef8b3796`. It asks for one adult's
   actual funny words about the money mobile, not another plan. Rendering and
-  the next ACT remain under verification. The native
+  the next ACT are now verified: REQUEST4965 at17:07:26→ACT4989 at17:13:11UTC.
+  Full-text review found zero captions, only repeated waiting/planning.
+  Parent296 changed to role reversal rather than recycling the original turn.
+  The native
   child 237705/start27878033 has not been signalled or restarted.
 - **Node3:** all eight kept natives exited with operator timeout code 124,
   approximately ten seconds before their configured experiment deadlines.
