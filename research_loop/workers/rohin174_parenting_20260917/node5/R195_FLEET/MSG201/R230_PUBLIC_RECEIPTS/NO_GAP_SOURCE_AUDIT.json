@@ -1,0 +1,101 @@
+{
+  "schema": "R230_DEPLOYED_NO_GAP_SOURCE_AUDIT_V1",
+  "observed_utc": "2026-09-18T09:49:13.029489+00:00",
+  "plan_sha256": "b3016752f19004842de09eca39595f68cc6dd1b4fc7b16366c1850d509704f98",
+  "sources": {
+    "gpu/orch_r125_continual_native.py": {
+      "sha256": "39a4391e6c414e33c38e6569c2b334cba1034a880e88236968f066962e205401",
+      "matching_guard": true,
+      "control_sites": [
+        {
+          "line": 714,
+          "text": "def run(plan_path, *, resume=False):"
+        },
+        {
+          "line": 717,
+          "text": "plan = validate_plan(read(plan_path))"
+        },
+        {
+          "line": 723,
+          "text": "old_handler = signal.signal(signal.SIGALRM, lambda signum, frame: (_ for _ in ()).throw(TimeoutError('native_wall')))"
+        },
+        {
+          "line": 726,
+          "text": "with StreamJournal(root/'stream', create=not resume) as journal:"
+        },
+        {
+          "line": 751,
+          "text": "child = NativeChild(plan, matching[0])"
+        },
+        {
+          "line": 803,
+          "text": "checkpoint = finish_sleep(child, stream, journal, anchors, root, completed_sleeps)"
+        },
+        {
+          "line": 812,
+          "text": "while time.time() < plan['hard_end_unix']:"
+        },
+        {
+          "line": 824,
+          "text": "checkpoint = finish_sleep(child, stream, journal, anchors, root, cycle)"
+        },
+        {
+          "line": 835,
+          "text": "signal.signal(signal.SIGALRM, old_handler)"
+        }
+      ],
+      "policy_reload_symbol_sites": []
+    },
+    "gpu/orch_r184_think_act_learn.py": {
+      "sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e",
+      "matching_guard": true,
+      "control_sites": [
+        {
+          "line": 899,
+          "text": "def run_loop(child, stream, journal, anchors, plan, root, plan_path, completed_sleeps):"
+        },
+        {
+          "line": 904,
+          "text": "driver = ThinkActLearn(child, stream, journal, plan['think_act_learn'],"
+        },
+        {
+          "line": 912,
+          "text": "while time.time() < plan['hard_end_unix']:"
+        },
+        {
+          "line": 915,
+          "text": "driver.wake()"
+        },
+        {
+          "line": 923,
+          "text": "checkpoint = finish_sleep(child, stream, journal, anchors, root, cycle)"
+        }
+      ],
+      "policy_reload_symbol_sites": []
+    },
+    "gpu/orch_r125_stream_journal.py": {
+      "sha256": "0b0d309cbb0399be3b9488fab0eb049063e321b927bf5b4b2c43369448bdf06f",
+      "matching_guard": true,
+      "control_sites": [
+        {
+          "line": 119,
+          "text": "fcntl.flock(self._lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)"
+        }
+      ],
+      "policy_reload_symbol_sites": []
+    }
+  },
+  "learn_row_policy": {
+    "native": null,
+    "driver": null
+  },
+  "learning_rate_parameters": {},
+  "finding": "No supported running-image policy reload or gapless same-life writer handoff found. Plan is read before journal lock/model load; driver is constructed before the cycle loop. Journal state reload is not a runtime policy reload.",
+  "supported_no_gap_adoption": false,
+  "restart_armed": false,
+  "runtime_source_writes": 0,
+  "plan_writes": 0,
+  "learner_signals": 0,
+  "LR_writes": 0,
+  "human_inbox_writes": 0
+}
