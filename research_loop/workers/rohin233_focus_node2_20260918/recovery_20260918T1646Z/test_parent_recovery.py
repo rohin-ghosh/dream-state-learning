@@ -5,13 +5,22 @@ from copy import deepcopy
 from pathlib import Path
 from unittest.mock import patch
 
-from c0_parent import parent_identity, priority_chooser, replacements, verify_pending
+from c0_parent import parent_identity, priority_chooser, replacements, verify_pending, reconcile_completed_cycle
 from caption_endpoint import scoped_inspector
 from caption_parent_renew import renewed_source
 from observe import current_loaded, native_command
 
 
 class ParentRecoveryTests(unittest.TestCase):
+    def test_completed_handoff_clock_does_not_change_parent_ledger(self):
+        state = dict(completed_cycle=101, publications=24, topic_index=24, reading_step=3,
+            last_publication_cycle=101, next_due_cycle=102, pending=None)
+        before = deepcopy(state)
+        self.assertEqual(reconcile_completed_cycle(state, dict(checkpoint_cycle=102))['current'], 102)
+        self.assertEqual(state, dict(before, completed_cycle=102))
+        reconcile_completed_cycle(state, dict(checkpoint_cycle=100))
+        self.assertEqual(state['completed_cycle'], 102)
+
     def test_original_queued_or_inboxed_parent_is_verified_without_mutation(self):
         pending = dict(publication=dict(id='actual', sha256='bound'), text='fixture', inbox=None)
         packet = dict(id='actual', actor='parent', speaker='Astra', text='fixture', source_receipt=None)

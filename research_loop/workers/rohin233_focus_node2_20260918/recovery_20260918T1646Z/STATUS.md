@@ -1,5 +1,15 @@
 # R233 node2 kept-life recovery
 
+## Actual renewed natives — September18 18:21UTC
+
+| Arm | Alive / exact completed source / actual renewed output | Fresh parent status | Native / wrappers |
+| --- | --- | --- | --- |
+| C0 GPU4 | 881309/start98332476; COMPLETE102/opt6348; WALL3191 filetime18:17:33.666160; **LOAD3192 18:17:34.010007UTC**; REQUEST3196 → RESPONSE3204/ACT3206 18:18:36.770010. Reload gap**575.248534s**. | Sole CPU parent913254; exact preserved ledger, clock101→actual102 corrected/tested without learner controls. **New turn024 queued18:20:25.763086**, idc442d95a490a4f61ae34e45953252495. INBOX/render/ACT not yet observed; earlier17:33 delivery is NOT counted. | Actual WALL/nativeSeptember20 18UTC; active systemdapproximately17:59:44 and timeout17:59:48.76 that date. Parent17:59UTC/80-publication cap. |
+| Astra7 GPU1 | 886059/start98343651; COMPLETE92/opt7052; WALL3544 filetime18:15:05.607489; **LOAD3545 18:15:05.943992UTC**; REQUEST3547 → RESPONSE3555/ACT3557 18:15:22.859973. Reload gap**314.863329s**. | Exact new identity/LOAD handed to Turing; P7 bridge rebind and fresh authenticated parent render remain **unverified**, not inferred from ACT. | Actual WALL/nativeSeptember20 18UTC; active systemdapproximately17:59:44 and timeout17:59:48.5 that date. Bridge owner reports separately. |
+| Kept caption GPU2 | Unchanged787115/start98128665; no new stop/reload in this follow-up. Existing WALL3304/LOAD3305 17:38:46.250332. | Existing same-incarnation INBOX3455 → REQUEST3457 → ACT3467 at17:55:24.001294; API parent3001805 remains alive. Not used as C0/Astra7 proof. | NativeSeptember20 18UTC; active systemd/timeout approximately17:59:44/17:59:48.64; parent17:59UTC. |
+
+Gaps are old-native-absent→newLOAD; TERM→LOAD is575.499274s(C0),315.164559s(Astra7). No deliberate idle or SIGSTOP; CPU replay/loading accounts for handoff time. Both source-record bindings, actual loaded adapter-state digests, optimizer counters and deadline-only saved-state comparisons verify. This is restored-state continuity, not uninterrupted resident execution or recall success. Exact files: `C0_CONTINUATION_LOADED.public.json`, `ASTRA7_CONTINUATION_LOADED.public.json`, `C0_POST_RENEWAL_PARENT.public.json`. One readout regression explicitly distinguishes adapter-file-manifest hashes from adapter-tensor-state hashes; no model source changed.14 local/14 receiving bounded controller/parent/readout tests pass after CPU-only clock repair; original receiving native suites125 each remain unchanged.
+
 ## Exact-COMPLETE continuations — September18 18:10UTC
 
 Explicit17:59:12 authorization is being executed now, not at22:55. Gate/source pushed582215ddb9d2b9981ac8f2d79660d0f2399afefa before controls:125 receiving tests per arm plus12 local/12 receiving boundary/parent-ledger regressions. The gate's initial18:08 heading was a one-minute labeling error, corrected to18:07; actual controls have timestamped receipts.

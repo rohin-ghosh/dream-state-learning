@@ -63,6 +63,14 @@ def verify_pending(root, pending):
             and record['document']['source_sha256'] == publication['sha256'], 'actual_unresolved_parent_inbox')
 
 
+def reconcile_completed_cycle(state, observed):
+    completed = observed['checkpoint_cycle']
+    require(type(completed) is int and completed >= 0, 'actual_loaded_completed_cycle')
+    previous = state['completed_cycle']
+    state['completed_cycle'] = max(previous, completed)
+    return dict(previous=previous, resumed_checkpoint_cycle=completed, current=state['completed_cycle'])
+
+
 def serve(priority_topic=None):
     root, source, control, _ = locations('C0')
     observed = observation('C0')
@@ -85,6 +93,7 @@ def serve(priority_topic=None):
     (support / 'curriculum_parent.py').write_text(source_text)
     inherited = deepcopy(read(OLD / 'EXIT.json'))
     state = inherited['state']
+    completed_clock = reconcile_completed_cycle(state, observed)
     state['record_cursor'] = observed['loaded']['index'] + 1
     if state['pending']:
         pending = state['pending']
@@ -96,6 +105,7 @@ def serve(priority_topic=None):
     write(previous / 'EXIT.json', inherited)
     write(SERVICE / 'RECOVERY_HANDOFF.public.json', dict(previous_exit_sha256=sha(OLD / 'EXIT.json'),
         previous_state_sha256=sha(OLD / 'STATE.json'), native=observed,
+        completed_cycle_reconciliation=completed_clock,
         inherited_parent_id=state['pending']['publication']['id'] if state['pending'] else None,
         inherited_message_republished=False, current_render_floor=state['record_cursor'],
         preserved_topic_index=state['topic_index'], preserved_reading_step=state['reading_step'],

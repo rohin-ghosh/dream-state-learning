@@ -8,7 +8,7 @@ from observe import observation
 from recover import LEASE_SOURCE, LEASE_SHA, locations, read, require, sha
 
 
-def main():
+def main(previous_directory=None, service_directory=None):
     root, _, _, _ = locations('C0')
     require(sha(LEASE_SOURCE) == LEASE_SHA and HORIZON <= read(LEASE_SOURCE)['hard_deadline_unix'], 'same_existing_lease')
     old = read(root / 'control_r233_lease_continuation/OLD_IDENTITY.json')
@@ -20,8 +20,8 @@ def main():
         time.sleep(2)
     else:
         raise ValueError('new_C0_LOAD_not_observed_no_duplicate_publisher')
-    c0_parent.OLD = c0_parent.HERE / 'C0_CURRICULUM_LEASE'
-    c0_parent.SERVICE = c0_parent.HERE / 'C0_CURRICULUM_AFTER_CONTINUATION'
+    c0_parent.OLD = previous_directory or c0_parent.HERE / 'C0_CURRICULUM_LEASE'
+    c0_parent.SERVICE = service_directory or c0_parent.HERE / 'C0_CURRICULUM_AFTER_CONTINUATION'
     original = c0_parent.replacements
 
     def replace(source, floor):

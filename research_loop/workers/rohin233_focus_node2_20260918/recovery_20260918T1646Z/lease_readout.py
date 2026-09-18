@@ -1,6 +1,7 @@
 """Read only the current continuation's public operational receipts."""
 
 import argparse
+from copy import deepcopy
 from datetime import datetime
 import json
 import os
@@ -9,6 +10,17 @@ import subprocess
 
 from observe import checked, header, observation, utc
 from recover import locations, read, sha
+
+
+def restored_state_checks(candidate, complete, wall, loaded):
+    expected = deepcopy(complete['document']['resume_state']['state'])
+    expected['deadline_unix'] = wall['authorization']['new_deadline_unix']
+    return dict(source_record_matches=complete['sha256'] == candidate['record_sha256'],
+        only_deadline_changed=expected == wall['state']['state'],
+        extended_hash_matches=wall['state']['sha256'] == candidate['extended_state_sha256'],
+        optimizer_steps_match=loaded['optimizer_steps'] == candidate['optimizer_steps'],
+        adapter_state_hash_matches=loaded['adapter_sha256']
+            == complete['document']['checkpoint']['adapter_state_sha256'])
 
 
 def receipt(name):
@@ -36,6 +48,11 @@ def receipt(name):
                     authorization=record['document']['authorization'],
                     state_sha256=record['document']['state']['sha256'],
                     record_mtime_utc=utc(path.stat().st_mtime))
+                if 'candidate' in recovery:
+                    candidate = recovery['candidate']
+                    complete = checked(root / 'raw/stream/records' / f'{candidate["record_index"]:020d}.json')
+                    observed['state_verification'] = restored_state_checks(candidate, complete,
+                        record['document'], observed['loaded'])
     owner = observed.get('native')
     if owner:
         process = Path('/proc', str(owner['pid']))
@@ -44,9 +61,13 @@ def receipt(name):
         command = (parent / 'cmdline').read_bytes().split(b'\0')
         if Path(os.fsdecode(command[0])).name == 'timeout':
             parent_stat = (parent / 'stat').read_text().rsplit(')', 1)[1].split()
+            duration = next(os.fsdecode(argument) for argument in command[1:]
+                if argument.endswith(b's') and argument[:-1].isdigit())
+            boot = next(int(line.split()[1]) for line in Path('/proc/stat').read_text().splitlines()
+                if line.startswith('btime '))
             observed['timeout'] = dict(pid=int(parent.name), start_ticks=int(parent_stat[19]),
-                duration=next(os.fsdecode(argument) for argument in command[1:]
-                    if argument.endswith(b's') and argument[:-1].isdigit()))
+                duration=duration, estimated_expiry_utc=utc(
+                    boot + int(parent_stat[19]) / os.sysconf('SC_CLK_TCK') + int(duration[:-1])))
         groups = (process / 'cgroup').read_text().splitlines()
         unit = next((part for line in groups for part in line.split('/')
             if part.startswith('orch-') and part.endswith('.service')), None)
