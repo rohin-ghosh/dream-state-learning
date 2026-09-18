@@ -1,5 +1,17 @@
 # R233 node2 kept-life recovery
 
+## Exact-COMPLETE continuations — September18 18:10UTC
+
+Explicit17:59:12 authorization is being executed now, not at22:55. Gate/source pushed582215ddb9d2b9981ac8f2d79660d0f2399afefa before controls:125 receiving tests per arm plus12 local/12 receiving boundary/parent-ledger regressions. The gate's initial18:08 heading was a one-minute labeling error, corrected to18:07; actual controls have timestamped receipts.
+
+| Arm | Actual current continuation | Parent / feedback | Horizon |
+| --- | --- | --- | --- |
+| C0 GPU4 | Latest COMPLETE102/opt6348, record3189; old process absent18:07:58.761473UTC. New native881309/start98332476 is STARTING; new LOAD/gap not yet available. Same journal/state preserved. | Supported exit of sole CPU parent preserves full ledger/pending packet. One successor waits for actual LOAD; no duplicate/republication. | New plan, timeout and systemdSeptember20 18UTC; actual WALL pending. |
+| Astra7 GPU1 | Latest COMPLETE92/opt7052, record3542; old process absent18:09:51.080662UTC. New native886059/start98343651 is STARTING; LOAD/gap pending. | Turing notified in TO_TURING.md; authentic P7-only bridge rebind is his task, not claimed here. | New plan and wrappersSeptember20 18UTC; actual WALL pending. |
+| Caption GPU2 | Same live native787115/start98128665, LOAD3305 at17:38:46.250332UTC. No continuation/control performed in this follow-up. | **Actual parent INBOX3455 → REQUEST3457 at17:55:12.151217 → RESPONSE3465/ACT3467 at17:55:24.001294**, masked history. Not a quality/uptake claim. | Actual WALL3304 and active timeout/systemd boundSeptember20 18UTC; parentSeptember20 17:59UTC. |
+
+Caption's earlier17:59:30 transport deadline is superseded by its owner's17:47 renewal receipts `LEASE_TRANSPORTS_RENEWED.json` and `LEASE_RENEWED_SHARED3.json` under `rohin233_ovx4_recovery_20260918`. This worker did not modify or inspect private scorer content; future feedback only, no history rescore. Old dated entries below are historical, not current blockers. No SIGSTOP, deliberate idle, unrelated-owner controls or new lease. Final actual LOAD gaps and parent/bridge observations will follow.
+
 ## Caption real output/feedback — September18 17:40 UTC
 
 First ACT RESPONSE3323/ACT3325 finished17:39:09.899196Z. R184_ACT3326 reportsPUBLISHED/executedtrue with a scorer receipt, and that feedback is **actually visible in REQUEST3329**, history tokens masked. The outcome is `scene_not_unambiguously_identified`, not a successful score or quality result. Two subsequent genuine ACTs likewise produce visible ambiguity feedback. WALL_EXTENDED3304 proves the deadline-only extension toSeptember20 18Z. Actual sleep recipe3355 confirms all-authentic rows, empty semantic filters, exclusionfalse. Private results/scores/panels are not exported; `CAPTION_OUTCOME.public.json` contains operational evidence only.

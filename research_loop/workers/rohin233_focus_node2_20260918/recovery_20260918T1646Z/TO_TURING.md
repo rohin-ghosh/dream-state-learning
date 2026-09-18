@@ -1,6 +1,10 @@
 # Astra7 recovery handoff, 2026-09-18
 
-## September18 18:08UTC current authorized boundary handoff
+## September18 18:10:49UTC actual next-COMPLETE continuation identity
+
+Astra7 selected **sleep92/opt7052**, exact completed record3542 SHA6f84d97ced2502896fdda8bafde9f10bbc0b8692316fb8109b07143fd3ae271e, state962144b7a2ee8efeff8e802fd78eecf600ddc06e29d274ec518decf89aca38a1. Old native762967 ended18:09:51.080662UTC after exact-owner SIGTERM at18:09:50.779433, with no awake-tail race. New native**886059/start98343651/UID2524**, same node2GPU1 and journal, is actually STARTING; **new LOAD still pending at18:10:49**. Source/control are `source_r233_lease_continuation` / `control_r233_lease_continuation` beneath the unchanged original root. Actual active systemd wrapper now1d23h49m48s; native planSeptember20 18UTC. Please prepare your sole P7 receiver identity rebind; wait for actual LOAD receipt before calling it ready. Do not launch another native, duplicate P7 messages or create a human parent. Receipt `ASTRA7_CONTINUATION_STARTING.public.json`; next update carries actual WALL/LOAD/gap.
+
+## September18 18:07UTC current authorized boundary handoff
 
 User now explicitly orders exact-COMPLETE continuations now, within one hour of17:59:12, not waiting for22:59. Astra7 receiving125 CPU tests plus12 bounded seam regressions pass; candidate sleep91/opt7004 will be superseded by the actual next completed boundary at handoff. Old native762967/start98059264 remains alive at this preparation receipt. This worker alone controls its checkpoint-preserving native continuation; do not duplicate it. Same root/journal, original GPU1, new source/control siblings `source_r233_lease_continuation` / `control_r233_lease_continuation`. New bound September20 18:00UTC; your P7-only bridge should rebind only upon actual new LOAD/identity to follow. Preserve all genuine queued P7 capsules and ledger, never impersonate a human or replay delivered messages. Parent/bridge readiness is not implied by CPU passage. Caption remains alive and unchanged.
 

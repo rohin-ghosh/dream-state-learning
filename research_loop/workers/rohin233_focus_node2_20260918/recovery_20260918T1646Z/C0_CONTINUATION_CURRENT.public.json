@@ -1,0 +1,75 @@
+{
+  "arm": "C0",
+  "control_name": "control_r233_lease_continuation",
+  "gpu_uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+  "handoff": {
+    "native_term_utc": "2026-09-18T18:07:58.510733+00:00",
+    "no_SIGSTOP": true,
+    "no_idle_hold": true,
+    "old_native_absent_utc": "2026-09-18T18:07:58.761473+00:00",
+    "old_owner": {
+      "command_sha256": "c0fe2337bd5cf4c86bc1a2191ad58fa301c0e0b1df8544b4a0be242f7efaba13",
+      "pid": 745118,
+      "start_ticks": 98001699,
+      "state": "R",
+      "uid": 2524
+    }
+  },
+  "hard_end_utc": "2026-09-20T18:00:00+00:00",
+  "head": {
+    "index": 3190,
+    "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+    "kind": "R184_LEARN_COMPLETE",
+    "previous_sha256": "b5bfa07a2e9be1f02231f199b2be773ccfc2e7245f851476a8d90e5721ffe49d",
+    "schema": "R125_STREAM_JOURNAL_V1",
+    "sha256": "7df1e5310d835498af86f49e6bfb539f14eaabb924ec185e0d44ee9cfee8a922"
+  },
+  "judge_content_or_scores_exported": false,
+  "lease_end_utc": "2026-09-21T08:43:00+00:00",
+  "native": {
+    "command_sha256": "15cacf1c6adbb72c7985f0bdd283701a7e5c67342e82437d996c3af27ff146fb",
+    "pid": 881309,
+    "start_ticks": 98332476,
+    "state": "R",
+    "uid": 2524
+  },
+  "observed_utc": "2026-09-18T18:11:31.050470+00:00",
+  "original_journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+  "physical_gpu": 4,
+  "plan_sha256": "87d5ed93cf9631cd101160f523eba550e590d8e1133f7c9c0a8329412243aa3a",
+  "preserved_checkpoint": {
+    "checkpoint_commit_sha256": "d9c7e5178d9d5a253b5469869f7a6ba3043f3819e9f3689ee1488564795c7d50",
+    "checkpoint_path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/checkpoints/sleep_000102",
+    "checkpoint_sha256": {
+      "adapter": "0bd28a887b573fdf341a3fc0fdded8de1908d71b4d1148ad9c2c527bfc660f3c",
+      "optimizer": "b6eea0a6510e725d2a9ba5c71a9ec9d9dbec5288a66ce3059e1a6a25ea88eb7d",
+      "rng": "b6eea0a6510e725d2a9ba5c71a9ec9d9dbec5288a66ce3059e1a6a25ea88eb7d"
+    },
+    "cycle": 102,
+    "extended_state_sha256": "500c7567e709abc8c251357b6b4a6cd6d757fad83bc669a60e7bc0053b9126b9",
+    "optimizer_steps": 6348,
+    "record_index": 3189,
+    "record_sha256": "b5bfa07a2e9be1f02231f199b2be773ccfc2e7245f851476a8d90e5721ffe49d",
+    "state_sha256": "aa73749ae20e2a97df785bb0d39f71da9c0273ea07f4169fcccdd5097dc61eb7"
+  },
+  "raw_text_exported": false,
+  "semantic_policies": [
+    "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+    "R227_ALL_AUTHENTIC_CHILD_ROWS_V1"
+  ],
+  "status": "STARTING",
+  "systemd": {
+    "properties": {
+      "ActiveState": "active",
+      "ExecMainStartTimestamp": "Fri 2026-09-18 18:08:04 UTC",
+      "RuntimeMaxUSec": "1d 23h 51min 40s",
+      "SubState": "running"
+    },
+    "unit": "orch-r184-c2-explicit-child-acf4d2d015874af1.service"
+  },
+  "timeout": {
+    "duration": "172304s",
+    "pid": 881308,
+    "start_ticks": 98332476
+  }
+}
