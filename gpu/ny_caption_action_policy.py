@@ -110,7 +110,9 @@ class CaptionActionPolicy:
                     break
                 visible = {key: deepcopy(result[key]) for key in (
                     'ok', 'accepted', 'status', 'q', 'scene_fit', 'pixel_id', 'submission_id',
-                    'rejection_reason', 'replayed', 'error', 'pause_required') if key in result}
+                    'rejection_reason', 'replayed', 'error', 'pause_required', 'raw_score', 'rank',
+                    'reference_count', 'top_k', 'acceptance_mode', 'relevance_score',
+                    'relevance_threshold') if key in result}
                 feedback.append(dict(ordinal=ordinal, result=visible,
                     repeat=result.get('status') == 'repeat' if result.get('ok', True) else None))
                 if result.get('pause_required'):

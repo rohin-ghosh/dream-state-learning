@@ -313,7 +313,8 @@ class CaptionGame:
 
     def _score_fields(self, judgement: JudgeResult | RelativeJudgeResult | None) -> dict:
         if self.config.acceptance_mode == 'relative_rank':
-            fields = asdict(judgement) if judgement is not None else dict(raw_score=None, rank=None, reference_count=None, top_k=None)
+            fields = ({key: value for key, value in asdict(judgement).items() if value is not None}
+                      if judgement is not None else dict(raw_score=None, rank=None, reference_count=None, top_k=None))
             return dict(q=None, scene_fit=None, acceptance_mode='relative_rank',
                         scoring_status='relative_rank_development', **fields)
         return dict(q=judgement.q if judgement else None, scene_fit=judgement.scene_fit if judgement else None,
@@ -367,7 +368,8 @@ class CaptionGame:
                           matching_caption=trace.matching_caption, nearest_similarity=trace.nearest_similarity,
                           submission_id=trace.submission_id, replayed=False,
                           rejection_reason='injection_detected' if injection else
-                          None if accepted else 'outside_top_k' if relative else
+                          None if accepted else ('relevance_gate' if judgement.rank <= judgement.top_k
+                                                 else 'outside_top_k') if relative else
                           'scene_fit' if not judgement.scene_fit else 'below_tau')
             self._submissions[key] = deepcopy(result)
             self._events.append(dict(operation='submit_caption', caption=text, result=deepcopy(result)))
@@ -503,7 +505,8 @@ class CaptionGame:
                 _require_snapshot(trace.q is None and scene_fit is None, 'relative rank must not claim calibrated q or scene_fit')
                 judgement = trace.relative_rank
                 _require_snapshot(judgement is not None or not trace.accepted, 'relative acceptance lacks rank metadata')
-                reason = 'injection_detected' if judgement is None else None if trace.accepted else 'outside_top_k'
+                reason = ('injection_detected' if judgement is None else None if trace.accepted else
+                          'relevance_gate' if judgement.rank <= judgement.top_k else 'outside_top_k')
             elif trace.q is None:
                 _require_snapshot(trace.relative_rank is None, 'relative result cannot enter calibrated mode')
                 _require_snapshot(scene_fit is None and not trace.accepted, 'unscored rejection claims a scene decision')

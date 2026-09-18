@@ -7,8 +7,9 @@ from pathlib import Path
 import time
 
 from gpu import ny_caption_data as data
-from gpu.ny_caption_game import CaptionGame, DevelopmentManifest, GameConfig, RelativeJudgeResult, VisualResult
+from gpu.ny_caption_game import CaptionGame, DevelopmentManifest, GameConfig, RelativeJudgeResult
 from gpu.ny_caption_pixels import PixelConfig
+from gpu.ny_caption_relevance import RelevanceGate
 from gpu.ny_caption_scalar_judge import ScalarJudge, relative_position
 
 
@@ -16,36 +17,51 @@ POLICY = 'R207_FIXED_DEVELOPMENT_REFERENCE_RANK_V1'
 
 
 class RelativeRankJudge:
-    def __init__(self, scalar, panels, top_k):
+    def __init__(self, scalar, panels, top_k, relevance=None):
         data.require(panels and all(isinstance(scene, str) and scores for scene, scores in panels.items()),
                      'nonempty_fixed_scene_reference_panels')
         for scores in panels.values():
             relative_position(0.0, scores, top_k)
         self.scalar, self.panels, self.top_k = scalar, panels, top_k
+        self.relevance = relevance
 
     def __call__(self, scene, caption):
         data.require(scene in self.panels, 'unregistered_development_scene')
         score = self.scalar.score([dict(scene=scene, caption=caption)])[0]
         result = relative_position(score, self.panels[scene], self.top_k)
-        return RelativeJudgeResult(**{key: result[key] for key in ('raw_score', 'rank', 'reference_count', 'top_k')})
+        relevance = dict(relevance_score=self.relevance.score(scene, caption),
+                         relevance_threshold=self.relevance.threshold) if self.relevance is not None else {}
+        return RelativeJudgeResult(**{key: result[key] for key in ('raw_score', 'rank', 'reference_count', 'top_k')},
+                                   **relevance)
 
 
-def prepare_references(source_manifest, game_manifest, scalar, *, panel_size=64, seed=207):
+def reference_bindings(manifest, game_manifest, release_map):
+    data.require(release_map.get('schema') == 'R177_GAME_IMAGE_RELEASE_MAP_V1'
+                 and release_map.get('mode') == 'DEVELOPMENT', 'bound_development_image_release_map')
+    bindings = {row['image']: row['contest_id'] for row in release_map['contests']
+                if row.get('split') == 'agent_development'}
+    requested = {contest.contest_id for contest in game_manifest.contests}
+    data.require(len(bindings) == 3 and set(bindings) == requested and len(set(bindings.values())) == 3
+                 and set(bindings.values()) <= set(manifest['pools']['agent_development']),
+                 'only_explicitly_released_agent_development_references_not_FINAL_or_judge_pools')
+    return bindings
+
+
+def prepare_references(source_manifest, game_manifest, scalar, release_map, *, panel_size=64, seed=207):
     data.require(type(panel_size) is int and 8 <= panel_size <= 512, 'bounded_development_reference_panel')
     manifest = data.load_manifest(source_manifest)
-    allowed = set(manifest['pools']['agent_development'])
-    requested = {contest.contest_id for contest in game_manifest.contests}
-    data.require(requested == allowed, 'only_exact_agent_development_references_not_FINAL_or_judge_pools')
+    bindings = reference_bindings(manifest, game_manifest, release_map)
     panels, records = {}, []
     for contest in game_manifest.contests:
-        reference = manifest['contests'][contest.contest_id]['rows']
+        source_id = bindings[contest.contest_id]
+        reference = manifest['contests'][source_id]['rows']
         data.require(data.file_ref(Path(reference['path']).resolve())['sha256'] == reference['sha256'],
                      'development_reference_rows_unchanged')
         eligible = {}
         with Path(reference['path']).open() as stream:
             for line in stream:
                 row = json.loads(line)
-                data.require(row['contest_id'] == contest.contest_id, 'reference_contest_join')
+                data.require(row['contest_id'] == source_id, 'reference_contest_join')
                 caption = data.normalize_caption(row['caption'])
                 if caption and len(caption.split()) <= 50:
                     eligible.setdefault(caption, row)
@@ -69,14 +85,15 @@ def prepare_references(source_manifest, game_manifest, scalar, *, panel_size=64,
 
 
 def build_game(game_manifest, scalar, panels, pixel_config, encoder, *, top_k=8,
-               agent_id='C2-development', lane='DEVELOPMENT', inspect_provider=None):
+               agent_id='C2-development', lane='DEVELOPMENT', inspect_provider=None, relevance_threshold=None):
     data.require(encoder.model_id == pixel_config.embedding_model_id
                  and encoder.revision == pixel_config.embedding_revision, 'actual_pixel_encoder_matches_config')
     if inspect_provider is None:
         def inspect_provider(image, question):
             raise RuntimeError('Live image inspection not configured; no fabricated observation')
     return CaptionGame(agent_id, lane, game_manifest, GameConfig(acceptance_mode='relative_rank'),
-                       pixel_config, embed=encoder, judge=RelativeRankJudge(scalar, panels, top_k),
+                       pixel_config, embed=encoder, judge=RelativeRankJudge(scalar, panels, top_k,
+                           RelevanceGate(encoder, relevance_threshold) if relevance_threshold is not None else None),
                        inspect_provider=inspect_provider,
                        count_tokens=lambda text: len(scalar.tokenizer.encode(text, add_special_tokens=False)))
 
@@ -97,16 +114,23 @@ def run(args):
                      and isinstance(action['origin'], dict) for action in actions), 'explicit_caption_origin_and_contest')
     started = time.time()
     scalar = ScalarJudge(args.judge_config, batch_size=args.batch_size)
-    panels, private = prepare_references(data_ref, manifest, scalar, panel_size=args.panel_size, seed=args.seed)
+    release_ref = data.file_ref(Path(args.image_map).resolve())
+    panels, private = prepare_references(data_ref, manifest, scalar, data.bound(release_ref),
+                                        panel_size=args.panel_size, seed=args.seed)
     panel_ref = data.private_write(output / 'REFERENCE_PANELS.private.json', private)
     encoder_ref = data.file_ref(Path(args.encoder_manifest).resolve())
     encoder = FrozenCPUEncoder(encoder_ref, threads=2)
     pixel_config = PixelConfig(**json.loads(Path(args.pixel_config).read_text()))
+    relevance_ref = data.file_ref(Path(args.relevance_config).resolve())
+    relevance = data.bound(relevance_ref)
+    data.require(relevance['policy'] == 'R209_MINILM_SCENE_CAPTION_COSINE_V1'
+                 and relevance['encoder']['sha256'] == encoder_ref['sha256'], 'measured_relevance_gate_same_encoder')
     game = build_game(manifest, scalar, panels, pixel_config, encoder, top_k=args.top_k,
-                      agent_id=args.agent_id, lane=args.lane)
+                      agent_id=args.agent_id, lane=args.lane, relevance_threshold=relevance['threshold'])
     data.private_write(output / 'LOADED.json', dict(policy=POLICY, loaded_unix=time.time(),
-                       scalar=scalar.reference, game_manifest=game_ref, encoder=encoder_ref,
+                       scalar=scalar.reference, game_manifest=game_ref, image_map=release_ref, encoder=encoder_ref,
                        panel_sha256=panel_ref['sha256'], panel_size=args.panel_size, top_k=args.top_k,
+                       relevance_gate=relevance_ref,
                        novelty='FROZEN_MINILM_EMBEDDING_ONLY_PROVISIONAL', tau=None,
                        FINAL_read=False, locked_validation_read=False))
     results = []
@@ -125,7 +149,7 @@ def run(args):
                    attempts=len(results), accepted=sum(row.get('accepted') is True for row in results),
                    new_pixels=sum(row.get('status') == 'new_pixel' for row in results),
                    per_attempt=[{key: row.get(key) for key in ('ok', 'accepted', 'status', 'rank', 'reference_count',
-                                'top_k', 'raw_score', 'q', 'pixel_count')} for row in results],
+                                'top_k', 'raw_score', 'q', 'pixel_count', 'relevance_score', 'relevance_threshold')} for row in results],
                    label='PROVISIONAL_FIXED_PANEL_TOP_K_NOT_CALIBRATED_HUMOR_OR_GLOBAL_CONTEST_RANK',
                    learning_or_retention_demonstrated=False, scene_fit_demonstrated=False,
                    pixel_config=data.file_ref(Path(args.pixel_config).resolve()), actions_sha256=captions_ref['sha256'])
@@ -135,7 +159,7 @@ def run(args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    for name in ('game-manifest', 'data-manifest', 'judge-config', 'encoder-manifest', 'pixel-config', 'captions', 'output'):
+    for name in ('game-manifest', 'data-manifest', 'image-map', 'judge-config', 'encoder-manifest', 'pixel-config', 'relevance-config', 'captions', 'output'):
         parser.add_argument('--' + name, required=True)
     parser.add_argument('--agent-id', default='C2-development')
     parser.add_argument('--lane', default='DEVELOPMENT')

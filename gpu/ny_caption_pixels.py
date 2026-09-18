@@ -103,6 +103,8 @@ class RelativeJudgeResult:
     rank: int
     reference_count: int
     top_k: int
+    relevance_score: float | None = None
+    relevance_threshold: float | None = None
 
     def __post_init__(self) -> None:
         if isinstance(self.raw_score, bool) or not isinstance(self.raw_score, (int, float)) or not math.isfinite(self.raw_score):
@@ -113,10 +115,16 @@ class RelativeJudgeResult:
             value = getattr(self, name)
             if type(value) is not int or not 1 <= value <= self.reference_count + 1:
                 raise ValueError(f'{name} must be a one-based integer within the comparison population')
+        if (self.relevance_score is None) != (self.relevance_threshold is None):
+            raise ValueError('relevance score and threshold must be supplied together')
+        if self.relevance_score is not None:
+            _number(self.relevance_score, 'relevance_score', -1, 1)
+            _number(self.relevance_threshold, 'relevance_threshold', -1, 1)
 
     @property
     def accepted(self) -> bool:
-        return self.rank <= self.top_k
+        return self.rank <= self.top_k and (self.relevance_score is None
+                                           or self.relevance_score >= self.relevance_threshold)
 
 
 @dataclass(frozen=True)
@@ -151,6 +159,9 @@ def _trace_document(trace: SubmissionTrace) -> dict:
     result = asdict(trace)
     if trace.relative_rank is None:
         result.pop('relative_rank')
+    elif trace.relative_rank.relevance_score is None:
+        result['relative_rank'].pop('relevance_score')
+        result['relative_rank'].pop('relevance_threshold')
     return result
 
 
