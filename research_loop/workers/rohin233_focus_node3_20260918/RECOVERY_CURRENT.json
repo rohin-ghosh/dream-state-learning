@@ -1,6 +1,6 @@
 {
   "lease_extended": false,
-  "live_count": 1,
+  "live_count": 2,
   "lives": [
     {
       "ACT": {
@@ -28,17 +28,17 @@
       },
       "SLEEP_RECIPE": {
         "active_semantic_filters": null,
-        "index": 3140,
+        "index": 3233,
         "learn_row_policy": null,
         "semantic_row_exclusion": null,
-        "sha256": "e5cc697f6960eadf53559c924290555b66894603d4782d2f08fcd30cf85c352b"
+        "sha256": "d3a2026d3af3be0ad078e2c52478450a03f824a3a875c892e790e746705359a8"
       },
       "actual_native": {
         "command_sha256": "30f8c167326a5be02ed30e0c5069ece57efcd47ecec900ef2246cddc3a053fbc",
         "pid": 1941202,
         "ppid": 1941201,
         "start_ticks": "45731595",
-        "state": "R"
+        "state": "S"
       },
       "checkpoint_sha256": {
         "adapter": "c73bd04c5da974c7eb92fffb0df73c35fc4a35c481253dbc3f68113e1023790a",
@@ -127,10 +127,43 @@
       "tail_response_count": 3
     },
     {
-      "ACT": null,
-      "LOADED": null,
-      "REQUEST": null,
-      "actual_native": null,
+      "ACT": {
+        "index": 3381,
+        "origin": {
+          "kind": "TRAIN_CHILD_RESPONSE",
+          "record_index": 3378,
+          "record_sha256": "4756b49fb5e30d1c0a641f8aae26f4f0d6275d834257904d05537b99307dc682"
+        },
+        "sha256": "0af6686caef54577f4e5640e7591333285c04d95fe061f7d91bdb53760affa7c"
+      },
+      "LOADED": {
+        "index": 3361,
+        "loaded_unix": 1789751756.3951676,
+        "optimizer_steps": 6924,
+        "pid": 1944402,
+        "resume": true,
+        "sha256": "78c6d7f2aad4a5f6339da3021f999686bfd561f81fe50b910c8717ff2dd1a3d0"
+      },
+      "REQUEST": {
+        "all_history_tokens_masked": true,
+        "index": 3364,
+        "sha256": "062ff20e43dcee4411bdc6d9cbf90bea96b0be556326e0994bbbbe76bedf4214",
+        "started_unix": 1789751758.8570726
+      },
+      "SLEEP_RECIPE": {
+        "active_semantic_filters": [],
+        "index": 3410,
+        "learn_row_policy": "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+        "semantic_row_exclusion": false,
+        "sha256": "85adb5af7b09498cf2ea364c8f54b0c0583c6ce8a692b999edbdbadcf9cec330"
+      },
+      "actual_native": {
+        "command_sha256": "a6237f762bd99f73bb6a99b3d2ee21211624b1790b302300d142e60f67e6bf58",
+        "pid": 1944402,
+        "ppid": 1944401,
+        "start_ticks": "45772663",
+        "state": "S"
+      },
       "checkpoint_sha256": {
         "adapter": "37c2f772688320e42a491539ae4b817eab56af5666c137e107d93e264d4ba5f6",
         "optimizer": "df6f67a1419da8e32c45e92cae3eaf70ad567c79b054833eefbd88bd073ce02e",
@@ -145,7 +178,7 @@
       "gpu": 3,
       "life": "r213_r226_caption_perspective_fork",
       "lost_tail_updates": 40,
-      "new_sleep_recipe_verified": false,
+      "new_sleep_recipe_verified": true,
       "optimizer_steps": 6924,
       "preservation_manifest_sha256": "5c2830a02c43305dda3d7a8c5dc00434ba247cab122af876b942fec253205b93",
       "recovery_receipt_sha256": "4ffdbf5d46b7a0cad5e2da17ae37bcc8e88b6bb649f9fb9519d9f63745e35236",
@@ -155,7 +188,7 @@
       },
       "replay_receipt_sha256": "497f78e7b7d772bc21210af1c4c5e9ff257cd854121fe0ad98279ef553a4d72c",
       "same_journal_manifest": true,
-      "status": "DISPATCHED_NOT_LOADED",
+      "status": "LOADED_ALIVE",
       "tail_inbox_count": 1,
       "tail_response_count": 4
     },
@@ -211,9 +244,13 @@
       "optimizer_steps": 6572,
       "preservation_manifest_sha256": "6d694f446f6afdeb0adc16c1a2e30183a297a00fa6bc197a954f11a167600851",
       "recovery_receipt_sha256": "200eb66b0b17769045be3a07852a9fe25e6f9a07530a936b2f056236e894f392",
+      "recovery_record": {
+        "index": 2877,
+        "sha256": "2000228ced3cecc20aec3e2c5f95c8326ee38a80eb711d8beed7d25531158a8e"
+      },
       "replay_receipt_sha256": "7cda96f5d7ef71579fb5a08f47eb4a462f474a19c05f7d84c2a25fcd1206cd7f",
       "same_journal_manifest": true,
-      "status": "RECONCILED_NOT_LAUNCHED",
+      "status": "DISPATCHED_NOT_LOADED",
       "tail_inbox_count": 1,
       "tail_response_count": 4
     },
@@ -278,6 +315,6 @@
   ],
   "native_signals": 0,
   "node": "node3",
-  "observed_utc": "2026-09-18T17:15:35.661256+00:00",
+  "observed_utc": "2026-09-18T17:17:24.753975+00:00",
   "retired_roots_restarted": 0
 }

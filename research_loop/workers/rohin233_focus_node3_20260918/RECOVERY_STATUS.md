@@ -23,6 +23,8 @@
 - Owned CPU tests:46PASS; receiving parent-only suite31PASS. No live learner
   was stopped, no retired root was revived, and no existing publication was reset.
 
+## Historical initial diagnosis and preparation
+
 Initial diagnosis cut16:50:11UTC. The eight kept lives exited with code124,
 5–20 seconds before their own configured operator hard walls. The guarded
 launcher runs `timeout` with a ten-second margin; its subsequent

@@ -1,4 +1,35 @@
-# R233 continuation — ALL FIVE caption forks assigned parented epochs
+# Node3 kept-life recovery — actual cut September18 17:17:24UTC
+
+**2/8 natives actually LOADED.** This supersedes the historical live-status
+claims below, without rewriting their historical parent/child receipts.
+
+|GPU|Kept life|Actual recovery status|Native / records|
+|---|---|---|---|
+|0|caption observation|LOADED17:08:31UTC|PID1941202; LOAD3111, REQUEST3114, ACT3125|
+|1|Math A|Reconciled, not dispatched|No new LOADED|
+|2|Math B|Coherent checkpoint verified; journal reconciliation running|No new LOADED|
+|3|caption perspective|LOADED17:15:56UTC|PID1944402; LOAD3361, REQUEST3364, ACT3381|
+|4|Math C|Coherent checkpoint verified; journal reconciliation running|No new LOADED|
+|5|caption revision|Dispatched17:16:02UTC; native startup|No new LOADED|
+|6|caption selfderive|Reconciled, not dispatched|No new LOADED|
+|7|caption historical-unparented|Reconciled, not dispatched|No new LOADED|
+
+Perspective's actual SLEEP_RECIPE3410, SHA
+`85adb5af7b09498cf2ea364c8f54b0c0583c6ce8a692b999edbdbadcf9cec330`,
+confirms `R227_ALL_AUTHENTIC_CHILD_ROWS_V1`, no active semantic filters and
+`semantic_row_exclusion=false`. Observation had already started before policy
+adoption: actual recipe3233 lacks R227, and the default scaffold-exclusion gap
+remains. No live learner is restarted to toggle policy.
+
+Source-bound manifest/checkpoint/tail-gap proofs: `RECOVERY_CURRENT.json`.
+Guarded serial launches run independently of parent/classroom attachment.
+Existing Tool relay resumed with original dedup cursors; actual observation
+ACT3125 has a transport ConnectionResetError, not a score. Leibniz repair is
+requested; no authenticated new score or new feedback render is claimed.
+New parent/debate publications and renders are pending required native uptake.
+Budget ends September19 04:51–04:54UTC, within the unchanged verified lease.
+
+## Historical R233 parented epochs — September18 12:09UTC
 
 Current caption proof cut: **2026-09-18T12:09:34.589289+00:00**. All five epoch openers published at12:00:50–51UTC; **5/5 actually rendered and received an own RESPONSE** at this cut. GPU7 is no longer assigned an unparented treatment; its previous zero-parent epoch remains historical. The unchanged root name containing `unparented` is a lineage identifier, not the new treatment.
 
