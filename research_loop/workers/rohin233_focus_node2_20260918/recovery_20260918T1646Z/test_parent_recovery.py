@@ -9,9 +9,43 @@ from c0_parent import parent_identity, priority_chooser, replacements, verify_pe
 from caption_endpoint import scoped_inspector
 from caption_parent_renew import renewed_source
 from observe import current_loaded, native_command
+from c0_continuation_parent import life_of_lease_capacity
+from caption_parent_lease_capacity import capacity_source, LIMIT
 
 
 class ParentRecoveryTests(unittest.TestCase):
+    def test_paid_caption_capacity_preserves_pending_and_per_turn_policy(self):
+        source = "\n".join(("epoch = remote(dict(operation='begin'))", 'maximum_turns=80',
+            'pending, prior, number = None, [], 0', 'while number < 80:',
+            "if pending:\n            observation = poll()", 'time.sleep(5)',
+            "strong(payload, attempt, deadline, INSTRUCTION, reasoning_effort='xhigh')",
+            "focus.write(PUBLIC/'EXIT.json', dict(completed_utc=focus.utc(), parent_turns=number, learner_signals=0))"))
+        updated = capacity_source(source)
+        self.assertIn('preserved_pending, preserved_prior, preserved_number', updated)
+        self.assertIn('maximum_turns=640', updated)
+        self.assertIn('time.sleep(5)', updated)
+        self.assertIn("strong(payload, attempt, deadline, INSTRUCTION, reasoning_effort='xhigh')", updated)
+        self.assertIn('CAPACITY_WARNING.json', updated)
+        self.assertEqual(LIMIT * 4096, 2621440)
+        with self.assertRaises(ValueError):
+            capacity_source(source.replace('maximum_turns=80', 'maximum_turns=81'))
+
+    def test_capacity_fits_whole_finite_lease_without_changing_cadence(self):
+        source = "\n".join(("service = dict(pid=os.getpid(),", "max_publications=80,",
+            "while time.time() < deadline and state['publications'] < 80:",
+            "publication = publish_parent(ROOT/'raw', 'Astra', text)", 'time.sleep(5)',
+            'per_turn_tokens = 4096', 'preserve_parent_prompts()'))
+        updated = life_of_lease_capacity(source)
+        self.assertIn("state['publications'] + int(max(0, deadline - time.time()) / 5) + 2", updated)
+        for retained in ('time.sleep(5)', 'per_turn_tokens = 4096', 'preserve_parent_prompts()'):
+            self.assertEqual(updated.count(retained), 1)
+        self.assertNotIn('max_publications=80', updated)
+        with self.assertRaises(ValueError):
+            life_of_lease_capacity(source.replace('time.sleep(5)', 'time.sleep(1)'))
+        for remaining in (0, 4.9, 5, 172800):
+            total_limit = 25 + int(max(0, remaining) / 5) + 2
+            self.assertGreater(total_limit - 25, remaining / 5)
+
     def test_completed_handoff_clock_does_not_change_parent_ledger(self):
         state = dict(completed_cycle=101, publications=24, topic_index=24, reading_step=3,
             last_publication_cycle=101, next_due_cycle=102, pending=None)

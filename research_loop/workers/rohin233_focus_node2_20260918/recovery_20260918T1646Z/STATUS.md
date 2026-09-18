@@ -1,5 +1,9 @@
 # R233 node2 kept-life recovery
 
+## Current canonical table — September18 18:39UTC
+
+See **`RENEWAL_TABLE.md` + `RENEWAL_TABLE.public.json`** for the normalized alive/parent/native/wrapper table and exact source receipts. Both C0/Astra7 actual renewals are complete; caption native unchanged. C0 fresh post-renewal parent REQUEST3278→ACT3288 is verified, and its old80-total cap is replaced by the finite lease-derived34,215 ceiling with unchanged cadence/per-turn prompts. Caption successor has640total provider calls, unchanged4,096outputtokens/call and90-word message, warning560, preserved pending ledger and fresh REQUEST3843→ACT3859. Astra7's P7-owned bridge/parent still awaits its owner's new actual roundtrip, not inferred from native LOAD. Earlier dated rows below are historical; their80-turn caps and pending C0 render are superseded by the canonical table.
+
 ## Actual renewed natives — September18 18:21UTC
 
 | Arm | Alive / exact completed source / actual renewed output | Fresh parent status | Native / wrappers |

@@ -8,7 +8,24 @@ from observe import observation
 from recover import LEASE_SOURCE, LEASE_SHA, locations, read, require, sha
 
 
-def main(previous_directory=None, service_directory=None):
+def life_of_lease_capacity(source):
+    require(source.count('time.sleep(5)') == 1
+        and source.count("publication = publish_parent(ROOT/'raw', 'Astra', text)") == 1,
+        'one_unchanged_static_publication_per_five_second_iteration')
+    changes = {
+        'service = dict(pid=os.getpid(),':
+            "maximum_publications = state['publications'] + int(max(0, deadline - time.time()) / 5) + 2\n    service = dict(pid=os.getpid(),",
+        'max_publications=80,': 'max_publications=maximum_publications,',
+        "while time.time() < deadline and state['publications'] < 80:":
+            "while time.time() < deadline and state['publications'] < maximum_publications:",
+    }
+    for original, replacement in changes.items():
+        require(source.count(original) == 1, 'exact_C0_total_capacity_seam')
+        source = source.replace(original, replacement)
+    return source
+
+
+def main(previous_directory=None, service_directory=None, lease_capacity=False):
     root, _, _, _ = locations('C0')
     require(sha(LEASE_SOURCE) == LEASE_SHA and HORIZON <= read(LEASE_SOURCE)['hard_deadline_unix'], 'same_existing_lease')
     old = read(root / 'control_r233_lease_continuation/OLD_IDENTITY.json')
@@ -28,9 +45,10 @@ def main(previous_directory=None, service_directory=None):
         result = original(source, floor)
         seam = "deadline = min(plan['hard_end_unix'] - 60, time.time() + 21600)"
         require(result.count(seam) == 1, 'same_curriculum_horizon_seam')
-        return result.replace(seam, 'deadline = ' + repr(HORIZON - 60)).replace(
+        result = result.replace(seam, 'deadline = ' + repr(HORIZON - 60)).replace(
             "ROOT/'control_r233_recovery/PLAN.json'", "ROOT/'control_r233_lease_continuation/PLAN.json'").replace(
             "ROOT/'source_r233_recovery'", "ROOT/'source_r233_lease_continuation'")
+        return life_of_lease_capacity(result) if lease_capacity else result
 
     c0_parent.replacements = replace
     c0_parent.serve()

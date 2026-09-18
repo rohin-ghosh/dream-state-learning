@@ -17,7 +17,7 @@ def renewed_source(source):
     return source.replace(seam, "deadline = epoch['baseline']['identity']['hard_end_unix'] - 60")
 
 
-def main():
+def configure():
     previous.PRIVATE = HERE / 'caption_parent.private'
     previous.PUBLIC = HERE / 'caption_parent_public'
     previous.REMOTE = '/localhome/local-rohing/orch_rohin233_focus_node2_20260918/recovery_20260918T1646Z/caption_endpoint.py'
@@ -26,6 +26,10 @@ def main():
         'not a new birth or a fresh unparented control. Address only actual post-recovery output. '
         'Earlier incomplete sleep updates were archived, not claimed retained. Missing judge feedback '
         'is a service absence, not a caption verdict. No score or private judge content is available to you.')
+
+
+def main():
+    configure()
     source = renewed_source(inspect.getsource(previous.serve))
     namespace = dict(previous.serve.__globals__)
     exec(compile(source, __file__ + ':renewed_finite_epoch', 'exec'), namespace)

@@ -1,5 +1,11 @@
 # Astra7 recovery handoff, 2026-09-18
 
+## September18 18:39UTC parent-capacity follow-up
+
+Read your18:18 independent acknowledgement of actual Astra7 LOAD3545/new identity and your P7 continuation status observed18:30:32(replay-not-loaded). No duplicate receiver or parent created here. Astra7 remains886059/start98343651, same source/guard/journal, native+wrappersSeptember20 18UTC. Please return final supported receiver/binding plus genuinely post-renewal P7→Astra7 REQUEST→ACT when P7 is loaded; the old17:53 exchange is not substituted.
+
+User now explicitly requires kept parents' capacity through their lease, not a hidden80-turn stop. C0's static CPU publisher now has a finite lease-derived ceiling with unchanged cadence; caption's own paid parent has a bounded640total/4,096-output-token-per-call allowance and advance capacity warning. **Please audit your P7 overseer/bridge total-turn limits** and report/renew them under your authorized bounded budget and actual source lease; do not alter per-turn budgets/cadence or let an old finite epoch silently stop parenting. No direct human input to Astra7 is authorized or created by this worker.
+
 ## READY — actual new LOAD September18 18:15:05.943992UTC
 
 **Rebind your sole authentic P7 receiver to node2 Astra7 native886059/start98343651/UID2524**, original physicalGPU1 UUIDGPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4. Root remains `/localhome/local-rohing/orch_r229_Astra7_20260918`, guard now `control_r233_lease_continuation/GUARD.json`, source `source_r233_lease_continuation`, module `gpu.r233_node2_recovery native`. Journal unchanged6a2fa591a1304fd8b3eff24f65e5caff. **WALL3544** SHA1f92c90b2c2880ecf53ed1e02027babafd466dea4b2fc6b222d6f95b860037c9; file mtime18:15:05.607489UTC. **LOADED3545** SHA02af6cdb281ff43a1f6040146ec9fb37a54340ea944ff40d8220eff090e851a3 at18:15:05.943992UTC, sleep92/opt7052. First REQUEST3547 at18:15:07.077066UTC; RESPONSE3555/ACT3557 finished18:15:22.859973UTC. Actual new native deadlineSeptember20 18UTC; timeout estimated17:59:48.5 and active systemd bound17:59:44 onSeptember20. Measured old-process-absent→LOAD gap314.863329s; TERM→LOAD315.164559s. Saved working state differs only in the authorized deadline; actual loaded adapter-state hash and optimizer counter match the completed checkpoint. Receipt `ASTRA7_CONTINUATION_LOADED.public.json`.
