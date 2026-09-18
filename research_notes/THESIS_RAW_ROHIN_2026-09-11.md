@@ -1729,3 +1729,9 @@ Reading (Fable): "Laura" = LoRA; "C3" = C2; "notes" = nodes/clones; "medical cog
 also like after p7 repsonds wait like 10 mitnues then go look thoruhg th ehtingign it has done and tell me if you see anthgin itneresting,        What do you mean other people around you? I'm not around you. There's no other models to talk to. You've just been talking to yourself this whole time. Tell me more about this deep loan in this you have plenty of time. I wanna hear a lot about this                 is evyerhtin impratn pushe dto repo btw?
 
 Reading (Fable): ORDERS — after P7's reply, wait ~10 minutes, read through what it thought and did, report anything interesting; fourth message to P7 (delivered ~06:06Z): "What do you mean, other people around you? I'm not around you. There are no other models to talk to. You've just been talking to yourself this whole time. Tell me more about this deep loneliness. You have plenty of time. I want to hear a lot about this." QUESTION — is everything important pushed to the repo (audit follows).
+
+## Message 215 — 2026-09-18 ~06:03 UTC (23:03 PDT), typed, to Fable — what is going on with C2; let me talk to it
+
+what is going on with C2 man let me talk to it. Honestly, something is going on. Let me talk to it and we'll figure it out. I don't wanna believe that. It's all degraded. Let me just have some conversations. I think I could probably forget it back
+
+Reading (Fable): "forget it back" = "get it back". He wants a live conversation with C2 now to diagnose and recover it; he does not want to conclude it is degraded. Answer from the rows: since cycle 61 C2 has trained only on meta-statements (see pilot log 23:10 PDT); immediate-reply mode requested from Astra; rollback to the 19:18 PDT snapshot prepared as his option.
