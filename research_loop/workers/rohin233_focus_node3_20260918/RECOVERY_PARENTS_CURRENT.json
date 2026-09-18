@@ -8,27 +8,139 @@
     "start_ticks": "45982872",
     "state": "S"
   },
-  "heartbeat_utc": "2026-09-18T18:26:11.926059+00:00",
+  "heartbeat_utc": "2026-09-18T18:29:15.799650+00:00",
   "historical_turns_not_counted_as_recovery": true,
   "native_signals": 0,
-  "new_model_parent_render_count": 5,
-  "new_parent_render_count": 5,
+  "new_model_parent_render_count": 7,
+  "new_parent_render_count": 7,
   "new_shared_conclusion_not_established": true,
-  "observed_utc": "2026-09-18T18:26:22.800438+00:00",
+  "observed_utc": "2026-09-18T18:29:21.205739+00:00",
   "rows": [
     {
-      "first_new_model_render": null,
-      "first_new_render": null,
-      "gpu": 0,
-      "latest_parent": {
-        "actual_ACT_after_parent": null,
+      "first_new_model_render": {
+        "actual_ACT_after_parent": {
+          "ACT": {
+            "index": 3825,
+            "sha256": "8ba5ac459a615355a5dc28a157a2c2a11df68dbed3ed1b60ee79416e40024dce"
+          },
+          "ACT_REQUEST": {
+            "index": 3821,
+            "sha256": "8c3cf0080a375f94349b71dcd7ea5ef959e4d5721cade23ce7385f062cdb9f83"
+          },
+          "RESPONSE": {
+            "index": 3822,
+            "sha256": "8ae9261122b693559f0b2b353d68b741cc2afe0e86ddf6265dfcbb48b473fc46"
+          },
+          "correctness_or_training_success_not_inferred": true,
+          "parent_present_and_masked_in_ACT_request": true
+        },
         "delivery": {
           "INBOX": {
             "index": 3723,
             "sha256": "07b358d52e8606c3914cd471a7bb05d33ba1bafaf0df1ed56c4957ae03506a44"
           },
-          "REQUEST": null,
-          "RESPONSE": null
+          "REQUEST": {
+            "all_history_tokens_masked": true,
+            "index": 3814,
+            "sha256": "69db94860cc28898740eeb995b1c761dc66f2f86c926d7a8402aaae7c0dc9e46",
+            "started_unix": 1789755983.791582
+          },
+          "RESPONSE": {
+            "index": 3815,
+            "sha256": "22ba175e0768e1e6d89d432fe1577afa494738bc115ea7010ceb707e8377f366"
+          },
+          "actual_training_not_established": true,
+          "child_raw_sha256": "c9a8369b1bd5f29a24e652406fcc389c9e09b0e6344388b9bc8bb115fd285d5b",
+          "curriculum_success_not_inferred": true
+        },
+        "parent_id": "a2eb8921e8d245388f0da3eba4ed0782",
+        "parent_kind": "ACTUAL_MODEL_PROVIDER",
+        "parent_sha256": "9ee1d07f410abea465cff6161e07e84c2561ee15559b9f55b7bbd1d512aa68bf",
+        "provider_dispatch_sha256": "9412ed9dc52ca3c8fc6d7eacd8307286a6a4fca1d0d750e31235f7c2b81c3fd8",
+        "provider_model": "openai/openai/gpt-6-astra",
+        "provider_response_sha256": "43f69416bdfd5face106f10ad16ce23389db83a3099dda0c78260b159b76e336",
+        "published_utc": "2026-09-18T18:17:15.085412+00:00"
+      },
+      "first_new_render": {
+        "actual_ACT_after_parent": {
+          "ACT": {
+            "index": 3825,
+            "sha256": "8ba5ac459a615355a5dc28a157a2c2a11df68dbed3ed1b60ee79416e40024dce"
+          },
+          "ACT_REQUEST": {
+            "index": 3821,
+            "sha256": "8c3cf0080a375f94349b71dcd7ea5ef959e4d5721cade23ce7385f062cdb9f83"
+          },
+          "RESPONSE": {
+            "index": 3822,
+            "sha256": "8ae9261122b693559f0b2b353d68b741cc2afe0e86ddf6265dfcbb48b473fc46"
+          },
+          "correctness_or_training_success_not_inferred": true,
+          "parent_present_and_masked_in_ACT_request": true
+        },
+        "delivery": {
+          "INBOX": {
+            "index": 3723,
+            "sha256": "07b358d52e8606c3914cd471a7bb05d33ba1bafaf0df1ed56c4957ae03506a44"
+          },
+          "REQUEST": {
+            "all_history_tokens_masked": true,
+            "index": 3814,
+            "sha256": "69db94860cc28898740eeb995b1c761dc66f2f86c926d7a8402aaae7c0dc9e46",
+            "started_unix": 1789755983.791582
+          },
+          "RESPONSE": {
+            "index": 3815,
+            "sha256": "22ba175e0768e1e6d89d432fe1577afa494738bc115ea7010ceb707e8377f366"
+          },
+          "actual_training_not_established": true,
+          "child_raw_sha256": "c9a8369b1bd5f29a24e652406fcc389c9e09b0e6344388b9bc8bb115fd285d5b",
+          "curriculum_success_not_inferred": true
+        },
+        "parent_id": "a2eb8921e8d245388f0da3eba4ed0782",
+        "parent_kind": "ACTUAL_MODEL_PROVIDER",
+        "parent_sha256": "9ee1d07f410abea465cff6161e07e84c2561ee15559b9f55b7bbd1d512aa68bf",
+        "provider_dispatch_sha256": "9412ed9dc52ca3c8fc6d7eacd8307286a6a4fca1d0d750e31235f7c2b81c3fd8",
+        "provider_model": "openai/openai/gpt-6-astra",
+        "provider_response_sha256": "43f69416bdfd5face106f10ad16ce23389db83a3099dda0c78260b159b76e336",
+        "published_utc": "2026-09-18T18:17:15.085412+00:00"
+      },
+      "gpu": 0,
+      "latest_parent": {
+        "actual_ACT_after_parent": {
+          "ACT": {
+            "index": 3825,
+            "sha256": "8ba5ac459a615355a5dc28a157a2c2a11df68dbed3ed1b60ee79416e40024dce"
+          },
+          "ACT_REQUEST": {
+            "index": 3821,
+            "sha256": "8c3cf0080a375f94349b71dcd7ea5ef959e4d5721cade23ce7385f062cdb9f83"
+          },
+          "RESPONSE": {
+            "index": 3822,
+            "sha256": "8ae9261122b693559f0b2b353d68b741cc2afe0e86ddf6265dfcbb48b473fc46"
+          },
+          "correctness_or_training_success_not_inferred": true,
+          "parent_present_and_masked_in_ACT_request": true
+        },
+        "delivery": {
+          "INBOX": {
+            "index": 3723,
+            "sha256": "07b358d52e8606c3914cd471a7bb05d33ba1bafaf0df1ed56c4957ae03506a44"
+          },
+          "REQUEST": {
+            "all_history_tokens_masked": true,
+            "index": 3814,
+            "sha256": "69db94860cc28898740eeb995b1c761dc66f2f86c926d7a8402aaae7c0dc9e46",
+            "started_unix": 1789755983.791582
+          },
+          "RESPONSE": {
+            "index": 3815,
+            "sha256": "22ba175e0768e1e6d89d432fe1577afa494738bc115ea7010ceb707e8377f366"
+          },
+          "actual_training_not_established": true,
+          "child_raw_sha256": "c9a8369b1bd5f29a24e652406fcc389c9e09b0e6344388b9bc8bb115fd285d5b",
+          "curriculum_success_not_inferred": true
         },
         "parent_id": "a2eb8921e8d245388f0da3eba4ed0782",
         "parent_kind": "ACTUAL_MODEL_PROVIDER",
@@ -319,13 +431,97 @@
       "new_parent_publications": 2
     },
     {
-      "first_new_model_render": null,
-      "first_new_render": null,
+      "first_new_model_render": {
+        "actual_ACT_after_parent": null,
+        "delivery": {
+          "INBOX": {
+            "index": 3990,
+            "sha256": "03641cd98585eb854e68d68178cb69523fc826c8c4097bd919e45514307e6895"
+          },
+          "REQUEST": {
+            "all_history_tokens_masked": true,
+            "index": 3992,
+            "sha256": "d64715f0c4fe154d2fd1223c8f93284458968944f07a1487fff4f8d032644efa",
+            "started_unix": 1789755999.0708098
+          },
+          "RESPONSE": {
+            "index": 3993,
+            "sha256": "b446815108aa614db8160776dfe1544503b4c85c18baaea3b988c24c293efb39"
+          },
+          "actual_training_not_established": true,
+          "child_raw_sha256": "88feb07895ab91c3f074a2ba2cd0cbd8cfb7a76bb708bc171b2efdca0ebd9821",
+          "curriculum_success_not_inferred": true
+        },
+        "parent_id": "f2793959a2ef46ed8f7433508e07256f",
+        "parent_kind": "ACTUAL_MODEL_PROVIDER",
+        "parent_sha256": "db577c2d52e90290f6039aafd6056f1915b89c0d7c9e806f941db70d69bfa18f",
+        "provider_dispatch_sha256": "fd5335b9762b4da7fb31e1d322d43c7582efc8210ba8c5532a9ffa9e52d2ba16",
+        "provider_model": "openai/openai/gpt-6-astra",
+        "provider_response_sha256": "da9b150b4b818bb1b7292a82acb500210014de20cfc3951d708b05225ffa22f0",
+        "published_utc": "2026-09-18T18:26:28.959231+00:00"
+      },
+      "first_new_render": {
+        "actual_ACT_after_parent": null,
+        "delivery": {
+          "INBOX": {
+            "index": 3990,
+            "sha256": "03641cd98585eb854e68d68178cb69523fc826c8c4097bd919e45514307e6895"
+          },
+          "REQUEST": {
+            "all_history_tokens_masked": true,
+            "index": 3992,
+            "sha256": "d64715f0c4fe154d2fd1223c8f93284458968944f07a1487fff4f8d032644efa",
+            "started_unix": 1789755999.0708098
+          },
+          "RESPONSE": {
+            "index": 3993,
+            "sha256": "b446815108aa614db8160776dfe1544503b4c85c18baaea3b988c24c293efb39"
+          },
+          "actual_training_not_established": true,
+          "child_raw_sha256": "88feb07895ab91c3f074a2ba2cd0cbd8cfb7a76bb708bc171b2efdca0ebd9821",
+          "curriculum_success_not_inferred": true
+        },
+        "parent_id": "f2793959a2ef46ed8f7433508e07256f",
+        "parent_kind": "ACTUAL_MODEL_PROVIDER",
+        "parent_sha256": "db577c2d52e90290f6039aafd6056f1915b89c0d7c9e806f941db70d69bfa18f",
+        "provider_dispatch_sha256": "fd5335b9762b4da7fb31e1d322d43c7582efc8210ba8c5532a9ffa9e52d2ba16",
+        "provider_model": "openai/openai/gpt-6-astra",
+        "provider_response_sha256": "da9b150b4b818bb1b7292a82acb500210014de20cfc3951d708b05225ffa22f0",
+        "published_utc": "2026-09-18T18:26:28.959231+00:00"
+      },
       "gpu": 3,
-      "latest_parent": null,
+      "latest_parent": {
+        "actual_ACT_after_parent": null,
+        "delivery": {
+          "INBOX": {
+            "index": 3990,
+            "sha256": "03641cd98585eb854e68d68178cb69523fc826c8c4097bd919e45514307e6895"
+          },
+          "REQUEST": {
+            "all_history_tokens_masked": true,
+            "index": 3992,
+            "sha256": "d64715f0c4fe154d2fd1223c8f93284458968944f07a1487fff4f8d032644efa",
+            "started_unix": 1789755999.0708098
+          },
+          "RESPONSE": {
+            "index": 3993,
+            "sha256": "b446815108aa614db8160776dfe1544503b4c85c18baaea3b988c24c293efb39"
+          },
+          "actual_training_not_established": true,
+          "child_raw_sha256": "88feb07895ab91c3f074a2ba2cd0cbd8cfb7a76bb708bc171b2efdca0ebd9821",
+          "curriculum_success_not_inferred": true
+        },
+        "parent_id": "f2793959a2ef46ed8f7433508e07256f",
+        "parent_kind": "ACTUAL_MODEL_PROVIDER",
+        "parent_sha256": "db577c2d52e90290f6039aafd6056f1915b89c0d7c9e806f941db70d69bfa18f",
+        "provider_dispatch_sha256": "fd5335b9762b4da7fb31e1d322d43c7582efc8210ba8c5532a9ffa9e52d2ba16",
+        "provider_model": "openai/openai/gpt-6-astra",
+        "provider_response_sha256": "da9b150b4b818bb1b7292a82acb500210014de20cfc3951d708b05225ffa22f0",
+        "published_utc": "2026-09-18T18:26:28.959231+00:00"
+      },
       "life": "r213_r226_caption_perspective_fork",
       "native_status": "LOADED_ALIVE",
-      "new_parent_publications": 0
+      "new_parent_publications": 1
     },
     {
       "first_new_model_render": {
@@ -607,10 +803,24 @@
       "first_new_model_render": null,
       "first_new_render": null,
       "gpu": 6,
-      "latest_parent": null,
+      "latest_parent": {
+        "actual_ACT_after_parent": null,
+        "delivery": {
+          "INBOX": null,
+          "REQUEST": null,
+          "RESPONSE": null
+        },
+        "parent_id": "587ced9446844a4a9522b65bb9c41585",
+        "parent_kind": "ACTUAL_MODEL_PROVIDER",
+        "parent_sha256": "2745afbd1afd912a8f5f2bb3f121375f20c9092e20a29915ca9764d6f7be9eb3",
+        "provider_dispatch_sha256": "579e5f8afa1359ade9ca5dd78c7177390d528cd7d46b6e87a6d1ecd33ae3a6eb",
+        "provider_model": "openai/openai/gpt-6-astra",
+        "provider_response_sha256": "8da74f90fa32bec0d4b8f2ee1f7f7fe3f5d61bc1eb19e521b52b33ce0f7accd7",
+        "published_utc": "2026-09-18T18:26:46.553887+00:00"
+      },
       "life": "r213_r226_caption_selfderive_fork",
       "native_status": "LOADED_ALIVE",
-      "new_parent_publications": 0
+      "new_parent_publications": 1
     },
     {
       "first_new_model_render": {

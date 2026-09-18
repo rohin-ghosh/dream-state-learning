@@ -1,20 +1,20 @@
-# Node3 recovery — current native cut 2026-09-18T18:25:51.405735+00:00
+# Node3 recovery — current native cut 2026-09-18T18:29:16.646189+00:00
 
 **8/8 actual current natives are LOADED. All eight have actual WALL_EXTENDED to September24 18:00UTC.**
 This is the conservative user-authorized operational ceiling, not a new provider expiry or lease extension.
 
-Deadline/component cut: **2026-09-18T18:26:18.917434+00:00**. Parent cut: **2026-09-18T18:26:22.800438+00:00**.
-New model-provider parent renders after each latest LOAD: **5/8**; remaining inputs are pending, not counted as rendered.
+Deadline/component cut: **2026-09-18T18:29:16.987190+00:00**. Parent cut: **2026-09-18T18:29:21.205739+00:00**.
+New model-provider parent renders after each latest LOAD: **7/8**; GPU6 parent587ced9446844a4a9522b65bb9c41585 is published but not yet rendered. GPU3 has REQUEST3992/RESPONSE3993; its subsequent parent-bound ACT remains pending. These are not success claims.
 
 |GPU|Kept life|Current native PID|WALL / LOAD|First own ACT|New adaptive parent REQUEST → ACT|
 |---|---|---|---|---|---|
-|0|`r213_r226_caption_observation_fork`|1998500|3681 / 3682|3696|pending → pending|
+|0|`r213_r226_caption_observation_fork`|1998500|3681 / 3682|3696|3814 → 3825|
 |1|`r213_math_a`|1966154|4179 / 4180|4193|4341 → 4353|
 |2|`r213_math_b_fork`|1966159|3858 / 3859|3873|4023 → 4035|
-|3|`r213_r226_caption_perspective_fork`|2009182|3948 / 3949|pending|pending → pending|
+|3|`r213_r226_caption_perspective_fork`|2009182|3948 / 3949|3969|3992 → pending|
 |4|`r213_math_c`|1957352|3754 / 3755|3768|3997 → 4010|
 |5|`r213_r226_caption_revision_fork`|1994937|3322 / 3323|3337|3455 → 3466|
-|6|`r213_r226_caption_selfderive_fork`|2009364|3486 / 3487|pending|pending → pending|
+|6|`r213_r226_caption_selfderive_fork`|2009364|3486 / 3487|3501|pending → pending|
 |7|`r213_r226_caption_unparented_fork`|1966164|3186 / 3187|3201|3579 → 3592|
 
 ## Actual Adoption And Gaps
@@ -22,7 +22,7 @@ New model-provider parent renders after each latest LOAD: **5/8**; remaining inp
 - Four exact-PID coherent-checkpoint handoffs preserved the SAME journals, adapters, optimizer/RNG and saved working state. Measured old-exit-to-LOAD gaps on GPUs0/3/5/6: **656.758 / 1124.433 / 578.807 / 701.596 seconds**. Each new handoff lost **zero UPDATE records** beyond its selected saved boundary; preserved inference/input tails are not erased and exact resident continuity is not claimed.
 - Perspective GPU3 had one preserved pre-native admission rejection. Its separate single retry passed a new privileged clear scan and unchanged reconciled-head/cache checks. Original rejection scan details were not retained by the frozen launcher, so no cause is invented. Actual retry LOAD3949 is not the failed attempt.
 - All four renewal sources passed139 receiving CPU/provenance tests each. The admission-retry repair passed63 tests locally and receiving; the current owned suite, including actual-wall-versus-staging checks, passes64 tests.
-- All eight plans select R227 at plan and THINK levels, preserving treatments and provenance. Actual post-latest-LOAD R227 SLEEP_RECIPE is verified on GPUs0/1/2/4/5/7; freshly LOADED GPUs3/6 remain recipe-pending. Observation now has actual R227 recipe3729, superseding its earlier legacy scaffold-exclusion gap. Earlier rows/controls are unchanged.
+- All eight plans select R227 at plan and THINK levels, preserving treatments and provenance. Actual post-latest-LOAD R227 SLEEP_RECIPE is verified on **all eight**, with semantic_row_exclusion=false and active_semantic_filters=[]. Recipe IDs by GPU0–7: **3859/4448/4128/4002/4023/3502/3517/3624**. This supersedes observation's earlier legacy scaffold-exclusion gap. Earlier rows/controls are unchanged.
 
 ## Adaptive Parents And Feedback
 - Existing model-provider CPU3057541 is alive with **17 completed source-bound calls**. Remote sole shared classroom writer1973233 and fifth-caption writer1973234 are alive with September24 18UTC startup budgets. They retain published history and rebind to current exact native guards; no duplicate openers are sent. Actual new renders and own-response-authenticated ACTs, not daemon liveness, are recorded in `RECOVERY_PARENTS_CURRENT.json`.
