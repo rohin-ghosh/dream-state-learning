@@ -41,3 +41,15 @@ for exact existing parent2805259 to exit naturally. New CPU lease authority
 does NOT change resident native deadline; no native signals, pauses, training
 policy changes, P3 actions or retirement. This is an operational repair under
 latest explicit user scope, not a new scientific claim.
+# September18 18:03UTC explicit native deadline continuation
+
+Rohin now explicitly authorizes checkpoint-preserving native continuations,
+recording reload gaps rather than blocking on no-gap. Exact P7 first, original
+C2 next, no retirement or training/exclusion-policy change. Two focused plan
+delta tests plus original receiving full checkpoint/AdamW/RNG replay and guard
+checks gate dispatch. Original runtime source stays byte-identical. P7 old
+timeout exited17:59:49.733 after latest COMPLETE6734/sleep157/optimizer8076;
+tail only LEARN-completion and INBOX metadata, no post-checkpoint updates.
+Use supported R131 authorization and actual WALL_EXTENDED on resume, same
+journal/root/inboxes; no SIGSTOP or deliberate hold. Six-hour safety bounds
+node4 September25 18UTC, node5 September20 18UTC, based on user-reported leases.
