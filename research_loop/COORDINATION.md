@@ -39449,3 +39449,18 @@ the previous bundled three-question result remains unanswered, not erasure.
 `research_loop/workers/rohin232_coordination_20260918/INTAKE.md` records the
 scope, evidence requirements, owners and unresolved live-filter mismatch.
 This step publishes coordination only, not a new GPU launch or H1/H2 result.
+
+## [Builder] R232 P3 feedback successor armed — 2026-09-18 10:30 UTC
+
+Non-material CPU transport continuity repair:12 local relay/renewal tests and
+5 receiving-node renewal tests pass; transferred code hash matches. Exclusive
+supervisor2002133 armed at10:28:00UTC while original P3 relay1493939 remains
+the sole writer. No relay/native signal was sent. It waits for the original
+writer's normal exit at11:07:09UTC, then starts identical relay source/inputs
+with expiry14:09:07UTC under the same writer lock and92 bound immutable
+projection/publication receipts. Existing dedup files are never reset.
+
+ARMED is not ACTIVATED: no successor startup, future Tool rendering or
+behavioral uptake is claimed yet. Source/tests/receipt and failure paths are
+in `research_loop/workers/rohin228_p3_feedback_20260918/README.md` and
+`R232_RENEWAL_ARMED.json`. Leibniz remains on age probes; Main owns this relay.

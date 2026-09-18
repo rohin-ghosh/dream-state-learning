@@ -69,3 +69,26 @@ This does not fix semantic scoring weaknesses, make the observation a matched
 H2 experiment, or prove behavioral uptake. It does not switch the cached
 learning policy of P3 or C2. Those older runtimes still need a supported
 no-gap adoption path; a source commit alone is not evidence of adoption.
+
+## R232 renewal armed, not yet activated
+
+At10:28:00UTC on2026-09-18, exclusive CPU supervisor2002133 was armed for
+the existing writer1493939. It waits for that writer's ordinary exit; neither
+the relay nor P3 is signalled. The successor uses the exact unchanged relay
+source, same life/sessions/output directory and writer lock, preserving the
+projection and publication deduplication ledger. The only relay argument
+change is the expiry from11:07:09UTC to14:09:07UTC.
+
+`R232_RENEWAL_ARMED.json` binds92 existing immutable projection/publication
+receipts. `renew_relay.py` verifies their preservation before and after the
+successor starts, records the CPU-writer handoff interval, and refuses another
+successor once activation is recorded. Twelve local relay/renewal tests and
+five receiving-host renewal tests passed; the transferred supervisor source
+SHA256 is `d5ce0ae62b6adfdf25c10e1d58fa636bff5fef84dc4f482c20f7dd26dbadc010`.
+
+The future activation receipt is
+`/localhome/local-rohing/orch_r228_p3_feedback_20260918/r232_renewal/ACTIVATED.json`.
+At this cut it does not exist and renewal is not reported as active. A failed
+handoff produces `FAILED.json` or the supervisor log; it does not stop or
+restart the learner. The next attributed Tool rendering still needs the
+normal delivery audit, independently of CPU-writer startup.
