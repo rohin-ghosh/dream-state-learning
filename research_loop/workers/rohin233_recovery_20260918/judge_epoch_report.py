@@ -179,6 +179,8 @@ def collect_fleet():
                 for row in adopted['sessions']], wrapper=wrapper))
 
     def fetch(specification):
+        if time.time() >= specification['cutoff_unix'] - 5:
+            return dict(role=specification['role'], status='SOURCE_LEASE_BOUND_REACHED_NOT_QUERIED')
         response = subprocess.run(['bash', str(repository / ('gpu/' + specification['wrapper'] + '_ssh.sh')),
             'python3 -B -c ' + shlex.quote(source)], input=json.dumps(specification),
             capture_output=True, text=True, timeout=40)
@@ -190,7 +192,7 @@ def collect_fleet():
 
     with ThreadPoolExecutor(max_workers=4) as executor:
         roles = list(executor.map(fetch, specifications))
-    stamp = datetime.now(timezone.utc).strftime('%H%M%S')
+    stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     result = dict(schema='R233_ADOPTED_JUDGE_EPOCH_AUDIT_V1', observed_utc=datetime.now(timezone.utc).isoformat(),
         reader_sha256=hashlib.sha256(source.encode()).hexdigest(), roles=roles,
         old_and_new_epochs_combined=False, raw_text_exported=False, native_signals=[], GPU_work=0)
@@ -218,6 +220,7 @@ def collect_fleet():
     print(json.dumps(dict(path=str(output.relative_to(repository)),
         players=sum(len(role.get('players', [])) for role in roles),
         errors=[role['role'] for role in roles if 'players' not in role])))
+    return output
 
 
 if __name__ == '__main__':

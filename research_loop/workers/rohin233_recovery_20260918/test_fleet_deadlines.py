@@ -1,9 +1,31 @@
 import unittest
 
-from fleet_deadlines import annotate_support, runtime_status, support_row, verified
+from fleet_deadlines import actual_parent_delivery, annotate_support, checkpoint_tail_entry, runtime_status, support_row, verified
 
 
 class DeadlineEvidenceTests(unittest.TestCase):
+    def test_parent_publication_is_not_render_or_ACT(self):
+        delivery=dict(status='REQUEST_TO_COMMITTED_ACT_OBSERVED',request_index=12,act_index=14,
+            committed_index=15,inbox_id='confirmed')
+        self.assertEqual(actual_parent_delivery(delivery,10,{})['act_index'],14)
+        self.assertIsNone(actual_parent_delivery(dict(delivery,status='PUBLISHED'),10,{}))
+        self.assertIsNone(actual_parent_delivery(delivery,13,{}))
+        self.assertIsNone(actual_parent_delivery(dict(delivery,committed_index=13),10,{}))
+
+    def test_checkpoint_tail_replaces_obsolete_replay_identity_only_with_actual_receipt(self):
+        binding = dict(status='LOADED', journal_id='260be8b8710a42559b291797c6e14983',
+            complete_index=11502, complete_sha256='9c59fe6c59a01948b6ffe894aaa681010346ccc671c2f774a10fe7399a49080f',
+            optimizer_steps=7756, wall_extended=dict(index=11504), loaded=dict(index=11505),
+            native=dict(pid=1139778), hard_end_unix=1789927200, guard_sha256='verified',
+            loaded_unix=1789764814.6953828)
+        replacement = checkpoint_tail_entry(dict(native=dict(pid=829798)), binding)
+        self.assertEqual(replacement['native']['pid'], 1139778)
+        self.assertAlmostEqual(replacement['recorded_exit_to_loaded_seconds'], 8713.273545, places=4)
+        for change in (dict(status='DISPATCHED'), dict(optimizer_steps=0),
+                dict(journal_id='other'), dict(loaded=dict(index=11503))):
+            with self.assertRaisesRegex(ValueError, 'exact_C2_checkpoint_tail_LOAD'):
+                checkpoint_tail_entry({}, dict(binding, **change))
+
     def test_dead_process_cannot_reuse_a_historical_alive_label(self):
         row = dict(pid=17, source_status='LOADED_ALIVE', alive_now=False, renewal_verified=False)
         self.assertTrue(runtime_status(row).startswith('NOT ALIVE;'))

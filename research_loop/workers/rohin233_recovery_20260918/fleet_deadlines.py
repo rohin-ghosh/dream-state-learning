@@ -48,6 +48,20 @@ def runtime_status(row):
     return row['source_status']
 
 
+def checkpoint_tail_entry(entry, binding):
+    if (binding.get('status') != 'LOADED' or binding.get('journal_id') != '260be8b8710a42559b291797c6e14983'
+            or binding.get('complete_index') != 11502
+            or binding.get('complete_sha256') != '9c59fe6c59a01948b6ffe894aaa681010346ccc671c2f774a10fe7399a49080f'
+            or binding.get('optimizer_steps') != 7756
+            or not 11502 < binding.get('wall_extended', {}).get('index', 0)
+            < binding.get('loaded', {}).get('index', 0)):
+        raise ValueError('exact_C2_checkpoint_tail_LOAD_binding_required')
+    return dict(entry, loaded=binding['loaded'], wall_extended=binding['wall_extended'],
+        native=binding['native'], status='CHECKPOINT_TAIL_LOADED',
+        hard_end_utc=utc(binding['hard_end_unix']), guard_sha256=binding['guard_sha256'],
+        recorded_exit_to_loaded_seconds=binding['loaded_unix']-1789756101.421838)
+
+
 def support_row(entry, reference):
     return dict(component=entry['name'], node='local' if entry['actual_host_alias'] == 'operator_vm'
         else entry['actual_host_alias'], pid=entry.get('pid'), start_ticks=entry.get('start_ticks'),
@@ -55,6 +69,16 @@ def support_row(entry, reference):
         deadline_utc=entry.get('actual_deadline'), execution_proof=entry.get('proof', []),
         deadline_mechanism=entry.get('deadline_mechanism'), source_admission=entry.get('source_admission'),
         evidence=reference)
+
+
+def actual_parent_delivery(delivery, loaded_index, reference):
+    if (delivery.get('status') != 'REQUEST_TO_COMMITTED_ACT_OBSERVED'
+            or not loaded_index < delivery.get('request_index', 0)
+            < delivery.get('act_index', 0) < delivery.get('committed_index', 0)):
+        return None
+    return dict(status='PARENT_REQUEST_TO_COMMITTED_ACT',loaded_index=loaded_index,
+        request_index=delivery['request_index'],act_index=delivery['act_index'],
+        inbox_id=delivery['inbox_id'],evidence=reference)
 
 
 def annotate_support(row, observation, observed_unix):
@@ -143,6 +167,10 @@ def collect():
         name = entry['component']
         if name in ('P7', 'C2'):
             live_reference = reference
+            fast_path = WORKERS / 'rohin233_recovery_node4_20260918/C2_CHECKPOINT_TAIL_LOADED.json'
+            if name == 'C2' and fast_path.is_file():
+                binding, live_reference = read(fast_path)
+                entry = checkpoint_tail_entry(entry, binding)
             receipt_path = WORKERS / 'rohin233_recovery_node4_20260918/NATIVE_CONTINUATION.public.json'
             if name == 'P7' and receipt_path.is_file():
                 newer, newer_reference = read(receipt_path)
@@ -170,7 +198,7 @@ def collect():
     add('P3', 'node4', 3, entry.get('status', p3['status']), entry.get('native'),
         entry.get('loaded'), entry.get('wall_extended'), deadline, reference,
         entry.get('recorded_exit_to_loaded_seconds'))
-    if (HERE / 'P3_RETRY_WAITER_STARTED.json').is_file():
+    if not p3.get('parent') and (HERE / 'P3_RETRY_WAITER_STARTED.json').is_file():
         waiter, waiter_reference = read(HERE / 'P3_RETRY_WAITER_STARTED.json')
         supports.append(dict(component='P3_retry_parent_waiter', node='local', pid=waiter['pid'],
             start_ticks=waiter['start_ticks'], deadline_utc=utc(waiter['hard_end_unix']),
@@ -231,12 +259,32 @@ def collect():
         parent, reference = read(parent_path)
         parent_deliveries['P7'] = dict(status=parent['status'], loaded_index=parent['loaded_index'],
             request_index=parent['request']['index'], response_index=parent['response']['index'], evidence=reference)
+    p3_path = HERE/'P3_RETRY_ACTUAL.json'
+    if p3_path.is_file():
+        parent, reference = read(p3_path)
+        for turn in parent.get('parent_turns', []):
+            delivery = actual_parent_delivery(turn.get('delivery', {}), parent['loaded_index'], reference)
+            if delivery is not None:
+                parent_deliveries['P3'] = delivery
+    c2_delivery = WORKERS/'rohin233_recovery_node4_20260918/CHECKPOINT_TAIL_V_DELIVERY.json'
+    if c2_delivery.is_file():
+        parent, reference = read(c2_delivery)
+        if parent.get('first_render') is not None:
+            parent_deliveries['C2'] = dict(status='SOURCE_GROUNDED_PARENT_REQUEST_RENDERED',
+                loaded_index=parent['native']['loaded_index'],detail=parent['first_render'],
+                following_ACT=parent.get('first_ACT'),evidence=reference)
     for row in rows:
         row['parent_delivery'] = parent_deliveries.get(row['life'], dict(status='NOT_ESTABLISHED_IN_THIS_AGGREGATE'))
     support_path = services / 'SUPPORT_COMPONENT_TABLE.json'
     if support_path.is_file():
         table, reference = read(support_path)
         supports.extend(support_row(entry, reference) for entry in table['rows'])
+    hourly_path=HERE/'CAPTION_HOURLY_STARTED.json'
+    if hourly_path.is_file():
+        hourly, reference=read(hourly_path)
+        supports.append(dict(component='adopted_epoch_hourly_collector',node='local',pid=hourly['pid'],
+            start_ticks=hourly['start_ticks'],deadline_utc=utc(hourly['until_unix']),
+            status='SINGLE_OWNER_AGGREGATE_ONLY_COLLECTOR',evidence=reference))
     return rows, supports, sources
 
 
