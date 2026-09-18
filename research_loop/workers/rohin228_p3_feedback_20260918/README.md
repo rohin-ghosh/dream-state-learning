@@ -108,3 +108,10 @@ caption results, were still awaiting rendering. Therefore activation is
 confirmed, but new successor feedback reaching the child is **not yet
 confirmed** at this cut. See `R232_DELIVERY_20260918T1110Z.json`. This does
 not claim uptake, new scoring, a native policy change or no-filter adoption.
+
+Follow-up at11:19:56UTC confirms that the first three successor publications
+all rendered verbatim in REQUEST2804, started11:13:26.682UTC. This delivers
+all15 ranked results from ACT2762 to the child. The audit now verifies65/68
+publications; three later publications remain pending as expected during the
+next cycle. `R232_DELIVERY_20260918T1120Z.json` preserves both delivered and
+pending rows without rewriting the earlier cut. Behavioral uptake is untested.
