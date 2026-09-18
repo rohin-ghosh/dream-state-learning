@@ -1,0 +1,306 @@
+{
+  "CPU_parent": {
+    "expiry_utc": "2026-09-18T14:00:00Z",
+    "learner_signals": 0,
+    "no_automatic_dose_changes": true,
+    "pid": 623682,
+    "stage": 0
+  },
+  "CPU_sha256": "959eb3fd6551422160205d9f67b81383157e39e6b68c4375a91f649e36e7bc5d",
+  "GPU_memory": "18941, 23028",
+  "birth_sha256": "7362d19a950779633067c81bacd0f0942e4243bbd62cf029463b61c264d66191",
+  "confinement": {
+    "denied_foreign_minors": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "gpu_uuid": "GPU-c57b2860-9ba6-74ee-876b-4fa22a10366e",
+    "model_calls": 0,
+    "observed_unix": 1789726350.2487378,
+    "physical": 0,
+    "pid": 62943,
+    "unit": "orch-r184-c2-explicit-child-a9a074a938115fcb"
+  },
+  "context_limit": 4096,
+  "current_process": {
+    "cgroup": "0::/system.slice/orch-r184-c2-explicit-child-a9a074a938115fcb.service",
+    "command_sha256": "d3a11b87bc1f2d78d41170c92bed8f92620210a2f6cc5b4e85f77060ef6554d5",
+    "pid": 62947,
+    "start_ticks": "7193467"
+  },
+  "exact_provider_lease_expiry_verified": false,
+  "first_requests": [
+    {
+      "birth_exactly_once": true,
+      "index": 5,
+      "max_new_tokens": 512,
+      "parent_rendered_ids": [
+        "85cc49386aba44faaccce68c0b33241b"
+      ],
+      "prompt_tokens": 1797,
+      "sha256": "a9f0ab0b9e5d85e8fac902b9173c5ff24666c32ad28db4deb3f203050b7f2453",
+      "utc": "2026-09-18T10:13:23.026946+00:00"
+    },
+    {
+      "birth_exactly_once": true,
+      "index": 14,
+      "max_new_tokens": 512,
+      "parent_rendered_ids": [],
+      "prompt_tokens": 2674,
+      "sha256": "ba10b9857fe7d65811749f1fed9e56c85a20e87b25e6f5df062f856f4e898cea",
+      "utc": "2026-09-18T10:13:37.627222+00:00"
+    },
+    {
+      "birth_exactly_once": true,
+      "index": 23,
+      "max_new_tokens": 512,
+      "parent_rendered_ids": [],
+      "prompt_tokens": 2683,
+      "sha256": "7c55c9a041271ca4524a2b41f28767cc2182931e6a3c059478ee54534889d8a5",
+      "utc": "2026-09-18T10:13:51.353662+00:00"
+    }
+  ],
+  "first_sleep_recipe": [
+    {
+      "active_semantic_filters": [],
+      "anchor_lambda": 0.25,
+      "available_old_rows": 0,
+      "candidate_row_filter_policies": {
+        "NEW": {
+          "content_target_filter": [],
+          "fabricated_speaker_filter": [],
+          "question_target_filter": []
+        },
+        "REHEARSAL": {
+          "content_target_filter": [],
+          "fabricated_speaker_filter": [],
+          "question_target_filter": []
+        }
+      },
+      "historical_row_annotations": "PRESERVED_NOT_APPLIED",
+      "index": 32,
+      "learn_row_policy": "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+      "new_presentations": 16,
+      "new_rows": 3,
+      "policy": "R181_NEW_ONLY_V1",
+      "selected_old_rows": 0,
+      "semantic_row_exclusion": false,
+      "sha256": "9764aede7412bf783007e5ca4827dd04adce4b3e2fc20a93f4186a01effb3ab0",
+      "sleep_loss_impl": "MASKED_CAUSAL_CE_V1",
+      "technical_provenance_and_encoding_checks": true
+    }
+  ],
+  "first_stages": [
+    {
+      "consolidation": {
+        "deleted_ids": [],
+        "revision": 1,
+        "source_event_id": "child:segment:0",
+        "status": "UPDATED",
+        "updated_ids": [
+          "next_intention"
+        ]
+      },
+      "index": 8,
+      "runtime_notice_is_target": false,
+      "schema": "R184_THINK_ACT_LEARN_V1",
+      "segment": 0,
+      "sha256": "e5acfb70a17056a496552127621a890c1dd3fe60510068c0171f3753f0bdf057",
+      "source_sha256": "e6794b5671d1bd296d273496cae06a56e084e1e8883472c35f4bb7b6c649582d",
+      "stage": "THINK",
+      "trial_id": "R231_BASE_CURRICULUM_FROM_BIRTH"
+    },
+    {
+      "consolidation": {
+        "reason": "duplicate_working_state_id",
+        "source_event_id": "child:segment:1",
+        "status": "REJECTED_PRIOR_STATE_RETAINED"
+      },
+      "index": 17,
+      "runtime_notice_is_target": false,
+      "schema": "R184_THINK_ACT_LEARN_V1",
+      "segment": 1,
+      "sha256": "c058d2a4bfa7b21c8e5f1057ff8fd11141d97f13157b44aba74e14f69217bb23",
+      "source_sha256": "4a7472338a5292264ffbf01c0a913d05f5a01f58489e2845ea42165676cff4f4",
+      "stage": "ACT",
+      "trial_id": "R231_BASE_CURRICULUM_FROM_BIRTH"
+    },
+    {
+      "consolidation": {
+        "deleted_ids": [],
+        "revision": 2,
+        "source_event_id": "child:segment:2",
+        "status": "UPDATED",
+        "updated_ids": [
+          "next_intention"
+        ]
+      },
+      "index": 26,
+      "runtime_notice_is_target": false,
+      "schema": "R184_THINK_ACT_LEARN_V1",
+      "segment": 2,
+      "sha256": "e1ba7c2494a140dbaaab059047a5048805317ea8a3d449c08d51c3c0b27df77e",
+      "source_sha256": "dde1c23e858b27fc03f6029a214854f0e058725a13cea7e5b093821072ff6922",
+      "stage": "LEARN",
+      "trial_id": "R231_BASE_CURRICULUM_FROM_BIRTH"
+    }
+  ],
+  "first_updates": [
+    {
+      "index": 34,
+      "optimizer_step": 1,
+      "optimizer_steps": null,
+      "presentation": null,
+      "row": null,
+      "sha256": "c1cf7fa9489bb483a6faf4936a2d3057ea8280ffc00a81db9ee4e7155220dd3f",
+      "source_sha256": "e6794b5671d1bd296d273496cae06a56e084e1e8883472c35f4bb7b6c649582d"
+    },
+    {
+      "index": 35,
+      "optimizer_step": 2,
+      "optimizer_steps": null,
+      "presentation": null,
+      "row": null,
+      "sha256": "4b98caf6e5a3739def409babd2f545ebbad23d363d4394d9dd59c99d728edb76",
+      "source_sha256": "4a7472338a5292264ffbf01c0a913d05f5a01f58489e2845ea42165676cff4f4"
+    }
+  ],
+  "hard_end_utc": "2026-09-18T14:00:00+00:00",
+  "initial_checkpoint": {
+    "checkpoint_sha256": {
+      "adapter": "3052101ef624b0455bbc23551f5a5801c97add41dd1f588c927f58d1ea3f9750",
+      "optimizer": "6e6b3af8a0ec413cc36f5aeb50d68f0c023cd2a5d0326af3a9772dba3a9d8e37",
+      "rng": "6e6b3af8a0ec413cc36f5aeb50d68f0c023cd2a5d0326af3a9772dba3a9d8e37"
+    },
+    "commit_sha256": "b95806f9340aaec5945908ab4578b1fb44ed6ba48ad87a51fa9318f36c21e989",
+    "initial_adapter_sha256": "04341ab86f5f98718bc53218166537ecc20fc7d5053f3ed47cc0fcdda918f5d0",
+    "optimizer_steps": 0,
+    "saved_optimizer_state_entries": 0,
+    "saved_optimizer_steps": 0
+  },
+  "initial_state": {
+    "history_sha256": "4145a19db1f424d19bdd307a5e6501fca78e5e785282a19487d59535cc024841",
+    "index": 0,
+    "pending": null,
+    "rows": 0,
+    "sha256": "fd565606872f1e68fce1a3fac0a672c70a1f7e2991b3596a8a9519d6d44c2940",
+    "sleep_receipts": 0,
+    "working_state": {
+      "entries": [],
+      "revision": 0,
+      "schema": "THINK_ACT_STATE_V1"
+    }
+  },
+  "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+  "last_record_sha256": "4bb1403fcdcae4b945bf07f9d5c61dc4887a822ca9990c5d16f064a31042a8ed",
+  "latest_request": [
+    {
+      "birth_exactly_once": true,
+      "index": 23,
+      "max_new_tokens": 512,
+      "parent_rendered_ids": [],
+      "prompt_tokens": 2683,
+      "sha256": "7c55c9a041271ca4524a2b41f28767cc2182931e6a3c059478ee54534889d8a5",
+      "utc": "2026-09-18T10:13:51.353662+00:00"
+    }
+  ],
+  "latest_stage": [
+    {
+      "consolidation": {
+        "deleted_ids": [],
+        "revision": 2,
+        "source_event_id": "child:segment:2",
+        "status": "UPDATED",
+        "updated_ids": [
+          "next_intention"
+        ]
+      },
+      "index": 26,
+      "runtime_notice_is_target": false,
+      "schema": "R184_THINK_ACT_LEARN_V1",
+      "segment": 2,
+      "sha256": "e1ba7c2494a140dbaaab059047a5048805317ea8a3d449c08d51c3c0b27df77e",
+      "source_sha256": "dde1c23e858b27fc03f6029a214854f0e058725a13cea7e5b093821072ff6922",
+      "stage": "LEARN",
+      "trial_id": "R231_BASE_CURRICULUM_FROM_BIRTH"
+    }
+  ],
+  "loaded": [
+    {
+      "adapter_sha256": "04341ab86f5f98718bc53218166537ecc20fc7d5053f3ed47cc0fcdda918f5d0",
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "index": 1,
+      "loaded_unix": 1789726403.009538,
+      "optimizer_steps": 0,
+      "pid": 62947,
+      "resume": false,
+      "sha256": "4f2bd96360a484f7989c520f0bc5c463168b82e808f29b6d0a09f6b4b6924be0",
+      "utc": "2026-09-18T10:13:23.009538+00:00"
+    }
+  ],
+  "memory_claim": "Observed seven real UPDATEs fit; not a worst-case future-context guarantee.",
+  "native_sha256": "4092dd4355dbb4c6d2ecbcb2f48ad08b23af4e37817b949c54ad31d6f5bc03c0",
+  "observed_utc": "2026-09-18T10:14:43.804825+00:00",
+  "parent_inboxes": [
+    {
+      "id": "85cc49386aba44faaccce68c0b33241b",
+      "index": 3,
+      "sha256": "b81b269e5b17d593222bc75ed5e7ecd5232cebea999cce9032bfa48ed12eb617",
+      "source_sha256": "b3f3c107cf916200e9a01f096083eddf7cf633f0b54d9f5f9e089afa98af26de",
+      "speaker": "Astra"
+    }
+  ],
+  "parent_publications": [
+    {
+      "delivered_unix": 1789726352.0254095,
+      "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+      "provider_response_sha256": "cfec215b51bc527707a5f3226494bb2da3f9550475a8cd7478ec484dd163ceea",
+      "publication": {
+        "id": "85cc49386aba44faaccce68c0b33241b",
+        "sha256": "b3f3c107cf916200e9a01f096083eddf7cf633f0b54d9f5f9e089afa98af26de"
+      },
+      "text_sha256": "a5510c4dc4f325a9d27dc43778152dfd7d1a2fba2cf17994d59b7f199f7f72ef"
+    },
+    {
+      "delivered_unix": 1789726481.8081052,
+      "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+      "provider_response_sha256": "a5f6e24fc737eff4b6aa7089f25715bf9030a6851c91ce1722cc7be0481faa43",
+      "publication": {
+        "id": "01b4a1da83924811889da1ba3a01fef9",
+        "sha256": "2b384ffc69ac0b20883a69b164947396a3e0e2cab9b77b56158bb24890343fcd"
+      },
+      "text_sha256": "9921be5495e931854c6b229f8dde566da2959271df5b007e8a3c87d8598f3fd0"
+    }
+  ],
+  "physical": 0,
+  "plan_sha256": "c1357d1317cbe35f7da3d23d9aae7375d87839becf5fa4163d449afc26939f6d",
+  "raw_observation_sha256": "8adacd99608b6fe3047b563f98a85299126c709cec3ff958a09a485f5041e700",
+  "record_counts": {
+    "COMMITTED": 4,
+    "COMPACTION": 3,
+    "CONTEXT_INPUT": 6,
+    "INBOX": 1,
+    "LOADED": 1,
+    "R184_ACT": 1,
+    "R184_SLEEP_NOTICE": 1,
+    "R184_STAGE": 3,
+    "R184_TRANSITION": 1,
+    "R191_DATASET_ROW": 3,
+    "R205_BIRTH_CONTEXT": 1,
+    "REQUEST": 3,
+    "RESPONSE": 3,
+    "SLEEP_RECIPE": 1,
+    "SLEEP_REQUEST": 1,
+    "TARGET_ELIGIBILITY": 1,
+    "UPDATE": 7
+  },
+  "review_publication_consumption_at_cut": "NOT_YET_VERIFIED",
+  "schema": "R231_CURRENT_COLD_BIRTH_RECEIPT_V1",
+  "segment_tokens": 512,
+  "verified_records": 41
+}
