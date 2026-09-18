@@ -6,7 +6,7 @@ import time
 
 BASE = Path('/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET')
 NAMES = ('creative_b1', 'r203_creative_structured_a4', 'r203_math_comm_b2',
-         'r203_math_self_derive_c5')
+         'r203_math_self_derive_c5', 'r203_repo_evidence_c3')
 
 
 def read(path):

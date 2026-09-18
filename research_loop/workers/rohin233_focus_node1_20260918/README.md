@@ -2,6 +2,8 @@
 
 Scope: `creative_b1`, `r203_creative_structured_a4`,
 `r203_math_comm_b2`, `r203_math_self_derive_c5`, on logical node1 only.
+The user's subsequent explicit extension adds `r203_repo_evidence_c3`, GPU3;
+`gpu/talk.sh` lines 17/45 confirm its prefix and `repo_c3` console mapping.
 Rohin explicitly authorizes retirement with state preserved. No refill,
 kept-life signal, other-node action, original-file deletion, or learning change.
 
@@ -29,9 +31,13 @@ paths in COMMIT files are preserved, with an explicit physical-root mapping.
 The existing runtime's journal validator validates the original full stream;
 the independently hash-equal copied stream preserves those exact bytes.
 
-Native start ticks cannot be read after an exit. The final LAUNCH PID and
-command hash are bound; recorded launcher-parent ticks must never be presented
-as native ticks. No process is signalled based on those historical identifiers.
+Native start ticks cannot be read after an exit. Source inspection confirms
+that the final LAUNCH PID and `parent_start_ticks` identify the timeout wrapper,
+not its native child. The wrapper PID/ticks and command hash are bound; native
+PID/ticks are reported as unavailable, never guessed. No process is signalled.
+The first archival version mislabeled this wrapper PID as native. The canonical
+`VERIFIED_RETIREMENT.json` corrects the label and retains the original receipt
+by path/hash; no private evidence is rewritten.
 
 CPU regression command: `python3 -m unittest -v test_preserve_ended.py`
 (run in this directory). Nine tests cover scope, exact-boundary integrity,

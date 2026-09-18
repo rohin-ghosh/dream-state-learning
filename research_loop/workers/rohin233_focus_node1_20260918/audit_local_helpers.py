@@ -1,4 +1,4 @@
-"""Read-only identity check of the four selected lives' historical CPU parents."""
+"""Read-only identity check of the five selected lives' historical CPU parents."""
 
 import json
 from pathlib import Path
@@ -10,7 +10,7 @@ from preserve_ended import identity, reference
 def main():
     root = Path(__file__).resolve().parents[1] / 'rohin174_parenting_20260917/node1/R195_FLEET'
     rows = []
-    for physical in (2, 4, 5, 7):
+    for physical in (2, 3, 4, 5, 7):
         paths = sorted(root.glob(f'*PARENT_PROCESS_{physical}.json'))
         paths += sorted((root / 'R213_NATURAL').glob(f'PARENT_PROCESS_{physical}.json'))
         for path in paths:
@@ -28,7 +28,7 @@ def main():
                                           'same_process_running' if same else
                                           'historical_ticks_missing_no_signal' if same is None else
                                           'pid_reused_no_signal')))
-    print(json.dumps(dict(node='orchestrator', selected_gpu_slots=[2, 4, 5, 7],
+    print(json.dumps(dict(node='orchestrator', selected_gpu_slots=[2, 3, 4, 5, 7],
                          observed_unix=time.time(), helper_signals=0, rows=rows), indent=2))
 
 

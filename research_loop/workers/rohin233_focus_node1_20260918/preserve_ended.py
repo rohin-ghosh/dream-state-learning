@@ -1,4 +1,4 @@
-"""Archive only the four authorized, already-ended node1 lives; never signal."""
+"""Archive only the five authorized, already-ended node1 lives; never signal."""
 
 import argparse
 import fcntl
@@ -8,7 +8,6 @@ import os
 from pathlib import Path
 import random
 import re
-import shutil
 import stat
 import subprocess
 import sys
@@ -19,7 +18,8 @@ from types import SimpleNamespace
 BASE = Path('/localhome/local-rohing/rohin174_parenting_20260917/node1/R195_FLEET')
 DESTINATION = Path('/localhome/local-rohing/rohin233_focus_node1_20260918')
 ARMS = {'creative_b1': 7, 'r203_creative_structured_a4': 4,
-        'r203_math_comm_b2': 2, 'r203_math_self_derive_c5': 5}
+        'r203_math_comm_b2': 2, 'r203_math_self_derive_c5': 5,
+        'r203_repo_evidence_c3': 3}
 PYTHON = '/localhome/local-rohing/v2/venv/bin/python'
 
 
@@ -176,13 +176,15 @@ def audit_journal(source, raw, expected, logical_root):
     from gpu.orch_r125_stream_journal import StreamJournal
     journal = snapshot_journal_type(StreamJournal, logical_root)(raw / 'stream')
     try:
-        audit = journal.audit()
         latest = journal.latest_checkpoint()
+        validated = journal._validated_state()
+        audit = dict(record_count=validated['index'], head_sha256=validated['previous'])
         require(audit['head_sha256'] == expected['terminal_sha256']
                 and audit['record_count'] == expected['terminal_index'] + 1, 'full_journal_head')
         require(latest['document']['sha256'] == expected['resume_state_sha256'], 'journal_latest_state')
         return dict(audit, all_transitions_validated=True, latest_state_matches=True,
-                    namespace_method='Existing R144 verify_snapshot logical-inbox projection')
+                    namespace_method='Existing R144 verify_snapshot logical-inbox projection',
+                    full_replay='StreamJournal constructor; validated cache checked afterwards')
     finally:
         journal.close()
 
@@ -216,12 +218,13 @@ def preserve(name):
     destination.mkdir(mode=0o700)
     write(destination / 'IDENTITY.json', dict(node='node1', name=name, physical=ARMS[name],
         root=str(root), raw_root=str(raw), active_control=str(control),
-        native_pid=launch['pid'], native_start_ticks=None,
-        native_start_ticks_reason='Native already exited; no live /proc identity exists. Parent ticks are not native ticks.',
+        native_pid=None, native_start_ticks=None, launcher_pid=launch['pid'],
+        launcher_start_ticks=launch['parent_start_ticks'],
+        native_start_ticks_reason='Native already exited; no live /proc identity exists. LAUNCH identifies the timeout wrapper, not its native child.',
         launch_parent_start_ticks=launch['parent_start_ticks'], launch_command_sha256=launch['command_sha256'],
         launch=reference(control / 'LAUNCH.json'), exit=reference(control / 'EXIT.json'),
         active_control_receipt=reference(root / 'ACTIVE_CONTROL.json'),
-        historical_native_pid_absent=True, matching_processes=[], observed_unix=time.time()))
+        historical_launcher_pid_absent=True, matching_processes=[], observed_unix=time.time()))
     snapshot = destination / 'snapshot'
     snapshot.mkdir(mode=0o700)
     for origin, target in ((raw / 'stream', snapshot / 'stream'),
@@ -251,7 +254,8 @@ def preserve(name):
     require(not matching_processes(name) and identity(launch['pid']) is None, 'final_absence_verified')
     receipt = dict(node='node1', name=name, physical=ARMS[name], disposition='ALREADY_ENDED_RETIRED_FROM_FLEET',
         existing_exit_code=exit_receipt['exit_code'], exited_unix=exit_receipt['finished_unix'],
-        native_pid=launch['pid'], native_start_ticks=None, raw_root=str(raw), active_control=str(control),
+        native_pid=None, native_start_ticks=None, launcher_pid=launch['pid'],
+        launcher_start_ticks=launch['parent_start_ticks'], raw_root=str(raw), active_control=str(control),
         signals_sent=0, pauses=0, refills=0, files_deleted=0, helper_signals=0,
         original_root_retained=True, all_stream_records_copied=True, all_checkpoints_copied=True,
         archive_root=str(destination), state_manifest=reference(destination / 'STATE_MANIFEST.json'),
@@ -268,9 +272,10 @@ def finish_existing(name):
     destination = DESTINATION / name
     snapshot = destination / 'snapshot'
     recorded = read(destination / 'IDENTITY.json')
+    launcher_pid = recorded.get('launcher_pid', recorded.get('native_pid'))
     require(recorded['name'] == name and recorded['root'] == str(BASE / name), 'owned_snapshot_identity')
     require(not (destination / 'RETIRED.json').exists(), 'no_duplicate_finalization')
-    require(not matching_processes(name) and identity(recorded['native_pid']) is None, 'still_already_ended')
+    require(not matching_processes(name) and identity(launcher_pid) is None, 'still_already_ended')
     require(sha(Path(recorded['active_control_receipt']['path']))
             == recorded['active_control_receipt']['sha256'], 'active_pointer_unchanged')
     manifest = read(destination / 'STATE_MANIFEST.json')
@@ -289,10 +294,11 @@ def finish_existing(name):
     exit_receipt = read(control / 'EXIT.json')
     require(sha(control / 'EXIT.json') == recorded['exit']['sha256']
             and exit_receipt['exit_code'] == 0, 'same_normal_exit')
-    require(not matching_processes(name) and identity(recorded['native_pid']) is None, 'final_absence_verified')
+    require(not matching_processes(name) and identity(launcher_pid) is None, 'final_absence_verified')
     receipt = dict(node='node1', name=name, physical=ARMS[name], disposition='ALREADY_ENDED_RETIRED_FROM_FLEET',
         existing_exit_code=exit_receipt['exit_code'], exited_unix=exit_receipt['finished_unix'],
-        native_pid=recorded['native_pid'], native_start_ticks=None,
+        native_pid=None, native_start_ticks=None, launcher_pid=launcher_pid,
+        launcher_start_ticks=recorded['launch_parent_start_ticks'],
         raw_root=str(raw), active_control=str(control),
         signals_sent=0, pauses=0, refills=0, files_deleted=0, helper_signals=0,
         original_root_retained=True, all_stream_records_copied=True, all_checkpoints_copied=True,

@@ -46,7 +46,7 @@ class PreservationTests(unittest.TestCase):
             self.assertTrue(preservation.selected_path(preservation.BASE / (name + '_r213'), name))
             self.assertFalse(preservation.selected_path(preservation.BASE / (name + '_other_child'), name))
             self.assertFalse(preservation.selected_path(Path('/tmp') / name, name))
-        self.assertFalse(preservation.selected_path(preservation.BASE / 'r203_repo_evidence_c3',
+        self.assertFalse(preservation.selected_path(preservation.BASE / 'r203_repo_evidence_c3_imposter',
                                                     'r203_repo_evidence_c3'))
 
     def test_complete_bound_state(self):

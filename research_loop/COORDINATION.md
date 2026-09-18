@@ -39582,3 +39582,17 @@ existing roots/readouts remain untouched. No GPU science or learning change.
 Evidence owner: research_loop/workers/rohin233_focus_node1_20260918.
 
 [Builder/Leibniz] 2026-09-18T11:54:07.267007+00:00 R233:20 focused CPU tests PASS; receiving coherent fresh learner sleep1/optimizer48/source+exposure PASS. Serial physical6/7 only, original6144-token parent-free R232 battery/private panels, no source histories/updates/signals. Pre-GPU source78b435d7fe209182f7ed676c36e3bc2332b31cd0cdeb2436ce37f814c3975626; actual LOAD pending. Separate continuous frozen-base R233_PARENT_v1 now genuinely rendered in opportunity89 THINK completed11:51:03.269701UTC; frozen weights and original player/scorer unchanged, preceding unparented epoch preserved, unmatched guidance explicit. CPU every-kept-sleep enrollment1172377 live; frontiers/reference-only vs capture pending explicit. Own sanitized sources/receipts: research_loop/workers/rohin233_kept_age_probe_20260918/{PRE_GPU_READY.json,PARENT_RENDER_LATEST.json,ENROLLMENT_PUBLIC_CUT.json,PLAN.md}.
+## [Builder] 2026-09-18 11:57 UTC — R233 node1 scope extends to exact repo_c3
+
+User explicitly added repo_c3. gpu/talk.sh:17 defines the verified prefix and
+:45 maps repo_c3 to logical node1/a100, r203_repo_evidence_c3/life. Actual active
+control is r203_repo_evidence_c3_r213/control on GPU3, already normally exited
+at 08:19:48 UTC, completed sleep81. Final cycle's ACT7792 -> execution7795 is
+PROCESS_FAILED; LEARN7802 proposes different code but is not a checked success.
+No source-bound movement in that bounded final cycle justifies retaining it.
+No alias substitution, signal or restart. Apply the same independent all-records,
+all-checkpoints/source/control archive and CPU optimizer/RNG validation. Nine
+focused tests pass; 21 historical CPU-parent checks now find no live process.
+The initial four full journals have passed. Their receipts are preserved while
+the fifth journal is validated once by the existing StreamJournal constructor
+plus unchanged-cache verification (avoids redundant second full replay).
