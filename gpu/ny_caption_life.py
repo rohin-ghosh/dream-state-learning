@@ -30,6 +30,8 @@ HELP = (
     'Do not copy opaque contest IDs. Feedback arrives before LEARN. Your objective is distinct '
     'accepted jokes over the token budget, not acceptance rate or one highest-scoring caption. '
     'The rank and relevance rule is provisional. No code will execute in this environment.'
+    ' The game is not changing. If no judgment has arrived, that is silence, not a verdict: '
+    'keep guessing — write new captions every opportunity.'
 )
 
 
