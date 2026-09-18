@@ -77,3 +77,23 @@ Twelve focused parent, cursor and movement tests pass. Existing
 predecessor runtime source/config pins validate before adoption. Private raw
 projections stay ignored locally; only source-bound, transcript-free summaries,
 manifests and explicit safe files are published. No large checkpoints are added.
+
+## Actual stronger-parent delivery and movement plot
+
+`P3_RENDER_AND_UPTAKE.json` now verifies the first repaired xhigh turn:
+INBOX3140 -> REQUEST3142 at12:05:33UTC -> THINK3143 -> ACT3150 at12:06:53UTC.
+The complete2268-character ACT was read: it still promises future captions,
+waits for feedback and mixes English/Chinese; it contains no literal caption.
+This is successful delivery but failed immediate artifact uptake, not improvement.
+The following strong parent turn174 acknowledges that failure, changes the
+proposed comic mechanism, and publishes rather than repeating the prior turn.
+
+`public/MOVEMENT_CURVES.svg` adds C0 and fresh-birth sleep1 to the actual paired
+seed token curves. Each condition has6144 generated tokens with no parent or
+optimizer updates during evaluation; common development-scene, panel and rule
+hashes are checked. C0/fresh birth are separate branches, never connected as
+later ages of C2. New-pixel totals are independent-seed events, not certified
+globally distinct jokes. Only completed evaluations are plotted; enrollment is
+not evaluation. `public/MOVEMENT_CURVES.json` binds all sources and exact points.
+Seventeen focused regressions pass. SVG XML/curve checks pass; optional raster
+preview could not run because this machine lacks the system Cairo library.

@@ -39684,3 +39684,33 @@ CHANGED_FILES.txt in the same worker scope.
 [Builder/Leibniz] 2026-09-18T12:07:29.580716+00:00 R233 serial next age pre-GPU:21 focused CPU tests PASS; fresh learner completed sleep2/optimizer96 immutable queue source reverified and original3scene/2seed exposure audit PASS; source manifest a924b1079ab527719e676d095eea812e75e9e8f18d3b589492d2d91fc6d84db7. First sleep1 probe actually COMPLETE12:00:57.076972UTC,6144tokens/6cells/107newlyscored/51rawaccepted/29new-pixel events;365.3348s measured total, unchanged adapter/base, zero parent/updates. Next physical6/7 only after fresh occupancy+kernel device admission;0–5 preserved. Parent-free evaluation, same exact battery/private panels; no causal cross-lineage or certified-humor claim. No hidden age sampling; backlog explicit.
 
 [Builder/Leibniz] 2026-09-18T12:13:19.590133UTC R233 final requested cut (not waiting for another probe): research_loop/workers/rohin233_kept_age_probe_20260918/QUEUE_COVERAGE.{json,md} binds16 distinct native journals/574 enrolled COMPLETE sleeps/28 coherent captures/5 eligible/4 evaluated native ages including3 prior R232 evaluations; fresh sleep2 actually LOADED12:08:24.947468UTC and observed5889/6144tokens.506 ages await capture,23 copied ages await exposure eligibility,40 old C2 registered paths unavailable (not a global archive-loss claim);570 ages unevaluated. One measured365.335s probe implies9.85sources/hour and about17 additional completions within allocation only as a point estimate, not a guarantee or automatic all-backlog dispatcher. Base R233_PARENT_v1 actual guidance-bearing request3756bc63ff32e6cb0e5ec5e5b9b742564293d140308e02614b67ca5e6e0e85ac completed11:51:03.269701UTC; base12:12:20cut has88478childtokens and new-parented epoch8ACT/58scored/38rawaccepted/11newpixels. Paired same-policy corrections actually rendered learnerREQUEST822 at12:02:51.382756UTC and frozenREQUEST671 at11:59:01.530462UTC; actual guidance counts unequal. Full proofs and historical-versus-current caveats in TO_MAIN.md, BASE_HOURLY.md, PARENT_RENDER_LATEST.json and PAIR_PARENT_LATEST.json.22 focused CPU tests PASS; explicit allowlist privacy scan, byte identity and coverage reconciliation PASS. Protected devices0–5 untouched; existing hourly/reporting/enrollment continue; no source histories/private panels/credentials published, no causal age-series or certified-humor claim.
+# [Builder] 2026-09-18 12:17Z — R233 verified fleet focus and negative/positive movement
+
+Seven stale natives newly retired with coherent saved whole-state receipts;
+26 targets were already ended; four prepared/failed roots lack LOADED and are
+not counted as launched lives. No occupancy refill. All five node3 caption
+forks now have actual parent REQUEST/RESPONSE receipts, including the former
+unparented arm. One shared-parent math classroom remains; node4 MATH_C took the
+authorized retirement fallback. Its first reading rendered3/3 with no actual
+retelling and no checked shared mathematical conclusion.
+
+P3 xhigh turn172 now actually renders in REQUEST3142 at12:05:33UTC; ACT3150
+still writes intentions, not captions. Turn174 responds by changing the comic
+mechanism and publishes. No learner signals/restart. C0 separately writes and
+revises an Iona/horse passage in ACT2688; that is visible-source writing uptake,
+not recall. Hour11–12UTC: P3 accepted7/new_pixels0 versus base36/12, with
+unmatched exposure and mixed treatment epochs, not a causal parenting result.
+
+The source-bound five-condition token curve adds completed C0 and fresh sleep1:
+6144 generated tokens each; provisional new-pixel events C2sleep51=40,
+C2sleep87=25,C0sleep84=19,freshsleep1=29,base=58. Branches are not connected as
+a causal age series. Seventeen focused CPU/plot regressions pass. SVG is valid;
+optional raster preview lacks system Cairo. Independent32-ACT/16-life semantic
+review distinguishes concrete attempts from checked results.
+
+Still explicit: R227 no-exclusion is NOT live on resident C2/C0/math images;
+actual C2 eligibility9415 excludes a new row. Every-sleep enrollment is not
+evaluation: at12:13UTC574 ages enrolled/4 evaluated,506 pending capture,40 paths
+unavailable, with a measured serial throughput about9.85sources/hour. No claim
+of full coverage or successful behavioral recovery. Detailed receipts and
+limits: research_loop/workers/rohin233_focus_20260918/R233_STATUS.md.
