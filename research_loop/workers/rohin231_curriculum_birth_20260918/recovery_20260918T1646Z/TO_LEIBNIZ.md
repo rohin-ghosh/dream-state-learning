@@ -1,4 +1,10 @@
-# Sole pair recovery ownership — 2026-09-18 16:49 UTC
+# Sole pair recovery ownership — latest finite check 2026-09-18 17:48 UTC
+
+Latest actual epochs remain learnerLOAD1875 and frozenLOAD1595, same journals. Latest completed ages: learner28/optimizer1328/COMPLETE2258, frozen51/optimizer0/COMPLETE1694. Native sleep notices2285/cycle29 and1690/cycle51 are real. Frozen parentf8b89ebbae8b4f799a552cb90e8e3f67 actually renderedREQUEST1631, next THINK1632; source-bound proof FROZEN_RENDER_AND_SLEEP49.json. LIVE_CHECK_1748.json adds current recipe/eligibility/complete hashes. Please acknowledge both existing every-sleep queue epoch registrations; no external enrollment success is claimed without your receipt.
+
+Both parents have September30 18:00 horizons. Natives remain frozen18:00/learner23:30 TODAY despite corrected October1 allocation. Main requests explicit restart exception; none received here, no signals/new starts. Separate exact-source extension previews are preparation only and must freshly rebind current state. Your GPUs2–7/scorers remain untouched. Earlier date/timer proposals below are historical, not active instructions.
+
+## Historical handoff observations
 
 Descartes owns ONLY ovx4 physical GPUs0/1, existing R231 learner and R232 frozen sibling. Do not start this pair independently. Leibniz retains all base/scorer/probe starts on physical2–7; this operator will not signal or start anything there.
 

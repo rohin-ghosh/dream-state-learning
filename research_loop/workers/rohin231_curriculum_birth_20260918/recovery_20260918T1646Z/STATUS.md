@@ -1,4 +1,16 @@
-# Pair live — actual cut 2026-09-18 17:37 UTC
+# Pair live — finite process/journal check 2026-09-18 17:48 UTC
+
+Fresh read-only check: learner399101/start9637168 running, head2324, latest COMPLETE2258/sleep28/optimizer1328; recipe2287/eligibility2288 R227 all-authentic,3NEW, exclusions[]. Frozen412570/start9735357 alive, head1695, latest COMPLETE1694/sleep51/optimizer0 at17:46:41.958477UTC; recipe1692/eligibility1693 R227,3NEW, exclusions[], weight_updates_enabled=false, adapter unchanged. LIVE_CHECK_1748.json binds the finite observation and hashes. CPU parents2946721/2946722 also alive. No native signals or new starts.
+
+**Urgent unresolved timer, not a lease expiry:** frozen resident alarm/wrapper/service still end September18 18:00UTC; learner still23:30UTC. Parents alone adopted September30 18:00. Explicit native restart exception is still pending; previews are not live adoption. CURRENT.json and TABLE_1738.md preserve their earlier finite observations; the current checks and rendered frozen parent proof are in LIVE_CHECK_1748.json and FROZEN_RENDER_AND_SLEEP49.json.
+
+## Render and extension preview verified 17:44 UTC
+
+**Frozen parent render now actual, no longer pending:** publicationf8b89ebbae8b4f799a552cb90e8e3f67's exact70-word text occurs in REQUEST1631.messages[6].content, requestSHA28cfa57d0c83fccd9c0dd8c09bddd7eac7e5b14cd91b5146cdc19f5b3c991f93, started17:38:52.985085UTC. Next actual RESPONSE1632 finished17:39:12.903982 and is bound to THINK stage1635. This proves rendering/output, not teaching success. Safe receipt FROZEN_RENDER_AND_SLEEP49.json independently binds actual prompt text, response, recipe1626, eligibility1627 and COMPLETE1628. Sleep49 exact0updates and before=after adapter; no semantic exclusions/raw edits.
+
+**Extension PREVIEW ONLY, not authorized/dispatched:** same-source receiving plan previews created separately at17:43:49UTC, both toSep30 18:00 under the user-confirmedOct01 date minus21600seconds. Frozen first: bound observedCOMPLETE1661/cycle50/optimizer0, planSHA26d4ed302b8b41dfba273c519a07a8afb4c58d86136e08af5bb3adde60d8807a. Learner: observedCOMPLETE2258/cycle28/optimizer1328, planSHA010640e7dd63dc5628942e9953254348ab5ea913f2b58f061858949fcfd6864e. Exact old runtime pins unchanged; existing plan/wall/checkpoint validators plus6newCPU tests pass on each receiver. Only deadline/lease metadata and receiving source paths differ. No GUARD/READY/dispatch file, native signal, live source/config/journal mutation or GPU call. Current natives remain412570/18:00 and399101/23:30; parents alone have newbound. These previews must be freshly rebound to the latest coherent boundary AFTER explicit restart authorization; never use them to roll back intervening completed or pending work.
+
+## Earlier finite observations
 
 Count correction from CURRENT.json's17:37:36.968742 parent observation: learner has5recovery-era provider publications,4actually rendered atREQUEST1959/2040/2119/2182; acd5f5cac19c406da8ee4f944efe4a02 is fifth/pending. Earlier narrative count4/3 below is superseded; raw JSON bindings were already correct. Frozen publication remains pending render at that same finite cut.
 
