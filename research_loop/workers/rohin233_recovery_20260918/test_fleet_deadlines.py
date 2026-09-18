@@ -45,6 +45,13 @@ class DeadlineEvidenceTests(unittest.TestCase):
     def test_dispatch_or_pid_alone_does_not_prove_renewal(self):
         self.assertFalse(verified(dict(alive_now=True, identity_matches=True)))
 
+    def test_replay_process_is_not_reported_as_a_restored_life(self):
+        row = dict(pid=17, source_status='NATIVE_REPLAY_NOT_LOADED', alive_now=True,
+            loaded_index=None, renewal_verified=False)
+        self.assertEqual(runtime_status(row), 'REPLAY PROCESS ALIVE; renewed LOAD not observed')
+        row['alive_now'] = False
+        self.assertTrue(runtime_status(row).startswith('NOT ALIVE;'))
+
     def test_requires_both_journal_events_and_current_identity(self):
         row = dict(loaded_index=10, wall_index=9, resident_deadline_utc='2026-09-25T18:00:00Z',
             target_deadline_utc='2026-09-25T18:00:00Z',

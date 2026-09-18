@@ -40,6 +40,8 @@ def runtime_status(row):
     if row.get('alive_now') is False:
         return 'NOT ALIVE; prior receipt: ' + row['source_status']
     if row.get('alive_now') is True:
+        if 'REPLAY' in row.get('source_status', '') and row.get('loaded_index') is None:
+            return 'REPLAY PROCESS ALIVE; renewed LOAD not observed'
         return 'PROCESS ALIVE; renewal identity/bound unverified'
     if row.get('pid'):
         return 'CURRENT PROCESS NOT VERIFIED; prior receipt: ' + row['source_status']

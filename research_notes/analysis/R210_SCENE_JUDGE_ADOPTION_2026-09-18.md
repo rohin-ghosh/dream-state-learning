@@ -130,3 +130,37 @@ eligible for parent correction; the diagnostic itself delivered no parent
 message. Parent delivery is a separate requirement, not implied by writing a
 correction file. The two recovered seeds are not falsely called the complete
 requested 10–12-example packet.
+
+## Post-adoption counters — September 18, 19:57 UTC
+
+A new read-only audit independently binds all eight per-player epoch ledgers
+to the current scorer PID, start ticks, command hash and adopted epoch hash.
+It counts exact distinct caption strings within each scene, separately from
+scoring occurrences, inherited cached outcomes and retrospective rescoring.
+Six CPU regressions cover these distinctions, incomplete comparisons and
+hour boundaries. No life, scorer, parent or ledger was changed by the read.
+
+| Player | ACT origins | Distinct scored | Distinct accepted | New pixels |
+| --- | ---: | ---: | ---: | ---: |
+| Frozen-weight base | 18 | 148 | 127 | 11 |
+| Observation fork | 24 | 6 | 2 | 0 |
+| Perspective fork | 24 | 0 | 0 | 0 |
+| Revision fork | 24 | 4 | 1 | 1 |
+| Selfderive fork | 16 | 2 | 1 | 1 |
+| Formerly unparented node-3 fork | 21 | 0 | 0 | 0 |
+| Extra node-2 player | 21 | 0 | 0 | 0 |
+| P3 | 1 | 0 | 0 | 0 |
+
+For the base's 100 same-string transition comparisons: 66 pass both judges,
+four pass only widegap, 15 pass only the adopted judge, and 15 pass neither.
+Those comparisons are not additional attempts. The three caption-bearing
+node-3 forks have 12 paired comparisons in total. New-epoch scoring is live,
+but these totals do not certify humor, establish improved exploration, or
+compare equal generated-token budgets. P3's recovery is still incomplete;
+its one historical post-adoption ACT is not evidence that it is now alive.
+
+Receipt: `research_loop/workers/rohin233_recovery_20260918/JUDGE_EPOCH_AUDIT_195736.json`.
+UTC-hour bins and paired counts stay separate by player and epoch. Parsed
+caption totals, format faults, no-caption acts and generated tokens are not
+present in these epoch ledgers; this audit leaves them unknown rather than
+fabricating zeros or calling itself the complete token-normalized curve.
