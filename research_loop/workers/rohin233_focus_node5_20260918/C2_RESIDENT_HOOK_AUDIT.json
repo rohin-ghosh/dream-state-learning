@@ -1,0 +1,263 @@
+{
+  "CPU_negative_schema_test": {
+    "GPU_calls": 0,
+    "end_line": 170,
+    "error": "exact_think_act_learn_config",
+    "function": "validate_config",
+    "native_calls": 0,
+    "observed_utc": "2026-09-18T12:13:35.604456+00:00",
+    "passed": true,
+    "remote_writes": 0,
+    "scope": "Isolated CPU execution of exact pinned resident validate_config AST; no native execution or mutation",
+    "signals": 0,
+    "source_sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e",
+    "start_line": 66,
+    "test": "R227 learn_row_policy rejected by resident exact-key schema"
+  },
+  "R227_adopted": false,
+  "application_attempted": false,
+  "conclusion": "NO_SUPPORTED_LIVE_R227_TOGGLE_IN_EXACT_RESIDENT_PATHS",
+  "debugger_or_memory_access": false,
+  "findings": [
+    {
+      "file": "gpu/orch_r125_continual_guard.py",
+      "finding": "Validates the guard/plan at startup, completes the one-shot launch handshake, then calls child.run(plan_path). No recurring configuration service.",
+      "function": "native_entry",
+      "resident_file_sha256": "1b12ff40ae7d88c06b956cf8c624aa8b010781f66a4eb0f630455f1be5e9dab6",
+      "start_line": 62
+    },
+    {
+      "file": "gpu/orch_r125_continual_native.py",
+      "finding": "Reads and validates plan_path at line717; passes this in-memory plan into the child and R184 loop.",
+      "function": "run",
+      "resident_file_sha256": "39a4391e6c414e33c38e6569c2b334cba1034a880e88236968f066962e205401",
+      "start_line": 714
+    },
+    {
+      "file": "gpu/orch_r125_continual_native.py",
+      "finding": "Stores the startup plan in self.plan at line317.",
+      "function": "NativeChild.__init__",
+      "resident_file_sha256": "39a4391e6c414e33c38e6569c2b334cba1034a880e88236968f066962e205401",
+      "start_line": 314
+    },
+    {
+      "file": "gpu/orch_r125_continual_native.py",
+      "finding": "Chooses filters from retained self.plan at each sleep; emits SLEEP_RECIPE and applies review/code/plain-context filters. Does not reread a policy file.",
+      "function": "NativeChild.sleep",
+      "resident_file_sha256": "39a4391e6c414e33c38e6569c2b334cba1034a880e88236968f066962e205401",
+      "start_line": 492
+    },
+    {
+      "file": "gpu/orch_r184_think_act_learn.py",
+      "finding": "Exact allowed-key set excludes learn_row_policy; isolated CPU test rejects the R227 key with exact_think_act_learn_config.",
+      "function": "validate_config",
+      "resident_file_sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e",
+      "start_line": 66
+    },
+    {
+      "file": "gpu/orch_r184_think_act_learn.py",
+      "finding": "Validates and retains config once at line317; new row annotations at lines596-603 use that same config.",
+      "function": "ThinkActLearn.__init__",
+      "resident_file_sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e",
+      "start_line": 315
+    },
+    {
+      "file": "gpu/orch_r184_think_act_learn.py",
+      "finding": "Creates one driver before the loop; wake, LEARN, finish_sleep and post-COMPLETE console drain do not reload learning policy.",
+      "function": "run_loop",
+      "resident_file_sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e",
+      "start_line": 899
+    },
+    {
+      "file": "gpu/orch_r205_console_preemption.py",
+      "finding": "Polls genuine console events and returns generation-interruption evidence, not trainer/driver policy updates.",
+      "function": "ConsoleInterrupt.__call__",
+      "resident_file_sha256": "496730a2365919e3bf5d88c0bc62c630f006b7b6dfa10c767fdb014b047a3e04",
+      "start_line": 21
+    },
+    {
+      "file": "gpu/orch_r125_stream_journal.py",
+      "finding": "Validates and journals canonical source-bound events; does not mutate native plan or driver config.",
+      "function": "StreamJournal.read_inbox",
+      "resident_file_sha256": "0b0d309cbb0399be3b9488fab0eb049063e321b927bf5b4b2c43369448bdf06f",
+      "start_line": 560
+    },
+    {
+      "file": "gpu/r184_cpu_bridge.py",
+      "finding": "BRIDGE.json really is reread, but only for matching code-policy/gate checks and the CPU socket. Response is an execution outcome; no learning-policy assignment.",
+      "function": "call",
+      "resident_file_sha256": "63100f72a00fedc20c609a250b399eec4874b5380a9638157a63e4fe50531a3c",
+      "start_line": 25
+    },
+    {
+      "file": "gpu/orch_r133_code_feedback_guard.py",
+      "finding": "Reads the one-time LAUNCH_READY stdin barrier before native execution. It is not an ongoing boundary-control channel.",
+      "function": "await_startup",
+      "resident_file_sha256": "094fe8dfc80f51d0048bf12d3b998f9393d1b5ef981a9082cdf28af5523d8261",
+      "start_line": 105
+    },
+    {
+      "file": "gpu/orch_r184_think_act_learn.py",
+      "finding": "Correction cache is bound to an actual journal record and updates the correction ledger, not policy.",
+      "function": "restore_corrections",
+      "resident_file_sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e",
+      "start_line": 383
+    },
+    {
+      "file": "gpu/orch_r205_reading_policy.py",
+      "finding": "Source-bound reading/rework/release protocol manages discussions, not learning-filter selectors.",
+      "function": "ReadingPolicy.observe",
+      "resident_file_sha256": "42ca16bda8cf144c2112c9c0fa322bf16cd461e42e7cdba192ca995fdd2d4d5b",
+      "start_line": 165
+    }
+  ],
+  "head": 9525,
+  "human_inbox_writes": 0,
+  "inspection_finished_utc": "2026-09-18T12:13:37.180567+00:00",
+  "inspection_started_utc": "2026-09-18T12:10:37.071338+00:00",
+  "latest_live_receipts": {
+    "LOADED": {
+      "index": 7620,
+      "loaded_utc": "2026-09-18T07:28:47.072366+00:00",
+      "mtime_utc": "2026-09-18T07:28:47.112459+00:00",
+      "pid": 3624513,
+      "sha256": "314b3b614ec933e197a37ad388fefad48c57c89b00486cc70ca613444c47cf88"
+    },
+    "SLEEP_COMPLETE": {
+      "cycle": 93,
+      "index": 9464,
+      "mtime_utc": "2026-09-18T12:03:33.965262+00:00",
+      "sha256": "e5eadd99ce68ac755b69984012d065c17e163fc618d065b8c148740b0df32bbb",
+      "status": "COMPLETE"
+    },
+    "SLEEP_RECIPE": {
+      "fields": {
+        "anchor_lambda": 0.25,
+        "available_old_rows": 319,
+        "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+        "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+        "new_presentations": 16,
+        "new_rows": 4,
+        "policy": "R181_NEW_ONLY_V1",
+        "selected_old_rows": 0,
+        "sleep_loss_impl": "MASKED_CAUSAL_CE_V1"
+      },
+      "index": 9508,
+      "mtime_utc": "2026-09-18T12:10:41.569860+00:00",
+      "sha256": "0e6aa47685ebb59f4c96197c061d8b3ac34d34358fa06c7cbb25c5982f305aaf"
+    },
+    "SLEEP_REQUEST": {
+      "cycle": 94,
+      "index": 9507,
+      "mtime_utc": "2026-09-18T12:10:41.496335+00:00",
+      "sha256": "ef4df879e66aab8c8f8aac1d61c28dc7ffdc8f67821f08f43d5fd1ea72ae97d1",
+      "status": null
+    },
+    "TARGET_ELIGIBILITY": {
+      "excluded_segments": [
+        320,
+        321,
+        322
+      ],
+      "index": 9509,
+      "mtime_utc": "2026-09-18T12:10:41.748894+00:00",
+      "raw_modified": false,
+      "retained_counts": {
+        "NEW": 1,
+        "REHEARSAL": 0
+      },
+      "review_policy": "R195_CHILD_ROW_REVIEW_V1",
+      "scheduled_updates": 16,
+      "sha256": "28f394f9476a838d8904ff41efc62c47836364777f4a067c61e4fb28865b1163"
+    }
+  },
+  "live_source_edits": 0,
+  "missing_capability": "An implemented, supported runtime boundary operation that accepts an R227 policy and revalidates/applies it to both retained trainer plan and driver configuration, including pending own-row semantics. Neither that operation nor resident R227 schema/dispatch support is present.",
+  "native": {
+    "pid": 3624513,
+    "start_ticks": "25171256",
+    "state": "R"
+  },
+  "no_restart_fallback": true,
+  "only_actual_reread_config_exception": "CPU bridge binding reread exists but is not a training-policy toggle.",
+  "parent": {
+    "pid": 471781,
+    "start_ticks": "183179491",
+    "state": "S"
+  },
+  "parent_changes": 0,
+  "plan_sha256": "b3016752f19004842de09eca39595f68cc6dd1b4fc7b16366c1850d509704f98",
+  "private_evidence": [
+    {
+      "location": "private/RESIDENT_SOURCE_20260918T121037Z.json",
+      "raw_export": false,
+      "sha256": "faf5a68cde48c940048e07b9e84f484f362729b6e61abd39ed1c42d6e1d51db5"
+    },
+    {
+      "location": "private/RESIDENT_BOUNDARY_READERS.json",
+      "raw_export": false,
+      "sha256": "0a9d784fa8d511d24d5f4785ce3addedcdd4d9b779dfbc3d23969d2ce92aab22"
+    },
+    {
+      "location": "private/RESIDENT_R227_SCHEMA_CPU.json",
+      "raw_export": false,
+      "sha256": "a564748640783b59ee4d4f3c581391d0b4ce8a8711b050e2ef443e58d0b9ac43"
+    },
+    {
+      "location": "private/RESIDENT_HOOK_FINAL_LIVE.json",
+      "raw_export": false,
+      "sha256": "0e6b8abd8b34dc82eacd5364f2412734024d5b7e786b30727ce4de9395287d89"
+    }
+  ],
+  "process_signals": 0,
+  "recall_questions": 0,
+  "remote_file_writes": 0,
+  "schema": "R233_RESIDENT_C2_LIVE_POLICY_HOOK_AUDIT_V1",
+  "scope": "Only exact resident C2 guard-pinned startup, configuration and boundary read paths; not current working-tree source.",
+  "source_pins": {
+    "gpu/orch_r125_continual_guard.py": {
+      "pin_matches": true,
+      "sha256": "1b12ff40ae7d88c06b956cf8c624aa8b010781f66a4eb0f630455f1be5e9dab6"
+    },
+    "gpu/orch_r125_continual_native.py": {
+      "pin_matches": true,
+      "sha256": "39a4391e6c414e33c38e6569c2b334cba1034a880e88236968f066962e205401"
+    },
+    "gpu/orch_r125_stream_journal.py": {
+      "pin_matches": true,
+      "sha256": "0b0d309cbb0399be3b9488fab0eb049063e321b927bf5b4b2c43369448bdf06f"
+    },
+    "gpu/orch_r133_code_feedback_guard.py": {
+      "pin_matches": true,
+      "sha256": "094fe8dfc80f51d0048bf12d3b998f9393d1b5ef981a9082cdf28af5523d8261"
+    },
+    "gpu/orch_r184_think_act_learn.py": {
+      "pin_matches": true,
+      "sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e"
+    },
+    "gpu/orch_r205_console_preemption.py": {
+      "pin_matches": true,
+      "sha256": "496730a2365919e3bf5d88c0bc62c630f006b7b6dfa10c767fdb014b047a3e04"
+    },
+    "gpu/orch_r205_reading_policy.py": {
+      "pin_matches": true,
+      "sha256": "42ca16bda8cf144c2112c9c0fa322bf16cd461e42e7cdba192ca995fdd2d4d5b"
+    },
+    "gpu/r184_cpu_bridge.py": {
+      "pin_matches": true,
+      "sha256": "63100f72a00fedc20c609a250b399eec4874b5380a9638157a63e4fe50531a3c"
+    },
+    "organism_v6/orch_r125_continual_stream.py": {
+      "pin_matches": true,
+      "sha256": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33"
+    },
+    "organism_v6/orch_r125_plain_context.py": {
+      "pin_matches": true,
+      "sha256": "4ac0ac3197bc59e8ebb9c5f8acaaae2155fff2dd09e7baf49f0c4c161a18aaef"
+    },
+    "organism_v6/orch_r194_code_target_filter.py": {
+      "pin_matches": true,
+      "sha256": "6ae31389771786a88e96d055c53dc029222102db8d5b233481cf3834dbdda770"
+    }
+  }
+}
