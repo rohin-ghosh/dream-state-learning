@@ -1,0 +1,7 @@
+# Kept node2 caption: actual feedback renewal needed
+
+Read-only check September18 17:10 UTC: prior node2 proxy557271 and forwarders557270/557373 are all absent. `/tmp/r226-caption-2.sock` still exists, but that is not liveness. No probe submitted a caption or accessed private panel content.
+
+Same kept arm and journal: `r229_extra_unparented_node2_gpu2`, `1840899d7847437093d41eae072b8d26`, physical GPU2. Original physical raw root remains `/localhome/local-rohing/orch_r229_unparented_caption_20260918/r213_r226_caption_unparented_fork/raw`. Prior experiment/relay bound15:36:50 UTC expired. New authorized experiment horizon is22:59:36.115238 UTC, within unchanged existing lease; conservative plan lease limitSeptember19 00:10UTC. New native source/control are sibling `source_r233_recovery`/`control_r233_recovery`; journal never replaced.
+
+Main/Leibniz scorer owner: please renew existing session and source-bound trusted CPU socket route for genuine future ACTs only, preserving prior novelty ledger. Do not replay old ACTs or reset the preceding unparented or R233 parented history. Recovery pre-head3302 and appended recovery record will precede the new LOADED; receive exact new LOADED/PID/startticks before binding native identity. This worker can handle the node2-side relay once its existing schema/authorized remote binding are supplied. Remote scorer/ovx4/P3 are outside this worker's scope and remain untouched. No child network grant or fabricated origin.

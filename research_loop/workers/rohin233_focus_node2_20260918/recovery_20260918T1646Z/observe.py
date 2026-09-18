@@ -36,6 +36,17 @@ def checked(path):
     return record
 
 
+def native_command(arguments, guard_path):
+    if not arguments or not Path(os.fsdecode(arguments[0])).name.startswith('python'):
+        return False
+    try:
+        position = arguments.index(b'-m')
+    except ValueError:
+        return False
+    return (arguments[position + 1:position + 3] == [b'gpu.r233_node2_recovery', b'native']
+        and str(guard_path).encode() in arguments)
+
+
 def observation(name):
     root, _, control, _ = locations(name)
     plan = read(control / 'PLAN.json')
@@ -47,7 +58,7 @@ def observation(name):
         try:
             command = (process / 'cmdline').read_bytes()
             arguments = command.split(b'\0')
-            if b'native' not in arguments or str(control / 'GUARD.json').encode() not in arguments:
+            if not native_command(arguments, control / 'GUARD.json'):
                 continue
             fields = (process / 'stat').read_text().rsplit(')', 1)[1].split()
             matches.append(dict(pid=int(process.name), start_ticks=int(fields[19]), state=fields[0],

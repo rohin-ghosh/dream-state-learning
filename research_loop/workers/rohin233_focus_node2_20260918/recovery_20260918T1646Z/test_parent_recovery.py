@@ -3,9 +3,27 @@
 import unittest
 
 from c0_parent import replacements
+from caption_endpoint import scoped_inspector
+from observe import native_command
 
 
 class ParentRecoveryTests(unittest.TestCase):
+    def test_timeout_wrapper_is_not_a_second_native(self):
+        command = [b'/owned/venv/bin/python', b'-B', b'-m', b'gpu.r233_node2_recovery', b'native',
+            b'--config', b'/owned/GUARD.json']
+        self.assertTrue(native_command(command, '/owned/GUARD.json'))
+        self.assertFalse(native_command([b'timeout', b'100s'] + command, '/owned/GUARD.json'))
+        self.assertFalse(native_command(command, '/different/GUARD.json'))
+
+    def test_caption_only_current_loaded_records(self):
+        original = "headers = [focus.metadata(path) for path in paths[-256:]]\nloaded_headers = [focus.metadata(path) for path in paths[:8]]"
+        output = scoped_inspector(original, 3304)
+        self.assertIn("entry['index'] >= 3304", output)
+        self.assertIn('00000000000000003304.json', output)
+        self.assertNotIn('paths[:8]', output)
+        with self.assertRaises(ValueError):
+            scoped_inspector(original.replace('paths[:8]', 'paths[:16]'), 3304)
+
     def test_only_finite_epoch_source_and_current_record_floor_change(self):
         original = "\n".join((
             "require((legacy_directory/'EXIT.json').is_file() and (legacy_directory/control_name).is_file(), 'supported_old_reading_handoff_complete')",
