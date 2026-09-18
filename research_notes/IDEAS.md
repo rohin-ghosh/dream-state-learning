@@ -2164,3 +2164,8 @@ Rohin reframes the siege as a success (an agent found something to do from nothi
 - **Onboarding parent (for C0):** treat the child as a new colleague being onboarded onto the task; ask it questions about what it is reviewing, probe deeper, and teach it to probe itself deeper.
 - **Acquiring memory while reflecting:** the parent may have to help the child work out, during reflection, how a reflection becomes something it will remember — the deliberate side of memory Rohin has wanted since 09-11.
 - **Vantage-point finding:** conversation with Rohin has moved the children more than parenting has, because he sees the whole project; parents should be given his vantage (the overview, his transcripts, the taught list) so their turns carry it. Experiments and conversation are both necessary during learning.
+
+## 2026-09-18 01:00 PDT — Rohin msg 226: parenting is fragile; generalise the architecture, not the task
+- **Parenting is fragile:** a child left to its own devices drifts; over-free parenting is bad; C2 was most composed when it answered Rohin while working a concrete problem — conversation plus a live task, not conversation alone.
+- **Generalise the drift onto the architecture:** keep a child's initial task (math for C0) and add games gradually (reading next) so what generalises across tasks is the Think/Act architecture, while the tasks themselves stay grounded; checkpoint before each addition.
+- **C0 vs C2:** C0 has the clean weights but not the depth (metacognition, self-perception, some idea of the paper) that C2 acquired in conversation; C2 has the depth but became misguided — the question is whether depth can be given to C0 without the drift.
