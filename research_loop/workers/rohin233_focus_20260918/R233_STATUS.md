@@ -53,7 +53,9 @@ and node5 `RETIREMENTS.json`.
   not recovered memory. Math and the diverse curriculum are retained.
 - **P7/Astra7:** the overseer change actually rendered in P7 REQUEST3888. The
   bidirectional child bridge remains active; P7 is Astra7's parent, not an
-  operator secretly answering for P7. Plan/repetition problems remain measured.
+  operator secretly answering for P7. A changed falsification question also
+  rendered in REQUEST3972 at12:07:19UTC; another changed claim-rewriting turn is
+  published, with rendering pending at its cut. Plan/repetition problems remain.
 - **Frozen base and fresh pair:** the continuous base has a new parented epoch
   beginning with the actual guidance-bearing opportunity89 THINK (completed
   11:51:03UTC); weights stay frozen. The fresh learner and frozen sibling have
@@ -130,10 +132,13 @@ limits remain in the published receipt; no adapter-only memory conclusion.
   allocation. Prospective fair capture/evaluation priority is requested without
   hiding historical pending/unavailable ages; no full every-sleep coverage claim.
 - R227 no-exclusion is **not live on resident C2/C0/math images**. C2 recipe9414
-  and eligibility9415 still exclude one of four new rows. The loaded C2 image
-  lacks a supported gapless policy reload; no false hot-adoption or restart was
-  performed. `rohin233_focus_node5_20260918/C2_NO_EXCLUSION_STATUS.md` documents
-  the actual mismatch. Source commits do not prove adoption.
+  and eligibility9415 exclude one of four new rows; the newer12:13:37UTC audit
+  finds cycle94 recipe9508/eligibility9509 exclude three rows and retain one for
+  sixteen planned updates. The loaded image retains its startup plan/config,
+  rejects `learn_row_policy`, and lacks a supported gapless policy reload.
+  No false hot-adoption, memory patch or restart was performed.
+  `rohin233_focus_node5_20260918/C2_RESIDENT_HOOK_AUDIT.md` documents this actual
+  mismatch. Source commits do not prove adoption.
 - Stronger parent delivery is not successful behavioral recovery. P3's first
   post-intervention ACT, the classroom reading replies and C2's dialogue attempt
   still fail their requested artifacts. Parents remain active; these failures
