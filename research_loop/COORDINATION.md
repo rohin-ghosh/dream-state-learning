@@ -39485,6 +39485,22 @@ parent rendering remains pending and is not inferred from startup.
 Code/tests/pins/configs/receipts:
 `research_loop/workers/rohin232_node4_parent_repair_20260918/README.md`.
 
+## [Builder] R232 token-axis result plot — 2026-09-18 11:01 UTC
+
+Read-only plot of the completed primary probe:6144 generated tokens/model,
+two separate seed panels. Sleep51→sleep87 new-pixel events fall24→14 and16→11;
+base25/33. Sums40/25/58 are independent-archive events, not globally distinct
+ideas or certified jokes. No improvement is shown on this provisional metric;
+this is not causal H2 evidence. Input-token/total-compute budgets differ.
+
+Three plotting tests and actual XML/curve checks pass. Full response tokens
+are charged before score credit; no interpolation or new scoring. Source
+RESULTS SHA256 `7f06be58eb2377b8f34efff85ecf98438bcb5ef4b40e265b94e04bc977f48235`.
+`research_loop/workers/rohin232_coordination_20260918/AGE_PROBE_PLOT.md` points
+to the SVG and records limitations, including9/200 literal-caption spot-checks.
+The separate early-Byte/Neo source scan is operator-only, with raw history and
+grading material retained privately and never sent to the child by Main.
+
 [2026-09-18T10:32:21.137055+00:00] [Builder] Leibniz R232 finite age probe: seven focused CPU tests and worker import/AST checks PASS; source51/4908 and coherent source87/6348 captured without source-life signals, adapter+COMMIT copy hashes unchanged. Independent lifetime identifier audit complete; description overlap and receiving hashes required before player generation. GPU4/5 matched pair,6 plain base,7 bounded fresh-image preparation then same6250/top50 judge, only currently empty owned devices with seven-denied confinement. Common1024 actual generated tokens per scene/seed, three fresh DEVELOPMENT cartoons/two seeds; no optimizer, parent, source context or private references in player inputs. Plan/source: research_loop/workers/rohin232_age_probe_20260918/PLAN.md. No LOADED/result claimed here; existing services preserved. Intake f067f6ddf; no H2 claim.
 
 [2026-09-18T10:35:31.152597+00:00] [Builder] R232 eight focused CPU tests PASS; non-material atomic receipt publication repair prevents partially read queue files without overwriting prior receipts. Applied only after own finite vision process naturally exited, before probe players/judge dispatch; no live source/service change. Receiving import/decoder smoke PASS (pytest absent there). Fresh DEVELOPMENT exposure audit:300 REQUESTs plus both inherited completed-source contexts, zero selected-scene identifier/hash/description-fivegram matches; source cut8875. Fixed scenes564/654/703, source51 vs87; first model evidence pending. Main owns relay renewal.
