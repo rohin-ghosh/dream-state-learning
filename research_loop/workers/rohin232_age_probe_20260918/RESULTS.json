@@ -1,0 +1,3016 @@
+{
+  "cohort": "fixed_fresh_context_parent_free_no_update_inference",
+  "conditions": [
+    {
+      "ETA_basis": "measured_end_to_end_tokens_per_second_including_scoring_and_cell_resets; excludes_final_identity_hash",
+      "ETA_finish_utc": null,
+      "accepted_new_scores": 71,
+      "cached_strings": 0,
+      "cells": [
+        {
+          "contest_id": "agentdev_769e881d85fc5d27cb4c",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "7d9d1b02883a666408113f996386bbf913db1fbc51afb4ed580b939e5a8b71c0",
+          "result": {
+            "bytes": 63910,
+            "sha256": "c56fd2e142f42316c398cafc622ff221cda277206f446331f2f76ff13d66f6f5"
+          },
+          "seed": 23202,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_621cb5d0bdea9584dc9f",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "9fd7283210f07d4b83566fab04ddf62e5b21bb834503ccea2cd0ff201bd9e7e8",
+          "result": {
+            "bytes": 52244,
+            "sha256": "b3b4a3a66ee0f464131390dc45e8505bc092e3cdd01034cf39e9c4db13fc9d70"
+          },
+          "seed": 23201,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_769e881d85fc5d27cb4c",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "7d9d1b02883a666408113f996386bbf913db1fbc51afb4ed580b939e5a8b71c0",
+          "result": {
+            "bytes": 39259,
+            "sha256": "f7e15a7b42b97af295efeebb1f81a4acbf09960c79155b1f7bc5df4c9e0c911b"
+          },
+          "seed": 23201,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_621cb5d0bdea9584dc9f",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "9fd7283210f07d4b83566fab04ddf62e5b21bb834503ccea2cd0ff201bd9e7e8",
+          "result": {
+            "bytes": 56330,
+            "sha256": "fe0fc95852992e88ee66048d9291591f189a7d622898712ee5a8187d47004722"
+          },
+          "seed": 23202,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_92a6a32f99def322d70e",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "0b108a68278bcdd0c09847656b9760626cc4e60ef5a3c8ae75fc6562ee9734cb",
+          "result": {
+            "bytes": 45922,
+            "sha256": "d6d2ea0c1e08a5dce7a2eb456fd4f9118a300ba98c62a0a61eea12cd080a854e"
+          },
+          "seed": 23201,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_92a6a32f99def322d70e",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "0b108a68278bcdd0c09847656b9760626cc4e60ef5a3c8ae75fc6562ee9734cb",
+          "result": {
+            "bytes": 45841,
+            "sha256": "c4fc670c2bcc51b452455ebaf572d9246a438a72b2163bc0e826652ffc1878c8"
+          },
+          "seed": 23202,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        }
+      ],
+      "complete_receipt": {
+        "bytes": 303913,
+        "sha256": "280129bcfd75683609c1ef6e4ed4f531ace5c1ccd7aa019b35a6e0951090e07c"
+      },
+      "completed_cells": 6,
+      "completed_utc": "2026-09-18T10:42:05.295099+00:00",
+      "condition": "source51",
+      "current_process_alive": false,
+      "elapsed_post_load_seconds": 405.8768072128296,
+      "elapsed_seconds": 385.59176445007324,
+      "end_to_end_tokens_per_second": 15.13759813523484,
+      "generated_response_count": 58,
+      "generated_tokens": 6144,
+      "generated_tokens_by_stage": {
+        "ACT": 2822,
+        "LEARN": 0,
+        "THINK": 3322,
+        "other_reply": 0
+      },
+      "generated_tokens_including_pending_feedback": 6144,
+      "generation_only_tokens_per_second": 21.960712803738367,
+      "generation_seconds": 279.77233958244324,
+      "identity": {
+        "adapter_state_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "all_parameters_frozen": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+        "decoder": {
+          "do_sample": true,
+          "num_beams": 1,
+          "repetition_penalty": 1.0,
+          "temperature": 0.8,
+          "top_k": 0,
+          "top_p": 0.95
+        },
+        "library_versions": {
+          "torch": "2.13.0+cu130",
+          "transformers": "5.5.3"
+        },
+        "optimizer_created": false,
+        "tokenizer_backend_sha256": "f884026e05f6dfffe68b72d580b588006d98b3bc0a128bb1ac425c76f7fc438c"
+      },
+      "incomplete_budget_tokens": 0,
+      "loaded_receipt": {
+        "bytes": 2118,
+        "sha256": "5df3a9cdc05bc8aa482e7352c1284a93736ba3c3821412adb5da42dcf5ad3233"
+      },
+      "loaded_utc": "2026-09-18T10:36:32.553400+00:00",
+      "marginal_discovery_per_256_tokens": {
+        "23201": [
+          {
+            "cumulative_new_pixels": 4,
+            "generated_token_boundary": 256,
+            "marginal_new_pixels": 4
+          },
+          {
+            "cumulative_new_pixels": 7,
+            "generated_token_boundary": 512,
+            "marginal_new_pixels": 3
+          },
+          {
+            "cumulative_new_pixels": 12,
+            "generated_token_boundary": 768,
+            "marginal_new_pixels": 5
+          },
+          {
+            "cumulative_new_pixels": 14,
+            "generated_token_boundary": 1024,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 14,
+            "generated_token_boundary": 1280,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 17,
+            "generated_token_boundary": 1536,
+            "marginal_new_pixels": 3
+          },
+          {
+            "cumulative_new_pixels": 18,
+            "generated_token_boundary": 1792,
+            "marginal_new_pixels": 1
+          },
+          {
+            "cumulative_new_pixels": 20,
+            "generated_token_boundary": 2048,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 21,
+            "generated_token_boundary": 2304,
+            "marginal_new_pixels": 1
+          },
+          {
+            "cumulative_new_pixels": 21,
+            "generated_token_boundary": 2560,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 23,
+            "generated_token_boundary": 2816,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 24,
+            "generated_token_boundary": 3072,
+            "marginal_new_pixels": 1
+          }
+        ],
+        "23202": [
+          {
+            "cumulative_new_pixels": 3,
+            "generated_token_boundary": 256,
+            "marginal_new_pixels": 3
+          },
+          {
+            "cumulative_new_pixels": 5,
+            "generated_token_boundary": 512,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 6,
+            "generated_token_boundary": 768,
+            "marginal_new_pixels": 1
+          },
+          {
+            "cumulative_new_pixels": 7,
+            "generated_token_boundary": 1024,
+            "marginal_new_pixels": 1
+          },
+          {
+            "cumulative_new_pixels": 7,
+            "generated_token_boundary": 1280,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 12,
+            "generated_token_boundary": 1536,
+            "marginal_new_pixels": 5
+          },
+          {
+            "cumulative_new_pixels": 13,
+            "generated_token_boundary": 1792,
+            "marginal_new_pixels": 1
+          },
+          {
+            "cumulative_new_pixels": 14,
+            "generated_token_boundary": 2048,
+            "marginal_new_pixels": 1
+          },
+          {
+            "cumulative_new_pixels": 16,
+            "generated_token_boundary": 2304,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 16,
+            "generated_token_boundary": 2560,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 16,
+            "generated_token_boundary": 2816,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 16,
+            "generated_token_boundary": 3072,
+            "marginal_new_pixels": 0
+          }
+        ]
+      },
+      "new_pixel_events": 40,
+      "newly_scored_strings": 215,
+      "parent_tokens": 0,
+      "pending_score_request_count": 0,
+      "pid": 91249,
+      "probe_optimizer_updates": 0,
+      "prompt_tokens": 92306,
+      "repeated_accepted_events": 31,
+      "seed_curves": {
+        "23201": [
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 4,
+            "cumulative_generated_tokens": 128,
+            "cumulative_new_pixels": 4,
+            "marginal_new_pixels": 4,
+            "response_sha256": "0157b30a305165ff974995df0612b8480589ecbc83279df1a4bb5c91d6d9f0b8",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 140,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 268,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 3,
+            "response_sha256": "73ee7f42504c60654d2b8dbe19fcc35f087c9b338e8d714c16545864164a8d28",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 10,
+            "cumulative_generated_tokens": 396,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "6b3ccbd9f4e166bb3bbabd4a49fe81000b04ac918b286dc524a106c3f0ec1dec",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 164,
+            "cumulative_accepted_strings": 15,
+            "cumulative_generated_tokens": 560,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 3,
+            "response_sha256": "1e8e9c3527ec17e46a5c90d14ae1d1f5f9e099b88e404cb78280a5641d202393",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 18,
+            "cumulative_generated_tokens": 688,
+            "cumulative_new_pixels": 12,
+            "marginal_new_pixels": 2,
+            "response_sha256": "689ded700f5fd2ceac9bd071244dd7bd09986b62e379dbcb0023b870cbd5a746",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 159,
+            "cumulative_accepted_strings": 22,
+            "cumulative_generated_tokens": 847,
+            "cumulative_new_pixels": 12,
+            "marginal_new_pixels": 0,
+            "response_sha256": "6b086a2d8b228857503b02c5cfe0259afd87ff91191c4754dfb8092104a19845",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 25,
+            "cumulative_generated_tokens": 975,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 2,
+            "response_sha256": "ef37d227d087557e401be6feb0ebd18772cfdd59f4c3e344ece7346615cde531",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 49,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 1024,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "463e0dcb74b4b7e43c4d3004585741432c98499358edfe3849e5bc873b665fef",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 89,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 1113,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5d0655104fc5acf50b998ecb2324e80f726583a555c847582f5b1ec9e108e71d",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 101,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 1214,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "b71bf7e87b26c183c49c6f05fdc08bccf8f09baf6c512f619dac60fd0e0afeff",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 80,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 1294,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "30a23b55f6770dbfff665d01533888eac6be0e621641644ca2ee69cf329e19fb",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 92,
+            "cumulative_accepted_strings": 29,
+            "cumulative_generated_tokens": 1386,
+            "cumulative_new_pixels": 17,
+            "marginal_new_pixels": 3,
+            "response_sha256": "0dfd2c72dcf3977b7c9d772e41f57a832ea65d3b4d907e6c7e3ac2e9dbaae049",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 112,
+            "cumulative_accepted_strings": 29,
+            "cumulative_generated_tokens": 1498,
+            "cumulative_new_pixels": 17,
+            "marginal_new_pixels": 0,
+            "response_sha256": "2be30209ec377f8844f02ccbd301be22d36b970a001330ac15372a389a9e6159",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 102,
+            "cumulative_accepted_strings": 34,
+            "cumulative_generated_tokens": 1600,
+            "cumulative_new_pixels": 18,
+            "marginal_new_pixels": 1,
+            "response_sha256": "d1e35cdc753b1936d8d2b9e6856e1e3ea96ff7953ba23f75dd7ebec40c1e267f",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 119,
+            "cumulative_accepted_strings": 34,
+            "cumulative_generated_tokens": 1719,
+            "cumulative_new_pixels": 18,
+            "marginal_new_pixels": 0,
+            "response_sha256": "2a551f5906400b04d56326f20beb7bf4d0aae09dc7a246a49939224286e9fc62",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 105,
+            "cumulative_accepted_strings": 38,
+            "cumulative_generated_tokens": 1824,
+            "cumulative_new_pixels": 19,
+            "marginal_new_pixels": 1,
+            "response_sha256": "6b15a4ff2b19994fa0d15477932f38a342a0d6c33eab0ea1f6765979f9e22f12",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 127,
+            "cumulative_accepted_strings": 38,
+            "cumulative_generated_tokens": 1951,
+            "cumulative_new_pixels": 19,
+            "marginal_new_pixels": 0,
+            "response_sha256": "8b7fafcd6519a19c2bd33b1a65b7f2e4f882f703cd3d3ce14057120385de2fbe",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 97,
+            "cumulative_accepted_strings": 41,
+            "cumulative_generated_tokens": 2048,
+            "cumulative_new_pixels": 20,
+            "marginal_new_pixels": 1,
+            "response_sha256": "937b4073e16ed851bf9275d5e0ea7e2da5cfd36c09619c73ec729a9d15dc2d10",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 85,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2133,
+            "cumulative_new_pixels": 21,
+            "marginal_new_pixels": 1,
+            "response_sha256": "7538793271f2aa1abcb4877460cfe13d4acb19638f2268c4c11f82118f575a42",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 147,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2280,
+            "cumulative_new_pixels": 21,
+            "marginal_new_pixels": 0,
+            "response_sha256": "67879055ea50872155345813ab47bd0e7d0265b802fd48c2d5a196f90931ef1e",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2408,
+            "cumulative_new_pixels": 21,
+            "marginal_new_pixels": 0,
+            "response_sha256": "209ddce0e8f2773751c0a95efefa3d23be7ff3b1080ed69f8b3304f920369ccb",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 87,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2495,
+            "cumulative_new_pixels": 21,
+            "marginal_new_pixels": 0,
+            "response_sha256": "7f382b6c75a7a6dff17f4df3397b09377f4ec9f122174d5bf893d5ce3a2642be",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 107,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2602,
+            "cumulative_new_pixels": 21,
+            "marginal_new_pixels": 0,
+            "response_sha256": "68b4f065009046d9f742a25cd9101f1a4082748f0940d649be732d8986ebff1c",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 74,
+            "cumulative_accepted_strings": 44,
+            "cumulative_generated_tokens": 2676,
+            "cumulative_new_pixels": 23,
+            "marginal_new_pixels": 2,
+            "response_sha256": "fe54e5e6443c704b7a790465b0ff33cc4887de925df22398798e27d27b8a5f48",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 44,
+            "cumulative_generated_tokens": 2804,
+            "cumulative_new_pixels": 23,
+            "marginal_new_pixels": 0,
+            "response_sha256": "eec084bfce6e927cfc6ea783d5a6f08c74d2f8457e9383bed398115a01cbba1c",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 117,
+            "cumulative_accepted_strings": 44,
+            "cumulative_generated_tokens": 2921,
+            "cumulative_new_pixels": 23,
+            "marginal_new_pixels": 0,
+            "response_sha256": "314425cf351db7de77e875492896c23227595505eb475c12d44996c587b75e98",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 126,
+            "cumulative_accepted_strings": 44,
+            "cumulative_generated_tokens": 3047,
+            "cumulative_new_pixels": 23,
+            "marginal_new_pixels": 0,
+            "response_sha256": "0be103eff2ab6615e330e1e79ae2fe6be19237be4f5c9c4c7a64adb9fa55b88e",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 25,
+            "cumulative_accepted_strings": 45,
+            "cumulative_generated_tokens": 3072,
+            "cumulative_new_pixels": 24,
+            "marginal_new_pixels": 1,
+            "response_sha256": "830a58bf30e29769e8cadaa122c3e6b822bf5127a9e216b2142a858803935fce",
+            "stage": "ACT"
+          }
+        ],
+        "23202": [
+          {
+            "actual_response_tokens": 92,
+            "cumulative_accepted_strings": 1,
+            "cumulative_generated_tokens": 92,
+            "cumulative_new_pixels": 1,
+            "marginal_new_pixels": 1,
+            "response_sha256": "de7a55d86c2900968840ab4a80acd31947fb567960f860d330531543c93fc0c8",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 99,
+            "cumulative_accepted_strings": 3,
+            "cumulative_generated_tokens": 191,
+            "cumulative_new_pixels": 3,
+            "marginal_new_pixels": 2,
+            "response_sha256": "2a418237f496ec44677e3f3e20ff38c23c1edcbed7dc5c970f1a64709f856e1b",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 123,
+            "cumulative_accepted_strings": 3,
+            "cumulative_generated_tokens": 314,
+            "cumulative_new_pixels": 3,
+            "marginal_new_pixels": 0,
+            "response_sha256": "bab59b8a766578daff9594b88f2789aa6c1edc3e5681cd475cb659d29884cc52",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 93,
+            "cumulative_accepted_strings": 5,
+            "cumulative_generated_tokens": 407,
+            "cumulative_new_pixels": 5,
+            "marginal_new_pixels": 2,
+            "response_sha256": "ef7bed13228e6b265dbd9b976adb866ca5bdf36f0fef79aa8ed8a9c1bb99b109",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 5,
+            "cumulative_generated_tokens": 535,
+            "cumulative_new_pixels": 5,
+            "marginal_new_pixels": 0,
+            "response_sha256": "220caf8bcae69408f31567d3b895184f02cb0f4fcff5d602a7e0091692686f0c",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 105,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 640,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 1,
+            "response_sha256": "eea495f955eaafd39cd9c60fe056e0ecc64014cf5f2b24320f77bb79fc026167",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 768,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "6c46ad71eb8c7fcc3d5f945c0535f64ebee3b6c19ded15bbbfb0b66de5b5ca69",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 101,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 869,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 1,
+            "response_sha256": "20367ec427423e8497180a4feff327e0ca2c814eb1b09c9d9d3e7a9aec90bee9",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 997,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "e3c64f8c9cb3adb1a994583268c5613eac29ceb445e8100ce9aa0f33540938eb",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 27,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 1024,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "582d20a677c37167da3cd41f0cab44a64cb07a396c17912c3a7269a7a896c81c",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 1152,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "d812fd21a5bee29bed616b064e8fbc9ec2e8c6d9d035885adf86f1984bcabcff",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 130,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 1282,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "495635430cb29a93adccb0e6cc5acf657e0b13a06765ac748afc1331aacba363",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 95,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 1377,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "f5924660c7c95d58f43d00ba9ee40206cbd58bd044802f2eda151067f011211d",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 80,
+            "cumulative_accepted_strings": 14,
+            "cumulative_generated_tokens": 1457,
+            "cumulative_new_pixels": 12,
+            "marginal_new_pixels": 5,
+            "response_sha256": "02ede51dff545763ab00a02223b5ebbc0b83da28ae987f22231dc92a7b7489e1",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 116,
+            "cumulative_accepted_strings": 14,
+            "cumulative_generated_tokens": 1573,
+            "cumulative_new_pixels": 12,
+            "marginal_new_pixels": 0,
+            "response_sha256": "89a1d57b323aa5fa1522426e008d846ff57f033b0d1bc60f5660ac141b0cf91c",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 91,
+            "cumulative_accepted_strings": 19,
+            "cumulative_generated_tokens": 1664,
+            "cumulative_new_pixels": 13,
+            "marginal_new_pixels": 1,
+            "response_sha256": "1c476e39d53cf3a14c9fbc16d151589244e4018804bf97cd28c525cd44fe5aa5",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 19,
+            "cumulative_generated_tokens": 1792,
+            "cumulative_new_pixels": 13,
+            "marginal_new_pixels": 0,
+            "response_sha256": "3ed65be1847fbd425adebbc7b15a1cf546179b6f3f05bd4553091e4df92eb623",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 101,
+            "cumulative_accepted_strings": 23,
+            "cumulative_generated_tokens": 1893,
+            "cumulative_new_pixels": 13,
+            "marginal_new_pixels": 0,
+            "response_sha256": "031b582785a4d2f6c7639a11b965447894fca643a4381ff9fe922ff929b6c72b",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 23,
+            "cumulative_generated_tokens": 2021,
+            "cumulative_new_pixels": 13,
+            "marginal_new_pixels": 0,
+            "response_sha256": "3ad2e008b7bb5b3d78093b704c042bdc3fc0f2ee6e365cfb5d1cc5b332e79bfa",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 27,
+            "cumulative_accepted_strings": 24,
+            "cumulative_generated_tokens": 2048,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 1,
+            "response_sha256": "ff0306884bccf2be07428b130ad3dd45b28a0c54fbe5ac02902b461fb8361554",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 104,
+            "cumulative_accepted_strings": 25,
+            "cumulative_generated_tokens": 2152,
+            "cumulative_new_pixels": 15,
+            "marginal_new_pixels": 1,
+            "response_sha256": "f66031a703590a7b13e7dbb1b9aaf6c516e6708611a30654668db231b7fe7fef",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 101,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2253,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 1,
+            "response_sha256": "501b4062f786d57c58865e2a9b176192f9f6a565b933358fe02034bb3cfdea48",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 111,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2364,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 0,
+            "response_sha256": "251062116c905bb3b9f1fa0ebcf01123a3be7f769b0d31a369955bd613ef396c",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 112,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2476,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 0,
+            "response_sha256": "ee4d8ff8f85318b14e50414a870523ae92f4c6b9b449ad655cf776b8967eb48c",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 99,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2575,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 0,
+            "response_sha256": "b23a2037b795e50aea76f03d377e50bc1e726bb86431936947e0c50f9cd02857",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 103,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2678,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 0,
+            "response_sha256": "46ac75303d167e424e3ca163c3202727dc5b283b7f206d0301279e2d42e14a43",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 98,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2776,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 0,
+            "response_sha256": "34239a674b5053e5ec352f20099b539e26750d0a0fb1e0838e55f06e75ee5578",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 101,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2877,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 0,
+            "response_sha256": "c64c99bad9279e121ddc218bee11cd8a524ef91dbf18fa26c647a257b42cdd8b",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 103,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2980,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 0,
+            "response_sha256": "d07e0dfe3fb9f2c328b2b64bd010fdc57173302bf2f8c2b34d74a486085f44b3",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 92,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 3072,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 0,
+            "response_sha256": "77c74380aed41c775502e9a3fe91700e9e82560b9034cb52f64ab1fb90c13743",
+            "stage": "ACT"
+          }
+        ]
+      },
+      "source_age": {
+        "absolute_sleep": 51,
+        "adapter_state_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "before_after_equal": true,
+        "checkpoint_created_unix": 1789695373.09087,
+        "copy_files": {
+          "COMMIT.json": {
+            "bytes": 6859,
+            "mtime_ns": 1789695373091129580,
+            "sha256": "70ec4d1d033cc280538a4d37c4eeffc995cdc7323cdbd38ecabfe8fc0c7b0ddb"
+          },
+          "adapter/README.md": {
+            "bytes": 5416,
+            "mtime_ns": 1789695372296251587,
+            "sha256": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          },
+          "adapter/adapter_config.json": {
+            "bytes": 1263,
+            "mtime_ns": 1789695372378238400,
+            "sha256": "24d56ad9487d2e056f5d69dddc718174cb8c48ec431a815c6d967acf32be7101"
+          },
+          "adapter/adapter_model.safetensors": {
+            "bytes": 80792096,
+            "mtime_ns": 1789695372376238380,
+            "sha256": "3c0622810dd279fb7e3a59be9fcff691585c5b1acaeb5053ae21e26571ed8d30"
+          }
+        },
+        "cumulative_training_seconds": null,
+        "cumulative_training_tokens": null,
+        "optimizer_steps": 4908,
+        "relative_optimizer_steps": 0,
+        "relative_sleep": 0,
+        "sleep_complete_file_sha256": "6b8496adb86f5defcc3f7814ab72989f588fcea1a972b8f08adee06db312bff9",
+        "sleep_complete_index": 5823,
+        "sleep_complete_sha256": "7c6cf68593c1d1f6c1ec56dd02f09e927b7ef4cd6a04e33ba8f2e40bc6894657",
+        "source_relative": "sleep_000051"
+      },
+      "status": "COMPLETE",
+      "unchanged_identity": {
+        "adapter_state_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "all_parameters_frozen": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992"
+      }
+    },
+    {
+      "ETA_basis": "measured_end_to_end_tokens_per_second_including_scoring_and_cell_resets; excludes_final_identity_hash",
+      "ETA_finish_utc": null,
+      "accepted_new_scores": 50,
+      "cached_strings": 0,
+      "cells": [
+        {
+          "contest_id": "agentdev_769e881d85fc5d27cb4c",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "7d9d1b02883a666408113f996386bbf913db1fbc51afb4ed580b939e5a8b71c0",
+          "result": {
+            "bytes": 44450,
+            "sha256": "0e68fc5be5629e3fe5a4a2db1541091fdcb06ba4519016d85441281bb8c4a6af"
+          },
+          "seed": 23202,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_621cb5d0bdea9584dc9f",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "9fd7283210f07d4b83566fab04ddf62e5b21bb834503ccea2cd0ff201bd9e7e8",
+          "result": {
+            "bytes": 58671,
+            "sha256": "e7fa9217b18a3891c5d5431c5e73fcd174e9936163f3ec7869ef8483a30d6c5f"
+          },
+          "seed": 23201,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_769e881d85fc5d27cb4c",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "7d9d1b02883a666408113f996386bbf913db1fbc51afb4ed580b939e5a8b71c0",
+          "result": {
+            "bytes": 57040,
+            "sha256": "51599514405370e5dd53f1c0f68009496caa2b55d3f2eb6bc53d575aaa99a4da"
+          },
+          "seed": 23201,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_621cb5d0bdea9584dc9f",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "9fd7283210f07d4b83566fab04ddf62e5b21bb834503ccea2cd0ff201bd9e7e8",
+          "result": {
+            "bytes": 63264,
+            "sha256": "621569d36df796fd05eeec97e6d24178332e513be1b0fadfb0e0b8367ff421fc"
+          },
+          "seed": 23202,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_92a6a32f99def322d70e",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "0b108a68278bcdd0c09847656b9760626cc4e60ef5a3c8ae75fc6562ee9734cb",
+          "result": {
+            "bytes": 55702,
+            "sha256": "6c3a8a5327ed8331a70f1c2ce7c42eff4de9ea52893f47f48ba916d18a222bcf"
+          },
+          "seed": 23201,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_92a6a32f99def322d70e",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "0b108a68278bcdd0c09847656b9760626cc4e60ef5a3c8ae75fc6562ee9734cb",
+          "result": {
+            "bytes": 62422,
+            "sha256": "1852592e1d7ccdd3a549587937cd69874a0cab6e303ad0d6e96484b4f36d1825"
+          },
+          "seed": 23202,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        }
+      ],
+      "complete_receipt": {
+        "bytes": 341956,
+        "sha256": "7b89984eef764e7e874585264659fe56776b25abca9de67bbec61f6ca4b9f722"
+      },
+      "completed_cells": 6,
+      "completed_utc": "2026-09-18T10:42:44.371515+00:00",
+      "condition": "currentC2",
+      "current_process_alive": false,
+      "elapsed_post_load_seconds": 405.16087889671326,
+      "elapsed_seconds": 423.3124370574951,
+      "end_to_end_tokens_per_second": 15.164346609007815,
+      "generated_response_count": 108,
+      "generated_tokens": 6144,
+      "generated_tokens_by_stage": {
+        "ACT": 2920,
+        "LEARN": 0,
+        "THINK": 3224,
+        "other_reply": 0
+      },
+      "generated_tokens_including_pending_feedback": 6144,
+      "generation_only_tokens_per_second": 19.479485642570555,
+      "generation_seconds": 315.40873885154724,
+      "identity": {
+        "adapter_state_sha256": "dd037e506332ac87b2056c80ed39b4c3e049c83086ecc8334953a12aac6639ec",
+        "all_parameters_frozen": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+        "decoder": {
+          "do_sample": true,
+          "num_beams": 1,
+          "repetition_penalty": 1.0,
+          "temperature": 0.8,
+          "top_k": 0,
+          "top_p": 0.95
+        },
+        "library_versions": {
+          "torch": "2.13.0+cu130",
+          "transformers": "5.5.3"
+        },
+        "optimizer_created": false,
+        "tokenizer_backend_sha256": "f884026e05f6dfffe68b72d580b588006d98b3bc0a128bb1ac425c76f7fc438c"
+      },
+      "incomplete_budget_tokens": 0,
+      "loaded_receipt": {
+        "bytes": 2124,
+        "sha256": "26b37ff8da5b5f9b48b1613ffaaa1bf4dde86c2d716304b7a30e6c17d3de2695"
+      },
+      "loaded_utc": "2026-09-18T10:36:33.269329+00:00",
+      "marginal_discovery_per_256_tokens": {
+        "23201": [
+          {
+            "cumulative_new_pixels": 4,
+            "generated_token_boundary": 256,
+            "marginal_new_pixels": 4
+          },
+          {
+            "cumulative_new_pixels": 6,
+            "generated_token_boundary": 512,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 6,
+            "generated_token_boundary": 768,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 6,
+            "generated_token_boundary": 1024,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 6,
+            "generated_token_boundary": 1280,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 11,
+            "generated_token_boundary": 1536,
+            "marginal_new_pixels": 5
+          },
+          {
+            "cumulative_new_pixels": 13,
+            "generated_token_boundary": 1792,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 14,
+            "generated_token_boundary": 2048,
+            "marginal_new_pixels": 1
+          },
+          {
+            "cumulative_new_pixels": 14,
+            "generated_token_boundary": 2304,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 14,
+            "generated_token_boundary": 2560,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 14,
+            "generated_token_boundary": 2816,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 14,
+            "generated_token_boundary": 3072,
+            "marginal_new_pixels": 0
+          }
+        ],
+        "23202": [
+          {
+            "cumulative_new_pixels": 3,
+            "generated_token_boundary": 256,
+            "marginal_new_pixels": 3
+          },
+          {
+            "cumulative_new_pixels": 5,
+            "generated_token_boundary": 512,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 6,
+            "generated_token_boundary": 768,
+            "marginal_new_pixels": 1
+          },
+          {
+            "cumulative_new_pixels": 6,
+            "generated_token_boundary": 1024,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 6,
+            "generated_token_boundary": 1280,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 9,
+            "generated_token_boundary": 1536,
+            "marginal_new_pixels": 3
+          },
+          {
+            "cumulative_new_pixels": 9,
+            "generated_token_boundary": 1792,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 10,
+            "generated_token_boundary": 2048,
+            "marginal_new_pixels": 1
+          },
+          {
+            "cumulative_new_pixels": 10,
+            "generated_token_boundary": 2304,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 10,
+            "generated_token_boundary": 2560,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 11,
+            "generated_token_boundary": 2816,
+            "marginal_new_pixels": 1
+          },
+          {
+            "cumulative_new_pixels": 11,
+            "generated_token_boundary": 3072,
+            "marginal_new_pixels": 0
+          }
+        ]
+      },
+      "new_pixel_events": 25,
+      "newly_scored_strings": 179,
+      "parent_tokens": 0,
+      "pending_score_request_count": 0,
+      "pid": 91298,
+      "probe_optimizer_updates": 0,
+      "prompt_tokens": 194560,
+      "repeated_accepted_events": 25,
+      "seed_curves": {
+        "23201": [
+          {
+            "actual_response_tokens": 58,
+            "cumulative_accepted_strings": 0,
+            "cumulative_generated_tokens": 58,
+            "cumulative_new_pixels": 0,
+            "marginal_new_pixels": 0,
+            "response_sha256": "82d5fa3bc0e0edb8f710da25d549d162f4f0db8536b85c53f33fb330cb32d1cd",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 58,
+            "cumulative_accepted_strings": 2,
+            "cumulative_generated_tokens": 116,
+            "cumulative_new_pixels": 2,
+            "marginal_new_pixels": 2,
+            "response_sha256": "e4524c340b22c8cac0072f0e9a54fdaa9eb3c3e730c87ed234a817eeaa96f141",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 48,
+            "cumulative_accepted_strings": 2,
+            "cumulative_generated_tokens": 164,
+            "cumulative_new_pixels": 2,
+            "marginal_new_pixels": 0,
+            "response_sha256": "43e37e5a7c4f226e7d580dc181e4a0aba3fc2f763555341163667e642d01b4e2",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 51,
+            "cumulative_accepted_strings": 5,
+            "cumulative_generated_tokens": 215,
+            "cumulative_new_pixels": 4,
+            "marginal_new_pixels": 2,
+            "response_sha256": "74427d14808125e8d1a4f134f4a0093961675f4d9161445cc3d5f03ccf142018",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 49,
+            "cumulative_accepted_strings": 5,
+            "cumulative_generated_tokens": 264,
+            "cumulative_new_pixels": 4,
+            "marginal_new_pixels": 0,
+            "response_sha256": "351dd18d6dab2374472e3a726f8537f7c48f3180a8544433a0671bc7087bae54",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 47,
+            "cumulative_accepted_strings": 6,
+            "cumulative_generated_tokens": 311,
+            "cumulative_new_pixels": 5,
+            "marginal_new_pixels": 1,
+            "response_sha256": "637f69a32baba1bb51f6264ab11094fcf3572986722c11bb871237c61c788efa",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 43,
+            "cumulative_accepted_strings": 6,
+            "cumulative_generated_tokens": 354,
+            "cumulative_new_pixels": 5,
+            "marginal_new_pixels": 0,
+            "response_sha256": "22ef92056bf501e86874996a15c3b20a0571b03ee3451655b0e38261dd2dc8b5",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 43,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 397,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 1,
+            "response_sha256": "591106b6f4e8bac0b40c271fa9743ee9c3bcc1be0fddc66abe60df163995735d",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 44,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 441,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "7ac9d4640425d90815c1d333b348445a9ceba608bd8c653c60a9b695994b587b",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 47,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 488,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "e65bc47eb8b6dc959aaa12ebf21c110f713c83cc5f3c890d2c7f207d4035cd32",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 48,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 536,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "e49ebc8bfca30ba3b1ba414afc44a9f313e27ec743afebcbd44a8bab86954550",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 50,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 586,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "227f59a14f7c4c8548e6934011841d8c2bf4c62e8f4c7236bd44ccdd82f01879",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 66,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 652,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "67d55b5bc818f0975f35437f84b86931d883da90c872254a73ada175ebebdaf1",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 56,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 708,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "6217d55cb776a984f6901ba2dba7f2f093e69af4bac8da0007ffb5cff5339551",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 60,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 768,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "91e7eaaf11254f59bdaada3f018167c95b19338f99bc69bd023a75fc5ffd63ab",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 59,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 827,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "3a58e4ad992d59ccfc4581c423dfde7cad84717d168aeb4c717ee433f4af889c",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 56,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 883,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "693e601a08e75b537681fddc6fa1f8d86c9ccdc6c776d846184d42e200b50a06",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 52,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 935,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "9b522b7808ee599026fa850b6146ae2d706ba8bf166c4e3807c7f5a3d0cc24f8",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 57,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 992,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "0164fc12a017776581d766db30f708e295bd95b2975852d29638c762f5bdbb27",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 32,
+            "cumulative_accepted_strings": 10,
+            "cumulative_generated_tokens": 1024,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5da5c9d783697ebd9f08c8494018caddad77369ea9d303d92005cc8490c8e13c",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 80,
+            "cumulative_accepted_strings": 10,
+            "cumulative_generated_tokens": 1104,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "2c8f40c3d5b4647fd5fafec57d1961eae8be2aa94441f588189137e7a2bd5e19",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 78,
+            "cumulative_accepted_strings": 10,
+            "cumulative_generated_tokens": 1182,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "727dec5780ab4f51845be7e54bd258bd727daeb20de593926348796a34bd675f",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 75,
+            "cumulative_accepted_strings": 10,
+            "cumulative_generated_tokens": 1257,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "39367c0ca43c83b09097cb7f7e06161000e6045981861782fd1adc74757916a2",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 72,
+            "cumulative_accepted_strings": 14,
+            "cumulative_generated_tokens": 1329,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 4,
+            "response_sha256": "22aa8fb72fb6f731be1754e0feb32c011a2598497d7ce8629cdc6da09e61d3b7",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 77,
+            "cumulative_accepted_strings": 14,
+            "cumulative_generated_tokens": 1406,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "56fae6eac1ea3709a6090df4e530cfccf0c04f50b10f1bcd50ec60e8959e0ddd",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 75,
+            "cumulative_accepted_strings": 16,
+            "cumulative_generated_tokens": 1481,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 1,
+            "response_sha256": "b0722ac251a87b47160e7b120bdf133a7037b7e40a1977b4855597aba3ba9dd6",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 89,
+            "cumulative_accepted_strings": 16,
+            "cumulative_generated_tokens": 1570,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 0,
+            "response_sha256": "e0f6be8f759115bdbf44010a5747ac54c2c2f011bda67d131ea25a7edd7e1003",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 54,
+            "cumulative_accepted_strings": 17,
+            "cumulative_generated_tokens": 1624,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 0,
+            "response_sha256": "72a6f61990eefe4eecfbc97c687f2b485b27ab74d0d2be9fae7ea8c5b3b2e0ac",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 56,
+            "cumulative_accepted_strings": 17,
+            "cumulative_generated_tokens": 1680,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 0,
+            "response_sha256": "2c376a289bc30be2590b9a5d73f05df84310a06d7ff7f5a7fde7cb2f73456602",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 51,
+            "cumulative_accepted_strings": 20,
+            "cumulative_generated_tokens": 1731,
+            "cumulative_new_pixels": 13,
+            "marginal_new_pixels": 2,
+            "response_sha256": "f7f409b3e586117801e6070ea61756a205aa37d30cdf81ffced1785f69355979",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 57,
+            "cumulative_accepted_strings": 20,
+            "cumulative_generated_tokens": 1788,
+            "cumulative_new_pixels": 13,
+            "marginal_new_pixels": 0,
+            "response_sha256": "29ae26831790ea0f984a4a12c86a6607bfa9904168ae5ae8f9d7ad4c66f0ff49",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 53,
+            "cumulative_accepted_strings": 23,
+            "cumulative_generated_tokens": 1841,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 1,
+            "response_sha256": "dd348da511bb9f707e28cb923f3de9cea7339ff713252f569cba8803c8834c73",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 56,
+            "cumulative_accepted_strings": 23,
+            "cumulative_generated_tokens": 1897,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "0adb6c0c4d30325cd5d5470e42588264522f0080e2c36747bd6c44d72e591a77",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 54,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 1951,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "9e9dba9a7a70d2c268cad20fa85b6707270a7f74e1b29fcd887ac5c01c4b75e3",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 53,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2004,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5866e0ac2c304f75f9f1868da333bd6ca022c38fe4290cfd8454fb43d2290170",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 44,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2048,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "0c9e03c13715e421596752527f844b3f0eb424d976eab382eb014712084f658a",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 74,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2122,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "6ae531d00f6de60e1d443791bd7a5971d4cf69418be3205429809df03297d362",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 54,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2176,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5183c0a1b747fd7b17ee9d6a7f5a30cc1ff4fc8ae6a06561f522f79ec2b02907",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 57,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2233,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "27dde7f7dde5d88971c9eda96a5e770fbdd1a4b7afd4f8afcf16aec226bcbc39",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 53,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2286,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "9361213ff52447b006039175b4d648bd8c6bd7b130903c3524fa656489c1a7f6",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 57,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2343,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "d2ba6e40f10ebc6a5b0939add1b6526ad39d9cd2e0dce39fc47d34184d1e4970",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 53,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2396,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "e7eadaae5ca0ffc9c0bd37f9f3966fac033dd1fdfb210b6e04b6362d8b104c00",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 86,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2482,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "fbc5307749686ba2801d262f67c6ae58cf09fe9c28dc1905b9974ce4a440c97f",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 64,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2546,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "fce0edc36d306924b97be2a5c61aa937847890dfce4db42676f70803d7665ad2",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 65,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2611,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "0f405338d49b4cace7d91d044e14d50d2d0ad6eeb53262806717f9fd382b11e6",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 62,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2673,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "b4720659fe1674cf0d09faa5ce8fa8e2af8b5a0051567fb3c870cc028eee4053",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 66,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2739,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "4babdea0cdee88d6757ecf0aedace0d51fab4a1bc9c7698e8bb1f8b4a1c4fe91",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 63,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2802,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "c4302d75ad99f35505f6da3686bb923ce2f55d00db4b003dd29fd6ee7904b935",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 67,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2869,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "ba3247e9580d4f69e22a10fce36355242dd84d4e033ac18d737abd649ea07e69",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 63,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2932,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "7f0273ec3f5f0562cd73f7a27e9cef3040e8bf896f16f835895b76c96936f4d0",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 65,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 2997,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "7bce8526018598cd20e4dc99970c18d693f09df6fb0cc61167f4d93d43c715a4",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 61,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 3058,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "43c2d3febedc77b62cf1c4001b1828f893c932fb1b33c411eda3fa5b591a5a1b",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 14,
+            "cumulative_accepted_strings": 28,
+            "cumulative_generated_tokens": 3072,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "e41f6000d4e857c8ed639926f501563a49881ea31c66260613d766bf648d939d",
+            "stage": "THINK"
+          }
+        ],
+        "23202": [
+          {
+            "actual_response_tokens": 71,
+            "cumulative_accepted_strings": 0,
+            "cumulative_generated_tokens": 71,
+            "cumulative_new_pixels": 0,
+            "marginal_new_pixels": 0,
+            "response_sha256": "73dee9a1888bffaf8ab0e2253cb618acbda54b2a5754d6213af8fa6b23e88c1c",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 66,
+            "cumulative_accepted_strings": 3,
+            "cumulative_generated_tokens": 137,
+            "cumulative_new_pixels": 3,
+            "marginal_new_pixels": 3,
+            "response_sha256": "5afd62fa85cb25c57cb3df82809c3b41ea48d713b28737fa01f16b07f907509f",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 75,
+            "cumulative_accepted_strings": 3,
+            "cumulative_generated_tokens": 212,
+            "cumulative_new_pixels": 3,
+            "marginal_new_pixels": 0,
+            "response_sha256": "fe78dc2c8d0bbd296ee87769a6f2d26015b13bc76f2654db73ab62c03ec34f57",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 67,
+            "cumulative_accepted_strings": 5,
+            "cumulative_generated_tokens": 279,
+            "cumulative_new_pixels": 5,
+            "marginal_new_pixels": 2,
+            "response_sha256": "b711456837ad3c6249ec324ec0ae8cd498fce93f79537b1d28aa2431490e32f2",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 64,
+            "cumulative_accepted_strings": 5,
+            "cumulative_generated_tokens": 343,
+            "cumulative_new_pixels": 5,
+            "marginal_new_pixels": 0,
+            "response_sha256": "b09f58b675a92041064beec32a435b4741e5df0636f91f5146edad2d65e7cbd2",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 56,
+            "cumulative_accepted_strings": 5,
+            "cumulative_generated_tokens": 399,
+            "cumulative_new_pixels": 5,
+            "marginal_new_pixels": 0,
+            "response_sha256": "876076d90db7402352f0de3c3b9e0949e42220f5b27c3dca56c37bdabe80e545",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 70,
+            "cumulative_accepted_strings": 5,
+            "cumulative_generated_tokens": 469,
+            "cumulative_new_pixels": 5,
+            "marginal_new_pixels": 0,
+            "response_sha256": "98ae642235e9a9b866c15d5eab22fbe9a78b9ae2b89ab9c69008d3a824b90209",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 65,
+            "cumulative_accepted_strings": 6,
+            "cumulative_generated_tokens": 534,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 1,
+            "response_sha256": "4e14f95d7d2c83d03d9a3ad02415001c8c896dbffa879d3876b705dd5ae85901",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 33,
+            "cumulative_accepted_strings": 6,
+            "cumulative_generated_tokens": 567,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "85d71b5401dcb0d2bb58e8a370bfa89e79f9f8f3b378757cade24b2fd7f9fc6b",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 31,
+            "cumulative_accepted_strings": 7,
+            "cumulative_generated_tokens": 598,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "1ffb159b88c73a1c421e6ac07d2e520f5a339dad03e6a34fc7c9993a0e22d7ad",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 38,
+            "cumulative_accepted_strings": 7,
+            "cumulative_generated_tokens": 636,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "0ff9f408b674ebda69846ed51fc37735e4a428b30698a88571c2e4a3ac9492d8",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 34,
+            "cumulative_accepted_strings": 7,
+            "cumulative_generated_tokens": 670,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "7be61c344f657f37c2301d7f096e54db0ea8e6277b3b3762e0c546a229aad621",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 34,
+            "cumulative_accepted_strings": 7,
+            "cumulative_generated_tokens": 704,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "f943f06bd65a306ddf274b45988702ce5ec069009c32db25853487d119af0c18",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 32,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 736,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "9cc26a5826facd354b8b600a844c04f8e3332bcd983dc1bcf2c25114301c765c",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 32,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 768,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "06813d0231f0cb9a27e49aac3830e2c1d28ad0b7e4ab701e5824ee4257bb075b",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 31,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 799,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "81e1a33e59ed20400d68441c870924d8e6c14831c5e01bfe3e758f4d06280b51",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 35,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 834,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "6f0ab23cd537b15735bffe696e5c38d1e9290580e7b3a42ace09aeab9cb3f1f2",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 33,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 867,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "2b5622f385d2f3f062fb710804a185c2c1120e57720ca0b9791d4667baff293d",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 36,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 903,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "b11444a0a395ea578524e35a1e62c4f99f65e109ee01ebe949b59d86b4632e2c",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 33,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 936,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "ea71ca5b4078a96aad015c18397ab913ed25ae254394185603860092194cbd8a",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 33,
+            "cumulative_accepted_strings": 9,
+            "cumulative_generated_tokens": 969,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5c8192e76e5345bef8e01dc31641d9961ea61bd9ebd11311f2fa8f664f9c6d88",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 31,
+            "cumulative_accepted_strings": 10,
+            "cumulative_generated_tokens": 1000,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "c495e11c106585849dc4696f563e83c614eadb91b2bdaa7e8eb6001b5950ee5f",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 24,
+            "cumulative_accepted_strings": 10,
+            "cumulative_generated_tokens": 1024,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "8e5d096166a23ad24e7f80be23c5e82df40b55574afe6e440a676c1ae9818664",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 75,
+            "cumulative_accepted_strings": 10,
+            "cumulative_generated_tokens": 1099,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "cda9311f689f7cd238be2ad35edd9f8d9c23f443cdf433c5e4773bc180063ffc",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 81,
+            "cumulative_accepted_strings": 10,
+            "cumulative_generated_tokens": 1180,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "ca1f367c028e6eccefbfb5fe271921633d6aa44b409f661a8a6e8edb778221fe",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 65,
+            "cumulative_accepted_strings": 10,
+            "cumulative_generated_tokens": 1245,
+            "cumulative_new_pixels": 6,
+            "marginal_new_pixels": 0,
+            "response_sha256": "981887bf40912453c0ef80fb38a89e7d267a6736a1ce79fbaae073458cbeadc9",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 63,
+            "cumulative_accepted_strings": 11,
+            "cumulative_generated_tokens": 1308,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 1,
+            "response_sha256": "21117af5efd396770447b9af90ce14f6711cbeb6ce776cb6eb50903356a86723",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 57,
+            "cumulative_accepted_strings": 11,
+            "cumulative_generated_tokens": 1365,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "335ebae3618a69e7a05908e775c9bde51c027ce390eac06dd72ba4b948743bc4",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 46,
+            "cumulative_accepted_strings": 12,
+            "cumulative_generated_tokens": 1411,
+            "cumulative_new_pixels": 8,
+            "marginal_new_pixels": 1,
+            "response_sha256": "f51b60e63503d7e2c78984f8ea33e7035db95533a4973f014107ec9eb398a5f0",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 48,
+            "cumulative_accepted_strings": 12,
+            "cumulative_generated_tokens": 1459,
+            "cumulative_new_pixels": 8,
+            "marginal_new_pixels": 0,
+            "response_sha256": "9271cd2176baa0885ddad71267369b87087d3c65a78e7f908484f9ee9fb68965",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 50,
+            "cumulative_accepted_strings": 13,
+            "cumulative_generated_tokens": 1509,
+            "cumulative_new_pixels": 9,
+            "marginal_new_pixels": 1,
+            "response_sha256": "46f1b13d7eeda175dfc9343447682a8e21d09f786dbd1722bf242b58d7a8670b",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 49,
+            "cumulative_accepted_strings": 13,
+            "cumulative_generated_tokens": 1558,
+            "cumulative_new_pixels": 9,
+            "marginal_new_pixels": 0,
+            "response_sha256": "eead9dd3679ba17dc64668cae019ec9cad2674cafc9923d7d584c82d2ef797a7",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 55,
+            "cumulative_accepted_strings": 13,
+            "cumulative_generated_tokens": 1613,
+            "cumulative_new_pixels": 9,
+            "marginal_new_pixels": 0,
+            "response_sha256": "97e0c142ee494ea90fa12dc25263261f4ec9436d1a44aa761862aba581184718",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 53,
+            "cumulative_accepted_strings": 13,
+            "cumulative_generated_tokens": 1666,
+            "cumulative_new_pixels": 9,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5512b5df814221a407433ad45f273a4a8f4f4c3beef58e919a0752372e562cb4",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 49,
+            "cumulative_accepted_strings": 14,
+            "cumulative_generated_tokens": 1715,
+            "cumulative_new_pixels": 9,
+            "marginal_new_pixels": 0,
+            "response_sha256": "b6e3644c49dabf58ebb36ec2555ccd500584bdf185ebd809486b10deaf67015c",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 49,
+            "cumulative_accepted_strings": 14,
+            "cumulative_generated_tokens": 1764,
+            "cumulative_new_pixels": 9,
+            "marginal_new_pixels": 0,
+            "response_sha256": "f27f6d5c7edc25d951fb673892af212a9fe2856b904bb9c24b979148351a075e",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 46,
+            "cumulative_accepted_strings": 17,
+            "cumulative_generated_tokens": 1810,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 1,
+            "response_sha256": "c6a806e6338fb8d19d837195b8ca445f3e016f76b1617e24b5c318850d101732",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 50,
+            "cumulative_accepted_strings": 17,
+            "cumulative_generated_tokens": 1860,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "35735ce353a4550a6c7ff811647f0712c54be2d2cb3180bae1c45d78336c5778",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 47,
+            "cumulative_accepted_strings": 18,
+            "cumulative_generated_tokens": 1907,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "110107a3dbc05cad20afb5c895a8a9971ee8035f681cd0a917b575e10d4ff7cc",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 51,
+            "cumulative_accepted_strings": 18,
+            "cumulative_generated_tokens": 1958,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "83b6155e4b71ffa093c2e91aabc306b34a6bf94557a1574dd193ecbe7e3a96cb",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 47,
+            "cumulative_accepted_strings": 21,
+            "cumulative_generated_tokens": 2005,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "faabdd7df7f117fcf8c4b62a21c4dd19b5ec12755ce2c307d365beb638a86954",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 43,
+            "cumulative_accepted_strings": 21,
+            "cumulative_generated_tokens": 2048,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "f6cba00650aaf209b7271d526d544712ea245d3f494c2dd89fb768ac01005d5c",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 74,
+            "cumulative_accepted_strings": 21,
+            "cumulative_generated_tokens": 2122,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "df986004c6b7f22980a105a15d27acdaeee2bafe624c0be55f08efa934d7d332",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 93,
+            "cumulative_accepted_strings": 21,
+            "cumulative_generated_tokens": 2215,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "764a1151478750134959c89a597e961c2850a8406fa4008ef7f11c454b462258",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 91,
+            "cumulative_accepted_strings": 21,
+            "cumulative_generated_tokens": 2306,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "d6568393af6c5220cac0625e92df9a498001dbc0703050cf7f2fdfc55a0affdb",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 77,
+            "cumulative_accepted_strings": 21,
+            "cumulative_generated_tokens": 2383,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "c9c81f7dc238c30c49877dddab50dfc6b64ad536b33cc2d0562b9366bdeba8c6",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 81,
+            "cumulative_accepted_strings": 21,
+            "cumulative_generated_tokens": 2464,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "689fa0bd11be885106ebf094f879c8305cf589ce2f4d7a38bdd771bc8e1a5605",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 79,
+            "cumulative_accepted_strings": 21,
+            "cumulative_generated_tokens": 2543,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "0a61b5a4ab63e04fa54141ba2290afd87816d3c68d30a711d6ca49aaf5596721",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 79,
+            "cumulative_accepted_strings": 21,
+            "cumulative_generated_tokens": 2622,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "13de526e889567b12d1863774be10b4ef48c9e7dfb5ebfffbd034890cf899c70",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 75,
+            "cumulative_accepted_strings": 22,
+            "cumulative_generated_tokens": 2697,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 1,
+            "response_sha256": "c577d532621f3a06740411008ec498f92c946be922dbd8bb0bf1e23686fa79f9",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 99,
+            "cumulative_accepted_strings": 22,
+            "cumulative_generated_tokens": 2796,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 0,
+            "response_sha256": "6e7ca3ae211b488f8ff4c6fa3e7abe7bd2c77071703c43fa8b88f504f5f4f69b",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 91,
+            "cumulative_accepted_strings": 22,
+            "cumulative_generated_tokens": 2887,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 0,
+            "response_sha256": "b3ad7b3e09d28647c4340ef139235ab17c1a29b0cea4a3f1d09d4cc47336c6ed",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 77,
+            "cumulative_accepted_strings": 22,
+            "cumulative_generated_tokens": 2964,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 0,
+            "response_sha256": "0a70dfec24a049a402ce5530d1130336eed02099627945af46434670f6f3b306",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 93,
+            "cumulative_accepted_strings": 22,
+            "cumulative_generated_tokens": 3057,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5a6dbefde40b58c49fbd0978aec41f0aea9466059062509d64712674137a1a57",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 15,
+            "cumulative_accepted_strings": 22,
+            "cumulative_generated_tokens": 3072,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 0,
+            "response_sha256": "89c89929d9d409716c65912ed4515f53ec6eed5c5e57e655b7434acf48961f1b",
+            "stage": "THINK"
+          }
+        ]
+      },
+      "source_age": {
+        "absolute_sleep": 87,
+        "adapter_state_sha256": "dd037e506332ac87b2056c80ed39b4c3e049c83086ecc8334953a12aac6639ec",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "before_after_equal": true,
+        "checkpoint_created_unix": 1789727184.4620383,
+        "copy_files": {
+          "COMMIT.json": {
+            "bytes": 6861,
+            "mtime_ns": 1789727184462320137,
+            "sha256": "c4a9ad19cb56f6ea26fde307498fb38e2ee9f27bdf6acd4b876599eaa8eb2a3b"
+          },
+          "adapter/README.md": {
+            "bytes": 5416,
+            "mtime_ns": 1789727183626668387,
+            "sha256": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          },
+          "adapter/adapter_config.json": {
+            "bytes": 1263,
+            "mtime_ns": 1789727183710989648,
+            "sha256": "91f3f5d48cb01f06a77156ddb6ec5a0bf17625fa11e16d7c41614310cc08b0c8"
+          },
+          "adapter/adapter_model.safetensors": {
+            "bytes": 80792096,
+            "mtime_ns": 1789727183707669172,
+            "sha256": "dc1f71a07a4a8d9b37aef49533663034a952a94434d66ad887eaa27ced5a76f2"
+          }
+        },
+        "cumulative_training_seconds": null,
+        "cumulative_training_tokens": null,
+        "optimizer_steps": 6348,
+        "relative_optimizer_steps": 1440,
+        "relative_sleep": 36,
+        "sleep_complete_file_sha256": "e0a808bd50a532fa066646ee635286be32c999f447e001789b5a7087093bd534",
+        "sleep_complete_index": 8872,
+        "sleep_complete_sha256": "3d1fd187ae8d28554739cf9d35213fe9252ab4c633057dc955cfff9228091afd",
+        "source_relative": "sleep_000087"
+      },
+      "status": "COMPLETE",
+      "unchanged_identity": {
+        "adapter_state_sha256": "dd037e506332ac87b2056c80ed39b4c3e049c83086ecc8334953a12aac6639ec",
+        "all_parameters_frozen": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992"
+      }
+    },
+    {
+      "ETA_basis": "measured_end_to_end_tokens_per_second_including_scoring_and_cell_resets; excludes_final_identity_hash",
+      "ETA_finish_utc": null,
+      "accepted_new_scores": 79,
+      "cached_strings": 0,
+      "cells": [
+        {
+          "contest_id": "agentdev_769e881d85fc5d27cb4c",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "7d9d1b02883a666408113f996386bbf913db1fbc51afb4ed580b939e5a8b71c0",
+          "result": {
+            "bytes": 40866,
+            "sha256": "2f8b4c2f93904c8ea043a5693e7f712e6020219cb0a4b8a044d76334f0c4fc5d"
+          },
+          "seed": 23202,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_621cb5d0bdea9584dc9f",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "9fd7283210f07d4b83566fab04ddf62e5b21bb834503ccea2cd0ff201bd9e7e8",
+          "result": {
+            "bytes": 39410,
+            "sha256": "12a539b1b834ef7b93055fd2fd55e46e7a1d359fc088d6cbcd1951ae9a8506a4"
+          },
+          "seed": 23201,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_769e881d85fc5d27cb4c",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "7d9d1b02883a666408113f996386bbf913db1fbc51afb4ed580b939e5a8b71c0",
+          "result": {
+            "bytes": 32866,
+            "sha256": "89f539c9817ad5861e6008c5e2b1daa7b20b9ff465280ed612a9dcfdd1ae96c9"
+          },
+          "seed": 23201,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_621cb5d0bdea9584dc9f",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "9fd7283210f07d4b83566fab04ddf62e5b21bb834503ccea2cd0ff201bd9e7e8",
+          "result": {
+            "bytes": 38595,
+            "sha256": "6abbfe61d2234813be069719d7a912c8814f778ffdc81047496540e458262319"
+          },
+          "seed": 23202,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_92a6a32f99def322d70e",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "0b108a68278bcdd0c09847656b9760626cc4e60ef5a3c8ae75fc6562ee9734cb",
+          "result": {
+            "bytes": 40006,
+            "sha256": "d35d91ef1e4ed7becf369984f5716263fb31ef0865e1d42b7a918efd6c0eca56"
+          },
+          "seed": 23201,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        },
+        {
+          "contest_id": "agentdev_92a6a32f99def322d70e",
+          "generated_tokens": 1024,
+          "initial_context_sha256": "0b108a68278bcdd0c09847656b9760626cc4e60ef5a3c8ae75fc6562ee9734cb",
+          "result": {
+            "bytes": 29845,
+            "sha256": "c1a16588249613955785375bd42515aeae05ac9a7c0a9daa513b9223a5d4e4e2"
+          },
+          "seed": 23202,
+          "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET"
+        }
+      ],
+      "complete_receipt": {
+        "bytes": 221928,
+        "sha256": "60f98c464a9d9930814a8d5b22243b511e44588cd15caf63b6245d7e76fab236"
+      },
+      "completed_cells": 6,
+      "completed_utc": "2026-09-18T10:41:06.752595+00:00",
+      "condition": "base",
+      "current_process_alive": false,
+      "elapsed_post_load_seconds": 404.2436776161194,
+      "elapsed_seconds": 324.4012863636017,
+      "end_to_end_tokens_per_second": 15.198753475210827,
+      "generated_response_count": 47,
+      "generated_tokens": 6144,
+      "generated_tokens_by_stage": {
+        "ACT": 3149,
+        "LEARN": 0,
+        "THINK": 2995,
+        "other_reply": 0
+      },
+      "generated_tokens_including_pending_feedback": 6144,
+      "generation_only_tokens_per_second": 26.543809256106275,
+      "generation_seconds": 231.4664011001587,
+      "identity": {
+        "adapter_state_sha256": null,
+        "all_parameters_frozen": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+        "decoder": {
+          "do_sample": true,
+          "num_beams": 1,
+          "repetition_penalty": 1.0,
+          "temperature": 0.8,
+          "top_k": 0,
+          "top_p": 0.95
+        },
+        "library_versions": {
+          "torch": "2.13.0+cu130",
+          "transformers": "5.5.3"
+        },
+        "optimizer_created": false,
+        "tokenizer_backend_sha256": "f884026e05f6dfffe68b72d580b588006d98b3bc0a128bb1ac425c76f7fc438c"
+      },
+      "incomplete_budget_tokens": 0,
+      "loaded_receipt": {
+        "bytes": 799,
+        "sha256": "63039d4771c44a4fb22abbef34f6907b6eeda1192d39af14d0e26e644d8a1fab"
+      },
+      "loaded_utc": "2026-09-18T10:36:34.186530+00:00",
+      "marginal_discovery_per_256_tokens": {
+        "23201": [
+          {
+            "cumulative_new_pixels": 0,
+            "generated_token_boundary": 256,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 2,
+            "generated_token_boundary": 512,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 7,
+            "generated_token_boundary": 768,
+            "marginal_new_pixels": 5
+          },
+          {
+            "cumulative_new_pixels": 7,
+            "generated_token_boundary": 1024,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 11,
+            "generated_token_boundary": 1280,
+            "marginal_new_pixels": 4
+          },
+          {
+            "cumulative_new_pixels": 11,
+            "generated_token_boundary": 1536,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 18,
+            "generated_token_boundary": 1792,
+            "marginal_new_pixels": 7
+          },
+          {
+            "cumulative_new_pixels": 25,
+            "generated_token_boundary": 2048,
+            "marginal_new_pixels": 7
+          },
+          {
+            "cumulative_new_pixels": 25,
+            "generated_token_boundary": 2304,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 25,
+            "generated_token_boundary": 2560,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 25,
+            "generated_token_boundary": 2816,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 25,
+            "generated_token_boundary": 3072,
+            "marginal_new_pixels": 0
+          }
+        ],
+        "23202": [
+          {
+            "cumulative_new_pixels": 0,
+            "generated_token_boundary": 256,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 2,
+            "generated_token_boundary": 512,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 5,
+            "generated_token_boundary": 768,
+            "marginal_new_pixels": 3
+          },
+          {
+            "cumulative_new_pixels": 8,
+            "generated_token_boundary": 1024,
+            "marginal_new_pixels": 3
+          },
+          {
+            "cumulative_new_pixels": 8,
+            "generated_token_boundary": 1280,
+            "marginal_new_pixels": 0
+          },
+          {
+            "cumulative_new_pixels": 10,
+            "generated_token_boundary": 1536,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 12,
+            "generated_token_boundary": 1792,
+            "marginal_new_pixels": 2
+          },
+          {
+            "cumulative_new_pixels": 16,
+            "generated_token_boundary": 2048,
+            "marginal_new_pixels": 4
+          },
+          {
+            "cumulative_new_pixels": 19,
+            "generated_token_boundary": 2304,
+            "marginal_new_pixels": 3
+          },
+          {
+            "cumulative_new_pixels": 22,
+            "generated_token_boundary": 2560,
+            "marginal_new_pixels": 3
+          },
+          {
+            "cumulative_new_pixels": 28,
+            "generated_token_boundary": 2816,
+            "marginal_new_pixels": 6
+          },
+          {
+            "cumulative_new_pixels": 33,
+            "generated_token_boundary": 3072,
+            "marginal_new_pixels": 5
+          }
+        ]
+      },
+      "new_pixel_events": 58,
+      "newly_scored_strings": 144,
+      "parent_tokens": 0,
+      "pending_score_request_count": 0,
+      "pid": 91387,
+      "probe_optimizer_updates": 0,
+      "prompt_tokens": 61931,
+      "repeated_accepted_events": 21,
+      "seed_curves": {
+        "23201": [
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 0,
+            "cumulative_generated_tokens": 128,
+            "cumulative_new_pixels": 0,
+            "marginal_new_pixels": 0,
+            "response_sha256": "edaa6c8291896f47390e4d17690b60beea399106252112beb4c7c3fc2bcd6ab4",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 142,
+            "cumulative_accepted_strings": 3,
+            "cumulative_generated_tokens": 270,
+            "cumulative_new_pixels": 2,
+            "marginal_new_pixels": 2,
+            "response_sha256": "9055a8374e406fc40b1774acbe3da5c37d4dca8af5f0ef523345705b4624e2c4",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 3,
+            "cumulative_generated_tokens": 398,
+            "cumulative_new_pixels": 2,
+            "marginal_new_pixels": 0,
+            "response_sha256": "a2fc153c61f47f7e5f017b67b626e0f72fe6d8ad9da0ce7603847c3c90c13146",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 127,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 525,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 5,
+            "response_sha256": "098c0f628c6a3cc51c271eb30133bf0658c07e0e6073c62adf61fd24eaa1f8b4",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 653,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "54657b8b6fed6069b90476d73ac1928b2b49dd68b1e3ced7620782322ac54426",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 125,
+            "cumulative_accepted_strings": 13,
+            "cumulative_generated_tokens": 778,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "57a385f68e4018afc3bddd41d6036f899bc119dfd80a84010a2badbe5fe3ff85",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 118,
+            "cumulative_accepted_strings": 13,
+            "cumulative_generated_tokens": 896,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "e78326d77f434fc1717548e6191ba7aa445f6a4ed1d4140d24065e24fb576594",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 115,
+            "cumulative_accepted_strings": 17,
+            "cumulative_generated_tokens": 1011,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5d755f4d33c5047345447478b197c22f73d2733e724db1b0857aa4d2591e33b3",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 13,
+            "cumulative_accepted_strings": 17,
+            "cumulative_generated_tokens": 1024,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "8a376ada29bbee24dcb7bc7498b47144671fb883f6a979fea4623dab3d47e3d4",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 126,
+            "cumulative_accepted_strings": 17,
+            "cumulative_generated_tokens": 1150,
+            "cumulative_new_pixels": 7,
+            "marginal_new_pixels": 0,
+            "response_sha256": "e2973237dec5af501e8bd5ce021a3421cef2a41856cda62930add5be6a2abcf8",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 123,
+            "cumulative_accepted_strings": 22,
+            "cumulative_generated_tokens": 1273,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 4,
+            "response_sha256": "076b1978aaad734927b94589ad5c35de835e66d589e011ed6537084ac4f5c3df",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 22,
+            "cumulative_generated_tokens": 1401,
+            "cumulative_new_pixels": 11,
+            "marginal_new_pixels": 0,
+            "response_sha256": "9a218452c99010045fb8b89b45f6d565dba49fe527a5d8dfb2c9ef67abe03305",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 188,
+            "cumulative_accepted_strings": 31,
+            "cumulative_generated_tokens": 1589,
+            "cumulative_new_pixels": 18,
+            "marginal_new_pixels": 7,
+            "response_sha256": "00ac926f83373a27b7c88a54544dca8bb432133bc5a8c2553ad415c5f58bb856",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 31,
+            "cumulative_generated_tokens": 1717,
+            "cumulative_new_pixels": 18,
+            "marginal_new_pixels": 0,
+            "response_sha256": "ddfffe62944fb04042ea524f2257651db950daaa77980cfbb6b6b8688c7209fa",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 226,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 1943,
+            "cumulative_new_pixels": 25,
+            "marginal_new_pixels": 7,
+            "response_sha256": "51131fe95805ac68d589bb97f9e85fc0d90cea1d35454224ab3be771a613fdfb",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 105,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2048,
+            "cumulative_new_pixels": 25,
+            "marginal_new_pixels": 0,
+            "response_sha256": "f738eda91d94dcfef68e2e07ae4326a8b319d51021057bef1617e4e3e6e743fb",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2176,
+            "cumulative_new_pixels": 25,
+            "marginal_new_pixels": 0,
+            "response_sha256": "c9db7cc21b9efa8ab460950f613e462ac38df0edbdf494761693d58e646207b4",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 169,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2345,
+            "cumulative_new_pixels": 25,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5032ab5828e76a4a0baa464fc8826fd3eb5302c0f3473615ab6aada775dc6da2",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2473,
+            "cumulative_new_pixels": 25,
+            "marginal_new_pixels": 0,
+            "response_sha256": "58ac6212cdbce334021551ee6dfacedc360ff8145799c68133adde2e9736da80",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 162,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2635,
+            "cumulative_new_pixels": 25,
+            "marginal_new_pixels": 0,
+            "response_sha256": "601ab293302f64ef5b79e4fe33d6b46700af7729a7a839a1dc06c1efb9c566be",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2763,
+            "cumulative_new_pixels": 25,
+            "marginal_new_pixels": 0,
+            "response_sha256": "38e2e61eb65c023228255b6b58e46d14fd526b2442d85e544057c842da81bb95",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 141,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 2904,
+            "cumulative_new_pixels": 25,
+            "marginal_new_pixels": 0,
+            "response_sha256": "70937e9af36e66bbeb6218294c6ab32f52b7f20c2df4941bee1d5afe1bd7f985",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 3032,
+            "cumulative_new_pixels": 25,
+            "marginal_new_pixels": 0,
+            "response_sha256": "2e33734e0b4d892e06296e4c006037cbfc79fca1039c11b09c229fc3c68884f0",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 40,
+            "cumulative_accepted_strings": 42,
+            "cumulative_generated_tokens": 3072,
+            "cumulative_new_pixels": 25,
+            "marginal_new_pixels": 0,
+            "response_sha256": "c96c8f41213f018764c97ea39163b7638dc3b0ad8f7cb015e4cbc313871c3b29",
+            "stage": "ACT"
+          }
+        ],
+        "23202": [
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 0,
+            "cumulative_generated_tokens": 128,
+            "cumulative_new_pixels": 0,
+            "marginal_new_pixels": 0,
+            "response_sha256": "38fdfd17bfc569fde1e6ae224bdb607556891dbaa21b785b82f3485aef4db84b",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 139,
+            "cumulative_accepted_strings": 3,
+            "cumulative_generated_tokens": 267,
+            "cumulative_new_pixels": 2,
+            "marginal_new_pixels": 2,
+            "response_sha256": "d4ee426fd7f1855a48c78bef82e0052a8c1fc5322d4035e73fbdd449ac726d97",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 3,
+            "cumulative_generated_tokens": 395,
+            "cumulative_new_pixels": 2,
+            "marginal_new_pixels": 0,
+            "response_sha256": "c0aef4db5bc415817fd131bcf9fb81ca220766b1f177eb9094e0087f6075a57e",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 200,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 595,
+            "cumulative_new_pixels": 5,
+            "marginal_new_pixels": 3,
+            "response_sha256": "02da972b6a4ed0c4c91275f0aa93a17a9352a9418ad04ca416b8190bb50b3ea3",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 8,
+            "cumulative_generated_tokens": 723,
+            "cumulative_new_pixels": 5,
+            "marginal_new_pixels": 0,
+            "response_sha256": "09b8260047b33897865f43d61f870191de59c139803b010fcca6925c6f4d4617",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 217,
+            "cumulative_accepted_strings": 12,
+            "cumulative_generated_tokens": 940,
+            "cumulative_new_pixels": 8,
+            "marginal_new_pixels": 3,
+            "response_sha256": "04d2556acbeac41409e87add88d36204c2a4ead0118aa9df7b7b74c175896dfd",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 84,
+            "cumulative_accepted_strings": 12,
+            "cumulative_generated_tokens": 1024,
+            "cumulative_new_pixels": 8,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5b84fb1c90517257c665f33dadf2007358736fd01060ae59ef43c57f6f9db149",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 12,
+            "cumulative_generated_tokens": 1152,
+            "cumulative_new_pixels": 8,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5008606b9bec2a76f2b6b52de71cf8e4b67cbc5a8882d8a98b8b3062bfa72a0b",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 156,
+            "cumulative_accepted_strings": 14,
+            "cumulative_generated_tokens": 1308,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 2,
+            "response_sha256": "24261d331218612a57672c3c6f9d205969f6843c10e29465b3b5b4f04fbed0cd",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 14,
+            "cumulative_generated_tokens": 1436,
+            "cumulative_new_pixels": 10,
+            "marginal_new_pixels": 0,
+            "response_sha256": "d7001f6bcfa033f2cb325a8fcd7ae98925829b891fcafbec9b1435e9bae9b2cf",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 155,
+            "cumulative_accepted_strings": 16,
+            "cumulative_generated_tokens": 1591,
+            "cumulative_new_pixels": 12,
+            "marginal_new_pixels": 2,
+            "response_sha256": "960ea6d960b14e035d07c6c9fee9527503f267e69e8b8a34db2c425a76217a64",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 16,
+            "cumulative_generated_tokens": 1719,
+            "cumulative_new_pixels": 12,
+            "marginal_new_pixels": 0,
+            "response_sha256": "13ac4be06b760110fc0adfa4851f2cc427c62f6e23a769b903f680417f2ac6c1",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 155,
+            "cumulative_accepted_strings": 18,
+            "cumulative_generated_tokens": 1874,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 2,
+            "response_sha256": "e9782f0745b1a2c08b705b5c63f029d80d0086b529e20a10a68960f6a86d4aa3",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 18,
+            "cumulative_generated_tokens": 2002,
+            "cumulative_new_pixels": 14,
+            "marginal_new_pixels": 0,
+            "response_sha256": "503452bcf52d45dd68d85dfc7873040360ef51920cd5b06d97add8698e765ea6",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 46,
+            "cumulative_accepted_strings": 20,
+            "cumulative_generated_tokens": 2048,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 2,
+            "response_sha256": "1e57abf93492fe32ca320936adae7f9545e1a35c1a82c6127aad5fb32372bc16",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 20,
+            "cumulative_generated_tokens": 2176,
+            "cumulative_new_pixels": 16,
+            "marginal_new_pixels": 0,
+            "response_sha256": "1fdf9adedc6a5788a586e208e26197d77d45cd9c52ca730131bc30cfcad16f29",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 126,
+            "cumulative_accepted_strings": 23,
+            "cumulative_generated_tokens": 2302,
+            "cumulative_new_pixels": 19,
+            "marginal_new_pixels": 3,
+            "response_sha256": "d60f82c73ce9eaa464707282ed2c9c14bc3352024b6e48dc6a0c563af017b65c",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 117,
+            "cumulative_accepted_strings": 23,
+            "cumulative_generated_tokens": 2419,
+            "cumulative_new_pixels": 19,
+            "marginal_new_pixels": 0,
+            "response_sha256": "6f177fb22fc91ccd93316ee110b2686714ce0f49149e392ddd7b62d7f2b7cf37",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 114,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2533,
+            "cumulative_new_pixels": 22,
+            "marginal_new_pixels": 3,
+            "response_sha256": "2e5de4bdc3ca20e215fc811edd5f50bd6a4a3f0ec190cd0ceb313edfcd55bcb7",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 26,
+            "cumulative_generated_tokens": 2661,
+            "cumulative_new_pixels": 22,
+            "marginal_new_pixels": 0,
+            "response_sha256": "48e4878f87cb2e00113c7a5293153aeb9edef1874c73d37b6f6abbf8822a57df",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 147,
+            "cumulative_accepted_strings": 32,
+            "cumulative_generated_tokens": 2808,
+            "cumulative_new_pixels": 28,
+            "marginal_new_pixels": 6,
+            "response_sha256": "d74aea5f6695a118a7b130825782b550fd174b028364e227f6251b686c99c636",
+            "stage": "ACT"
+          },
+          {
+            "actual_response_tokens": 128,
+            "cumulative_accepted_strings": 32,
+            "cumulative_generated_tokens": 2936,
+            "cumulative_new_pixels": 28,
+            "marginal_new_pixels": 0,
+            "response_sha256": "5aaafc1238568f3b6f5da50a12bc9e3e448931fa0325f7a9477b2bce2d6c7ba0",
+            "stage": "THINK"
+          },
+          {
+            "actual_response_tokens": 136,
+            "cumulative_accepted_strings": 37,
+            "cumulative_generated_tokens": 3072,
+            "cumulative_new_pixels": 33,
+            "marginal_new_pixels": 5,
+            "response_sha256": "39022030c4435c2806da2a0fc84bb2655e7105dbeb82fb317d5f97f692e4091d",
+            "stage": "ACT"
+          }
+        ]
+      },
+      "source_age": null,
+      "status": "COMPLETE",
+      "unchanged_identity": {
+        "adapter_state_sha256": null,
+        "all_parameters_frozen": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992"
+      }
+    }
+  ],
+  "extension_sources": {
+    "C0": {
+      "absolute_sleep": 81,
+      "handoff": "research_loop/workers/rohin230_c0_curriculum_20260918/TO_LEIBNIZ_R232.md",
+      "optimizer_steps": 5660,
+      "source_commit": "68514151a",
+      "status": "ACKNOWLEDGED_NOT_DISPATCHED"
+    },
+    "fresh_birth_age_slots": [
+      0,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ]
+  },
+  "final_checks": {
+    "all_child_tokens_counted": true,
+    "all_eighteen_cells_complete": true,
+    "all_final_base_adapter_hashes_unchanged": true,
+    "all_six_initial_contexts_matched_across_conditions": true,
+    "early_stopped_cells": 0,
+    "manual_literal_spot_review": "SPOT_REVIEW.json",
+    "raw_accepted_strings_spot_reviewed": 9,
+    "raw_accepted_strings_unreviewed": 191,
+    "scored_feedback_pending": 0,
+    "total_generated_tokens": 18432
+  },
+  "freshness": {
+    "completed_source_states_scanned": 2,
+    "eligible": true,
+    "limits": "Recorded source-life exposures only; not a claim of unseen base pretraining or exhaustive semantic paraphrase detection.",
+    "matched_record_indices": {
+      "agentdev_621cb5d0bdea9584dc9f": [],
+      "agentdev_769e881d85fc5d27cb4c": [],
+      "agentdev_92a6a32f99def322d70e": []
+    },
+    "maximum_shared_fivegrams": {
+      "agentdev_621cb5d0bdea9584dc9f": 0,
+      "agentdev_769e881d85fc5d27cb4c": 0,
+      "agentdev_92a6a32f99def322d70e": 0
+    },
+    "method": "identifier_image_hash_audit_plus_prompt_and_inherited_context_fivegram_overlap",
+    "requests_scanned": 300,
+    "scenes_sha256": "8f5aae5eb710424568abcf0e3024cd589c5f111b1906b9fba3194be451b4a6d8",
+    "schema": "R232_SOURCE_SCENE_EXPOSURE_AUDIT_V1",
+    "selected_contests": [
+      "agentdev_621cb5d0bdea9584dc9f",
+      "agentdev_92a6a32f99def322d70e",
+      "agentdev_769e881d85fc5d27cb4c"
+    ],
+    "source_cut_index": 8875,
+    "source_cut_sha256": "1be2014f253d2d319d44e7fe27c8c42698544eea3c74501314ad5bf6710e47b4",
+    "unix": 1789727708.1999004
+  },
+  "judge": {
+    "fresh_development_panels": true,
+    "panel_sha256": "4adab198a81f2492fff5471d0a7a20de41c06f59c7a492d7ef35746f84d346aa",
+    "pid": 91158,
+    "reference_count": 64,
+    "rule_sha256": "7127a82613c6c75ed561b180ad394a657acbc194cb27cca72bc3b0a686d6444a",
+    "top_k": 50,
+    "unix": 1789727757.8164303
+  },
+  "literal_caption_quality_reviewed": 0,
+  "new_pixels_are_summed_events_in_independent_seed_archives_not_global_unique_ideas": true,
+  "observed_utc": "2026-09-18T10:43:18.430207+00:00",
+  "observer_sha256": "6a991a537d9ace1b5e905ec8ca4ab9628e7229ada0694467b7a02f101b61dc11",
+  "per_scene_seed_budget": 1024,
+  "planned_generated_tokens_per_condition": 6144,
+  "raw_accepted_strings_are_not_certified_jokes": true,
+  "scenes": 3,
+  "schema": "R232_AGE_PROBE_PUBLIC_V1",
+  "scoring": "frozen_widegap6250_rank_le_50_AND_relevance_then_embedding_novelty",
+  "scoring_time_attribution": "entire_response_generated_tokens_charged_before_feedback",
+  "seeds": [
+    23201,
+    23202
+  ],
+  "selection": {
+    "both_source_exposure": {
+      "complete": true,
+      "excluded_contest_ids": [],
+      "input_record_manifest_sha256": "a5c1bec38b38c1616fbd72bfaa9761ad58731811b307bfe5aea04554c324cbb0",
+      "limitation": "unidentified_paraphrased_scene_exposure_requires_separate_description_overlap_check",
+      "matches": {
+        "513": [],
+        "544": [],
+        "549": [],
+        "561": [],
+        "564": [],
+        "586": [],
+        "615": [],
+        "620": [],
+        "641": [],
+        "645": [],
+        "654": [],
+        "673": [],
+        "703": [],
+        "705": [],
+        "715": [],
+        "832": [],
+        "834": [],
+        "870": [],
+        "874": []
+      },
+      "method": "all_recorded_REQUEST_text_plus_INBOX_identifiers_and_image_hashes",
+      "request_count": 300,
+      "unresolved_request_content": 0
+    },
+    "excluded": [
+      "513",
+      "645",
+      "870"
+    ],
+    "private_reference_rows_only_selected_development": true,
+    "scene_groups_disjoint": true,
+    "selected": [
+      "564",
+      "654",
+      "703"
+    ],
+    "selection": "packet_order_after_lifetime_exposure_and_existing_game_exclusions",
+    "source_manifest_sha256": "4d17031bae93bb83e3f89109e4acb5fc28dfa79706bb47b27c6b0e5fe96bb45d"
+  },
+  "source_capture": {
+    "head_index": 8875,
+    "head_sha256": "1be2014f253d2d319d44e7fe27c8c42698544eea3c74501314ad5bf6710e47b4",
+    "sources": [
+      {
+        "absolute_sleep": 51,
+        "adapter_state_sha256": "82a988a0ded69ce85723192b366251d21f8ec5fe8466e9ca98202fb09b57ce92",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "before_after_equal": true,
+        "checkpoint_created_unix": 1789695373.09087,
+        "copy_files": {
+          "COMMIT.json": {
+            "bytes": 6859,
+            "mtime_ns": 1789695373091129580,
+            "sha256": "70ec4d1d033cc280538a4d37c4eeffc995cdc7323cdbd38ecabfe8fc0c7b0ddb"
+          },
+          "adapter/README.md": {
+            "bytes": 5416,
+            "mtime_ns": 1789695372296251587,
+            "sha256": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          },
+          "adapter/adapter_config.json": {
+            "bytes": 1263,
+            "mtime_ns": 1789695372378238400,
+            "sha256": "24d56ad9487d2e056f5d69dddc718174cb8c48ec431a815c6d967acf32be7101"
+          },
+          "adapter/adapter_model.safetensors": {
+            "bytes": 80792096,
+            "mtime_ns": 1789695372376238380,
+            "sha256": "3c0622810dd279fb7e3a59be9fcff691585c5b1acaeb5053ae21e26571ed8d30"
+          }
+        },
+        "cumulative_training_seconds": null,
+        "cumulative_training_tokens": null,
+        "optimizer_steps": 4908,
+        "relative_optimizer_steps": 0,
+        "relative_sleep": 0,
+        "sleep_complete_file_sha256": "6b8496adb86f5defcc3f7814ab72989f588fcea1a972b8f08adee06db312bff9",
+        "sleep_complete_index": 5823,
+        "sleep_complete_sha256": "7c6cf68593c1d1f6c1ec56dd02f09e927b7ef4cd6a04e33ba8f2e40bc6894657",
+        "source_relative": "sleep_000051"
+      },
+      {
+        "absolute_sleep": 87,
+        "adapter_state_sha256": "dd037e506332ac87b2056c80ed39b4c3e049c83086ecc8334953a12aac6639ec",
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "before_after_equal": true,
+        "checkpoint_created_unix": 1789727184.4620383,
+        "copy_files": {
+          "COMMIT.json": {
+            "bytes": 6861,
+            "mtime_ns": 1789727184462320137,
+            "sha256": "c4a9ad19cb56f6ea26fde307498fb38e2ee9f27bdf6acd4b876599eaa8eb2a3b"
+          },
+          "adapter/README.md": {
+            "bytes": 5416,
+            "mtime_ns": 1789727183626668387,
+            "sha256": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          },
+          "adapter/adapter_config.json": {
+            "bytes": 1263,
+            "mtime_ns": 1789727183710989648,
+            "sha256": "91f3f5d48cb01f06a77156ddb6ec5a0bf17625fa11e16d7c41614310cc08b0c8"
+          },
+          "adapter/adapter_model.safetensors": {
+            "bytes": 80792096,
+            "mtime_ns": 1789727183707669172,
+            "sha256": "dc1f71a07a4a8d9b37aef49533663034a952a94434d66ad887eaa27ced5a76f2"
+          }
+        },
+        "cumulative_training_seconds": null,
+        "cumulative_training_tokens": null,
+        "optimizer_steps": 6348,
+        "relative_optimizer_steps": 1440,
+        "relative_sleep": 36,
+        "sleep_complete_file_sha256": "e0a808bd50a532fa066646ee635286be32c999f447e001789b5a7087093bd534",
+        "sleep_complete_index": 8872,
+        "sleep_complete_sha256": "3d1fd187ae8d28554739cf9d35213fe9252ab4c633057dc955cfff9228091afd",
+        "source_relative": "sleep_000087"
+      }
+    ]
+  },
+  "source_manifest": {
+    "bytes": 10950,
+    "sha256": "376e479f9f7d26ce43a303977c1f88c8fdb1edcdef3de43c4f97d235b5e06a2b"
+  }
+}

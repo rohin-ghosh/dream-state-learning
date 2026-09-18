@@ -1,5 +1,14 @@
 # R232 first age-probe launch — September18,2026 10:38UTC
 
+**Completed update10:43UTC:** all three models reached exactly6144 generated
+tokens, all18 cells complete, six initial-context hashes matched across models,
+final model hashes unchanged. Source51/current87/base raw new-pixel events are
+40/25/58 (paired-seed sums, not globally unique ideas); accepted strings71/50/79.
+Only9/200 accepted strings were spot-reviewed as literal attempts; no humor or
+H2 claim. Final bounded report and curves: `RESULTS.md`, `RESULTS.json`.
+Finite processes exited normally;4–7 are empty at10:43:19, not failed lives.
+Existing scorer2/3 and hourly services remain present. C0 was not launched.
+
 Actual frozen-inference probes, not new native learners. First paired battery
 is running; no source life was paused, restarted, or written to.
 

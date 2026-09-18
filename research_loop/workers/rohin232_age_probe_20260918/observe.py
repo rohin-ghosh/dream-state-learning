@@ -43,6 +43,8 @@ def aggregate(root):
         output = root/'players'/condition
         row = dict(condition=condition, status='NOT_LOADED', current_process_alive=False,
             generated_tokens=0, completed_cells=0, generated_response_count=0,
+            prompt_tokens=0, parent_tokens=0, probe_optimizer_updates=0,
+            generated_tokens_by_stage=dict(THINK=0, ACT=0, LEARN=0, other_reply=0),
             newly_scored_strings=0, cached_strings=0, accepted_new_scores=0,
             new_pixel_events=0, repeated_accepted_events=0, generation_seconds=0,
             elapsed_post_load_seconds=None, ETA_finish_utc=None, incomplete_budget_tokens=6144,
@@ -69,6 +71,8 @@ def aggregate(root):
         for _, path, record in sorted(records):
             event, generation = record['event'], record['generation']
             row['generated_tokens'] += event['actual_generated_tokens']
+            row['prompt_tokens'] += event.get('prompt_tokens', generation.get('prompt_tokens', 0))
+            row['generated_tokens_by_stage'][event['origin']['stage']] += event['actual_generated_tokens']
             row['generated_response_count'] += 1
             row['generation_seconds'] += generation['finished_unix']-generation['started_unix']
             seed = int(path.parent.name.rsplit('_',1)[1])
