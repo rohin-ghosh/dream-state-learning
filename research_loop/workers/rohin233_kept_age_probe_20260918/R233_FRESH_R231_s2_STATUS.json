@@ -1,6 +1,6 @@
 {
   "schema": "R233_BOUND_AGE_PROBE_MEASUREMENT_V1",
-  "unix": 1789733599.4884768,
+  "unix": 1789733928.906359,
   "condition": "R233_FRESH_R231_s2",
   "source": {
     "absolute_sleep": 2,
@@ -101,24 +101,24 @@
     "sha256": "a924b1079ab527719e676d095eea812e75e9e8f18d3b589492d2d91fc6d84db7",
     "bytes": 11735
   },
-  "status": "LOADED",
+  "status": "COMPLETE",
   "parent_tokens": 0,
   "optimizer_updates": 0,
   "source_context_used": false,
-  "generated_tokens": 5889,
+  "generated_tokens": 6144,
   "actual_tokens_by_stage": {
     "THINK": 2752,
-    "ACT": 3137,
+    "ACT": 3392,
     "LEARN": 0,
     "other": 0
   },
   "planned_generated_tokens": 6144,
-  "newly_scored_strings": 140,
-  "accepted_new_scores": 52,
-  "new_pixel_events": 14,
+  "newly_scored_strings": 160,
+  "accepted_new_scores": 53,
+  "new_pixel_events": 15,
   "repeated_accepted_events": 38,
   "cached_strings": 0,
-  "completed_cells": 5,
+  "completed_cells": 6,
   "seed_curves": {
     "23201": [
       {
@@ -528,10 +528,28 @@
         "cumulative_accepted_new_scores": 25,
         "response_receipt_sha256": "beeb88172e970a9724ae72288b19ba920aeb8b5bd06d93aefea51f0d1c95b521",
         "finished_unix": 1789733592.3190584
+      },
+      {
+        "cumulative_generated_tokens": 3072,
+        "cumulative_new_pixel_events": 5,
+        "cumulative_accepted_new_scores": 26,
+        "response_receipt_sha256": "c2d7a18736265c1b2883681d23353d574c604d85cb41d368cf8bee05b2c25a94",
+        "finished_unix": 1789733603.8265526
       }
     ]
   },
   "cells": [
+    {
+      "contest_id": "agentdev_769e881d85fc5d27cb4c",
+      "seed": 23202,
+      "status": "COMPLETE_FIXED_ACTUAL_TOKEN_BUDGET",
+      "generated_tokens": 1024,
+      "initial_context_sha256": "7d9d1b02883a666408113f996386bbf913db1fbc51afb4ed580b939e5a8b71c0",
+      "receipt": {
+        "sha256": "8d524d7342f2b5ca66854c15687586fe6865a23e5ef9e282656d40e9f75ec0bf",
+        "bytes": 49708
+      }
+    },
     {
       "contest_id": "agentdev_621cb5d0bdea9584dc9f",
       "seed": 23201,
@@ -588,7 +606,7 @@
       }
     }
   ],
-  "process_alive": true,
+  "process_alive": false,
   "literal_caption_quality_reviewed": 0,
   "raw_acceptance_not_certified_humor": true,
   "new_pixels_are_independent_seed_events_not_global_unique_ideas": true,
@@ -622,11 +640,25 @@
       "tokenizer_backend_sha256": "f884026e05f6dfffe68b72d580b588006d98b3bc0a128bb1ac425c76f7fc438c"
     }
   },
+  "complete": {
+    "receipt": {
+      "sha256": "cda4fb78df819b0e62c38fa4805c918d2c2f5bb9dc4a47f92ff34906c38f5915",
+      "bytes": 252629
+    },
+    "unix": 1789733605.0373094,
+    "actual_generated_tokens": 6144,
+    "elapsed_seconds": 378.8303189277649,
+    "unchanged_identity": {
+      "adapter_state_sha256": "cb4f827f6050b40ade804e205faeaf988fd1815ff0a2d34ca5bf87e06e308384",
+      "all_parameters_frozen": true,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992"
+    }
+  },
   "judge": {
     "pid": 225225,
     "unix": 1789733259.2690043,
     "rule_sha256": "7127a82613c6c75ed561b180ad394a657acbc194cb27cca72bc3b0a686d6444a",
     "panel_sha256": "4adab198a81f2492fff5471d0a7a20de41c06f59c7a492d7ef35746f84d346aa"
   },
-  "remaining_budget_tokens": 255
+  "remaining_budget_tokens": 0
 }

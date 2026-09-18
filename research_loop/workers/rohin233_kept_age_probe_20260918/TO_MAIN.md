@@ -1,4 +1,17 @@
-# R233 current handoff — September 18, 2026 12:13:19 UTC
+# R233 current handoff — September 18, 2026 12:23:03 UTC
+
+Latest prospective-priority cut: `PROSPECTIVE_STATUS.json` and
+`PROSPECTIVE_STATUS.md`.590 enrolled/42 captured/5 eligible/5 evaluated;
+585 unevaluated. First fair forward-capture round copied14 actual prospective
+ages across14 of16 registered lives; the other2 had no post-frontier completion
+available in the bound ledgers. Metadata retained; historical work not dispatched.
+Age2 completed naturally at12:13:25.037309UTC,6144tokens/53rawaccepted/15pixels.
+Physical6/7 observed empty12:20:31UTC: one existing serial lane, zero additional
+verified parallel lanes. Two measured probes imply9.68sources/hour, about60.5h
+for the backlog before eligibility delays. This is NOT every-sleep testing
+complete. No new GPU dispatch, no0–5 changes; expansion plan is not a launch.
+
+## Retained prior 12:13:19 cut
 
 Earlier continuation receipts `R233_STATUS.md` / `R233_STATUS.json` remain
 historical cuts, not the current queue totals. No earlier result is rewritten.
