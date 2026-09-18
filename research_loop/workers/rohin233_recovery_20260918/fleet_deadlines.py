@@ -154,14 +154,25 @@ def collect():
                 entry.get('hard_end_utc'), live_reference, entry.get('recorded_exit_to_loaded_seconds'))
         else:
             supports.append(dict(component=name, node='node2' if name == 'ASTRA7_TRANSPORT' else 'local',
-                pid=entry.get('pid', entry.get('native_pid')), status=entry['status'],
+                pid=entry.get('pid', entry.get('native_pid')), start_ticks=entry.get('start_ticks'), status=entry['status'],
                 deadline_utc=entry.get('hard_end_utc'), evidence=reference))
 
-    p3, reference = read(HERE / 'P3_FINISH_STATUS.json')
+    retry_status = HERE / 'P3_RETRY_STATUS.json'
+    p3, reference = read(retry_status if retry_status.is_file() else HERE / 'P3_FINISH_STATUS.json')
     entry = p3.get('native', p3.get('evidence', {}))
+    if retry_status.is_file() and (HERE / 'P3_RETRY_LOADED.json').is_file():
+        entry, reference = read(HERE / 'P3_RETRY_LOADED.json')
+    deadline = entry.get('actual_deadline_utc')
+    if (entry.get('wall_extended') or {}).get('deadline_unix') is not None:
+        deadline = utc(entry['wall_extended']['deadline_unix'])
     add('P3', 'node4', 3, entry.get('status', p3['status']), entry.get('native'),
-        entry.get('loaded'), entry.get('wall_extended'), entry.get('actual_deadline_utc'), reference,
+        entry.get('loaded'), entry.get('wall_extended'), deadline, reference,
         entry.get('recorded_exit_to_loaded_seconds'))
+    if (HERE / 'P3_RETRY_WAITER_STARTED.json').is_file():
+        waiter, waiter_reference = read(HERE / 'P3_RETRY_WAITER_STARTED.json')
+        supports.append(dict(component='P3_retry_parent_waiter', node='local', pid=waiter['pid'],
+            start_ticks=waiter['start_ticks'], deadline_utc=utc(waiter['hard_end_unix']),
+            status='WAITING_VERIFIED_RETRY_LOAD_NOT_A_PARENT', evidence=waiter_reference))
     if p3.get('parent'):
         supports.append(dict(component='P3_parent', node='local', pid=p3['parent']['pid'],
             start_ticks=p3['parent'].get('start_ticks'),
