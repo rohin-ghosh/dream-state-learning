@@ -62,3 +62,28 @@ turn's verified REQUEST→ACT remains separately identified.
 
 No Main/C2/native source was changed by this CPU sidecar. Latest code validation
 remains54 local/isolated-publication tests and44 receiving CPU tests PASS.
+
+## Bounded follow-up — 21:09:34 UTC
+
+The rescoring Tool notice is no longer merely queued: its exact inbox bytes
+render in REQUEST5321, followed by ACT5329/COMMITTED5330/stage5331. The
+`tool_notice` object in `P3_RETRY_ACTUAL.json` is the source-bound proof, including
+request, response and commit identities. This does not imply the child used the
+correction successfully.
+
+Post-LOAD xhigh parent turn318 remains published but not rendered through the
+current journal head5395. Native699464/start33078516 and parent4071384/start187218132
+are both verified alive. No duplicate parent message was sent.
+
+The actual unfinished sleep is **cycle154**, requested in SLEEP_REQUEST5345.
+A bounded contiguous-chain audit verifies48 UPDATE records5348–5395, optimizer
+steps6749–6796; the first update finished21:02:14.974 and the last21:08:42.211 UTC.
+**No SLEEP_COMPLETE is present at the21:09:33.740 sleep audit.** This is a
+journal-grounded unfinished sleep, not an inference from Linux process state S,
+and no diagnosis of the remaining work or completion ETA is claimed.
+`P3_RETRY_SLEEP_STATUS.json` binds the request, update endpoints and current head.
+
+The learner remains untouched; the21:10 conditional fastpath is inapplicable
+because actual LOAD occurred20:58:52.486. This read-only follow-up makes no source,
+deadline, parent-policy, scoring or publication change and does not wait
+indefinitely for a new boundary.
