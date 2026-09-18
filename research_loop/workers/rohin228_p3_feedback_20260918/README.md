@@ -92,3 +92,19 @@ At this cut it does not exist and renewal is not reported as active. A failed
 handoff produces `FAILED.json` or the supervisor log; it does not stop or
 restart the learner. The next attributed Tool rendering still needs the
 normal delivery audit, independently of CPU-writer startup.
+
+## R232 renewal activated
+
+On September 18, 2026 at11:07:09.147UTC, successor2249812 started after
+writer1493939's normal exit. The measured CPU-writer handoff was0.011594s;
+P3 native237705 remained running, with no learner or relay signals. The
+unchanged source, output directory and deduplication ledger were retained;
+the activation check preserved124 immutable receipts. The new expiry is
+14:09:07UTC. Exact bindings are in `R232_RENEWAL_ACTIVATED.json`.
+
+The read-only audit at11:10:54UTC verified62 of65 total publications in
+actual REQUESTs. All three new successor publications, covering15 ranked
+caption results, were still awaiting rendering. Therefore activation is
+confirmed, but new successor feedback reaching the child is **not yet
+confirmed** at this cut. See `R232_DELIVERY_20260918T1110Z.json`. This does
+not claim uptake, new scoring, a native policy change or no-filter adoption.
