@@ -28,6 +28,10 @@ remain visibly pending direct review. No extra model/agent is invoked.
 recall contamination and recovery exclusions separately from native proof.
 Caught-up journal coverage does not mean a life is currently running. A parent
 process replacement is not proof its new treatment rendered to the child.
+`public/SEMANTIC_REVIEW.md` gives the selected reviewed predicates and partial
+artifacts in plain language. `public/HISTORICAL_C2_DERIVATION.json` separately
+preserves the real earlier V=3 console work without calling it an ACT, training,
+or unreminded transfer. Recovery status and gaps are in `PAIR_OWNER_STATUS.json`.
 `public/CURRENT.json` includes exact feedback event/INBOX/REQUEST IDs, child
 RESPONSE/COMMITTED/STAGE IDs and hashes, observed subsequent outputs, reminder
 counts or explicit unknowns, parent-solution exposure, and cross-task/sleep

@@ -1,46 +1,79 @@
 {
-  "schema": "R232_MAINTENANCE_CONTEXT_V1",
-  "observed_utc": "2026-09-18T10:44:20+00:00",
-  "source": "Main direct handoff plus read-only owner receipt inspection",
-  "parent_treatment": {
-    "reported_commit": "990aec46d",
-    "reported_adoption_window_utc": ["2026-09-18T10:38:52Z", "2026-09-18T10:39:07Z"],
-    "policy": "R232_BOUND_R230_NODE4_PARENT_REPAIR_V1",
-    "cadence_responses": 1,
-    "hardcoded_three_turn_retirement_removed": "owner_reported",
-    "scientific_condition": "new_R230_treatment_not_unchanged_control",
-    "learner_signals": 0,
-    "actual_epoch_render": "pending_verification_not_inferred_from_process_start",
-    "scope_excludes_P7": true,
-    "receipts": [
-      {"physical": 2, "parent_pid": 785257, "started_unix": 1789727947.06087, "receipt": "research_loop/workers/rohin232_node4_parent_repair_20260918/physical2/LIVE.json", "receipt_sha256": "ed6fdd0e403d45917311e8c7ffaae5fe64ff04883d2ec90ecbaf3171c532514d"},
-      {"physical": 3, "parent_pid": 783596, "started_unix": 1789727933.592688, "receipt": "research_loop/workers/rohin232_node4_parent_repair_20260918/physical3/LIVE.json", "receipt_sha256": "c787a0586be7bdc93bdeca4cdcedbf9b2c3eccbaa82f21008c64df75559c86bf"},
-      {"physical": 5, "parent_pid": 785190, "started_unix": 1789727946.9582448, "receipt": "research_loop/workers/rohin232_node4_parent_repair_20260918/physical5/LIVE.json", "receipt_sha256": "f61ed5a98de654e84858dc2353951b8b24a5f2f9b1c8754da18bcb87b6d33031"},
-      {"physical": 6, "parent_pid": 785217, "started_unix": 1789727947.0105114, "receipt": "research_loop/workers/rohin232_node4_parent_repair_20260918/physical6/LIVE.json", "receipt_sha256": "731f36644ddbf8eef1534a6c7ef9ac856f48e6d2c5381bb9eda9845a1bf86ee1"}
-    ]
-  },
   "C2_recall": {
-    "authority": "Main direct handoff",
-    "design": "controlled_isolated_retries",
     "B1": "contaminated_by_old_queued_task",
     "V3": "partial_response_only",
+    "authority": "Main direct handoff",
     "correction_success_credited": false,
-    "current_audited_trace": "historical_graph_correction_REQUEST8118_not_recall_trial"
+    "current_audited_trace": "historical_graph_correction_REQUEST8118_not_recall_trial",
+    "design": "controlled_isolated_retries"
   },
+  "audit_actions": {
+    "inbox_writes": 0,
+    "learner_signals": 0,
+    "runtime_edits": 0,
+    "score_replays": 0
+  },
+  "observed_utc": "2026-09-18T10:44:20+00:00",
+  "parent_treatment": {
+    "actual_epoch_render": "pending_verification_not_inferred_from_process_start",
+    "cadence_responses": 1,
+    "hardcoded_three_turn_retirement_removed": "owner_reported",
+    "learner_signals": 0,
+    "policy": "R232_BOUND_R230_NODE4_PARENT_REPAIR_V1",
+    "receipts": [
+      {
+        "parent_pid": 785257,
+        "physical": 2,
+        "receipt": "research_loop/workers/rohin232_node4_parent_repair_20260918/physical2/LIVE.json",
+        "receipt_sha256": "ed6fdd0e403d45917311e8c7ffaae5fe64ff04883d2ec90ecbaf3171c532514d",
+        "started_unix": 1789727947.06087
+      },
+      {
+        "parent_pid": 783596,
+        "physical": 3,
+        "receipt": "research_loop/workers/rohin232_node4_parent_repair_20260918/physical3/LIVE.json",
+        "receipt_sha256": "c787a0586be7bdc93bdeca4cdcedbf9b2c3eccbaa82f21008c64df75559c86bf",
+        "started_unix": 1789727933.592688
+      },
+      {
+        "parent_pid": 785190,
+        "physical": 5,
+        "receipt": "research_loop/workers/rohin232_node4_parent_repair_20260918/physical5/LIVE.json",
+        "receipt_sha256": "f61ed5a98de654e84858dc2353951b8b24a5f2f9b1c8754da18bcb87b6d33031",
+        "started_unix": 1789727946.9582448
+      },
+      {
+        "parent_pid": 785217,
+        "physical": 6,
+        "receipt": "research_loop/workers/rohin232_node4_parent_repair_20260918/physical6/LIVE.json",
+        "receipt_sha256": "731f36644ddbf8eef1534a6c7ef9ac856f48e6d2c5381bb9eda9845a1bf86ee1",
+        "started_unix": 1789727947.0105114
+      }
+    ],
+    "reported_adoption_window_utc": [
+      "2026-09-18T10:38:52Z",
+      "2026-09-18T10:39:07Z"
+    ],
+    "reported_commit": "990aec46d",
+    "scientific_condition": "new_R230_treatment_not_unchanged_control",
+    "scope_excludes_P7": true
+  },
+  "schema": "R232_MAINTENANCE_CONTEXT_V1",
   "siblings": {
+    "both_status": "natural_error_exit_context_budget_preserved_not_live",
+    "do_not_double_count": true,
+    "frozen_R232_epoch_rendered": true,
+    "learner_R232_epoch_rendered": false,
+    "learner_alias": "FRESH_R231",
     "owner": "Cicero",
+    "owner_reported_available_tokens": 3071,
+    "owner_reported_required_tokens": 3637,
     "receipt": "research_loop/workers/rohin231_curriculum_birth_20260918/r232_pair/LATEST.json",
     "receipt_sha256": "9aad0f47862532d4948e42bfff31209fb6773d1581b505e79a27014ba1a48594",
     "receipt_utc": "2026-09-18T10:34:12.643472+00:00",
-    "both_status": "natural_error_exit_context_budget_preserved_not_live",
-    "owner_reported_required_tokens": 3637,
-    "owner_reported_available_tokens": 3071,
     "recovery": "owner_work_in_progress_no_new_loaded_receipt_verified",
-    "learner_alias": "FRESH_R231",
-    "learner_R232_epoch_rendered": false,
-    "frozen_R232_epoch_rendered": true,
-    "do_not_double_count": true,
-    "require_new_incarnation_receipt_for_live_claim": true
+    "require_new_incarnation_receipt_for_live_claim": true,
+    "superseded_by": "PAIR_OWNER_STATUS.json: directly verified same-journal recovery at10:58:29UTC with gaps retained"
   },
-  "audit_actions": {"learner_signals": 0, "inbox_writes": 0, "runtime_edits": 0, "score_replays": 0}
+  "source": "Main direct handoff plus read-only owner receipt inspection"
 }

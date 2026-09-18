@@ -1,0 +1,212 @@
+{
+  "accepted_level": 2,
+  "child_records": [
+    {
+      "committed": {
+        "index": 39,
+        "kind": "COMMITTED",
+        "sha256": "7a0d22605e729ac61d3b1a16641acd8a83a4c28c40b4cf2e65b7ac4d1af73a8a"
+      },
+      "request": {
+        "index": 37,
+        "kind": "REQUEST",
+        "sha256": "d8b9a4997df52026f5952412acaf52653c673e898d5c88a223759844eef264e0"
+      },
+      "response": {
+        "index": 38,
+        "kind": "RESPONSE",
+        "sha256": "7d9b81cc36d4299cac1f0bc34c6bbb8929cd55f27d5966dde274041e4f43fc7f"
+      },
+      "stage": "THINK",
+      "stage_receipt": {
+        "index": 40,
+        "kind": "R184_STAGE",
+        "sha256": "ae2673eb67228ef8013ed942082e28288838c282f05dfc473a35e1bd47ae5adc"
+      }
+    },
+    {
+      "committed": {
+        "index": 48,
+        "kind": "COMMITTED",
+        "sha256": "4a9066e19c9ada3a365c72d08e5f93592fb7c55b4c98fc78e1519774d842308a"
+      },
+      "request": {
+        "index": 46,
+        "kind": "REQUEST",
+        "sha256": "b9c331819588159847a2d1de8d2351fab4c55cfe2bf34b12338dc770ffc1ac73"
+      },
+      "response": {
+        "index": 47,
+        "kind": "RESPONSE",
+        "sha256": "9c7bdd388c5d2512d2ea57352eae834b67964f3ed78aa6c1c90b90af8026e9dd"
+      },
+      "stage": "ACT",
+      "stage_receipt": {
+        "index": 49,
+        "kind": "R184_STAGE",
+        "sha256": "f98a1d83ce5073c6f9b8e3bd77adf78537964b695e3b3c95410bd86ea94256b7"
+      }
+    },
+    {
+      "committed": {
+        "index": 88,
+        "kind": "COMMITTED",
+        "sha256": "02b3a2b39db324cc78ae7717bd9c4817826e2b83e8d90b35455c38e69d25fd4c"
+      },
+      "request": {
+        "index": 86,
+        "kind": "REQUEST",
+        "sha256": "63f4b0d43e85cda48c5a14aa401d0b9172bf67e88eefc445806e311f650da170"
+      },
+      "response": {
+        "index": 87,
+        "kind": "RESPONSE",
+        "sha256": "c28dc88b9a321292bca88ece9026276574044b26d14e116313c5458fddda2dbf"
+      },
+      "stage": "ACT",
+      "stage_receipt": {
+        "index": 89,
+        "kind": "R184_STAGE",
+        "sha256": "18d4f3a299b02417f0efb7e03c17caf5f5348701e227d11495fe05b9d565e375"
+      }
+    }
+  ],
+  "completed_sleep_boundaries_between": [
+    {
+      "cycle": 2,
+      "optimizer_steps": 0,
+      "record": {
+        "index": 67,
+        "kind": "SLEEP_COMPLETE",
+        "sha256": "592fbf52b9fc9e722a0849e527ee7d14ed248fc5c3f906feda3137b34523b22d"
+      }
+    }
+  ],
+  "context_assistance_or_carried_method_not_excluded": true,
+  "crash_recovery_between_selected_acts": true,
+  "cross_task_transfer": false,
+  "cycle_delta": 1,
+  "explanation": "The later actual ACT repeats the earlier case after a new explicit method reminder; this is not unreminded transfer to the requested new problem.",
+  "external_exposures": [
+    {
+      "actor": "environment",
+      "body_sha256": "ecb4796270422832be1278cbbc1ff868658edefbff065be2cc38d32499c7ad22",
+      "classification": "runtime_telemetry_compaction_or_no_execution_status",
+      "event_id": "r184:R231_BASE_CURRICULUM_FROM_BIRTH:5:TOOL_STATUS",
+      "source_sha256": "963fc3e33eef6c48446c61c6b26dea78c201b6da20b14bfc7615b479ef2d3d76",
+      "targeted_reminder": false
+    },
+    {
+      "actor": "environment",
+      "body_sha256": "7eef8913df26fe58774d1f0f48654c8b695c1c4e4a0e3ca72ed5eb0ecb7ceb2f",
+      "classification": "generic_runtime_coaching",
+      "event_id": "r184:R231_BASE_CURRICULUM_FROM_BIRTH:5:LEARN",
+      "source_sha256": "2de9b6b6502b4118ed99ca740fec7c1fdcc2770b7dd47a6e85d9f66c13af6d7e",
+      "targeted_reminder": false
+    },
+    {
+      "actor": "environment",
+      "body_sha256": "5ca700113e3f181668d0b520b32ded6e327774b5dacc448ba9d405bde946ecff",
+      "classification": "runtime_telemetry_compaction_or_no_execution_status",
+      "event_id": "r204:compaction:c53371f8a3484fac0b06295075ef387ea52dab357c7b33cbfb1d1752330c87c4",
+      "source_sha256": "abe26d678ea0af2650954b651f8ce09422cc89a940984e050e1ddd7d4c892681",
+      "targeted_reminder": false
+    },
+    {
+      "actor": "environment",
+      "body_sha256": "655ddc5140654d5137195ccfef14715d08f74e8053c7e9296b780c7b186a8efe",
+      "classification": "runtime_telemetry_compaction_or_no_execution_status",
+      "event_id": "cost:segment:5",
+      "source_sha256": "adf59d90a8003a3d7bdc042f7e4d162cba09811f56cde8a05ed198e329140924",
+      "targeted_reminder": false
+    },
+    {
+      "actor": "environment",
+      "body_sha256": "ce22a6946076d136902428d37fb105260f3bfa17db5470082b71f6a7d1ff4bf4",
+      "classification": "runtime_telemetry_compaction_or_no_execution_status",
+      "event_id": "r184:R231_BASE_CURRICULUM_FROM_BIRTH:6:LEARN",
+      "source_sha256": "12c1681976a136ad528df236a66d3328b943ffdbc6ceffec7757edb8aa66fac5",
+      "targeted_reminder": false
+    },
+    {
+      "actor": "parent",
+      "body_sha256": "a243b9895b4e2dbc11198db84e9d2eb5b71830317982b4a8a1c0609b3854ad52",
+      "classification": "targeted_reverse_check_reminder_and_new_problem",
+      "event_id": "parent:inbox:8496263ca4474017ae6cbc9b8e1375b0",
+      "source_sha256": "0399eb666bbc312f604a040f5939e082bd9294eeb16bb73a85c34636704c054c",
+      "targeted_reminder": true
+    },
+    {
+      "actor": "environment",
+      "body_sha256": "b22c43dd2b3e6e02d01be7ca868e00a3e101d49de55127d05a683915d1dcafda",
+      "classification": "generic_runtime_coaching",
+      "event_id": "r184:R231_BASE_CURRICULUM_FROM_BIRTH:6:THINK",
+      "source_sha256": "d462ae7dc023b51ce990291e5eb61d90179bac24a679e63b207b2a1ac7f93c54",
+      "targeted_reminder": false
+    },
+    {
+      "actor": "environment",
+      "body_sha256": "cdb756df5994f4852001d69877ddfbfe878fa772b6c563a42dc47fa77c148937",
+      "classification": "runtime_telemetry_compaction_or_no_execution_status",
+      "event_id": "r204:compaction:405815137959a5c5df782ba748ad8af1a2d7e86a90b876607fc771143086ec74",
+      "source_sha256": "46e611b1121d7d898ce45b2f915629ef9dc87019c1fa717cd41d954ade07db52",
+      "targeted_reminder": false
+    },
+    {
+      "actor": "environment",
+      "body_sha256": "a7a90db1dc1cd374f06f6b54233285e6a194716f1534f299a83587fbb85c6199",
+      "classification": "generic_runtime_coaching",
+      "event_id": "r184:R231_BASE_CURRICULUM_FROM_BIRTH:6:THINK:ba3c3c3b8449a8f5be7e5b654a790c0429d553ba316dde8934e8f30b75a8d859",
+      "source_sha256": "ba3c3c3b8449a8f5be7e5b654a790c0429d553ba316dde8934e8f30b75a8d859",
+      "targeted_reminder": false
+    },
+    {
+      "actor": "environment",
+      "body_sha256": "82b39313ab4bd760170733137b64d967f3f6721cbe470779996057a5d9ab8b4f",
+      "classification": "runtime_telemetry_compaction_or_no_execution_status",
+      "event_id": "cost:segment:6",
+      "source_sha256": "7c42e5723ca8b57ff6b97b637d4114eedaeedd82af5111d55afa001d223f0a95",
+      "targeted_reminder": false
+    },
+    {
+      "actor": "environment",
+      "body_sha256": "3d69e162ee7b6fd8c08c6bd97f2c7dac34b6983ccf33d60d91ec06ca946f2c38",
+      "classification": "generic_runtime_coaching",
+      "event_id": "r184:R231_BASE_CURRICULUM_FROM_BIRTH:7:ACT",
+      "source_sha256": "b35e33b4e69d206489cbbbfae13572e3821d8a1bc9055ed7035298012c3835f8",
+      "targeted_reminder": false
+    },
+    {
+      "actor": "environment",
+      "body_sha256": "6fa952f3426ca3464112139415d402118119b569ed76b7aaf755478f6ed000a2",
+      "classification": "runtime_telemetry_compaction_or_no_execution_status",
+      "event_id": "r204:compaction:4af140245126301ea5a12f9413f2e7f456af913a6934c3c8df87fc51514341e9",
+      "source_sha256": "a4b9572b3f2f93833c972acbf3f406a8c04e518a713e31f1b925b61533ad67db",
+      "targeted_reminder": false
+    }
+  ],
+  "initial_method_supplied_by_parent": true,
+  "initial_numeric_inverse_steps_supplied_by_parent": false,
+  "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+  "later_actual_problem": "17+8-6",
+  "later_requested_problem": "34-15+7",
+  "learning_or_no_gap_claim": false,
+  "new_distinct_external_events": 12,
+  "new_parent_events": 1,
+  "observed_utc": "2026-09-18T11:03:21.588699+00:00",
+  "optimizer_updates": 0,
+  "original_correction_literal_still_visible": false,
+  "pre_correction_act": {
+    "index": 13,
+    "kind": "RESPONSE",
+    "sha256": "c1689b5622528c40ef2eda834b057fe8dc2552afcde6070a4cfd59d4ae864df2"
+  },
+  "schema": "R232_FROZEN_COACHED_FOLLOWUP_V1",
+  "targeted_new_parent_reminder_count": 1,
+  "unreminded_sleep_survival_proved": false,
+  "unreminded_transfer": false,
+  "window": {
+    "after_response": 47,
+    "through_response": 87
+  }
+}
