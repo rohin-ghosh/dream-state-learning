@@ -40,7 +40,8 @@ def require(condition, reason):
 def prepare(args):
     root, snapshot = args.root.resolve(), args.snapshot.resolve()
     source = root / 'source'
-    require(root.name == 'orch_r216_C0_20260918' and not (root / 'READY.json').exists(), 'new_C0_once_only')
+    require(root.name in ('orch_r216_C0_20260918', 'orch_r216_C0_20260918_attempt2')
+        and not (root / 'READY.json').exists(), 'new_C0_once_only')
     require(sha(snapshot / 'MANIFEST.json') == '29ca04c2c51671c7df922a4b05448586e74eec35da45b03009877baccbccce84', 'exact_requested_snapshot')
     manifest = read(snapshot / 'MANIFEST.json')
     for entry in manifest['files']:

@@ -14,8 +14,14 @@ current C2 remains the interlocutor. This is not a rollback of original C2.
 - Runtime: THINK/ACT/LEARN, boundary compaction, original-target content and
   language exclusions; zero eligible rows means no optimizer or anchor update.
 - Local content/prose tests: 64 passed, 46 subtests after the repetition patch.
-- Initial receiving suite: 158 passed, 303 subtests in 5.80s; the additional
-  repetition and code-wrapped-prose patch requires a new receiving receipt.
+- Final receiving suite: 165 passed, 303 subtests in 5.95s, including repetition,
+  code-wrapped prose, fresh privileged-admission binding and the actual service deadline.
+- First dispatch failed before loading a model: the legacy supervisor attempted
+  a second privileged scan inside its no-new-privileges service. That attempt,
+  source and receipts remain intact. Attempt2 consumes the already-required
+  fresh external privileged scan, bound to the exact guard bytes; device
+  confinement and no-new-privileges remain enforced. Only the failed parent
+  publisher was stopped; no learner was stopped or rolled back.
 - Launch not yet claimed. A `LOADED` journal record, source adapter identity,
   actual pinned reference and parent render must be observed separately.
 
