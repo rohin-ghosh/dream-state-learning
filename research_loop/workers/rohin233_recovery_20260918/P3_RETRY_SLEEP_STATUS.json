@@ -1,5 +1,24 @@
 {
-  "complete": null,
+  "complete": {
+    "active_semantic_filters": [],
+    "checkpoint_sha256": {
+      "adapter": "1bc3cc2711afb1368e933aaa6722a300ab633a5c03eae383752d03f5357e70f9",
+      "optimizer": "731549b69350b71e7432251034df14ab9555028d9d71e25edc6cceeb59e2bb7e",
+      "rng": "731549b69350b71e7432251034df14ab9555028d9d71e25edc6cceeb59e2bb7e"
+    },
+    "cycle": 154,
+    "durable_binary_rehash": false,
+    "historical_row_annotations": "PRESERVED_NOT_APPLIED",
+    "index": 5396,
+    "kind": "SLEEP_COMPLETE",
+    "learn_row_policy": "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+    "optimizer_steps": 6796,
+    "semantic_row_exclusion": false,
+    "sha256": "1b3f627258851369ba920817585b710a018a6dbf9ce32094b15237b995b424c3",
+    "status": "COMPLETE",
+    "technical_provenance_and_encoding_checks": true
+  },
+  "complete_time_fields": {},
   "first_update": {
     "finished_utc": "2026-09-18T21:02:14.973820+00:00",
     "index": 5348,
@@ -7,9 +26,11 @@
     "sha256": "1631add4a6ad1e17b24ab5ee8cb3920273375c2cce7468420aa099c4c974bbc2"
   },
   "head": {
-    "index": 5395,
-    "kind": "UPDATE",
-    "sha256": "115d3b39ac9ad366d83a4fb0d09e7b762003c5c1638acdcd229d51bce856097d"
+    "index": 5406,
+    "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+    "kind": "CONTEXT_INPUT",
+    "previous_sha256": "bbc026ec290a4de6e77a385264d8118eed80fb059c9253e7fee1b6cb698badc4",
+    "sha256": "a95e0790b0ee8ce384f1d0a9704a216055f1e1578bd4a745224636cef4548184"
   },
   "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
   "last_update": {
@@ -28,7 +49,7 @@
   "native_alive_same_incarnation": true,
   "native_signals": [],
   "node": "node4",
-  "observed_utc": "2026-09-18T21:09:33.740244+00:00",
+  "observed_utc": "2026-09-18T21:13:43.687032+00:00",
   "remote_writes": 0,
   "sleep_request": {
     "cycle": 154,
@@ -36,6 +57,6 @@
     "sha256": "e2c54b65dbac658d6a6b7ea84c49aab064cf310656745391d6121df6814384f3"
   },
   "source_bound_chain_verified": true,
-  "status": "SLEEP154_UPDATES_OBSERVED_COMPLETE_PENDING",
+  "status": "SLEEP154_COMPLETE",
   "update_count": 48
 }

@@ -87,3 +87,42 @@ The learner remains untouched; the21:10 conditional fastpath is inapplicable
 because actual LOAD occurred20:58:52.486. This read-only follow-up makes no source,
 deadline, parent-policy, scoring or publication change and does not wait
 indefinitely for a new boundary.
+
+## Completed bounded handoff — 21:14:36 UTC
+
+**First post-resume sleep COMPLETE is now observed:** cycle154,
+SLEEP_COMPLETE5396, SHA
+`1b3f627258851369ba920817585b710a018a6dbf9ce32094b15237b995b424c3`,
+total optimizer steps6796. It retains R227_ALL_AUTHENTIC_CHILD_ROWS_V1,
+`semantic_row_exclusion=false`, empty active semantic filters and technical
+provenance/encoding checks. Recipe5346/eligibility5347 remain3/3 genuine new
+rows retained, zero exclusions, raw unchanged. The runtime's adapter/optimizer/
+RNG checkpoint hashes are retained in the receipt; this observer did not rehash
+the large checkpoint binaries. COMPLETE has no embedded wall-clock timestamp,
+so no exact completion time is invented.
+
+**Parent318 has completed its verified delivery sequence:** inbox
+`6001179cf4364d018074d92f2775a890` renders in REQUEST5400 at21:12:20.587 UTC,
+SHA `d71cc942c4aeba9bef171c987fa08f185c58fc14a151eb9f1d8b48080f8003d4`.
+Its subsequent ACT uses REQUEST5409 → RESPONSE5410 at21:14:04.735 UTC,
+SHA `1e80fad4d0af0a97f3b4cca641201afcb90c3e4504967fd51858b3282462a461`,
+then COMMITTED5411 and ACT-stage5412. The original xhigh policy/ledger produced
+this turn from authenticated new child history; external context remains masked.
+
+The retrospective Tool notice's verified route remains REQUEST5321 → ACT5329 →
+COMMITTED5330/stage5331. Its209-own-span correction scope and the distinct
+223-entry diagnostic scope remain as documented above. Nothing was rescored,
+republished, credited as a new game opportunity or asserted to be learned by
+this observation.
+
+At21:14:36.895 UTC, native699464/start33078516 and original adaptive
+parent4071384/start187218132 remain alive. The journal has reached REQUEST5419.
+The continuing parent has also published turn319, inbox
+`bfd71d86616044cbbf0c9e69d77cad31`; that later turn is **not yet rendered in this
+cut** and is not required to complete the bounded turn318 follow-through.
+
+This finishes the requested LOAD → original-parent REQUEST/committed ACT,
+retrospective Tool rendering, and first actual R227 recipe/eligibility/COMPLETE
+verification. Native/controller/source/horizon remain unchanged. No fastpath
+switch, native signal, duplicate replay or replacement parent was performed.
+The live learner and sole adaptive parent are left running.

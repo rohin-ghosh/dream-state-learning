@@ -1,8 +1,11 @@
 {
   "actual_receipt": "P3_RETRY_ACTUAL.json",
   "fastpath_replacement_needed": false,
-  "first_complete_observed": false,
+  "first_complete_index": 5396,
+  "first_complete_observed": true,
+  "first_complete_sha256": "1b3f627258851369ba920817585b710a018a6dbf9ce32094b15237b995b424c3",
   "last_optimizer_step": 6796,
+  "later_parent319_rendering": "PENDING_IN_THIS_CUT",
   "life": "P3",
   "loaded": {
     "index": 5317,
@@ -23,22 +26,25 @@
   "native_signals": [],
   "node": "node4",
   "observed_update_count": 48,
-  "observed_utc": "2026-09-18T21:09:34.881277+00:00",
+  "observed_utc": "2026-09-18T21:14:36.894832+00:00",
   "parent": {
     "pid": 4071384,
     "start_ticks": "187218132"
   },
-  "parent318_delivery_status": "PUBLISHED_NOT_YET_RENDERED_IN_WINDOW",
+  "parent318_act_index": 5410,
+  "parent318_committed_index": 5411,
+  "parent318_delivery_status": "REQUEST_TO_COMMITTED_ACT_OBSERVED",
+  "parent318_request_index": 5400,
   "parent_alive": true,
   "sleep_cycle": 154,
   "sleep_receipt": "P3_RETRY_SLEEP_STATUS.json",
-  "status": "SLEEP154_48_UPDATES_COMPLETE_PENDING_PARENT318_QUEUED",
+  "status": "BOUNDED_RECOVERY_FOLLOWTHROUGH_COMPLETE_LIVES_CONTINUE",
   "through": {
-    "index": 5395,
+    "index": 5419,
     "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
-    "kind": "UPDATE",
-    "previous_sha256": "f25d208909211aa5e2538afc8aa7fbe72980f7cd3c0558aad39c9f1d11c0ed80",
-    "sha256": "115d3b39ac9ad366d83a4fb0d09e7b762003c5c1638acdcd229d51bce856097d"
+    "kind": "REQUEST",
+    "previous_sha256": "3b86ae292d0429d2472dcee637c414acb756da71ae9854573176eb92e7e83811",
+    "sha256": "216d504b1d7c33c51a7d14f043b863747227f22b73f1fab7ca18aaa8c548e37f"
   },
   "tool_following_committed_act": 5329,
   "tool_render_request": 5321,

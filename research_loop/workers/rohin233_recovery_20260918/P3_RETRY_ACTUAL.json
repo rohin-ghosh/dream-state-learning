@@ -1,7 +1,7 @@
 {
-  "bytes_read_this_chunk": 0,
+  "bytes_read_this_chunk": 71104644,
   "caught_up": true,
-  "incremental_after": 5395,
+  "incremental_after": 5406,
   "learning": [
     {
       "active_semantic_filters": [],
@@ -30,6 +30,25 @@
       "semantic_row_exclusion": false,
       "sha256": "5500bd2d3d46bfd0b17cc68a631c4f913cfa1e6e9a2a50ead97e846e1be8ee2a",
       "technical_provenance_and_encoding_checks": true
+    },
+    {
+      "active_semantic_filters": [],
+      "checkpoint_sha256": {
+        "adapter": "1bc3cc2711afb1368e933aaa6722a300ab633a5c03eae383752d03f5357e70f9",
+        "optimizer": "731549b69350b71e7432251034df14ab9555028d9d71e25edc6cceeb59e2bb7e",
+        "rng": "731549b69350b71e7432251034df14ab9555028d9d71e25edc6cceeb59e2bb7e"
+      },
+      "cycle": 154,
+      "durable_binary_rehash": false,
+      "historical_row_annotations": "PRESERVED_NOT_APPLIED",
+      "index": 5396,
+      "kind": "SLEEP_COMPLETE",
+      "learn_row_policy": "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+      "optimizer_steps": 6796,
+      "semantic_row_exclusion": false,
+      "sha256": "1b3f627258851369ba920817585b710a018a6dbf9ce32094b15237b995b424c3",
+      "status": "COMPLETE",
+      "technical_provenance_and_encoding_checks": true
     }
   ],
   "life": "P3",
@@ -46,7 +65,7 @@
   "native_exit": null,
   "native_signals": [],
   "node": "node4",
-  "observed_utc": "2026-09-18T21:09:34.881277+00:00",
+  "observed_utc": "2026-09-18T21:14:36.894832+00:00",
   "parent_alive": true,
   "parent_process": {
     "pid": 4071384,
@@ -90,10 +109,20 @@
       "api_response_sha256": "a7f646f3b091ebf680a319b4df27275d41c5b2c0446b4056b504c8eaabcf739a",
       "attempt": "parent_000000000318",
       "delivery": {
+        "act_index": 5410,
+        "act_request_index": 5409,
+        "act_sha256": "1e80fad4d0af0a97f3b4cca641201afcb90c3e4504967fd51858b3282462a461",
+        "act_text_sha256": "c8a0262ff4deb5721941c55e585391453146bc91fb7688a9cb94b8db092bcd0a",
+        "act_utc": "2026-09-18T21:14:04.734806+00:00",
         "actor": "parent",
+        "committed_index": 5411,
         "inbox_id": "6001179cf4364d018074d92f2775a890",
         "inbox_sha256": "41a2bfbd1a0c33a56359c1875aa550bbf7e95d53f1cb056107bcde40671cef79",
-        "status": "PUBLISHED_NOT_YET_RENDERED_IN_WINDOW",
+        "request_index": 5400,
+        "request_sha256": "d71cc942c4aeba9bef171c987fa08f185c58fc14a151eb9f1d8b48080f8003d4",
+        "request_utc": "2026-09-18T21:12:20.587440+00:00",
+        "stage_index": 5412,
+        "status": "REQUEST_TO_COMMITTED_ACT_OBSERVED",
         "uptake_or_quality_claim": false
       },
       "generation_phase": "POST_LOAD_PARENT",
@@ -106,6 +135,28 @@
       },
       "result_sha256": "95ddafc2efb7840e75e3d7f6a2cd4b8e27a87034e2afc347e0321ab853a9cad5",
       "status": "PUBLISHED"
+    },
+    {
+      "api_request_sha256": "60651e64a4865df9d138c8fe8eb38b15b66a81eae52914c510c48ba51f58dcc8",
+      "api_response_sha256": "768f8857e07ff00b8b6efab6a61967865af147e7a091adaaca51ff4216131381",
+      "attempt": "parent_000000000319",
+      "delivery": {
+        "actor": "parent",
+        "inbox_id": "bfd71d86616044cbbf0c9e69d77cad31",
+        "inbox_sha256": "c516a1d77f03d4a5eb79ca6ae0819c733a3b85cfd6602ec50853ec73d4c6721a",
+        "status": "PUBLISHED_NOT_YET_RENDERED_IN_WINDOW",
+        "uptake_or_quality_claim": false
+      },
+      "generation_phase": "POST_LOAD_PARENT",
+      "provider_request": true,
+      "provider_response": true,
+      "provider_status": "completed",
+      "requested_model": "openai/openai/gpt-6-astra",
+      "requested_reasoning": {
+        "effort": "xhigh"
+      },
+      "result_sha256": "575b5238c8cea3547d7415cb824597301269d842e87167266f091fd148b0d0a9",
+      "status": "PUBLISHED"
     }
   ],
   "publication_actions": 0,
@@ -114,11 +165,11 @@
   "reader_sha256": "c9d979ca06970b7afcbd125ccbdf08517c1c32ca94eeda25eb3611722be82659",
   "remote_writes": 0,
   "through": {
-    "index": 5395,
+    "index": 5419,
     "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
-    "kind": "UPDATE",
-    "previous_sha256": "f25d208909211aa5e2538afc8aa7fbe72980f7cd3c0558aad39c9f1d11c0ed80",
-    "sha256": "115d3b39ac9ad366d83a4fb0d09e7b762003c5c1638acdcd229d51bce856097d"
+    "kind": "REQUEST",
+    "previous_sha256": "3b86ae292d0429d2472dcee637c414acb756da71ae9854573176eb92e7e83811",
+    "sha256": "216d504b1d7c33c51a7d14f043b863747227f22b73f1fab7ca18aaa8c548e37f"
   },
   "tool_notice": {
     "act_index": 5329,
