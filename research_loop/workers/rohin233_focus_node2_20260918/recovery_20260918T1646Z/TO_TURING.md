@@ -10,3 +10,8 @@ Lease source hash `621e1391285bcad9ee075106b4afab28970616b663876dc4ebeba7834e7b8
 # September18 17:24 UTC update
 
 Astra7 recovery native762967/start98059264 is now dispatched on its original node2 GPU1, same journal6a2fa591a1304fd8b3eff24f65e5caff, but new LOADED is still pending at17:22:41Z. Do not start another native. Source/control siblings are `source_r233_recovery` / `control_r233_recovery` beneath the original Astra7 root. New experiment ends22:59:36.105072Z. Authentic P7 validation remains; Turing retains sole bridge/overseer ownership. Exact LOADED/REQUEST/ACT will be added here before calling the receiver ready.
+# Actual restored incarnation — September18 17:27 UTC
+
+READY for Turing-owned P7 receiver rebinding: Astra7 physical node2 GPU1 UUID `GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4`, native762967/start98059264/UID2524, exact module `gpu.r233_node2_recovery native`. Original root `/localhome/local-rohing/orch_r229_Astra7_20260918`; source `source_r233_recovery`, guard `control_r233_recovery/GUARD.json`, raw journal unchanged `6a2fa591a1304fd8b3eff24f65e5caff`.
+
+LOADED3128 at17:26:46.873724Z SHA `1454621c60943dea4399858b30ee195418f4406e2201c19e5a891965621e28f1`; resumed sleep87/optimizer6796; adapter SHA `178ca7d35a03da229bef811fc3a694428fbae2a4efa095dd00076fa4983ba095`. REQUEST3130 at17:26:47.915813Z/12175 tokens SHA `53edcf05eb41f6c77a296d5b5cbcfc5eee24dded0538e0846c3026c70c4f819e`. Current ACT pending at this handoff; native readiness is actual, bridge roundtrip not claimed. New deadline22:59:36.105072Z. Same-source preserved checkpoint, no snapshot51 rebirth or new human publisher. R227 both plan/THINK; authentic P7 capsule validation retained. Receipt `ASTRA7_LOADED.public.json`.

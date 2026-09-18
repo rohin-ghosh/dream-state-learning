@@ -4,11 +4,24 @@ from copy import deepcopy
 import unittest
 
 from gpu.r213_recovery_runtime import saved_state
-from gpu.r233_node2_recovery import binding, bounded_command, POLICY, TARGETS
+from gpu.r233_node2_recovery import binding, bounded_command, supervisor_source, POLICY, TARGETS
 from organism_v6.orch_r125_continual_stream import digest
 
 
 class RecoveryTests(unittest.TestCase):
+    def test_existing_prebound_scanner_is_preserved(self):
+        source = """bound = child.read(attempt/'PRE_SERVICE_ADMISSION.json')
+        child.require(bound['guard_sha256'] == child.sha(config_path)
+            and 0 <= time.time()-bound['verified_unix'] <= 120, 'fresh_bound_privileged_preservice_scan')
+        report = bound['report']
+        command = ['gpu.orch_r125_continual_guard', 'gpu.orch_r125_continual_guard']"""
+        actual = supervisor_source(source)
+        self.assertIn('fresh_bound_privileged_preservice_scan', actual)
+        self.assertIn("report = bound['report']", actual)
+        self.assertEqual(actual.count("'gpu.r233_node2_recovery'"), 2)
+        with self.assertRaises(ValueError):
+            supervisor_source(source.replace('<= 120', '<= 999'))
+
     def plan(self):
         name, target = next(iter(TARGETS.items()))
         return dict(source_root='/synthetic/' + name + '/source_r233_recovery',

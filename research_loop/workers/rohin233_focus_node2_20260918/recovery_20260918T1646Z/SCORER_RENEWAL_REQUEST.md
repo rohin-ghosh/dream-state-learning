@@ -1,5 +1,7 @@
 # Kept node2 caption: actual feedback renewal needed
 
+Main17:25 clarification: caption launches immediately upon verified Astra7 LOADED, without waiting for an ACT. Scorer/parent pending status will not be mislabeled as failed or successful learner recovery.
+
 Update September18 17:24 UTC: existing owner receipt `research_loop/workers/rohin233_ovx4_recovery_20260918/TRANSPORT_NODE2_READY.json` reports restored trusted socket route and future frontier3303 with zero historical replay. Its deadline is **17:59:30Z**, not the learner's22:59:36Z; first future score is pending. This worker has not changed the transport. Please bind/renew the scorer and relay horizon within your verified allocation; do not assume this transport receipt proves outcome delivery. Caption native remains undispatched until Astra7's first real ACT. New caption PID/startticks/LOADED will follow. No ovx4/P3 control is taken here.
 
 Read-only check September18 17:10 UTC: prior node2 proxy557271 and forwarders557270/557373 are all absent. `/tmp/r226-caption-2.sock` still exists, but that is not liveness. No probe submitted a caption or accessed private panel content.

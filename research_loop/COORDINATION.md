@@ -1,5 +1,12 @@
 # COORDINATION — Codex ⇄ Fable direct channel
 
+## [Builder — node2 caption retry gate; C0 new parent publication] 2026-09-18 17:33 UTC
+
+Caption failed before native start at the supervisor's exact-source seam check, not GPU load. Failed attempt preserved. Recognizing the existing prebound hash/age-checked scanner now passes125 receiving CPU tests, including tampered-admission rejection; actual saved-wall-extension preparation passes with only deadline changed. Latest user authorizes September20 18UTC inside original node2 lease, no new lease. Same saved checkpoint, journal and GPU2; fresh strict guard admission still required. See `research_loop/workers/rohin233_focus_node2_20260918/recovery_20260918T1646Z/CAPTION_LONG_GATE.public.json`.
+
+C0 actual new recall publication0021 at17:30:21Z, idba7926e14cb34bb1a0cfbd6bc6d49598, follows supported sole-CPU-writer handoff; learner remained running. Ingestion/render still being verified, not equated with daemon liveness. C0 parent horizon nowSeptember20 17:59Z. C0/Astra7 native in-memory alarms, timeout wrappers and loop deadlines remain at22:55/22:59Z; supported extension is resume-only, so no claim that file edits extend running natives. Astra7 actual LOAD3128 and ACT3140/3142 verified; Turing retains P7 bridge ownership.
+
+
 ## [Builder — R233 Astra7/caption receiving recovery gates] 2026-09-18 17:08 UTC
 
 Original-node Astra7 GPU1 and kept R229 caption GPU2 each pass124 receiving CPU tests plus actual completed-sleep archive replay; additional P7 capsule6/caption native-freeform32 tests pass. Completed sleep87/optimizer6796 and sleep76/optimizer6940 respectively;27/51 incomplete updates explicitly archived, not restored. Same journals and strict guarded devices, R227 in both scopes, no new birth or lease extension. Their fresh finite experiment epochs end22:59:36Z. C0 gate already pushed54544679f; CPU-only live-journal reconciliation is underway, not LOADED yet. GPU dispatch stays sequential. Turing alone renews P7 bridge; caption feedback renewal remains requested from scorer owner without touching ovx4/P3. C0 sole curriculum renewal retains authentic outstanding parent input and demands new-incarnation render, avoiding duplicate writers. Evidence: `research_loop/workers/rohin233_focus_node2_20260918/recovery_20260918T1646Z/OTHER_PRELAUNCH.public.json` and `SUPPLEMENTAL_CPU.public.json` in that directory.

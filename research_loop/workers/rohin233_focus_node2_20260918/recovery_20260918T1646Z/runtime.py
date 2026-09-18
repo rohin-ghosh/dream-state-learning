@@ -40,7 +40,7 @@ def bounded_command(command, plan, now):
     positions = [index for index, argument in enumerate(result)
         if argument.startswith('--property=RuntimeMaxSec=')]
     remaining = int(min(plan['hard_end_unix'], plan['lease_end_unix'] - 600) - now - 15)
-    if len(positions) != 1 or not 30 < remaining <= 21600:
+    if len(positions) != 1 or not 30 < remaining <= plan['lease_end_unix'] - now - 600:
         raise ValueError('fresh_finite_operator_and_existing_lease_bound')
     result[positions[0]] = '--property=RuntimeMaxSec=' + str(remaining)
     return result
@@ -60,14 +60,21 @@ def preadmitted_report(config_path):
     return report
 
 
-def supervise_owned(config_path):
-    from gpu import orch_r125_continual_guard as guard
-    source = inspect.getsource(guard.supervise)
+def supervisor_source(source):
     seam = 'report = json.loads(subprocess.check_output(command, text=True, timeout=100))'
-    if source.count(seam) != 1 or source.count("'gpu.orch_r125_continual_guard'") != 2:
+    prebound = """bound = child.read(attempt/'PRE_SERVICE_ADMISSION.json')
+        child.require(bound['guard_sha256'] == child.sha(config_path)
+            and 0 <= time.time()-bound['verified_unix'] <= 120, 'fresh_bound_privileged_preservice_scan')
+        report = bound['report']"""
+    if source.count(seam) + source.count(prebound) != 1 or source.count("'gpu.orch_r125_continual_guard'") != 2:
         raise ValueError('existing_tested_guard_seams_only')
     source = source.replace(seam, 'report = preadmitted_report(config_path)')
-    source = source.replace("'gpu.orch_r125_continual_guard'", repr(MODULE))
+    return source.replace("'gpu.orch_r125_continual_guard'", repr(MODULE))
+
+
+def supervise_owned(config_path):
+    from gpu import orch_r125_continual_guard as guard
+    source = supervisor_source(inspect.getsource(guard.supervise))
     namespace = dict(guard.supervise.__globals__, preadmitted_report=preadmitted_report)
     exec(compile(source, __file__ + ':existing_admission', 'exec'), namespace)
     return namespace['supervise'](config_path)

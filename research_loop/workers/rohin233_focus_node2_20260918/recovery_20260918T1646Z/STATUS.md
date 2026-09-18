@@ -1,16 +1,22 @@
 # R233 node2 kept-life recovery
 
+## Update — September18 17:27 UTC
+
+Astra7 actual LOADED3128 at17:26:46.873724Z, native762967/start98059264, completed sleep87/optimizer6796; first REQUEST3130 at17:26:47.915813Z/12175 tokens. Outage7018.849s. Turing handoff contains exact new identity/source/guard/journal and22:59:36Z horizon; no P7 bridge success is inferred. Caption one-shot dispatch started immediately after this verified LOAD; no ACT dependency. Both original roots/devices remain separate; no duplicate starts. `ASTRA7_LOADED.public.json` contains source hashes. C0 continues running with verified empty semantic filters and sole curriculum writer.
+
 ## Current recovery — September18 17:24 UTC
 
 | Kept arm | Actual incarnation evidence | Current blocker / next step |
 | --- | --- | --- |
 | C0 / GPU4 | Native745118/start98001699; LOADED2871 at17:21:10.338114Z, sleep98/optimizer6156; REQUEST2873 at17:21:12.417179Z, 11483 tokens; RESPONSE2883/ACT2885 at17:22:07.164669Z | Running. Outage17307.073s; same journal and saved state. No uninterrupted-memory claim. |
 | Astra7 / GPU1 | Native762967/start98059264 dispatched17:22; no new LOADED yet at17:22:41Z | Existing native validating original journal. Do not duplicate. Turing alone owns P7 bridge. Estimated LOADED17:29–32Z, not a receipt. |
-| Kept R229 caption / GPU2 | Not dispatched; receiving124+32 tests, full archive replay, saved sleep76/optimizer6940 and correction cache verified | Sequential dispatch after Astra7 first real ACT. External transport owner reports route renewed only through17:59:30Z; real future feedback still unverified. |
+| Kept R229 caption / GPU2 | Not dispatched; receiving124+32 tests, full archive replay, saved sleep76/optimizer6940 and correction cache verified | Launch immediately after verified Astra7 LOADED; no semantic ACT dependency (Main17:25). External transport owner reports route renewed only through17:59:30Z; real future feedback still unverified. |
 
 C0 sole curriculum writer762836/start98059019 began17:22:31Z. Its first attempt failed before publication because the CPU identity receipt omitted `journal_id`; failed files preserved, scoped fix passes6 local and6 receiving regressions, no learner restart. Actual inherited INBOX2858 rendered in current REQUEST2873, followed by THINK2874 and ACT2883/2885. It was **not republished**. This is visibility and output evidence, not reading uptake or recall success. `C0_LOADED.public.json` and `C0_PARENT_RECEIPTS.public.json` carry hashes and paths, not raw text. R227 all-authentic policy is present in both recovery plan/THINK; fresh sleep recipe evidence follows when observed.
 
 Receipt reader now finds current PID/start-bound LOADED even beyond256 records, and excludes inherited/reused-PID loads. Readout-only change; frozen running native remains unchanged. Next aggregate table due17:38Z even if some rows remain pending.
+
+17:24 live-policy evidence: C0 SLEEP_RECIPE2899 SHA `b3b78c3f36738c9db7a4e66d696eeeec675f15c447e5a17b9e546ecb27a5100a` explicitly reports `R227_ALL_AUTHENTIC_CHILD_ROWS_V1`, `active_semantic_filters: []`, `semantic_row_exclusion: false`; UPDATE2909 was current at17:24:05Z. This is actual resumed training-policy evidence, not an edit to unloaded source. C0 receipt/source publication pushed `20dc2a2096a1ee5723aee47fab3e249314980899` (8 explicitly audited paths, no transcripts/hosts/binaries).
 
 ## Initial diagnosis
 

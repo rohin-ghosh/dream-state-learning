@@ -36,7 +36,16 @@ def replacements(source, floor):
     return source
 
 
-def serve():
+def priority_chooser(original, topic):
+    def choose(state):
+        if not state.get('r233_priority_turn') and state['pending'] is None:
+            state['r233_priority_turn'] = True
+            return topic
+        return original(state)
+    return choose
+
+
+def serve(priority_topic=None):
     root, source, control, _ = locations('C0')
     observed = observation('C0')
     require(observed['status'] == 'LOADED', 'new_actual_C0_loaded_before_parent')
@@ -81,6 +90,9 @@ def serve():
     sys.path.insert(0, str(support))
     sys.path.insert(0, str(source))
     import curriculum_parent as parent
+    if priority_topic is not None:
+        require(priority_topic in parent.TOPICS, 'existing_curriculum_topic_only')
+        parent.choose_topic = priority_chooser(parent.choose_topic, priority_topic)
 
     def identity():
         process = Path('/proc', str(native['pid']))

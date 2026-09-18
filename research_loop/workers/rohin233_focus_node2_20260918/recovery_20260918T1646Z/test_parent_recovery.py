@@ -3,12 +3,22 @@
 import unittest
 from unittest.mock import patch
 
-from c0_parent import parent_identity, replacements
+from c0_parent import parent_identity, priority_chooser, replacements
 from caption_endpoint import scoped_inspector
 from observe import current_loaded, native_command
 
 
 class ParentRecoveryTests(unittest.TestCase):
+    def test_urgent_parent_turn_is_once_without_overlapping_pending(self):
+        choose = priority_chooser(lambda state: 'normal', 'recall')
+        state = {'pending': {'id': 'actual'}}
+        self.assertEqual(choose(state), 'normal')
+        self.assertNotIn('r233_priority_turn', state)
+        state['pending'] = None
+        self.assertEqual(choose(state), 'recall')
+        self.assertTrue(state['r233_priority_turn'])
+        self.assertEqual(choose(state), 'normal')
+
     def test_parent_identity_keeps_actual_journal(self):
         observed = {'native': {'pid': 42, 'start_ticks': 9}, 'loaded': {'index': 123},
             'original_journal_id': 'actual-journal'}
