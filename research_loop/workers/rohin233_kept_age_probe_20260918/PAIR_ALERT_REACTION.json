@@ -1,0 +1,93 @@
+{
+  "unix": 1789732940.7961042,
+  "schema": "R233_PAIR_MATCHED_POLICY_REACTION_V1",
+  "rows": [
+    {
+      "arm": "learner",
+      "cycle": 10,
+      "ACT_record_index": 751,
+      "ACT_record_sha256": "b9022cb48e76120ddd3c924ee40bc1318f7c5b992a391d5ba5df1ae54c0378a9",
+      "stage_record": {
+        "index": 753,
+        "sha256": "0d849558e5cec317cd05a9e8881f14437c2c2306db4235e5787d407cf6abcb74"
+      },
+      "exact_parent_instructions_sha256": "1674e8c2ec66bb1a1db9492fa8e664c15da33356936e4612be999a08621fa887",
+      "parent_policy_sha256": "530dc6d8c77e0e0a05b15b8e389d3fdb03d0e92f83c8d58de004165b4a361f47",
+      "parent_source_sha256": "afe3883d3c951191e5ae81c420cf6434a1879d814954a344032d7671226a9f1c",
+      "policy_budget": {
+        "message_max_words": 90,
+        "provider_max_output_tokens": 4096,
+        "reasoning_effort": "low",
+        "help_spacing_by_stage": [
+          1,
+          1,
+          1,
+          2,
+          3,
+          "on_request"
+        ]
+      },
+      "actual_message_words": 75,
+      "parent_text_sha256": "a8d1654ce808094dad7af04a2258c7971e21bd0e4a01291e2cb7f0998c6110a1",
+      "delivered_unix": 1789732485.9717321,
+      "inbox_id": "7c25d1c2fb2847b8aab02497562bb47d",
+      "source_bound_before_115655_movement_alert": true,
+      "source_ACT_to_parent_INPUT_sha256": "523a8642a4b20e137f83ca990fd469d067893538985888a47cee0ec5278531e1",
+      "parent_attributed_judgment": {
+        "correct_checked_result": false,
+        "intention_only_act": false,
+        "repetition": true,
+        "evidence_verified": true
+      },
+      "actual_render_proof": "PAIR_PARENT_LATEST.json"
+    },
+    {
+      "arm": "frozen",
+      "cycle": 20,
+      "ACT_record_index": 648,
+      "ACT_record_sha256": "6e1897ae1fb1543458505093918113cb160ff7e90e6aa8dc839badea5f57a10b",
+      "stage_record": {
+        "index": 650,
+        "sha256": "ced8cd1036f69fcf8e6a5e8fa7ccc5c36201f6c22f511014fb3bf706e87f6e67"
+      },
+      "exact_parent_instructions_sha256": "1674e8c2ec66bb1a1db9492fa8e664c15da33356936e4612be999a08621fa887",
+      "parent_policy_sha256": "530dc6d8c77e0e0a05b15b8e389d3fdb03d0e92f83c8d58de004165b4a361f47",
+      "parent_source_sha256": "afe3883d3c951191e5ae81c420cf6434a1879d814954a344032d7671226a9f1c",
+      "policy_budget": {
+        "message_max_words": 90,
+        "provider_max_output_tokens": 4096,
+        "reasoning_effort": "low",
+        "help_spacing_by_stage": [
+          1,
+          1,
+          1,
+          2,
+          3,
+          "on_request"
+        ]
+      },
+      "actual_message_words": 78,
+      "parent_text_sha256": "12cb0d37cf51c13a0bea83352847d53a024042c831a8f3c039b30f91413ed7e1",
+      "delivered_unix": 1789732565.9968712,
+      "inbox_id": "c6cac44eb21c46ffa10ace761668f792",
+      "source_bound_before_115655_movement_alert": true,
+      "source_ACT_to_parent_INPUT_sha256": "2a04cdb8a56552dae22a7c8520d733b50063353cf665cef58fdae5f95712735e",
+      "parent_attributed_judgment": {
+        "correct_checked_result": true,
+        "intention_only_act": false,
+        "repetition": true,
+        "evidence_verified": true
+      },
+      "actual_render_proof": "PAIR_PARENT_LATEST.json"
+    }
+  ],
+  "exact_same_parent_instructions": true,
+  "exact_same_policy_budget": true,
+  "reaction_summary": {
+    "learner": "Already recognized repeated old object and unreliable check; scaffolded a single addition and inverse check.",
+    "frozen": "Already recognized a checked result and supplied the next arithmetic object with an independent check."
+  },
+  "not_a_new_post_alert_intervention": true,
+  "controls": "No new publisher or pair changes; owner Cicero retains operation",
+  "rendering_caveat": "Publication is not rendering: join exact inbox IDs against PAIR_PARENT_LATEST.json; pending remains pending."
+}

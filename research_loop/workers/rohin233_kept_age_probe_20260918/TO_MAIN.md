@@ -1,8 +1,21 @@
-# R233 actual separation — September 18, 2026 11:51 UTC
+# R233 current handoff — September 18, 2026 12:13:19 UTC
 
-Current continuation receipt: `R233_STATUS.md` / `R233_STATUS.json`, including
-the actual pair parent renders and fresh-sleep1 probe LOAD. This initial handoff
-is retained as the earlier cut, not presented as the current queue total.
+Earlier continuation receipts `R233_STATUS.md` / `R233_STATUS.json` remain
+historical cuts, not the current queue totals. No earlier result is rewritten.
+
+Superseding12:13:19UTC queue/capture/result status: `QUEUE_COVERAGE.md` and
+`QUEUE_COVERAGE.json` include all16 confirmed native roots. First fresh-age
+probe is COMPLETE and age2 is actually LOADED. `BASE_HOURLY.md` and
+`PARENT_RENDER_LATEST.json` supply base ACT/token totals without another hourly
+service. `PAIR_ALERT_REACTION.json` proves identical actual parent instructions
+and policy budgets reacting to ACT751/648; the learner correction subsequently
+rendered REQUEST822 at12:02:51.382756UTC (`PAIR_PARENT_LATEST.json`).
+
+Current native ledger:574 enrolled,28 coherent captured,5 eligible,4 evaluated
+(including3 preserved R232 native-source evaluations),1 probe running at this
+cut.506 ages await capture;23 captured ages await exposure eligibility;40 old
+C2 paths are unavailable at their registered checkpoint locations, not proven
+lost from all archives.570 ages remain unevaluated. Every age remains listed.
 
 Continuous frozen base now has a genuinely rendered NEW `R233_PARENT_v1`
 scripted Leibniz parent/curriculum, not a relabeled unparented control.
@@ -21,17 +34,33 @@ Guidance amount is unmatched to other lives; no adapter-versus-scaffold claim.
 All AGE EVALUATION remains parent-free, including the flat base reference.
 No source working state, parent text or curriculum enters evaluation context.
 Physical0/1 remain Cicero's; scorers2/3 and player/scorer4/5 untouched.
-Physical6/7 were free on fresh physical+process census; preparing a bounded
-6144-token original-battery probe of coherently captured fresh-learner sleep1.
-No LOADED claim for that probe yet. All original R232 results remain frozen.
+Fresh learner sleep1/optimizer48 actually COMPLETE12:00:57.076972UTC:
+6144 child tokens,107 newly scored strings,51 raw accepted,29 new-pixel events.
+Fresh sleep2/optimizer96 LOADED12:08:24.947468UTC,observed12:13:19UTC at
+5889/6144 tokens on physical6 with judge7. No further completion is assumed.
+All original R232 results remain frozen. Raw acceptance is not certified humor.
 
-Every-sleep CPU enrollment daemon1172377 is running, expires14:00UTC.
-284 verified COMPLETE records enrolled across15 pinned native lives at11:50:30UTC;
-the journal coverage backlog is explicit, not age subsampling. Enrollment is
-NOT adapter capture/evaluation. Existing fresh queue125962 separately has
-coherent ages1–8 and continues without interference. It was not restarted.
-Main R233 intake confirms the retained math trio. Extra node2 unparented player
-still needs explicit kept disposition; do not silently omit/retire it.
+Every-sleep CPU enrollment daemons1172377 and1273274 cover16 distinct journals,
+expire14:00UTC,and are caught up to their individual recorded scan cuts.
+GAME_UNPARENTED_N2 is included; Jason owns its newly authorized parent epoch,
+whose actual rendering is not asserted here. Existing fresh queue125962 was
+not restarted; its bound capture cut verifies ages1–10. FRESH_R231 is the learner
+alias; the frozen sibling is distinct. Standalone base has opportunities, not
+fabricated native sleeps. Enrollment is NOT adapter capture/evaluation.
+
+Measured first complete probe365.335s implies9.85 sources/hour from one sample:
+about17 more completions before13:59:30UTC is only a point estimate. The present
+backlog requires about57.8h before source/eligibility delays; this allocation
+cannot clear it. Selection is disclosed: fresh1 thenfresh2. Oldest available
+sources for the other15 lives are captured for round-robin eligibility work.
+There is no automatic all-backlog GPU dispatcher; later dispatch remains work.
+
+Base observation12:12:20UTC:9 guidance deliveries,0 bridge errors,88478 total
+child tokens. New parented epoch has8 ACT attempts,58 newly scored strings,
+38 raw accepted and11 new-pixel events; unmatched guidance prevents a causal
+adapter/scaffold comparison. Pair policy is identical but counts are unequal:
+learner11/12 and frozen22/23 rendered/consumed parent turns at12:06:55UTC.
+Frozen ACT648 correction actually rendered REQUEST671 at11:59:01.530462UTC.
 
 Main/Cicero: no GPU0/1 controls or scorer publication from this worker. Please
 retain the new base treatment boundary in hourly/parent comparisons. Original

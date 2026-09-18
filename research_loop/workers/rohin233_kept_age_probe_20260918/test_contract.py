@@ -182,3 +182,24 @@ def test_readonly_parent_receipt_observers_compile():
     from research_loop.workers.rohin233_kept_age_probe_20260918 import observe_parent, observe_pair
     compile(observe_parent.CODE, '<parent-render>', 'exec')
     compile(observe_pair.CODE, '<pair-render>', 'exec')
+
+
+def test_retained_capture_is_not_eligibility_and_does_not_copy_context(tmp_path):
+    from research_loop.workers.rohin233_kept_age_probe_20260918 import capture_retained
+    target = fixture(tmp_path)
+    checkpoint = Path(target['root']) / 'checkpoints/sleep_000001'
+    (checkpoint / 'adapter').mkdir(parents=True)
+    names = ['README.md', 'adapter_config.json', 'adapter_model.safetensors']
+    for name in names:
+        (checkpoint / 'adapter' / name).write_bytes(b'synthetic-not-model')
+    (checkpoint / 'COMMIT.json').write_text(json.dumps(dict(base_sha256=enroll.BASE,
+        adapter_state_sha256='d' * 64, optimizer_steps=0,
+        adapter_files={name:capture_retained.sha(checkpoint / 'adapter' / name) for name in names})))
+    entry = enroll.page(target, {})['entries'][0]
+    source = capture_retained.capture(target, entry, tmp_path / 'custody')
+    assert source['eligibility'].startswith('PENDING') and source['relative_sleep'] is None
+    assert source['source_context_copied_or_loaded'] is False and source['learner_signals'] == []
+    assert capture_retained.capture(target, entry, tmp_path / 'custody') == source
+    (checkpoint / 'adapter/adapter_model.safetensors').write_bytes(b'tamper')
+    with pytest.raises(ValueError, match='retained_adapter_commit_hashes'):
+        capture_retained.capture(target, entry, tmp_path / 'bad')

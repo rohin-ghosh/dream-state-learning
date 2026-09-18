@@ -25,7 +25,7 @@ def write(path, value):
         json.dump(value, stream, sort_keys=True)
 
 
-def prepare(root, source_root, original, queued, life):
+def prepare(root, source_root, original, queued, life, condition=None):
     if root.exists() or root.resolve() != root or queued.is_symlink():
         raise ValueError('new_canonical_probe_root')
     source = read(queued / 'SOURCE.json')
@@ -108,8 +108,9 @@ def prepare(root, source_root, original, queued, life):
     if not semantic['eligible']:
         write(root / 'EXPOSURE_INELIGIBLE.json', semantic)
         raise ValueError('fresh_development_scene_exposure_unresolved_or_seen')
-    source['source_name'] = 'R231_FRESH_LEARNING_BIRTH'
-    condition = 'R233_FRESH_R231_s' + str(source['absolute_sleep'])
+    condition = condition or 'R233_' + source['source_name'] + '_s' + str(source['absolute_sleep'])
+    if not re.fullmatch(r'R233_[A-Za-z0-9_]+', condition):
+        raise ValueError('bounded_source_condition_name')
     identity = read(source_root / 'CONDITION.json')
     identity.update(condition=condition, source_name=source['source_name'], absolute_sleep=source['absolute_sleep'],
         sleep_complete_sha256=source['sleep_complete_sha256'], parent_tokens=0,
@@ -137,5 +138,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     for field in ('root', 'source-root', 'original', 'queued', 'life'):
         parser.add_argument('--' + field, type=Path, required=True)
+    parser.add_argument('--condition')
     args = parser.parse_args()
-    print(json.dumps(prepare(args.root, args.source_root, args.original, args.queued, args.life)))
+    print(json.dumps(prepare(args.root, args.source_root, args.original, args.queued, args.life, args.condition)))

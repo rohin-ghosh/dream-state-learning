@@ -1,6 +1,7 @@
 """Report source-bound parent rendering, not only endpoint setup."""
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 import subprocess
 
@@ -42,6 +43,30 @@ for event in state['events']:
  totals['ACT_attempts']+=1
  for key,field in [('parsed','parsed'),('scored','scored'),('accepted','accepted'),('new_pixels','novel'),('cached','cached'),('faults','fault')]:
   totals[key]+=int(event.get(field,0) or 0)
+now=time.time()
+first_unix=min(row['finished_unix'] for row in state['generations'])
+hourly=[]
+for start in range(int(first_unix//3600)*3600,int(now//3600)*3600+1,3600):
+ end=min(start+3600,now)
+ selected=[row for row in state['events'] if start<=row['finished_unix']<end]
+ generations=[row for row in state['generations'] if start<=row['finished_unix']<end]
+ tokens={stage:sum(row['generated_tokens'] for row in generations if row['stage']==stage) for stage in ['THINK','ACT','LEARN']}
+ per_phase={phase:dict(ACT_attempts=0,scored=0,accepted=0,new_pixels=0) for phase in ['historical_unparented','R233_parented']}
+ for row in selected:
+  phase='R233_parented' if rendered and row['finished_unix']>rendered[0]['finished_unix'] else 'historical_unparented'
+  per_phase[phase]['ACT_attempts']+=1
+  for key,field in [('scored','scored'),('accepted','accepted'),('new_pixels','novel')]:per_phase[phase][key]+=int(row.get(field,0) or 0)
+ hourly.append(dict(start_unix=start,end_unix=end,partial=end<start+3600 or first_unix>start,
+  ACT_attempts=len(selected),parsed=sum(row['parsed'] for row in selected),
+  scored=sum(row['scored'] for row in selected),accepted=sum(row['accepted'] for row in selected),
+  new_pixels=sum(row['novel'] for row in selected),cached=sum(row['cached'] for row in selected),
+  faults=sum(bool(row['fault']) for row in selected),planned_unknown=sum(row.get('planned') is None for row in selected),
+  no_caption_ACTs=sum(row.get('no_caption_act') is True for row in selected),
+  routing_ambiguity_ACTs=sum(row.get('routing_ambiguity') is True for row in selected),
+  generation_count=len(generations),child_generated_tokens=sum(tokens.values()),tokens_by_stage=tokens,
+  acceptance_per_new_score=(sum(row['accepted'] for row in selected)/sum(row['scored'] for row in selected)) if sum(row['scored'] for row in selected) else None,
+  treatment_breakdown=per_phase))
+token_sum=sum(row['generated_tokens'] for row in state['generations'])
 result=dict(schema='R233_PARENT_RENDER_EVIDENCE_V1',unix=time.time(),epoch='R233_PARENT_v1',
  bridge_pid=active['pid'],bridge_live=proc(active['pid']),player_pid=162813,player_live=proc(162813),
  scorer_pid=162806,scorer_live=proc(162806),source_process_signals=[],guidance_deliveries=len(receipts),
@@ -53,7 +78,11 @@ result=dict(schema='R233_PARENT_RENDER_EVIDENCE_V1',unix=time.time(),epoch='R233
  distinct_guidance_texts=len(guides),delivered_guidance_text_tokens=sum(guide_tokens[row['guidance_sha256']] for row in receipts),
  rendered_guidance_span_tokens=sum(row['rendered_guidance_span_tokens'] for row in rendered),
  guidance_tokenizer_backend_sha256=hashlib.sha256(tokenizer.to_str().encode()).hexdigest(),
- phase_counts=phase_counts,raw_counts_not_literal_humor_review=True,
+ phase_counts=phase_counts,raw_counts_not_literal_humor_review=True,hourly_rows=hourly,
+ token_accounting=dict(retained_generation_tokens=token_sum,controller_total_tokens=state['total_generated_tokens'],
+  exact_retained_coverage=token_sum==state['total_generated_tokens'],counts_as_of_finished_generation=True),
+ hourly_definition='UTC half-open windows; ACT attempts by completed feedback event; all child tokens by completed generation; partial windows explicit; not an hourly rate',
+ planned_unknown_definition='declared output cardinality absent, not unknown judge score',
  no_matched_adapter_scaffold_claim=True,parent_free_age_probes_unchanged=True)
 print(json.dumps(result))
 '''
@@ -67,7 +96,28 @@ def main():
     receipt = json.loads(result.stdout)
     root = Path(__file__).resolve().parent
     (root / 'PARENT_RENDER_LATEST.json').write_text(json.dumps(receipt, indent=2) + '\n')
-    print(json.dumps({key: value for key, value in receipt.items() if key != 'rendered_generations'}))
+    lines = ['# Continuous frozen-base hourly ACT and token receipt', '',
+        'Observed UTC: ' + datetime.fromtimestamp(receipt['unix'], timezone.utc).isoformat(), '',
+        'Existing read-only receipt only; no new hourly daemon. ACT means completed-feedback attempt. '
+        'Tokens count all completed child generations, charged on completion. Partial windows are not hourly rates.', '',
+        '| UTC window | ACT attempts | Scored strings | Raw accepted | New pixels | Faults | THINK tokens | ACT tokens | Total tokens |',
+        '|---|---:|---:|---:|---:|---:|---:|---:|---:|']
+    for row in receipt['hourly_rows']:
+        start = datetime.fromtimestamp(row['start_unix'], timezone.utc).strftime('%H:%M:%S')
+        end = datetime.fromtimestamp(row['end_unix'], timezone.utc).strftime('%H:%M:%S')
+        label = start + '–' + end + (' partial' if row['partial'] else '')
+        lines.append(f"| {label} | {row['ACT_attempts']} | {row['scored']} | {row['accepted']} | {row['new_pixels']} | "
+            f"{row['faults']} | {row['tokens_by_stage']['THINK']} | {row['tokens_by_stage']['ACT']} | {row['child_generated_tokens']} |")
+    lines += ['', 'Retained token reconciliation: ' + json.dumps(receipt['token_accounting'], sort_keys=True), '',
+        '10–11UTC is verified inactivity during the known stopped epoch, not missing collection. '
+        '11–12UTC includes both the real gap before11:25 continuation and the R233 policy change; not a full active hour or single treatment.',
+        'R233 first actual guidance-bearing THINK completed11:51:03.269701UTC; exact request3756bc63… is the boundary. '
+        'Treatment-separated counts are in PARENT_RENDER_LATEST.json / phase_counts and hourly_rows / treatment_breakdown.',
+        'Accepted strings are not certified literal jokes or novel ideas; repetitions and parser commentary may remain. '
+        'No historical rescore. planned_unknown means missing declared cardinality, not unknown score. '
+        'Guidance-span tokens are separately measured and unmatched; wrappers are not included. Main owns aggregate/hourly publication.']
+    (root / 'BASE_HOURLY.md').write_text('\n'.join(lines) + '\n')
+    print(json.dumps({key: value for key, value in receipt.items() if key not in ('rendered_generations', 'hourly_rows')}))
 
 
 if __name__ == '__main__':

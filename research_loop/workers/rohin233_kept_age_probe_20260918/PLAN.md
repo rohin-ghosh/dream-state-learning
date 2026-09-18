@@ -35,7 +35,9 @@ age series. Raw accepted/new-pixel events are not certified humor or global idea
 Register C2, C0, P3, P7, Astra7, five node3 caption forks, the kept math trio,
 and the fresh learner/frozen sibling. Continuous standalone base has no native
 sleep counter: record opportunities/treatment epochs and its flat weight reference,
-never fabricate SLEEP_COMPLETE. An extra node2 player awaits Main's kept disposition.
+never fabricate SLEEP_COMPLETE. Main explicitly confirmed GAME_UNPARENTED_N2
+as the sixteenth distinct native journal under a new parented epoch; Jason owns
+that parenting. FRESH_R231 is the existing learner alias, not an extra root.
 
 CPU-only read-only journal scanning uses pinned journal and initial LOADED
 identity, canonical hashes, chain continuity, finite records per poll and explicit
