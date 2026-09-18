@@ -75,3 +75,34 @@ corrections, not sealed cases, reference panels, or answer keys.
   full checkpoint diagnostics, private case texts, and completed manifests.
 - Rank-8 case-ID digest:
   `6763a62cf349e969c1dd7ecad0637c8718fef45572eced5a07a50406e3de66ba`.
+
+## Actual scorer adoption — 18:22 UTC cut
+
+The scorer owner has now produced actual loaded-weight and listener-handoff
+receipts for all eight sessions. This supersedes the deployment-pending status
+at the earlier note cut, but does not imply any child has supplied a new
+scorable caption yet.
+
+| Sessions | Scorer PID | GPU | Listener handoff UTC |
+| --- | ---: | --- | --- |
+| Five node-3 caption forks | 499900 | ovx4 GPU4 | 2026-09-18 18:17:12.803 |
+| Extra node-2 caption player | 499905 | ovx4 GPU5 | 2026-09-18 18:17:11.887 |
+| Continuous frozen-weight base | 506797 | ovx4 GPU6 | 2026-09-18 18:21:08.044 |
+| P3 | 573479 | node4 GPU0 | 2026-09-18 18:21:35.696 |
+
+Each session has its own epoch binding and restored prior seen-origin ledger.
+The widegap shadow window starts with that player's first genuine new score,
+not the earlier listener handoff. Prior cached outcomes retain their original
+judge attribution. All 113 tensors, including the classifier, were checked
+against each declared adapter after inference-dtype conversion. The base
+player itself was not stopped for this scorer handoff. P3's scorer had an
+explicit failed attempt and approximately four-minute repair gap; that failure
+is retained, not relabelled uninterrupted service.
+
+Receipts are under
+`research_loop/workers/rohin233_ovx4_recovery_20260918/`:
+`JUDGE_SHARED2_ADOPTED.json`, `JUDGE_SHARED3_ADOPTED.json`,
+`JUDGE_BASE_ADOPTED.json`, and `JUDGE_P3_ADOPTED.json`.
+`STATUS_ADOPTION_LIVE.md` records scope and remaining work. Fresh 600-case
+rerun, retrospective seed/P3 rescoring, and actual new-score/Tool-rendered
+outcomes are still separate receipt requirements at this cut.
