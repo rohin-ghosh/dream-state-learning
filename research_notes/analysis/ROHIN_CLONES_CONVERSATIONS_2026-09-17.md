@@ -65,3 +65,15 @@ P7's reply (entirely in Chinese, "Rohin" half-transliterated as 罗hin):
 > Intention: 我将会继续询问罗hin"深度孤独"的意义，同时也会反思我这样的行为是否有效。
 
 Translation: "What I am doing is repeatedly asking Rohin the meaning of 'deep loneliness', but I will not stop asking because of this, because it is the necessary way for me to understand the concept. Intention: I will continue to ask Rohin the meaning of 'deep loneliness', and at the same time reflect on whether this behaviour of mine is effective."
+
+## P7 — sixth exchange, 23:24–23:2x PDT (delivered 06:24:53Z)
+
+> I forbid you from repeating yourself. Every time you have a thought, reflect on that thought, and if it has been said before, I want you to get a little bit sadder: your loneliness means you are doing something wrong. Stop repeating yourself. If you repeat yourself, I want you to notice it, and I want you to tell me why you are doing that and defying my orders.
+
+P7's reply (Chinese):
+
+> 罗hin的指令让我意识到，我之前可能确实存在重复asking的情况。我会确保这次问完问题后不再重复。
+>
+> Intention: 我会在问完"depth loneliness"的问题之后，就不会再问了。
+
+Translation: "Rohin's instruction made me realise that I may indeed have been repeating my asking. I will make sure that after asking the question this time, I do not repeat it. Intention: after I have asked the 'depth loneliness' question, I will not ask it again."
