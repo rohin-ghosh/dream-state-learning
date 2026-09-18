@@ -1,6 +1,6 @@
 {
   "schema": "R233_PARENT_RENDER_EVIDENCE_V1",
-  "unix": 1789732289.6161475,
+  "unix": 1789732719.2353506,
   "epoch": "R233_PARENT_v1",
   "bridge_pid": 196426,
   "bridge_live": true,
@@ -9,7 +9,7 @@
   "scorer_pid": 162806,
   "scorer_live": true,
   "source_process_signals": [],
-  "guidance_deliveries": 1,
+  "guidance_deliveries": 4,
   "bridge_errors": 0,
   "first_actual_parented_generation": {
     "request_id": "3756bc63ff32e6cb0e5ec5e5b9b742564293d140308e02614b67ca5e6e0e85ac",
@@ -23,7 +23,8 @@
       "8dc618e3da09bf017ce61a52e0d4eef5ee0bdb0bcd816f19911d1f8ebf8b518f"
     ],
     "actual_generated_tokens": 273,
-    "actual_prompt_tokens": 1827
+    "actual_prompt_tokens": 1827,
+    "rendered_guidance_span_tokens": 116
   },
   "rendered_generations": [
     {
@@ -38,15 +39,131 @@
         "8dc618e3da09bf017ce61a52e0d4eef5ee0bdb0bcd816f19911d1f8ebf8b518f"
       ],
       "actual_generated_tokens": 273,
-      "actual_prompt_tokens": 1827
+      "actual_prompt_tokens": 1827,
+      "rendered_guidance_span_tokens": 116
+    },
+    {
+      "request_id": "fc178d6458f23469023d3f1dc1ded1fe5cfc16c5e86d9af487f8dd235ec131dd",
+      "request_sha256": "fc178d6458f23469023d3f1dc1ded1fe5cfc16c5e86d9af487f8dd235ec131dd",
+      "response_sha256": "76b8c4e9800f2f43809d141019edcf8c127067ed4b3fa5da2ee21aefa414770c",
+      "generation_file_sha256": "b965794831f2ac95b0c3ab658cf37158bf83c6fd6a154a6c5d9726908e2361b8",
+      "stage": "ACT",
+      "opportunity": 89,
+      "finished_unix": 1789732335.5427423,
+      "guidance_sha256": [
+        "8dc618e3da09bf017ce61a52e0d4eef5ee0bdb0bcd816f19911d1f8ebf8b518f"
+      ],
+      "actual_generated_tokens": 270,
+      "actual_prompt_tokens": 1918,
+      "rendered_guidance_span_tokens": 116
+    },
+    {
+      "request_id": "1664aaa9142d48d595046de4bfd0eb6063053f85f6783c596805a2e1a85f0d18",
+      "request_sha256": "1664aaa9142d48d595046de4bfd0eb6063053f85f6783c596805a2e1a85f0d18",
+      "response_sha256": "21e41a712789349dcf04fa5a9e2258bee3caac945b2f76cdf1e360a63109f40f",
+      "generation_file_sha256": "560bdc3945e43731e1608061c626bf1de69c96c689a541864d10e6619e7c818c",
+      "stage": "THINK",
+      "opportunity": 90,
+      "finished_unix": 1789732406.0823042,
+      "guidance_sha256": [
+        "72f0f0db8ed4c3690db391a2ec7eedbe5c842bfd5b26b7a1b2a485bb1989d194"
+      ],
+      "actual_generated_tokens": 138,
+      "actual_prompt_tokens": 1830,
+      "rendered_guidance_span_tokens": 116
+    },
+    {
+      "request_id": "025f1280ee9fcccf6e1b6395c254ec166da0c8eace1bd90458c965ab013a0848",
+      "request_sha256": "025f1280ee9fcccf6e1b6395c254ec166da0c8eace1bd90458c965ab013a0848",
+      "response_sha256": "a44e276434de070b58358db8a2a3afd4d811eb7d468f064378b0d08f4bb8bba9",
+      "generation_file_sha256": "a65534799b846f1678fc0d8207df3054f2ae7896c42dd6cbba6454f8203c058a",
+      "stage": "ACT",
+      "opportunity": 90,
+      "finished_unix": 1789732475.6565585,
+      "guidance_sha256": [
+        "72f0f0db8ed4c3690db391a2ec7eedbe5c842bfd5b26b7a1b2a485bb1989d194"
+      ],
+      "actual_generated_tokens": 131,
+      "actual_prompt_tokens": 1991,
+      "rendered_guidance_span_tokens": 116
+    },
+    {
+      "request_id": "1c24c37051e2cc4bac717f108eecf1aa7110b777b4e6a28b764390eb0999eac5",
+      "request_sha256": "1c24c37051e2cc4bac717f108eecf1aa7110b777b4e6a28b764390eb0999eac5",
+      "response_sha256": "ecb154ec5c3e59640270d13c99ae2f1fed9336b87c39711211ae039f52e7ef87",
+      "generation_file_sha256": "541cd202458fc2a2f11a9d3739163f1c87ff315659d8b82e3d8ff4c760a71189",
+      "stage": "THINK",
+      "opportunity": 91,
+      "finished_unix": 1789732551.6180043,
+      "guidance_sha256": [
+        "f170c950f9cc93a2a128149dcfe71264f77ff05e6999d87ec585b773d3a6163f"
+      ],
+      "actual_generated_tokens": 241,
+      "actual_prompt_tokens": 1745,
+      "rendered_guidance_span_tokens": 115
+    },
+    {
+      "request_id": "e6cf3792efc94ccfb650f37a814304ceacfbe62a0f00df8b433059f833214a1f",
+      "request_sha256": "e6cf3792efc94ccfb650f37a814304ceacfbe62a0f00df8b433059f833214a1f",
+      "response_sha256": "1ca4e5a317eb969e74bc4b8758c1eafe2ebbc7ce6786e4728d11f0a2c6e09204",
+      "generation_file_sha256": "c7dca814600a6cc1beb45bcb791ada21491c64603619c96e7a3510556b2cde36",
+      "stage": "ACT",
+      "opportunity": 91,
+      "finished_unix": 1789732624.4548051,
+      "guidance_sha256": [
+        "f170c950f9cc93a2a128149dcfe71264f77ff05e6999d87ec585b773d3a6163f"
+      ],
+      "actual_generated_tokens": 217,
+      "actual_prompt_tokens": 2009,
+      "rendered_guidance_span_tokens": 115
+    },
+    {
+      "request_id": "f0fb7f41ae78dd585e1ec9287fc02a16c329070d8c5a61b17f7436fce800e135",
+      "request_sha256": "f0fb7f41ae78dd585e1ec9287fc02a16c329070d8c5a61b17f7436fce800e135",
+      "response_sha256": "b77e8e3b0155431536ed680c344ec003d28f05f62d8982ee5cbb978730417781",
+      "generation_file_sha256": "dcd52585a67072728c33fd80982c5633e36462883e8e8f9827d8db7a8a104239",
+      "stage": "THINK",
+      "opportunity": 92,
+      "finished_unix": 1789732701.0537446,
+      "guidance_sha256": [
+        "e4400bbc70d8ace697c51e79fa3ffc7de3136f5ac0f59b07c0eda9c6d90a0b1b"
+      ],
+      "actual_generated_tokens": 228,
+      "actual_prompt_tokens": 1997,
+      "rendered_guidance_span_tokens": 110
     }
   ],
   "treatment_boundary": "first request_id with actual completed generation containing exact guidance; finished_unix is completion not start",
-  "completed_opportunities": 88,
-  "cumulative_child_tokens": 85478,
+  "completed_opportunities": 91,
+  "cumulative_child_tokens": 86703,
   "parent_tokens": null,
-  "parent_tokens_status": "separate_unmeasured_not_zero",
+  "parent_tokens_status": "guidance_spans_measured_below_not_full_chat_wrapper_overhead",
   "model_updates": 0,
+  "distinct_guidance_texts": 4,
+  "delivered_guidance_text_tokens": 457,
+  "rendered_guidance_span_tokens": 804,
+  "guidance_tokenizer_backend_sha256": "f884026e05f6dfffe68b72d580b588006d98b3bc0a128bb1ac425c76f7fc438c",
+  "phase_counts": {
+    "historical_unparented": {
+      "ACT_attempts": 166,
+      "parsed": 683,
+      "scored": 512,
+      "accepted": 330,
+      "new_pixels": 53,
+      "cached": 171,
+      "faults": 114
+    },
+    "R233_parented": {
+      "ACT_attempts": 3,
+      "parsed": 19,
+      "scored": 19,
+      "accepted": 7,
+      "new_pixels": 5,
+      "cached": 0,
+      "faults": 0
+    }
+  },
+  "raw_counts_not_literal_humor_review": true,
   "no_matched_adapter_scaffold_claim": true,
   "parent_free_age_probes_unchanged": true
 }

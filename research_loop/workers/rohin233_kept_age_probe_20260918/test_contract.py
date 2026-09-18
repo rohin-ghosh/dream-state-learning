@@ -176,3 +176,9 @@ def test_probe_does_not_load_source_parent_or_optimizer():
     assert 'parent_tokens=0,source_parent_text_loaded=False' in source
     assert "source['sleep_complete_sha256']==identity['sleep_complete_sha256']" in source
     assert 'contract.run_cell(backend,scene,seed,score,emit)' in source
+
+
+def test_readonly_parent_receipt_observers_compile():
+    from research_loop.workers.rohin233_kept_age_probe_20260918 import observe_parent, observe_pair
+    compile(observe_parent.CODE, '<parent-render>', 'exec')
+    compile(observe_pair.CODE, '<pair-render>', 'exec')

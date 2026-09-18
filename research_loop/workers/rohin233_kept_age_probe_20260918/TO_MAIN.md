@@ -1,5 +1,9 @@
 # R233 actual separation — September 18, 2026 11:51 UTC
 
+Current continuation receipt: `R233_STATUS.md` / `R233_STATUS.json`, including
+the actual pair parent renders and fresh-sleep1 probe LOAD. This initial handoff
+is retained as the earlier cut, not presented as the current queue total.
+
 Continuous frozen base now has a genuinely rendered NEW `R233_PARENT_v1`
 scripted Leibniz parent/curriculum, not a relabeled unparented control.
 Original player162813/scorer162806 remain live and unchanged; bridge196426
