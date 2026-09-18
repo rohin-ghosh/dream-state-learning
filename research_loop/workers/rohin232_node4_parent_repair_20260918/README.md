@@ -203,3 +203,27 @@ Perform one physical at a time, only for 2, 3, 5 and 6:
 
 The signal operations above are only a specification for Main's later approved
 CPU handoff. None was executed by this worker.
+
+## Main adoption and actual rendering
+
+Main subsequently performed the exclusive CPU-parent handoffs at10:38:52–
+10:39:07UTC on September 18, 2026. Per-physical `HANDOFF.json` and `LIVE.json`
+preserve the old/new process identities, unchanged history and measured CPU
+handoff intervals. No learner was signalled or restarted.
+
+The independent read-only audit at11:17:30UTC checked the exact inbox text in
+actual user-role REQUEST messages and their canonical record hashes:
+
+| Physical | First repaired-parent inbox | Rendered REQUEST |
+| --- | --- | ---: |
+| 2 | `c087a8c35be644df9fec446e1975af7d` | 2937 |
+| 3 / P3 | `72299f008542469aa0e18ec8a8172313` | 2629 |
+| 5 | `4b4d7b3bce1a4a77b965ef86b2ceb6e8` | 3133 |
+| 6 / MATH_C | `c60c09c8d0654ecd9e8b3201af17b51c` | 3246 |
+
+`FIRST_RENDER_20260918T1117Z.json` contains the full inbox, text and REQUEST
+hashes. All four have actual delivery evidence, not merely a running publisher.
+This proves neither useful uptake nor retention. Some later physical3/5 parent
+attempts still failed the English/script validator; those failures were retained,
+not bypassed or represented as delivered turns. No native LEARN-filter policy
+was changed by this CPU-parent repair.
