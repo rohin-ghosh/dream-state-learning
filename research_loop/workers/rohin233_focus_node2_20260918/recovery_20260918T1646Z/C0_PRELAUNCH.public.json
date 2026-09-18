@@ -1,0 +1,65 @@
+{
+  "archive_replay": {
+    "original_journal_unchanged": true,
+    "proof": {
+      "index": 2870,
+      "path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/r233_preserved/stream/records/00000000000000002870.json",
+      "sha256": "a52b3e61d9ba6dcb74e84bbb42d4cdc28239e6e387149b05fd14e24c6e79844f"
+    },
+    "verified": true
+  },
+  "arm": "C0",
+  "cpu_tests": [
+    "test_r233_node2_recovery",
+    "test_orch_r227_learning_policy",
+    "test_orch_r125_continual_native",
+    "test_orch_r184_think_act_learn"
+  ],
+  "hard_end_utc": "2026-09-18T22:55:15.395191+00:00",
+  "lease_end_utc": "2026-09-19T00:10:00+00:00",
+  "observed_utc": "2026-09-18T17:04:08.011579+00:00",
+  "physical_gpu": 4,
+  "policy": [
+    "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+    "R227_ALL_AUTHENTIC_CHILD_ROWS_V1"
+  ],
+  "private_bytes_exported": false,
+  "receiving_cpu_sha256": "de0200c57a33d468c258d6363216c2aba11d219a33beda9d48f19fbb804452fa",
+  "recovery": {
+    "authorization_description": "R233 explicit kept-life restart after diagnosis",
+    "birth_compaction_repeated": false,
+    "checkpoint_sha256": {
+      "adapter": "b95c6e27f8c80ff7c7f6c7016898c93831b5766a427d5b993343831a99f40a79",
+      "optimizer": "b8d84f6a3596b726a7179053715cf7fd3c3df0176f97d7c44f7c490d8cafb38d",
+      "rng": "b8d84f6a3596b726a7179053715cf7fd3c3df0176f97d7c44f7c490d8cafb38d"
+    },
+    "complete_cycle": 98,
+    "complete_path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/raw/stream/records/00000000000000002856.json",
+    "complete_sha256": "a82d332a861d3ae1352300cb2502a2c5d0128c7717a5b1188e49385bc2e75595",
+    "exact_resident_continuity_claimed": false,
+    "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+    "lost_tail_updates": 0,
+    "new_deadline_unix": 1789772115.3951912,
+    "old_head_index": 2869,
+    "old_head_sha256": "bced867d87f3e9a902eea461b4f38221e29e1dd54d21ae9d6030d09714c97f50",
+    "old_native_absent": true,
+    "old_native_pid": 2561156,
+    "old_outer_exit": {
+      "finished_unix": 1789734763.2649865,
+      "status": 1
+    },
+    "old_outer_exit_status": 1,
+    "old_plan_sha256": "f45ff013614aa12f905e8767d310001ca3da482b13cce794469e1b3708f739b2",
+    "optimizer_steps": 6156,
+    "original_tail_records_retained": true,
+    "policy_change": "Prospective approved R227, both scopes; history unchanged",
+    "preservation_manifest_sha256": "3202ef08f7bd0d56b139ec17c86cff3243176a4f773007953dcba72f7285f6d6",
+    "restored_state_sha256": "76dc9f71a7b8d6e671a56ead7743cdd6a59da1a5550b07157418dd2f2284aa5f",
+    "saved_state_sha256": "82b0d273d8607098164011f2b4dfe0219f93a302e850ca95fdccbe6e3a149506",
+    "tail_record_count": 13
+  },
+  "source_pins_sha256": "14087488bce95e632cc64cb54a55d0d1f52805a71117544c42ced166b3513a72",
+  "source_python_count": 2292,
+  "status": "CPU_PASS_ARCHIVE_REPLAY_PASS_NOT_LAUNCHED",
+  "test_log": "----------------------------------------------------------------------\nRan 124 tests in 5.422s\n\nOK\n"
+}
