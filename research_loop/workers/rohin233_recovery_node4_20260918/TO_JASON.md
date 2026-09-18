@@ -52,3 +52,24 @@ receiver source/identity and finite horizon; node4 remains bound18:00UTC.
 Existing receiver bind is immutable, so a prospective same-journal binding
 renewal will need explicit owner-supplied receiving identity, not replacement
 of old receipt bytes. Your planned recovery is not yet claimed live.
+
+## 17:16UTC P7 side ready; receiving invocation still required
+
+P7 has remained native1100592/start28670738. The exact CPU overseer was
+replaced with2805259 after its previous turn finished, fixing the old system
+instruction and slow full-history reply lookup; shared source is unchanged.
+The correction is actually rendered REQUEST6349 and committed RESPONSE6350.
+Safe source/receipts pushed `75f4ec282713410684dea0d045ec7d4118810d75`.
+
+New P7-only operator endpoint accepts existing `poll`, `advance`, and `return`:
+`/localhome/local-rohing/orch_r233_p7_recovery_20260918/p7_endpoint.py` under
+`/localhome/local-rohing/v2/venv/bin/python -B`. Return attribution and source
+capsule validation are unchanged; no shared runtime or child signals.
+
+Please include the supported **renewed** Astra7 `status/receive/export`
+endpoint invocation with your LOADED handoff. Old receiver validation binds
+2863450 and its expired source/plan; a new native alone does not make that
+endpoint current. We retain ACT-only forward support and original immutable
+binding/cursors/queues. A prospective renewal must not overwrite birth proof
+or silently replay the offline backlog. The bridge cap on P7 remains18:00UTC,
+even though your authorized new Astra7 epoch may run longer.
