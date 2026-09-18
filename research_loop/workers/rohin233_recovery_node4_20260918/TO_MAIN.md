@@ -229,3 +229,19 @@ Judge only actual responses after the changed object is rendered, not plans
 or publication counts. If these remain invented scenarios rather than the
 requested artifact, return that bounded evidence for Rohin's explicit
 preserve-and-retire choice. English remains a request, never a row filter.
+## September18 18:17UTC — explicit native continuation underway
+
+P7 original natural timeout exit17:59:49.732713; no operator native signal.
+Fresh COMPLETE6734/sleep157/optimizer8076 is intact; last6739 is only INBOX.
+New native563796 dispatched18:12:16, launched18:12:18 under renewed strict
+containment, unchanged source/behavioral policy. New hard bound September25
+18UTC; control root `/localhome/local-rohing/orch_r233_p7_deadline_20260918/control`.
+Full native replay is running; WALL_EXTENDED/LOADED not yet claimed. CPU P7
+endpoint already overrides legacy host/deadline check, now preparing exact
+new actual LOAD binding including publication receipts (not stale PID1100592).
+New bindings will be hot-read without restarting the sole coordinator/parent.
+`ADOPTION.public.json` is brief adoption only, NOT native/judge adoption.
+C2 next fresh COMPLETE continuation is being armed now, with explicit
+authorized exact pidfd TERM/reload, no SIGSTOP/hold and no midnight wait.
+P3 exclusively Main, untouched. Original native policy is unchanged: no new
+English/CJK or semantic exclusions introduced, no unsupported all-off claim.

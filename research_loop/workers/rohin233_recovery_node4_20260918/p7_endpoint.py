@@ -11,6 +11,7 @@ import time
 from receipt_window import linked_reply, read_record
 from lease_horizon import cpu_horizon
 from route_truth import overlay
+from native_binding import verify as verify_native
 
 
 OPERATOR = Path('/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/MATH_C')
@@ -30,20 +31,24 @@ def install():
             and os.getuid() == 2524, 'same_node4_host_and_user')
         cpu_horizon()
 
-    original_live = endpoint.live
-
     def live(source):
-        original_live(source)
-        fields = Path('/proc/1100592/stat').read_text().rsplit(') ', 1)[1].split()
-        engine.require(fields[19] == '28670738', 'same_P7_native_start_ticks')
-        plan = Path(source).parent / 'control/PLAN.json'
-        engine.require(hashlib.sha256(plan.read_bytes()).hexdigest() ==
-            '6ac1502f85b1e0cba8a9870e9ed083c6afdc621a7ee451522ba8b19af0604d87'
-            and time.time() < json.loads(plan.read_bytes())['hard_end_unix'],
-            'CPU_renewal_does_not_extend_resident_native_budget')
+        root = engine.paths()[0]
+        return verify_native(Path(__file__).with_name('NATIVE_BINDING.json'), root, source)
 
     endpoint.host = host
     endpoint.live = live
+    original_write = endpoint.write_once
+
+    def write_current(path, document):
+        if 'actual_native_pid' in document:
+            actual = live(engine.paths()[2])
+            document = dict(document, actual_native_pid=actual['pid'],
+                actual_native_loaded_index=actual['loaded_index'],
+                actual_native_loaded_sha256=actual['loaded_sha256'],
+                actual_native_guard_sha256=actual['guard_sha256'])
+        return original_write(path, document)
+
+    endpoint.write_once = write_current
     original_observe = endpoint.observe
 
     def observe(reference=None):
@@ -56,14 +61,8 @@ def install():
     def poll(reference=None):
         root, previous, source, output = engine.paths()
         engine.require(engine.read(output / 'PHASE.json')['phase'] == engine.PHASE, 'same_existing_parent_phase')
-        process = Path('/proc/1100592')
-        fields = (process / 'stat').read_text().rsplit(') ', 1)[1].split()
-        engine.require(fields[19] == '28670738' and os.readlink(process / 'cwd') == str(source),
-            'same_P7_native_start_and_source')
+        actual_native = live(source)
         records = root / 'life/stream/records'
-        loaded = read_record(records / '00000000000000001986.json', JOURNAL)
-        engine.require(loaded['sha256'] == LOADED_SHA and loaded['document']['pid'] == 1100592,
-            'same_bound_loaded_P7')
         snapshot = engine.load('r233_p7_snapshot', engine.HOME / 'read_snapshot.py')
         result = snapshot.stored_poll(root / 'life', output / 'cursor', reference)
         state = result['snapshot']
@@ -91,7 +90,7 @@ def install():
             if not receipt.exists():
                 engine.write(receipt, dict(publication=published[-1]['publication'], reply=reply,
                     observed_unix=time.time(), scoring=False))
-        result.update(publications=published, reply=reply, earlier=earlier,
+        result.update(publications=published, reply=reply, earlier=earlier, actual_native=actual_native,
             render_receipts=[engine.read(path) for path in sorted(output.glob('RENDERED_*.json'))],
             completed=(output / 'COMPLETED.json').exists(),
             reply_reader='R233_P7_EXACT_RECORD_METADATA_LOOKUP_V1')

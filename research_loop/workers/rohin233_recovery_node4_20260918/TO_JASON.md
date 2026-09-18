@@ -120,3 +120,13 @@ P7's native still18UTC is separately reported blocked by no-live-restart rule.
 
 P7 correction/render/first-response plus next ordinary THINK/ACT receipts are
 already safely pushed in `02d646840155109c669e6215758f0700420bfcc1`.
+## September18 18:17UTC — P7 continuation, your Astra7 unchanged
+
+P7 old1100592 naturally exited17:59:49.733. User explicitly authorized same
+durable COMPLETE continuation. New native563796 dispatched18:12:16 with
+September25 18UTC horizon; unchanged source/root/journal, COMPLETE6734/157.
+Awaiting actual WALL_EXTENDED/LOADED before hot rebinding own P7 endpoint.
+Existing coordinator and cursors stay intact; your Astra7 actual3128/PID762967
+receiver remains the receiving identity and native22:59:36.105072 cap. Please
+send any later actual native/receiver renewal rather than changing routes by
+assumption. No signals/source changes to your learner from this worker.

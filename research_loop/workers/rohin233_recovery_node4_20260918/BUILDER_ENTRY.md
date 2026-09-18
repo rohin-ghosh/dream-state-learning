@@ -53,3 +53,13 @@ tail only LEARN-completion and INBOX metadata, no post-checkpoint updates.
 Use supported R131 authorization and actual WALL_EXTENDED on resume, same
 journal/root/inboxes; no SIGSTOP or deliberate hold. Six-hour safety bounds
 node4 September25 18UTC, node5 September20 18UTC, based on user-reported leases.
+
+18:17UTC: P7 dispatched18:12:16 from complete6734/157/8076; native replay
+pending, not claimed LOADED. Removed an unnecessary duplicate operator replay,
+not the unchanged native's full journal validation. C2 continuation reuses
+its original strict node5 containment, unchanged source and CPU tool gate.
+Exact pidfd TERM only while blocked on the current durable COMPLETE readout;
+no SIGSTOP, hold, policy change, rollback or retirement. All source/history/
+inboxes remain preserved. Twenty-five focused operator tests pass including
+post-COMPLETE activity veto, latest-checkpoint selection and actual new-native
+LOAD/wall/identity binding. CPU service rebinding waits for actual new LOAD.
