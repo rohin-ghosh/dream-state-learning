@@ -36,7 +36,9 @@ def process(pid):
 
 def observe(physical):
     root = Path('/localhome/local-rohing') / ROOT_NAMES[physical]
-    control = root / 'extension_oct01_preview_20260918T1742Z/authorized_continuation_1754Z'
+    original = root / 'extension_oct01_preview_20260918T1742Z/authorized_continuation_1754Z'
+    retry = root / 'extension_oct01_preview_20260918T1742Z/authorized_continuation_sidecar_retry_1811Z'
+    control = retry if (retry / 'GUARD.json').exists() else original
     result = dict(physical=physical, observed_utc=utc(time.time()), raw_text_exported=False,
         resident_unsaved_sampling_RNG_continuation_claim=False,
         journal_id=read(root / 'raw/stream/JOURNAL.json')['journal_id'])
@@ -44,9 +46,18 @@ def observe(physical):
         result['status'] = 'NOT_STARTED'
         return result
     for name in ('WAITING_BOUNDARY', 'TERM', 'EXIT_BOUNDARY', 'DISPATCHED', 'OUTER_STARTED', 'LAUNCH'):
-        path = control / (name + '.json')
+        parent = original if name in ('WAITING_BOUNDARY', 'TERM', 'EXIT_BOUNDARY') else control
+        path = parent / (name + '.json')
         if path.exists():
             result[name.lower()] = read(path)
+    result['active_attempt_name'] = control.name
+    if control != original:
+        result['prior_failed_attempt'] = dict(exit=read(original / 'EXIT.json'),
+            native_log_sha256=sha(original / 'NATIVE.log'),
+            reason='Missing required receiving PRESERVATION.json before model construction',
+            records_preserved=True, no_signal_for_latency=True)
+    if (original / 'SIDECAR_REPAIR.json').exists():
+        result['sidecar_repair'] = read(original / 'SIDECAR_REPAIR.json')
     if (control / 'OUTER_FAILED.json').exists():
         failure = read(control / 'OUTER_FAILED.json')
         result['dispatch_error'] = dict(error_type=failure['error_type'], error_sha256=sha(control / 'OUTER_FAILED.json'))
@@ -55,8 +66,8 @@ def observe(physical):
         result['admission'] = dict(scanner_euid=admission['report']['scanner_euid'],
             clear=admission['report']['clear'], blocking_reasons=admission['report']['blocking_reasons'],
             verified_utc=utc(admission['verified_unix']), receipt_sha256=sha(control / 'PRE_SERVICE_ADMISSION.json'))
-    if (control / 'BOUNDARY.json').exists():
-        bound = read(control / 'BOUNDARY.json')
+    if (original / 'BOUNDARY.json').exists():
+        bound = read(original / 'BOUNDARY.json')
         complete = bound['complete']
         checkpoint = complete['document']['checkpoint']
         result['bound_complete'] = dict(index=complete['index'], record_sha256=complete['sha256'],

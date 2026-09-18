@@ -115,6 +115,24 @@ def main():
         current_paths, current_records = tail(root)
         if current_paths != paths or current_records[-1]['sha256'] != records[-1]['sha256']:
             continue
+        bound = dict(complete=complete, head=records[-1],
+            journal_id=read(root / 'raw/stream/JOURNAL.json')['journal_id'],
+            bound_unix=time.time(), saved_checkpoint_RNG_preserved=True,
+            unsaved_resident_sampling_RNG_claim=False, raw_originals_unchanged=True)
+        from repair_receiving_sidecar import preservation
+        required = source.parent / 'control'
+        required.mkdir(exist_ok=True, mode=0o700)
+        sidecar = required / 'PRESERVATION.json'
+        document = preservation(bound, checkpoint)
+        if sidecar.exists():
+            require(read(sidecar) == document, 'receiving_sidecar_current_boundary')
+        else:
+            prepared = required / ('PRESERVATION.prepared.' + str(time.time_ns()) + '.json')
+            write(prepared, document)
+            with prepared.open('rb') as handle:
+                os.fsync(handle.fileno())
+            os.link(prepared, sidecar)
+        require(read(sidecar)['checkpoint'] == checkpoint, 'receiving_constructor_sidecar_ready_before_TERM')
         write(output / 'PLAN.json', plan)
         write(output / 'LEASE_WINDOW.json', dict(lease_end_unix=authority['lease_end_unix'],
             hard_end_unix=authority['hard_end_unix'], authority_sha256=sha(preview / 'ALLOCATION_AUTHORITY.json'),
@@ -130,10 +148,7 @@ def main():
             allocation_sha256=sha(output / 'ALLOCATION.json'))
         write(output / 'GUARD.json', config)
         validate(output / 'GUARD.json')
-        write(output / 'BOUNDARY.json', dict(complete=complete, head=records[-1],
-            journal_id=read(root / 'raw/stream/JOURNAL.json')['journal_id'],
-            bound_unix=time.time(), saved_checkpoint_RNG_preserved=True,
-            unsaved_resident_sampling_RNG_claim=False, raw_originals_unchanged=True))
+        write(output / 'BOUNDARY.json', bound)
         current_paths, current_records = tail(root)
         require(current_paths == paths and current_records[-1]['sha256'] == records[-1]['sha256'],
             'still_coherent_after_successor_readiness')
