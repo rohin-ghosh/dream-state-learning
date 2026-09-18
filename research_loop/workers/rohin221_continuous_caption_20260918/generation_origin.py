@@ -75,7 +75,12 @@ def process_generation(session, request, *, receipt_root, expected_binding, expe
     think_tokens = verified['think']['generated_tokens'] if verified['think'] else 0
     data.require(request['metrics'] == dict(THINK=think_tokens if verified['request']['attempt'] == 1 else 0,
         ACT=verified['generated_tokens'], LEARN=0), 'actual_standalone_tokens_no_learning_claim')
+    from research_loop.workers.rohin221_continuous_caption_20260918.scene_schedule import verified_active_scene
+    active = verified_active_scene(verified['request'], session.scene_ids)
+    if verified['think'] is not None:
+        data.require(verified_active_scene(verified['think']['request'], session.scene_ids) == active,
+                     'same_THINK_ACT_assigned_scene')
     result = session.process_verified(request, verified['raw'], identifier=request['origin']['request_id'],
-        think_resolver=lambda: verified['think'])
+        think_resolver=lambda: verified['think'], active_scene=active)
     return dict(result, request_id=request['origin']['request_id'],
         rule_sha256=expected_binding['plan']['rule_sha256'], condition=expected_binding['plan']['condition'])

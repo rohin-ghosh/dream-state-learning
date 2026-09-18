@@ -265,6 +265,12 @@ def select_rehearsal_rows(plan, old_rows):
     return old_rows if presentations else []
 
 
+def candidate_row_filter_policies(new_rows, old_rows):
+    fields = ('content_target_filter', 'question_target_filter', 'fabricated_speaker_filter')
+    return {cohort: {field: sorted({row[field] for row in rows if field in row})
+        for field in fields} for cohort, rows in (('NEW', new_rows), ('REHEARSAL', old_rows))}
+
+
 def readout_name(plan, cycle):
     revision = plan.get('readout_revision', 1)
     require(type(revision) is int and revision >= 1, 'positive_readout_revision')
@@ -510,6 +516,7 @@ class NativeChild:
             else 'LEGACY_FULL_REHEARSAL', new_presentations=self.plan['new_presentations'],
             new_rows=len(new_rows), available_old_rows=available_old_rows,
             selected_old_rows=len(old_rows), anchor_lambda=0.25,
+            candidate_row_filter_policies=candidate_row_filter_policies(new_rows, old_rows),
             **(dict(plasticity=self.plasticity) if self.plasticity is not None else {}),
             **(dict(sleep_loss_impl=loss_implementation) if loss_implementation != MODEL_DEFAULT else {}),
             **(dict(code_target_filter=code_target_policy) if code_target_policy is not None else {}),

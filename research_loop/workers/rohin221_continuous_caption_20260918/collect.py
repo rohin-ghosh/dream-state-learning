@@ -25,6 +25,9 @@ def hourly(document):
         bucket['planned_known'] += event['planned'] or 0
         bucket['planned_unknown_attempts'] += int(event['planned'] is None)
         bucket['fault_attempts'] += int(event['fault'])
+        for name in ['no_caption_act', 'routing_ambiguity']:
+            bucket[name + '_known'] = bucket.get(name + '_known', 0) + int(event.get(name) is not None)
+            bucket[name + '_count'] = bucket.get(name + '_count', 0) + int(bool(event.get(name)))
         bucket['salvaged_THINK_captions'] += event.get('salvaged_THINK', 0)
         for name in ['parsed', 'scored', 'accepted', 'novel', 'unknown', 'cached']:
             bucket[name] += event[name]

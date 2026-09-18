@@ -139,7 +139,8 @@ def validate_config(config):
             and 'reading_reply_policy' in config, 'preemption_requires_reading_exception')
     if 'content_target_filter' in config:
         from organism_v6.orch_r213_content_target_filter import POLICY as CONTENT_POLICY
-        require(config['content_target_filter'] == CONTENT_POLICY
+        from organism_v6.orch_r225_content_target_filter import POLICY as REVISED_CONTENT_POLICY
+        require(config['content_target_filter'] in (CONTENT_POLICY, REVISED_CONTENT_POLICY)
             and 'learn_review_filter' in config, 'content_targets_require_review_filter')
     if 'question_target_filter' in config:
         from organism_v6.orch_r220_question_target_filter import POLICY as QUESTION_POLICY

@@ -27,6 +27,16 @@ def test_actual_routing_shape_two_literals_not_closing_commentary():
         assert source['text_sha256'] == hashlib.sha256(caption.encode()).hexdigest()
 
 
+@pytest.mark.parametrize('selector', ['场景1', '場景１'])
+def test_bilingual_scene_heading_routes_only_never_rewrites_caption(selector):
+    raw = f'现在考虑{selector}，这里有英文 caption candidates。\n- "First literal ９８， joke."\n- "Second literal."'
+    actions, metrics = extract_batches(raw, SCENES)
+    assert actions[0]['captions'] == ['First literal ９８， joke.', 'Second literal.']
+    assert metrics['recovered_count'] == 2 and not metrics['clarification_needed']
+    for source, caption in zip(metrics['caption_sources'], actions[0]['captions']):
+        assert raw[source['start']:source['end']] == caption
+
+
 def test_named_numbered_multiple_scenes_no_required_fields_or_count():
     raw = 'For the crib:\n"First joke."\nScene ２:\n- Second joke.\n- Third joke.'
     actions, metrics = extract_batches(raw, SCENES)

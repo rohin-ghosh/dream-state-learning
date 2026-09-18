@@ -71,7 +71,7 @@ class LifeSession:
         return self.process_verified(request, raw, identifier=origin['record_sha256'],
             think_resolver=lambda: latest_own_think(self.life_root, origin))
 
-    def process_verified(self, request, raw, *, identifier, think_resolver=None):
+    def process_verified(self, request, raw, *, identifier, think_resolver=None, active_scene=None):
         """Internal callback ONLY after source validation, never a raw-text wire endpoint."""
         validate_tokens(request['metrics'])
         data.require(isinstance(identifier, str) and len(identifier) == 64
@@ -86,7 +86,7 @@ class LifeSession:
         save_state(self.output / 'SESSION_STATE.private.json', self.snapshot('PENDING'))
         actions, caption_sources, source_groups, salvaged = [], [], [], None
         try:
-            actions, format_metrics = extract_batches(raw, self.scene_ids)
+            actions, format_metrics = extract_batches(raw, self.scene_ids, active_scene=active_scene)
             caption_sources = [dict(item, stage='ACT', origin=origin) for item in format_metrics['caption_sources']]
             source_groups = [[item for item in caption_sources if item['contest_id'] == action['contest_id']]
                              for action in actions]
@@ -98,7 +98,7 @@ class LifeSession:
                 salvaged = think_resolver() if think_resolver else None
                 if salvaged:
                     recovered, salvage_metrics = extract_batches(salvaged['raw'], self.scene_ids,
-                                                                   explicit_candidates_only=True)
+                        explicit_candidates_only=True, active_scene=active_scene)
                     existing = {(action['contest_id'], caption) for action in actions for caption in action['captions']}
                     for action in recovered:
                         kept, kept_sources = [], []
@@ -153,6 +153,10 @@ class LifeSession:
                          if clarification else 'Use the actual ranks, acceptance and novelty feedback.'))
         if not actions:
             report['error'] = format_metrics['unscored_reason']
+        if format_metrics.get('no_caption_act'):
+            report['instruction'] = ('No caption found in your output—write the captions themselves, '
+                'one per line, for the scene you choose. One per line is a suggestion, not a required '
+                'format. Any actual recovered THINK captions keep their separately attributed results.')
         format_metrics.pop('caption_sources', None)
         report['format_metrics'] = format_metrics
         document = dict(policy=POLICY, origin=origin, raw_act=raw, action=actions[0] if len(actions)==1 else None,
