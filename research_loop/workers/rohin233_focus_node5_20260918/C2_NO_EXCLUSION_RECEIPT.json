@@ -1,0 +1,150 @@
+{
+  "adoption_blocker": "Loaded frozen native/driver have no supported policy-reload hook; no gapless activation demonstrated. No restart/gap, live-source mutation or staged-as-live claim.",
+  "conclusion": "R227_NOT_ADOPTED_SEMANTIC_EXCLUSIONS_STILL_ACTIVE",
+  "current_sleep_cycle": 93,
+  "driver_policies": {
+    "code_policy": "R194_FIRST_CODE_BLOCK_NFKC_V1",
+    "content_target_filter": "R213_CONTENT_BEARING_TARGETS_V1",
+    "fabricated_speaker_filter": "R220_FABRICATED_HUMAN_TURNS_V1",
+    "learn_row_policy": null,
+    "prose_target_filter": "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1",
+    "question_target_filter": "R220_EXPLICIT_FABLE_QUESTIONS_V1"
+  },
+  "eligibility": {
+    "code_policy": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+    "code_retained_counts": {
+      "NEW": 3,
+      "REHEARSAL": 0
+    },
+    "excluded": [
+      {
+        "content_policies": [
+          "R213_CONTENT_BEARING_TARGETS_V1"
+        ],
+        "content_reasons": [
+          "uncertain_content_target"
+        ],
+        "prose_policies": [
+          "R209_ENGLISH_PROSE_TARGET_QUARANTINE_V1"
+        ],
+        "prose_reasons": [
+          "provisional_english_target_script_quarantine"
+        ],
+        "raw_target_sha256": "9f51b87b53975b48bf61808b8256ffcb5c6b06bc37b880eab2bef79b4fca6ecc",
+        "reason": "provisional_english_target_script_quarantine",
+        "review_policy": "R195_CHILD_ROW_REVIEW_V1",
+        "segment": 318,
+        "source_sha256": "c0e06e07147d362c698805beec5e9fc82dbc4998e5864ca3ce664819119b2029"
+      }
+    ],
+    "index": 9415,
+    "mtime_utc": "2026-09-18T11:54:06.049784+00:00",
+    "planned_presentations": 48,
+    "raw_modified": false,
+    "record_sha256": "01a89946fc01761321f1c1bbb099ffb92036c9bc1568baff2f090197c1240f00",
+    "review_excluded_counts": {
+      "NEW": 1,
+      "REHEARSAL": 0
+    },
+    "review_policy": "R195_CHILD_ROW_REVIEW_V1",
+    "review_retained_counts": {
+      "NEW": 3,
+      "REHEARSAL": 0
+    }
+  },
+  "head": 9450,
+  "latest_complete": {
+    "cycle": 92,
+    "index": 9369,
+    "record_sha256": "dd733a69ceb9538189e70bf5d05ca238cdd5c5e7e973cc71d212e12a3df22013",
+    "status": "COMPLETE",
+    "total_optimizer_steps": 6620
+  },
+  "latest_update": {
+    "index": 9450,
+    "optimizer_step": 6655,
+    "record_sha256": "2811df35001683230dd8e8dcd5abe343679b32dbe149d9e848c4beef79be935a"
+  },
+  "loaded": {
+    "index": 7620,
+    "loaded_utc": "2026-09-18T07:28:47.072366+00:00",
+    "record_sha256": "314b3b614ec933e197a37ad388fefad48c57c89b00486cc70ca613444c47cf88"
+  },
+  "loaded_source_pins": {
+    "gpu/orch_r125_continual_native.py": {
+      "actual_sha256": "39a4391e6c414e33c38e6569c2b334cba1034a880e88236968f066962e205401",
+      "exists": true,
+      "expected_sha256": "39a4391e6c414e33c38e6569c2b334cba1034a880e88236968f066962e205401",
+      "pin_matches": true
+    },
+    "gpu/orch_r184_think_act_learn.py": {
+      "actual_sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e",
+      "exists": true,
+      "expected_sha256": "ed0212494a2a8ac2cad9af6f4ab943041dd888c2121d12296c00b4b57248265e",
+      "pin_matches": true
+    },
+    "organism_v6/orch_r213_content_target_filter.py": {
+      "actual_sha256": "b8c6c1710d92deda72b7db085eeded147511f168ca86d51d52a951b528a2577e",
+      "exists": true,
+      "expected_sha256": "b8c6c1710d92deda72b7db085eeded147511f168ca86d51d52a951b528a2577e",
+      "pin_matches": true
+    },
+    "organism_v6/orch_r227_learning_policy.py": {
+      "exists": false,
+      "expected_sha256": null
+    }
+  },
+  "native": {
+    "pid": 3624513,
+    "start_ticks": "25171256",
+    "state": "S"
+  },
+  "native_learn_row_policy": null,
+  "observed_utc": "2026-09-18T12:00:18.289110+00:00",
+  "operations": {
+    "human_inbox_writes": 0,
+    "live_file_edits": 0,
+    "policy_changes": 0,
+    "restarts": 0,
+    "signals": 0
+  },
+  "plan_sha256": "b3016752f19004842de09eca39595f68cc6dd1b4fc7b16366c1850d509704f98",
+  "private_evidence": {
+    "location": "private/NO_EXCLUSION_OBSERVATION_20260918T120019Z.json",
+    "raw_export": false,
+    "sha256": "a38988417938928c6cd36fce899c864505ed8f683d266229498be94187b9d7fa"
+  },
+  "published_R227_source": {
+    "commit": "bb1e9a9033979d50ed97072675515f7290de1237",
+    "policy": "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+    "required_recipe_fields": {
+      "active_semantic_filters": [],
+      "learn_row_policy": "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+      "semantic_row_exclusion": false
+    },
+    "source_commit_is_not_runtime_adoption": true
+  },
+  "recipe": {
+    "absent_R227_fields": [
+      "learn_row_policy",
+      "active_semantic_filters",
+      "semantic_row_exclusion"
+    ],
+    "fields": {
+      "anchor_lambda": 0.25,
+      "available_old_rows": 315,
+      "code_target_filter": "R194_FULLWIDTH_CODE_TARGET_EXCLUSION_V1",
+      "learn_review_filter": "R195_CHILD_ROW_REVIEW_V1",
+      "new_presentations": 16,
+      "new_rows": 4,
+      "policy": "R181_NEW_ONLY_V1",
+      "selected_old_rows": 0,
+      "sleep_loss_impl": "MASKED_CAUSAL_CE_V1"
+    },
+    "index": 9414,
+    "mtime_utc": "2026-09-18T11:54:05.826421+00:00",
+    "record_sha256": "65c03f1954fd0b7ca4938f316157b5c6d353ce61889382581b35495b02ce9d3f",
+    "time_basis": "journal_file_mtime"
+  },
+  "schema": "R233_C2_NO_EXCLUSION_ADOPTION_AUDIT_V1"
+}
