@@ -7,9 +7,23 @@ from pathlib import Path
 import json
 import tempfile
 from retirement import sha
+from types import SimpleNamespace
 
 
 class ClassroomTests(unittest.TestCase):
+    def test_partial_recovery_preserves_default_gate(self):
+        helper = SimpleNamespace(bind=lambda root, name: dict(name=name),
+            alive=lambda item: item['name'] == classroom.CAPTIONS[0])
+        config = dict(helper_pins={}, helper_directory='frozen')
+        with patch('classroom.importlib.import_module', return_value=helper):
+            with self.assertRaisesRegex(ValueError, 'all seven'):
+                classroom.load_helpers(Path('/owned'), config)
+            _, bound = classroom.load_helpers(Path('/owned'), config, recovering=True)
+            self.assertEqual(set(bound), set(classroom.MEMBERS))
+            self.assertEqual(sum(helper.alive(item) for item in bound.values()), 1)
+        with self.assertRaisesRegex(ValueError, 'requires_preserved_parent_state'):
+            classroom.serve(None, None, {}, recovering=True)
+
     def test_only_seven_parented_and_no_control(self):
         self.assertEqual(len(classroom.MEMBERS), 7)
         self.assertNotIn('r213_r226_caption_unparented_fork', classroom.MEMBERS)

@@ -1,23 +1,24 @@
-# Node3 kept-life recovery — actual cut September18 17:17:24UTC
+# Node3 kept-life recovery — actual cut September18 17:25:11UTC
 
-**2/8 natives actually LOADED.** This supersedes the historical live-status
+**3/8 natives actually LOADED.** This supersedes the historical live-status
 claims below, without rewriting their historical parent/child receipts.
 
 |GPU|Kept life|Actual recovery status|Native / records|
 |---|---|---|---|
 |0|caption observation|LOADED17:08:31UTC|PID1941202; LOAD3111, REQUEST3114, ACT3125|
 |1|Math A|Reconciled, not dispatched|No new LOADED|
-|2|Math B|Coherent checkpoint verified; journal reconciliation running|No new LOADED|
+|2|Math B|Reconciled, not dispatched|No new LOADED|
 |3|caption perspective|LOADED17:15:56UTC|PID1944402; LOAD3361, REQUEST3364, ACT3381|
 |4|Math C|Coherent checkpoint verified; journal reconciliation running|No new LOADED|
-|5|caption revision|Dispatched17:16:02UTC; native startup|No new LOADED|
-|6|caption selfderive|Reconciled, not dispatched|No new LOADED|
+|5|caption revision|LOADED17:20:07UTC|PID1946892; LOAD2878, REQUEST2881, ACT2892|
+|6|caption selfderive|Dispatched17:20:16UTC; native startup|No new LOADED|
 |7|caption historical-unparented|Reconciled, not dispatched|No new LOADED|
 
 Perspective's actual SLEEP_RECIPE3410, SHA
 `85adb5af7b09498cf2ea364c8f54b0c0583c6ce8a692b999edbdbadcf9cec330`,
 confirms `R227_ALL_AUTHENTIC_CHILD_ROWS_V1`, no active semantic filters and
-`semantic_row_exclusion=false`. Observation had already started before policy
+`semantic_row_exclusion=false`. Revision also has an actual R227 recipe2921.
+Observation had already started before policy
 adoption: actual recipe3233 lacks R227, and the default scaffold-exclusion gap
 remains. No live learner is restarted to toggle policy.
 
@@ -26,7 +27,16 @@ Guarded serial launches run independently of parent/classroom attachment.
 Existing Tool relay resumed with original dedup cursors; actual observation
 ACT3125 has a transport ConnectionResetError, not a score. Leibniz repair is
 requested; no authenticated new score or new feedback render is claimed.
-New parent/debate publications and renders are pending required native uptake.
+Classroom CPU1949315/startticks45836730 is attached at17:21:44UTC, with each
+not-yet-recovered member explicitly inactive rather than blocking the ready
+children. Observation's new parent31df98f2bc40412a9eb5ce0545394ce2 was actually
+published17:21:46UTC; its new INBOX/REQUEST/RESPONSE is still pending at this cut.
+Other shown historical parent renders are not relabelled as post-recovery input.
+The pending math phase4/exchange3 parents are authenticated and will be reused,
+not resent; no new shared conclusion or resolved-training claim exists.
+The feedback CPU1945863 remains the sole original-cursor relay. Only the
+wait-for-all CPU1945860 was handed off; no native or feedback process was stopped.
+The independent serial native worker continues one verified LOADED at a time.
 Budget ends September19 04:51–04:54UTC, within the unchanged verified lease.
 
 ## Historical R233 parented epochs — September18 12:09UTC

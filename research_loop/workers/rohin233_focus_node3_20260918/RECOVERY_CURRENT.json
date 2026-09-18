@@ -1,6 +1,6 @@
 {
   "lease_extended": false,
-  "live_count": 2,
+  "live_count": 3,
   "lives": [
     {
       "ACT": {
@@ -108,9 +108,9 @@
         "rng": "48869694aeead637f835e714b310ac44548feadf4745791211c191b638c3c0a0"
       },
       "complete_cycle": 121,
-      "configured_learning_policy": null,
-      "configured_think_learning_policy": null,
-      "cpu_receipt_sha256": "5e7e729a41841fb588bf7b8f01902537a54bc32ce56894ca8de488eec9d8862f",
+      "configured_learning_policy": "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+      "configured_think_learning_policy": "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+      "cpu_receipt_sha256": "93f856f60534d1669973660c6ffb1e960034e11db1aeedafbf763377fab25183",
       "deadline_utc": "2026-09-19T04:54:40.750161+00:00",
       "exact_resident_continuity_claimed": false,
       "gpu": 2,
@@ -122,7 +122,7 @@
       "recovery_receipt_sha256": "81c49ec7a2c6890df3116c234af2d84b6557067d6bf314a731638a24c5be175d",
       "replay_receipt_sha256": "9e1b06ada956199e9bc35d881c71e7778748f93789256173da62fdc2660e522f",
       "same_journal_manifest": true,
-      "status": "READY_NOT_RECONCILED",
+      "status": "RECONCILED_NOT_LAUNCHED",
       "tail_inbox_count": 1,
       "tail_response_count": 3
     },
@@ -222,10 +222,43 @@
       "tail_response_count": 0
     },
     {
-      "ACT": null,
-      "LOADED": null,
-      "REQUEST": null,
-      "actual_native": null,
+      "ACT": {
+        "index": 2892,
+        "origin": {
+          "kind": "TRAIN_CHILD_RESPONSE",
+          "record_index": 2889,
+          "record_sha256": "3349114594648181618e8995ae89f47472c0b3171cb2804f811b77e4aea9afa5"
+        },
+        "sha256": "1870340d6228cc3b814d75c168b38dfca45b96da5f7083d36b42a23803e6adca"
+      },
+      "LOADED": {
+        "index": 2878,
+        "loaded_unix": 1789752007.6568642,
+        "optimizer_steps": 6572,
+        "pid": 1946892,
+        "resume": true,
+        "sha256": "b63e0e135a8e9ff40e8c6c9bc42a631363816f1e816bc8fbe98c4435db6bc201"
+      },
+      "REQUEST": {
+        "all_history_tokens_masked": true,
+        "index": 2881,
+        "sha256": "da6d631625e1f4f6038ac379976ce1781ad0476a565e4a39f419aff1ae98d9b4",
+        "started_unix": 1789752009.9872904
+      },
+      "SLEEP_RECIPE": {
+        "active_semantic_filters": [],
+        "index": 2921,
+        "learn_row_policy": "R227_ALL_AUTHENTIC_CHILD_ROWS_V1",
+        "semantic_row_exclusion": false,
+        "sha256": "b06e5abc92148a31fb14312d6d7e384c9caba13be505e5e7d5d92b5feae0940d"
+      },
+      "actual_native": {
+        "command_sha256": "dfe62159d642e748f245e5783098c90c856bbdace5e3d692d95864203d84c7e4",
+        "pid": 1946892,
+        "ppid": 1946891,
+        "start_ticks": "45802682",
+        "state": "S"
+      },
       "checkpoint_sha256": {
         "adapter": "25239e90ce37ca8404f85bad5ab04481136ae9997421d78ece6fd92dc00f32eb",
         "optimizer": "52415e035f20d0f1005a58a3f222d689af7d4a92fb4be9e90506db4236337296",
@@ -240,7 +273,7 @@
       "gpu": 5,
       "life": "r213_r226_caption_revision_fork",
       "lost_tail_updates": 56,
-      "new_sleep_recipe_verified": false,
+      "new_sleep_recipe_verified": true,
       "optimizer_steps": 6572,
       "preservation_manifest_sha256": "6d694f446f6afdeb0adc16c1a2e30183a297a00fa6bc197a954f11a167600851",
       "recovery_receipt_sha256": "200eb66b0b17769045be3a07852a9fe25e6f9a07530a936b2f056236e894f392",
@@ -250,7 +283,7 @@
       },
       "replay_receipt_sha256": "7cda96f5d7ef71579fb5a08f47eb4a462f474a19c05f7d84c2a25fcd1206cd7f",
       "same_journal_manifest": true,
-      "status": "DISPATCHED_NOT_LOADED",
+      "status": "LOADED_ALIVE",
       "tail_inbox_count": 1,
       "tail_response_count": 4
     },
@@ -277,9 +310,13 @@
       "optimizer_steps": 6700,
       "preservation_manifest_sha256": "52294782b608fd303f63b1fd6568748e56cae2aefec0af339b32627ab6b6ec81",
       "recovery_receipt_sha256": "ca42000c827438b1a1e33e6a429ecf55caa9bb4f94a5af7b5b8cde00b86371c5",
+      "recovery_record": {
+        "index": 3035,
+        "sha256": "d9a1484ce3c08e8197635ebf33f133f16c872387cc2495144f622c8df58f93e1"
+      },
       "replay_receipt_sha256": "aec393901b4d3386ba9e9b0fdad0b471c38635a17cae4790da4b337038bfcdec",
       "same_journal_manifest": true,
-      "status": "RECONCILED_NOT_LAUNCHED",
+      "status": "DISPATCHED_NOT_LOADED",
       "tail_inbox_count": 1,
       "tail_response_count": 4
     },
@@ -315,6 +352,6 @@
   ],
   "native_signals": 0,
   "node": "node3",
-  "observed_utc": "2026-09-18T17:17:24.753975+00:00",
+  "observed_utc": "2026-09-18T17:25:11.804758+00:00",
   "retired_roots_restarted": 0
 }

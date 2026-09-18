@@ -48,6 +48,14 @@ class RecoveryTests(unittest.TestCase):
                 recovery_services.start(Path('/owned'), 'feedback', [], Path('/source'), {})
             process.assert_not_called()
 
+    def test_parent_wait_is_for_exact_required_lives_not_total_count(self):
+        proof = dict(lives=[dict(life='r213_math_a', status='LOADED_ALIVE')])
+        with patch('recovery_services.project', return_value=proof), \
+                patch('pathlib.Path.write_text'), patch('pathlib.Path.replace'), \
+                patch('recovery_services.time.time', return_value=1):
+            self.assertEqual(recovery_services.wait_for(Path('/root'), Path('/output'), 2,
+                ('r213_math_a',)), proof)
+
     def test_reconcile_and_launch_are_separate_operations(self):
         with patch('recovery.inactive', side_effect=ValueError('not_inactive')), patch('recovery.subprocess.Popen') as process:
             with self.assertRaisesRegex(ValueError, 'not_inactive'):

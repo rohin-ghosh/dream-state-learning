@@ -47,10 +47,10 @@ def prompt(name, turn=0):
         'This parent input is not your authored training target. Genuine Rohin messages take priority.')
 
 
-def helpers(root, config):
+def helpers(root, config, recovering=False):
     if config.get('caption_epoch_policy') != POLICY:
         raise ValueError('explicit all-five parenting authorization required')
-    helper, bound = classroom.load_helpers(root, config)
+    helper, bound = classroom.load_helpers(root, config, recovering)
     helper.MEMBERS = tuple(dict.fromkeys((*helper.MEMBERS, FORMER_CONTROL)))
     bound[FORMER_CONTROL] = helper.bind(root, FORMER_CONTROL)
     if not helper.alive(bound[FORMER_CONTROL]):
@@ -109,7 +109,7 @@ def attachment_path(output, resume, pid):
 
 
 def serve_former_control(root, output, config, resume=False):
-    helper, bound = helpers(root, config)
+    helper, bound = helpers(root, config, recovering=resume)
     lock = (root / 'R233_FORMER_CONTROL_PARENT.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     name = FORMER_CONTROL

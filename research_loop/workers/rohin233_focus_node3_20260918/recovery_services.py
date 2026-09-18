@@ -25,7 +25,20 @@ def start(output, name, command, source, environment):
     return process
 
 
-def run(root, output, python):
+def wait_for(root, output, deadline, names):
+    while time.time() < deadline:
+        proof = project(root)
+        temporary = output / 'NATIVE_WAIT.partial'
+        temporary.write_text(json.dumps(proof, sort_keys=True) + '\n')
+        temporary.replace(output / 'NATIVE_WAIT.json')
+        live = {row['life'] for row in proof['lives'] if row['status'] == 'LOADED_ALIVE'}
+        if set(names) <= live:
+            return proof
+        time.sleep(10)
+    raise ValueError('parent_attachment_expired_without_required_exact_natives')
+
+
+def run(root, output, python, parents_only=False):
     output.mkdir(parents=True, exist_ok=True)
     lock = (root / 'R233_RECOVERY_SERVICES.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -37,28 +50,22 @@ def run(root, output, python):
     native_source = Path(plans['r213_r226_caption_observation_fork']['source_root'])
     environment = dict(os.environ, CUDA_VISIBLE_DEVICES='', PYTHONDONTWRITEBYTECODE='1', OMP_NUM_THREADS='1',
         PYTHONPATH=os.pathsep.join((str(native_source), str(root), str(relay_source))))
-    start(output, 'feedback', [python, '-B', str(relay_source / 'node3_feedback.py'), '--root', str(root),
-        '--output', str(relay_source / 'output'), '--formatter-sha256', sha(relay_source / 'relay.py'),
-        '--end-unix', str(deadline)], relay_source, environment)
-    while time.time() < deadline:
-        proof = project(root)
-        temporary = output / 'NATIVE_WAIT.partial'
-        temporary.write_text(json.dumps(proof, sort_keys=True) + '\n')
-        temporary.replace(output / 'NATIVE_WAIT.json')
-        if proof['live_count'] == 8:
-            break
-        time.sleep(10)
-    else:
-        raise ValueError('parent_attachment_expired_without_all_eight_natives')
-    parent_source = root / 'r233_recovery_parents_v1'
+    if not parents_only:
+        start(output, 'feedback', [python, '-B', str(relay_source / 'node3_feedback.py'), '--root', str(root),
+            '--output', str(relay_source / 'output'), '--formatter-sha256', sha(relay_source / 'relay.py'),
+            '--end-unix', str(deadline)], relay_source, environment)
+    wait_for(root, output, deadline, ('r213_r226_caption_observation_fork',))
+    parent_source = root / 'r233_recovery_parents_v2'
     environment['PYTHONPATH'] = os.pathsep.join((str(parent_source), str(root)))
-    start(output, 'classroom', [python, '-B', str(parent_source / 'classroom.py'), 'serve', '--resume',
+    start(output, 'classroom', [python, '-B', str(parent_source / 'classroom.py'), 'serve', '--resume', '--recovering',
         '--root', str(root), '--output', str(root / 'r233_classroom_handoff_v1/live'),
         '--config', str(root / 'r233_classroom_operator_v2/CONFIG_PRIVATE.json')], parent_source, environment)
+    wait_for(root, output, deadline, ('r213_r226_caption_unparented_fork',))
     start(output, 'caption_gpu7', [python, '-B', str(parent_source / 'caption_epoch.py'),
         'serve-former-control', '--resume', '--root', str(root),
         '--output', str(root / 'r233_all_five_caption_epochs_v1'),
         '--config', str(root / 'r233_caption_epoch_operator_v1/CONFIG_PRIVATE.json')], parent_source, environment)
+    proof = wait_for(root, output, deadline, ('r213_math_a', 'r213_math_b_fork', 'r213_math_c'))
     start(output, 'math_debate', [python, '-B', str(parent_source / 'debate_resume.py'),
         '--root', str(root), '--output', str(root / 'r231_math_parent_live_v2'),
         '--initial', str(root / 'r231_math_operator_v2/R229_MATH_PARENT_FIRST_RENDER_20260918T093031Z.json'),
@@ -73,5 +80,6 @@ if __name__ == '__main__':
     for name in ('root', 'output'):
         parser.add_argument('--' + name, required=True, type=Path)
     parser.add_argument('--python', required=True)
+    parser.add_argument('--parents-only', action='store_true')
     options = parser.parse_args()
-    run(options.root, options.output, options.python)
+    run(options.root, options.output, options.python, options.parents_only)

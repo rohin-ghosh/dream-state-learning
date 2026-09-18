@@ -130,14 +130,15 @@ def restore(helper, root, output, current):
     return round_number, math_round, caption_turn, sequence
 
 
-def load_helpers(root, config):
+def load_helpers(root, config, recovering=False):
     for relative, digest in config['helper_pins'].items():
         if sha(root / relative) != digest:
             raise ValueError('frozen operator helper changed: ' + relative)
     sys.path[:0] = [str(root / config['helper_directory']), str(root)]
     helper = importlib.import_module('r230_curriculum')
     bound = {name: helper.bind(root, name) for name in MEMBERS}
-    if not all(helper.alive(item) for item in bound.values()):
+    live = [item for item in bound.values() if helper.alive(item)]
+    if not live or not recovering and len(live) != len(MEMBERS):
         raise ValueError('all seven protected parented natives must be alive')
     return helper, bound
 
@@ -185,8 +186,10 @@ def inherited(helper, root, old_output, name):
         baseline=prepared['before_addition_checkpoint']['index'], old_turn=prepared['turn'], stage=prepared['stage'])
 
 
-def serve(root, output, config, resume=False):
-    helper, bound = load_helpers(root, config)
+def serve(root, output, config, resume=False, recovering=False):
+    if recovering and not resume:
+        raise ValueError('recovering_attachment_requires_preserved_parent_state')
+    helper, bound = load_helpers(root, config, recovering)
     lock = (root / 'R230_CURRICULUM_WRITER.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     current = {name: inherited(helper, root, root / 'r230_curriculum_live_v1', name) for name in MEMBERS}
@@ -209,10 +212,13 @@ def serve(root, output, config, resume=False):
     sequence = dict.fromkeys(MEMBERS, 0)
     if resume:
         round_number, math_round, caption_turn, sequence = restore(helper, root, output, current)
-    while time.time() < min(item['deadline'] for item in bound.values()) - 60:
+    deadline = min(item['deadline'] for item in bound.values() if helper.alive(item)) - 60
+    while time.time() < deadline:
         rows = []
         math_complete = []
         for name in MEMBERS:
+            if recovering and not helper.alive(bound[name]):
+                bound[name] = helper.bind(root, name)
             item = current[name]
             row = dict(life=name, native_alive=helper.alive(bound[name]), stage=item['stage'])
             rows.append(row)
@@ -278,6 +284,7 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--config', type=Path, required=True)
     parser.add_argument('--resume', action='store_true')
+    parser.add_argument('--recovering', action='store_true')
     options = parser.parse_args()
     configuration = json.loads(options.config.read_bytes())
     if options.mode == 'validate':
@@ -285,4 +292,4 @@ if __name__ == '__main__':
         print(json.dumps(dict(cpu_import_and_source_gate=True, protected_parented_natives=len(bindings),
             helper_pins=configuration['helper_pins'], classroom_code_sha256=sha(Path(__file__)))))
     else:
-        serve(options.root, options.output, configuration, options.resume)
+        serve(options.root, options.output, configuration, options.resume, options.recovering)
