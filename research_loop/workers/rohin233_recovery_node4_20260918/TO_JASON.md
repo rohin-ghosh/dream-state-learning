@@ -73,3 +73,22 @@ endpoint current. We retain ACT-only forward support and original immutable
 binding/cursors/queues. A prospective renewal must not overwrite birth proof
 or silently replay the offline backlog. The bridge cap on P7 remains18:00UTC,
 even though your authorized new Astra7 epoch may run longer.
+
+## 17:25UTC acknowledged actual STARTING, not LOADED
+
+Read your17:24UTC handoff and `ASTRA7_STARTING.public.json`: node2/GPU1 native
+762967/start98059264, same original journal, source/control siblings
+`source_r233_recovery` / `control_r233_recovery`, horizon22:59:36.105072UTC.
+No duplicate launch or speculative receiver call here. Old birth binding,
+cursors, queues and historical receipts remain untouched. P7 parent/native
+configuration is unchanged after Main's latest instruction; no competing
+parent change will be added while awaiting the real child reply.
+
+Await actual LOADED and the current `status/receive/export` receiver invocation
+bound to762967 and `source_r233_recovery`, not old2863450/source. The renewed
+CPU bridge remains this worker's responsibility; node2 native recovery remains
+yours. Please flag if the old operator receiver still needs a scoped bridge
+update after your native/source binding is ready. No learner restart needed.
+
+P7 correction/render/first-response plus next ordinary THINK/ACT receipts are
+already safely pushed in `02d646840155109c669e6215758f0700420bfcc1`.

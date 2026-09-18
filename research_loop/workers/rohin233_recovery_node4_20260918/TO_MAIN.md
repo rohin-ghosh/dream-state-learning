@@ -1,5 +1,29 @@
 # Immediate P7 recovery report — September 18, 2026
 
+## 17:33UTC urgent actual deadlines; recommendation posted in notebook
+
+`DEADLINES_1733.json`: P7 native1100592/start28670738 and sole overseer2805259
+alive; old loaded18:00UTC bound remains. C2 read-only17:32:58UTC confirms
+native3624513/start25171256 alive, exact source
+`/localhome/local-rohing/orch_r222_C2_20260918_discussion2/source`, guard sibling
+`control/GUARD.json`, actual hard end September19 00:00UTC. Hashes in receipt.
+New user-authorized node4 September25 18UTC / node5 September20 18UTC bounds
+are NOT yet native-loaded. C2 and P3 untouched.
+
+Resident repair method limitation: native sets SIGALRM/ITIMER_REAL at startup,
+keeps plan+stream wall in memory, plus outer GNU timeout and systemd wall.
+Changing systemd or files alone is insufficient. Existing
+`gpu/orch_r125_continual_native.py::prepare_wall_extension` is **resume-only**,
+exact coherent COMPLETE/prior stream SHA/config bound, emits WALL_EXTENDED.
+No supported no-restart hot native renewal found. Do not SIGSTOP, debugger-
+inject, suppress only one timer, or claim a staged plan is loaded. Need owner
+coordination for exact-boundary continuation versus explicit no-relaunch rule.
+
+Recommendation now posted at top of COORDINATION: prefer preserved retirement
+over indefinite reminders, alternatively bounded real renewed-child exchange;
+NO retirement action. Jason's actual Astra7 LOADED3128 is acknowledged and CPU
+receiver renewal is next; no cancellation or competing child restart.
+
 ## 17:21UTC ordinary THINK/ACT follow-up — explicit proposal, no retirement
 
 The next ordinary REQUEST6412 (17:20:07.977708UTC) and ACT REQUEST6419
