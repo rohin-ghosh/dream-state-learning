@@ -1,21 +1,22 @@
 # Research status — September 19, 2026
 
-**Handoff update:** September 19, 14:10 UTC / 07:10 PDT. Individual evidence cuts are dated below.
-**Current phase:** a running sampling replication, evidence audit, and recovery.
+**Handoff update:** September 19, 14:33 UTC / 07:33 PDT. Individual evidence cuts are dated below.
+**Current phase:** independently checked sampling results, parenting refinement, and recovery.
 
 This is the morning handoff for Rohin. It separates completed observations from
 planned work. The submitted abstract remains the research direction; no positive
 result is a prerequisite for recording an experiment.
 
-**Morning headline:** the slow-adapter / fast-context hypothesis is now
-formalized, and the historical data and correction measurements are audited.
-We have examples of useful coached actions, but not a replicated demonstration
-of independent improvement. **New-seed controlled caption sampling is now
-running**, with actual model-load and completed-cell receipts. Recovery is
-urgent: eight node-3 lives stopped on a
-full disk; C0 and Astra7 are also down at their recorded bindings. The fresh
-learner and frozen sibling are running, but their parents are authentication
-blocked. These outages are not valid independence or tapering treatments.
+**Morning headline:** the new fixed-budget sampling block completed. Earlier
+C2 (sleep51) produced **28/29 operational new pixels**, versus **23/25 for
+base**; later C2 (sleep117) produced **15/23**, across the two new seeds.
+That repeats the earlier checkpoint's directional novelty advantage, not a
+replication of training lineages or proof of general independence. The
+slow-adapter / fast-context hypothesis and its falsifiers are now formalized.
+Recovery remains urgent: eight node-3 lives and C0/Astra7 are still down at
+their recorded bindings; node-3 storage headroom is now being restored. The
+fresh learner and frozen sibling run, but their parents are authentication
+blocked. None of these outages is a valid tapering treatment.
 
 ## The hypothesis we are testing
 
@@ -30,6 +31,45 @@ Repeating useful, grounded checks is different from repeating intentions or
 the parent's vocabulary. Reflection counts as useful only when its relationship
 to an actual action and outcome is supported by a trace.
 
+## New completed experiment: sampling the C2 age comparison again
+
+Completed **September 19, 14:24:35 UTC**. All18 scene/seed/source cells reached
+their1,024-token budget:18,432 generated tokens overall,6,144 per source.
+The original adopted judge, decoder, extractor and three development scenes
+were held fixed; these probe copies had no parent, learning updates or old
+working context. All six model-role processes exited successfully.
+
+| Source | Generation seed | Distinct scored strings | Distinct accepted strings | Operational new pixels | Generated tokens |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Frozen base | 23301 | 55 | 42 | 23 | 3,072 |
+| Frozen base | 23302 | 50 | 39 | 25 | 3,072 |
+| C2 sleep51 | 23301 | 67 | 44 | 28 | 3,072 |
+| C2 sleep51 | 23302 | 84 | 35 | 29 | 3,072 |
+| C2 sleep117 | 23301 | 74 | 37 | 15 | 3,072 |
+| C2 sleep117 | 23302 | 94 | 44 | 23 | 3,072 |
+
+The unit of deduplication is scene/caption within a seed. Novelty resets between
+seeds; adding the two rows is not a cross-seed count of globally distinct ideas.
+The independent raw-outcome recount **matches all240 metric comparisons**,
+including every cell and seed row, with no discrepancies. It verifies the
+recorded source/weight and completion joins, not an independent reread of
+the model tensors. Its46 CPU tests also pass when rerun by Main.
+
+**What this means:** sleep51 has more operational novelty in both new seeds,
+but not more accepted strings overall (79 versus base's81). Sleep117 emits
+more scored strings yet less novelty than base in both seeds. This is a useful
+early-versus-late checkpoint pattern to reproduce and investigate; it does not
+establish its cause. Judge acceptance is not certified humor, these are the
+same development scenes, and these two generation seeds are not two training
+replications. No tapering or new parenting treatment is tested in this block.
+
+Receipts: `research_loop/workers/replication_sprint_20260919/operations/`
+`SAMPLING_V3_BLOCK_COMPLETE.json` and `SAMPLING_V3_FINAL_REPORT.json`.
+The complete comparison and attempt denominators are in
+`research_loop/workers/replication_sprint_20260919/replication/RESULTS.md`.
+Independent input projection, deduplication checks and all18 cell results:
+`research_loop/workers/replication_sprint_20260919/replication_accounting/README.md`.
+
 ## What is happening now
 
 Six parallel workstreams have been assigned. Assignment is not completion:
@@ -37,18 +77,18 @@ Six parallel workstreams have been assigned. Assignment is not completion:
 | Workstream | Concrete deliverable | Current status |
 | --- | --- | --- |
 | Evidence | Actual mixed-curriculum delivery; strongest reflection-to-action traces; early-versus-late C2 comparison | Historical audit complete; positive examples and timing caveat below |
-| Replication | Original-protocol sampling probe; distinguish sampling replication from training-lineage replication | Launched14:04:39 UTC on ovx4; base player and judge loaded; completed scene/seed cells observed; full comparison pending |
+| Replication | Original-protocol sampling probe; distinguish sampling replication from training-lineage replication | All18 cells and block completed14:24:35 UTC; independent recount matches all240 comparisons |
 | Measurement | Offline source-bound uptake/retention summaries and tests, including unknown outcomes | First bounded measurement complete; 45 tests independently rerun by Main |
-| Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Candidate complete; 34 tests independently rerun; live deployment blocked by provider authentication |
+| Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Pair candidate blocked by authentication; C2-only short artifact/check refinement being prepared, not yet deployed |
 | Formalization | Fast/slow-loop hypotheses, estimands, controls and falsifiers | Proposal complete; not a launched experiment |
-| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | Retired-state archive and full physical restore verified; lossless storage canary authorized; none restarted |
+| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | Verified retired-copy coalescing restores headroom; MathB staged,52 receiving and108 Main CPU tests pass; original admission/launch next, not yet recovered |
 
-**Actual replication startup status:** the V3 controller launched on ovx4 at
+**Verified replication execution:** the V3 controller launched on ovx4 at
 **14:04:39 UTC**, after Main's72 focused CPU tests and all six real receiving
 role proofs passed. The player and judge have actual LOADED receipts on the
-originally reserved GPUs2/7. The14:08:48 UTC source-bound report confirms
-completed1,024-token scene/seed cells for the base. The two C2 checkpoints run
-after base, serially; incomplete or not-yet-started cells are not zeros.
+originally reserved GPUs2/7. All three sources ran serially and the block
+completed at14:24:35 UTC. Earlier partial reports remain preserved; their
+missing cells were not counted as zeros.
 
 This fixed block compares base, preserved C2sleep51 and C2sleep117 using new
 generation seeds23301/23302, the same three development scenes and adopted
@@ -69,6 +109,12 @@ Receipts: `research_loop/workers/replication_sprint_20260919/operations/`
 The source-bound `replication/report_sampling.py` reports complete, partial and
 missing cells separately. An older progress receipt guessed the wrong output
 directory; its `event_files: 0` is not evidence of zero generation.
+
+The independent V3 review finished at14:10:21 UTC:83 offline tests passed
+(72 candidate plus11 independent), and the reviewer verified the six real
+role proofs and actual base-role load receipts. This is validation of the
+experiment's execution and isolation, not evidence of a positive learning effect.
+The separate independent final-results accounting pass is now complete.
 
 ## First sprint outputs: measurement and historical-result reconciliation
 
@@ -265,7 +311,9 @@ Readiness and exact integration:
 - Ovx4 GPUs 2 and 7 were free at that observation. Any dispatch must recheck
   occupancy, provenance, confinement, existing job state, and lease bounds.
   The sampling block subsequently completed those checks and uses those two
-  devices from14:04 UTC; they are no longer free.
+  devices from14:04 through14:24 UTC. At14:27:21 UTC both GPUs showed0MiB
+  and none of the seven sampling controller/model PIDs remained. Any next
+  dispatch still needs fresh shared-resource and provenance checks.
 
 Per-life recovery table:
 `research_loop/workers/replication_sprint_20260919/node3_recovery/STATUS.md`.

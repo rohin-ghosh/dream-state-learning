@@ -1,6 +1,20 @@
 # C2 sampling diagnostic: independent executable review
 
-## CURRENT: V3 source and actual custody review PASS — September 19, 14:05 UTC
+## CURRENT: independent V3 review COMPLETE / PASS — September 19, 14:10:21 UTC
+
+**Review finished; no remaining demonstrated V3 source/custody defect.**
+All requested bound artifacts were rechecked against the same source and
+authorization pins. Main's controller launch and the base judge/player LOADED
+receipts are now independently verified from the local primary exports, not
+merely reported as planned. `V3_FINAL_REVIEW.json` is the final receipt.
+
+- Controller **1989482**: launch receipt **14:04:39 UTC**.
+- Base judge **1989497**: LOADED **14:04:48.324347 UTC**.
+- Base player **1989501**: LOADED **14:05:30.901855 UTC**.
+- Progress evidence cut: **14:06:58.919244 UTC**; neither failed nor complete
+  at that cut. The export establishes actual execution started, not full-block
+  completion or any acceptance/performance result. Later arms had no LOADED
+  receipt in that snapshot.
 
 **The demonstrated V1/V2 custody blocker is resolved in the distinct V3
 incarnation.** Independent local verification of Main's exported actual proof
@@ -30,12 +44,17 @@ same scientific diagnostic after its exact successful proof, while a V2 scope
 flip remains rejected. Failed V1/V2 roots/guards remain failed; their owned dead
 claims are archived. Model dispatch still uses Main's original fresh
 host/device/lease/protected-process admission and the existing finite block;
-no fresh approval gate is introduced by this review. The proof is not a science
-result: LOADED, actual cell/output and COMPLETE receipts remain necessary.
+no fresh approval gate is introduced by this review. The proof and verified
+base LOADED receipts are not a science result: actual cell/output and final
+COMPLETE receipts remain necessary for results.
 
-Evidence: `V3_RECEIVING_REVIEW.json`, `V3_DELTA_AND_RECEIVING_REVIEW.md`, and
-`CPU_REVIEW_RECEIPT.json`. Reviewer made no receiving calls, launches, claim
-changes, model calls, commits or pushes.
+Evidence: `V3_FINAL_REVIEW.json`, `V3_RECEIVING_REVIEW.json`,
+`V3_DELTA_AND_RECEIVING_REVIEW.md`, and `CPU_REVIEW_RECEIPT.json`. Finalization
+also binds `operations/SAMPLING_V3_FINAL_MAIN_TESTS.txt` (72 passing tests),
+the PROOFS/CUSTODY_EVIDENCE/PREPARED exports and `SAMPLING_V3_LAUNCH.txt`.
+Reviewer made no receiving calls, launches, claim changes, model calls,
+commits, pushes or writes outside this disjoint review scope. Earlier failure
+sections below are preserved history, not the current V3 status.
 
 ## Preserved V2 failure — September 19, 13:51 UTC
 

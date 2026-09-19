@@ -34,13 +34,14 @@ checkpoints, partial sleep state, or unrelated working-tree changes.
 
 | Owner | Write scope |
 | --- | --- |
-| Main | Front-page handoff, this brief, operations receipts, integration/publication |
-| Hilbert | `evidence/` |
-| Singer | `replication/` |
-| Gibbs | `measurement/` |
-| Galileo | `parenting/` |
-| Fermat | `formalization/` |
+| Main | Front-page handoff, this brief, operations receipts, `replication/`, integration/publication |
+| Hilbert | `evidence/`; isolated node-2 wall compatibility and partial-intent recovery candidates |
+| Singer | Initial `replication/` work complete; closed; Main now owns the executable |
+| Gibbs | `measurement/` complete; independent `replication_accounting/` in progress |
+| Galileo | Initial `parenting/` and authentication diagnosis complete; `parenting/c2_refinement/` candidate in progress |
+| Fermat | `formalization/` complete; closed |
 | McClintock | `node3_recovery/`; explicitly scoped original-node recovery staging |
+| Curie | `replication_review/` complete; V3 independently reviewed; closed |
 
 Workers must preserve historical artifacts and use source-bound evidence.
 Publication and final scientific synthesis belong to Main. Original live

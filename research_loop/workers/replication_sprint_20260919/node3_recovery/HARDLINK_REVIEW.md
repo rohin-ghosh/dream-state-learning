@@ -1,4 +1,18 @@
-# Read-only hardlink assessment — 2026-09-19 13:47:30 UTC
+# Hardlink assessment and execution review
+
+## 2026-09-19 14:12 UTC — canary done; all remaining work unexecuted
+
+The original read-only assessment below is historical. The complete archive
+and filesystem restore passed. Main then authorized exact canary
+`c36db2e09f6918416a0276c353b30931361f4bad90d89bff49bd351292ba4f83`:
+6 replacements,9 file paths preserved and verified,17,084,416 observed free
+bytes gained, **owner f_bavail still0**. The6 parent-directory mtimes advanced
+as an entry-operation side effect; the9 file mtimes and required metadata are
+preserved. This distinction is explicitly submitted to Main before more work.
+See `CANARY_RESULT_AND_REMAINING_REVIEW.md` for receipts, the exact remaining
+proposal and its metadata caveat. No other batches ran.
+
+## Original read-only assessment — 2026-09-19 13:47:30 UTC
 
 **No hardlinks, replacements, deletions or remapping performed.**
 

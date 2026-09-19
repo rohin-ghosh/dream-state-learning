@@ -103,3 +103,35 @@ reclassifies the failure nor counts it as executed science.
 No new scientific outcome is claimed here. Model LOADED, cell/output and final
 COMPLETE receipts remain necessary to report execution or results. Main owns
 dispatch; this reviewer performed no receiving commands or mutations.
+
+## Finalization — September 19, 14:10:21 UTC
+
+**Independent review is complete and remains PASS.**
+`finalize_v3_review.py` reran the local receiving-artifact validator, rechecked
+every source/test pin in the 83-test review receipt, and verified Main's sealed
+72-test final log plus the exact launch receipt. Source, authorization,
+preparation and six-role proof hashes remain unchanged. Final machine receipt:
+`V3_FINAL_REVIEW.json`.
+
+Main's exported progress snapshot, observed **14:06:58.919244 UTC**, supplies
+the actual base LOADED payloads. Their hashes were recomputed using the original
+runtime's canonical writer, and their paths/job/epochs joined to the V3 registry:
+
+| Receipt | Time, September 19 UTC | PID | SHA-256 |
+| --- | --- | --- | --- |
+| Controller launch | 14:04:39 | 1989482 | `40e115bb308835889881c9d2728734d6a73659ae2473d9a5680f3c45933c4c89` |
+| Base judge LOADED | 14:04:48.324347 | 1989497 | `43b1d97dc5836e2376554461e50018fb2f83a95e015c8b274145496b75cfa754` |
+| Base player LOADED | 14:05:30.901855 | 1989501 | `bc7dcb09d8da4437b24b392f49c03cc1563f59d2bb7622de61943009534242b0` |
+
+The loaded base identity matches the original weight hash, frozen/no-optimizer
+status, decoder, tokenizer, chat template and library versions exactly. The
+adopted judge binding retains its original epoch hash and private-panel
+selection; the new diagnostic remains seeds23301/23302. Historical seeds in
+the immutable judge reference binding are not new generation-cell seeds.
+
+At that progress cut, `block_failed=false` and `block_complete=false`; the two
+later arms had no LOADED payload yet. This establishes that actual execution
+started, **not** that all three arms ran, succeeded or produced scientific
+results. Completion and per-cell outcomes remain Main's running experiment,
+not unfinished work in this bounded source/custody review. No receiving command,
+dispatch, claim operation or write outside `replication_review/` was performed.

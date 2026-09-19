@@ -1,12 +1,39 @@
-# Replication execution preparation — September 19, 2026
+# Replication execution and results — September 19, 2026
 
-**Latest (after Main's terminal CPU proof): `CPU_CUSTODY_V2_HANDOFF.md`.**
+## Current: V3 completed
+
+Main launched controller1989482 on ovx4 at14:04:39 UTC after72 CPU tests,
+all six real custody proofs, and the14:03 Builder pre-GPU entry. Independent
+review subsequently passed83 tests and verified the same source, authorization,
+actual proofs and base-role LOADED receipts. See
+`../replication_review/V3_FINAL_REVIEW.json`.
+
+V3 root:
+`/localhome/local-rohing/post_sampling_custody_diagnostics_20260919/21df1fcbff9c54358c2474541bd399a2ab2572c58aa73046a255d1d851517d8f`.
+The scientific scope remains base / C2sleep51 / C2sleep117, seeds23301/23302,
+three original development scenes,6,144 generated tokens/source and the adopted
+rank8/step15625 judge, without parent guidance or updates in the probe copies.
+This samples selected historical checkpoints; it is not an independent
+training-lineage replication or a new-scene transfer test.
+
+All18 cells and the block completed at14:24:35 UTC. See `RESULTS.md`,
+`../operations/SAMPLING_V3_BLOCK_COMPLETE.json` and
+`../operations/SAMPLING_V3_FINAL_REPORT.json`. Runtime new pixels by seed:
+base23/25, sleep51 28/29, sleep117 15/23. Independent outcome accounting
+matches all240 comparisons; see `../replication_accounting/README.md`.
+Earlier partial reports remain preserved; missing cells
+were not zeros. Do not launch another copy or reuse a failed incarnation.
+Main owns the executable; Gibbs owns the independent accounting pass.
+
+## Preserved preparation and failure history
+
+**Historical V2 handoff: `CPU_CUSTODY_V2_HANDOFF.md`.**
 V2 is a distinct CPU-only isolation/dependency diagnostic and audited dead-claim
 disposition, with 66 tests. The failed scientific block remains terminal; no
 model execution is enabled by V2. Use its sealed commands, not the older
 restaging/model-dispatch instructions below.
 
-**Current execution handoff: `EXECUTABLE_HANDOFF.md`.** The seed-aware runner,
+**Historical V1 execution handoff: `EXECUTABLE_HANDOFF.md`.** The seed-aware runner,
 original shared admission integration, immutable release and guarded repair
 of Main's unlaunched CPU-staging failure are implemented; **52 CPU tests pass**.
 Receiving role proofs and any dispatch remain Main's responsibility. The
