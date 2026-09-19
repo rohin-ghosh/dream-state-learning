@@ -1,5 +1,13 @@
 # Research status — September 19, 2026
 
+**Evening behavior/parenting discussion:** [What sleep51 actually does, later drift, tapering and a proposed parenting charter](PARENTING_AND_BEHAVIOR_STUDY_2026-09-19.md).
+The source-bound caption audit preserves the original game counts but finds
+off-task accepted output and separates THINK-origin scores from ACT behavior.
+A bounded recent C2 review finds0/4 requested artifacts, with two planned
+outcomes still unknown. At21:07UTC, safe deletion of three verified redundant
+retired archives reclaimed1.410GB on node2; no unique evidence was deleted and
+no life was restarted by that cleanup. Exact receipts are linked in the packet.
+
 **Final-paper packet:** [Evidence, missing experiments, figures and submission checklist](FINAL_PAPER_PLAN_2026-09-19.md).
 At20:43 UTC /13:43 PDT, a new metadata-only check found C2, P3, P7, the curriculum
 learner, frozen sibling and frozen-base player alive at their original process

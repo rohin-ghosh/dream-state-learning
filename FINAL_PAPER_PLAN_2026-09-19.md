@@ -1,5 +1,10 @@
 # Final-paper preparation — September 19, 2026
 
+**New discussion packet:** [Best-checkpoint behavior, parenting principles, reading tests and tapering](PARENTING_AND_BEHAVIOR_STUDY_2026-09-19.md).
+The source-bound evening audit finds off-task repetition in the later checkpoint
+and an accepted off-task rank11 line. This is an additional metric limitation,
+not a retrospective edit to the reported game counts.
+
 **Start here for the submission plan.** This is an evidence inventory and a
 proposed next-experiment order, not a claim that the proposed experiments ran.
 It preserves Rohin's submitted abstract, the H1/H2 thesis, the frozen base,

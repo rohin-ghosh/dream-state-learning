@@ -1,0 +1,52 @@
+{
+  "schema": "c2_checkpoint117_save_time_limit_v1",
+  "created_utc": "2026-09-19T21:10:13.045078+00:00",
+  "status": "EXACT_SAVE_TIME_UNVERIFIED_STOP_NO_EXPANSION",
+  "exact_save_time_utc": null,
+  "save_time_not_inferred_from_selection": true,
+  "original_complete_record_index": 11831,
+  "original_complete_record_sha256": "e6ae76769b29b2ae43d056f3ef6ee832f35960b2a7190ad605236031704c0539",
+  "absolute_sleep": 117,
+  "optimizer_steps": 7948,
+  "adapter_state_sha256": "351b8148f815b77d6d193c1a44477cec2be03a90296a118584bade3db60099fc",
+  "selected_utc": "2026-09-18T21:58:47.607578+00:00",
+  "selection_time_is_not_save_time": true,
+  "source_ready": {
+    "path": "research_loop/workers/post_recovery_c2_age_sources_20260918/READY.json",
+    "bytes": 9690,
+    "sha256": "f931fbc66c13b0290a9146e2e8766283a026be1e607249d89e3c7671d5362600"
+  },
+  "stopped_reader": {
+    "path": "research_loop/workers/replication_sprint_20260919/parenting_behavior_audit_20260919_evening/checkpoint117_time.py",
+    "bytes": 4717,
+    "sha256": "c625be9f6faed8cdc73bedbd51769e05f47768f7a140a2827d50d4ac7a5a6763"
+  },
+  "expected_record_path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/records/00000000000000011831.json",
+  "remote_route": "gpu/ovx3_ssh.sh",
+  "record_byte_limit": 2000000,
+  "observed_file_bytes": 22644713,
+  "attempts": [
+    {
+      "attempt": 1,
+      "exit_status": 1,
+      "diagnostics": "CalledProcessError; child stderr not retained by first wrapper version; failure preserved in session tool output. No successful receipt."
+    },
+    {
+      "attempt": 2,
+      "exit_status": 1,
+      "diagnostic": "AssertionError: ('bounded_regular_file_required', 22644713)",
+      "stopped_at": "fstat size guard before stream.read",
+      "record_body_bytes_read": 0,
+      "record_body_or_timestamp_exported": false
+    }
+  ],
+  "original_record_hash_remotely_revalidated": false,
+  "current_native_or_service_state_not_probed": true,
+  "observer_reset": false,
+  "ACT_windows_recollected": false,
+  "remote_writes": 0,
+  "signals": 0,
+  "sealed_panels_read": 0,
+  "disposition": "Main requested closure without expanded remote reads; keep exact save time unknown. Reader refuses further calls while this stop receipt exists.",
+  "clock_interval_or_developmental_age_inferred": false
+}
