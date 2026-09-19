@@ -1,0 +1,38 @@
+test_changed_judge_or_source_rejected (test_candidate.CandidateTests.test_changed_judge_or_source_rejected) ... ok
+test_changed_scene_panel_extractor_or_decoder_rejected (test_candidate.CandidateTests.test_changed_scene_panel_extractor_or_decoder_rejected) ... ok
+test_context_or_learning_not_admitted (test_candidate.CandidateTests.test_context_or_learning_not_admitted) ... ok
+test_duplicate_historic_or_noninteger_seeds_rejected (test_candidate.CandidateTests.test_duplicate_historic_or_noninteger_seeds_rejected) ... ok
+test_existing_lease_not_extended (test_candidate.CandidateTests.test_existing_lease_not_extended) ... ok
+test_never_mix_original_and_adopted_judges (test_candidate.CandidateTests.test_never_mix_original_and_adopted_judges) ... ok
+test_new_sampling_epoch_preserves_protocol (test_candidate.CandidateTests.test_new_sampling_epoch_preserves_protocol) ... ok
+test_no_forged_new_runtime_or_guard (test_candidate.CandidateTests.test_no_forged_new_runtime_or_guard) ... ok
+test_original_pair_is_complete_without_replay (test_candidate.CandidateTests.test_original_pair_is_complete_without_replay) ... ok
+test_pair_replication_is_two_sources (test_candidate.CandidateTests.test_pair_replication_is_two_sources) ... ok
+test_partial_budget_or_mismatched_checkpoint_rejected (test_candidate.CandidateTests.test_partial_budget_or_mismatched_checkpoint_rejected) ... ok
+test_reducer_deduplicates_by_scene_and_seed (test_candidate.CandidateTests.test_reducer_deduplicates_by_scene_and_seed) ... ok
+test_seed_changes_get_different_epoch_identity (test_candidate.CandidateTests.test_seed_changes_get_different_epoch_identity) ... ok
+test_time_does_not_change_scientific_epoch (test_candidate.CandidateTests.test_time_does_not_change_scientific_epoch) ... ok
+setUpClass (test_candidate.SamplingContractTests) ... ERROR
+
+======================================================================
+ERROR: setUpClass (test_candidate.SamplingContractTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/replication/test_candidate.py", line 150, in setUpClass
+    cls.contract = sampling_cells.load_contract(REPO, cls.expected)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/replication/sampling_cells.py", line 11, in load_contract
+    require(not source.is_symlink() and sha(source) == expected_sha256, 'original_contract_bytes')
+                                        ^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/replication/construct_candidate.py", line 46, in sha
+    with path.open('rb') as stream:
+         ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/research_loop/workers/rohin232_age_probe_20260918/contract.py'
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.031s
+
+FAILED (errors=1)

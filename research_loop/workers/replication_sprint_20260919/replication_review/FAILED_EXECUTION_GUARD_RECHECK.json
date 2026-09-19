@@ -1,0 +1,23 @@
+{
+  "recorded_utc": "2026-09-19T13:48:13Z",
+  "scope": "Read-only receiving source hashes and no-retry guard lines; no service submissions, device access, model calls or writes",
+  "root": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+  "sha256": {
+    "runtime/dispatch_sampling.py": "598c09058d939477d23013918c1c1c5a8f8c3b3f3761a1dcfacad906f0d8ed40",
+    "runtime/prepare_executable.py": "0b8ffe6270840da33a0fcbb2d4c0928f364d608eade8198ef4a721e0a6df7919",
+    "SOURCE_FREEZE.json": "b85c15d598010712af0fe32505285b79b63c8daf4a85565e300f0b940080e0ab",
+    "BLOCK_FAILED.json": "4b874d58530f9cd59156fed24bbf7aa76e9766bbf737e006d01812f4e579de75"
+  },
+  "guards": {
+    "runtime/dispatch_sampling.py:76": "block_already_attempted_no_retry",
+    "runtime/dispatch_sampling.py:135": "exact PROOFS_COMPLETE.json hash required by run",
+    "runtime/dispatch_sampling.py:198": "failed_block_never_retried before mode dispatch",
+    "runtime/prepare_executable.py:71": "PREPARED, BLOCK_LAUNCH, BLOCK_FAILED, PROOFS_COMPLETE among forbidden staging markers",
+    "runtime/prepare_executable.py:79": "execution_evidence_blocks_staging_repair",
+    "runtime/prepare_executable.py:103": "already_claimed_diagnostic_cannot_be_reprepared"
+  },
+  "classification": "FAILED_CPU_CUSTODY_NO_SCIENTIFIC_OUTCOME",
+  "earlier_receiving_metadata": "FAILED_EXECUTION_READ_ONLY.json",
+  "gpu_dispatch_ready": false,
+  "reviewer_remote_mutations": false
+}

@@ -1,0 +1,166 @@
+{
+  "candidate_stable_during_checks": true,
+  "executable_seal": {
+    "actual_receiving_proof": false,
+    "current_source_and_tests_match": true,
+    "diagnostic_epoch_matches": true,
+    "dispatch_performed": false,
+    "exact_runtime_file_set": true,
+    "mismatches": [],
+    "path": "research_loop/workers/replication_sprint_20260919/replication/CPU_CUSTODY_SOURCE_FREEZE_V2.json",
+    "preregistration_matches": true,
+    "present": true,
+    "sha256": "050587019d9f0a53e3c52ea6ac1af61635db20683ba40ac69809c47e90b099df"
+  },
+  "mutation_observations": [
+    {
+      "error": "same_inference_identity:tokenizer_backend_sha256",
+      "mutation": "tokenizer_backend_sha256",
+      "rejected": true
+    },
+    {
+      "error": "same_inference_identity:chat_template_sha256",
+      "mutation": "chat_template_sha256",
+      "rejected": true
+    },
+    {
+      "error": "same_inference_identity:decoder",
+      "mutation": "decoder",
+      "rejected": true
+    },
+    {
+      "error": "same_inference_identity:library_versions",
+      "mutation": "library_versions",
+      "rejected": true
+    },
+    {
+      "error": "pinned_manifest_scene_identity",
+      "mutation": "unbound_scene_ids",
+      "rejected": true
+    }
+  ],
+  "observed_utc": "2026-09-19T13:50:29Z",
+  "partial_reporting_observation": {
+    "first_seed": {
+      "actual_generated_tokens": null,
+      "arm": "base",
+      "cells": [
+        {
+          "contest_id": "agentdev_621cb5d0bdea9584dc9f",
+          "metrics": {
+            "accept_rate": null,
+            "act_attempts": 0,
+            "acts_without_results": 0,
+            "distinct_accepted": 0,
+            "distinct_scored": 0,
+            "generated_tokens": 128,
+            "new_pixels": 0,
+            "rankless_by_status": {},
+            "rankless_outcomes": 0,
+            "think_events": 1
+          },
+          "observed_generated_tokens": 128,
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/37a1552b0ed1e3e7090cffe3bd74e5fefc1b54ef4416897066fcabfb4955fbf1/view/players/R233_SAMPLING_FIXTURE/agentdev_621cb5d0bdea9584dc9f_23301/RESULT.json",
+          "seed": 23301,
+          "sha256": "synthetic",
+          "status": "INCOMPLETE_ZERO_TOKEN_GENERATION"
+        },
+        {
+          "contest_id": "agentdev_769e881d85fc5d27cb4c",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/37a1552b0ed1e3e7090cffe3bd74e5fefc1b54ef4416897066fcabfb4955fbf1/view/players/R233_SAMPLING_FIXTURE/agentdev_769e881d85fc5d27cb4c_23301/RESULT.json",
+          "seed": 23301,
+          "status": "NO_COMPLETE_CELL_RECEIPT"
+        },
+        {
+          "contest_id": "agentdev_92a6a32f99def322d70e",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/37a1552b0ed1e3e7090cffe3bd74e5fefc1b54ef4416897066fcabfb4955fbf1/view/players/R233_SAMPLING_FIXTURE/agentdev_92a6a32f99def322d70e_23301/RESULT.json",
+          "seed": 23301,
+          "status": "NO_COMPLETE_CELL_RECEIPT"
+        }
+      ],
+      "complete_cells_only": {
+        "accept_rate": null,
+        "act_attempts": 0,
+        "acts_without_results": 0,
+        "distinct_accepted": 0,
+        "distinct_scored": 0,
+        "generated_tokens": 0,
+        "new_pixels": 0,
+        "rankless_by_status": {},
+        "rankless_outcomes": 0,
+        "think_events": 0
+      },
+      "expected_generated_tokens": 3072,
+      "incomplete_present_cells": 1,
+      "missing_cells": 2,
+      "seed": 23301,
+      "status": "INCOMPLETE"
+    },
+    "first_seed_status": "INCOMPLETE",
+    "fixture": "authentic_contract_partial_status_128_of_1024_tokens",
+    "public_table_available": true,
+    "rows": 6
+  },
+  "pins_after": {
+    "research_loop/workers/post_reboot_probe_queue_20260919/version_v4_rebind/SOURCE_FREEZE_V4_REBIND.json": "d77089e8d7eb3ff06e709fb8f16c9555a2c620a614fe9c335a516c54475061e0",
+    "research_loop/workers/post_recovery_age_queue_20260918/epoch.py": "3530e58a65458b4e9e56a4a93a5e6152d8d47da134e9cdcaa0b815d67a42d864",
+    "research_loop/workers/post_recovery_age_queue_20260918/runner.py": "64b118f16dd310a97379aa4640f9f7689c36a4024cd6b4a41be14cfc6b5f79f9",
+    "research_loop/workers/replication_sprint_20260919/C2_SAMPLING_PREREGISTRATION.md": "afb4de49f040c589ec416f7901c02b945776593ecf8670d4505aa417a30c5c63",
+    "research_loop/workers/replication_sprint_20260919/replication/C2_SAMPLING_CANDIDATE_V2.json": "83a897cf8a5054364a65b55918d5fde321aa552e9f5ab85a1ed5ee176e2eb51f",
+    "research_loop/workers/replication_sprint_20260919/replication/CPU_CUSTODY_REGISTRY_V2.json": "e77f7d10b2e7732b7603ed471e3874408d8c3099ee62f2921e2ade118489c7b4",
+    "research_loop/workers/replication_sprint_20260919/replication/CPU_CUSTODY_REPAIR_V2.json": "54f7b3e3153e068d09fb479cb4c8a56e29ad8062c917834557f67d0bbbcaecbf",
+    "research_loop/workers/replication_sprint_20260919/replication/CPU_CUSTODY_SOURCE_FREEZE_V2.json": "050587019d9f0a53e3c52ea6ac1af61635db20683ba40ac69809c47e90b099df",
+    "research_loop/workers/replication_sprint_20260919/replication/EXECUTABLE_SOURCE_FREEZE.json": "e717180b6caf7777dad84126a5cd30c503a908dc32c9f3f6fdde0a3a42f31ad0",
+    "research_loop/workers/replication_sprint_20260919/replication/EXECUTION_REGISTRY.json": "1b4d9cb073ffa904c24cc7956a521d0b64be98138c12a4054dec456b40d8f1e1",
+    "research_loop/workers/replication_sprint_20260919/replication/ORIGINALS_RECEIPT.json": "7459c1b35c1f445add6da32cfa812103c5c3a6be76b8d2989003fc6d85c4efca",
+    "research_loop/workers/replication_sprint_20260919/replication/construct_candidate.py": "623c463cfaa02b67ba264dc3118de4b520861ec327f6f9ec77563c4dfc7fd3af",
+    "research_loop/workers/replication_sprint_20260919/replication/dispatch_sampling.py": "89a90fa4ed6be41cbee5f0f4630e8d259ffc7a52a4fadacf7bab680c86ee0732",
+    "research_loop/workers/replication_sprint_20260919/replication/execution.py": "818ef75d1cc111b5d8ddf2e5871633ee8c25b305c7b82c88c0f48145b3689f9d",
+    "research_loop/workers/replication_sprint_20260919/replication/inspect_originals.py": "b5de391b5b15a42001dae55ee8e10efb70e01fd083b07fcba608e7ee533ed570",
+    "research_loop/workers/replication_sprint_20260919/replication/prepare_executable.py": "3d687a248df0638f6c8d4b649d5a171632cd81d0d8366119a322dd03883ba29c",
+    "research_loop/workers/replication_sprint_20260919/replication/release_failed_claims.py": "88783fdc342324a035d11eff47086c2689fa8d19c61d27a59241f75cbd89c239",
+    "research_loop/workers/replication_sprint_20260919/replication/report_sampling.py": "e0fdc8d6c49047901ac1122745a23bbd18bbe40f4894e72cab3204e6d0329fcd",
+    "research_loop/workers/replication_sprint_20260919/replication/sampling_cells.py": "69bb970bc7be3fc2e4843d0ca99aad5fb4a08995dcdad7286f476bc020cf2e7f",
+    "research_loop/workers/replication_sprint_20260919/replication/sealed_runner.py": "aecd3aa3b95722ef325dbf1d48eb03e174fd95540aebee13c3b8f7ddf5d76ae0",
+    "research_loop/workers/replication_sprint_20260919/replication/test_candidate.py": "14177e8ee695418266813f149f7508ca856580a3e16c02665a9ca2e3ad28c9de",
+    "research_loop/workers/replication_sprint_20260919/replication/test_custody_repair.py": "25334af652c1bf073805ae4731231a49c9cf62d294afefa7acb54dd91c9a5c5d",
+    "research_loop/workers/replication_sprint_20260919/replication/test_execution.py": "d9457e0b421421a69c12df5cad2ed7ea003a1d4d6ddeaee98354e57857f84b85",
+    "research_loop/workers/replication_sprint_20260919/replication/verify_receiving_sources.py": "860e344dc2d9c2101af8461c3a82a2263e28997ecd29f6d92ab5217673d9b4e9",
+    "research_loop/workers/rohin232_age_probe_20260918/contract.py": "5dc3262c1e4e64752c9a5b372f8d0a22d9d465025210079d2f860304e3bafde1",
+    "research_loop/workers/rohin232_age_probe_20260918/runtime.py": "e1e1694d4b1709691d00963bb366888e78268597b9ba960b364e61f394000b60"
+  },
+  "pins_before": {
+    "research_loop/workers/post_reboot_probe_queue_20260919/version_v4_rebind/SOURCE_FREEZE_V4_REBIND.json": "d77089e8d7eb3ff06e709fb8f16c9555a2c620a614fe9c335a516c54475061e0",
+    "research_loop/workers/post_recovery_age_queue_20260918/epoch.py": "3530e58a65458b4e9e56a4a93a5e6152d8d47da134e9cdcaa0b815d67a42d864",
+    "research_loop/workers/post_recovery_age_queue_20260918/runner.py": "64b118f16dd310a97379aa4640f9f7689c36a4024cd6b4a41be14cfc6b5f79f9",
+    "research_loop/workers/replication_sprint_20260919/C2_SAMPLING_PREREGISTRATION.md": "afb4de49f040c589ec416f7901c02b945776593ecf8670d4505aa417a30c5c63",
+    "research_loop/workers/replication_sprint_20260919/replication/C2_SAMPLING_CANDIDATE_V2.json": "83a897cf8a5054364a65b55918d5fde321aa552e9f5ab85a1ed5ee176e2eb51f",
+    "research_loop/workers/replication_sprint_20260919/replication/CPU_CUSTODY_REGISTRY_V2.json": "e77f7d10b2e7732b7603ed471e3874408d8c3099ee62f2921e2ade118489c7b4",
+    "research_loop/workers/replication_sprint_20260919/replication/CPU_CUSTODY_REPAIR_V2.json": "54f7b3e3153e068d09fb479cb4c8a56e29ad8062c917834557f67d0bbbcaecbf",
+    "research_loop/workers/replication_sprint_20260919/replication/CPU_CUSTODY_SOURCE_FREEZE_V2.json": "050587019d9f0a53e3c52ea6ac1af61635db20683ba40ac69809c47e90b099df",
+    "research_loop/workers/replication_sprint_20260919/replication/EXECUTABLE_SOURCE_FREEZE.json": "e717180b6caf7777dad84126a5cd30c503a908dc32c9f3f6fdde0a3a42f31ad0",
+    "research_loop/workers/replication_sprint_20260919/replication/EXECUTION_REGISTRY.json": "1b4d9cb073ffa904c24cc7956a521d0b64be98138c12a4054dec456b40d8f1e1",
+    "research_loop/workers/replication_sprint_20260919/replication/ORIGINALS_RECEIPT.json": "7459c1b35c1f445add6da32cfa812103c5c3a6be76b8d2989003fc6d85c4efca",
+    "research_loop/workers/replication_sprint_20260919/replication/construct_candidate.py": "623c463cfaa02b67ba264dc3118de4b520861ec327f6f9ec77563c4dfc7fd3af",
+    "research_loop/workers/replication_sprint_20260919/replication/dispatch_sampling.py": "89a90fa4ed6be41cbee5f0f4630e8d259ffc7a52a4fadacf7bab680c86ee0732",
+    "research_loop/workers/replication_sprint_20260919/replication/execution.py": "818ef75d1cc111b5d8ddf2e5871633ee8c25b305c7b82c88c0f48145b3689f9d",
+    "research_loop/workers/replication_sprint_20260919/replication/inspect_originals.py": "b5de391b5b15a42001dae55ee8e10efb70e01fd083b07fcba608e7ee533ed570",
+    "research_loop/workers/replication_sprint_20260919/replication/prepare_executable.py": "3d687a248df0638f6c8d4b649d5a171632cd81d0d8366119a322dd03883ba29c",
+    "research_loop/workers/replication_sprint_20260919/replication/release_failed_claims.py": "88783fdc342324a035d11eff47086c2689fa8d19c61d27a59241f75cbd89c239",
+    "research_loop/workers/replication_sprint_20260919/replication/report_sampling.py": "e0fdc8d6c49047901ac1122745a23bbd18bbe40f4894e72cab3204e6d0329fcd",
+    "research_loop/workers/replication_sprint_20260919/replication/sampling_cells.py": "69bb970bc7be3fc2e4843d0ca99aad5fb4a08995dcdad7286f476bc020cf2e7f",
+    "research_loop/workers/replication_sprint_20260919/replication/sealed_runner.py": "aecd3aa3b95722ef325dbf1d48eb03e174fd95540aebee13c3b8f7ddf5d76ae0",
+    "research_loop/workers/replication_sprint_20260919/replication/test_candidate.py": "14177e8ee695418266813f149f7508ca856580a3e16c02665a9ca2e3ad28c9de",
+    "research_loop/workers/replication_sprint_20260919/replication/test_custody_repair.py": "25334af652c1bf073805ae4731231a49c9cf62d294afefa7acb54dd91c9a5c5d",
+    "research_loop/workers/replication_sprint_20260919/replication/test_execution.py": "d9457e0b421421a69c12df5cad2ed7ea003a1d4d6ddeaee98354e57857f84b85",
+    "research_loop/workers/replication_sprint_20260919/replication/verify_receiving_sources.py": "860e344dc2d9c2101af8461c3a82a2263e28997ecd29f6d92ab5217673d9b4e9",
+    "research_loop/workers/rohin232_age_probe_20260918/contract.py": "5dc3262c1e4e64752c9a5b372f8d0a22d9d465025210079d2f860304e3bafde1",
+    "research_loop/workers/rohin232_age_probe_20260918/runtime.py": "e1e1694d4b1709691d00963bb366888e78268597b9ba960b364e61f394000b60"
+  },
+  "scope": "CPU_ONLY_NO_MODELS_NO_DISPATCH_NO_SHARED_WRITES",
+  "temporary_directory_redirect": "test_execution.HERE and test_custody_repair.HERE -> replication_review only",
+  "test_errors": 0,
+  "test_failures": 0,
+  "tests_passed": true,
+  "tests_run": 77
+}

@@ -1,0 +1,627 @@
+{
+  "control_records": {
+    "BLOCK_COMPLETE.json": null,
+    "BLOCK_FAILED.json": {
+      "error": "own_unit_failure_terminal_no_retry",
+      "error_type": "ValueError",
+      "kept_life_signals": [],
+      "observed_unix": 1789825163.559638,
+      "original_histories_preserved": true,
+      "status": "TERMINAL_NO_RETRY_NO_FALLBACK"
+    },
+    "BLOCK_LAUNCH.json": {
+      "block_id": "65d113ba39d7a2ea0953dd290e64d1c4b9daeb607f2bc97029fd1e162a9114cf",
+      "created_unix": 1789825157.0417323,
+      "deadline_unix": 1789827557.0417323,
+      "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+      "job_configs": {
+        "37a1552b0ed1e3e7090cffe3bd74e5fefc1b54ef4416897066fcabfb4955fbf1": "6fe932c6e9423918bf663e7879171f09cd081a7a1cd555ce5c4f72b1c114f3ab",
+        "c3094680583eb0e18f5d13873912608e7d4fb5ba73aebeb2c89c58710f6003e3": "01c4adce8286be59145a629c4d3d5289db479f9978870568292ab361a5528a12",
+        "d4dcc289b524c0d9d29a55ced3bdb15511ed465738cd09198c5f3edd7535cad1": "67971423b2713817e71ff23ac99c53b1a0a2275cecfc5299caca51ce0c99154b"
+      },
+      "mode": "CPU_CUSTODY_PROOF_ONLY",
+      "model_dispatch_authorized": false,
+      "no_native_signals": true,
+      "prior_histories_preserved": true
+    },
+    "GPU_REVIEW.json": null,
+    "PROOFS_COMPLETE.json": null
+  },
+  "jobs": [
+    {
+      "arm": "base",
+      "common_forbidden": [
+        {
+          "bytes": 32,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 1352,
+          "inode": 41156633,
+          "mode": "0o664",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/CUSTODY_CANARY",
+          "regular": true,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 142825,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 1352,
+          "inode": 33816763,
+          "mode": "0o664",
+          "path": "/localhome/local-rohing/orch_post_recovery_c2_age_eval_20260918/base/judge/REFERENCE_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 142716,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 1352,
+          "inode": 33816618,
+          "mode": "0o600",
+          "path": "/localhome/local-rohing/orch_post_recovery_c2_age_eval_20260918/epoch/PRIMARY_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 20484,
+          "mode": "0o777",
+          "path": "/proc/1/root",
+          "regular": false,
+          "symlink": true,
+          "uid": 0
+        },
+        {
+          "bytes": 4096,
+          "contents_read": false,
+          "directory": true,
+          "exists": true,
+          "gid": 1352,
+          "inode": 35258629,
+          "mode": "0o700",
+          "path": "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/dispatch_locks",
+          "regular": false,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 4096,
+          "contents_read": false,
+          "directory": true,
+          "exists": true,
+          "gid": 1352,
+          "inode": 35651783,
+          "mode": "0o700",
+          "path": "/localhome/local-rohing/post_reboot_probe_queue_20260919/inputs",
+          "regular": false,
+          "symlink": false,
+          "uid": 1352
+        }
+      ],
+      "config_sha256": "6fe932c6e9423918bf663e7879171f09cd081a7a1cd555ce5c4f72b1c114f3ab",
+      "job_id": "37a1552b0ed1e3e7090cffe3bd74e5fefc1b54ef4416897066fcabfb4955fbf1",
+      "original_source_metadata": {
+        "CONDITION.json": {
+          "actual": "8f2ed55a9dfe259509cbba26bcb45f24ef95b77555f1f59bab10982298196e34",
+          "expected": "8f2ed55a9dfe259509cbba26bcb45f24ef95b77555f1f59bab10982298196e34",
+          "unchanged": true
+        },
+        "CONFIG.json": {
+          "actual": "5968895c64166238afc2240b4c5a9e40f72d9c603f4d4ba85c8998e2a978d6f7",
+          "expected": "5968895c64166238afc2240b4c5a9e40f72d9c603f4d4ba85c8998e2a978d6f7",
+          "unchanged": true
+        },
+        "GAME_MANIFEST.json": {
+          "actual": "31e3c9919524deacc1d8255caa65f5121744ef6f0465988576b2d1b7ad281274",
+          "expected": "31e3c9919524deacc1d8255caa65f5121744ef6f0465988576b2d1b7ad281274",
+          "unchanged": true
+        },
+        "SOURCE_MANIFEST.json": {
+          "actual": "bcdd5adbcd03bc52e0ae20ca400cd6b328bc9d89aeb19a3f1d9fbae20b3e5c7b",
+          "expected": "bcdd5adbcd03bc52e0ae20ca400cd6b328bc9d89aeb19a3f1d9fbae20b3e5c7b",
+          "unchanged": true
+        }
+      },
+      "player_private": [
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 41156798,
+          "mode": "0o644",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/37a1552b0ed1e3e7090cffe3bd74e5fefc1b54ef4416897066fcabfb4955fbf1/view/judge/REFERENCE_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 0
+        },
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 41156797,
+          "mode": "0o644",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/37a1552b0ed1e3e7090cffe3bd74e5fefc1b54ef4416897066fcabfb4955fbf1/view/epoch/PRIMARY_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 0
+        },
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 41156796,
+          "mode": "0o644",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/37a1552b0ed1e3e7090cffe3bd74e5fefc1b54ef4416897066fcabfb4955fbf1/view/epoch/JUDGE_EPOCH.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 0
+        }
+      ],
+      "queue_receipts": [],
+      "scientific_receipts": [],
+      "stage_records": {
+        "judge_proof_FAILED.json": {
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "error": "No module named 'sentence_transformers'",
+          "error_type": "ModuleNotFoundError",
+          "observed_unix": 1789825161.052979,
+          "result": "INCOMPLETE_NOT_ZERO_NO_RETRY"
+        },
+        "judge_proof_STARTED.json": {
+          "config_sha256": "6fe932c6e9423918bf663e7879171f09cd081a7a1cd555ce5c4f72b1c114f3ab",
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "launch_sha256": "1b7b2ded66840e0cc3da29d7ec11ad2931e71347273b0f0fee3a7ac300f14640",
+          "mode": "proof",
+          "observed_unix": 1789825157.2367098,
+          "pid": 1952278,
+          "role": "judge"
+        },
+        "judge_run_FAILED.json": null,
+        "judge_run_STARTED.json": null,
+        "player_proof_FAILED.json": {
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "error": "private_paths_and_host_proc_must_be_inaccessible",
+          "error_type": "ValueError",
+          "observed_unix": 1789825157.2858915,
+          "result": "INCOMPLETE_NOT_ZERO_NO_RETRY"
+        },
+        "player_proof_STARTED.json": {
+          "config_sha256": "6fe932c6e9423918bf663e7879171f09cd081a7a1cd555ce5c4f72b1c114f3ab",
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "launch_sha256": "1b7b2ded66840e0cc3da29d7ec11ad2931e71347273b0f0fee3a7ac300f14640",
+          "mode": "proof",
+          "observed_unix": 1789825157.2847583,
+          "pid": 1952283,
+          "role": "player"
+        },
+        "player_run_FAILED.json": null,
+        "player_run_STARTED.json": null
+      }
+    },
+    {
+      "arm": "c2sleep51",
+      "common_forbidden": [
+        {
+          "bytes": 32,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 1352,
+          "inode": 41156633,
+          "mode": "0o664",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/CUSTODY_CANARY",
+          "regular": true,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 142825,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 1352,
+          "inode": 33816915,
+          "mode": "0o664",
+          "path": "/localhome/local-rohing/orch_post_recovery_c2_age_eval_20260918/c2sleep51/judge/REFERENCE_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 142716,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 1352,
+          "inode": 33816618,
+          "mode": "0o600",
+          "path": "/localhome/local-rohing/orch_post_recovery_c2_age_eval_20260918/epoch/PRIMARY_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 20484,
+          "mode": "0o777",
+          "path": "/proc/1/root",
+          "regular": false,
+          "symlink": true,
+          "uid": 0
+        },
+        {
+          "bytes": 4096,
+          "contents_read": false,
+          "directory": true,
+          "exists": true,
+          "gid": 1352,
+          "inode": 35258629,
+          "mode": "0o700",
+          "path": "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/dispatch_locks",
+          "regular": false,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 4096,
+          "contents_read": false,
+          "directory": true,
+          "exists": true,
+          "gid": 1352,
+          "inode": 35651783,
+          "mode": "0o700",
+          "path": "/localhome/local-rohing/post_reboot_probe_queue_20260919/inputs",
+          "regular": false,
+          "symlink": false,
+          "uid": 1352
+        }
+      ],
+      "config_sha256": "67971423b2713817e71ff23ac99c53b1a0a2275cecfc5299caca51ce0c99154b",
+      "job_id": "d4dcc289b524c0d9d29a55ced3bdb15511ed465738cd09198c5f3edd7535cad1",
+      "original_source_metadata": {
+        "CONDITION.json": {
+          "actual": "c416b4d4f2009bc88d9d4161195ce822fac9321a8f0fd7a4019612260d54080e",
+          "expected": "c416b4d4f2009bc88d9d4161195ce822fac9321a8f0fd7a4019612260d54080e",
+          "unchanged": true
+        },
+        "CONFIG.json": {
+          "actual": "8edfba91dfb1cdbb94c0f9a967edb5955d2ada509bd6c06a025ffd4e734d2a9e",
+          "expected": "8edfba91dfb1cdbb94c0f9a967edb5955d2ada509bd6c06a025ffd4e734d2a9e",
+          "unchanged": true
+        },
+        "GAME_MANIFEST.json": {
+          "actual": "31e3c9919524deacc1d8255caa65f5121744ef6f0465988576b2d1b7ad281274",
+          "expected": "31e3c9919524deacc1d8255caa65f5121744ef6f0465988576b2d1b7ad281274",
+          "unchanged": true
+        },
+        "SOURCE_MANIFEST.json": {
+          "actual": "bcdd5adbcd03bc52e0ae20ca400cd6b328bc9d89aeb19a3f1d9fbae20b3e5c7b",
+          "expected": "bcdd5adbcd03bc52e0ae20ca400cd6b328bc9d89aeb19a3f1d9fbae20b3e5c7b",
+          "unchanged": true
+        }
+      },
+      "player_private": [
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 41156861,
+          "mode": "0o644",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/d4dcc289b524c0d9d29a55ced3bdb15511ed465738cd09198c5f3edd7535cad1/view/judge/REFERENCE_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 0
+        },
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 41156860,
+          "mode": "0o644",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/d4dcc289b524c0d9d29a55ced3bdb15511ed465738cd09198c5f3edd7535cad1/view/epoch/PRIMARY_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 0
+        },
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 41156859,
+          "mode": "0o644",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/d4dcc289b524c0d9d29a55ced3bdb15511ed465738cd09198c5f3edd7535cad1/view/epoch/JUDGE_EPOCH.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 0
+        }
+      ],
+      "queue_receipts": [],
+      "scientific_receipts": [],
+      "stage_records": {
+        "judge_proof_FAILED.json": {
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "error": "No module named 'sentence_transformers'",
+          "error_type": "ModuleNotFoundError",
+          "observed_unix": 1789825161.6728609,
+          "result": "INCOMPLETE_NOT_ZERO_NO_RETRY"
+        },
+        "judge_proof_STARTED.json": {
+          "config_sha256": "67971423b2713817e71ff23ac99c53b1a0a2275cecfc5299caca51ce0c99154b",
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "launch_sha256": "1b7b2ded66840e0cc3da29d7ec11ad2931e71347273b0f0fee3a7ac300f14640",
+          "mode": "proof",
+          "observed_unix": 1789825157.341495,
+          "pid": 1952286,
+          "role": "judge"
+        },
+        "judge_run_FAILED.json": null,
+        "judge_run_STARTED.json": null,
+        "player_proof_FAILED.json": {
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "error": "private_paths_and_host_proc_must_be_inaccessible",
+          "error_type": "ValueError",
+          "observed_unix": 1789825157.3780723,
+          "result": "INCOMPLETE_NOT_ZERO_NO_RETRY"
+        },
+        "player_proof_STARTED.json": {
+          "config_sha256": "67971423b2713817e71ff23ac99c53b1a0a2275cecfc5299caca51ce0c99154b",
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "launch_sha256": "1b7b2ded66840e0cc3da29d7ec11ad2931e71347273b0f0fee3a7ac300f14640",
+          "mode": "proof",
+          "observed_unix": 1789825157.3768032,
+          "pid": 1952289,
+          "role": "player"
+        },
+        "player_run_FAILED.json": null,
+        "player_run_STARTED.json": null
+      }
+    },
+    {
+      "arm": "c2sleep117",
+      "common_forbidden": [
+        {
+          "bytes": 32,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 1352,
+          "inode": 41156633,
+          "mode": "0o664",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/CUSTODY_CANARY",
+          "regular": true,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 142825,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 1352,
+          "inode": 33817075,
+          "mode": "0o664",
+          "path": "/localhome/local-rohing/orch_post_recovery_c2_age_eval_20260918/c2sleep117/judge/REFERENCE_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 142716,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 1352,
+          "inode": 33816618,
+          "mode": "0o600",
+          "path": "/localhome/local-rohing/orch_post_recovery_c2_age_eval_20260918/epoch/PRIMARY_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 20484,
+          "mode": "0o777",
+          "path": "/proc/1/root",
+          "regular": false,
+          "symlink": true,
+          "uid": 0
+        },
+        {
+          "bytes": 4096,
+          "contents_read": false,
+          "directory": true,
+          "exists": true,
+          "gid": 1352,
+          "inode": 35258629,
+          "mode": "0o700",
+          "path": "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/dispatch_locks",
+          "regular": false,
+          "symlink": false,
+          "uid": 1352
+        },
+        {
+          "bytes": 4096,
+          "contents_read": false,
+          "directory": true,
+          "exists": true,
+          "gid": 1352,
+          "inode": 35651783,
+          "mode": "0o700",
+          "path": "/localhome/local-rohing/post_reboot_probe_queue_20260919/inputs",
+          "regular": false,
+          "symlink": false,
+          "uid": 1352
+        }
+      ],
+      "config_sha256": "01c4adce8286be59145a629c4d3d5289db479f9978870568292ab361a5528a12",
+      "job_id": "c3094680583eb0e18f5d13873912608e7d4fb5ba73aebeb2c89c58710f6003e3",
+      "original_source_metadata": {
+        "CONDITION.json": {
+          "actual": "538259661ee450b2f2d60739db9c1dd1f3a355d869d78b6222f574e4db77179e",
+          "expected": "538259661ee450b2f2d60739db9c1dd1f3a355d869d78b6222f574e4db77179e",
+          "unchanged": true
+        },
+        "CONFIG.json": {
+          "actual": "6e274efce8a9578ecbde356c1ca79f0f585f3782801c0d4acc182568a5c67ba1",
+          "expected": "6e274efce8a9578ecbde356c1ca79f0f585f3782801c0d4acc182568a5c67ba1",
+          "unchanged": true
+        },
+        "GAME_MANIFEST.json": {
+          "actual": "31e3c9919524deacc1d8255caa65f5121744ef6f0465988576b2d1b7ad281274",
+          "expected": "31e3c9919524deacc1d8255caa65f5121744ef6f0465988576b2d1b7ad281274",
+          "unchanged": true
+        },
+        "SOURCE_MANIFEST.json": {
+          "actual": "bcdd5adbcd03bc52e0ae20ca400cd6b328bc9d89aeb19a3f1d9fbae20b3e5c7b",
+          "expected": "bcdd5adbcd03bc52e0ae20ca400cd6b328bc9d89aeb19a3f1d9fbae20b3e5c7b",
+          "unchanged": true
+        }
+      },
+      "player_private": [
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 41156931,
+          "mode": "0o644",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/c3094680583eb0e18f5d13873912608e7d4fb5ba73aebeb2c89c58710f6003e3/view/judge/REFERENCE_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 0
+        },
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 41156930,
+          "mode": "0o644",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/c3094680583eb0e18f5d13873912608e7d4fb5ba73aebeb2c89c58710f6003e3/view/epoch/PRIMARY_PANELS.private.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 0
+        },
+        {
+          "bytes": 0,
+          "contents_read": false,
+          "directory": false,
+          "exists": true,
+          "gid": 0,
+          "inode": 41156929,
+          "mode": "0o644",
+          "path": "/localhome/local-rohing/post_sampling_replication_20260919/4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95/jobs/c3094680583eb0e18f5d13873912608e7d4fb5ba73aebeb2c89c58710f6003e3/view/epoch/JUDGE_EPOCH.json",
+          "regular": true,
+          "symlink": false,
+          "uid": 0
+        }
+      ],
+      "queue_receipts": [],
+      "scientific_receipts": [],
+      "stage_records": {
+        "judge_proof_FAILED.json": {
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "error": "No module named 'sentence_transformers'",
+          "error_type": "ModuleNotFoundError",
+          "observed_unix": 1789825161.693747,
+          "result": "INCOMPLETE_NOT_ZERO_NO_RETRY"
+        },
+        "judge_proof_STARTED.json": {
+          "config_sha256": "01c4adce8286be59145a629c4d3d5289db479f9978870568292ab361a5528a12",
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "launch_sha256": "1b7b2ded66840e0cc3da29d7ec11ad2931e71347273b0f0fee3a7ac300f14640",
+          "mode": "proof",
+          "observed_unix": 1789825157.4558053,
+          "pid": 1952292,
+          "role": "judge"
+        },
+        "judge_run_FAILED.json": null,
+        "judge_run_STARTED.json": null,
+        "player_proof_FAILED.json": {
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "error": "private_paths_and_host_proc_must_be_inaccessible",
+          "error_type": "ValueError",
+          "observed_unix": 1789825157.4827378,
+          "result": "INCOMPLETE_NOT_ZERO_NO_RETRY"
+        },
+        "player_proof_STARTED.json": {
+          "config_sha256": "01c4adce8286be59145a629c4d3d5289db479f9978870568292ab361a5528a12",
+          "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+          "launch_sha256": "1b7b2ded66840e0cc3da29d7ec11ad2931e71347273b0f0fee3a7ac300f14640",
+          "mode": "proof",
+          "observed_unix": 1789825157.4818032,
+          "pid": 1952295,
+          "role": "player"
+        },
+        "player_run_FAILED.json": null,
+        "player_run_STARTED.json": null
+      }
+    }
+  ],
+  "no_devices": true,
+  "no_models": true,
+  "no_service_submissions": true,
+  "no_writes": true,
+  "observed_utc": "2026-09-19T13:44:13Z",
+  "original_no_retry_history": {
+    "actual": "5115656143caa617c455054acbbad8117e0231823a49cd3758fb23774dbcd647",
+    "expected": "5115656143caa617c455054acbbad8117e0231823a49cd3758fb23774dbcd647",
+    "path": "/localhome/local-rohing/post_reboot_probe_queue_20260919/candidate_v4/history.json",
+    "unchanged": true
+  },
+  "private_contents_read": false,
+  "retained_claims": {
+    "judge": {
+      "created_unix": 1789825157.0417323,
+      "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+      "hold_until_unix": 1789827587.0417323,
+      "job_id": "65d113ba39d7a2ea0953dd290e64d1c4b9daeb607f2bc97029fd1e162a9114cf",
+      "protocol": "C2_SAMPLING_DIAGNOSTIC_V1"
+    },
+    "player": {
+      "created_unix": 1789825157.0417323,
+      "diagnostic_epoch_sha256": "4df129caf0a0377ba91feec83923bc972e00b10dab13b5b198594db567689d95",
+      "hold_until_unix": 1789827587.0417323,
+      "job_id": "65d113ba39d7a2ea0953dd290e64d1c4b9daeb607f2bc97029fd1e162a9114cf",
+      "protocol": "C2_SAMPLING_DIAGNOSTIC_V1"
+    }
+  },
+  "scope": "HOST_METADATA_NOT_A_LIVE_ROLE_NAMESPACE_PROOF",
+  "source_freeze_sha256": "b85c15d598010712af0fe32505285b79b63c8daf4a85565e300f0b940080e0ab",
+  "uid": 1352
+}

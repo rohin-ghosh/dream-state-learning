@@ -27,6 +27,14 @@ not fix it in the actual player namespace. No failed root may be retried or
 relabelled as science. This reviewer runs no receiving commands or mutations;
 Main owns the new receiving proof and its exact custody/mount evidence.
 
+**Concrete V2 configuration concern:** the frozen command uses `RootDirectory`
+with plain absolute `InaccessiblePaths` (no `+`), while bind destinations are
+unit-root-relative. Upstream systemd documents the former as host-root-relative
+unless prefixed with `+`. This is a source-level root-addressing mismatch
+consistent with the failed masks; no actual mount-order trace is claimed.
+V3 still needs the structural private-target separation, not a retry of V2.
+Primary specification and limitations are recorded in the V2 sidecar.
+
 ## Preserved V1 failure — September 19, 13:44:13 UTC evidence cut
 
 **NOT READY FOR MODEL/GPU DISPATCH. All six real CPU proof units failed.**

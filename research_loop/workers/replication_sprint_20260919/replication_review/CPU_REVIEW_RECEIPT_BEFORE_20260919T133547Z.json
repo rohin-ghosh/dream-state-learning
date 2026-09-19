@@ -1,0 +1,90 @@
+{
+  "candidate_stable_during_checks": true,
+  "mutation_observations": [
+    {
+      "error": "same_inference_identity:tokenizer_backend_sha256",
+      "mutation": "tokenizer_backend_sha256",
+      "rejected": true
+    },
+    {
+      "error": "same_inference_identity:chat_template_sha256",
+      "mutation": "chat_template_sha256",
+      "rejected": true
+    },
+    {
+      "error": "same_inference_identity:decoder",
+      "mutation": "decoder",
+      "rejected": true
+    },
+    {
+      "error": "same_inference_identity:library_versions",
+      "mutation": "library_versions",
+      "rejected": true
+    },
+    {
+      "error": "pinned_manifest_scene_identity",
+      "mutation": "unbound_scene_ids",
+      "rejected": true
+    }
+  ],
+  "observed_utc": "2026-09-19T13:35:39Z",
+  "partial_reporting_observation": {
+    "concern": "A present partial cell prevents reporting all six source/seed denominators",
+    "error": "Cannot autospec attr 'exists' from target 'Path' as it has already been mocked out. [target=<class 'pathlib.Path'>, attr=<MagicMock name='exists' id='123720238650320'>]",
+    "error_type": "InvalidSpecError",
+    "fixture": "authentic_contract_partial_status_128_of_1024_tokens",
+    "public_table_available": false
+  },
+  "pins_after": {
+    "research_loop/workers/post_reboot_probe_queue_20260919/version_v4_rebind/SOURCE_FREEZE_V4_REBIND.json": "d77089e8d7eb3ff06e709fb8f16c9555a2c620a614fe9c335a516c54475061e0",
+    "research_loop/workers/post_recovery_age_queue_20260918/epoch.py": "3530e58a65458b4e9e56a4a93a5e6152d8d47da134e9cdcaa0b815d67a42d864",
+    "research_loop/workers/post_recovery_age_queue_20260918/runner.py": "64b118f16dd310a97379aa4640f9f7689c36a4024cd6b4a41be14cfc6b5f79f9",
+    "research_loop/workers/replication_sprint_20260919/C2_SAMPLING_PREREGISTRATION.md": "afb4de49f040c589ec416f7901c02b945776593ecf8670d4505aa417a30c5c63",
+    "research_loop/workers/replication_sprint_20260919/replication/C2_SAMPLING_CANDIDATE_V2.json": "83a897cf8a5054364a65b55918d5fde321aa552e9f5ab85a1ed5ee176e2eb51f",
+    "research_loop/workers/replication_sprint_20260919/replication/EXECUTABLE_SOURCE_FREEZE.json": "e717180b6caf7777dad84126a5cd30c503a908dc32c9f3f6fdde0a3a42f31ad0",
+    "research_loop/workers/replication_sprint_20260919/replication/EXECUTION_REGISTRY.json": "1b4d9cb073ffa904c24cc7956a521d0b64be98138c12a4054dec456b40d8f1e1",
+    "research_loop/workers/replication_sprint_20260919/replication/ORIGINALS_RECEIPT.json": "7459c1b35c1f445add6da32cfa812103c5c3a6be76b8d2989003fc6d85c4efca",
+    "research_loop/workers/replication_sprint_20260919/replication/construct_candidate.py": "623c463cfaa02b67ba264dc3118de4b520861ec327f6f9ec77563c4dfc7fd3af",
+    "research_loop/workers/replication_sprint_20260919/replication/dispatch_sampling.py": "598c09058d939477d23013918c1c1c5a8f8c3b3f3761a1dcfacad906f0d8ed40",
+    "research_loop/workers/replication_sprint_20260919/replication/execution.py": "a9d5b99852a76c366fce6f03ee660e0486ebaa4d4020390a796e51b8d83b72bd",
+    "research_loop/workers/replication_sprint_20260919/replication/inspect_originals.py": "b5de391b5b15a42001dae55ee8e10efb70e01fd083b07fcba608e7ee533ed570",
+    "research_loop/workers/replication_sprint_20260919/replication/prepare_executable.py": "02b0db31dace0d2bb23bd4c547e0e42cfc38d66ae49d35781d5676e9324358dd",
+    "research_loop/workers/replication_sprint_20260919/replication/report_sampling.py": "cebd13f63249fc4f8c51f8916628ada3e8d942508f05708ef93974d10ba8b772",
+    "research_loop/workers/replication_sprint_20260919/replication/sampling_cells.py": "69bb970bc7be3fc2e4843d0ca99aad5fb4a08995dcdad7286f476bc020cf2e7f",
+    "research_loop/workers/replication_sprint_20260919/replication/sealed_runner.py": "f8fd3519b69b81a1d6d0fa1e6d9ff8ebcd1fb188bb900a98d2650a30e9794243",
+    "research_loop/workers/replication_sprint_20260919/replication/test_candidate.py": "14177e8ee695418266813f149f7508ca856580a3e16c02665a9ca2e3ad28c9de",
+    "research_loop/workers/replication_sprint_20260919/replication/test_execution.py": "cb66e15595058e4421ae85dd4f34c3fc9e59e2590f4f24ed9a2663368ba35a3d",
+    "research_loop/workers/replication_sprint_20260919/replication/verify_receiving_sources.py": "860e344dc2d9c2101af8461c3a82a2263e28997ecd29f6d92ab5217673d9b4e9",
+    "research_loop/workers/rohin232_age_probe_20260918/contract.py": "5dc3262c1e4e64752c9a5b372f8d0a22d9d465025210079d2f860304e3bafde1",
+    "research_loop/workers/rohin232_age_probe_20260918/runtime.py": "e1e1694d4b1709691d00963bb366888e78268597b9ba960b364e61f394000b60"
+  },
+  "pins_before": {
+    "research_loop/workers/post_reboot_probe_queue_20260919/version_v4_rebind/SOURCE_FREEZE_V4_REBIND.json": "d77089e8d7eb3ff06e709fb8f16c9555a2c620a614fe9c335a516c54475061e0",
+    "research_loop/workers/post_recovery_age_queue_20260918/epoch.py": "3530e58a65458b4e9e56a4a93a5e6152d8d47da134e9cdcaa0b815d67a42d864",
+    "research_loop/workers/post_recovery_age_queue_20260918/runner.py": "64b118f16dd310a97379aa4640f9f7689c36a4024cd6b4a41be14cfc6b5f79f9",
+    "research_loop/workers/replication_sprint_20260919/C2_SAMPLING_PREREGISTRATION.md": "afb4de49f040c589ec416f7901c02b945776593ecf8670d4505aa417a30c5c63",
+    "research_loop/workers/replication_sprint_20260919/replication/C2_SAMPLING_CANDIDATE_V2.json": "83a897cf8a5054364a65b55918d5fde321aa552e9f5ab85a1ed5ee176e2eb51f",
+    "research_loop/workers/replication_sprint_20260919/replication/EXECUTABLE_SOURCE_FREEZE.json": "e717180b6caf7777dad84126a5cd30c503a908dc32c9f3f6fdde0a3a42f31ad0",
+    "research_loop/workers/replication_sprint_20260919/replication/EXECUTION_REGISTRY.json": "1b4d9cb073ffa904c24cc7956a521d0b64be98138c12a4054dec456b40d8f1e1",
+    "research_loop/workers/replication_sprint_20260919/replication/ORIGINALS_RECEIPT.json": "7459c1b35c1f445add6da32cfa812103c5c3a6be76b8d2989003fc6d85c4efca",
+    "research_loop/workers/replication_sprint_20260919/replication/construct_candidate.py": "623c463cfaa02b67ba264dc3118de4b520861ec327f6f9ec77563c4dfc7fd3af",
+    "research_loop/workers/replication_sprint_20260919/replication/dispatch_sampling.py": "598c09058d939477d23013918c1c1c5a8f8c3b3f3761a1dcfacad906f0d8ed40",
+    "research_loop/workers/replication_sprint_20260919/replication/execution.py": "a9d5b99852a76c366fce6f03ee660e0486ebaa4d4020390a796e51b8d83b72bd",
+    "research_loop/workers/replication_sprint_20260919/replication/inspect_originals.py": "b5de391b5b15a42001dae55ee8e10efb70e01fd083b07fcba608e7ee533ed570",
+    "research_loop/workers/replication_sprint_20260919/replication/prepare_executable.py": "02b0db31dace0d2bb23bd4c547e0e42cfc38d66ae49d35781d5676e9324358dd",
+    "research_loop/workers/replication_sprint_20260919/replication/report_sampling.py": "cebd13f63249fc4f8c51f8916628ada3e8d942508f05708ef93974d10ba8b772",
+    "research_loop/workers/replication_sprint_20260919/replication/sampling_cells.py": "69bb970bc7be3fc2e4843d0ca99aad5fb4a08995dcdad7286f476bc020cf2e7f",
+    "research_loop/workers/replication_sprint_20260919/replication/sealed_runner.py": "f8fd3519b69b81a1d6d0fa1e6d9ff8ebcd1fb188bb900a98d2650a30e9794243",
+    "research_loop/workers/replication_sprint_20260919/replication/test_candidate.py": "14177e8ee695418266813f149f7508ca856580a3e16c02665a9ca2e3ad28c9de",
+    "research_loop/workers/replication_sprint_20260919/replication/test_execution.py": "cb66e15595058e4421ae85dd4f34c3fc9e59e2590f4f24ed9a2663368ba35a3d",
+    "research_loop/workers/replication_sprint_20260919/replication/verify_receiving_sources.py": "860e344dc2d9c2101af8461c3a82a2263e28997ecd29f6d92ab5217673d9b4e9",
+    "research_loop/workers/rohin232_age_probe_20260918/contract.py": "5dc3262c1e4e64752c9a5b372f8d0a22d9d465025210079d2f860304e3bafde1",
+    "research_loop/workers/rohin232_age_probe_20260918/runtime.py": "e1e1694d4b1709691d00963bb366888e78268597b9ba960b364e61f394000b60"
+  },
+  "scope": "CPU_ONLY_NO_MODELS_NO_DISPATCH_NO_SHARED_WRITES",
+  "temporary_directory_redirect": "test_execution.HERE -> replication_review only",
+  "test_errors": 0,
+  "test_failures": 0,
+  "tests_passed": true,
+  "tests_run": 55
+}
