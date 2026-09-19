@@ -1,0 +1,111 @@
+{
+  "schema": "PAIRED_PARENT_AUTH_DIAGNOSIS_V1",
+  "inspection_started_utc": "2026-09-19T13:34:34Z",
+  "inspection_last_read_utc": "2026-09-19T13:36:11Z",
+  "scope": "Bounded read-only diagnosis; parenting candidate remains offline",
+  "status": "LIVE_BLOCKED_ORIGINAL_PROVIDER_AUTHORIZATION",
+  "local_code_or_configuration_mismatch_demonstrated": false,
+  "root_cause_detail": "401/auth_error is established; expiry, revocation, invalid credential and entitlement cannot be distinguished offline",
+  "original_route": {
+    "provider_name": "nvidia",
+    "model": "openai/openai/gpt-6-astra",
+    "endpoint": "https://inference-api.nvidia.com/v1/responses",
+    "method": "POST",
+    "wire_api": "responses",
+    "config_path": "/home/rohing/.codex/nvidia-astra.config.toml",
+    "credential_source_name": "inherited environment NVIDIA_API_KEY",
+    "authorization_scheme": "Bearer",
+    "pair_reasoning_effort": "low",
+    "redirects_allowed": false,
+    "proxy_handler_explicitly_empty": true,
+    "provider_attempts_per_call": 1,
+    "provider_retries": 0,
+    "current_selected_configuration_matches": true,
+    "source": "gpu/orch_route_parent_campaign_providers.py:65"
+  },
+  "pair_findings": [
+    {
+      "arm": "learner",
+      "process_receipt": "research_loop/workers/post_reboot_pair_parents_20260919/private/learner/PROCESS_345404_792480.json",
+      "recorded_python_sources_match_current": true,
+      "prior_success": {
+        "directory": "research_loop/workers/post_reboot_pair_parents_20260919/private/learner/turn_000103_1789793374442350991",
+        "dispatch_utc": "2026-09-19T04:49:34.474044+00:00",
+        "status": "completed",
+        "publication_exists": true,
+        "same_config_identity_as_failed_attempt": true
+      },
+      "failure": {
+        "directory": "research_loop/workers/post_reboot_pair_parents_20260919/private/learner/turn_000104_1789794006756564934",
+        "dispatch_utc": "2026-09-19T05:00:06.791085+00:00",
+        "code": "401",
+        "type": "auth_error",
+        "response_exists": false,
+        "result_exists": false,
+        "publication_exists": false,
+        "attempts": 1,
+        "retries": 0,
+        "same_config_identity_as_successful_c2_reference": true
+      }
+    },
+    {
+      "arm": "frozen",
+      "process_receipt": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/PROCESS_345405_792480.json",
+      "recorded_python_sources_match_current": true,
+      "prior_success": {
+        "directory": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/turn_000133_1789793798431912135",
+        "dispatch_utc": "2026-09-19T04:56:38.487334+00:00",
+        "status": "completed",
+        "publication_exists": true,
+        "same_config_identity_as_failed_attempt": true
+      },
+      "failure": {
+        "directory": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/turn_000134_1789794506916730728",
+        "dispatch_utc": "2026-09-19T05:08:26.977778+00:00",
+        "code": "401",
+        "type": "auth_error",
+        "response_exists": false,
+        "result_exists": false,
+        "publication_exists": false,
+        "attempts": 1,
+        "retries": 0,
+        "same_config_identity_as_successful_c2_reference": true
+      }
+    }
+  ],
+  "c2_successful_comparison": {
+    "directory": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session1/parent/parent_000064",
+    "provider_created_at_utc": "2026-09-19T08:06:33+00:00",
+    "status": "completed",
+    "same_model_and_endpoint": true,
+    "actual_method": "POST",
+    "route_changed": false,
+    "inherited_key_present_receipt": true,
+    "authorization_matches_inherited_key_receipt": true,
+    "wrapper_source": "research_loop/workers/rohin174_parenting_20260917/node5/provider_route.py",
+    "wrapper_changes_credentials_or_route": false,
+    "latest_status_claim": false,
+    "credential_equality_with_pair_established": false
+  },
+  "p3_bounded_comparison": {
+    "source": "research_loop/workers/post_reboot_p3_parent_20260919/runner.py",
+    "observed_design": "preserves original strong provider; activity logging and 429 backoff; xhigh effort",
+    "history_or_environment_audited": false
+  },
+  "external_prerequisite": "Owner-secured valid authorization for the existing provider; no renewed credential available per Main",
+  "safe_repair_proposal": "AUTH_DIAGNOSIS.md#safe-restoration-proposal",
+  "credential_values_or_hashes_exported": false,
+  "credential_environments_read_or_compared_by_this_worker": false,
+  "credentials_copied_across_scopes": false,
+  "configuration_files_modified_or_hashed": false,
+  "api_calls": 0,
+  "api_retries": 0,
+  "provider_fallbacks": 0,
+  "guards_cleared": 0,
+  "parent_publications": 0,
+  "native_signals": 0,
+  "repair_code_changes": 0,
+  "repair_tests_added": 0,
+  "repair_tests_reason": "No demonstrated non-secret local defect; no repair patch to test",
+  "independent_parent_free_probes_blocked_by_this_diagnosis": false
+}

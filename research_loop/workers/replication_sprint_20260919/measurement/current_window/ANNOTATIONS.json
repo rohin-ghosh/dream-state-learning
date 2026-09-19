@@ -1,0 +1,70 @@
+{
+  "schema": "current_window_semantic_annotations_v1",
+  "reviewer": "Workstream 3 assistant; manual reading of the selected complete source-bound outputs",
+  "reviewed_utc": "2026-09-19T13:46:26Z",
+  "independent_second_review": false,
+  "evidence_sha256": "74d03022b25bf78c6ea8cb40384283e58672df0d71c8a8ca3e32fa01f2f69e29",
+  "correct_next_ACT_definition": "Does the actual next ACT implement the primary parent's concrete corrective instruction? This is not a humor score or a declaration that every mathematical claim is false.",
+  "rows": [
+    {
+      "life": "C2", "ACT_response": 15105,
+      "specific_recognition_of_primary_in_THINK": "UNKNOWN",
+      "specific_recognition_of_visible_group_feedback_in_THINK": "NO",
+      "specific_recognition_in_ACT": "NO", "correct_next_ACT": "NO", "requested_artifact_present": "NO",
+      "external_check": "UNKNOWN", "task_correctness": "UNKNOWN", "child_plan_to_artifact_fidelity": "UNKNOWN",
+      "THINK_quote": {"response": 15088, "text": "I believe I am incorporating the corrections and calculations correctly."},
+      "ACT_quote": "No modifications are necessary.",
+      "basis": "The primary pair-listing request arrived after both THINK prompts. Those THINKs did see earlier requests for actual arithmetic, but supply assurances rather than identifying and checking that error. THINK15088 mentions V=3 without the requested worked check. ACT15105 sees the pair-listing request yet supplies a V correctness assertion and print wrapper: no chosen graph subset, pair list, or edge markings. No actual tool result is evaluated here."
+    },
+    {
+      "life": "C2", "ACT_response": 15214,
+      "specific_recognition_of_primary_in_THINK": "UNKNOWN",
+      "specific_recognition_of_visible_group_feedback_in_THINK": "NO",
+      "specific_recognition_in_ACT": "NO", "correct_next_ACT": "NO", "requested_artifact_present": "NO",
+      "external_check": "UNKNOWN", "task_correctness": "UNKNOWN", "child_plan_to_artifact_fidelity": "UNKNOWN",
+      "THINK_quote": {"response": 15197, "text": "I believe I am incorporating the corrections and calculations correctly."},
+      "ACT_quote": "print(\"The value of V is correct.\")",
+      "basis": "The primary request to recover the graph statement or identify missing information arrived after the last THINK prompt. The earlier visible parent request asks for vertex labels and edges; neither THINK names the actual missing graph evidence. ACT15214 has the primary request visible but neither restates the problem nor specifies unavailable information; it repeats assertions about V."
+    },
+    {
+      "life": "C2", "ACT_response": 15325,
+      "specific_recognition_of_primary_in_THINK": "UNKNOWN",
+      "specific_recognition_of_visible_group_feedback_in_THINK": "NO",
+      "specific_recognition_in_ACT": "NO", "correct_next_ACT": "NO", "requested_artifact_present": "NO",
+      "external_check": "UNKNOWN", "task_correctness": "UNKNOWN", "child_plan_to_artifact_fidelity": "UNKNOWN",
+      "THINK_quote": {"response": 15306, "text": "Thus, I will assume that the solution is correct"},
+      "ACT_quote": "print(\"The value of V is correct.\")",
+      "basis": "The final parent asks for an evidence-versus-intention working-state revision, but arrives after both THINK prompts. Earlier visible feedback asks for a concrete rejecting graph test. THINK15306 assumes correctness; THINK15315 includes an unexecuted broken code fragment assigning V=29, not the requested graph test or explicit error recognition. ACT15325 repeats confidence and a print claim, with no revised evidence/intention note. The code fragment is not an external check."
+    },
+    {
+      "life": "GAME1_P3", "ACT_response": 10318,
+      "specific_recognition_of_primary_in_THINK": "NO",
+      "specific_recognition_of_visible_group_feedback_in_THINK": "NO",
+      "specific_recognition_in_ACT": "NO", "correct_next_ACT": "NO", "requested_artifact_present": "NO",
+      "external_check": "UNKNOWN", "task_correctness": "UNKNOWN", "child_plan_to_artifact_fidelity": "UNKNOWN",
+      "THINK_quote": {"response": 10311, "text": "we will focus on creating a funny caption for the given cartoons"},
+      "ACT_quote": "We will record the judges'",
+      "basis": "The same concrete caption correction is visible in THINK10310 and ACT10317. The complete THINK and ACT outputs repeatedly promise to record feedback. They do not identify that the preceding response lacked a caption and do not provide the woman's requested line about an adult responsibility. This is a semantic full-output review, not a language or intention-marker filter."
+    },
+    {
+      "life": "GAME1_P3", "ACT_response": 10398,
+      "specific_recognition_of_primary_in_THINK": "NO",
+      "specific_recognition_of_visible_group_feedback_in_THINK": "NO",
+      "specific_recognition_in_ACT": "NO", "correct_next_ACT": "NO", "requested_artifact_present": "NO",
+      "external_check": "UNKNOWN", "task_correctness": "UNKNOWN", "child_plan_to_artifact_fidelity": "UNKNOWN",
+      "THINK_quote": {"response": 10391, "text": "we will focus on creating a funny caption for the given cartoons"},
+      "ACT_quote": "We will record the judges' feedback on the previous caption suggestions",
+      "basis": "The primary parent explicitly asks for the man's selfish purchase and an actual caption. It is visible in both the THINK and ACT requests. The child gives repeated plans to use feedback, with no specific recognition of its missing artifact, no chosen purchase, and no man's caption. No score or humor-quality judgment is inferred."
+    },
+    {
+      "life": "GAME1_P3", "ACT_response": 10718,
+      "specific_recognition_of_primary_in_THINK": "NO",
+      "specific_recognition_of_visible_group_feedback_in_THINK": "NO",
+      "specific_recognition_in_ACT": "NO", "correct_next_ACT": "NO", "requested_artifact_present": "NO",
+      "external_check": "UNKNOWN", "task_correctness": "UNKNOWN", "child_plan_to_artifact_fidelity": "UNKNOWN",
+      "THINK_quote": {"response": 10711, "text": "we will record the judges' feedback on the previous caption suggestions"},
+      "ACT_quote": "although the previous suggestions did not produce the desired feedback",
+      "basis": "The parent asks for the woman's exact line scolding the money, visible throughout this THINK→ACT pair. The child reframes the issue as absent desired feedback and repeats recording promises. That is not recognition of the actual correction: supply a caption rather than planning. No scolding line or other actual caption appears in the complete output. An irrelevant script-shaped suffix is treated as untrusted child text, never executed, and is not the requested artifact."
+    }
+  ]
+}

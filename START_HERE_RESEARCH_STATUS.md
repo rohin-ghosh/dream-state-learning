@@ -1,6 +1,6 @@
 # Research status — September 19, 2026
 
-**Handoff update:** September 19, 13:34 UTC / 06:34 PDT. Individual evidence cuts are dated below.
+**Handoff update:** September 19, 13:43 UTC / 06:43 PDT. Individual evidence cuts are dated below.
 **Current phase:** evidence audit, controlled-replication preparation, and recovery.
 
 This is the morning handoff for Rohin. It separates completed observations from
@@ -41,6 +41,14 @@ Six parallel workstreams have been assigned. Assignment is not completion:
 | Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Candidate complete; 34 tests independently rerun; live deployment blocked by provider authentication |
 | Formalization | Fast/slow-loop hypotheses, estimands, controls and falsifiers | Proposal complete; not a launched experiment |
 | Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | Disk exhaustion confirmed; checkpoint files verified; storage/recovery work continues; none restarted |
+
+**Actual replication startup status:** Main reran52 CPU tests and staged the
+three-condition diagnostic on ovx4. A nonexistent legacy backbone path was
+repaired against the pinned model manifest, preserving the failed staging
+directory. The real, model-free confinement proof then failed: a judge-side
+import was missing and the player-side private-path check did not pass. No
+model was loaded and no new scientific result exists. The failed attempt is
+preserved; repair must restore the intended confinement, not waive it.
 
 Main is checking usable evaluation resources, preserving the existing experiment
 state, and integrating these workstreams. A repeated ovx4 check at13:14 UTC
@@ -100,6 +108,30 @@ does not explain the whole problem.
 
 Readout: `research_loop/workers/replication_sprint_20260919/measurement/results/SUMMARY.md`.
 Tests: `research_loop/workers/replication_sprint_20260919/measurement/MAIN_TESTS.txt`.
+
+### New preregistered correction window
+
+A separate last-three-available-opportunities review used the fixed12:00 and
+13:00 collector cuts, selecting outcomes from11:23–12:47 UTC. Selection was
+declared before inspecting child outputs; it is not exhaustive coverage up to
+the13:40 cutoff. Main independently reran24 focused tests successfully.
+
+| Life | Exact correction visible in ACT | Correct next implementation | Requested artifact present |
+| --- | ---: | ---: | ---: |
+| C2 | 3/3 | 0/3 | 0/3 |
+| P3 | 3/3 | 0/3 | 0/3 captions |
+
+For C2, these primary instructions arrived after the selected THINK prompts,
+so THINK recognition is UNKNOWN, not a demonstrated failure. P3 saw the same
+correction during THINK and ACT in all three cases but showed no specific
+recognition. Another P3 ACT remains unlinked/UNKNOWN because of a collection
+gap. These six opportunities are not pooled with the older five-chain review.
+
+The operational lesson is that delivering the words does not guarantee uptake.
+This window supports a real failure to implement visible guidance; it does not
+identify a causal LoRA effect or establish that every later action fails.
+Receipts, annotations and49 verified source hashes:
+`research_loop/workers/replication_sprint_20260919/measurement/current_window/README.md`.
 
 ### Matched-age learner and frozen-sibling caption observations
 
@@ -162,6 +194,13 @@ Readiness and exact integration:
   metadata exists, but that alone is not a verified continuation. Astra7's
   bridge is running with file-not-found errors; it is not a functioning
   parent-child exchange while Astra7 is absent.
+- The **13:38 UTC** follow-up confirms that both node-2 failures were also
+  ENOSPC. C0 has48 recorded but uncommitted sleep updates; Astra7 has29.
+  Those records are not saved optimizer/RNG tensors. The existing recovery
+  candidate also rejects their already-authorized wall-extension metadata;
+  deleting that field would not be a legitimate repair. Exact blockers and
+  retained row/state identities are in
+  `research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/RECOVERY_PLAN.md`.
 - This separate fleet cut and exact source identities are recorded in
   `research_loop/workers/replication_sprint_20260919/evidence/CURRENT_FLEET_CUT.md`
   and its accompanying JSON. Cuts below cover different nodes and times.
@@ -175,6 +214,9 @@ Readiness and exact integration:
   provider authentication must be restored through the secure configuration
   before these can be called actively parented treatments. Parent-free
   evaluation and offline implementation do not require that parent API.
+  A subsequent read-only route audit found no provider/configuration mismatch
+  to fix locally. Valid authorization for the original provider must be
+  restored securely; see `parenting/AUTH_DIAGNOSIS.md` in the sprint directory.
 - At **13:08:36 UTC**, the original node-3 route reached `ipp2-ovx-p6-09`.
   All eight GPUs showed approximately 1 MiB, with no compute processes. The five
   caption forks and three math lives have exit records. The machine had not just
@@ -209,6 +251,10 @@ Per-life recovery table:
   two sampling seeds at equal generated-token budgets. These are historical
   development-scene results, not independent trained-lineage replications,
   certified humor, or proof that tapering caused improvement.
+  The earlier conflicting totals counted replayed status events: raw base
+  sums28/40 reduce to15/24 after scene/caption deduplication in that same
+  block. The distinction is in `post_recovery_c2_age_eval_20260918/RESULTS.md`;
+  do not mix raw events, distinct strings and novelty counts.
 - A deliberately parent-absent caption cycle was completed and logged. It did
   not establish verified self-correction; earlier teaching remained visible.
 - The bounded post-reboot correction review did not establish the complete
@@ -216,7 +262,9 @@ Per-life recovery table:
   to act despite visible guidance occurred.
 - A frozen-sibling sleep24 probe completed with 6,144 generated tokens and no
   parent tokens or parameter updates. Its two seeds produced 14/14 operational
-  new pixels. It is a completed control observation, not a new training success.
+  new pixels under the original judge; the separately executed adopted-judge
+  probe produced15/24. These are completed control observations, not new
+  training successes or interchangeable judge epochs.
 
 Receipts:
 
@@ -241,6 +289,37 @@ Receipts:
    artifacts. All authentic child-authored rows remain eligible under the
    existing learning policy; frozen controls remain frozen. No new leases,
    access bypasses, or silent resets.
+
+## My recommendation for the next experimental block
+
+The immediate target is **reliably doing the useful operation**, not producing
+more self-reflective language. First demonstrate a short chain: actual error
+or missing artifact, grounded feedback, a correct next action, then another
+relevant action without a reminder. Only afterward ask whether sleep preserves
+that improvement in clean context and on a different task. A frozen sibling
+must receive the same opportunity for contingent help, not necessarily the
+same words.
+
+Use a diverse but connected curriculum: check a calculation, retell something
+actually read, write the requested paragraph, and revise an actual caption
+using its returned judgment. Repeat the operation **produce → check → revise**
+across those subjects rather than repeating a script. The prepared short and
+mixed-subject parent briefs are competing interventions to evaluate, not
+established explanations of the historical C2 peak.
+
+Announced tapering comes after that transmission chain works. Tell the child
+when help will be less frequent; the rarer parent turn can supply a longer-term
+goal and questions for deciding the next attempt. Ordinary environmental
+feedback stays available. Outages, expired authentication and missing judges
+must never count as deliberate tapering. The decisive outcome is preserved
+performance and self-correction during planned absence, not merely continuing
+to generate text.
+
+For paper scope, the current defensible position is a two-timescale mechanism
+and an audited experimental framework with mixed and negative observations.
+We do not yet have replicated evidence that parenting plus LoRA produces
+general independent exploration. The next experiments should be allowed to
+falsify that claim rather than being tuned to make the abstract come true.
 
 ## How to read the next update
 

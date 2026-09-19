@@ -1,0 +1,27 @@
+{
+  "schema": "current_window_parent_only_selection_v1",
+  "child_outcomes_inspected_before_selection": false,
+  "classification_basis": "Parent text only; every candidate group requests a concrete change to unsuccessful behavior or a missing artifact.",
+  "correction_targets": {
+    "C2": {
+      "14996": {"actionable": true, "target": "Provide a concrete example input for the five-cycle validator, including required relationships."},
+      "15105": {"actionable": true, "target": "Choose a candidate vertex group, list every distinct pair, and mark cycle edges before a verdict."},
+      "15214": {"actionable": true, "target": "Recover and restate the graph problem and what must be checked, or identify the missing problem/candidate information."},
+      "15325": {"actionable": true, "target": "Revise the vertex-validator working-state note to distinguish actual produced evidence from merely intended work."}
+    },
+    "GAME1_P3": {
+      "10318": {"actionable": true, "target": "Write the woman's actual English caption about the ridiculous adult responsibility taught by the money mobile; no planning preface."},
+      "10398": {"actionable": true, "target": "Write the man's actual English caption justifying a selfish purchase with the hanging cash; no plan instead of caption."},
+      "10718": {"actionable": true, "target": "Write the woman's actual English caption scolding the dangling money like a naughty child; no planning preface."}
+    }
+  },
+  "selected_ACT_responses": {
+    "C2": [15105, 15214, 15325],
+    "GAME1_P3": [10318, 10398, 10718]
+  },
+  "analysis_omissions_NOT_training": [
+    {"life": "C2", "ACT_response": 14996, "reason": "Older than last three available source-linked correction opportunities; outcome not inspected for selection."},
+    {"life": "GAME1_P3", "ACT_response": 10638, "reason": "ACT is complete but no new delivered parent correction is linked across the collector gap 10467–10605. Uptake UNKNOWN, not a failure; retained as unresolved, not silently substituted."}
+  ],
+  "comparison_limit": "These are the last three fully source-linked available correction opportunities in the two fixed cuts, not all of the latest three live cycles. The unlinked newer P3 ACT remains an explicit coverage limitation. No historical five-chain review is used."
+}

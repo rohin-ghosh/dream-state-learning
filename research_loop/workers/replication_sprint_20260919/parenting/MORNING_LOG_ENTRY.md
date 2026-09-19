@@ -14,6 +14,10 @@ September 19, 2026, 13:19 UTC:
 - Both pair services are alive but **blocked by existing provider authentication:
   401 / auth_error on both preserved attempts**. Main reports no renewed
   credential. No retries, provider switches, key changes or fake parents.
+- Follow-up read at 13:34–13:36 UTC found no route/config bug: each arm previously
+  succeeded with the same configuration, and C2 later succeeded on the identical
+  route. See `AUTH_DIAGNOSIS.md` for the secure original-provider restoration
+  proposal; it does not borrow another life's credential or erase blocked turns.
 - Added a shorter task -> artifact -> concrete-check treatment at the same
   active parent hook; Main selects a matched policy when authentication permits.
 - Status: **READY OFFLINE / LIVE BLOCKED AUTH; zero provider calls/publications,

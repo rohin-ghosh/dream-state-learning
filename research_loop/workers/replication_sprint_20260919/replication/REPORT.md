@@ -1,6 +1,20 @@
 # Replication execution preparation — September 19, 2026
 
-**CPU PREPARED; GPU EXECUTION HAS CONCRETE INTEGRATION BLOCKERS.**
+**Latest (after Main's terminal CPU proof): `CPU_CUSTODY_V2_HANDOFF.md`.**
+V2 is a distinct CPU-only isolation/dependency diagnostic and audited dead-claim
+disposition, with 66 tests. The failed scientific block remains terminal; no
+model execution is enabled by V2. Use its sealed commands, not the older
+restaging/model-dispatch instructions below.
+
+**Current execution handoff: `EXECUTABLE_HANDOFF.md`.** The seed-aware runner,
+original shared admission integration, immutable release and guarded repair
+of Main's unlaunched CPU-staging failure are implemented; **52 CPU tests pass**.
+Receiving role proofs and any dispatch remain Main's responsibility. The
+earlier missing-runner/admission blockers below are retained as historical
+preparation notes, not the current implementation status. The original source
+seal remains preserved; use `EXECUTABLE_SOURCE_FREEZE_REPAIR_V1.json`.
+
+**Historical preparation report follows.**
 Workstream 2 did not launch, stop, signal, register, or modify any native,
 scorer, daemon, original bundle, queue policy, or capsule registry. Main owns
 all launch decisions. No commits or pushes. Everything written is in this

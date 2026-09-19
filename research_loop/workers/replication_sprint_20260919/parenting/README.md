@@ -21,6 +21,9 @@ by this candidate. No claim of behavioral efficacy follows from the CPU tests.
   Main selects one matched treatment, not conflicting briefs stacked together.
 - `AUTH_BLOCKER.json`: both exact old attempts returned 401 / auth_error.
   No renewed credential is available per Main; no retry or provider swap.
+- `AUTH_DIAGNOSIS.md` / `.json`: bounded follow-up finds no local route/config
+  mismatch; preceding pair successes and a later C2 success used the same
+  configuration/endpoint. Original-provider authorization restoration is needed.
 - `INTEGRATION.md`: exact injection point, incompatible paths, and adoption
   prerequisites. There is no live-source patch because C2 already has the hook.
 - `MEASUREMENT_AND_ABSENCE.md`: proposed baseline and small secondary absence
