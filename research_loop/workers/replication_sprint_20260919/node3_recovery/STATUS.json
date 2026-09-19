@@ -1,0 +1,245 @@
+{
+  "artifacts": {
+    "CPU_TESTS.txt": "c468e5ebcb10726ad4f29747ac1b1b9d8a3f80286068505cf02ef16a44f2080b",
+    "FRESH_LIVENESS_20260919.txt": "f341cf975949e333807b9c03da9f70fe4d76580a880a653faa390b63d8b526a0",
+    "NODE3_DIAGNOSIS_20260919.json": "05b06e867a59cf21d5d77f3890ff883fc26e28eda1f0c0e36a908c3d09873c8d",
+    "PENDING_SLEEP_CONTRACTS.json": "9348ce356e29bca65ce302486d35bccddcc64f100fe635d11e04eab7155eca7f",
+    "diagnose.py": "61d82ad1bcba0912b56ab0846036b07f0a26229f20a773b50b9831b04dd006c5",
+    "pending_sleep_contract.py": "07ab015bbac57f311f7892e6aeaef6d7d61c2653a29420c9c54c1c4d12807b84",
+    "test_original_startup_gates.py": "d75fbeacffb2ab268f6c73c13642e2da83cc6537f145c6dcbb513ddaa65a6ae7",
+    "test_pending_sleep_contract.py": "34171f4da3b2889077467d1fe3335ce97f10da2ea21c3639028f0e4ff549b14a"
+  },
+  "cpu_tests_passed": 27,
+  "filesystem_available_bytes": 0,
+  "full_history_audited": false,
+  "gpu_runs": 0,
+  "historical_tail_or_pending_rows_discarded": false,
+  "host": "ipp2-ovx-p6-09",
+  "lives": [
+    {
+      "checkpoint_file_hashes_match": true,
+      "control": "/localhome/local-rohing/orch_r205_node3_20260918/r213_math_a/control_r233_recovery_20260918_policy_lease_ceiling",
+      "downtime_seconds_lower_bound": 26474.967817544937,
+      "exact_complete_continuation_eligible": false,
+      "exit_mtime_utc": "2026-09-19T05:56:38.032182+00:00",
+      "gpu": 1,
+      "interrupted_updates": 0,
+      "last_complete": 9445,
+      "last_complete_cycle": 183,
+      "life": "r213_math_a",
+      "loaded_receipt": null,
+      "offline_sleep_contract_sha256": null,
+      "original_deadline_unix": 1790272800.0,
+      "parent_rebound": false,
+      "partial_artifacts": [
+        {
+          "bytes": 0,
+          "name": "00000000000000009467.intent.json.partial"
+        }
+      ],
+      "pending_kind": "REQUEST",
+      "pending_record": 9466,
+      "request_act_receipt": null,
+      "resumed": false,
+      "source_pins_match": true,
+      "status": "DOWN"
+    },
+    {
+      "checkpoint_file_hashes_match": true,
+      "control": "/localhome/local-rohing/orch_r205_node3_20260918/r213_math_b_fork/control_r233_recovery_20260918_policy_lease_ceiling",
+      "downtime_seconds_lower_bound": 26493.532821893692,
+      "exact_complete_continuation_eligible": false,
+      "exit_mtime_utc": "2026-09-19T05:56:19.467178+00:00",
+      "gpu": 2,
+      "interrupted_updates": 48,
+      "last_complete": 9476,
+      "last_complete_cycle": 192,
+      "life": "r213_math_b_fork",
+      "loaded_receipt": null,
+      "offline_sleep_contract_sha256": "ffd9a76909e3e04a20325ec07006add1cf24dc5de07b3378c81438951ad869a9",
+      "original_deadline_unix": 1790272800.0,
+      "parent_rebound": false,
+      "partial_artifacts": [],
+      "pending_kind": "SLEEP_REQUEST",
+      "pending_record": 9505,
+      "request_act_receipt": null,
+      "resumed": false,
+      "source_pins_match": true,
+      "status": "DOWN"
+    },
+    {
+      "checkpoint_file_hashes_match": true,
+      "control": "/localhome/local-rohing/orch_r205_node3_20260918/r213_math_c/control_r233_recovery_20260918_policy_lease_ceiling",
+      "downtime_seconds_lower_bound": 26476.254009485245,
+      "exact_complete_continuation_eligible": false,
+      "exit_mtime_utc": "2026-09-19T05:56:36.745991+00:00",
+      "gpu": 4,
+      "interrupted_updates": 8,
+      "last_complete": 8937,
+      "last_complete_cycle": 194,
+      "life": "r213_math_c",
+      "loaded_receipt": null,
+      "offline_sleep_contract_sha256": "6048f8c8719addbc923d41f26fd0d1f496c3d8d5788ad49895c59ca076ca7efb",
+      "original_deadline_unix": 1790272800.0,
+      "parent_rebound": false,
+      "partial_artifacts": [
+        {
+          "bytes": 0,
+          "name": "00000000000000008977.intent.json.partial"
+        }
+      ],
+      "pending_kind": "SLEEP_REQUEST",
+      "pending_record": 8966,
+      "request_act_receipt": null,
+      "resumed": false,
+      "source_pins_match": true,
+      "status": "DOWN"
+    },
+    {
+      "checkpoint_file_hashes_match": true,
+      "control": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/control_r233_recovery_20260918_boundary_lease_ceiling",
+      "downtime_seconds_lower_bound": 26474.51499915123,
+      "exact_complete_continuation_eligible": false,
+      "exit_mtime_utc": "2026-09-19T05:56:38.485001+00:00",
+      "gpu": 0,
+      "interrupted_updates": 77,
+      "last_complete": 10269,
+      "last_complete_cycle": 143,
+      "life": "r213_r226_caption_observation_fork",
+      "loaded_receipt": null,
+      "offline_sleep_contract_sha256": "f154e3b82c6ed7a7c3befa0932516b2d3f22735791ee9b29a0e372636ac6c5b8",
+      "original_deadline_unix": 1790272800.0,
+      "parent_rebound": false,
+      "partial_artifacts": [
+        {
+          "bytes": 0,
+          "name": "00000000000000010398.intent.json.partial"
+        }
+      ],
+      "pending_kind": "SLEEP_REQUEST",
+      "pending_record": 10317,
+      "request_act_receipt": null,
+      "resumed": false,
+      "source_pins_match": true,
+      "status": "DOWN"
+    },
+    {
+      "checkpoint_file_hashes_match": true,
+      "control": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/control_r233_recovery_20260918_boundary_lease_ceiling_admission_retry1",
+      "downtime_seconds_lower_bound": 26479.869307279587,
+      "exact_complete_continuation_eligible": false,
+      "exit_mtime_utc": "2026-09-19T05:56:33.130693+00:00",
+      "gpu": 3,
+      "interrupted_updates": 20,
+      "last_complete": 10789,
+      "last_complete_cycle": 139,
+      "life": "r213_r226_caption_perspective_fork",
+      "loaded_receipt": null,
+      "offline_sleep_contract_sha256": "10667a847bf1a5ed6ecff199e3147c2e11938489eca12b22993fc5fb60fff36a",
+      "original_deadline_unix": 1790272800.0,
+      "parent_rebound": false,
+      "partial_artifacts": [
+        {
+          "bytes": 0,
+          "name": "00000000000000010857.intent.json.partial"
+        }
+      ],
+      "pending_kind": "SLEEP_REQUEST",
+      "pending_record": 10833,
+      "request_act_receipt": null,
+      "resumed": false,
+      "source_pins_match": true,
+      "status": "DOWN"
+    },
+    {
+      "checkpoint_file_hashes_match": true,
+      "control": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/control_r233_recovery_20260918_boundary_lease_ceiling",
+      "downtime_seconds_lower_bound": 26474.629507780075,
+      "exact_complete_continuation_eligible": false,
+      "exit_mtime_utc": "2026-09-19T05:56:38.370492+00:00",
+      "gpu": 5,
+      "interrupted_updates": 42,
+      "last_complete": 9991,
+      "last_complete_cycle": 137,
+      "life": "r213_r226_caption_revision_fork",
+      "loaded_receipt": null,
+      "offline_sleep_contract_sha256": "e0fbfff98c061824e7bf35abaa053a8fc742b1a0c2e4ad4d53b65400a40e4ad0",
+      "original_deadline_unix": 1790272800.0,
+      "parent_rebound": false,
+      "partial_artifacts": [
+        {
+          "bytes": 0,
+          "name": "00000000000000010086.intent.json.partial"
+        }
+      ],
+      "pending_kind": "SLEEP_REQUEST",
+      "pending_record": 10040,
+      "request_act_receipt": null,
+      "resumed": false,
+      "source_pins_match": true,
+      "status": "DOWN"
+    },
+    {
+      "checkpoint_file_hashes_match": true,
+      "control": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/control_r233_recovery_20260918_boundary_lease_ceiling",
+      "downtime_seconds_lower_bound": 26470.506499528885,
+      "exact_complete_continuation_eligible": false,
+      "exit_mtime_utc": "2026-09-19T05:56:42.493500+00:00",
+      "gpu": 6,
+      "interrupted_updates": 68,
+      "last_complete": 9292,
+      "last_complete_cycle": 132,
+      "life": "r213_r226_caption_selfderive_fork",
+      "loaded_receipt": null,
+      "offline_sleep_contract_sha256": "850bf926460606f1f3d1e3059ee6bb9aab4976e3bc6c432268dece4983b36891",
+      "original_deadline_unix": 1790272800.0,
+      "parent_rebound": false,
+      "partial_artifacts": [
+        {
+          "bytes": 0,
+          "name": "00000000000000009412.intent.json.partial"
+        }
+      ],
+      "pending_kind": "SLEEP_REQUEST",
+      "pending_record": 9340,
+      "request_act_receipt": null,
+      "resumed": false,
+      "source_pins_match": true,
+      "status": "DOWN"
+    },
+    {
+      "checkpoint_file_hashes_match": true,
+      "control": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/control_r233_recovery_20260918_policy_lease_ceiling",
+      "downtime_seconds_lower_bound": 26474.870807886124,
+      "exact_complete_continuation_eligible": false,
+      "exit_mtime_utc": "2026-09-19T05:56:38.129192+00:00",
+      "gpu": 7,
+      "interrupted_updates": 5,
+      "last_complete": 10102,
+      "last_complete_cycle": 142,
+      "life": "r213_r226_caption_unparented_fork",
+      "loaded_receipt": null,
+      "offline_sleep_contract_sha256": "27c2e7e4725dedb075951211d0881d84250df183c229357645b031314e44807b",
+      "original_deadline_unix": 1790272800.0,
+      "parent_rebound": false,
+      "partial_artifacts": [
+        {
+          "bytes": 0,
+          "name": "00000000000000010157.intent.json.partial"
+        }
+      ],
+      "pending_kind": "SLEEP_REQUEST",
+      "pending_record": 10148,
+      "request_act_receipt": null,
+      "resumed": false,
+      "source_pins_match": true,
+      "status": "DOWN"
+    }
+  ],
+  "native_signals": 0,
+  "observed_at_utc": "2026-09-19T13:17:53Z",
+  "original_state_modified": false,
+  "primary_blocker": "ENOSPC_OWNER_AVAILABLE_BYTES_ZERO",
+  "provider_calls": 0,
+  "schema": "NODE3_RECOVERY_STATUS_V1"
+}

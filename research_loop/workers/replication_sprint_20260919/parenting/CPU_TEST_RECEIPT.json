@@ -1,0 +1,49 @@
+{
+  "schema": "PARENTING_CANDIDATE_CPU_RECEIPT_V1",
+  "recorded_utc": "2026-09-19T13:20:52.384614+00:00",
+  "status": "READY_OFFLINE_LIVE_BLOCKED_EXISTING_PROVIDER_AUTHENTICATION",
+  "command": "python3 -B -m unittest discover -s research_loop/workers/replication_sprint_20260919/parenting -p 'test_*.py' -v",
+  "tests_run": 34,
+  "failures": 0,
+  "errors": 0,
+  "reported_duration_seconds": 0.145,
+  "patch_check": {
+    "command": "git apply --check --whitespace=error research_loop/workers/replication_sprint_20260919/parenting/PAIR_INTEGRATION.patch",
+    "exit_code": 0,
+    "applied": false,
+    "original_target_sha256": "84ccf8832ee78d3c749b11b56b11872162f684aac9763c90f1a56b316fc13db7",
+    "proposed_target_sha256": "50183386d8d66336ba5990b0451f3021a35e951f52d98ec62aa7cd2a855a5e61"
+  },
+  "tested_files_sha256": {
+    "PAIR_INTEGRATION.patch": "d0501e7a53e3c516a84a84f552f2eb7e17ef39434f11951273bad68f2d51eb11",
+    "paired_curriculum_policy.py": "b50bd8bf9d18e9db8f52abe3adf3868592c027cf77c8b7919df10f5c5f0b6e07",
+    "PAIR_MIXED_CURRICULUM_BRIEF.md": "8848a81f120c4fd88484836f4964b718ff015a7e54c91976b9273eee3c834dc6",
+    "MIXED_CURRICULUM_PARENT_BRIEF.md": "2d7e4962295c5d12ca77589fec17a1691c500607ccfd53107c2611d03d8ce054",
+    "candidate_review.py": "fd4feb25718c370ba8e1e7c72763f333cd4c6977baf4e5699aa39142c304b6a3",
+    "test_candidate.py": "c5d72f1ee611dcd6c5f736b5a481b81e27cc779e8334df4683c0064c1d8b7618",
+    "test_pair_candidate.py": "9f2e64ca0546f2ed088fa7d88cb20b6fa476bc9df48d7512b3224691cc43ebb6",
+    "PAIR_TASK_CHECK_BRIEF.md": "ddf431fd625fedb64321bf0ffddafea6501e3ddc4d53c59a4bde47ccdfa328ae",
+    "PAIR_TASK_CHECK_INTEGRATION.patch": "2247432453e0cbb5156028ed66cc710bf4d299cbe1718145f979d4c1fd38fce7"
+  },
+  "preserved_failure_history": "First run had one test-fixture duplicate actor-key error; corrected the test only. No live source was changed.",
+  "provider_calls": 0,
+  "publications": 0,
+  "native_signals": 0,
+  "gpu_runs": 0,
+  "live_source_files_edited": 0,
+  "commits": 0,
+  "pushes": 0,
+  "claim_limit": "CPU composition/contract tests only; no policy delivery, uptime, behavioral uptake, retention or generalization proven.",
+  "previous_passed_run": {
+    "tests_run": 32,
+    "reported_duration_seconds": 0.109
+  },
+  "short_patch_check": {
+    "command": "git apply --check --whitespace=error research_loop/workers/replication_sprint_20260919/parenting/PAIR_TASK_CHECK_INTEGRATION.patch",
+    "exit_code": 0,
+    "applied": false,
+    "original_target_sha256": "84ccf8832ee78d3c749b11b56b11872162f684aac9763c90f1a56b316fc13db7",
+    "proposed_target_sha256": "d0d5c47adb5b529d15dc79d4c177fe66b7d2c89b15053a014388a93099226323"
+  },
+  "auth_blocker_receipt": "AUTH_BLOCKER.json"
+}

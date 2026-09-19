@@ -1,0 +1,111 @@
+{
+  "schema": "replication_sprint_formalization_proposal_v1",
+  "status": "DRAFT_NOT_REGISTERED_NOT_LAUNCHED",
+  "date_utc": "2026-09-19",
+  "write_scope": "research_loop/workers/replication_sprint_20260919/formalization/",
+  "submitted_abstract": {
+    "commit": "9fd18cb9cd82112eb6d2be6c62c62cd5b0fe27f2",
+    "path": "ABSTRACT_SCOPE_AND_RESEARCH_UPDATE_2026-09-19.md",
+    "sha256": "e3ebf0e6946ad38b1fd7810742c4393b74cde594c43b7f7d76a68df0e54dc0b7"
+  },
+  "replication": {
+    "independent_seed_blocks": 3,
+    "development_arms": ["PL", "PF", "UL"],
+    "development_trajectories": 9,
+    "analysis_unit": "paired_independent_training_lineage_block",
+    "evaluation_decoding_seeds_per_item": 2,
+    "evaluation_seeds_are_training_replicates": false,
+    "claim_level": "prospective_small_sample_pilot"
+  },
+  "development": {
+    "cycles": 48,
+    "cycles_per_sleep": 4,
+    "nominal_sleep_boundaries": 12,
+    "max_think_tokens_per_cycle": 512,
+    "max_act_tokens_per_cycle": 512,
+    "max_parent_calls_per_cycle": 1,
+    "max_parent_output_tokens_per_call": 256,
+    "parented_arms": ["PL", "PF"],
+    "update_enabled_arms": ["PL", "UL"],
+    "max_child_generated_tokens_all_arms": 442368,
+    "max_parent_output_tokens_all_arms": 73728,
+    "row_quality_exclusions": false
+  },
+  "primary_assay": {
+    "family_proposal": "development_withheld_unweighted_shortest_path",
+    "sealed_generator_implemented_or_verified_by_this_workstream": false,
+    "development_age_cycles": 48,
+    "items_per_lineage": 24,
+    "max_child_generated_tokens_per_item": 1024,
+    "max_child_generated_tokens_all_arms": 442368,
+    "parent_tokens": 0,
+    "parameter_updates": 0,
+    "fresh_context_per_item": true,
+    "metric": "fraction_correct_first_committed_ACT",
+    "primary_contrast": "mean_block(Y_PL - Y_PF)",
+    "secondary_contrast": "mean_block(Y_PL - Y_UL)",
+    "practical_difference_proposal": 0.1,
+    "primary_age_selected_from_results": false
+  },
+  "core_budget": {
+    "max_child_generated_tokens": 884736,
+    "max_parent_output_tokens": 73728,
+    "excludes": [
+      "input_prefill_tokens",
+      "provider_reported_parent_reasoning_tokens",
+      "optimizer_and_training_compute",
+      "tool_or_judge_compute",
+      "failed_work_and_recovery",
+      "optional_modules"
+    ],
+    "measured_gpu_hours": null,
+    "measured_wall_time_forecast": null
+  },
+  "optional_h2": {
+    "included": false,
+    "development_source_arms": ["PL", "UL"],
+    "deployment_updates": [true, false],
+    "deployment_trajectories": 12,
+    "adaptation_opportunities": 16,
+    "report_ages_opportunities": [0, 4, 8, 16],
+    "report_items_per_age": 8,
+    "max_child_generated_tokens_adaptation": 196608,
+    "max_child_generated_tokens_report_panels": 786432,
+    "parent_tokens": 0,
+    "primary_slope_x_axis": "environment_opportunities_divided_by_16",
+    "estimand": "mean_block((slope_P_on-slope_U_on)-(slope_P_off-slope_U_off))"
+  },
+  "optional_taper": {
+    "included": false,
+    "cycles": 12,
+    "taper_guidance_cycles": [1, 2, 3, 4, 5, 7, 9],
+    "abrupt_guidance_cycles": [1, 2, 3, 4, 5, 6, 7],
+    "announced_to_child": true,
+    "long_horizon_guidance_in_both_conditions": true,
+    "environment_feedback_maintained": true,
+    "learning_rate_schedule_matched": true,
+    "necessity_presumed": false
+  },
+  "unbound_execution_fields": [
+    "registration_timestamp_and_protocol_hash",
+    "runtime_source_commit_and_checkpoint_manifests",
+    "base_tokenizer_birth_adapter_hashes",
+    "parent_model_settings_and_exact_prompt_bytes",
+    "common_birth_and_task_prefix_bytes",
+    "development_task_ids_and_excerpt_bytes",
+    "independent_block_rng_bindings_and_device_randomization",
+    "private_panel_generator_checker_split_hashes",
+    "decoding_rngs_and_extractor_rubric_analysis_hashes",
+    "optimizer_recipe_and_loss_mask_provenance",
+    "probe_surface_audit_and_evaluator_custody",
+    "optional_module_choices_and_budgets",
+    "hardware_calibration_and_existing_lease_headroom"
+  ],
+  "actions_performed": {
+    "runtime_edits": false,
+    "model_calls_or_launches": false,
+    "live_messages_or_signals": false,
+    "commit_or_publish": false,
+    "lease_extension": false
+  }
+}

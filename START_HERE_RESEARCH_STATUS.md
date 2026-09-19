@@ -1,11 +1,20 @@
 # Research status — September 19, 2026
 
-**Latest direct infrastructure observation:** September 19, 13:08 UTC / 06:08 PDT.
+**Handoff update:** September 19, 13:34 UTC / 06:34 PDT. Individual evidence cuts are dated below.
 **Current phase:** evidence audit, controlled-replication preparation, and recovery.
 
 This is the morning handoff for Rohin. It separates completed observations from
 planned work. The submitted abstract remains the research direction; no positive
 result is a prerequisite for recording an experiment.
+
+**Morning headline:** the slow-adapter / fast-context hypothesis is now
+formalized, and the historical data and correction measurements are audited.
+We have examples of useful coached actions, but not a replicated demonstration
+of independent improvement. New-seed controlled caption sampling is being
+prepared, not yet running. Recovery is urgent: eight node-3 lives stopped on a
+full disk; C0 and Astra7 are also down at their recorded bindings. The fresh
+learner and frozen sibling are running, but their parents are authentication
+blocked. These outages are not valid independence or tapering treatments.
 
 ## The hypothesis we are testing
 
@@ -26,23 +35,160 @@ Six parallel workstreams have been assigned. Assignment is not completion:
 
 | Workstream | Concrete deliverable | Current status |
 | --- | --- | --- |
-| Evidence | Actual mixed-curriculum delivery; strongest reflection-to-action traces; early-versus-late C2 comparison | Running audit |
-| Replication | Original-protocol executable probe preparation; distinguish sampling replication from training-lineage replication | Preparing, no new GPU launch yet |
-| Measurement | Offline source-bound uptake/retention summaries and tests, including unknown outcomes | Implementation in progress |
-| Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Candidate only; no live prompt change |
-| Formalization | Fast/slow-loop hypotheses, estimands, controls and falsifiers | Drafting |
-| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | Diagnosis in progress |
+| Evidence | Actual mixed-curriculum delivery; strongest reflection-to-action traces; early-versus-late C2 comparison | Historical audit complete; positive examples and timing caveat below |
+| Replication | Original-protocol executable probe preparation; distinguish sampling replication from training-lineage replication | Source audit and CPU candidates complete; execution integration in progress; no new GPU launch yet |
+| Measurement | Offline source-bound uptake/retention summaries and tests, including unknown outcomes | First bounded measurement complete; 45 tests independently rerun by Main |
+| Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Candidate complete; 34 tests independently rerun; live deployment blocked by provider authentication |
+| Formalization | Fast/slow-loop hypotheses, estimands, controls and falsifiers | Proposal complete; not a launched experiment |
+| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | Disk exhaustion confirmed; checkpoint files verified; storage/recovery work continues; none restarted |
 
 Main is checking usable evaluation resources, preserving the existing experiment
-state, and integrating these workstreams. Source, tests, and receipts will be
-linked here as they become available.
+state, and integrating these workstreams. A repeated ovx4 check at13:14 UTC
+again found the paired natives resident and GPUs2/7 free. This does not reserve
+those devices or establish actual parent delivery.
+
+## First sprint outputs: measurement and historical-result reconciliation
+
+### Did diverse parenting actually happen?
+
+**Yes, especially for C0.** Source-bound requests show math alongside reading,
+writing, recall, model-science and research questions. There are substantive
+retellings and a new paragraph, as well as ignored questions and invented recall.
+Delivery of a diverse curriculum is established; successful retention and
+generalization are not.
+
+The fresh learner and frozen sibling also really launched with the bound birth
+prompt and stage policy. They must not be described as completing that whole
+curriculum: the reviewed stage receipts remained at stage0, and the current
+parent status also reports stage0.
+
+The older selected reflection audit contains **two narrow coached next-ACT
+successes among21 selected traces**, including one frozen-control success.
+These are meaningful local examples, not proof of LoRA learning or autonomous
+transfer. The later zero-success window below does not erase those positives;
+the samples and denominators remain separate.
+
+**Important correction to the mid-life narrative:** C2's sleep51 weights were
+saved at September18 01:36:13 UTC, before the successful direct-console V=3
+derivation at01:58:23 UTC and the later Byte teaching. Those later conversations
+cannot explain the saved adapter's probe advantage through subsequent learning.
+The audit also identifies RESPONSE5863 as THINK, not ACT; do not reuse the old
+mislabel as an action-transfer receipt.
+
+Full evidence and exact record references:
+`research_loop/workers/replication_sprint_20260919/evidence/EVIDENCE.md` and
+`research_loop/workers/replication_sprint_20260919/evidence/EVIDENCE_INDEX.json`.
+
+### Reflection reaching action
+
+An offline measurement utility now summarizes hash-bound reviewed evidence,
+without changing training eligibility. Main independently reran all45 focused
+CPU tests successfully. This is a measurement of existing traces, not a new
+GPU experiment or a random fleet sample.
+
+| Five reviewed correction chains | Count |
+| --- | ---: |
+| Exact correction visible at the selected ACT | 4/5 |
+| Specific correction recognized | 1/5 |
+| Correct implementation in the next ACT | 0/5 |
+
+Eleven additional unreviewed ACTs remain UNKNOWN for recognition/correctness.
+No-reminder reuse, post-sleep retention, and fresh-context transfer have
+insufficient evidence in this input set; unknown is not zero. The failed
+reviewed actions include cases with the correction present, so transport alone
+does not explain the whole problem.
+
+Readout: `research_loop/workers/replication_sprint_20260919/measurement/results/SUMMARY.md`.
+Tests: `research_loop/workers/replication_sprint_20260919/measurement/MAIN_TESTS.txt`.
+
+### Matched-age learner and frozen-sibling caption observations
+
+The source audit found that both age24 comparisons had already completed.
+There is no reason to rerun a consumed job merely to fill an apparent missing
+cell. The following are two different judge epochs and must remain separate:
+
+| Judge epoch | Learner sleep24 new pixels, seeds23201/23202 | Frozen sibling sleep24 new pixels, seeds23201/23202 |
+| --- | --- | --- |
+| Original judge | 0 / 11 | 14 / 14 |
+| Adopted rank8/step15625 judge | 6 / 19 | 15 / 24 |
+
+Each arm uses3,072 generated tokens per seed. The learner is lower in both
+seeds under each separately reported epoch. This is one historical training
+pair, not replicated learning evidence; historical parenting opportunities
+and wall-time conditions are not established as identical. Judge acceptance
+still is not certified humor. Different judge feedback also changes subsequent
+generation, so these are not simply rescored identical trajectories.
+
+Receipt and verified source table:
+`research_loop/workers/replication_sprint_20260919/replication/REPORT.md`.
+
+### Formalization
+
+The first formalization distinguishes contextual uptake, parameter retention,
+parent-free transfer, and continued-consolidation-dependent improvement. It
+also states how self-training could consolidate waiting or repetition instead
+of useful checks. The proposed controlled design is not an execution receipt;
+its source, task, lease, and launch bindings still need completion.
+
+- `research_loop/workers/replication_sprint_20260919/formalization/FORMALIZATION.md`
+- `research_loop/workers/replication_sprint_20260919/formalization/PREREGISTRATION_DRAFT.md`
+
+### Parenting refinement ready for review, not deployed
+
+Two alternative source-bound policy candidates are prepared at the existing
+paired-parent hook: a mixed-subject curriculum brief, and a shorter
+**task → actual artifact → concrete check** brief. They preserve the current
+teacher model, budgets, cadence, pending ledgers, frozen control and visibility.
+Main independently reran34 CPU tests successfully. Neither candidate has been
+applied to the live services, and no parent turn has been fabricated as a
+substitute for the authentication-blocked model.
+
+The short candidate repeats the useful operation across different objects,
+not the same wording; it neither supplies the answer nor introduces a rigid
+thought template. It is a refinement to test, not an established cure.
+
+Readiness and exact integration:
+`research_loop/workers/replication_sprint_20260919/parenting/PAIR_READY.md`.
 
 ## Important live finding: infrastructure is not all healthy
 
+- The **13:25 UTC** bounded fleet check verifies C2, P3 and P7's current
+  native identities, GPU residency and fresh records. Their recent parent
+  INBOX registrations hash-match publisher receipts. Registration is not yet
+  proof of rendering into ACT or behavioral uptake.
+- **C0 and Astra7 are down at their recorded node-2 bindings**, with no
+  replacement established. Their journals were last modified around02:43
+  and02:44 UTC respectively, during unfinished sleep work. Checkpoint
+  metadata exists, but that alone is not a verified continuation. Astra7's
+  bridge is running with file-not-found errors; it is not a functioning
+  parent-child exchange while Astra7 is absent.
+- This separate fleet cut and exact source identities are recorded in
+  `research_loop/workers/replication_sprint_20260919/evidence/CURRENT_FLEET_CUT.md`
+  and its accompanying JSON. Cuts below cover different nodes and times.
+
+- At **13:17 UTC**, both curriculum parent services were alive but explicitly
+  blocked on their existing provider attempts. The original error receipts
+  report **HTTP401 / auth_error**. A read-only comparison found the current
+  operator environment has the same credential as those processes; no renewed
+  credential was available. Values were not printed or persisted. No401 retry,
+  provider fallback, or fabricated parent turn has been attempted. Existing
+  provider authentication must be restored through the secure configuration
+  before these can be called actively parented treatments. Parent-free
+  evaluation and offline implementation do not require that parent API.
 - At **13:08:36 UTC**, the original node-3 route reached `ipp2-ovx-p6-09`.
   All eight GPUs showed approximately 1 MiB, with no compute processes. The five
   caption forks and three math lives have exit records. The machine had not just
   rebooted. Exit causes and preserved-state recovery are being investigated.
+- The subsequent **13:17:53 UTC** audit established the cause: all eight native
+  logs report **No space left on device**, beginning05:56:19–05:56:42 UTC.
+  The owner's filesystem has0 available bytes. Reserved filesystem blocks
+  are not usable recovery capacity and were not accessed or changed. All last
+  durable checkpoint file sets and pinned sources hash-match, but seven lives
+  stopped during sleep and one during generation. None is at a clean restart
+  boundary; unsaved updates are not recoverable optimizer state. Storage
+  reclamation is being assessed without deleting research artifacts, and an
+  interrupted-sleep recovery candidate is being prepared. No life has been
+  silently reset or falsely reported restored.
 - The node-3 parent service's startup fails because its expected protected
   natives are absent. Do not count this as a developmental failure, a deliberate
   parenting-withdrawal interval, or a reason to bypass identity checks.
@@ -52,6 +198,9 @@ linked here as they become available.
   that every current feedback or parent message is reaching an action.
 - Ovx4 GPUs 2 and 7 were free at that observation. Any dispatch must recheck
   occupancy, provenance, confinement, existing job state, and lease bounds.
+
+Per-life recovery table:
+`research_loop/workers/replication_sprint_20260919/node3_recovery/STATUS.md`.
 
 ## Evidence already established before this sprint
 

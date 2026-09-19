@@ -1,0 +1,17 @@
+{
+  "schema": "PAIRED_PARENT_AUTH_BLOCKER_V1",
+  "observed_utc": "2026-09-19T13:18:59Z",
+  "status": "LIVE_DEPLOYMENT_BLOCKED_EXISTING_PROVIDER_AUTHENTICATION",
+  "read_only_evidence": [
+    {"arm": "learner", "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/learner/turn_000104_1789794006756564934/http_error_response.txt", "code": "401", "type": "auth_error"},
+    {"arm": "frozen", "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/turn_000134_1789794506916730728/http_error_response.txt", "code": "401", "type": "auth_error"}
+  ],
+  "credential_context": "Main reports that running parents and its current environment use the same credential, with no renewed credential available. This worker did not inspect, hash, print or change credentials.",
+  "provider_retry_attempts": 0,
+  "provider_switches": 0,
+  "provider_guards_cleared": 0,
+  "fake_parent_publications": 0,
+  "native_signals": 0,
+  "effect_on_other_work": "This blocks live parent treatment delivery, not independent parent-free GPU probes owned by Main.",
+  "required_external_change": "Valid authorized authentication for the existing provider, followed by owner reconciliation of preserved attempts; no automatic retry of these 401s."
+}

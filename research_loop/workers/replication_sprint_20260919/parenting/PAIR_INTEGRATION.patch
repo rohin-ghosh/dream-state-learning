@@ -1,0 +1,50 @@
+--- a/research_loop/workers/post_reboot_pair_parents_20260919/parent_service.py
++++ b/research_loop/workers/post_reboot_pair_parents_20260919/parent_service.py
+@@ -23,6 +23,7 @@
+ ORIGINAL = HERE.parent / 'rohin231_curriculum_birth_20260918'
+ RECOVERY = ORIGINAL / 'recovery_20260918T1646Z'
+ GAP_PREFIX = 'My parent publisher was offline; you kept running.'
++CANDIDATE = HERE.parent / 'replication_sprint_20260919/parenting'
+ 
+ 
+ def read(path):
+@@ -164,6 +165,11 @@
+     parent = importlib.util.module_from_spec(spec)
+     spec.loader.exec_module(parent)
+     parent.OWN, parent.REPO, parent.END, parent.PRIVATE = ORIGINAL, REPO, deadline, directory
++    candidate_spec = importlib.util.spec_from_file_location('paired_curriculum_policy',
++        CANDIDATE / 'paired_curriculum_policy.py')
++    curriculum = importlib.util.module_from_spec(candidate_spec)
++    candidate_spec.loader.exec_module(curriculum)
++    policy_brief = (CANDIDATE / 'PAIR_MIXED_CURRICULUM_BRIEF.md').read_text()
+     original_instruction = parent.instruction
+ 
+     def instruction():
+@@ -180,8 +186,14 @@
+             text += (' Your FIRST new message MUST begin exactly: ' + GAP_PREFIX +
+                      ' Then give concrete feedback on this child\'s most recent ACT and a specific task. '
+                      'Do not claim the child paused, forgot, restarted, or changed its learning policy.')
+-        return text
+-
++        return curriculum.extend_instruction(text, state['stage'], policy_brief)
++
++    original_generate = parent.generate
++
++    def generate(turn, payload):
++        return original_generate(turn, curriculum.bind_payload(payload, policy_brief))
++
++    parent.generate = generate
+     parent.instruction, parent.write = instruction, write
+     parent.remote = lambda request: remote(arm, request, state['native'])
+     return parent
+@@ -269,7 +281,9 @@
+                    provider_model='openai/openai/gpt-6-astra', provider_tools=[], native_signals=0,
+                    sources={str(path): sha(path) for path in (HERE / 'parent_service.py', HERE / 'remote_io.py',
+                        ORIGINAL / 'r232_pair/PARENT_SOURCE.py', REPO / 'gpu/orch_route_parent_campaign_providers.py',
+-                       RECOVERY / 'ALLOCATION_DATE_CORRECTION.json')})
++                       RECOVERY / 'ALLOCATION_DATE_CORRECTION.json',
++                       CANDIDATE / 'paired_curriculum_policy.py',
++                       CANDIDATE / 'PAIR_MIXED_CURRICULUM_BRIEF.md')})
+     write(directory / ('PROCESS_' + str(process['pid']) + '_' + process['start_ticks'] + '.json'), process)
+     state_path = directory / 'STATE.json'
+     state = read(state_path) if state_path.exists() else seed(arm)

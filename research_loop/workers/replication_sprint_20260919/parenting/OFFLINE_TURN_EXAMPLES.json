@@ -1,0 +1,41 @@
+{
+  "status": "MANUALLY_AUTHORED_OFFLINE_CANDIDATES_NOT_SENT",
+  "provider_calls": 0,
+  "publications": 0,
+  "behavioral_outcomes": [],
+  "examples": [
+    {
+      "name": "c2_actual_code_not_a_verified_check",
+      "source_id": "c2_delivery",
+      "record_index": 12599,
+      "record_sha256": "30a4bd9f0ac94ad1607261c15d1e15c9f4776b1d5a33d77ad43958ecc1fefcd3",
+      "draft": {
+        "speak": true,
+        "message": "You wrote code and named a candidate set, but that does not show the check ran. For the same graph, list every unordered pair in your proposed set and compare each with the supplied edges. Then keep or revise the set using that check. Put the calculation itself in your next ACT; do not substitute another claim of correctness.",
+        "rationale": "{\"latest\": {\"record_index\": 12599, \"record_sha256\": \"30a4bd9f0ac94ad1607261c15d1e15c9f4776b1d5a33d77ad43958ecc1fefcd3\", \"quote\": \"The largest independent set includes the vertices {A, C, E}.\"}, \"comparison\": \"A concrete code artifact and candidate exist; acknowledge those only. Ask for the missing deciding check without supplying the solution or claiming execution.\"}"
+      }
+    },
+    {
+      "name": "c2_assertion_without_demonstration",
+      "source_id": "c2_loop",
+      "record_index": 14353,
+      "record_sha256": "cedbb7a9a5d969dc6cf4f113116dcfcd7f4c5acd6a1a1a47835792171130cca9",
+      "draft": {
+        "speak": true,
+        "message": "Your latest working-state entry asserts correctness without showing a check. Write one concrete comparison from the current graph task now, and state what result would change your conclusion. If you cannot recover the task, ask for its wording instead of declaring success.",
+        "rationale": "{\"latest\": {\"record_index\": 14353, \"record_sha256\": \"cedbb7a9a5d969dc6cf4f113116dcfcd7f4c5acd6a1a1a47835792171130cca9\", \"quote\": \"Therefore, no corrections are necessary.\"}, \"comparison\": \"The supplied output declares correctness without a worked check. Request a smaller artifact or a factual help question, not another belief statement. No new success is inferred.\"}"
+      }
+    },
+    {
+      "name": "p7_overseer_not_astra7_teacher",
+      "source_id": "p7_reply",
+      "record_index": 12566,
+      "record_sha256": "5a338afe639d9c65c9732fc6908553c5cff0169e2040df02b9f57747d6a57081",
+      "draft": {
+        "speak": true,
+        "message": "Your latest reply names a goal rather than demonstrating a check. Before assigning more tasks, write the actual short note you would give Astra7: identify one uncertainty in its supplied reply and ask one question to resolve it. If no actual reply is visible, say that instead. Please use English; the note itself, not a promise.",
+        "rationale": "{\"latest\": {\"record_index\": 12566, \"record_sha256\": \"5a338afe639d9c65c9732fc6908553c5cff0169e2040df02b9f57747d6a57081\", \"quote\": \"误差应该最小\"}, \"comparison\": \"Coach P7 on a real note, not imagined improvements. Do not address Astra7 directly or claim a returned child's uncertainty without visible evidence. English is requested, not a training condition.\"}"
+      }
+    }
+  ]
+}
