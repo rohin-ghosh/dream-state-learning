@@ -10,7 +10,7 @@ import time
 
 import checkpoint_tail_runtime as tail
 import math_b_runtime_candidate as kernel
-from pending_sleep_contract import HARD_END, ORIGINAL_GPUS, digest, require
+from pending_sleep_contract import HARD_END, ORIGINAL_GPUS, digest, relocated_execution_plan, require
 
 
 SCHEMA = 'NODE3_MATH_B_INTERRUPTED_SLEEP_STARTUP_V1'
@@ -32,7 +32,7 @@ def validate_manifest(manifest, plan_bytes):
     original, execution = json.loads(original_bytes), json.loads(plan_bytes)
     require(hashlib.sha256(plan_bytes).hexdigest() == manifest['execution_plan_sha256'],
         'source_bound_execution_plan')
-    require(execution == dict(original, source_root=manifest['staged_source_root']),
+    require(execution == relocated_execution_plan(original, manifest['staged_source_root']),
         'only_source_location_delta_no_scientific_change')
     staged_source = Path(manifest['staged_source_root'])
     require(staged_source.is_absolute() and staged_source.parent.name == 'r213_math_b_fork'

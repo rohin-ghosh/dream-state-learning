@@ -1,0 +1,22 @@
+{
+  "observed_utc": "2026-09-19T14:40:24Z",
+  "method": "Fresh ps PID/PPID/lstart/stat/argv read; start ticks and cwd carried from the earlier exact read, not re-read from process environment",
+  "fresh_start_ticks_check": false,
+  "deployment_requires_identity_refresh": true,
+  "publisher": {
+    "pid": 325487, "start_ticks": "753205", "state": "S",
+    "started_local": "Fri Sep 18 17:56:17 2026",
+    "cwd": "/data/home/rohing/dream-state-orch",
+    "argv": ["/usr/bin/python3", "-B", "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/checkpoint_tail_parent_strong.py", "--manifest", "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_session1/MANIFEST.json", "--manifest-sha256", "e633ecae3b71e2e4e901c2f7eceece0374c8190f5c859ab300ee449daa80e753"]
+  },
+  "CPU_service": {
+    "pid": 361010, "start_ticks": "822432", "state": "S",
+    "started_local": "Fri Sep 18 18:07:49 2026",
+    "cwd": "/data/home/rohing/dream-state-orch",
+    "argv": ["/usr/bin/python3", "-B", "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_service.py"]
+  },
+  "process_environment_read": false,
+  "credential_values_or_hashes_read": false,
+  "signals": [], "provider_calls": 0,
+  "sandbox_note": "Direct proc-stat access from candidate preparation was unavailable inside the sandbox; escalation was interrupted without execution. Preparation uses explicit recorded evidence instead of waiting or treating that as a stopped parent."
+}

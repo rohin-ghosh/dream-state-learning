@@ -1,6 +1,7 @@
 """Unique-source staging and CPU-only receiving proof; never dispatch a native."""
 
 import base64
+from copy import deepcopy
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -131,18 +132,31 @@ def main():
         write_bytes(control / 'ORIGINAL_PLAN.json', original_bytes)
         write_bytes(control / 'ORIGINAL_GUARD.json', (OLD_CONTROL / 'GUARD.json').read_bytes())
         write_bytes(control / 'ORIGINAL_EXIT.json', (OLD_CONTROL / 'EXIT.json').read_bytes())
-        execution = dict(original, source_root=str(staged_source))
-        write_json(control / 'PLAN.json', execution)
         sys.path.insert(0, str(staged_source))
         import math_b_runtime_candidate as kernel
         import math_b_startup as startup
+        from pending_sleep_contract import relocated_execution_plan
+        from gpu import orch_r125_continual_native as native
+        execution = relocated_execution_plan(original, str(staged_source))
+        require(checksum(original['startup_context']['path'])
+            == checksum(execution['startup_context']['path']) == original['startup_context']['sha256'],
+            'startup_bytes_identical_after_source_copy')
+        require(native.validate_plan(execution) == execution, 'actual_original_native_PLAN_validation')
+        native.verify_experiment_resume(execution, complete['document']['checkpoint']['experiment'])
+        write_json(control / 'PLAN.json', execution)
+        write_json(control / 'ORIGINAL_PLAN_VALIDATION_CPU.json', dict(passed=True,
+            utc=datetime.now(timezone.utc).isoformat(), fixture=False,
+            original_native_validator=True, original_experiment_resume_validator=True,
+            changed_fields=['source_root', 'startup_context.path'],
+            startup_sha256=execution['startup_context']['sha256'],
+            birth_text_unchanged=execution['birth_prompt'] == original['birth_prompt']))
         candidate = kernel.prepare_candidate(complete, pending, suffix,
             plan_bytes=original_bytes, expected_plan_sha256=PLAN_SHA256)
         write_json(control / 'PENDING_SLEEP_CANDIDATE.json', candidate)
         journal_id = json.loads((raw / 'stream' / 'JOURNAL.json').read_bytes())['journal_id']
         selection = dict(policy='R233_PINNED_COMPLETE_TAIL_V1', root=str(Path(original['root']) / 'stream'),
             journal_id=journal_id, complete_index=9476, complete_sha256=COMPLETE_SHA256,
-            life_id='R213_NEW_MATH_B', max_tail_records=2048, max_tail_bytes=128 * 1024**2,
+            life_id='R213_NEW_MATH_B', max_tail_records=2048, max_tail_bytes=512 * 1024**2,
             sidecars=[dict(name='correction_ledger.json', kind='R197_CORRECTION_CYCLE', required=True)],
             persist_complete_anchors=True)
         manifest = dict(schema=startup.SCHEMA, life='r213_math_b_fork',
@@ -189,6 +203,45 @@ def main():
             result = subprocess.run(command, cwd=control / 'test_support', env=environment, stdout=log,
                 stderr=subprocess.STDOUT, timeout=180)
         require(result.returncode == 0, 'receiving_CPU_tests_failed_preserve_staging')
+        print(json.dumps(dict(status='RECEIVING_TESTS_PASS_ACTUAL_JOURNAL_PROOF_START',
+            source=str(staged_source), control=str(control))), flush=True)
+        from gpu.orch_r125_stream_journal import StreamJournal
+        host_selection = dict(selection, root=str(raw / 'stream'))
+        journal_base = startup.make_journal_class(StreamJournal, host_selection)
+
+        class ReadOnlyJournal(journal_base):
+            def _scan(self):
+                self.inbox = Path(selection['root']) / 'inbox'
+                return super()._scan()
+
+            def _publish(self, *args, **kwargs):
+                raise ValueError('CPU_proof_forbids_journal_publication')
+
+            def record(self, *args, **kwargs):
+                raise ValueError('CPU_proof_forbids_journal_record')
+
+        proof_started = time.monotonic()
+        with ReadOnlyJournal(raw / 'stream', create=False) as journal:
+            journal_proof = deepcopy(journal.checkpoint_tail_receipt)
+            contract = candidate['candidate']['contract']['contract']
+            require(journal_proof['record_count'] == 9556 and journal_proof['head_sha256'] == HEAD_SHA256,
+                'actual_exact_retained_head')
+            require(journal.latest_checkpoint() == dict(document=contract['preserved_state'],
+                expected_sha256=contract['preserved_state']['sha256']), 'actual_exact_pending_state')
+            restored = native.ContinualStream.restore(contract['preserved_state'],
+                expected_sha256=contract['preserved_state']['sha256'])
+            require(restored.checkpoint() == contract['preserved_state']
+                and [row['source_sha256'] for row in restored.pending_rows()] == contract['pending_row_sha256'],
+                'actual_rows_and_history_preserved')
+            require(journal._record_snapshot() == journal._record_signatures,
+                'actual_journal_unchanged_by_CPU_proof')
+            journal_proof.update(passed=True, fixture=False, utc=datetime.now(timezone.utc).isoformat(),
+                elapsed_seconds=time.monotonic() - proof_started, rows=len(restored.rows),
+                sleep_frontier=restored.sleep_frontier, pending_rows=len(restored.pending_rows()),
+                original_journal_writes_performed=False, guest_inbox_path_compared_on_host_descriptor=True,
+                pending_sleep_executed=False, startup_manifest=pin(control / 'STARTUP_MANIFEST.json'))
+        require(not torch.cuda.is_initialized(), 'no_CUDA_initialized_by_real_CPU_proof')
+        write_json(control / 'ACTUAL_JOURNAL_CPU.json', journal_proof)
         require(source_pins == {str(path.relative_to(staged_source)): checksum(path)
             for path in staged_source.rglob('*.py')}, 'source_closure_unchanged_after_receiving_tests')
         require(checksum(OLD_CONTROL / 'PLAN.json') == PLAN_SHA256
@@ -200,6 +253,8 @@ def main():
             source_pins_sha256=kernel.digest(source_pins), original_source_count=len(guard['source_pins']),
             added_source_files=additions, plan_sha256=checksum(control / 'PLAN.json'),
             startup_manifest=pin(control / 'STARTUP_MANIFEST.json'), checkpoint_cpu=pin(control / 'ACTUAL_CHECKPOINT_CPU.json'),
+            original_native_plan_validation=pin(control / 'ORIGINAL_PLAN_VALIDATION_CPU.json'),
+            actual_journal_cpu=pin(control / 'ACTUAL_JOURNAL_CPU.json'),
             native_or_GPU_launch_performed=False, original_state_or_journal_written=False,
             fresh_privileged_admission=False, main_published_scoped_builder_receipt_pending=True,
             initial_owner_available_bytes=available,
@@ -215,12 +270,39 @@ def main():
             allocation_sha256=checksum(control / 'ALLOCATION_CANDIDATE.json'),
             pending_sleep_recovery=pin(control / 'STARTUP_MANIFEST.json'))
         write_json(control / 'GUARD_CANDIDATE.json', candidate_guard)
+        from gpu import orch_r125_continual_guard as original_guard
+        try:
+            original_guard.validate(control / 'GUARD_CANDIDATE.json')
+        except ValueError as error:
+            require(str(error) == 'posted_allocation_and_CPU_provenance', 'unexpected_original_guard_blocker:' + str(error))
+        else:
+            raise ValueError('unpublished_allocation_must_not_validate')
+        entry_command = [sys.executable, '-B', '-m', 'gpu.ws6_math_b_pending_entry', 'scan',
+            '--config', str(control / 'GUARD_CANDIDATE.json')]
+        with (control / 'ORIGINAL_ENTRY_CHAIN_CPU.log').open('xb') as log:
+            entry_result = subprocess.run(entry_command, cwd=staged_source, env=environment,
+                stdout=log, stderr=subprocess.STDOUT, timeout=60)
+        entry_log = (control / 'ORIGINAL_ENTRY_CHAIN_CPU.log').read_text()
+        require(entry_result.returncode == 1
+            and entry_log.rstrip().endswith('ValueError: posted_allocation_and_CPU_provenance'),
+            'actual_original_entry_chain_reaches_only_unpublished_allocation_gate')
+        entry_proof = dict(utc=datetime.now(timezone.utc).isoformat(), fixture=False,
+            original_entry_chain_executed=True, original_guard_reachable_checks_pass=True,
+            expected_terminal_gate='posted_allocation_and_CPU_provenance',
+            allocation_builder_flag=False, command=entry_command,
+            log=pin(control / 'ORIGINAL_ENTRY_CHAIN_CPU.log'),
+            privileged_scan_or_confinement_run=False, native_or_GPU_launch_performed=False)
+        write_json(control / 'ORIGINAL_ENTRY_CHAIN_CPU.json', entry_proof)
         receipt = dict(status='SOURCE_STAGED_ACTUAL_CHECKPOINT_CPU_AND_RECEIVING_TESTS_PASS_NO_LAUNCH',
             utc=datetime.now(timezone.utc).isoformat(), source=str(staged_source), control=str(control),
             source_pins=source_pins, source_pins_sha256=kernel.digest(source_pins),
             original_source_count=len(guard['source_pins']), added_source_files=additions,
             plan=pin(control / 'PLAN.json'), startup_manifest=pin(control / 'STARTUP_MANIFEST.json'),
             candidate_guard=pin(control / 'GUARD_CANDIDATE.json'), receiving_cpu=pin(control / 'RECEIVING_CPU.json'),
+            actual_journal_cpu=pin(control / 'ACTUAL_JOURNAL_CPU.json'),
+            original_entry_chain_cpu=pin(control / 'ORIGINAL_ENTRY_CHAIN_CPU.json'),
+            original_native_plan_validation=pin(control / 'ORIGINAL_PLAN_VALIDATION_CPU.json'),
+            permitted_PLAN_deltas=['source_root', 'startup_context.path'],
             checkpoint_cpu=tensor_receipt, candidate_sha256=candidate['sha256'],
             original_head_sha256=HEAD_SHA256, original_complete_sha256=COMPLETE_SHA256,
             CPU_log_tail=(control / 'RECEIVING_CPU.log').read_text()[-1200:],

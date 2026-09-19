@@ -1,0 +1,32 @@
+{
+  "schema": "C2_REFINEMENT_CPU_TEST_RECEIPT_V1",
+  "date_utc": "2026-09-19",
+  "command": "python3 -B -m unittest discover -s research_loop/workers/replication_sprint_20260919/parenting/c2_refinement -p 'test_c2_refinement.py' -v",
+  "result": "PASS",
+  "tests_run": 19,
+  "failures": 0,
+  "reported_seconds": 0.081,
+  "candidate_source_sha256": "272a614160bf0d15349cf5b8362ef86eb3c3f3900d5f204181ec24a554a63761",
+  "test_source_sha256": "66dd33ca7bf5eb5255525f9affb8a69599843742760193d8bf95b4f48bc2af84",
+  "original_functions_exercised": ["r202_parent.main's policy_addendum prompt hook", "orch_r133_programme_parent.prompt", "orch_r133_programme_parent.resume_cursor", "checkpoint_tail_parent_strong.validate_config", "checkpoint_tail_parent_strong.validate_manifest", "c2_service selection and successor CONFIG assignments"],
+  "actual_generated_manifest_validation": {
+    "result": "PASS",
+    "manifest_sha256": "6ecbcacfde1deaae9e06af1aa6b00fc95eb3a8c966d6f056caaf98ce4a0e9b49",
+    "original_resume_cursor": 564,
+    "only_changed_config_keys": ["predecessor_output", "predecessor_started_sha256", "start_after_response_count"]
+  },
+  "read_only_seed_check": {
+    "result": "STRUCTURAL_PASS_PENDING_DELIVERY",
+    "seed_sha256": "14b4a285dda3abcb7ccd9421ccbd8135bd26883cde7cead410e52a56cd073330",
+    "live_supervisor_identity_checked_by_this_command": false,
+    "current_ledger_settled": false,
+    "pending_inbox_id": "f2d22684d6b84e14a8db55542d24d4fe"
+  },
+  "limits": ["AST-isolated original functions avoid importing executable live modules", "Synthetic filesystem fixtures are not live REQUEST/ACT or provider evidence", "CPU tests do not establish policy effectiveness, authentication or adapter retention"],
+  "provider_calls": 0,
+  "messages_published": 0,
+  "process_signals": [],
+  "live_files_changed": [],
+  "credentials_read_or_copied": false,
+  "deployment_executed": false
+}

@@ -41,6 +41,25 @@ def digest(value):
         separators=(',', ':'), allow_nan=False).encode()).hexdigest()
 
 
+def relocated_execution_plan(original, source_root):
+    destination = Path(source_root)
+    require(destination.is_absolute() and '..' not in destination.parts, 'absolute_staged_source')
+    execution = dict(deepcopy(original), source_root=str(destination))
+    startup = original.get('startup_context')
+    if startup is not None:
+        require(type(startup) is dict and set(startup) == {'version', 'path', 'sha256'},
+            'exact_original_startup_descriptor')
+        old_root, old_path = Path(original['source_root']), Path(startup['path'])
+        require(old_root.is_absolute() and old_path.is_absolute()
+            and '..' not in old_root.parts and '..' not in old_path.parts,
+            'original_startup_unredirected_path')
+        require(old_path.is_relative_to(old_root) and old_path != old_root,
+            'original_startup_inside_original_source')
+        execution['startup_context'] = dict(startup,
+            path=str(destination / old_path.relative_to(old_root)))
+    return execution
+
+
 def reference(record):
     return dict(index=record['index'], sha256=record['sha256'])
 

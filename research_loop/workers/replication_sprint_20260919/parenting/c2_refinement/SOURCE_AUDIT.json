@@ -1,0 +1,252 @@
+{
+  "CPU_service": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_service.py"
+    ],
+    "cwd": "/data/home/rohing/dream-state-orch",
+    "pid": 361010,
+    "start_ticks": "822432",
+    "started_local": "Fri Sep 18 18:07:49 2026",
+    "state": "S"
+  },
+  "identity_observation": {
+    "CPU_service": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_service.py"
+      ],
+      "cwd": "/data/home/rohing/dream-state-orch",
+      "pid": 361010,
+      "start_ticks": "822432",
+      "started_local": "Fri Sep 18 18:07:49 2026",
+      "state": "S"
+    },
+    "credential_values_or_hashes_read": false,
+    "deployment_requires_identity_refresh": true,
+    "fresh_start_ticks_check": false,
+    "method": "Fresh ps PID/PPID/lstart/stat/argv read; start ticks and cwd carried from the earlier exact read, not re-read from process environment",
+    "observed_utc": "2026-09-19T14:40:24Z",
+    "process_environment_read": false,
+    "provider_calls": 0,
+    "publisher": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/checkpoint_tail_parent_strong.py",
+        "--manifest",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_session1/MANIFEST.json",
+        "--manifest-sha256",
+        "e633ecae3b71e2e4e901c2f7eceece0374c8190f5c859ab300ee449daa80e753"
+      ],
+      "cwd": "/data/home/rohing/dream-state-orch",
+      "pid": 325487,
+      "start_ticks": "753205",
+      "started_local": "Fri Sep 18 17:56:17 2026",
+      "state": "S"
+    },
+    "sandbox_note": "Direct proc-stat access from candidate preparation was unavailable inside the sandbox; escalation was interrupted without execution. Preparation uses explicit recorded evidence instead of waiting or treating that as a stopped parent.",
+    "signals": []
+  },
+  "identity_refresh_required_at_deployment": true,
+  "ledgers": [
+    {
+      "counts": {
+        "MISSING": 3,
+        "PUBLISHED": 110,
+        "attempt_directories": 113,
+        "dispatch_intents": 113,
+        "outbound_route_receipts": 113
+      },
+      "failed_attempts_remain_reserved": true,
+      "failures": [
+        {
+          "attempt": "parent_000000",
+          "error_type": "HTTPError",
+          "result_sha256": "27308b7d738e6dac4b9191db1c77447231c0e7faf14804c57f40ce353a946bf9",
+          "retry": false
+        },
+        {
+          "attempt": "parent_000001",
+          "error_type": "HTTPError",
+          "result_sha256": "81a0ba680530e4c63be46b211e4676cf1d23b0339fafa28dab8ae9c1a60c307c",
+          "retry": false
+        },
+        {
+          "attempt": "parent_000039",
+          "error_type": "HTTPError",
+          "result_sha256": "7ad37545756c2725d8aa042205b66ec506e9078f43f97b551540e2de88b082f4",
+          "retry": false
+        }
+      ],
+      "last_status": "PUBLISHED",
+      "missing_usage_not_estimated": true,
+      "output": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_session1/parent",
+      "pending": [
+        {
+          "attempt": "parent_000112",
+          "inbox_id": "f2d22684d6b84e14a8db55542d24d4fe",
+          "kind": "publication_consumption_unknown",
+          "result_sha256": "9fe0768db19d7833baa48723f5add9ca2b5887fad36200b2994cc516338461dd"
+        }
+      ],
+      "reserved": 564,
+      "signature": "32e22bfe6c04e6803786d14d2016f4208e265f9d21877f6d39efbe6077ae5462",
+      "usage_recorded": {
+        "input_tokens": 1471803,
+        "output_tokens": 16571,
+        "total_tokens": 1488374
+      }
+    },
+    {
+      "counts": {
+        "PUBLISHED": 16,
+        "attempt_directories": 16,
+        "dispatch_intents": 16,
+        "outbound_route_receipts": 16
+      },
+      "failed_attempts_remain_reserved": true,
+      "failures": [],
+      "last_status": "PUBLISHED",
+      "missing_usage_not_estimated": true,
+      "output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/private/checkpoint_tail_parent_r233",
+      "pending": [
+        {
+          "attempt": "parent_000015",
+          "inbox_id": "16aba5d9069349a0965977c88202c798",
+          "kind": "publication_consumption_unknown",
+          "result_sha256": "4a47ebfe3413f226bdd54169ed3cf7b3d3d45f37bd9c1d1c8f1375abf6f2eba5"
+        }
+      ],
+      "reserved": 428,
+      "signature": "ed72183102eb037fddb73da63c7888e01e7d698211ef01798fba69ba471b37e0",
+      "usage_recorded": {
+        "input_tokens": 209760,
+        "output_tokens": 2541,
+        "total_tokens": 212301
+      }
+    },
+    {
+      "counts": {},
+      "failed_attempts_remain_reserved": true,
+      "failures": [],
+      "last_status": null,
+      "missing_usage_not_estimated": true,
+      "output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/private/checkpoint_tail_parent_after_correction",
+      "pending": [],
+      "reserved": 412,
+      "signature": "817a4df3c8d412fc4b2dbea1d895945e5b4e5488e5252f1f27fbd5b08b71d39d",
+      "usage_recorded": {}
+    },
+    {
+      "counts": {
+        "PUBLISHED": 2,
+        "SILENT": 1,
+        "attempt_directories": 3,
+        "dispatch_intents": 3,
+        "outbound_route_receipts": 3
+      },
+      "failed_attempts_remain_reserved": true,
+      "failures": [],
+      "last_status": "PUBLISHED",
+      "missing_usage_not_estimated": true,
+      "output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/private/checkpoint_tail_parent",
+      "pending": [
+        {
+          "attempt": "parent_000002",
+          "inbox_id": "f3df03f60e984c54a3ee5ece885e000b",
+          "kind": "publication_consumption_unknown",
+          "result_sha256": "6ba786dc377266abf77a5fdf71b291c3be9f2605b140b0306072701b0a4d9108"
+        }
+      ],
+      "reserved": 412,
+      "signature": "35cc4efc6ca59cee51a7d820e668c812dcf96eff45c0cf1d657e0b1a35ea2b89",
+      "usage_recorded": {
+        "input_tokens": 40114,
+        "output_tokens": 420,
+        "total_tokens": 40534
+      }
+    },
+    {
+      "counts": {
+        "PUBLISHED": 71,
+        "SILENT": 40,
+        "attempt_directories": 111,
+        "dispatch_intents": 111,
+        "outbound_route_receipts": 111
+      },
+      "failed_attempts_remain_reserved": true,
+      "failures": [],
+      "last_status": "SILENT",
+      "missing_usage_not_estimated": true,
+      "output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/LIVE_CONVERSATION_PARENT14/run",
+      "pending": [],
+      "reserved": 409,
+      "signature": "5d82a94467c78602a47d4a6ccf229451a82b7e8c7e8f4c121d465ae97410a2d2",
+      "usage_recorded": {
+        "input_tokens": 1517682,
+        "output_tokens": 15511,
+        "total_tokens": 1533193
+      }
+    }
+  ],
+  "native_remote_observation": {
+    "binding_path": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/parent_operator/C2_CHECKPOINT_TAIL_LOADED.json",
+    "binding_questions_only_keys": [],
+    "binding_sha256": "a7dc874936befcf29258597c8423dea2cd3be929d56bc00bb27f8c0d4220a757",
+    "method": "Read-only original checkpoint_tail_parent_binding.verify with expected binding hash; source/guard/plan/actual LOAD and process identity validated",
+    "native": {
+      "pid": 1139778,
+      "start_ticks": "30025875"
+    },
+    "native_signals": [],
+    "node": "ovx3",
+    "observed_utc": "2026-09-19T14:25:13.412020+00:00",
+    "provider_calls": 0,
+    "questions_only_keys": {
+      "GUARD.json": [],
+      "PLAN.json": []
+    },
+    "scope_limit": "Process and binding liveness, not a new REQUEST-to-ACT or learning-success receipt",
+    "verification": {
+      "hard_end_unix": 1789927200,
+      "loaded_index": 11505,
+      "pid": 1139778
+    }
+  },
+  "observed_utc": "2026-09-19T14:41:19.403203+00:00",
+  "older_boundary": {
+    "config_sha256": "b8a45a275794ec10ab104b10597570bc3d2e96561554d210e4010a2027f18eee",
+    "output": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/LIVE_CONVERSATION_PARENT13/run",
+    "started_sha256": "6892b854def10ff99318d964770f7aae0cbac3b414712b3fe3c71b4ba4779c3c",
+    "status": "retained_not_fully_audited"
+  },
+  "publisher": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/checkpoint_tail_parent_strong.py",
+      "--manifest",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_session1/MANIFEST.json",
+      "--manifest-sha256",
+      "e633ecae3b71e2e4e901c2f7eceece0374c8190f5c859ab300ee449daa80e753"
+    ],
+    "cwd": "/data/home/rohing/dream-state-orch",
+    "pid": 325487,
+    "start_ticks": "753205",
+    "started_local": "Fri Sep 18 17:56:17 2026",
+    "state": "S"
+  },
+  "replay_authorized": false,
+  "totals_known": {
+    "MISSING": 3,
+    "PUBLISHED": 199,
+    "SILENT": 41,
+    "attempt_directories": 243,
+    "dispatch_intents": 243,
+    "outbound_route_receipts": 243
+  },
+  "whole_life_totals_known": false
+}

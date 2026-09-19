@@ -1,5 +1,6 @@
 """Deliver only reviewed additions and CPU proof inputs to unique original-node staging."""
 
+import argparse
 import base64
 from datetime import datetime, timezone
 import hashlib
@@ -15,6 +16,11 @@ REPO = HERE.parents[3]
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--receipt-prefix', default='MATH_B')
+    args = parser.parse_args()
+    if not args.receipt_prefix.replace('_', '').isalnum():
+        raise ValueError('simple_local_receipt_prefix')
     files = []
 
     def add(surface, destination, raw):
@@ -26,7 +32,7 @@ def main():
         add('source', name, (HERE / name).read_bytes())
     add('source', 'gpu/ws6_math_b_pending_entry.py', (HERE / 'ws6_math_b_pending_entry.py').read_bytes())
     for name in ['test_pending_sleep_contract.py', 'test_math_b_runtime_candidate.py',
-            'test_math_b_startup.py', 'test_original_confinement_chain.py']:
+            'test_math_b_startup.py', 'test_original_confinement_chain.py', 'test_startup_relocation.py']:
         add('control', 'receiving_tests/' + name, (HERE / name).read_bytes())
     support = 'test_support/research_loop/workers/post_recovery_node2_sleep_20260919/'
     for directory in ['test_support/research_loop', 'test_support/research_loop/workers',
@@ -38,7 +44,7 @@ def main():
     payload = dict(gpu_launch_authorized=False, files=files,
         test_source_evidence=[str(path.relative_to(HERE / 'source_evidence'))
             for path in (HERE / 'source_evidence').rglob('*.py')])
-    with (HERE / 'MATH_B_STAGING_REQUEST.json').open('x') as output:
+    with (HERE / (args.receipt_prefix + '_STAGING_REQUEST.json')).open('x') as output:
         json.dump(dict(utc=datetime.now(timezone.utc).isoformat(),
             worker_sha256=hashlib.sha256((HERE / 'math_b_receiving_worker.py').read_bytes()).hexdigest(),
             inputs=[{key: value for key, value in entry.items() if key != 'content'} for entry in files],
@@ -46,8 +52,8 @@ def main():
     command = '/usr/bin/env CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 ' + encoded_command(
         (HERE / 'math_b_receiving_worker.py').read_text()).replace('python3 -u -B',
             '/localhome/local-rohing/v2/venv/bin/python -u -B', 1)
-    with (HERE / 'MATH_B_RECEIVING_PROGRESS.jsonl').open('x') as output, \
-            (HERE / 'MATH_B_RECEIVING.stderr').open('x') as errors:
+    with (HERE / (args.receipt_prefix + '_RECEIVING_PROGRESS.jsonl')).open('x') as output, \
+            (HERE / (args.receipt_prefix + '_RECEIVING.stderr')).open('x') as errors:
         result = subprocess.run(['bash', str(REPO / 'gpu/ovx2_ssh.sh'), command],
             input=json.dumps(payload) + '\n', stdout=output, stderr=errors, text=True, timeout=300)
     if result.returncode:

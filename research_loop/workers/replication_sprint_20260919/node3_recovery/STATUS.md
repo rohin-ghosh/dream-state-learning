@@ -1,5 +1,52 @@
 # Node 3 preserved-state recovery — September 19, 2026
 
+## Update14:47 UTC — known startup blocker repaired in a new CPU-proven candidate
+
+`MATH_B_RELOCATION_V3_READY.json` binds the fresh source/control pair ending
+`20260919T144429Z`. The startup-path-only relocation passes the original native
+PLAN and experiment checks.59 receiving regressions pass;real saved optimizer/
+RNG and real checkpoint+tail state are verified on CPU. The actual original
+entry chain now reaches only the truthful unpublished-allocation gate. No
+privileged admission/confinement/native/model run is claimed. Main final exact
+source/PLAN/manifest binding is next,then fresh original admission;all eight
+remain unrecovered here. Final retired-copy repair remains complete;owner
+headroom33,897,074,688 bytes at14:46:17Z. Current bindings are in`TO_MAIN.md`.
+
+## Current cut:14:42:01 UTC — storage restored; native recovery not achieved
+
+**Storage repair COMPLETE.**125 remaining batches,3,189 replacements,all4,845
+remaining paths plus9 canary paths rehashed after completion. No research path
+removed;bytes and required file metadata preserved.11,725-entry ledger and
+per-batch/final receipts independently agree. Final owner availability was
+33,928,876,032 bytes;fresh census now33,927,520,256 bytes.
+
+**MathB is still DOWN.** Exact V2 publication/allocation/guard is bound,but the
+original guard rejects PLAN's old-source startup_context.path before scan/probe
+with`pinned_startup_source`. No confinement,privilege,lease or namespace bypass.
+`MATH_B_BUILDER1438_GUARD_RESULT.json` is the actual failure plus proof that a
+single in-memory startup-path rebase passes the original native/experiment
+validators. Local-only three-module repair passes125 tests;it is not staged,
+reviewed under a new source closure,or launched. The remote617cc5 source remains
+unchanged. Prior real CPU checkpoint+tail proof retains580 rows/frontier577 and
+all3 pending rows;no lost resident optimizer/RNG is invented.
+
+| Life | GPU | Last record | Current state / remaining recovery issue |
+| --- | ---: | ---: | --- |
+| MathA | 1 | 9466 | DOWN;missing generation RESPONSE and preserved partial intent |
+| MathB | 2 | 9555 | DOWN;original startup source-pin rejection;pending full48 updates |
+| MathC | 4 | 8976 | DOWN;preserved partial intent and interrupted sleep |
+| Caption observation | 0 | 10397 | DOWN;preserved partial intent and interrupted sleep |
+| Caption perspective | 3 | 10856 | DOWN;preserved partial intent and interrupted sleep |
+| Caption revision | 5 | 10085 | DOWN;preserved partial intent and interrupted sleep |
+| Caption selfderive | 6 | 9411 | DOWN;preserved partial intent and interrupted sleep |
+| Caption unparented-named | 7 | 10156 | DOWN;preserved partial intent and interrupted sleep |
+
+No actual recovery LOADED/COMPLETE/REQUEST/ACT or parent rebind. No healthy native
+stopped. Original execution ceiling1790272800 and seven-native parent prerequisite
+unchanged. Source outages continue;the fresh cut shows525–527 minutes since
+each last record,not successful restarts. `FINAL_NODE3_CENSUS_1442.json` records
+all partial artifacts and original GPU/process observations. Older cuts follow.
+
 ## Update14:35 UTC
 
 Retired-only coalescing has125/125 batch postchecks;final all-path rehash is

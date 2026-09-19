@@ -1,6 +1,6 @@
 # Research status — September 19, 2026
 
-**Handoff update:** September 19, 14:39 UTC / 07:39 PDT. Individual evidence cuts are dated below.
+**Handoff update:** September 19, 14:50 UTC / 07:50 PDT. Individual evidence cuts are dated below.
 **Current phase:** independently checked sampling results, parenting refinement, and recovery.
 
 This is the morning handoff for Rohin. It separates completed observations from
@@ -79,9 +79,9 @@ Six parallel workstreams have been assigned. Assignment is not completion:
 | Evidence | Actual mixed-curriculum delivery; strongest reflection-to-action traces; early-versus-late C2 comparison | Historical audit complete; positive examples and timing caveat below |
 | Replication | Original-protocol sampling probe; distinguish sampling replication from training-lineage replication | All18 cells and block completed14:24:35 UTC; independent recount matches all240 comparisons |
 | Measurement | Offline source-bound uptake/retention summaries and tests, including unknown outcomes | First bounded measurement complete; 45 tests independently rerun by Main |
-| Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Pair candidate blocked by authentication; C2-only short artifact/check refinement being prepared, not yet deployed |
+| Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Pair authentication-blocked. C2-only refinement passes 19 tests; awaiting an idle CPU-parent handoff, not deployed |
 | Formalization | Fast/slow-loop hypotheses, estimands, controls and falsifiers | Proposal complete; not a launched experiment |
-| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | All125 coalescing batches verified;33.93GB owner-available space. Real MathB pending state CPU-verified; original admission/launch next, not yet recovered |
+| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | Storage restored. Original MathB admission exposed a startup-path mismatch; minimal relocation repair passes 125 Main / 59 receiving tests. No native recovery yet |
 
 **Verified replication execution:** the V3 controller launched on ovx4 at
 **14:04:39 UTC**, after Main's72 focused CPU tests and all six real receiving
@@ -316,8 +316,20 @@ Readiness and exact integration:
   required a512MiB read-bound manifest; the failed smaller manifest is retained.
   A real checkpoint/tail CPU audit restored all580 rows, including3 pending
   rows, with the identical state hash. The runtime sources, full pending-sleep
-  recipe and lease are unchanged. Native launch remains subject to original
-  fresh privileged admission; no real LOADED or ACT is claimed yet.
+  recipe and lease are unchanged. Original admission then rejected
+  `pinned_startup_source`: the copied runtime still referenced the old startup
+  path. The V3 repair relocates that path while preserving its exact text/hash
+  and all198 original source files. Main's125 CPU tests and59 receiving tests
+  pass; real original PLAN/entry validation now reaches the publication gate.
+  Fresh privileged admission remains required; no real LOADED or ACT is
+  claimed. Both failed admission attempts are preserved.
+- **C2 at14:49 UTC:** the original native is alive and writing optimizer
+  UPDATE records during sleep153. Its last parent publication is queued, not
+  yet acknowledged as consumed. The proposed short task/artifact/check policy
+  is ready with19 passing CPU tests and a prospectively fixed first-six-ACT
+  measurement window. It is not live: the CPU-parent handoff must preserve
+  that pending publication and the original supervisor's credential scope.
+  No native pause, taper, learning-rate change or row exclusion is involved.
 - **Node2 recovery code:** the narrow already-applied-wall compatibility and
   empty failed-intent preservation candidates pass132 CPU tests when rerun by
   Main. They are not installed; C0's actual startup integration is in progress.

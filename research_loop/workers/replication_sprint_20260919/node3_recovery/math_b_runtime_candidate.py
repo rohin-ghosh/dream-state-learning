@@ -60,7 +60,7 @@ def finish_pending_sleep(envelope, *, expected_sha256, native, journal,
         'unchanged_original_plan_bytes')
     plan = json.loads(plan_bytes)
     if execution_plan is not None:
-        allowed = dict(plan, source_root=execution_plan['source_root'])
+        allowed = preparation.relocated_execution_plan(plan, execution_plan['source_root'])
         require(execution_plan == allowed, 'only_staged_source_location_may_change')
         require(Path(execution_plan['source_root']).is_absolute(), 'absolute_staged_source')
         plan = deepcopy(execution_plan)
