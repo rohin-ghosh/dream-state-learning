@@ -1,0 +1,96 @@
+{
+  "GPU_called": false,
+  "all_passed": true,
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_node2_sleep_20260919/runtime_candidate",
+        "-p",
+        "test_interrupted_sleep.py",
+        "-v"
+      ],
+      "elapsed_seconds": 4.7060111119972134,
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_node2_sleep_20260919",
+        "-p",
+        "test_restart_contract.py",
+        "-v"
+      ],
+      "elapsed_seconds": 0.051376785999309504,
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation",
+        "-p",
+        "test_strict_replay.py",
+        "-v"
+      ],
+      "elapsed_seconds": 0.38866655099991476,
+      "returncode": 0
+    }
+  ],
+  "execution_authorized": false,
+  "finished_unix": 1789803093.607704,
+  "full_real_journals_audited": false,
+  "model_loaded": false,
+  "native_signals": false,
+  "output_path": "research_loop/workers/post_recovery_node2_sleep_20260919/runtime_candidate/TEST_OUTPUT_1789803093607468737.txt",
+  "output_sha256": "6ca81de2151abd69510ae644239f9c241888442a8d7c8dceace86565b5bee1c4",
+  "real_checkpoint_tensors_loaded": false,
+  "remote_calls": false,
+  "schema": "NODE2_INTERRUPTED_SLEEP_CPU_TESTS_V1",
+  "source_sha256": {
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/Astra7/gpu/astra_experienced_event_microloop.py": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/Astra7/gpu/orch_guided_native.py": "559d8e6ea7002f2651748ba192a57c5cf627381f6a3994d93cb02d63011a3157",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/Astra7/gpu/orch_r125_continual_native.py": "4092dd4355dbb4c6d2ecbcb2f48ad08b23af4e37817b949c54ad31d6f5bc03c0",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/Astra7/gpu/orch_r125_stream_journal.py": "0b0d309cbb0399be3b9488fab0eb049063e321b927bf5b4b2c43369448bdf06f",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/Astra7/gpu/orch_r184_think_act_learn.py": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/Astra7/gpu/r205_runtime.py": "14a6e7e1eab7fde393e27c9a0e1ebd44dca7c4508e98d6ba146828f63ade6ede",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/Astra7/gpu/r213_recovery_runtime.py": "82ccaa073bd008d952cd51e12aff54a079d9ab1d22528b7344ac9f965231b3e1",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/Astra7/gpu/r233_node2_recovery.py": "a411b7fed8ed8338725467ff483b552e60db3365e3e0ac962d2325aeec8eb4a0",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/Astra7/organism_v6/orch_r124_train_history.py": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/Astra7/organism_v6/orch_r125_continual_stream.py": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/C0/gpu/astra_experienced_event_microloop.py": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/C0/gpu/orch_guided_native.py": "559d8e6ea7002f2651748ba192a57c5cf627381f6a3994d93cb02d63011a3157",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/C0/gpu/orch_r125_continual_native.py": "4092dd4355dbb4c6d2ecbcb2f48ad08b23af4e37817b949c54ad31d6f5bc03c0",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/C0/gpu/orch_r125_stream_journal.py": "0b0d309cbb0399be3b9488fab0eb049063e321b927bf5b4b2c43369448bdf06f",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/C0/gpu/orch_r184_think_act_learn.py": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/C0/gpu/r205_runtime.py": "14a6e7e1eab7fde393e27c9a0e1ebd44dca7c4508e98d6ba146828f63ade6ede",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/C0/gpu/r213_recovery_runtime.py": "82ccaa073bd008d952cd51e12aff54a079d9ab1d22528b7344ac9f965231b3e1",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/C0/gpu/r233_node2_recovery.py": "a411b7fed8ed8338725467ff483b552e60db3365e3e0ac962d2325aeec8eb4a0",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/C0/organism_v6/orch_r124_train_history.py": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/source_evidence_1789790199409689539/C0/organism_v6/orch_r125_continual_stream.py": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/strict_replay.py": "226fd859cf559c670024ea6cb1a700c2a4bc8fb74f6ccd53ff0a5659ac566d32",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation/test_strict_replay.py": "71bce84d8ff2492fb9cd1b7a3cc1150853a0c5f7c7d41af5e8d9ada2b5d67a48",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/restart_contract.py": "050bdf3de64d213330af37b7f87da328ca5a826badc42e0497f4544fe44a9e95",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/runtime_candidate/interrupted_sleep.py": "4b0300ce0375fab8e86db9f265d8be6a3cb8421ac12a0e1405fbd44f7c928183",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/runtime_candidate/receiving_fixture.py": "5def29657947ee15302209ecf14e2eeb3c8ee557fd21e1343a0e70fd8ce69d79",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/runtime_candidate/run_cpu_tests.py": "3fb85eb1c046cf77c466e2f834c37197943d539e3c30201c4ac64021b49ee942",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/runtime_candidate/test_interrupted_sleep.py": "e9a2c2fdfb44e3d355aa2a103d1375f87f86a57a42ae1a0b3281ddee8c581ccf",
+    "research_loop/workers/post_recovery_node2_sleep_20260919/test_restart_contract.py": "6a584d70bc8dfcfad01d6a13e2c31f6cc23dc07f113929ab663ca8c825f8873f"
+  },
+  "started_unix": 1789803088.4603367,
+  "tests_use_synthetic_training_child": true
+}

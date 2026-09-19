@@ -18,6 +18,9 @@ an experiment succeeded.
 
 ## Current scientific and operational receipts
 
+- `research_notes/analysis/CONTINUATION_RECEIPTS_2026-09-19.md`:
+  completed frozen-sibling probe and caption-parent/transport recovery, with
+  actual delivery distinguished from uptake and unresolved work kept explicit.
 - `research_loop/workers/post_recovery_c2_age_eval_20260918/RESULTS.md`:
   same-block, per-seed caption counts and the replay-count reconciliation.
 - `research_loop/workers/post_recovery_correction_review_20260919_0139/REVIEW.md`:

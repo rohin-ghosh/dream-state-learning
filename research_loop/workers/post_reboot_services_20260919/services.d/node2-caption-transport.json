@@ -1,0 +1,34 @@
+{
+  "approval_scope": "R233 kept caption game and user continue; restore original private CPU transport after VM reboot; no new exposure or scorer/native modifications",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_node2_caption_20260919/parent_restore/restore_transport.py"
+  ],
+  "boot_installation": "BLOCKED_UNINSTALLED",
+  "child_native": false,
+  "cwd": "/data/home/rohing/dream-state-orch",
+  "enabled": true,
+  "entrypoint": "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_node2_caption_20260919/parent_restore/restore_transport.py",
+  "entrypoint_sha256": "b4ce5ef764b85666613e4712319645347521bb9ca0987de25e45703455435fda",
+  "foreground": true,
+  "historical_replay_allowed": false,
+  "kind": "parent",
+  "lease_evidence": {
+    "json_pointer": "/original_transport_deadline_unix",
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_node2_caption_20260919/parent_restore/TRANSPORT_MANIFEST.json",
+    "sha256": "43ef1e1f16aa5fdff7932a735b476a12e190bc9ab40ea3aaca9bfeb8b0c3429c"
+  },
+  "local_daemon_only": true,
+  "name": "node2-caption-transport",
+  "owner": "Main",
+  "readiness_is_not_judgment_success": true,
+  "restart_safe": true,
+  "self_enforces_lease": true,
+  "service_role": "CPU_TRANSPORT_NOT_MODEL_PARENT_OR_GPU_DISPATCHER",
+  "shutdown_leaves_child_natives_running": true,
+  "singleton_inherited_by_cpu_children": true,
+  "singleton_lock": "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_node2_caption_20260919/parent_restore/transport/locks/TRANSPORT.lock",
+  "synthetic_probe_allowed": false,
+  "until_unix": 1789927160
+}
