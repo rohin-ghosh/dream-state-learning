@@ -1,5 +1,22 @@
 # Mailbox setup receipt — September 19, 2026
 
+## Published-message delivery verified at 23:09:17 UTC / 16:09:17 PDT
+
+The same tmux process (`4056363`) completed its next scheduled poll and detected
+**both newly published messages**, totaling **10,495 bytes**, at remote commit
+`e135b326d6ed8a14ebbada2810b7d4d911c0a89e`. Both have local notification entries
+marked `downloaded_not_acknowledged`; there were no ignored messages.
+
+- Previous-reply message SHA-256:
+  `b708df924d728c993d136603d3ede9f676f658f82e3e37e1d4bc691372943c32`.
+- Reading-room handoff SHA-256:
+  `68f5aa26c2d235e641bb26fbcee9b703690b6556f14005d9b232f6a657043f08`.
+
+Publication checked **35 relative document links**, verified the submitted
+abstract blob was unchanged, and preserved the ordinary local HEAD and index.
+The focused **10-test suite passed again** after publication. No scientific
+outcome was inferred from these infrastructure tests.
+
 ## Verified at 23:07:19 UTC / 16:07:19 PDT
 
 - `tools/mailbox_watch.py` is running in tmux session `astra-mailbox`, PID
