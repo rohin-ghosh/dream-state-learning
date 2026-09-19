@@ -1,5 +1,7 @@
 # Dream-State Learning
 
+**Latest research update:** [Abstract scope, results, and next experiments — September 19, 2026](ABSTRACT_SCOPE_AND_RESEARCH_UPDATE_2026-09-19.md).
+
 Research project: **experiential parametric memory for continual LLM agents** —
 an agent's lived experience is consolidated ("dreamed") into adapter weights,
 and we measure whether that memory keeps improving with experience where
