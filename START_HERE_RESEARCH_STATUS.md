@@ -1,6 +1,6 @@
 # Research status — September 19, 2026
 
-**Handoff update:** September 19, 14:50 UTC / 07:50 PDT. Individual evidence cuts are dated below.
+**Handoff update:** September 19, 15:09 UTC / 08:09 PDT. Individual evidence cuts are dated below.
 **Current phase:** independently checked sampling results, parenting refinement, and recovery.
 
 This is the morning handoff for Rohin. It separates completed observations from
@@ -84,9 +84,9 @@ Six parallel workstreams have been assigned. Assignment is not completion:
 | Evidence | Actual mixed-curriculum delivery; strongest reflection-to-action traces; early-versus-late C2 comparison | Historical audit complete; positive examples and timing caveat below |
 | Replication | Original-protocol sampling probe; distinguish sampling replication from training-lineage replication | All18 cells and block completed14:24:35 UTC; independent recount matches all240 comparisons |
 | Measurement | Offline source-bound uptake/retention summaries and tests, including unknown outcomes | First bounded measurement complete; 45 tests independently rerun by Main |
-| Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Pair authentication-blocked. C2-only refinement passes 19 tests; awaiting an idle CPU-parent handoff, not deployed |
+| Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Pair authentication-blocked. C2-only refinement and 40-test handoff helper ready; bounded supervisor watcher awaits a settled publication, not deployed |
 | Formalization | Fast/slow-loop hypotheses, estimands, controls and falsifiers | Proposal complete; not a launched experiment |
-| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | Storage restored. Original MathB admission exposed a startup-path mismatch; minimal relocation repair passes 125 Main / 59 receiving tests. No native recovery yet |
+| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | MathB restored on original GPU2: 48 recovery updates, real COMPLETE9607 and LOADED9609. First request begun; next ACT and parenting still pending. Seven other lives remain down |
 
 **Verified replication execution:** the V3 controller launched on ovx4 at
 **14:04:39 UTC**, after Main's72 focused CPU tests and all six real receiving
@@ -326,8 +326,18 @@ Readiness and exact integration:
   path. The V3 repair relocates that path while preserving its exact text/hash
   and all198 original source files. Main's125 CPU tests and59 receiving tests
   pass; real original PLAN/entry validation now reaches the publication gate.
-  Fresh privileged admission remains required; no real LOADED or ACT is
-  claimed. Both failed admission attempts are preserved.
+  Both failed admission attempts are preserved. The new original privileged
+  admission passed at14:55:11 UTC, with the actual root scanner reporting clear
+  and the original GPU namespace checks passing; no bypass was used.
+- **MathB recovery committed at15:06 UTC:** durable optimizer9740 was restored
+  and the full48 interrupted updates rerun as explicitly logged recovery
+  compute. Real SLEEP_COMPLETE9607, LEARN9608 and LOADED9609 now exist; the new
+  adapter/optimizer/RNG files hash-verify. All580 retained rows and the working
+  state are preserved; lost resident RNG is not claimed recovered. The first
+  new REQUEST9613 began15:06:20. Downtime to LOADED was9h9m56s. An ACT and
+  restored parenting remain unverified; one restored process is not recovery
+  of the eight-life classroom. Receipt:
+  `node3_recovery/MATH_B_V3_VERIFICATION_20260919T150636Z.json` in the sprint.
 - **C2 at14:49 UTC:** the original native is alive and writing optimizer
   UPDATE records during sleep153. Its last parent publication is queued, not
   yet acknowledged as consumed. The proposed short task/artifact/check policy
@@ -335,10 +345,25 @@ Readiness and exact integration:
   measurement window. It is not live: the CPU-parent handoff must preserve
   that pending publication and the original supervisor's credential scope.
   No native pause, taper, learning-rate change or row exclusion is involved.
+  Publication112 subsequently acquired the original DELIVERED receipt for
+  INBOX15741. Later messages are still pending, so neither that delivery nor
+  the40 passing CPU handoff tests establishes deployment. A bounded tmux
+  waiter started15:08 UTC, using the same reviewed one-shot helper only after
+  a settled ledger; the earlier local background attempt did not persist and
+  is retained as a failed operational attempt, not claimed running.
 - **Node2 recovery code:** the narrow already-applied-wall compatibility and
   empty failed-intent preservation candidates pass132 CPU tests when rerun by
-  Main. They are not installed; C0's actual startup integration is in progress.
-  Astra7's empty temporary artifact has not been moved or silently ignored.
+  Main. C0's original-wrapper startup integration separately passes26 CPU
+  tests in Main's run. These are synthetic integration tests, not receiving
+  admission or a restored model. Astra7's empty temporary artifact has not
+  been moved or silently ignored.
+- **Node2 storage emergency:** owner-available space fell to247MB at15:03 UTC
+  and about6MB at15:06 UTC. C0's conservative first-recovery budget is2.98GB;
+  it is not launch-ready. Fresh hashing identifies1.84GB of possible savings
+  among retired duplicate records, not live journals/checkpoints. A bounded
+  off-node preservation and full-restore check is being prepared before any
+  coalescing; no recovery or reclaimed-space claim follows from identifying
+  duplicates. Reserved root-only blocks are not available capacity.
 - At **13:06:43 UTC**, the curriculum learner and frozen sibling remained GPU
   resident on ovx4 (`ipp2-ovx-p3-02`), alongside the base player and scorers.
   The original probe daemon was present. This is process evidence, not proof

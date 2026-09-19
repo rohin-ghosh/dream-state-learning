@@ -1,0 +1,42 @@
+{
+  "schema": "C0_CONTRACT_AND_AUDITOR_REGRESSION_V1",
+  "observed_utc": "2026-09-19T14:54:54.237241+00:00",
+  "passed": true,
+  "suites": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research_loop/workers/post_recovery_node2_sleep_20260919",
+        "-p",
+        "test_restart_contract.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "passed_lines": 18
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research_loop/workers/post_recovery_node2_sleep_20260919/replay_validation",
+        "-p",
+        "test_strict_replay.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "passed_lines": 22
+    }
+  ],
+  "output": "research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/c0_startup/CONTRACT_REPLAY_REGRESSION_1789829693805867316.txt",
+  "sha256": "7970d033cd1b645455774c4e30b7a7a76bb93cea1e9c39cfaf7f74bffee41135",
+  "full_fixture_replay_only_not_production_resume": true
+}

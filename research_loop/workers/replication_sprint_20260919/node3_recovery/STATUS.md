@@ -1,5 +1,27 @@
 # Node 3 preserved-state recovery — September 19, 2026
 
+## Update15:06:36 UTC — MathB recovered and LOADED; ACT pending
+
+Recovery COMPLETE9607/LEARN9608 and LOADED9609 are verified,including new saved
+adapter/optimizer/RNG hashes,all48 update records9741–9788,all3 rows×16,and
+preserved580 rows/history/working state. Native2890010 remains on originalGPU2.
+First REQUEST9613 is running;no ACT claim yet. Original outage→LOADED downtime
+32,996.253s (9h9m56.253s). Parent unbound:seven-native prerequisite unchanged.
+Other seven lives remain down. Current receipt:
+`MATH_B_V3_VERIFICATION_20260919T150636Z.json`. Old failures/partial states remain.
+
+## Update14:58:46 UTC — actual original-route recovery attempt running
+
+Main's published14:50 Builder was bound and the one authorized V3 dispatch
+started14:55:09Z. Original privileged admission and original GPU2 confinement
+passed without bypass. Native PID2890010,start_ticks53597510 is now on GPU2.
+New journal record9556 `INTERRUPTED_SLEEP_RESTART` is hash/intent verified;
+it preserves the lost-work distinction and requires the full48 new updates
+from durable9740. LOADED/COMPLETE/REQUEST/ACT are not yet observed. Other seven
+lives remain stopped;no other launch,signal,provider request or parent rebind.
+Seven-native parent prerequisite and original ceiling1790272800 unchanged.
+Owner availability33,894,359,040 bytes. See `TO_MAIN.md` for exact bindings.
+
 ## Update14:47 UTC — known startup blocker repaired in a new CPU-proven candidate
 
 `MATH_B_RELOCATION_V3_READY.json` binds the fresh source/control pair ending

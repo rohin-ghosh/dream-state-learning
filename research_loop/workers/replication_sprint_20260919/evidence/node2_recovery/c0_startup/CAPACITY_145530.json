@@ -1,0 +1,50 @@
+{
+  "budget": {
+    "assumptions": [
+      "Same adapter/optimizer tensor shapes; at most two checkpoint payload footprints.",
+      "Prior failed artifacts remain allocated and untouched.",
+      "4 MiB growth allowance per full state envelope; doubled atomic publication allowance.",
+      "Only first post-recovery THINK/ACT is budgeted; indefinite life growth is not guaranteed.",
+      "No base-model download or new optimizer/base cache; original offline paths preserved.",
+      "2 GiB unallocated reserve protects against shared-node growth; it is not a reservation."
+    ],
+    "components": {
+      "CPU_payload_small_receipts_and_startup": 8388608,
+      "_first_THINK_ACT_atomic_record_headroom": 206560992,
+      "new_checkpoint_and_temporary_payloads": 485319168,
+      "pending_completion_and_candidate_publication": 103280496,
+      "pinned_source_and_additions": 30103952,
+      "shared_filesystem_unallocated_safety_reserve": 2147483648
+    },
+    "required_bytes": 2981136864,
+    "state_envelope_bytes": 25820124
+  },
+  "launch_ready": false,
+  "measurement": {
+    "all_free_bytes": 39556390912,
+    "available_bytes": 947650560,
+    "complete_record_bytes": 21453804,
+    "durable_checkpoint_bytes": 242659584,
+    "euid": 2524,
+    "fragment_size": 4096,
+    "observed_unix": 1789829730.2896612,
+    "old_head_record_bytes": 959,
+    "owner_uid": 2524,
+    "pending_record_bytes": 21625820,
+    "source_python_bytes": 30051006,
+    "source_python_count": 2292
+  },
+  "notes": [
+    "statvfs f_bavail is nonprivileged writer-available space for UID2524. f_bfree includes unavailable reserved blocks.",
+    "No archive, coalesce, deletion, staging, training, signal or model call was performed.",
+    "Capacity dropped from 1875496960 at14:40:31UTC to947650560 at14:55:30UTC; snapshots do not reserve storage."
+  ],
+  "observed_utc": "2026-09-19T14:55:30.289661+00:00",
+  "quota_verified": false,
+  "remote_mutations": false,
+  "route": "bash gpu/ovx_ssh.sh",
+  "schema": "C0_OWNER_AVAILABLE_SPACE_CUT_V1",
+  "shortfall_bytes": 2033486304,
+  "space_reserved": false,
+  "sufficient": false
+}
