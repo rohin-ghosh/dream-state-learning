@@ -1,5 +1,19 @@
 # Node 3 preserved-state recovery — September 19, 2026
 
+## Update14:35 UTC
+
+Retired-only coalescing has125/125 batch postchecks;final all-path rehash is
+still running. Actual owner f_bavail measured33,786,118,144 bytes14:34:38Z.
+MathB is staged on its original node/source closure;52 receiving CPU tests and
+actual saved optimizer/RNG CPU loading pass. Real journal check restores all
+580 rows/frontier577/3 pending rows,including correction sidecar,in95.27s without
+historical transition replay. The real335,798,634-byte tail exceeds the original
+128MiB manifest:revised512MiB manifest is fully CPU-proven and awaiting Main's
+exact amendment. See`TO_MAIN.md` and`MATH_B_RECEIVING_VERIFIED_V2.json`.
+No native LOADED/ACT or parent rebind yet;all eight remain unrecovered by this
+workstream. Original per-life failure table below remains applicable;capacity
+and CPU-proof statements in the13:17 section are historical.
+
 ## Current cut: 13:17:53 UTC
 
 **All eight kept lives remain DOWN. None has been restarted.** The first blocker

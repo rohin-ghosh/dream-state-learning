@@ -1,6 +1,6 @@
 # Research status — September 19, 2026
 
-**Handoff update:** September 19, 14:33 UTC / 07:33 PDT. Individual evidence cuts are dated below.
+**Handoff update:** September 19, 14:39 UTC / 07:39 PDT. Individual evidence cuts are dated below.
 **Current phase:** independently checked sampling results, parenting refinement, and recovery.
 
 This is the morning handoff for Rohin. It separates completed observations from
@@ -81,7 +81,7 @@ Six parallel workstreams have been assigned. Assignment is not completion:
 | Measurement | Offline source-bound uptake/retention summaries and tests, including unknown outcomes | First bounded measurement complete; 45 tests independently rerun by Main |
 | Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Pair candidate blocked by authentication; C2-only short artifact/check refinement being prepared, not yet deployed |
 | Formalization | Fast/slow-loop hypotheses, estimands, controls and falsifiers | Proposal complete; not a launched experiment |
-| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | Verified retired-copy coalescing restores headroom; MathB staged,52 receiving and108 Main CPU tests pass; original admission/launch next, not yet recovered |
+| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | All125 coalescing batches verified;33.93GB owner-available space. Real MathB pending state CPU-verified; original admission/launch next, not yet recovered |
 
 **Verified replication execution:** the V3 controller launched on ovx4 at
 **14:04:39 UTC**, after Main's72 focused CPU tests and all six real receiving
@@ -304,6 +304,24 @@ Readiness and exact integration:
   coalescing canary is authorized only inside those retired copies; live state
   is outside its scope. Any reclaimed capacity still needs an actual filesystem
   receipt before recovery can be claimed.
+- **Storage repair completed,14:36:38 UTC:** all125 remaining batches plus the
+  canary passed final checks on4,854 preserved paths. Filesystem free space
+  increased35.23GB during the remaining batches; owner-available capacity is
+  now33.93GB. No original pathname or content was removed. Hardlink inode,
+  link-count and associated timestamp changes were explicitly accepted and
+  original metadata is backed up. This removes the node-3 capacity blocker,
+  not the separate native-recovery and parenting requirements.
+- **MathB receiving validation:**52 original-node CPU tests and actual saved
+  optimizer/RNG deserialization passed. A measured79-record/335.80MB tail
+  required a512MiB read-bound manifest; the failed smaller manifest is retained.
+  A real checkpoint/tail CPU audit restored all580 rows, including3 pending
+  rows, with the identical state hash. The runtime sources, full pending-sleep
+  recipe and lease are unchanged. Native launch remains subject to original
+  fresh privileged admission; no real LOADED or ACT is claimed yet.
+- **Node2 recovery code:** the narrow already-applied-wall compatibility and
+  empty failed-intent preservation candidates pass132 CPU tests when rerun by
+  Main. They are not installed; C0's actual startup integration is in progress.
+  Astra7's empty temporary artifact has not been moved or silently ignored.
 - At **13:06:43 UTC**, the curriculum learner and frozen sibling remained GPU
   resident on ovx4 (`ipp2-ovx-p3-02`), alongside the base player and scorers.
   The original probe daemon was present. This is process evidence, not proof
