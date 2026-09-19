@@ -1,0 +1,51 @@
+{
+  "schema": "scoped_auth_and_capacity_recheck_v1",
+  "scope": "User-requested blocker clarification; not a fleet recovery or experiment launch",
+  "authentication": {
+    "observed_utc": "2026-09-19T19:14:07.968297+00:00",
+    "purpose": "new_independent_auth_health_check_not_parent_retry",
+    "original_configured_provider": true,
+    "credential_source": "existing_current_environment",
+    "current_environment_has_NVIDIA_API_KEY": true,
+    "http_status": 200,
+    "response_status": "completed",
+    "attempts": 1,
+    "retries": 0,
+    "maximum_output_tokens": 32,
+    "input_tokens": 21,
+    "output_tokens": 5,
+    "total_tokens": 26,
+    "redirects_allowed": false,
+    "credential_values_or_hashes_output": false,
+    "credential_values_persisted": false,
+    "other_process_credentials_read": false,
+    "old_parent_attempts_retried": false,
+    "reboot_credential_provisioning_verified": false,
+    "parent_services_recovered": false
+  },
+  "node2_capacity": {
+    "observed_utc": "2026-09-19T19:13:49Z",
+    "original_route": "gpu/ovx_ssh.sh",
+    "owner_available_bytes": 1414766592,
+    "free_including_reserves_bytes": 40023506944,
+    "gpu_count": 8,
+    "all_gpus_reported_zero_memory_used_and_utilization": true,
+    "budget_source": "research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/c0_startup/CAPACITY_145530.json",
+    "budget_source_observed_utc": "2026-09-19T14:55:30.289661+00:00",
+    "saved_checkpoint_payload_bytes": 242659584,
+    "estimated_startup_writes_bytes": 833653216,
+    "unallocated_safety_reserve_bytes": 2147483648,
+    "total_conservative_budget_bytes": 2981136864,
+    "budget_is_gpu_memory_requirement": false,
+    "budget_is_guarantee_of_indefinite_operation": false,
+    "recovery_launched": false,
+    "files_deleted": false,
+    "reserved_blocks_used_or_changed": false
+  },
+  "limits": [
+    "Successful current-key authentication does not identify the credential held by a historical publisher.",
+    "No original failed request disposition, ledger reservation, service binding or queue was changed.",
+    "Node2 capacity is a point-in-time observation, not reserved storage.",
+    "All other fleet liveness and probe statuses retain their earlier observation times."
+  ]
+}

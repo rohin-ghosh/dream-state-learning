@@ -1,18 +1,37 @@
 # Research status — September 19, 2026
 
-**Latest verified operational cut:** September 19, 16:12 UTC / 09:12 PDT. Individual evidence cuts are dated below.
+**Final-paper packet:** [Evidence, missing experiments, figures and submission checklist](FINAL_PAPER_PLAN_2026-09-19.md).
+At20:43 UTC /13:43 PDT, a new metadata-only check found C2, P3, P7, the curriculum
+learner, frozen sibling and frozen-base player alive at their original process
+identities with recent record activity. This is not a parent-delivery or outcome
+audit; the paper packet links the exact receipt and separates those questions.
+
+**Latest full operational cut:** September 19, 16:12 UTC / 09:12 PDT. A scoped authentication/capacity recheck at19:14 UTC /12:14 PDT follows; it is not a fresh fleet audit.
 **Current phase:** independently checked sampling results, parenting refinement, and recovery.
 
 This is the morning handoff for Rohin. It separates completed observations from
 planned work. The submitted abstract remains the research direction; no positive
 result is a prerequisite for recording an experiment.
 
-**Action needed when you wake:** restore valid authentication for the
-original curriculum-pair parent service; MathB's original classroom provider
-also needs its credential/ledger custody re-established. The learner and frozen sibling cannot
-count as actively parented treatments while their publishers remain blocked
-after the recorded401 errors; current credential validity has not been re-probed. No
-credential from another life has been borrowed to conceal that interruption.
+**Authentication correction,19:14 UTC:** the existing key in Main's current
+environment successfully completed one new, independent health check against
+the original configured provider/model: HTTP200,26 tokens. **No replacement key
+is currently requested from Rohin.** This supersedes the earlier inference that
+current authorization must be restored externally. It does not establish what
+credential an older publisher holds or resolve its failed request. Original401
+receipts and outstanding reservations remain; no parent request was retried and
+no service was restarted. The remaining work is service recovery/reconciliation,
+including MathB's missing classroom ledger. No other life's credential was read
+or borrowed. Secure reboot-time credential provisioning remains unverified.
+
+**C0 capacity clarification,19:13:49 UTC:** node2 reports1,414,766,592
+owner-available bytes and all eight GPUs idle with0 MiB used. The2,981,136,864-byte
+startup estimate is a disk budget, not a GPU-memory requirement:833,653,216 bytes
+of estimated writes plus a2GiB safety reserve. The saved checkpoint payload is
+242,659,584 bytes. The reserve is a conservative engineering assumption, not an
+intrinsic model requirement. Storage growth still needs a remedy; no recovery
+launch, deletion, reservation change or GPU admission occurred in this check.
+Receipt: `research_loop/workers/replication_sprint_20260919/operations/AUTH_AND_CAPACITY_RECHECK_20260919T1914Z.json`.
 
 **Morning headline:** the new fixed-budget sampling block completed. Earlier
 C2 (sleep51) produced **28/29 operational new pixels**, versus **23/25 for
@@ -27,8 +46,10 @@ off-node. The canary and87 small batches released1.835GB of allocated blocks
 while retaining every path; a later batch stopped before mutation on an
 unresolved live-process read. Owner capacity is1.57GB, still1.41GB short of
 C0's conservative startup budget. The
-fresh learner and frozen sibling run, but their parents are authentication
-blocked. None of these outages is a valid tapering treatment.
+fresh learner and frozen sibling were running at that cut, but their parents
+were stalled after authentication failures. The later successful key check
+above does not establish restored parenting. None of these outages is a valid
+tapering treatment.
 
 ## The hypothesis we are testing
 
