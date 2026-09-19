@@ -1,0 +1,54 @@
+{
+  "GPU_runs": 0,
+  "authorized_next_step": "CPU witness-preservation tests only; no candidate implementation changes, source substitution, live repair or runtime/capsule/ledger edits.",
+  "baseline_sha256": "8bd9f79620a42653d9727045e9fab36497345bb586658be649eaf6cc088af0bb",
+  "candidate_behavior": {
+    "ambiguous_partial_disappearance": "Original changed-source failure still applies; candidate does not claim to resolve this residual race.",
+    "cached_mutation_checked_before_pending": true,
+    "live_pause_may_be_cleared": false,
+    "no_original_changed_source_check_removed": true,
+    "old_failure_remains_latched": true,
+    "scope": "Recognized newest unverified canonical record with nlink=2 and an exact fingerprint-matched .json.partial sibling is pending, never cached or admitted."
+  },
+  "candidate_path": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/candidate_epoch_cache.py",
+  "candidate_sha256": "1d11d58676aa9a00cabc989dfcc545de048e612912b3c1d30f56a6b47ee40099",
+  "checkpoint_utc": "2026-09-19T15:53:02.952909+00:00",
+  "completed_regressions": 22,
+  "completed_regressions_passed": 22,
+  "consumed_capsule": {
+    "absolute_sleep": 24,
+    "adapter_state_sha256": "04341ab86f5f98718bc53218166537ecc20fc7d5053f3ed47cc0fcdda918f5d0",
+    "job_id": "4694399fdaa00125796b604de48551af434e8377a5ac06795bfa31241b4c5c3f",
+    "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+    "retry_admissible": false,
+    "selected_key_at_pause": null,
+    "sleep_complete_index": 800,
+    "sleep_complete_sha256": "7dfa305c4c2d689bd72a6ff343448c36246a2398190291d46688852ca1b565cd"
+  },
+  "production_writes": 0,
+  "provider_calls": 0,
+  "root_cause": {
+    "artifact_canonical_sha256": "d9dc5eda02148b5277a51582e0691e3d50b055cb00678562446ef3a1376730cc",
+    "artifact_ctime_utc": "2026-09-19T13:59:42.575490+00:00",
+    "artifact_kind": "RESPONSE",
+    "artifact_mtime_utc": "2026-09-19T13:59:42.534490+00:00",
+    "historical_limit": "Original failure logs omit source/index/path, which of four checks failed, and before/after fingerprints. Exact historical cause remains unproven; stable current hashes cannot retrospectively prove no mutation.",
+    "pause_log_mtime_utc": "2026-09-19T13:59:42.672490+00:00",
+    "proven": "Native StreamJournal._publish fully writes/fsyncs NAME.json.partial, links canonical NAME.json, fsyncs the directory, unlinks the partial, then fsyncs the directory. EpochCache fingerprints nlink and ctime before reading. Retirement of that extra name changes nlink 2->1 and ctime without changing content. The pinned baseline deterministically raises source_record_changed_during_read under this interleaving.",
+    "strong_time_correlated_artifact": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/raw/stream/records/00000000000000005614.json"
+  },
+  "runtime_source_pins_unchanged": true,
+  "schema": "PROBE_SOURCE_REPAIR_FROZEN_CHECKPOINT_V1",
+  "scientific_admissibility": {
+    "existing_epoch_changes_admissible": false,
+    "new_LOADED_auto_adoption_admissible": false,
+    "no_new_scientific_claim": true,
+    "normal_append_after_same_pinned_anchors": "Only after existing full canonical hash, chain, journal/base, identity, exposure, protected-process and admission rules pass. Pending is not admission.",
+    "scientific_equivalence_proven": false,
+    "sealed_context_or_source_bytes_may_change": false,
+    "source_rewrites_admissible": false,
+    "source_substitution_admissible": false
+  },
+  "source_full_journal_replay": false,
+  "status": "CANDIDATE_FROZEN_CPU_REVIEW_ONLY_ORIGINAL_BLOCKER_NOT_CLEARED"
+}

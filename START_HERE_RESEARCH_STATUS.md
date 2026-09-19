@@ -1,6 +1,6 @@
 # Research status — September 19, 2026
 
-**Handoff update:** September 19, 15:49 UTC / 08:49 PDT. Individual evidence cuts are dated below.
+**Latest verified operational cut:** September 19, 16:12 UTC / 09:12 PDT. Individual evidence cuts are dated below.
 **Current phase:** independently checked sampling results, parenting refinement, and recovery.
 
 This is the morning handoff for Rohin. It separates completed observations from
@@ -23,9 +23,10 @@ slow-adapter / fast-context hypothesis and its falsifiers are now formalized.
 Recovery remains urgent: MathB is restored and producing ACTs, but seven other
 node-3 lives and C0/Astra7 remain down at their recorded bindings. Node-3 storage
 has been repaired; node2 is full and its retired records are now safely archived
-off-node. The canary and eight small batches released395.53MB of allocated
-blocks while retaining every path; the next batch stopped before mutation on
-an inconclusive writer scan. C0 still lacks safe owner-available capacity. The
+off-node. The canary and87 small batches released1.835GB of allocated blocks
+while retaining every path; a later batch stopped before mutation on an
+unresolved live-process read. Owner capacity is1.57GB, still1.41GB short of
+C0's conservative startup budget. The
 fresh learner and frozen sibling run, but their parents are authentication
 blocked. None of these outages is a valid tapering treatment.
 
@@ -61,6 +62,19 @@ assessed, with five outcomes still unknown. Its preceding THINK request was
 earlier than the instruction, so recognition in THINK cannot be scored.
 This tests instruction-to-action transmission first; it does not yet test
 adapter retention or independence.
+
+**Running continuation:** the existing C2 life and its revised parent keep
+cycling. A separately tested, read-only observer started at16:05 UTC and
+verified its first capture; it collects the fixed window until six ACTs, two
+hours,25MB of new receipts, or an integrity failure. It does not stop the life,
+change training, grade outcomes automatically, or publish a success claim.
+The last manually reviewed result remains0/1; later collected outcomes require
+review. Its local durable progress pointer is
+`research_loop/workers/replication_sprint_20260919/measurement/c2_refinement_live/continuation_run/LATEST.json`.
+At16:12 UTC the collector has advanced through record15975 with one eligible
+ACT and about2.02MB charged. This GitHub handoff is a dated snapshot; the
+collector writes local receipts, not automatic interpretations or commits.
+Launch evidence: `research_loop/workers/replication_sprint_20260919/operations/C2_BOUNDED_COLLECTION_STARTED.json`.
 
 ## New completed experiment: sampling the C2 age comparison again
 
@@ -395,6 +409,10 @@ Readiness and exact integration:
   Receipts: `operations/C2_HANDOFF_BOUNDARY_WAIT2/ONE_EXECUTION_RESULT.json`
   and `operations/C2_REFINEMENT_DELIVERY_EPOCH.json`; first-outcome detail:
   `measurement/c2_refinement_live/OPPORTUNITY_01_REPORT.md`.
+  Main reran37 observer tests and validated all nine original captures before
+  launch. At16:06 UTC its first committed observation advances15917 → 15929
+  under the same native identity. Receipt:
+  `measurement/c2_refinement_live/continuation_run/STATE_0001.json`.
 - **Node2 recovery code:** the narrow already-applied-wall compatibility and
   empty failed-intent preservation candidates pass132 CPU tests when rerun by
   Main. C0's original-wrapper startup integration separately passes26 CPU
@@ -409,22 +427,24 @@ Readiness and exact integration:
   became a large VM or origin copy. After62 Main CPU tests, the exact canary
   completed at15:36 UTC: all8 paths reverified,6 atomic alias replacements,
   10,444,800 allocated bytes released, with no path/content deletion. Owner
-  available space still read0 after the canary. Main then verified16 additional
-  batch tests and bound the remaining plan: batches1–8 completed, releasing
-  another385,081,344 allocated bytes and verifying320 paths. Owner capacity
-  reached147,968,000 bytes at15:44 UTC, not enough for C0. Batch9 stopped
-  **before mutation** on an inconclusive privileged writer check; no retry or
-  rollback occurred. Its original raw error was not retained, so no specific
-  PID/FD cause can honestly be assigned. Fresh read-only scans are clear and
-  all40 failed-batch path identities remain unchanged, but that does not
-  retroactively approve the failed admission. A diagnostic-preservation repair
-  is being prepared without weakening the predicate. Even completing the
-  original plan leaves an optimistic1.36GB C0 shortfall at the measured reserve
-  threshold, before further growth. Original writer locks remain required. No live
+  available space still read0 after the canary. Batches1–8 then completed;
+  batch9 stopped before mutation on an inconclusive writer check. Its raw
+  error had not been retained, so no specific historical PID/FD cause is claimed.
+  After18 further Main tests, a separately bound continuation preserved raw
+  diagnostics before the **unchanged** predicate and excluded all completed
+  work. It completed9–87, then stopped before batch88 mutation on an unresolved
+  read from live `polkitd` PID2499/start1612; that uncertainty was not waived.
+  Final result: **436/515 groups,3,488 paths and2,616 replacements verified;
+  1,835,274,240 allocated bytes released**. The independent audit checked8,803
+  completed-chain records and freshly sampled40 paths/five content hashes.
+  This is not a fresh rehash of every path. All original failure artifacts remain.
+  Batches88–103 are uncoalesced; their entire remaining potential is only6.29MB.
+  At16:05 UTC actual owner capacity is1,569,976,320 bytes, leaving C0 short by
+  1,411,160,544 bytes. No further cleanup or C0 launch follows from these results. No live
   journal/checkpoint is deleted and root-reserved blocks are not capacity.
   Receipts: `evidence/node2_recovery/storage/HANDOFF.json` (pre-canary cut)
   and `evidence/node2_recovery/storage/coalescence_locked/CANARY_EXECUTION/VERIFIED.json`;
-  `evidence/node2_recovery/storage/batch9_diagnosis/DIAGNOSIS.md`.
+  `evidence/node2_recovery/storage/FINAL_PARTIAL_CLEANUP_SUMMARY_20260919.md`.
 - **Fresh service audit,15:41–15:43 UTC:** learner, frozen sibling, P3 and P7
   natives are alive at their verified identities. P3 and P7 have hash-matched
   recent INBOXs11606 and15799; latest-message ACT visibility was not assessed
@@ -435,6 +455,16 @@ Readiness and exact integration:
   not execution. The hourly collector has a15:01 report, but P3's latest
   observed ACT-origin bucket is08:00, so current-hour fleet coverage is not
   established. Receipt: `operations/FLEET_CUT_1540/STATUS.md`.
+- **Probe-reader repair remains held:** CPU fixtures reproduce a hard-link
+  publication race that changes metadata without changing record bytes, but
+  the original fault lacks the witness needed to prove its historical cause.
+  Main's original28-test run also caught one timing-sensitive mutation-detection
+  failure; an unchanged green rerun does not erase it. A separate14-test
+  characterization passes in Main's run and records the shared baseline/candidate
+  limitation when metadata fingerprints remain identical and the content fence
+  is disabled. This is not an unconditional immutability guarantee or live
+  repair approval. Production stays unchanged; no consumed capsule is retried.
+  Diagnosis: `operations/PROBE_SOURCE_REPAIR_20260919/TIMESTAMP_AUDIT_1605/VERDICT.md`.
 - At **13:06:43 UTC**, the curriculum learner and frozen sibling remained GPU
   resident on ovx4 (`ipp2-ovx-p3-02`), alongside the base player and scorers.
   The original probe daemon was present. This is process evidence, not proof

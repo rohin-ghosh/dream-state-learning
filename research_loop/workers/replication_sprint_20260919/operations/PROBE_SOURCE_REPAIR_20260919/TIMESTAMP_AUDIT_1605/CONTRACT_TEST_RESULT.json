@@ -1,0 +1,29 @@
+{
+  "baseline_source_sha256": "8bd9f79620a42653d9727045e9fab36497345bb586658be649eaf6cc088af0bb",
+  "candidate_source_sha256": "1d11d58676aa9a00cabc989dfcc545de048e612912b3c1d30f56a6b47ee40099",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/TIMESTAMP_AUDIT_1605",
+    "-p",
+    "test_timestamp_contract.py",
+    "-v"
+  ],
+  "controlled_fingerprint_tests_are_not_live_filesystem_precision_proof": true,
+  "elapsed_seconds": 0.042,
+  "exit_code": 0,
+  "failures": 0,
+  "observed_utc": "2026-09-19T16:09:41.027441+00:00",
+  "original_test_not_deleted_skipped_or_modified": true,
+  "passed": 14,
+  "residual_test_expected_result": "Both implementations return cached proof when the content fence is deliberately disabled and every reported fingerprint is held unchanged despite changed bytes. This is a demonstrated limitation, not immutability success.",
+  "schema": "FROZEN_TIMESTAMP_CONTRACT_TEST_RESULT_V1",
+  "stderr": "test_content_failure_stays_latched (test_timestamp_contract.BaselineTimestampTests.test_content_failure_stays_latched) ... ok\ntest_distinct_reported_ctime_rejects_same_size_restored_mtime (test_timestamp_contract.BaselineTimestampTests.test_distinct_reported_ctime_rejects_same_size_restored_mtime) ... ok\ntest_final_fence_checks_mutation_before_clearing_fence (test_timestamp_contract.BaselineTimestampTests.test_final_fence_checks_mutation_before_clearing_fence) ... ok\ntest_residual_false_settled_clock_and_identical_metadata_cannot_detect_changed_bytes (test_timestamp_contract.BaselineTimestampTests.test_residual_false_settled_clock_and_identical_metadata_cannot_detect_changed_bytes) ... ok\ntest_same_fingerprint_fresh_record_rejected_by_content_fence (test_timestamp_contract.BaselineTimestampTests.test_same_fingerprint_fresh_record_rejected_by_content_fence) ... ok\ntest_timestamp_guards_are_identical_in_baseline_and_candidate (test_timestamp_contract.BaselineTimestampTests.test_timestamp_guards_are_identical_in_baseline_and_candidate) ... ok\ntest_unchanged_final_fence_hashes_before_metadata_only_reuse (test_timestamp_contract.BaselineTimestampTests.test_unchanged_final_fence_hashes_before_metadata_only_reuse) ... ok\ntest_content_failure_stays_latched (test_timestamp_contract.CandidateTimestampTests.test_content_failure_stays_latched) ... ok\ntest_distinct_reported_ctime_rejects_same_size_restored_mtime (test_timestamp_contract.CandidateTimestampTests.test_distinct_reported_ctime_rejects_same_size_restored_mtime) ... ok\ntest_final_fence_checks_mutation_before_clearing_fence (test_timestamp_contract.CandidateTimestampTests.test_final_fence_checks_mutation_before_clearing_fence) ... ok\ntest_residual_false_settled_clock_and_identical_metadata_cannot_detect_changed_bytes (test_timestamp_contract.CandidateTimestampTests.test_residual_false_settled_clock_and_identical_metadata_cannot_detect_changed_bytes) ... ok\ntest_same_fingerprint_fresh_record_rejected_by_content_fence (test_timestamp_contract.CandidateTimestampTests.test_same_fingerprint_fresh_record_rejected_by_content_fence) ... ok\ntest_timestamp_guards_are_identical_in_baseline_and_candidate (test_timestamp_contract.CandidateTimestampTests.test_timestamp_guards_are_identical_in_baseline_and_candidate) ... ok\ntest_unchanged_final_fence_hashes_before_metadata_only_reuse (test_timestamp_contract.CandidateTimestampTests.test_unchanged_final_fence_hashes_before_metadata_only_reuse) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.042s\n\nOK\n",
+  "stdout": "",
+  "test_file_sha256": "25c5eb78c6e7abbbca29d80f30951ac2d82b37e6f0af0b137d98ff6411d85fb7",
+  "tests": 14
+}

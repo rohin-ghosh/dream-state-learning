@@ -1,0 +1,210 @@
+{
+  "GPU_runs": 0,
+  "baseline_vs_candidate": "fingerprint/raw_record/decode/validate ASTs are identical. Deterministic residual cases miss in both; deterministic changed-ctime and active/final-fence cases reject in both. The publication-pending branch does not account for this difference.",
+  "classification": "TEST_ONLY_REVISION_PROPOSAL_NO_SOURCE_REVISION",
+  "consumed_capsule_retried": false,
+  "filesystem_evidence": {
+    "conclusion": "Equal ctime/fingerprints occurred on this local filesystem. A nanosecond stat field and CLOCK_REALTIME resolution do not guarantee distinct ctime for back-to-back writes.",
+    "equal_reported_fingerprint_examples": [
+      {
+        "content_fence": true,
+        "ctime_ns": 1789834024120314140,
+        "exception": "verified_source_record_changed_within_timestamp_granularity",
+        "implementation": "baseline",
+        "mode": "actual_wall_clock",
+        "raw_sha256_after": "40be5c1d43ce3ee20cd418605fcad079deb2624f0d05ab28f7704f730cc152e8",
+        "raw_sha256_before": "282ed6963ded15472e4e8b3c7c2e0f3975b7b1e13469ee2077ed35134f4a0238",
+        "trial": 5
+      },
+      {
+        "content_fence": false,
+        "ctime_ns": 1789834024135314250,
+        "exception": null,
+        "implementation": "candidate",
+        "mode": "frozen_fixture_far_future_clock",
+        "raw_sha256_after": "40be5c1d43ce3ee20cd418605fcad079deb2624f0d05ab28f7704f730cc152e8",
+        "raw_sha256_before": "282ed6963ded15472e4e8b3c7c2e0f3975b7b1e13469ee2077ed35134f4a0238",
+        "trial": 5
+      },
+      {
+        "content_fence": false,
+        "ctime_ns": 1789834024137314264,
+        "exception": null,
+        "implementation": "candidate",
+        "mode": "frozen_fixture_far_future_clock",
+        "raw_sha256_after": "40be5c1d43ce3ee20cd418605fcad079deb2624f0d05ab28f7704f730cc152e8",
+        "raw_sha256_before": "282ed6963ded15472e4e8b3c7c2e0f3975b7b1e13469ee2077ed35134f4a0238",
+        "trial": 6
+      },
+      {
+        "content_fence": false,
+        "ctime_ns": 1789834024139314279,
+        "exception": null,
+        "implementation": "candidate",
+        "mode": "frozen_fixture_far_future_clock",
+        "raw_sha256_after": "40be5c1d43ce3ee20cd418605fcad079deb2624f0d05ab28f7704f730cc152e8",
+        "raw_sha256_before": "282ed6963ded15472e4e8b3c7c2e0f3975b7b1e13469ee2077ed35134f4a0238",
+        "trial": 7
+      },
+      {
+        "content_fence": true,
+        "ctime_ns": 1789834024141314293,
+        "exception": "verified_source_record_changed_within_timestamp_granularity",
+        "implementation": "candidate",
+        "mode": "actual_wall_clock",
+        "raw_sha256_after": "40be5c1d43ce3ee20cd418605fcad079deb2624f0d05ab28f7704f730cc152e8",
+        "raw_sha256_before": "282ed6963ded15472e4e8b3c7c2e0f3975b7b1e13469ee2077ed35134f4a0238",
+        "trial": 0
+      },
+      {
+        "content_fence": true,
+        "ctime_ns": 1789834024143314308,
+        "exception": "verified_source_record_changed_within_timestamp_granularity",
+        "implementation": "candidate",
+        "mode": "actual_wall_clock",
+        "raw_sha256_after": "40be5c1d43ce3ee20cd418605fcad079deb2624f0d05ab28f7704f730cc152e8",
+        "raw_sha256_before": "282ed6963ded15472e4e8b3c7c2e0f3975b7b1e13469ee2077ed35134f4a0238",
+        "trial": 1
+      },
+      {
+        "content_fence": true,
+        "ctime_ns": 1789834024148314345,
+        "exception": "verified_source_record_changed_within_timestamp_granularity",
+        "implementation": "candidate",
+        "mode": "actual_wall_clock",
+        "raw_sha256_after": "40be5c1d43ce3ee20cd418605fcad079deb2624f0d05ab28f7704f730cc152e8",
+        "raw_sha256_before": "282ed6963ded15472e4e8b3c7c2e0f3975b7b1e13469ee2077ed35134f4a0238",
+        "trial": 4
+      },
+      {
+        "content_fence": true,
+        "ctime_ns": 1789834024150314359,
+        "exception": "verified_source_record_changed_within_timestamp_granularity",
+        "implementation": "candidate",
+        "mode": "actual_wall_clock",
+        "raw_sha256_after": "40be5c1d43ce3ee20cd418605fcad079deb2624f0d05ab28f7704f730cc152e8",
+        "raw_sha256_before": "282ed6963ded15472e4e8b3c7c2e0f3975b7b1e13469ee2077ed35134f4a0238",
+        "trial": 5
+      }
+    ],
+    "filesystem_granularity_exactly_measured": false,
+    "maximum_positive_observed_ctime_delta_ns": 1000008,
+    "minimum_positive_observed_ctime_delta_ns": 1000007,
+    "summary": [
+      {
+        "detected": 8,
+        "implementation": "baseline",
+        "missed_changed_bytes": 0,
+        "mode": "frozen_fixture_far_future_clock",
+        "same_ctime": 0,
+        "trials": 8
+      },
+      {
+        "detected": 8,
+        "implementation": "baseline",
+        "missed_changed_bytes": 0,
+        "mode": "actual_wall_clock",
+        "same_ctime": 1,
+        "trials": 8
+      },
+      {
+        "detected": 5,
+        "implementation": "candidate",
+        "missed_changed_bytes": 3,
+        "mode": "frozen_fixture_far_future_clock",
+        "same_ctime": 3,
+        "trials": 8
+      },
+      {
+        "detected": 8,
+        "implementation": "candidate",
+        "missed_changed_bytes": 0,
+        "mode": "actual_wall_clock",
+        "same_ctime": 4,
+        "trials": 8
+      }
+    ]
+  },
+  "frozen_files_unchanged": [
+    {
+      "path": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/CANDIDATE_PROVENANCE.json",
+      "sha256": "b5a97a7c526bed25d1b50c54a0f920f83c01a176d1d2c9c53a37898f2a5aab52"
+    },
+    {
+      "path": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/CHECKPOINT.json",
+      "sha256": "4409a6a92eac01db58f3cb49319658ee31f5ade94aafc2a803009ab4dc8464c0"
+    },
+    {
+      "path": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/CHECKPOINT.md",
+      "sha256": "481d0f85c1a9b909bdec2288c44e104e7a2c3c1e13884fd5f7856577ee1e4cb1"
+    },
+    {
+      "path": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/CPU_TEST_RECEIPT.json",
+      "sha256": "01353dd80ea6fe3cc8c06ed2f5a9aa6fe1295c3d791a2561ef2ef6090eaf4a78"
+    },
+    {
+      "path": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/FAILURE_WINDOW.json",
+      "sha256": "6474fdb10c0f7fec5c991cd9d72f336e40025de5bbc09d5d9f239809115e5d4b"
+    },
+    {
+      "path": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/REMOTE_DISCOVERY.json",
+      "sha256": "79e3ee313740be93f23d0ae80d7689ef5450fef4164241be78fefef0c06233f9"
+    },
+    {
+      "path": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/candidate_epoch_cache.py",
+      "sha256": "1d11d58676aa9a00cabc989dfcc545de048e612912b3c1d30f56a6b47ee40099"
+    },
+    {
+      "path": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/test_candidate.py",
+      "sha256": "63a977babd948d546fa171a5dd1a1f0017ea37419a0dafc447a05314e2bd8ccc"
+    },
+    {
+      "path": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/test_frozen_witness.py",
+      "sha256": "15f22c45c9ca1a96e7fc9b0d539ecad32884f62e814b207c32942ce17d477e01"
+    }
+  ],
+  "frozen_source_revision_authorized": false,
+  "frozen_suite": {
+    "effective_result": "NONDETERMINISTIC / BLOCKED; passing rerun does not supersede independent failed evidence",
+    "main_result": {
+      "failures": 1,
+      "log_sha256": "30aa78b9fb4ca0a2f96f14c65839b3bf6be6c1b54a9d27fa7153b8cf704ff8e9",
+      "passed": 27,
+      "tests": 28
+    },
+    "unmodified_audit_rerun": {
+      "exit_code": 0,
+      "failures": 0,
+      "passed": 28,
+      "stderr_sha256": "5216f03f265207c9fb661a57864e7d2dd2ab3e7f449012f49852aa4163e1041f",
+      "tests": 28
+    }
+  },
+  "frozen_utc": "2026-09-19T16:09:41.027441+00:00",
+  "parent_and_queue_failure_latches_cleared": false,
+  "production_edits": 0,
+  "proposed_exact_claim_tests": {
+    "baseline_cases": 7,
+    "candidate_cases": 7,
+    "coarse_timestamp": "Controlled equal fingerprints with active content fence must reject changed raw bytes.",
+    "distinct_ctime": "Controlled metadata differs exactly at ctime; mutation+restored mtime+same size are real fixture operations. Rejection is required.",
+    "file": "research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/TIMESTAMP_AUDIT_1605/test_timestamp_contract.py",
+    "passed": 14,
+    "residual": "With a deliberately false settled-clock classification plus indistinguishable fingerprints, both guards can miss changed bytes; explicitly tested and disclosed, not represented as protection.",
+    "tests": 14
+  },
+  "provider_calls": 0,
+  "real_guard_scope": {
+    "candidate_specific_live_hole_established": false,
+    "if_real_metadata_assumption_failure_is_found": "Keep source blocked; isolate a separately authorized revision to age/fingerprint/content-proof retirement, not the publication deferral branch. No such revision or wider acceptance is authorized here.",
+    "ordinary_clock_local_trials_rejected": 16,
+    "ordinary_clock_local_trials_total": 16,
+    "remaining_trust_assumption": "Once content fencing ends, truthful sufficiently advancing filesystem metadata and compatible wall-clock age assumptions are required. Forged/stale fingerprints or premature fence expiry are outside the demonstrated guarantee.",
+    "source_fix_implemented": false,
+    "unconditional_immutability_proven": false
+  },
+  "remote_calls": 0,
+  "root_cause": "The frozen helper replaces time.time_ns with 10**20 during initial validation, so a newly created record is falsely considered older than the 2-second content-fence interval. The same-size/mtime-restoring mutation fixture does not force or assert a distinct st_ctime_ns. Same-tick ctime can therefore leave the complete fingerprint unchanged and avoid metadata-only detection.",
+  "schema": "FROZEN_TIMESTAMP_AUDIT_FINAL_VERDICT_V1",
+  "status": "FIXTURE_TIMING_BUG_CONFIRMED_ORIGINAL_FREEZE_NOT_PROMOTABLE"
+}

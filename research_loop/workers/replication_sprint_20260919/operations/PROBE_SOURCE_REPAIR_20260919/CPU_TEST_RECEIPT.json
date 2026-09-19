@@ -1,0 +1,44 @@
+{
+  "baseline_sha256": "8bd9f79620a42653d9727045e9fab36497345bb586658be649eaf6cc088af0bb",
+  "candidate_sha256": "1d11d58676aa9a00cabc989dfcc545de048e612912b3c1d30f56a6b47ee40099",
+  "candidate_unchanged_since_checkpoint": true,
+  "command": "python3 -B -m unittest discover -s research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919 -p 'test_*.py' -v",
+  "exit_code": 0,
+  "failed": 0,
+  "fixture_scope": "All fixture files created under this operations directory and cleaned up; -B suppresses bytecode files.",
+  "live_actions": {
+    "GPU_runs": 0,
+    "dispatches": 0,
+    "production_edits": 0,
+    "provider_calls": 0,
+    "retries": 0,
+    "source_substitutions": 0,
+    "unpauses": 0
+  },
+  "not_proven": [
+    "Exact failed source/index/fingerprint comparison of original 13:59:42 failure",
+    "Historical sealed production bundle byte equivalence",
+    "Scientific equivalence or admissibility of any changed epoch",
+    "Safe live unpause or runtime replacement",
+    "Removal of residual ambiguous partial-disappearance race"
+  ],
+  "passed": 28,
+  "proven": {
+    "baseline_link_unlink_failure_without_content_change": true,
+    "cached_prefix_evidence_unchanged_under_concurrent_append": true,
+    "consumed_capsule_fixture_ledger_bytes_unchanged": true,
+    "existing_canonical_source_record_bytes_unchanged": true,
+    "existing_failure_latch_not_cleared": true,
+    "genuine_source_changes_still_fail_closed": true,
+    "known_in_progress_publication_pending_not_admitted": true,
+    "policy_and_capsule_fixture_bytes_unchanged": true,
+    "sealed_context_fixture_bytes_and_sha256_unchanged": true,
+    "sealed_source_fixture_bytes_and_sha256_unchanged": true
+  },
+  "recorded_utc": "2026-09-19T15:55:09.936471+00:00",
+  "regression_tests": 22,
+  "schema": "PROBE_SOURCE_REPAIR_CPU_TEST_RECEIPT_V1",
+  "test_runtime_seconds": 0.089,
+  "tests_run": 28,
+  "witness_custody_tests": 6
+}

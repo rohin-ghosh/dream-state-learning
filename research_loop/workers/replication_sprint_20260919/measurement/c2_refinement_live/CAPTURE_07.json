@@ -1,0 +1,147 @@
+{
+  "after": 15885,
+  "collector_sources": [
+    {
+      "bytes": 8536,
+      "path": "research_loop/workers/post_recovery_correction_hourly_20260918/contract/reader.py",
+      "sha256": "c9d979ca06970b7afcbd125ccbdf08517c1c32ca94eeda25eb3611722be82659"
+    },
+    {
+      "bytes": 3954,
+      "path": "research_loop/workers/post_recovery_correction_hourly_20260918/remote.py",
+      "sha256": "e1ee0ce0f58562ab50e70c0e7c844880bd94786b947decd8f25cecd34cbdbcb5"
+    }
+  ],
+  "combined_addendum_sha256": "14515a0a0306a40846540c647d565e17885a93b64d7a0f0b4472f36c21a1402f",
+  "evidence": {
+    "bytes_read": 0,
+    "caught_up": true,
+    "continuity": [
+      {
+        "index": 15886,
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "COMPACTION",
+        "previous_sha256": "75beb6040bfd828e6b6b8700d6fcea3104bdca8d84343b178e0f416a0ce47272",
+        "sha256": "3076d62aabe1fe2ff36aba31cde398e1209ed9afdc95cb8c5362886e37d370d5"
+      },
+      {
+        "index": 15887,
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "CONTEXT_INPUT",
+        "previous_sha256": "3076d62aabe1fe2ff36aba31cde398e1209ed9afdc95cb8c5362886e37d370d5",
+        "sha256": "c904e7be9263b358e73a2b4c2395c27cc1160cdc6012c612f36e45c2256b7a5c"
+      },
+      {
+        "index": 15888,
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "R184_SLEEP_NOTICE",
+        "previous_sha256": "c904e7be9263b358e73a2b4c2395c27cc1160cdc6012c612f36e45c2256b7a5c",
+        "sha256": "8252aa8a8f08a0939f07502ee249c7d31cfdc2c8077236ac87ceb7d821f2f80e"
+      },
+      {
+        "index": 15889,
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "R189_LEARN_ALLOCATION",
+        "previous_sha256": "8252aa8a8f08a0939f07502ee249c7d31cfdc2c8077236ac87ceb7d821f2f80e",
+        "sha256": "d0418e968176ef836f7477bbd4f40db47b4fab767eb893864d21d9ca255957a3"
+      },
+      {
+        "index": 15890,
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "SLEEP_REQUEST",
+        "previous_sha256": "d0418e968176ef836f7477bbd4f40db47b4fab767eb893864d21d9ca255957a3",
+        "sha256": "3b0f755063ac46b98bf6cf7c920c2bc37c51ea6f670b40150b2ccffe34bcf2b3"
+      },
+      {
+        "index": 15891,
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "SLEEP_RECIPE",
+        "previous_sha256": "3b0f755063ac46b98bf6cf7c920c2bc37c51ea6f670b40150b2ccffe34bcf2b3",
+        "sha256": "acdb7224dd85c544668fa512bb55657f9500397f5ddc0bdeda9b0d3423607700"
+      },
+      {
+        "index": 15892,
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "TARGET_ELIGIBILITY",
+        "previous_sha256": "acdb7224dd85c544668fa512bb55657f9500397f5ddc0bdeda9b0d3423607700",
+        "sha256": "e92670f7353cb509d0beb7a4f5f6fee6847aedcab02e8204e85da2ed279fbc24"
+      },
+      {
+        "index": 15893,
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "UPDATE",
+        "previous_sha256": "e92670f7353cb509d0beb7a4f5f6fee6847aedcab02e8204e85da2ed279fbc24",
+        "sha256": "aea82aeed1788865234f9ab74107802aeb52f2fd61e8e74699c7edaa3fb1032c"
+      },
+      {
+        "index": 15894,
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "kind": "UPDATE",
+        "previous_sha256": "aea82aeed1788865234f9ab74107802aeb52f2fd61e8e74699c7edaa3fb1032c",
+        "sha256": "ae30a671049a3927ca1d1a31fc4efd1348c61c90cd3f73e0e653fb7e50122a3d"
+      }
+    ],
+    "coverage_start": 15886,
+    "head": {
+      "index": 15894,
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "kind": "UPDATE",
+      "previous_sha256": "aea82aeed1788865234f9ab74107802aeb52f2fd61e8e74699c7edaa3fb1032c",
+      "sha256": "ae30a671049a3927ca1d1a31fc4efd1348c61c90cd3f73e0e653fb7e50122a3d"
+    },
+    "journal_id": "260be8b8710a42559b291797c6e14983",
+    "model_calls": 0,
+    "observed_unix": 1789832907.391882,
+    "reader_revision": "R232_READ_ONLY_V2",
+    "readout_or_private_score_files_read": 0,
+    "records": [],
+    "remote_writes": 0,
+    "signals": 0,
+    "through": {
+      "index": 15894,
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "kind": "UPDATE",
+      "previous_sha256": "aea82aeed1788865234f9ab74107802aeb52f2fd61e8e74699c7edaa3fb1032c",
+      "sha256": "ae30a671049a3927ca1d1a31fc4efd1348c61c90cd3f73e0e653fb7e50122a3d"
+    }
+  },
+  "expanded_collector_sha256": "046fbcd3181cc068c8426541aaa0904c598c8813bda721ca0e9f8879a83e5bc1",
+  "external_events": {},
+  "identity": {
+    "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+    "command_sha256": "e0bd2a6670d2d904a6895efeebdcef7f8de75474b259bfc01835aaa34ed3082b",
+    "guard_sha256": "29d1aa615820332deaa826bd8505209ef89c9fed5aea0f6fe98e7690d0867ffb",
+    "pid": 1139778,
+    "source_manifest_sha256": "4d2fc856b09a282c87a49485d31fa5f7acefcc2ca12191b5f30908d10ae1d196",
+    "start_ticks": "30025875"
+  },
+  "maximum": 12,
+  "native": {
+    "hard_end_unix": 1789927200,
+    "loaded_index": 11505,
+    "pid": 1139778
+  },
+  "observed_utc": "2026-09-19T15:48:27.426527+00:00",
+  "parent_manifest_sha256": "bbe422f766fe49e56a3121b6be406ea2958d071918ba0a4f1e676f4da5961367",
+  "schema": "c2_refinement_native_projection_v1",
+  "sidecar_source": {
+    "bytes": 17023,
+    "path": "research_loop/workers/replication_sprint_20260919/measurement/c2_refinement_live/observe.py",
+    "sha256": "8ca38854496d5a4e571cc50cdff76c24f617af8af5250d3578bb1e33ea0fe68d"
+  },
+  "target": {
+    "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+    "guard_sha256": "29d1aa615820332deaa826bd8505209ef89c9fed5aea0f6fe98e7690d0867ffb",
+    "journal_id": "260be8b8710a42559b291797c6e14983",
+    "loaded_index": 11505,
+    "loaded_sha256": "8c8e60799e1699e037b3bdb01adb4ee1da97ecaec5e82ff4ab7a09d7e4ac462f",
+    "owner_receipt_sha256": "a7dc874936befcf29258597c8423dea2cd3be929d56bc00bb27f8c0d4220a757",
+    "pid": 1139778,
+    "root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+    "source": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/source",
+    "source_manifest_sha256": "4d2fc856b09a282c87a49485d31fa5f7acefcc2ca12191b5f30908d10ae1d196",
+    "start_ticks": "30025875",
+    "until_unix": 1789927200,
+    "wrapper": "ovx3_ssh.sh"
+  }
+}

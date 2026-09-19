@@ -35,7 +35,7 @@ checkpoints, partial sleep state, or unrelated working-tree changes.
 | Owner | Write scope |
 | --- | --- |
 | Main | Front-page handoff, this brief, operations receipts, `replication/`, integration/publication |
-| Hilbert | `evidence/`; isolated node-2 wall compatibility and partial-intent recovery candidates |
+| Hilbert | `evidence/` handoff complete; node2 partial cleanup audited, C0/Astra7 capacity-blocked; closed |
 | Singer | Initial `replication/` work complete; closed; Main now owns the executable |
 | Gibbs | `measurement/` and independent `replication_accounting/` complete; closed |
 | Galileo | `parenting/` and `parenting/c2_refinement/` candidates complete; deployment belongs to Main; closed |
@@ -43,8 +43,8 @@ checkpoints, partial sleep state, or unrelated working-tree changes.
 | Fermat | `formalization/` complete; closed |
 | McClintock | `node3_recovery/` handoff complete; MathB restored, original classroom provider custody blocked; closed |
 | Curie | `replication_review/` complete; V3 independently reviewed; closed |
-| Sagan | `measurement/c2_refinement_live/`; read-only first-six-ACT policy observation, no runtime changes |
-| Mill | `operations/FLEET_CUT_1540/`; one bounded read-only current-service audit, no repair authority |
+| Sagan | `measurement/c2_refinement_live/` first ACT and finite observer complete; Main launched reviewed collector, no life changes; closed |
+| Mill | Fleet audit and isolated probe-reader/timestamp-test diagnosis complete; candidate not promoted, production unchanged; closed |
 
 Workers must preserve historical artifacts and use source-bound evidence.
 Publication and final scientific synthesis belong to Main. Original live

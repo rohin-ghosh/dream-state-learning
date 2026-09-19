@@ -1,0 +1,41 @@
+test_anchor_is_not_reclassified_as_new_publication (test_candidate.PublicationRaceTests.test_anchor_is_not_reclassified_as_new_publication) ... ok
+test_baseline_reproduces_native_link_unlink_race_without_byte_change (test_candidate.PublicationRaceTests.test_baseline_reproduces_native_link_unlink_race_without_byte_change) ... ok
+test_broken_previous_hash_still_fails (test_candidate.PublicationRaceTests.test_broken_previous_hash_still_fails) ... ok
+test_cached_mutation_is_checked_before_pending_frontier (test_candidate.PublicationRaceTests.test_cached_mutation_is_checked_before_pending_frontier) ... ok
+test_candidate_never_edits_binding_policy (test_candidate.PublicationRaceTests.test_candidate_never_edits_binding_policy) ... ok
+test_content_mutation_during_decode_still_fails (test_candidate.PublicationRaceTests.test_content_mutation_during_decode_still_fails) ... ok
+test_deleted_source_still_fails (test_candidate.PublicationRaceTests.test_deleted_source_still_fails) ... ok
+test_demonstrated_open_publication_is_pending_not_cached_or_admitted (test_candidate.PublicationRaceTests.test_demonstrated_open_publication_is_pending_not_cached_or_admitted) ... ok
+test_existing_failure_is_not_cleared_by_publication_pending (test_candidate.PublicationRaceTests.test_existing_failure_is_not_cleared_by_publication_pending) ... ok
+test_fresh_snapshot_publication_is_pending_after_decodes (test_candidate.PublicationRaceTests.test_fresh_snapshot_publication_is_pending_after_decodes) ... ok
+test_missing_partial_during_detection_keeps_original_change_error (test_candidate.PublicationRaceTests.test_missing_partial_during_detection_keeps_original_change_error) ... ok
+test_partial_symlink_is_not_trusted (test_candidate.PublicationRaceTests.test_partial_symlink_is_not_trusted) ... ok
+test_prior_epoch_anchors_remain_exact (test_candidate.PublicationRaceTests.test_prior_epoch_anchors_remain_exact) ... ok
+test_replaced_inode_still_fails (test_candidate.PublicationRaceTests.test_replaced_inode_still_fails) ... ok
+test_same_size_mutation_with_restored_mtime_still_fails (test_candidate.PublicationRaceTests.test_same_size_mutation_with_restored_mtime_still_fails) ... FAIL
+test_settled_new_loaded_epoch_requires_explicit_rebind (test_candidate.PublicationRaceTests.test_settled_new_loaded_epoch_requires_explicit_rebind) ... ok
+test_settled_publication_requires_normal_full_canonical_validation (test_candidate.PublicationRaceTests.test_settled_publication_requires_normal_full_canonical_validation) ... ok
+test_source_symlink_still_fails (test_candidate.PublicationRaceTests.test_source_symlink_still_fails) ... ok
+test_tampered_settled_publication_is_not_admitted (test_candidate.PublicationRaceTests.test_tampered_settled_publication_is_not_admitted) ... ok
+test_unauthenticated_cursor_cannot_skip_prefix (test_candidate.PublicationRaceTests.test_unauthenticated_cursor_cannot_skip_prefix) ... ok
+test_unrelated_partial_never_suppresses_changed_source_error (test_candidate.PublicationRaceTests.test_unrelated_partial_never_suppresses_changed_source_error) ... ok
+test_verified_record_link_change_still_fails (test_candidate.PublicationRaceTests.test_verified_record_link_change_still_fails) ... ok
+test_changed_cached_source_still_blocks_without_mutating_capsule_or_ledger (test_frozen_witness.FrozenWitnessTests.test_changed_cached_source_still_blocks_without_mutating_capsule_or_ledger) ... ok
+test_cleanup_changes_metadata_not_context_source_or_canonical_record_bytes (test_frozen_witness.FrozenWitnessTests.test_cleanup_changes_metadata_not_context_source_or_canonical_record_bytes) ... ok
+test_concurrent_append_keeps_earlier_witness_and_sealed_bundle_byte_identical (test_frozen_witness.FrozenWitnessTests.test_concurrent_append_keeps_earlier_witness_and_sealed_bundle_byte_identical) ... ok
+test_consumed_capsule_ledger_remains_exact_after_pending_and_full_validation (test_frozen_witness.FrozenWitnessTests.test_consumed_capsule_ledger_remains_exact_after_pending_and_full_validation) ... ok
+test_pending_preserves_sealed_source_context_policy_ledger_and_prefix_witness (test_frozen_witness.FrozenWitnessTests.test_pending_preserves_sealed_source_context_policy_ledger_and_prefix_witness) ... ok
+test_test_harness_rejects_sealed_context_drift_instead_of_claiming_equivalence (test_frozen_witness.FrozenWitnessTests.test_test_harness_rejects_sealed_context_drift_instead_of_claiming_equivalence) ... ok
+
+======================================================================
+FAIL: test_same_size_mutation_with_restored_mtime_still_fails (test_candidate.PublicationRaceTests.test_same_size_mutation_with_restored_mtime_still_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/operations/PROBE_SOURCE_REPAIR_20260919/test_candidate.py", line 240, in test_same_size_mutation_with_restored_mtime_still_fails
+    with self.assertRaisesRegex(ValueError, "verified_source_record_changed"):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.095s
+
+FAILED (failures=1)
