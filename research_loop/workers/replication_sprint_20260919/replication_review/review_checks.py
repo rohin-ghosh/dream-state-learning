@@ -29,6 +29,17 @@ import sealed_runner
 import test_candidate
 import test_custody_repair
 import test_execution
+import test_main_v3
+
+
+ORIGINAL_TEMPORARY_DIRECTORY = tempfile.TemporaryDirectory
+
+
+def scoped_temporary_directory(*args, **kwargs):
+    kwargs.setdefault('dir', HERE)
+    if not Path(kwargs['dir']).resolve().is_relative_to(HERE.resolve()):
+        raise ValueError('review_test_temporary_directory_outside_owned_scope')
+    return ORIGINAL_TEMPORARY_DIRECTORY(*args, **kwargs)
 
 
 def sha(path):
@@ -411,7 +422,8 @@ def pins(seal_path):
             paths.append(path)
     if seal_path.exists() and seal_path not in paths:
         paths.append(seal_path)
-    for name in ('CPU_CUSTODY_REPAIR_V2.json', 'CPU_CUSTODY_REGISTRY_V2.json'):
+    for name in ('CPU_CUSTODY_REPAIR_V2.json', 'CPU_CUSTODY_REGISTRY_V2.json',
+            'SAMPLING_EXECUTION_AUTHORIZATION_V3.json', 'SAMPLING_REGISTRY_V3.json'):
         path = CANDIDATE_ROOT / name
         if path.exists():
             paths.append(path)
@@ -424,11 +436,23 @@ def seal_observation(path):
     seal = read(path)
     mismatches = []
     for group in ('files', 'inputs', 'cpu_test_evidence'):
-        for name, expected in seal[group].items():
+        for name, expected in seal.get(group, {}).items():
             source = CANDIDATE_ROOT / name
             actual = sha(source) if source.exists() else None
             if actual != expected:
                 mismatches.append(dict(group=group, path=name, declared=expected, actual=actual))
+    if 'main_test_log_sha256' in seal:
+        source = CANDIDATE_ROOT.parent / 'operations/SAMPLING_V3_FINAL_MAIN_TESTS.txt'
+        actual = sha(source)
+        if actual != seal['main_test_log_sha256']:
+            mismatches.append(dict(group='main_test_log', path=str(source),
+                declared=seal['main_test_log_sha256'], actual=actual))
+    if seal.get('schema') == 'C2_BOUND_CUSTODY_REPAIR_SOURCE_FREEZE_V3':
+        source = CANDIDATE_ROOT / 'SAMPLING_EXECUTION_AUTHORIZATION_V3.json'
+        authorization = read(source)
+        if sha(source) != seal['cpu_repair_sha256'] or execution.digest(authorization) != seal['execution_incarnation_sha256']:
+            mismatches.append(dict(group='authorization', path=str(source),
+                declared=seal['cpu_repair_sha256'], actual=sha(source)))
     return dict(present=True, path=str(path.relative_to(REPO)), sha256=sha(path), mismatches=mismatches,
         exact_runtime_file_set=set(seal['files']) == set(execution.RUNTIME_NAMES),
         current_source_and_tests_match=not mismatches,
@@ -448,10 +472,11 @@ def main():
     test_execution.HERE = HERE
     test_custody_repair.HERE = HERE
     suite = unittest.TestSuite()
-    for module in (test_candidate, test_execution, test_custody_repair, sys.modules[__name__]):
+    for module in (test_candidate, test_execution, test_custody_repair, test_main_v3, sys.modules[__name__]):
         suite.addTests(unittest.defaultTestLoader.loadTestsFromModule(module))
     stream = io.StringIO()
-    result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
+    with patch.object(tempfile, 'TemporaryDirectory', side_effect=scoped_temporary_directory):
+        result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
     mutations = mutation_observations()
     partial_reporting = partial_reporting_observation()
     after = pins(seal_path)

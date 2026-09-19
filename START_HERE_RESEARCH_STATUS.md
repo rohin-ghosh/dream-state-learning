@@ -1,7 +1,7 @@
 # Research status — September 19, 2026
 
-**Handoff update:** September 19, 13:43 UTC / 06:43 PDT. Individual evidence cuts are dated below.
-**Current phase:** evidence audit, controlled-replication preparation, and recovery.
+**Handoff update:** September 19, 14:10 UTC / 07:10 PDT. Individual evidence cuts are dated below.
+**Current phase:** a running sampling replication, evidence audit, and recovery.
 
 This is the morning handoff for Rohin. It separates completed observations from
 planned work. The submitted abstract remains the research direction; no positive
@@ -10,8 +10,9 @@ result is a prerequisite for recording an experiment.
 **Morning headline:** the slow-adapter / fast-context hypothesis is now
 formalized, and the historical data and correction measurements are audited.
 We have examples of useful coached actions, but not a replicated demonstration
-of independent improvement. New-seed controlled caption sampling is being
-prepared, not yet running. Recovery is urgent: eight node-3 lives stopped on a
+of independent improvement. **New-seed controlled caption sampling is now
+running**, with actual model-load and completed-cell receipts. Recovery is
+urgent: eight node-3 lives stopped on a
 full disk; C0 and Astra7 are also down at their recorded bindings. The fresh
 learner and frozen sibling are running, but their parents are authentication
 blocked. These outages are not valid independence or tapering treatments.
@@ -36,24 +37,38 @@ Six parallel workstreams have been assigned. Assignment is not completion:
 | Workstream | Concrete deliverable | Current status |
 | --- | --- | --- |
 | Evidence | Actual mixed-curriculum delivery; strongest reflection-to-action traces; early-versus-late C2 comparison | Historical audit complete; positive examples and timing caveat below |
-| Replication | Original-protocol executable probe preparation; distinguish sampling replication from training-lineage replication | Source audit and CPU candidates complete; execution integration in progress; no new GPU launch yet |
+| Replication | Original-protocol sampling probe; distinguish sampling replication from training-lineage replication | Launched14:04:39 UTC on ovx4; base player and judge loaded; completed scene/seed cells observed; full comparison pending |
 | Measurement | Offline source-bound uptake/retention summaries and tests, including unknown outcomes | First bounded measurement complete; 45 tests independently rerun by Main |
 | Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Candidate complete; 34 tests independently rerun; live deployment blocked by provider authentication |
 | Formalization | Fast/slow-loop hypotheses, estimands, controls and falsifiers | Proposal complete; not a launched experiment |
-| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | Disk exhaustion confirmed; checkpoint files verified; storage/recovery work continues; none restarted |
+| Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | Retired-state archive and full physical restore verified; lossless storage canary authorized; none restarted |
 
-**Actual replication startup status:** Main reran52 CPU tests and staged the
-three-condition diagnostic on ovx4. A nonexistent legacy backbone path was
-repaired against the pinned model manifest, preserving the failed staging
-directory. The real, model-free confinement proof then failed: a judge-side
-import was missing and the player-side private-path check did not pass. No
-model was loaded and no new scientific result exists. The failed attempt is
-preserved; repair must restore the intended confinement, not waive it.
+**Actual replication startup status:** the V3 controller launched on ovx4 at
+**14:04:39 UTC**, after Main's72 focused CPU tests and all six real receiving
+role proofs passed. The player and judge have actual LOADED receipts on the
+originally reserved GPUs2/7. The14:08:48 UTC source-bound report confirms
+completed1,024-token scene/seed cells for the base. The two C2 checkpoints run
+after base, serially; incomplete or not-yet-started cells are not zeros.
 
-Main is checking usable evaluation resources, preserving the existing experiment
-state, and integrating these workstreams. A repeated ovx4 check at13:14 UTC
-again found the paired natives resident and GPUs2/7 free. This does not reserve
-those devices or establish actual parent delivery.
+This fixed block compares base, preserved C2sleep51 and C2sleep117 using new
+generation seeds23301/23302, the same three development scenes and adopted
+rank8/step15625 judge, and6,144 generated tokens per source. Evaluation copies
+receive no parent, sleep updates, historical working context or optimizer.
+**This is sampling replication of selected checkpoints, not independent
+training-lineage replication or a held-out-game generalization result.**
+
+Earlier staging and CPU-only custody failures are retained. The final repair
+restored strict private-path denial with read-only empty directory mounts;
+it did not waive a visibility check, change the scorer, or bypass admission.
+No model ran in those failed incarnations. The existing diagnostic time bound
+and protected-device/shared-claim rules are unchanged.
+
+Receipts: `research_loop/workers/replication_sprint_20260919/operations/`
+`SAMPLING_V3_LAUNCH.txt`, `SAMPLING_V3_PROOFS.json`,
+`SAMPLING_V3_CUSTODY_EVIDENCE.json`, and `SAMPLING_V3_FINAL_MAIN_TESTS.txt`.
+The source-bound `replication/report_sampling.py` reports complete, partial and
+missing cells separately. An older progress receipt guessed the wrong output
+directory; its `event_files: 0` is not evidence of zero generation.
 
 ## First sprint outputs: measurement and historical-result reconciliation
 
@@ -234,12 +249,23 @@ Readiness and exact integration:
 - The node-3 parent service's startup fails because its expected protected
   natives are absent. Do not count this as a developmental failure, a deliberate
   parenting-withdrawal interval, or a reason to bypass identity checks.
+- **Storage preservation milestone,14:01:12 UTC:** a41.26GB archive of the
+  reviewed retired node-3 copies was transferred to existing ovx4 storage and
+  fully restored there for verification:85,620 members and66.50GB logical file
+  bytes. Content, links, mode, mtime and xattrs passed; original ownership and
+  other metadata remain in the archive/manifest. Originals remain untouched by
+  that copy, so copying alone reclaimed no disk. A small, reviewed hardlink
+  coalescing canary is authorized only inside those retired copies; live state
+  is outside its scope. Any reclaimed capacity still needs an actual filesystem
+  receipt before recovery can be claimed.
 - At **13:06:43 UTC**, the curriculum learner and frozen sibling remained GPU
   resident on ovx4 (`ipp2-ovx-p3-02`), alongside the base player and scorers.
   The original probe daemon was present. This is process evidence, not proof
   that every current feedback or parent message is reaching an action.
 - Ovx4 GPUs 2 and 7 were free at that observation. Any dispatch must recheck
   occupancy, provenance, confinement, existing job state, and lease bounds.
+  The sampling block subsequently completed those checks and uses those two
+  devices from14:04 UTC; they are no longer free.
 
 Per-life recovery table:
 `research_loop/workers/replication_sprint_20260919/node3_recovery/STATUS.md`.

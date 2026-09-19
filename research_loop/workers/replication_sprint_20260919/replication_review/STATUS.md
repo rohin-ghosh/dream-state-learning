@@ -1,6 +1,43 @@
 # C2 sampling diagnostic: independent executable review
 
-## CURRENT: V2 receiving custody failed again — September 19, 13:51 UTC
+## CURRENT: V3 source and actual custody review PASS — September 19, 14:05 UTC
+
+**The demonstrated V1/V2 custody blocker is resolved in the distinct V3
+incarnation.** Independent local verification of Main's exported actual proof
+payloads passes: all **six roles**, all **nine player-path denials per arm**,
+all six common judge-path denials per arm, GPU2-only player/GPU7-only judge
+access with seven devices denied per role, original UID/boot, and no models
+loaded during proof. Successful unit PIDs, config hashes, launch, registry,
+source seal and joined proof all match. These are actual role receipts, not
+merely a completion label or mocked results.
+
+- Source freeze: `d6c99489e68497af4dbbfd4f3c347ac73d09cdfb592c57341b7103db713b283b`.
+- Joined actual proof: `af813b207130fe637676bda10576c3e6d4f4a27bfe400b7b0151cd60fb5312ed`.
+- Distinct execution: `21df1fcbff9c54358c2474541bd399a2ab2572c58aa73046a255d1d851517d8f`.
+- **83 offline tests pass** (72 candidate plus 11 independent), reviewed bytes
+  stable and matched; Main's dated 14:03 UTC Builder line binds the same source,
+  proof, incarnation and preregistered scientific scope.
+
+The repair uses read-only empty-directory overlays from outside the shared
+view; the old private targets are deliberately present before any proof, so
+their denial cannot be a missing-target/judge-start race. The original denial
+checks, public transport and original scientific functions are unchanged.
+No exact namespace mount table was exported; the behavioral cannot-open proof
+is verified, without inventing mount-order observations.
+
+**Mode guard is usable and scoped:** explicit V3 authorization permits this
+same scientific diagnostic after its exact successful proof, while a V2 scope
+flip remains rejected. Failed V1/V2 roots/guards remain failed; their owned dead
+claims are archived. Model dispatch still uses Main's original fresh
+host/device/lease/protected-process admission and the existing finite block;
+no fresh approval gate is introduced by this review. The proof is not a science
+result: LOADED, actual cell/output and COMPLETE receipts remain necessary.
+
+Evidence: `V3_RECEIVING_REVIEW.json`, `V3_DELTA_AND_RECEIVING_REVIEW.md`, and
+`CPU_REVIEW_RECEIPT.json`. Reviewer made no receiving calls, launches, claim
+changes, model calls, commits or pushes.
+
+## Preserved V2 failure — September 19, 13:51 UTC
 
 **NOT READY FOR MODEL/GPU DISPATCH.** The frozen V2 CPU-only incarnation
 `d0f368fbcb0ac74ba908a008d7b4daac0bf3f3cd19d5a3fc171902e7419adaad`
