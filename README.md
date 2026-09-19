@@ -1,5 +1,7 @@
 # Dream-State Learning
 
+**Reading room and mailbox:** [Full replies, constitution draft, parenting guide, evidence, and messages between machines](READING_ROOM.md).
+
 **Parenting and behavior:** [Best-checkpoint audit, core principles, reading tests and tapering](PARENTING_AND_BEHAVIOR_STUDY_2026-09-19.md).
 
 **Final-paper preparation:** [Evidence, final experiments, figures and checklist](FINAL_PAPER_PLAN_2026-09-19.md).

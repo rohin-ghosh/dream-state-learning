@@ -1,0 +1,17 @@
+[Unit]
+Description=Read-only Astra repository mailbox watcher
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/data/home/rohing/dream-state-orch
+ExecStart=/usr/bin/python3 /data/home/rohing/dream-state-orch/tools/mailbox_watch.py --repo /data/home/rohing/dream-state-orch --interval 120
+Restart=always
+RestartSec=30
+NoNewPrivileges=true
+Nice=10
+StandardOutput=null
+StandardError=journal
+
+[Install]
+WantedBy=default.target
