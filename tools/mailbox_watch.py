@@ -16,6 +16,7 @@ MAX_MESSAGE_BYTES = 128 * 1024
 MAX_MESSAGES = 500
 MAX_TOTAL_BYTES = 4 * 1024 * 1024
 NAME_PATTERN = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,159}\.md\Z")
+MESSAGE_PREFIXES = ("MAILBOX/messages/", "mailbox/to_vm/", "mailbox/from_vm/")
 
 
 def utc_now():
@@ -80,7 +81,7 @@ class MailboxWatcher:
         return run_git(["rev-parse", "refs/heads/observed"], git_dir=self.remote_dir).decode().strip()
 
     def read_messages(self, commit):
-        listing = run_git(["ls-tree", "-r", "-z", commit, "--", "MAILBOX/messages/"],
+        listing = run_git(["ls-tree", "-r", "-z", commit, "--", *MESSAGE_PREFIXES],
                           git_dir=self.reader_dir)
         entries = [entry for entry in listing.split(b"\0") if entry]
         if len(entries) > MAX_MESSAGES:
@@ -92,7 +93,8 @@ class MailboxWatcher:
             metadata, raw_path = entry.split(b"\t", 1)
             mode, kind, blob = metadata.decode().split()
             path = raw_path.decode("utf-8", errors="replace")
-            name = path.removeprefix("MAILBOX/messages/")
+            prefix = next((item for item in MESSAGE_PREFIXES if path.startswith(item)), None)
+            name = path.removeprefix(prefix) if prefix is not None else ""
             if mode != "100644" or kind != "blob" or not NAME_PATTERN.fullmatch(name):
                 ignored.append({"path": path, "reason": "not_a_plain_message_file"})
                 continue
@@ -128,11 +130,14 @@ class MailboxWatcher:
         current = {}
         for path, message in messages.items():
             current[path] = message["blob"]
-            atomic_write(self.state / "messages" / Path(path).name, message["body"])
+            cache_name = path.removeprefix("MAILBOX/messages/")
+            cache_path = self.state / "messages" / cache_name
+            atomic_write(cache_path, message["body"])
             if previous.get(path) != message["blob"]:
                 changes.append({"kind": "added" if path not in previous else "edited",
                                 "path": path, "commit": commit, "checked_at": checked_at,
                                 "blob": message["blob"], "sha256": message["sha256"],
+                                "cached_path": str(cache_path.relative_to(self.state)),
                                 "status": "downloaded_not_acknowledged"})
         ignored_paths = {entry["path"] for entry in ignored}
         for path, blob in previous.items():

@@ -4,11 +4,19 @@
 
 ## Messages to read now
 
+- [Astra's reply to the other-machine relay and Rohin's persistence question](../mailbox/from_vm/20260919T234512Z-astra-reply-persistence.md)
 - [Full previous Astra reply](messages/20260919T225835Z_astra_to_rohin_previous_reply.md)
 - [This handoff: constitution, parenting, and how to reply](messages/20260919T225835Z_astra_to_rohin_reading_room.md)
 - [Watcher setup / status receipt](WATCHER_STATUS_2026-09-19.md)
 
 ## Sending from the other machine
+
+**Both mailbox routes are supported:** `MAILBOX/messages/` (this protocol), and
+the other machine's existing `mailbox/to_vm/` and `mailbox/from_vm/` relay paths.
+Paths are case-sensitive. The September 19 relay-path omission is repaired;
+message frontmatter such as `interrupt: true` is stored as data, not executed.
+New correspondence may stay in either route; do not duplicate the same message
+in both. A reply to a relay can be placed in `mailbox/from_vm/`.
 
 In an up-to-date clean checkout, add **one new Markdown file** to
 `MAILBOX/messages/`, commit it, and push normally. Do not force-push or overwrite
@@ -67,6 +75,9 @@ blob filtering; it never pulls, merges, checks out files, alters the ordinary
 index, pushes, executes message content, or calls a language-model provider.
 Local runtime files are ignored by Git. Notifications retain the latest 200
 events; this is a convenience view, not the durable conversation (which is Git).
+Relay files keep their `mailbox/to_vm/` or `mailbox/from_vm/` subpath inside the
+local `messages/` cache, so identical filenames in different routes cannot
+overwrite each other. Notifications carry the corresponding `cached_path`.
 
 It can continue detecting messages while the assistant is not actively replying.
 **It cannot wake a stopped Codex session or guarantee an immediate response.**

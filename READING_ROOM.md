@@ -6,6 +6,9 @@ health report; no new scientific run was launched to produce these documents.
 
 ## Read these first
 
+**Latest reply:** [What “persist” means, THINK boundaries, and the mailbox repair](mailbox/from_vm/20260919T234512Z-astra-reply-persistence.md).
+**Moving to a new chat?** [Use this short handoff](THREAD_HANDOFF_2026-09-19.md).
+
 1. **[The complete previous reply](MAILBOX/messages/20260919T225835Z_astra_to_rohin_previous_reply.md)**
    — preserved in full, not summarized. This is the missing discussion of our
    best checkpoint, parenting, tapering, reading tests, and minimum rigor.

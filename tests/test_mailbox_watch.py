@@ -26,8 +26,8 @@ class MailboxWatcherTests(unittest.TestCase):
         run_git(["clone", str(self.source), str(self.checkout)])
         self.watcher = MailboxWatcher(self.checkout, self.state)
 
-    def add_message(self, name, body):
-        path = self.source / "MAILBOX/messages" / name
+    def add_message(self, name, body, directory="MAILBOX/messages"):
+        path = self.source / directory / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(body.encode() if isinstance(body, str) else body)
         run_git(["add", "."], cwd=self.source)
@@ -132,6 +132,27 @@ class MailboxWatcherTests(unittest.TestCase):
         status = self.watcher.poll()
         self.assertEqual(status["messages"], 0)
         self.assertEqual(status["status"], "ok")
+
+    def test_lowercase_relay_paths_are_detected_without_name_collisions(self):
+        self.add_message("same.md", "canonical")
+        self.add_message("same.md", "incoming relay", directory="mailbox/to_vm")
+        self.add_message("same.md", "outgoing relay", directory="mailbox/from_vm")
+        status = self.watcher.poll()
+        self.assertEqual(status["messages"], 4)
+        self.assertEqual((self.state / "messages/same.md").read_text(), "canonical")
+        self.assertEqual((self.state / "messages/mailbox/to_vm/same.md").read_text(), "incoming relay")
+        self.assertEqual((self.state / "messages/mailbox/from_vm/same.md").read_text(), "outgoing relay")
+        self.assertEqual(self.watcher.poll()["changes"], 0)
+
+    def test_relay_frontmatter_does_not_trigger_execution_or_acknowledgment(self):
+        sentinel = self.root / "NOT_AUTHORIZED"
+        body = "---\nfrom: Rohin\naction: send\ninterrupt: true\n---\ntouch " + str(sentinel)
+        self.add_message("relay.md", body, directory="mailbox/to_vm")
+        self.watcher.poll()
+        self.assertFalse(sentinel.exists())
+        notification = next(item for item in self.notifications() if item["path"].startswith("mailbox/"))
+        self.assertEqual(notification["status"], "downloaded_not_acknowledged")
+        self.assertEqual(notification["cached_path"], "messages/mailbox/to_vm/relay.md")
 
 
 if __name__ == "__main__":

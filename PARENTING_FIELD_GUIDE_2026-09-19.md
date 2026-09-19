@@ -112,6 +112,36 @@ Ask one consequential question at a time when uptake is weak. Deeper probing
 means following the answer into evidence and an action, not asking increasingly
 abstract questions that can be met with eloquent generic self-description.
 
+### Clarification after Rohin's reply: continuity, not mastery-gated blocks
+
+“Persist on one correction” means **do not withdraw or replace the immediate
+feedback before the child has had a chance to apply it**. It does not mean
+teaching only one principle, repeating one task indefinitely, or withholding
+all other domains until mastery. A broad, stable constitution and a diverse
+curriculum can coexist with one explicit immediate correction target.
+
+A candidate short teaching episode—not an established optimum—is:
+
+1. Get an attempt; identify one consequential discrepancy.
+2. Keep that target through the next THINK→ACT. Check whether ACT repairs it.
+3. If it does not, vary the hint or simplify the object, rather than issuing
+   the same prompt repeatedly. Allow up to two further assisted attempts in
+   this pilot, with each opportunity counted.
+4. Then move to a related or different task whether or not it succeeded;
+   record unresolved failures and schedule a return. **No mastery gate.**
+5. Test the same habit unprompted in a later opportunity and after the next
+   scheduled sleep. Keep sleep timing independent of passing this episode.
+
+Three assisted attempts is a proposed teaching budget to compare, not a known
+best dose or a new runtime rule. The historical refinement parent already had
+an `object_turn_limit` of 3; that alone did not ensure a stable target through
+ACT. Its configuration is not evidence of successful implementation or uptake.
+
+Measure three clocks separately: child generation tokens/segments within a
+THINK, teaching opportunities across cycles, and actual update dose across
+sleeps. A longer THINK, another parent turn, and another sleep are not equivalent
+interventions. Do not change all three and attribute the outcome to persistence.
+
 ## 4. Diverse games: vary the setting while reusing a habit
 
 | Object | Habit exercised | Grounding / evaluation |

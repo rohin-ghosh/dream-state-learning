@@ -1,5 +1,30 @@
 # Mailbox setup receipt — September 19, 2026
 
+## Relay-path repair verified at 23:45:11 UTC / 16:45:11 PDT
+
+Rohin's other-machine reply was committed at
+`mailbox/to_vm/20260919T232722Z-codex-relay-astra.md`, whereas the original watcher
+only checked `MAILBOX/messages/`. The successful polls therefore missed it.
+This was a routing omission, not evidence that the reply had been read.
+
+Non-material repair: watch the canonical directory **and** `mailbox/to_vm/`
+and `mailbox/from_vm/`, retaining route-specific cache paths to avoid filename
+collisions. **12 tests pass**, including both relay directions, duplicate
+filenames, and inert `interrupt: true` frontmatter. No runtime, curriculum,
+training eligibility, or benchmark changed.
+
+Only the mailbox poller was restarted. New process `4157335` in tmux session
+`astra-mailbox` downloaded the incoming relay on its first poll at
+**23:45:11.046192 UTC**, remote commit
+`b41c6c2c02050c31ef7cfbaf9bcacfa322d178a2`: **3 messages, 14,310 bytes**.
+Incoming relay SHA-256:
+`05b92addde673b42f1e2073b406ee525e4b6bea57abaf03802861cba1a2869e7`.
+
+Astra also read the message and wrote a separate
+[acknowledgment and substantive reply](../mailbox/from_vm/20260919T234512Z-astra-reply-persistence.md).
+The old watcher PID and earlier counts below are historical receipts.
+The watcher still cannot wake an inactive assistant or survive a reboot.
+
 ## Published-message delivery verified at 23:09:17 UTC / 16:09:17 PDT
 
 The same tmux process (`4056363`) completed its next scheduled poll and detected
