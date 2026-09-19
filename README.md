@@ -1,5 +1,7 @@
 # Dream-State Learning
 
+**Start here:** [Current experiments, evidence, blockers, and morning handoff](START_HERE_RESEARCH_STATUS.md).
+
 **Latest research update:** [Abstract scope, results, and next experiments — September 19, 2026](ABSTRACT_SCOPE_AND_RESEARCH_UPDATE_2026-09-19.md).
 
 Research project: **experiential parametric memory for continual LLM agents** —
