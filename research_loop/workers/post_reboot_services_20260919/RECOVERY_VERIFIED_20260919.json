@@ -1,0 +1,75 @@
+{
+  "backfills": [
+    {
+      "cut_utc": "2026-09-18T23:00:00+00:00",
+      "epochs_match_original_source_receipts": true,
+      "errors": [],
+      "players": 8,
+      "report": "research_loop/workers/post_reboot_services_20260919/cuts/20260918T230000Z.json",
+      "sha256": "b4fdde02d62e755f414991a4db4db4ea369eee7d69c96946d2c3e5610d855295",
+      "source_receipt": {
+        "path": "research_loop/workers/post_reboot_services_20260919/receipts/AUDIT_20260918T230000Z_1789778664267676939.json",
+        "sha256": "c672113ca45d5037aa934606b9243176adb7bfe8efc21cfc335c33b9c8c7fdd8"
+      }
+    },
+    {
+      "cut_utc": "2026-09-19T00:00:00+00:00",
+      "epochs_match_original_source_receipts": true,
+      "errors": [],
+      "players": 8,
+      "report": "research_loop/workers/post_reboot_services_20260919/cuts/20260919T000000Z.json",
+      "sha256": "fe7c07c0a76e0ffb3f587ffb33215300f5bb70657d1939a4e4d5b9d5777f0a23",
+      "source_receipt": {
+        "path": "research_loop/workers/post_reboot_services_20260919/receipts/AUDIT_20260919T000000Z_1789778691175615129.json",
+        "sha256": "a2db1c098117af1dc7edb9eb4537e9e6933527cde03936b18d2ed1179686f5ab"
+      }
+    }
+  ],
+  "boot_enabled": false,
+  "boot_utc": "2026-09-18T22:50:45+00:00",
+  "collector": {
+    "command_sha256": "bb786d932ddf62712332bf315b64ecdaa98383d4bdb6f1baf6bf9689f580f5a8",
+    "pid": 311631,
+    "start_ticks": "717211"
+  },
+  "configured_services": [
+    "caption-collector"
+  ],
+  "duplicate_collector_exit": 75,
+  "duplicate_supervisor_exit": 75,
+  "git_commit": null,
+  "git_push_attempted": false,
+  "host": {
+    "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+    "hostname": "nvl-ai",
+    "pid": 315142,
+    "start_ticks": "726714"
+  },
+  "installation_status": "BLOCKED_UNINSTALLED",
+  "legacy_collector_lock_held": true,
+  "native_signals": [],
+  "observed_utc": "2026-09-19T00:51:52.879882+00:00",
+  "pending_owner_argv": [
+    "approval-watch",
+    "c2-parent",
+    "every-sleep-queue",
+    "node3-parents",
+    "p7-parent",
+    "pair-parents",
+    "probe-daemon"
+  ],
+  "service_management_guard_not_bypassed": true,
+  "supervisor": {
+    "command_sha256": "844a7dc7c1a8118f4cdca0197fc7f5822935a62869b243db7bbce7f8ed9aab5b",
+    "pid": 311614,
+    "start_ticks": "717203"
+  },
+  "supervisor_lock_held": true,
+  "tests": {
+    "inherited_epoch": 6,
+    "inherited_projection": 3,
+    "recovery": 26,
+    "total": 35
+  },
+  "until_unix": 1790791170
+}

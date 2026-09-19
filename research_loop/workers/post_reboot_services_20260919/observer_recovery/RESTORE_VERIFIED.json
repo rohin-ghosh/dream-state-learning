@@ -1,0 +1,169 @@
+{
+  "backlog_dispatcher_started": false,
+  "boot_enabled": false,
+  "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+  "correction_observer": {
+    "command_sha256": "a7980c8ce3c85453d63a86886eb436ccd059262a323d2e3d5dd07e348dd7dff4",
+    "pid": 298357,
+    "start_ticks": "687734"
+  },
+  "correction_restarted": false,
+  "correction_source_unchanged": true,
+  "deadline_unix": 1790791170,
+  "driver": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/source/driver.py",
+      "--config",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/runs/1789779728873833849/CONFIG.private.json"
+    ],
+    "command_sha256": "398e1fb14d5ce6b1eae36ade220e4fd512052d5d33ef87f481f98f53215d98ae",
+    "executable": "/usr/bin/python3.12",
+    "pid": 343342,
+    "start_ticks": "788324"
+  },
+  "first_cycle_receipt": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/runs/1789779728873833849/FIRST_CYCLE.json",
+    "sha256": "87a78e4f943c42f8a7489dd590202a805f34791d0d85e272dd0d645ec3d3d972"
+  },
+  "first_poll_enrolled": 1254,
+  "first_poll_root_statuses": [
+    {
+      "life": "C2",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "P7",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "GAME1_P3",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "C0",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "Astra7",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "MATH_A",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "MATH_B_FORK",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "MATH_C",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "GAME_N3_0",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "GAME_N3_3",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "GAME_N3_5",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "GAME_N3_6",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "GAME_N3_7",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "FRESH_R231",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "R232_SIBLING_FROZEN",
+      "status": "BACKLOG_SCANNING"
+    },
+    {
+      "life": "GAME_UNPARENTED_N2",
+      "status": "BACKLOG_SCANNING"
+    }
+  ],
+  "first_poll_utc": "2026-09-19T01:02:55.822780+00:00",
+  "focused_unittest_passed": 15,
+  "installation_status": "BLOCKED_UNINSTALLED",
+  "launcher": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/queue_launcher.py"
+    ],
+    "command_sha256": "51c646318fb621e74067c402a013fc42778092effd4e4a0c1111a63971f8db08",
+    "executable": "/usr/bin/python3.12",
+    "pid": 343304,
+    "start_ticks": "788315"
+  },
+  "ledgers": [
+    {
+      "current_entries": 1223,
+      "cursors_monotone": true,
+      "ledger": "enrollment",
+      "lock_inode": "00:24:6428379",
+      "lock_owner_pid": 343342,
+      "original_entries_unchanged": true,
+      "pending_flags_preserved": true,
+      "prior_entries": 1197
+    },
+    {
+      "current_entries": 46,
+      "cursors_monotone": true,
+      "ledger": "extra_enrollment",
+      "lock_inode": "00:24:6599254",
+      "lock_owner_pid": 343342,
+      "original_entries_unchanged": true,
+      "pending_flags_preserved": true,
+      "prior_entries": 45
+    }
+  ],
+  "loaded_receipt": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/runs/1789779728873833849/LOADED.json",
+    "sha256": "fbde30535a74e514da1b292273ad9622b5629a9a37767c6c6e86ce19fc9971eb"
+  },
+  "native_signals": [],
+  "new_evaluations": 0,
+  "new_native_runs": 0,
+  "observed_utc": "2026-09-19T01:04:16.508358+00:00",
+  "preserved_references": 1242,
+  "pytest_unavailable": true,
+  "queue_duplicate_exit": 75,
+  "supervisor_regression_passed": 26,
+  "supervisor_services": [
+    {
+      "matches": [
+        {
+          "command_sha256": "a7980c8ce3c85453d63a86886eb436ccd059262a323d2e3d5dd07e348dd7dff4",
+          "pid": 298357,
+          "start_ticks": "687734"
+        }
+      ],
+      "name": "correction-observer",
+      "status": "RUNNING_ADOPTED_NO_SIGNALS"
+    },
+    {
+      "matches": [
+        {
+          "command_sha256": "51c646318fb621e74067c402a013fc42778092effd4e4a0c1111a63971f8db08",
+          "pid": 343304,
+          "start_ticks": "788315"
+        }
+      ],
+      "name": "every-sleep-queue",
+      "status": "RUNNING_OWNED"
+    }
+  ]
+}

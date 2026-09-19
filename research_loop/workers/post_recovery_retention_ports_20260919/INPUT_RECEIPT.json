@@ -1,0 +1,94 @@
+{
+  "dispatches": [],
+  "inventory_sha256": {
+    "node2_INVENTORY2.json": "8313f1148df6d877ac3307dc590a0c5c96efb61899acf5c4462a9aeef041434a",
+    "node4_INVENTORY2.json": "4806131746e5568db5ddae1ce43187dd708b3793cf2b10ff6114d5e358cbf356",
+    "node5_INVENTORY2.json": "c6d16cfd7161d31f64fdbebee80bf10dd2bfad5e5ba9ae46c8df0313245277c0"
+  },
+  "live_writes": [],
+  "native_signals": [],
+  "parent_deliveries": [],
+  "phase2_sha256": {
+    "REPAIR.patch": "7053d826efcfbc6ee6a8f44f36a8dbe8c179dd4d9ffb485a7ac548a075e876f1",
+    "run_checks.py": "59b6a183ab145709d205e47c998312dd88d5079bd690b96f84aa4c15927c3de1",
+    "test_retention.py": "7f24a660576e96505e6e2ff08fa2d17ae8a0bea4b48d6ee7ab6005a478213a20"
+  },
+  "scope": "local-only exact retention ports; no source staging or adoption",
+  "variants": {
+    "Astra7": {
+      "before": {
+        "gpu/orch_r184_think_act_learn.py": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46",
+        "organism_v6/orch_r124_train_history.py": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+        "organism_v6/orch_r125_continual_stream.py": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33"
+      },
+      "guard_path": "/localhome/local-rohing/orch_r229_Astra7_20260918/control_r233_lease_continuation/GUARD.json",
+      "guard_sha256": "fae6f4ede1e9c80be060aeca8dd494cbb24a6228b9225e33856b62ec3c0047f6",
+      "inventory_file": "node2_INVENTORY2.json",
+      "journal_id": "6a2fa591a1304fd8b3eff24f65e5caff",
+      "node": "node2",
+      "observed_unix": 1789779749.2848682,
+      "source_files": 2295,
+      "source_root": "/localhome/local-rohing/orch_r229_Astra7_20260918/source_r233_lease_continuation"
+    },
+    "C0": {
+      "before": {
+        "gpu/orch_r184_think_act_learn.py": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46",
+        "organism_v6/orch_r124_train_history.py": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+        "organism_v6/orch_r125_continual_stream.py": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33"
+      },
+      "guard_path": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/control_r233_lease_continuation/GUARD.json",
+      "guard_sha256": "acf4d2d015874af1cc9585a25de63827e7d7ec36acd7a4509bce09671985f6c2",
+      "inventory_file": "node2_INVENTORY2.json",
+      "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+      "node": "node2",
+      "observed_unix": 1789779749.137019,
+      "source_files": 2292,
+      "source_root": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/source_r233_lease_continuation"
+    },
+    "C2": {
+      "before": {
+        "gpu/orch_r184_think_act_learn.py": "57bba9866edd6e4adb8a047d7ca3f5fbe99f613e56b64833e0b9b58829bc8cc5",
+        "organism_v6/orch_r124_train_history.py": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+        "organism_v6/orch_r125_continual_stream.py": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33"
+      },
+      "guard_path": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/control/GUARD.json",
+      "guard_sha256": "29d1aa615820332deaa826bd8505209ef89c9fed5aea0f6fe98e7690d0867ffb",
+      "inventory_file": "node5_INVENTORY2.json",
+      "journal_id": "260be8b8710a42559b291797c6e14983",
+      "node": "node5",
+      "observed_unix": 1789779749.5979102,
+      "source_files": 183,
+      "source_root": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/source"
+    },
+    "P3": {
+      "before": {
+        "gpu/orch_r184_think_act_learn.py": "c684c66bc3e577ba022dc08f257161a4709542fafb21981afaef7a5cb84a407a",
+        "organism_v6/orch_r124_train_history.py": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+        "organism_v6/orch_r125_continual_stream.py": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+      },
+      "guard_path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/r233_lease_continuation_retry1/control/GUARD.json",
+      "guard_sha256": "df9769ae317f249fe8ff9f93c62457eb23c659d7e7e707dc67cf3a2d78f75ece",
+      "inventory_file": "node4_INVENTORY2.json",
+      "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+      "node": "node4",
+      "observed_unix": 1789779749.629677,
+      "source_files": 177,
+      "source_root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/r233_lease_continuation_retry1/source"
+    },
+    "P7": {
+      "before": {
+        "gpu/orch_r184_think_act_learn.py": "798f1d91706f72b3af5725dd06ba938c0b8d0e3ddc91a58fb81426d674d1ee73",
+        "organism_v6/orch_r124_train_history.py": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+        "organism_v6/orch_r125_continual_stream.py": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+      },
+      "guard_path": "/localhome/local-rohing/orch_r233_p7_deadline_20260918/control/GUARD.json",
+      "guard_sha256": "9e98fbbe00081c9c6fe5047c74a2be8a4b10d77e1c38120a86ce8494fdf6f640",
+      "inventory_file": "node4_INVENTORY2.json",
+      "journal_id": "e9d22d1e26234c4bbac761922929365f",
+      "node": "node4",
+      "observed_unix": 1789779749.6122093,
+      "source_files": 175,
+      "source_root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/r224_language_v3/source"
+    }
+  }
+}

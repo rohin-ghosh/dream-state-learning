@@ -1,0 +1,24 @@
+test_remote_process_census_splits_actual_proc_nuls (test_preflight.PreflightTests.test_remote_process_census_splits_actual_proc_nuls) ... ok
+test_entry_binds_only_existing_p3_lock_and_original_lease (test_restart.RegistrationTests.test_entry_binds_only_existing_p3_lock_and_original_lease) ... ok
+test_registration_is_atomic_idempotent_and_never_overwrites_conflict (test_restart.RegistrationTests.test_registration_is_atomic_idempotent_and_never_overwrites_conflict) ... ok
+test_expired_lease_refuses_before_source_or_provider (test_restart.RestartTests.test_expired_lease_refuses_before_source_or_provider) ... ok
+test_live_parent_causes_no_preflight_no_exec (test_restart.RestartTests.test_live_parent_causes_no_preflight_no_exec) ... ok
+test_preflight_failure_is_sanitized_and_never_executes (test_restart.RestartTests.test_preflight_failure_is_sanitized_and_never_executes) ... ok
+test_reused_pid_from_another_boot_is_not_live_owner (test_restart.RestartTests.test_reused_pid_from_another_boot_is_not_live_owner) ... ok
+test_success_refreshes_preflight_before_same_pid_exec (test_restart.RestartTests.test_success_refreshes_preflight_before_same_pid_exec) ... ok
+test_429_preserves_error_and_does_not_retry_or_consume_new_boundary (test_runner.BackoffTests.test_429_preserves_error_and_does_not_retry_or_consume_new_boundary) ... ok
+test_http_date_and_malformed_header (test_runner.BackoffTests.test_http_date_and_malformed_header) ... ok
+test_model_and_effort_are_not_changed (test_runner.BackoffTests.test_model_and_effort_are_not_changed) ... ok
+test_no_header_uses_minute_then_exponential_backoff (test_runner.BackoffTests.test_no_header_uses_minute_then_exponential_backoff) ... ok
+test_non_xhigh_request_cannot_be_published (test_runner.BackoffTests.test_non_xhigh_request_cannot_be_published) ... ok
+test_retry_after_never_shortened (test_runner.BackoffTests.test_retry_after_never_shortened) ... ok
+test_without_backoff_original_tick_and_gates_are_called (test_runner.BackoffTests.test_without_backoff_original_tick_and_gates_are_called) ... ok
+test_backoff_status_without_document_timestamp (test_status.StatusTests.test_backoff_status_without_document_timestamp) ... ok
+test_historical_document_is_never_fresh_from_file_mtime (test_status.StatusTests.test_historical_document_is_never_fresh_from_file_mtime) ... ok
+test_attributed_prefix_is_part_of_exact_render_not_provider_message (test_trace.TraceTests.test_attributed_prefix_is_part_of_exact_render_not_provider_message) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.009s
+
+OK
+{"status": "EXACT_PARENT_ALREADY_ALIVE_NO_ACTION", "provider_calls": 0}

@@ -1,0 +1,88 @@
+{
+  "adapter": null,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "family": "simulated_tools",
+  "finished_unix": 1789461482.636449,
+  "max_new_tokens": 512,
+  "messages": [
+    {
+      "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Format a brief report on topic cedar446 limited to 17 entries.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+      "role": "user"
+    }
+  ],
+  "outcome": {
+    "category": "correct",
+    "completion": "complete",
+    "content_tokens": 43,
+    "generated_tokens": 44,
+    "machine": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "verified_anchor": true
+  },
+  "position": 62,
+  "response": {
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Format a brief report on topic cedar446 limited to 17 entries.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      }
+    ],
+    "prompt_tokens": 146,
+    "raw": "{\n  \"tool\": \"format_report\",\n  \"arguments\": {\n    \"limit\": 17,\n    \"style\": \"brief\",\n    \"topic\": \"cedar446\"\n  }\n}",
+    "terminal": true,
+    "token_ids": [
+      515,
+      220,
+      330,
+      14172,
+      788,
+      330,
+      2243,
+      14813,
+      756,
+      220,
+      330,
+      16370,
+      788,
+      341,
+      262,
+      330,
+      9506,
+      788,
+      220,
+      16,
+      22,
+      345,
+      262,
+      330,
+      3528,
+      788,
+      330,
+      6658,
+      756,
+      262,
+      330,
+      16411,
+      788,
+      330,
+      1998,
+      277,
+      19,
+      19,
+      21,
+      698,
+      220,
+      456,
+      92,
+      151645
+    ],
+    "truncated": false
+  },
+  "started_unix": 1789461481.7109048,
+  "status": "COMPLETE",
+  "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_15"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "node3-judgment-transport",
+  "enabled": true,
+  "kind": "parent",
+  "service_role": "CPU_TRANSPORT_CONTROLLER_NOT_MODEL_PARENT_OR_GPU_DISPATCHER",
+  "owner": "Epicurus / post_reboot_node3_parents_20260919",
+  "approval_scope": "Explicit user-directed bounded registration of the restored node3 SSH/authenticated-journal-proxy/SSH CPU transport; preserve exact owner identity, original deadline, native/scorer/Tool relay and original epochs. Non-material operational repair only.",
+  "local_daemon_only": true,
+  "child_native": false,
+  "restart_safe": true,
+  "self_enforces_lease": true,
+  "foreground": true,
+  "shutdown_leaves_child_natives_running": true,
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-u",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/restore_transport.py"
+  ],
+  "cwd": "/data/home/rohing/dream-state-orch",
+  "entrypoint": "research_loop/workers/post_reboot_node3_parents_20260919/restore_transport.py",
+  "entrypoint_sha256": "7f25682a2e71d89226e2d60f46edab8882fb83402853d28457fc980ba38a8f51",
+  "until_unix": 1790272760,
+  "lease_evidence": {
+    "path": "research_loop/workers/rohin233_ovx4_recovery_20260918/TRANSPORT_SOURCE_LEASE_CAPPED.json",
+    "sha256": "d5bbd76c2da4644098658fcbb77a8e87a3ed2d9cd87306ffc27ce3e3e77722b0",
+    "json_pointer": "/1/actual_deadline"
+  },
+  "singleton_lock": "research_loop/workers/post_reboot_node3_parents_20260919/locks/TRANSPORT.lock",
+  "singleton_inherited_by_cpu_children": true,
+  "current_process_identity": {
+    "pid": 425470,
+    "start_ticks": "939654",
+    "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e"
+  },
+  "host_preflight_receipt": "research_loop/workers/post_reboot_services_20260919/judgment_transport/HOST_PREFLIGHT_1789781339098820614.json",
+  "owner_handoff": "research_loop/workers/post_reboot_node3_parents_20260919/JUDGMENT_TRANSPORT_HANDOFF.md",
+  "readiness_is_not_judgment_success": true,
+  "historical_replay_allowed": false,
+  "synthetic_probe_allowed": false
+}

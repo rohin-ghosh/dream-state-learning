@@ -30,3 +30,43 @@ research_notes/analysis/**/CALL_*.json
 research_notes/analysis/**/CALLS_*.jsonl
 research_notes/analysis/**/raw/
 research_notes/analysis/**/publication_chunks_*/
+
+# Local credentials remain private, including copies in worker source trees.
+**/gpu/hosts.env
+.env
+.env.local
+.env.*.local
+
+# Keep worker source and receipts; retain heavy runtime artifacts on the nodes.
+research_loop/workers/**/*.tar
+research_loop/workers/**/*.tar.gz
+research_loop/workers/**/*.tgz
+research_loop/workers/**/*.zip
+research_loop/workers/**/*.safetensors
+research_loop/workers/**/*.pt
+research_loop/workers/**/*.pth
+research_loop/workers/**/*.bin
+research_loop/workers/**/*.sqlite
+research_loop/workers/**/*.sqlite3
+research_loop/workers/**/*.sqlite-wal
+research_loop/workers/**/*.sqlite-shm
+research_loop/workers/**/*.sqlite3-wal
+research_loop/workers/**/*.sqlite3-shm
+research_loop/workers/**/*.lock
+research_loop/workers/**/*.pid
+research_loop/workers/**/*.sock
+research_loop/workers/**/CPU_TMP/
+research_loop/workers/**/test_tmp/
+research_loop/workers/**/pytest-current/
+
+# Nested publication checkouts have their own Git histories, not submodules.
+research_loop/workers/**/.publication/
+research_loop/workers/**/commit-worktree/
+research_loop/workers/**/publish-worktree/
+research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r227_publish_checkout/
+research_loop/workers/rohin174_parenting_20260917/node5/R195_FLEET/MSG201/R227_PUBLICATION/
+research_loop/workers/rohin226_c0_checkpoint_reading_20260918/publication/
+research_loop/workers/rohin233_recovery_20260918/private/hourly_publication/
+research_loop/workers/rohin233_recovery_node4_20260918/private/publication/
+research_loop/workers/rohin233_focus_node4_20260918/private/publication/
+research_loop/workers/post_recovery_pair_evidence_20260918/private/publication/

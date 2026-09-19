@@ -1,0 +1,1643 @@
+[
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "dcfc8e0500074e1ee1faa6b70b6728d8a4b6c17eab9a6f922373149e6e72c208",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_00",
+    "oracle": {
+      "cases": [
+        {
+          "expected": -64,
+          "inputs": {
+            "number": -4
+          }
+        },
+        {
+          "expected": -1,
+          "inputs": {
+            "number": -1
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "number": 0
+          }
+        },
+        {
+          "expected": 125,
+          "inputs": {
+            "number": 5
+          }
+        }
+      ],
+      "reference_expression": "number * number * number"
+    },
+    "prompt": "Return the cube of number.\nArguments: number.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "781e496462d5cb7dd7605375f14bf1f5b2ecfa1752bf2a69aa9e52b25ee53293",
+    "question": "Return the cube of number.",
+    "question_sha256": "661430c31dd3f81faa5bf910c856d59b76422c3b99a0ff8dd54a9938ec7ca679",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "4bd7c94ffd037db6986eb36fbaa73cf91c165e030abcd9c60650b002d53b6c2f",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_00",
+    "oracle": {
+      "answer": "88"
+    },
+    "prompt": "A hall has 19 rows of 6 seats. Exactly 26 seats are reserved. How many seats remain unreserved?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "eb36fbcec6afa7d531d1e3bcf319850d1f7e2dc2a397e03fa23b58ab265191a2",
+    "question": "A hall has 19 rows of 6 seats. Exactly 26 seats are reserved. How many seats remain unreserved?",
+    "question_sha256": "d4b193b60025ea409f2556874858a34c08a53f0df2e7d4141b33dbbaa75de0a1",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "8e2e00e4dd226e458eb499b1858503186587c8b21ba66c0e8fa0829595b955b8",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_00",
+    "oracle": {
+      "arguments": {
+        "sku": "B431",
+        "warehouse": "west1"
+      },
+      "tool": "lookup_catalog"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Look up SKU B431 in warehouse west1.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "b1f35e0a39bf4a80d716bc22c4e9f91c1086bf786b0eafbdae2d2c567b57867c",
+    "question": "Look up SKU B431 in warehouse west1.",
+    "question_sha256": "1c5fef6ef951bab6fdc2e555e0ed09316020e39252c677941aa5bb5d16cc090e",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "2ad9fff51863d0dd861077c8c06f81aa30c4a0e7432cb0c948a86b3617dd3eb1",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_00",
+    "oracle": {
+      "answer": "HARBOR"
+    },
+    "prompt": "Convert harbor to uppercase.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "fd6be08f4a21bd8bb680d0ebf5cc143a536e69d4ea883d31d8f50616da015a39",
+    "question": "Convert harbor to uppercase.",
+    "question_sha256": "c578a0fe2dc0a78295629342f3de69e3ba74fa831a9b88d5c44bbe064ac4c9c9",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "baebd08331868280b745539174df63afdae93248335eb27fa655ed65a8019df9",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_01",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 6,
+          "inputs": {
+            "first": 2,
+            "second": 10
+          }
+        },
+        {
+          "expected": 10,
+          "inputs": {
+            "first": 7,
+            "second": 13
+          }
+        },
+        {
+          "expected": 1,
+          "inputs": {
+            "first": -4,
+            "second": 6
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "first": 0,
+            "second": 0
+          }
+        }
+      ],
+      "reference_expression": "(first + second) / 2"
+    },
+    "prompt": "Return the arithmetic mean of first and second.\nArguments: first, second.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "a036931db898d2c0b92a975f89d7ea24fd7e7994bb30cc6110f32337767f82ac",
+    "question": "Return the arithmetic mean of first and second.",
+    "question_sha256": "69bdd85044dc0507bec533d50e8a58fe3153c1ada0f7c20b0f3f07364c022910",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "1e89cfeeb6b68207f03d62ea55ec253215510442afe4d45fc0e131c1467888dc",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_01",
+    "oracle": {
+      "answer": "39"
+    },
+    "prompt": "A tank starts with 22 liters. It gains 7 liters per minute for 4 minutes and then loses 11 liters. How many liters remain?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "cca5e8a855ab4846ed43404a312a61c51826e84d1667cf01f44c2ddd584bf0f3",
+    "question": "A tank starts with 22 liters. It gains 7 liters per minute for 4 minutes and then loses 11 liters. How many liters remain?",
+    "question_sha256": "cdc279afbe1cea8f69a28c1f4dc97b3c163613512182eae6830f5615a9ea0bb0",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "ad085f301416ff3b04efb2cd392c83fd1553364f6027c4ba9e966d3b65d5721c",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_01",
+    "oracle": {
+      "arguments": {
+        "level": "urgent",
+        "ticket": "T432"
+      },
+      "tool": "mark_priority"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Mark ticket T432 as urgent.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "1a3ea001b54f7ed629dc4dc80cbaf44247551f3de66fbb8e07cf9969e2b849a7",
+    "question": "Mark ticket T432 as urgent.",
+    "question_sha256": "42e4859e03fe1d44eafc2bb1fe95a55f5917e1415c595f2acd580585e613d1da",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "fe593d19d3d97af8f5667bd9f143435cdb79bf3ce12a2da697a9f814e824a102",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_01",
+    "oracle": {
+      "answer": "violet"
+    },
+    "prompt": "Convert VIOLET to lowercase.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "165ad196d8aa22003a4408fd2ad06ef4521e833794ce713414f3c0046d2a2354",
+    "question": "Convert VIOLET to lowercase.",
+    "question_sha256": "1ee326c55ad4b468c853dd655f35bc5072f917dca5faea67b4b558e6ac07f6be",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "1c62b2e6a1fa8b0518639f7604b1ee1d22643ade22ae899cea1b868b1cc21c60",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_02",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 1,
+          "inputs": {
+            "divisor": 4,
+            "number": 9
+          }
+        },
+        {
+          "expected": 2,
+          "inputs": {
+            "divisor": 5,
+            "number": 17
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "divisor": 7,
+            "number": 0
+          }
+        },
+        {
+          "expected": 5,
+          "inputs": {
+            "divisor": 6,
+            "number": 23
+          }
+        }
+      ],
+      "reference_expression": "number % divisor"
+    },
+    "prompt": "Return the remainder when number is divided by positive divisor.\nArguments: number, divisor.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "e1415bd22e6c249b0e481622d2b5843b4af142a8ddd11260928512c061efe2d2",
+    "question": "Return the remainder when number is divided by positive divisor.",
+    "question_sha256": "be8f7b293898fc5e86efadc020f120d30486418a2d5f4c97b0979e064aa246de",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "28ed86ffbddc847f3f1ad4353702c9e25d793ee868c2e8d2007178272f2dd0af",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_02",
+    "oracle": {
+      "answer": "213"
+    },
+    "prompt": "A store packs 25 cartons with 8 clips each and adds 13 loose clips. How many clips are packed in total?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "85d7f6b19ec9a42951f235bc6978e8d9bee928a8dbd7c70048c8d2e91e7fd72b",
+    "question": "A store packs 25 cartons with 8 clips each and adds 13 loose clips. How many clips are packed in total?",
+    "question_sha256": "84bf004afaecf7d9272ee53125eb428e314d3e70249419f129489c369a6b3dde",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "d1b03f72b6045e168b75f57f1c5a206732289f42149fc995a7602cae41c8699b",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_02",
+    "oracle": {
+      "arguments": {
+        "day": "Tuesday",
+        "parcels": 5,
+        "zone": "north3"
+      },
+      "tool": "plan_pickup"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Plan pickup in zone north3 on Tuesday for 5 parcels.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "6b474b13472976b02f311da32e3e544c9b0db8d77f372b17f207afc757526ec2",
+    "question": "Plan pickup in zone north3 on Tuesday for 5 parcels.",
+    "question_sha256": "4391f33cb2582f6fb49163166edd9582838a60a5151659ca54604dc97cc182c7",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "77931fe17d464ee4c60ef80fab6a644a71d88d0264c12f079364b1d01ac82f0a",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_02",
+    "oracle": {
+      "answer": "noynac"
+    },
+    "prompt": "Reverse the letters of canyon.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "d5ca2835fe6600a89a81613c50af2cb2a8407a451ac1991147190852b8d80aec",
+    "question": "Reverse the letters of canyon.",
+    "question_sha256": "0fc1b6a35f10c4c625aaf6d6c62572f3b2e25b91d06f8b0450c66279cd3b87ae",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "d657e8c29abc235d4b9ec563e7e6bed092f52069ae95bc6db1db6c185c267721",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_03",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 5,
+          "inputs": {
+            "divisor": 5,
+            "number": 29
+          }
+        },
+        {
+          "expected": 2,
+          "inputs": {
+            "divisor": 3,
+            "number": 7
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "divisor": 2,
+            "number": 0
+          }
+        },
+        {
+          "expected": -3,
+          "inputs": {
+            "divisor": 4,
+            "number": -9
+          }
+        }
+      ],
+      "reference_expression": "number // divisor"
+    },
+    "prompt": "Return number divided by positive divisor, rounded down to an integer.\nArguments: number, divisor.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "7d751e511bdbbf0abc720c62d27f439fdc2f93a8448f851958de80d21162b497",
+    "question": "Return number divided by positive divisor, rounded down to an integer.",
+    "question_sha256": "aa635c329ff36ecb3134f312f402141ea827f03633138f28f5d39b598d526de8",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "8d36c486073c6b0935ea01afdb3b02a52962628ed46ecca2f323a557168642fe",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_03",
+    "oracle": {
+      "answer": "28"
+    },
+    "prompt": "A team has 164 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "6e868d866905ae4ad9cb5f09212bb9cda624eced867736550aba6a7428cd8569",
+    "question": "A team has 164 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?",
+    "question_sha256": "fb0c08d064a474f16e4c6c1ce508127f391ffccfd464c6870956260a075c471b",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "3502f86e37a5c07fbeb5c80b7378a6e1385fd94a0e31205e126f9598867dafb8",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_03",
+    "oracle": {
+      "arguments": {
+        "limit": 5,
+        "style": "brief",
+        "topic": "cedar434"
+      },
+      "tool": "format_report"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Format a brief report on topic cedar434 limited to 5 entries.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "0aaff13b44a48f2ed7c1f0f13d582d68ee900e3126b6f1237a1d58bc610da888",
+    "question": "Format a brief report on topic cedar434 limited to 5 entries.",
+    "question_sha256": "a87eed7e60d317d7a7057d8137ac821a910dc5e0d07309e549b1e7d2495f0eda",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "190a357aa9642c0b5d4627283006c36d77fa14047dee846a6e7b5e62be210c56",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_03",
+    "oracle": {
+      "answer": "mea"
+    },
+    "prompt": "Write the first three letters of meadow.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "5c02a761bb2f78f4ee00889d5b1872d832d4ec53771fd17a697993032b213e17",
+    "question": "Write the first three letters of meadow.",
+    "question_sha256": "0407194ece2f199159b8a8ba98026cedbff7752672fc49b2de4c5cb2f51b83f3",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "5eda5511c4ec3983e73c6cf864de0727be94f711150cfe51b6f8971763998752",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_04",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 20,
+          "inputs": {
+            "height": 7,
+            "width": 3
+          }
+        },
+        {
+          "expected": 22,
+          "inputs": {
+            "height": 9,
+            "width": 2
+          }
+        },
+        {
+          "expected": 8,
+          "inputs": {
+            "height": 4,
+            "width": 0
+          }
+        },
+        {
+          "expected": 4,
+          "inputs": {
+            "height": 1,
+            "width": 1
+          }
+        }
+      ],
+      "reference_expression": "2 * (width + height)"
+    },
+    "prompt": "Return the perimeter of a rectangle with sides width and height.\nArguments: width, height.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "64c9ddbba57b05dab09bcba7fb5c66781e96bfca342ced211aba2e686fb3949e",
+    "question": "Return the perimeter of a rectangle with sides width and height.",
+    "question_sha256": "48bcbaf1842c560f854c75f92d97d30b55e2ff56988563d27e811acb574a46f6",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "94088921e8b6a005e1793fbe6eef5e176a34634382e3b4d3a670cde1eaa58284",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_04",
+    "oracle": {
+      "answer": "148"
+    },
+    "prompt": "A hall has 31 rows of 6 seats. Exactly 38 seats are reserved. How many seats remain unreserved?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "d8d8aa1e16dbf5ccfeb32bcdc36a85046471fa2132048589caf41fed4e92efd5",
+    "question": "A hall has 31 rows of 6 seats. Exactly 38 seats are reserved. How many seats remain unreserved?",
+    "question_sha256": "8e18e57a014f76688a98a713aea77565b121eb5e164fb95cf86796fcde78a00c",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "bd119817e61a6052f1f6d2c4d0d843358ffdaefa267b5078efc84c24b1789a84",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_04",
+    "oracle": {
+      "arguments": {
+        "sku": "B435",
+        "warehouse": "west5"
+      },
+      "tool": "lookup_catalog"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Look up SKU B435 in warehouse west5.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "1851fc08b7799b2819427ce40c0452f68d3b5023142c618d04d6176f1a298712",
+    "question": "Look up SKU B435 in warehouse west5.",
+    "question_sha256": "284610f1db8519bb043fbf9b2f7c746e7eba4c1e2afb24042925e024a7482a91",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "63483ad98778f9c6f17779201c925fbf5deb27f9e107e3acd175453f5e62a107",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_04",
+    "oracle": {
+      "answer": "LANTERN"
+    },
+    "prompt": "Convert lantern to uppercase.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "945fe6d72bc6c37ee97ba9e7faff49b73a9f1a605f2abbe589add75c1ee7bddb",
+    "question": "Convert lantern to uppercase.",
+    "question_sha256": "ea0a7f4a2b4ffc4ccc85528affa208ae8990140329d375383f8fdda4e4e69cf0",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "fdac22f28b32cdd11742e24e55429d7c3f876c3821238a43c7d6236a6ddd0c11",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_05",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 24,
+          "inputs": {
+            "depth": 4,
+            "height": 3,
+            "width": 2
+          }
+        },
+        {
+          "expected": 35,
+          "inputs": {
+            "depth": 7,
+            "height": 5,
+            "width": 1
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "depth": 3,
+            "height": 8,
+            "width": 0
+          }
+        },
+        {
+          "expected": 27,
+          "inputs": {
+            "depth": 3,
+            "height": 3,
+            "width": 3
+          }
+        }
+      ],
+      "reference_expression": "width * height * depth"
+    },
+    "prompt": "Return the volume of a box with sides width, height and depth.\nArguments: width, height, depth.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "df338a8b568e1479c84115796bee2b9305d12228863444446a54ee22127e0a17",
+    "question": "Return the volume of a box with sides width, height and depth.",
+    "question_sha256": "da501ebd955dd736b332c80754a4b78fd6ab84f699164547da042229fa76ba57",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "e369ee5b13159b7d8b089d905cb8709685d488b97068e216b6e1b99b89f255f9",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_05",
+    "oracle": {
+      "answer": "51"
+    },
+    "prompt": "A tank starts with 34 liters. It gains 7 liters per minute for 4 minutes and then loses 11 liters. How many liters remain?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "1eb21cbcf9f013b54ababaa0ba7402cbf2c3c19b30aed7e1b7da966c8c01a9c0",
+    "question": "A tank starts with 34 liters. It gains 7 liters per minute for 4 minutes and then loses 11 liters. How many liters remain?",
+    "question_sha256": "67d5f46dd4274db07e73b036128add85dee66887f12f8bc742a3bd9dcaed8390",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "d29b735be0d879ad7043eaa14da3729c2e22806e3a22e178681eba00d4809ecf",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_05",
+    "oracle": {
+      "arguments": {
+        "level": "urgent",
+        "ticket": "T436"
+      },
+      "tool": "mark_priority"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Mark ticket T436 as urgent.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "9e57d1855a06c9f0f19f89edef86f353d5e2a11cfd3a147637735ec76d66487b",
+    "question": "Mark ticket T436 as urgent.",
+    "question_sha256": "7e729b95faff729640f3c1f875f7d15f4fe57eb82420b0a55f5d46da42b11cd9",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "686799f7a9d85fd249e134c2e9b9156d0139afa96d4dcab713f32b927b5eb7a7",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_05",
+    "oracle": {
+      "answer": "planet"
+    },
+    "prompt": "Convert PLANET to lowercase.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "0374e530c1110f698bf64b533c5c48f3698867940b1188676baee14efbf9bb8b",
+    "question": "Convert PLANET to lowercase.",
+    "question_sha256": "aca707677962decae0ae5d0d647dec298e3856e4a7ce23f2c48f15b093c6d750",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "f464852c20b207c1c63d223da67a7b38962edc4a05bea19a21d61ee74da84131",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_06",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 0,
+          "inputs": {
+            "number": 0
+          }
+        },
+        {
+          "expected": 1,
+          "inputs": {
+            "number": 1
+          }
+        },
+        {
+          "expected": 10,
+          "inputs": {
+            "number": 4
+          }
+        },
+        {
+          "expected": 28,
+          "inputs": {
+            "number": 7
+          }
+        }
+      ],
+      "reference_expression": "number * (number + 1) // 2"
+    },
+    "prompt": "For nonnegative number, return the sum of integers from zero through number.\nArguments: number.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "9bb3dbf83ce7707a9de691d75c53ae52a108865da3b7d2f7c1d15f60d9a42f5f",
+    "question": "For nonnegative number, return the sum of integers from zero through number.",
+    "question_sha256": "1bbe6ccdd14907b911f95d131480d7df7f4fa5ad4a7cb2c8d7b858ff438a9563",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "4e4e542ca4096c776b96273371cc108738d29772b8f2fb3d85b051566f6e57b2",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_06",
+    "oracle": {
+      "answer": "309"
+    },
+    "prompt": "A store packs 37 cartons with 8 clips each and adds 13 loose clips. How many clips are packed in total?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "c3f1eb2c016a5031aa7a70e039575b697d0dce7274b9815978527acfbe88bdd2",
+    "question": "A store packs 37 cartons with 8 clips each and adds 13 loose clips. How many clips are packed in total?",
+    "question_sha256": "2ad6bebd46ed97f5f3aa1c75611cfafd10b207e4e3ecf43f0dd3b479c6fc03eb",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "26a7ed10e8832c21c06af21d1906f0445432577ad81fe01d65437a8acdd635d2",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_06",
+    "oracle": {
+      "arguments": {
+        "day": "Tuesday",
+        "parcels": 9,
+        "zone": "north7"
+      },
+      "tool": "plan_pickup"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Plan pickup in zone north7 on Tuesday for 9 parcels.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "322931e1e0ddc0b1ee4056b9ade7902b52fe6250c26137895213a9e30851d6dd",
+    "question": "Plan pickup in zone north7 on Tuesday for 9 parcels.",
+    "question_sha256": "b29e9b127168fc6ad60e2ebe9a034221782121e4992735ad32fa376a5b2147c6",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "681dda970eff65d0f6a1fe54a4e80caa68d49f8c4ee3e3ad58cfed318ba20e39",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_06",
+    "oracle": {
+      "answer": "nobbir"
+    },
+    "prompt": "Reverse the letters of ribbon.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "a22237590f853239093b4eba463527bc4405875b2740853289c83b8a83699ae7",
+    "question": "Reverse the letters of ribbon.",
+    "question_sha256": "2104373d92c92d6faa002b8e841eb80e1d4fb49d14b55438d7e450ef52e8cea6",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "2b043f865dec22fd123bf68f5b7f99d52451c7b96e7bcfb207cb9f0f8724fe78",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_07",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 137,
+          "inputs": {
+            "hours": 2,
+            "minutes": 17
+          }
+        },
+        {
+          "expected": 8,
+          "inputs": {
+            "hours": 0,
+            "minutes": 8
+          }
+        },
+        {
+          "expected": 180,
+          "inputs": {
+            "hours": 3,
+            "minutes": 0
+          }
+        },
+        {
+          "expected": 102,
+          "inputs": {
+            "hours": 1,
+            "minutes": 42
+          }
+        }
+      ],
+      "reference_expression": "hours * 60 + minutes"
+    },
+    "prompt": "Convert hours and additional minutes to a total number of minutes.\nArguments: hours, minutes.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "7424b844f983f3a616d9b403776765214eca6cc3c97c9f1f09c90bd44a019057",
+    "question": "Convert hours and additional minutes to a total number of minutes.",
+    "question_sha256": "58f7415bd6433ced62f12727a665b6bad4ee138dc417e43bba39b9978053cbe0",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "d25b128b38d69c98b039978fc88f9a8cc022e1d71af9b33acfbc4d0c6f01a5a1",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_07",
+    "oracle": {
+      "answer": "40"
+    },
+    "prompt": "A team has 224 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "9cac455ad01e42bdaff7663d87ff6a710d493e93c97504b84d8239c2935d6d41",
+    "question": "A team has 224 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?",
+    "question_sha256": "afa4ecdbea2299c3a89f60d9c59f39b159fcbc521b7144d5a34b6f09cc6913f3",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "b39f783bb5d7b76702687c7c7530b34fc16c0e7f9f2fd0df55c125a38bc06b5e",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_07",
+    "oracle": {
+      "arguments": {
+        "limit": 9,
+        "style": "brief",
+        "topic": "cedar438"
+      },
+      "tool": "format_report"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Format a brief report on topic cedar438 limited to 9 entries.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "6aa703dfcda8876333eeade2c876123c6058bf4b386a824e88a230910c0695b0",
+    "question": "Format a brief report on topic cedar438 limited to 9 entries.",
+    "question_sha256": "4917c8285d74309e99ce8eac843811840d1b4c1fb2bfaf090e7bfa7ae669811b",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "a250ee6ec92979d03ae2a7deccb1da6e37d2832175b399bd449457608cb27b4c",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_07",
+    "oracle": {
+      "answer": "cop"
+    },
+    "prompt": "Write the first three letters of copper.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "00ebdae1db0f9b7a6a6128f316b207a89af26feacec3563f90aba46719d769f8",
+    "question": "Write the first three letters of copper.",
+    "question_sha256": "fb351ca409a6f94341d3c9dd2264fc87370c2977998babbb832e99f75b04bbf1",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "fdde969159d020b8afd3dc8ba7369321bea10565bbe9e7c60f90e6bf1a23bad8",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_08",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 2,
+          "inputs": {
+            "numbers": [
+              -2,
+              0,
+              -5,
+              7
+            ]
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "numbers": []
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "numbers": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "expected": 3,
+          "inputs": {
+            "numbers": [
+              -1,
+              -1,
+              -1
+            ]
+          }
+        }
+      ],
+      "reference_expression": "len([item for item in numbers if item < 0])"
+    },
+    "prompt": "Count strictly negative entries in numbers.\nArguments: numbers.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "fa800ebda9d89d9f5fa69dec8c16dae9d93abddd533f3246715c3662b4ec192c",
+    "question": "Count strictly negative entries in numbers.",
+    "question_sha256": "345e42a36fc87b68f9e647e7ba167dbdf174dff96f0f4a45b46ab2e5a7358204",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "6e5dae0494d275974b871cde0f783a73d9949ebf3382798b2e15b267f997106e",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_08",
+    "oracle": {
+      "answer": "208"
+    },
+    "prompt": "A hall has 43 rows of 6 seats. Exactly 50 seats are reserved. How many seats remain unreserved?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "a9028a7b344fd2aa53eb15442bf33ef94c2f9fc8c431aa381fe6cc7f47600b1e",
+    "question": "A hall has 43 rows of 6 seats. Exactly 50 seats are reserved. How many seats remain unreserved?",
+    "question_sha256": "df3c9ea91279bffc3fedc0aac52923c6fa5d30d226fd31161b16cfa3e5855f3a",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "caf7b1ddc2d569c59597bba0e86fa8f290455206b2b45e075539f4181081e6c3",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_08",
+    "oracle": {
+      "arguments": {
+        "sku": "B439",
+        "warehouse": "west9"
+      },
+      "tool": "lookup_catalog"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Look up SKU B439 in warehouse west9.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "714105f52153d68e9728e27f6d8ceb9aa108c2700cb10deb4f6cd4241c3f9a8c",
+    "question": "Look up SKU B439 in warehouse west9.",
+    "question_sha256": "e482666f7274e132c187950b723718a3abd0c7290c4f2989d5a44d859faa220b",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "4e93905d02992d7cb2aea4f85564915cf20018c70b086a1265373e06e3a9ca0e",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_08",
+    "oracle": {
+      "answer": "FALCON"
+    },
+    "prompt": "Convert falcon to uppercase.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "805397c187690c093e24c2ce43d386f3090f224c80af0e6ebb89ce0a428dd134",
+    "question": "Convert falcon to uppercase.",
+    "question_sha256": "ba84bfdb04c65b3804436c0f12655b5614f460d959652b68e87599402162455e",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "f7b3021bcd9833a36a5419d57837ab47f7a9968f729313066356ac575c725e07",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_09",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 8,
+          "inputs": {
+            "numbers": [
+              -8,
+              3
+            ]
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "numbers": []
+          }
+        },
+        {
+          "expected": 9,
+          "inputs": {
+            "numbers": [
+              2,
+              -1,
+              9
+            ]
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "numbers": [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "reference_expression": "max([abs(item) for item in numbers]) if numbers else 0"
+    },
+    "prompt": "Return the largest absolute value in numbers, or zero for an empty list.\nArguments: numbers.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "ae77500c3115fa20743834f81b92f4a42b3ae62e2e1df8daf2fc2db230bb73a9",
+    "question": "Return the largest absolute value in numbers, or zero for an empty list.",
+    "question_sha256": "37b92343e925b588bcc1f2e94e2f5d28b20cc42b649c92fc3b10897c9cbcc8da",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "ef28d07af102d094c998c3841f97340293cd94911f37a18419b6f07010318751",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_09",
+    "oracle": {
+      "answer": "63"
+    },
+    "prompt": "A tank starts with 46 liters. It gains 7 liters per minute for 4 minutes and then loses 11 liters. How many liters remain?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "6baf8464c3dc67b9f309c1d21dce123e57501fdb45cfa59271c4ae068358da32",
+    "question": "A tank starts with 46 liters. It gains 7 liters per minute for 4 minutes and then loses 11 liters. How many liters remain?",
+    "question_sha256": "beeb8bd2a92d350ce8041f36bcdde6473fb0ce3f5d293016332536bb46c74b3e",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "769a5e29cab3b769e8e09f46e9899164601acef3e634a58b88d018d10dac5d29",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_09",
+    "oracle": {
+      "arguments": {
+        "level": "urgent",
+        "ticket": "T440"
+      },
+      "tool": "mark_priority"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Mark ticket T440 as urgent.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "470efc158ce5cedfd8663a29520013961398f34bb8a678099d48c751ec103906",
+    "question": "Mark ticket T440 as urgent.",
+    "question_sha256": "341535b769c0c59c1f4ab2901f7a88a7248000d8d1d671d81383ae6e31386c93",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "aa79f6c4aab48f9e3b306195f7b8e73c3eb93052e9cc3cb3f27acb107e696a87",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_09",
+    "oracle": {
+      "answer": "timber"
+    },
+    "prompt": "Convert TIMBER to lowercase.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "544f93d7769b9b6657636106526eda493a66745e8e78564c91b12d9ef5ee6684",
+    "question": "Convert TIMBER to lowercase.",
+    "question_sha256": "93e02ab6addaa1ce44129c15b83fc8db8bb85a9ed7ae243438302b138995329a",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "54b079b99cf42a9c372d70c0a75e6d41b02d6c064aec234c7f2af44cd24f805c",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_10",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 5,
+          "inputs": {
+            "numbers": [
+              -3,
+              -2,
+              1,
+              4,
+              7
+            ]
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "numbers": []
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "numbers": [
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "expected": 11,
+          "inputs": {
+            "numbers": [
+              3,
+              3,
+              5
+            ]
+          }
+        }
+      ],
+      "reference_expression": "sum([item for item in numbers if item % 2 != 0])"
+    },
+    "prompt": "Return the sum of odd integers in numbers.\nArguments: numbers.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "7e3227a98193b20387b8271e4fcb343a4461dd02f196b7c30418f1fe25498b38",
+    "question": "Return the sum of odd integers in numbers.",
+    "question_sha256": "2a2b662c3323498d4ccc7c6185c2053ddadb00355479a9f96cf25cb888e68664",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "8e1f076d7e73dcfaece2ed09f53ef1a6443b8fbd25c470feea4403772267d768",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_10",
+    "oracle": {
+      "answer": "405"
+    },
+    "prompt": "A store packs 49 cartons with 8 clips each and adds 13 loose clips. How many clips are packed in total?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "0f3f0cf8325f4a9b80dfef672189025ba225c07540a1e5a0ce575acb0f931d3d",
+    "question": "A store packs 49 cartons with 8 clips each and adds 13 loose clips. How many clips are packed in total?",
+    "question_sha256": "5efc3f9ac78bc2c855e266e2e818dbcc67aa3bdf3de05855d0e9eba8a4c87887",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "16ee386cdda4419ca2a1300c05f6788181c0c6a0bc99e0988b5a085897b0e6b7",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_10",
+    "oracle": {
+      "arguments": {
+        "day": "Tuesday",
+        "parcels": 13,
+        "zone": "north11"
+      },
+      "tool": "plan_pickup"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Plan pickup in zone north11 on Tuesday for 13 parcels.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "77ef12d2bc63e4138742933b8834e2f9039e1cf4d671417e250418d336b58d03",
+    "question": "Plan pickup in zone north11 on Tuesday for 13 parcels.",
+    "question_sha256": "e1fb33332cfbef14d3abdd3d24dfc7c651dff49616e32a5fc7645e5ac9f7030a",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "ed4b4470d866b3e299bfb7999807c51e2e22a7f2ab2b4d99378fcf1bce46df16",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_10",
+    "oracle": {
+      "answer": "ezeerb"
+    },
+    "prompt": "Reverse the letters of breeze.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "c07169ee49eeda5615bbd954ae5e0767d04d43587ca93c77ad5589e7d6e5eaf7",
+    "question": "Reverse the letters of breeze.",
+    "question_sha256": "515142c86cc4ec8fb0e667644da06493a889f9f36b331fcd8b89d81b79972cb6",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "b4baef73b0bb034d92670c8839997464b3bcdd9828e32e5dfdf18bac5b0c005f",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_11",
+    "oracle": {
+      "cases": [
+        {
+          "expected": [
+            -1,
+            1,
+            5
+          ],
+          "inputs": {
+            "numbers": [
+              -2,
+              0,
+              4
+            ]
+          }
+        },
+        {
+          "expected": [],
+          "inputs": {
+            "numbers": []
+          }
+        },
+        {
+          "expected": [
+            10
+          ],
+          "inputs": {
+            "numbers": [
+              9
+            ]
+          }
+        },
+        {
+          "expected": [
+            2,
+            2
+          ],
+          "inputs": {
+            "numbers": [
+              1,
+              1
+            ]
+          }
+        }
+      ],
+      "reference_expression": "[item + 1 for item in numbers]"
+    },
+    "prompt": "Return a new list adding one to every entry in numbers.\nArguments: numbers.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "98e4ee896dd979b4991261c7650f97999e0609f04b354a527f3e8402681ee093",
+    "question": "Return a new list adding one to every entry in numbers.",
+    "question_sha256": "ee60380603a36f82a36020e6ccc0894296aa6c23f78cca614e37f5c3470a250c",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "13ec96d2998ffc4ba72b6a697f59ad02fc4db9199d467a3ee97168381db4ce09",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_11",
+    "oracle": {
+      "answer": "52"
+    },
+    "prompt": "A team has 284 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "3a41e2327c3c3012cfc936832b9f218eafef2324c068f10d3dd7a0e4805e3849",
+    "question": "A team has 284 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?",
+    "question_sha256": "63981d98cad97231bc239b40d6679764d08f153d4efa934e0c0cee2a6d3b70af",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "c7bd3ada26a0d3027947d5e21de2dcf2f11a7f80793303ae83571c24c5c99ddf",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_11",
+    "oracle": {
+      "arguments": {
+        "limit": 13,
+        "style": "brief",
+        "topic": "cedar442"
+      },
+      "tool": "format_report"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Format a brief report on topic cedar442 limited to 13 entries.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "0c9105bda80167468ae80c105143a06df69938a035814b2eea374e0d0148e9e5",
+    "question": "Format a brief report on topic cedar442 limited to 13 entries.",
+    "question_sha256": "639e3f4bc1f9e0c463f1d8e62d3ce2d0491b894ce37e81afce3e5d638b70a77d",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "c8b1c79145a95a45cc434728ad44b5826465784ceeeaf0983d43888a2ed87107",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_11",
+    "oracle": {
+      "answer": "vel"
+    },
+    "prompt": "Write the first three letters of velvet.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "3ad3e9ae22c6fa781b90e17b75ed283f8e9f5fb43a14a4fd1a435472e81250c8",
+    "question": "Write the first three letters of velvet.",
+    "question_sha256": "41efafa89b30a58ce8fb4b75c0fccb8041755a6b5c934a5339622394019f7665",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "ba24f12029b2aab9f9d0343b45b2baafba9e4fd8ad6ceae31dc96f5a12cc80e2",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_12",
+    "oracle": {
+      "cases": [
+        {
+          "expected": [
+            4,
+            1,
+            2
+          ],
+          "inputs": {
+            "numbers": [
+              4,
+              7,
+              1,
+              9,
+              2
+            ]
+          }
+        },
+        {
+          "expected": [],
+          "inputs": {
+            "numbers": []
+          }
+        },
+        {
+          "expected": [
+            8
+          ],
+          "inputs": {
+            "numbers": [
+              8
+            ]
+          }
+        },
+        {
+          "expected": [
+            3
+          ],
+          "inputs": {
+            "numbers": [
+              3,
+              6
+            ]
+          }
+        }
+      ],
+      "reference_expression": "numbers[::2]"
+    },
+    "prompt": "Return entries at indices zero, two, four and so on from numbers.\nArguments: numbers.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "19aad47f37410246530747c32a4a91cc915dc6fd7a138d1682b76c504cd4ac52",
+    "question": "Return entries at indices zero, two, four and so on from numbers.",
+    "question_sha256": "1c4bdad987a57e19d32cab529b65dc345b1e019098f7e2a55c5f6ed9b84994ab",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "54365a383ae9fe5ae19fe6cf611fc7fc17d36f98d7b8724cd771c0739d9819c2",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_12",
+    "oracle": {
+      "answer": "268"
+    },
+    "prompt": "A hall has 55 rows of 6 seats. Exactly 62 seats are reserved. How many seats remain unreserved?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "7a53ee989d4a55d929f371571bb6e350daf0bc23cae6de5a4d6ba7fe279074a7",
+    "question": "A hall has 55 rows of 6 seats. Exactly 62 seats are reserved. How many seats remain unreserved?",
+    "question_sha256": "1b71a788ec6e0be68e649f081722a19287c45c5527940b682b8e5a54f5c66966",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "f3f6ff762db8b3caa3b5f3bc0b4cd138d871330b0d258643724ce281581e4773",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_12",
+    "oracle": {
+      "arguments": {
+        "sku": "B443",
+        "warehouse": "west13"
+      },
+      "tool": "lookup_catalog"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Look up SKU B443 in warehouse west13.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "fc2641e796ffdc704d66b5f4cab21c77b745558601017a337030b55bb788a269",
+    "question": "Look up SKU B443 in warehouse west13.",
+    "question_sha256": "dd53b00251f154155eef5bd1459c21069e2149982560c0e3dc40bb83ac4384a5",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "f016cba98d1680120eab777c16c86df9ab2637e372d72039aabeb9565086f452",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_12",
+    "oracle": {
+      "answer": "PUZZLE"
+    },
+    "prompt": "Convert puzzle to uppercase.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "727c842533d8b0b3ea9c00d59cd07c43f15aa0d7c4ecf0b448922d2d21d6f473",
+    "question": "Convert puzzle to uppercase.",
+    "question_sha256": "623e6ea2a14847def52128f449e50c4bf8ff206b1ff8263b9f8fdfa6e2e037aa",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "943ef8b6cdcb60adf80e336c0d2de926642c00d46db835da1a7b0989bfd6d1ac",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_13",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 18,
+          "inputs": {
+            "end": 6,
+            "start": 3
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "end": 2,
+            "start": -2
+          }
+        },
+        {
+          "expected": 4,
+          "inputs": {
+            "end": 4,
+            "start": 4
+          }
+        },
+        {
+          "expected": 6,
+          "inputs": {
+            "end": 3,
+            "start": 0
+          }
+        }
+      ],
+      "reference_expression": "sum(range(start, end + 1))"
+    },
+    "prompt": "Return the sum of integers from start through end, inclusive; start is at most end.\nArguments: start, end.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "fc0840a1b6fad42e1b18154178e75f6827ffb2c766fa6cf62ff8ed155e382194",
+    "question": "Return the sum of integers from start through end, inclusive; start is at most end.",
+    "question_sha256": "cfd1bbb6cdf52c015525ec88b38a372013b4d7db981025c9617436dc5e914987",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "2180a17a60d9d618e374cd623555564ab753b2462fc92a61ad47d6281e9e4f3c",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_13",
+    "oracle": {
+      "answer": "75"
+    },
+    "prompt": "A tank starts with 58 liters. It gains 7 liters per minute for 4 minutes and then loses 11 liters. How many liters remain?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "9e3afc2dfe448fb70b14b86b1d4a4594e86ed541848eb00cdf49128567d7490a",
+    "question": "A tank starts with 58 liters. It gains 7 liters per minute for 4 minutes and then loses 11 liters. How many liters remain?",
+    "question_sha256": "119d435ff31cbde0a7c802b624669690d2ddaf808a7ce0b8ab3b4eb2238ff8d3",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "fd19a8097e964d5404b88a96b77357a3752b2cec6e7baa34c249e5907c18be4d",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_13",
+    "oracle": {
+      "arguments": {
+        "level": "urgent",
+        "ticket": "T444"
+      },
+      "tool": "mark_priority"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Mark ticket T444 as urgent.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "a4f40f3b08eedea35d1ff10bb88b670120bd6a3271987b5b56226bb1769476df",
+    "question": "Mark ticket T444 as urgent.",
+    "question_sha256": "8aa04871496956516ce35795255d333adf74c4cbd6bda4aa4d338856369ddc7f",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "efe76d54959df50daef390dfbc3312f9d54569d57c16d29f4caeceadc9ea2ab0",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_13",
+    "oracle": {
+      "answer": "garden"
+    },
+    "prompt": "Convert GARDEN to lowercase.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "5c30393c3d32484eeac1dc9a49ca7b65ae2a20e5f6c7290149ab32951f795d92",
+    "question": "Convert GARDEN to lowercase.",
+    "question_sha256": "64e34eed43b7a9144d0c4f31a75c995d093c4406da537b99f18dec79e41004b1",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "b2558e4dbcf2a93cad70b46ded665bddf01494fd31947d5915e4c62e704751dd",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_14",
+    "oracle": {
+      "cases": [
+        {
+          "expected": [
+            0,
+            0,
+            5
+          ],
+          "inputs": {
+            "numbers": [
+              -3,
+              0,
+              5
+            ]
+          }
+        },
+        {
+          "expected": [],
+          "inputs": {
+            "numbers": []
+          }
+        },
+        {
+          "expected": [
+            0,
+            0
+          ],
+          "inputs": {
+            "numbers": [
+              -2,
+              -1
+            ]
+          }
+        },
+        {
+          "expected": [
+            7,
+            8
+          ],
+          "inputs": {
+            "numbers": [
+              7,
+              8
+            ]
+          }
+        }
+      ],
+      "reference_expression": "[max(0, item) for item in numbers]"
+    },
+    "prompt": "Return a new list replacing each negative entry in numbers with zero.\nArguments: numbers.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "f70d42ce3f52e4c7f8341a30edc40e166856429015486f84a35bb28eddd8bcd6",
+    "question": "Return a new list replacing each negative entry in numbers with zero.",
+    "question_sha256": "15dc8e4377b7b3bc61924b785020c2b72a7b9c33f6896940d09adb2e97e28d9f",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "4fd9fa467ebc647351f591fcd1794f4e2cce7c0932dee125beeb8762567b941b",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_14",
+    "oracle": {
+      "answer": "501"
+    },
+    "prompt": "A store packs 61 cartons with 8 clips each and adds 13 loose clips. How many clips are packed in total?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "2a8b40e2b6e4b9cc9652ac99e47c1bf4a3695d12ff803efc0441a249067d8681",
+    "question": "A store packs 61 cartons with 8 clips each and adds 13 loose clips. How many clips are packed in total?",
+    "question_sha256": "151f9fc24a5670782277112465d44800a6874c0f6d176f733cdc80b8acd79bd5",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "364a556632d26d028a64acb40d57009c122cd5fd2a28cb851a9f9f4b8dc5c37f",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_14",
+    "oracle": {
+      "arguments": {
+        "day": "Tuesday",
+        "parcels": 17,
+        "zone": "north15"
+      },
+      "tool": "plan_pickup"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Plan pickup in zone north15 on Tuesday for 17 parcels.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "084451d3e1043565a46b83d795bde6c7e4b39c243495e3195b99633ed06f7f24",
+    "question": "Plan pickup in zone north15 on Tuesday for 17 parcels.",
+    "question_sha256": "fca8122dadfcd3aaacebaaa3f7eddb8019e3f5f785893c011a4ee3c4b326446d",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "f03bf875abbbaff3e8874ef52926be2ce339792dd5053c61cc23c9abc0d903bf",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_14",
+    "oracle": {
+      "answer": "elbram"
+    },
+    "prompt": "Reverse the letters of marble.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "63b416f869ec7cc3128c56edbbe4290c1cb56108b40d4c93787718f34557084e",
+    "question": "Reverse the letters of marble.",
+    "question_sha256": "71eb15af932c1789a525a33f059a4a1311593e2572dd46e25246d2d05078af65",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "07f11a81c51458033c7ce3a03ff97d39015f8a5fc8eccc41154a58b116929edb",
+    "family": "code",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_15",
+    "oracle": {
+      "cases": [
+        {
+          "expected": 7,
+          "inputs": {
+            "horizontal": -4,
+            "vertical": 3
+          }
+        },
+        {
+          "expected": 0,
+          "inputs": {
+            "horizontal": 0,
+            "vertical": 0
+          }
+        },
+        {
+          "expected": 10,
+          "inputs": {
+            "horizontal": 2,
+            "vertical": -8
+          }
+        },
+        {
+          "expected": 6,
+          "inputs": {
+            "horizontal": -1,
+            "vertical": -5
+          }
+        }
+      ],
+      "reference_expression": "abs(horizontal) + abs(vertical)"
+    },
+    "prompt": "Return Manhattan distance from the origin using horizontal and vertical coordinates.\nArguments: horizontal, vertical.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+    "prompt_sha256": "b785fb0f12ada66ef3a2b2194e724a6ea8a1abfe5d1e221dfc7754ae4979db1b",
+    "question": "Return Manhattan distance from the origin using horizontal and vertical coordinates.",
+    "question_sha256": "5df855a9e972616291af5e9beeb3579b25b523ba8afd994d23e2ab1d57edffa9",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "a8eaedf26edf1a70a3921e961bc6c4e8b0519d64bdf707f99b1b27e65b41f0ed",
+    "family": "math",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_15",
+    "oracle": {
+      "answer": "64"
+    },
+    "prompt": "A team has 344 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?\nReturn only the numeric answer, without units or explanation.",
+    "prompt_sha256": "8659a8d4ec6117ab658c61db15b718f3e8ca5cab87e45e2d150d7ce004e23b21",
+    "question": "A team has 344 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?",
+    "question_sha256": "ca4fe18c5a1f6a89b4b20ea3634c0b2b098aa61c35e59ab81ae00a818a825cba",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "ebab436320c35c0a7ba1b88d96e41c2f8e495acb3462ca364ca2d7e8e33e155c",
+    "family": "simulated_tools",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_15",
+    "oracle": {
+      "arguments": {
+        "limit": 17,
+        "style": "brief",
+        "topic": "cedar446"
+      },
+      "tool": "format_report"
+    },
+    "prompt": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Format a brief report on topic cedar446 limited to 17 entries.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+    "prompt_sha256": "2c70208ff9a02b360721d2f3cb939bbd508c10aa64c880b7bf58a9c0cb607ca7",
+    "question": "Format a brief report on topic cedar446 limited to 17 entries.",
+    "question_sha256": "d24b88f1e1a936b09af1ad4e076b442c3e19875f4176bb38bbdc7a1b3a280c19",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  },
+  {
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "content_sha256": "bb40ec57f9d1304eca85ae7b58e83953188402503c9f625640c453186f14c41b",
+    "family": "concise_answer",
+    "id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_15",
+    "oracle": {
+      "answer": "win"
+    },
+    "prompt": "Write the first three letters of winter.\nOutput only the result, with no whitespace or punctuation.",
+    "prompt_sha256": "9dfde817888a98429d8e13308825f2ed1f42ec9087d36f5b70bc5710d2bf7816",
+    "question": "Write the first three letters of winter.",
+    "question_sha256": "c8c28ec5027c9c4d2d2836daa8e3f56b97ca4141e25b1d4ec9e6f507b80d9149",
+    "source": "PREDETERMINED_ORDINARY_TRAIN_TASK",
+    "split": "TRAIN",
+    "trainingAllowed": false
+  }
+]

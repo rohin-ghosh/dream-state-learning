@@ -1,0 +1,30 @@
+{
+  "name": "caption-collector",
+  "enabled": true,
+  "kind": "collector",
+  "owner": "post_reboot_services_20260919 / main",
+  "approval_scope": "User-directed non-material reboot recovery; existing R233 leases, epochs, visibility unchanged",
+  "local_daemon_only": true,
+  "child_native": false,
+  "restart_safe": true,
+  "self_enforces_lease": true,
+  "foreground": true,
+  "shutdown_leaves_child_natives_running": true,
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/collector.py",
+    "--until-unix",
+    "1790791170"
+  ],
+  "cwd": "/data/home/rohing/dream-state-orch",
+  "entrypoint": "research_loop/workers/post_reboot_services_20260919/collector.py",
+  "entrypoint_sha256": "af56338df1ac7495b7fa90b49a57e78dd8823cec083019541cfbe8dc7dd71361",
+  "until_unix": 1790791170,
+  "lease_evidence": {
+    "path": "research_loop/workers/rohin233_recovery_20260918/CAPTION_HOURLY_STARTED.json",
+    "sha256": "9389803c0223b7d347ec054769d9ba91976ada502823e8ad7b265f24e046d639",
+    "json_pointer": "/until_unix"
+  },
+  "singleton_lock": "research_loop/workers/rohin233_recovery_20260918/CAPTION_HOURLY.lock"
+}

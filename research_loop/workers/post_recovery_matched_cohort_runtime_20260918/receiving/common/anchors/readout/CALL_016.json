@@ -1,0 +1,58 @@
+{
+  "adapter": null,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "family": "code",
+  "finished_unix": 1789461466.0538774,
+  "max_new_tokens": 512,
+  "messages": [
+    {
+      "content": "Return the perimeter of a rectangle with sides width and height.\nArguments: width, height.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+      "role": "user"
+    }
+  ],
+  "outcome": {
+    "category": "correct",
+    "completion": "complete",
+    "content_tokens": 12,
+    "generated_tokens": 13,
+    "machine": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "verified_anchor": true
+  },
+  "position": 16,
+  "response": {
+    "messages": [
+      {
+        "content": "Return the perimeter of a rectangle with sides width and height.\nArguments: width, height.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      }
+    ],
+    "prompt_tokens": 108,
+    "raw": "{\"expression\": \"2 * (width + height)\"}",
+    "terminal": true,
+    "token_ids": [
+      4913,
+      28099,
+      788,
+      330,
+      17,
+      353,
+      320,
+      3098,
+      488,
+      2608,
+      8,
+      9207,
+      151645
+    ],
+    "truncated": false
+  },
+  "started_unix": 1789461465.7807314,
+  "status": "COMPLETE",
+  "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_04"
+}

@@ -62,7 +62,7 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         raise ValueError('provider_redirect_forbidden')
 
 
-def strong(prompt, directory, deadline, instruction=SYSTEM):
+def strong(prompt, directory, deadline, instruction=SYSTEM, *, reasoning_effort=None):
     config_path = Path.home() / '.codex/nvidia-astra.config.toml'
     config = tomllib.loads(config_path.read_text())
     provider = config['model_providers'][config['model_provider']]
@@ -70,13 +70,16 @@ def strong(prompt, directory, deadline, instruction=SYSTEM):
         and provider['base_url'] == 'https://inference-api.nvidia.com/v1'
         and provider['env_key'] == 'NVIDIA_API_KEY', 'existing_exact_provider_configuration')
     key = os.environ[provider['env_key']]
+    effort = config['model_reasoning_effort'] if reasoning_effort is None else reasoning_effort
+    policy.require(effort in ('low', 'medium', 'high', 'xhigh'), 'explicit_supported_parent_effort')
     body = dict(model=config['model'], instructions=instruction, input=prompt,
         max_output_tokens=4096, tools=[], tool_choice='none', store=False,
-        reasoning=dict(effort=config['model_reasoning_effort']))
+        reasoning=dict(effort=effort))
     write(directory / 'API_REQUEST.json', body)
     write(directory / 'DISPATCH.json', dict(utc=datetime.now(timezone.utc).isoformat(),
         kind='existing_nvidia_responses', requested_model=config['model'], attempts=1, retries=0,
         config_sha256=file_sha256(config_path), maximum_output_tokens=4096, timeout_seconds=120,
+        actual_reasoning_effort=effort,
         tool_access=False, raw_http_attempts_observable=True))
     request = urllib.request.Request(provider['base_url'] + '/responses', data=json.dumps(body).encode(),
         headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})

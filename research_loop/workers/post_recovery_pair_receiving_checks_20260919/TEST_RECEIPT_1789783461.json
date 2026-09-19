@@ -1,0 +1,53 @@
+{
+  "GPU_calls": 0,
+  "broad_suite_known_failure": "Existing mocked sleep plan missing new_presentations; reproduced with pre-optimization history",
+  "live_adoption": false,
+  "native_signals": [],
+  "observed_unix": 1789783461.597658,
+  "results": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research_loop/workers/post_recovery_pair_receiving_checks_20260919",
+        "-p",
+        "test_*.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stderr": "----------------------------------------------------------------------\nRan 9 tests in 0.016s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "tests.test_orch_r124_train_history",
+        "tests.test_orch_r125_continual_stream",
+        "tests.test_orch_r125_stream_journal",
+        "-q"
+      ],
+      "returncode": 0,
+      "stderr": "----------------------------------------------------------------------\nRan 124 tests in 4.125s\n\nOK\n",
+      "stdout": ""
+    }
+  ],
+  "source_pins": {
+    "organism_v6/orch_r124_train_history.py": "c6e241d1539a381aad175b334dd2ffe29b324249df0754e9692ea279d9443a02",
+    "research_loop/workers/post_recovery_pair_receiving_checks_20260919/accelerated_observer.py": "34d70237fff11d06ebfd1c2490555dfd289a39366e4485cc1eeaf8e46839f38c",
+    "research_loop/workers/post_recovery_pair_receiving_checks_20260919/complete_cost_probe.py": "857ca2da9a7e14bbe119aaff490cdc1aad7a9fe96a201f57009f1e74e334771b",
+    "research_loop/workers/post_recovery_pair_receiving_checks_20260919/frontier_port.py": "551aaf3eabcc1aef13c44830d3790b63a1ad0ce043c7b39b41e051b6d21cea79",
+    "research_loop/workers/post_recovery_pair_receiving_checks_20260919/profile_tail.py": "8fc943b9c4401b625680d401a6a449e63c3484c90ce6895851117868c1c137a5",
+    "research_loop/workers/post_recovery_pair_receiving_checks_20260919/remote_checks.py": "b220d4df78960f7cda793569345ae6b18b4781fe3f322518d3c425b8d24f877f",
+    "research_loop/workers/post_recovery_pair_receiving_checks_20260919/tail_observation.py": "bb051970c3c18cb92f97a07f21dd816292403d8a6f25096e2953d2f004d7e5e6",
+    "research_loop/workers/post_recovery_pair_receiving_checks_20260919/test_remote_checks.py": "6d32f01900826504f77ccb10e7ee291d86d2d524de5ca4f23e90dd6191fee7c4",
+    "tests/test_orch_r124_train_history.py": "849344dc032c44629db057071acbb660b8f690135644eb4530c92492235d4e59"
+  },
+  "status": "CPU_PASS"
+}

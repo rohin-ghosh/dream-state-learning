@@ -1,0 +1,34 @@
+{
+  "schema": "READ_ONLY_SOURCE_PREFLIGHT_RECEIPT_V1",
+  "started_utc": "2026-09-19T03:56:26Z",
+  "reported_complete_unix": 1789790365.4700718,
+  "host": "ipp2-ovx-p3-02",
+  "command": "/localhome/local-rohing/v2/venv/bin/python -B /localhome/local-rohing/post_reboot_probe_queue_20260919/candidate_v4/source_preflight.py --policy /localhome/local-rohing/post_reboot_probe_queue_20260919/inputs/policy.json --max-seconds 300",
+  "tool_exit_code": 0,
+  "tool_wall_seconds": 179.7121,
+  "status": "SOURCE_EPOCHS_VERIFIED",
+  "cold_elapsed_seconds": 178.56285709500662,
+  "total_elapsed_seconds": 178.66158949700184,
+  "bounded_calls": 190,
+  "warm_elapsed_seconds": 0.09856704500271007,
+  "warm_decoded_bytes": 0,
+  "warm_decoded_records": 0,
+  "warm_timestamp_fence_bytes": 0,
+  "warm_timestamp_fence_reads": 0,
+  "source_heads": {
+    "FRESH_R231": {"index": 7710, "sha256": "e95f4e2090f1f8fd46e40337a5fdfb8b0ed89e019dccfe6a1185dc0d35a7f9fe"},
+    "R232_SIBLING_FROZEN": {"index": 4200, "sha256": "ffc6a5ae55ee0796a56bb41a60834ce1122a067f612f4e8ba836677420397b20"}
+  },
+  "sources": {
+    "FRESH_R231": {"total_decoded_records": 5246, "total_decoded_bytes": 5457672570, "warm_elapsed_seconds": 0.06355300900759175},
+    "R232_SIBLING_FROZEN": {"total_decoded_records": 2439, "total_decoded_bytes": 11829576917, "warm_elapsed_seconds": 0.033231743989745155}
+  },
+  "cache_persistence": "PROCESS_ONLY; no disk cursor trust; a new process must cold-validate",
+  "protected_identity_checks": "Fresh configured host/boot/UID/protected PID-start-argv and lease checks passed each bounded call and warm recheck",
+  "current_gpu_occupancy_checked": false,
+  "capsule_runtime_binding_checked": false,
+  "activation_performed": false,
+  "gpu_execution_performed": false,
+  "signals_sent": false,
+  "note": "One source warmup only; no duplicate original V3 scan. Successful source proof is not full admission or activation readiness."
+}

@@ -156,11 +156,20 @@ class TrainHistory:
         self._system_prompt = system_prompt
         self._birth_prompt = birth_prompt
         self._events = []
+        self._frontier_hasher = hashlib.sha256(b'[')
+        self._frontier_digests = [_digest([])]
         self._by_id = {}
         self._operations = []
         self._working_entries = {}
         self._working_updates = []
         self._pinned_parent_event_ids = []
+
+    def __deepcopy__(self, memo):
+        copied = type(self).__new__(type(self))
+        memo[id(self)] = copied
+        for name, value in vars(self).items():
+            setattr(copied, name, value.copy() if name == '_frontier_hasher' else deepcopy(value, memo))
+        return copied
 
     @property
     def events(self):
@@ -193,6 +202,13 @@ class TrainHistory:
         if event.event_id in self._by_id:
             require(self._by_id[event.event_id] == event, 'conflicting_event_id')
             return False
+        encoded = _json(asdict(event)).encode()
+        if self._events:
+            self._frontier_hasher.update(b',')
+        self._frontier_hasher.update(encoded)
+        closed = self._frontier_hasher.copy()
+        closed.update(b']')
+        self._frontier_digests.append(closed.hexdigest())
         self._events.append(event)
         self._by_id[event.event_id] = event
         return True
@@ -208,7 +224,7 @@ class TrainHistory:
     def frontier(self, event_count=None) -> Frontier:
         count = len(self._events) if event_count is None else event_count
         require(type(count) is int and 0 <= count <= len(self._events), 'frontier_out_of_range')
-        return Frontier(count, _digest([asdict(event) for event in self._events[:count]]))
+        return Frontier(count, self._frontier_digests[count])
 
     def _check_frontier(self, frontier):
         require(type(frontier) is Frontier, 'typed_frontier_required')

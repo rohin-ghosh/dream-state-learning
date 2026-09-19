@@ -1,0 +1,51 @@
+{
+  "schema": "OFFLINE_EVERY_SLEEP_QUEUE_V1",
+  "deployment_enabled": false,
+  "automatic_launch": false,
+  "mode": "OFFLINE_REVIEW_ONLY",
+  "max_concurrent_jobs": 1,
+  "max_runtime_seconds": 2400,
+  "observation_max_age_seconds": 30,
+  "teardown_margin_seconds": 30,
+  "lease_end_unix": 1790791170,
+  "lease_boundary_unix": 1790812800,
+  "receiving_hostname": "ipp2-ovx-p3-02",
+  "receiving_boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+  "expected_uid": 1352,
+  "claims_namespace": "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/dispatch_locks",
+  "future_job_root": "/localhome/local-rohing/post_reboot_probe_queue_20260919/jobs",
+  "role_devices": {
+    "player": {"physical": 2, "uuid": "GPU-ac7e4165-630c-eafe-4ba5-2b2fc4a4e5d1"},
+    "judge": {"physical": 7, "uuid": "GPU-b7ec9035-3ba3-464f-6c2f-7588a3e328c1"}
+  },
+  "protected_physical": [0, 1, 3, 4, 5, 6],
+  "protected_processes": [
+    {"pid": 493500, "start_ticks": "10070880", "argv_sha256": "1ad6a38de129942f5c9751c118ad0e54afc733247762065fd7a89755a221898c"},
+    {"pid": 471737, "start_ticks": "9987073", "argv_sha256": "773a6154e90a5f5f1e4e92beffe66e56a6b0128c76e531ec920322a3ca85a3a2"},
+    {"pid": 459712, "start_ticks": "9942311", "argv_sha256": "83e336aeba1936b6cbeb89cc2c72b36171ea4c1514e5f28a00962ce60ee5b45e"},
+    {"pid": 499900, "start_ticks": "10094999", "argv_sha256": "c76f093b6e739f17b272f8630467c80f22cbb33acbfd860cf305c0a8acb23582"},
+    {"pid": 499905, "start_ticks": "10095034", "argv_sha256": "4b6351cfb25a0900ac98f763f8b3d9d738c9ef6e27d2b55576f27d39af09c887"},
+    {"pid": 506797, "start_ticks": "10120809", "argv_sha256": "01662fe66202518ddc2523a2590d389fb0db01ce7f69a30b62d4e049d1b7c5bf"}
+  ],
+  "supported_journals": {
+    "FRESH_R231": "038f85cbde5c4abfb749ea4d59da6897",
+    "R232_SIBLING_FROZEN": "30fa18c869b34fd496a2758a4a28e197"
+  },
+  "frontiers": {"FRESH_R231": 921, "R232_SIBLING_FROZEN": 799},
+  "source_roots": {
+    "FRESH_R231": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/raw",
+    "R232_SIBLING_FROZEN": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/raw"
+  },
+  "initial_loaded": {
+    "FRESH_R231": {"index": 1, "sha256": "4f2bd96360a484f7989c520f0bc5c463168b82e808f29b6d0a09f6b4b6924be0"},
+    "R232_SIBLING_FROZEN": {"index": 1, "sha256": "f368e136223b95436f51e380318ad9ec1a81823722efe686493e967f99465638"}
+  },
+  "current_loaded": {
+    "FRESH_R231": {"index": 2466, "sha256": "b22420fde3c8ce6435f4c73d9ff5c34b5b33cae5f87ce72d809f797d78a0681c"},
+    "R232_SIBLING_FROZEN": {"index": 1763, "sha256": "177a785eef0f2126823e31f54aa07e50c1b0dd93f73cc680029c765197ab963c"}
+  },
+  "attempt_scan_parent": "/localhome/local-rohing",
+  "historical_policy": "PRESERVE_PENDING_NO_AUTOMATIC_HISTORICAL_EXECUTION",
+  "registered_roots": ["C2", "P7", "GAME1_P3", "C0", "Astra7", "MATH_A", "MATH_B_FORK", "MATH_C", "GAME_N3_0", "GAME_N3_3", "GAME_N3_5", "GAME_N3_6", "GAME_N3_7", "FRESH_R231", "R232_SIBLING_FROZEN", "GAME_UNPARENTED_N2"],
+  "standalone_frozen_base": "FLAT_WEIGHT_REFERENCE_NO_NATIVE_SLEEP_COUNTER_NO_SYNTHETIC_AGES"
+}

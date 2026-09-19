@@ -1,0 +1,100 @@
+{
+  "boot_installation": "BLOCKED_UNINSTALLED",
+  "collector_cut_0200": {
+    "completed_utc": "2026-09-19T02:00:01.208797+00:00",
+    "cut_utc": "2026-09-19T02:00:00+00:00",
+    "epoch_separated": true,
+    "errors": [],
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/cuts/20260919T020000Z.json",
+    "players": 8,
+    "scoring_calls_made": 0,
+    "sha256": "a51dff4c575a99cacb9adc1464db9cec49e0696ccaa19e856f42e4d7a3274c57"
+  },
+  "collector_last_success_utc": "2026-09-19T02:01:03.585321+00:00",
+  "locks": [
+    {
+      "owner_pid": 399392,
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/SUPERVISOR.lock"
+    },
+    {
+      "owner_pid": 311631,
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_20260918/CAPTION_HOURLY.lock"
+    },
+    {
+      "owner_pid": 343304,
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/QUEUE_LAUNCHER.lock"
+    },
+    {
+      "owner_pid": 343342,
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_kept_age_probe_20260918/enrollment/ENROLL.lock"
+    },
+    {
+      "owner_pid": 343342,
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_kept_age_probe_20260918/extra_enrollment/ENROLL.lock"
+    }
+  ],
+  "new_gpu_executions": 0,
+  "observed_utc": "2026-09-19T02:01:04.102568+00:00",
+  "processes": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/supervisor.py"
+      ],
+      "command_sha256": "844a7dc7c1a8118f4cdca0197fc7f5822935a62869b243db7bbce7f8ed9aab5b",
+      "executable": "/usr/bin/python3.12",
+      "pid": 399392,
+      "start_ticks": "891869"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/collector.py",
+        "--until-unix",
+        "1790791170"
+      ],
+      "command_sha256": "bb786d932ddf62712332bf315b64ecdaa98383d4bdb6f1baf6bf9689f580f5a8",
+      "executable": "/usr/bin/python3.12",
+      "pid": 311631,
+      "start_ticks": "717211"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/queue_launcher.py"
+      ],
+      "command_sha256": "51c646318fb621e74067c402a013fc42778092effd4e4a0c1111a63971f8db08",
+      "executable": "/usr/bin/python3.12",
+      "pid": 343304,
+      "start_ticks": "788315"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/source/driver.py",
+        "--config",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/runs/1789779728873833849/CONFIG.private.json"
+      ],
+      "command_sha256": "398e1fb14d5ce6b1eae36ade220e4fd512052d5d33ef87f481f98f53215d98ae",
+      "executable": "/usr/bin/python3.12",
+      "pid": 343342,
+      "start_ticks": "788324"
+    }
+  ],
+  "queue": {
+    "backlog_dispatcher_started": false,
+    "caught_up_roots": 16,
+    "completed_poll_utc": "2026-09-19T02:00:33.933511+00:00",
+    "enrolled": 1551,
+    "new_evaluations": 0,
+    "receipt_path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/runs/1789779728873833849/LATEST.json",
+    "receipt_sha256": "77b81958dd80a740974da0ce317f80789325b60f4395aef2df9fff2939e830b4",
+    "roots": 16
+  },
+  "supervisor_errors": [],
+  "supervisor_heartbeat_utc": "2026-09-19T02:01:02.062827+00:00"
+}

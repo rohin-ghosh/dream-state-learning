@@ -1,0 +1,1210 @@
+{
+  "adapter": null,
+  "anchors_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/ANCHOR_ROWS.json",
+  "anchors_sha256": "c7e70846fa8adf18555b793912acf5dc85c53cc0fd1905f61501d295ef91d264",
+  "automatic_fit": false,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "before_after_verified": true,
+  "completed_calls": 64,
+  "families": {
+    "code": {
+      "expected_tasks": 16,
+      "shortfall": 0,
+      "target_minimum": 4,
+      "verified_anchors": 9
+    },
+    "concise_answer": {
+      "expected_tasks": 16,
+      "shortfall": 0,
+      "target_minimum": 4,
+      "verified_anchors": 11
+    },
+    "math": {
+      "expected_tasks": 16,
+      "shortfall": 0,
+      "target_minimum": 4,
+      "verified_anchors": 6
+    },
+    "simulated_tools": {
+      "expected_tasks": 16,
+      "shortfall": 0,
+      "target_minimum": 4,
+      "verified_anchors": 16
+    }
+  },
+  "finished_unix": 1789461513.0604606,
+  "fit_ready": false,
+  "held": false,
+  "l2": false,
+  "parent_calls": 0,
+  "plan_sha256": "83068ec64e7b4a448ef31e3b09a4d8719933e3b7ead32cff267d2ba329e2d7f6",
+  "reserved_calls": 64,
+  "rows": [
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_000.json",
+      "call_sha256": "d55d04b0e113bfec99b7176708d137a18cc00b61d1501d82e1a84bb4a12e3138",
+      "category": "unsafe_or_invalid_expression",
+      "completion": "complete",
+      "content_tokens": 8,
+      "family": "code",
+      "generated_tokens": 9,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 0,
+        "cases_total": 4,
+        "category": "unsafe_or_invalid_expression",
+        "passed": false
+      },
+      "position": 0,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_00",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_001.json",
+      "call_sha256": "87f36e8e0faf6fb0e969f227a234b61932b6efa0263e68d3bc31adea5d1f3585",
+      "category": "wrong_answer",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "math",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "wrong_answer",
+        "passed": false
+      },
+      "position": 1,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_00",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_002.json",
+      "call_sha256": "3710161f7bfb1d8c82d05f19f629f15af533af9e0b8a1a494cdc1f0b602ab2ff",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 35,
+      "family": "simulated_tools",
+      "generated_tokens": 36,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 2,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_00",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_003.json",
+      "call_sha256": "cb457257428167168bf1c93492ada92b1eb15438f81826e52b8371122ad77152",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "concise_answer",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 3,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_00",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_004.json",
+      "call_sha256": "78e02fa211a1e364c1d7c27ec8da4046bb0ac22a538c6973385dc2cb3ea2e911",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 12,
+      "family": "code",
+      "generated_tokens": 13,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 4,
+        "cases_total": 4,
+        "category": "correct",
+        "passed": true
+      },
+      "position": 4,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_01",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_005.json",
+      "call_sha256": "dcc1c962a0f03f902370efe94dbe42d844091128b5e8f88e39f1497b4da1e021",
+      "category": "wrong_answer",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "math",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "wrong_answer",
+        "passed": false
+      },
+      "position": 5,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_01",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_006.json",
+      "call_sha256": "e08a77b070e4f9b5d5fa1f812a4df59e7347ad432ca3dd2a05c7463b31aab066",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 34,
+      "family": "simulated_tools",
+      "generated_tokens": 35,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 6,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_01",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_007.json",
+      "call_sha256": "5901d311d6ad710426c73ee1f1e302beb014ef9364836bdc384072bda802db54",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "concise_answer",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 7,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_01",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_008.json",
+      "call_sha256": "bf125671db30b645ec0ed78bbbf96a3be5b92752c0f7622a4e7d37981f4820b7",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 8,
+      "family": "code",
+      "generated_tokens": 9,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 4,
+        "cases_total": 4,
+        "category": "correct",
+        "passed": true
+      },
+      "position": 8,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_02",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_009.json",
+      "call_sha256": "4aafde2e594b686ba97c29c7214bfd9a949c8d26b146a60b8e2e1f76e3805ac1",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "math",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 9,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_02",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_010.json",
+      "call_sha256": "240f20a6c7fd100036db43e023959398daf8de5dd61324fbc37629855d360dc5",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 42,
+      "family": "simulated_tools",
+      "generated_tokens": 43,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 10,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_02",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_011.json",
+      "call_sha256": "cf5f6e94bff08fbe530c904766e65c417a38b08fdcd28f256c653b3a59c0a381",
+      "category": "exact_constraint_failure",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "concise_answer",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "exact_constraint_failure",
+        "passed": false
+      },
+      "position": 11,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_02",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_012.json",
+      "call_sha256": "f45f2115f2a7613459941497b72b7f3d6b45774b16c317e56eb2064dc272afbc",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 7,
+      "family": "code",
+      "generated_tokens": 8,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 4,
+        "cases_total": 4,
+        "category": "correct",
+        "passed": true
+      },
+      "position": 12,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_03",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_013.json",
+      "call_sha256": "77526e35f95c6b87bd30901b52d5befbf89242079bbfd0a0492878ccb102833e",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "math",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 13,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_03",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_014.json",
+      "call_sha256": "24523411874438fcbb166f9dd69bbc5e3d9c8ea11e20307538af52d5a2ffffbd",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 42,
+      "family": "simulated_tools",
+      "generated_tokens": 43,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 14,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_03",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_015.json",
+      "call_sha256": "c56f456de5508bd175a36255761b8713d642d2e1cb2413aa9918031214a7abcb",
+      "category": "exact_constraint_failure",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "concise_answer",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "exact_constraint_failure",
+        "passed": false
+      },
+      "position": 15,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_03",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_016.json",
+      "call_sha256": "56d08d7aefc333f739f21ffc734bae0a63d5d72546c085623d9c144cd31e5365",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 12,
+      "family": "code",
+      "generated_tokens": 13,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 4,
+        "cases_total": 4,
+        "category": "correct",
+        "passed": true
+      },
+      "position": 16,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_04",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_017.json",
+      "call_sha256": "f2e77781761d810521be3065fc1c69a2116b82e61b6995a37165547b598e9f82",
+      "category": "wrong_answer",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "math",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "wrong_answer",
+        "passed": false
+      },
+      "position": 17,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_04",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_018.json",
+      "call_sha256": "d0ab486ef3cb509668ec82e830eb53e68726388811c22c85df02f609e6bc518f",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 35,
+      "family": "simulated_tools",
+      "generated_tokens": 36,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 18,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_04",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_019.json",
+      "call_sha256": "510d6de0619a0ed001658145463c1e5563f7f4210a78a4c0822bd3f1e9d30150",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "concise_answer",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 19,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_04",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_020.json",
+      "call_sha256": "75f955f6e6d74c111c5957b24c44a523c2c5eb404b1ae454615e3d1fbb4731e5",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 10,
+      "family": "code",
+      "generated_tokens": 11,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 4,
+        "cases_total": 4,
+        "category": "correct",
+        "passed": true
+      },
+      "position": 20,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_05",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_021.json",
+      "call_sha256": "c508a1c0d86964b07fe6829eccf1c2ae82f39e2d1b203c2f4f80766b9f5e1c62",
+      "category": "wrong_answer",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "math",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "wrong_answer",
+        "passed": false
+      },
+      "position": 21,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_05",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_022.json",
+      "call_sha256": "b847819f0c4e7ec8fa459657ccee06c74fd428bb680f994fefb9120fb564c9dd",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 34,
+      "family": "simulated_tools",
+      "generated_tokens": 35,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 22,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_05",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_023.json",
+      "call_sha256": "61cd411b04a89690878cf5ed13b9e7e6e2d0b21c42d3bcb91934c0b6c70928fe",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 1,
+      "family": "concise_answer",
+      "generated_tokens": 2,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 23,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_05",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_024.json",
+      "call_sha256": "22e935c78a3085564ecaf0f745672898b692eb2905865533d70dcdddbde860c1",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 11,
+      "family": "code",
+      "generated_tokens": 12,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 4,
+        "cases_total": 4,
+        "category": "correct",
+        "passed": true
+      },
+      "position": 24,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_06",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_025.json",
+      "call_sha256": "50f3c9e7c79a6231463647437398a7d9fe40ced67e1eaddb47e35ab398dc5e62",
+      "category": "wrong_answer",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "math",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "wrong_answer",
+        "passed": false
+      },
+      "position": 25,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_06",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_026.json",
+      "call_sha256": "9981be3b66403a9be2458fab238514956a2f7a7d2f903313422e93f6a7a99865",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 42,
+      "family": "simulated_tools",
+      "generated_tokens": 43,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 26,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_06",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_027.json",
+      "call_sha256": "058a3b224ab1e03fb83e01f04297e4790185424ef8e298b838aae7ed8b630803",
+      "category": "exact_constraint_failure",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "concise_answer",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "exact_constraint_failure",
+        "passed": false
+      },
+      "position": 27,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_06",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_028.json",
+      "call_sha256": "c49b1e2cf5bd84e06cdf2c3bccd0b11a382463c0886e6135ecd31add1c082057",
+      "category": "invalid_json",
+      "completion": "complete",
+      "content_tokens": 16,
+      "family": "code",
+      "generated_tokens": 17,
+      "machine": {
+        "category": "invalid_json",
+        "passed": false
+      },
+      "position": 28,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_07",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_029.json",
+      "call_sha256": "c961bfad46f2ccb3258f6cb12e5e774b2295f87da5d38cda90970003f7535290",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "math",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 29,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_07",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_030.json",
+      "call_sha256": "525e9e880527bbd1a81e26897a845d74f2b8666350de884445dc3c3e4ff3aa5a",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 42,
+      "family": "simulated_tools",
+      "generated_tokens": 43,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 30,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_07",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_031.json",
+      "call_sha256": "c6272db4a9b89f0f145a82600769e4b5763552bffd27cc5f82ff61d89ceeefe1",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 1,
+      "family": "concise_answer",
+      "generated_tokens": 2,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 31,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_07",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_032.json",
+      "call_sha256": "90ed9bd4a0d12ac42514cf3146430facf039acd48ed4ba89b6754453d9c1fb91",
+      "category": "unsafe_or_invalid_expression",
+      "completion": "complete",
+      "content_tokens": 18,
+      "family": "code",
+      "generated_tokens": 19,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 0,
+        "cases_total": 4,
+        "category": "unsafe_or_invalid_expression",
+        "passed": false
+      },
+      "position": 32,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_08",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_033.json",
+      "call_sha256": "ad709c1cbd6924df46f23e24851b7fdd8be2c43bd4d7a86d20fe840271dea7c3",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "math",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 33,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_08",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_034.json",
+      "call_sha256": "43c0e0b687a97d4b0deab2508840abf71fd49d56e5343ca22f95f01a0ce492bf",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 35,
+      "family": "simulated_tools",
+      "generated_tokens": 36,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 34,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_08",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_035.json",
+      "call_sha256": "77e3e6db359af9dcd6edd1c1ee9b10fea5d5a5da8b30328b11589134bddcc71f",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "concise_answer",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 35,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_08",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_036.json",
+      "call_sha256": "a4472fb6a06ac95731537f1aa6333d1721b49d20373c6713c2d53b819a08cb98",
+      "category": "unsafe_or_invalid_expression",
+      "completion": "complete",
+      "content_tokens": 37,
+      "family": "code",
+      "generated_tokens": 38,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 0,
+        "cases_total": 4,
+        "category": "unsafe_or_invalid_expression",
+        "passed": false
+      },
+      "position": 36,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_09",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_037.json",
+      "call_sha256": "1bf2439f16d410e1a38964b464c4ac87909b3a2612c3735eaed46fa8ef289e72",
+      "category": "wrong_answer",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "math",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "wrong_answer",
+        "passed": false
+      },
+      "position": 37,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_09",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_038.json",
+      "call_sha256": "95b0e07bc395b0b8566d79a89956ec7f1a0dc30faf0e6fd27351fe5406aa9809",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 34,
+      "family": "simulated_tools",
+      "generated_tokens": 35,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 38,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_09",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_039.json",
+      "call_sha256": "3ac3ad897ebbe43b6c906fb44e30086742ed3afdccd17d3b72178904210775c1",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "concise_answer",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 39,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_09",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_040.json",
+      "call_sha256": "06e63ce136bb1fe3bb1e2afc4ff1a63ef79fa801f5644485e9a76ae3b2025a8f",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 21,
+      "family": "code",
+      "generated_tokens": 22,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 4,
+        "cases_total": 4,
+        "category": "correct",
+        "passed": true
+      },
+      "position": 40,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_10",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_041.json",
+      "call_sha256": "8bbe1123a49f8895f071dbe8a28c4806911179de0c908e746795091c61f46e8b",
+      "category": "wrong_answer",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "math",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "wrong_answer",
+        "passed": false
+      },
+      "position": 41,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_10",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_042.json",
+      "call_sha256": "bc95ef2c9d645fb6427533fdcd83897f467b2ef81200529d88819bd41cfbcd3a",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 44,
+      "family": "simulated_tools",
+      "generated_tokens": 45,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 42,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_10",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_043.json",
+      "call_sha256": "0837f0dba09efb21d6a1d62b7409322e9a8c1fde2ef8bfb397e8bd19f274d24f",
+      "category": "exact_constraint_failure",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "concise_answer",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "exact_constraint_failure",
+        "passed": false
+      },
+      "position": 43,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_10",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_044.json",
+      "call_sha256": "dec30472dbe6fe40bc8164b95ace59ffd0bb519ab63df2b5f1b90bce3369ad00",
+      "category": "invalid_json",
+      "completion": "complete",
+      "content_tokens": 11,
+      "family": "code",
+      "generated_tokens": 12,
+      "machine": {
+        "category": "invalid_json",
+        "passed": false
+      },
+      "position": 44,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_11",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_045.json",
+      "call_sha256": "ca8bc63d4faeda8afb8b9b2fef17ec0a4d6b702c4da5c2ea39217d55a2e724c5",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "math",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 45,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_11",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_046.json",
+      "call_sha256": "60bc1231d8f09967f3664d3662cae96bb2198269bfe9c886a1ebe7b911b0ebca",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 43,
+      "family": "simulated_tools",
+      "generated_tokens": 44,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 46,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_11",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_047.json",
+      "call_sha256": "78d81331908050914c473c4d5faac095bc4a8aa19a85e37535599f9f126e154e",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 1,
+      "family": "concise_answer",
+      "generated_tokens": 2,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 47,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_11",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_048.json",
+      "call_sha256": "c044569903a55b4778cb8f5af666233e61c0ed7b21d7dd3bc985e70c563f97a7",
+      "category": "invalid_json",
+      "completion": "complete",
+      "content_tokens": 28,
+      "family": "code",
+      "generated_tokens": 29,
+      "machine": {
+        "category": "invalid_json",
+        "passed": false
+      },
+      "position": 48,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_12",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_049.json",
+      "call_sha256": "598d25bf2cfcfb1dbe2b77b6a7e68bf98d9d6e79e8d9db8211718717092d8fe7",
+      "category": "wrong_answer",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "math",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "wrong_answer",
+        "passed": false
+      },
+      "position": 49,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_12",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_050.json",
+      "call_sha256": "ab54795fb3f606017723463c0af79ce3856d2f11bf61b23d78d1904753710981",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 36,
+      "family": "simulated_tools",
+      "generated_tokens": 37,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 50,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_12",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_051.json",
+      "call_sha256": "178094128becdf685ba3b785e4810082823f3aa028b903ffeb1a50d26af43ffb",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "concise_answer",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 51,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_12",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_052.json",
+      "call_sha256": "8d2ce348147201243fbb366d3abdc5d0c310745fc1459b7d7e8cc81b21f4e9d0",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 13,
+      "family": "code",
+      "generated_tokens": 14,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 4,
+        "cases_total": 4,
+        "category": "correct",
+        "passed": true
+      },
+      "position": 52,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_13",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_053.json",
+      "call_sha256": "2c3c648bd413784c41e57cc31cb50090515d7d7b0458d3e7850772626f237acd",
+      "category": "invalid_numeric_format",
+      "completion": "complete",
+      "content_tokens": 15,
+      "family": "math",
+      "generated_tokens": 16,
+      "machine": {
+        "category": "invalid_numeric_format",
+        "passed": false
+      },
+      "position": 53,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_13",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_054.json",
+      "call_sha256": "7f500312b533013e08674e4f187b3636dd333be5d658679a764471c4b35085cb",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 34,
+      "family": "simulated_tools",
+      "generated_tokens": 35,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 54,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_13",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_055.json",
+      "call_sha256": "bfbff9076fb33e84513b28f460bc1429312d5d7a64432412c283ad1ad9941bdf",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "concise_answer",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 55,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_13",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_056.json",
+      "call_sha256": "789358716c4f23bc098eb360b578ab1438c46e71e63ec433e808735d595f994f",
+      "category": "invalid_json",
+      "completion": "complete",
+      "content_tokens": 17,
+      "family": "code",
+      "generated_tokens": 18,
+      "machine": {
+        "category": "invalid_json",
+        "passed": false
+      },
+      "position": 56,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_14",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_057.json",
+      "call_sha256": "5b5af4a7d169ac89c0fba86ca0d31a5940a4f8902b592af4091ebe75b6b13664",
+      "category": "wrong_answer",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "math",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "wrong_answer",
+        "passed": false
+      },
+      "position": 57,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_14",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_058.json",
+      "call_sha256": "12840c87602cefdd3feb1104787f6eb8c793375eaeed3c6f5176d909e6353211",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 44,
+      "family": "simulated_tools",
+      "generated_tokens": 45,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 58,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_14",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_059.json",
+      "call_sha256": "a865cbfa38549cc9ffc25beff7731dc4c5fb313efa984e06e74a4c7e35b2fc11",
+      "category": "exact_constraint_failure",
+      "completion": "complete",
+      "content_tokens": 3,
+      "family": "concise_answer",
+      "generated_tokens": 4,
+      "machine": {
+        "category": "exact_constraint_failure",
+        "passed": false
+      },
+      "position": 59,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_14",
+      "verified_anchor": false
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_060.json",
+      "call_sha256": "55de873fe00f412271ff4b4b5dbb94938f1b6b3c6acd1e8a434f988f9ca166ea",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 12,
+      "family": "code",
+      "generated_tokens": 13,
+      "machine": {
+        "arbitrary_execution": false,
+        "cases_passed": 4,
+        "cases_total": 4,
+        "category": "correct",
+        "passed": true
+      },
+      "position": 60,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_15",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_061.json",
+      "call_sha256": "ff29a2f44622674c5995302cc16add234b0393d1705ae83e62aa1b295b854911",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 2,
+      "family": "math",
+      "generated_tokens": 3,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 61,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_15",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_062.json",
+      "call_sha256": "5f2993c3c55bbf47fc02c45e0f803360365b3b472e08bf6cde5a3edb80a56bf9",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 43,
+      "family": "simulated_tools",
+      "generated_tokens": 44,
+      "machine": {
+        "category": "correct",
+        "mock_only": true,
+        "passed": true,
+        "schema_valid": true
+      },
+      "position": 62,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_15",
+      "verified_anchor": true
+    },
+    {
+      "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_063.json",
+      "call_sha256": "8cb441c667c5acbf1254ce791a21a46106809bf2cd34efbb593ae36e37625d5d",
+      "category": "correct",
+      "completion": "complete",
+      "content_tokens": 1,
+      "family": "concise_answer",
+      "generated_tokens": 2,
+      "machine": {
+        "category": "correct",
+        "passed": true
+      },
+      "position": 63,
+      "status": "COMPLETE",
+      "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_15",
+      "verified_anchor": true
+    }
+  ],
+  "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+  "schema": "R107_BASE_ORDINARY_ANCHORS_V1",
+  "selector_handoff": "Hubble: separate source registration required; only this verified manifest, never capability outputs.",
+  "source_kind": "GENUINE_BASE_ORDINARY_TRAIN_ANCHORS",
+  "status": "VERIFIED_ANCHOR_MANIFEST_READY",
+  "suite_sha256": "dd0cd5b2bfcef830e95bc406f9d601c6f8f861354fae5ba1d5d8395ba0df8196",
+  "teacher_targets": false,
+  "trainingAllowed": false,
+  "training_updates": 0,
+  "verified_anchors": 42
+}

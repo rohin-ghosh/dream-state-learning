@@ -1,0 +1,35 @@
+{
+  "name": "node3-operational-errors",
+  "enabled": true,
+  "kind": "parent",
+  "service_role": "CPU_OPERATIONAL_ERROR_TOOL_RELAY_NOT_MODEL_PARENT_OR_SCORER",
+  "owner": "Node3 caption recovery owner; services coordination to Averroes",
+  "approval_scope": "User-scoped non-material repair: source-bound no-judgment Tool feedback for confirmed undispatched 64MiB origin-export failures; no bound bypass, scoring, ACT replay, native/scorer changes or target-row writes",
+  "local_daemon_only": true,
+  "child_native": false,
+  "restart_safe": true,
+  "self_enforces_lease": true,
+  "foreground": true,
+  "shutdown_leaves_child_natives_running": true,
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-u",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/report_transport_errors.py"
+  ],
+  "cwd": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919",
+  "entrypoint": "research_loop/workers/post_reboot_node3_parents_20260919/report_transport_errors.py",
+  "entrypoint_sha256": "92f3bdebc5c11110a55cd38a7e0f874aef0988f46477a9a5a8dc547f4810cd9f",
+  "until_unix": 1790272760,
+  "lease_evidence": {
+    "path": "research_loop/workers/rohin233_ovx4_recovery_20260918/TRANSPORT_SOURCE_LEASE_CAPPED.json",
+    "sha256": "d5bbd76c2da4644098658fcbb77a8e87a3ed2d9cd87306ffc27ce3e3e77722b0",
+    "json_pointer": "/1/actual_deadline"
+  },
+  "singleton_lock": "research_loop/workers/post_reboot_node3_parents_20260919/locks/OPERATIONAL_ERRORS.lock",
+  "handoff": "research_loop/workers/post_reboot_node3_parents_20260919/BOUNDED_REPAIR_HANDOFF.md",
+  "scoring_calls": 0,
+  "historical_ACT_replay_allowed": false,
+  "byte_bound_changes": 0,
+  "no_judgment_not_zero_score": true
+}

@@ -1,0 +1,36 @@
+{
+  "enabled": true,
+  "kind": "parent",
+  "owner": "Main-approved C2/P7/bridge owners",
+  "approval_scope": "Explicit Main approval to register ready CPU services; preserve live publishers, original locks and append-only ledgers; no native runs or service management",
+  "local_daemon_only": true,
+  "child_native": false,
+  "restart_safe": true,
+  "self_enforces_lease": true,
+  "foreground": true,
+  "shutdown_leaves_child_natives_running": true,
+  "cwd": "/data/home/rohing/dream-state-orch",
+  "name": "astra7-bridge",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/bridge.py"
+  ],
+  "entrypoint": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/bridge.py",
+  "entrypoint_sha256": "e24e306b19170352e3894a97e5966a79d9c05b15940f08209d9e8b63bfbf61ed",
+  "until_unix": 1789927200.0,
+  "lease_evidence": {
+    "json_pointer": "/astra7/hard_end_unix",
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/private/bridge/BINDING.json",
+    "sha256": "38a414b3c6d4cbfa30ba9e8d180fb0e1fbd74d028050ceb9b12e1d3c088b8b6f"
+  },
+  "singleton_lock": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r229_bridge_run/COORDINATOR.lock",
+  "verified_minimum_lease_components": {
+    "cpu_horizon": 1790359200,
+    "astra7_hard_end_unix": 1789927200.0,
+    "cpu_authority": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/LEASE_AUTHORITY.json",
+      "sha256": "d60fdbcb661af334ce3ebfc42c8b9ab3fa8c5923b135a1e7aaafc4c7d05aa08f"
+    }
+  }
+}

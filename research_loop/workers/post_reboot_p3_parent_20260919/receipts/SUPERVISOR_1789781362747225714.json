@@ -1,0 +1,55 @@
+{
+  "boot_enabled": false,
+  "installation_status": "BLOCKED_UNINSTALLED",
+  "kernel_locks": [
+    {
+      "inode_key": "00:24:6816199",
+      "owner_pid": 399392,
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/SUPERVISOR.lock"
+    },
+    {
+      "inode_key": "00:24:3352924",
+      "owner_pid": 346649,
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent3/PARENT_OPERATOR.lock"
+    },
+    {
+      "inode_key": "00:24:6819348",
+      "owner_pid": 346649,
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_p3_parent_20260919/operator/RECOVERY.lock"
+    }
+  ],
+  "manifest_sha256": "fc189c73eda3b5aafa78b1adb2a70d01d5ace6ef3c62da9fb688ae5d4a072697",
+  "no_native_signals": true,
+  "no_other_service_changes": true,
+  "no_parent_restart": true,
+  "observed_utc": "2026-09-19T01:29:22.746565+00:00",
+  "p3_service": {
+    "matches": [],
+    "name": "p3-parent",
+    "status": "EXISTING_SINGLETON_LOCK_HELD_NO_LAUNCH"
+  },
+  "parent": {
+    "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+    "command_sha256": "1d20e06e866b2e292f5e7b7b6c2ecdcb09e7270a9450874e87c634a7c190f431",
+    "pid": 346649,
+    "start_ticks": "795156",
+    "state": "S"
+  },
+  "previous_supervisor": {
+    "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+    "command_sha256": "844a7dc7c1a8118f4cdca0197fc7f5822935a62869b243db7bbce7f8ed9aab5b",
+    "pid": 311614,
+    "start_ticks": "717203",
+    "state": "S"
+  },
+  "previous_supervisor_current_process": null,
+  "supervisor": {
+    "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+    "command_sha256": "844a7dc7c1a8118f4cdca0197fc7f5822935a62869b243db7bbce7f8ed9aab5b",
+    "pid": 399392,
+    "start_ticks": "891869",
+    "state": "S"
+  },
+  "supervisor_changed_since_previous_observation": true,
+  "supervisor_heartbeat_utc": "2026-09-19T01:29:20.313234+00:00"
+}

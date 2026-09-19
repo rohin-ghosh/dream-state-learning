@@ -1,0 +1,57 @@
+{
+  "adapter": null,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "family": "code",
+  "finished_unix": 1789461468.3547137,
+  "max_new_tokens": 512,
+  "messages": [
+    {
+      "content": "For nonnegative number, return the sum of integers from zero through number.\nArguments: number.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+      "role": "user"
+    }
+  ],
+  "outcome": {
+    "category": "correct",
+    "completion": "complete",
+    "content_tokens": 11,
+    "generated_tokens": 12,
+    "machine": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "verified_anchor": true
+  },
+  "position": 24,
+  "response": {
+    "messages": [
+      {
+        "content": "For nonnegative number, return the sum of integers from zero through number.\nArguments: number.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      }
+    ],
+    "prompt_tokens": 109,
+    "raw": "{\"expression\": \"sum(range(number+1))\"}",
+    "terminal": true,
+    "token_ids": [
+      4913,
+      28099,
+      788,
+      330,
+      1242,
+      22345,
+      17918,
+      10,
+      16,
+      593,
+      9207,
+      151645
+    ],
+    "truncated": false
+  },
+  "started_unix": 1789461468.1030698,
+  "status": "COMPLETE",
+  "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_06"
+}

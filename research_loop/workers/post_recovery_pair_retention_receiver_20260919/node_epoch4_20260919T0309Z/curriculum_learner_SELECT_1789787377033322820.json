@@ -1,0 +1,170 @@
+{
+  "life": "curriculum_learner",
+  "observed_utc": "2026-09-19T03:09:37.032826+00:00",
+  "phase": "select",
+  "result": {
+    "GPU_calls": 0,
+    "after": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.r232_recovery",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/authorized_continuation_sidecar_retry_1811Z/GUARD.json"
+      ],
+      "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+      "cwd": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/source",
+      "deadline_unix": 1790791200,
+      "guard_sha256": "282ad372328b6244f0cc82b4cfbd39de0fcdd2b7a748c681449f937cbfadd632",
+      "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+      "mount_namespace": "mnt:[4026540429]",
+      "observed_unix": 1789787377.0206304,
+      "pid": 493500,
+      "source_pins_sha256": "73376b367146fe7c7942173fa47e4d77e95fe0db7264d4f08201e7ee8805ac64",
+      "start_ticks": "10070880",
+      "state": "R",
+      "uid": 1352
+    },
+    "before": {
+      "argv": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.r232_recovery",
+        "native",
+        "--config",
+        "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/authorized_continuation_sidecar_retry_1811Z/GUARD.json"
+      ],
+      "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+      "cwd": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/source",
+      "deadline_unix": 1790791200,
+      "guard_sha256": "282ad372328b6244f0cc82b4cfbd39de0fcdd2b7a748c681449f937cbfadd632",
+      "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+      "mount_namespace": "mnt:[4026540429]",
+      "observed_unix": 1789787376.3598797,
+      "pid": 493500,
+      "source_pins_sha256": "73376b367146fe7c7942173fa47e4d77e95fe0db7264d4f08201e7ee8805ac64",
+      "start_ticks": "10070880",
+      "state": "R",
+      "uid": 1352
+    },
+    "handoff_eligible_claim": false,
+    "journal_writes": 0,
+    "life": "curriculum_learner",
+    "native_signals": [],
+    "old_native_source_guard_unchanged": true,
+    "parent_actions": [],
+    "phase": "select",
+    "receiving_admission_proven": false,
+    "remote_artifacts": "/localhome/local-rohing/orch_retention_20260919/pair_epoch4_cpu_20260919_1789787359751234852/curriculum_learner/select_1789787376380975136",
+    "reservations": [],
+    "results": [
+      {
+        "command": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_retention_20260919/pair_epoch4_cpu_20260919_1789787359751234852/node_epoch4_probe.py",
+          "select",
+          "--request",
+          "/localhome/local-rohing/orch_retention_20260919/pair_epoch4_cpu_20260919_1789787359751234852/curriculum_learner/REQUEST.json"
+        ],
+        "elapsed_seconds": 0.595808959013084,
+        "result": {
+          "GPU_calls": 0,
+          "actual_confined_admission_proven": false,
+          "authorizes_native_handoff": false,
+          "checkpoint_request": "/localhome/local-rohing/orch_retention_20260919/pair_epoch4_cpu_20260919_1789787359751234852/curriculum_learner/CHECKPOINT_REQUEST.json",
+          "checkpoint_request_sha256": "32b388ab2a52c7dc3ea8a2d0aa3ffcdc8d7a39af4ac7234001197cd32a8d98d2",
+          "complete_index": 7285,
+          "complete_sha256": "53e3b4168b0c415aa22c4a3ff1b75594688d5f0095d9c97170dcdd07adfeb905",
+          "family": {
+            "frozen_INITIAL_explicitly_initialized": true,
+            "journal_type": "gpu.r232_recovery:LearnerJournal",
+            "path": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/raw/checkpoints/initial/COMMIT.json",
+            "sha256": "6af901f325aeb665b6b3cece5376a91bf41d99a2c3f11b038efef48dbe7731a4"
+          },
+          "journal_writes": 0,
+          "learn_index": 7286,
+          "life": "curriculum_learner",
+          "native_after": {
+            "argv": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.r232_recovery",
+              "native",
+              "--config",
+              "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/authorized_continuation_sidecar_retry_1811Z/GUARD.json"
+            ],
+            "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+            "cwd": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/source",
+            "deadline_unix": 1790791200,
+            "guard_sha256": "282ad372328b6244f0cc82b4cfbd39de0fcdd2b7a748c681449f937cbfadd632",
+            "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+            "mount_namespace": "mnt:[4026540429]",
+            "observed_unix": 1789787376.9600894,
+            "pid": 493500,
+            "source_pins_sha256": "73376b367146fe7c7942173fa47e4d77e95fe0db7264d4f08201e7ee8805ac64",
+            "start_ticks": "10070880",
+            "state": "R",
+            "uid": 1352
+          },
+          "native_before": {
+            "argv": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.r232_recovery",
+              "native",
+              "--config",
+              "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/authorized_continuation_sidecar_retry_1811Z/GUARD.json"
+            ],
+            "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+            "cwd": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/source",
+            "deadline_unix": 1790791200,
+            "guard_sha256": "282ad372328b6244f0cc82b4cfbd39de0fcdd2b7a748c681449f937cbfadd632",
+            "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+            "mount_namespace": "mnt:[4026540429]",
+            "observed_unix": 1789787376.4653254,
+            "pid": 493500,
+            "source_pins_sha256": "73376b367146fe7c7942173fa47e4d77e95fe0db7264d4f08201e7ee8805ac64",
+            "start_ticks": "10070880",
+            "state": "R",
+            "uid": 1352
+          },
+          "native_signals": [],
+          "observed_head": 7312,
+          "operation_seconds": 0.39981922999140806,
+          "optimizer_steps": 4368,
+          "original_native_source_guard_unchanged": true,
+          "parent_actions": [],
+          "producer_request": "/localhome/local-rohing/orch_retention_20260919/pair_epoch4_cpu_20260919_1789787359751234852/curriculum_learner/PRODUCER.json",
+          "producer_request_sha256": "594e8675a41778268980e0ba4028e2855c1ac189cd522bfc126911563276913b",
+          "reservations": [],
+          "source": "/localhome/local-rohing/orch_retention_20260919/curriculum_learner/epoch4/source",
+          "source_file_count": 211,
+          "status": "HISTORICAL_COMPLETE_SELECTED_NOT_HANDOFF",
+          "writer_lock_acquired": false
+        },
+        "returncode": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "87806c9da3bd9f122aea94ce92c4ed8c68b3f00ef4bad5152e7d915d683fbd5a"
+      }
+    ],
+    "source": "/localhome/local-rohing/orch_retention_20260919/curriculum_learner/epoch4/source",
+    "source_file_count": 211,
+    "source_unchanged": true,
+    "status": "PAIR_EPOCH4_CPU_DIAGNOSTIC_ONLY"
+  },
+  "returncode": 0,
+  "source_pins": {
+    "epoch4_node_runner.py": "c0d658974d0ccd6a8b7faa13fb26a127b46b85e77860430768ed30f4e9cd834a",
+    "node_epoch4_driver.py": "cdf5d40bcb061b4222ae6832417eafdc9b035c71481749d48440fe78ee462c6d",
+    "node_epoch4_probe.py": "552bd5b41e17de329ef0345ba48adf8c247bc4573a59ccfa9a67e2528811233a",
+    "remote_epoch4_stage.py": "14839791854c839cca5ad52372c0785cdf98aaa30e75e91c4466b081b2c99dab"
+  },
+  "stderr": "",
+  "transport_elapsed_seconds": 1.6730154369997763
+}

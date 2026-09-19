@@ -1,0 +1,137 @@
+{
+  "boot_enabled": false,
+  "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+  "children": [
+    {
+      "command_sha256": "b83434876c27d6bf708e25f92fe148dba1037cea1f596df567e0c75324a8ac6a",
+      "executable": "/usr/bin/timeout",
+      "pid": 425573,
+      "start_ticks": "940063"
+    },
+    {
+      "command_sha256": "ab9a5b2d95251df99b3e2505c21e22ae145f99a3541348f6db1350d055b15661",
+      "executable": "/usr/bin/timeout",
+      "pid": 425574,
+      "start_ticks": "940063"
+    },
+    {
+      "command_sha256": "3d240f741c88e475415b88dfba22ac8666cdc531bbae890825208322f9cd6758",
+      "executable": "/usr/bin/timeout",
+      "pid": 425638,
+      "start_ticks": "940103"
+    }
+  ],
+  "controller": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "-u",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/restore_transport.py"
+    ],
+    "command_sha256": "2e6dbf7a730315262530c99d595325d2215e0a06d9caf15b2aa742d59e4741fb",
+    "executable": "/usr/bin/python3.12",
+    "pid": 425470,
+    "start_ticks": "939654"
+  },
+  "first_natural_act_tool_inbox_confirmed_by_this_worker": false,
+  "installation_status": "BLOCKED_UNINSTALLED",
+  "judgment_verdict": "READINESS_VERIFIED_NOT_FIRST_NATURAL_JUDGMENT",
+  "lease_evidence": {
+    "json_pointer": "/1/actual_deadline",
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_ovx4_recovery_20260918/TRANSPORT_SOURCE_LEASE_CAPPED.json",
+    "sha256": "d5bbd76c2da4644098658fcbb77a8e87a3ed2d9cd87306ffc27ce3e3e77722b0"
+  },
+  "local_sockets": [
+    {
+      "is_socket": true,
+      "mode": "0o600",
+      "path": "/tmp/n3cap-17897812456785859204349e8/shared.sock"
+    },
+    {
+      "is_socket": true,
+      "mode": "0o600",
+      "path": "/tmp/n3cap-17897812456785859204349e8/proxy/0.sock"
+    },
+    {
+      "is_socket": true,
+      "mode": "0o600",
+      "path": "/tmp/n3cap-17897812456785859204349e8/proxy/3.sock"
+    },
+    {
+      "is_socket": true,
+      "mode": "0o600",
+      "path": "/tmp/n3cap-17897812456785859204349e8/proxy/5.sock"
+    },
+    {
+      "is_socket": true,
+      "mode": "0o600",
+      "path": "/tmp/n3cap-17897812456785859204349e8/proxy/6.sock"
+    },
+    {
+      "is_socket": true,
+      "mode": "0o600",
+      "path": "/tmp/n3cap-17897812456785859204349e8/proxy/7.sock"
+    }
+  ],
+  "lock": {
+    "owner_pid": 425470,
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/locks/TRANSPORT.lock"
+  },
+  "native_changes": false,
+  "observed_utc": "2026-09-19T01:28:59.098558+00:00",
+  "owner_activated_routes": [
+    {
+      "alias": "/tmp/r226-caption-0.sock",
+      "slot": "0",
+      "target": "/tmp/n3cap-17897812456785859204349e8-0.sock"
+    },
+    {
+      "alias": "/tmp/r226-caption-3.sock",
+      "slot": "3",
+      "target": "/tmp/n3cap-17897812456785859204349e8-3.sock"
+    },
+    {
+      "alias": "/tmp/r226-caption-5.sock",
+      "slot": "5",
+      "target": "/tmp/n3cap-17897812456785859204349e8-5.sock"
+    },
+    {
+      "alias": "/tmp/r226-caption-6.sock",
+      "slot": "6",
+      "target": "/tmp/n3cap-17897812456785859204349e8-6.sock"
+    },
+    {
+      "alias": "/tmp/r226-caption-7.sock",
+      "slot": "7",
+      "target": "/tmp/n3cap-17897812456785859204349e8-7.sock"
+    }
+  ],
+  "owner_heartbeat_utc": "2026-09-19T01:28:56.909783+00:00",
+  "owner_preflight": {
+    "epochs": {
+      "r213_r226_caption_observation_fork": "dc9031f615e51a8e815c84e401aedb5c9759c6231ea6f7fad0dc92bbb6742fc9",
+      "r213_r226_caption_perspective_fork": "b4fc7c273d628c617bb997b0104f18384c29763531ae14aecbe062db08ee8281",
+      "r213_r226_caption_revision_fork": "eeb4110ead721b8941ebef56bc85e7a8c6e7ef2fe0f8848c39bf19b9d9dea08c",
+      "r213_r226_caption_selfderive_fork": "c8b076d69ffe9e9e8e7156ce5fffc5343fd7343808b89d4cb43a77771da1e1e9",
+      "r213_r226_caption_unparented_fork": "32197bb17b0d0932e21dad4cdc82d10566ed456cc6824baaab443e1e89054f2f"
+    },
+    "loaded_sha256": "7326a438c9ab9613a2a0e8d6e8f94f043b3cbd3499d293377c802cbd3d383848",
+    "no_historical_replay": true,
+    "no_native_or_scorer_restart": true,
+    "observed_utc": "2026-09-19T01:27:25.678563+00:00",
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/private/transport_runs/17897812456785859204349e8/PREFLIGHT.json",
+    "sha256": "6912d7e4ebba227aa8b8cffe7ae5440042082891bbcbb3841eb409ed756de77c"
+  },
+  "owner_start_status": "CPU_TRANSPORT_RESTORED_FUTURE_NATURAL_ACT_RECEIPTS_PENDING",
+  "owner_status": "RUNNING_NOT_A_SCORING_RECEIPT",
+  "preflight_source_sha256": "4fc1773baaadd01e93b73196be97408c3de249a58001d0867aabb33d5d522d3f",
+  "scorer_changes": false,
+  "secure_boot_credentials": "UNVERIFIED",
+  "signals": [],
+  "singleton_controller_matches": 1,
+  "source_sha256": "7f25682a2e71d89226e2d60f46edab8882fb83402853d28457fc980ba38a8f51",
+  "synthetic_requests_sent": 0,
+  "transport_started_by_this_worker": false,
+  "until_unix": 1790272760,
+  "until_utc": "2026-09-24T17:59:20+00:00"
+}

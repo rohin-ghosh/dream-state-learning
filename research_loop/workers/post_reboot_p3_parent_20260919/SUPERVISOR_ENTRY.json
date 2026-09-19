@@ -1,0 +1,36 @@
+{
+  "approval_scope": "User 2026-09-19: finish P3 fresh xhigh publication/REQUEST-to-ACT receipt and supervisor registration with Averroes; no native changes",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_p3_parent_20260919/restart.py"
+  ],
+  "child_native": false,
+  "current_adoption": "Existing parent protected by original singleton lock; no argv replacement or signals",
+  "cwd": "/data/home/rohing/dream-state-orch",
+  "enabled": true,
+  "entrypoint": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_p3_parent_20260919/restart.py",
+  "entrypoint_sha256": "eb711060ff87416b60732495824b26b2bcf04e91fb5fc9229d4dc01234257fce",
+  "existing_live_argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_p3_parent_20260919/runner.py"
+  ],
+  "foreground": true,
+  "handoff": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_p3_parent_20260919/TO_MAIN_AND_AVERROES.md",
+  "kind": "parent",
+  "lease_evidence": {
+    "json_pointer": "/hard_end_unix",
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_p3_parent_20260919/P3_RETRY_PARENT_MANIFEST.json",
+    "sha256": "b30d289ff597286563de3e4f8037af47fa8500cc6961fc4f1a7048a6f3c989ca"
+  },
+  "local_daemon_only": true,
+  "name": "p3-parent",
+  "owner": "P3 recovery owner; Main; supervisor coordination to Averroes",
+  "restart_behavior": "Fresh native/guard/source/ledger preflight then same-PID exec into existing pinned runner; incomplete attempts fail closed",
+  "restart_safe": true,
+  "self_enforces_lease": true,
+  "shutdown_leaves_child_natives_running": true,
+  "singleton_lock": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent3/PARENT_OPERATOR.lock",
+  "until_unix": 1790359200
+}

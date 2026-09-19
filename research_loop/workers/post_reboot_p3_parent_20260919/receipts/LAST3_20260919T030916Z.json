@@ -1,0 +1,228 @@
+{
+  "actual_parent": {
+    "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+    "command_sha256": "1d20e06e866b2e292f5e7b7b6c2ecdcb09e7270a9450874e87c634a7c190f431",
+    "pid": 346649,
+    "start_ticks": "795156",
+    "state": "S"
+  },
+  "contract_sha256": {
+    "audit.py": "e5b97a72e1566fd347f68792cac0dd7770fdaa8ee3a9790a7e9c073081af93dc",
+    "reader.py": "c9d979ca06970b7afcbd125ccbdf08517c1c32ca94eeda25eb3611722be82659"
+  },
+  "existing_parent_lock_holders": [
+    "2: FLOCK  ADVISORY  WRITE 346649 00:24:3352924 0 EOF"
+  ],
+  "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+  "loaded_index": 5317,
+  "loaded_sha256": "f397616c711988f5e469920e3b76db5c01113452f35c2c3b42fdd603912256cc",
+  "local_boot_utc": "2026-09-18T22:50:45+00:00",
+  "model_ACT_chains_after_reboot": 2,
+  "model_publications_after_reboot": 3,
+  "native": {
+    "command_sha256": "dc134301c56e9d9f15abc86db3e3e0e5ed2cf5a8ce551d91b08861b3407f093e",
+    "guard_argument_present": true,
+    "pid": 699464,
+    "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/r233_lease_continuation_retry1/source",
+    "start_ticks": "33078516",
+    "state": "S"
+  },
+  "native_guard_sha256": "df9769ae317f249fe8ff9f93c62457eb23c659d7e7e707dc67cf3a2d78f75ece",
+  "native_signals": 0,
+  "node_boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+  "node_local_bridge_not_model_parent": true,
+  "observed_utc": "2026-09-19T03:09:16.361763+00:00",
+  "provider_calls": 0,
+  "raw_text_exported": false,
+  "remote_writes": 0,
+  "rows": [
+    {
+      "API_REQUEST_utc": "2026-09-19T02:36:13.650236+00:00",
+      "artifact_sha256": {
+        "API_REQUEST.json": "630b7a7f0635e2ca6051e9c28949564b0af528471aa8f7bcc4b2c8cf8e7127b9",
+        "DISPATCH.json": "f4148fb488c1bd64cc015094128e307dba754b477032deaf4b4fb74e9910527a",
+        "PUBLISH_INTENT.json": "6d9565607f2959e9c222a839905cab04a43dc60bd46c7fb69673de489eedb80e",
+        "RESULT.json": "11b602f0523e762071096b4619fae205aabce9db46fd6511f0df7ec643a11a72",
+        "SOURCE.json": "493a292f381a9ead585e839b67225e40ba11f2380d151900da357c14f54ff9c7",
+        "stdout.json": "356b4dde55302a07e4675d7199702b40bb7a71db2fe13b38e41aed90e2321f1e"
+      },
+      "attempt": "parent_000000000392",
+      "chain": {
+        "ACT_request": {
+          "index": 7418,
+          "kind": "REQUEST",
+          "sha256": "50c07862ea64dee9b7e69e58da1b00e4b85f0b69c6e2c22604e7de3b5bc611e0"
+        },
+        "ACT_request_utc": "2026-09-19T02:50:11.369571+00:00",
+        "ACT_response": {
+          "index": 7419,
+          "kind": "RESPONSE",
+          "sha256": "86abbeb60585a6bb07d5abd252aa727e2c08189e5b80879a45b5c9073b64a7a4"
+        },
+        "ACT_response_utc": "2026-09-19T02:50:48.474994+00:00",
+        "ACT_text_sha256": "479f1b6aab1eb14f8b3f47838f65591f59157468bf383ed6d234396546cbf5fc",
+        "all_history_tokens_masked": true,
+        "attempt": "parent_000000000392",
+        "bytes_read": 486884422,
+        "committed": {
+          "index": 7420,
+          "kind": "COMMITTED",
+          "sha256": "8b75dce066bdd880f8c9af07712981907c36e42ed1551da5d85f41c58902b002"
+        },
+        "first_request": {
+          "index": 7411,
+          "kind": "REQUEST",
+          "sha256": "ea2e5b89c12c02fab45354cf59bdbab07c60fa23d1a6e04b685e84e6c463f955"
+        },
+        "first_request_utc": "2026-09-19T02:49:11.950293+00:00",
+        "parent_exact_text_in_ACT": true,
+        "publication_id": "d204d4591343408aa67b43108c327142",
+        "published_inbox_file_sha256": "aa4e17fedc8bb28adbad2520602e11e186321e041eddb2228fa2601e41c61c6a",
+        "rendered_message_sha256": "74529391240beff1aab3c27a55000f0db3ef8b681064758dd0293f52c315abeb",
+        "rendering": "Existing attributed inbox renderer: speaker + colon-space + exact provider message.",
+        "scanned_through": {
+          "index": 7537,
+          "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+          "kind": "UPDATE",
+          "previous_sha256": "990ad3fdc8a3166e3f98a8e90c51aeeb8cba8e51caea638ff8227edf3d754bcd",
+          "sha256": "02e789828effcddea8d920a7879a6316805bd092db59b40b00cd0084c3137deb"
+        },
+        "semantic_uptake": null,
+        "source_anchor_index": 7337,
+        "stage_receipt": {
+          "index": 7421,
+          "kind": "R184_STAGE",
+          "sha256": "d7f63e48f4b23efd91e11371d99c4525212a8b1ccbda99ea48ee83fcb8c43b82"
+        },
+        "status": "PROVIDER_TO_EXACT_REQUEST_TO_COMMITTED_ACT_VERIFIED"
+      },
+      "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+      "message_sha256": "5a4a9325ffac2d565ff046f53d9b8bc1edc7289917155ca82dc888f7cf6dd742",
+      "model": "openai/openai/gpt-6-astra",
+      "provider_created_utc": "2026-09-19T02:36:15+00:00",
+      "provider_response_completed": true,
+      "provider_response_file_utc": "2026-09-19T02:37:02.579106+00:00",
+      "publication_id": "d204d4591343408aa67b43108c327142",
+      "publication_sha256": "aa4e17fedc8bb28adbad2520602e11e186321e041eddb2228fa2601e41c61c6a",
+      "published_result_utc": "2026-09-19T02:37:03.759115+00:00",
+      "reasoning_effort": "xhigh",
+      "source_head_sha256": "d39d258771271585bdb9ca66bc4a9ac3e46d450a82874e3dd8cf5eff4d23dda4"
+    },
+    {
+      "API_REQUEST_utc": "2026-09-19T02:50:13.634489+00:00",
+      "artifact_sha256": {
+        "API_REQUEST.json": "ab180f2da142833c113362a2bec5ef1bccc594470ac77f4847bd5a637f288744",
+        "DISPATCH.json": "a374d2932b84d83949623bf63dd400b4625a7c1c3490cf470ff39a6de8db5552",
+        "PUBLISH_INTENT.json": "6759fd4890f0f07ae54b3e60297dc2856e4c97ff52984efc0c562258c3d043c5",
+        "RESULT.json": "ccc2dd69b1840a9ff3a965317bf986075cb9cb079f11545c5de1be36ccf8382a",
+        "SOURCE.json": "0ee75ebf02303c3a4166e52d8e9d75ab2304d851f68c786b18cba73e28cb1f46",
+        "stdout.json": "9dd3558b8b3ec5fc1626e49ebc13770cf4dba41ee11ff0e1c944128fa6f03849"
+      },
+      "attempt": "parent_000000000395",
+      "chain": {
+        "ACT_request": {
+          "index": 7499,
+          "kind": "REQUEST",
+          "sha256": "f244c96840c26ada9b14e548d03022c640380e61eadf0c92d6a19ed49e07aeda"
+        },
+        "ACT_request_utc": "2026-09-19T03:04:17.869350+00:00",
+        "ACT_response": {
+          "index": 7500,
+          "kind": "RESPONSE",
+          "sha256": "a5a8ea5d1ee69bd256ca9414c31493353a984f8b4fc7f71cdc832a4f2c285bbc"
+        },
+        "ACT_response_utc": "2026-09-19T03:04:54.727080+00:00",
+        "ACT_text_sha256": "a2768859ca77ea463d1ef93321fe2860d5c3ec4cc91d235d851075e8fecdfa41",
+        "all_history_tokens_masked": true,
+        "attempt": "parent_000000000395",
+        "bytes_read": 287428282,
+        "committed": {
+          "index": 7501,
+          "kind": "COMMITTED",
+          "sha256": "e7f36c8403ecaff0dc66c3860f7092208d43cd99eb447efce796dcdf103a5cde"
+        },
+        "first_request": {
+          "index": 7492,
+          "kind": "REQUEST",
+          "sha256": "348963d2778f2e661bcb8dcc96d7a85d095317c964b75049341bc06a7ef4d231"
+        },
+        "first_request_utc": "2026-09-19T03:03:19.094600+00:00",
+        "parent_exact_text_in_ACT": true,
+        "publication_id": "f9ac9372e25449a4b033f4274231a366",
+        "published_inbox_file_sha256": "7580735573b59f561806d6e1b96825b1509dd9b22c872fca5cfc1d77559750f9",
+        "rendered_message_sha256": "c1a21b07270681a57fcdb4c94eadcafb4b95ef59795ddd499b4d20559cf5e244",
+        "rendering": "Existing attributed inbox renderer: speaker + colon-space + exact provider message.",
+        "scanned_through": {
+          "index": 7538,
+          "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+          "kind": "UPDATE",
+          "previous_sha256": "02e789828effcddea8d920a7879a6316805bd092db59b40b00cd0084c3137deb",
+          "sha256": "c4793491dce1b2740ac12cfdef31c6e39f8f3300a59e1a2e13d98e6324651c2d"
+        },
+        "semantic_uptake": null,
+        "source_anchor_index": 7418,
+        "stage_receipt": {
+          "index": 7502,
+          "kind": "R184_STAGE",
+          "sha256": "b7d80229e3dc10aca50264654200163ef7840715ebfe927477081d8424104d59"
+        },
+        "status": "PROVIDER_TO_EXACT_REQUEST_TO_COMMITTED_ACT_VERIFIED"
+      },
+      "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+      "message_sha256": "2838cf05a2c943494a41d24556981eefe8a57edd9674cd09029243c891136b80",
+      "model": "openai/openai/gpt-6-astra",
+      "provider_created_utc": "2026-09-19T02:50:15+00:00",
+      "provider_response_completed": true,
+      "provider_response_file_utc": "2026-09-19T02:51:16.237283+00:00",
+      "publication_id": "f9ac9372e25449a4b033f4274231a366",
+      "publication_sha256": "7580735573b59f561806d6e1b96825b1509dd9b22c872fca5cfc1d77559750f9",
+      "published_result_utc": "2026-09-19T02:51:17.469292+00:00",
+      "reasoning_effort": "xhigh",
+      "source_head_sha256": "50c07862ea64dee9b7e69e58da1b00e4b85f0b69c6e2c22604e7de3b5bc611e0"
+    },
+    {
+      "API_REQUEST_utc": "2026-09-19T03:04:20.505661+00:00",
+      "artifact_sha256": {
+        "API_REQUEST.json": "f59403420b3851ef1baaf7d808c3bff8979a1d9cedd49fe45699fd14400388a5",
+        "DISPATCH.json": "b759028f0a778da4ad240fdc93bd3ec3c242fb1987e1e1fc7a78dfefa4d6797e",
+        "PUBLISH_INTENT.json": "a313c4f46fb17abd881720278b4fe19872ad66f49226f32fa706bdede4295336",
+        "RESULT.json": "a35abc454589c8ca4a45e96a1d43fb392c7cd70e5788e77cb9f5415068ac9b07",
+        "SOURCE.json": "1dc5c51c0d5ead00d1a2bdd63b24990b62111aae66435211a286bace4a930140",
+        "stdout.json": "5a26f6a43ea204c09296b54effb1eab149b5dc4e2335ed28525a1c0c90adf0b2"
+      },
+      "attempt": "parent_000000000398",
+      "chain": {
+        "attempt": "parent_000000000398",
+        "bytes_read": 86552084,
+        "publication_id": "30cb916ff0b544e0a30ecbc7707d4a37",
+        "published_inbox_file_sha256": "e4d0ba306b794d1a35f05d44b876135fda6a1edd69d1828babc1faee8127571d",
+        "rendered_message_sha256": "c07eed0149cc42003e1ca200b7fd0d5a90561487f0853d21e40bb90723ee552c",
+        "rendering": "Existing attributed inbox renderer: speaker + colon-space + exact provider message.",
+        "scanned_through": {
+          "index": 7539,
+          "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+          "kind": "UPDATE",
+          "previous_sha256": "c4793491dce1b2740ac12cfdef31c6e39f8f3300a59e1a2e13d98e6324651c2d",
+          "sha256": "0c7cdb4d59b66fe2d7539db52c89ec7e845e5fb92fab564cadc36cd597f32c07"
+        },
+        "semantic_uptake": null,
+        "source_anchor_index": 7499,
+        "status": "PUBLISHED_NO_EXACT_RENDER_IN_BOUNDED_WINDOW"
+      },
+      "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+      "message_sha256": "cd90f461bde2ac8ec68b4205a1f840e63e42263d24003ffd04409aa1f6285d27",
+      "model": "openai/openai/gpt-6-astra",
+      "provider_created_utc": "2026-09-19T03:04:20+00:00",
+      "provider_response_completed": true,
+      "provider_response_file_utc": "2026-09-19T03:05:13.994500+00:00",
+      "publication_id": "30cb916ff0b544e0a30ecbc7707d4a37",
+      "publication_sha256": "e4d0ba306b794d1a35f05d44b876135fda6a1edd69d1828babc1faee8127571d",
+      "published_result_utc": "2026-09-19T03:05:15.129508+00:00",
+      "reasoning_effort": "xhigh",
+      "source_head_sha256": "f244c96840c26ada9b14e548d03022c640380e61eadf0c92d6a19ed49e07aeda"
+    }
+  ],
+  "same_parent_identity_alive": true,
+  "semantic_quality_or_retention_claim": false,
+  "timestamp_basis": "Canonical record file mtime, not inferred from uptime."
+}

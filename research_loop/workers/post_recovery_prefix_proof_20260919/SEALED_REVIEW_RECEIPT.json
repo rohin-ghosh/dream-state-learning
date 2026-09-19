@@ -1,0 +1,58 @@
+{
+  "schema": "R233_PREFIX_PROOF_OFFLINE_REVIEW_HANDOFF_V1",
+  "hash_capture_utc": "2026-09-19T02:36:00Z",
+  "status": "OFFLINE_CANDIDATE_READY_NAMESPACE_INTEGRATION_HELD",
+  "api_stable_for_independent_review": true,
+  "hash_sealed_not_filesystem_immutable": true,
+  "source_epoch_requires_separate_external_path_and_sha256": true,
+  "authority": "EXTERNAL_OPERATOR_GUARD_PATH_AND_SHA256_ONLY",
+  "forward_reuse": {
+    "proof_complete": "A",
+    "resume_complete": "EXACT_EXTERNALLY_APPROVED_B_NOT_BEFORE_A",
+    "raw_interval_A_exclusive_through_B_and_entire_tail_verified": true,
+    "new_interval_inbox_records_decoded_and_advanced": true,
+    "explicit_advance_record_and_byte_bounds_required": true,
+    "non_complete_selection_fields_must_match": true,
+    "implicit_selection_or_fallback": false
+  },
+  "synthetic_validation": {
+    "C2_cases_passed": 45,
+    "pair_learner_cases_passed": 45,
+    "pair_frozen_cases_passed": 45,
+    "original_default_reader_regressions_passed": 18,
+    "total_tests_passed": 153,
+    "final_receipt": "TEST_RECEIPT_v3.json",
+    "final_log": "TEST_RUN_v3.log"
+  },
+  "namespace_gate": {
+    "same_boot_and_mount_namespace_required": true,
+    "cross_namespace_override_implemented": false,
+    "main_reported_node": "C2 node5",
+    "main_reported_observation_utc": "2026-09-19T02:30:14Z",
+    "main_reported_host_mount_namespace_inode": 4026531832,
+    "main_reported_original_native_pid": 1139778,
+    "main_reported_native_mount_namespace_inode": 4026536303,
+    "reported_contexts_match": false,
+    "matching_source_root_and_manifest_samples_do_not_override_namespace_gate": true,
+    "actual_consumer_namespace_support_unresolved": true
+  },
+  "reservation_maximum_seconds": 30,
+  "reservation_maximum_changed": false,
+  "actual_node_proof_or_timing_performed": false,
+  "actual_startup_or_LOADED_claimed": false,
+  "live_GPU_parent_native_staging_or_lease_actions": false,
+  "raw_journals_copied_to_VM": false,
+  "existing_sources_or_epochs_edited": false,
+  "original_reader_sha256_rechecked_in_all_three_reference_locations": "972456b7d6cb026cc922e067114701d4f157fa6ed775e4406ecb52c86eef7d3e",
+  "file_sha256": {
+    "prefix_port.py": "45250725ff35192c1d5a4534ad56fa4c78f913b004570e2dcd4a3936abbe5a53",
+    "immutable_prefix_proof.py": "e635da49cafa94507b3f9bc7f68afae18e0cb9cb6512742d76849f11196a912b",
+    "prefix_cli.py": "7a3652992c51f6dc72fe8df9198cae39e0109bb1f49a5f2a36c631bec12893ea",
+    "test_prefix_proof.py": "26408449cb413e82abfd877d2319768b22958162bb9681b2afe000b77823c0e1",
+    "checkpoint_tail_runtime.candidate.py": "733671a1d73d67f1d8b6616ee4a4b449fb957997c6dd04e2052a1a7a5cb8b0de",
+    "README.md": "4bf112d86ad7710219fca621d589ca069f016539f68e9b818d3ff85d36e47243",
+    "TO_BANACH_PASTEUR.md": "41bc6f4be2b68a5e230a8b365d357f64a3a8e8434370310f2d57028f7d8d8893",
+    "TEST_RECEIPT_v3.json": "9f09e522f58bf788e4a2d3b783814ce77bba3891afd0c2c5921e3a556aef1a79",
+    "TEST_RUN_v3.log": "1861d94716079c34dbf0d932894830de9a1dc9dbdf864033f5bd8eab818c4d88"
+  }
+}

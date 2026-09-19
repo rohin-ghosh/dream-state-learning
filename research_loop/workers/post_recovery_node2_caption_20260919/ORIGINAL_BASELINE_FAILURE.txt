@@ -1,0 +1,21 @@
+test_only_caption_slots_and_no_filter_configuration (test_r227_caption.R227CaptionTests.test_only_caption_slots_and_no_filter_configuration) ... FAIL
+
+======================================================================
+FAIL: test_only_caption_slots_and_no_filter_configuration (test_r227_caption.R227CaptionTests.test_only_caption_slots_and_no_filter_configuration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_node2_caption_20260919/original/source/tests/test_r227_caption.py", line 21, in test_only_caption_slots_and_no_filter_configuration
+    self.assertEqual({assignment[0] for assignment in ASSIGNMENTS.values()}, {0, 3, 5, 6, 7})
+AssertionError: Items in the first set but not the second:
+2
+Items in the second set but not the first:
+0
+3
+5
+6
+7
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

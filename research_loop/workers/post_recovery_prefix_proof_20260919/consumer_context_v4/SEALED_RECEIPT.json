@@ -1,0 +1,47 @@
+{
+  "schema": "R233_CONSUMER_CONTEXT_V4_OFFLINE_HANDOFF_V1",
+  "hash_capture_utc": "2026-09-19T02:47:13Z",
+  "status": "SEALED_OFFLINE_CANDIDATE_READY_FOR_MAIN_CPU_BENCHMARK_AND_ADMISSION_REVIEW",
+  "api_stable": true,
+  "new_features_only": [
+    "ORIGINAL_ADMISSION_PINNED_SAME_FILESYSTEM_OBJECTS_ACROSS_ADMITTED_NAMESPACE",
+    "THREE_SECOND_PRODUCER_QUIET_AGE_AND_GRANULARITY_ASSUMPTION_GUARD"
+  ],
+  "same_namespace_default_preserved": true,
+  "same_kernel_boot_required": true,
+  "consumer_checks_own_path_and_FD_view": true,
+  "every_prefix_record_and_intent_and_pinned_source_identity_required": true,
+  "producer_and_actual_consumer_namespace_recorded": true,
+  "no_predicted_namespace_or_namespace_allowlist": true,
+  "exact_A_to_B_and_full_raw_extension_tail_checks_preserved": true,
+  "quiet_age_minimum_ns": 3000000000,
+  "young_proof_refuses_before_raw_prefix_hashing": true,
+  "actual_filesystem_granularity_and_attribute_coherence_still_require_admission": true,
+  "independent_admission_reference_must_be_supplied_by_original_validated_guard_chain": true,
+  "test_counts": {
+    "C2": 59,
+    "pair_learner": 59,
+    "pair_frozen": 59,
+    "original_default_regressions": 18,
+    "total_passed": 195
+  },
+  "v3_sealed_hashes_preserved": true,
+  "namespace_tests_simulated": true,
+  "positive_unit_clock_offset_ns": 4000000000,
+  "negative_same_quantum_metadata_alias_test_passed": true,
+  "real_quiet_age_CLI_tests_passed": true,
+  "original_admission_peer_critique_status": "REQUESTED_VIA_MAIN_NOT_ACKNOWLEDGED",
+  "reservation_maximum_seconds_unchanged": 30,
+  "live_GPU_native_parent_lease_or_staging_actions": false,
+  "actual_node_benchmark_performed_here": false,
+  "file_sha256": {
+    "checkpoint_tail_runtime.candidate.py": "4e7746a8da7f99cb0354beb8d489a92e8fcb387e1409256901d1a9b0a033803c",
+    "immutable_prefix_proof.py": "ce5542e08f463cac4d795100bdc409480b4aef162632dc2aa6642bed9d08960b",
+    "prefix_cli.py": "bdb5eea3bb2f5af109fcd9c0d9ae0dd85b4605dadf92565d4ed67bd5751547b8",
+    "source_port.py": "e55c28f7dfadc859e2d966077bba027d8f95f5da00de5dc4e75373f955349aa9",
+    "context_extension.py": "ba8c0651923edc482c848fef1df27e643f953e646a736096f920959eadc84ee4",
+    "test_consumer_context.py": "5079f15a0f856afc4a0ea178ca10abd50509f55a65b528c163d084cf47cd4830",
+    "TEST_RECEIPT_attempt1.json": "35cafd6b795773c5d906b69fccf2c4c5829aeb54a020b150b3da1376aac08d3b",
+    "TEST_RUN_attempt1.log": "0ea167a43e9140ce9771ffa7327e43c5f4df075e20b69c8526b55eb92249e7fb"
+  }
+}

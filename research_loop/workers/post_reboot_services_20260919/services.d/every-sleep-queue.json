@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "owner": "main / post_reboot_services_20260919 observer recovery",
+  "approval_scope": "Explicit follow-up: restore unchanged every-sleep metadata enrollment and adopt existing correction observer; no GPU runs, evaluation or source modification",
+  "local_daemon_only": true,
+  "child_native": false,
+  "restart_safe": true,
+  "self_enforces_lease": true,
+  "foreground": true,
+  "shutdown_leaves_child_natives_running": true,
+  "cwd": "/data/home/rohing/dream-state-orch",
+  "until_unix": 1790791170,
+  "name": "every-sleep-queue",
+  "kind": "queue",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/queue_launcher.py"
+  ],
+  "entrypoint": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/queue_launcher.py",
+  "entrypoint_sha256": "a4e8a7be67a104c39f5813b719312a712b9c986934c34295f34075ec63e9f4b0",
+  "lease_evidence": {
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_ovx4_recovery_20260918/LEASE_ENROLLMENT_STARTED.json",
+    "sha256": "3e8fb24c19737f5cf331fe800d04ef12d0f7c0b75476477285a69db6056a1fc6",
+    "json_pointer": "/deadline_unix"
+  },
+  "singleton_lock": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_kept_age_probe_20260918/enrollment/ENROLL.lock"
+}

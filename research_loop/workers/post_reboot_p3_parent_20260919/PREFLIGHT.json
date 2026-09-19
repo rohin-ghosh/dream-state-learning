@@ -1,0 +1,95 @@
+{
+  "credential_present": true,
+  "credentials_persisted": false,
+  "existing_lock_identity": [
+    36,
+    3352924
+  ],
+  "existing_parent_lock_free": true,
+  "fresh_native": {
+    "binding": {
+      "command_sha256": "dc134301c56e9d9f15abc86db3e3e0e5ed2cf5a8ce551d91b08861b3407f093e",
+      "guard_sha256": "df9769ae317f249fe8ff9f93c62457eb23c659d7e7e707dc67cf3a2d78f75ece",
+      "hard_end_unix": 1790359200,
+      "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+      "loaded_index": 5317,
+      "loaded_sha256": "f397616c711988f5e469920e3b76db5c01113452f35c2c3b42fdd603912256cc",
+      "pid": 699464,
+      "plan_sha256": "d3a0424a1da5552c3e8954948483045dfad8e17bc5c9f7589c2278df3323e6ef",
+      "recovery_sha256": "9c35e4885feeef2a6b0d289b6db96f6fb9cc8a0308e63fe41a7d6e4bc0a95731",
+      "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/r233_lease_continuation_retry1/source",
+      "source_manifest_sha256": "46e57f5c996038f97676929432a7ca21b5773362a64f40b58a5afe402bde3da0",
+      "start_ticks": "33078516",
+      "wall_index": 5316,
+      "wall_sha256": "e48028cec1667cd5f8e2a5cfebcf2909e45ddee48be0b1fedcc9cd46b11cf49f"
+    },
+    "endpoint_sha256": "2f1593be8bf2be408869e8491e73653428a92ef72c5e51df4d1fa6ade8fbd2ca",
+    "native": {
+      "command_sha256": "dc134301c56e9d9f15abc86db3e3e0e5ed2cf5a8ce551d91b08861b3407f093e",
+      "guard_argument_present": true,
+      "pid": 699464,
+      "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/r233_lease_continuation_retry1/source",
+      "start_ticks": "33078516",
+      "state": "R"
+    },
+    "native_signals": 0,
+    "node_boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+    "observed_unix": 1789779796.9434857,
+    "provider_calls": 0,
+    "related_python_processes": [
+      {
+        "module": "research_loop.workers.rohin233_ovx4_recovery_20260918.lease_bridge",
+        "pid": 428814,
+        "scripts": [],
+        "start_ticks": "32156589",
+        "state": "S"
+      },
+      {
+        "module": null,
+        "pid": 458401,
+        "scripts": [
+          "/localhome/local-rohing/orch_r233_lease_renewal_20260918/attempt3/p3/feedback_recovery.py"
+        ],
+        "start_ticks": "32182952",
+        "state": "S"
+      },
+      {
+        "module": "research_loop.workers.rohin233_ovx4_recovery_20260918.lease_bridge",
+        "pid": 570041,
+        "scripts": [],
+        "start_ticks": "32361960",
+        "state": "S"
+      }
+    ],
+    "remote_writes": 0
+  },
+  "local_boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+  "model": "openai/openai/gpt-6-astra",
+  "native_signals": 0,
+  "observed_unix": 1789779797.173474,
+  "observed_utc": "2026-09-19T01:03:17.173475+00:00",
+  "old_parent": {
+    "credentials_inherited_not_persisted": true,
+    "hard_end_unix": 1790359200,
+    "loaded_index": 5317,
+    "native_pid": 699464,
+    "native_signals": [],
+    "pid": 4071384,
+    "publication_claim": false,
+    "source_sha256": "a2d18a55196aa95fe6244517b79d07b9559a1549f9530b1d330e5ab68d9e204d",
+    "start_ticks": "187218132",
+    "started_unix": 1789765163.2575338
+  },
+  "old_parent_observed": null,
+  "original_manifest_sha256": "b30d289ff597286563de3e4f8037af47fa8500cc6961fc4f1a7048a6f3c989ca",
+  "prior_attempt_count": 138,
+  "prior_ledger_file_count": 1016,
+  "provider_calls": 0,
+  "reasoning_effort": "xhigh",
+  "runner_pins": {
+    "preflight.py": "7a1ffe365d6ec57b3832db17487c3a45e472fefdc4f7269a8b5f52399a415c0b",
+    "runner.py": "f459b8eba126b4d0c8b595f2e48fa12e39ebff08cdbf84ef718b1d15236808d2"
+  },
+  "scope": "P3_CPU_MODEL_PARENT_ONLY_EXISTING_LEDGER_NO_NATIVE_CONTROL",
+  "seed_sha256": "73fc032fc880901071f9b01de8c22841b808664e89f218187393381138494314"
+}

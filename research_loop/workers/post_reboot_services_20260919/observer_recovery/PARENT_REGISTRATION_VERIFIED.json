@@ -1,0 +1,124 @@
+{
+  "boot_enabled": false,
+  "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+  "c2_owner": {
+    "command_sha256": "b27c6a4ff3bb90b2305561167a1aa0a2e9c32fe5ec1b345984dab4b9df7ca580",
+    "pid": 361010,
+    "start_ticks": "822432"
+  },
+  "c2_owner_lock": {
+    "inode": "00:24:6818812",
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/C2_SERVICE.lock",
+    "pid": 361010
+  },
+  "existing_restore_tests_passed": 2,
+  "native_signals": [],
+  "new_native_runs": 0,
+  "observed_utc": "2026-09-19T01:08:28.940434+00:00",
+  "original_locks": [
+    {
+      "inode": "00:24:6749545",
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/private/C2_WAIT_CONTROLLER.lock",
+      "pid": 325487
+    },
+    {
+      "inode": "00:24:3349961",
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent7/PARENT_OPERATOR.lock",
+      "pid": 325545
+    },
+    {
+      "inode": "00:24:5565309",
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r225_parent7/PARENT_OPERATOR.lock",
+      "pid": 325545
+    },
+    {
+      "inode": "00:24:6093429",
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r229_bridge_run/COORDINATOR.lock",
+      "pid": 325634
+    }
+  ],
+  "pinned_c2_restore_unchanged": true,
+  "preserved_publishers": {
+    "bridge": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/bridge.py"
+      ],
+      "command_sha256": "8d4ba1113100b96546b2b31cb6306665232ce9167e28c63487053dc92c895e03",
+      "executable": "/usr/bin/python3.12",
+      "pid": 325634,
+      "start_ticks": "753612"
+    },
+    "c2_publisher": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/checkpoint_tail_parent_strong.py",
+        "--manifest",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_session1/MANIFEST.json",
+        "--manifest-sha256",
+        "e633ecae3b71e2e4e901c2f7eceece0374c8190f5c859ab300ee449daa80e753"
+      ],
+      "command_sha256": "b2067e03a83fd4e472d3df17386e35872d2c439b8177526554148e0b608a1689",
+      "executable": "/usr/bin/python3.12",
+      "pid": 325487,
+      "start_ticks": "753205"
+    },
+    "p7": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/p7_restore.py"
+      ],
+      "command_sha256": "e355d06624cc8e957574801d894510e91398777a1d32f491eafe51ee3c041f47",
+      "executable": "/usr/bin/python3.12",
+      "pid": 325545,
+      "start_ticks": "753409"
+    }
+  },
+  "publishers_restarted": false,
+  "registration_regressions_passed": 7,
+  "service_management_attempted": false,
+  "services": [
+    {
+      "matches": [
+        {
+          "command_sha256": "8d4ba1113100b96546b2b31cb6306665232ce9167e28c63487053dc92c895e03",
+          "pid": 325634,
+          "start_ticks": "753612"
+        }
+      ],
+      "name": "astra7-bridge",
+      "status": "RUNNING_ADOPTED_NO_SIGNALS"
+    },
+    {
+      "matches": [
+        {
+          "command_sha256": "b27c6a4ff3bb90b2305561167a1aa0a2e9c32fe5ec1b345984dab4b9df7ca580",
+          "pid": 361010,
+          "start_ticks": "822432"
+        }
+      ],
+      "name": "c2-parent",
+      "status": "RUNNING_OWNED"
+    },
+    {
+      "matches": [
+        {
+          "command_sha256": "e355d06624cc8e957574801d894510e91398777a1d32f491eafe51ee3c041f47",
+          "pid": 325545,
+          "start_ticks": "753409"
+        }
+      ],
+      "name": "p7-parent",
+      "status": "RUNNING_ADOPTED_NO_SIGNALS"
+    }
+  ],
+  "supervisor_pid": 311614,
+  "until_unix": {
+    "astra7-bridge": 1789927200.0,
+    "c2-parent": 1789927200,
+    "p7-parent": 1790359200
+  }
+}

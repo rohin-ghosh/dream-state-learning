@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "kind": "parent",
+  "owner": "Main-approved C2/P7/bridge owners",
+  "approval_scope": "Main-approved bounded-observation P7 CPU parent; exact idle pidfd handoff completed; same turn ledger and policy, no native signal",
+  "local_daemon_only": true,
+  "child_native": false,
+  "restart_safe": true,
+  "self_enforces_lease": true,
+  "foreground": true,
+  "shutdown_leaves_child_natives_running": true,
+  "cwd": "/data/home/rohing/dream-state-orch",
+  "name": "p7-parent",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/p7_bounded.py"
+  ],
+  "entrypoint": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/p7_bounded.py",
+  "entrypoint_sha256": "04e12726565d2e46df28ca7bdc3aea2909601dc2d8984ce9615c59154fa9871a",
+  "until_unix": 1790359200,
+  "lease_evidence": {
+    "json_pointer": "/node4_cpu_hard_end_unix",
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/LEASE_AUTHORITY.json",
+    "sha256": "d60fdbcb661af334ce3ebfc42c8b9ab3fa8c5923b135a1e7aaafc4c7d05aa08f"
+  },
+  "singleton_lock": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent7/PARENT_OPERATOR.lock",
+  "handoff_receipt": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/P7_BOUNDED_STARTED.json"
+}

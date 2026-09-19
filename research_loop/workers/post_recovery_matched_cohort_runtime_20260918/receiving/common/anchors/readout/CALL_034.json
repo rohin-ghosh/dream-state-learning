@@ -1,0 +1,80 @@
+{
+  "adapter": null,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "family": "simulated_tools",
+  "finished_unix": 1789461472.1521716,
+  "max_new_tokens": 512,
+  "messages": [
+    {
+      "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Look up SKU B439 in warehouse west9.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+      "role": "user"
+    }
+  ],
+  "outcome": {
+    "category": "correct",
+    "completion": "complete",
+    "content_tokens": 35,
+    "generated_tokens": 36,
+    "machine": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "verified_anchor": true
+  },
+  "position": 34,
+  "response": {
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Look up SKU B439 in warehouse west9.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      }
+    ],
+    "prompt_tokens": 141,
+    "raw": "{\n  \"tool\": \"lookup_catalog\",\n  \"arguments\": {\n    \"sku\": \"B439\",\n    \"warehouse\": \"west9\"\n  }\n}",
+    "terminal": true,
+    "token_ids": [
+      515,
+      220,
+      330,
+      14172,
+      788,
+      330,
+      21020,
+      47310,
+      756,
+      220,
+      330,
+      16370,
+      788,
+      341,
+      262,
+      330,
+      39929,
+      788,
+      330,
+      33,
+      19,
+      18,
+      24,
+      756,
+      262,
+      330,
+      45546,
+      788,
+      330,
+      11039,
+      24,
+      698,
+      220,
+      456,
+      92,
+      151645
+    ],
+    "truncated": false
+  },
+  "started_unix": 1789461471.394055,
+  "status": "COMPLETE",
+  "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_08"
+}

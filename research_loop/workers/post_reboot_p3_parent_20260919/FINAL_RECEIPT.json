@@ -1,0 +1,151 @@
+{
+  "HTTP429": {
+    "TPM_mentioned_in_original_error_body": true,
+    "attempt": "parent_000000000373",
+    "backoff_evidence": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent3/STATUS_1789780391796160280.json",
+      "sha256": "4b0033d8177b2df8d1b07af81cd69eab90b86c4213359e60e0e7f43272f777af"
+    },
+    "backoff_respected": true,
+    "error_body_bytes": 604,
+    "error_body_sha256": "2fef0a9ccf596f4b69e26418226e1cc3bdf85840b1a9b4e54eceb60c97096319",
+    "error_type": "HTTPError",
+    "http429_in_original_error": true,
+    "http_status": 429,
+    "next_dispatch_sha256": "68bea1e2c08320a13f69b0216852ee7c9fecca94b6e3d571660f49816b24a4ea",
+    "next_dispatch_utc": "2026-09-19T01:13:17.641363+00:00",
+    "next_distinct_attempt": "parent_000000000374",
+    "not_before_utc": "2026-09-19T01:13:15.883248+00:00",
+    "observed_utc": "2026-09-19T01:20:39.210802+00:00",
+    "original_dispatch": "2026-09-19T01:12:14.912081+00:00",
+    "raw_error_exported": false,
+    "result_sha256": "75de32f5ebe990f1393ccf09ea62425e8078e267af0063cc6976438be7cb2bfb",
+    "result_utc": "2026-09-19T01:12:15.883197+00:00",
+    "same_attempt_retries": 0,
+    "status": "PROVIDER_FAILED"
+  },
+  "actual_fresh_model_publications": 2,
+  "actual_post_reboot_provider_attempts": 4,
+  "boot_enabled": false,
+  "count_basis": "Unique fresh model publications with an exact verified chain; not a count of repeated context renderings.",
+  "evidence_sha256": {
+    "DUPLICATE_REFUSAL.json": "e77b5de44be73b7c8816ca6668690b53a2564370f0de214cd5714934199c0813",
+    "FRESH_PROVIDER_REQUEST_ACT.json": "7904dbcc8e53bf8c90902e475ffac6b01426309cee6f8f8a12fd2b69451baf62",
+    "LAST3_PROVIDER_REQUEST_ACT.json": "b9d58079ee9b4ccf8387b43ba9fb9600234abb1b6c6adba78992418262c75c4a",
+    "PROVIDER_429_RECEIPT.json": "8b1e6d571e55a1b0b69a02935c61abb2e002ba73bef37c509ba23a6274a077cb",
+    "SUPERVISOR_OBSERVED.json": "c36b2de471dead5565cf1d1116883748d9597d2f3317b0dda11af7a139d9e285",
+    "TESTS.txt": "f47a7b826347b321637fb70fc3cf7ce87ce2d45d8156c06c4522103335eac722",
+    "TEST_existing_parent.txt": "40a382386a8c9aab1773e4bfe5a4effe9629f2872c74872a99d32b4c4ae1ba4e",
+    "VERIFIED_PROCESS.json": "e9c3f766e77e8091772276ea370f080fc4e388989e1095da451ab39f9e725f7b"
+  },
+  "fresh_publications": [
+    {
+      "ACT_request": {
+        "index": 6932,
+        "kind": "REQUEST",
+        "sha256": "6d93ca5dea9ee3d286a635e057871e48cf717d404464cbef7883a479ac06dd42"
+      },
+      "ACT_request_utc": "2026-09-19T01:26:46.843450+00:00",
+      "ACT_response": {
+        "index": 6933,
+        "kind": "RESPONSE",
+        "sha256": "27bfb0a8e6d6a7a7cbf301f5c715b70864eb57a35ff9ee29cf6f94e7f2707361"
+      },
+      "ACT_response_utc": "2026-09-19T01:27:23.892878+00:00",
+      "attempt": "parent_000000000374",
+      "committed": {
+        "index": 6934,
+        "kind": "COMMITTED",
+        "sha256": "38002111f042f80dbc583b8f6ae76327ec90f52cfa115953329ef50f375e43bd"
+      },
+      "first_request": {
+        "index": 6925,
+        "kind": "REQUEST",
+        "sha256": "386d7808e0055c5f5386f32b8106dec59b0df22018024e24106f2da46af98d01"
+      },
+      "first_request_utc": "2026-09-19T01:25:50.373796+00:00",
+      "publication_id": "0e2ffa3c8fa54413b454119b1b5e648b",
+      "publication_result_utc": "2026-09-19T01:14:03.351945+00:00",
+      "stage_receipt": {
+        "index": 6935,
+        "kind": "R184_STAGE",
+        "sha256": "99c58478b39ca383f74ea0646eeb988f838cec2fe2a1f7c941ee59b5f48724ef"
+      },
+      "status": "PROVIDER_TO_EXACT_REQUEST_TO_COMMITTED_ACT_VERIFIED"
+    },
+    {
+      "ACT_request": null,
+      "ACT_request_utc": null,
+      "ACT_response": null,
+      "ACT_response_utc": null,
+      "attempt": "parent_000000000377",
+      "committed": null,
+      "first_request": null,
+      "first_request_utc": null,
+      "publication_id": "3e62442a438d4745985c7075d0601d45",
+      "publication_result_utc": "2026-09-19T01:28:06.925864+00:00",
+      "stage_receipt": null,
+      "status": "PUBLISHED_NO_EXACT_RENDER_IN_BOUNDED_WINDOW"
+    }
+  ],
+  "fresh_publications_with_verified_REQUEST": 1,
+  "fresh_publications_with_verified_committed_ACT": 1,
+  "locks": [
+    {
+      "inode_key": "00:24:3352924",
+      "name": "PARENT_OPERATOR.lock",
+      "owner_pid": 346649
+    },
+    {
+      "inode_key": "00:24:6819348",
+      "name": "RECOVERY.lock",
+      "owner_pid": 346649
+    }
+  ],
+  "model": "openai/openai/gpt-6-astra",
+  "no_new_native_parent_or_supervisor_starts_for_final_evidence": true,
+  "observed_utc": "2026-09-19T01:30:14.149834+00:00",
+  "original_attempt_files_preserved": 1016,
+  "original_seed_unchanged": true,
+  "pending": [
+    "Publication377 exact render/ACT not yet observed; existing render gate and parent continue without a new start.",
+    "Automatic OS boot installation remains BLOCKED_UNINSTALLED.",
+    "No semantic uptake, retention or rollout claim; no independent semantic review performed here."
+  ],
+  "private_scores_read": false,
+  "process": {
+    "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+    "command_sha256": "1d20e06e866b2e292f5e7b7b6c2ecdcb09e7270a9450874e87c634a7c190f431",
+    "pid": 346649,
+    "start_ticks": "795156",
+    "state": "S"
+  },
+  "provider_attempt_outcomes": {
+    "IN_PROGRESS": 0,
+    "PROVIDER_FAILED": 1,
+    "PUBLISHED": 2,
+    "SILENT": 1
+  },
+  "reasoning_effort": "xhigh",
+  "strong_parent_phase": {
+    "awaiting_render": true,
+    "belongs_to_post_reboot_parent": true,
+    "not_before_unix": null,
+    "observed_utc": "2026-09-19T01:30:10.696409+00:00",
+    "status": "AWAITING_RENDER",
+    "timestamp_basis": "document"
+  },
+  "supervisor": {
+    "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+    "command_sha256": "844a7dc7c1a8118f4cdca0197fc7f5822935a62869b243db7bbce7f8ed9aab5b",
+    "pid": 399392,
+    "start_ticks": "891869",
+    "state": "S"
+  },
+  "supervisor_status": "EXISTING_SINGLETON_LOCK_HELD_NO_LAUNCH",
+  "tests": {
+    "actual_duplicate_refusal_exit": 75,
+    "original_parent_context_passed": 1,
+    "scoped_passed": 18
+  }
+}

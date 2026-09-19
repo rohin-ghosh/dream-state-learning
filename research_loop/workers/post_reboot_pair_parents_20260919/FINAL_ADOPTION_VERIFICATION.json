@@ -1,0 +1,107 @@
+{
+  "schema": "PAIR_FINAL_LIVE_ADOPTION_VERIFICATION_V1",
+  "observed_utc": "2026-09-19T01:26:52.544384+00:00",
+  "host_proc_verified": true,
+  "supervisor_pid": 399392,
+  "supervisor_start_ticks": "891869",
+  "supervisor_argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/supervisor.py"
+  ],
+  "supervisor_heartbeat_observed_utc": "2026-09-19T01:26:48.791237+00:00",
+  "supervisor_heartbeat_sha256": "4a8c9e705145f7d133da417eb756e186ab9778cdfcbd2541e2b20f14c13486cf",
+  "until_unix": 1790791200,
+  "adoption_confirmed": true,
+  "boot_enabled": false,
+  "installation_status": "BLOCKED_UNINSTALLED",
+  "arms": [
+    {
+      "arm": "learner",
+      "enabled": true,
+      "status": "RUNNING_ADOPTED_NO_SIGNALS",
+      "pid": 345404,
+      "start_ticks": "792480",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_pair_parents_20260919/parent_service.py",
+        "--arm",
+        "learner"
+      ],
+      "lock": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_pair_parents_20260919/private/learner/PUBLISHER.lock",
+      "native_identity": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r232_recovery",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/authorized_continuation_sidecar_retry_1811Z/GUARD.json"
+        ],
+        "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+        "cwd": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/source",
+        "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+        "pid": 493500,
+        "root": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918",
+        "start_ticks": "10070880"
+      },
+      "current_counts": {
+        "ACT_prompt_exposed": 3,
+        "following_ACT": 3,
+        "inbox_registered": 4,
+        "queued": 4,
+        "rendered_REQUEST": 3
+      },
+      "manifest_path": "research_loop/workers/post_reboot_services_20260919/services.d/pair-curriculum-learner.json",
+      "manifest_sha256": "241bb9cf0f4d0bdc78d9a13c3fd2b2fc022d58f9a1dd9dc95032b5e7b1432468"
+    },
+    {
+      "arm": "frozen",
+      "enabled": true,
+      "status": "RUNNING_ADOPTED_NO_SIGNALS",
+      "pid": 345405,
+      "start_ticks": "792480",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_pair_parents_20260919/parent_service.py",
+        "--arm",
+        "frozen"
+      ],
+      "lock": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/PUBLISHER.lock",
+      "native_identity": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r232_recovery",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/extension_oct01_preview_20260918T1742Z/authorized_continuation_1754Z/GUARD.json"
+        ],
+        "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+        "cwd": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/extension_oct01_preview_20260918T1742Z/source",
+        "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+        "pid": 471737,
+        "root": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918",
+        "start_ticks": "9987073"
+      },
+      "current_counts": {
+        "ACT_prompt_exposed": 0,
+        "following_ACT": 1,
+        "inbox_registered": 3,
+        "queued": 4,
+        "rendered_REQUEST": 3
+      },
+      "manifest_path": "research_loop/workers/post_reboot_services_20260919/services.d/pair-curriculum-frozen.json",
+      "manifest_sha256": "d0ee6ddff575f4fd5e65d8c91076f0639fff94a8f3a449d6ed6cb8a4a0f126c9"
+    }
+  ],
+  "native_signals": 0,
+  "native_restarts": 0,
+  "parent_restarts": 0,
+  "actual_rebind_performed": false,
+  "status_receipt_sha256": "9cb4d61c6b530bae4d0eb57a959e64495bff7530d04c910d35d59a051f8a2599"
+}

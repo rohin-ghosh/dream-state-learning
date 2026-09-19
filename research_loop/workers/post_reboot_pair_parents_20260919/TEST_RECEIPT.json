@@ -1,0 +1,37 @@
+{
+  "observed_utc": "2026-09-19T01:28:27.840907+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "research_loop/workers/post_reboot_pair_parents_20260919",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "environment_nonsecret": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "returncode": 0,
+  "tests_run": 26,
+  "output": "test_all_authentic_act_content_retained (test_recovery.RecoveryTests.test_all_authentic_act_content_retained) ... ok\ntest_binding_failure_is_not_retried_as_transport (test_recovery.RecoveryTests.test_binding_failure_is_not_retried_as_transport) ... ok\ntest_canonical_unicode_hash_matches_original (test_recovery.RecoveryTests.test_canonical_unicode_hash_matches_original) ... ok\ntest_curriculum_spacing_unchanged (test_recovery.RecoveryTests.test_curriculum_spacing_unchanged) ... ok\ntest_enable_keeps_exact_existing_service_and_horizon (test_recovery.RecoveryTests.test_enable_keeps_exact_existing_service_and_horizon) ... ok\ntest_exact_inbox_request_act_receipt (test_recovery.RecoveryTests.test_exact_inbox_request_act_receipt) ... ok\ntest_explicit_429_has_bounded_backoff (test_recovery.RecoveryTests.test_explicit_429_has_bounded_backoff) ... ok\ntest_following_act_distinguishes_compaction_from_direct_render (test_recovery.RecoveryTests.test_following_act_distinguishes_compaction_from_direct_render) ... ok\ntest_following_act_never_substitutes_publication_for_render (test_recovery.RecoveryTests.test_following_act_never_substitutes_publication_for_render) ... ok\ntest_following_act_rejects_wrong_origin (test_recovery.RecoveryTests.test_following_act_rejects_wrong_origin) ... ok\ntest_future_contract_preserves_ledger_and_current_native_bindings (test_recovery.RecoveryTests.test_future_contract_preserves_ledger_and_current_native_bindings) ... ok\ntest_future_rebind_contract_is_inert_and_not_an_activation (test_recovery.RecoveryTests.test_future_rebind_contract_is_inert_and_not_an_activation) ... ok\ntest_incomplete_provider_attempt_blocks_resume (test_recovery.RecoveryTests.test_incomplete_provider_attempt_blocks_resume) ... ok\ntest_nonparent_documents_not_exposed (test_recovery.RecoveryTests.test_nonparent_documents_not_exposed) ... ok\ntest_partial_batch_keeps_exact_act_binding (test_recovery.RecoveryTests.test_partial_batch_keeps_exact_act_binding) ... ok\ntest_public_summary_separates_current_parent_author_and_exposure (test_recovery.RecoveryTests.test_public_summary_separates_current_parent_author_and_exposure) ... ok\ntest_publication_alone_is_not_delivery (test_recovery.RecoveryTests.test_publication_alone_is_not_delivery) ... ok\ntest_read_only_transport_stops_after_five_truthful_errors (test_recovery.RecoveryTests.test_read_only_transport_stops_after_five_truthful_errors) ... ok\ntest_registration_does_not_hide_other_validation_errors (test_recovery.RecoveryTests.test_registration_does_not_hide_other_validation_errors) ... ok\ntest_registration_never_shortens_requested_lease_for_supervisor_cap (test_recovery.RecoveryTests.test_registration_never_shortens_requested_lease_for_supervisor_cap) ... ok\ntest_remote_binding_rejects_pid_reuse (test_recovery.RecoveryTests.test_remote_binding_rejects_pid_reuse) ... ok\ntest_request_without_matching_source_is_not_rendered (test_recovery.RecoveryTests.test_request_without_matching_source_is_not_rendered) ... ok\ntest_seed_reuses_old_evidence_without_opening_replay (test_recovery.RecoveryTests.test_seed_reuses_old_evidence_without_opening_replay) ... ok\ntest_timeout_never_implicitly_redispatches (test_recovery.RecoveryTests.test_timeout_never_implicitly_redispatches) ... ok\ntest_wrong_act_origin_rejected (test_recovery.RecoveryTests.test_wrong_act_origin_rejected) ... ok\ntest_wrong_response_pending_rejected (test_recovery.RecoveryTests.test_wrong_response_pending_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 26 tests in 0.102s\n\nOK\n",
+  "source_sha256": {
+    "adopt_retry_guard.py": "de84dd37cd63aee2a283a269eae395506b919d5ffec68a3edf3a0831d3d29b47",
+    "launch.py": "423c6134c8d9c2b96a4e30c03c63f8fbddd4e9e885c552a638a6c6f0be5e3279",
+    "parent_service.py": "84ccf8832ee78d3c749b11b56b11872162f684aac9763c90f1a56b316fc13db7",
+    "register_supervisor.py": "3cc0ed193ea1502f885d14e66d3ad20b81c4406391297885f8062c1084f18c28",
+    "remote_io.py": "db952754187873a805e3ad56324892442d6cc54aefbaff71beb70f957d72bd50",
+    "report.py": "ef33cf3bce5bbdcb3cd50f6ed45f195d75dc08148bd5bbc929cf304c5ec1dabd",
+    "test_recovery.py": "e338d7d5de65ecb46a5dc688b2963fa340b6da6c0d4bbc5373f2210d756e9005",
+    "verify_following_act.py": "bc49817d25237ac603ab236a34c66ca3e507e94c6081742e01833750c0f62aa0"
+  },
+  "contract_sha256": {
+    "PARENT_REBIND_CONTRACT.md": "c5f465ad0ce7a73e0203eb17d06d234ea2ef0e9639eea2af9ca0463b20c8067f",
+    "PARENT_REBIND_CONTRACT.json": "32deb3dd1d87a1373ba0280c8bdec26ce20e9f4672eb3538091945ef57e47d9f"
+  },
+  "scope": "Current CPU recovery tests and inert-contract regression tests, not future rebind implementation tests",
+  "actual_rebind_performed": false
+}

@@ -6,6 +6,8 @@ and we measure whether that memory keeps improving with experience where
 retrieval and long context flatten. Target: ICLR 2027.
 
 ## Start here (live documents, in reading order)
+- [`research_notes/REPOSITORY_MAP.md`](research_notes/REPOSITORY_MAP.md) —
+  current code, recovery receipts, scientific results, and artifact boundaries.
 - [`research_notes/00_THESIS.md`](research_notes/00_THESIS.md) — **the
   consolidated theory**: thesis, scaling ideology, architecture organs,
   measurement inventions, game doctrine. Read this before anything.

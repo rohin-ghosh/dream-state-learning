@@ -1,0 +1,38 @@
+usage: cli.py [-h] [--plan PLAN] [--plan-sha256 PLAN_SHA256]
+              [--approval APPROVAL] [--approval-sha256 APPROVAL_SHA256]
+              [--dependency DEPENDENCY]
+              [--dependency-sha256 DEPENDENCY_SHA256] [--binding BINDING]
+              [--binding-sha256 BINDING_SHA256] [--receipt RECEIPT]
+              [--receipt-sha256 RECEIPT_SHA256] [--manifest MANIFEST]
+              [--manifest-sha256 MANIFEST_SHA256]
+              [--service-receipt SERVICE_RECEIPT]
+              [--service-receipt-sha256 SERVICE_RECEIPT_SHA256]
+              [--configuration CONFIGURATION]
+              [--configuration-sha256 CONFIGURATION_SHA256]
+              [--execution-sha256 EXECUTION_SHA256]
+              {prepare,inspect,disable,fence,owner-check,rebind,publisher,serve,enable-successor,coordinate}
+
+C2 owner transport entrypoints. Mutations require explicit pinned Main inputs.
+
+positional arguments:
+  {prepare,inspect,disable,fence,owner-check,rebind,publisher,serve,enable-successor,coordinate}
+
+options:
+  -h, --help            show this help message and exit
+  --plan PLAN
+  --plan-sha256 PLAN_SHA256
+  --approval APPROVAL
+  --approval-sha256 APPROVAL_SHA256
+  --dependency DEPENDENCY
+  --dependency-sha256 DEPENDENCY_SHA256
+  --binding BINDING
+  --binding-sha256 BINDING_SHA256
+  --receipt RECEIPT
+  --receipt-sha256 RECEIPT_SHA256
+  --manifest MANIFEST
+  --manifest-sha256 MANIFEST_SHA256
+  --service-receipt SERVICE_RECEIPT
+  --service-receipt-sha256 SERVICE_RECEIPT_SHA256
+  --configuration CONFIGURATION
+  --configuration-sha256 CONFIGURATION_SHA256
+  --execution-sha256 EXECUTION_SHA256

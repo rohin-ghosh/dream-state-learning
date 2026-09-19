@@ -1,0 +1,79 @@
+{
+  "adapter": null,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "family": "simulated_tools",
+  "finished_unix": 1789461473.8515205,
+  "max_new_tokens": 512,
+  "messages": [
+    {
+      "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Mark ticket T440 as urgent.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+      "role": "user"
+    }
+  ],
+  "outcome": {
+    "category": "correct",
+    "completion": "complete",
+    "content_tokens": 34,
+    "generated_tokens": 35,
+    "machine": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "verified_anchor": true
+  },
+  "position": 38,
+  "response": {
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Mark ticket T440 as urgent.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      }
+    ],
+    "prompt_tokens": 138,
+    "raw": "{\n  \"tool\": \"mark_priority\",\n  \"arguments\": {\n    \"level\": \"urgent\",\n    \"ticket\": \"T440\"\n  }\n}",
+    "terminal": true,
+    "token_ids": [
+      515,
+      220,
+      330,
+      14172,
+      788,
+      330,
+      3987,
+      38161,
+      756,
+      220,
+      330,
+      16370,
+      788,
+      341,
+      262,
+      330,
+      3294,
+      788,
+      330,
+      85053,
+      756,
+      262,
+      330,
+      26534,
+      788,
+      330,
+      51,
+      19,
+      19,
+      15,
+      698,
+      220,
+      456,
+      92,
+      151645
+    ],
+    "truncated": false
+  },
+  "started_unix": 1789461473.1132007,
+  "status": "COMPLETE",
+  "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_09"
+}

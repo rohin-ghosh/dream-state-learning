@@ -1,0 +1,115 @@
+{
+  "boot_enabled": false,
+  "credential_environment_inherited_in_memory": true,
+  "credential_values_recorded": false,
+  "heartbeat_utc": "2026-09-19T01:19:24.524050+00:00",
+  "installation_status": "BLOCKED_UNINSTALLED",
+  "native_signals": [],
+  "new_process": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/supervisor.py"
+    ],
+    "command_sha256": "844a7dc7c1a8118f4cdca0197fc7f5822935a62869b243db7bbce7f8ed9aab5b",
+    "executable": "/usr/bin/python3.12",
+    "pid": 399392,
+    "start_ticks": "891869"
+  },
+  "observed_utc": "2026-09-19T01:19:24.550672+00:00",
+  "old_exited": true,
+  "old_pid": 311614,
+  "old_start_ticks": "717203",
+  "only_own_cpu_supervisor_sigterm": true,
+  "preserved_workers": {
+    "311631": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/collector.py",
+        "--until-unix",
+        "1790791170"
+      ],
+      "command_sha256": "bb786d932ddf62712332bf315b64ecdaa98383d4bdb6f1baf6bf9689f580f5a8",
+      "executable": "/usr/bin/python3.12",
+      "pid": 311631,
+      "start_ticks": "717211"
+    },
+    "330973": {
+      "argv": [
+        "python3",
+        "-B",
+        "-u",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/recover.py"
+      ],
+      "command_sha256": "6cfe7e87bfa9f32d504421726a3ee2fc315fd90f309181660a2b8ec15b649ffe",
+      "executable": "/usr/bin/python3.12",
+      "pid": 330973,
+      "start_ticks": "764197"
+    },
+    "343304": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/queue_launcher.py"
+      ],
+      "command_sha256": "51c646318fb621e74067c402a013fc42778092effd4e4a0c1111a63971f8db08",
+      "executable": "/usr/bin/python3.12",
+      "pid": 343304,
+      "start_ticks": "788315"
+    },
+    "343342": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/source/driver.py",
+        "--config",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/observer_recovery/runs/1789779728873833849/CONFIG.private.json"
+      ],
+      "command_sha256": "398e1fb14d5ce6b1eae36ade220e4fd512052d5d33ef87f481f98f53215d98ae",
+      "executable": "/usr/bin/python3.12",
+      "pid": 343342,
+      "start_ticks": "788324"
+    },
+    "345404": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_pair_parents_20260919/parent_service.py",
+        "--arm",
+        "learner"
+      ],
+      "command_sha256": "ee0d080c0f7c5a10a07f90dce8be636d951b9ed934d46698bb347b488fe78fe5",
+      "executable": "/usr/bin/python3.12",
+      "pid": 345404,
+      "start_ticks": "792480"
+    },
+    "345405": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_pair_parents_20260919/parent_service.py",
+        "--arm",
+        "frozen"
+      ],
+      "command_sha256": "533a4cac6eb0fb52ce617d8ca5d782d1b9fad0b0e5fa3b4c6970a154ef76362d",
+      "executable": "/usr/bin/python3.12",
+      "pid": 345405,
+      "start_ticks": "792480"
+    },
+    "378291": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/p7_bounded.py"
+      ],
+      "command_sha256": "11a61f08a842225782aeaa51dba1e8b9e7205d5e9f9beab65b2c06d8a52b7e62",
+      "executable": "/usr/bin/python3.12",
+      "pid": 378291,
+      "start_ticks": "854895"
+    }
+  },
+  "source_sha256": "f25d5af4f5d42c290b9052a715f330f220362ce0975aa0aa3af5b65d59b4373a",
+  "until_unix": 1790791200.0,
+  "worker_signals": []
+}

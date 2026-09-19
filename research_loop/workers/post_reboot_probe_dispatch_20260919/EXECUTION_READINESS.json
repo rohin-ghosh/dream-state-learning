@@ -1,0 +1,139 @@
+{
+  "admitted_gpu_jobs": [],
+  "automatic_dispatcher_implemented": false,
+  "battery": {
+    "game_sha256": "31e3c9919524deacc1d8255caa65f5121744ef6f0465988576b2d1b7ad281274",
+    "model_updates": 0,
+    "panel_sha256": "4adab198a81f2492fff5471d0a7a20de41c06f59c7a492d7ef35746f84d346aa",
+    "parent_tokens": 0,
+    "policy": "R232_FRESH_DEVELOPMENT_FIXED_TOKENS_V1",
+    "rule_digest": "7127a82613c6c75ed561b180ad394a657acbc194cb27cca72bc3b0a686d6444a",
+    "scenes": 3,
+    "seeds": [
+      23201,
+      23202
+    ],
+    "tokens_per_cell": 1024,
+    "total_generated_tokens": 6144
+  },
+  "blocked_original_devices": [
+    {
+      "compute_pids": [
+        499900
+      ],
+      "memory_used_mib": 14363,
+      "physical": 4,
+      "uuid": "GPU-891f01d9-82a7-1c36-5e71-e9f6912cada6"
+    },
+    {
+      "compute_pids": [
+        499905
+      ],
+      "memory_used_mib": 14363,
+      "physical": 5,
+      "uuid": "GPU-c133443b-2a53-dc7b-294f-06b894a58d05"
+    }
+  ],
+  "blockers": [
+    "EXISTING_LEASE_RUNNER_GPU_4_5_OCCUPIED_DO_NOT_DISPLACE",
+    "NO_VERIFIED_UNEVALUATED_PREPARED_JOB",
+    "SECURE_PLATFORM_PERMITTED_DEVICE_ISOLATED_LAUNCH_REQUIRED",
+    "LEASE_ENTRYPOINT_DEPLOYMENT_CLOSURE_NOT_YET_BOUND"
+  ],
+  "boot_installation_attempted": false,
+  "enrollment_ledger_written": false,
+  "generated_unix": 1789783188.783747,
+  "gpu_execution_performed": false,
+  "launch_command": null,
+  "native_signals": [],
+  "original_source_deadline_unix": 1790791170,
+  "other_empty_devices_not_implicitly_authorized": true,
+  "per_job_deadline_recipe": "min(now + 2400, 1790791170); at least 60 seconds remaining",
+  "schema": "REBOOT_PROBE_EXECUTION_READINESS_V1",
+  "selection_is_not_capture_eligibility_or_execution": true,
+  "source_dispositions": [
+    {
+      "life": "FRESH_R231",
+      "sleep": 12,
+      "source_key": [
+        "038f85cbde5c4abfb749ea4d59da6897",
+        "64927d106eb5069d6a66fc9c61358966cf80a50b77924992d02a72c9221af2cf"
+      ],
+      "status": "COHERENT_PROSPECTIVE_SOURCE_PENDING_EXPOSURE_AUDIT"
+    },
+    {
+      "life": "FRESH_R231",
+      "sleep": 24,
+      "source_key": [
+        "038f85cbde5c4abfb749ea4d59da6897",
+        "1e1aaeab36d85adf9e94cef3378006731395af6272dd98311ffa82523ec97024"
+      ],
+      "status": "ALREADY_ATTEMPTED_OR_COMPLETE_NO_REPLAY"
+    },
+    {
+      "life": "R232_SIBLING_FROZEN",
+      "sleep": 1,
+      "source_key": [
+        "30fa18c869b34fd496a2758a4a28e197",
+        "7a58b176ed2554af0f1848e6daca1712471be287caf21f2eea4f36cb1fac2960"
+      ],
+      "status": "HISTORICAL_CAPTURE_NOT_SELECTED"
+    },
+    {
+      "life": "R232_SIBLING_FROZEN",
+      "sleep": 24,
+      "source_key": [
+        "30fa18c869b34fd496a2758a4a28e197",
+        "7dfa305c4c2d689bd72a6ff343448c36246a2398190291d46688852ca1b565cd"
+      ],
+      "status": "COHERENT_PROSPECTIVE_SOURCE_PENDING_EXPOSURE_AUDIT"
+    }
+  ],
+  "source_preparation_candidate": {
+    "argv": [
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "/localhome/local-rohing/orch_r233_recovery_s24_probe_20260918/source/research_loop/workers/rohin233_kept_age_probe_20260918/prepare_probe.py",
+      "--root",
+      "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7",
+      "--source-root",
+      "/localhome/local-rohing/orch_r233_recovery_s24_probe_20260918",
+      "--original",
+      "/localhome/local-rohing/orch_r232_age_probe_20260918",
+      "--queued",
+      "/localhome/local-rohing/orch_r233_retained_source_queue_20260918/FRESH_R231/FRESH_R231_sleep_000012_64927d106eb5069d",
+      "--life",
+      "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/raw",
+      "--condition",
+      "R233_REBOOT_FRESH_R231_s12"
+    ],
+    "command": "bash gpu/ovx4_ssh.sh '/localhome/local-rohing/v2/venv/bin/python -B /localhome/local-rohing/orch_r233_recovery_s24_probe_20260918/source/research_loop/workers/rohin233_kept_age_probe_20260918/prepare_probe.py --root /localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7 --source-root /localhome/local-rohing/orch_r233_recovery_s24_probe_20260918 --original /localhome/local-rohing/orch_r232_age_probe_20260918 --queued /localhome/local-rohing/orch_r233_retained_source_queue_20260918/FRESH_R231/FRESH_R231_sleep_000012_64927d106eb5069d --life /localhome/local-rohing/orch_r231_curriculum_birth_20260918/raw --condition R233_REBOOT_FRESH_R231_s12'",
+    "job_id": "465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7",
+    "not_executed": true,
+    "original_prepare_rejects_existing_output": true,
+    "output": "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7",
+    "requires_fresh_source_lease_and_lane_coordination": true,
+    "role": "CPU_PREPARATION_ONLY_NOT_ELIGIBILITY_OR_GPU_EXECUTION",
+    "source": {
+      "absolute_sleep": 12,
+      "adapter_state_sha256": "c01b385ba9ed28447351b2344efed83fd32513bb3cb0c22012c62d09b7e372f4",
+      "canonical_complete_verified": true,
+      "captured_unix": 1789734085.775969,
+      "copy_hashes_verified": true,
+      "eligibility": "PENDING_SOURCE_AND_INHERITED_EXPOSURE_AUDIT",
+      "evaluation": "PENDING",
+      "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+      "life_root": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/raw",
+      "queued": "/localhome/local-rohing/orch_r233_retained_source_queue_20260918/FRESH_R231/FRESH_R231_sleep_000012_64927d106eb5069d",
+      "registered_loaded": {
+        "index": 1,
+        "sha256": "4f2bd96360a484f7989c520f0bc5c463168b82e808f29b6d0a09f6b4b6924be0"
+      },
+      "sleep_complete_index": 981,
+      "sleep_complete_sha256": "64927d106eb5069d6a66fc9c61358966cf80a50b77924992d02a72c9221af2cf",
+      "source_metadata_sha256": "a4de94fb23e23448d666262ca6750c066b75dbdbee36492de8bccd3ecb6aab9d",
+      "source_name": "FRESH_R231"
+    }
+  },
+  "status": "BLOCKED_NOT_GPU_LAUNCH_READY"
+}

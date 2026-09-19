@@ -1,0 +1,69 @@
+{
+  "applied_to_live": false,
+  "complete_old_live_to_receiver_delta": {
+    "gpu/c2_retention_runtime.py": {
+      "after": "350802c5c996c3f5856fbb84f771f663df364a67abe87b809ada15840c7591e1",
+      "before": null
+    },
+    "gpu/orch_r125_continual_native.py": {
+      "after": "004042397f5bdec18bdd5cb26b30ed102ee94d70db1e4cea7ee85ff1936b2ebb",
+      "before": "1bf18d5f34d2f027be1c79120ec654afe9869e647150245a29c8a19ebda81ff6"
+    },
+    "gpu/orch_r184_think_act_learn.py": {
+      "after": "63037afaa9f079c2beaa69703d3000e5b7ccd2bb8ec6473a9da9e6dbbb528c40",
+      "before": "57bba9866edd6e4adb8a047d7ca3f5fbe99f613e56b64833e0b9b58829bc8cc5"
+    },
+    "organism_v6/orch_r124_train_history.py": {
+      "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+      "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+    },
+    "organism_v6/orch_r125_continual_stream.py": {
+      "after": "2ce336555c4ec9b3ee6e5965ce4d17df72275e555965ce80dd9691d4b70c0e70",
+      "before": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33"
+    }
+  },
+  "dispatchable": false,
+  "epoch1_source": "/localhome/local-rohing/orch_retention_20260919/C2/epoch1/source",
+  "existing_stage_modified": false,
+  "extra_source_changes": {
+    "gpu/c2_retention_runtime.py": {
+      "after": "350802c5c996c3f5856fbb84f771f663df364a67abe87b809ada15840c7591e1",
+      "before": null
+    },
+    "gpu/orch_r125_continual_native.py": {
+      "after": "004042397f5bdec18bdd5cb26b30ed102ee94d70db1e4cea7ee85ff1936b2ebb",
+      "before": "1bf18d5f34d2f027be1c79120ec654afe9869e647150245a29c8a19ebda81ff6"
+    }
+  },
+  "hard_end_unix": 1789927200,
+  "live_native": {
+    "argv": [
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "-m",
+      "gpu.orch_r125_continual_guard",
+      "native",
+      "--config",
+      "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/control/GUARD.json"
+    ],
+    "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+    "cwd": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/source",
+    "pid": 1139778,
+    "start_ticks": "30025875",
+    "state": "S",
+    "uid": 2524
+  },
+  "new_receiving_source": "MAIN_MUST_SELECT_A_NEW_IMMUTABLE_ROOT_NOT_EPOCH1",
+  "old_source": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/source",
+  "original_stage_path": "research_loop/workers/post_recovery_retention_rollout_20260919/C2_STAGED.json",
+  "original_stage_sha256": "1f7af748247d6cf992ddcf33fc664544659f5e13406de8abf9f55203ac605c27",
+  "original_stage_status": "IMMUTABLE_SOURCE_STAGED_NOT_DISPATCHABLE",
+  "overlay_paths": {
+    "gpu/c2_retention_runtime.py": "research_loop/workers/post_recovery_c2_retention_receiver_20260919/overlay/gpu/c2_retention_runtime.py",
+    "gpu/orch_r125_continual_native.py": "research_loop/workers/post_recovery_c2_retention_receiver_20260919/overlay/gpu/orch_r125_continual_native.py"
+  },
+  "parent_rebind_allowed": false,
+  "same_checkpoint_tail_reader": true,
+  "same_r188_confinement": true,
+  "schema": "C2_RETENTION_ADOPTION_PORT_V1"
+}

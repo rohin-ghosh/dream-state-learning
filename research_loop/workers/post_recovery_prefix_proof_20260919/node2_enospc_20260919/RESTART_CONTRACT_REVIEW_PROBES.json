@@ -1,0 +1,45 @@
+{
+  "helper_sha256": "ce7fda824274563985a66020ca5f3b0afb59865f13adc00af304acf1111d67a1",
+  "model_execution": false,
+  "node_access": false,
+  "outcomes": [
+    {
+      "accepted_presentations": 2,
+      "accepted_total": 6,
+      "original_presentations": 16,
+      "original_total": 48,
+      "probe": "changed_recipe_presentation_count_accepted"
+    },
+    {
+      "accepted_count": 1,
+      "fixture_durable_update_count": 4,
+      "missing_indices": [
+        24,
+        25,
+        26
+      ],
+      "probe": "known_update_suffix_omitted_accepted",
+      "still_requires_full_journal_verification": true
+    },
+    {
+      "accepted_life": "Astra7",
+      "journal_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "original_life": "C0",
+      "probe": "same_journal_relabelled_between_allowed_lives_accepted"
+    },
+    {
+      "accepted_pending_sha256": "4471932c16af6496c06bb1e03fb89543b59be07c30681eefee3b0e78a8ca495b",
+      "note": "Different digest must be rejected by exact external selection, not inferred authentic from self-hash.",
+      "original_pending_sha256": "bb9548c2794c782812e2c38418f221fe2723244dad95936bc3b7458ae4d9a431",
+      "probe": "resealed_history_not_externally_authenticated"
+    },
+    {
+      "probe": "exact_state_copy_and_no_aliasing",
+      "result": "PASS"
+    }
+  ],
+  "reviewer_script_sha256": "007d0afa09513d3206cf07082c21877af218313b133ee23581f74985dc18cfb0",
+  "runtime_changes": false,
+  "schema": "INDEPENDENT_RESTART_CONTRACT_REVIEW_PROBES_V1",
+  "tests_sha256": "baf2771b55e7584aa8bd061360aca4c8a96fb7e380aeb029b112c14139c626eb"
+}

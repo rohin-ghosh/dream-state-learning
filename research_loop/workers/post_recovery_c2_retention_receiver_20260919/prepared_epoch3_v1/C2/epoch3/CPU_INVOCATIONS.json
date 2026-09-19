@@ -1,0 +1,75 @@
+{
+  "CPU_results_are_not_dispatch_authority": true,
+  "checkpoint_default": {
+    "complete_index": 11502,
+    "complete_sha256": "9c59fe6c59a01948b6ffe894aaa681010346ccc671c2f774a10fe7399a49080f",
+    "role": "HISTORICAL_CPU_VERIFICATION_ONLY_NOT_CURRENT_HANDOFF_BOUNDARY"
+  },
+  "commands": {
+    "checkpoint": [
+      "env",
+      "CUDA_VISIBLE_DEVICES=",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3/tools/cpu_check.py",
+      "checkpoint",
+      "--bundle",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3"
+    ],
+    "frontier_checks": [
+      "env",
+      "CUDA_VISIBLE_DEVICES=",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3/tools/frontier_checks.py",
+      "--source",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3/source",
+      "--manifest",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3/EPOCH3_SOURCE.json"
+    ],
+    "source": [
+      "env",
+      "CUDA_VISIBLE_DEVICES=",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3/tools/cpu_check.py",
+      "source",
+      "--bundle",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3"
+    ],
+    "source_checks": [
+      "env",
+      "CUDA_VISIBLE_DEVICES=",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3/tools/source_checks.py",
+      "--source",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3/source",
+      "--manifest",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3/EPOCH3_SOURCE.json"
+    ],
+    "tail": [
+      "env",
+      "CUDA_VISIBLE_DEVICES=",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3/tools/cpu_check.py",
+      "tail",
+      "--bundle",
+      "/localhome/local-rohing/orch_retention_20260919/C2/epoch3"
+    ]
+  },
+  "guard_requires_Main_actual_path": true,
+  "invoked_on_node": false,
+  "newer_checkpoint_requires": [
+    "--complete-index",
+    "--complete-sha256"
+  ],
+  "one_shot_no_retry_or_signals": true,
+  "timeout_seconds_recommended": 180
+}

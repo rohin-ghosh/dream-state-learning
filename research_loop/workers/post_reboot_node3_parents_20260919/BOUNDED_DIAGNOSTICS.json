@@ -1,0 +1,849 @@
+{
+  "byte_bound_unchanged": true,
+  "mode": "diagnose",
+  "no_scorer_requests": true,
+  "no_target_row_writes": true,
+  "rows": [
+    {
+      "life": "r213_r226_caption_unparented_fork",
+      "result": {
+        "projection": {
+          "ACT_record": {
+            "bytes": 954,
+            "file_sha256": "5b278bc0cdfeb9d3c1d001ad343fd29978d000f536fb78c0b1ec9c07f51cfbe2",
+            "index": 7507,
+            "kind": "R184_ACT",
+            "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007507.json",
+            "sha256": "3212054f7fc91ea32ea795abe3bc15418df73fdc95c42bf5f05404bd1f8d4a66"
+          },
+          "journal_id": "bbc25ac6d79c4c7db89a3c5092aa9cfe",
+          "no_ACT_replay": true,
+          "no_dropped_records": true,
+          "no_rank_or_acceptance_decision": true,
+          "origin": {
+            "kind": "TRAIN_CHILD_RESPONSE",
+            "record_index": 7504,
+            "record_sha256": "a976faa6f785d015c08c8264778736c35897b1e4919b132479ba882bb1eb1544"
+          },
+          "schema": "R233_UNSCORED_TRANSPORT_ERROR_FEEDBACK_V1",
+          "scorer_receipt": false,
+          "scoring_calls": 0,
+          "target_rows_written": 0,
+          "text": "No judgment: operational transport failure for your ACT response 7504 (a976faa6f785). Its complete authenticated ACT/THINK record window requires 67959455 bytes, exceeding the unchanged 64MiB (67108864-byte) transport limit. The scorer was not contacted for this attempt. No rank, acceptance decision, or zero score exists; this is not a rejection of your caption. No ACT was replayed, and no evidence or THINK attribution was dropped.",
+          "transport_failure": {
+            "dispatched": false,
+            "error": "ORIGIN_TRANSPORT_NOT_DISPATCHED",
+            "error_type": "CalledProcessError",
+            "feedback_count": 0,
+            "origin": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 7504,
+              "record_sha256": "a976faa6f785d015c08c8264778736c35897b1e4919b132479ba882bb1eb1544"
+            },
+            "receipt_sha256": null,
+            "seconds": 2.587886333465576,
+            "session_id": "r213_r226_caption_unparented_fork",
+            "source_transport": null,
+            "unix": 1789781257.0350447
+          },
+          "transport_file_sha256": "c731fafcd6aef83214f9a42dc0966a959206771a7be393e2a83f3d9c48fe4fd7",
+          "window": {
+            "ACT": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 7504,
+              "record_sha256": "a976faa6f785d015c08c8264778736c35897b1e4919b132479ba882bb1eb1544"
+            },
+            "THINK": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 7497,
+              "record_sha256": "ddcaa4ba091019a38fbe1901381fe53838b8feaa37dadb08ca4a6f05d7b9da01"
+            },
+            "all_ancestry_preserved": true,
+            "bound_bytes": 67108864,
+            "exceeds_bound": true,
+            "excess_bytes": 850591,
+            "final": 7506,
+            "first": 7497,
+            "no_export_or_scoring_performed": true,
+            "original_bytes_only": true,
+            "records": [
+              {
+                "bytes": 1030,
+                "file_sha256": "6086eb3a234d87c2833a99509da35b14651769a1962044dcc647e3eb79dcba64",
+                "index": 7497,
+                "kind": "RESPONSE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007497.json",
+                "sha256": "ddcaa4ba091019a38fbe1901381fe53838b8feaa37dadb08ca4a6f05d7b9da01"
+              },
+              {
+                "bytes": 16964058,
+                "file_sha256": "b537a27367b93ae1911d103d20345877ac6a67b1121e89f85c7692f5fd1c2807",
+                "index": 7498,
+                "kind": "COMMITTED",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007498.json",
+                "sha256": "01dac0c014e3be09b52a933bdda7c6d968d44ec600c6f4b755187dd0e012ce90"
+              },
+              {
+                "bytes": 600,
+                "file_sha256": "4d73e74561f65ccb15134f18d559b73db337c13b06b551774d602ba9e9f5f1dd",
+                "index": 7499,
+                "kind": "R184_STAGE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007499.json",
+                "sha256": "8a0b647c06588babc8f3c25b4ed4a68dd6b11fce365915141fa6e362096db274"
+              },
+              {
+                "bytes": 560,
+                "file_sha256": "3628e1b77852c773e2a70c14fee51b428070afb69669fd4f7fc98eb798d2f954",
+                "index": 7500,
+                "kind": "R191_DATASET_ROW",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007500.json",
+                "sha256": "3b4b7877fa3323503ffd7d25b57a520b4109e33972f779783d1f261b16556389"
+              },
+              {
+                "bytes": 621,
+                "file_sha256": "b359519d856296a467f776c1d3de990c499ec33ea66b60ee0bbf3bfdee070c41",
+                "index": 7501,
+                "kind": "R184_TRANSITION",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007501.json",
+                "sha256": "013458e5e133504f907884bafea9b6fe6ec5b26275dba3a7c6d90e72eaa78ee1"
+              },
+              {
+                "bytes": 16969397,
+                "file_sha256": "49d204ce03334cda37838cb54f3e122c2308fef43c67f2239ccc377e5be96fe9",
+                "index": 7502,
+                "kind": "CONTEXT_INPUT",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007502.json",
+                "sha256": "b12b2f5664346991a3be49f19be451dd54198cce9ddbe5660718cc6467f71615"
+              },
+              {
+                "bytes": 17010236,
+                "file_sha256": "ab191b6439aed279a0cb2594dd25f3b33488ee3bcdb7a44a454f4e159119124f",
+                "index": 7503,
+                "kind": "REQUEST",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007503.json",
+                "sha256": "ad8f3bcec9cd7a774dc899daeac067a8352dd739523044eadbcc748fbe24b358"
+              },
+              {
+                "bytes": 1030,
+                "file_sha256": "4b738eb1f4253b81ef10a46fd40d9360d767ef2a5fc94f02c72bf38b91886053",
+                "index": 7504,
+                "kind": "RESPONSE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007504.json",
+                "sha256": "a976faa6f785d015c08c8264778736c35897b1e4919b132479ba882bb1eb1544"
+              },
+              {
+                "bytes": 17011325,
+                "file_sha256": "eed134ca28ce6b168191a5fbb7772b0b21a69b054d28543cc74d94c27bc2911e",
+                "index": 7505,
+                "kind": "COMMITTED",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007505.json",
+                "sha256": "2c7b738727aa30b8ea6ceda3e6dd7b380016a42a23cf66308bbd009a0777228e"
+              },
+              {
+                "bytes": 598,
+                "file_sha256": "2de6b81244eb039d4949846deced8ea4971caa98a546a0f5eab1a93e390649b0",
+                "index": 7506,
+                "kind": "R184_STAGE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/raw/stream/records/00000000000000007506.json",
+                "sha256": "2473fd4fdd666cf258d962da40bb246f032cfdf2775d92794784d91cf1e23b6d"
+              }
+            ],
+            "repairable_by_smaller_contiguous_window": false,
+            "total_bytes": 67959455
+          }
+        },
+        "status": "CONFIRMED_MINIMUM_WINDOW_EXCEEDS_UNCHANGED_BOUND"
+      },
+      "transport_failure": {
+        "dispatched": false,
+        "error": "ORIGIN_TRANSPORT_NOT_DISPATCHED",
+        "error_type": "CalledProcessError",
+        "feedback_count": 0,
+        "origin": {
+          "kind": "TRAIN_CHILD_RESPONSE",
+          "record_index": 7504,
+          "record_sha256": "a976faa6f785d015c08c8264778736c35897b1e4919b132479ba882bb1eb1544"
+        },
+        "receipt_sha256": null,
+        "seconds": 2.587886333465576,
+        "session_id": "r213_r226_caption_unparented_fork",
+        "source_transport": null,
+        "unix": 1789781257.0350447
+      },
+      "transport_path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/private/transport_runs/17897812456785859204349e8/TRANSPORT_1789781257035014053.json"
+    },
+    {
+      "life": "r213_r226_caption_revision_fork",
+      "result": {
+        "projection": {
+          "ACT_record": {
+            "bytes": 954,
+            "file_sha256": "fb964b5e92821dc58eb02144d0ad6d2dc0d465ee92a6a8db7dc21f77c3fb706b",
+            "index": 7393,
+            "kind": "R184_ACT",
+            "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007393.json",
+            "sha256": "d86c9f3634ecedf212eaebd778fb8579b42ef17163f0a820ee32aebfc79f68d5"
+          },
+          "journal_id": "160ab37a826e4a8faf869be8ac74b56b",
+          "no_ACT_replay": true,
+          "no_dropped_records": true,
+          "no_rank_or_acceptance_decision": true,
+          "origin": {
+            "kind": "TRAIN_CHILD_RESPONSE",
+            "record_index": 7390,
+            "record_sha256": "4d3267d68a6a9c7a5a4b956fda449a5875327d09dc7c6d7d9f0b065535f982de"
+          },
+          "schema": "R233_UNSCORED_TRANSPORT_ERROR_FEEDBACK_V1",
+          "scorer_receipt": false,
+          "scoring_calls": 0,
+          "target_rows_written": 0,
+          "text": "No judgment: operational transport failure for your ACT response 7390 (4d3267d68a6a). Its complete authenticated ACT/THINK record window requires 70202753 bytes, exceeding the unchanged 64MiB (67108864-byte) transport limit. The scorer was not contacted for this attempt. No rank, acceptance decision, or zero score exists; this is not a rejection of your caption. No ACT was replayed, and no evidence or THINK attribution was dropped.",
+          "transport_failure": {
+            "dispatched": false,
+            "error": "ORIGIN_TRANSPORT_NOT_DISPATCHED",
+            "error_type": "CalledProcessError",
+            "feedback_count": 0,
+            "origin": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 7390,
+              "record_sha256": "4d3267d68a6a9c7a5a4b956fda449a5875327d09dc7c6d7d9f0b065535f982de"
+            },
+            "receipt_sha256": null,
+            "seconds": 2.7338051795959473,
+            "session_id": "r213_r226_caption_revision_fork",
+            "source_transport": null,
+            "unix": 1789781318.9604552
+          },
+          "transport_file_sha256": "76f072007f49e02e9a92054270cd0a56e56bfef0e28133567afc4ae89a4f22e9",
+          "window": {
+            "ACT": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 7390,
+              "record_sha256": "4d3267d68a6a9c7a5a4b956fda449a5875327d09dc7c6d7d9f0b065535f982de"
+            },
+            "THINK": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 7383,
+              "record_sha256": "c859a909ad74fd26493823c01228e64850006ac714a71d62c6ac87f79652a403"
+            },
+            "all_ancestry_preserved": true,
+            "bound_bytes": 67108864,
+            "exceeds_bound": true,
+            "excess_bytes": 3093889,
+            "final": 7392,
+            "first": 7383,
+            "no_export_or_scoring_performed": true,
+            "original_bytes_only": true,
+            "records": [
+              {
+                "bytes": 957,
+                "file_sha256": "b35ff69469ac34011e58db3042e0d9dd935044b2cfdea17595188a622dc5c3ec",
+                "index": 7383,
+                "kind": "RESPONSE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007383.json",
+                "sha256": "c859a909ad74fd26493823c01228e64850006ac714a71d62c6ac87f79652a403"
+              },
+              {
+                "bytes": 17537531,
+                "file_sha256": "9d56f1c421d9f9ade1f08649513102059e78d690488cb9c44f5d8672617ecea4",
+                "index": 7384,
+                "kind": "COMMITTED",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007384.json",
+                "sha256": "d46ecd0e675ad50ff84f97b77bb1fc8ec7a6857ed39297602bf5975cfb36cbd0"
+              },
+              {
+                "bytes": 598,
+                "file_sha256": "c114279f0032cc854c70c0c4cfa66b00d135088ffa4b511224255dbb49fb28d8",
+                "index": 7385,
+                "kind": "R184_STAGE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007385.json",
+                "sha256": "844dbbe35e2ba1ff7e1eaad2ff4c64a0c5a9f050f48c015505a300fb0a7561f9"
+              },
+              {
+                "bytes": 558,
+                "file_sha256": "08b8dd26b49def24c57df3ceb617a44e0f29597076ab40f7f074139163d54f41",
+                "index": 7386,
+                "kind": "R191_DATASET_ROW",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007386.json",
+                "sha256": "8ac4e49349b7151409d00be8b1d4a7ac537764c22b988578a11b3d775a5807b2"
+              },
+              {
+                "bytes": 621,
+                "file_sha256": "296e3b17a1da8b12529eba780d673ddea0e951c17d177d66046acb4fed6d8723",
+                "index": 7387,
+                "kind": "R184_TRANSITION",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007387.json",
+                "sha256": "5d442ce989863546083a11a65bb1b0d27c16155dda6b68ec9625442d8ca0a9c3"
+              },
+              {
+                "bytes": 17542863,
+                "file_sha256": "c481b4eff279e548c1f1fcfa6b54a5b237816e022c1bc8a98951cf08023a5eba",
+                "index": 7388,
+                "kind": "CONTEXT_INPUT",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007388.json",
+                "sha256": "804df03c8cbc7cbae4117b27099119d70616c979b00e8bfd178e125e021f2012"
+              },
+              {
+                "bytes": 17558556,
+                "file_sha256": "357d99b4f7a90dc7272e8846b64e7fb40f88f04e3014a2f5ca930d8a3b1156e8",
+                "index": 7389,
+                "kind": "REQUEST",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007389.json",
+                "sha256": "45dba4115e4bc09ca3ea750c7d8a4452e2b82c6ba2254c2ab6da73a2a1d7f828"
+              },
+              {
+                "bytes": 951,
+                "file_sha256": "4b7307a13471d32b2bd13c04242daf58ddc7baee8a9089b1478c06e679ff845c",
+                "index": 7390,
+                "kind": "RESPONSE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007390.json",
+                "sha256": "4d3267d68a6a9c7a5a4b956fda449a5875327d09dc7c6d7d9f0b065535f982de"
+              },
+              {
+                "bytes": 17559522,
+                "file_sha256": "bfd90aafec45abd82e412dce7ae9d079ef6600f1d6f97ddd5706a539a4fda0b7",
+                "index": 7391,
+                "kind": "COMMITTED",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007391.json",
+                "sha256": "614bc5c11e02e77e14e22ee5fcf7de0b4d066ef71737fa2580c73bd4c4555a96"
+              },
+              {
+                "bytes": 596,
+                "file_sha256": "1f687ec59d93cc67d20fa44098196ec14f6cb36e1f297b57754d44ce885c40eb",
+                "index": 7392,
+                "kind": "R184_STAGE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/raw/stream/records/00000000000000007392.json",
+                "sha256": "7bb86ec6bed14a6d87f4d63718adedc06fbd7e9d35603266199e806a7bca327c"
+              }
+            ],
+            "repairable_by_smaller_contiguous_window": false,
+            "total_bytes": 70202753
+          }
+        },
+        "status": "CONFIRMED_MINIMUM_WINDOW_EXCEEDS_UNCHANGED_BOUND"
+      },
+      "transport_failure": {
+        "dispatched": false,
+        "error": "ORIGIN_TRANSPORT_NOT_DISPATCHED",
+        "error_type": "CalledProcessError",
+        "feedback_count": 0,
+        "origin": {
+          "kind": "TRAIN_CHILD_RESPONSE",
+          "record_index": 7390,
+          "record_sha256": "4d3267d68a6a9c7a5a4b956fda449a5875327d09dc7c6d7d9f0b065535f982de"
+        },
+        "receipt_sha256": null,
+        "seconds": 2.7338051795959473,
+        "session_id": "r213_r226_caption_revision_fork",
+        "source_transport": null,
+        "unix": 1789781318.9604552
+      },
+      "transport_path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/private/transport_runs/17897812456785859204349e8/TRANSPORT_1789781318960427809.json"
+    },
+    {
+      "life": "r213_r226_caption_selfderive_fork",
+      "result": {
+        "projection": {
+          "ACT_record": {
+            "bytes": 954,
+            "file_sha256": "d8bf4733e0ade4c82d3e3e13f13e5134a60c5a5e0ba38de11b0e0ebb2eb80278",
+            "index": 6952,
+            "kind": "R184_ACT",
+            "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006952.json",
+            "sha256": "15274d7caf432fba3c73a8b923e664f31545787c8a9026d9380711d3d07956ec"
+          },
+          "journal_id": "ebfd6f5f84284073a964e83223fe7c5a",
+          "no_ACT_replay": true,
+          "no_dropped_records": true,
+          "no_rank_or_acceptance_decision": true,
+          "origin": {
+            "kind": "TRAIN_CHILD_RESPONSE",
+            "record_index": 6949,
+            "record_sha256": "cfb3126ca272cc99c656a3ce65a12795f739c62325fc52ecab0d9c71da3040c1"
+          },
+          "schema": "R233_UNSCORED_TRANSPORT_ERROR_FEEDBACK_V1",
+          "scorer_receipt": false,
+          "scoring_calls": 0,
+          "target_rows_written": 0,
+          "text": "No judgment: operational transport failure for your ACT response 6949 (cfb3126ca272). Its complete authenticated ACT/THINK record window requires 70724606 bytes, exceeding the unchanged 64MiB (67108864-byte) transport limit. The scorer was not contacted for this attempt. No rank, acceptance decision, or zero score exists; this is not a rejection of your caption. No ACT was replayed, and no evidence or THINK attribution was dropped.",
+          "transport_failure": {
+            "dispatched": false,
+            "error": "ORIGIN_TRANSPORT_NOT_DISPATCHED",
+            "error_type": "CalledProcessError",
+            "feedback_count": 0,
+            "origin": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 6949,
+              "record_sha256": "cfb3126ca272cc99c656a3ce65a12795f739c62325fc52ecab0d9c71da3040c1"
+            },
+            "receipt_sha256": null,
+            "seconds": 2.58771014213562,
+            "session_id": "r213_r226_caption_selfderive_fork",
+            "source_transport": null,
+            "unix": 1789781382.7974048
+          },
+          "transport_file_sha256": "9fa5e34b549ed90a570870b04ad63ac45e7487aa18c256ae897a6796c31daf8f",
+          "window": {
+            "ACT": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 6949,
+              "record_sha256": "cfb3126ca272cc99c656a3ce65a12795f739c62325fc52ecab0d9c71da3040c1"
+            },
+            "THINK": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 6942,
+              "record_sha256": "3a030bf15f51a5fc1529aa6865a8069810a35805a64fee81cb825bef3ef24326"
+            },
+            "all_ancestry_preserved": true,
+            "bound_bytes": 67108864,
+            "exceeds_bound": true,
+            "excess_bytes": 3615742,
+            "final": 6951,
+            "first": 6942,
+            "no_export_or_scoring_performed": true,
+            "original_bytes_only": true,
+            "records": [
+              {
+                "bytes": 2358,
+                "file_sha256": "f51fdd41eab7ee1123a60703408434611229f6deabe9aa0c6d2bdc74c4e681fc",
+                "index": 6942,
+                "kind": "RESPONSE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006942.json",
+                "sha256": "3a030bf15f51a5fc1529aa6865a8069810a35805a64fee81cb825bef3ef24326"
+              },
+              {
+                "bytes": 17647970,
+                "file_sha256": "5354ae2920bb1cc45e39344ae1ed2b720417c64df0c5d2ffa92c8cba462646bc",
+                "index": 6943,
+                "kind": "COMMITTED",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006943.json",
+                "sha256": "9f8c794bc3814464f146fda5c9af2e38d9d239313509f49c08a96ee8db262339"
+              },
+              {
+                "bytes": 600,
+                "file_sha256": "d67c19b221a902c75112a12a31d2e93a5b805023b2982914d68951ca20f92ea1",
+                "index": 6944,
+                "kind": "R184_STAGE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006944.json",
+                "sha256": "8a5970697f008c1a8db207390121481fa59cb80ee2fde36097c90afba2374ee6"
+              },
+              {
+                "bytes": 560,
+                "file_sha256": "970b857acc74dd30144ff65a9f4128259f7216b2219af8ce23cfb5adb6f53597",
+                "index": 6945,
+                "kind": "R191_DATASET_ROW",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006945.json",
+                "sha256": "7dbef960b7da6d617c4620b6cb392f51cd60058e3b1034ea6d10f5a90532961e"
+              },
+              {
+                "bytes": 621,
+                "file_sha256": "f19ccf0d26fd3c23e660cfb12a276b399ad1af82b4f3de5e84e55556e3800da6",
+                "index": 6946,
+                "kind": "R184_TRANSITION",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006946.json",
+                "sha256": "8a98beae728454c29b83c88693a1df6519e75a5d97e3551c166ee3f7eee009f1"
+              },
+              {
+                "bytes": 17653302,
+                "file_sha256": "d27681fa6fe1af45a2d7f40a9113bf1ce15a916d4515107eef7ba8f8eb4e4785",
+                "index": 6947,
+                "kind": "CONTEXT_INPUT",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006947.json",
+                "sha256": "505dd951573e5a98316c4bdc1e0e5f4cc8cd4e19d83a9de781d1d0c950fdbf2d"
+              },
+              {
+                "bytes": 17706678,
+                "file_sha256": "be0f630199816abca5f3e1be27b3159831636a63addd6f8211544a106196ded9",
+                "index": 6948,
+                "kind": "REQUEST",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006948.json",
+                "sha256": "062eda3819afec5b2b4dd89cab3f9aad8dd0edf089e3cde72acd532ef53848a2"
+              },
+              {
+                "bytes": 2249,
+                "file_sha256": "85a9e1bfaa3f954dd5fee58fddaf2d9ed9776195a9645444c70eac4d40824595",
+                "index": 6949,
+                "kind": "RESPONSE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006949.json",
+                "sha256": "cfb3126ca272cc99c656a3ce65a12795f739c62325fc52ecab0d9c71da3040c1"
+              },
+              {
+                "bytes": 17709670,
+                "file_sha256": "8ca800dedc38c1dcc2d2015da139b08241b9396bb2f1377f17af68a34b180d7a",
+                "index": 6950,
+                "kind": "COMMITTED",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006950.json",
+                "sha256": "ade37fc4056d1c3260b39b6ad00ba41edd853a1e43caf2a475461a0fffa93a73"
+              },
+              {
+                "bytes": 598,
+                "file_sha256": "d48fb0e0705364d32fd1b347f356b24e3e5e98a05ff3cac27c1535fac76a44bb",
+                "index": 6951,
+                "kind": "R184_STAGE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/raw/stream/records/00000000000000006951.json",
+                "sha256": "1febed7146238306a80bce3100dd5f8df8858bc9a65a108520e9f02f8c6b1e94"
+              }
+            ],
+            "repairable_by_smaller_contiguous_window": false,
+            "total_bytes": 70724606
+          }
+        },
+        "status": "CONFIRMED_MINIMUM_WINDOW_EXCEEDS_UNCHANGED_BOUND"
+      },
+      "transport_failure": {
+        "dispatched": false,
+        "error": "ORIGIN_TRANSPORT_NOT_DISPATCHED",
+        "error_type": "CalledProcessError",
+        "feedback_count": 0,
+        "origin": {
+          "kind": "TRAIN_CHILD_RESPONSE",
+          "record_index": 6949,
+          "record_sha256": "cfb3126ca272cc99c656a3ce65a12795f739c62325fc52ecab0d9c71da3040c1"
+        },
+        "receipt_sha256": null,
+        "seconds": 2.58771014213562,
+        "session_id": "r213_r226_caption_selfderive_fork",
+        "source_transport": null,
+        "unix": 1789781382.7974048
+      },
+      "transport_path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/private/transport_runs/17897812456785859204349e8/TRANSPORT_1789781382797299065.json"
+    },
+    {
+      "life": "r213_r226_caption_observation_fork",
+      "result": {
+        "projection": {
+          "ACT_record": {
+            "bytes": 954,
+            "file_sha256": "5d547e11634205f643197f4523559692514c88d4c61c7aaadf48ed8e3ccaad02",
+            "index": 7808,
+            "kind": "R184_ACT",
+            "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007808.json",
+            "sha256": "f8be25c1d4d945ee74606edb24f5f7c7cf814bd2f135ce80ac1ffa29f0b5444e"
+          },
+          "journal_id": "9c8b0140df9449428023ac1a783c6e51",
+          "no_ACT_replay": true,
+          "no_dropped_records": true,
+          "no_rank_or_acceptance_decision": true,
+          "origin": {
+            "kind": "TRAIN_CHILD_RESPONSE",
+            "record_index": 7805,
+            "record_sha256": "c52ea5f85494ee6b2e6743604c5ef17944c78554a6ff3fbba787e5dd5487706f"
+          },
+          "schema": "R233_UNSCORED_TRANSPORT_ERROR_FEEDBACK_V1",
+          "scorer_receipt": false,
+          "scoring_calls": 0,
+          "target_rows_written": 0,
+          "text": "No judgment: operational transport failure for your ACT response 7805 (c52ea5f85494). Its complete authenticated ACT/THINK record window requires 70793006 bytes, exceeding the unchanged 64MiB (67108864-byte) transport limit. The scorer was not contacted for this attempt. No rank, acceptance decision, or zero score exists; this is not a rejection of your caption. No ACT was replayed, and no evidence or THINK attribution was dropped.",
+          "transport_failure": {
+            "dispatched": false,
+            "error": "ORIGIN_TRANSPORT_NOT_DISPATCHED",
+            "error_type": "CalledProcessError",
+            "feedback_count": 0,
+            "origin": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 7805,
+              "record_sha256": "c52ea5f85494ee6b2e6743604c5ef17944c78554a6ff3fbba787e5dd5487706f"
+            },
+            "receipt_sha256": null,
+            "seconds": 2.542909622192383,
+            "session_id": "r213_r226_caption_observation_fork",
+            "source_transport": null,
+            "unix": 1789781528.7757864
+          },
+          "transport_file_sha256": "ca1a1180c645fa77f2be97198b1f2bed8943045b929cfe0eedacc92cc7b42ade",
+          "window": {
+            "ACT": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 7805,
+              "record_sha256": "c52ea5f85494ee6b2e6743604c5ef17944c78554a6ff3fbba787e5dd5487706f"
+            },
+            "THINK": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 7798,
+              "record_sha256": "843f0873418b5e89f47254cedcfd5c73ace18af2a73ddacf9d567e428a28c59d"
+            },
+            "all_ancestry_preserved": true,
+            "bound_bytes": 67108864,
+            "exceeds_bound": true,
+            "excess_bytes": 3684142,
+            "final": 7807,
+            "first": 7798,
+            "no_export_or_scoring_performed": true,
+            "original_bytes_only": true,
+            "records": [
+              {
+                "bytes": 1409,
+                "file_sha256": "8c404c682b7f994b40057030f7f5074aad261f6fc1211656431d50cc9f8124a4",
+                "index": 7798,
+                "kind": "RESPONSE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007798.json",
+                "sha256": "843f0873418b5e89f47254cedcfd5c73ace18af2a73ddacf9d567e428a28c59d"
+              },
+              {
+                "bytes": 17676881,
+                "file_sha256": "fa7b2227590400708aa4a2a495f29e2bd0832c6e5710b65a3ca4ff76542d87cf",
+                "index": 7799,
+                "kind": "COMMITTED",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007799.json",
+                "sha256": "41002922973959f849a6ba1ce180d847b4a18d71b4117af889808a3c3a3462d9"
+              },
+              {
+                "bytes": 601,
+                "file_sha256": "4999f63f316affa85bf60607de26a65ec81f76d49f38c44a16edb9ddf912d579",
+                "index": 7800,
+                "kind": "R184_STAGE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007800.json",
+                "sha256": "4c36595aa0e712c3b83d37c4d4e27926a1d36b99859233c51585fef02ebcb9ad"
+              },
+              {
+                "bytes": 561,
+                "file_sha256": "c186610b14f7c3c72150b6f706f3918d6aa94869ea2822817d8d3656f7fba295",
+                "index": 7801,
+                "kind": "R191_DATASET_ROW",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007801.json",
+                "sha256": "7724ae339d9c3dbad771d8d85e5c74039af5788bf982288a61253b618423b34b"
+              },
+              {
+                "bytes": 621,
+                "file_sha256": "e6665f66ca5d87ec8e3bb55bf30fb490ac6cfa6f0238ae2b901d0e90ca9f95ee",
+                "index": 7802,
+                "kind": "R184_TRANSITION",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007802.json",
+                "sha256": "fe9c43791687fee91cf7e767b7abf381d0b5e7408b71c72e9319620c9a591bfd"
+              },
+              {
+                "bytes": 17682221,
+                "file_sha256": "eebf00377941a29d3f43190e6c2c9f223f1c8f5dd6a44d05314dae7265fc5935",
+                "index": 7803,
+                "kind": "CONTEXT_INPUT",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007803.json",
+                "sha256": "e8e32daf8885ab392a88570647cad537d5e7450ee86067ea662a5fb8332c454e"
+              },
+              {
+                "bytes": 17713720,
+                "file_sha256": "7485d41a2178529ea64c71a450a9c38d8e34c452981e0cc33b8dba2464dfaa2f",
+                "index": 7804,
+                "kind": "REQUEST",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007804.json",
+                "sha256": "19995ac2b0a08f856b0659ddc231164979a2301f1d59160ae5a3ce17186b44c8"
+              },
+              {
+                "bytes": 1255,
+                "file_sha256": "3ad2643b4e81de781c98d5e04e3da15a2d13ecac7d44cdf72932dbeaf9e340ee",
+                "index": 7805,
+                "kind": "RESPONSE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007805.json",
+                "sha256": "c52ea5f85494ee6b2e6743604c5ef17944c78554a6ff3fbba787e5dd5487706f"
+              },
+              {
+                "bytes": 17715138,
+                "file_sha256": "b3a96212745b3c832b5fc579195fc41e2c81bb5d1b93fe04bb35993af0ca41d4",
+                "index": 7806,
+                "kind": "COMMITTED",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007806.json",
+                "sha256": "1aca56db5dd40c4f48791baa201314f8c576a151ddc42e7ce4cde37c980b3564"
+              },
+              {
+                "bytes": 599,
+                "file_sha256": "3b811f0f7a94acd6c4748de0ede8b020d1dde106cb87fa910e6d95799deb05ef",
+                "index": 7807,
+                "kind": "R184_STAGE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/raw/stream/records/00000000000000007807.json",
+                "sha256": "41f82b6f7d9c650bc0295dc7cd00f8950fea72b9c8a1031e5fa29120d0b8e29c"
+              }
+            ],
+            "repairable_by_smaller_contiguous_window": false,
+            "total_bytes": 70793006
+          }
+        },
+        "status": "CONFIRMED_MINIMUM_WINDOW_EXCEEDS_UNCHANGED_BOUND"
+      },
+      "transport_failure": {
+        "dispatched": false,
+        "error": "ORIGIN_TRANSPORT_NOT_DISPATCHED",
+        "error_type": "CalledProcessError",
+        "feedback_count": 0,
+        "origin": {
+          "kind": "TRAIN_CHILD_RESPONSE",
+          "record_index": 7805,
+          "record_sha256": "c52ea5f85494ee6b2e6743604c5ef17944c78554a6ff3fbba787e5dd5487706f"
+        },
+        "receipt_sha256": null,
+        "seconds": 2.542909622192383,
+        "session_id": "r213_r226_caption_observation_fork",
+        "source_transport": null,
+        "unix": 1789781528.7757864
+      },
+      "transport_path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/private/transport_runs/17897812456785859204349e8/TRANSPORT_1789781528775764164.json"
+    },
+    {
+      "life": "r213_r226_caption_perspective_fork",
+      "result": {
+        "projection": {
+          "ACT_record": {
+            "bytes": 954,
+            "file_sha256": "b04759496f565ac788f7281a177fba6273038f9f8a589b906576a0c39fbb3940",
+            "index": 8186,
+            "kind": "R184_ACT",
+            "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008186.json",
+            "sha256": "ade617071d861ba480ddc3fbb8dde01e2d0e488fcce505c5df2e55f6695f014a"
+          },
+          "journal_id": "d9393884f50b4524b39a18cf1cfb78fa",
+          "no_ACT_replay": true,
+          "no_dropped_records": true,
+          "no_rank_or_acceptance_decision": true,
+          "origin": {
+            "kind": "TRAIN_CHILD_RESPONSE",
+            "record_index": 8183,
+            "record_sha256": "571b243f9fefb2fbad9bfc55d40e295434ce56d62c400ab150b827eaac342a56"
+          },
+          "schema": "R233_UNSCORED_TRANSPORT_ERROR_FEEDBACK_V1",
+          "scorer_receipt": false,
+          "scoring_calls": 0,
+          "target_rows_written": 0,
+          "text": "No judgment: operational transport failure for your ACT response 8183 (571b243f9fef). Its complete authenticated ACT/THINK record window requires 71076805 bytes, exceeding the unchanged 64MiB (67108864-byte) transport limit. The scorer was not contacted for this attempt. No rank, acceptance decision, or zero score exists; this is not a rejection of your caption. No ACT was replayed, and no evidence or THINK attribution was dropped.",
+          "transport_failure": {
+            "dispatched": false,
+            "error": "ORIGIN_TRANSPORT_NOT_DISPATCHED",
+            "error_type": "CalledProcessError",
+            "feedback_count": 0,
+            "origin": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 8183,
+              "record_sha256": "571b243f9fefb2fbad9bfc55d40e295434ce56d62c400ab150b827eaac342a56"
+            },
+            "receipt_sha256": null,
+            "seconds": 2.565284252166748,
+            "session_id": "r213_r226_caption_perspective_fork",
+            "source_transport": null,
+            "unix": 1789781584.7234752
+          },
+          "transport_file_sha256": "1f4b50308c8f82dbe58148717133a1cff3fdb150fb09027897ad5ea4b973a834",
+          "window": {
+            "ACT": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 8183,
+              "record_sha256": "571b243f9fefb2fbad9bfc55d40e295434ce56d62c400ab150b827eaac342a56"
+            },
+            "THINK": {
+              "kind": "TRAIN_CHILD_RESPONSE",
+              "record_index": 8176,
+              "record_sha256": "5f8272881dc0484e5b82f77697bdabf762f449862f514a70add8066f9e05deaf"
+            },
+            "all_ancestry_preserved": true,
+            "bound_bytes": 67108864,
+            "exceeds_bound": true,
+            "excess_bytes": 3967941,
+            "final": 8185,
+            "first": 8176,
+            "no_export_or_scoring_performed": true,
+            "original_bytes_only": true,
+            "records": [
+              {
+                "bytes": 1173,
+                "file_sha256": "c82e8d21d4547472794e11ffe601f01280f1a5cb54f5fb77e44e8719fe6b6ab9",
+                "index": 8176,
+                "kind": "RESPONSE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008176.json",
+                "sha256": "5f8272881dc0484e5b82f77697bdabf762f449862f514a70add8066f9e05deaf"
+              },
+              {
+                "bytes": 17737117,
+                "file_sha256": "43d268f0e30efc8e605a453bc9d94664b363ffb57715878448b3c24a1045d48f",
+                "index": 8177,
+                "kind": "COMMITTED",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008177.json",
+                "sha256": "012d2c5f6ed7883278dc3e8f15a4d37147e0c8ebf977bc918ec964e66e6e5c40"
+              },
+              {
+                "bytes": 601,
+                "file_sha256": "ae9e580b373bb28c4f49363dac7ea6f34a4b223eee39edabf9ee5baaf7649b23",
+                "index": 8178,
+                "kind": "R184_STAGE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008178.json",
+                "sha256": "6ba3dd84048eccd067fc808ceafbd7dcabd20adf5b38a32ff4c77c483d5ebf78"
+              },
+              {
+                "bytes": 561,
+                "file_sha256": "8463bd3cbfd4a3bcd81661a583776aaeec5fedc6d62db37531b33571f2cf41ea",
+                "index": 8179,
+                "kind": "R191_DATASET_ROW",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008179.json",
+                "sha256": "2dab3262764f5a8dae603d8365d5e5e11f9b3c98cf3ce3a0f0fa2392d5a7481c"
+              },
+              {
+                "bytes": 621,
+                "file_sha256": "efc460ce53c78cc506d3703162f2297115e1469f59c22f726079f20f6f5b51dd",
+                "index": 8180,
+                "kind": "R184_TRANSITION",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008180.json",
+                "sha256": "ebaf511e63ac75ba1b11d586cf41924b6193962c34f7e28a733b0840e4ba2cdd"
+              },
+              {
+                "bytes": 17742455,
+                "file_sha256": "4a4567739ef28ceb5eda0a85325e3e8d287e85b0e9958c005e87f1b56dd4ed3e",
+                "index": 8181,
+                "kind": "CONTEXT_INPUT",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008181.json",
+                "sha256": "9b072a1b77ac167218f52beb748602eadbd202b2b1c9530398dfee2c46649b0f"
+              },
+              {
+                "bytes": 17795566,
+                "file_sha256": "8008073682dd914e8fb6dd7b23d800e499232263ff3a596a08efa6788a9063a0",
+                "index": 8182,
+                "kind": "REQUEST",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008182.json",
+                "sha256": "f0e23bf676544791c01f69b3624c30b8f5d39b1e563fa49e172879787ca17c9e"
+              },
+              {
+                "bytes": 1200,
+                "file_sha256": "1e3c5cc0d5abe61a8245980dc47ec19d9abeded56f3c20d304d796207e4dfeba",
+                "index": 8183,
+                "kind": "RESPONSE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008183.json",
+                "sha256": "571b243f9fefb2fbad9bfc55d40e295434ce56d62c400ab150b827eaac342a56"
+              },
+              {
+                "bytes": 17796912,
+                "file_sha256": "d147d8e0536e3eb8d138c349ee27db8f22e4f9c6b0b21eef09f99f6d6fa32af6",
+                "index": 8184,
+                "kind": "COMMITTED",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008184.json",
+                "sha256": "511dbaa9822fc37fc712630408b66b03d09984f5e1ce3dac87eafaa28ad4281c"
+              },
+              {
+                "bytes": 599,
+                "file_sha256": "cbc60816c4afa1d85d0997380a1420a42f7aa0e4e7f1c48e74364b821a40b94a",
+                "index": 8185,
+                "kind": "R184_STAGE",
+                "path": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/raw/stream/records/00000000000000008185.json",
+                "sha256": "3f27d8aff890f12bb1cd325ef5ef096950424647aa363a94af63634524a8cd54"
+              }
+            ],
+            "repairable_by_smaller_contiguous_window": false,
+            "total_bytes": 71076805
+          }
+        },
+        "status": "CONFIRMED_MINIMUM_WINDOW_EXCEEDS_UNCHANGED_BOUND"
+      },
+      "transport_failure": {
+        "dispatched": false,
+        "error": "ORIGIN_TRANSPORT_NOT_DISPATCHED",
+        "error_type": "CalledProcessError",
+        "feedback_count": 0,
+        "origin": {
+          "kind": "TRAIN_CHILD_RESPONSE",
+          "record_index": 8183,
+          "record_sha256": "571b243f9fefb2fbad9bfc55d40e295434ce56d62c400ab150b827eaac342a56"
+        },
+        "receipt_sha256": null,
+        "seconds": 2.565284252166748,
+        "session_id": "r213_r226_caption_perspective_fork",
+        "source_transport": null,
+        "unix": 1789781584.7234752
+      },
+      "transport_path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_node3_parents_20260919/private/transport_runs/17897812456785859204349e8/TRANSPORT_1789781584723442186.json"
+    }
+  ],
+  "unix": 1789781819.6635797
+}

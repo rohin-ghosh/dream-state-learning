@@ -1,0 +1,100 @@
+{
+  "existing_deadline_utc": "2026-09-25T18:00:00Z",
+  "gates_disabled": 0,
+  "latest_policy_status": {
+    "awaiting_render": true,
+    "belongs_to_post_reboot_parent": true,
+    "not_before_unix": null,
+    "observed_utc": "2026-09-19T01:30:10.696409+00:00",
+    "status": "AWAITING_RENDER",
+    "timestamp_basis": "document"
+  },
+  "locks": [
+    {
+      "inode_key": "00:24:3352924",
+      "name": "PARENT_OPERATOR.lock",
+      "owner_pid": 346649
+    },
+    {
+      "inode_key": "00:24:6819348",
+      "name": "RECOVERY.lock",
+      "owner_pid": 346649
+    }
+  ],
+  "model": "openai/openai/gpt-6-astra",
+  "native_relaunches": 0,
+  "native_signals": 0,
+  "no_credential_bytes_found_in_scope": true,
+  "observed_utc": "2026-09-19T01:30:14.101974+00:00",
+  "original_attempt_files_preserved": 1016,
+  "original_seed_unchanged": true,
+  "post_reboot_provider_attempts": [
+    {
+      "API_REQUEST_utc": "2026-09-19T01:12:14.911190+00:00",
+      "attempt": "parent_000000000373",
+      "model": "openai/openai/gpt-6-astra",
+      "provider_response_status": null,
+      "provider_response_utc": null,
+      "publication_id": null,
+      "reasoning": {
+        "effort": "xhigh"
+      },
+      "result_sha256": "75de32f5ebe990f1393ccf09ea62425e8078e267af0063cc6976438be7cb2bfb",
+      "status": "PROVIDER_FAILED"
+    },
+    {
+      "API_REQUEST_utc": "2026-09-19T01:13:17.640627+00:00",
+      "attempt": "parent_000000000374",
+      "model": "openai/openai/gpt-6-astra",
+      "provider_response_status": "completed",
+      "provider_response_utc": "2026-09-19T01:14:02.322938+00:00",
+      "publication_id": "0e2ffa3c8fa54413b454119b1b5e648b",
+      "reasoning": {
+        "effort": "xhigh"
+      },
+      "result_sha256": "da85b635eaa8db2a8247967ab0298eac427e2f2106ee8f50163b6ddcecb6cd57",
+      "status": "PUBLISHED"
+    },
+    {
+      "API_REQUEST_utc": "2026-09-19T01:25:57.111951+00:00",
+      "attempt": "parent_000000000376",
+      "model": "openai/openai/gpt-6-astra",
+      "provider_response_status": "completed",
+      "provider_response_utc": "2026-09-19T01:26:06.713018+00:00",
+      "publication_id": null,
+      "reasoning": {
+        "effort": "xhigh"
+      },
+      "result_sha256": "c8a8cb9d83e889e91f018c0fed9fd9344296710026338285af02ba29327aff5b",
+      "status": "SILENT"
+    },
+    {
+      "API_REQUEST_utc": "2026-09-19T01:26:53.338348+00:00",
+      "attempt": "parent_000000000377",
+      "model": "openai/openai/gpt-6-astra",
+      "provider_response_status": "completed",
+      "provider_response_utc": "2026-09-19T01:28:05.626855+00:00",
+      "publication_id": "3e62442a438d4745985c7075d0601d45",
+      "reasoning": {
+        "effort": "xhigh"
+      },
+      "result_sha256": "e795b6d11d4343460990261a56b44bd3b052b3e08002642e83d06260c700a19f",
+      "status": "PUBLISHED"
+    }
+  ],
+  "process": {
+    "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+    "command_sha256": "1d20e06e866b2e292f5e7b7b6c2ecdcb09e7270a9450874e87c634a7c190f431",
+    "pid": 346649,
+    "start_ticks": "795156",
+    "state": "S"
+  },
+  "reasoning_effort": "xhigh",
+  "scope_files_scanned": 64,
+  "static_turns_sent": 0,
+  "supervisor_argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_p3_parent_20260919/runner.py"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "kind": "parent",
+  "owner": "Main-approved C2/P7/bridge owners",
+  "approval_scope": "Explicit Main approval to register ready CPU services; preserve live publishers, original locks and append-only ledgers; no native runs or service management",
+  "local_daemon_only": true,
+  "child_native": false,
+  "restart_safe": true,
+  "self_enforces_lease": true,
+  "foreground": true,
+  "shutdown_leaves_child_natives_running": true,
+  "cwd": "/data/home/rohing/dream-state-orch",
+  "name": "c2-parent",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_service.py"
+  ],
+  "entrypoint": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_service.py",
+  "entrypoint_sha256": "4022f81fa3fa52aa57f5d86d46ab2fac2de332ff9a8ed24bd182348ef89abab1",
+  "until_unix": 1789927200,
+  "lease_evidence": {
+    "json_pointer": "/hard_end_unix",
+    "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_session1/CONFIG.json",
+    "sha256": "3a113e74974dad6ee21ee759b01b2f21839f881e08504c601c1ff148d82ad123"
+  },
+  "singleton_lock": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/C2_SERVICE.lock"
+}

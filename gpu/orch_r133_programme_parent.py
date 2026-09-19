@@ -13,7 +13,7 @@ import time
 from gpu.orch_route_parent_campaign_providers import STRONG, strong
 
 
-PROGRAMMES = {'emotional_support', 'brain_lecture', 'creative_writing', 'raw_parented'}
+PROGRAMMES = {'emotional_support', 'brain_lecture', 'creative_writing', 'raw_parented', 'repo_reader'}
 
 
 def require(condition, message):
@@ -45,6 +45,25 @@ def validate(config):
         require(sha(config[name]) == config[name.replace('_path', '_sha256')], 'fixed_parent_source')
     require(type(config.get('cadence_responses')) is int and config['cadence_responses'] >= 1,
             'positive_parent_cadence')
+    require(config.get('cadence_label', 'SPARSE') in ('SPARSE', 'PERSISTENT'), 'known_cadence_label')
+    if config.get('cadence_label') == 'PERSISTENT':
+        require(config['cadence_responses'] == 1, 'persistent_every_boundary')
+        require(type(config.get('minimum_duration_seconds')) is int
+                and config['minimum_duration_seconds'] >= 3600, 'persistent_hour_minimum')
+    require(type(config.get('parent_style', 'responsive')) is str
+            and 0 < len(config.get('parent_style', 'responsive')) <= 300, 'bounded_parent_style')
+    require(config.get('parent_reasoning_effort') in (None, 'low', 'medium', 'high', 'xhigh'),
+            'known_parent_effort')
+    require(type(config.get('poll_interval_seconds', 5)) in (int, float)
+            and 0.25 <= config.get('poll_interval_seconds', 5) <= 30,
+            'bounded_parent_poll_interval')
+    require(type(config.get('start_after_response_count', 0)) is int
+            and config.get('start_after_response_count', 0) >= 0, 'valid_parent_resume_cursor')
+    require(config.get('schedule_on', 'response') in ('response', 'request'), 'known_parent_clock')
+    if config.get('schedule_on') == 'request':
+        require(config.get('cadence_label') == 'PERSISTENT', 'prefetch_only_for_persistent')
+        require(type(config.get('start_after_request_count', 0)) is int
+                and config.get('start_after_request_count', 0) >= 0, 'valid_request_cursor')
     require(type(config.get('hard_end_unix')) in (int, float)
             and time.time() < config['hard_end_unix'], 'parent_wall')
     return config
@@ -64,7 +83,7 @@ def snapshot(repository, config):
 from pathlib import Path
 from gpu.orch_r125_stream_console import _open_stream_directory,_read_record
 root=ROOT
-events=[]; consumed={}; response_count=0; previous='0'*64
+events=[]; consumed={}; boundaries=[]; parent_consumptions=[]; response_count=0; request_count=0; previous='0'*64
 with _open_stream_directory(root,'records') as (directory,unused):
  index=0
  while True:
@@ -72,18 +91,43 @@ with _open_stream_directory(root,'records') as (directory,unused):
   if record is None: break
   if index: assert record['previous_sha256']==previous
   previous=record['sha256']; document=record['document']
+  if record['kind']=='REQUEST':
+   request_count+=1
+   if boundaries and boundaries[-1]['next_request_index'] is None:
+    boundaries[-1]['next_request_index']=index
   if record['kind']=='RESPONSE':
    response_count+=1
+   boundaries.append(dict(response_count=response_count,record_index=index,next_request_index=None))
    events.append(dict(actor='child',text=document['response']['raw'],record_index=index,record_sha256=record['sha256']))
   elif record['kind']=='INBOX':
    message=document['message']
    consumed[message['id']]=dict(record_index=index,record_sha256=record['sha256'])
+   if message['actor']=='parent':
+    parent_consumptions.append(dict(record_index=index,speaker=message.get('speaker'),inbox_id=message['id']))
    events.append(dict(actor=message['actor'],speaker=message.get('speaker'),text=message['text'],record_index=index,record_sha256=record['sha256']))
   index+=1
 print(json.dumps(dict(schema='R133_TRAIN_PARENT_SNAPSHOT_V1',response_count=response_count,
- record_count=index,head_sha256=previous,events=events[-8:],consumed_inbox=consumed)))
+ record_count=index,request_count=request_count,head_sha256=previous,events=events[-8:],consumed_inbox=consumed,
+ boundaries=boundaries,parent_consumptions=parent_consumptions)))
 '''.replace('ROOT', repr(config['root']))
     return remote(repository, config, script)
+
+
+def transport_preflight(repository, config):
+    script = ('import json; from pathlib import Path; '
+              'from gpu import orch_r125_stream_console as journal; '
+              'from gpu import orch_r127_pilot_console as console; '
+              'assert callable(journal._open_stream_directory) and callable(journal._read_record); '
+              'assert callable(console.publish_parent); '
+              'print(json.dumps(dict(journal=str(Path(journal.__file__).resolve()), '
+              'console=str(Path(console.__file__).resolve()))))')
+    result = remote(repository, config, script)
+    require(set(result) == {'journal', 'console'}, 'parent_transport_modules')
+    root = Path(config['source_root'])
+    for path in result.values():
+        require(type(path) is str and Path(path).is_relative_to(root),
+                'parent_transport_source_binding')
+    return result
 
 
 def prompt(config, state):
@@ -97,7 +141,15 @@ def prompt(config, state):
         'help the learner investigate; allow initiative and useful silence. The child keeps generating '
         'while you answer. Return only JSON: speak(boolean), message(string, at most90 words), '
         'rationale(short string). If silent, message must be empty. No tools.\n\n'
-        + Path(config['principles_path']).read_text() + '\n\nProgramme:\n'
+        + '\nParent style: ' + config.get('parent_style', 'responsive')
+        + ('\nThis is the PERSISTENT arm: offer a brief, responsive contribution at every generation boundary. '
+           'Vary your intervention with the actual activity; do not repeat a slogan or require longer output. '
+           'A useful acknowledgment or a precise question is sufficient; silence is recorded as an uncovered slot. '
+           if config.get('cadence_label') == 'PERSISTENT' else '')
+        + ('\nThe child is generating while you respond. Prepare guidance for the next boundary from '
+           'the latest completed observations shown here; do not invent its unfinished response. '
+           if config.get('schedule_on') == 'request' else '')
+        + '\n' + Path(config['principles_path']).read_text() + '\n\nProgramme:\n'
         + Path(config['programme_path']).read_text())
     recent = []
     for event in state['events']:
@@ -128,24 +180,72 @@ def record_deliveries(output, state):
                 observation_time_not_exact_consumption_time=True, result_sha256=sha(path)))
 
 
+def boundary_coverage(state, baseline):
+    boundaries = [item for item in state.get('boundaries', [])
+                  if item['response_count'] > baseline and item['next_request_index'] is not None]
+    parent_indices = [event['record_index'] for event in state.get('parent_consumptions', [])]
+    covered = sum(any(item['record_index'] < index < item['next_request_index']
+                      for index in parent_indices) for item in boundaries)
+    return dict(closed_boundaries=len(boundaries), covered_boundaries=covered,
+                missing_boundaries=len(boundaries)-covered,
+                coverage_basis='registered_parent_INBOX_before_next_REQUEST_not_verified_rendered_exposure')
+
+
+def resume_cursor(config):
+    count_key = 'request_count' if config.get('schedule_on') == 'request' else 'response_count'
+    cursor = config.get('start_after_' + count_key, 0)
+    predecessor = config.get('predecessor_output')
+    if predecessor is None:
+        return cursor
+    predecessor = Path(predecessor)
+    require(predecessor.is_absolute() and predecessor.is_dir(), 'existing_parent_predecessor')
+    require(sha(predecessor/'STARTED.json') == config.get('predecessor_started_sha256'),
+            'pinned_parent_predecessor')
+    started = json.loads((predecessor/'STARTED.json').read_text())
+    require(started['branch'] == config['branch'] and started['programme'] == config['programme'],
+            'same_parent_branch_predecessor')
+    reserved = 0
+    for path in predecessor.glob('parent_*/SOURCE.json'):
+        reserved = max(reserved, json.loads(path.read_text())[count_key])
+    require(cursor >= reserved, 'no_replay_of_reserved_parent_sources')
+    return cursor
+
+
 def serve(config_path, repository, output, once=False):
     config_path, output = Path(config_path), Path(output)
     config = validate(json.loads(config_path.read_text()))
+    transport = transport_preflight(repository, config)
+    if config.get('cadence_label') == 'PERSISTENT':
+        require(time.time()+config['minimum_duration_seconds'] < config['hard_end_unix'],
+                'time_for_full_persistent_segment')
     output.mkdir(parents=True, exist_ok=False, mode=0o700)
     write(output/'STARTED.json', dict(pid=os.getpid(), started_unix=time.time(), config_sha256=sha(config_path),
-                                    model=STRONG, programme=config['programme'], branch=config['branch']))
-    last_count = 0
+                                    model=STRONG, programme=config['programme'], branch=config['branch'],
+                                    schedule_on=config.get('schedule_on', 'response'), transport=transport))
+    last_count = resume_cursor(config)
     calls = 0
+    baseline = None
     while time.time() < config['hard_end_unix']:
         validate(config)
         state = snapshot(repository, config)
+        if baseline is None:
+            baseline = config.get('start_after_response_count', 0)
+            write(output/'SEGMENT.json', dict(started_unix=time.time(), baseline_response_count=baseline,
+                cadence_label=config.get('cadence_label', 'SPARSE'),
+                parent_style=config.get('parent_style', 'responsive'),
+                minimum_duration_seconds=config.get('minimum_duration_seconds', 0)))
+        if config.get('cadence_label') == 'PERSISTENT':
+            coverage_path = output/('COVERAGE_' + str(state['record_count']) + '.json')
+            if not coverage_path.exists():
+                write(coverage_path, dict(observed_unix=time.time(), **boundary_coverage(state, baseline)))
         record_deliveries(output, state)
-        if state['response_count'] < max(1, last_count + config['cadence_responses']):
+        clock = state['request_count'] if config.get('schedule_on') == 'request' else state['response_count']
+        if clock < max(1, last_count + config['cadence_responses']):
             if once:
                 return
-            time.sleep(5)
+            time.sleep(config.get('poll_interval_seconds', 5))
             continue
-        last_count = state['response_count']
+        last_count = clock
         directory = output/f'parent_{calls:06d}'
         directory.mkdir()
         calls += 1
@@ -154,11 +254,18 @@ def serve(config_path, repository, output, once=False):
         (directory/'SYSTEM.txt').write_text(instruction)
         (directory/'PROMPT.txt').write_text(payload)
         receipt = dict(speaker='Astra', programme=config['programme'], branch=config['branch'],
-                       source_response_count=last_count, source_head_sha256=state['head_sha256'],
+                       source_response_count=state['response_count'], source_head_sha256=state['head_sha256'],
+                       schedule_on=config.get('schedule_on', 'response'), schedule_count=last_count,
                        started_unix=time.time(), status='MISSING', retry=False)
+        write(directory/'DISPATCH_INTENT.json', dict(source_response_count=state['response_count'],
+            schedule_on=config.get('schedule_on', 'response'), schedule_count=last_count,
+            source_sha256=sha(directory/'SOURCE.json'), system_sha256=sha(directory/'SYSTEM.txt'),
+            prompt_sha256=sha(directory/'PROMPT.txt'), created_unix=time.time(),
+            uncertainty_requires_reconciliation=True, retries=0))
         try:
             response, model, usage = strong(payload, directory,
-                min(config['hard_end_unix'], time.time()+120), instruction)
+                min(config['hard_end_unix'], time.time()+120), instruction,
+                reasoning_effort=config.get('parent_reasoning_effort'))
             receipt.update(actual_model=model, usage=usage, response=response)
             require(time.time() < config['hard_end_unix'], 'late_reply_not_delivered')
             if response['speak']:

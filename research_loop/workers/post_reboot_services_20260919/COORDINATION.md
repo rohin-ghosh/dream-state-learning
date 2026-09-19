@@ -1,0 +1,20 @@
+# Post-reboot recovery — 2026-09-19
+
+- Non-material infrastructure repair only. Existing scientific definitions, player/judge epochs, visibility and source deadlines stay unchanged; no new GPU work and no native signals.
+- Host checked with approved escalated read-only calls: nvl-ai, uid 158984, boot ID 80d71f45-6f0c-4479-b0e5-77a9611c793e. No live hourly collector found at 2026-09-19T00:42:29Z. Sandbox /proc is not host evidence.
+- System-management commands were rejected by platform enforcement. No bypass, installation, enablement or linger change will be attempted. Repository unit/boot templates are NOT installed or boot enabled.
+- Collector replacement shares the original CAPTION_HOURLY.lock, preserves all prior worker bytes, writes recovery artifacts only here, and never calls git publication.
+- Backfill targets: 2026-09-18T23:00:00Z and 2026-09-19T00:00:00Z. Retrospective immutable admission/origin counts are bounded by each cut; score completion timing is not reconstructed. Epochs remain distinct.
+- MAIN / pair, node3, C2, P7 owners: provide exact non-secret local daemon argv, cwd, per-source lease horizon and source receipt before enabling your registry entry. Do not add or restart a child native. Pending entries remain disabled.
+- Lovelace owns every-sleep queue-daemon identification. Main coordinates its exact argv and lease before registry activation; this worker does not independently restore that queue.
+- Approval watcher argv is not inferred. Supply its exact CPU-local watch-only invocation; automatic approval/ratification is prohibited.
+
+## Verified handoff — 2026-09-19T00:51:52Z
+
+[Builder 2026-09-19T00:51:52Z] Non-material CPU-service recovery; no GPU launch. Actual host boot verified 2026-09-18T22:50:45Z. Supervisor PID311614/start717203 and collector PID311631/start717211 are live on nvl-ai under boot80d71f45-6f0c-4479-b0e5-77a9611c793e. Both duplicate foreground starts returned75 without spawning a second owner. Original collector flock is held. Current code retry/catch-up closure passed26 regressions; inherited epoch6 and projector3 also passed (35 total). No other agent daemon or child native was stopped/restarted; only this worker's first recovery collector was refreshed to tested code. First nohup attempt was reaped with its command session, preserved its23:00 cut, and was replaced with an ordinary detached process; this is not service installation. Initial mock-PID test-harness serialization failure was corrected; final logs retain the passing run.
+
+- Completed immutable cuts: `cuts/20260918T230000Z.json` and `cuts/20260919T000000Z.json`, each8players, no source errors, exact source SHA/epoch verification. Historical completion-time caveat remains explicit. Current partial cut at00:50:17 also succeeded; next scheduled UTC hour01:00.
+- `RECOVERY_VERIFIED_20260919.json` binds actual host/process/locks, backfill hashes and status. `COLLECTOR_LAST_SUCCESS.json` and `SUPERVISOR_HEARTBEAT.json` are current pointers here; pre-reboot workers' latest pointers remain historical and untouched.
+- Only `services.d/caption-collector.json` is enabled in the application registry. Main must atomically add exact owner-provided parent/probe/watcher manifests; seven placeholders remain disabled, not restored-service claims. Lovelace continues every-sleep identification through main. Registry changes reload every10seconds; full schema/example and foreground command are in README.md.
+- Existing collector horizon remains2026-09-30T17:59:30Z; each remote scorer retains its earlier individual cutoff. No credentials in config/unit, no commit, no push, no remote scorer writes, no child-native signals.
+- Automatic boot remains **BLOCKED_UNINSTALLED / boot_enabled=false**. Repository unit/boot templates exist only as files. No host-management guard workaround occurred. Safe foreground execution: `/usr/bin/bash /data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/boot.sh` (returns75 while this supervisor is already live).

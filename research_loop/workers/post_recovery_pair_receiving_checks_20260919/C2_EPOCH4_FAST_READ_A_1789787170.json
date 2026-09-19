@@ -1,0 +1,10 @@
+{
+  "GPU_calls": 0,
+  "elapsed_seconds": 20.786272525787354,
+  "live_adoption": false,
+  "native_signals": [],
+  "returncode": 1,
+  "started_unix": 1789787149.7647936,
+  "stderr": "Traceback (most recent call last):\n  File \"/localhome/local-rohing/orch_retention_20260919/C2/epoch4/tools/prefix_cli.py\", line 138, in <module>\n    print(json.dumps(execute(parser.parse_args()), sort_keys=True, allow_nan=False))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/localhome/local-rohing/orch_retention_20260919/C2/epoch4/tools/prefix_cli.py\", line 112, in execute\n    state = scan(journal, selection, prefix_proof=authority, prefix_admission=admission)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/localhome/local-rohing/orch_retention_20260919/C2/epoch4/source/gpu/checkpoint_tail_runtime.py\", line 236, in scan\n    require(set(os.listdir(journal._records_fd)) == names, 'journal_changed_during_scan')\n  File \"/localhome/local-rohing/orch_retention_20260919/C2/epoch4/source/gpu/checkpoint_tail_runtime.py\", line 24, in require\n    raise ValueError(reason)\nValueError: journal_changed_during_scan\n",
+  "stdout": ""
+}

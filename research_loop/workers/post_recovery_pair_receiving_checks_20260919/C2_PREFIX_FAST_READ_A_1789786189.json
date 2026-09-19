@@ -1,0 +1,89 @@
+{
+  "GPU_calls": 0,
+  "elapsed_seconds": 4.369727849960327,
+  "live_adoption": false,
+  "native_signals": [],
+  "report": {
+    "elapsed_seconds": 3.243093060038518,
+    "inbox_count": 356,
+    "journal_writes": 0,
+    "pending": {
+      "request": true,
+      "response": true,
+      "sleep_request": false
+    },
+    "receipt": {
+      "complete_index": 13120,
+      "complete_sha256": "18980365b172a39140b8387d3eb49d3320fbb4be9ebfaef03c70dd21c9074eff",
+      "decoded_prefix_indices": [
+        13120
+      ],
+      "head_sha256": "18273ae63cd7651c6589720cf2f73ea1a2714d73ca593c2e390df8c42e666334",
+      "pending_preserved": true,
+      "policy": "R233_PINNED_COMPLETE_TAIL_V1",
+      "prefix_proof": {
+        "consumer_context": {
+          "admission": null,
+          "consumer_environment": {
+            "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+            "mount_namespace": {
+              "dev": 5,
+              "ino": 4026531832
+            }
+          },
+          "mode": "SAME_MOUNT_NAMESPACE",
+          "producer_environment": {
+            "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+            "mount_namespace": {
+              "dev": 5,
+              "ino": 4026531832
+            }
+          }
+        },
+        "full_raw_extension_verified": true,
+        "full_raw_tail_verified": true,
+        "guard_path": "/localhome/local-rohing/orch_retention_20260919/C2/prefix_observer_1789786096867912576/GUARD_A.json",
+        "guard_sha256": "9bea228259c2c5083c5139200fb246c62ae2c4d67ddbe780441fa5524caaccea",
+        "implicit_fallback": false,
+        "prefix_records_metadata_rechecked": 13121,
+        "prevalidated_complete_index": 13120,
+        "prevalidated_raw_prefix_bytes": 24205128929,
+        "proof_path": "/localhome/local-rohing/orch_retention_20260919/C2/prefix_observer_1789786096867912576/PROOF.json",
+        "proof_sha256": "ef794d3521510248b64a5984c57c3cdf25b8e025e57e2de3169ffe5d31c2d3a5",
+        "raw_extension_bytes_hashed": 0,
+        "raw_extension_records": 0,
+        "raw_tail_bytes_hashed": 52091027,
+        "schema": "R233_IMMUTABLE_PREFIX_PROOF_V2",
+        "selected_complete_index": 13120,
+        "trust": "LOCAL_LINUX_SAME_BOOT_NO_ROLLBACK_NO_CONCURRENT_PREFIX_WRITERS_V1"
+      },
+      "prefix_records": 13121,
+      "prefix_rewritten": false,
+      "prefix_semantic_authority": "EXTERNAL_EXACT_COMPLETE_PIN_OR_CURRENT_VALIDATED_WRITER",
+      "prefix_work": "EXTERNALLY_PINNED_PREHASH_PLUS_METADATA_AND_RAW_EXTENSION",
+      "raw_record_bytes_hashed": 52091027,
+      "record_count": 13126,
+      "restored_state_sha256": "31dbfa1c6b18f4645f435bc7adbb62dcc935f6ef9c73c18d290c7a1ad3b027fc",
+      "sidecars": [
+        {
+          "file_sha256": "d98de8575428fa49258846b3bbd683d0727aee0fc131fa32ab9d71955be56756",
+          "maximum_cycle": 129,
+          "name": "correction_ledger.json",
+          "present": true,
+          "record_index": 13038,
+          "record_sha256": "afdfcc3e89e43eaee26340049da9a5c563057eb8b666e1b361afab54cbdc63b8"
+        }
+      ],
+      "source_admission_unchanged": true,
+      "tail_bytes": 52091027,
+      "tail_records": 5
+    },
+    "status": "READ_ONLY_PROBE_NOT_LOADED_OR_DISPATCH",
+    "writer_lock_acquired": false
+  },
+  "returncode": 0,
+  "root": "/localhome/local-rohing/orch_retention_20260919/C2/prefix_observer_1789786096867912576",
+  "started_unix": 1789786184.9016826,
+  "stderr": "",
+  "stdout": "{\"elapsed_seconds\": 3.243093060038518, \"inbox_count\": 356, \"journal_writes\": 0, \"pending\": {\"request\": true, \"response\": true, \"sleep_request\": false}, \"receipt\": {\"complete_index\": 13120, \"complete_sha256\": \"18980365b172a39140b8387d3eb49d3320fbb4be9ebfaef03c70dd21c9074eff\", \"decoded_prefix_indices\": [13120], \"head_sha256\": \"18273ae63cd7651c6589720cf2f73ea1a2714d73ca593c2e390df8c42e666334\", \"pending_preserved\": true, \"policy\": \"R233_PINNED_COMPLETE_TAIL_V1\", \"prefix_proof\": {\"consumer_context\": {\"admission\": null, \"consumer_environment\": {\"boot_id\": \"2c05ffec-1b4c-472f-9688-2a37543a6f4a\", \"mount_namespace\": {\"dev\": 5, \"ino\": 4026531832}}, \"mode\": \"SAME_MOUNT_NAMESPACE\", \"producer_environment\": {\"boot_id\": \"2c05ffec-1b4c-472f-9688-2a37543a6f4a\", \"mount_namespace\": {\"dev\": 5, \"ino\": 4026531832}}}, \"full_raw_extension_verified\": true, \"full_raw_tail_verified\": true, \"guard_path\": \"/localhome/local-rohing/orch_retention_20260919/C2/prefix_observer_1789786096867912576/GUARD_A.json\", \"guard_sha256\": \"9bea228259c2c5083c5139200fb246c62ae2c4d67ddbe780441fa5524caaccea\", \"implicit_fallback\": false, \"prefix_records_metadata_rechecked\": 13121, \"prevalidated_complete_index\": 13120, \"prevalidated_raw_prefix_bytes\": 24205128929, \"proof_path\": \"/localhome/local-rohing/orch_retention_20260919/C2/prefix_observer_1789786096867912576/PROOF.json\", \"proof_sha256\": \"ef794d3521510248b64a5984c57c3cdf25b8e025e57e2de3169ffe5d31c2d3a5\", \"raw_extension_bytes_hashed\": 0, \"raw_extension_records\": 0, \"raw_tail_bytes_hashed\": 52091027, \"schema\": \"R233_IMMUTABLE_PREFIX_PROOF_V2\", \"selected_complete_index\": 13120, \"trust\": \"LOCAL_LINUX_SAME_BOOT_NO_ROLLBACK_NO_CONCURRENT_PREFIX_WRITERS_V1\"}, \"prefix_records\": 13121, \"prefix_rewritten\": false, \"prefix_semantic_authority\": \"EXTERNAL_EXACT_COMPLETE_PIN_OR_CURRENT_VALIDATED_WRITER\", \"prefix_work\": \"EXTERNALLY_PINNED_PREHASH_PLUS_METADATA_AND_RAW_EXTENSION\", \"raw_record_bytes_hashed\": 52091027, \"record_count\": 13126, \"restored_state_sha256\": \"31dbfa1c6b18f4645f435bc7adbb62dcc935f6ef9c73c18d290c7a1ad3b027fc\", \"sidecars\": [{\"file_sha256\": \"d98de8575428fa49258846b3bbd683d0727aee0fc131fa32ab9d71955be56756\", \"maximum_cycle\": 129, \"name\": \"correction_ledger.json\", \"present\": true, \"record_index\": 13038, \"record_sha256\": \"afdfcc3e89e43eaee26340049da9a5c563057eb8b666e1b361afab54cbdc63b8\"}], \"source_admission_unchanged\": true, \"tail_bytes\": 52091027, \"tail_records\": 5}, \"status\": \"READ_ONLY_PROBE_NOT_LOADED_OR_DISPATCH\", \"writer_lock_acquired\": false}\n"
+}

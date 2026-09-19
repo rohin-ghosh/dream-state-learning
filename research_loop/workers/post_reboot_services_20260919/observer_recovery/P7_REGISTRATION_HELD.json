@@ -1,0 +1,105 @@
+{
+  "boot_enabled": false,
+  "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+  "c2_original_publisher": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/checkpoint_tail_parent_strong.py",
+      "--manifest",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_session1/MANIFEST.json",
+      "--manifest-sha256",
+      "e633ecae3b71e2e4e901c2f7eceece0374c8190f5c859ab300ee449daa80e753"
+    ],
+    "command_sha256": "b2067e03a83fd4e472d3df17386e35872d2c439b8177526554148e0b608a1689",
+    "executable": "/usr/bin/python3.12",
+    "pid": 325487,
+    "start_ticks": "753205"
+  },
+  "existing_p7_process": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/p7_restore.py"
+    ],
+    "command_sha256": "e355d06624cc8e957574801d894510e91398777a1d32f491eafe51ee3c041f47",
+    "executable": "/usr/bin/python3.12",
+    "pid": 325545,
+    "start_ticks": "753409"
+  },
+  "historical_1242_references_preserved": true,
+  "live_services": [
+    {
+      "matches": [
+        {
+          "command_sha256": "51c646318fb621e74067c402a013fc42778092effd4e4a0c1111a63971f8db08",
+          "pid": 343304,
+          "start_ticks": "788315"
+        }
+      ],
+      "name": "every-sleep-queue",
+      "status": "RUNNING_OWNED"
+    },
+    {
+      "matches": [
+        {
+          "command_sha256": "b27c6a4ff3bb90b2305561167a1aa0a2e9c32fe5ec1b345984dab4b9df7ca580",
+          "pid": 361010,
+          "start_ticks": "822432"
+        }
+      ],
+      "name": "c2-parent",
+      "status": "RUNNING_OWNED"
+    },
+    {
+      "matches": [
+        {
+          "command_sha256": "8d4ba1113100b96546b2b31cb6306665232ce9167e28c63487053dc92c895e03",
+          "pid": 325634,
+          "start_ticks": "753612"
+        }
+      ],
+      "name": "astra7-bridge",
+      "status": "RUNNING_ADOPTED_NO_SIGNALS"
+    },
+    {
+      "matches": [
+        {
+          "command_sha256": "a7980c8ce3c85453d63a86886eb436ccd059262a323d2e3d5dd07e348dd7dff4",
+          "pid": 298357,
+          "start_ticks": "687734"
+        }
+      ],
+      "name": "correction-observer",
+      "status": "RUNNING_ADOPTED_NO_SIGNALS"
+    },
+    {
+      "matches": [
+        {
+          "command_sha256": "bb786d932ddf62712332bf315b64ecdaa98383d4bdb6f1baf6bf9689f580f5a8",
+          "pid": 311631,
+          "start_ticks": "717211"
+        }
+      ],
+      "name": "caption-collector",
+      "status": "RUNNING_OWNED"
+    }
+  ],
+  "native_signals": [],
+  "new_evaluations": 0,
+  "observed_utc": "2026-09-19T01:09:40.685877+00:00",
+  "p7_hold_reason": "Await Main bounded-observation logging variant; do not re-enable old argv",
+  "p7_process_stopped_or_restarted": false,
+  "p7_registration_enabled": false,
+  "queue_driver_pid": 343342,
+  "queue_latest_enrolled": 1337,
+  "queue_latest_observed_utc": "2026-09-19T01:09:12.960649+00:00",
+  "service_management_attempted": false,
+  "supersedes_p7_registration_in": "PARENT_REGISTRATION_VERIFIED.json",
+  "tests_passed": {
+    "existing_restore": 2,
+    "followup": 22,
+    "supervisor": 26,
+    "total": 50
+  }
+}

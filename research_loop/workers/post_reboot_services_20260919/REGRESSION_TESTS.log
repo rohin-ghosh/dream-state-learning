@@ -1,0 +1,32 @@
+test_existing_receipt_is_never_overwritten (test_collector.CollectorTests.test_existing_receipt_is_never_overwritten) ... ok
+test_expired_source_is_not_queried (test_collector.CollectorTests.test_expired_source_is_not_queried) ... ok
+test_failed_live_read_retries_without_waiting_for_next_hour (test_collector.CollectorTests.test_failed_live_read_retries_without_waiting_for_next_hour) ... ok
+test_lease_extension_is_rejected (test_collector.CollectorTests.test_lease_extension_is_rejected) ... ok
+test_legacy_lock_prevents_second_collector (test_collector.CollectorTests.test_legacy_lock_prevents_second_collector) ... {"status": "SINGLE_COLLECTOR_ALREADY_LOCKED"}
+ok
+test_reboot_catches_later_missing_hours_without_recollecting_completed_cuts (test_collector.CollectorTests.test_reboot_catches_later_missing_hours_without_recollecting_completed_cuts) ... ok
+test_remote_cut_changes_only_clock_selection (test_collector.CollectorTests.test_remote_cut_changes_only_clock_selection) ... ok
+test_sources_keep_player_epochs_and_individual_leases (test_collector.CollectorTests.test_sources_keep_player_epochs_and_individual_leases) ... ok
+test_approval_watch_requires_watch_only (test_supervisor.SupervisorTests.test_approval_watch_requires_watch_only) ... ok
+test_bad_registry_file_does_not_hide_good_entries (test_supervisor.SupervisorTests.test_bad_registry_file_does_not_hide_good_entries) ... ok
+test_bound_manifest_is_valid (test_supervisor.SupervisorTests.test_bound_manifest_is_valid) ... ok
+test_busy_legacy_lock_suppresses_start (test_supervisor.SupervisorTests.test_busy_legacy_lock_suppresses_start) ... ok
+test_changed_owned_command_never_launches_duplicate (test_supervisor.SupervisorTests.test_changed_owned_command_never_launches_duplicate) ... ok
+test_changed_source_is_rejected (test_supervisor.SupervisorTests.test_changed_source_is_rejected) ... ok
+test_crash_has_restart_backoff (test_supervisor.SupervisorTests.test_crash_has_restart_backoff) ... ok
+test_disabled_entry_is_not_started (test_supervisor.SupervisorTests.test_disabled_entry_is_not_started) ... ok
+test_duplicate_existing_processes_are_not_stopped_or_restarted (test_supervisor.SupervisorTests.test_duplicate_existing_processes_are_not_stopped_or_restarted) ... ok
+test_existing_process_is_adopted_without_restart (test_supervisor.SupervisorTests.test_existing_process_is_adopted_without_restart) ... ok
+test_expired_entry_never_starts (test_supervisor.SupervisorTests.test_expired_entry_never_starts) ... ok
+test_lease_expiring_during_discovery_never_starts (test_supervisor.SupervisorTests.test_lease_expiring_during_discovery_never_starts) ... ok
+test_lease_extension_and_changed_evidence_are_rejected (test_supervisor.SupervisorTests.test_lease_extension_and_changed_evidence_are_rejected) ... ok
+test_native_and_shutdown_propagation_are_rejected (test_supervisor.SupervisorTests.test_native_and_shutdown_propagation_are_rejected) ... ok
+test_only_owned_local_pid_is_stopped_at_lease (test_supervisor.SupervisorTests.test_only_owned_local_pid_is_stopped_at_lease) ... ok
+test_sandbox_pid_namespace_is_rejected (test_supervisor.SupervisorTests.test_sandbox_pid_namespace_is_rejected) ... ok
+test_secrets_and_inline_commands_are_rejected (test_supervisor.SupervisorTests.test_secrets_and_inline_commands_are_rejected) ... ok
+test_start_is_direct_no_shell_and_no_secret_log_capture (test_supervisor.SupervisorTests.test_start_is_direct_no_shell_and_no_secret_log_capture) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.109s
+
+OK

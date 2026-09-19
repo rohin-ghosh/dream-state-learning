@@ -1,0 +1,51 @@
+{
+  "captured_main_sha256": "c5ea88e80e520fe35dc3df9c5b442060bd86ced4453e779c5cfe585cc552ef0c",
+  "computed_offline_utc": "2026-09-19T02:59:52.640946+00:00",
+  "drain_proved": false,
+  "kernel_queue_evidence_collected": false,
+  "live_actions": [],
+  "local_source_mismatches": {
+    "research_loop/workers/rohin221_continuous_caption_20260918/native_proxy.py": {
+      "deployed_sha256": "a017a86dd3ec8082d09219d01240daac550cd47d52f24f747cd949789917a793",
+      "disposition": "STAGE_PINNED_DEPLOYED_COPY_NOT_CURRENT_CHECKOUT",
+      "local_forward_ast_sha256": "944cf78037b4f0102091c3eed4713acd3b389534bc4590a850e45d24105210bf",
+      "local_inspected_sha256": "f84ea3ea82d2855edbbc4ff1653046493b356942517d0beeb12cc98a587c9d10",
+      "local_not_substitutable": true
+    }
+  },
+  "original_source_manifest_sha256": "499831e0fb0330cf916c814ff2a3b7820c9678a1fa7a4839bfd7b1d0455e4797",
+  "protocol_sources": {
+    "research_loop/workers/rohin221_continuous_caption_20260918/shared_scorer.py": {
+      "definitions": {
+        "Hub": 21,
+        "main": 113,
+        "serve": 73
+      },
+      "sha256": "9d9702c494ead1f4fb04ac94a39f2167551d0ceebccc69abd89e26341cb87a36"
+    },
+    "research_loop/workers/rohin233_ovx4_recovery_20260918/lease_bridge.py": {
+      "definitions": {
+        "exchange": 15,
+        "put": 24,
+        "serve": 37,
+        "validate": 31
+      },
+      "sha256": "84d5016b2ce0d254bb4d2d55a574f56ed8c58c3c36459d24124189052ed0e3ab"
+    },
+    "research_loop/workers/rohin233_ovx4_recovery_20260918/transport_proxy.py": {
+      "definitions": {
+        "main": 23,
+        "validate_deadline": 18
+      },
+      "sha256": "115e611cc386d0709d9eab685a1b7201abb116d5a3afd1aa588c4cd44d10dedd"
+    }
+  },
+  "schema": "R233_ORIGINAL_CONNECTION_LIFECYCLE_WITNESS_V1",
+  "source_evidence": [
+    "Non-daemon threaded proxy and bridges retain handlers beyond accepted frames.",
+    "Proxy writes TRANSPORT only after completion or exception; no durable pre-dispatch intent.",
+    "Original shared serve is non-threaded per accepted connection and returns only after callback/write.",
+    "Client timeout or close cannot terminate synchronous Python callback or GPU computation.",
+    "Bridge TARGET routing is not a fence over already-accepted/queued connections or SSH channels."
+  ]
+}

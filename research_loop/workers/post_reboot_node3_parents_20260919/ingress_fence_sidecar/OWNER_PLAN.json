@@ -1,0 +1,216 @@
+{
+  "aliases_changed": [],
+  "assessment_type": "OFFLINE_SOURCE_SUPPORTED_BEHAVIOR_NOT_FRESH_LIVE_STATE",
+  "decision": "BLOCKED_NO_LEGACY_FENCE_ACK_OR_PERMITTED_DRAIN_PROOF",
+  "evidence_cut": {
+    "admission_closed": false,
+    "explicitly_not_a_fresh_drain": true,
+    "kernel_backlog_observed": false,
+    "path": "research_loop/workers/post_reboot_node3_parents_20260919/INTEGRATION_CUT_1789785379507492424.json",
+    "sha256": "639a423c18551e44c5feba769693a116aadf666104f7493d0e61503a5189be08",
+    "unix": 1789785379.4822543
+  },
+  "executable_live_actions": [],
+  "generated_offline_utc": "2026-09-19T03:14:17.096929+00:00",
+  "historical_replay": false,
+  "live_actions": [],
+  "live_observations": [],
+  "native_signals": [],
+  "necessary_release_condition": "An independently authorized evidence or lifecycle-control capability that actually closes the unobserved legacy work; not a new assertion of zero.",
+  "owner_decision": "KEEP_CONTINUATION_BLOCKED; no executable live mutation plan is justified by this evidence.",
+  "precise_blocker": {
+    "consequence": "Cannot exclude a handler that captured the old target and can still dispatch or a live scorer callback.",
+    "missing_in_live_source": "No acknowledged fence generation/admission ledger covering every old handler and queue.",
+    "missing_permitted_evidence": "No permitted complete observation of retained accepted/queued/SSH lifetimes.",
+    "no_alternative_procfs_netlink_socket_or_packet_probe": true,
+    "no_finite_quiet_interval_suffices": true,
+    "platform_denied_kernel_information_will_not_be_retrieved_by_other_tools": true
+  },
+  "ready": false,
+  "recorded_retained_routes": [
+    {
+      "endpoint": "/localhome/local-rohing/orch_r226_shared_caption_20260918/attempt2/native.sock",
+      "endpoint_is_not_queue_proof": true,
+      "routing_file": "/localhome/local-rohing/orch_r233_lease_renewal_20260918/attempt2/shared2/bridge/TARGET.json",
+      "routing_file_sha256_at_old_cut": "8013d014cf44e33f1886ff1834c2eb21b86e43d4a614c534b9d8baf85c25ee4b",
+      "target": "/localhome/local-rohing/orch_r233_lease_renewal_20260918/attempt2/shared2/sockets/native.sock"
+    },
+    {
+      "endpoint": "/localhome/local-rohing/orch_r233_lease_renewal_20260918/attempt2/shared2/sockets/native.sock",
+      "endpoint_is_not_queue_proof": true,
+      "routing_file": "/localhome/local-rohing/orch_r233_judge15625_20260918/judge15625-shared2-v1/bridge/TARGET.json",
+      "routing_file_sha256_at_old_cut": "7afbc76d5be8f2bb6f28c1710d911898275c5f47098c77baf7b67d1a4878c524",
+      "target": "/localhome/local-rohing/orch_r233_judge15625_20260918/judge15625-shared2-v1/sockets/native.sock"
+    }
+  ],
+  "rejected_shortcuts": [
+    {
+      "proposal": "Replace TARGET.json then wait 108/110/115 seconds",
+      "reason": "Handler retains target before connect; max(.1, stop-now) still permits connect/send after stop."
+    },
+    {
+      "proposal": "Remove TARGET.json to revoke old handlers",
+      "reason": "Only readers that have not captured a target wait; captured targets and upstream calls survive."
+    },
+    {
+      "proposal": "Edit running VM proxy config",
+      "reason": "Config is loaded once in main; no per-request reload or administrative close exists."
+    },
+    {
+      "proposal": "Point bridge TARGET directly at sealed transactional relay native socket",
+      "reason": "Bridge forwards trusted session/request/records envelope; relay native ingress requires origin/metrics."
+    },
+    {
+      "proposal": "Five source alias switches prove old route closed",
+      "reason": "Retained private socket paths, accepted frames and established SSH channels are not revoked."
+    },
+    {
+      "proposal": "Quiet sessions, stable COMPLETE or 52/26 logged origins prove drain",
+      "reason": "Old proxy logs only after outcome; unlogged accepted or queued work remains unenumerated."
+    },
+    {
+      "proposal": "Client disconnect proves callback finished",
+      "reason": "Original synchronous scorer retains accepted socket through callback and response write."
+    },
+    {
+      "proposal": "CPU bridge exit alone proves original scorer quiescent",
+      "reason": "An upstream scorer callback can outlive the bridge connection; no callback completion acknowledgment follows from process exit."
+    }
+  ],
+  "schema": "R233_SOURCE_ONLY_INGRESS_FENCE_ASSESSMENT_V1",
+  "scorer_restarts": [],
+  "sealed_candidate_sha256": "e00ed71d18f9dfd4cb7e41f020927fe4e292a5fa529ea885ca5968df82b762dc",
+  "source_evidence": {
+    "research_loop/workers/rohin221_continuous_caption_20260918/shared_scorer.py": {
+      "definitions": [
+        {
+          "end_line": 70,
+          "line": 21,
+          "name": "Hub"
+        },
+        {
+          "end_line": 110,
+          "line": 73,
+          "name": "serve"
+        },
+        {
+          "end_line": 153,
+          "line": 113,
+          "name": "main"
+        },
+        {
+          "end_line": 39,
+          "line": 22,
+          "name": "__init__"
+        },
+        {
+          "end_line": 55,
+          "line": 41,
+          "name": "native"
+        },
+        {
+          "end_line": 70,
+          "line": 57,
+          "name": "generation"
+        },
+        {
+          "end_line": 89,
+          "line": 74,
+          "name": "Handler"
+        },
+        {
+          "end_line": 140,
+          "line": 138,
+          "name": "game_factory"
+        },
+        {
+          "end_line": 89,
+          "line": 75,
+          "name": "handle"
+        }
+      ],
+      "sha256": "9d9702c494ead1f4fb04ac94a39f2167551d0ceebccc69abd89e26341cb87a36"
+    },
+    "research_loop/workers/rohin233_ovx4_recovery_20260918/lease_bridge.py": {
+      "definitions": [
+        {
+          "end_line": 21,
+          "line": 15,
+          "name": "exchange"
+        },
+        {
+          "end_line": 28,
+          "line": 24,
+          "name": "put"
+        },
+        {
+          "end_line": 34,
+          "line": 31,
+          "name": "validate"
+        },
+        {
+          "end_line": 79,
+          "line": 37,
+          "name": "serve"
+        },
+        {
+          "end_line": 66,
+          "line": 46,
+          "name": "Handler"
+        },
+        {
+          "end_line": 69,
+          "line": 68,
+          "name": "Server"
+        },
+        {
+          "end_line": 66,
+          "line": 47,
+          "name": "handle"
+        }
+      ],
+      "sha256": "84d5016b2ce0d254bb4d2d55a574f56ed8c58c3c36459d24124189052ed0e3ab"
+    },
+    "research_loop/workers/rohin233_ovx4_recovery_20260918/transport_proxy.py": {
+      "definitions": [
+        {
+          "end_line": 20,
+          "line": 18,
+          "name": "validate_deadline"
+        },
+        {
+          "end_line": 86,
+          "line": 23,
+          "name": "main"
+        },
+        {
+          "end_line": 61,
+          "line": 33,
+          "name": "Handler"
+        },
+        {
+          "end_line": 64,
+          "line": 63,
+          "name": "Server"
+        },
+        {
+          "end_line": 61,
+          "line": 34,
+          "name": "handle"
+        }
+      ],
+      "sha256": "115e611cc386d0709d9eab685a1b7201abb116d5a3afd1aa588c4cd44d10dedd"
+    }
+  },
+  "supported_route_control": {
+    "all_five_source_aliases_and_direct_native_base_routes_still_require_accounting": true,
+    "already_captured_target_not_revoked": true,
+    "changes_only": "Handlers whose TARGET read occurs after an owner replacement select the replacement.",
+    "connect_line": 60,
+    "kind": "EXISTING_BRIDGE_TARGET_JSON_READ_PER_HANDLER",
+    "not_a_drain_ack": true,
+    "not_an_admission_fence": true,
+    "read_line": 57,
+    "source": "research_loop/workers/rohin233_ovx4_recovery_20260918/lease_bridge.py"
+  }
+}

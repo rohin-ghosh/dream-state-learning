@@ -1,0 +1,1 @@
+[Builder] 2026-09-19T01:58:41.467691+00:00 Operator-only exact dependency/dispatch integration. 41 worker tests and 83 boundary tests pass. No receiving source or history edit, remote probe, live fence, signal, reservation, handoff, service management or dispatch. Historical cutoff proof is not current boundary authority.

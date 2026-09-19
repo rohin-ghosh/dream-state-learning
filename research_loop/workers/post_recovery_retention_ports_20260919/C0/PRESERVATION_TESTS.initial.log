@@ -1,0 +1,18 @@
+test_exact_three_variant_modules_and_unchanged_tests (__main__.main.<locals>.PreservationTests.test_exact_three_variant_modules_and_unchanged_tests) ... ok
+test_existing_interrupt_interface_and_abort_semantics (__main__.main.<locals>.PreservationTests.test_existing_interrupt_interface_and_abort_semantics) ... ok
+test_nontraining_response_and_checkpoint_roundtrip_unchanged (__main__.main.<locals>.PreservationTests.test_nontraining_response_and_checkpoint_roundtrip_unchanged) ... ok
+test_preimages_and_exact_phase2_delta_preserve_every_other_byte (__main__.main.<locals>.PreservationTests.test_preimages_and_exact_phase2_delta_preserve_every_other_byte) ... FAIL
+test_r227_language_and_native_hooks_remain_variant_specific (__main__.main.<locals>.PreservationTests.test_r227_language_and_native_hooks_remain_variant_specific) ... ok
+
+======================================================================
+FAIL: test_preimages_and_exact_phase2_delta_preserve_every_other_byte (__main__.main.<locals>.PreservationTests.test_preimages_and_exact_phase2_delta_preserve_every_other_byte)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_retention_ports_20260919/validate_variant.py", line 119, in test_preimages_and_exact_phase2_delta_preserve_every_other_byte
+    self.assertEqual(ast.dump(ast.parse(before.read_text())),
+AssertionError: "Modu[22734 chars]ody=[Assign(targets=[Name(id='rendered', ctx=S[56796 chars]=[])" != "Modu[22734 chars]ody=[Return(value=Name(id='rendered', ctx=Load[55263 chars]=[])"
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.098s
+
+FAILED (failures=1)

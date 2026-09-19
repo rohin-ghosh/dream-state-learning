@@ -1,0 +1,1 @@
+[Builder] 2026-09-19T02:55:57.348848+00:00 Offline prefix operator package; exact source tests and CPU regression receipt pinned. Reuses unchanged <=30s reserved coordinator and original parent owner bridge. No original native, parent, guard, admission, source, namespace or service action.

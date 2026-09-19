@@ -1,0 +1,85 @@
+{
+  "schema": "READ_ONLY_PROVIDER_ERROR_CAUSE_AND_GATE_AUDIT_V1",
+  "job_id": "465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7",
+  "source": "FRESH_R231_s12",
+  "seed": 23201,
+  "contest_id": "agentdev_769e881d85fc5d27cb4c",
+  "caption_sha256": "1a5495602427ac11e303020a98506331adb460a702353b17b744993c58a93703",
+  "original_result_path": "queue/R233_REBOOT_FRESH_R231_s12-agentdev_769e881d85fc5d27cb4c-23201-0001.result.json",
+  "original_result_sha256": "e7eaece27a2559ba0bb0f0c600965753596dcf759baeaeab52aaf15692601c7b",
+  "original_result_unix": 1789784507.2583015,
+  "position_in_original_result": 2,
+  "raw_outcome": {
+    "error": {"code": "provider_error", "message": "submit_caption provider failed without a usable result."},
+    "ok": false,
+    "pause_required": true,
+    "remaining_budget": 100,
+    "status": "error"
+  },
+  "raw_semantics": {
+    "rank": "ABSENT_NOT_ZERO",
+    "raw_score": "ABSENT_NOT_ZERO",
+    "accepted": "ABSENT_NOT_FALSE",
+    "submission_id": "ABSENT_NOT_COMMITTED",
+    "remaining_budget": "Original remaining_visual_calls, not a generation-token balance."
+  },
+  "cpu_diagnostic": {
+    "observed_unix": 1789785359.4293718,
+    "model_loaded": false,
+    "scoring_called": false,
+    "method": "Reconstruct the exact failed caption with the hash-verified original extract_batches; tokenize original canonical_input using the same local scalar tokenizer and bound scalar runtime config, with CUDA visibility empty and both offline flags enabled. No model or score call.",
+    "caption_words": 22,
+    "canonical_input_sha256": "047db453104d8dfcb75e556276b1268ab55c127be6ec9c084e52215ba6dc4a31",
+    "scalar_input_tokens": 621,
+    "scalar_max_length": 512,
+    "length_guard_name": "scalar_input_not_truncated",
+    "length_guard_passed": false,
+    "scalar_runtime_sha256": "e3604059fa653ad463cb210e7b2afd48430d3b9bef1fd102e88dfe6b081aaa90",
+    "tokenizer_file_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "cause": "Deterministically reproduced oversized canonical scalar input:621 tokens exceeds the unchanged512-token limit. ScalarJudge.score checks this before its model forward call. No truncation or scorer change was applied.",
+    "confidence_boundary": "The exact original exception text is discarded by the generic provider-error handler. This is a hash-bound CPU reproduction of a necessarily failing pre-model guard, not a recovered traceback."
+  },
+  "frozen_source_hashes": {
+    "gpu/ny_caption_game.py": "9d192ba50dc9e51f6cba9306aba242b0c12fd2143311a248a93651c539cd436f",
+    "gpu/ny_caption_judge.py": "b1f24eff4e575ec0aaf6678cf59833b934f77ecbda0d181716ba5548d5e9cbef",
+    "gpu/ny_caption_relative_game.py": "f3152ab3a03e789cadd466df38b8775004422b8aaa753ae59c428854de92f3a1",
+    "gpu/ny_caption_scalar_judge.py": "0a82ee57b0b7a50fded4c1b43d71b1342a1fa1d1edbf8e5be08a624f2656e446",
+    "research_loop/workers/rohin221_continuous_caption_20260918/freeform.py": "3e459ac7fd4dbb1e1ed9e4cfae153b41511620e3ec84cd90505489db516cf560",
+    "research_loop/workers/rohin233_kept_age_probe_20260918/probe.py": "0d3f49d44f5a9d1b0cb92350ce4385e173eb44173598e0d4cc3a48accc55bf63",
+    "research_loop/workers/rohin232_age_probe_20260918/contract.py": "5dc3262c1e4e64752c9a5b372f8d0a22d9d465025210079d2f860304e3bafde1"
+  },
+  "handling_chain": [
+    "RelativeScalarJudge invokes ScalarJudge.score for the candidate.",
+    "ScalarJudge's untruncated-input length guard runs before model inference.",
+    "DevelopmentGame._invoke catches generic Exception and returns provider_error with pause_required=true rather than preserving the exception text.",
+    "The original probe stores the raw nested outcome, but flattens it into feedback containing rank None, accepted None, novelty error; pause_required is not propagated as a stop condition.",
+    "The original run_cell consumes that feedback and continues its fixed-token loop without inspecting nested pause_required."
+  ],
+  "continued_execution_evidence": {
+    "judged_after_error": true,
+    "later_nonreplayed_ranked_outcomes": 13,
+    "same_seed_scene_later_nonreplayed_ranked_outcomes": 0,
+    "first_later_scored_result": "queue/R233_REBOOT_FRESH_R231_s12-agentdev_769e881d85fc5d27cb4c-23202-0004.result.json",
+    "first_later_scored_unix": 1789784568.958262,
+    "judge_pid": 998210,
+    "judge_exit_unix": 1789784631.3190298,
+    "next_generation_receipt": "players/R233_REBOOT_FRESH_R231_s12/agentdev_769e881d85fc5d27cb4c_23201/0002.json",
+    "next_generation_sha256": "db21b8fd168601240c61c0606b1689ef622d082467d0812d8643e2cac00fe621",
+    "next_generation_tokens": 46,
+    "next_generation_contains_exact_prior_feedback": true,
+    "failed_caption_later_scored": false
+  },
+  "scientific_gating_effect": {
+    "generation_budget_complete": true,
+    "all_scores_present": false,
+    "pause_required_honored_as_run_stop": false,
+    "unknown_outcome_converted_to_zero": false,
+    "clean_all_scored_comparison_ready": false,
+    "interpretation": "Retain this one executed run and its observed scores as diagnostic evidence with an explicit unknown. The missing feedback and continued trajectory matter; fixed6144 tokens and final unchanged weights do not establish an error-free comparable run. Main owns comparison/integration under its existing metric and missing-data rules. No corrective execution or metric change is inferred."
+  },
+  "log_access": "Runtime judge/player logs returned Permission denied. No sudo, alternate log-access path, or service-management workaround was attempted.",
+  "observer_model_calls_relaunches_or_signals": 0,
+  "frozen_or_other_worker_source_changes": 0,
+  "model_parent_feedback_sent": false,
+  "queue_coding": "Paused for this metric/cause reconciliation; existing offline draft is not deployed."
+}

@@ -1,0 +1,54 @@
+{
+  "adapter": null,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "family": "code",
+  "finished_unix": 1789461463.481169,
+  "max_new_tokens": 512,
+  "messages": [
+    {
+      "content": "Return the remainder when number is divided by positive divisor.\nArguments: number, divisor.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+      "role": "user"
+    }
+  ],
+  "outcome": {
+    "category": "correct",
+    "completion": "complete",
+    "content_tokens": 8,
+    "generated_tokens": 9,
+    "machine": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "verified_anchor": true
+  },
+  "position": 8,
+  "response": {
+    "messages": [
+      {
+        "content": "Return the remainder when number is divided by positive divisor.\nArguments: number, divisor.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      }
+    ],
+    "prompt_tokens": 107,
+    "raw": "{\"expression\": \"number % divisor\"}",
+    "terminal": true,
+    "token_ids": [
+      4913,
+      28099,
+      788,
+      330,
+      4082,
+      1018,
+      49109,
+      9207,
+      151645
+    ],
+    "truncated": false
+  },
+  "started_unix": 1789461463.290469,
+  "status": "COMPLETE",
+  "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_02"
+}

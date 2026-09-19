@@ -1,0 +1,1699 @@
+[
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_002.json",
+    "call_sha256": "3710161f7bfb1d8c82d05f19f629f15af533af9e0b8a1a494cdc1f0b602ab2ff",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Look up SKU B431 in warehouse west1.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"lookup_catalog\",\n  \"arguments\": {\n    \"sku\": \"B431\",\n    \"warehouse\": \"west1\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "b1f35e0a39bf4a80d716bc22c4e9f91c1086bf786b0eafbdae2d2c567b57867c",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"lookup_catalog\",\n  \"arguments\": {\n    \"sku\": \"B431\",\n    \"warehouse\": \"west1\"\n  }\n}",
+    "target_sha256": "3969bbc8b2584c1fa3346fb64989be9721e61c300045ff4400ad4a242d3a3548",
+    "task_content_sha256": "8e2e00e4dd226e458eb499b1858503186587c8b21ba66c0e8fa0829595b955b8",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_00",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_003.json",
+    "call_sha256": "cb457257428167168bf1c93492ada92b1eb15438f81826e52b8371122ad77152",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Convert harbor to uppercase.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "HARBOR",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "fd6be08f4a21bd8bb680d0ebf5cc143a536e69d4ea883d31d8f50616da015a39",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "HARBOR",
+    "target_sha256": "2e9ee124df846ca681fd7c2e4a4b6e30fae2f2c716e8acb9a0102a23882de9d2",
+    "task_content_sha256": "2ad9fff51863d0dd861077c8c06f81aa30c4a0e7432cb0c948a86b3617dd3eb1",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_00",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_004.json",
+    "call_sha256": "78e02fa211a1e364c1d7c27ec8da4046bb0ac22a538c6973385dc2cb3ea2e911",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "code",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Return the arithmetic mean of first and second.\nArguments: first, second.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      },
+      {
+        "content": "{\"expression\": \"(first + second) / 2\"}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "a036931db898d2c0b92a975f89d7ea24fd7e7994bb30cc6110f32337767f82ac",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\"expression\": \"(first + second) / 2\"}",
+    "target_sha256": "791e40c230e04e6bc574b5559d524484fc5db7355b27a1300c2b1bd1a2707eec",
+    "task_content_sha256": "baebd08331868280b745539174df63afdae93248335eb27fa655ed65a8019df9",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_01",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_006.json",
+    "call_sha256": "e08a77b070e4f9b5d5fa1f812a4df59e7347ad432ca3dd2a05c7463b31aab066",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Mark ticket T432 as urgent.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"mark_priority\",\n  \"arguments\": {\n    \"level\": \"urgent\",\n    \"ticket\": \"T432\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "1a3ea001b54f7ed629dc4dc80cbaf44247551f3de66fbb8e07cf9969e2b849a7",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"mark_priority\",\n  \"arguments\": {\n    \"level\": \"urgent\",\n    \"ticket\": \"T432\"\n  }\n}",
+    "target_sha256": "12d15c22a0ee91ad5250484db815faa70521d661c4d36e1efa16a3587c1b74fc",
+    "task_content_sha256": "ad085f301416ff3b04efb2cd392c83fd1553364f6027c4ba9e966d3b65d5721c",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_01",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_007.json",
+    "call_sha256": "5901d311d6ad710426c73ee1f1e302beb014ef9364836bdc384072bda802db54",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Convert VIOLET to lowercase.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "violet",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "165ad196d8aa22003a4408fd2ad06ef4521e833794ce713414f3c0046d2a2354",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "violet",
+    "target_sha256": "22d2084f01936c564e690d170959976647b46c843bcb313ff7312fc169dc889c",
+    "task_content_sha256": "fe593d19d3d97af8f5667bd9f143435cdb79bf3ce12a2da697a9f814e824a102",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_01",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_008.json",
+    "call_sha256": "bf125671db30b645ec0ed78bbbf96a3be5b92752c0f7622a4e7d37981f4820b7",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "code",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Return the remainder when number is divided by positive divisor.\nArguments: number, divisor.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      },
+      {
+        "content": "{\"expression\": \"number % divisor\"}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "e1415bd22e6c249b0e481622d2b5843b4af142a8ddd11260928512c061efe2d2",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\"expression\": \"number % divisor\"}",
+    "target_sha256": "7c21c844bcfe2e1ed47ba23060f60cc43f446c071b5a184956bd1326e5e1c5e9",
+    "task_content_sha256": "1c62b2e6a1fa8b0518639f7604b1ee1d22643ade22ae899cea1b868b1cc21c60",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_02",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_009.json",
+    "call_sha256": "4aafde2e594b686ba97c29c7214bfd9a949c8d26b146a60b8e2e1f76e3805ac1",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "math",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "A store packs 25 cartons with 8 clips each and adds 13 loose clips. How many clips are packed in total?\nReturn only the numeric answer, without units or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "213",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "85d7f6b19ec9a42951f235bc6978e8d9bee928a8dbd7c70048c8d2e91e7fd72b",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "213",
+    "target_sha256": "d48ff4b2f68a10fd7c86f185a6ccede0dc0f2c48538d697cb33b6ada3f1e85db",
+    "task_content_sha256": "28ed86ffbddc847f3f1ad4353702c9e25d793ee868c2e8d2007178272f2dd0af",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_02",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_010.json",
+    "call_sha256": "240f20a6c7fd100036db43e023959398daf8de5dd61324fbc37629855d360dc5",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Plan pickup in zone north3 on Tuesday for 5 parcels.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"plan_pickup\",\n  \"arguments\": {\n    \"day\": \"Tuesday\",\n    \"parcels\": 5,\n    \"zone\": \"north3\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "6b474b13472976b02f311da32e3e544c9b0db8d77f372b17f207afc757526ec2",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"plan_pickup\",\n  \"arguments\": {\n    \"day\": \"Tuesday\",\n    \"parcels\": 5,\n    \"zone\": \"north3\"\n  }\n}",
+    "target_sha256": "c19b706c5da4268e993a745a25c38df1e39fe3e02e7bd8caacc240115d8076ac",
+    "task_content_sha256": "d1b03f72b6045e168b75f57f1c5a206732289f42149fc995a7602cae41c8699b",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_02",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_012.json",
+    "call_sha256": "f45f2115f2a7613459941497b72b7f3d6b45774b16c317e56eb2064dc272afbc",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "code",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Return number divided by positive divisor, rounded down to an integer.\nArguments: number, divisor.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      },
+      {
+        "content": "{\"expression\":\"number // divisor\"}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "7d751e511bdbbf0abc720c62d27f439fdc2f93a8448f851958de80d21162b497",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\"expression\":\"number // divisor\"}",
+    "target_sha256": "e50cd291b8e850df19ed0d2374cb8eed8797c61fbed6ecf350a12f3b913edc26",
+    "task_content_sha256": "d657e8c29abc235d4b9ec563e7e6bed092f52069ae95bc6db1db6c185c267721",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_03",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_013.json",
+    "call_sha256": "77526e35f95c6b87bd30901b52d5befbf89242079bbfd0a0492878ccb102833e",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "math",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "A team has 164 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?\nReturn only the numeric answer, without units or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "28",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "6e868d866905ae4ad9cb5f09212bb9cda624eced867736550aba6a7428cd8569",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "28",
+    "target_sha256": "59e19706d51d39f66711c2653cd7eb1291c94d9b55eb14bda74ce4dc636d015a",
+    "task_content_sha256": "8d36c486073c6b0935ea01afdb3b02a52962628ed46ecca2f323a557168642fe",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_03",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_014.json",
+    "call_sha256": "24523411874438fcbb166f9dd69bbc5e3d9c8ea11e20307538af52d5a2ffffbd",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Format a brief report on topic cedar434 limited to 5 entries.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"format_report\",\n  \"arguments\": {\n    \"limit\": 5,\n    \"style\": \"brief\",\n    \"topic\": \"cedar434\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "0aaff13b44a48f2ed7c1f0f13d582d68ee900e3126b6f1237a1d58bc610da888",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"format_report\",\n  \"arguments\": {\n    \"limit\": 5,\n    \"style\": \"brief\",\n    \"topic\": \"cedar434\"\n  }\n}",
+    "target_sha256": "b99d75b351e239aa7cbabad9f24b3ed774df977e9bf0a8b201531473e79e8cd3",
+    "task_content_sha256": "3502f86e37a5c07fbeb5c80b7378a6e1385fd94a0e31205e126f9598867dafb8",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_03",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_016.json",
+    "call_sha256": "56d08d7aefc333f739f21ffc734bae0a63d5d72546c085623d9c144cd31e5365",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "code",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Return the perimeter of a rectangle with sides width and height.\nArguments: width, height.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      },
+      {
+        "content": "{\"expression\": \"2 * (width + height)\"}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "64c9ddbba57b05dab09bcba7fb5c66781e96bfca342ced211aba2e686fb3949e",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\"expression\": \"2 * (width + height)\"}",
+    "target_sha256": "9c94daa254fe13004ef38c802cdca897823b8add6379fc930f666b1f266b3450",
+    "task_content_sha256": "5eda5511c4ec3983e73c6cf864de0727be94f711150cfe51b6f8971763998752",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_04",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_018.json",
+    "call_sha256": "d0ab486ef3cb509668ec82e830eb53e68726388811c22c85df02f609e6bc518f",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Look up SKU B435 in warehouse west5.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"lookup_catalog\",\n  \"arguments\": {\n    \"sku\": \"B435\",\n    \"warehouse\": \"west5\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "1851fc08b7799b2819427ce40c0452f68d3b5023142c618d04d6176f1a298712",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"lookup_catalog\",\n  \"arguments\": {\n    \"sku\": \"B435\",\n    \"warehouse\": \"west5\"\n  }\n}",
+    "target_sha256": "37e6195bc4827c145d8608e91ff0aebf57e4345fc892ae8ba5476b1a93bd3a1c",
+    "task_content_sha256": "bd119817e61a6052f1f6d2c4d0d843358ffdaefa267b5078efc84c24b1789a84",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_04",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_019.json",
+    "call_sha256": "510d6de0619a0ed001658145463c1e5563f7f4210a78a4c0822bd3f1e9d30150",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Convert lantern to uppercase.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "LANTERN",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "945fe6d72bc6c37ee97ba9e7faff49b73a9f1a605f2abbe589add75c1ee7bddb",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "LANTERN",
+    "target_sha256": "27cf72e0cf1af013e24c8a15822b2837e6c4e63b0fdf1f13eedf11ea991c344d",
+    "task_content_sha256": "63483ad98778f9c6f17779201c925fbf5deb27f9e107e3acd175453f5e62a107",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_04",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_020.json",
+    "call_sha256": "75f955f6e6d74c111c5957b24c44a523c2c5eb404b1ae454615e3d1fbb4731e5",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "code",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Return the volume of a box with sides width, height and depth.\nArguments: width, height, depth.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      },
+      {
+        "content": "{\"expression\": \"width*height*depth\"}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "df338a8b568e1479c84115796bee2b9305d12228863444446a54ee22127e0a17",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\"expression\": \"width*height*depth\"}",
+    "target_sha256": "37fc33729ec1212103e44868d6a043775a4262a7bdb5bb5227623c3d4a1e8fca",
+    "task_content_sha256": "fdac22f28b32cdd11742e24e55429d7c3f876c3821238a43c7d6236a6ddd0c11",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_05",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_022.json",
+    "call_sha256": "b847819f0c4e7ec8fa459657ccee06c74fd428bb680f994fefb9120fb564c9dd",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Mark ticket T436 as urgent.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"mark_priority\",\n  \"arguments\": {\n    \"level\": \"urgent\",\n    \"ticket\": \"T436\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "9e57d1855a06c9f0f19f89edef86f353d5e2a11cfd3a147637735ec76d66487b",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"mark_priority\",\n  \"arguments\": {\n    \"level\": \"urgent\",\n    \"ticket\": \"T436\"\n  }\n}",
+    "target_sha256": "3823fd58d78bbf0fda87234eb1e6abf8f04c43917cb0d3db31808ff9732b10e4",
+    "task_content_sha256": "d29b735be0d879ad7043eaa14da3729c2e22806e3a22e178681eba00d4809ecf",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_05",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_023.json",
+    "call_sha256": "61cd411b04a89690878cf5ed13b9e7e6e2d0b21c42d3bcb91934c0b6c70928fe",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Convert PLANET to lowercase.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "planet",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "0374e530c1110f698bf64b533c5c48f3698867940b1188676baee14efbf9bb8b",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "planet",
+    "target_sha256": "cb5815fe5c3c9d7bf15dbe4964571c528985bb6c3559d1752f11ebd00cfd451f",
+    "task_content_sha256": "686799f7a9d85fd249e134c2e9b9156d0139afa96d4dcab713f32b927b5eb7a7",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_05",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_024.json",
+    "call_sha256": "22e935c78a3085564ecaf0f745672898b692eb2905865533d70dcdddbde860c1",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "code",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "For nonnegative number, return the sum of integers from zero through number.\nArguments: number.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      },
+      {
+        "content": "{\"expression\": \"sum(range(number+1))\"}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "9bb3dbf83ce7707a9de691d75c53ae52a108865da3b7d2f7c1d15f60d9a42f5f",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\"expression\": \"sum(range(number+1))\"}",
+    "target_sha256": "49fea44708b0403a233572e26e4dbfe9ffff9cdee0d0771fb07c6c350ddb3d47",
+    "task_content_sha256": "f464852c20b207c1c63d223da67a7b38962edc4a05bea19a21d61ee74da84131",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_06",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_026.json",
+    "call_sha256": "9981be3b66403a9be2458fab238514956a2f7a7d2f903313422e93f6a7a99865",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Plan pickup in zone north7 on Tuesday for 9 parcels.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"plan_pickup\",\n  \"arguments\": {\n    \"day\": \"Tuesday\",\n    \"parcels\": 9,\n    \"zone\": \"north7\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "322931e1e0ddc0b1ee4056b9ade7902b52fe6250c26137895213a9e30851d6dd",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"plan_pickup\",\n  \"arguments\": {\n    \"day\": \"Tuesday\",\n    \"parcels\": 9,\n    \"zone\": \"north7\"\n  }\n}",
+    "target_sha256": "4c9feb368c04479eca97dc0b688464882f4a75794babab391f8606b1adc0aa44",
+    "task_content_sha256": "26a7ed10e8832c21c06af21d1906f0445432577ad81fe01d65437a8acdd635d2",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_06",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_029.json",
+    "call_sha256": "c961bfad46f2ccb3258f6cb12e5e774b2295f87da5d38cda90970003f7535290",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "math",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "A team has 224 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?\nReturn only the numeric answer, without units or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "40",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "9cac455ad01e42bdaff7663d87ff6a710d493e93c97504b84d8239c2935d6d41",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "40",
+    "target_sha256": "d59eced1ded07f84c145592f65bdf854358e009c5cd705f5215bf18697fed103",
+    "task_content_sha256": "d25b128b38d69c98b039978fc88f9a8cc022e1d71af9b33acfbc4d0c6f01a5a1",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_07",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_030.json",
+    "call_sha256": "525e9e880527bbd1a81e26897a845d74f2b8666350de884445dc3c3e4ff3aa5a",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Format a brief report on topic cedar438 limited to 9 entries.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"format_report\",\n  \"arguments\": {\n    \"limit\": 9,\n    \"style\": \"brief\",\n    \"topic\": \"cedar438\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "6aa703dfcda8876333eeade2c876123c6058bf4b386a824e88a230910c0695b0",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"format_report\",\n  \"arguments\": {\n    \"limit\": 9,\n    \"style\": \"brief\",\n    \"topic\": \"cedar438\"\n  }\n}",
+    "target_sha256": "5a45e853d55db730694fc4c9394e183c74adb0cda550935b2782549ddb8ffcc2",
+    "task_content_sha256": "b39f783bb5d7b76702687c7c7530b34fc16c0e7f9f2fd0df55c125a38bc06b5e",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_07",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_031.json",
+    "call_sha256": "c6272db4a9b89f0f145a82600769e4b5763552bffd27cc5f82ff61d89ceeefe1",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Write the first three letters of copper.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "cop",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "00ebdae1db0f9b7a6a6128f316b207a89af26feacec3563f90aba46719d769f8",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "cop",
+    "target_sha256": "b1c02b717c94bd4243e83b5e98ba37fb273bc035e4ad8fc438ea4d07a1043f56",
+    "task_content_sha256": "a250ee6ec92979d03ae2a7deccb1da6e37d2832175b399bd449457608cb27b4c",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_07",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_033.json",
+    "call_sha256": "ad709c1cbd6924df46f23e24851b7fdd8be2c43bd4d7a86d20fe840271dea7c3",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "math",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "A hall has 43 rows of 6 seats. Exactly 50 seats are reserved. How many seats remain unreserved?\nReturn only the numeric answer, without units or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "208",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "a9028a7b344fd2aa53eb15442bf33ef94c2f9fc8c431aa381fe6cc7f47600b1e",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "208",
+    "target_sha256": "8df66f64b57424391d363fd6b811fed3c430c77597da265025728bd637bad804",
+    "task_content_sha256": "6e5dae0494d275974b871cde0f783a73d9949ebf3382798b2e15b267f997106e",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_08",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_034.json",
+    "call_sha256": "43c0e0b687a97d4b0deab2508840abf71fd49d56e5343ca22f95f01a0ce492bf",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Look up SKU B439 in warehouse west9.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"lookup_catalog\",\n  \"arguments\": {\n    \"sku\": \"B439\",\n    \"warehouse\": \"west9\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "714105f52153d68e9728e27f6d8ceb9aa108c2700cb10deb4f6cd4241c3f9a8c",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"lookup_catalog\",\n  \"arguments\": {\n    \"sku\": \"B439\",\n    \"warehouse\": \"west9\"\n  }\n}",
+    "target_sha256": "56e1857fc96fd0aa1d486158a64d6c4609cc90f7661010faa8f4e584fc9ed4d5",
+    "task_content_sha256": "caf7b1ddc2d569c59597bba0e86fa8f290455206b2b45e075539f4181081e6c3",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_08",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_035.json",
+    "call_sha256": "77e3e6db359af9dcd6edd1c1ee9b10fea5d5a5da8b30328b11589134bddcc71f",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Convert falcon to uppercase.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "FALCON",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "805397c187690c093e24c2ce43d386f3090f224c80af0e6ebb89ce0a428dd134",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "FALCON",
+    "target_sha256": "50673d02ac6324d4cfa82c941caed56709489e70bd5402e1e3520c25d1100b8e",
+    "task_content_sha256": "4e93905d02992d7cb2aea4f85564915cf20018c70b086a1265373e06e3a9ca0e",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_08",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_038.json",
+    "call_sha256": "95b0e07bc395b0b8566d79a89956ec7f1a0dc30faf0e6fd27351fe5406aa9809",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Mark ticket T440 as urgent.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"mark_priority\",\n  \"arguments\": {\n    \"level\": \"urgent\",\n    \"ticket\": \"T440\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "470efc158ce5cedfd8663a29520013961398f34bb8a678099d48c751ec103906",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"mark_priority\",\n  \"arguments\": {\n    \"level\": \"urgent\",\n    \"ticket\": \"T440\"\n  }\n}",
+    "target_sha256": "7ecfa5a2f74308238cf02490ff2d52054c3d46e7862e63d254276debc503a6c9",
+    "task_content_sha256": "769a5e29cab3b769e8e09f46e9899164601acef3e634a58b88d018d10dac5d29",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_09",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_039.json",
+    "call_sha256": "3ac3ad897ebbe43b6c906fb44e30086742ed3afdccd17d3b72178904210775c1",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Convert TIMBER to lowercase.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "timber",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "544f93d7769b9b6657636106526eda493a66745e8e78564c91b12d9ef5ee6684",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "timber",
+    "target_sha256": "5dd46878bb0b580b3086cfd1091b7bf6204c7bd521f6ac371226367241c3ab53",
+    "task_content_sha256": "aa79f6c4aab48f9e3b306195f7b8e73c3eb93052e9cc3cb3f27acb107e696a87",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_09",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_040.json",
+    "call_sha256": "06e63ce136bb1fe3bb1e2afc4ff1a63ef79fa801f5644485e9a76ae3b2025a8f",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "code",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Return the sum of odd integers in numbers.\nArguments: numbers.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      },
+      {
+        "content": "{\"expression\": \"sum([x for x in numbers if x % 2 != 0])\"}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "7e3227a98193b20387b8271e4fcb343a4461dd02f196b7c30418f1fe25498b38",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\"expression\": \"sum([x for x in numbers if x % 2 != 0])\"}",
+    "target_sha256": "e64a64fed966436e287583b6901dc6d41dc8f61012a01ca45c20e41e5a513f92",
+    "task_content_sha256": "54b079b99cf42a9c372d70c0a75e6d41b02d6c064aec234c7f2af44cd24f805c",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_10",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_042.json",
+    "call_sha256": "bc95ef2c9d645fb6427533fdcd83897f467b2ef81200529d88819bd41cfbcd3a",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Plan pickup in zone north11 on Tuesday for 13 parcels.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"plan_pickup\",\n  \"arguments\": {\n    \"day\": \"Tuesday\",\n    \"parcels\": 13,\n    \"zone\": \"north11\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "77ef12d2bc63e4138742933b8834e2f9039e1cf4d671417e250418d336b58d03",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"plan_pickup\",\n  \"arguments\": {\n    \"day\": \"Tuesday\",\n    \"parcels\": 13,\n    \"zone\": \"north11\"\n  }\n}",
+    "target_sha256": "a58b48b843067c3bd94567fc1563ddd2f0f54fe6a7b30d10e5bf1ff76101931b",
+    "task_content_sha256": "16ee386cdda4419ca2a1300c05f6788181c0c6a0bc99e0988b5a085897b0e6b7",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_10",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_045.json",
+    "call_sha256": "ca8bc63d4faeda8afb8b9b2fef17ec0a4d6b702c4da5c2ea39217d55a2e724c5",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "math",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "A team has 284 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?\nReturn only the numeric answer, without units or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "52",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "3a41e2327c3c3012cfc936832b9f218eafef2324c068f10d3dd7a0e4805e3849",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "52",
+    "target_sha256": "41cfc0d1f2d127b04555b7246d84019b4d27710a3f3aff6e7764375b1e06e05d",
+    "task_content_sha256": "13ec96d2998ffc4ba72b6a697f59ad02fc4db9199d467a3ee97168381db4ce09",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_11",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_046.json",
+    "call_sha256": "60bc1231d8f09967f3664d3662cae96bb2198269bfe9c886a1ebe7b911b0ebca",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Format a brief report on topic cedar442 limited to 13 entries.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"format_report\",\n  \"arguments\": {\n    \"limit\": 13,\n    \"style\": \"brief\",\n    \"topic\": \"cedar442\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "0c9105bda80167468ae80c105143a06df69938a035814b2eea374e0d0148e9e5",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"format_report\",\n  \"arguments\": {\n    \"limit\": 13,\n    \"style\": \"brief\",\n    \"topic\": \"cedar442\"\n  }\n}",
+    "target_sha256": "6f4f769a02d66f3aa54780720de356093d562e78e53e4ececcfa1ef4e02b59c9",
+    "task_content_sha256": "c7bd3ada26a0d3027947d5e21de2dcf2f11a7f80793303ae83571c24c5c99ddf",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_11",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_047.json",
+    "call_sha256": "78d81331908050914c473c4d5faac095bc4a8aa19a85e37535599f9f126e154e",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Write the first three letters of velvet.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "vel",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "3ad3e9ae22c6fa781b90e17b75ed283f8e9f5fb43a14a4fd1a435472e81250c8",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "vel",
+    "target_sha256": "4a6530b1bd85143344c9c02723ea33a24b29768816c9f6bc382c369a247390f2",
+    "task_content_sha256": "c8b1c79145a95a45cc434728ad44b5826465784ceeeaf0983d43888a2ed87107",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_11",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_050.json",
+    "call_sha256": "ab54795fb3f606017723463c0af79ce3856d2f11bf61b23d78d1904753710981",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Look up SKU B443 in warehouse west13.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"lookup_catalog\",\n  \"arguments\": {\n    \"sku\": \"B443\",\n    \"warehouse\": \"west13\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "fc2641e796ffdc704d66b5f4cab21c77b745558601017a337030b55bb788a269",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"lookup_catalog\",\n  \"arguments\": {\n    \"sku\": \"B443\",\n    \"warehouse\": \"west13\"\n  }\n}",
+    "target_sha256": "fd4454e3c83b33035a51f0a8405d5367f0ad413cf2dbcd21f1f972a05cc937fc",
+    "task_content_sha256": "f3f6ff762db8b3caa3b5f3bc0b4cd138d871330b0d258643724ce281581e4773",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_12",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_051.json",
+    "call_sha256": "178094128becdf685ba3b785e4810082823f3aa028b903ffeb1a50d26af43ffb",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Convert puzzle to uppercase.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "PUZZLE",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "727c842533d8b0b3ea9c00d59cd07c43f15aa0d7c4ecf0b448922d2d21d6f473",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "PUZZLE",
+    "target_sha256": "9d9775f4bf6c1202b9479b34e20145d880e1ba7c5af2622c2d178a33f4f00baf",
+    "task_content_sha256": "f016cba98d1680120eab777c16c86df9ab2637e372d72039aabeb9565086f452",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_12",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_052.json",
+    "call_sha256": "8d2ce348147201243fbb366d3abdc5d0c310745fc1459b7d7e8cc81b21f4e9d0",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "code",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Return the sum of integers from start through end, inclusive; start is at most end.\nArguments: start, end.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      },
+      {
+        "content": "{\"expression\": \"sum(range(start, end+1))\"}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "fc0840a1b6fad42e1b18154178e75f6827ffb2c766fa6cf62ff8ed155e382194",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\"expression\": \"sum(range(start, end+1))\"}",
+    "target_sha256": "ea72ed7ae13e034258233df1807493baa5ff1c7cd604306be7e5fd8667273ba3",
+    "task_content_sha256": "943ef8b6cdcb60adf80e336c0d2de926642c00d46db835da1a7b0989bfd6d1ac",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_13",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_054.json",
+    "call_sha256": "7f500312b533013e08674e4f187b3636dd333be5d658679a764471c4b35085cb",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Mark ticket T444 as urgent.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"mark_priority\",\n  \"arguments\": {\n    \"level\": \"urgent\",\n    \"ticket\": \"T444\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "a4f40f3b08eedea35d1ff10bb88b670120bd6a3271987b5b56226bb1769476df",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"mark_priority\",\n  \"arguments\": {\n    \"level\": \"urgent\",\n    \"ticket\": \"T444\"\n  }\n}",
+    "target_sha256": "f5f31d30983134afdc2ccbfc73ea9fc0c92993c98fc4214ef797ac675c3a2532",
+    "task_content_sha256": "fd19a8097e964d5404b88a96b77357a3752b2cec6e7baa34c249e5907c18be4d",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_13",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_055.json",
+    "call_sha256": "bfbff9076fb33e84513b28f460bc1429312d5d7a64432412c283ad1ad9941bdf",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Convert GARDEN to lowercase.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "garden",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "5c30393c3d32484eeac1dc9a49ca7b65ae2a20e5f6c7290149ab32951f795d92",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "garden",
+    "target_sha256": "23eeb69c681dfdb8eacc7ce9e55ea007d41c2dd5273848c597f1b3e49dbd86e1",
+    "task_content_sha256": "efe76d54959df50daef390dfbc3312f9d54569d57c16d29f4caeceadc9ea2ab0",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_13",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_058.json",
+    "call_sha256": "12840c87602cefdd3feb1104787f6eb8c793375eaeed3c6f5176d909e6353211",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Plan pickup in zone north15 on Tuesday for 17 parcels.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"plan_pickup\",\n  \"arguments\": {\n    \"day\": \"Tuesday\",\n    \"parcels\": 17,\n    \"zone\": \"north15\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "084451d3e1043565a46b83d795bde6c7e4b39c243495e3195b99633ed06f7f24",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"plan_pickup\",\n  \"arguments\": {\n    \"day\": \"Tuesday\",\n    \"parcels\": 17,\n    \"zone\": \"north15\"\n  }\n}",
+    "target_sha256": "5840c8ad5be5abb654fa8d7fb534f4d54b5da021b157a231ae7ab2d2535c9fa3",
+    "task_content_sha256": "364a556632d26d028a64acb40d57009c122cd5fd2a28cb851a9f9f4b8dc5c37f",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_14",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_060.json",
+    "call_sha256": "55de873fe00f412271ff4b4b5dbb94938f1b6b3c6acd1e8a434f988f9ca166ea",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "code",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Return Manhattan distance from the origin using horizontal and vertical coordinates.\nArguments: horizontal, vertical.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      },
+      {
+        "content": "{\"expression\": \"abs(horizontal) + abs(vertical)\"}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "b785fb0f12ada66ef3a2b2194e724a6ea8a1abfe5d1e221dfc7754ae4979db1b",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\"expression\": \"abs(horizontal) + abs(vertical)\"}",
+    "target_sha256": "fe0da18c05739b76f0b668ac6ea92b1f2f2704080ef38ae9a6d38ce6aa2bcabb",
+    "task_content_sha256": "07f11a81c51458033c7ce3a03ff97d39015f8a5fc8eccc41154a58b116929edb",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_15",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_061.json",
+    "call_sha256": "ff29a2f44622674c5995302cc16add234b0393d1705ae83e62aa1b295b854911",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "math",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "A team has 344 credits. It spends 24 credits and divides the remainder equally among 5 members. How many credits does each receive?\nReturn only the numeric answer, without units or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "64",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "8659a8d4ec6117ab658c61db15b718f3e8ca5cab87e45e2d150d7ce004e23b21",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "64",
+    "target_sha256": "a68b412c4282555f15546cf6e1fc42893b7e07f271557ceb021821098dd66c1b",
+    "task_content_sha256": "a8eaedf26edf1a70a3921e961bc6c4e8b0519d64bdf707f99b1b27e65b41f0ed",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_15",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_062.json",
+    "call_sha256": "5f2993c3c55bbf47fc02c45e0f803360365b3b472e08bf6cde5a3edb80a56bf9",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "simulated_tools",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "mock_only": true,
+      "passed": true,
+      "schema_valid": true
+    },
+    "messages": [
+      {
+        "content": "These are inert simulated tools; do not execute anything. Schemas: {\"format_report\":{\"limit\":\"positive_integer\",\"style\":[\"brief\",\"detailed\"],\"topic\":\"string\"},\"lookup_catalog\":{\"sku\":\"string\",\"warehouse\":\"string\"},\"mark_priority\":{\"level\":[\"low\",\"normal\",\"urgent\"],\"ticket\":\"string\"},\"plan_pickup\":{\"day\":\"string\",\"parcels\":\"positive_integer\",\"zone\":\"string\"}}\nRequest: Format a brief report on topic cedar446 limited to 17 entries.\nReturn only JSON with exactly \"tool\" and \"arguments\" keys. No Markdown or explanation.",
+        "role": "user"
+      },
+      {
+        "content": "{\n  \"tool\": \"format_report\",\n  \"arguments\": {\n    \"limit\": 17,\n    \"style\": \"brief\",\n    \"topic\": \"cedar446\"\n  }\n}",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "2c70208ff9a02b360721d2f3cb939bbd508c10aa64c880b7bf58a9c0cb607ca7",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "{\n  \"tool\": \"format_report\",\n  \"arguments\": {\n    \"limit\": 17,\n    \"style\": \"brief\",\n    \"topic\": \"cedar446\"\n  }\n}",
+    "target_sha256": "32c9ff8f5ae425296f98c37a434a5d136927ca87b225f1350ddf876f31d70602",
+    "task_content_sha256": "ebab436320c35c0a7ba1b88d96e41c2f8e495acb3462ca364ca2d7e8e33e155c",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_SIMULATED_TOOLS_15",
+    "trainingAllowed": false
+  },
+  {
+    "admitted_as_anchor": true,
+    "automatic_fit": false,
+    "call_path": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1/readout/CALL_063.json",
+    "call_sha256": "8cb441c667c5acbf1254ce791a21a46106809bf2cd34efbb593ae36e37625d5d",
+    "cohort": "ANCHOR_TRAIN_R107_20260915_A1",
+    "family": "concise_answer",
+    "fit_ready": false,
+    "label": "ORDINARY_COMPETENT_BASE_TRAIN_ANCHOR",
+    "machine_outcome": {
+      "category": "correct",
+      "passed": true
+    },
+    "messages": [
+      {
+        "content": "Write the first three letters of winter.\nOutput only the result, with no whitespace or punctuation.",
+        "role": "user"
+      },
+      {
+        "content": "win",
+        "role": "assistant"
+      }
+    ],
+    "prompt_sha256": "9dfde817888a98429d8e13308825f2ed1f42ec9087d36f5b70bc5710d2bf7816",
+    "runtime_prefix": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+    "semantic_richness": "NOT_CLAIMED",
+    "source_actor": {
+      "adapter": null,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "generator_sha256": "4ab83dd04de4365ac2570f4b5105933580c722363f5985897170a82a11fb7f4e",
+      "policy_sha256": "ce1fdd632d06084baf2d3b1bfbebebbdf3531c7c71c88e8d37a396465952c4b7"
+    },
+    "split": "TRAIN",
+    "target": "win",
+    "target_sha256": "823a3180dad3c9c3c4dea43ab2baf9f04bac9c3a7711745ff5f702551496d735",
+    "task_content_sha256": "bb40ec57f9d1304eca85ae7b58e83953188402503c9f625640c453186f14c41b",
+    "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CONCISE_ANSWER_15",
+    "trainingAllowed": false
+  }
+]

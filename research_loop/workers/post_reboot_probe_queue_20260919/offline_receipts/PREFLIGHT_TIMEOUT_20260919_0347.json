@@ -1,0 +1,23 @@
+{
+  "schema": "OBSERVER_TIMEOUT_RECEIPT_V1",
+  "reported_timeout_utc": "2026-09-19T03:47:00Z",
+  "time_is_approximate": true,
+  "timeout_seconds": 120,
+  "source": "Main user report; exact original tool log unavailable in this context",
+  "reported_phase": "preflight before activation",
+  "diagnosis": "V3 verify_source_epoch repeatedly JSON-decodes and canonicalizes the suffix after current_loaded; verify_live_source does not share LocalHost cursors",
+  "receiving_host_check_utc": "2026-09-19T03:50:08Z",
+  "matching_observer_processes": [],
+  "process_match_terms": ["post_reboot_probe_queue_20260919", "probe_runtime", "verify_source_epoch", "bind_bundle"],
+  "activation_marker": "ABSENT",
+  "journal_metadata_only_inventory": {
+    "FRESH_R231": {"json_files_including_intents": 15284, "bytes": 6147685503},
+    "R232_SIBLING_FROZEN": {"json_files_including_intents": 8350, "bytes": 14129788539}
+  },
+  "original_timeout_exit_status": "UNAVAILABLE",
+  "survivor_exit_cause": "UNKNOWN; absence does not prove how it exited",
+  "signals_sent": false,
+  "activation_performed": false,
+  "gpu_launch_performed": false,
+  "native_or_source_changes": false
+}

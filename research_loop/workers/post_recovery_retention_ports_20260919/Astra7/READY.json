@@ -1,0 +1,104 @@
+{
+  "after_fullsourcepins_sha256": "bc92cb02db5d2ecde77d8755112b613dae9826e0aed46be640cf02304bd36752",
+  "applied_to_live": false,
+  "before_fullsourcepins_sha256": "6a8d20ada2b47ec2139351b774027c034ec0cc2616f876b63dd7fef4715a4a7f",
+  "changed_source_files": {
+    "gpu/orch_r184_think_act_learn.py": {
+      "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+      "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46",
+      "overlay": "Astra7/fork/gpu/orch_r184_think_act_learn.py",
+      "preimage": "Astra7/preimage/gpu/orch_r184_think_act_learn.py"
+    },
+    "organism_v6/orch_r124_train_history.py": {
+      "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+      "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+      "overlay": "Astra7/fork/organism_v6/orch_r124_train_history.py",
+      "preimage": "Astra7/preimage/organism_v6/orch_r124_train_history.py"
+    },
+    "organism_v6/orch_r125_continual_stream.py": {
+      "after": "2ce336555c4ec9b3ee6e5965ce4d17df72275e555965ce80dd9691d4b70c0e70",
+      "before": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33",
+      "overlay": "Astra7/fork/organism_v6/orch_r125_continual_stream.py",
+      "preimage": "Astra7/preimage/organism_v6/orch_r125_continual_stream.py"
+    }
+  },
+  "dispatches": [],
+  "git_commits": [],
+  "independent_of_live_source": true,
+  "inventory_sha256": "8313f1148df6d877ac3307dc590a0c5c96efb61899acf5c4462a9aeef041434a",
+  "legacy_tests_sha256": {
+    "test_orch_r124_train_history.py": "ef7cecd803b22da9b59a0c51afd5b7411aeb76e288953a54af8369ef4d22c76f",
+    "test_orch_r125_continual_stream.py": "0d866dd30100821ebca5d762f7b9006d30f8a64ec4c3a7fa0a485b1793ead19a"
+  },
+  "native_signals": [],
+  "node": "node2",
+  "parent_deliveries": [],
+  "patch_dry_runs": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "--directory=research_loop/workers/post_recovery_retention_ports_20260919/Astra7/preimage",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_retention_ports_20260919/Astra7/RETENTION.patch"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "--reverse",
+        "--directory=research_loop/workers/post_recovery_retention_ports_20260919/Astra7/fork",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_retention_ports_20260919/Astra7/RETENTION.patch"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "phase2_tests_sha256": "7f24a660576e96505e6e2ff08fa2d17ae8a0bea4b48d6ee7ab6005a478213a20",
+  "port_patch_sha256": "8de12cf0ef19a375b694b893247d70987e918ae99313942c6c125de56ddbbef4",
+  "prepared_utc": "2026-09-19T01:11:59.795164+00:00",
+  "receiving_hook_generated": false,
+  "receiving_required": "Main must reverify full current closure and stage/adopt through its separately authorized receiving hook.",
+  "reference_patch_sha256": "7053d826efcfbc6ee6a8f44f36a8dbe8c179dd4d9ffb485a7ac548a075e876f1",
+  "remote_writes": [],
+  "source": {
+    "before": {
+      "gpu/orch_r184_think_act_learn.py": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46",
+      "organism_v6/orch_r124_train_history.py": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+      "organism_v6/orch_r125_continual_stream.py": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33"
+    },
+    "guard_path": "/localhome/local-rohing/orch_r229_Astra7_20260918/control_r233_lease_continuation/GUARD.json",
+    "guard_sha256": "fae6f4ede1e9c80be060aeca8dd494cbb24a6228b9225e33856b62ec3c0047f6",
+    "inventory_file": "node2_INVENTORY2.json",
+    "journal_id": "6a2fa591a1304fd8b3eff24f65e5caff",
+    "node": "node2",
+    "observed_unix": 1789779749.2848682,
+    "source_files": 2295,
+    "source_root": "/localhome/local-rohing/orch_r229_Astra7_20260918/source_r233_lease_continuation"
+  },
+  "source_files": 2295,
+  "status": "LOCAL_PORT_CPU_READY_NOT_STAGED",
+  "test_counts": {
+    "LEGACY_TESTS": 5,
+    "PRESERVATION_TESTS": 5,
+    "TESTS": 17
+  },
+  "test_receipt": {
+    "path": "Astra7/TEST_RECEIPT.json",
+    "sha256": "ec8cf9dbd1129d6f1db3312e46ee2f9aef267a2341d2a778afcaf9c14689074f"
+  },
+  "test_scripts_sha256": {
+    "finalize.py": "a77bc04e42328c0459241fa652b9145b92b9e62b6b43b79e7f1a49ba2e00bd0c",
+    "port.py": "47905bfd1ca177ab562b4eb6055ba34d14d31c099779cae04f32fa61fd9ce9ca",
+    "prepare.py": "3e20ecc8ce6f5ba971fc7e65d4dd7c144791965d3e06c79e12d545a087bc9e60",
+    "validate_variant.py": "eb466f066defaf63a275792e5a31fde75a769468deec519a4e45e82ddda84a8b"
+  },
+  "unchanged_source_pins": 2292,
+  "variant": "Astra7"
+}

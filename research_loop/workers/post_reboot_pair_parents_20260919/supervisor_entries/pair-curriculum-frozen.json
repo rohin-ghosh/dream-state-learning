@@ -1,0 +1,34 @@
+{
+  "name": "pair-curriculum-frozen",
+  "enabled": true,
+  "kind": "parent",
+  "owner": "post_reboot_pair_parents_20260919 / main",
+  "approval_scope": "Explicit user-directed CPU-only pair publisher restoration and registration through 1790791200; unchanged natives, model, scaffold, learning policy and lease.",
+  "local_daemon_only": true,
+  "child_native": false,
+  "restart_safe": true,
+  "self_enforces_lease": true,
+  "foreground": true,
+  "shutdown_leaves_child_natives_running": true,
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_pair_parents_20260919/parent_service.py",
+    "--arm",
+    "frozen"
+  ],
+  "cwd": "/data/home/rohing/dream-state-orch",
+  "entrypoint": "research_loop/workers/post_reboot_pair_parents_20260919/parent_service.py",
+  "entrypoint_sha256": "84ccf8832ee78d3c749b11b56b11872162f684aac9763c90f1a56b316fc13db7",
+  "until_unix": 1790791200,
+  "lease_evidence": {
+    "path": "research_loop/workers/rohin231_curriculum_birth_20260918/recovery_20260918T1646Z/ALLOCATION_DATE_CORRECTION.json",
+    "sha256": "76dab5a2cb47834ec71dee50cef1f434df56ab95161831f083325532b303e17e",
+    "json_pointer": "/hard_end_unix"
+  },
+  "singleton_lock": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/PUBLISHER.lock",
+  "current_process_identity": {"pid": 345405, "start_ticks": "792480"},
+  "native_identity_is_not_a_supervisor_target": {"pid": 471737, "start_ticks": "9987073"},
+  "operator_block_state": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/STATE.json",
+  "public_status": "research_loop/workers/post_reboot_pair_parents_20260919/public/frozen_REQUEST_TO_ACT.json"
+}

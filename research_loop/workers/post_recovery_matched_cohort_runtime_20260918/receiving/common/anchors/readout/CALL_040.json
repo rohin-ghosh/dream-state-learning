@@ -1,0 +1,67 @@
+{
+  "adapter": null,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "family": "code",
+  "finished_unix": 1789461474.384548,
+  "max_new_tokens": 512,
+  "messages": [
+    {
+      "content": "Return the sum of odd integers in numbers.\nArguments: numbers.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+      "role": "user"
+    }
+  ],
+  "outcome": {
+    "category": "correct",
+    "completion": "complete",
+    "content_tokens": 21,
+    "generated_tokens": 22,
+    "machine": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "verified_anchor": true
+  },
+  "position": 40,
+  "response": {
+    "messages": [
+      {
+        "content": "Return the sum of odd integers in numbers.\nArguments: numbers.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      }
+    ],
+    "prompt_tokens": 103,
+    "raw": "{\"expression\": \"sum([x for x in numbers if x % 2 != 0])\"}",
+    "terminal": true,
+    "token_ids": [
+      4913,
+      28099,
+      788,
+      330,
+      1242,
+      2561,
+      87,
+      369,
+      856,
+      304,
+      5109,
+      421,
+      856,
+      1018,
+      220,
+      17,
+      961,
+      220,
+      15,
+      2467,
+      9207,
+      151645
+    ],
+    "truncated": false
+  },
+  "started_unix": 1789461473.9264052,
+  "status": "COMPLETE",
+  "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_10"
+}

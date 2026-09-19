@@ -1,0 +1,57 @@
+{
+  "schema": "C2_EXECUTABLE_OWNER_COORDINATOR_OFFLINE_HANDOFF_V1",
+  "status": "OFFLINE_IMPLEMENTATION_TESTED_NOT_ACTIVATION_AUTHORITY",
+  "write_scope": "research_loop/workers/post_recovery_c2_retention_receiver_20260919/owner_transport",
+  "source_manifest": {
+    "path": "research_loop/workers/post_recovery_c2_retention_receiver_20260919/owner_transport/checks_20260919T033027628179Z/SOURCE_MANIFEST.json",
+    "sha256": "c6066437ef8fe51dfa4f8ff54ed9481e1cbe7bca014ffb382efdcca25df5c7b4"
+  },
+  "test_receipt": {
+    "path": "research_loop/workers/post_recovery_c2_retention_receiver_20260919/owner_transport/checks_20260919T033027628179Z/TEST_RECEIPT.json",
+    "sha256": "fbbcb2019bef7457290b24064fe2711fe7440b43750baeae5fb1634a90ca2047",
+    "tests_passed": 53,
+    "groups": {"owner_transport": 26, "binding_and_drain": 11, "coordinator": 6, "integration": 10}
+  },
+  "node_coordinator_overlay": {
+    "path": "research_loop/workers/post_recovery_c2_retention_receiver_20260919/owner_transport/checks_20260919T033027628179Z/C2_OWNER_COORDINATOR_OVERLAY.tar.gz",
+    "sha256": "7b69b416d59c2cf2ce216fd1a1a2df9dacd36ec1d0d040e0f789e46ad9c54bab",
+    "native_source_included": false,
+    "Main_authority_included": false
+  },
+  "relocated_overlay_import_receipt": {
+    "path": "research_loop/workers/post_recovery_c2_retention_receiver_20260919/owner_transport/checks_20260919T033027628179Z/PORTABILITY_RECEIPT.json",
+    "sha256": "c8bc52f10bb087d3aceb07d8578c05f0af962a39969f12bec79d89a5d85f3be6",
+    "passed": true
+  },
+  "entrypoint": "research_loop/workers/post_recovery_c2_retention_receiver_20260919/owner_transport/cli.py",
+  "commands_and_input_schemas": "research_loop/workers/post_recovery_c2_retention_receiver_20260919/owner_transport/README.md",
+  "offline_recheck_command": "CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 python3 -B research_loop/workers/post_recovery_c2_retention_receiver_20260919/owner_transport/run_checks.py",
+  "runtime_files": ["common.py", "owner.py", "transport.py", "c2_owner_binding.py", "successor.py", "coordinator.py", "integration.py", "cli.py"],
+  "preserved": {
+    "original_owner_inputs_verified_unchanged": true,
+    "sealed_epoch4_all_source_helpers_assets_verified_unchanged": true,
+    "sealed_epoch4_manifest_sha256": "f51ad85c16dbfc4f683baeee7147aecc9730ea993a9ef194dee6037555edac01",
+    "sealed_epoch4_archive_sha256": "79b5d29bd6bc44e3e11ec5a44cb44f087c55f989a28dd67ae702452753cb13eb",
+    "original_r188_sha256": "75eed0e5e57cd7463e46fa10adeeebdb80b9ef1ce5e76a9b527c034d1e8e6481",
+    "maximum_reservation_seconds": 30,
+    "hard_end_unix": 1789927200,
+    "source_admission_prefix_ABI": "UNCHANGED_SEALED_EPOCH4_V4",
+    "slow_prefix_fallback": false,
+    "native_observer": "ADJACENT_FINAL_COMPLETE_PLUS_LEARN_ONLY"
+  },
+  "actual_30_second_all_in_dispatch_proven": false,
+  "dispatch_ready": false,
+  "owner_fence_executed": false,
+  "owner_rebind_executed": false,
+  "native_actions": [],
+  "parent_actions": [],
+  "registry_mutations": [],
+  "remote_commands": [],
+  "GPU_calls": 0,
+  "blockers": [
+    "Fresh original-owner process, idle/drain, ancestry/ledger and lock evidence; real authenticated owner RPC must fit two seconds.",
+    "Current eligible adjacent COMPLETE+LEARN head; Main forward-B receipt still preserves a pending REQUEST and is not eligible.",
+    "Original-admission-bound consumer context and measured entire reserved-cost/static route receipts, exact Main action approvals and execution digest.",
+    "Unchanged r188 retains two 100-second admission limits and asynchronous long-lived child execution. Outer launch is not privileged-admission completion or LOADED within 30 seconds; no shared startup deadline ABI is supplied here."
+  ]
+}

@@ -1,0 +1,554 @@
+{
+  "native_signals": [],
+  "patch_sha256": "7053d826efcfbc6ee6a8f44f36a8dbe8c179dd4d9ffb485a7ac548a075e876f1",
+  "results": [
+    {
+      "error": "error: patch failed: organism_v6/orch_r125_continual_stream.py:189\nerror: organism_v6/orch_r125_continual_stream.py: patch does not apply\n",
+      "life": "C0",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_node2_recovery",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/control_r233_lease_continuation/GUARD.json"
+        ],
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "cwd": "/localhome/local-rohing/orch_r216_C0_20260918_attempt2/source_r233_lease_continuation",
+        "pid": 881309,
+        "start_ticks": "98332476",
+        "state": "S",
+        "uid": 2524
+      },
+      "node": "node2",
+      "preserved_sources": 2289,
+      "source_guard_sha256": "acf4d2d015874af1cc9585a25de63827e7d7ec36acd7a4509bce09671985f6c2",
+      "status": "VARIANT_NEEDS_SCOPED_PORT"
+    },
+    {
+      "error": "error: patch failed: organism_v6/orch_r125_continual_stream.py:189\nerror: organism_v6/orch_r125_continual_stream.py: patch does not apply\n",
+      "life": "Astra7",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_node2_recovery",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r229_Astra7_20260918/control_r233_lease_continuation/GUARD.json"
+        ],
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "cwd": "/localhome/local-rohing/orch_r229_Astra7_20260918/source_r233_lease_continuation",
+        "pid": 886059,
+        "start_ticks": "98343651",
+        "state": "S",
+        "uid": 2524
+      },
+      "node": "node2",
+      "preserved_sources": 2292,
+      "source_guard_sha256": "fae6f4ede1e9c80be060aeca8dd494cbb24a6228b9225e33856b62ec3c0047f6",
+      "status": "VARIANT_NEEDS_SCOPED_PORT"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "caption_node2",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_node2_recovery",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r229_unparented_caption_20260918/r213_r226_caption_unparented_fork/control_r233_recovery/GUARD.json"
+        ],
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "cwd": "/localhome/local-rohing/orch_r229_unparented_caption_20260918/r213_r226_caption_unparented_fork/source_r233_recovery",
+        "pid": 787115,
+        "start_ticks": "98128665",
+        "state": "S",
+        "uid": 2524
+      },
+      "node": "node2",
+      "preserved_sources": 213,
+      "source_guard_sha256": "f17b2c06389e3ef2d1f9e6fac439c096aead14c788421ddc191039418b891ec2",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "r213_r226_caption_observation_fork",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_recovery_runtime",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/control_r233_recovery_20260918_boundary_lease_ceiling/GUARD.json"
+        ],
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+        "cwd": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_observation_fork/source_r233_recovery_20260918_boundary_lease_ceiling",
+        "pid": 1998500,
+        "start_ticks": "46129222",
+        "state": "R",
+        "uid": 2524
+      },
+      "node": "node3",
+      "preserved_sources": 198,
+      "source_guard_sha256": "f9324a3e8fd7a3fecaade76e12d72999f08e92531b07da048803390d3540a5e4",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "r213_math_a",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_recovery_runtime",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r205_node3_20260918/r213_math_a/control_r233_recovery_20260918_policy_lease_ceiling/GUARD.json"
+        ],
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+        "cwd": "/localhome/local-rohing/orch_r205_node3_20260918/r213_math_a/source_r233_recovery_20260918_policy",
+        "pid": 1966154,
+        "start_ticks": "45959563",
+        "state": "R",
+        "uid": 2524
+      },
+      "node": "node3",
+      "preserved_sources": 193,
+      "source_guard_sha256": "6ad28a1542e8e5addfcce5f2b2b55dd6c52f6f245324004364fee24e838eaa58",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "r213_math_b_fork",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_recovery_runtime",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r205_node3_20260918/r213_math_b_fork/control_r233_recovery_20260918_policy_lease_ceiling/GUARD.json"
+        ],
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+        "cwd": "/localhome/local-rohing/orch_r205_node3_20260918/r213_math_b_fork/source_r233_recovery_20260918_policy",
+        "pid": 1966159,
+        "start_ticks": "45959598",
+        "state": "S",
+        "uid": 2524
+      },
+      "node": "node3",
+      "preserved_sources": 195,
+      "source_guard_sha256": "9cb1f895c32954733a46e2acec941b7e6c23c905931958721b141bcc7dcf6282",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "r213_r226_caption_perspective_fork",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_recovery_runtime",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/control_r233_recovery_20260918_boundary_lease_ceiling_admission_retry1/GUARD.json"
+        ],
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+        "cwd": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_perspective_fork/source_r233_recovery_20260918_boundary_lease_ceiling",
+        "pid": 2009182,
+        "start_ticks": "46183263",
+        "state": "S",
+        "uid": 2524
+      },
+      "node": "node3",
+      "preserved_sources": 198,
+      "source_guard_sha256": "c511178bd6c96fbc83678d9ef2da127c36d215d61cb81eb51f5da652f3a7979f",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "r213_math_c",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_recovery_runtime",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r205_node3_20260918/r213_math_c/control_r233_recovery_20260918_policy_lease_ceiling/GUARD.json"
+        ],
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+        "cwd": "/localhome/local-rohing/orch_r205_node3_20260918/r213_math_c/source_r233_recovery_20260918_policy",
+        "pid": 1957352,
+        "start_ticks": "45901421",
+        "state": "S",
+        "uid": 2524
+      },
+      "node": "node3",
+      "preserved_sources": 193,
+      "source_guard_sha256": "99630217a72b1297f4f05ba4642c62a30145f7568e31d51fc3b0ecdd82217fea",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "r213_r226_caption_revision_fork",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_recovery_runtime",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/control_r233_recovery_20260918_boundary_lease_ceiling/GUARD.json"
+        ],
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+        "cwd": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_revision_fork/source_r233_recovery_20260918_boundary_lease_ceiling",
+        "pid": 1994937,
+        "start_ticks": "46110965",
+        "state": "S",
+        "uid": 2524
+      },
+      "node": "node3",
+      "preserved_sources": 198,
+      "source_guard_sha256": "9f484b75189251338212db8b89ed67018856f6dfc029e8597d7dbccf6ddaf7cd",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "r213_r226_caption_selfderive_fork",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_recovery_runtime",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/control_r233_recovery_20260918_boundary_lease_ceiling/GUARD.json"
+        ],
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+        "cwd": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_selfderive_fork/source_r233_recovery_20260918_boundary_lease_ceiling",
+        "pid": 2009364,
+        "start_ticks": "46184377",
+        "state": "R",
+        "uid": 2524
+      },
+      "node": "node3",
+      "preserved_sources": 198,
+      "source_guard_sha256": "0cfbfe93f89a78459804e582e33cfcb0a437691fb524f6bf8cb8f82828aba501",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "r213_r226_caption_unparented_fork",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r233_recovery_runtime",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/control_r233_recovery_20260918_policy_lease_ceiling/GUARD.json"
+        ],
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+        "cwd": "/localhome/local-rohing/orch_r205_node3_20260918/r213_r226_caption_unparented_fork/source_r233_recovery_20260918_policy",
+        "pid": 1966164,
+        "start_ticks": "45959629",
+        "state": "S",
+        "uid": 2524
+      },
+      "node": "node3",
+      "preserved_sources": 198,
+      "source_guard_sha256": "559899248709f63097754c3cdc239f312a67316e03bb3d2094fa1b907abd63ed",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "error": "error: patch failed: gpu/orch_r184_think_act_learn.py:338\nerror: gpu/orch_r184_think_act_learn.py: patch does not apply\n",
+      "life": "P7",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r233_p7_deadline_20260918/control/GUARD.json"
+        ],
+        "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+        "cwd": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/r224_language_v3/source",
+        "pid": 563796,
+        "start_ticks": "32330897",
+        "state": "S",
+        "uid": 2524
+      },
+      "node": "node4",
+      "preserved_sources": 172,
+      "source_guard_sha256": "9e98fbbe00081c9c6fe5047c74a2be8a4b10d77e1c38120a86ce8494fdf6f640",
+      "status": "VARIANT_NEEDS_SCOPED_PORT"
+    },
+    {
+      "error": "error: patch failed: gpu/orch_r184_think_act_learn.py:338\nerror: gpu/orch_r184_think_act_learn.py: patch does not apply\n",
+      "life": "P3",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/r233_lease_continuation_retry1/control/GUARD.json"
+        ],
+        "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+        "cwd": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/r233_lease_continuation_retry1/source",
+        "pid": 699464,
+        "start_ticks": "33078516",
+        "state": "R",
+        "uid": 2524
+      },
+      "node": "node4",
+      "preserved_sources": 174,
+      "source_guard_sha256": "df9769ae317f249fe8ff9f93c62457eb23c659d7e7e707dc67cf3a2d78f75ece",
+      "status": "VARIANT_NEEDS_SCOPED_PORT"
+    },
+    {
+      "error": "error: patch failed: organism_v6/orch_r125_continual_stream.py:189\nerror: organism_v6/orch_r125_continual_stream.py: patch does not apply\n",
+      "life": "C2",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r125_continual_guard",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/control/GUARD.json"
+        ],
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "cwd": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/source",
+        "pid": 1139778,
+        "start_ticks": "30025875",
+        "state": "S",
+        "uid": 2524
+      },
+      "node": "node5",
+      "preserved_sources": 180,
+      "source_guard_sha256": "29d1aa615820332deaa826bd8505209ef89c9fed5aea0f6fe98e7690d0867ffb",
+      "status": "VARIANT_NEEDS_SCOPED_PORT"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "curriculum_frozen_sibling",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r232_recovery",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/extension_oct01_preview_20260918T1742Z/authorized_continuation_1754Z/GUARD.json"
+        ],
+        "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+        "cwd": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/extension_oct01_preview_20260918T1742Z/source",
+        "pid": 471737,
+        "start_ticks": "9987073",
+        "state": "S",
+        "uid": 1352
+      },
+      "node": "ovx4",
+      "preserved_sources": 204,
+      "source_guard_sha256": "197463ab56dab2b04a88797c28dffd854a56bd1a8756cdfa611f0995690d7a0b",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "changes": {
+        "gpu/orch_r184_think_act_learn.py": {
+          "after": "88bade651bb372c7ee0f00848deb767dbeec70ec5a208b01603f92539df6d505",
+          "before": "65a20ebfaaa47f8b38be6e2666ad9cc82aaf57a783510a6b5aff50f8724d0e46"
+        },
+        "organism_v6/orch_r124_train_history.py": {
+          "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+          "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625"
+        },
+        "organism_v6/orch_r125_continual_stream.py": {
+          "after": "e81275bf891dec9ad68572f6432c5709b8a1099fbc6f08833bb39db65758b2ce",
+          "before": "baf6cc915dd430db580a28f9e6a21678c5a90ba59a9fd4b5651943cc3db6484e"
+        }
+      },
+      "life": "curriculum_learner",
+      "native": {
+        "argv": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.r232_recovery",
+          "native",
+          "--config",
+          "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/authorized_continuation_sidecar_retry_1811Z/GUARD.json"
+        ],
+        "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+        "cwd": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/source",
+        "pid": 493500,
+        "start_ticks": "10070880",
+        "state": "S",
+        "uid": 1352
+      },
+      "node": "ovx4",
+      "preserved_sources": 204,
+      "source_guard_sha256": "282ad372328b6244f0cc82b4cfbd39de0fcdd2b7a748c681449f937cbfadd632",
+      "status": "EXACT_THREE_FILE_PATCH_APPLIES_NOT_DEPLOYED"
+    },
+    {
+      "life": "frozen_base_player",
+      "node": "ovx4",
+      "status": "NOT_R125_THINK_ACT_NATIVE_REQUIRES_SEPARATE_SCOPE"
+    }
+  ]
+}

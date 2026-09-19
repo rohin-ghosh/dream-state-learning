@@ -1,0 +1,104 @@
+{
+  "after_fullsourcepins_sha256": "90c727ab91f1e5cc9f8b80d474a49421cd6bca9d1b9a6f17d34252d06c6bb5cd",
+  "applied_to_live": false,
+  "before_fullsourcepins_sha256": "86e154a5f75566f4124eaeb79d3904870edd3183712bf6b90b909bb45416e1a5",
+  "changed_source_files": {
+    "gpu/orch_r184_think_act_learn.py": {
+      "after": "63037afaa9f079c2beaa69703d3000e5b7ccd2bb8ec6473a9da9e6dbbb528c40",
+      "before": "57bba9866edd6e4adb8a047d7ca3f5fbe99f613e56b64833e0b9b58829bc8cc5",
+      "overlay": "C2/fork/gpu/orch_r184_think_act_learn.py",
+      "preimage": "C2/preimage/gpu/orch_r184_think_act_learn.py"
+    },
+    "organism_v6/orch_r124_train_history.py": {
+      "after": "ec7ecd7ebf395885606e7b500a47baedd11172a4c46e23b8d05d569dc8fac1d3",
+      "before": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+      "overlay": "C2/fork/organism_v6/orch_r124_train_history.py",
+      "preimage": "C2/preimage/organism_v6/orch_r124_train_history.py"
+    },
+    "organism_v6/orch_r125_continual_stream.py": {
+      "after": "2ce336555c4ec9b3ee6e5965ce4d17df72275e555965ce80dd9691d4b70c0e70",
+      "before": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33",
+      "overlay": "C2/fork/organism_v6/orch_r125_continual_stream.py",
+      "preimage": "C2/preimage/organism_v6/orch_r125_continual_stream.py"
+    }
+  },
+  "dispatches": [],
+  "git_commits": [],
+  "independent_of_live_source": true,
+  "inventory_sha256": "c6d16cfd7161d31f64fdbebee80bf10dd2bfad5e5ba9ae46c8df0313245277c0",
+  "legacy_tests_sha256": {
+    "test_orch_r124_train_history.py": "ef7cecd803b22da9b59a0c51afd5b7411aeb76e288953a54af8369ef4d22c76f",
+    "test_orch_r125_continual_stream.py": "0d866dd30100821ebca5d762f7b9006d30f8a64ec4c3a7fa0a485b1793ead19a"
+  },
+  "native_signals": [],
+  "node": "node5",
+  "parent_deliveries": [],
+  "patch_dry_runs": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "--directory=research_loop/workers/post_recovery_retention_ports_20260919/C2/preimage",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_retention_ports_20260919/C2/RETENTION.patch"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "--reverse",
+        "--directory=research_loop/workers/post_recovery_retention_ports_20260919/C2/fork",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_retention_ports_20260919/C2/RETENTION.patch"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "phase2_tests_sha256": "7f24a660576e96505e6e2ff08fa2d17ae8a0bea4b48d6ee7ab6005a478213a20",
+  "port_patch_sha256": "e3f2dd3febac9d1705897c3037a4f93a09c07ad93742068b1ac5fb9810f42ed6",
+  "prepared_utc": "2026-09-19T01:11:28.060671+00:00",
+  "receiving_hook_generated": false,
+  "receiving_required": "Main must reverify full current closure and stage/adopt through its separately authorized receiving hook.",
+  "reference_patch_sha256": "7053d826efcfbc6ee6a8f44f36a8dbe8c179dd4d9ffb485a7ac548a075e876f1",
+  "remote_writes": [],
+  "source": {
+    "before": {
+      "gpu/orch_r184_think_act_learn.py": "57bba9866edd6e4adb8a047d7ca3f5fbe99f613e56b64833e0b9b58829bc8cc5",
+      "organism_v6/orch_r124_train_history.py": "1211c8f312f8572dd51938ffde4806f7171e6368f1c5ea12a296ff02567e4625",
+      "organism_v6/orch_r125_continual_stream.py": "8f22a5754a0cf3a806d552064fe25d4069021e74fff3329c5a7e74e3d226ca33"
+    },
+    "guard_path": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/control/GUARD.json",
+    "guard_sha256": "29d1aa615820332deaa826bd8505209ef89c9fed5aea0f6fe98e7690d0867ffb",
+    "inventory_file": "node5_INVENTORY2.json",
+    "journal_id": "260be8b8710a42559b291797c6e14983",
+    "node": "node5",
+    "observed_unix": 1789779749.5979102,
+    "source_files": 183,
+    "source_root": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/source"
+  },
+  "source_files": 183,
+  "status": "LOCAL_PORT_CPU_READY_NOT_STAGED",
+  "test_counts": {
+    "LEGACY_TESTS": 5,
+    "PRESERVATION_TESTS": 5,
+    "TESTS": 17
+  },
+  "test_receipt": {
+    "path": "C2/TEST_RECEIPT.json",
+    "sha256": "8aaa287691471a385100a507357c30eb49473d78e4bfd40fef5d720f1b291262"
+  },
+  "test_scripts_sha256": {
+    "finalize.py": "a77bc04e42328c0459241fa652b9145b92b9e62b6b43b79e7f1a49ba2e00bd0c",
+    "port.py": "47905bfd1ca177ab562b4eb6055ba34d14d31c099779cae04f32fa61fd9ce9ca",
+    "prepare.py": "3e20ecc8ce6f5ba971fc7e65d4dd7c144791965d3e06c79e12d545a087bc9e60",
+    "validate_variant.py": "eb466f066defaf63a275792e5a31fde75a769468deec519a4e45e82ddda84a8b"
+  },
+  "unchanged_source_pins": 180,
+  "variant": "C2"
+}

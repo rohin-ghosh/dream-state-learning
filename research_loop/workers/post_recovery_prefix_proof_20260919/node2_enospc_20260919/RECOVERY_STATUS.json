@@ -1,0 +1,73 @@
+{
+  "schema": "NODE2_ENOSPC_INDEPENDENT_RECOVERY_REVIEW_V1",
+  "status": "BLOCKED_UNCHANGED_CONTRACT_EXACT_TAIL_FAST_RESUME",
+  "automatic_recovery_authorized": false,
+  "node_writes": false,
+  "native_signals": [],
+  "full_journal_audit": false,
+  "checkpoint_binaries_hashed": false,
+  "new_source_or_admission_tests_run": false,
+  "local_receipt_consistency_checks": "PASS",
+  "original_executable": "/localhome/local-rohing/v2/venv/bin/python",
+  "original_module": "gpu.r233_node2_recovery",
+  "original_external_mode": "dispatch",
+  "old_dispatch_guards_reusable": false,
+  "hard_end_unix_unchanged": 1789927200,
+  "lease_end_unix_unchanged": 1789980180,
+  "next_reserved_unix_unchanged": 1789958580,
+  "artifacts": {
+    "RECOVERY_PLAN.md": "a532fa1314f3bff47a4405507127c3cb17e7d4f9036914af31713900b0d0a4ec",
+    "NODE2_READ_ONLY_20260919.json": "0981c0861c60a35b492ba0ff717e9a109f2d0cc2e4051b96dd59417b4fd5b2ea",
+    "BOUNDARIES_VERIFIED_20260919.json": "ad85f45a7be0eaa1a372476b4c763ffad3f6ac6571caf53bf95540c7e360fd68"
+  },
+  "lives": {
+    "C0": {
+      "complete_index": 6631,
+      "learn_index": 6632,
+      "checkpoint_cycle": 145,
+      "checkpoint_optimizer_steps": 8412,
+      "pending_sleep_request_index": 6660,
+      "pending_cycle": 146,
+      "saved_pending_rows": 444,
+      "saved_sleep_frontier": 441,
+      "last_committed_update_index": 6710,
+      "last_recorded_optimizer_step": 8460,
+      "post_complete_update_receipts": 48,
+      "tail_records": 79,
+      "tail_record_bytes": 280375032,
+      "failed_next_checkpoint_has_COMMIT": false,
+      "failed_optimizer_rng_file_bytes": 86966272,
+      "exit_code": 1,
+      "outer_exit_status": 1,
+      "installed_checkpoint_tail_reader": false
+    },
+    "Astra7": {
+      "complete_index": 7750,
+      "learn_index": 7751,
+      "checkpoint_cycle": 146,
+      "checkpoint_optimizer_steps": 9644,
+      "pending_sleep_request_index": 7776,
+      "pending_cycle": 147,
+      "saved_pending_rows": 453,
+      "saved_sleep_frontier": 450,
+      "last_committed_update_index": 7807,
+      "last_recorded_optimizer_step": 9673,
+      "post_complete_update_receipts": 29,
+      "tail_records": 57,
+      "tail_record_bytes": 200755465,
+      "partial_record_path": "/localhome/local-rohing/orch_r229_Astra7_20260918/raw/stream/records/00000000000000007808.intent.json.partial",
+      "partial_bytes": 0,
+      "exit_receipts_zero_length": true,
+      "outer_exit_status": null,
+      "installed_checkpoint_tail_reader": false
+    }
+  },
+  "required_before_execution": [
+    "Explicit authorized reconciliation of post-update pending sleep without silent tail or working-state loss",
+    "Explicit original-contract-compatible handling of Astra7 partial; no delete, skip, fabricated commit or unknown replay",
+    "Exact-source bounded reader and receiving tests; no implicit full-prefix fallback",
+    "Verify exact checkpoint binaries and preserve optimizer plus Python/CPU/CUDA RNG restoration",
+    "New one-shot attempt with exact source/plan/CPU/allocation pins and fresh original confinement/admission",
+    "Unchanged policy, GPU binding, deadlines and lease bounds; actual LOADED required to claim restoration"
+  ]
+}

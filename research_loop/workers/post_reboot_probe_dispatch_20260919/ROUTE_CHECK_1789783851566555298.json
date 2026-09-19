@@ -1,0 +1,192 @@
+{
+  "additional_human_ratification_required": false,
+  "automatic_queue_execution_enabled": false,
+  "confinement_enforced_by_cgroup_and_runtime_before_model_load": true,
+  "gpu_execution_performed": false,
+  "inventory": [
+    {
+      "compute_pids": [
+        493500
+      ],
+      "memory_used_mib": 16853,
+      "physical": 0,
+      "uuid": "GPU-c57b2860-9ba6-74ee-876b-4fa22a10366e"
+    },
+    {
+      "compute_pids": [
+        471737
+      ],
+      "memory_used_mib": 15095,
+      "physical": 1,
+      "uuid": "GPU-02917283-de83-a2c7-db03-272dca482162"
+    },
+    {
+      "compute_pids": [],
+      "memory_used_mib": 0,
+      "physical": 2,
+      "uuid": "GPU-ac7e4165-630c-eafe-4ba5-2b2fc4a4e5d1"
+    },
+    {
+      "compute_pids": [
+        459712
+      ],
+      "memory_used_mib": 16083,
+      "physical": 3,
+      "uuid": "GPU-cfc797b1-08cd-c8f0-7691-9e188e8c11bb"
+    },
+    {
+      "compute_pids": [
+        499900
+      ],
+      "memory_used_mib": 14363,
+      "physical": 4,
+      "uuid": "GPU-891f01d9-82a7-1c36-5e71-e9f6912cada6"
+    },
+    {
+      "compute_pids": [
+        499905
+      ],
+      "memory_used_mib": 14363,
+      "physical": 5,
+      "uuid": "GPU-c133443b-2a53-dc7b-294f-06b894a58d05"
+    },
+    {
+      "compute_pids": [
+        506797
+      ],
+      "memory_used_mib": 14363,
+      "physical": 6,
+      "uuid": "GPU-17a145a7-e358-3193-a0fc-30b469e6c120"
+    },
+    {
+      "compute_pids": [],
+      "memory_used_mib": 0,
+      "physical": 7,
+      "uuid": "GPU-b7ec9035-3ba3-464f-6c2f-7588a3e328c1"
+    }
+  ],
+  "job_id": "465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7",
+  "platform_permission_not_probed": true,
+  "proposed_commands": [
+    {
+      "argv": [
+        "sudo",
+        "-n",
+        "systemd-run",
+        "--unit=orch-reboot-probe-465dedb4d06300e2-judge",
+        "--property=User=1352",
+        "--property=Group=1352",
+        "--property=WorkingDirectory=/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/source",
+        "--property=RuntimeMaxSec=2400",
+        "--property=TimeoutStopSec=15",
+        "--property=KillMode=control-group",
+        "--property=UMask=0077",
+        "--property=DevicePolicy=closed",
+        "--property=NoNewPrivileges=yes",
+        "--property=StandardOutput=append:/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/runtime/judge.log",
+        "--property=StandardError=append:/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/runtime/judge.log",
+        "--property=DeviceAllow=/dev/nvidia7 rw",
+        "--property=DeviceAllow=/dev/nvidiactl rw",
+        "--property=DeviceAllow=/dev/nvidia-uvm rw",
+        "--property=DeviceAllow=/dev/nvidia-uvm-tools rw",
+        "--setenv=CUDA_VISIBLE_DEVICES=GPU-b7ec9035-3ba3-464f-6c2f-7588a3e328c1",
+        "--setenv=HF_HUB_OFFLINE=1",
+        "--setenv=TRANSFORMERS_OFFLINE=1",
+        "--setenv=PYTHONDONTWRITEBYTECODE=1",
+        "--setenv=PYTHONPATH=/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/source",
+        "--setenv=OMP_NUM_THREADS=2",
+        "--setenv=MKL_NUM_THREADS=2",
+        "--setenv=TOKENIZERS_PARALLELISM=false",
+        "--setenv=HOME=/localhome/local-rohing",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/runtime/probe_runtime.py",
+        "--config",
+        "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/runtime/JOB_CONFIG.json",
+        "--config-sha256",
+        "9744a62e40d0ebb64dfb1c9911416ff2e9be33184814b1d5cd687db78a44a380",
+        "--launch",
+        "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/runtime/LAUNCH.json",
+        "--launch-sha256",
+        "CREATED_AT_ACTUAL_ADMISSION",
+        "--mode",
+        "judge"
+      ],
+      "role": "judge",
+      "unit": "orch-reboot-probe-465dedb4d06300e2-judge"
+    },
+    {
+      "argv": [
+        "sudo",
+        "-n",
+        "systemd-run",
+        "--unit=orch-reboot-probe-465dedb4d06300e2-player",
+        "--property=User=1352",
+        "--property=Group=1352",
+        "--property=WorkingDirectory=/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/source",
+        "--property=RuntimeMaxSec=2400",
+        "--property=TimeoutStopSec=15",
+        "--property=KillMode=control-group",
+        "--property=UMask=0077",
+        "--property=DevicePolicy=closed",
+        "--property=NoNewPrivileges=yes",
+        "--property=StandardOutput=append:/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/runtime/player.log",
+        "--property=StandardError=append:/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/runtime/player.log",
+        "--property=DeviceAllow=/dev/nvidia2 rw",
+        "--property=DeviceAllow=/dev/nvidiactl rw",
+        "--property=DeviceAllow=/dev/nvidia-uvm rw",
+        "--property=DeviceAllow=/dev/nvidia-uvm-tools rw",
+        "--setenv=CUDA_VISIBLE_DEVICES=GPU-ac7e4165-630c-eafe-4ba5-2b2fc4a4e5d1",
+        "--setenv=HF_HUB_OFFLINE=1",
+        "--setenv=TRANSFORMERS_OFFLINE=1",
+        "--setenv=PYTHONDONTWRITEBYTECODE=1",
+        "--setenv=PYTHONPATH=/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/source",
+        "--setenv=OMP_NUM_THREADS=2",
+        "--setenv=MKL_NUM_THREADS=2",
+        "--setenv=TOKENIZERS_PARALLELISM=false",
+        "--setenv=HOME=/localhome/local-rohing",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/runtime/probe_runtime.py",
+        "--config",
+        "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/runtime/JOB_CONFIG.json",
+        "--config-sha256",
+        "9744a62e40d0ebb64dfb1c9911416ff2e9be33184814b1d5cd687db78a44a380",
+        "--launch",
+        "/localhome/local-rohing/post_reboot_probe_dispatch_20260919/465dedb4d06300e2a82046af61bd914f915a4ccbe588d5f05fb0616b90440ae7/runtime/LAUNCH.json",
+        "--launch-sha256",
+        "CREATED_AT_ACTUAL_ADMISSION",
+        "--mode",
+        "player"
+      ],
+      "role": "player",
+      "unit": "orch-reboot-probe-465dedb4d06300e2-player"
+    }
+  ],
+  "receiving_config_sha256": "9744a62e40d0ebb64dfb1c9911416ff2e9be33184814b1d5cd687db78a44a380",
+  "receiving_runtime_files": {
+    "JOB_CONFIG.json": "9744a62e40d0ebb64dfb1c9911416ff2e9be33184814b1d5cd687db78a44a380",
+    "LEASE_AUTHORITY.json": "c7b6ddb38e455a19c520dd643dec6fb5c3fd18d3097b418d6d3417ee2d99a804",
+    "dispatch_once.py": "c8e5001709430e161ee241b18daa87bf5adac09f18594b1d1cb28b68d2c30152",
+    "probe_runtime.py": "21cd09dc3834287b3e6fe41d5b9b2bd3b860551640440cbdf9605abf2f1a91e4"
+  },
+  "role_devices": {
+    "judge": {
+      "physical": 7,
+      "uuid": "GPU-b7ec9035-3ba3-464f-6c2f-7588a3e328c1"
+    },
+    "player": {
+      "physical": 2,
+      "uuid": "GPU-ac7e4165-630c-eafe-4ba5-2b2fc4a4e5d1"
+    }
+  },
+  "source_identity": {
+    "absolute_sleep": 12,
+    "adapter_state_sha256": "c01b385ba9ed28447351b2344efed83fd32513bb3cb0c22012c62d09b7e372f4",
+    "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+    "optimizer_steps": 576,
+    "sleep_complete_sha256": "64927d106eb5069d6a66fc9c61358966cf80a50b77924992d02a72c9221af2cf"
+  },
+  "status": "CPU_SOURCE_ELIGIBLE_DEVICES_FREE_AT_CHECK_NOT_RESERVED_NOT_LAUNCHED",
+  "unix": 1789783851.5443482
+}

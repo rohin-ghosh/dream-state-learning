@@ -1,0 +1,61 @@
+.............................................................................................................. [ 40%]
+................................................................. [ 64%]
+.........F......................................................... [ 89%]
+.............................                             [100%]
+=================================== FAILURES ===================================
+_____ test_all_scaffolding_rows_skip_training_without_fabricating_progress _____
+
+    def test_all_scaffolding_rows_skip_training_without_fabricating_progress():
+        child = object.__new__(native.NativeChild)
+        child.plan = dict(presentation_version=VERSION, system_prompt=native.SYSTEM, birth_prompt=native.BIRTH)
+        child.optimizer_steps = 123
+        child.adapter_hash = lambda: 'same_adapter'
+        child.engine = Mock()
+        records = []
+        with patch('gpu.orch_r108_guided_native.validate_anchor_inventory'):
+>           receipt = child.sleep([dict(target='source_sha256 fake', source_sha256='a'*64)], [],
+                dict(code=[], math=[], tools=[], short=[]), lambda kind, value: records.append((kind, value)))
+
+tests/test_orch_r125_plain_context.py:286: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <gpu.orch_r125_continual_native.NativeChild object at 0x7794c9e8efc0>
+new_rows = [{'target': 'source_sha256 fake', 'source_sha256': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}]
+old_rows = [], anchors = {'code': [], 'math': [], 'tools': [], 'short': []}
+record = <function test_all_scaffolding_rows_skip_training_without_fabricating_progress.<locals>.<lambda> at 0x7794ca828900>
+
+    def sleep(self, new_rows, old_rows, anchors, record):
+        loss_implementation = sleep_loss_implementation(self.plan)
+        retain_all = all_child_rows(self.plan)
+        code_target_policy = None
+        if not retain_all and 'code_target_filter' in self.plan:
+            from organism_v6.orch_r194_code_target_filter import (
+                CODE_FILTER_SUBREASON, filter_sleep_targets, validate_policy, zero_update_authorization,
+            )
+            code_target_policy = validate_policy(self.plan)
+        review_policy = None
+        if not retain_all and 'learn_review_filter' in self.plan:
+            from organism_v6.orch_r194_code_target_filter import (
+                REVIEW_FILTER_SUBREASON, filter_learn_review_targets,
+                review_zero_update_authorization, validate_review_policy,
+            )
+            review_policy = validate_review_policy(self.plan)
+        available_old_rows = len(old_rows)
+        old_rows = select_rehearsal_rows(self.plan, old_rows)
+        record('SLEEP_RECIPE', dict(policy='R181_NEW_ONLY_V1' if not self.plan.get('rehearsal_presentations', 1)
+>           else 'LEGACY_FULL_REHEARSAL', new_presentations=self.plan['new_presentations'],
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            new_rows=len(new_rows), available_old_rows=available_old_rows,
+            selected_old_rows=len(old_rows), anchor_lambda=0.25,
+            candidate_row_filter_policies=candidate_row_filter_policies(new_rows, old_rows),
+            **recipe_fields(self.plan),
+            **(dict(plasticity=self.plasticity) if self.plasticity is not None else {}),
+            **(dict(sleep_loss_impl=loss_implementation) if loss_implementation != MODEL_DEFAULT else {}),
+            **(dict(code_target_filter=code_target_policy) if code_target_policy is not None else {}),
+            **(dict(learn_review_filter=review_policy) if review_policy is not None else {})))
+E       KeyError: 'new_presentations'
+
+gpu/orch_r125_continual_native.py:522: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_orch_r125_plain_context.py::test_all_scaffolding_rows_skip_training_without_fabricating_progress
+1 failed, 270 passed, 349 subtests passed in 20.32s

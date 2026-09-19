@@ -1,0 +1,58 @@
+{
+  "adapter": null,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "family": "code",
+  "finished_unix": 1789461481.6358597,
+  "max_new_tokens": 512,
+  "messages": [
+    {
+      "content": "Return Manhattan distance from the origin using horizontal and vertical coordinates.\nArguments: horizontal, vertical.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+      "role": "user"
+    }
+  ],
+  "outcome": {
+    "category": "correct",
+    "completion": "complete",
+    "content_tokens": 12,
+    "generated_tokens": 13,
+    "machine": {
+      "arbitrary_execution": false,
+      "cases_passed": 4,
+      "cases_total": 4,
+      "category": "correct",
+      "passed": true
+    },
+    "verified_anchor": true
+  },
+  "position": 60,
+  "response": {
+    "messages": [
+      {
+        "content": "Return Manhattan distance from the origin using horizontal and vertical coordinates.\nArguments: horizontal, vertical.\nRespond with exactly one JSON object with a string field \"expression\". No Markdown, prose or function definition. Use only numeric arithmetic, comparisons, lists, indexing/slicing, one-generator list comprehensions, conditional expressions and calls sum,min,max,len,abs,range. No attributes, imports or arbitrary calls.",
+        "role": "user"
+      }
+    ],
+    "prompt_tokens": 108,
+    "raw": "{\"expression\": \"abs(horizontal) + abs(vertical)\"}",
+    "terminal": true,
+    "token_ids": [
+      4913,
+      28099,
+      788,
+      330,
+      3435,
+      58831,
+      8,
+      488,
+      3647,
+      80171,
+      8,
+      9207,
+      151645
+    ],
+    "truncated": false
+  },
+  "started_unix": 1789461481.3623238,
+  "status": "COMPLETE",
+  "task_id": "ANCHOR_TRAIN_R107_20260915_A1_CODE_15"
+}

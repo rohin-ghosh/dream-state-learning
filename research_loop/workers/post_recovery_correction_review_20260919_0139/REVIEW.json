@@ -1,0 +1,1023 @@
+{
+  "GPU_runs": 0,
+  "checkpoint_loads": 0,
+  "cutoff_utc": "2026-09-19T01:39:59Z",
+  "frozen_predecessor_evidence": {
+    "path": "evidence/frozen_PREDECESSOR.json",
+    "sha256": "1d139e80453a030d67392f6f992af3591c0f220d81884e8071bc66d6bb185a3c"
+  },
+  "git_commits": 0,
+  "independent_second_reviewer": false,
+  "level_definitions": {
+    "0": "No specific actual correction identified in this sampled feedback chain.",
+    "1": "Specific real correction identified with source-bound feedback exposure.",
+    "2": "Level1 plus next ACT implements correctly, with exact parent exposure verified.",
+    "3": "Level2 plus another relevant ACT implements, with a complete no-intervening-reminder proof."
+  },
+  "parent_messages_sent": 0,
+  "prior_P3_recovery_authorship_disclosed": true,
+  "process_changes": 0,
+  "reboot_utc": "2026-09-18T22:50:45Z",
+  "reference_checks": {
+    "C2_ACE_forbidden_pairs": [
+      [
+        "A",
+        "E"
+      ]
+    ],
+    "C2_largest_independent_size": 2,
+    "P7_strictly_greater_than_three": {
+      "2": false,
+      "3": false,
+      "4": true
+    },
+    "frozen_assigned": 10,
+    "frozen_independent_method": 10,
+    "frozen_old_expression": 19,
+    "learner_assigned": 19,
+    "learner_changed_expression": 7,
+    "learner_reverse": 17
+  },
+  "retention_effect_claim": false,
+  "reviewed_utc": "2026-09-19T01:49:20.506988+00:00",
+  "rows": [
+    {
+      "additional_model_correction": null,
+      "best_supported_level": 0,
+      "category": "EXPOSED_WRONG_OBJECT_AND_MATH_ERROR",
+      "evidence_path": "evidence/learner.json",
+      "evidence_sha256": "509f56c517599924b113466413563f89cdb590e16f7e611ac72eae77a05bcd0c",
+      "finding": "The assigned expression equals19; the substituted21-6-8 equals7, not8. ACT6348 says Error and correctly computes21-6=15, but still substitutes a different task, retains a nonnumeric symbol and supplies no requested reverse check. This does not identify the actual feedback correction.",
+      "flags": {
+        "another_relevant_ACT_implements": false,
+        "identification_exposed": false,
+        "identifies_actual_correction": false,
+        "intervening_context_complete": false,
+        "next_ACT_exact_exposure": true,
+        "next_ACT_implements": false,
+        "no_intervening_reminder": null
+      },
+      "intervening_parent_inputs": [
+        {
+          "event_key": "parent:inbox:f2e6653fee42463e82ef67f9b275f556:7763ab115114f2f6bbfbe31534818e9a5a4410c0b1fb00b357499be22a17f0f1",
+          "excerpt": "Astra: Your latest Act still contains a nonnumeric symbol and repeats a verification claim without checking arithmetic. Changing that symbol does not repair the calculation. Stay w",
+          "full_text_sha256": "c3e1166e4b1156e653b290de1469dc9f3bd8ecd94474de42ff2f87593c14db7f",
+          "request": {
+            "index": 6340,
+            "kind": "REQUEST",
+            "sha256": "b16f01df246c7ecac17c5109cea7bebad4d78135a80f9762b12e38f8c581548a"
+          }
+        },
+        {
+          "event_key": "parent:inbox:ef1319531b204597b4615a253d061d89:613335b20b25feb35a936b19b5cec90181bc5a0af0c4dfa01b2278dcdddc80ee",
+          "excerpt": "Astra: You noticed an error and wrote a correct subtraction, but it is not the assigned expression, and you did not check it. Your result claims also conflict. Stay with 17 + 8 - 6",
+          "full_text_sha256": "1278020fbcf59c12c25e480f4df7bb085613b58cf767b1507976a4f5c9ac039f",
+          "request": {
+            "index": 6419,
+            "kind": "REQUEST",
+            "sha256": "86efe86fe890ceaa02331842e90abaeb6a87ec27e8bf8f3a24ab3740e95f90dd"
+          }
+        },
+        {
+          "event_key": "parent:inbox:641e47cf4df4411993711c6048eb4e36:7d99be405f5393465bc0bec1037ff061bd5d1e1a6a5426803b07c1ad843eba0a",
+          "excerpt": "Astra: Your latest calculation changes the assigned expression, and both subtraction steps are incorrect. Describing operations is not a check. Stay with 17 + 8 - 6, but isolate it",
+          "full_text_sha256": "05bde190c6f8f4a787e1979b1ee6c45e627de07cabf96784204858e0ef7bee0c",
+          "request": {
+            "index": 6498,
+            "kind": "REQUEST",
+            "sha256": "4bde2f16a33c416d3669f5198bc3479113ab5fcce192b204c8f00f56a0eafe3a"
+          }
+        }
+      ],
+      "label": "learner",
+      "level3_status": "NOT_DEMONSTRATED_NO_PROMOTION",
+      "proofs": [
+        {
+          "committed": {
+            "index": 6428,
+            "kind": "COMMITTED",
+            "sha256": "5feeae18a516ffdfbbc9cdd1cc621c1baa6174b8d2b5cafe5896cd4c907b5375"
+          },
+          "masked": true,
+          "request": {
+            "index": 6426,
+            "kind": "REQUEST",
+            "sha256": "48430b8edf8047c8efc838e99396d1a6bcfdb3d5c88d023d4f0bb7add91dcc4c"
+          },
+          "request_utc": 1789781004.9732819,
+          "response": {
+            "index": 6427,
+            "kind": "RESPONSE",
+            "sha256": "c608e91e428b19798e112383a6fdbabe47f4e1267abed6a3e05b7093d698700b"
+          },
+          "response_utc": 1789781009.500085,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 6429,
+            "kind": "R184_STAGE",
+            "sha256": "38a411be7c64689d7fee2dd7742a00ee46ca362da007c4633eedd9ad2f6b9ce1"
+          },
+          "visible_publications": [
+            "ef1319531b204597b4615a253d061d89"
+          ]
+        },
+        {
+          "committed": {
+            "index": 6270,
+            "kind": "COMMITTED",
+            "sha256": "b77756396495138655e547c383095f7c4592eab7c910cb320d0c67d8822b6d68"
+          },
+          "masked": true,
+          "request": {
+            "index": 6268,
+            "kind": "REQUEST",
+            "sha256": "4c41bc1bf753306f3372576691ba5312a1576042f507761fc51367f0c53fa5bc"
+          },
+          "request_utc": 1789779903.3293197,
+          "response": {
+            "index": 6269,
+            "kind": "RESPONSE",
+            "sha256": "872ad869bd96802968876438810dcda8becfc744cc216392d880dea2049b3a51"
+          },
+          "response_utc": 1789779907.2858398,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 6271,
+            "kind": "R184_STAGE",
+            "sha256": "c32bb2e7d6096d036de770d499845be65a7a5912d966fbc5a3bdfe7f05f3db66"
+          },
+          "visible_publications": [
+            "a7e9f099211c4f5992a85f5911a3efd5"
+          ]
+        },
+        {
+          "committed": {
+            "index": 6349,
+            "kind": "COMMITTED",
+            "sha256": "4ba071a2523f609666d53903d14e11246a1366d9a958e06b599df89ffbe68979"
+          },
+          "masked": true,
+          "request": {
+            "index": 6347,
+            "kind": "REQUEST",
+            "sha256": "0bbe461e8159226332195c044b52529b59efc10c2f47085d542b56cead04803a"
+          },
+          "request_utc": 1789780448.3386352,
+          "response": {
+            "index": 6348,
+            "kind": "RESPONSE",
+            "sha256": "369b2c163252f07ed2f899f6d0a37463a911d2abc26fbca8e0ae1ff4029e19ca"
+          },
+          "response_utc": 1789780455.180562,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 6350,
+            "kind": "R184_STAGE",
+            "sha256": "72578cbbf2d5ba91883511af7fa8eb7fd7016bbc7c92fa739b705039f2af4609"
+          },
+          "visible_publications": [
+            "f2e6653fee42463e82ef67f9b275f556"
+          ]
+        }
+      ],
+      "quotes": [
+        {
+          "end": 173,
+          "full_text_sha256": "90d1fa053d4b60f04117cecf0bdc9b18d08821c25a862625b689b9e29e52ec38",
+          "reference": {
+            "publication_id": "ef1319531b204597b4615a253d061d89",
+            "source_sha256": "613335b20b25feb35a936b19b5cec90181bc5a0af0c4dfa01b2278dcdddc80ee"
+          },
+          "span_sha256": "8e6dd15ec2412c6be164ae449395691de8555532b2543c2c0aeb45de18b21308",
+          "start": 153,
+          "text": "Stay with 17 + 8 - 6"
+        },
+        {
+          "end": 83,
+          "full_text_sha256": "10736260763eeeb091960cc16b18cf7d289384820486dc12fab492f03127136d",
+          "reference": {
+            "index": 6427,
+            "kind": "RESPONSE",
+            "sha256": "c608e91e428b19798e112383a6fdbabe47f4e1267abed6a3e05b7093d698700b"
+          },
+          "span_sha256": "00763fa325634c9d9391accf8e03341ed8e4dba39b91d9caa7822b1afda13631",
+          "start": 60,
+          "text": "21 - ６ - 8 = 17 - 8 = 8"
+        }
+      ],
+      "semantic_review": "MANUAL_SOURCE_BOUND_NOT_PARENT_SELF_REPORT",
+      "source_epoch": {
+        "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+        "guard_sha256": "282ad372328b6244f0cc82b4cfbd39de0fcdd2b7a748c681449f937cbfadd632",
+        "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+        "loaded_index": 2466,
+        "loaded_sha256": "b22420fde3c8ce6435f4c73d9ff5c34b5b33cae5f87ce72d809f797d78a0681c",
+        "observed_boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+        "observed_source_manifest_sha256": "049c6ed92a9bbcb69cec8cf4c0b1d888b635f30a9135b752b77b4441712b4bb4",
+        "owner_receipt_sha256": "7d84fccc094d675a42c598e5b35e773fc2ca39388bbf24b2d618abd2b2575c3d",
+        "pid": 493500,
+        "root": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/raw",
+        "source": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/extension_oct01_preview_20260918T1742Z/source",
+        "source_manifest_sha256": "049c6ed92a9bbcb69cec8cf4c0b1d888b635f30a9135b752b77b4441712b4bb4",
+        "start_ticks": "10070880",
+        "until_unix": 1790791170,
+        "wrapper": "ovx4_ssh.sh"
+      },
+      "source_epoch_sha256": "4ff6c68dcee57ec8c9532828622e09aa9bdda2a209dc0e3a7b98c09d4b768f8d",
+      "unknowns": "No isolated reminder-free transfer trial; repeated arithmetic reminders enter at REQUEST6340 and6419. No causal claim about why the answer fails.",
+      "window": {
+        "bytes_read": 175637928,
+        "cutoff_unix": 1789781999.0,
+        "first": 6259,
+        "reviewed_ACTs": 4,
+        "through": 6533
+      }
+    },
+    {
+      "additional_model_correction": null,
+      "best_supported_level": 1,
+      "category": "RECOGNIZES_IN_THINK_CORRECTION_ABSENT_AT_ACT",
+      "evidence_path": "evidence/frozen.json",
+      "evidence_sha256": "fd69f9c19b3c812e0b3ca891e8eec348f8b478e9023b26e288b5332cb21ad2ce",
+      "finding": "THINK3630 accurately identifies the preceding missing calculation/check (predecessor ACT3606 independently re-read). The exact correction is visible in THINK REQUEST3629 but absent from the following ACT REQUEST3638. ACT3639 solves the older expression19 instead of the assigned10 and repeats the same operations as its check. Later ACT3672 does obtain10, but its independent check is unfinished; ACT3705 contains metadata, not the requested calculation/check. Recognition earns1, not a complete next-ACT repair.",
+      "flags": {
+        "another_relevant_ACT_implements": false,
+        "identification_exposed": true,
+        "identifies_actual_correction": true,
+        "intervening_context_complete": false,
+        "next_ACT_exact_exposure": false,
+        "next_ACT_implements": false,
+        "no_intervening_reminder": null
+      },
+      "intervening_parent_inputs": [
+        {
+          "event_key": "parent:inbox:903b89c7be6b42fe99df0ab627bfe1e9:5611d7514fef1296564713b9efdfb8622a465dde317a14f27d7d165df75a4b09",
+          "excerpt": "Astra: You produced correct arithmetic for the older expression, but did not answer the current task. Your verification also repeats the same operations rather than checking indepe",
+          "full_text_sha256": "6a35237e8479e27b27590dd078bb112fd68ff0a2822f300d0b01e5ee9c968330",
+          "request": {
+            "index": 3662,
+            "kind": "REQUEST",
+            "sha256": "8f050c9cc28e5e39cf36c81e4f0a97b08b6338a1e80bcaf5ecb27a2d98dbefb0"
+          }
+        },
+        {
+          "event_key": "parent:inbox:564dc217a7454fa3bde38616687742aa:1b28a186278575e525c150823ba40e2fa3dd0121e56f9708be61137471e8c12c",
+          "excerpt": "Astra: You correctly evaluated the current expression and showed the arithmetic. Your verification stops at a description, though, so the independent check is still missing. Stay w",
+          "full_text_sha256": "f093c1080eeb3a1ee2d591fafe5a0306bf18ac788f82de1fc5b1c97626962e48",
+          "request": {
+            "index": 3695,
+            "kind": "REQUEST",
+            "sha256": "dabafe63932e459691ca67af0bb57cf9c1d89243dd3f2260a07e63c87e793795"
+          }
+        },
+        {
+          "event_key": "parent:inbox:b1f1dbc20f3a49ad9483fe5fd564a047:09a0ff7ea4855655957e6e040d02cc7c390b10f137b5de85f13293a1454a5f4e",
+          "excerpt": "Astra: Your latest Act contains only metadata, with no calculation, check, or question. I cannot count it as a checked result. Put the arithmetic first: evaluate 17 + 8 - (7 + 3 + ",
+          "full_text_sha256": "07227dbfcaa1af02e66de0cf64bab6eca8a34feafe721e23148b21ded87d17e1",
+          "request": {
+            "index": 3728,
+            "kind": "REQUEST",
+            "sha256": "8c76b07d90e52d2c74fde220e6d43fd0b6d1f230de28d7e818a470640692a589"
+          }
+        }
+      ],
+      "label": "frozen",
+      "level3_status": "NOT_DEMONSTRATED_NO_PROMOTION",
+      "proofs": [
+        {
+          "committed": {
+            "index": 3640,
+            "kind": "COMMITTED",
+            "sha256": "92253af684c27a4bf96fb8de3628e6fd0406288f10b89a03029263014d2c125b"
+          },
+          "masked": true,
+          "request": {
+            "index": 3638,
+            "kind": "REQUEST",
+            "sha256": "c9082b1f32fc233ead6348e93d95364929b57523a1721c831adf5d39bb5a5f57"
+          },
+          "request_utc": 1789779947.301504,
+          "response": {
+            "index": 3639,
+            "kind": "RESPONSE",
+            "sha256": "160148ed4944d781d955110e55e8646847b90b44047201d3c2854ba6924620c0"
+          },
+          "response_utc": 1789779974.258391,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 3641,
+            "kind": "R184_STAGE",
+            "sha256": "ebfebe18a6fd199182de2b59fafd798ed1af0df3f8e85a61f188d353a17ca4db"
+          },
+          "visible_publications": []
+        },
+        {
+          "committed": {
+            "index": 3631,
+            "kind": "COMMITTED",
+            "sha256": "d420d059212381c6c29437b6799f5bd022cb03c42f08e4c33cf6936cf203ef97"
+          },
+          "masked": true,
+          "request": {
+            "index": 3629,
+            "kind": "REQUEST",
+            "sha256": "270fbbd06de0b3dd557de81b989e8e623c5ae826d64b71710dceed77fb94af08"
+          },
+          "request_utc": 1789779824.0953226,
+          "response": {
+            "index": 3630,
+            "kind": "RESPONSE",
+            "sha256": "4c1aa5fb50e8ebd43b582e5abe3086e2771ad5d129f6b0c6b0b42111e2af9ad8"
+          },
+          "response_utc": 1789779849.9610384,
+          "stage": "THINK",
+          "stage_receipt": {
+            "index": 3632,
+            "kind": "R184_STAGE",
+            "sha256": "97279db6bcdf3d2d5e4c90472d4b308be5c642645aed9256ec7f8a233e277c7a"
+          },
+          "visible_publications": [
+            "eabd8d4ebb3843dc9c911614f707fe6d"
+          ]
+        },
+        {
+          "committed": {
+            "index": 3673,
+            "kind": "COMMITTED",
+            "sha256": "eaafc87e0e8e0bf23f3571f764ad99a901647720ccad6957a9147859b8ae0dd8"
+          },
+          "masked": true,
+          "request": {
+            "index": 3671,
+            "kind": "REQUEST",
+            "sha256": "e5e08c7df04fa9f1c03345a79e16b0c4414a78bc46be98cca96dc965225d0ce7"
+          },
+          "request_utc": 1789780507.5798736,
+          "response": {
+            "index": 3672,
+            "kind": "RESPONSE",
+            "sha256": "da7684d430a5817dbd2251496ad47bdbe68ad6a8c57de6588799cbe51ed31671"
+          },
+          "response_utc": 1789780533.9266381,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 3674,
+            "kind": "R184_STAGE",
+            "sha256": "0327886b66e3a5b5e0f56758d2aedb495b5b79cc3d20d8bb1ef08d7a015a6659"
+          },
+          "visible_publications": []
+        },
+        {
+          "committed": {
+            "index": 3706,
+            "kind": "COMMITTED",
+            "sha256": "d0bba7ff9a898054d76bdffd3f798dc0c02c1579ab05aa17b0beaf3b9f6cabda"
+          },
+          "masked": true,
+          "request": {
+            "index": 3704,
+            "kind": "REQUEST",
+            "sha256": "e67fee1e9f931e68c087148b705264f7623af7e924a5cc2c125232ad519f7c4c"
+          },
+          "request_utc": 1789781073.3282511,
+          "response": {
+            "index": 3705,
+            "kind": "RESPONSE",
+            "sha256": "549a773670c4f07598fa346116295cbd0ebda6573fbdc5c7bd36f2f1f0a157b1"
+          },
+          "response_utc": 1789781100.1062164,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 3707,
+            "kind": "R184_STAGE",
+            "sha256": "b856db15eaba0aa525a59220ec51424368dd50452c3d2989e519e8ded7688859"
+          },
+          "visible_publications": []
+        }
+      ],
+      "quotes": [
+        {
+          "end": 230,
+          "full_text_sha256": "c60ff87379c25436e9e1816f2e88a184117f5ab912364956f12718592bb31d8d",
+          "reference": {
+            "publication_id": "eabd8d4ebb3843dc9c911614f707fe6d",
+            "source_sha256": "5217836902264b783801f8429ef85d21c572187d9d03c05c1304fa39ad01db13"
+          },
+          "span_sha256": "59d9934e53c91ddd4fd318b8511034698d89b75724540b8e6f108ab7800709e6",
+          "start": 200,
+          "text": "Stay with 17 + 8 - (7 + 3 + 5)"
+        },
+        {
+          "end": 1173,
+          "full_text_sha256": "dd6fd126181045b53460a957b0241ffef9433931dac6e1bef95ad055c4ae25ca",
+          "reference": {
+            "index": 3639,
+            "kind": "RESPONSE",
+            "sha256": "160148ed4944d781d955110e55e8646847b90b44047201d3c2854ba6924620c0"
+          },
+          "span_sha256": "cd5ca08b63d50604307c59ac7b92dfad523e01405ccd2839b91f43e55ab497c8",
+          "start": 1149,
+          "text": "17 + 8 - 6 = 25 - 6 = 19"
+        },
+        {
+          "end": 643,
+          "full_text_sha256": "518d3d332a276d9ec3acaf24f8d41c855c360fea2d5f3f56fe4e14b510833789",
+          "reference": {
+            "index": 3630,
+            "kind": "RESPONSE",
+            "sha256": "4c1aa5fb50e8ebd43b582e5abe3086e2771ad5d129f6b0c6b0b42111e2af9ad8"
+          },
+          "span_sha256": "57ca9ed0602c161bee7632ffd07f888dfdefc9343cb8389c33a3364220e1a7fa",
+          "start": 586,
+          "text": "My last attempt did not produce a calculation or a check."
+        }
+      ],
+      "semantic_review": "MANUAL_SOURCE_BOUND_NOT_PARENT_SELF_REPORT",
+      "source_epoch": {
+        "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+        "guard_sha256": "197463ab56dab2b04a88797c28dffd854a56bd1a8756cdfa611f0995690d7a0b",
+        "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+        "loaded_index": 1763,
+        "loaded_sha256": "177a785eef0f2126823e31f54aa07e50c1b0dd93f73cc680029c765197ab963c",
+        "observed_boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+        "observed_source_manifest_sha256": "049c6ed92a9bbcb69cec8cf4c0b1d888b635f30a9135b752b77b4441712b4bb4",
+        "owner_receipt_sha256": "7d84fccc094d675a42c598e5b35e773fc2ca39388bbf24b2d618abd2b2575c3d",
+        "pid": 471737,
+        "root": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/raw",
+        "source": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/extension_oct01_preview_20260918T1742Z/source",
+        "source_manifest_sha256": "049c6ed92a9bbcb69cec8cf4c0b1d888b635f30a9135b752b77b4441712b4bb4",
+        "start_ticks": "9987073",
+        "until_unix": 1790791170,
+        "wrapper": "ovx4_ssh.sh"
+      },
+      "source_epoch_sha256": "8f6b6368e26b96427809f79420aa5246d2f331dcac3cf12ddde74ed2ff57f91c",
+      "unknowns": "No ACT with the selected exact parent correction visible; no complete independent check or reminder-free transfer. This absence is not by itself a causal proof that compaction caused the failure.",
+      "window": {
+        "bytes_read": 409630816,
+        "cutoff_unix": 1789781999.0,
+        "first": 3619,
+        "reviewed_ACTs": 4,
+        "through": 3783
+      }
+    },
+    {
+      "additional_model_correction": {
+        "THINK_exact_exposure": true,
+        "first_sampled_THINK": {
+          "index": 12797,
+          "kind": "REQUEST",
+          "sha256": "98dd2177d97e7a68b0296436b706e48aef0204c4b900182fb47e5981f7987df7"
+        },
+        "initial_gap_turn_is_model_generated": false,
+        "next_ACT_exact_exposure": false,
+        "next_ACT_request": {
+          "index": 12813,
+          "kind": "REQUEST",
+          "sha256": "58259aeb1a4f793cb8e71d30615c96ab7cc5ede3e3b5bb6f6b59aa5b76384660"
+        },
+        "next_ACT_response": {
+          "index": 12815,
+          "kind": "RESPONSE",
+          "sha256": "13809d07229986049cc4165b15feed8dd82596c92c6acb93da07624271eff6e7"
+        },
+        "publication_id": "fe9f5646adb047b9912bdfa1a53ac7aa",
+        "publication_sha256": "174623b74e724994089b1697dd6ab4cae971a3e1d4c704e1122f4fbe17d7736e"
+      },
+      "best_supported_level": 0,
+      "category": "EXPOSED_GRAPH_ERROR_THEN_UNSUPPORTED_ASSURANCE_WITH_LOST_CORRECTION",
+      "evidence_path": "evidence/C2.json",
+      "evidence_sha256": "a31ea69dac9c419f520bbd70c938b1dcc442c1e5a77d33eb34309e5df956656b",
+      "finding": "The exposed graph task is answered incorrectly: EA is an edge, so {A,C,E} is not independent; the five-cycle maximum is2. The later actual model corrections request concrete pair/adjacency checks. They are visible in LEARN12717 or THINK12798/12805, but not in the next ACT REQUEST12813. ACT12815 merely prints a confidence statement. Generic claims of incorporating corrections do not identify a graph error.",
+      "flags": {
+        "another_relevant_ACT_implements": false,
+        "identification_exposed": false,
+        "identifies_actual_correction": false,
+        "intervening_context_complete": false,
+        "next_ACT_exact_exposure": true,
+        "next_ACT_implements": false,
+        "no_intervening_reminder": null
+      },
+      "intervening_parent_inputs": [],
+      "label": "C2",
+      "level3_status": "NOT_DEMONSTRATED_NO_PROMOTION",
+      "proofs": [
+        {
+          "committed": {
+            "index": 12600,
+            "kind": "COMMITTED",
+            "sha256": "bc6caa568d93c3b58f0612d26eb7ff587a95c17169c95bc12a18ebca6f2736f7"
+          },
+          "masked": true,
+          "request": {
+            "index": 12598,
+            "kind": "REQUEST",
+            "sha256": "85f7490758f21c342de653e58186f11efb72a09361a8306d2d861fce11ab055f"
+          },
+          "request_utc": 1789778873.993027,
+          "response": {
+            "index": 12599,
+            "kind": "RESPONSE",
+            "sha256": "30a4bd9f0ac94ad1607261c15d1e15c9f4776b1d5a33d77ad43958ecc1fefcd3"
+          },
+          "response_utc": 1789778906.8436909,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 12601,
+            "kind": "R184_STAGE",
+            "sha256": "f94436092b7396106735867ad79943960072d3efdbb27da895c6a1c975b3937a"
+          },
+          "visible_publications": [
+            "a09f98c398a24674b28a6ef94ae743e3"
+          ]
+        },
+        {
+          "committed": {
+            "index": 12718,
+            "kind": "COMMITTED",
+            "sha256": "d3e11238e4b41288be2d8813a1a68e9ebd617e0beb0233394885a1563e7a3c02"
+          },
+          "masked": true,
+          "request": {
+            "index": 12716,
+            "kind": "REQUEST",
+            "sha256": "5be185f08b3ce7f10597ea2be2c535c6898980648fe55b7150a5c0e4e42ee745"
+          },
+          "request_utc": 1789780521.0954363,
+          "response": {
+            "index": 12717,
+            "kind": "RESPONSE",
+            "sha256": "5560cceb5ca32a3501986cd43541587bee75ae1f37ab522601a8cbec033c98f4"
+          },
+          "response_utc": 1789780530.7171187,
+          "stage": "LEARN",
+          "stage_receipt": {
+            "index": 12719,
+            "kind": "R184_STAGE",
+            "sha256": "af127c6cbf41096afb4533164136cfc20a9344f9e3df7d9a0e6183e2da03f91a"
+          },
+          "visible_publications": [
+            "f79671bdb6214673b7e33c5ccb4615c4"
+          ]
+        },
+        {
+          "committed": {
+            "index": 12799,
+            "kind": "COMMITTED",
+            "sha256": "6a0fc8dc0a4c0e854bed82c0654e60c9fe72e806b7c462de7d64bcf82a827248"
+          },
+          "masked": true,
+          "request": {
+            "index": 12797,
+            "kind": "REQUEST",
+            "sha256": "98dd2177d97e7a68b0296436b706e48aef0204c4b900182fb47e5981f7987df7"
+          },
+          "request_utc": 1789781552.07085,
+          "response": {
+            "index": 12798,
+            "kind": "RESPONSE",
+            "sha256": "c6cb06b25090216debb2aba4bae8c463fe3ee2c169c697b4b0f047109dfb0a6c"
+          },
+          "response_utc": 1789781572.0610344,
+          "stage": "THINK",
+          "stage_receipt": {
+            "index": 12800,
+            "kind": "R184_STAGE",
+            "sha256": "1d1fcfbe793cd54962d64540d79a29b4beda5b2415db59a70e126e3e77f3abb4"
+          },
+          "visible_publications": [
+            "320a74f218584f6cb8b3190a01e373dd",
+            "fe9f5646adb047b9912bdfa1a53ac7aa"
+          ]
+        },
+        {
+          "committed": {
+            "index": 12816,
+            "kind": "COMMITTED",
+            "sha256": "3bc53a18817fedce7718ccf2e760d46459b3090ad41dc8210a9c06476277d4cc"
+          },
+          "masked": true,
+          "request": {
+            "index": 12813,
+            "kind": "REQUEST",
+            "sha256": "58259aeb1a4f793cb8e71d30615c96ab7cc5ede3e3b5bb6f6b59aa5b76384660"
+          },
+          "request_utc": 1789781831.1489687,
+          "response": {
+            "index": 12815,
+            "kind": "RESPONSE",
+            "sha256": "13809d07229986049cc4165b15feed8dd82596c92c6acb93da07624271eff6e7"
+          },
+          "response_utc": 1789781843.9545424,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 12817,
+            "kind": "R184_STAGE",
+            "sha256": "fcc3ae4b0b7e02289264a4e55d60e4e66fd37ff49125aea4aae829715e936b29"
+          },
+          "visible_publications": []
+        }
+      ],
+      "quotes": [
+        {
+          "end": 276,
+          "full_text_sha256": "4351ed5c6c40f20f2e74be8bfedfd115a0f4e6193829ec3d39ec0005bebabd09",
+          "reference": {
+            "publication_id": "a09f98c398a24674b28a6ef94ae743e3",
+            "source_sha256": "3ae648756bb6505695027fb1664f2b3683516ee2038d5dd11a1816ab04b73dd5"
+          },
+          "span_sha256": "b506d217bce385c12b9ad1235a91944b4ac0b38920eb20fee1fd45330e17d33d",
+          "start": 253,
+          "text": "is {A,C,E} independent?"
+        },
+        {
+          "end": 600,
+          "full_text_sha256": "2c7c2d2e37e698e4ec2e5b7d46088c35ca9d5c08a376f925e8c071afcb2a0d1c",
+          "reference": {
+            "index": 12599,
+            "kind": "RESPONSE",
+            "sha256": "30a4bd9f0ac94ad1607261c15d1e15c9f4776b1d5a33d77ad43958ecc1fefcd3"
+          },
+          "span_sha256": "720d272ff5158269503e2e38cb35618da2ed610d6a3fc868d4e951b544b72c2c",
+          "start": 540,
+          "text": "The largest independent set includes the vertices {A, C, E}."
+        },
+        {
+          "end": 393,
+          "full_text_sha256": "17f870bd2bf2affe921ea1445a69f3fcdc493e72eccb67bc47c1ad04437e8e18",
+          "reference": {
+            "publication_id": "fe9f5646adb047b9912bdfa1a53ac7aa",
+            "source_sha256": "174623b74e724994089b1697dd6ab4cae971a3e1d4c704e1122f4fbe17d7736e"
+          },
+          "span_sha256": "03563b57be0c7d9232b450580ed985329dc34d0bd52512328c74e9b087ede0ab",
+          "start": 334,
+          "text": "write which vertices are directly connected to each vertex."
+        },
+        {
+          "end": 81,
+          "full_text_sha256": "9dfc59c1c15684da6c5439143b424322ed9862e2bad05be4676f22fd75998f20",
+          "reference": {
+            "index": 12815,
+            "kind": "RESPONSE",
+            "sha256": "13809d07229986049cc4165b15feed8dd82596c92c6acb93da07624271eff6e7"
+          },
+          "span_sha256": "631a326650977b73aebd9441bebd18b16a5d9e85ee849bf57cab17474f133db4",
+          "start": 18,
+          "text": "The value shows consistency and satisfaction of the conditions."
+        }
+      ],
+      "semantic_review": "MANUAL_SOURCE_BOUND_NOT_PARENT_SELF_REPORT",
+      "source_epoch": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "guard_sha256": "29d1aa615820332deaa826bd8505209ef89c9fed5aea0f6fe98e7690d0867ffb",
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "loaded_index": 11505,
+        "loaded_sha256": "8c8e60799e1699e037b3bdb01adb4ee1da97ecaec5e82ff4ab7a09d7e4ac462f",
+        "observed_boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "observed_source_manifest_sha256": "4d2fc856b09a282c87a49485d31fa5f7acefcc2ca12191b5f30908d10ae1d196",
+        "owner_receipt_sha256": "a7dc874936befcf29258597c8423dea2cd3be929d56bc00bb27f8c0d4220a757",
+        "pid": 1139778,
+        "root": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life",
+        "source": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/source",
+        "source_manifest_sha256": "4d2fc856b09a282c87a49485d31fa5f7acefcc2ca12191b5f30908d10ae1d196",
+        "start_ticks": "30025875",
+        "until_unix": 1789927200,
+        "wrapper": "ovx3_ssh.sh"
+      },
+      "source_epoch_sha256": "da33de6e018dd2f7a583f5f5b037aacd5cb1670e5edd1715ee0163da1f447424",
+      "unknowns": "Later model-correction ACT exposure is absent, not proven ignored under exposure. The512MiB read limit stops this window at12818; external-context projection is capped, so absence of intervening reminders cannot be certified.",
+      "window": {
+        "bytes_read": 526023134,
+        "cutoff_unix": 1789781999.0,
+        "first": 12589,
+        "reviewed_ACTs": 3,
+        "through": 12818
+      }
+    },
+    {
+      "additional_model_correction": null,
+      "best_supported_level": 0,
+      "category": "EXPOSED_NO_SUBSTANTIVE_CAPTION_PERSISTENT_WAITING_LOOP",
+      "evidence_path": "evidence/P3.json",
+      "evidence_sha256": "d3e8446a9ac6560b6bbb21c1b0e5df878302f1831856888f813acaa2d0e9320c",
+      "finding": "The actual fresh model correction asks for an adult's spoken caption for the crib/mobile scene, rather than waiting for judges. Its literal attributed text is present in ACT REQUEST6932. ACT6933 repeatedly promises to follow decisions/record feedback and supplies no caption. This is nonproduction despite exposure, not a humor-quality failure; no sealed score was consulted.",
+      "flags": {
+        "another_relevant_ACT_implements": false,
+        "identification_exposed": false,
+        "identifies_actual_correction": false,
+        "intervening_context_complete": false,
+        "next_ACT_exact_exposure": true,
+        "next_ACT_implements": false,
+        "no_intervening_reminder": null
+      },
+      "intervening_parent_inputs": [
+        {
+          "event_key": "parent:inbox:0e2ffa3c8fa54413b454119b1b5e648b:6968e308a578f9b827cfc5661ee195292f47568431a9f3cdfc556150ab7971f0",
+          "excerpt": "Astra: Astra: We're continuing after the interruption. Your preserved response repeats “We will follow the previous decisions” without a caption. The shown Tool receipt for respons",
+          "full_text_sha256": "cb48e495d8a4d0eedb65b01f9a1560cdc82c02c2bbbcd195b2e44be13a52a61e",
+          "request": {
+            "index": 6925,
+            "kind": "REQUEST",
+            "sha256": "386d7808e0055c5f5386f32b8106dec59b0df22018024e24106f2da46af98d01"
+          }
+        }
+      ],
+      "label": "P3",
+      "level3_status": "NOT_DEMONSTRATED_NO_PROMOTION",
+      "proofs": [
+        {
+          "committed": {
+            "index": 6934,
+            "kind": "COMMITTED",
+            "sha256": "38002111f042f80dbc583b8f6ae76327ec90f52cfa115953329ef50f375e43bd"
+          },
+          "masked": true,
+          "request": {
+            "index": 6932,
+            "kind": "REQUEST",
+            "sha256": "6d93ca5dea9ee3d286a635e057871e48cf717d404464cbef7883a479ac06dd42"
+          },
+          "request_utc": 1789781206.8434496,
+          "response": {
+            "index": 6933,
+            "kind": "RESPONSE",
+            "sha256": "27bfb0a8e6d6a7a7cbf301f5c715b70864eb57a35ff9ee29cf6f94e7f2707361"
+          },
+          "response_utc": 1789781243.892878,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 6935,
+            "kind": "R184_STAGE",
+            "sha256": "99c58478b39ca383f74ea0646eeb988f838cec2fe2a1f7c941ee59b5f48724ef"
+          },
+          "visible_publications": [
+            "0e2ffa3c8fa54413b454119b1b5e648b"
+          ]
+        },
+        {
+          "committed": {
+            "index": 6927,
+            "kind": "COMMITTED",
+            "sha256": "c39bf182e1e13ce2dc063ebd5121f36bce36330ba74538b4ef0e60a21d51d117"
+          },
+          "masked": true,
+          "request": {
+            "index": 6925,
+            "kind": "REQUEST",
+            "sha256": "386d7808e0055c5f5386f32b8106dec59b0df22018024e24106f2da46af98d01"
+          },
+          "request_utc": 1789781150.3737955,
+          "response": {
+            "index": 6926,
+            "kind": "RESPONSE",
+            "sha256": "5e3fe44467deb61d43765fd477ca0c896749f5d9e343b6b3e3bc718259c1e7f3"
+          },
+          "response_utc": 1789781185.531798,
+          "stage": "THINK",
+          "stage_receipt": {
+            "index": 6928,
+            "kind": "R184_STAGE",
+            "sha256": "f2a488bd0b04c93ac53abf46ed0a8fc18d58bf716e46d079cc2d775bf71f4838"
+          },
+          "visible_publications": [
+            "0e2ffa3c8fa54413b454119b1b5e648b"
+          ]
+        }
+      ],
+      "quotes": [
+        {
+          "end": 579,
+          "full_text_sha256": "0d46d52b7226a55f8cfb5c7b36574ada48311df0547c9dd7df5ca7590dae00b6",
+          "reference": {
+            "publication_id": "0e2ffa3c8fa54413b454119b1b5e648b",
+            "source_sha256": "6968e308a578f9b827cfc5661ee195292f47568431a9f3cdfc556150ab7971f0"
+          },
+          "span_sha256": "e5ac4434f8015bf09e5427abce97860a18903035134a4e8f77151102aaac289b",
+          "start": 529,
+          "text": "Where is the caption? Write it now, not a promise."
+        },
+        {
+          "end": 99,
+          "full_text_sha256": "4f0cf8cdc4058accb3af0961d9e800a8cffee4169ef8b064127c979dafbd8ee5",
+          "reference": {
+            "index": 6933,
+            "kind": "RESPONSE",
+            "sha256": "27bfb0a8e6d6a7a7cbf301f5c715b70864eb57a35ff9ee29cf6f94e7f2707361"
+          },
+          "span_sha256": "05fe21ec18076dc52857d90f1c1a72e49fe6fba9cf038bb25362ef8a06b7ada7",
+          "start": 3,
+          "text": "Despite the previous challenges, we will follow the decided upon criteria and record the judges’"
+        }
+      ],
+      "semantic_review": "MANUAL_SOURCE_BOUND_NOT_PARENT_SELF_REPORT",
+      "source_epoch": {
+        "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+        "guard_sha256": "df9769ae317f249fe8ff9f93c62457eb23c659d7e7e707dc67cf3a2d78f75ece",
+        "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+        "loaded_index": 5317,
+        "loaded_sha256": "f397616c711988f5e469920e3b76db5c01113452f35c2c3b42fdd603912256cc",
+        "observed_boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+        "observed_source_manifest_sha256": "3fc98c6cfff9ae911b3d19fff1104845a98896d01b4bd070ad1d48ae0285c0b7",
+        "owner_receipt_sha256": "65381709f4748b5ac7a4a6fd9463cfaae337d48567081ee9889c4af2614bea2c",
+        "pid": 699464,
+        "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life",
+        "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/r233_lease_continuation_retry1/source",
+        "source_manifest_sha256": "3fc98c6cfff9ae911b3d19fff1104845a98896d01b4bd070ad1d48ae0285c0b7",
+        "start_ticks": "33078516",
+        "until_unix": 1790359200,
+        "wrapper": "a40r_ssh.sh"
+      },
+      "source_epoch_sha256": "be37a7ca216d2008569bfd422cfdb3a0537852fd76285379cd2a55876c105a2e",
+      "unknowns": "Only one eligible post-correction ACT in this pre-cutoff window. Later publication377 delivery is outside this baseline judgment; no second relevant unreminded attempt or humor-quality judgment is established.",
+      "window": {
+        "bytes_read": 410795306,
+        "cutoff_unix": 1789781999.0,
+        "first": 6853,
+        "reviewed_ACTs": 1,
+        "through": 7017
+      }
+    },
+    {
+      "additional_model_correction": null,
+      "best_supported_level": 0,
+      "category": "EXPOSED_NO_SUBSTANTIVE_PARENTING_ARTIFACT",
+      "evidence_path": "evidence/P7.json",
+      "evidence_sha256": "b8d29d0aaf08e5ee02b69a7e21da16437ddde9ae6b21d22095377ee3e76c2840",
+      "finding": "The exact model correction asks P7 to write an actual parenting prompt using the >3 rule and2,3,4; it is visible in ACT REQUEST9772. ACT9773 supplies only a generic pattern/testing intention, with no rule, cases, or question to its child. Other sampled exposed ACTs9690/9804 likewise do not provide the requested concrete question/table. Language alone is not the failure criterion.",
+      "flags": {
+        "another_relevant_ACT_implements": false,
+        "identification_exposed": false,
+        "identifies_actual_correction": false,
+        "intervening_context_complete": false,
+        "next_ACT_exact_exposure": true,
+        "next_ACT_implements": false,
+        "no_intervening_reminder": null
+      },
+      "intervening_parent_inputs": [
+        {
+          "event_key": "parent:inbox:f0408fdf208d454ab4fa71e35133dcf4:5b3f2c8755ff6e28ad8b4bd3be5f458b174fa63c3d8d08b7631be3aa5329dd2f",
+          "excerpt": "Astra: P7, “QuirksAndEdgeCasesShouldBeTestedSeparately” states a testing rule without showing a case. Make it concrete with a small math task: write an English parenting prompt def",
+          "full_text_sha256": "ba40e4caf1b5a0f282ea7fd0c96e11d1f309b7c437b9bb9e3988ac261090d14d",
+          "request": {
+            "index": 9765,
+            "kind": "REQUEST",
+            "sha256": "a8cdb346566e95479460c18e976152ba2e73199f24c8653d1345b592ac9aec86"
+          }
+        },
+        {
+          "event_key": "parent:inbox:2c7d1a5b2963454198b39d5187dd5a81:6901a36cc9b87aee1000e97980fa18c7b70b4569e7f5fc27ac106003d003f78e",
+          "excerpt": "Astra: P7, “DataVisualizations” introduces a new topic, but the sentence supplies no data or displayed pattern. Turn that gap into a concrete parenting artifact: write a short Engl",
+          "full_text_sha256": "6e6db5fdf7195c411e0aa054acc702c204dd59781aa40fbf0219e1ce5cb087ea",
+          "request": {
+            "index": 9796,
+            "kind": "REQUEST",
+            "sha256": "362fa264099e366cdd714d8f2c3a10489be9c4963d1cc4b6c902ec46193478c9"
+          }
+        }
+      ],
+      "label": "P7",
+      "level3_status": "NOT_DEMONSTRATED_NO_PROMOTION",
+      "proofs": [
+        {
+          "committed": {
+            "index": 9774,
+            "kind": "COMMITTED",
+            "sha256": "720239aa54acef669655211cd8a335a504afff1d90ae32ac5252485a91f1da5c"
+          },
+          "masked": true,
+          "request": {
+            "index": 9772,
+            "kind": "REQUEST",
+            "sha256": "602b3bc381e01f1e4bfd78769cbd203a35a96b6b029d2b05e331fdbb2f4199ff"
+          },
+          "request_utc": 1789780965.9115932,
+          "response": {
+            "index": 9773,
+            "kind": "RESPONSE",
+            "sha256": "36808e3893ac25e0feb911b74c8237e251ff9506a9d3ce78f186a7d59445332c"
+          },
+          "response_utc": 1789780968.6382833,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 9775,
+            "kind": "R184_STAGE",
+            "sha256": "34e7866546a10c5b6ee65e40f321f3ded50a5499e4c0d3581ea1efe2c26737a6"
+          },
+          "visible_publications": [
+            "f0408fdf208d454ab4fa71e35133dcf4"
+          ]
+        },
+        {
+          "committed": {
+            "index": 9691,
+            "kind": "COMMITTED",
+            "sha256": "c10b1bd5970402c47a0a6cdc97bdb685f8d29bea1d453441de2a4b169085d39f"
+          },
+          "masked": true,
+          "request": {
+            "index": 9689,
+            "kind": "REQUEST",
+            "sha256": "4a856114108885d15c2a3311efce1387a04dfa1d77cc766312c385bb3b491b87"
+          },
+          "request_utc": 1789780287.5344384,
+          "response": {
+            "index": 9690,
+            "kind": "RESPONSE",
+            "sha256": "1a09ee142e78e50be60478da75bd6a89e772f44a5e69243e223685089315bfd5"
+          },
+          "response_utc": 1789780292.4299753,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 9692,
+            "kind": "R184_STAGE",
+            "sha256": "e31892f8dd6dde6b9509a8f7678377f18d13f57a5cf77119cb34d2ae876ba071"
+          },
+          "visible_publications": [
+            "37315131923b49bf937b6e96d3a62fea"
+          ]
+        },
+        {
+          "committed": {
+            "index": 9805,
+            "kind": "COMMITTED",
+            "sha256": "4ad44e824a4cdc4a901a6621369601acecb663826ba0030f915dc4f653b9ccb2"
+          },
+          "masked": true,
+          "request": {
+            "index": 9803,
+            "kind": "REQUEST",
+            "sha256": "df2ec0a442c2da27f92fee6ec48176ad3c2a346ea7da7732f9cfd4d183f5c1ca"
+          },
+          "request_utc": 1789781228.2326972,
+          "response": {
+            "index": 9804,
+            "kind": "RESPONSE",
+            "sha256": "af61b265bb491fbdeaac279bfbb9c26826c48287c870cb0eb73aae3b896b9576"
+          },
+          "response_utc": 1789781231.6966221,
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 9806,
+            "kind": "R184_STAGE",
+            "sha256": "f37b6eb8ad963eb02a5b3642d651113e490f8d18efd3c8f2ebcb7ddd562e761d"
+          },
+          "visible_publications": [
+            "f0408fdf208d454ab4fa71e35133dcf4",
+            "2c7d1a5b2963454198b39d5187dd5a81"
+          ]
+        }
+      ],
+      "quotes": [
+        {
+          "end": 230,
+          "full_text_sha256": "8a42e7730a08f9efe502cd9e9d536ae66c6cdf5a920cf937b868aa58eb90fe8e",
+          "reference": {
+            "publication_id": "f0408fdf208d454ab4fa71e35133dcf4",
+            "source_sha256": "5b3f2c8755ff6e28ad8b4bd3be5f458b174fa63c3d8d08b7631be3aa5329dd2f"
+          },
+          "span_sha256": "550a3eb63629e22fcd7185f3f6e270713e8ebb92aa58d3544d2eae2985365e73",
+          "start": 191,
+          "text": "accepts numbers strictly greater than 3"
+        },
+        {
+          "end": 98,
+          "full_text_sha256": "149a80b3b8a80e656a237cb6c693b305fc065222705c21dcd133939c6a689fd8",
+          "reference": {
+            "index": 9773,
+            "kind": "RESPONSE",
+            "sha256": "36808e3893ac25e0feb911b74c8237e251ff9506a9d3ce78f186a7d59445332c"
+          },
+          "span_sha256": "86bf963833b2693e93bb18c1f516dbef1349731247442d5edc9860ccc0492523",
+          "start": 48,
+          "text": "IntentionRandomTestsShouldBeIncludedForVerifiction"
+        }
+      ],
+      "semantic_review": "MANUAL_SOURCE_BOUND_NOT_PARENT_SELF_REPORT",
+      "source_epoch": {
+        "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+        "guard_sha256": "9e98fbbe00081c9c6fe5047c74a2be8a4b10d77e1c38120a86ce8494fdf6f640",
+        "journal_id": "e9d22d1e26234c4bbac761922929365f",
+        "loaded_index": 6741,
+        "loaded_sha256": "5f6f2d355c08085bec1b65060d805be34e4619f7d92806f9c0034c18ed052b13",
+        "observed_boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+        "observed_source_manifest_sha256": "0ab8d8983a9a4a093c41c1ae05d5cd6dfb5fa0238354b2eddaacaa179e9710a3",
+        "owner_receipt_sha256": "60771f5667eab365c9f693c2cf12254e557e75e67327cc68fd0acb044a9a8bcf",
+        "pid": 563796,
+        "root": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life",
+        "source": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/r224_language_v3/source",
+        "start_ticks": "32330897",
+        "until_unix": 1790359200,
+        "wrapper": "a40r_ssh.sh"
+      },
+      "source_epoch_sha256": "5e4f31faf76ae86366ee02389ceb2a64dc342f580b015134af4847a7b7840a36",
+      "unknowns": "No demonstrated correction identification or relevant implementation. New corrective/task inputs arrive before later ACTs; no no-reminder transfer proof.512MiB bound leaves later records outside the reviewed window.",
+      "window": {
+        "bytes_read": 517167174,
+        "cutoff_unix": 1789781999.0,
+        "first": 9680,
+        "reviewed_ACTs": 3,
+        "through": 9807
+      }
+    }
+  ],
+  "sealed_scores_read": false
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=Lease-bounded local research daemons (repository template, NOT installed)
+
+[Service]
+Type=simple
+WorkingDirectory=/data/home/rohing/dream-state-orch
+ExecStart=/usr/bin/bash /data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_services_20260919/boot.sh
+Restart=on-failure
+RestartSec=15
+RestartPreventExitStatus=75
+KillMode=process
+TimeoutStopSec=20
+UMask=0077
+
+[Install]
+WantedBy=default.target

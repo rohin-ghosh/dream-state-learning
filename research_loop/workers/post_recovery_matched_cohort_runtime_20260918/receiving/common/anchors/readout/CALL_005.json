@@ -1,0 +1,45 @@
+{
+  "adapter": null,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "family": "math",
+  "finished_unix": 1789461462.476689,
+  "max_new_tokens": 512,
+  "messages": [
+    {
+      "content": "A tank starts with 22 liters. It gains 7 liters per minute for 4 minutes and then loses 11 liters. How many liters remain?\nReturn only the numeric answer, without units or explanation.",
+      "role": "user"
+    }
+  ],
+  "outcome": {
+    "category": "wrong_answer",
+    "completion": "complete",
+    "content_tokens": 2,
+    "generated_tokens": 3,
+    "machine": {
+      "category": "wrong_answer",
+      "passed": false
+    },
+    "verified_anchor": false
+  },
+  "position": 5,
+  "response": {
+    "messages": [
+      {
+        "content": "A tank starts with 22 liters. It gains 7 liters per minute for 4 minutes and then loses 11 liters. How many liters remain?\nReturn only the numeric answer, without units or explanation.",
+        "role": "user"
+      }
+    ],
+    "prompt_tokens": 73,
+    "raw": "25",
+    "terminal": true,
+    "token_ids": [
+      17,
+      20,
+      151645
+    ],
+    "truncated": false
+  },
+  "started_unix": 1789461462.4087706,
+  "status": "COMPLETE",
+  "task_id": "ANCHOR_TRAIN_R107_20260915_A1_MATH_01"
+}

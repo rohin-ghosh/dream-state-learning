@@ -1,0 +1,56 @@
+{
+  "report": {
+    "GPU_calls": 0,
+    "live_adoption": false,
+    "native_signals": [],
+    "native_unchanged": true,
+    "observed_unix": 1789783755.1360087,
+    "root": "/localhome/local-rohing/orch_retention_20260919/C2/receiving_cpu_1789783751816124081",
+    "rows": [
+      {
+        "elapsed_seconds": 0.16500922199338675,
+        "mode": "source",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_sha256": "7494d52cd5d1b080cc81720afee7408f30d2d6c042c34bb8030d9467fb2d0ee5",
+        "summary": {
+          "actual_checkpoint_validated": false,
+          "elapsed_seconds": 0.09385810303501785,
+          "passed": true
+        }
+      },
+      {
+        "elapsed_seconds": 1.1680357859586366,
+        "mode": "source_checks",
+        "returncode": 0,
+        "stderr_tail": "cate_source_adoption (__main__.ExactSourceTests.test_no_duplicate_source_adoption) ... ok\ntest_old_native_alive_and_wall_reapply_refuse (__main__.ExactSourceTests.test_old_native_alive_and_wall_reapply_refuse) ... ok\ntest_old_r188_and_bridge_exact_pins (__main__.ExactSourceTests.test_old_r188_and_bridge_exact_pins) ... ok\ntest_original_mailbox_rewrite_refuses (__main__.ExactSourceTests.test_original_mailbox_rewrite_refuses) ... ok\ntest_pending_tail_cannot_adopt (__main__.ExactSourceTests.test_pending_tail_cannot_adopt) ... ok\ntest_prefix_request_response_bodies_not_replayed (__main__.ExactSourceTests.test_prefix_request_response_bodies_not_replayed) ... ok\ntest_readonly_probe_uses_same_scope_reader_no_writer_lock (__main__.ExactSourceTests.test_readonly_probe_uses_same_scope_reader_no_writer_lock) ... ok\ntest_retains_exclusive_writer_lock (__main__.ExactSourceTests.test_retains_exclusive_writer_lock) ... ok\ntest_source_tampering_refuses (__main__.ExactSourceTests.test_source_tampering_refuses) ... ok\ntest_wrong_LEARN_refuses (__main__.ExactSourceTests.test_wrong_LEARN_refuses) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.840s\n\nOK\n",
+        "stdout_sha256": "335bccd8b06c8dcb5efda2e24ecd42987d42df867ce9200b71e5ff98fd1053c3",
+        "summary": {
+          "actual_checkpoint_validated": false,
+          "passed": true
+        }
+      },
+      {
+        "elapsed_seconds": 1.4689386610407382,
+        "mode": "frontier_checks",
+        "returncode": 0,
+        "stderr_tail": "hot_2.WallExtensionJournalTests.test_missing_boundary_and_duplicate_extension_rejected) ... ok\ntest_pending_generation_sleep_and_unslept_frontier_rejected (c2_snapshot_2.WallExtensionJournalTests.test_pending_generation_sleep_and_unslept_frontier_rejected) ... ok\ntest_wrong_prior_wall_digest_shortening_and_lease_overrun_rejected (c2_snapshot_2.WallExtensionJournalTests.test_wrong_prior_wall_digest_shortening_and_lease_overrun_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 54 tests in 0.771s\n\nOK\ntest_actual_preimage_all_prefix_digests_match (__main__.ReferenceParity.test_actual_preimage_all_prefix_digests_match) ... ok\ntest_actual_preimage_and_new_deepcopy_diverge_independently (__main__.ReferenceParity.test_actual_preimage_and_new_deepcopy_diverge_independently) ... ok\ntest_actual_preimage_and_new_reject_same_tamper (__main__.ReferenceParity.test_actual_preimage_and_new_reject_same_tamper) ... ok\ntest_actual_preimage_checkpoint_bytes_and_restore_match (__main__.ReferenceParity.test_actual_preimage_checkpoint_bytes_and_restore_match) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.313s\n\nOK\n",
+        "stdout_sha256": "90ed5e60e94e800cb21c49269359740af65a53ac067ffd387bfefbd450519d82",
+        "summary": {
+          "passed": true
+        }
+      },
+      {
+        "elapsed_seconds": 0.5160362730384804,
+        "mode": "checkpoint",
+        "returncode": 1,
+        "stderr_tail": "Traceback (most recent call last):\n  File \"/localhome/local-rohing/orch_retention_20260919/C2/epoch3/tools/cpu_check.py\", line 162, in <module>\n    main()\n  File \"/localhome/local-rohing/orch_retention_20260919/C2/epoch3/tools/cpu_check.py\", line 123, in main\n    candidate, evidence = read_checkpoint_pair(boundary, binding, complete_index, complete_sha)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/localhome/local-rohing/orch_retention_20260919/C2/epoch3/tools/cpu_check.py\", line 73, in read_checkpoint_pair\n    candidate = boundary.validate_records(records, binding, intents=intents)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/localhome/local-rohing/orch_retention_20260919/C2/epoch3/tools/boundary.py\", line 122, in validate_records\n    require(state['deadline_unix'] == binding['hard_end_unix'], 'same_deadline_no_wall_extension')\n  File \"/localhome/local-rohing/orch_retention_20260919/C2/epoch3/tools/boundary.py\", line 25, in require\n    raise Refusal(reason)\nc2_cpu_boundary.Refusal: same_deadline_no_wall_extension\n",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "summary": {}
+      }
+    ],
+    "status": "C2_CPU_DIAGNOSTIC_FAILURE_NO_NATIVE_ACTION"
+  },
+  "returncode": 0,
+  "stderr": ""
+}

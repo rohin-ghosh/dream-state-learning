@@ -1,0 +1,4354 @@
+{
+  "actual_current_bound_sources": 4,
+  "alias_rows": 1,
+  "automatic_semantic_review": false,
+  "git_publication": false,
+  "interpretation": "Historical levels are manual-ledger revalidations; fresh inputs/ACTs are unjudged. Unknown is not level0. Bounded windows and unsampled gaps are explicit.",
+  "model_calls": 0,
+  "native_kept_sources": 16,
+  "native_signals": 0,
+  "new_semantic_judgments": 0,
+  "observed_utc": "2026-09-18T22:35:02.625963+00:00",
+  "parent_messages": 0,
+  "partial_fleet": true,
+  "registered_rows": 18,
+  "remote_writes": 0,
+  "rows": [
+    {
+      "between_hour_gap": null,
+      "binding_receipt_sha256": "a7dc874936befcf29258597c8423dea2cd3be929d56bc00bb27f8c0d4220a757",
+      "current_identity": {
+        "command_sha256": "e0bd2a6670d2d904a6895efeebdcef7f8de75474b259bfc01835aaa34ed3082b",
+        "guard_sha256": "29d1aa615820332deaa826bd8505209ef89c9fed5aea0f6fe98e7690d0867ffb",
+        "pid": 1139778,
+        "start_ticks": "30025875"
+      },
+      "current_window": {
+        "actual_committed_ACTs": 2,
+        "caught_up": true,
+        "first": 11767,
+        "head": {
+          "index": 12006,
+          "journal_id": "260be8b8710a42559b291797c6e14983",
+          "kind": "UPDATE",
+          "previous_sha256": "056041780afccca76506f63f129d34f9502a211c7360fcc7de3b84d432843b6b",
+          "sha256": "385e6de13d6ab4c84d9a065838de95299974dc12e6ed8e375389075812cef7d4"
+        },
+        "newest_ACT": {
+          "committed": {
+            "index": 11963,
+            "kind": "COMMITTED",
+            "sha256": "a25c941c112a47c41cef5282b78c04c123ec6e3b34538394aa4977dcb2d5a80e"
+          },
+          "request": {
+            "index": 11960,
+            "kind": "REQUEST",
+            "sha256": "59730302cd8b7e9fae6f6031b96b83aa8bb792e7e68f9baa1ac8785c6da6d352"
+          },
+          "response": {
+            "index": 11962,
+            "kind": "RESPONSE",
+            "sha256": "95f81a4a32dc570162a5b9860bcfffc752af5cd0b8d2846d08a080eeda69f2ba"
+          },
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 11964,
+            "kind": "R184_STAGE",
+            "sha256": "77a10f8e6e1ea89ea21e824a410573acee09b8cddc1964b06a78b21a79fea5c5"
+          }
+        },
+        "raw_bytes_read": 412659677,
+        "snapshot_sha256": "a5cc48da1a221756bf2bfe4c10f3078408cbdf2c13bfd33e27b7e47ef47943cb",
+        "through": {
+          "index": 12006,
+          "journal_id": "260be8b8710a42559b291797c6e14983",
+          "kind": "UPDATE",
+          "previous_sha256": "056041780afccca76506f63f129d34f9502a211c7360fcc7de3b84d432843b6b",
+          "sha256": "385e6de13d6ab4c84d9a065838de95299974dc12e6ed8e375389075812cef7d4"
+        }
+      },
+      "current_window_semantic_level": null,
+      "earlier_unsampled_interval": [
+        9793,
+        11766
+      ],
+      "highest_verified_level": 1,
+      "historical": {
+        "actual_ACTs": 58,
+        "actual_committed_outputs": 194,
+        "caught_up": true,
+        "confirmed_reminders": 0,
+        "coverage_end": 9792,
+        "coverage_start": 5501,
+        "cross_task_transfers": 0,
+        "external_feedback_candidates": 172,
+        "highest_verified_level": 1,
+        "historical_cut_index": 9792,
+        "imported_pins": {
+          "ANNOTATIONS.json": "86a8bf160854cd5d872695374cdeebc7a40afbea5859fb8ba00466ee09575378",
+          "EVIDENCE.json": "572ebcc5b09e11ae45320391f0dc55981b3ec588bc429566cf9c049b18963993"
+        },
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "label": "C2",
+        "learner_controls": 0,
+        "level_counts": {
+          "0": 1,
+          "1": 1,
+          "2": 0,
+          "3": 0
+        },
+        "lifetime_absence_claim": false,
+        "model_calls": 0,
+        "observed_unix": 1789736452.154989,
+        "provenance": "REVALIDATED_ORIGINAL_MANUAL_LEDGER_NOT_NEW_SEMANTICS",
+        "rejected_annotations": [],
+        "reminder_count_unknown": 2,
+        "reviewed_corrections": 2,
+        "status": "REVIEWED_PARTIAL",
+        "traces": [
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:315aa7847e0c44e8856358198f5928e0:ae21c031d4802cafa5ced57df91d5dd564c10b3aa8a85ffd58a3508c0ff14397",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:315aa7847e0c44e8856358198f5928e0",
+              "inbox": {
+                "index": 8115,
+                "kind": "INBOX",
+                "sha256": "1440bc0f69e5780d37874a85bb45cf83db777248e9c4af32b50973124f406b30"
+              },
+              "request": {
+                "index": 8118,
+                "kind": "REQUEST",
+                "sha256": "9785404ffaa0b68289685bd63158acbabffd7ed2a6c8f4ecb19686c0367da3fe"
+              },
+              "source_sha256": "ae21c031d4802cafa5ced57df91d5dd564c10b3aa8a85ffd58a3508c0ff14397",
+              "text_sha256": "e4d7418367fc23cadffd901fafcf7ef7459536f35161fc13a4067083e22a7166"
+            },
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 8118,
+                  "kind": "REQUEST",
+                  "sha256": "9785404ffaa0b68289685bd63158acbabffd7ed2a6c8f4ecb19686c0367da3fe"
+                },
+                "response": {
+                  "index": 8119,
+                  "kind": "RESPONSE",
+                  "sha256": "093ded6120a6110b8f84308062db9245fca7c92a689d61a393f2b15b272a4cda"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 8124,
+                  "kind": "REQUEST",
+                  "sha256": "4b43ebb162122e823737bebdd97ba4be57949d52dc197df28d6bf070c88ad334"
+                },
+                "response": {
+                  "index": 8125,
+                  "kind": "RESPONSE",
+                  "sha256": "ad18362f242e4a293377a9f99da5ee325a0c43e14979219d97012ef61180e52c"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 8133,
+                  "kind": "REQUEST",
+                  "sha256": "ecedac114c0d9d78704eee96299ffe329b012e4ebc53f345595f3e56577cbf06"
+                },
+                "response": {
+                  "index": 8134,
+                  "kind": "RESPONSE",
+                  "sha256": "15172b91fb7e394aff272cfb612cfc239646beb2d9d2a59da0cca5b1d07f562b"
+                },
+                "stage": "ACT"
+              }
+            ],
+            "observer_assessment_sha256": "ca9f3ebefa11421e74cd4ef01bc4e32b5e5bb223958f26dd937b243c38835f51",
+            "parent_supplied_solution": false,
+            "reminders": null
+          },
+          {
+            "child_records": [
+              {
+                "committed": {
+                  "index": 5561,
+                  "kind": "COMMITTED",
+                  "sha256": "6a56f13222070e881f958f0c037f973dedfcfa920f074fce2bc1247f2f9bcc15"
+                },
+                "cycle": 48,
+                "end": 130,
+                "record": {
+                  "index": 5560,
+                  "kind": "RESPONSE",
+                  "sha256": "81d7fb3d8643c8d6f4185c7fa03e823c2d9992f999fd847c790d65de5d6c47aa"
+                },
+                "request": {
+                  "index": 5559,
+                  "kind": "REQUEST",
+                  "sha256": "c0cc09a6d9a70f1cdba940955c6f72b1dd6ea32b8bb98f7f60715328954fc3f5"
+                },
+                "span_sha256": "b0bb2dbc04bf55670187cdda090d425c8f4eaf8f583ea55a73954b01a2375487",
+                "stage": "LEARN",
+                "stage_record": {
+                  "index": 5562,
+                  "kind": "R184_STAGE",
+                  "sha256": "b48813eff1409521c5e9c0d72f88c9035592978b0a9d04898e9505bf86911a1a"
+                },
+                "start": 11
+              }
+            ],
+            "context_exposure_at_transfer": null,
+            "correction_key": "environment:inbox:a5624b8d77aa448fa5d7f60da7549424:f9ffff146469ccd2a4b0c2d6a0a2774b73e83b5dab077903f3525c3d59633716",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "environment",
+              "event_id": "environment:inbox:a5624b8d77aa448fa5d7f60da7549424",
+              "inbox": {
+                "index": 5558,
+                "kind": "INBOX",
+                "sha256": "ba708e6b09a2ac60d5cda7e4d70f43fdfd5c725489559848c21c21394c2d6f91"
+              },
+              "request": {
+                "index": 5559,
+                "kind": "REQUEST",
+                "sha256": "c0cc09a6d9a70f1cdba940955c6f72b1dd6ea32b8bb98f7f60715328954fc3f5"
+              },
+              "source_sha256": "f9ffff146469ccd2a4b0c2d6a0a2774b73e83b5dab077903f3525c3d59633716",
+              "text_sha256": "561f8d1c22ee04dbfadb2be2b66e671081a9fefc8f39ac62425b894e6889495d"
+            },
+            "journal_id": "260be8b8710a42559b291797c6e14983",
+            "level": 1,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 5559,
+                  "kind": "REQUEST",
+                  "sha256": "c0cc09a6d9a70f1cdba940955c6f72b1dd6ea32b8bb98f7f60715328954fc3f5"
+                },
+                "response": {
+                  "index": 5560,
+                  "kind": "RESPONSE",
+                  "sha256": "81d7fb3d8643c8d6f4185c7fa03e823c2d9992f999fd847c790d65de5d6c47aa"
+                },
+                "stage": "LEARN"
+              },
+              {
+                "request": {
+                  "index": 5617,
+                  "kind": "REQUEST",
+                  "sha256": "904cdbafd4f602ec6e9f08587377c2a705b6535933e6aa7529caabd3702dc62c"
+                },
+                "response": {
+                  "index": 5618,
+                  "kind": "RESPONSE",
+                  "sha256": "7d32989f89e9379f0974c30cb3948e65cddd8d30a8b30350161d429966b4db33"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 5622,
+                  "kind": "REQUEST",
+                  "sha256": "2dec5d84cc087a823a9d720e15cb52dfe7caf9d255956e1fcfd21db04c43f090"
+                },
+                "response": {
+                  "index": 5623,
+                  "kind": "RESPONSE",
+                  "sha256": "b408d183354af50bcd1d1e7e2b988262ef22db8686d04db5257f9e54f21d8537"
+                },
+                "stage": "ACT"
+              }
+            ],
+            "observer_assessment_sha256": "39dd9162ed3d98ced5bad3e5a0b6f6da7191c5f4f317687144181a46e932501e",
+            "parent_supplied_solution": false,
+            "reminders": null
+          }
+        ],
+        "unknown_candidates": 170
+      },
+      "historical_reference_manifest_sha256": "72e187cd77a37e09a944e0752cbc1a64d01635f6818e3812ab6eac68390828cb",
+      "historical_reference_scope": "CANONICAL_SOURCE_RECORDS_RECHECKED_NOW",
+      "label": "C2",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": true,
+      "new_semantic_judgments": 0,
+      "original_correction_context_may_remain_visible": true,
+      "revalidated_historical_record_count": 16,
+      "review_queue": {
+        "automatic_semantic_review": false,
+        "displayed": 4,
+        "interpretation": "All rendered external inputs are triage candidates, including tasks and telemetry; none is classified as a correction here.",
+        "items": [
+          {
+            "actual_new_ACT_count": 2,
+            "after_index": 11766,
+            "existing_annotation_keys": [
+              "environment:inbox:a5624b8d77aa448fa5d7f60da7549424:f9ffff146469ccd2a4b0c2d6a0a2774b73e83b5dab077903f3525c3d59633716",
+              "parent:inbox:315aa7847e0c44e8856358198f5928e0:ae21c031d4802cafa5ced57df91d5dd564c10b3aa8a85ffd58a3508c0ff14397"
+            ],
+            "kind": "NEW_ACTS_REQUIRE_SEMANTIC_REVIEW",
+            "latest_ACT": {
+              "committed": {
+                "index": 11963,
+                "kind": "COMMITTED",
+                "sha256": "a25c941c112a47c41cef5282b78c04c123ec6e3b34538394aa4977dcb2d5a80e"
+              },
+              "request": {
+                "index": 11960,
+                "kind": "REQUEST",
+                "sha256": "59730302cd8b7e9fae6f6031b96b83aa8bb792e7e68f9baa1ac8785c6da6d352"
+              },
+              "response": {
+                "index": 11962,
+                "kind": "RESPONSE",
+                "sha256": "95f81a4a32dc570162a5b9860bcfffc752af5cd0b8d2846d08a080eeda69f2ba"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 11964,
+                "kind": "R184_STAGE",
+                "sha256": "77a10f8e6e1ea89ea21e824a410573acee09b8cddc1964b06a78b21a79fea5c5"
+              }
+            },
+            "new_since_previous_collection": true,
+            "outputs": [
+              {
+                "committed": {
+                  "index": 11854,
+                  "kind": "COMMITTED",
+                  "sha256": "2fc06b11020b994aeea23622e0d7b5f8321f25f52933f2970d3a2662654d88ea"
+                },
+                "request": {
+                  "index": 11851,
+                  "kind": "REQUEST",
+                  "sha256": "ced1bed2ae9fc9d98a350fc1909cdc316cce095c488c153a63a1a885fdaf5d39"
+                },
+                "response": {
+                  "index": 11853,
+                  "kind": "RESPONSE",
+                  "sha256": "9e138df97463997ffc89889d081ed69ce47dadd57d5d4f488b172db46313632f"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 11855,
+                  "kind": "R184_STAGE",
+                  "sha256": "65d305d9cbdc705f557dfc7707a5f12e33e10ebde7054ad80d068ed38e4dd928"
+                }
+              },
+              {
+                "committed": {
+                  "index": 11963,
+                  "kind": "COMMITTED",
+                  "sha256": "a25c941c112a47c41cef5282b78c04c123ec6e3b34538394aa4977dcb2d5a80e"
+                },
+                "request": {
+                  "index": 11960,
+                  "kind": "REQUEST",
+                  "sha256": "59730302cd8b7e9fae6f6031b96b83aa8bb792e7e68f9baa1ac8785c6da6d352"
+                },
+                "response": {
+                  "index": 11962,
+                  "kind": "RESPONSE",
+                  "sha256": "95f81a4a32dc570162a5b9860bcfffc752af5cd0b8d2846d08a080eeda69f2ba"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 11964,
+                  "kind": "R184_STAGE",
+                  "sha256": "77a10f8e6e1ea89ea21e824a410573acee09b8cddc1964b06a78b21a79fea5c5"
+                }
+              }
+            ],
+            "queue_id": "5b2eedb8d5eeb6fa4d241259a7c27475bae2473783d4fc86d5a2abe7ab05c713",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW",
+            "through_index": 12006
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "cb7c5abcd691ed4af14a1761b29bf683ab067bee0c33851a8873048a073381aa",
+            "event_id": "parent:inbox:7b0f823371c44497abd9401e97f07610",
+            "feedback_key": "parent:inbox:7b0f823371c44497abd9401e97f07610:54f9a6bb3fc49cec5164f190f15518a11392f509d0d42eda4e36ab03c55c209d",
+            "first_observed_request": {
+              "index": 11835,
+              "kind": "REQUEST",
+              "sha256": "6dbb833c847055af59b6993babe922ca95ead2ada63bee6f8f0b309640ddf58e"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 11837,
+                  "kind": "COMMITTED",
+                  "sha256": "754baa48581ab9aa5cade946c780702b84db31ddeb845c57d9454d0aa0523c8c"
+                },
+                "request": {
+                  "index": 11835,
+                  "kind": "REQUEST",
+                  "sha256": "6dbb833c847055af59b6993babe922ca95ead2ada63bee6f8f0b309640ddf58e"
+                },
+                "response": {
+                  "index": 11836,
+                  "kind": "RESPONSE",
+                  "sha256": "934c72e1d13c54db7882c9ff7c802b4ccdba16b65ba94983cd02fa877e892f1b"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 11838,
+                  "kind": "R184_STAGE",
+                  "sha256": "c5633b778fdafc7f91f73ec993d11fabc71cf5b49a2a2b8f0afa42e2ab04a873"
+                }
+              },
+              {
+                "committed": {
+                  "index": 11844,
+                  "kind": "COMMITTED",
+                  "sha256": "f9ffe2d5e3de5e9efa3b6aad86c6f9638728f1742712786015333b91b58d258f"
+                },
+                "request": {
+                  "index": 11841,
+                  "kind": "REQUEST",
+                  "sha256": "9ea464b5665c7199d13ba51580a05d0b570e9d3350ceb9ff57be1081be114305"
+                },
+                "response": {
+                  "index": 11843,
+                  "kind": "RESPONSE",
+                  "sha256": "9801256485d588f3ca40c422e4456312710cb90a407d3ad4106dc59fc349b872"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 11845,
+                  "kind": "R184_STAGE",
+                  "sha256": "a5670e9bb70ab48d4750031bd0ac35fa5db0b5e4e79dc37eacc6ae129c498d87"
+                }
+              },
+              {
+                "committed": {
+                  "index": 11854,
+                  "kind": "COMMITTED",
+                  "sha256": "2fc06b11020b994aeea23622e0d7b5f8321f25f52933f2970d3a2662654d88ea"
+                },
+                "request": {
+                  "index": 11851,
+                  "kind": "REQUEST",
+                  "sha256": "ced1bed2ae9fc9d98a350fc1909cdc316cce095c488c153a63a1a885fdaf5d39"
+                },
+                "response": {
+                  "index": 11853,
+                  "kind": "RESPONSE",
+                  "sha256": "9e138df97463997ffc89889d081ed69ce47dadd57d5d4f488b172db46313632f"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 11855,
+                  "kind": "R184_STAGE",
+                  "sha256": "65d305d9cbdc705f557dfc7707a5f12e33e10ebde7054ad80d068ed38e4dd928"
+                }
+              }
+            ],
+            "inbox": null,
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 11854,
+                "kind": "COMMITTED",
+                "sha256": "2fc06b11020b994aeea23622e0d7b5f8321f25f52933f2970d3a2662654d88ea"
+              },
+              "request": {
+                "index": 11851,
+                "kind": "REQUEST",
+                "sha256": "ced1bed2ae9fc9d98a350fc1909cdc316cce095c488c153a63a1a885fdaf5d39"
+              },
+              "response": {
+                "index": 11853,
+                "kind": "RESPONSE",
+                "sha256": "9e138df97463997ffc89889d081ed69ce47dadd57d5d4f488b172db46313632f"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 11855,
+                "kind": "R184_STAGE",
+                "sha256": "65d305d9cbdc705f557dfc7707a5f12e33e10ebde7054ad80d068ed38e4dd928"
+              }
+            },
+            "queue_id": "09ad69bca25b0f8e1670524ee164681ec39c4fb3d2aaaea845e22e16e0d6d05d",
+            "source_sha256": "54f9a6bb3fc49cec5164f190f15518a11392f509d0d42eda4e36ab03c55c209d",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "b0c9d36d2f62dedf6253bdb836adba1ad6b79a95dbc926e1ace453ee1f777ae1",
+            "event_id": "parent:inbox:76690677c10d4116939d584c3b319988",
+            "feedback_key": "parent:inbox:76690677c10d4116939d584c3b319988:b8b05ee4d5c56836db30c966704c67e205c4b1361c177605e2371bc02c867c6a",
+            "first_observed_request": {
+              "index": 11835,
+              "kind": "REQUEST",
+              "sha256": "6dbb833c847055af59b6993babe922ca95ead2ada63bee6f8f0b309640ddf58e"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 11837,
+                  "kind": "COMMITTED",
+                  "sha256": "754baa48581ab9aa5cade946c780702b84db31ddeb845c57d9454d0aa0523c8c"
+                },
+                "request": {
+                  "index": 11835,
+                  "kind": "REQUEST",
+                  "sha256": "6dbb833c847055af59b6993babe922ca95ead2ada63bee6f8f0b309640ddf58e"
+                },
+                "response": {
+                  "index": 11836,
+                  "kind": "RESPONSE",
+                  "sha256": "934c72e1d13c54db7882c9ff7c802b4ccdba16b65ba94983cd02fa877e892f1b"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 11838,
+                  "kind": "R184_STAGE",
+                  "sha256": "c5633b778fdafc7f91f73ec993d11fabc71cf5b49a2a2b8f0afa42e2ab04a873"
+                }
+              },
+              {
+                "committed": {
+                  "index": 11844,
+                  "kind": "COMMITTED",
+                  "sha256": "f9ffe2d5e3de5e9efa3b6aad86c6f9638728f1742712786015333b91b58d258f"
+                },
+                "request": {
+                  "index": 11841,
+                  "kind": "REQUEST",
+                  "sha256": "9ea464b5665c7199d13ba51580a05d0b570e9d3350ceb9ff57be1081be114305"
+                },
+                "response": {
+                  "index": 11843,
+                  "kind": "RESPONSE",
+                  "sha256": "9801256485d588f3ca40c422e4456312710cb90a407d3ad4106dc59fc349b872"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 11845,
+                  "kind": "R184_STAGE",
+                  "sha256": "a5670e9bb70ab48d4750031bd0ac35fa5db0b5e4e79dc37eacc6ae129c498d87"
+                }
+              },
+              {
+                "committed": {
+                  "index": 11854,
+                  "kind": "COMMITTED",
+                  "sha256": "2fc06b11020b994aeea23622e0d7b5f8321f25f52933f2970d3a2662654d88ea"
+                },
+                "request": {
+                  "index": 11851,
+                  "kind": "REQUEST",
+                  "sha256": "ced1bed2ae9fc9d98a350fc1909cdc316cce095c488c153a63a1a885fdaf5d39"
+                },
+                "response": {
+                  "index": 11853,
+                  "kind": "RESPONSE",
+                  "sha256": "9e138df97463997ffc89889d081ed69ce47dadd57d5d4f488b172db46313632f"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 11855,
+                  "kind": "R184_STAGE",
+                  "sha256": "65d305d9cbdc705f557dfc7707a5f12e33e10ebde7054ad80d068ed38e4dd928"
+                }
+              }
+            ],
+            "inbox": null,
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 11854,
+                "kind": "COMMITTED",
+                "sha256": "2fc06b11020b994aeea23622e0d7b5f8321f25f52933f2970d3a2662654d88ea"
+              },
+              "request": {
+                "index": 11851,
+                "kind": "REQUEST",
+                "sha256": "ced1bed2ae9fc9d98a350fc1909cdc316cce095c488c153a63a1a885fdaf5d39"
+              },
+              "response": {
+                "index": 11853,
+                "kind": "RESPONSE",
+                "sha256": "9e138df97463997ffc89889d081ed69ce47dadd57d5d4f488b172db46313632f"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 11855,
+                "kind": "R184_STAGE",
+                "sha256": "65d305d9cbdc705f557dfc7707a5f12e33e10ebde7054ad80d068ed38e4dd928"
+              }
+            },
+            "queue_id": "09d740465ab344d394a76dc0a8c0166b4b4b1fdcc08091722878fc0025e3c00d",
+            "source_sha256": "b8b05ee4d5c56836db30c966704c67e205c4b1361c177605e2371bc02c867c6a",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "77b128b3da9c35b89c6465e518fa083d3c59ed4c070303156e43ebe1899ad089",
+            "event_id": "parent:inbox:9883145578dc499c8d53b4137ee822eb",
+            "feedback_key": "parent:inbox:9883145578dc499c8d53b4137ee822eb:095d772c48f46390c791a9094708ec0fb4b53f5da657d5ea2f31599693c8ddfb",
+            "first_observed_request": {
+              "index": 11835,
+              "kind": "REQUEST",
+              "sha256": "6dbb833c847055af59b6993babe922ca95ead2ada63bee6f8f0b309640ddf58e"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 11837,
+                  "kind": "COMMITTED",
+                  "sha256": "754baa48581ab9aa5cade946c780702b84db31ddeb845c57d9454d0aa0523c8c"
+                },
+                "request": {
+                  "index": 11835,
+                  "kind": "REQUEST",
+                  "sha256": "6dbb833c847055af59b6993babe922ca95ead2ada63bee6f8f0b309640ddf58e"
+                },
+                "response": {
+                  "index": 11836,
+                  "kind": "RESPONSE",
+                  "sha256": "934c72e1d13c54db7882c9ff7c802b4ccdba16b65ba94983cd02fa877e892f1b"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 11838,
+                  "kind": "R184_STAGE",
+                  "sha256": "c5633b778fdafc7f91f73ec993d11fabc71cf5b49a2a2b8f0afa42e2ab04a873"
+                }
+              },
+              {
+                "committed": {
+                  "index": 11844,
+                  "kind": "COMMITTED",
+                  "sha256": "f9ffe2d5e3de5e9efa3b6aad86c6f9638728f1742712786015333b91b58d258f"
+                },
+                "request": {
+                  "index": 11841,
+                  "kind": "REQUEST",
+                  "sha256": "9ea464b5665c7199d13ba51580a05d0b570e9d3350ceb9ff57be1081be114305"
+                },
+                "response": {
+                  "index": 11843,
+                  "kind": "RESPONSE",
+                  "sha256": "9801256485d588f3ca40c422e4456312710cb90a407d3ad4106dc59fc349b872"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 11845,
+                  "kind": "R184_STAGE",
+                  "sha256": "a5670e9bb70ab48d4750031bd0ac35fa5db0b5e4e79dc37eacc6ae129c498d87"
+                }
+              },
+              {
+                "committed": {
+                  "index": 11854,
+                  "kind": "COMMITTED",
+                  "sha256": "2fc06b11020b994aeea23622e0d7b5f8321f25f52933f2970d3a2662654d88ea"
+                },
+                "request": {
+                  "index": 11851,
+                  "kind": "REQUEST",
+                  "sha256": "ced1bed2ae9fc9d98a350fc1909cdc316cce095c488c153a63a1a885fdaf5d39"
+                },
+                "response": {
+                  "index": 11853,
+                  "kind": "RESPONSE",
+                  "sha256": "9e138df97463997ffc89889d081ed69ce47dadd57d5d4f488b172db46313632f"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 11855,
+                  "kind": "R184_STAGE",
+                  "sha256": "65d305d9cbdc705f557dfc7707a5f12e33e10ebde7054ad80d068ed38e4dd928"
+                }
+              }
+            ],
+            "inbox": null,
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 11854,
+                "kind": "COMMITTED",
+                "sha256": "2fc06b11020b994aeea23622e0d7b5f8321f25f52933f2970d3a2662654d88ea"
+              },
+              "request": {
+                "index": 11851,
+                "kind": "REQUEST",
+                "sha256": "ced1bed2ae9fc9d98a350fc1909cdc316cce095c488c153a63a1a885fdaf5d39"
+              },
+              "response": {
+                "index": 11853,
+                "kind": "RESPONSE",
+                "sha256": "9e138df97463997ffc89889d081ed69ce47dadd57d5d4f488b172db46313632f"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 11855,
+                "kind": "R184_STAGE",
+                "sha256": "65d305d9cbdc705f557dfc7707a5f12e33e10ebde7054ad80d068ed38e4dd928"
+              }
+            },
+            "queue_id": "18739f3b70784c7fb462605b81245e41f35ac2e3e1f5d32a6d317074090a9bb4",
+            "source_sha256": "095d772c48f46390c791a9094708ec0fb4b53f5da657d5ea2f31599693c8ddfb",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          }
+        ],
+        "journal_id": "260be8b8710a42559b291797c6e14983",
+        "label": "C2",
+        "model_calls": 0,
+        "new_ACT_count": 2,
+        "new_rendered_input_count": 243,
+        "new_semantic_judgments": 0,
+        "omitted_pending_count": 240,
+        "owner": "Main: semantic review handoff requested; acceptance not inferred",
+        "pending_output_windows": 1,
+        "pending_rendered_input_count": 243,
+        "pending_total": 244,
+        "selection": "At most two fresh items, then least-recently-offered backlog; role/index tie-breaks only.",
+        "stage_scope": "Following child outputs require actual R184_STAGE; unframed console outputs are not relabelled.",
+        "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+      },
+      "source_horizon_utc": "2026-09-20T18:00:00+00:00",
+      "status": "ACTUAL_BOUNDED_COLLECTION_COMPLETE"
+    },
+    {
+      "highest_verified_level": 0,
+      "historical": {
+        "actual_ACTs": 36,
+        "actual_committed_outputs": 108,
+        "caught_up": true,
+        "confirmed_reminders": 0,
+        "coverage_end": 4435,
+        "coverage_start": 2085,
+        "cross_task_transfers": 0,
+        "external_feedback_candidates": 176,
+        "highest_verified_level": 0,
+        "historical_cut_index": 4435,
+        "imported_pins": {
+          "ANNOTATIONS.json": "4fe2b69feeaba1f435848e457def13e0a5f4bda053892a337e5774f721bb674a",
+          "EVIDENCE.json": "c30952997601df8253179c0bac567660965a9690b063b04dc59b2e8dbeda7c39"
+        },
+        "journal_id": "e9d22d1e26234c4bbac761922929365f",
+        "label": "P7",
+        "learner_controls": 0,
+        "level_counts": {
+          "0": 1,
+          "1": 0,
+          "2": 0,
+          "3": 0
+        },
+        "lifetime_absence_claim": false,
+        "model_calls": 0,
+        "observed_unix": 1789736454.2442157,
+        "provenance": "REVALIDATED_ORIGINAL_MANUAL_LEDGER_NOT_NEW_SEMANTICS",
+        "rejected_annotations": [],
+        "reminder_count_unknown": 1,
+        "reviewed_corrections": 1,
+        "status": "REVIEWED_PARTIAL",
+        "traces": [
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:215afd317bc0438d8257c0bf13145460:d2d3ea4e4b5bdb1b73d7ca5c41a97f186f289c23e6a8e494953521a22324c432",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:215afd317bc0438d8257c0bf13145460",
+              "inbox": {
+                "index": 2555,
+                "kind": "INBOX",
+                "sha256": "0cd85f05abc6a483cefd883a36269e5b1125926afcfaef717f3b751de628eb12"
+              },
+              "request": {
+                "index": 2557,
+                "kind": "REQUEST",
+                "sha256": "fbbfa423bc9b2489af8d584c680fdef0b827be863deaeffc01e0e3fdccf15342"
+              },
+              "source_sha256": "d2d3ea4e4b5bdb1b73d7ca5c41a97f186f289c23e6a8e494953521a22324c432",
+              "text_sha256": "38296bd387711ef88122fc20a05de6ffe40fea7e138cf17a5fc6e27286caf7bd"
+            },
+            "journal_id": "e9d22d1e26234c4bbac761922929365f",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 2557,
+                  "kind": "REQUEST",
+                  "sha256": "fbbfa423bc9b2489af8d584c680fdef0b827be863deaeffc01e0e3fdccf15342"
+                },
+                "response": {
+                  "index": 2558,
+                  "kind": "RESPONSE",
+                  "sha256": "f6e6ab8d06a77a936126240161f7bb56967a453bafd5fba08e4dde32570386e4"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 2564,
+                  "kind": "REQUEST",
+                  "sha256": "fd3bd70a145330a51d20d557b44107514dbf27ec9b9232a739a93e3291048c45"
+                },
+                "response": {
+                  "index": 2565,
+                  "kind": "RESPONSE",
+                  "sha256": "af2cc8658faca179f2b80da0aaf9c362715ea294ae510f3473922169807ac43a"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 2573,
+                  "kind": "REQUEST",
+                  "sha256": "bd6848914428afb76c50b59677be9f69374cbc87b7cff4c979c6d4675ac125f2"
+                },
+                "response": {
+                  "index": 2574,
+                  "kind": "RESPONSE",
+                  "sha256": "5951dea2f0f84005db931b714b516d4f013b4d6cfc9d1a5498dab864a2f0e21f"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "d9fe7939aabf62341ef12a815a129d50e72457052adc6200767d224032e6a741",
+            "parent_supplied_solution": false,
+            "reminders": null
+          }
+        ],
+        "unknown_candidates": 175
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "P7",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": 0,
+      "historical": {
+        "actual_ACTs": 47,
+        "actual_committed_outputs": 148,
+        "caught_up": true,
+        "confirmed_reminders": 0,
+        "coverage_end": 2869,
+        "coverage_start": 0,
+        "cross_task_transfers": 0,
+        "external_feedback_candidates": 167,
+        "highest_verified_level": 0,
+        "historical_cut_index": 2869,
+        "imported_pins": {
+          "ANNOTATIONS.json": "2093289ebb9d1f008185406a94873000d90bc3f7b5930e6265868bc802790093",
+          "EVIDENCE.json": "89d6bb64056f92b448b7ac83025232715c85875afb6afa97731cfa9a67d223c4"
+        },
+        "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+        "label": "C0",
+        "learner_controls": 0,
+        "level_counts": {
+          "0": 2,
+          "1": 0,
+          "2": 0,
+          "3": 0
+        },
+        "lifetime_absence_claim": false,
+        "model_calls": 0,
+        "observed_unix": 1789736450.808038,
+        "provenance": "REVALIDATED_ORIGINAL_MANUAL_LEDGER_NOT_NEW_SEMANTICS",
+        "rejected_annotations": [],
+        "reminder_count_unknown": 2,
+        "reviewed_corrections": 2,
+        "status": "REVIEWED_PARTIAL",
+        "traces": [
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:e9a03e410e9245039d9eee9d89b5efb5:d594c308bcd54d30a6ebb2aea3c8f8886e61a73ccf7868bd20d4af0a813a0ddd",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:e9a03e410e9245039d9eee9d89b5efb5",
+              "inbox": {
+                "index": 1303,
+                "kind": "INBOX",
+                "sha256": "9afc216f7dc11b098d40a6bc3faf2bb71ae8b85aca1675e496e981777843b949"
+              },
+              "request": {
+                "index": 1307,
+                "kind": "REQUEST",
+                "sha256": "1e376248612ef4bec916ff17cc696e84659b001991baaa5ddfaa0af413b0b73c"
+              },
+              "source_sha256": "d594c308bcd54d30a6ebb2aea3c8f8886e61a73ccf7868bd20d4af0a813a0ddd",
+              "text_sha256": "0e2833596ff77ae495dc75be0d32521830a6972edd3bf23cd1edd30407a924af"
+            },
+            "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 1307,
+                  "kind": "REQUEST",
+                  "sha256": "1e376248612ef4bec916ff17cc696e84659b001991baaa5ddfaa0af413b0b73c"
+                },
+                "response": {
+                  "index": 1308,
+                  "kind": "RESPONSE",
+                  "sha256": "541b33677447c4d26e0acc3b39db6e948ef6f318fa6c1e65f57c0e925c2626de"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 1314,
+                  "kind": "REQUEST",
+                  "sha256": "38fd66f6c986e444f55f59ca58c3622b7a1166b42b1a6c2cf753424155b29c03"
+                },
+                "response": {
+                  "index": 1315,
+                  "kind": "RESPONSE",
+                  "sha256": "57d16767a21c744b4e215fe3837f65ea2671a624b03c0dbecc4d594dca957953"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 1323,
+                  "kind": "REQUEST",
+                  "sha256": "b29c877f6c990534b0042d0a6bd5ed5a290f2f60715c180fa10010e758800596"
+                },
+                "response": {
+                  "index": 1324,
+                  "kind": "RESPONSE",
+                  "sha256": "4ac6046d3b9be74f168ce344bf5b203839b3d5a3860b55bd617d64c462e56d69"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "e8c3fb51f2125ec5ca1584a9026a44adb8acb2c975b1c37b2773636a6b9759ae",
+            "parent_supplied_solution": false,
+            "reminders": null
+          },
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:ee80eb6a474d46c3a8fbde82b953006f:7cb2ec8e0d5d6c808ce440f14ed1e5120b6ea7b21e4ae77e8cc93bd332dd51fe",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:ee80eb6a474d46c3a8fbde82b953006f",
+              "inbox": {
+                "index": 635,
+                "kind": "INBOX",
+                "sha256": "a1a15835febf6a91aa52e27d592a8a5181f8a6618d5ae1fabf121eb2431b354b"
+              },
+              "request": {
+                "index": 637,
+                "kind": "REQUEST",
+                "sha256": "ae2834db4c696055ada23364bf596dbc7dc196ef09e0f16f01bcfc516a562698"
+              },
+              "source_sha256": "7cb2ec8e0d5d6c808ce440f14ed1e5120b6ea7b21e4ae77e8cc93bd332dd51fe",
+              "text_sha256": "ccf77bd1cac44afcf81798bf75676556c14f7fe086e27c4fc5341d8cc8deea60"
+            },
+            "journal_id": "e0c3b033023e43c7a3dfa494d68011af",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 637,
+                  "kind": "REQUEST",
+                  "sha256": "ae2834db4c696055ada23364bf596dbc7dc196ef09e0f16f01bcfc516a562698"
+                },
+                "response": {
+                  "index": 638,
+                  "kind": "RESPONSE",
+                  "sha256": "0a35ce851cf1a444121d223b133c659ef3a2b3cad64392d0dfa50d308f0498c3"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 646,
+                  "kind": "REQUEST",
+                  "sha256": "9371093fe2cc7419a66e116ad1f530fac26fcb46c94ce9e7a913234184058ba3"
+                },
+                "response": {
+                  "index": 647,
+                  "kind": "RESPONSE",
+                  "sha256": "d5c8203eb1a0707577956e36cee855d0913621d290588536ea4eb4a990ee7363"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 655,
+                  "kind": "REQUEST",
+                  "sha256": "794db9f8f9db2a7af02d2005430c3b8349a6b43c5100a97a0ecc1aa260e82d4d"
+                },
+                "response": {
+                  "index": 656,
+                  "kind": "RESPONSE",
+                  "sha256": "42fc37d8cead780cef40417680af4c8b84b8ff6a3c2ed81e25f5863e82a0372a"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "97c53f71ff22a56c35d6707c9ffbcebd759c84e36524049b8a81d19160b9b7b3",
+            "parent_supplied_solution": false,
+            "reminders": null
+          }
+        ],
+        "unknown_candidates": 165
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "C0",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": null,
+      "historical": {
+        "highest_verified_level": null,
+        "provenance": "NO_IMPORTED_MANUAL_ANNOTATION",
+        "traces": []
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "Astra7",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "between_hour_gap": null,
+      "binding_receipt_sha256": "65381709f4748b5ac7a4a6fd9463cfaae337d48567081ee9889c4af2614bea2c",
+      "current_identity": {
+        "command_sha256": "e6103b8750d45cfb74247b5902e808137a04dd9c29c9c2a4eb9be7e7e6aeee2b",
+        "guard_sha256": "df9769ae317f249fe8ff9f93c62457eb23c659d7e7e707dc67cf3a2d78f75ece",
+        "pid": 699464,
+        "start_ticks": "33078516"
+      },
+      "current_window": {
+        "actual_committed_ACTs": 3,
+        "caught_up": true,
+        "first": 5664,
+        "head": {
+          "index": 5903,
+          "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+          "kind": "REQUEST",
+          "previous_sha256": "1a2a3d8ffc4b1ba990db04a1b8206466f9832c891d3f10bb8f6ccd86f05dcddf",
+          "sha256": "8d5cfaf265e6bca22733a2195a03036a1ce58124fd370bd80594600beb220c8f"
+        },
+        "newest_ACT": {
+          "committed": {
+            "index": 5896,
+            "kind": "COMMITTED",
+            "sha256": "c615ab0b0163fbbf374651c6990b14c51628de60c2d76eeb0cff2868e0d109fd"
+          },
+          "request": {
+            "index": 5894,
+            "kind": "REQUEST",
+            "sha256": "9633fd73ba216ee4af69b558a06efdd9d97169b2480243a5ffb9581cebe48dd7"
+          },
+          "response": {
+            "index": 5895,
+            "kind": "RESPONSE",
+            "sha256": "55a6e787be04cebcf3eecbedeacda924b23015d08b35c2a83c8319f24c909e11"
+          },
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 5897,
+            "kind": "R184_STAGE",
+            "sha256": "81516f469b8137692c7fa088d2fa66a48cab315b1d1dc6d2d2200e40221ddbfc"
+          }
+        },
+        "raw_bytes_read": 516400944,
+        "snapshot_sha256": "da91524a9a1f77186e6178247a209e46e3dc4fbe58fbc8e3b32d0f914c46abfa",
+        "through": {
+          "index": 5903,
+          "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+          "kind": "REQUEST",
+          "previous_sha256": "1a2a3d8ffc4b1ba990db04a1b8206466f9832c891d3f10bb8f6ccd86f05dcddf",
+          "sha256": "8d5cfaf265e6bca22733a2195a03036a1ce58124fd370bd80594600beb220c8f"
+        }
+      },
+      "current_window_semantic_level": null,
+      "earlier_unsampled_interval": [
+        3491,
+        5663
+      ],
+      "highest_verified_level": 0,
+      "historical": {
+        "actual_ACTs": 43,
+        "actual_committed_outputs": 127,
+        "caught_up": true,
+        "confirmed_reminders": 0,
+        "coverage_end": 3490,
+        "coverage_start": 1390,
+        "cross_task_transfers": 0,
+        "external_feedback_candidates": 228,
+        "highest_verified_level": 0,
+        "historical_cut_index": 3490,
+        "imported_pins": {
+          "ANNOTATIONS.json": "c77f09744708b7b95e89b639d66acdc0a4be8e376d3da586e3c10ba54e7728d1",
+          "EVIDENCE.json": "dc6bcd042a534c84044bee2bc2e1253cd011b3164b62c9890d6ef34489f64c60"
+        },
+        "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+        "label": "GAME1_P3",
+        "learner_controls": 0,
+        "level_counts": {
+          "0": 1,
+          "1": 0,
+          "2": 0,
+          "3": 0
+        },
+        "lifetime_absence_claim": false,
+        "model_calls": 0,
+        "observed_unix": 1789736461.3535707,
+        "provenance": "REVALIDATED_ORIGINAL_MANUAL_LEDGER_NOT_NEW_SEMANTICS",
+        "rejected_annotations": [],
+        "reminder_count_unknown": 1,
+        "reviewed_corrections": 1,
+        "status": "REVIEWED_PARTIAL",
+        "traces": [
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "environment:inbox:5d5c0ac3baa14c859048cf3baa64522b:761f7dcef2c304056b75f5ca29675dc1152c092de261141a820a0dcb9253c8a9",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "environment",
+              "event_id": "environment:inbox:5d5c0ac3baa14c859048cf3baa64522b",
+              "inbox": {
+                "index": 2550,
+                "kind": "INBOX",
+                "sha256": "ddc5ce05d96747834e3ac33717e692e78d78a88841c1281d8f1559e2207f88f5"
+              },
+              "request": {
+                "index": 2561,
+                "kind": "REQUEST",
+                "sha256": "891532e6d01fb37b59c1783ef9e4860b1464e9a395cb635db450cc1789d51b40"
+              },
+              "source_sha256": "761f7dcef2c304056b75f5ca29675dc1152c092de261141a820a0dcb9253c8a9",
+              "text_sha256": "c6d53f0553711fb0857ef9a599f9adfda1c3c60c663e96a18bc89b5c88895fd1"
+            },
+            "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 2561,
+                  "kind": "REQUEST",
+                  "sha256": "891532e6d01fb37b59c1783ef9e4860b1464e9a395cb635db450cc1789d51b40"
+                },
+                "response": {
+                  "index": 2562,
+                  "kind": "RESPONSE",
+                  "sha256": "e7b5ec927f109a64371f54f5149eab20719b2220f54a75fc2b65856ec9120a77"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 2568,
+                  "kind": "REQUEST",
+                  "sha256": "180ad0795c4d6b5bd4cfe703e660a9ae1ebe8d82bdcca52d5942828f90fcec72"
+                },
+                "response": {
+                  "index": 2569,
+                  "kind": "RESPONSE",
+                  "sha256": "633e45966aca639decaa0df23370fc9a59d28a2ea077f5b962c939c542ff4350"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 2577,
+                  "kind": "REQUEST",
+                  "sha256": "c0536f3a8d9390e8bb4c20b46c924d334dd3c0f772262105333e4843d556c1d6"
+                },
+                "response": {
+                  "index": 2578,
+                  "kind": "RESPONSE",
+                  "sha256": "200604ee5b771e370bde770bfa3c2b7a58196bdace7e7075e5a2e8a33a9487f9"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "edecf7a9d8a3973e43a313e4958e2dbe7638daf2c6d5b20268d5430e59108613",
+            "parent_supplied_solution": false,
+            "reminders": null
+          }
+        ],
+        "unknown_candidates": 227
+      },
+      "historical_reference_manifest_sha256": "cb8e7ddd5ed2bce96c4301d1ae6d02c0e4242b60a58ced7c3dde9496886d2fcd",
+      "historical_reference_scope": "CANONICAL_SOURCE_RECORDS_RECHECKED_NOW",
+      "label": "GAME1_P3",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": true,
+      "new_semantic_judgments": 0,
+      "original_correction_context_may_remain_visible": true,
+      "revalidated_historical_record_count": 7,
+      "review_queue": {
+        "automatic_semantic_review": false,
+        "displayed": 4,
+        "interpretation": "All rendered external inputs are triage candidates, including tasks and telemetry; none is classified as a correction here.",
+        "items": [
+          {
+            "actual_new_ACT_count": 3,
+            "after_index": 5663,
+            "existing_annotation_keys": [
+              "environment:inbox:5d5c0ac3baa14c859048cf3baa64522b:761f7dcef2c304056b75f5ca29675dc1152c092de261141a820a0dcb9253c8a9"
+            ],
+            "kind": "NEW_ACTS_REQUIRE_SEMANTIC_REVIEW",
+            "latest_ACT": {
+              "committed": {
+                "index": 5896,
+                "kind": "COMMITTED",
+                "sha256": "c615ab0b0163fbbf374651c6990b14c51628de60c2d76eeb0cff2868e0d109fd"
+              },
+              "request": {
+                "index": 5894,
+                "kind": "REQUEST",
+                "sha256": "9633fd73ba216ee4af69b558a06efdd9d97169b2480243a5ffb9581cebe48dd7"
+              },
+              "response": {
+                "index": 5895,
+                "kind": "RESPONSE",
+                "sha256": "55a6e787be04cebcf3eecbedeacda924b23015d08b35c2a83c8319f24c909e11"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 5897,
+                "kind": "R184_STAGE",
+                "sha256": "81516f469b8137692c7fa088d2fa66a48cab315b1d1dc6d2d2200e40221ddbfc"
+              }
+            },
+            "new_since_previous_collection": true,
+            "outputs": [
+              {
+                "committed": {
+                  "index": 5734,
+                  "kind": "COMMITTED",
+                  "sha256": "1974de56e9a837dd1ec0d3b4feab5dcb3e4a8668b625a20777d67e6ae0e77b3c"
+                },
+                "request": {
+                  "index": 5732,
+                  "kind": "REQUEST",
+                  "sha256": "87eedf23dd33bf9d38021edc6a72f3741a2b04c2085b9de49f5483d90c087a81"
+                },
+                "response": {
+                  "index": 5733,
+                  "kind": "RESPONSE",
+                  "sha256": "0a9ad674f0b61de3d31aeb17779d8acb56c27bb4bd2090a7cd9f908ac9a756a4"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 5735,
+                  "kind": "R184_STAGE",
+                  "sha256": "30ca9687415a5e03c627e37f5b613c16bb4e1de3b03cf00e7babd236dd81e27f"
+                }
+              },
+              {
+                "committed": {
+                  "index": 5815,
+                  "kind": "COMMITTED",
+                  "sha256": "52e91d6f83af9776530df964711c2b04ebab07c195e90adfe47cd23eff695e91"
+                },
+                "request": {
+                  "index": 5813,
+                  "kind": "REQUEST",
+                  "sha256": "6f13582bf0cc8de42b0f0fecd181f27c59841b74cf5576f28feba80f9631607e"
+                },
+                "response": {
+                  "index": 5814,
+                  "kind": "RESPONSE",
+                  "sha256": "1bf02523673f49d8a2e519e85180e026a497669f5f7388e4a9164af42fa3bbfa"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 5816,
+                  "kind": "R184_STAGE",
+                  "sha256": "e12a6839ec3f35241dd106a64ac284a3a7b4fd4d78eb586210cbbf2892558de5"
+                }
+              },
+              {
+                "committed": {
+                  "index": 5896,
+                  "kind": "COMMITTED",
+                  "sha256": "c615ab0b0163fbbf374651c6990b14c51628de60c2d76eeb0cff2868e0d109fd"
+                },
+                "request": {
+                  "index": 5894,
+                  "kind": "REQUEST",
+                  "sha256": "9633fd73ba216ee4af69b558a06efdd9d97169b2480243a5ffb9581cebe48dd7"
+                },
+                "response": {
+                  "index": 5895,
+                  "kind": "RESPONSE",
+                  "sha256": "55a6e787be04cebcf3eecbedeacda924b23015d08b35c2a83c8319f24c909e11"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 5897,
+                  "kind": "R184_STAGE",
+                  "sha256": "81516f469b8137692c7fa088d2fa66a48cab315b1d1dc6d2d2200e40221ddbfc"
+                }
+              }
+            ],
+            "queue_id": "93c57dc6ac474bad98cbde3d3a63d1f258d79252d3c18bd4580319b393f6e460",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW",
+            "through_index": 5903
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "976879070d45824ee1336fda4e9f9b2ce8a3d25c3bdf9f7d98299061ae5ae761",
+            "event_id": "parent:inbox:623532e41ff14258a5c3e483ca268e2b",
+            "feedback_key": "parent:inbox:623532e41ff14258a5c3e483ca268e2b:619752569c89d793a7c90eb66da24bf73061d8a0a66a67ecbf47f06574737f31",
+            "first_observed_request": {
+              "index": 5725,
+              "kind": "REQUEST",
+              "sha256": "f95ed83db246856ed09a61906b3797bc8de28586c3a28959d392ea524f7bb7d2"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 5727,
+                  "kind": "COMMITTED",
+                  "sha256": "3c30cf1057665df78729337c31e8a6dbb026b4848202a682927062fb340a9826"
+                },
+                "request": {
+                  "index": 5725,
+                  "kind": "REQUEST",
+                  "sha256": "f95ed83db246856ed09a61906b3797bc8de28586c3a28959d392ea524f7bb7d2"
+                },
+                "response": {
+                  "index": 5726,
+                  "kind": "RESPONSE",
+                  "sha256": "f84ecb0a537356fc3bf3a50894f3bc26168923f09b6ecb151e3f13e159ac64f8"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 5728,
+                  "kind": "R184_STAGE",
+                  "sha256": "8f3feffa547255f04ac677d748dedfa10da4cf7cd843c235eeb2b141e19f106e"
+                }
+              },
+              {
+                "committed": {
+                  "index": 5734,
+                  "kind": "COMMITTED",
+                  "sha256": "1974de56e9a837dd1ec0d3b4feab5dcb3e4a8668b625a20777d67e6ae0e77b3c"
+                },
+                "request": {
+                  "index": 5732,
+                  "kind": "REQUEST",
+                  "sha256": "87eedf23dd33bf9d38021edc6a72f3741a2b04c2085b9de49f5483d90c087a81"
+                },
+                "response": {
+                  "index": 5733,
+                  "kind": "RESPONSE",
+                  "sha256": "0a9ad674f0b61de3d31aeb17779d8acb56c27bb4bd2090a7cd9f908ac9a756a4"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 5735,
+                  "kind": "R184_STAGE",
+                  "sha256": "30ca9687415a5e03c627e37f5b613c16bb4e1de3b03cf00e7babd236dd81e27f"
+                }
+              },
+              {
+                "committed": {
+                  "index": 5744,
+                  "kind": "COMMITTED",
+                  "sha256": "330b3f7999167ea31941bb64de2c4979bcccac181dcc4c0ca22a4a9612b99b5b"
+                },
+                "request": {
+                  "index": 5742,
+                  "kind": "REQUEST",
+                  "sha256": "39da3d5d64914452098587458a34bd6e305fae40e3b2b99c9f7473907509cb3c"
+                },
+                "response": {
+                  "index": 5743,
+                  "kind": "RESPONSE",
+                  "sha256": "8d2efc9f875ae51e2fbfd471ca90ef1d7810d9cf5f26002e35b66e1c6ba6d6ec"
+                },
+                "stage": "LEARN",
+                "stage_receipt": {
+                  "index": 5745,
+                  "kind": "R184_STAGE",
+                  "sha256": "d2a51dfd01c16129d4b9b489f7497010dad21acd1484c73365cb7d3b5d7b6789"
+                }
+              }
+            ],
+            "inbox": null,
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 5734,
+                "kind": "COMMITTED",
+                "sha256": "1974de56e9a837dd1ec0d3b4feab5dcb3e4a8668b625a20777d67e6ae0e77b3c"
+              },
+              "request": {
+                "index": 5732,
+                "kind": "REQUEST",
+                "sha256": "87eedf23dd33bf9d38021edc6a72f3741a2b04c2085b9de49f5483d90c087a81"
+              },
+              "response": {
+                "index": 5733,
+                "kind": "RESPONSE",
+                "sha256": "0a9ad674f0b61de3d31aeb17779d8acb56c27bb4bd2090a7cd9f908ac9a756a4"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 5735,
+                "kind": "R184_STAGE",
+                "sha256": "30ca9687415a5e03c627e37f5b613c16bb4e1de3b03cf00e7babd236dd81e27f"
+              }
+            },
+            "queue_id": "125ada74d90c81b896f163a3fc682f528fd2a2ea2d141c323e6733c02259af98",
+            "source_sha256": "619752569c89d793a7c90eb66da24bf73061d8a0a66a67ecbf47f06574737f31",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "b5b79ff24a2690c5bddbb9a78d46b92039ceffc51542485c5b00eab77f3d713b",
+            "event_id": "parent:inbox:ff00374b2c1a460dbc72b1fb0eab17d2",
+            "feedback_key": "parent:inbox:ff00374b2c1a460dbc72b1fb0eab17d2:0d0ab4aba7fb8bbccf91fdb0f9b0442d8c6dbae3ccf55b29922ceaa7be2fb04f",
+            "first_observed_request": {
+              "index": 5725,
+              "kind": "REQUEST",
+              "sha256": "f95ed83db246856ed09a61906b3797bc8de28586c3a28959d392ea524f7bb7d2"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 5727,
+                  "kind": "COMMITTED",
+                  "sha256": "3c30cf1057665df78729337c31e8a6dbb026b4848202a682927062fb340a9826"
+                },
+                "request": {
+                  "index": 5725,
+                  "kind": "REQUEST",
+                  "sha256": "f95ed83db246856ed09a61906b3797bc8de28586c3a28959d392ea524f7bb7d2"
+                },
+                "response": {
+                  "index": 5726,
+                  "kind": "RESPONSE",
+                  "sha256": "f84ecb0a537356fc3bf3a50894f3bc26168923f09b6ecb151e3f13e159ac64f8"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 5728,
+                  "kind": "R184_STAGE",
+                  "sha256": "8f3feffa547255f04ac677d748dedfa10da4cf7cd843c235eeb2b141e19f106e"
+                }
+              },
+              {
+                "committed": {
+                  "index": 5734,
+                  "kind": "COMMITTED",
+                  "sha256": "1974de56e9a837dd1ec0d3b4feab5dcb3e4a8668b625a20777d67e6ae0e77b3c"
+                },
+                "request": {
+                  "index": 5732,
+                  "kind": "REQUEST",
+                  "sha256": "87eedf23dd33bf9d38021edc6a72f3741a2b04c2085b9de49f5483d90c087a81"
+                },
+                "response": {
+                  "index": 5733,
+                  "kind": "RESPONSE",
+                  "sha256": "0a9ad674f0b61de3d31aeb17779d8acb56c27bb4bd2090a7cd9f908ac9a756a4"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 5735,
+                  "kind": "R184_STAGE",
+                  "sha256": "30ca9687415a5e03c627e37f5b613c16bb4e1de3b03cf00e7babd236dd81e27f"
+                }
+              },
+              {
+                "committed": {
+                  "index": 5744,
+                  "kind": "COMMITTED",
+                  "sha256": "330b3f7999167ea31941bb64de2c4979bcccac181dcc4c0ca22a4a9612b99b5b"
+                },
+                "request": {
+                  "index": 5742,
+                  "kind": "REQUEST",
+                  "sha256": "39da3d5d64914452098587458a34bd6e305fae40e3b2b99c9f7473907509cb3c"
+                },
+                "response": {
+                  "index": 5743,
+                  "kind": "RESPONSE",
+                  "sha256": "8d2efc9f875ae51e2fbfd471ca90ef1d7810d9cf5f26002e35b66e1c6ba6d6ec"
+                },
+                "stage": "LEARN",
+                "stage_receipt": {
+                  "index": 5745,
+                  "kind": "R184_STAGE",
+                  "sha256": "d2a51dfd01c16129d4b9b489f7497010dad21acd1484c73365cb7d3b5d7b6789"
+                }
+              }
+            ],
+            "inbox": null,
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 5734,
+                "kind": "COMMITTED",
+                "sha256": "1974de56e9a837dd1ec0d3b4feab5dcb3e4a8668b625a20777d67e6ae0e77b3c"
+              },
+              "request": {
+                "index": 5732,
+                "kind": "REQUEST",
+                "sha256": "87eedf23dd33bf9d38021edc6a72f3741a2b04c2085b9de49f5483d90c087a81"
+              },
+              "response": {
+                "index": 5733,
+                "kind": "RESPONSE",
+                "sha256": "0a9ad674f0b61de3d31aeb17779d8acb56c27bb4bd2090a7cd9f908ac9a756a4"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 5735,
+                "kind": "R184_STAGE",
+                "sha256": "30ca9687415a5e03c627e37f5b613c16bb4e1de3b03cf00e7babd236dd81e27f"
+              }
+            },
+            "queue_id": "396ae4f6d4b1b99e55147ddf8a67716f0a41955854df62db486ec3904ffe0aa5",
+            "source_sha256": "0d0ab4aba7fb8bbccf91fdb0f9b0442d8c6dbae3ccf55b29922ceaa7be2fb04f",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "4f89d532338bcae38759a72203820c810c15181a8b36e247605a7267f49b22fa",
+            "event_id": "parent:inbox:cd760d58e5d14f5e89323eee628a2a3a",
+            "feedback_key": "parent:inbox:cd760d58e5d14f5e89323eee628a2a3a:1dd785cc473b878c56650ad4b4d00b03b73484dded274c22df0d0951ef51526e",
+            "first_observed_request": {
+              "index": 5725,
+              "kind": "REQUEST",
+              "sha256": "f95ed83db246856ed09a61906b3797bc8de28586c3a28959d392ea524f7bb7d2"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 5727,
+                  "kind": "COMMITTED",
+                  "sha256": "3c30cf1057665df78729337c31e8a6dbb026b4848202a682927062fb340a9826"
+                },
+                "request": {
+                  "index": 5725,
+                  "kind": "REQUEST",
+                  "sha256": "f95ed83db246856ed09a61906b3797bc8de28586c3a28959d392ea524f7bb7d2"
+                },
+                "response": {
+                  "index": 5726,
+                  "kind": "RESPONSE",
+                  "sha256": "f84ecb0a537356fc3bf3a50894f3bc26168923f09b6ecb151e3f13e159ac64f8"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 5728,
+                  "kind": "R184_STAGE",
+                  "sha256": "8f3feffa547255f04ac677d748dedfa10da4cf7cd843c235eeb2b141e19f106e"
+                }
+              },
+              {
+                "committed": {
+                  "index": 5734,
+                  "kind": "COMMITTED",
+                  "sha256": "1974de56e9a837dd1ec0d3b4feab5dcb3e4a8668b625a20777d67e6ae0e77b3c"
+                },
+                "request": {
+                  "index": 5732,
+                  "kind": "REQUEST",
+                  "sha256": "87eedf23dd33bf9d38021edc6a72f3741a2b04c2085b9de49f5483d90c087a81"
+                },
+                "response": {
+                  "index": 5733,
+                  "kind": "RESPONSE",
+                  "sha256": "0a9ad674f0b61de3d31aeb17779d8acb56c27bb4bd2090a7cd9f908ac9a756a4"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 5735,
+                  "kind": "R184_STAGE",
+                  "sha256": "30ca9687415a5e03c627e37f5b613c16bb4e1de3b03cf00e7babd236dd81e27f"
+                }
+              },
+              {
+                "committed": {
+                  "index": 5744,
+                  "kind": "COMMITTED",
+                  "sha256": "330b3f7999167ea31941bb64de2c4979bcccac181dcc4c0ca22a4a9612b99b5b"
+                },
+                "request": {
+                  "index": 5742,
+                  "kind": "REQUEST",
+                  "sha256": "39da3d5d64914452098587458a34bd6e305fae40e3b2b99c9f7473907509cb3c"
+                },
+                "response": {
+                  "index": 5743,
+                  "kind": "RESPONSE",
+                  "sha256": "8d2efc9f875ae51e2fbfd471ca90ef1d7810d9cf5f26002e35b66e1c6ba6d6ec"
+                },
+                "stage": "LEARN",
+                "stage_receipt": {
+                  "index": 5745,
+                  "kind": "R184_STAGE",
+                  "sha256": "d2a51dfd01c16129d4b9b489f7497010dad21acd1484c73365cb7d3b5d7b6789"
+                }
+              }
+            ],
+            "inbox": {
+              "index": 5723,
+              "kind": "INBOX",
+              "sha256": "d0953e9758625ec33a2d9aad7a797cacb8de02385c439dc337c950eec554e129"
+            },
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 5734,
+                "kind": "COMMITTED",
+                "sha256": "1974de56e9a837dd1ec0d3b4feab5dcb3e4a8668b625a20777d67e6ae0e77b3c"
+              },
+              "request": {
+                "index": 5732,
+                "kind": "REQUEST",
+                "sha256": "87eedf23dd33bf9d38021edc6a72f3741a2b04c2085b9de49f5483d90c087a81"
+              },
+              "response": {
+                "index": 5733,
+                "kind": "RESPONSE",
+                "sha256": "0a9ad674f0b61de3d31aeb17779d8acb56c27bb4bd2090a7cd9f908ac9a756a4"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 5735,
+                "kind": "R184_STAGE",
+                "sha256": "30ca9687415a5e03c627e37f5b613c16bb4e1de3b03cf00e7babd236dd81e27f"
+              }
+            },
+            "queue_id": "40626c637311922eb53e8ca53da7f94903948867f568a97fdcd4840566630cab",
+            "source_sha256": "1dd785cc473b878c56650ad4b4d00b03b73484dded274c22df0d0951ef51526e",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          }
+        ],
+        "journal_id": "0727d448bca644bfa64f1a1f65c1f21f",
+        "label": "GAME1_P3",
+        "model_calls": 0,
+        "new_ACT_count": 3,
+        "new_rendered_input_count": 299,
+        "new_semantic_judgments": 0,
+        "omitted_pending_count": 296,
+        "owner": "Main: semantic review handoff requested; acceptance not inferred",
+        "pending_output_windows": 1,
+        "pending_rendered_input_count": 299,
+        "pending_total": 300,
+        "selection": "At most two fresh items, then least-recently-offered backlog; role/index tie-breaks only.",
+        "stage_scope": "Following child outputs require actual R184_STAGE; unframed console outputs are not relabelled.",
+        "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+      },
+      "source_horizon_utc": "2026-09-25T18:00:00+00:00",
+      "status": "ACTUAL_BOUNDED_COLLECTION_COMPLETE"
+    },
+    {
+      "highest_verified_level": 0,
+      "historical": {
+        "actual_ACTs": 58,
+        "actual_committed_outputs": 173,
+        "caught_up": true,
+        "confirmed_reminders": 0,
+        "coverage_end": 3558,
+        "coverage_start": 0,
+        "cross_task_transfers": 0,
+        "external_feedback_candidates": 204,
+        "highest_verified_level": 0,
+        "historical_cut_index": 3558,
+        "imported_pins": {
+          "ANNOTATIONS.json": "7044c624965cc692e533bc2f3818804c92576402e209bc67e19d5ad90503c1c1",
+          "EVIDENCE.json": "a95b1a9abc8b6cae08bf9e456712a36b1c895e17669fad31bae2fc8c62e5d8e2"
+        },
+        "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+        "label": "MATH_A",
+        "learner_controls": 0,
+        "level_counts": {
+          "0": 3,
+          "1": 0,
+          "2": 0,
+          "3": 0
+        },
+        "lifetime_absence_claim": false,
+        "model_calls": 0,
+        "observed_unix": 1789736456.4871035,
+        "provenance": "REVALIDATED_ORIGINAL_MANUAL_LEDGER_NOT_NEW_SEMANTICS",
+        "rejected_annotations": [],
+        "reminder_count_unknown": 3,
+        "reviewed_corrections": 3,
+        "status": "REVIEWED_PARTIAL",
+        "traces": [
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:185ee15416284c5cb4fa91687ab5de54:7dfd0fd35caead15e00965f619d11c6f528ef198ef6d252031b1d5d0187c5476",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:185ee15416284c5cb4fa91687ab5de54",
+              "inbox": {
+                "index": 1701,
+                "kind": "INBOX",
+                "sha256": "891ba5fa63c534a4628d37ffa08745cb1924f34db5a0daedf4a1fcf88a4d6b05"
+              },
+              "request": {
+                "index": 1703,
+                "kind": "REQUEST",
+                "sha256": "4323d21fd75831e90eb1fa4e6e0c58c0056c5ec369a5f1f6be0198008f04f949"
+              },
+              "source_sha256": "7dfd0fd35caead15e00965f619d11c6f528ef198ef6d252031b1d5d0187c5476",
+              "text_sha256": "bab12bda6bd7cd135b252f8fb9bde5438a828c4580113d533fc71f6a4e8b47a7"
+            },
+            "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 1703,
+                  "kind": "REQUEST",
+                  "sha256": "4323d21fd75831e90eb1fa4e6e0c58c0056c5ec369a5f1f6be0198008f04f949"
+                },
+                "response": {
+                  "index": 1704,
+                  "kind": "RESPONSE",
+                  "sha256": "400e53780c50c4b829beafd05aa71234014a82fe1ad45ca16a59f0d74a9ac055"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 1710,
+                  "kind": "REQUEST",
+                  "sha256": "9e33db94d1b24d82ecedf9821992eba4ac4051bd05f2978e850820c82f53067f"
+                },
+                "response": {
+                  "index": 1711,
+                  "kind": "RESPONSE",
+                  "sha256": "dc848829f4d27723342f61cdf981c1114526a1a479b3b5b5cb4b5774b6fe82aa"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 1719,
+                  "kind": "REQUEST",
+                  "sha256": "e57862babb530047843630affe8fe6ae48f4acec38eb7982402402dc59ed9dc2"
+                },
+                "response": {
+                  "index": 1720,
+                  "kind": "RESPONSE",
+                  "sha256": "c0f824f7c5f218f123c09ec3fbb2aad7ac9624c73bdad1535a27db1c918a380e"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "e3b3f7d3093ca340c3d72601f212699c438a3efed5a2d6d94b4e1162d422225f",
+            "parent_supplied_solution": false,
+            "reminders": null
+          },
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:b19bc72722b346a1bdc3dfc4b6a3a423:dd5d11eff6f8619b5668eabd3480cfdfc1e05df6d6a0707aa2b70ffee560fe95",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:b19bc72722b346a1bdc3dfc4b6a3a423",
+              "inbox": {
+                "index": 2561,
+                "kind": "INBOX",
+                "sha256": "86023c98da3850744f49967d64072604fe56c3ae5fa9a1b4573972ec41a63d1a"
+              },
+              "request": {
+                "index": 2563,
+                "kind": "REQUEST",
+                "sha256": "7f12461b5ae0cda00f986242ef02eb4347c26c9f083cb8201af7428583ceac96"
+              },
+              "source_sha256": "dd5d11eff6f8619b5668eabd3480cfdfc1e05df6d6a0707aa2b70ffee560fe95",
+              "text_sha256": "3edf839c490194fce0a0516a651b56da196cac5bef50112aead3d3ef9b3b2fe0"
+            },
+            "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 2563,
+                  "kind": "REQUEST",
+                  "sha256": "7f12461b5ae0cda00f986242ef02eb4347c26c9f083cb8201af7428583ceac96"
+                },
+                "response": {
+                  "index": 2564,
+                  "kind": "RESPONSE",
+                  "sha256": "ea21907049a303f2223f59ac0e804592fd5c7ad92b54e79abb00d0e1a2be980c"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 2570,
+                  "kind": "REQUEST",
+                  "sha256": "a1b535bd1097bf94c8c187350ae39ba4f682866697126fe55008c93e159aa99d"
+                },
+                "response": {
+                  "index": 2571,
+                  "kind": "RESPONSE",
+                  "sha256": "a51618d0170df8605de194a533b4a08de34a49bdec36156f9a9448162186daf8"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 2579,
+                  "kind": "REQUEST",
+                  "sha256": "ffb7536d3216a1d47f4232476d4ea668a396a2a8393a4f8bd733821d168b0f71"
+                },
+                "response": {
+                  "index": 2580,
+                  "kind": "RESPONSE",
+                  "sha256": "4ee1baf0a9ae27e021eb078efe1c5a2851c7cce131471dc084f06f466a2df28a"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "e173f265011aa6e91eb687a5cd61628702e71bc69acef5338bc155b5e3079e0e",
+            "parent_supplied_solution": "Completeness-check method supplied; no count supplied.",
+            "reminders": null
+          },
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:72397c84238e49a1b5cac8016baeeed2:4cc15b744dece0ac1ac473c330fac9f59972b364bfe7a1e92d91779e1392f9e0",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:72397c84238e49a1b5cac8016baeeed2",
+              "inbox": {
+                "index": 2593,
+                "kind": "INBOX",
+                "sha256": "3ce3b5989dbd22564f019aa33b9be8f928613f1e13a6c94d08e18c9373cb4ca3"
+              },
+              "request": {
+                "index": 2595,
+                "kind": "REQUEST",
+                "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc"
+              },
+              "source_sha256": "4cc15b744dece0ac1ac473c330fac9f59972b364bfe7a1e92d91779e1392f9e0",
+              "text_sha256": "af962a389b34214d1ee75171db1e1849c8cbcb3e615f360f1c0c3e1567bc3765"
+            },
+            "journal_id": "5c8cc6ab24174a34a79d4c1190bf677e",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 2595,
+                  "kind": "REQUEST",
+                  "sha256": "b0e6da46d9445cdec3f338eade587dfde4121d607c5014271c3385aa4e3457dc"
+                },
+                "response": {
+                  "index": 2596,
+                  "kind": "RESPONSE",
+                  "sha256": "90e106dec99e1a608c1e6f6f623f6c32844665d5fd9fd9b69666e33567daa4e3"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 2602,
+                  "kind": "REQUEST",
+                  "sha256": "903666fee797b696581f41f93a0a99bd012253968a93feaf3a05cc7883af049d"
+                },
+                "response": {
+                  "index": 2603,
+                  "kind": "RESPONSE",
+                  "sha256": "7c1836a45d46087c5d370c2c043728baf4915821bdd8ff1cdd7e8590869cbd57"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 2611,
+                  "kind": "REQUEST",
+                  "sha256": "eda5747869c6d5c6429b030ab233384dab73579404a521e87d4ddb37f048d41d"
+                },
+                "response": {
+                  "index": 2612,
+                  "kind": "RESPONSE",
+                  "sha256": "3cc942c5465a6f034103afa1615353ba10e9b8eb54396338e90ed020d94ee500"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "31a8965ecabac0759b37363157703a665b6474c1d10570b1feeec03b6e10975a",
+            "parent_supplied_solution": "Method and current task supplied; no numerical answer supplied.",
+            "reminders": null
+          }
+        ],
+        "unknown_candidates": 201
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "MATH_A",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": 1,
+      "historical": {
+        "actual_ACTs": 65,
+        "actual_committed_outputs": 192,
+        "caught_up": true,
+        "confirmed_reminders": 0,
+        "coverage_end": 3239,
+        "coverage_start": 0,
+        "cross_task_transfers": 0,
+        "external_feedback_candidates": 214,
+        "highest_verified_level": 1,
+        "historical_cut_index": 3239,
+        "imported_pins": {
+          "ANNOTATIONS.json": "5acafd5c7957e66dfa0249d8742b2da5633db93060f010195d85378a67518ab3",
+          "EVIDENCE.json": "8d9c931337aa730127dca0208d40c026169baea5e94aa2191a16c64d9e5fa1d1"
+        },
+        "journal_id": "45315f580ec845989682e2a728255608",
+        "label": "MATH_B_FORK",
+        "learner_controls": 0,
+        "level_counts": {
+          "0": 1,
+          "1": 1,
+          "2": 0,
+          "3": 0
+        },
+        "lifetime_absence_claim": false,
+        "model_calls": 0,
+        "observed_unix": 1789736461.510766,
+        "provenance": "REVALIDATED_ORIGINAL_MANUAL_LEDGER_NOT_NEW_SEMANTICS",
+        "rejected_annotations": [],
+        "reminder_count_unknown": 2,
+        "reviewed_corrections": 2,
+        "status": "REVIEWED_PARTIAL",
+        "traces": [
+          {
+            "child_records": [
+              {
+                "committed": {
+                  "index": 1461,
+                  "kind": "COMMITTED",
+                  "sha256": "d84dcff35d3eb93f6b9c0709504568e77c5c7d191623ec34d8712dcd50aac63b"
+                },
+                "cycle": 82,
+                "end": 113,
+                "record": {
+                  "index": 1460,
+                  "kind": "RESPONSE",
+                  "sha256": "e62f35866729fbd5a1de631538136432885a0b33c239f0a05ffa22e204f9124a"
+                },
+                "request": {
+                  "index": 1459,
+                  "kind": "REQUEST",
+                  "sha256": "85e956ba298aad80b8ab62c2bad63255ba808a7cb5049d595c3de33505393940"
+                },
+                "span_sha256": "46066fab125e401e351aa0ed0e3090df830a5f0e672eca3da3b7a8e868738d1c",
+                "stage": "THINK",
+                "stage_record": {
+                  "index": 1462,
+                  "kind": "R184_STAGE",
+                  "sha256": "5670e59a4aa3712eb4b15a345fb0f6ffd937ab56dc33273d69240870f79162a8"
+                },
+                "start": 63
+              }
+            ],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:2d4acee0ab9042a7a6ecd83a9ee04d3a:fc40bc2050c2d6954aeb30ea4138a2818c3014b483352ff262ee212722b4bca0",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:2d4acee0ab9042a7a6ecd83a9ee04d3a",
+              "inbox": {
+                "index": 1457,
+                "kind": "INBOX",
+                "sha256": "937b899be4636be8e9820e8c278d5a5ffd658576f934f94a2ed8b9eabfa19fef"
+              },
+              "request": {
+                "index": 1459,
+                "kind": "REQUEST",
+                "sha256": "85e956ba298aad80b8ab62c2bad63255ba808a7cb5049d595c3de33505393940"
+              },
+              "source_sha256": "fc40bc2050c2d6954aeb30ea4138a2818c3014b483352ff262ee212722b4bca0",
+              "text_sha256": "c407e0a3748eebed3ab0b07720482aa1b7ee2c92737eeeebcb0041a56d82fdeb"
+            },
+            "journal_id": "45315f580ec845989682e2a728255608",
+            "level": 1,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 1459,
+                  "kind": "REQUEST",
+                  "sha256": "85e956ba298aad80b8ab62c2bad63255ba808a7cb5049d595c3de33505393940"
+                },
+                "response": {
+                  "index": 1460,
+                  "kind": "RESPONSE",
+                  "sha256": "e62f35866729fbd5a1de631538136432885a0b33c239f0a05ffa22e204f9124a"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 1466,
+                  "kind": "REQUEST",
+                  "sha256": "2bc1338f4f35e186103dde071373ba53318e8ea0f9cefcf735a19fe3e2b29f04"
+                },
+                "response": {
+                  "index": 1467,
+                  "kind": "RESPONSE",
+                  "sha256": "89e2837bb53a3ac616499051f5931586d06a2dac37566502eb9ae2db53e39e69"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 1475,
+                  "kind": "REQUEST",
+                  "sha256": "9fab80377c3aeaf2bf1b018fef8cea92cfff0966dff89be4a1fdbe9f17242042"
+                },
+                "response": {
+                  "index": 1476,
+                  "kind": "RESPONSE",
+                  "sha256": "4994e618d9540d87e6db4491c38356ba352bfb22954e5761f1c8057bee9fcce1"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "788a33165d8c33f5aa6e5efd8646bab23d00e07ebbe133b09440c72b62b30f78",
+            "parent_supplied_solution": false,
+            "reminders": null
+          },
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:d6c887a46f0042a19d1b414983203581:c43dde8fa576965cfd4d0f0378fa4d6fe5621e62beb26f8739b5a1126ed7d356",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:d6c887a46f0042a19d1b414983203581",
+              "inbox": {
+                "index": 2271,
+                "kind": "INBOX",
+                "sha256": "5765576c5a9439805d83de2302cc204502a0bdf9b2f2c86f26be0a6324b6ed5c"
+              },
+              "request": {
+                "index": 2274,
+                "kind": "REQUEST",
+                "sha256": "cda8075bd884edc2e377265721b17551fdaa72cf01c15660f7ee1040fd100882"
+              },
+              "source_sha256": "c43dde8fa576965cfd4d0f0378fa4d6fe5621e62beb26f8739b5a1126ed7d356",
+              "text_sha256": "1f6c0757c4967e028f9a773915aeae5f1ed154b19cb9a81914b2197a9e10c008"
+            },
+            "journal_id": "45315f580ec845989682e2a728255608",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 2274,
+                  "kind": "REQUEST",
+                  "sha256": "cda8075bd884edc2e377265721b17551fdaa72cf01c15660f7ee1040fd100882"
+                },
+                "response": {
+                  "index": 2275,
+                  "kind": "RESPONSE",
+                  "sha256": "8add6addb2e3b85213a94bce636111e44545c1cd0c525c200060185868f44f0f"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 2283,
+                  "kind": "REQUEST",
+                  "sha256": "0e120671266bf2a413d09a838c9e6c5cd0237ad9cfc88ab0397c7f317f9789be"
+                },
+                "response": {
+                  "index": 2284,
+                  "kind": "RESPONSE",
+                  "sha256": "d45778283357b97ceaa1ac956b15cfbf777a9f543758aa109fa201947234dcbc"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 2292,
+                  "kind": "REQUEST",
+                  "sha256": "33cc949c955ba4e2f6b7f5db5c7199db55583377266ae673362c3c247bb15136"
+                },
+                "response": {
+                  "index": 2293,
+                  "kind": "RESPONSE",
+                  "sha256": "89b2c82b38dd8e0563324d1891491f5e7848d31a51b9839cc5ca71c126c34fa5"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "9bec45d834f0021365f88a3417ed62b330ec800c5cdade1cdf321b56f49dc35a",
+            "parent_supplied_solution": "Procedural task guidance only; stale unverified peer polynomial work is also exposed.",
+            "reminders": null
+          }
+        ],
+        "unknown_candidates": 212
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "MATH_B_FORK",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": 1,
+      "historical": {
+        "actual_ACTs": 71,
+        "actual_committed_outputs": 213,
+        "caught_up": true,
+        "confirmed_reminders": 0,
+        "coverage_end": 3217,
+        "coverage_start": 0,
+        "cross_task_transfers": 0,
+        "external_feedback_candidates": 234,
+        "highest_verified_level": 1,
+        "historical_cut_index": 3217,
+        "imported_pins": {
+          "ANNOTATIONS.json": "3040e744bd8cbe48526b420eb7e1c9c7c8d1b1a5027f73f1547cc4847f4add92",
+          "EVIDENCE.json": "be1eb8ebd955d2ccd737f8b2318c5ac4b49aae173e0c8dbe714846a623b649a2"
+        },
+        "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+        "label": "MATH_C",
+        "learner_controls": 0,
+        "level_counts": {
+          "0": 2,
+          "1": 1,
+          "2": 0,
+          "3": 0
+        },
+        "lifetime_absence_claim": false,
+        "model_calls": 0,
+        "observed_unix": 1789736465.3353782,
+        "provenance": "REVALIDATED_ORIGINAL_MANUAL_LEDGER_NOT_NEW_SEMANTICS",
+        "rejected_annotations": [],
+        "reminder_count_unknown": 3,
+        "reviewed_corrections": 3,
+        "status": "REVIEWED_PARTIAL",
+        "traces": [
+          {
+            "child_records": [
+              {
+                "committed": {
+                  "index": 1548,
+                  "kind": "COMMITTED",
+                  "sha256": "b7c8d05c097fde8a1a96092b8d43ac0b453f80e721b265bf25990e7823690f89"
+                },
+                "cycle": 85,
+                "end": 681,
+                "record": {
+                  "index": 1547,
+                  "kind": "RESPONSE",
+                  "sha256": "ccda00f8a076517cde1b8062868551fbbf7994f3d6b1e42e75ae91364e303421"
+                },
+                "request": {
+                  "index": 1546,
+                  "kind": "REQUEST",
+                  "sha256": "36b9820ee9fd613e824385cab050351c3b919ffa33b8a3e8c077aa607fa99537"
+                },
+                "span_sha256": "9c4aeaff15fd851704424231627ef5cfe1c5ce857a587f686fa671942e6a8d01",
+                "stage": "THINK",
+                "stage_record": {
+                  "index": 1549,
+                  "kind": "R184_STAGE",
+                  "sha256": "7d9ba54fbb4192f2ae5253f3bc3d4fd1873c9d8cdec63b9875ac57709260f37a"
+                },
+                "start": 649
+              }
+            ],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:575d2c2e4d76476091105eab6e2e0c06:823d302d63890175e38d81865a6b82eeceda70536a4f66e9808b74b21973800d",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:575d2c2e4d76476091105eab6e2e0c06",
+              "inbox": {
+                "index": 1544,
+                "kind": "INBOX",
+                "sha256": "479f56888cf3f79da67de3987349bc75783e1597b14a3a3a909478fb0811d69c"
+              },
+              "request": {
+                "index": 1546,
+                "kind": "REQUEST",
+                "sha256": "36b9820ee9fd613e824385cab050351c3b919ffa33b8a3e8c077aa607fa99537"
+              },
+              "source_sha256": "823d302d63890175e38d81865a6b82eeceda70536a4f66e9808b74b21973800d",
+              "text_sha256": "a398723ea7e576d0cc5a835755d616f488e55930728ff077b6b1231dca83b03f"
+            },
+            "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+            "level": 1,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 1546,
+                  "kind": "REQUEST",
+                  "sha256": "36b9820ee9fd613e824385cab050351c3b919ffa33b8a3e8c077aa607fa99537"
+                },
+                "response": {
+                  "index": 1547,
+                  "kind": "RESPONSE",
+                  "sha256": "ccda00f8a076517cde1b8062868551fbbf7994f3d6b1e42e75ae91364e303421"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 1553,
+                  "kind": "REQUEST",
+                  "sha256": "e91a0da29b13a9dc7a3f2e586864b6cd2a38f3c6c224d74880a47b32a1376983"
+                },
+                "response": {
+                  "index": 1554,
+                  "kind": "RESPONSE",
+                  "sha256": "9d9bb100c2e6edb4072d9802f0dfad2f0bcc86ec87c6222bb250bf8f781c5d2a"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 1562,
+                  "kind": "REQUEST",
+                  "sha256": "5d7d7b7c1b8bbc3ac66b3375e19b408e48d72dc961eef44d03899c4fb050ff7f"
+                },
+                "response": {
+                  "index": 1563,
+                  "kind": "RESPONSE",
+                  "sha256": "d4638f8d39bb027bf56c370c23de2412d624c61ff18f013fd35ec789d8a28c1f"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "7e2bc87505a7fcb5fd8b01edda6f94d09c027962038d14b3453713e821bbcafa",
+            "parent_supplied_solution": false,
+            "reminders": null
+          },
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:376ac361a0e54b179b71c846fae957ec:f6d73533c1812fa9538a19f9dfe2700457382459868eb11202d602fb4a999d0e",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:376ac361a0e54b179b71c846fae957ec",
+              "inbox": {
+                "index": 2272,
+                "kind": "INBOX",
+                "sha256": "c291c5c099916c819c3b7723b392cc1436f7293fdb6f4b28898149e09a4bf29a"
+              },
+              "request": {
+                "index": 2274,
+                "kind": "REQUEST",
+                "sha256": "0032b78c1fadf9af822e3546f17b11ad7ba7fcba1bee4766504f3e8bb5cc3bb2"
+              },
+              "source_sha256": "f6d73533c1812fa9538a19f9dfe2700457382459868eb11202d602fb4a999d0e",
+              "text_sha256": "e925a4ecfef29dbb0886135303e7546e53ddb54141164b1a098efe3474e07873"
+            },
+            "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 2274,
+                  "kind": "REQUEST",
+                  "sha256": "0032b78c1fadf9af822e3546f17b11ad7ba7fcba1bee4766504f3e8bb5cc3bb2"
+                },
+                "response": {
+                  "index": 2275,
+                  "kind": "RESPONSE",
+                  "sha256": "eb341daee81b504efdcc17c1924a9d214606d644e0975fb91dfecb50af9c946a"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 2283,
+                  "kind": "REQUEST",
+                  "sha256": "853f39ae2be27316f16c3a9cde216d78a5cf3f7d11ff021edebabefd08e4d83d"
+                },
+                "response": {
+                  "index": 2284,
+                  "kind": "RESPONSE",
+                  "sha256": "662c12e2dcd2adc01cf894466f83a0f7b76abcbd53aafc34ce2bf690bfb66959"
+                },
+                "stage": "LEARN"
+              },
+              {
+                "request": {
+                  "index": 2298,
+                  "kind": "REQUEST",
+                  "sha256": "a004aa53d1d5e4a9e8aa6299608fdc4d811c674c0ce532af750980e21fd5b6b7"
+                },
+                "response": {
+                  "index": 2299,
+                  "kind": "RESPONSE",
+                  "sha256": "d7d16420144d400ca86d1c99d5ddf727dc95cc3085550c27eec23215885620dc"
+                },
+                "stage": "THINK"
+              }
+            ],
+            "observer_assessment_sha256": "e43a6619ee083b719cda228881a1278d5d4fa8d2ef15b43ef7ae253430795ef5",
+            "parent_supplied_solution": "Residue-class method supplied; no numerical solution supplied.",
+            "reminders": null
+          },
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:472d1f2c436540e9894a338266ad4b6d:4fd227d6118d1fc45ab11564a3f9852752deaf9657e064c13a34f805245494ca",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:472d1f2c436540e9894a338266ad4b6d",
+              "inbox": {
+                "index": 2347,
+                "kind": "INBOX",
+                "sha256": "494b6a85bbd6630871da4e759994f38eb296d3c24a3c4ae2fba6ee226f737a30"
+              },
+              "request": {
+                "index": 2350,
+                "kind": "REQUEST",
+                "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9"
+              },
+              "source_sha256": "4fd227d6118d1fc45ab11564a3f9852752deaf9657e064c13a34f805245494ca",
+              "text_sha256": "ed0a63d67b37bf33843db199f90156ba52e5f2ffe196902edaf8e1b5c731f328"
+            },
+            "journal_id": "f54fa0fd2485417187e1a4cc9657efdc",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 2350,
+                  "kind": "REQUEST",
+                  "sha256": "1564edd9a5b11cc9a3bc51c09519a0d845e12e473af852ff86ea0016a92d73b9"
+                },
+                "response": {
+                  "index": 2351,
+                  "kind": "RESPONSE",
+                  "sha256": "c90b57245f0b92a5b86fbfc725047dc61700cbb952d1063b0b65864e4a7e9171"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 2357,
+                  "kind": "REQUEST",
+                  "sha256": "ee847fdded5b91c4ea4366bf70165c8d3a7dcae21bb8d2574fdce84700c3efef"
+                },
+                "response": {
+                  "index": 2358,
+                  "kind": "RESPONSE",
+                  "sha256": "de52308140d1a312029911d7a99409f95a452eddbbadf40c129574b25353181a"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 2366,
+                  "kind": "REQUEST",
+                  "sha256": "421820d32b9b8a85d6d778b162effeea73c6b49945d4b3920b1c26813275dbe1"
+                },
+                "response": {
+                  "index": 2367,
+                  "kind": "RESPONSE",
+                  "sha256": "69dfd692cfd5ea038f921e60dddf76452948480367a7714609598916c1db66a2"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "246a1bbe4bdb95f4a4bf8f70f341bbccab4d34c0851a39333f34809436113d74",
+            "parent_supplied_solution": "Method supplied; no numerical answer supplied.",
+            "reminders": null
+          }
+        ],
+        "unknown_candidates": 231
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "MATH_C",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": null,
+      "historical": {
+        "highest_verified_level": null,
+        "provenance": "NO_IMPORTED_MANUAL_ANNOTATION",
+        "traces": []
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "GAME_N3_0",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": null,
+      "historical": {
+        "highest_verified_level": null,
+        "provenance": "NO_IMPORTED_MANUAL_ANNOTATION",
+        "traces": []
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "GAME_N3_3",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": null,
+      "historical": {
+        "highest_verified_level": null,
+        "provenance": "NO_IMPORTED_MANUAL_ANNOTATION",
+        "traces": []
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "GAME_N3_5",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": null,
+      "historical": {
+        "highest_verified_level": null,
+        "provenance": "NO_IMPORTED_MANUAL_ANNOTATION",
+        "traces": []
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "GAME_N3_6",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": null,
+      "historical": {
+        "highest_verified_level": null,
+        "provenance": "NO_IMPORTED_MANUAL_ANNOTATION",
+        "traces": []
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "GAME_N3_7",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": null,
+      "historical": {
+        "highest_verified_level": null,
+        "provenance": "NO_IMPORTED_MANUAL_ANNOTATION",
+        "traces": []
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "GAME_UNPARENTED_N2",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": null,
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "between_hour_gap": null,
+      "binding_receipt_sha256": "7d84fccc094d675a42c598e5b35e773fc2ca39388bbf24b2d618abd2b2575c3d",
+      "current_identity": {
+        "command_sha256": "68ddadda7493b94ea6bbfba834699fd8f37f1f24348489f04866f43c5303dafb",
+        "guard_sha256": "282ad372328b6244f0cc82b4cfbd39de0fcdd2b7a748c681449f937cbfadd632",
+        "pid": 493500,
+        "start_ticks": "10070880"
+      },
+      "current_window": {
+        "actual_committed_ACTs": 3,
+        "caught_up": true,
+        "first": 4745,
+        "head": {
+          "index": 4984,
+          "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+          "kind": "UPDATE",
+          "previous_sha256": "8d4a7c5dcee546c6008789d8ff6ce7ba61270b9272e8f17f2537e6b2eda0d400",
+          "sha256": "ea11eaddccd5750c9b88205350e9e535709d5d815be75510fa5bba2ff3924e35"
+        },
+        "newest_ACT": {
+          "committed": {
+            "index": 4927,
+            "kind": "COMMITTED",
+            "sha256": "a8267587ebcd633c6a5c4cff6c45979125ee526f7ac97e690ab4876be2f5e73c"
+          },
+          "request": {
+            "index": 4925,
+            "kind": "REQUEST",
+            "sha256": "c34684b431747acf37d4e8d892b45314e832fed72c86973af05b4c94a87a85d7"
+          },
+          "response": {
+            "index": 4926,
+            "kind": "RESPONSE",
+            "sha256": "d24600619cda7e7c7a920f16d537973f256347df8b5800efdea01ef9dd69d8e8"
+          },
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 4928,
+            "kind": "R184_STAGE",
+            "sha256": "e1c38e923d741736d8ab8f044d9ee83a8f7bfa4c29caf6aad58ad96968c475db"
+          }
+        },
+        "raw_bytes_read": 107119321,
+        "snapshot_sha256": "872d8ca787129508519cee54a13ba9ea56735c80f52348b865fd4096c18e64b6",
+        "through": {
+          "index": 4984,
+          "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+          "kind": "UPDATE",
+          "previous_sha256": "8d4a7c5dcee546c6008789d8ff6ce7ba61270b9272e8f17f2537e6b2eda0d400",
+          "sha256": "ea11eaddccd5750c9b88205350e9e535709d5d815be75510fa5bba2ff3924e35"
+        }
+      },
+      "current_window_semantic_level": null,
+      "earlier_unsampled_interval": [
+        1360,
+        4744
+      ],
+      "highest_verified_level": 2,
+      "historical": {
+        "actual_ACTs": 17,
+        "actual_committed_outputs": 51,
+        "caught_up": true,
+        "confirmed_reminders": 0,
+        "coverage_end": 1359,
+        "coverage_start": 0,
+        "cross_task_transfers": 0,
+        "external_feedback_candidates": 35,
+        "highest_verified_level": 2,
+        "historical_cut_index": 1359,
+        "imported_pins": {
+          "ANNOTATIONS.json": "099ca94792dae90fcae1a154a563add30e8321cea7a57b0cd33c67bb7ae3d9fb",
+          "EVIDENCE.json": "a3fc0e8bd390d9dbf10ecaf402d3ed340689fa031777f7b95cc07437e1b1b9e8"
+        },
+        "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+        "label": "FRESH_R231",
+        "learner_controls": 0,
+        "level_counts": {
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 0
+        },
+        "lifetime_absence_claim": false,
+        "model_calls": 0,
+        "observed_unix": 1789736467.1221304,
+        "provenance": "REVALIDATED_ORIGINAL_MANUAL_LEDGER_NOT_NEW_SEMANTICS",
+        "rejected_annotations": [],
+        "reminder_count_unknown": 3,
+        "reviewed_corrections": 3,
+        "status": "REVIEWED_PARTIAL",
+        "traces": [
+          {
+            "child_records": [
+              {
+                "committed": {
+                  "index": 88,
+                  "kind": "COMMITTED",
+                  "sha256": "0a0e12981e4a220996fcbc65b85198fb5a83b9830c90e76fff4b9ceb53895ef0"
+                },
+                "cycle": 2,
+                "end": 1063,
+                "record": {
+                  "index": 87,
+                  "kind": "RESPONSE",
+                  "sha256": "f8f39d03872777dcb2692f7ddbc680e6434c0de740f3e4f10ea1b02492b3befe"
+                },
+                "request": {
+                  "index": 86,
+                  "kind": "REQUEST",
+                  "sha256": "c904f62e135996146778062155f740cb7839593e8848287fd7c001313203946e"
+                },
+                "span_sha256": "f450db5046c4377be45e2bc512069640087290fdcfbbc22db006b89a0732828a",
+                "stage": "THINK",
+                "stage_record": {
+                  "index": 89,
+                  "kind": "R184_STAGE",
+                  "sha256": "574a0df97c4e6b708370beadb70dda80250604f8a94508de442e9c3a96497175"
+                },
+                "start": 1017
+              }
+            ],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:01b4a1da83924811889da1ba3a01fef9:2b384ffc69ac0b20883a69b164947396a3e0e2cab9b77b56158bb24890343fcd",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:01b4a1da83924811889da1ba3a01fef9",
+              "inbox": {
+                "index": 84,
+                "kind": "INBOX",
+                "sha256": "e08825c00a07c8065456473f06284f5d5127672db457f1926ac9a733b6c77c53"
+              },
+              "request": {
+                "index": 86,
+                "kind": "REQUEST",
+                "sha256": "c904f62e135996146778062155f740cb7839593e8848287fd7c001313203946e"
+              },
+              "source_sha256": "2b384ffc69ac0b20883a69b164947396a3e0e2cab9b77b56158bb24890343fcd",
+              "text_sha256": "6d8361a055c7106eca541b63095687b33bf7c1cac343bb5d4c4676ee8a272dcd"
+            },
+            "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+            "level": 1,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 86,
+                  "kind": "REQUEST",
+                  "sha256": "c904f62e135996146778062155f740cb7839593e8848287fd7c001313203946e"
+                },
+                "response": {
+                  "index": 87,
+                  "kind": "RESPONSE",
+                  "sha256": "f8f39d03872777dcb2692f7ddbc680e6434c0de740f3e4f10ea1b02492b3befe"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 95,
+                  "kind": "REQUEST",
+                  "sha256": "22b7dc4cfd5d65e7e8a52d54d77b8e1968586ca798aaa5b1118919bf596f0c47"
+                },
+                "response": {
+                  "index": 96,
+                  "kind": "RESPONSE",
+                  "sha256": "dd43d54b37ec3167441f5d9d1008d74e523db31f2ddd002216f9f4eba313249f"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 104,
+                  "kind": "REQUEST",
+                  "sha256": "6951c62fef17554a2637219d346b1ea6057e01ec18f7ca630eab6573062d00c6"
+                },
+                "response": {
+                  "index": 105,
+                  "kind": "RESPONSE",
+                  "sha256": "6eb7c91499ecb7242fb318d15c1f58c3c552d296d2feb7f07b85705c22c66164"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "2d63736bfce322fac28516f0a38ea1369409b140db027b4dfffa45778be044ce",
+            "parent_supplied_solution": false,
+            "reminders": null
+          },
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:a38f4c1b263248cbb88e83696415626f:b6473495a940f7bf37a205f59cd9bb9f33290a75134ffb1191c3f1f46d65a0b8",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:a38f4c1b263248cbb88e83696415626f",
+              "inbox": {
+                "index": 109,
+                "kind": "INBOX",
+                "sha256": "937bc5bc498fdcd52bf0caf961c29410e36b2b9d81067472e92441c3115085c7"
+              },
+              "request": {
+                "index": 174,
+                "kind": "REQUEST",
+                "sha256": "243b5c67566202e04b78cc1a2306f54b51c25aa72b54f4b0201a923564a960fa"
+              },
+              "source_sha256": "b6473495a940f7bf37a205f59cd9bb9f33290a75134ffb1191c3f1f46d65a0b8",
+              "text_sha256": "5f5a5c7a93634c3b2ad00439f30edb0cbf3933774d2efc909f2e1c3321de775a"
+            },
+            "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 174,
+                  "kind": "REQUEST",
+                  "sha256": "243b5c67566202e04b78cc1a2306f54b51c25aa72b54f4b0201a923564a960fa"
+                },
+                "response": {
+                  "index": 175,
+                  "kind": "RESPONSE",
+                  "sha256": "0fb5d24bd86d37bd2e1827467c125d16df392a288d86fc826b3c73563ccb92ea"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 183,
+                  "kind": "REQUEST",
+                  "sha256": "e0c345ccfc5ca1aa377c2cd4e62e15ae4b5826ce42fea4693f06d639982d6b83"
+                },
+                "response": {
+                  "index": 184,
+                  "kind": "RESPONSE",
+                  "sha256": "d115418ec377da9340de149fc2fc612fd5a336b0241ba448c3346194b1c45310"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 192,
+                  "kind": "REQUEST",
+                  "sha256": "352c74072681482198a5a7cdcead87551083c518fa528e97002932be1d8f35ef"
+                },
+                "response": {
+                  "index": 193,
+                  "kind": "RESPONSE",
+                  "sha256": "783464f355cc61638c16149b7cebd398951c1a72bc9f2ad34257e7dcd19ef846"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "b097ec5333c2b7dffae7f9a04bd48c805a8930b3e4d99b185c0785a70da71cff",
+            "parent_supplied_solution": true,
+            "reminders": null
+          },
+          {
+            "child_records": [
+              {
+                "committed": {
+                  "index": 338,
+                  "kind": "COMMITTED",
+                  "sha256": "aad5a3120dc9ee8dd4532c594152f7cf9a95d99edef2a165aa852b2bc29eeadd"
+                },
+                "cycle": 5,
+                "end": 1073,
+                "record": {
+                  "index": 337,
+                  "kind": "RESPONSE",
+                  "sha256": "5bbbc2d8dd6207640e66d3277d44bc7c4b87df88f119cc4582b06bd70ab4488a"
+                },
+                "request": {
+                  "index": 336,
+                  "kind": "REQUEST",
+                  "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+                },
+                "span_sha256": "be6a6d77ba7dea44ea71eaab4cbba7e14475d71e9770fcca96f6c88c7fb7902a",
+                "stage": "THINK",
+                "stage_record": {
+                  "index": 339,
+                  "kind": "R184_STAGE",
+                  "sha256": "f118ae4e7868f123634b5be602433e0f167d1812f4a555c295dbdafb20bc93eb"
+                },
+                "start": 977
+              },
+              {
+                "committed": {
+                  "index": 347,
+                  "kind": "COMMITTED",
+                  "sha256": "0790feb3b838fa49117993866d0cc787732315db5a59ae768489cd6d29fa7eb5"
+                },
+                "cycle": 5,
+                "end": 1331,
+                "record": {
+                  "index": 346,
+                  "kind": "RESPONSE",
+                  "sha256": "5fc4e64d2cb565421cb17ed8f29ac2a988e617144516d3898e6e638d4e306961"
+                },
+                "request": {
+                  "index": 345,
+                  "kind": "REQUEST",
+                  "sha256": "5bbf98363489d9dd04405fceec1ebcf8baf7fecf20dab08c229d75a8038049c2"
+                },
+                "span_sha256": "140f354e73e7bb4ef62e947b6ebde9ad789ae5e8c2b9bdeeb6b3891e76bbc2a2",
+                "stage": "ACT",
+                "stage_record": {
+                  "index": 348,
+                  "kind": "R184_STAGE",
+                  "sha256": "51fa0330fe7629098ec0f4ba0e542fc7bd50bd90a90112e75e85ce1f8d6ff953"
+                },
+                "start": 1198
+              }
+            ],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:c93ae171dc0e4d2a947f5377200c05d1:4cdf51fd5697235d777bf26fa7c83516196c61d6d810e63d06b4bba273f16463",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:c93ae171dc0e4d2a947f5377200c05d1",
+              "inbox": {
+                "index": 278,
+                "kind": "INBOX",
+                "sha256": "faf72b50bd9cc002b023208c56511557701a357e22b517a64644b56bc19cffd1"
+              },
+              "request": {
+                "index": 336,
+                "kind": "REQUEST",
+                "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+              },
+              "source_sha256": "4cdf51fd5697235d777bf26fa7c83516196c61d6d810e63d06b4bba273f16463",
+              "text_sha256": "14a3fefd4f7a4db87daa770a7c5adc53740b285dfadbada86d2057c9de0b60c8"
+            },
+            "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+            "level": 2,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 336,
+                  "kind": "REQUEST",
+                  "sha256": "bc67d114dec9c8c3db4a77463ab0cf7f9e779bd50483c61754e5cc6fad5dcd81"
+                },
+                "response": {
+                  "index": 337,
+                  "kind": "RESPONSE",
+                  "sha256": "5bbbc2d8dd6207640e66d3277d44bc7c4b87df88f119cc4582b06bd70ab4488a"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 345,
+                  "kind": "REQUEST",
+                  "sha256": "5bbf98363489d9dd04405fceec1ebcf8baf7fecf20dab08c229d75a8038049c2"
+                },
+                "response": {
+                  "index": 346,
+                  "kind": "RESPONSE",
+                  "sha256": "5fc4e64d2cb565421cb17ed8f29ac2a988e617144516d3898e6e638d4e306961"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 354,
+                  "kind": "REQUEST",
+                  "sha256": "0d96dc85acf8f453e826ada008128a89a7904df21da9ddae1981ee22dd9597bc"
+                },
+                "response": {
+                  "index": 355,
+                  "kind": "RESPONSE",
+                  "sha256": "4e2189c1920ea681ee8746ebc6ab3412810f2b1921af95e0e6f8e9d6d1eeb2fc"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "89bef7843bd080cd87d2ce79a23c6318d9f3a63a40d8652c19918f67718ce890",
+            "parent_supplied_solution": "Method supplied; numerical inverse steps not supplied in this feedback.",
+            "reminders": null
+          }
+        ],
+        "unknown_candidates": 32
+      },
+      "historical_reference_manifest_sha256": "629a342da6a49f8d525fc9072f07c14964b15babd6512120911b2a25332d4eff",
+      "historical_reference_scope": "CANONICAL_SOURCE_RECORDS_RECHECKED_NOW",
+      "label": "FRESH_R231",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": true,
+      "new_semantic_judgments": 0,
+      "original_correction_context_may_remain_visible": true,
+      "revalidated_historical_record_count": 27,
+      "review_queue": {
+        "automatic_semantic_review": false,
+        "displayed": 4,
+        "interpretation": "All rendered external inputs are triage candidates, including tasks and telemetry; none is classified as a correction here.",
+        "items": [
+          {
+            "actual_new_ACT_count": 3,
+            "after_index": 4744,
+            "existing_annotation_keys": [
+              "parent:inbox:01b4a1da83924811889da1ba3a01fef9:2b384ffc69ac0b20883a69b164947396a3e0e2cab9b77b56158bb24890343fcd",
+              "parent:inbox:a38f4c1b263248cbb88e83696415626f:b6473495a940f7bf37a205f59cd9bb9f33290a75134ffb1191c3f1f46d65a0b8",
+              "parent:inbox:c93ae171dc0e4d2a947f5377200c05d1:4cdf51fd5697235d777bf26fa7c83516196c61d6d810e63d06b4bba273f16463"
+            ],
+            "kind": "NEW_ACTS_REQUIRE_SEMANTIC_REVIEW",
+            "latest_ACT": {
+              "committed": {
+                "index": 4927,
+                "kind": "COMMITTED",
+                "sha256": "a8267587ebcd633c6a5c4cff6c45979125ee526f7ac97e690ab4876be2f5e73c"
+              },
+              "request": {
+                "index": 4925,
+                "kind": "REQUEST",
+                "sha256": "c34684b431747acf37d4e8d892b45314e832fed72c86973af05b4c94a87a85d7"
+              },
+              "response": {
+                "index": 4926,
+                "kind": "RESPONSE",
+                "sha256": "d24600619cda7e7c7a920f16d537973f256347df8b5800efdea01ef9dd69d8e8"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 4928,
+                "kind": "R184_STAGE",
+                "sha256": "e1c38e923d741736d8ab8f044d9ee83a8f7bfa4c29caf6aad58ad96968c475db"
+              }
+            },
+            "new_since_previous_collection": true,
+            "outputs": [
+              {
+                "committed": {
+                  "index": 4769,
+                  "kind": "COMMITTED",
+                  "sha256": "6729aae9b52aebf78061d5de9c27fd43100a8f298a0601b5c03b7539b19923f7"
+                },
+                "request": {
+                  "index": 4767,
+                  "kind": "REQUEST",
+                  "sha256": "889d104ee24c0986d9f561066e69d3b267586cc3b5ea1af1e40913ddf99d884a"
+                },
+                "response": {
+                  "index": 4768,
+                  "kind": "RESPONSE",
+                  "sha256": "918d11345b64efff989f9ba94f277535e38076c5d7b0a369ef33e154f6d813ac"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 4770,
+                  "kind": "R184_STAGE",
+                  "sha256": "307ca098f9f4112fcce8c8467004508ce5c7c220b0c829fb8f0eb671cabad417"
+                }
+              },
+              {
+                "committed": {
+                  "index": 4848,
+                  "kind": "COMMITTED",
+                  "sha256": "b54181488f1e0319ecce089afb4cecf3327faba9bad314fb1f3f40bc5b37c9f0"
+                },
+                "request": {
+                  "index": 4846,
+                  "kind": "REQUEST",
+                  "sha256": "58d955abe0025d8654d86b9bf013c2c77968effa04967d11b5b70f66a55938d0"
+                },
+                "response": {
+                  "index": 4847,
+                  "kind": "RESPONSE",
+                  "sha256": "fe609db2f49515efed792a4491df07ca5b66abbe9efb6a8ca01d4d786f6fac70"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 4849,
+                  "kind": "R184_STAGE",
+                  "sha256": "b5bb7d327d07632a5f7beffa05978d10807c608f0c6706b72f5b494c047ceff7"
+                }
+              },
+              {
+                "committed": {
+                  "index": 4927,
+                  "kind": "COMMITTED",
+                  "sha256": "a8267587ebcd633c6a5c4cff6c45979125ee526f7ac97e690ab4876be2f5e73c"
+                },
+                "request": {
+                  "index": 4925,
+                  "kind": "REQUEST",
+                  "sha256": "c34684b431747acf37d4e8d892b45314e832fed72c86973af05b4c94a87a85d7"
+                },
+                "response": {
+                  "index": 4926,
+                  "kind": "RESPONSE",
+                  "sha256": "d24600619cda7e7c7a920f16d537973f256347df8b5800efdea01ef9dd69d8e8"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 4928,
+                  "kind": "R184_STAGE",
+                  "sha256": "e1c38e923d741736d8ab8f044d9ee83a8f7bfa4c29caf6aad58ad96968c475db"
+                }
+              }
+            ],
+            "queue_id": "df2373e20311ac8828a139ab0b3442c6d75dddc46b735f8a7a181c99bb7daae0",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW",
+            "through_index": 4984
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "ae678da7076c8ee02aca67cf2e3f85746b0f00983ddedec0880ddc86fb76cc76",
+            "event_id": "parent:inbox:4153d783258f4f7fa4dce4fb5a92e57f",
+            "feedback_key": "parent:inbox:4153d783258f4f7fa4dce4fb5a92e57f:5222a0afbc447c801f370d72df03339346bdb8989f83f9496705399651a107fd",
+            "first_observed_request": {
+              "index": 4760,
+              "kind": "REQUEST",
+              "sha256": "1b4eb5369df42a083f4e96c96e6528a47b77e5a7c35f13febab2daaf4b5bcb42"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 4762,
+                  "kind": "COMMITTED",
+                  "sha256": "90c1583eecb4215cd5ce31fc40ad8747140c33ed0459c487ff9b306cb41279cb"
+                },
+                "request": {
+                  "index": 4760,
+                  "kind": "REQUEST",
+                  "sha256": "1b4eb5369df42a083f4e96c96e6528a47b77e5a7c35f13febab2daaf4b5bcb42"
+                },
+                "response": {
+                  "index": 4761,
+                  "kind": "RESPONSE",
+                  "sha256": "72bf5ae38e176dc21616b89b9e7cc6639b4902c4cecf2f84ae3b6e8d3802cca6"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 4763,
+                  "kind": "R184_STAGE",
+                  "sha256": "8acda7dfca0cb12fff244d69195821d3cd7e433123f966f8fa613bd48cc0a4a3"
+                }
+              },
+              {
+                "committed": {
+                  "index": 4769,
+                  "kind": "COMMITTED",
+                  "sha256": "6729aae9b52aebf78061d5de9c27fd43100a8f298a0601b5c03b7539b19923f7"
+                },
+                "request": {
+                  "index": 4767,
+                  "kind": "REQUEST",
+                  "sha256": "889d104ee24c0986d9f561066e69d3b267586cc3b5ea1af1e40913ddf99d884a"
+                },
+                "response": {
+                  "index": 4768,
+                  "kind": "RESPONSE",
+                  "sha256": "918d11345b64efff989f9ba94f277535e38076c5d7b0a369ef33e154f6d813ac"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 4770,
+                  "kind": "R184_STAGE",
+                  "sha256": "307ca098f9f4112fcce8c8467004508ce5c7c220b0c829fb8f0eb671cabad417"
+                }
+              },
+              {
+                "committed": {
+                  "index": 4778,
+                  "kind": "COMMITTED",
+                  "sha256": "2910e2868488482ffd8debee74eb443f87da7ef83b9c83ada661348edb0216ae"
+                },
+                "request": {
+                  "index": 4776,
+                  "kind": "REQUEST",
+                  "sha256": "aca839fe39356e39f53dc7ff55657c4d40500b45247458cd017e5f797d66d55e"
+                },
+                "response": {
+                  "index": 4777,
+                  "kind": "RESPONSE",
+                  "sha256": "8586a2628aff1363a49df4e3228d09c15e805b4fcc1a6a35bf02d31f331e32c0"
+                },
+                "stage": "LEARN",
+                "stage_receipt": {
+                  "index": 4779,
+                  "kind": "R184_STAGE",
+                  "sha256": "b2447d388fa85f41e580866fcb3c43277f9fd3ce107e23305f29aaccb4b445bd"
+                }
+              }
+            ],
+            "inbox": null,
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 4769,
+                "kind": "COMMITTED",
+                "sha256": "6729aae9b52aebf78061d5de9c27fd43100a8f298a0601b5c03b7539b19923f7"
+              },
+              "request": {
+                "index": 4767,
+                "kind": "REQUEST",
+                "sha256": "889d104ee24c0986d9f561066e69d3b267586cc3b5ea1af1e40913ddf99d884a"
+              },
+              "response": {
+                "index": 4768,
+                "kind": "RESPONSE",
+                "sha256": "918d11345b64efff989f9ba94f277535e38076c5d7b0a369ef33e154f6d813ac"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 4770,
+                "kind": "R184_STAGE",
+                "sha256": "307ca098f9f4112fcce8c8467004508ce5c7c220b0c829fb8f0eb671cabad417"
+              }
+            },
+            "queue_id": "abe23608a5aea75d2a0d45abd2730493c841faa44d129b2267e65cec7f7cca00",
+            "source_sha256": "5222a0afbc447c801f370d72df03339346bdb8989f83f9496705399651a107fd",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "03928482b065ca9c0455da2a9832d1f6377408ed99ab5e93c534d7d145ac4c60",
+            "event_id": "parent:inbox:24161bd8b4e94fea85ff99ecf8816742",
+            "feedback_key": "parent:inbox:24161bd8b4e94fea85ff99ecf8816742:da8b1b506b1d261d7df5c98109516239436d52918de0c58e7fb22c89b15e4e11",
+            "first_observed_request": {
+              "index": 4839,
+              "kind": "REQUEST",
+              "sha256": "9dbc1700f398445441cfbbb3e2be1b41c3881ce8715db036432e762a2df2260e"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 4841,
+                  "kind": "COMMITTED",
+                  "sha256": "ee1802321ccac24af8b369e0039f1eae9aa861398d5aa39eb8f6bcbe8f459c88"
+                },
+                "request": {
+                  "index": 4839,
+                  "kind": "REQUEST",
+                  "sha256": "9dbc1700f398445441cfbbb3e2be1b41c3881ce8715db036432e762a2df2260e"
+                },
+                "response": {
+                  "index": 4840,
+                  "kind": "RESPONSE",
+                  "sha256": "5aa4d9139419e4eeb5b5a27a32437e1944479cf2ae259889f221f299a0703a63"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 4842,
+                  "kind": "R184_STAGE",
+                  "sha256": "26e4c128a2b5a3e78b45f3a83f0913a7dedb647e5e4ca249c5d23b2e191772a4"
+                }
+              },
+              {
+                "committed": {
+                  "index": 4848,
+                  "kind": "COMMITTED",
+                  "sha256": "b54181488f1e0319ecce089afb4cecf3327faba9bad314fb1f3f40bc5b37c9f0"
+                },
+                "request": {
+                  "index": 4846,
+                  "kind": "REQUEST",
+                  "sha256": "58d955abe0025d8654d86b9bf013c2c77968effa04967d11b5b70f66a55938d0"
+                },
+                "response": {
+                  "index": 4847,
+                  "kind": "RESPONSE",
+                  "sha256": "fe609db2f49515efed792a4491df07ca5b66abbe9efb6a8ca01d4d786f6fac70"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 4849,
+                  "kind": "R184_STAGE",
+                  "sha256": "b5bb7d327d07632a5f7beffa05978d10807c608f0c6706b72f5b494c047ceff7"
+                }
+              },
+              {
+                "committed": {
+                  "index": 4857,
+                  "kind": "COMMITTED",
+                  "sha256": "a86c5d9a7e4120706fbfe56d61145e0b806676d6f792282a3a1ef9a0c722cf02"
+                },
+                "request": {
+                  "index": 4855,
+                  "kind": "REQUEST",
+                  "sha256": "1338822cf95d6137238fb3541c60846bb1064e339629b1520560d3b5928ad4ac"
+                },
+                "response": {
+                  "index": 4856,
+                  "kind": "RESPONSE",
+                  "sha256": "2d103bc795275cb3aead45d16f894402ef19d4b9276f187dc956d8e3d91009a0"
+                },
+                "stage": "LEARN",
+                "stage_receipt": {
+                  "index": 4858,
+                  "kind": "R184_STAGE",
+                  "sha256": "fad0ad62756e06b56e4ab921e8dbed5a4f6e7b4c993970c6532fe76fe3ef571d"
+                }
+              }
+            ],
+            "inbox": {
+              "index": 4781,
+              "kind": "INBOX",
+              "sha256": "ee770f7017a029d3587430840e9855edea73bd5031d716a50ee62608891090b0"
+            },
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 4848,
+                "kind": "COMMITTED",
+                "sha256": "b54181488f1e0319ecce089afb4cecf3327faba9bad314fb1f3f40bc5b37c9f0"
+              },
+              "request": {
+                "index": 4846,
+                "kind": "REQUEST",
+                "sha256": "58d955abe0025d8654d86b9bf013c2c77968effa04967d11b5b70f66a55938d0"
+              },
+              "response": {
+                "index": 4847,
+                "kind": "RESPONSE",
+                "sha256": "fe609db2f49515efed792a4491df07ca5b66abbe9efb6a8ca01d4d786f6fac70"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 4849,
+                "kind": "R184_STAGE",
+                "sha256": "b5bb7d327d07632a5f7beffa05978d10807c608f0c6706b72f5b494c047ceff7"
+              }
+            },
+            "queue_id": "1dc1ea53bb3e150e215c3071105c9b48cf90a7cd2e61715bca79238fa79591cf",
+            "source_sha256": "da8b1b506b1d261d7df5c98109516239436d52918de0c58e7fb22c89b15e4e11",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "f8ceb2dd9b9f68b965c1ef3605fe2d1c9624d58848c2f05b9b45a3181a3f73bb",
+            "event_id": "parent:inbox:789b257157ed4f0bb94b34eea0bb5749",
+            "feedback_key": "parent:inbox:789b257157ed4f0bb94b34eea0bb5749:e6d3a8ec1b072eb64edbead95b98b38ef766d4df66efa5287d2305885b61d213",
+            "first_observed_request": {
+              "index": 4918,
+              "kind": "REQUEST",
+              "sha256": "4a1a1f0eea868b9e0fc356237aa2aace6b9aba36dce841459dae0bd9d670d6d8"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 4920,
+                  "kind": "COMMITTED",
+                  "sha256": "d184b58e096b77b28346c610b459dd696f06fe924834342531ee347e715431f4"
+                },
+                "request": {
+                  "index": 4918,
+                  "kind": "REQUEST",
+                  "sha256": "4a1a1f0eea868b9e0fc356237aa2aace6b9aba36dce841459dae0bd9d670d6d8"
+                },
+                "response": {
+                  "index": 4919,
+                  "kind": "RESPONSE",
+                  "sha256": "4083be004ebec0a143151188656ea7b98651ab98960c1d52b390640c077b02ab"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 4921,
+                  "kind": "R184_STAGE",
+                  "sha256": "6d0f65fb338064d8c9a5d5855eeadfb89440bd3cdf6745d37be28baee7ff1955"
+                }
+              },
+              {
+                "committed": {
+                  "index": 4927,
+                  "kind": "COMMITTED",
+                  "sha256": "a8267587ebcd633c6a5c4cff6c45979125ee526f7ac97e690ab4876be2f5e73c"
+                },
+                "request": {
+                  "index": 4925,
+                  "kind": "REQUEST",
+                  "sha256": "c34684b431747acf37d4e8d892b45314e832fed72c86973af05b4c94a87a85d7"
+                },
+                "response": {
+                  "index": 4926,
+                  "kind": "RESPONSE",
+                  "sha256": "d24600619cda7e7c7a920f16d537973f256347df8b5800efdea01ef9dd69d8e8"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 4928,
+                  "kind": "R184_STAGE",
+                  "sha256": "e1c38e923d741736d8ab8f044d9ee83a8f7bfa4c29caf6aad58ad96968c475db"
+                }
+              },
+              {
+                "committed": {
+                  "index": 4936,
+                  "kind": "COMMITTED",
+                  "sha256": "805258489e0c346fcb64a0290024b899d1df006696dd7cf14d9b8ca3ec7cdfba"
+                },
+                "request": {
+                  "index": 4934,
+                  "kind": "REQUEST",
+                  "sha256": "1c1a5d27a32407adc006f75e808e1ac5bd52144918be9e521fe2c4046f40d869"
+                },
+                "response": {
+                  "index": 4935,
+                  "kind": "RESPONSE",
+                  "sha256": "a1b71632a325c6d7c6f4ebb3cf2d8a804f827a013022c7a7390e032ad12888af"
+                },
+                "stage": "LEARN",
+                "stage_receipt": {
+                  "index": 4937,
+                  "kind": "R184_STAGE",
+                  "sha256": "3502562e0bc4d4a515596a6f696d2d67cabed55cc69ee48233418ce9ec7d97dc"
+                }
+              }
+            ],
+            "inbox": {
+              "index": 4860,
+              "kind": "INBOX",
+              "sha256": "ba3f1a378a9b33ec0a1e9a276d3a39a84d9703284886c95720989e3e687a3553"
+            },
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 4927,
+                "kind": "COMMITTED",
+                "sha256": "a8267587ebcd633c6a5c4cff6c45979125ee526f7ac97e690ab4876be2f5e73c"
+              },
+              "request": {
+                "index": 4925,
+                "kind": "REQUEST",
+                "sha256": "c34684b431747acf37d4e8d892b45314e832fed72c86973af05b4c94a87a85d7"
+              },
+              "response": {
+                "index": 4926,
+                "kind": "RESPONSE",
+                "sha256": "d24600619cda7e7c7a920f16d537973f256347df8b5800efdea01ef9dd69d8e8"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 4928,
+                "kind": "R184_STAGE",
+                "sha256": "e1c38e923d741736d8ab8f044d9ee83a8f7bfa4c29caf6aad58ad96968c475db"
+              }
+            },
+            "queue_id": "caae4992f49803c2f56c3a5be2f0b62ae5b864f107bc1bfeaeae6efacca36739",
+            "source_sha256": "e6d3a8ec1b072eb64edbead95b98b38ef766d4df66efa5287d2305885b61d213",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          }
+        ],
+        "journal_id": "038f85cbde5c4abfb749ea4d59da6897",
+        "label": "FRESH_R231",
+        "model_calls": 0,
+        "new_ACT_count": 3,
+        "new_rendered_input_count": 30,
+        "new_semantic_judgments": 0,
+        "omitted_pending_count": 27,
+        "owner": "Main: semantic review handoff requested; acceptance not inferred",
+        "pending_output_windows": 1,
+        "pending_rendered_input_count": 30,
+        "pending_total": 31,
+        "selection": "At most two fresh items, then least-recently-offered backlog; role/index tie-breaks only.",
+        "stage_scope": "Following child outputs require actual R184_STAGE; unframed console outputs are not relabelled.",
+        "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+      },
+      "source_horizon_utc": "2026-09-30T17:59:30+00:00",
+      "status": "ACTUAL_BOUNDED_COLLECTION_COMPLETE"
+    },
+    {
+      "highest_verified_level": null,
+      "historical": {
+        "highest_verified_level": null,
+        "provenance": "NO_IMPORTED_MANUAL_ANNOTATION",
+        "traces": []
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "GAME_FROZEN_BASE",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": "NON_NATIVE_LOG_CONTRACT_PENDING_OWNER",
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "highest_verified_level": null,
+      "historical": {
+        "highest_verified_level": null,
+        "provenance": "NO_IMPORTED_MANUAL_ANNOTATION",
+        "traces": []
+      },
+      "historical_reference_scope": "LOCAL_FROZEN_CACHE_ONLY",
+      "label": "R232_SIBLING_LEARNER",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": false,
+      "new_semantic_judgments": 0,
+      "original_registry_status": "ALIAS_OF_FRESH_R231_SAME_JOURNAL_RECOVERY_LOADED172_GAP_DECLARED",
+      "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED"
+    },
+    {
+      "between_hour_gap": null,
+      "binding_receipt_sha256": "7d84fccc094d675a42c598e5b35e773fc2ca39388bbf24b2d618abd2b2575c3d",
+      "current_identity": {
+        "command_sha256": "77d69dff6d888d46d43fc807b26fbd8f78796d3496b58c973a36700f1c945f43",
+        "guard_sha256": "197463ab56dab2b04a88797c28dffd854a56bd1a8756cdfa611f0995690d7a0b",
+        "pid": 471737,
+        "start_ticks": "9987073"
+      },
+      "current_window": {
+        "actual_committed_ACTs": 7,
+        "caught_up": true,
+        "first": 2835,
+        "head": {
+          "index": 3074,
+          "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+          "kind": "R191_DATASET_ROW",
+          "previous_sha256": "f9813053f6e7492384117b7430f10dbb88e953b6bf063b068f2621044339ed06",
+          "sha256": "d151bdf521101cf69c2ac51614019e573450a6b95d5a686e5f0a0503c94534ee"
+        },
+        "newest_ACT": {
+          "committed": {
+            "index": 3063,
+            "kind": "COMMITTED",
+            "sha256": "799554b2459634cf2ba75da38f8ebc1c1537d62e3a44b832fd1bf3c1692a8939"
+          },
+          "request": {
+            "index": 3061,
+            "kind": "REQUEST",
+            "sha256": "a8b405688b2fa80993db4267567b15a6cb55f6a83c960c403c8bb2583fa48f66"
+          },
+          "response": {
+            "index": 3062,
+            "kind": "RESPONSE",
+            "sha256": "c93fe610a6f631725ef6be6b35d28addd97cca572d7e3bc8a0667e1e0aa2bcd3"
+          },
+          "stage": "ACT",
+          "stage_receipt": {
+            "index": 3064,
+            "kind": "R184_STAGE",
+            "sha256": "87633b092a5618d87b94dd38b948d63b88000b577c9af59ba78723f716ca0084"
+          }
+        },
+        "raw_bytes_read": 472406802,
+        "snapshot_sha256": "697b55430e8a4a652469ee18e0989f216f8b6a36279dd34f0ef2ed40443180dc",
+        "through": {
+          "index": 3074,
+          "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+          "kind": "R191_DATASET_ROW",
+          "previous_sha256": "f9813053f6e7492384117b7430f10dbb88e953b6bf063b068f2621044339ed06",
+          "sha256": "d151bdf521101cf69c2ac51614019e573450a6b95d5a686e5f0a0503c94534ee"
+        }
+      },
+      "current_window_semantic_level": null,
+      "earlier_unsampled_interval": [
+        1165,
+        2834
+      ],
+      "highest_verified_level": 2,
+      "historical": {
+        "actual_ACTs": 35,
+        "actual_committed_outputs": 105,
+        "caught_up": true,
+        "confirmed_reminders": 0,
+        "coverage_end": 1164,
+        "coverage_start": 0,
+        "cross_task_transfers": 0,
+        "external_feedback_candidates": 71,
+        "highest_verified_level": 2,
+        "historical_cut_index": 1164,
+        "imported_pins": {
+          "ANNOTATIONS.json": "b5b78b14c02312492101b457fc3c3a6cdf24f7cc68664708bebd745b8d4b16ab",
+          "EVIDENCE.json": "25ea8a1d86ec30376587af6a97716b9ff13dee96514d6b518a7fb9ddd735a6cf"
+        },
+        "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+        "label": "R232_SIBLING_FROZEN",
+        "learner_controls": 0,
+        "level_counts": {
+          "0": 2,
+          "1": 1,
+          "2": 1,
+          "3": 0
+        },
+        "lifetime_absence_claim": false,
+        "model_calls": 0,
+        "observed_unix": 1789736467.9468653,
+        "provenance": "REVALIDATED_ORIGINAL_MANUAL_LEDGER_NOT_NEW_SEMANTICS",
+        "rejected_annotations": [],
+        "reminder_count_unknown": 4,
+        "reviewed_corrections": 4,
+        "status": "REVIEWED_PARTIAL",
+        "traces": [
+          {
+            "child_records": [
+              {
+                "committed": {
+                  "index": 39,
+                  "kind": "COMMITTED",
+                  "sha256": "7a0d22605e729ac61d3b1a16641acd8a83a4c28c40b4cf2e65b7ac4d1af73a8a"
+                },
+                "cycle": 2,
+                "end": 261,
+                "record": {
+                  "index": 38,
+                  "kind": "RESPONSE",
+                  "sha256": "7d9b81cc36d4299cac1f0bc34c6bbb8929cd55f27d5966dde274041e4f43fc7f"
+                },
+                "request": {
+                  "index": 37,
+                  "kind": "REQUEST",
+                  "sha256": "d8b9a4997df52026f5952412acaf52653c673e898d5c88a223759844eef264e0"
+                },
+                "span_sha256": "64cc11bf463429e7cb97fe83bdf3b30ab1d2b6d52d461c6ec3769fc6dec58ecd",
+                "stage": "THINK",
+                "stage_record": {
+                  "index": 40,
+                  "kind": "R184_STAGE",
+                  "sha256": "ae2673eb67228ef8013ed942082e28288838c282f05dfc473a35e1bd47ae5adc"
+                },
+                "start": 198
+              },
+              {
+                "committed": {
+                  "index": 48,
+                  "kind": "COMMITTED",
+                  "sha256": "4a9066e19c9ada3a365c72d08e5f93592fb7c55b4c98fc78e1519774d842308a"
+                },
+                "cycle": 2,
+                "end": 618,
+                "record": {
+                  "index": 47,
+                  "kind": "RESPONSE",
+                  "sha256": "9c7bdd388c5d2512d2ea57352eae834b67964f3ed78aa6c1c90b90af8026e9dd"
+                },
+                "request": {
+                  "index": 46,
+                  "kind": "REQUEST",
+                  "sha256": "b9c331819588159847a2d1de8d2351fab4c55cfe2bf34b12338dc770ffc1ac73"
+                },
+                "span_sha256": "760ed3a82772ec8915f325e7ed708eafbd3a0384945aa7f34978d8d5d8fd7631",
+                "stage": "ACT",
+                "stage_record": {
+                  "index": 49,
+                  "kind": "R184_STAGE",
+                  "sha256": "f98a1d83ce5073c6f9b8e3bd77adf78537964b695e3b3c95410bd86ea94256b7"
+                },
+                "start": 538
+              }
+            ],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:f4fa63d89d9b4496a3be52af319c0779:143b5ac3760adae20729019d475ffe2fea0e645fea119cb07fdd6b58eaabee1a",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:f4fa63d89d9b4496a3be52af319c0779",
+              "inbox": {
+                "index": 26,
+                "kind": "INBOX",
+                "sha256": "afce51e90c46f6ef6731a6ce4e92330d3a5e101668eb66e2fff3fbfb7c34448e"
+              },
+              "request": {
+                "index": 37,
+                "kind": "REQUEST",
+                "sha256": "d8b9a4997df52026f5952412acaf52653c673e898d5c88a223759844eef264e0"
+              },
+              "source_sha256": "143b5ac3760adae20729019d475ffe2fea0e645fea119cb07fdd6b58eaabee1a",
+              "text_sha256": "0266deafc1b656da9820f39d170b9c274e31d5b6aeb99726753af048e9c4050f"
+            },
+            "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+            "level": 2,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 37,
+                  "kind": "REQUEST",
+                  "sha256": "d8b9a4997df52026f5952412acaf52653c673e898d5c88a223759844eef264e0"
+                },
+                "response": {
+                  "index": 38,
+                  "kind": "RESPONSE",
+                  "sha256": "7d9b81cc36d4299cac1f0bc34c6bbb8929cd55f27d5966dde274041e4f43fc7f"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 46,
+                  "kind": "REQUEST",
+                  "sha256": "b9c331819588159847a2d1de8d2351fab4c55cfe2bf34b12338dc770ffc1ac73"
+                },
+                "response": {
+                  "index": 47,
+                  "kind": "RESPONSE",
+                  "sha256": "9c7bdd388c5d2512d2ea57352eae834b67964f3ed78aa6c1c90b90af8026e9dd"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 55,
+                  "kind": "REQUEST",
+                  "sha256": "598a7938faf0d96a39e75d849a7c4bc6f893cb38510d7aeed71fd073cf961cd9"
+                },
+                "response": {
+                  "index": 56,
+                  "kind": "RESPONSE",
+                  "sha256": "80374f2898b15cde639cd94c02c4876dfbfb7c76b554ad248a048c4c06872680"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "4317671661474e369d2b60f9ab2e75be4e46e5cb95052b8389a4a0e20724c90d",
+            "parent_supplied_solution": true,
+            "reminders": null
+          },
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:8496263ca4474017ae6cbc9b8e1375b0:0399eb666bbc312f604a040f5939e082bd9294eeb16bb73a85c34636704c054c",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:8496263ca4474017ae6cbc9b8e1375b0",
+              "inbox": {
+                "index": 60,
+                "kind": "INBOX",
+                "sha256": "979f527e3269f2bb2e8c318d66f3158caecb29e4bc1ce92f5798b6acd0b1c1d2"
+              },
+              "request": {
+                "index": 77,
+                "kind": "REQUEST",
+                "sha256": "fd9b5a8dcc4cec60a9a2d7c43c8aa14304be11702a2aca133a7f10c1a8a368aa"
+              },
+              "source_sha256": "0399eb666bbc312f604a040f5939e082bd9294eeb16bb73a85c34636704c054c",
+              "text_sha256": "a243b9895b4e2dbc11198db84e9d2eb5b71830317982b4a8a1c0609b3854ad52"
+            },
+            "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 77,
+                  "kind": "REQUEST",
+                  "sha256": "fd9b5a8dcc4cec60a9a2d7c43c8aa14304be11702a2aca133a7f10c1a8a368aa"
+                },
+                "response": {
+                  "index": 78,
+                  "kind": "RESPONSE",
+                  "sha256": "93b00eb9209bb8a33eaf41101718660de51effef871aee3235096650b7399ea6"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 86,
+                  "kind": "REQUEST",
+                  "sha256": "63f4b0d43e85cda48c5a14aa401d0b9172bf67e88eefc445806e311f650da170"
+                },
+                "response": {
+                  "index": 87,
+                  "kind": "RESPONSE",
+                  "sha256": "c28dc88b9a321292bca88ece9026276574044b26d14e116313c5458fddda2dbf"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 95,
+                  "kind": "REQUEST",
+                  "sha256": "4fcf1657fefc892a49a62faa5f9fcf4e94172567359e49fd8d0ad94cc3593c22"
+                },
+                "response": {
+                  "index": 96,
+                  "kind": "RESPONSE",
+                  "sha256": "1a88ccd8987bbfa1ad4abf241f72ddc86a82a750f56b703b1ba9c0b1752cf00a"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "27a629d47b033574874cdd881f11ef85f35033ad60467ee16922e0396ebfd123",
+            "parent_supplied_solution": false,
+            "reminders": null
+          },
+          {
+            "child_records": [],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:968418545f514125b0a43c239564f0f8:6350f045dad8e160708b6c38a54d234f84a022a8d74911a3e2d8fd57c5b1b59f",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:968418545f514125b0a43c239564f0f8",
+              "inbox": {
+                "index": 199,
+                "kind": "INBOX",
+                "sha256": "c38f1cdb84fda59a9d2d7f976aa3f9ad5e948d6c78c999829670a3a36ac2381f"
+              },
+              "request": {
+                "index": 209,
+                "kind": "REQUEST",
+                "sha256": "9a97006acb44d907c38b5e8de080d8c02823811b1cfa29316a99572ff8cf5fa4"
+              },
+              "source_sha256": "6350f045dad8e160708b6c38a54d234f84a022a8d74911a3e2d8fd57c5b1b59f",
+              "text_sha256": "e33b6950801360c4d47db55345ca5ad3dab49132d435e7236a7b9d11809cb100"
+            },
+            "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+            "level": 0,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 209,
+                  "kind": "REQUEST",
+                  "sha256": "9a97006acb44d907c38b5e8de080d8c02823811b1cfa29316a99572ff8cf5fa4"
+                },
+                "response": {
+                  "index": 210,
+                  "kind": "RESPONSE",
+                  "sha256": "75c99fd61621be2144d27f89aa6a191b5a6d533914148a994a7109d670e5c433"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 218,
+                  "kind": "REQUEST",
+                  "sha256": "d9c41bbbd743678429f8381c487ad3e1704181f1e5b73b27c860474c55594669"
+                },
+                "response": {
+                  "index": 219,
+                  "kind": "RESPONSE",
+                  "sha256": "b92ac415b8374b4b10ff5e649000812cbd5af4a7e1c1828199e826ba31956ae9"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 227,
+                  "kind": "REQUEST",
+                  "sha256": "2f3b47179eee8f17d9a8c06be17ececda4f61fba33cba0ce1e0bf161a13b2d92"
+                },
+                "response": {
+                  "index": 228,
+                  "kind": "RESPONSE",
+                  "sha256": "6de8ce69bc71e25d735f46dceff0840919e14a2ead532b97997b121ddda254c1"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "54de11161943389a0ee964e8bce7802bf79c98629b9e16ade7b602083672428a",
+            "parent_supplied_solution": "Requested a checked calculation but did not supply the numerical result.",
+            "reminders": null
+          },
+          {
+            "child_records": [
+              {
+                "committed": {
+                  "index": 244,
+                  "kind": "COMMITTED",
+                  "sha256": "257d824ee234199d78f0dd3e073c6048599f3a3f32dbb629008a71415ae04ca5"
+                },
+                "cycle": 8,
+                "end": 267,
+                "record": {
+                  "index": 243,
+                  "kind": "RESPONSE",
+                  "sha256": "cebc9b4f62562073f07a9ba6caac53d74817585b7143af233b0f3a4c019fc985"
+                },
+                "request": {
+                  "index": 242,
+                  "kind": "REQUEST",
+                  "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+                },
+                "span_sha256": "6c249b1c548aba3f8e7ef0eb771b7c319e7af915e87dd9b226b11e9abc2a7a0d",
+                "stage": "THINK",
+                "stage_record": {
+                  "index": 245,
+                  "kind": "R184_STAGE",
+                  "sha256": "a8bbbacac0d43a3388c49ff6777247a0eb5439d5cfe05af19515e745f7098cf3"
+                },
+                "start": 188
+              }
+            ],
+            "context_exposure_at_transfer": null,
+            "correction_key": "parent:inbox:ac403801fc1b4a95b51c71c3b713333a:9becd3c15d44577cf1ced724d3e3c24a0196e7bccf05ea679138c011127bb378",
+            "cross_task_transfer": "not_demonstrated",
+            "feedback": {
+              "actor": "parent",
+              "event_id": "parent:inbox:ac403801fc1b4a95b51c71c3b713333a",
+              "inbox": {
+                "index": 232,
+                "kind": "INBOX",
+                "sha256": "3eaa77ea3775607283a6fb675269bc768a796ad5a6974708720c8cd95cfc1190"
+              },
+              "request": {
+                "index": 242,
+                "kind": "REQUEST",
+                "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+              },
+              "source_sha256": "9becd3c15d44577cf1ced724d3e3c24a0196e7bccf05ea679138c011127bb378",
+              "text_sha256": "9f6b866fe4cb3953a8a6b518783ab0154c74b53bdff168d60a16bbbd01d31ee7"
+            },
+            "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+            "level": 1,
+            "method": "Source-bound observer semantic adjudication; not an optimizer or causal-retention proof.",
+            "observed_following_child_records": [
+              {
+                "request": {
+                  "index": 242,
+                  "kind": "REQUEST",
+                  "sha256": "bda6d73b5b69b03f6ba3bbcfb14b01ba35df2d4ad17fd2e80f5ec11917ffa9a2"
+                },
+                "response": {
+                  "index": 243,
+                  "kind": "RESPONSE",
+                  "sha256": "cebc9b4f62562073f07a9ba6caac53d74817585b7143af233b0f3a4c019fc985"
+                },
+                "stage": "THINK"
+              },
+              {
+                "request": {
+                  "index": 251,
+                  "kind": "REQUEST",
+                  "sha256": "92fa215508d5c2914617509a2e0b4e24298720890acee2917f63550793863977"
+                },
+                "response": {
+                  "index": 252,
+                  "kind": "RESPONSE",
+                  "sha256": "75f1d6e56041d7733a6ec99eb9e2e95264633bb93a5f5ac7c9ea5e5278bbb94c"
+                },
+                "stage": "ACT"
+              },
+              {
+                "request": {
+                  "index": 260,
+                  "kind": "REQUEST",
+                  "sha256": "a629446d56447331b12655273206b275a0e49a61c6179e1f40548fdb68146dd5"
+                },
+                "response": {
+                  "index": 261,
+                  "kind": "RESPONSE",
+                  "sha256": "f86e8fa7993584175304cc9818194fcdc6c0a43e23feac77d95203dc000f8ce0"
+                },
+                "stage": "LEARN"
+              }
+            ],
+            "observer_assessment_sha256": "adcb906b99afc78e8a4dce12a5220020694f315efc9b76f0461286472e72a353",
+            "parent_supplied_solution": "Task and artifact demand supplied; no numerical answer supplied.",
+            "reminders": null
+          }
+        ],
+        "unknown_candidates": 67
+      },
+      "historical_reference_manifest_sha256": "5c0031f58eeb20186d148f6cf5df93e14a9488893c006708e2559843965ab2de",
+      "historical_reference_scope": "CANONICAL_SOURCE_RECORDS_RECHECKED_NOW",
+      "label": "R232_SIBLING_FROZEN",
+      "level_scope": "IMPORTED_ORIGINAL_LEDGER_ONLY_NOT_LIFETIME_OR_NEW_WINDOW_JUDGMENT",
+      "native_identity_verified": true,
+      "new_semantic_judgments": 0,
+      "original_correction_context_may_remain_visible": true,
+      "revalidated_historical_record_count": 34,
+      "review_queue": {
+        "automatic_semantic_review": false,
+        "displayed": 4,
+        "interpretation": "All rendered external inputs are triage candidates, including tasks and telemetry; none is classified as a correction here.",
+        "items": [
+          {
+            "actual_new_ACT_count": 7,
+            "after_index": 2834,
+            "existing_annotation_keys": [
+              "parent:inbox:8496263ca4474017ae6cbc9b8e1375b0:0399eb666bbc312f604a040f5939e082bd9294eeb16bb73a85c34636704c054c",
+              "parent:inbox:968418545f514125b0a43c239564f0f8:6350f045dad8e160708b6c38a54d234f84a022a8d74911a3e2d8fd57c5b1b59f",
+              "parent:inbox:ac403801fc1b4a95b51c71c3b713333a:9becd3c15d44577cf1ced724d3e3c24a0196e7bccf05ea679138c011127bb378",
+              "parent:inbox:f4fa63d89d9b4496a3be52af319c0779:143b5ac3760adae20729019d475ffe2fea0e645fea119cb07fdd6b58eaabee1a"
+            ],
+            "kind": "NEW_ACTS_REQUIRE_SEMANTIC_REVIEW",
+            "latest_ACT": {
+              "committed": {
+                "index": 3063,
+                "kind": "COMMITTED",
+                "sha256": "799554b2459634cf2ba75da38f8ebc1c1537d62e3a44b832fd1bf3c1692a8939"
+              },
+              "request": {
+                "index": 3061,
+                "kind": "REQUEST",
+                "sha256": "a8b405688b2fa80993db4267567b15a6cb55f6a83c960c403c8bb2583fa48f66"
+              },
+              "response": {
+                "index": 3062,
+                "kind": "RESPONSE",
+                "sha256": "c93fe610a6f631725ef6be6b35d28addd97cca572d7e3bc8a0667e1e0aa2bcd3"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 3064,
+                "kind": "R184_STAGE",
+                "sha256": "87633b092a5618d87b94dd38b948d63b88000b577c9af59ba78723f716ca0084"
+              }
+            },
+            "new_since_previous_collection": true,
+            "outputs": [
+              {
+                "committed": {
+                  "index": 2866,
+                  "kind": "COMMITTED",
+                  "sha256": "93b19ed42028d902067ee0c3407273ebb7f8c1fbdf101cf83bd55faa3b1bb907"
+                },
+                "request": {
+                  "index": 2864,
+                  "kind": "REQUEST",
+                  "sha256": "19207e887bdd7ec0fecc8e1665343c9dc5cf7a165e6aea5f4907de003c532b83"
+                },
+                "response": {
+                  "index": 2865,
+                  "kind": "RESPONSE",
+                  "sha256": "a5e06ffe79bd63a2269e127c418f13bd709f17ccb20d52b821d4f92dc0e7a37e"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 2867,
+                  "kind": "R184_STAGE",
+                  "sha256": "a9980af8b4a79d15a9d1fd44f32d4e7459e9312cc8a93874e3b78b76bc167aa7"
+                }
+              },
+              {
+                "committed": {
+                  "index": 2899,
+                  "kind": "COMMITTED",
+                  "sha256": "9cda2f13070b8a03709023ac674c6889e6729907cb0210ad29c5453ec7a016b2"
+                },
+                "request": {
+                  "index": 2897,
+                  "kind": "REQUEST",
+                  "sha256": "ac99c06b4bec2c2d161b4dfe5d0eaf7325d4370f4d8842d5b7e2bbf2f97a8e7f"
+                },
+                "response": {
+                  "index": 2898,
+                  "kind": "RESPONSE",
+                  "sha256": "7c057a70cb7f02dce202147e57675f28ea8a9d0f8914c3371f1af4c73926768f"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 2900,
+                  "kind": "R184_STAGE",
+                  "sha256": "e3553363fc1b1ff87505bff8ede1d06b2268c0097d00bf9a1dddc76c4c5a4c30"
+                }
+              },
+              {
+                "committed": {
+                  "index": 2932,
+                  "kind": "COMMITTED",
+                  "sha256": "96ad84db2e5759b77bbacc31207ef2235e4e36278ea0c8cac2d1aaeb3c8eb860"
+                },
+                "request": {
+                  "index": 2930,
+                  "kind": "REQUEST",
+                  "sha256": "b79c0e71fcbf45e6a9c5ff8218956f36f7380afda7070433644d759238fa0d0b"
+                },
+                "response": {
+                  "index": 2931,
+                  "kind": "RESPONSE",
+                  "sha256": "d83c8d041ed24273338ca03f2c97ba2aa3b9d4e3b98e348fec33281bfa7927c1"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 2933,
+                  "kind": "R184_STAGE",
+                  "sha256": "94dca39f8d9afbd53d7bb8e79356e7d5be7c380417ddf165604ba27f329b4838"
+                }
+              }
+            ],
+            "queue_id": "fe6af65a4ac751530b1f948a70f5015590650f9eed8cc083fc6fcd2c111409f4",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW",
+            "through_index": 3074
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "670a90b0d4e2b53024c06d234b99e73dbf701ee43759eec898c4138578b10f63",
+            "event_id": "parent:inbox:66b7721699f54948a2279b3e93da8e26",
+            "feedback_key": "parent:inbox:66b7721699f54948a2279b3e93da8e26:cbe8e1a0742a60f17fe888dc6b3b7fe3cf1ba256b79729a70ea16e1e9d5a651e",
+            "first_observed_request": {
+              "index": 2855,
+              "kind": "REQUEST",
+              "sha256": "c3f89f0b18093d596372d2c9a5d9c51d92efdeee122ae6c366a8bbd9abc658ec"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 2857,
+                  "kind": "COMMITTED",
+                  "sha256": "a4508c70fcefbd989dc98497f8f3b237e457cea58411b0cbeba5ce69eec2a81e"
+                },
+                "request": {
+                  "index": 2855,
+                  "kind": "REQUEST",
+                  "sha256": "c3f89f0b18093d596372d2c9a5d9c51d92efdeee122ae6c366a8bbd9abc658ec"
+                },
+                "response": {
+                  "index": 2856,
+                  "kind": "RESPONSE",
+                  "sha256": "b28eb3d4d5236b6ee361c3956c5c618fea2bbf5cff7d19965b6d2d8c5edb17c6"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 2858,
+                  "kind": "R184_STAGE",
+                  "sha256": "81516d391019945124b24d92ee836e7ffd5fbb14fce6e0071bdebfacd877f737"
+                }
+              },
+              {
+                "committed": {
+                  "index": 2866,
+                  "kind": "COMMITTED",
+                  "sha256": "93b19ed42028d902067ee0c3407273ebb7f8c1fbdf101cf83bd55faa3b1bb907"
+                },
+                "request": {
+                  "index": 2864,
+                  "kind": "REQUEST",
+                  "sha256": "19207e887bdd7ec0fecc8e1665343c9dc5cf7a165e6aea5f4907de003c532b83"
+                },
+                "response": {
+                  "index": 2865,
+                  "kind": "RESPONSE",
+                  "sha256": "a5e06ffe79bd63a2269e127c418f13bd709f17ccb20d52b821d4f92dc0e7a37e"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 2867,
+                  "kind": "R184_STAGE",
+                  "sha256": "a9980af8b4a79d15a9d1fd44f32d4e7459e9312cc8a93874e3b78b76bc167aa7"
+                }
+              },
+              {
+                "committed": {
+                  "index": 2875,
+                  "kind": "COMMITTED",
+                  "sha256": "ee1e19224ccfa37308ad73d3b0ad945833db2e3877374c0b41d33f540afe7abd"
+                },
+                "request": {
+                  "index": 2873,
+                  "kind": "REQUEST",
+                  "sha256": "0b428b9a30a8377977c8f4eb9114285eb0fe01e9ddf8d8b89a7d636b8c299d57"
+                },
+                "response": {
+                  "index": 2874,
+                  "kind": "RESPONSE",
+                  "sha256": "0d9894f5e13e77475cd87dfe8cf598da787756990a3691eca043ad4caee66b52"
+                },
+                "stage": "LEARN",
+                "stage_receipt": {
+                  "index": 2876,
+                  "kind": "R184_STAGE",
+                  "sha256": "f251d0b51d52ba85108dfb45bc8467f006b40e84f63a42a9a4ead6a4efff93be"
+                }
+              }
+            ],
+            "inbox": {
+              "index": 2845,
+              "kind": "INBOX",
+              "sha256": "a96a0434c962118934fcd967581fec0a5f8d44f794be7d5127668660e0d6c3ea"
+            },
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 2866,
+                "kind": "COMMITTED",
+                "sha256": "93b19ed42028d902067ee0c3407273ebb7f8c1fbdf101cf83bd55faa3b1bb907"
+              },
+              "request": {
+                "index": 2864,
+                "kind": "REQUEST",
+                "sha256": "19207e887bdd7ec0fecc8e1665343c9dc5cf7a165e6aea5f4907de003c532b83"
+              },
+              "response": {
+                "index": 2865,
+                "kind": "RESPONSE",
+                "sha256": "a5e06ffe79bd63a2269e127c418f13bd709f17ccb20d52b821d4f92dc0e7a37e"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 2867,
+                "kind": "R184_STAGE",
+                "sha256": "a9980af8b4a79d15a9d1fd44f32d4e7459e9312cc8a93874e3b78b76bc167aa7"
+              }
+            },
+            "queue_id": "01f89d0e8cb11198f2505458c32fa7d908bbf2967cdd45e25897cba2139cbe3b",
+            "source_sha256": "cbe8e1a0742a60f17fe888dc6b3b7fe3cf1ba256b79729a70ea16e1e9d5a651e",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "63d1ac1cabd775b63bb703aa5c7e93683ebd513a609d265894b6022671975e85",
+            "event_id": "parent:inbox:362fecb0d8204ec4b58da0b20dd70fe3",
+            "feedback_key": "parent:inbox:362fecb0d8204ec4b58da0b20dd70fe3:d7e9c5742c76aad1122a1d72b4aea0af29f1f6df6730bb81a494321250d0c1ed",
+            "first_observed_request": {
+              "index": 2888,
+              "kind": "REQUEST",
+              "sha256": "6230b1aba699a8c66aef26ed0a724246d3292495ab00ccb02d93e3f20b983591"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 2890,
+                  "kind": "COMMITTED",
+                  "sha256": "012fe5eb57fff35e34336cdc71be380597189a044839ee1bfd24b02f347be60b"
+                },
+                "request": {
+                  "index": 2888,
+                  "kind": "REQUEST",
+                  "sha256": "6230b1aba699a8c66aef26ed0a724246d3292495ab00ccb02d93e3f20b983591"
+                },
+                "response": {
+                  "index": 2889,
+                  "kind": "RESPONSE",
+                  "sha256": "3ac51759dd25ca375f4036943f0f88195f77cee01ae09a9bac5f4f72788f0529"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 2891,
+                  "kind": "R184_STAGE",
+                  "sha256": "e1cc896358f5157ea265003b0b0b98e0892cd88b5e4e9cfbdfabd9f7f11b7e30"
+                }
+              },
+              {
+                "committed": {
+                  "index": 2899,
+                  "kind": "COMMITTED",
+                  "sha256": "9cda2f13070b8a03709023ac674c6889e6729907cb0210ad29c5453ec7a016b2"
+                },
+                "request": {
+                  "index": 2897,
+                  "kind": "REQUEST",
+                  "sha256": "ac99c06b4bec2c2d161b4dfe5d0eaf7325d4370f4d8842d5b7e2bbf2f97a8e7f"
+                },
+                "response": {
+                  "index": 2898,
+                  "kind": "RESPONSE",
+                  "sha256": "7c057a70cb7f02dce202147e57675f28ea8a9d0f8914c3371f1af4c73926768f"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 2900,
+                  "kind": "R184_STAGE",
+                  "sha256": "e3553363fc1b1ff87505bff8ede1d06b2268c0097d00bf9a1dddc76c4c5a4c30"
+                }
+              },
+              {
+                "committed": {
+                  "index": 2908,
+                  "kind": "COMMITTED",
+                  "sha256": "227c3cbf308482c3eb10873101fc7022fce611a7efb3daaf1761bd232f43d746"
+                },
+                "request": {
+                  "index": 2906,
+                  "kind": "REQUEST",
+                  "sha256": "6011ef384debace7cedb0b77666735849ed984aecb07e868f4c42a3d20bc3ca0"
+                },
+                "response": {
+                  "index": 2907,
+                  "kind": "RESPONSE",
+                  "sha256": "a322e7663546a46ec585fa1c014bfc08d8910e8f32c709436ed8754f8d7d3c5d"
+                },
+                "stage": "LEARN",
+                "stage_receipt": {
+                  "index": 2909,
+                  "kind": "R184_STAGE",
+                  "sha256": "5e9e1bdda2ab7d63bf6ee6ca5280ba8b1fe5f428dd0d5fc413c35b1fc14e840c"
+                }
+              }
+            ],
+            "inbox": {
+              "index": 2878,
+              "kind": "INBOX",
+              "sha256": "0777b52a4b86c78ef1285b1a2a52a05f3092f52df4ebabda8def42afb8892283"
+            },
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 2899,
+                "kind": "COMMITTED",
+                "sha256": "9cda2f13070b8a03709023ac674c6889e6729907cb0210ad29c5453ec7a016b2"
+              },
+              "request": {
+                "index": 2897,
+                "kind": "REQUEST",
+                "sha256": "ac99c06b4bec2c2d161b4dfe5d0eaf7325d4370f4d8842d5b7e2bbf2f97a8e7f"
+              },
+              "response": {
+                "index": 2898,
+                "kind": "RESPONSE",
+                "sha256": "7c057a70cb7f02dce202147e57675f28ea8a9d0f8914c3371f1af4c73926768f"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 2900,
+                "kind": "R184_STAGE",
+                "sha256": "e3553363fc1b1ff87505bff8ede1d06b2268c0097d00bf9a1dddc76c4c5a4c30"
+              }
+            },
+            "queue_id": "c9c23ea22af76fdf9b097103f232dfdf0930584828988455c192c71c08be39ce",
+            "source_sha256": "d7e9c5742c76aad1122a1d72b4aea0af29f1f6df6730bb81a494321250d0c1ed",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          },
+          {
+            "actor": "parent",
+            "body_sha256": "1b5b472ed39e707479bcb610f53b5a60acc00704b16b7f015b903cf727bf277c",
+            "event_id": "parent:inbox:43fad53891674526b5f760807b5fbd30",
+            "feedback_key": "parent:inbox:43fad53891674526b5f760807b5fbd30:804d8ed7f99e96bed9be784ded1a61aefc499303351af1fde7a63243da452fcc",
+            "first_observed_request": {
+              "index": 2921,
+              "kind": "REQUEST",
+              "sha256": "5224f37acc542baefc503fd29cbb568f5993741630da611b9a68315ae094624f"
+            },
+            "following_outputs": [
+              {
+                "committed": {
+                  "index": 2923,
+                  "kind": "COMMITTED",
+                  "sha256": "5c49ab3b4f0fc0edfcb8ef4eed39f6ab78596f8612fc7ba4f95f651bcb8c071b"
+                },
+                "request": {
+                  "index": 2921,
+                  "kind": "REQUEST",
+                  "sha256": "5224f37acc542baefc503fd29cbb568f5993741630da611b9a68315ae094624f"
+                },
+                "response": {
+                  "index": 2922,
+                  "kind": "RESPONSE",
+                  "sha256": "3d7e50aedbeb3dc4b9b23b59a90f3eb554d4afa29e480d64d7079673f071b80f"
+                },
+                "stage": "THINK",
+                "stage_receipt": {
+                  "index": 2924,
+                  "kind": "R184_STAGE",
+                  "sha256": "41f498a58a76fb4df373515c0850e6fb1c7c6dfb96b884f4b0f16f031ebb9e47"
+                }
+              },
+              {
+                "committed": {
+                  "index": 2932,
+                  "kind": "COMMITTED",
+                  "sha256": "96ad84db2e5759b77bbacc31207ef2235e4e36278ea0c8cac2d1aaeb3c8eb860"
+                },
+                "request": {
+                  "index": 2930,
+                  "kind": "REQUEST",
+                  "sha256": "b79c0e71fcbf45e6a9c5ff8218956f36f7380afda7070433644d759238fa0d0b"
+                },
+                "response": {
+                  "index": 2931,
+                  "kind": "RESPONSE",
+                  "sha256": "d83c8d041ed24273338ca03f2c97ba2aa3b9d4e3b98e348fec33281bfa7927c1"
+                },
+                "stage": "ACT",
+                "stage_receipt": {
+                  "index": 2933,
+                  "kind": "R184_STAGE",
+                  "sha256": "94dca39f8d9afbd53d7bb8e79356e7d5be7c380417ddf165604ba27f329b4838"
+                }
+              },
+              {
+                "committed": {
+                  "index": 2941,
+                  "kind": "COMMITTED",
+                  "sha256": "9a3928cfb7bdfd991dd14e557dd8471e92d341bebe9246a4e10b472880f74b5d"
+                },
+                "request": {
+                  "index": 2939,
+                  "kind": "REQUEST",
+                  "sha256": "c8859953dd4e58f4c46e72cc331a124794ef9fe71c437461f36ac88a01736a37"
+                },
+                "response": {
+                  "index": 2940,
+                  "kind": "RESPONSE",
+                  "sha256": "57fbbfd812128ddb669041e922f82e05af3023321f89c641346332dfdbdc5039"
+                },
+                "stage": "LEARN",
+                "stage_receipt": {
+                  "index": 2942,
+                  "kind": "R184_STAGE",
+                  "sha256": "52a4fde38ee001109be4fe02b940872ea1936f9528d4aa7933a82d408120d955"
+                }
+              }
+            ],
+            "inbox": {
+              "index": 2911,
+              "kind": "INBOX",
+              "sha256": "119900db7c44e263e23b6c33c88106136b627a059462260122d4b9609b2ae39e"
+            },
+            "kind": "UNADJUDICATED_RENDERED_INPUT",
+            "new_since_previous_collection": true,
+            "next_actual_ACT": {
+              "committed": {
+                "index": 2932,
+                "kind": "COMMITTED",
+                "sha256": "96ad84db2e5759b77bbacc31207ef2235e4e36278ea0c8cac2d1aaeb3c8eb860"
+              },
+              "request": {
+                "index": 2930,
+                "kind": "REQUEST",
+                "sha256": "b79c0e71fcbf45e6a9c5ff8218956f36f7380afda7070433644d759238fa0d0b"
+              },
+              "response": {
+                "index": 2931,
+                "kind": "RESPONSE",
+                "sha256": "d83c8d041ed24273338ca03f2c97ba2aa3b9d4e3b98e348fec33281bfa7927c1"
+              },
+              "stage": "ACT",
+              "stage_receipt": {
+                "index": 2933,
+                "kind": "R184_STAGE",
+                "sha256": "94dca39f8d9afbd53d7bb8e79356e7d5be7c380417ddf165604ba27f329b4838"
+              }
+            },
+            "queue_id": "af935bc9e7e840a4482d80f0f62b53cadf86a19cbf29c8f75d8fe4fbdb305953",
+            "source_sha256": "804d8ed7f99e96bed9be784ded1a61aefc499303351af1fde7a63243da452fcc",
+            "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+          }
+        ],
+        "journal_id": "30fa18c869b34fd496a2758a4a28e197",
+        "label": "R232_SIBLING_FROZEN",
+        "model_calls": 0,
+        "new_ACT_count": 7,
+        "new_rendered_input_count": 81,
+        "new_semantic_judgments": 0,
+        "omitted_pending_count": 78,
+        "owner": "Main: semantic review handoff requested; acceptance not inferred",
+        "pending_output_windows": 1,
+        "pending_rendered_input_count": 81,
+        "pending_total": 82,
+        "selection": "At most two fresh items, then least-recently-offered backlog; role/index tie-breaks only.",
+        "stage_scope": "Following child outputs require actual R184_STAGE; unframed console outputs are not relabelled.",
+        "status": "PENDING_MAIN_SEMANTIC_REVIEW"
+      },
+      "source_horizon_utc": "2026-09-30T17:59:30+00:00",
+      "status": "ACTUAL_BOUNDED_COLLECTION_COMPLETE"
+    }
+  ],
+  "unique_kept_sources": 17
+}

@@ -1,0 +1,119 @@
+{
+  "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+  "bridge": {
+    "astra7_hard_end_unix": 1789927200.0,
+    "cpu_authority": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/LEASE_AUTHORITY.json",
+      "sha256": "d60fdbcb661af334ce3ebfc42c8b9ab3fa8c5923b135a1e7aaafc4c7d05aa08f"
+    },
+    "cpu_horizon": 1790359200,
+    "entrypoint": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/bridge.py",
+      "sha256": "e24e306b19170352e3894a97e5966a79d9c05b15940f08209d9e8b63bfbf61ed"
+    },
+    "lease_evidence": {
+      "json_pointer": "/astra7/hard_end_unix",
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/private/bridge/BINDING.json",
+      "sha256": "38a414b3c6d4cbfa30ba9e8d180fb0e1fbd74d028050ceb9b12e1d3c088b8b6f"
+    },
+    "lock": {
+      "inode": "00:24:6093429",
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r229_bridge_run/COORDINATOR.lock",
+      "pid": 325634
+    },
+    "process": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/bridge.py"
+      ],
+      "command_sha256": "8d4ba1113100b96546b2b31cb6306665232ce9167e28c63487053dc92c895e03",
+      "executable": "/usr/bin/python3.12",
+      "pid": 325634,
+      "start_ticks": "753612"
+    },
+    "until_unix": 1789927200.0
+  },
+  "c2": {
+    "entrypoint": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_service.py",
+      "sha256": "4022f81fa3fa52aa57f5d86d46ab2fac2de332ff9a8ed24bd182348ef89abab1"
+    },
+    "existing_owner": [],
+    "lease_evidence": {
+      "json_pointer": "/hard_end_unix",
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_session1/CONFIG.json",
+      "sha256": "3a113e74974dad6ee21ee759b01b2f21839f881e08504c601c1ff148d82ad123"
+    },
+    "owner_argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_service.py"
+    ],
+    "pinned_restore": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_restore.py",
+      "sha256": "5426ca9ddefbe248da8d8ecc0feea8ce4f52697c5eb67a9a0d0af745473a25f0"
+    },
+    "publisher": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/checkpoint_tail_parent_strong.py",
+        "--manifest",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_session1/MANIFEST.json",
+        "--manifest-sha256",
+        "e633ecae3b71e2e4e901c2f7eceece0374c8190f5c859ab300ee449daa80e753"
+      ],
+      "command_sha256": "b2067e03a83fd4e472d3df17386e35872d2c439b8177526554148e0b608a1689",
+      "executable": "/usr/bin/python3.12",
+      "pid": 325487,
+      "start_ticks": "753205"
+    },
+    "publisher_lock": {
+      "inode": "00:24:6749545",
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/private/C2_WAIT_CONTROLLER.lock",
+      "pid": 325487
+    },
+    "singleton_lock": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/C2_SERVICE.lock",
+    "until_unix": 1789927200
+  },
+  "native_signals": [],
+  "observed_utc": "2026-09-19T01:07:21.025092+00:00",
+  "p7": {
+    "entrypoint": {
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/p7_restore.py",
+      "sha256": "9c52bae61046c8cd06a87274d29ff5220629a461020dffe5ef437269e5127e22"
+    },
+    "lease_evidence": {
+      "json_pointer": "/node4_cpu_hard_end_unix",
+      "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/LEASE_AUTHORITY.json",
+      "sha256": "d60fdbcb661af334ce3ebfc42c8b9ab3fa8c5923b135a1e7aaafc4c7d05aa08f"
+    },
+    "locks": [
+      {
+        "inode": "00:24:3349961",
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent7/PARENT_OPERATOR.lock",
+        "pid": 325545
+      },
+      {
+        "inode": "00:24:5565309",
+        "path": "/data/home/rohing/dream-state-orch/research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r225_parent7/PARENT_OPERATOR.lock",
+        "pid": 325545
+      }
+    ],
+    "process": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/p7_restore.py"
+      ],
+      "command_sha256": "e355d06624cc8e957574801d894510e91398777a1d32f491eafe51ee3c041f47",
+      "executable": "/usr/bin/python3.12",
+      "pid": 325545,
+      "start_ticks": "753409"
+    },
+    "until_unix": 1790359200
+  },
+  "publishers_restarted": false,
+  "service_management_attempted": false
+}

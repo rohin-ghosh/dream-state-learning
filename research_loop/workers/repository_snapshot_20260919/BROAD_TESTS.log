@@ -1,0 +1,581 @@
+......................................F................................. [  0%]
+..................s..................................................... [  0%]
+.........................................................F..FF.......... [  1%]
+..............................................................FF [  1%]
+FF.............................................................. [  1%]
+.................................................................................................................................... [  2%]
+.....................................FF....FFFFF
+==================================== ERRORS ====================================
+_______________ ERROR collecting tests/test_ny_caption_vision.py _______________
+ImportError while importing test module '/data/home/rohing/dream-state-orch/tests/test_ny_caption_vision.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_ny_caption_vision.py:17: in <module>
+    from PIL import Image
+E   ModuleNotFoundError: No module named 'PIL'
+_________ ERROR collecting tests/test_orch_r110_completion_recovery.py _________
+tests/test_orch_r110_completion_recovery.py:5: in <module>
+    from gpu import orch_r110_completion_recovery as recovery
+gpu/orch_r110_completion_recovery.py:8: in <module>
+    from gpu import orch_r110_guided_run as run
+gpu/orch_r110_guided_run.py:17: in <module>
+    from gpu import orch_r110_guided_native as science
+gpu/orch_r110_guided_native.py:10: in <module>
+    from organism_v6 import orch_r110_guided as policy
+organism_v6/orch_r110_guided.py:42: in <module>
+    require(hashlib.sha256(PRINCIPLES_PATH.read_bytes()).hexdigest() == PRINCIPLES_SHA256,
+organism_v6/orch_math_feedback_uptake.py:51: in require
+    raise ValueError(reason)
+E   ValueError: pinned_rohin_principles_required
+_______________ ERROR collecting tests/test_orch_r110_guided.py ________________
+tests/test_orch_r110_guided.py:8: in <module>
+    from organism_v6 import orch_r110_guided as policy
+organism_v6/orch_r110_guided.py:42: in <module>
+    require(hashlib.sha256(PRINCIPLES_PATH.read_bytes()).hexdigest() == PRINCIPLES_SHA256,
+organism_v6/orch_math_feedback_uptake.py:51: in require
+    raise ValueError(reason)
+E   ValueError: pinned_rohin_principles_required
+____________ ERROR collecting tests/test_orch_r110_guided_broker.py ____________
+tests/test_orch_r110_guided_broker.py:12: in <module>
+    from gpu import orch_r110_guided_broker as broker
+gpu/orch_r110_guided_broker.py:35: in <module>
+    from organism_v6 import orch_r110_guided as policy
+organism_v6/orch_r110_guided.py:42: in <module>
+    require(hashlib.sha256(PRINCIPLES_PATH.read_bytes()).hexdigest() == PRINCIPLES_SHA256,
+organism_v6/orch_math_feedback_uptake.py:51: in require
+    raise ValueError(reason)
+E   ValueError: pinned_rohin_principles_required
+____________ ERROR collecting tests/test_orch_r110_guided_native.py ____________
+tests/test_orch_r110_guided_native.py:1: in <module>
+    from gpu import orch_r110_guided_native as native
+gpu/orch_r110_guided_native.py:10: in <module>
+    from organism_v6 import orch_r110_guided as policy
+organism_v6/orch_r110_guided.py:42: in <module>
+    require(hashlib.sha256(PRINCIPLES_PATH.read_bytes()).hexdigest() == PRINCIPLES_SHA256,
+organism_v6/orch_math_feedback_uptake.py:51: in require
+    raise ValueError(reason)
+E   ValueError: pinned_rohin_principles_required
+_____________ ERROR collecting tests/test_orch_r110_guided_run.py ______________
+tests/test_orch_r110_guided_run.py:1: in <module>
+    from gpu import orch_r110_guided_run as run
+gpu/orch_r110_guided_run.py:17: in <module>
+    from gpu import orch_r110_guided_native as science
+gpu/orch_r110_guided_native.py:10: in <module>
+    from organism_v6 import orch_r110_guided as policy
+organism_v6/orch_r110_guided.py:42: in <module>
+    require(hashlib.sha256(PRINCIPLES_PATH.read_bytes()).hexdigest() == PRINCIPLES_SHA256,
+organism_v6/orch_math_feedback_uptake.py:51: in require
+    raise ValueError(reason)
+E   ValueError: pinned_rohin_principles_required
+__________ ERROR collecting tests/test_orch_r110_guided_supervisor.py __________
+tests/test_orch_r110_guided_supervisor.py:5: in <module>
+    from gpu import orch_r110_guided_supervisor as supervisor
+gpu/orch_r110_guided_supervisor.py:12: in <module>
+    from gpu import orch_r110_guided_run as run
+gpu/orch_r110_guided_run.py:17: in <module>
+    from gpu import orch_r110_guided_native as science
+gpu/orch_r110_guided_native.py:10: in <module>
+    from organism_v6 import orch_r110_guided as policy
+organism_v6/orch_r110_guided.py:42: in <module>
+    require(hashlib.sha256(PRINCIPLES_PATH.read_bytes()).hexdigest() == PRINCIPLES_SHA256,
+organism_v6/orch_math_feedback_uptake.py:51: in require
+    raise ValueError(reason)
+E   ValueError: pinned_rohin_principles_required
+=================================== FAILURES ===================================
+_________ test_all473_exact_rows_and_false_historical_labels_preserved _________
+
+    def test_all473_exact_rows_and_false_historical_labels_preserved():
+        root, packet, exclusions = packet_fixture()
+        before = deepcopy(packet)
+>       state = policy.initial_state(json.loads((root / 'PACKET/ADMITTED_ROWS.json').read_text()), 'initial')
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_combined_l1_continual_content_test.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_notes/analysis/orch_combined_l1_continual_20260915_attempt1/PACKET/ADMITTED_ROWS.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_notes/analysis/orch_combined_l1_continual_20260915_attempt1/PACKET/ADMITTED_ROWS.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+________ test_entire_frozen_inventory_and_single_exact_target_duplicate ________
+
+    def test_entire_frozen_inventory_and_single_exact_target_duplicate():
+>       manifest = run.validate_corpus(ARTIFACT)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_combined_l1_test.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_combined_l1_run.py:48: in validate_corpus
+    assert all(sha(root / name) == digest for name, digest in manifest['files'].items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gpu/orch_combined_l1_run.py:48: in <genexpr>
+    assert all(sha(root / name) == digest for name, digest in manifest['files'].items())
+               ^^^^^^^^^^^^^^^^
+gpu/orch_l2_rich_math_bootstrap.py:44: in sha
+    return bridge.file_sha256(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+organism_v6/orch_guided_bridge.py:37: in file_sha256
+    with Path(path).open('rb') as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_notes/analysis/orch_combined_l1_20260915_attempt1/PACKET/ADMITTED_ROWS.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_notes/analysis/orch_combined_l1_20260915_attempt1/PACKET/ADMITTED_ROWS.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_____ test_encoder_reuses_original1452_boundary_and_all_whole_rich_targets _____
+
+    def test_encoder_reuses_original1452_boundary_and_all_whole_rich_targets():
+>       packet = read(ARTIFACT / 'PACKET/ADMITTED_ROWS.json')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_combined_l1_test.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_l2_rich_math_bootstrap.py:32: in read
+    return json.loads(Path(path).read_text())
+                      ^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_notes/analysis/orch_combined_l1_20260915_attempt1/PACKET/ADMITTED_ROWS.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_notes/analysis/orch_combined_l1_20260915_attempt1/PACKET/ADMITTED_ROWS.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+___________ test_held_both_families_and_source_text_worlds_disjoint ____________
+
+    def test_held_both_families_and_source_text_worlds_disjoint():
+>       packet = read(ARTIFACT / 'PACKET/ADMITTED_ROWS.json')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_combined_l1_test.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_l2_rich_math_bootstrap.py:32: in read
+    return json.loads(Path(path).read_text())
+                      ^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/data/home/rohing/dream-state-orch/research_notes/analysis/orch_combined_l1_20260915_attempt1/PACKET/ADMITTED_ROWS.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_notes/analysis/orch_combined_l1_20260915_attempt1/PACKET/ADMITTED_ROWS.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_____ Node5PreparationTests.test_explicit_new_caps_and_unchanged_hard_end ______
+
+self = <orch_math_feedback_uptake_node5_prepare_test.Node5PreparationTests testMethod=test_explicit_new_caps_and_unchanged_hard_end>
+
+    def setUp(self):
+>       self.plan = preparation.make_plan(Path(__file__).resolve().parents[1])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_math_feedback_uptake_node5_prepare_test.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_math_feedback_uptake_node5_prepare.py:46: in make_plan
+    policy.require(principles_sha == ready['family']['principles_sha256'], 'same_shared_principles')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'same_shared_principles'
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: same_shared_principles
+
+organism_v6/orch_math_feedback_uptake.py:51: ValueError
+___ Node5PreparationTests.test_no_connections_or_model_calls_in_preparation ____
+
+self = <orch_math_feedback_uptake_node5_prepare_test.Node5PreparationTests testMethod=test_no_connections_or_model_calls_in_preparation>
+
+    def setUp(self):
+>       self.plan = preparation.make_plan(Path(__file__).resolve().parents[1])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_math_feedback_uptake_node5_prepare_test.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_math_feedback_uptake_node5_prepare.py:46: in make_plan
+    policy.require(principles_sha == ready['family']['principles_sha256'], 'same_shared_principles')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'same_shared_principles'
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: same_shared_principles
+
+organism_v6/orch_math_feedback_uptake.py:51: ValueError
+_ Node5PreparationTests.test_reuses_exact_principles_and_does_not_block_originals _
+
+self = <orch_math_feedback_uptake_node5_prepare_test.Node5PreparationTests testMethod=test_reuses_exact_principles_and_does_not_block_originals>
+
+    def setUp(self):
+>       self.plan = preparation.make_plan(Path(__file__).resolve().parents[1])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_math_feedback_uptake_node5_prepare_test.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_math_feedback_uptake_node5_prepare.py:46: in make_plan
+    policy.require(principles_sha == ready['family']['principles_sha256'], 'same_shared_principles')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'same_shared_principles'
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: same_shared_principles
+
+organism_v6/orch_math_feedback_uptake.py:51: ValueError
+____ Node5PreparationTests.test_unknown_native_identity_never_becomes_ready ____
+
+self = <orch_math_feedback_uptake_node5_prepare_test.Node5PreparationTests testMethod=test_unknown_native_identity_never_becomes_ready>
+
+    def setUp(self):
+>       self.plan = preparation.make_plan(Path(__file__).resolve().parents[1])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_math_feedback_uptake_node5_prepare_test.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_math_feedback_uptake_node5_prepare.py:46: in make_plan
+    policy.require(principles_sha == ready['family']['principles_sha256'], 'same_shared_principles')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'same_shared_principles'
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: same_shared_principles
+
+organism_v6/orch_math_feedback_uptake.py:51: ValueError
+_ FreshBootstrapTests.test_central_seed_restore_once_before_collection_no_local_optimizer _
+
+self = <orch_math_feedback_uptake_r118_parallel_exec_test.FreshBootstrapTests testMethod=test_central_seed_restore_once_before_collection_no_local_optimizer>
+
+    def test_central_seed_restore_once_before_collection_no_local_optimizer(self):
+        engine = SimpleNamespace(session=dict(branch='F2',shared_root='/synthetic/common'),
+            loaded=SimpleNamespace(engine=object()), verify_base=Mock())
+        document = dict(bootstrap_path='/synthetic/lane1/BOOTSTRAP.json')
+        reference = dict(owners={'F2':dict(bootstrap_path=document['bootstrap_path'])})
+        order = []
+        with patch.dict(os.environ, R118_PARALLEL_SESSION='/synthetic/SESSION.json',
+                R118_PARALLEL_SESSION_SHA256='a'*64,R118_PARALLEL_BRANCH='F2'), \
+                patch.object(life, 'checked', return_value=reference), \
+                patch.object(life.hook, 'bootstrap_fresh_actor', side_effect=lambda **kwargs: order.append(('bootstrap',kwargs)) or {
+                    'status':'BOOTSTRAP_VERIFIED','startup_action':'COLLECT_NEW_TWO_EPISODES',
+                    'canonical_adapter_actually_verified':True}), \
+                patch.object(life.hook, 'wait_fresh_collection_go', side_effect=lambda *args,**kwargs:order.append(('GO',args))):
+>           result = native.bootstrap(engine, document, Mock())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_math_feedback_uptake_r118_parallel_exec_test.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_math_feedback_uptake_r118_parallel_native.py:44: in bootstrap
+    verified_hook()
+gpu/orch_math_feedback_uptake_r118_parallel_native.py:25: in verified_hook
+    require(loop.hook is life.hook and shared.sha(life.hook.__file__) == FINALIZED_HOOK_SHA256,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'finalized_Herschel_v4_invoked_hook_required'
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: finalized_Herschel_v4_invoked_hook_required
+
+gpu/orch_r116_shared_learner.py:24: ValueError
+___ FreshBootstrapTests.test_central_wrong_branch_rejected_before_bootstrap ____
+ValueError: finalized_Herschel_v4_invoked_hook_required
+
+During handling of the above exception, another exception occurred:
+
+self = <orch_math_feedback_uptake_r118_parallel_exec_test.FreshBootstrapTests testMethod=test_central_wrong_branch_rejected_before_bootstrap>
+
+    def test_central_wrong_branch_rejected_before_bootstrap(self):
+        engine = SimpleNamespace(session=dict(branch='F2'))
+        with patch.dict(os.environ, R118_PARALLEL_SESSION='/synthetic/SESSION.json',
+                R118_PARALLEL_SESSION_SHA256='a'*64,R118_PARALLEL_BRANCH='A2'), \
+                patch.object(life.hook, 'bootstrap_fresh_actor') as bootstrap:
+>           with self.assertRaisesRegex(ValueError, 'fresh_branch_binding'):
+E           AssertionError: "fresh_branch_binding" does not match "finalized_Herschel_v4_invoked_hook_required"
+
+tests/orch_math_feedback_uptake_r118_parallel_exec_test.py:158: AssertionError
+_ FreshBootstrapTests.test_wrong_or_missing_startup_action_cannot_reach_GO (result={'canonical_adapter_actually_verified': True}) _
+ValueError: finalized_Herschel_v4_invoked_hook_required
+
+During handling of the above exception, another exception occurred:
+
+self = <orch_math_feedback_uptake_r118_parallel_exec_test.FreshBootstrapTests testMethod=test_wrong_or_missing_startup_action_cannot_reach_GO>
+
+    def test_wrong_or_missing_startup_action_cannot_reach_GO(self):
+        for result in ({'canonical_adapter_actually_verified':True},
+                {'startup_action':'RESUME_PENDING_PARALLEL_BOUNDARY_BEFORE_NEW_CALLS',
+                 'canonical_adapter_actually_verified':True},
+                {'startup_action':'COLLECT_NEW_TWO_EPISODES','canonical_adapter_actually_verified':False}):
+            engine=SimpleNamespace(session=dict(branch='F2',shared_root='/synthetic/common'),
+                loaded=SimpleNamespace(engine=object()),verify_base=Mock())
+            document=dict(bootstrap_path='/synthetic/BOOTSTRAP.json')
+            with self.subTest(result=result),patch.dict(os.environ,R118_PARALLEL_SESSION='/synthetic/SESSION.json',
+                    R118_PARALLEL_SESSION_SHA256='a'*64,R118_PARALLEL_BRANCH='F2'), \
+                    patch.object(life,'checked',return_value=dict(owners={'F2':document})), \
+                    patch.object(life.hook,'bootstrap_fresh_actor',return_value=result), \
+                    patch.object(life.hook,'wait_fresh_collection_go') as go:
+>               with self.assertRaisesRegex(ValueError,'new_cycle_startup_action'):
+E               AssertionError: "new_cycle_startup_action" does not match "finalized_Herschel_v4_invoked_hook_required"
+
+tests/orch_math_feedback_uptake_r118_parallel_exec_test.py:149: AssertionError
+_ FreshBootstrapTests.test_wrong_or_missing_startup_action_cannot_reach_GO (result={'startup_action': 'RESUME_PENDING_PARALLEL_BOUNDARY_BEFORE_NEW_CALLS', 'canonical_adapter_actually_verified': True}) _
+ValueError: finalized_Herschel_v4_invoked_hook_required
+
+During handling of the above exception, another exception occurred:
+
+self = <orch_math_feedback_uptake_r118_parallel_exec_test.FreshBootstrapTests testMethod=test_wrong_or_missing_startup_action_cannot_reach_GO>
+
+    def test_wrong_or_missing_startup_action_cannot_reach_GO(self):
+        for result in ({'canonical_adapter_actually_verified':True},
+                {'startup_action':'RESUME_PENDING_PARALLEL_BOUNDARY_BEFORE_NEW_CALLS',
+                 'canonical_adapter_actually_verified':True},
+                {'startup_action':'COLLECT_NEW_TWO_EPISODES','canonical_adapter_actually_verified':False}):
+            engine=SimpleNamespace(session=dict(branch='F2',shared_root='/synthetic/common'),
+                loaded=SimpleNamespace(engine=object()),verify_base=Mock())
+            document=dict(bootstrap_path='/synthetic/BOOTSTRAP.json')
+            with self.subTest(result=result),patch.dict(os.environ,R118_PARALLEL_SESSION='/synthetic/SESSION.json',
+                    R118_PARALLEL_SESSION_SHA256='a'*64,R118_PARALLEL_BRANCH='F2'), \
+                    patch.object(life,'checked',return_value=dict(owners={'F2':document})), \
+                    patch.object(life.hook,'bootstrap_fresh_actor',return_value=result), \
+                    patch.object(life.hook,'wait_fresh_collection_go') as go:
+>               with self.assertRaisesRegex(ValueError,'new_cycle_startup_action'):
+E               AssertionError: "new_cycle_startup_action" does not match "finalized_Herschel_v4_invoked_hook_required"
+
+tests/orch_math_feedback_uptake_r118_parallel_exec_test.py:149: AssertionError
+_ FreshBootstrapTests.test_wrong_or_missing_startup_action_cannot_reach_GO (result={'startup_action': 'COLLECT_NEW_TWO_EPISODES', 'canonical_adapter_actually_verified': False}) _
+ValueError: finalized_Herschel_v4_invoked_hook_required
+
+During handling of the above exception, another exception occurred:
+
+self = <orch_math_feedback_uptake_r118_parallel_exec_test.FreshBootstrapTests testMethod=test_wrong_or_missing_startup_action_cannot_reach_GO>
+
+    def test_wrong_or_missing_startup_action_cannot_reach_GO(self):
+        for result in ({'canonical_adapter_actually_verified':True},
+                {'startup_action':'RESUME_PENDING_PARALLEL_BOUNDARY_BEFORE_NEW_CALLS',
+                 'canonical_adapter_actually_verified':True},
+                {'startup_action':'COLLECT_NEW_TWO_EPISODES','canonical_adapter_actually_verified':False}):
+            engine=SimpleNamespace(session=dict(branch='F2',shared_root='/synthetic/common'),
+                loaded=SimpleNamespace(engine=object()),verify_base=Mock())
+            document=dict(bootstrap_path='/synthetic/BOOTSTRAP.json')
+            with self.subTest(result=result),patch.dict(os.environ,R118_PARALLEL_SESSION='/synthetic/SESSION.json',
+                    R118_PARALLEL_SESSION_SHA256='a'*64,R118_PARALLEL_BRANCH='F2'), \
+                    patch.object(life,'checked',return_value=dict(owners={'F2':document})), \
+                    patch.object(life.hook,'bootstrap_fresh_actor',return_value=result), \
+                    patch.object(life.hook,'wait_fresh_collection_go') as go:
+>               with self.assertRaisesRegex(ValueError,'new_cycle_startup_action'):
+E               AssertionError: "new_cycle_startup_action" does not match "finalized_Herschel_v4_invoked_hook_required"
+
+tests/orch_math_feedback_uptake_r118_parallel_exec_test.py:149: AssertionError
+_ ActivationWaitTests.test_autoarm_publishes_actual_certificate_via_shared_hook _
+
+self = <orch_math_feedback_uptake_r118_parallel_exec_test.ActivationWaitTests testMethod=test_autoarm_publishes_actual_certificate_via_shared_hook>
+
+    def test_autoarm_publishes_actual_certificate_via_shared_hook(self):
+        document = dict(self.document,campaign=dict(path='/synthetic/campaign.json',sha256='b'*64))
+        result = dict(path='/synthetic/ACTIVATION.json',sha256='c'*64)
+        with patch.object(life.hook,'await_campaign_activation',return_value=result) as await_hook:
+>           self.assertEqual(native.wait_activation(self.service,document,self.certificate,100,clock=lambda:1),result)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_math_feedback_uptake_r118_parallel_exec_test.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_math_feedback_uptake_r118_parallel_native.py:88: in wait_activation
+    verified_hook()
+gpu/orch_math_feedback_uptake_r118_parallel_native.py:25: in verified_hook
+    require(loop.hook is life.hook and shared.sha(life.hook.__file__) == FINALIZED_HOOK_SHA256,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'finalized_Herschel_v4_invoked_hook_required'
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: finalized_Herschel_v4_invoked_hook_required
+
+gpu/orch_r116_shared_learner.py:24: ValueError
+__ ActivationWaitTests.test_exact_existing_Main_generation_reference_contract __
+
+self = <orch_math_feedback_uptake_r118_parallel_exec_test.ActivationWaitTests testMethod=test_exact_existing_Main_generation_reference_contract>
+
+    def test_exact_existing_Main_generation_reference_contract(self):
+        activation = self.service/'activation.json'
+        shared.write(activation, dict(generation=1,participants={'F2':self.certificate}))
+        reference = life.ref(activation)
+        shared.write(self.inbox/'generation_000001.ref.json', reference)
+>       self.assertEqual(native.wait_activation(self.service,self.document,self.certificate,100,clock=lambda:1), reference)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/orch_math_feedback_uptake_r118_parallel_exec_test.py:188: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_math_feedback_uptake_r118_parallel_native.py:88: in wait_activation
+    verified_hook()
+gpu/orch_math_feedback_uptake_r118_parallel_native.py:25: in verified_hook
+    require(loop.hook is life.hook and shared.sha(life.hook.__file__) == FINALIZED_HOOK_SHA256,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'finalized_Herschel_v4_invoked_hook_required'
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: finalized_Herschel_v4_invoked_hook_required
+
+gpu/orch_r116_shared_learner.py:24: ValueError
+_________ ActivationWaitTests.test_no_activation_replay_after_deadline _________
+
+self = <orch_math_feedback_uptake_r118_parallel_exec_test.ActivationWaitTests testMethod=test_no_activation_replay_after_deadline>
+
+    def test_no_activation_replay_after_deadline(self):
+        with self.assertRaisesRegex(TimeoutError, 'bounded_Main_activation'):
+>           native.wait_activation(self.service,self.document,self.certificate,100,clock=lambda:100)
+
+tests/orch_math_feedback_uptake_r118_parallel_exec_test.py:209: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_math_feedback_uptake_r118_parallel_native.py:88: in wait_activation
+    verified_hook()
+gpu/orch_math_feedback_uptake_r118_parallel_native.py:25: in verified_hook
+    require(loop.hook is life.hook and shared.sha(life.hook.__file__) == FINALIZED_HOOK_SHA256,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: finalized_Herschel_v4_invoked_hook_required
+
+gpu/orch_r116_shared_learner.py:24: ValueError
+________ ActivationWaitTests.test_retirement_does_not_launch_collective ________
+
+self = <orch_math_feedback_uptake_r118_parallel_exec_test.ActivationWaitTests testMethod=test_retirement_does_not_launch_collective>
+
+    def test_retirement_does_not_launch_collective(self):
+        shared.write(self.service/'STOP_REQUEST.json', dict(reason='deadline'))
+        with self.assertRaisesRegex(TimeoutError, 'retirement_no_collective'):
+>           native.wait_activation(self.service,self.document,self.certificate,100,clock=lambda:1)
+
+tests/orch_math_feedback_uptake_r118_parallel_exec_test.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+gpu/orch_math_feedback_uptake_r118_parallel_native.py:88: in wait_activation
+    verified_hook()
+gpu/orch_math_feedback_uptake_r118_parallel_native.py:25: in verified_hook
+    require(loop.hook is life.hook and shared.sha(life.hook.__file__) == FINALIZED_HOOK_SHA256,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def require(condition, reason):
+        if not condition:
+>           raise ValueError(reason)
+E           ValueError: finalized_Herschel_v4_invoked_hook_required
+
+gpu/orch_r116_shared_learner.py:24: ValueError
+________ ActivationWaitTests.test_wrong_generation_activation_rejected _________
+ValueError: finalized_Herschel_v4_invoked_hook_required
+
+During handling of the above exception, another exception occurred:
+
+self = <orch_math_feedback_uptake_r118_parallel_exec_test.ActivationWaitTests testMethod=test_wrong_generation_activation_rejected>
+
+    def test_wrong_generation_activation_rejected(self):
+        activation = self.service/'activation.json'
+        shared.write(activation, dict(generation=0,participants={'F2':self.certificate}))
+        shared.write(self.inbox/'generation_000001.ref.json', life.ref(activation))
+>       with self.assertRaisesRegex(ValueError, 'exact_Main_parallel_activation'):
+E       AssertionError: "exact_Main_parallel_activation" does not match "finalized_Herschel_v4_invoked_hook_required"
+
+tests/orch_math_feedback_uptake_r118_parallel_exec_test.py:215: AssertionError
+=============================== warnings summary ===============================
+../.cache/uv/archive-v0/mjpoH1nso-rGw4lM/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:279
+  /data/home/rohing/.cache/uv/archive-v0/mjpoH1nso-rGw4lM/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:279: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:81.)
+    cpu = _conversion_method_template(device=torch.device("cpu"))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/orch_combined_l1_continual_content_test.py::test_all473_exact_rows_and_false_historical_labels_preserved
+FAILED tests/orch_combined_l1_test.py::test_entire_frozen_inventory_and_single_exact_target_duplicate
+FAILED tests/orch_combined_l1_test.py::test_encoder_reuses_original1452_boundary_and_all_whole_rich_targets
+FAILED tests/orch_combined_l1_test.py::test_held_both_families_and_source_text_worlds_disjoint
+FAILED tests/orch_math_feedback_uptake_node5_prepare_test.py::Node5PreparationTests::test_explicit_new_caps_and_unchanged_hard_end
+FAILED tests/orch_math_feedback_uptake_node5_prepare_test.py::Node5PreparationTests::test_no_connections_or_model_calls_in_preparation
+FAILED tests/orch_math_feedback_uptake_node5_prepare_test.py::Node5PreparationTests::test_reuses_exact_principles_and_does_not_block_originals
+FAILED tests/orch_math_feedback_uptake_node5_prepare_test.py::Node5PreparationTests::test_unknown_native_identity_never_becomes_ready
+FAILED tests/orch_math_feedback_uptake_r118_parallel_exec_test.py::FreshBootstrapTests::test_central_seed_restore_once_before_collection_no_local_optimizer
+FAILED tests/orch_math_feedback_uptake_r118_parallel_exec_test.py::FreshBootstrapTests::test_central_wrong_branch_rejected_before_bootstrap
+SUBFAILED(result={'canonical_adapter_actually_verified': True}) tests/orch_math_feedback_uptake_r118_parallel_exec_test.py::FreshBootstrapTests::test_wrong_or_missing_startup_action_cannot_reach_GO
+SUBFAILED(result={'startup_action': 'RESUME_PENDING_PARALLEL_BOUNDARY_BEFORE_NEW_CALLS', 'canonical_adapter_actually_verified': True}) tests/orch_math_feedback_uptake_r118_parallel_exec_test.py::FreshBootstrapTests::test_wrong_or_missing_startup_action_cannot_reach_GO
+SUBFAILED(result={'startup_action': 'COLLECT_NEW_TWO_EPISODES', 'canonical_adapter_actually_verified': False}) tests/orch_math_feedback_uptake_r118_parallel_exec_test.py::FreshBootstrapTests::test_wrong_or_missing_startup_action_cannot_reach_GO
+FAILED tests/orch_math_feedback_uptake_r118_parallel_exec_test.py::ActivationWaitTests::test_autoarm_publishes_actual_certificate_via_shared_hook
+FAILED tests/orch_math_feedback_uptake_r118_parallel_exec_test.py::ActivationWaitTests::test_exact_existing_Main_generation_reference_contract
+FAILED tests/orch_math_feedback_uptake_r118_parallel_exec_test.py::ActivationWaitTests::test_no_activation_replay_after_deadline
+FAILED tests/orch_math_feedback_uptake_r118_parallel_exec_test.py::ActivationWaitTests::test_retirement_does_not_launch_collective
+FAILED tests/orch_math_feedback_uptake_r118_parallel_exec_test.py::ActivationWaitTests::test_wrong_generation_activation_rejected
+ERROR tests/test_ny_caption_vision.py
+ERROR tests/test_orch_r110_completion_recovery.py - ValueError: pinned_rohin_...
+ERROR tests/test_orch_r110_guided.py - ValueError: pinned_rohin_principles_re...
+ERROR tests/test_orch_r110_guided_broker.py - ValueError: pinned_rohin_princi...
+ERROR tests/test_orch_r110_guided_native.py - ValueError: pinned_rohin_princi...
+ERROR tests/test_orch_r110_guided_run.py - ValueError: pinned_rohin_principle...
+ERROR tests/test_orch_r110_guided_supervisor.py - ValueError: pinned_rohin_pr...
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 25 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+18 failed, 508 passed, 4 skipped, 1 warning, 7 errors, 39 subtests passed in 35.15s

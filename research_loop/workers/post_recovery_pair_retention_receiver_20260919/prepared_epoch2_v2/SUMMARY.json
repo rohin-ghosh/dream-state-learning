@@ -1,0 +1,268 @@
+{
+  "actual_checkpoint_tested": false,
+  "dispatches": [],
+  "lives": {
+    "curriculum_frozen_sibling": {
+      "deadline_unix": 1790791200,
+      "epoch1_to_epoch2_delta": {
+        "gpu/checkpoint_tail_runtime.py": {
+          "after": "972456b7d6cb026cc922e067114701d4f157fa6ed775e4406ecb52c86eef7d3e",
+          "before": null
+        },
+        "gpu/pair_retention_runtime.py": {
+          "after": "bc632040bfaf43968feb82a08c599b2828de9ae8cf8b082d9da407e3a283cd29",
+          "before": null
+        },
+        "gpu/r232_recovery.py": {
+          "after": "6fe61718ef2ceede3301e558ddc8fddf426ea4974fbf19840b0a09bb0375cc48",
+          "before": "278b1c566a8685a160f4ae2b1e26316d93be9f3721ca5c0eef56ca8a944b5e4a"
+        }
+      },
+      "receipt": "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_pair_retention_receiver_20260919/prepared_epoch2_v2/curriculum_frozen_sibling/epoch2/EPOCH2_SOURCE.json",
+      "receipt_sha256": "2bbec3d96b04122ae8d903915384c8b2b67c335c2fabb8843e6eac4fa1e984dc",
+      "source_bytes": 2833098,
+      "source_files": 209,
+      "tests": {
+        "GPU_calls": 0,
+        "dispatches": 0,
+        "errors": 0,
+        "failures": 0,
+        "native_signals": 0,
+        "passed": true,
+        "prefix_cost_samples": [
+          {
+            "complete_index": 7,
+            "complete_sha256": "610dbfd29d1bf6d1bed1720a226efbfa4e70ad4a26032b43cf295cd6b662f8da",
+            "decoded_prefix_indices": [
+              7
+            ],
+            "head_sha256": "dee4b24faeec1ce9ca1256e6efe7f3cc4a1772171e8212de8ac392af03c4c73b",
+            "open_seconds": 0.01464579200001026,
+            "pending_preserved": true,
+            "physical": 0,
+            "policy": "R233_PINNED_COMPLETE_TAIL_V1",
+            "prefix_records": 8,
+            "prefix_rewritten": false,
+            "prefix_semantic_authority": "EXTERNAL_EXACT_COMPLETE_PIN_OR_CURRENT_VALIDATED_WRITER",
+            "prefix_work": "ALL_RETAINED_BYTES_HASHED_NO_HISTORICAL_BODY_JSON_REPLAY",
+            "raw_record_bytes_hashed": 26247,
+            "record_count": 9,
+            "restored_state_sha256": "7dfc1c550ded29fe1e8e8d87ab0f4237ab6c57c75599d4de02509ba7f07ffc4d",
+            "sidecars": [],
+            "source_admission_unchanged": true,
+            "tail_bytes": 578,
+            "tail_records": 1
+          },
+          {
+            "complete_index": 7,
+            "complete_sha256": "6b2530b93eb13b25dad21199d90dec6da7a71a6f6a41f81dbd143021e160cbaf",
+            "decoded_prefix_indices": [
+              7
+            ],
+            "head_sha256": "4aa954e2c40a17b99357759b428f9a13cee99a72378dccbd08f095181843b22f",
+            "open_seconds": 0.008286770000268007,
+            "pending_preserved": true,
+            "physical": 1,
+            "policy": "R233_PINNED_COMPLETE_TAIL_V1",
+            "prefix_records": 8,
+            "prefix_rewritten": false,
+            "prefix_semantic_authority": "EXTERNAL_EXACT_COMPLETE_PIN_OR_CURRENT_VALIDATED_WRITER",
+            "prefix_work": "ALL_RETAINED_BYTES_HASHED_NO_HISTORICAL_BODY_JSON_REPLAY",
+            "raw_record_bytes_hashed": 27607,
+            "record_count": 9,
+            "restored_state_sha256": "f2f9a4abc819545b61c23efaf9add4973488bf3a0cfbf96fc3c9d53311a43746",
+            "sidecars": [],
+            "source_admission_unchanged": true,
+            "synthetic_full_replay_seconds": 0.0032875880006031366,
+            "tail_bytes": 578,
+            "tail_records": 1
+          },
+          {
+            "complete_index": 7,
+            "complete_sha256": "85ae5022c0a01b338e5362d437111cb37da76a6acb300edb2914749cbbef9165",
+            "decoded_prefix_indices": [
+              7
+            ],
+            "head_sha256": "43ce1092afbe6431f1fe8a75c503453335a4bb06d1c032a6898c5401dce80328",
+            "open_seconds": 0.010582163999060867,
+            "pending_preserved": true,
+            "physical": 0,
+            "policy": "R233_PINNED_COMPLETE_TAIL_V1",
+            "prefix_records": 8,
+            "prefix_rewritten": false,
+            "prefix_semantic_authority": "EXTERNAL_EXACT_COMPLETE_PIN_OR_CURRENT_VALIDATED_WRITER",
+            "prefix_work": "ALL_RETAINED_BYTES_HASHED_NO_HISTORICAL_BODY_JSON_REPLAY",
+            "raw_record_bytes_hashed": 26247,
+            "record_count": 9,
+            "restored_state_sha256": "7dfc1c550ded29fe1e8e8d87ab0f4237ab6c57c75599d4de02509ba7f07ffc4d",
+            "sidecars": [],
+            "source_admission_unchanged": true,
+            "synthetic_full_replay_seconds": 0.00456553799995163,
+            "tail_bytes": 578,
+            "tail_records": 1
+          },
+          {
+            "complete_index": 7,
+            "complete_sha256": "3696b492c8839ddc9d05f5d97bca42cd8f3ff7177ab7763a4989314d5da3173c",
+            "decoded_prefix_indices": [
+              7
+            ],
+            "head_sha256": "11cc831f631b11de06edd80dd2aa2a5fa6e3523c720b0dc0a043e89ac02f2395",
+            "open_seconds": 0.008576336998885381,
+            "pending_preserved": true,
+            "physical": 0,
+            "policy": "R233_PINNED_COMPLETE_TAIL_V1",
+            "prefix_records": 8,
+            "prefix_rewritten": false,
+            "prefix_semantic_authority": "EXTERNAL_EXACT_COMPLETE_PIN_OR_CURRENT_VALIDATED_WRITER",
+            "prefix_work": "ALL_RETAINED_BYTES_HASHED_NO_HISTORICAL_BODY_JSON_REPLAY",
+            "raw_record_bytes_hashed": 26933,
+            "record_count": 10,
+            "restored_state_sha256": "7dfc1c550ded29fe1e8e8d87ab0f4237ab6c57c75599d4de02509ba7f07ffc4d",
+            "sidecars": [],
+            "source_admission_unchanged": true,
+            "tail_bytes": 1264,
+            "tail_records": 2
+          }
+        ],
+        "synthetic_only": true,
+        "tests_run": 14
+      }
+    },
+    "curriculum_learner": {
+      "deadline_unix": 1790791200,
+      "epoch1_to_epoch2_delta": {
+        "gpu/checkpoint_tail_runtime.py": {
+          "after": "972456b7d6cb026cc922e067114701d4f157fa6ed775e4406ecb52c86eef7d3e",
+          "before": null
+        },
+        "gpu/pair_retention_runtime.py": {
+          "after": "bc632040bfaf43968feb82a08c599b2828de9ae8cf8b082d9da407e3a283cd29",
+          "before": null
+        },
+        "gpu/r232_recovery.py": {
+          "after": "6fe61718ef2ceede3301e558ddc8fddf426ea4974fbf19840b0a09bb0375cc48",
+          "before": "278b1c566a8685a160f4ae2b1e26316d93be9f3721ca5c0eef56ca8a944b5e4a"
+        }
+      },
+      "receipt": "/data/home/rohing/dream-state-orch/research_loop/workers/post_recovery_pair_retention_receiver_20260919/prepared_epoch2_v2/curriculum_learner/epoch2/EPOCH2_SOURCE.json",
+      "receipt_sha256": "20d1c9d393a7d67b8ce1a91c33dd7bffea5e159c80eecd4bcbeab9a2c6e03a92",
+      "source_bytes": 2833098,
+      "source_files": 209,
+      "tests": {
+        "GPU_calls": 0,
+        "dispatches": 0,
+        "errors": 0,
+        "failures": 0,
+        "native_signals": 0,
+        "passed": true,
+        "prefix_cost_samples": [
+          {
+            "complete_index": 7,
+            "complete_sha256": "e2e290161333c5dc65756f0506b5a44a4ae357d1431d82ba584fd3959fac378b",
+            "decoded_prefix_indices": [
+              7
+            ],
+            "head_sha256": "4570432b6d1848477f1fb951aaf3ccc5f3306fa903fbf3ad056a738ef90d1b26",
+            "open_seconds": 0.01782021100007114,
+            "pending_preserved": true,
+            "physical": 0,
+            "policy": "R233_PINNED_COMPLETE_TAIL_V1",
+            "prefix_records": 8,
+            "prefix_rewritten": false,
+            "prefix_semantic_authority": "EXTERNAL_EXACT_COMPLETE_PIN_OR_CURRENT_VALIDATED_WRITER",
+            "prefix_work": "ALL_RETAINED_BYTES_HASHED_NO_HISTORICAL_BODY_JSON_REPLAY",
+            "raw_record_bytes_hashed": 26247,
+            "record_count": 9,
+            "restored_state_sha256": "7dfc1c550ded29fe1e8e8d87ab0f4237ab6c57c75599d4de02509ba7f07ffc4d",
+            "sidecars": [],
+            "source_admission_unchanged": true,
+            "tail_bytes": 578,
+            "tail_records": 1
+          },
+          {
+            "complete_index": 7,
+            "complete_sha256": "2c390a459bc92f8203d104f06099cdc2d0f9630cb79077ab0e63eb19d0526df2",
+            "decoded_prefix_indices": [
+              7
+            ],
+            "head_sha256": "191c3cdb327ac2f3e6d3c23c986d753da3af803485345c49ca59f44df6efce63",
+            "open_seconds": 0.011084922000009101,
+            "pending_preserved": true,
+            "physical": 1,
+            "policy": "R233_PINNED_COMPLETE_TAIL_V1",
+            "prefix_records": 8,
+            "prefix_rewritten": false,
+            "prefix_semantic_authority": "EXTERNAL_EXACT_COMPLETE_PIN_OR_CURRENT_VALIDATED_WRITER",
+            "prefix_work": "ALL_RETAINED_BYTES_HASHED_NO_HISTORICAL_BODY_JSON_REPLAY",
+            "raw_record_bytes_hashed": 27607,
+            "record_count": 9,
+            "restored_state_sha256": "f2f9a4abc819545b61c23efaf9add4973488bf3a0cfbf96fc3c9d53311a43746",
+            "sidecars": [],
+            "source_admission_unchanged": true,
+            "synthetic_full_replay_seconds": 0.0031290099996112986,
+            "tail_bytes": 578,
+            "tail_records": 1
+          },
+          {
+            "complete_index": 7,
+            "complete_sha256": "891ba2f270f490cbd3abbc0135de740eb59a1a07a3833b257d583d93c3297a3c",
+            "decoded_prefix_indices": [
+              7
+            ],
+            "head_sha256": "18d52622637718462f71c7c2d3b60b76523247cd94d1d3a7c6b9ef46e67a56de",
+            "open_seconds": 0.008669888000440551,
+            "pending_preserved": true,
+            "physical": 0,
+            "policy": "R233_PINNED_COMPLETE_TAIL_V1",
+            "prefix_records": 8,
+            "prefix_rewritten": false,
+            "prefix_semantic_authority": "EXTERNAL_EXACT_COMPLETE_PIN_OR_CURRENT_VALIDATED_WRITER",
+            "prefix_work": "ALL_RETAINED_BYTES_HASHED_NO_HISTORICAL_BODY_JSON_REPLAY",
+            "raw_record_bytes_hashed": 26247,
+            "record_count": 9,
+            "restored_state_sha256": "7dfc1c550ded29fe1e8e8d87ab0f4237ab6c57c75599d4de02509ba7f07ffc4d",
+            "sidecars": [],
+            "source_admission_unchanged": true,
+            "synthetic_full_replay_seconds": 0.0031983249991753837,
+            "tail_bytes": 578,
+            "tail_records": 1
+          },
+          {
+            "complete_index": 7,
+            "complete_sha256": "000c32b6c1403879cb537b4122ab4f3a313b6fad5446a02abf88f2e67af6e799",
+            "decoded_prefix_indices": [
+              7
+            ],
+            "head_sha256": "573bf85bf993dd625d00d6182358e8fcff3e5351485b6a87ef00027886288a6a",
+            "open_seconds": 0.010951490001389175,
+            "pending_preserved": true,
+            "physical": 0,
+            "policy": "R233_PINNED_COMPLETE_TAIL_V1",
+            "prefix_records": 8,
+            "prefix_rewritten": false,
+            "prefix_semantic_authority": "EXTERNAL_EXACT_COMPLETE_PIN_OR_CURRENT_VALIDATED_WRITER",
+            "prefix_work": "ALL_RETAINED_BYTES_HASHED_NO_HISTORICAL_BODY_JSON_REPLAY",
+            "raw_record_bytes_hashed": 26926,
+            "record_count": 10,
+            "restored_state_sha256": "7dfc1c550ded29fe1e8e8d87ab0f4237ab6c57c75599d4de02509ba7f07ffc4d",
+            "sidecars": [],
+            "source_admission_unchanged": true,
+            "tail_bytes": 1257,
+            "tail_records": 2
+          }
+        ],
+        "synthetic_only": true,
+        "tests_run": 14
+      }
+    }
+  },
+  "native_signals": [],
+  "observed_utc": "2026-09-19T01:32:48.453315+00:00",
+  "parent_dependency_pending": true,
+  "privileged_operations": [],
+  "reader_owner_ack_pending": true,
+  "reservations": [],
+  "schema": "PAIR_EPOCH2_LOCAL_PREPARATION_SUMMARY_V1",
+  "status": "LOCAL_PREPARED_CPU_TESTED_NOT_ADMITTED"
+}
