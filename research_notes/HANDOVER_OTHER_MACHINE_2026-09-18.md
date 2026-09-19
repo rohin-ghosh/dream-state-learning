@@ -25,3 +25,163 @@ Nothing that matters runs on the laptop. Astra is a Codex thread on the always-o
 ## 3. Lease and bound dates to carry over (as of 2026-09-18)
 
 Leases: node 5 (ipp2-ovx-p1-10) to 09-21 21:04 PDT; node 2 (ipp2-ovx-p2-08) to 09-21; node 3 (ipp2-ovx-p6-09) to 09-25; node 1 (a4u8g-0147) to 09-26; a4u8g-0105 to 09-28; ovx5 (ipp2-ovx-p6-07) to 09-29; ovx4 (ipp2-ovx-p3-02) to 10-01. The kept lives' resident wall bounds were set today to lease end minus a margin (node 3 to 09-24 18:00Z, C0/Astra7/C2 to 09-20 18:00Z, P3/P7 to 09-25, learner/sibling/base to 09-30). Node 5 and node 2 need extending before 09-21 or C2 and C0 stop with them.
+
+## 4. What a fresh Codex checkout still needs before it can operate
+
+Status from a fresh checkout at `/Users/rohinghosh/Documents/New project/dream-state-learning`, checked 2026-09-19 PDT: the repository contains the operating procedure and wrapper scripts, but not the private local state required to reach the VM, GPU nodes, or Colossus. This is intentional. Do not put the missing host map, keys, tokens, or lease secrets in git.
+
+### Required private host map
+
+Create or copy `gpu/hosts.env`. It is gitignored by `.gitignore` and is absent in a clean clone. Without it, the first real control command fails immediately:
+
+```bash
+bash gpu/talk_astra.sh --watch 5
+# gpu/hosts.env missing (see hosts.env.example)
+```
+
+The file should contain shell assignments for every active wrapper that may be used. Use `user@host` or the SSH alias that already works from the machine; do not include passwords, tokens, lease secrets, or comments containing internal IPs that will be copied into reports.
+
+Minimum current variable set:
+
+```bash
+NVL_HOST="user@helper-vm"      # always-on VM that hosts Astra's tmux session
+A100_NODE="user@node-1"        # a100_ssh.sh
+OVX_NODE="user@node-2"         # ovx_ssh.sh
+OVX2_NODE="user@node-3"        # ovx2_ssh.sh
+OVX3_NODE="user@node-5"        # ovx3_ssh.sh; C2 / community lives
+OVX4_NODE="user@ovx4"          # ovx4_ssh.sh; curriculum learner/frozen sibling
+OVX5_NODE="user@ovx5"          # ovx5_ssh.sh, if still leased
+A40_NODE="user@old-a40"        # a40_ssh.sh, legacy wrapper
+A40R_NODE="user@node-4"        # a40r_ssh.sh; P3/P7 fleet
+GH200_NODE="user@gh200"        # gh200_ssh.sh, if active
+V2_NODE="user@v2-node"         # v2node_ssh.sh, if active
+```
+
+The committed `gpu/hosts.env.example` is only a stub. It does not list all wrappers now used by the watcher flow. If a wrapper is not active, either leave its variable unset and avoid that wrapper, or set it to a valid SSH alias for the active replacement.
+
+### Required SSH access
+
+The machine needs a private key or agent configuration that can reach:
+
+- `NVL_HOST`, where Astra runs in tmux session `astra2`.
+- Every active GPU node named in `gpu/hosts.env`.
+- GitHub, preferably over SSH, if this machine must push commits.
+
+Smoke tests after `gpu/hosts.env` is present:
+
+```bash
+bash gpu/nvl_ssh.sh 'tmux ls'
+bash gpu/talk_astra.sh --watch 20
+bash gpu/talk.sh --list
+perl -e 'alarm 100; exec @ARGV' bash gpu/ovx3_ssh.sh 'hostname; nvidia-smi -L | head'
+perl -e 'alarm 100; exec @ARGV' bash gpu/a40r_ssh.sh 'hostname; nvidia-smi -L | head'
+perl -e 'alarm 100; exec @ARGV' bash gpu/ovx2_ssh.sh 'hostname; nvidia-smi -L | head'
+perl -e 'alarm 100; exec @ARGV' bash gpu/ovx4_ssh.sh 'hostname; nvidia-smi -L | head'
+```
+
+Expected meaning:
+
+- `tmux ls` must show `astra2`.
+- `talk_astra.sh --watch` must print Astra's pane, with hostnames and IPs redacted by the wrapper.
+- `talk.sh --list` is local and only proves aliases exist; it does not prove node reachability.
+- Each bounded node SSH call must return promptly. If it hangs or asks an interactive question, fix SSH known-hosts/key access before starting watcher work.
+
+### Required Colossus access
+
+This checkout does not by itself provide the Colossus CLI or login. The handoff expects:
+
+```bash
+~/.venvs/colossus-cli/bin/colossus
+```
+
+If absent, install the same package used on the original machine, then perform the Colossus login flow. After login, verify leases without printing secrets:
+
+```bash
+~/.venvs/colossus-cli/bin/colossus bm lease list --status ACTIVE --json \
+  | python3 -c 'import json,sys; [print(l["lease_details"].get("lease_id"), l["lease_details"].get("end_time")) for l in json.load(sys.stdin)]'
+```
+
+Never print or paste `lease_secrets`. Extend leases only with explicit intent. The historical note says 3-day extensions have worked, while 5- and 8-day extensions were refused; re-check current quota before assuming that still holds.
+
+For inventory search without the CLI, `gpu/scout.py` can query Colossus when `COLOSSUS_TOKEN` is supplied in the environment. That token is short-lived and must remain env-only:
+
+```bash
+COLOSSUS_TOKEN=... python3 gpu/scout.py
+COLOSSUS_TOKEN=... python3 gpu/scout.py --any
+```
+
+### Required watcher state
+
+To run the Fable/watcher loop faithfully, the machine needs:
+
+- A current repo checkout on `main`.
+- The private `gpu/hosts.env`.
+- Claude Code or Codex environment capable of running the loop.
+- The watcher memory directory copied to the path pattern described above, if reproducing Fable's exact standing memory matters.
+- The committed prompt in `tools/watcher/CHECK_PROMPT.md`.
+
+First watcher action after setup should be a liveness scan, not a launch. The watcher role is relay/diagnosis. It should not start new lives by itself. If it finds a stall, it should identify the exit reason and relay the concrete restart order to Astra.
+
+### Operational readiness checklist for Codex
+
+Before saying "I can do shit" from a new machine, require all of the following to pass:
+
+```bash
+test -f gpu/hosts.env
+bash gpu/talk_astra.sh --watch 20
+bash gpu/talk.sh --list
+bash gpu/nvl_ssh.sh 'tmux capture-pane -p -t astra2 | tail -n 20'
+bash gpu/nvl_ssh.sh 'pgrep -fc "[a]stra_watch.sh"'
+test -x ~/.venvs/colossus-cli/bin/colossus
+~/.venvs/colossus-cli/bin/colossus bm lease list --status ACTIVE --json >/tmp/colossus_active_leases.json
+git status --short --branch
+git ls-remote --heads origin main >/dev/null
+```
+
+Then run the bounded fleet checks from `tools/watcher/CHECK_PROMPT.md` over the kept roots. Record only high-level movement/stall facts in reports; do not paste internal hostnames, IPs, tokens, keys, or lease secrets.
+
+### If something is missing
+
+- Missing `gpu/hosts.env`: copy it from the working laptop or reconstruct it from known SSH aliases. Do not commit it.
+- Missing SSH key access: add the new public key to the VM and active nodes from a machine that still has access, or use the existing key/agent.
+- Missing Colossus CLI: install the CLI in `~/.venvs/colossus-cli`, log in, and verify active leases.
+- Missing Astra tmux session: use the VM reboot recipe in section 2. Do not restart Astra if `astra2` already exists.
+- Missing GitHub push auth: use SSH remote or the GitHub connector if it has write permission; otherwise edits can be local but not published.
+- Missing watcher memory: the scripts still work, but the watcher may lose Rohin's pinned report style and standing rules. Re-copy memory before unattended looping.
+
+## 5. Repo mailbox fallback when this computer cannot reach the VM
+
+Decision, 2026-09-19 PDT: if the current computer cannot SSH to the helper VM, use a Git-backed mailbox rather than exposing tmux on a public host. This makes the conversation email-style: slower, but durable, auditable, and safer than a public terminal.
+
+The implementation lives in `tools/repo_mailbox/`:
+
+- `tools/repo_mailbox/send_message.sh` creates `mailbox/to_vm/<id>.md` messages.
+- `tools/repo_mailbox/vm_poll.sh` runs on the VM, pulls messages, talks to Astra's tmux session, writes `mailbox/from_vm/<id>.reply.md`, commits, and pushes.
+- `tools/repo_mailbox/README.md` documents setup, supported actions, and safety boundaries.
+
+Supported mailbox actions are intentionally narrow:
+
+- `send`: paste a Rohin message into Astra and wait for a reply/pane tail.
+- `watch`: capture Astra's redacted pane tail without interrupting it.
+- `resume`: send `/goal resume` only if Astra is idle and paused.
+- `status`: report basic tmux/watchdog/git status.
+
+There is no arbitrary shell action. If the mailbox repo is public, every message and reply is public; use a private repo or private branch for real conversations if possible. Do not put keys, tokens, lease secrets, internal hostnames, or private IPs in mailbox messages.
+
+Bootstrap still requires the VM to start the poller once. If direct SSH from this computer is impossible, commit/push these scripts and use whatever path still reaches the VM or the running VM-side agent to run:
+
+```bash
+cd ~/dream-state
+git pull --rebase --autostash
+nohup bash tools/repo_mailbox/vm_poll.sh > ~/repo_mailbox_vm.out 2>&1 < /dev/null &
+```
+
+After that, from this computer:
+
+```bash
+bash tools/repo_mailbox/send_message.sh --commit --push "What changed since the last watcher check?"
+git pull --rebase --autostash
+ls -lt mailbox/from_vm | head
+```
+
+For continuous conversation, send one mailbox message per turn and pull replies. Longer instructions and longer replies are fine; this path is optimized for reliability, not immediacy.
