@@ -37,8 +37,9 @@ checkpoints, partial sleep state, or unrelated working-tree changes.
 | Main | Front-page handoff, this brief, operations receipts, `replication/`, integration/publication |
 | Hilbert | `evidence/`; isolated node-2 wall compatibility and partial-intent recovery candidates |
 | Singer | Initial `replication/` work complete; closed; Main now owns the executable |
-| Gibbs | `measurement/` complete; independent `replication_accounting/` in progress |
-| Galileo | Initial `parenting/` and authentication diagnosis complete; `parenting/c2_refinement/` candidate in progress |
+| Gibbs | `measurement/` and independent `replication_accounting/` complete; closed |
+| Galileo | `parenting/` and `parenting/c2_refinement/` candidates complete; deployment belongs to Main; closed |
+| Dalton | `parenting/c2_handoff/`; tested identity-bound CPU-publisher handoff only, no deployment |
 | Fermat | `formalization/` complete; closed |
 | McClintock | `node3_recovery/`; explicitly scoped original-node recovery staging |
 | Curie | `replication_review/` complete; V3 independently reviewed; closed |

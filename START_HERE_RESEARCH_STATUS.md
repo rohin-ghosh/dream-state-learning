@@ -7,6 +7,11 @@ This is the morning handoff for Rohin. It separates completed observations from
 planned work. The submitted abstract remains the research direction; no positive
 result is a prerequisite for recording an experiment.
 
+**One action needed when you wake:** restore valid authentication for the
+original curriculum-pair parent service. Its learner and frozen sibling cannot
+count as actively parented treatments while their provider returns401. No
+credential from another life has been borrowed to conceal that interruption.
+
 **Morning headline:** the new fixed-budget sampling block completed. Earlier
 C2 (sleep51) produced **28/29 operational new pixels**, versus **23/25 for
 base**; later C2 (sleep117) produced **15/23**, across the two new seeds.
