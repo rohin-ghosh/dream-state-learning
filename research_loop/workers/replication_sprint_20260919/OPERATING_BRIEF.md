@@ -39,10 +39,12 @@ checkpoints, partial sleep state, or unrelated working-tree changes.
 | Singer | Initial `replication/` work complete; closed; Main now owns the executable |
 | Gibbs | `measurement/` and independent `replication_accounting/` complete; closed |
 | Galileo | `parenting/` and `parenting/c2_refinement/` candidates complete; deployment belongs to Main; closed |
-| Dalton | `parenting/c2_handoff/`; tested identity-bound CPU-publisher handoff only, no deployment |
+| Dalton | `parenting/c2_handoff/` candidate complete; Main deployed the exact tested handoff; closed |
 | Fermat | `formalization/` complete; closed |
-| McClintock | `node3_recovery/`; explicitly scoped original-node recovery staging |
+| McClintock | `node3_recovery/` handoff complete; MathB restored, original classroom provider custody blocked; closed |
 | Curie | `replication_review/` complete; V3 independently reviewed; closed |
+| Sagan | `measurement/c2_refinement_live/`; read-only first-six-ACT policy observation, no runtime changes |
+| Mill | `operations/FLEET_CUT_1540/`; one bounded read-only current-service audit, no repair authority |
 
 Workers must preserve historical artifacts and use source-bound evidence.
 Publication and final scientific synthesis belong to Main. Original live

@@ -1,0 +1,533 @@
+test_acknowledged_remote_events_fsync_before_mutation (test_node2_coalescer.Node2MutationTests.test_acknowledged_remote_events_fsync_before_mutation) ... ERROR
+test_actual_open_writer_is_detected (test_node2_coalescer.Node2MutationTests.test_actual_open_writer_is_detected) ... ERROR
+test_bindings_file_change_rejected (test_node2_coalescer.Node2MutationTests.test_bindings_file_change_rejected) ... ERROR
+test_bound_in_memory_membership_cannot_be_changed_after_installation (test_node2_coalescer.Node2MutationTests.test_bound_in_memory_membership_cannot_be_changed_after_installation) ... ERROR
+test_content_change_detected_with_same_size_mtime (test_node2_coalescer.Node2MutationTests.test_content_change_detected_with_same_size_mtime) ... ERROR
+test_ctime_change_without_content_change_rejected (test_node2_coalescer.Node2MutationTests.test_ctime_change_without_content_change_rejected) ... ERROR
+test_enospc_preserves_every_original (test_node2_coalescer.Node2MutationTests.test_enospc_preserves_every_original) ... ERROR
+test_exact_group_mutation_rejected_even_with_new_batch_approval (test_node2_coalescer.Node2MutationTests.test_exact_group_mutation_rejected_even_with_new_batch_approval) ... ERROR
+test_exact_in_memory_binding_avoids_source_staging_files (test_node2_coalescer.Node2MutationTests.test_exact_in_memory_binding_avoids_source_staging_files) ... ERROR
+test_existing_lock_refused (test_node2_coalescer.Node2MutationTests.test_existing_lock_refused) ... ERROR
+test_existing_temporary_artifact_preserved (test_node2_coalescer.Node2MutationTests.test_existing_temporary_artifact_preserved) ... ERROR
+test_inaccessible_process_blocks_mutation (test_node2_coalescer.Node2MutationTests.test_inaccessible_process_blocks_mutation) ... ERROR
+test_linkcount_race_after_ack_rejected (test_node2_coalescer.Node2MutationTests.test_linkcount_race_after_ack_rejected) ... ERROR
+test_lost_ack_halts_before_link (test_node2_coalescer.Node2MutationTests.test_lost_ack_halts_before_link) ... ERROR
+test_missing_restore_proof_rejected (test_node2_coalescer.Node2MutationTests.test_missing_restore_proof_rejected) ... ERROR
+test_mode_change_detected (test_node2_coalescer.Node2MutationTests.test_mode_change_detected) ... ERROR
+test_mutated_in_memory_binding_rejected (test_node2_coalescer.Node2MutationTests.test_mutated_in_memory_binding_rejected) ... ERROR
+test_no_execution_authorization_has_no_mutation (test_node2_coalescer.Node2MutationTests.test_no_execution_authorization_has_no_mutation) ... ERROR
+test_old_judge_or_other_archive_proof_rejected (test_node2_coalescer.Node2MutationTests.test_old_judge_or_other_archive_proof_rejected) ... ERROR
+test_preexisting_outside_hardlink_rejected (test_node2_coalescer.Node2MutationTests.test_preexisting_outside_hardlink_rejected) ... ERROR
+test_real_copied_mutator_preserves_all_eight_paths_and_metadata (test_node2_coalescer.Node2MutationTests.test_real_copied_mutator_preserves_all_eight_paths_and_metadata) ... ERROR
+test_replace_failure_preserves_originals_and_temporary (test_node2_coalescer.Node2MutationTests.test_replace_failure_preserves_originals_and_temporary) ... ERROR
+test_scope_rejects_protected_and_unselected_paths (test_node2_coalescer.Node2MutationTests.test_scope_rejects_protected_and_unselected_paths) ... ERROR
+test_source_local_ledger_rejected (test_node2_coalescer.Node2MutationTests.test_source_local_ledger_rejected) ... ERROR
+test_symlink_destination_rejected (test_node2_coalescer.Node2MutationTests.test_symlink_destination_rejected) ... ERROR
+test_unaccepted_parent_directory_deltas_rejected (test_node2_coalescer.Node2MutationTests.test_unaccepted_parent_directory_deltas_rejected) ... ERROR
+test_unknown_selection_index_rejected (test_node2_coalescer.Node2MutationTests.test_unknown_selection_index_rejected) ... ERROR
+test_unprivileged_incomplete_scan_blocks_mutation (test_node2_coalescer.Node2MutationTests.test_unprivileged_incomplete_scan_blocks_mutation) ... ERROR
+test_wrong_approval_digest_rejected (test_node2_coalescer.Node2MutationTests.test_wrong_approval_digest_rejected) ... ERROR
+test_xattr_change_detected (test_node2_coalescer.Node2MutationTests.test_xattr_change_detected) ... ERROR
+test_all_515_groups_partition_exact_4120_paths (test_node2_coalescer.ProductionBindingTests.test_all_515_groups_partition_exact_4120_paths) ... ERROR
+test_canary_is_first_exact_group_only (test_node2_coalescer.ProductionBindingTests.test_canary_is_first_exact_group_only) ... ERROR
+test_minimum_size_lowering_is_exact_membership_not_general_scope (test_node2_coalescer.ProductionBindingTests.test_minimum_size_lowering_is_exact_membership_not_general_scope) ... ERROR
+
+======================================================================
+ERROR: test_acknowledged_remote_events_fsync_before_mutation (test_node2_coalescer.Node2MutationTests.test_acknowledged_remote_events_fsync_before_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_actual_open_writer_is_detected (test_node2_coalescer.Node2MutationTests.test_actual_open_writer_is_detected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_bindings_file_change_rejected (test_node2_coalescer.Node2MutationTests.test_bindings_file_change_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_bound_in_memory_membership_cannot_be_changed_after_installation (test_node2_coalescer.Node2MutationTests.test_bound_in_memory_membership_cannot_be_changed_after_installation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_content_change_detected_with_same_size_mtime (test_node2_coalescer.Node2MutationTests.test_content_change_detected_with_same_size_mtime)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_ctime_change_without_content_change_rejected (test_node2_coalescer.Node2MutationTests.test_ctime_change_without_content_change_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_enospc_preserves_every_original (test_node2_coalescer.Node2MutationTests.test_enospc_preserves_every_original)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_exact_group_mutation_rejected_even_with_new_batch_approval (test_node2_coalescer.Node2MutationTests.test_exact_group_mutation_rejected_even_with_new_batch_approval)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_exact_in_memory_binding_avoids_source_staging_files (test_node2_coalescer.Node2MutationTests.test_exact_in_memory_binding_avoids_source_staging_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_existing_lock_refused (test_node2_coalescer.Node2MutationTests.test_existing_lock_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_existing_temporary_artifact_preserved (test_node2_coalescer.Node2MutationTests.test_existing_temporary_artifact_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_inaccessible_process_blocks_mutation (test_node2_coalescer.Node2MutationTests.test_inaccessible_process_blocks_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_linkcount_race_after_ack_rejected (test_node2_coalescer.Node2MutationTests.test_linkcount_race_after_ack_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_lost_ack_halts_before_link (test_node2_coalescer.Node2MutationTests.test_lost_ack_halts_before_link)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_missing_restore_proof_rejected (test_node2_coalescer.Node2MutationTests.test_missing_restore_proof_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_mode_change_detected (test_node2_coalescer.Node2MutationTests.test_mode_change_detected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_mutated_in_memory_binding_rejected (test_node2_coalescer.Node2MutationTests.test_mutated_in_memory_binding_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_no_execution_authorization_has_no_mutation (test_node2_coalescer.Node2MutationTests.test_no_execution_authorization_has_no_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_old_judge_or_other_archive_proof_rejected (test_node2_coalescer.Node2MutationTests.test_old_judge_or_other_archive_proof_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_preexisting_outside_hardlink_rejected (test_node2_coalescer.Node2MutationTests.test_preexisting_outside_hardlink_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_real_copied_mutator_preserves_all_eight_paths_and_metadata (test_node2_coalescer.Node2MutationTests.test_real_copied_mutator_preserves_all_eight_paths_and_metadata)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_replace_failure_preserves_originals_and_temporary (test_node2_coalescer.Node2MutationTests.test_replace_failure_preserves_originals_and_temporary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_scope_rejects_protected_and_unselected_paths (test_node2_coalescer.Node2MutationTests.test_scope_rejects_protected_and_unselected_paths)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_source_local_ledger_rejected (test_node2_coalescer.Node2MutationTests.test_source_local_ledger_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_symlink_destination_rejected (test_node2_coalescer.Node2MutationTests.test_symlink_destination_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_unaccepted_parent_directory_deltas_rejected (test_node2_coalescer.Node2MutationTests.test_unaccepted_parent_directory_deltas_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_unknown_selection_index_rejected (test_node2_coalescer.Node2MutationTests.test_unknown_selection_index_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_unprivileged_incomplete_scan_blocks_mutation (test_node2_coalescer.Node2MutationTests.test_unprivileged_incomplete_scan_blocks_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_wrong_approval_digest_rejected (test_node2_coalescer.Node2MutationTests.test_wrong_approval_digest_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_xattr_change_detected (test_node2_coalescer.Node2MutationTests.test_xattr_change_detected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 71, in setUp
+    self.batch = json.loads((HERE / 'CANARY.json').read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_all_515_groups_partition_exact_4120_paths (test_node2_coalescer.ProductionBindingTests.test_all_515_groups_partition_exact_4120_paths)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 324, in test_all_515_groups_partition_exact_4120_paths
+    template = json.loads((HERE / 'CANARY.json').read_bytes())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_canary_is_first_exact_group_only (test_node2_coalescer.ProductionBindingTests.test_canary_is_first_exact_group_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 338, in test_canary_is_first_exact_group_only
+    canary = json.loads((HERE / 'CANARY.json').read_bytes())
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+======================================================================
+ERROR: test_minimum_size_lowering_is_exact_membership_not_general_scope (test_node2_coalescer.ProductionBindingTests.test_minimum_size_lowering_is_exact_membership_not_general_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/test_node2_coalescer.py", line 346, in test_minimum_size_lowering_is_exact_membership_not_general_scope
+    template = json.loads((HERE / 'CANARY.json').read_bytes())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/CANARY.json'
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.207s
+
+FAILED (errors=33)

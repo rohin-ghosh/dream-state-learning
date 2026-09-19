@@ -1,0 +1,61 @@
+{
+  "bfree_minus_bavail_is_not_total_reserve_deficit_when_bavail_zero": true,
+  "c0_required_bytes": 2981136864,
+  "estimate_excludes_additional_allocator_reserves_quotas_and_future_writes": true,
+  "growth_is_short_window_net_filesystem_change_not_attributed_to_a_process": true,
+  "host": "ipp2-ovx-p2-08",
+  "mount": {
+    "fstype": "ext4",
+    "source": "/dev/nvme1n1p2",
+    "target": "/"
+  },
+  "net_bytes_consumed": 28672,
+  "net_consumption_bytes_per_second": 5716.302937221377,
+  "no_changes": true,
+  "no_reserved_block_use": true,
+  "optimistic_c0_shortfall_after_remaining": 1361066464,
+  "optimistic_owner_bytes_after_remaining": 1620070400,
+  "remaining_selected_allocated_relief_bytes": 1831120896,
+  "reserve": {
+    "fields": {
+      "Block count": 234275072,
+      "Block size": 4096,
+      "Reserved block count": 9421866
+    },
+    "reserved_bytes": 38591963136,
+    "status": "READ_ONLY_SUPERBLOCK_RESERVE_REPORTED"
+  },
+  "sample_seconds": 5.015829341951758,
+  "samples": [
+    {
+      "bavail": 0,
+      "bfree": 9370347,
+      "bfree_minus_bavail_bytes": 38380941312,
+      "blocks": 230547672,
+      "free_bytes_including_reserved": 38380941312,
+      "free_inodes": 54682038,
+      "frsize": 4096,
+      "monotonic": 1060914.951338165,
+      "owner_available_bytes": 0,
+      "owner_available_inodes": 54682038,
+      "utc": "2026-09-19T15:41:15.811468+00:00"
+    },
+    {
+      "bavail": 0,
+      "bfree": 9370340,
+      "bfree_minus_bavail_bytes": 38380912640,
+      "blocks": 230547672,
+      "free_bytes_including_reserved": 38380912640,
+      "free_inodes": 54682038,
+      "frsize": 4096,
+      "monotonic": 1060919.967167507,
+      "owner_available_bytes": 0,
+      "owner_available_inodes": 54682038,
+      "utc": "2026-09-19T15:41:20.827279+00:00"
+    }
+  ],
+  "superblock_reserve_deficit_bytes": 211050496,
+  "superblock_reserved_threshold_bytes": 38591963136,
+  "uid": 2524,
+  "utc": "2026-09-19T15:41:20.827279+00:00"
+}

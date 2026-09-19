@@ -1,0 +1,261 @@
+{
+  "authentication_logs": {
+    "frozen": {
+      "auth_error": true,
+      "failure_disposition": {
+        "explicit_429": false,
+        "http_status": null,
+        "outcome": "AMBIGUOUS_OR_UNVALIDATED_NO_REDISPATCH",
+        "retry_permitted": false,
+        "status": null
+      },
+      "failure_disposition_receipt": {
+        "file_bytes": 166,
+        "file_sha256": "d47a4d7e4bb1867b5122fb312045bea962063735611649612cdce5b3c0033801",
+        "mtime_utc": "2026-09-19T05:08:31.850626+00:00",
+        "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/turn_000134_1789794506916730728/FAILURE_DISPOSITION.json"
+      },
+      "http_401": true,
+      "interpretation": "Historical original-attempt log; current parent status remains BLOCKED_PROVIDER. No credential freshness or current provider availability tested.",
+      "raw_provider_body_exported": false,
+      "receipt": {
+        "file_bytes": 181,
+        "file_sha256": "77feecf8cc78cef107d39586577177b83bd663c43dc96ffd3260f22aa0fa07cc",
+        "mtime_utc": "2026-09-19T05:08:31.850626+00:00",
+        "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/turn_000134_1789794506916730728/http_error_response.txt"
+      }
+    },
+    "learner": {
+      "auth_error": true,
+      "failure_disposition": {
+        "explicit_429": false,
+        "http_status": null,
+        "outcome": "AMBIGUOUS_OR_UNVALIDATED_NO_REDISPATCH",
+        "retry_permitted": false,
+        "status": null
+      },
+      "failure_disposition_receipt": {
+        "file_bytes": 166,
+        "file_sha256": "d47a4d7e4bb1867b5122fb312045bea962063735611649612cdce5b3c0033801",
+        "mtime_utc": "2026-09-19T05:00:08.075966+00:00",
+        "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/learner/turn_000104_1789794006756564934/FAILURE_DISPOSITION.json"
+      },
+      "http_401": true,
+      "interpretation": "Historical original-attempt log; current parent status remains BLOCKED_PROVIDER. No credential freshness or current provider availability tested.",
+      "raw_provider_body_exported": false,
+      "receipt": {
+        "file_bytes": 181,
+        "file_sha256": "77feecf8cc78cef107d39586577177b83bd663c43dc96ffd3260f22aa0fa07cc",
+        "mtime_utc": "2026-09-19T05:00:08.075966+00:00",
+        "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/learner/turn_000104_1789794006756564934/http_error_response.txt"
+      }
+    }
+  },
+  "collector_coverage": {
+    "CURRENT_learner": {
+      "ACTs": 3,
+      "caught_up": true,
+      "current_identity": {
+        "boot_id": "7c130f24-3105-4909-abfb-b669929e0b96",
+        "command_sha256": "68ddadda7493b94ea6bbfba834699fd8f37f1f24348489f04866f43c5303dafb",
+        "guard_sha256": "282ad372328b6244f0cc82b4cfbd39de0fcdd2b7a748c681449f937cbfadd632",
+        "pid": 493500,
+        "source_manifest_sha256": "049c6ed92a9bbcb69cec8cf4c0b1d888b635f30a9135b752b77b4441712b4bb4",
+        "start_ticks": "10070880"
+      },
+      "exact_parent_text_ACTs": 0,
+      "first": 11995,
+      "head": 12234,
+      "native_identity_verified": true,
+      "report_receipt": {
+        "file_bytes": 217092,
+        "file_sha256": "d5b7ca898ae338ee35f3948875564830d3bcda7fc2e4e1a68558ee3e1ac57de1",
+        "mtime_utc": "2026-09-19T15:00:45.405932+00:00",
+        "path": "research_loop/workers/post_recovery_correction_hourly_20260918/public/CURRENT.json"
+      },
+      "scope": "Complete bounded snapshot as of 15:00 collector, not the ongoing 15:00-16:00 UTC hour. R232_SIBLING_LEARNER is a separate unresolved alias, not CURRENT learner.",
+      "source_label": "FRESH_R231",
+      "status": "ACTUAL_BOUNDED_COLLECTION_COMPLETE",
+      "through": 12234
+    },
+    "base_caption": {
+      "counts_are_not_current_liveness": true,
+      "current_hour_complete": false,
+      "cut_semantics": "ACT origins and admissions strictly before cut; immutable score outcomes observed at recovery, not certified completed by cut.",
+      "cut_utc": "2026-09-19T15:01:04.064981+00:00",
+      "latest_hour_operational_counts": {
+        "act_origins": 4,
+        "pending_admissions": 0,
+        "pending_shadows": 0
+      },
+      "latest_observed_ACT_origin_hour": "2026-09-19T14:00:00Z",
+      "report_receipt": {
+        "file_bytes": 67614,
+        "file_sha256": "860857a6963acd50bf9e472f90a5780d493dd04eb97a8a684bd8b327fc25a5f8",
+        "mtime_utc": "2026-09-19T15:01:05.426076+00:00",
+        "path": "research_loop/workers/post_reboot_services_20260919/cuts/20260919T150104Z.json"
+      }
+    },
+    "p3_caption": {
+      "counts_are_not_current_liveness": true,
+      "current_hour_complete": false,
+      "cut_semantics": "ACT origins and admissions strictly before cut; immutable score outcomes observed at recovery, not certified completed by cut.",
+      "cut_utc": "2026-09-19T15:01:04.064981+00:00",
+      "latest_hour_operational_counts": {
+        "act_origins": 2,
+        "pending_admissions": 0,
+        "pending_shadows": 0
+      },
+      "latest_observed_ACT_origin_hour": "2026-09-19T08:00:00Z",
+      "report_receipt": {
+        "file_bytes": 67614,
+        "file_sha256": "860857a6963acd50bf9e472f90a5780d493dd04eb97a8a684bd8b327fc25a5f8",
+        "mtime_utc": "2026-09-19T15:01:05.426076+00:00",
+        "path": "research_loop/workers/post_reboot_services_20260919/cuts/20260919T150104Z.json"
+      }
+    }
+  },
+  "observed_utc": "2026-09-19T15:43:40.700032+00:00",
+  "provider_calls": 0,
+  "publication_matches": {
+    "P3": {
+      "latest_local_publication": {
+        "publication": {
+          "id": "032a6ddce8cd48ca808e5351aabb16bc",
+          "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/inbox/032a6ddce8cd48ca808e5351aabb16bc.json",
+          "sha256": "6c096db525cc067c200b6cf727eb207111a3cf316f508afb4ad612e4c2f99404"
+        },
+        "published_utc": null,
+        "receipt": {
+          "file_bytes": 1889,
+          "file_sha256": "14bc457d7361b16141f917a0e0f96d153ecbb5eea76bf4b915853e28554df7e8",
+          "mtime_utc": "2026-09-19T15:41:30.306871+00:00",
+          "path": "research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent3/turns/parent_000000000553/RESULT.json"
+        },
+        "sequence": null
+      },
+      "latest_publication_may_postdate_registration": "Remote native cut and local metadata cut are non-atomic; no remote refresh performed.",
+      "matches": [
+        {
+          "ACT_render_verified": false,
+          "native_inbox": {
+            "bytes": 1241,
+            "canonical_hash_verified": true,
+            "canonical_sha256": "b50323b99f29b0502704f2e8b86f587ce8feff267ed389f01ce097e5630eed21",
+            "file_sha256": "62154b7aa7994a7d94cba7836ec764c1ab34df60a3a21cb7395d0a3b51545801",
+            "index": 11606,
+            "message_id": "19e831c743884e1184a3d7fca9a0c2b8",
+            "mtime_utc": "2026-09-19T15:27:15.292119+00:00",
+            "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/records/00000000000000011606.json",
+            "source_sha256": "10fd14e1dc53d77f93fdaea096e39da766ec7b5524b5e24845b549a8ef4628b4",
+            "speaker": "Astra",
+            "visibility": "INBOX_REGISTRATION_NOT_ACT_RENDER"
+          },
+          "publication": {
+            "publication": {
+              "id": "19e831c743884e1184a3d7fca9a0c2b8",
+              "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/inbox/19e831c743884e1184a3d7fca9a0c2b8.json",
+              "sha256": "10fd14e1dc53d77f93fdaea096e39da766ec7b5524b5e24845b549a8ef4628b4"
+            },
+            "published_utc": null,
+            "receipt": {
+              "file_bytes": 1813,
+              "file_sha256": "6be4919072d60e6141d4a1020547f7ace809b4ade8cb8e449a2874f68e74ba43",
+              "mtime_utc": "2026-09-19T15:26:03.671735+00:00",
+              "path": "research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent3/turns/parent_000000000550/RESULT.json"
+            },
+            "sequence": null
+          },
+          "registration_verified": true
+        }
+      ]
+    },
+    "P7": {
+      "latest_local_publication": {
+        "publication": {
+          "id": "7f465c1853d8450ebefc2bb218027a51",
+          "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/inbox/7f465c1853d8450ebefc2bb218027a51.json",
+          "sha256": "3c5ba7ac47c0bf06d7fd5e69a93cf6b431bcb58a0341092bd49cd3b5fa0f056e"
+        },
+        "published_utc": "2026-09-19T15:34:53.085734+00:00",
+        "receipt": {
+          "file_bytes": 4466,
+          "file_sha256": "a483768151177cbb8a2068d5f132b75f387695f1e96ecc48a9a0598936af2d59",
+          "mtime_utc": "2026-09-19T15:34:53.913837+00:00",
+          "path": "research_loop/workers/post_reboot_c2_p7_20260919/p7/turn_1789832078153739217/NEXT.json"
+        },
+        "sequence": 283
+      },
+      "latest_publication_may_postdate_registration": "Remote native cut and local metadata cut are non-atomic; no remote refresh performed.",
+      "matches": [
+        {
+          "ACT_render_verified": false,
+          "native_inbox": {
+            "bytes": 1277,
+            "canonical_hash_verified": true,
+            "canonical_sha256": "44a8581974004895fd2caa0bcf44b6349ee575616eb2d663c2c020ec79f99105",
+            "file_sha256": "16ae019c077bf55aa7dbdea0d521e6f874779f1492d2e51d7aaf4e5c8208d71d",
+            "index": 15782,
+            "message_id": "1073eb46caf84906a80f9bda838da90f",
+            "mtime_utc": "2026-09-19T15:32:32.408283+00:00",
+            "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000015782.json",
+            "source_sha256": "13e6313f6fd8261ff07fc882509f26cd348375bf89b483fbefedcb3f9ccfe1e3",
+            "speaker": "Astra",
+            "visibility": "INBOX_REGISTRATION_NOT_ACT_RENDER"
+          },
+          "publication": {
+            "publication": {
+              "id": "1073eb46caf84906a80f9bda838da90f",
+              "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/inbox/1073eb46caf84906a80f9bda838da90f.json",
+              "sha256": "13e6313f6fd8261ff07fc882509f26cd348375bf89b483fbefedcb3f9ccfe1e3"
+            },
+            "published_utc": "2026-09-19T15:26:12.686557+00:00",
+            "receipt": {
+              "file_bytes": 4619,
+              "file_sha256": "7ffb7944465ed73f8060deaa3fe3b9e10bb1c0d7a035749fd95e90ee407ee581",
+              "mtime_utc": "2026-09-19T15:26:13.474809+00:00",
+              "path": "research_loop/workers/post_reboot_c2_p7_20260919/p7/turn_1789831556185779565/NEXT.json"
+            },
+            "sequence": 281
+          },
+          "registration_verified": true
+        },
+        {
+          "ACT_render_verified": false,
+          "native_inbox": {
+            "bytes": 1231,
+            "canonical_hash_verified": true,
+            "canonical_sha256": "63764ca6ecfebcecacd7be0003066d3c3b734b1533e902aa35e289561a34c939",
+            "file_sha256": "ffa8776556388487281568de031c4a7d93a3b1f7fcdf20049f552057aa068e92",
+            "index": 15799,
+            "message_id": "4845f080e92145ff84c217b1f2462cdb",
+            "mtime_utc": "2026-09-19T15:33:50.078270+00:00",
+            "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/records/00000000000000015799.json",
+            "source_sha256": "0b0e1eec65efbfce8d36e50153072909dad9b0a412ca2278a9ecca9849e7ec4f",
+            "speaker": "Astra",
+            "visibility": "INBOX_REGISTRATION_NOT_ACT_RENDER"
+          },
+          "publication": {
+            "publication": {
+              "id": "4845f080e92145ff84c217b1f2462cdb",
+              "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/life/stream/inbox/4845f080e92145ff84c217b1f2462cdb.json",
+              "sha256": "0b0e1eec65efbfce8d36e50153072909dad9b0a412ca2278a9ecca9849e7ec4f"
+            },
+            "published_utc": "2026-09-19T15:33:31.375276+00:00",
+            "receipt": {
+              "file_bytes": 4348,
+              "file_sha256": "a518238cbf71e8e8ff63b83d92546406a4127840a15b3ef60e70cbe3dee3c72e",
+              "mtime_utc": "2026-09-19T15:33:32.204209+00:00",
+              "path": "research_loop/workers/post_reboot_c2_p7_20260919/p7/turn_1789831996243795857/NEXT.json"
+            },
+            "sequence": 282
+          },
+          "registration_verified": true
+        }
+      ]
+    }
+  },
+  "remote_reads": 0,
+  "schema": "BOUNDED_FLEET_EVIDENCE_LINKS_V1",
+  "secrets_read": false
+}

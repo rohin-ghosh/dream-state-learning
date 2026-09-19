@@ -1,0 +1,108 @@
+{
+  "actual_reclaimed_bytes": 0,
+  "all_groups": 515,
+  "all_paths": 4120,
+  "c0_shortfall_after_all_potential_reclaim_bytes": 1139571168,
+  "canary_canonical_sha256": "d98bc74ee5a7cf88527d7c660dcec8ed407dba70ccd31653fc87fcb442568220",
+  "canary_filename": "00000000000000005844.json",
+  "canary_group_index": 0,
+  "canary_paths": 8,
+  "canary_potential_allocated_bytes": 10444800,
+  "canary_replacements": 6,
+  "estimated_scan_seconds_for_103_40_path_batches": 33.92161078836459,
+  "execution_attempted": false,
+  "files": [
+    {
+      "bytes": 17152,
+      "path": "retired_coalescer.py",
+      "sha256": "5e0b86dd20aff27c1f3bc36fb6c34d87a1486f51c684643ab9dc0d45a3560bc8"
+    },
+    {
+      "bytes": 5010,
+      "path": "node2_scope.py",
+      "sha256": "1e61f1ecb46069c6991b675674e1f2e315cc9c315fa1da78102df3d54977b828"
+    },
+    {
+      "bytes": 4111,
+      "path": "retired_writer_guard.py",
+      "sha256": "fa073147be764bdff011d28cce882a2bf457ced207aca727a57784d2193deb8f"
+    },
+    {
+      "bytes": 4852,
+      "path": "pidfd_scan.py",
+      "sha256": "3f2e858d2d540759aaef0d7cd56acae56600460a72da039803793dc71d15503c"
+    },
+    {
+      "bytes": 1375300,
+      "path": "GROUPS.json",
+      "sha256": "3df839dd78047d875059829a64194942d550d76a305e5e92a46ccbdd1108db57"
+    },
+    {
+      "bytes": 34911,
+      "path": "GROUP_BINDINGS.json",
+      "sha256": "b73f8e4fb80bbdd9933d26611417d293287dbdf24f5447a1a15cdc85250c9935"
+    },
+    {
+      "bytes": 1561,
+      "path": "WRITER_LOCKS.json",
+      "sha256": "7e71274cbd4745a38c717423c10472572df2b5c5155aac8f5828e2010a4570f7"
+    },
+    {
+      "bytes": 3898,
+      "path": "CANARY.json",
+      "sha256": "ae622ada631759a66368a911bcacad2dfabac3c82b349389c3e0a803a1c6dd9e"
+    },
+    {
+      "bytes": 17481,
+      "path": "test_node2_coalescer.py",
+      "sha256": "3854aaa919dd6c15182cd9e7b5a8c5c6e5b84dadf6dc9aea17f503dea1ba72a6"
+    },
+    {
+      "bytes": 8496,
+      "path": "test_writer_readiness.py",
+      "sha256": "4f96732461e7df912aaa194868e1b1e3b31320bd8bf270a68b8767cde29cbc31"
+    },
+    {
+      "bytes": 7028,
+      "path": "CPU_LOCKED_FINAL.txt",
+      "sha256": "408bf7776137124605a1f75bbb23e44f2007873fe26cfd4c178e3b77c20b921e"
+    },
+    {
+      "bytes": 2298,
+      "path": "PIDFD_READINESS_20260919T152854Z.json",
+      "sha256": "76f5dd6d5a34bbdeb83ba0066b29e93de768d7000dc49b688fc7ca3736ff1442"
+    }
+  ],
+  "full_potential_reclaim_bytes": 1841565696,
+  "mean_scan_seconds": 0.32933602707150084,
+  "no_gpu_or_other_life_liveness_gate": true,
+  "owner_available_bytes_at_readiness": 0,
+  "prebinding_disappearance_policy": "kernel pidfd_open ESRCH plus rechecked absent process start; never clear a live/reused/unreadable PID",
+  "prior_frozen_candidate_unchanged": true,
+  "readonly_real_node_scans_passed": 3,
+  "readonly_real_node_scans_total": 3,
+  "receiving_conditions": [
+    "Main exact operation execution binding remains required",
+    "all four original WRITER lock identities must still match and be exclusively acquirable",
+    "fresh target-only no-writer scan must pass under held locks",
+    "all per-file hash/identity/metadata/link-count/flock checks remain live",
+    "ENOSPC remains possible at zero owner headroom; preserve artifacts and halt without retry or rollback"
+  ],
+  "remote_WRITER_locks_acquired": false,
+  "runtime_binding_order": [
+    "load pidfd_scan, node2_scope, retired_writer_guard, retired_coalescer exact frozen module bytes",
+    "node2_scope.bind_scope_bytes(exact GROUP_BINDINGS.json bytes)",
+    "retired_writer_guard.bind_lock_bytes(exact WRITER_LOCKS.json bytes)",
+    "provide Main-bound CANARY digest and execution authorization to execute_batch",
+    "use AcknowledgedLedger to external fsynced ledger; no node2 staging needed"
+  ],
+  "scans_per_batch": 1,
+  "schema": "NODE2_LOCKED_CANARY_FROZEN_REVIEW_V1",
+  "source_mutations": false,
+  "status": "CPU_TESTED_READONLY_SCAN_READY_AWAITING_MAIN_EXACT_CANARY_EXECUTION_BINDING",
+  "test_denominator": "33 adapted coalescer/binding tests + 9 stream-lock guard tests + 7 process-lifetime tests; no inherited duplicate counting",
+  "tests_passed": 49,
+  "utc": "2026-09-19T15:29:46.997019+00:00",
+  "writer_locks_sha256": "7e71274cbd4745a38c717423c10472572df2b5c5155aac8f5828e2010a4570f7",
+  "writer_policy": "exact_four_original_WRITER_locks_one_pidfd_bound_scan_per_batch"
+}

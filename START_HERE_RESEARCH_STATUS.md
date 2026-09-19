@@ -1,15 +1,17 @@
 # Research status — September 19, 2026
 
-**Handoff update:** September 19, 15:34 UTC / 08:34 PDT. Individual evidence cuts are dated below.
+**Handoff update:** September 19, 15:49 UTC / 08:49 PDT. Individual evidence cuts are dated below.
 **Current phase:** independently checked sampling results, parenting refinement, and recovery.
 
 This is the morning handoff for Rohin. It separates completed observations from
 planned work. The submitted abstract remains the research direction; no positive
 result is a prerequisite for recording an experiment.
 
-**One action needed when you wake:** restore valid authentication for the
-original curriculum-pair parent service. Its learner and frozen sibling cannot
-count as actively parented treatments while their provider returns401. No
+**Action needed when you wake:** restore valid authentication for the
+original curriculum-pair parent service; MathB's original classroom provider
+also needs its credential/ledger custody re-established. The learner and frozen sibling cannot
+count as actively parented treatments while their publishers remain blocked
+after the recorded401 errors; current credential validity has not been re-probed. No
 credential from another life has been borrowed to conceal that interruption.
 
 **Morning headline:** the new fixed-budget sampling block completed. Earlier
@@ -21,7 +23,9 @@ slow-adapter / fast-context hypothesis and its falsifiers are now formalized.
 Recovery remains urgent: MathB is restored and producing ACTs, but seven other
 node-3 lives and C0/Astra7 remain down at their recorded bindings. Node-3 storage
 has been repaired; node2 is full and its retired records are now safely archived
-off-node, with reclamation still pending. The
+off-node. The canary and eight small batches released395.53MB of allocated
+blocks while retaining every path; the next batch stopped before mutation on
+an inconclusive writer scan. C0 still lacks safe owner-available capacity. The
 fresh learner and frozen sibling run, but their parents are authentication
 blocked. None of these outages is a valid tapering treatment.
 
@@ -37,6 +41,26 @@ capabilities, not proof that the agent has acquired a general new intelligence.
 Repeating useful, grounded checks is different from repeating intentions or
 the parent's vocabulary. Reflection counts as useful only when its relationship
 to an actual action and outcome is supported by a trace.
+
+## What seems useful, and what is not working
+
+| Observation | Practical implication | What it does not establish |
+| --- | --- | --- |
+| Preserved sleep51 produces more operational novelty than base in both new sampling seeds | Keep that checkpoint and investigate how its behavior differs from later C2 | Why it differs, or that parenting caused it |
+| Two narrow coached next-action successes exist in the older21-trace selection, one from a frozen control | Useful local correction is possible; study the actual interaction rather than the model's self-description | A learned, reusable self-reflection habit |
+| A later bounded window has0/3 correct next artifacts for C2 and0/3 for P3 despite visible instructions | Measure production and checking, not promises; test a smaller, stable target through ACT | A population failure rate or proof that no parenting can work |
+| C0 received genuinely diverse material, yet recall included invention and subject changes | Diverse exposure must be paired with verifiable recall and cross-task checks | Successful memory or generalization merely because content was delivered |
+| The observed learner24 is below its frozen sibling in both seeds within each separately reported judge epoch | Preserve the negative control comparison; more consolidation is not automatically better | A universal harmful effect of LoRA from one interrupted historical pair |
+| Services can be alive while feedback, parenting or measurement is absent | Track delivery and action visibility separately from GPU utilization | An accidental outage being a valid independence/tapering experiment |
+
+**Next test, already started on C2:** one small task, its actual artifact, and
+one concrete check, with the target held through the following ACT. The first
+six opportunities are prospectively fixed. The first completed ACT saw the
+instruction, but produced neither the requested artifact nor a check:0/1
+assessed, with five outcomes still unknown. Its preceding THINK request was
+earlier than the instruction, so recognition in THINK cannot be scored.
+This tests instruction-to-action transmission first; it does not yet test
+adapter retention or independence.
 
 ## New completed experiment: sampling the C2 age comparison again
 
@@ -86,7 +110,7 @@ Six parallel workstreams have been assigned. Assignment is not completion:
 | Evidence | Actual mixed-curriculum delivery; strongest reflection-to-action traces; early-versus-late C2 comparison | Historical audit complete; positive examples and timing caveat below |
 | Replication | Original-protocol sampling probe; distinguish sampling replication from training-lineage replication | All18 cells and block completed14:24:35 UTC; independent recount matches all240 comparisons |
 | Measurement | Offline source-bound uptake/retention summaries and tests, including unknown outcomes | First bounded measurement complete; 45 tests independently rerun by Main |
-| Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Pair authentication-blocked. C2-only refinement handed to its original supervisor at15:28 UTC without signalling the native; successor STARTED, first actual policy delivery/ACT still being checked |
+| Parenting | Grounded mixed-subject guidance and bounded, announced-withdrawal candidate | Pair authentication-blocked. C2 refinement delivered and visible in ACT; first requested artifact0/1, five prospective outcomes still unknown |
 | Formalization | Fast/slow-loop hypotheses, estimands, controls and falsifiers | Proposal complete; not a launched experiment |
 | Node-3 recovery | Diagnose outages; recover preserved lives only through verified continuation | MathB restored on original GPU2; REQUEST9697 → RESPONSE9698 → COMMITTED9699 → ACT9701 verified at15:17 UTC. Not verified math success; original classroom credential/ledger custody blocks parent recovery. Seven other lives remain down |
 
@@ -355,11 +379,22 @@ Readiness and exact integration:
   policy tests and40 handoff tests pass. The candidate keeps one small
   task → actual artifact → concrete check, retaining the target through the
   next ACT; no taper, learning-rate change or row exclusion is introduced.
-  STARTED is verified, but is not proof of delivery or uptake. The new epoch
-  starts only at the first actual new-policy INBOX. A separate read-only
-  observer is checking the prospectively fixed first-six-committed-ACT window.
+  The successor's provider success and publication now join to actual
+  **INBOX15859**, record timestamp15:33:02 UTC. This is the new policy epoch,
+  not a claim about uptake. The timestamp is the record's file mtime, not a
+  separately measured native ingestion instant. A read-only observer checks
+  the prospectively fixed first-six-committed-ACT window. Its first completed
+  chain is REQUEST15868 → RESPONSE15870 → COMMITTED15871 → ACT15872. The
+  instruction is actually visible and the parent retained its target through
+  ACT, but the response gives generic correctness assertions rather than the
+  requested quotation or an explicit acknowledgment that the source is absent.
+  Artifact0/1 assessed; correct checked action0/1; five future outcomes unknown.
+  The earlier THINK did not yet see the instruction, so this is not a failed
+  recognition score. No sleep-dependent or causal improvement is claimed.
   The earlier nonpersistent background attempt is retained, not erased.
-  Receipt: `operations/C2_HANDOFF_BOUNDARY_WAIT2/ONE_EXECUTION_RESULT.json`.
+  Receipts: `operations/C2_HANDOFF_BOUNDARY_WAIT2/ONE_EXECUTION_RESULT.json`
+  and `operations/C2_REFINEMENT_DELIVERY_EPOCH.json`; first-outcome detail:
+  `measurement/c2_refinement_live/OPPORTUNITY_01_REPORT.md`.
 - **Node2 recovery code:** the narrow already-applied-wall compatibility and
   empty failed-intent preservation candidates pass132 CPU tests when rerun by
   Main. C0's original-wrapper startup integration separately passes26 CPU
@@ -371,13 +406,35 @@ Readiness and exact integration:
   The four retired lives'4,120 selected record paths are now archived on ovx4
   and fully physically restored for verification: content, hardlinks,
   ownership, modes, timestamps and xattrs matched. The358.8MB archive never
-  became a large VM or origin copy. Coalescence has not executed; reclaim is
-  still0 bytes. Its1.84GB potential is insufficient alone for C0, with another
-  approximately1.14GB needed. The49-test canary candidate is designed to hold
-  original writer locks and distinguish verified exited processes from
-  uncertain live references; uncertain live writers still block mutation. No live
+  became a large VM or origin copy. After62 Main CPU tests, the exact canary
+  completed at15:36 UTC: all8 paths reverified,6 atomic alias replacements,
+  10,444,800 allocated bytes released, with no path/content deletion. Owner
+  available space still read0 after the canary. Main then verified16 additional
+  batch tests and bound the remaining plan: batches1–8 completed, releasing
+  another385,081,344 allocated bytes and verifying320 paths. Owner capacity
+  reached147,968,000 bytes at15:44 UTC, not enough for C0. Batch9 stopped
+  **before mutation** on an inconclusive privileged writer check; no retry or
+  rollback occurred. Its original raw error was not retained, so no specific
+  PID/FD cause can honestly be assigned. Fresh read-only scans are clear and
+  all40 failed-batch path identities remain unchanged, but that does not
+  retroactively approve the failed admission. A diagnostic-preservation repair
+  is being prepared without weakening the predicate. Even completing the
+  original plan leaves an optimistic1.36GB C0 shortfall at the measured reserve
+  threshold, before further growth. Original writer locks remain required. No live
   journal/checkpoint is deleted and root-reserved blocks are not capacity.
-  Receipt: `evidence/node2_recovery/storage/HANDOFF.json` in the sprint.
+  Receipts: `evidence/node2_recovery/storage/HANDOFF.json` (pre-canary cut)
+  and `evidence/node2_recovery/storage/coalescence_locked/CANARY_EXECUTION/VERIFIED.json`;
+  `evidence/node2_recovery/storage/batch9_diagnosis/DIAGNOSIS.md`.
+- **Fresh service audit,15:41–15:43 UTC:** learner, frozen sibling, P3 and P7
+  natives are alive at their verified identities. P3 and P7 have hash-matched
+  recent INBOXs11606 and15799; latest-message ACT visibility was not assessed
+  by this metadata-only cut. Pair publishers are alive but remain blocked on
+  the original authentication failures. Base/scorers are resident. The original
+  every-sleep probe process is present but paused after
+  `source_record_changed_during_read`, with no active probes; enrollment is
+  not execution. The hourly collector has a15:01 report, but P3's latest
+  observed ACT-origin bucket is08:00, so current-hour fleet coverage is not
+  established. Receipt: `operations/FLEET_CUT_1540/STATUS.md`.
 - At **13:06:43 UTC**, the curriculum learner and frozen sibling remained GPU
   resident on ovx4 (`ipp2-ovx-p3-02`), alongside the base player and scorers.
   The original probe daemon was present. This is process evidence, not proof

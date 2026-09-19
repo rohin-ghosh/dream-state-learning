@@ -1,0 +1,155 @@
+{
+  "attempts": [
+    {
+      "attempt": "parent_000000",
+      "exact_combined_addendum_in_api_request": false,
+      "exact_combined_addendum_in_system": true,
+      "files": {
+        "API_REQUEST.json": {
+          "bytes": 62075,
+          "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/parent/parent_000000/API_REQUEST.json",
+          "sha256": "6932c5608281e28c26b3cc59c6f8e5d38728e1b5d3644a221a901ff51e06e3f8"
+        },
+        "DISPATCH.json": {
+          "bytes": 416,
+          "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/parent/parent_000000/DISPATCH.json",
+          "sha256": "b34db746678327c90cd660f6da5728b5682b5f61dd0bd5eb35d24381e6abf122"
+        },
+        "DISPATCH_INTENT.json": {
+          "bytes": 450,
+          "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/parent/parent_000000/DISPATCH_INTENT.json",
+          "sha256": "08b79f5bbc45d8c5651467a1875e15dbff48ed0182a7f61488b05caa39a2cd3d"
+        },
+        "OUTBOUND_ROUTE.json": {
+          "bytes": 643,
+          "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/parent/parent_000000/OUTBOUND_ROUTE.json",
+          "sha256": "6ddfa4f6d4e5fd1f72b1693a4ce46d9a5a9cf3c3cf347b8233b3af61beeba464"
+        },
+        "RESULT.json": {
+          "bytes": 1833,
+          "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/parent/parent_000000/RESULT.json",
+          "sha256": "9bfb08045924da7ca5b1cfb198e30688f749f5ab9aef065154f71ba25e963909"
+        },
+        "SOURCE.json": {
+          "bytes": 192635,
+          "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/parent/parent_000000/SOURCE.json",
+          "sha256": "b1e2363b0dbb3c2aa7e7582a232b7fec4373ebd7dfe03432a5db6fdfe2f4a6b5"
+        },
+        "SYSTEM.txt": {
+          "bytes": 45286,
+          "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/parent/parent_000000/SYSTEM.txt",
+          "sha256": "1cde5ac5dc7ad5e88b6483510869eea2865c5db3c1469ed4dcefcc9a05cef107"
+        },
+        "stdout.json": {
+          "bytes": 49932,
+          "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/parent/parent_000000/stdout.json",
+          "sha256": "e9fdaeb5e889c14a45595dec94f4093f2b6751b99741e0520f423044fb3d5982"
+        }
+      },
+      "result": {
+        "actual_model": "openai/openai/gpt-6-astra",
+        "branch": "C2",
+        "consumption_not_yet_verified": true,
+        "finished_unix": 1789831874.0819745,
+        "inbox_publication": {
+          "id": "57d67483bbd34284bc682e47d71877bb",
+          "path": "/localhome/local-rohing/orch_r153_community_C2_20260916_attempt1/life/stream/inbox/57d67483bbd34284bc682e47d71877bb.json",
+          "sha256": "9bcea8e54d99afb449aaa277ee90d384eaaaf90616d09bfb264265b7ba32bd57"
+        },
+        "programme": "raw_parented",
+        "response": {
+          "message": "Astra: Your latest response asserts correctness but supplies no calculation or graph evidence. I\u2019m setting the candidate-group request aside unresolved after repeated prompts. For this five-cycle project, let\u2019s inspect the source instead: can you quote the actual problem statement available to you? Focus on its requested output; if the statement is unavailable, say so rather than reconstructing it from the algebra.",
+          "rationale": "Candidate-group prompting has exhausted its budget. Shift to source recovery within the same project, without crediting unsupported validation or reopening the algebra correction.",
+          "speak": true
+        },
+        "retry": false,
+        "schedule_count": 569,
+        "schedule_on": "response",
+        "sent_unix": 1789831871.4157379,
+        "source_head_sha256": "12ea7f6edb0260d7f71ea86321880ecc7a70ce018811070542034c78245d4480",
+        "source_response_count": 569,
+        "speaker": "Astra",
+        "started_unix": 1789831866.7823246,
+        "status": "PUBLISHED",
+        "usage": {
+          "cost": null,
+          "input_tokens": 14119,
+          "input_tokens_details": {
+            "audio_tokens": null,
+            "cache_write_tokens": 14116,
+            "cached_tokens": 0,
+            "text_tokens": null
+          },
+          "output_tokens": 148,
+          "output_tokens_details": {
+            "reasoning_tokens": 26,
+            "text_tokens": null
+          },
+          "total_tokens": 14267
+        }
+      }
+    }
+  ],
+  "combined_addendum_sha256": "14515a0a0306a40846540c647d565e17885a93b64d7a0f0b4472f36c21a1402f",
+  "config_sha256": "97b2f6d47d70472bee4df999fd01a2b84ebc0ce23b1f659c1dfa292a1798ee90",
+  "manifest_sha256": "bbe422f766fe49e56a3121b6be406ea2958d071918ba0a4f1e676f4da5961367",
+  "native_binding_path": "/localhome/local-rohing/orch_r233_C2_checkpoint_tail_20260918/parent_operator/C2_CHECKPOINT_TAIL_LOADED.json",
+  "native_binding_sha256": "a7dc874936befcf29258597c8423dea2cd3be929d56bc00bb27f8c0d4220a757",
+  "observed_utc": "2026-09-19T15:33:01.080421+00:00",
+  "parent_process": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/rohin233_recovery_node4_20260918/checkpoint_tail_parent_strong.py",
+      "--manifest",
+      "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/MANIFEST.json",
+      "--manifest-sha256",
+      "bbe422f766fe49e56a3121b6be406ea2958d071918ba0a4f1e676f4da5961367"
+    ],
+    "pid": 2774221,
+    "ppid": 361010,
+    "start_ticks": "5988081",
+    "state": "S"
+  },
+  "provider_calls": 0,
+  "schema": "c2_refinement_local_binding_v1",
+  "signals": 0,
+  "sources": [
+    {
+      "bytes": 11556,
+      "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/MANIFEST.json",
+      "sha256": "bbe422f766fe49e56a3121b6be406ea2958d071918ba0a4f1e676f4da5961367"
+    },
+    {
+      "bytes": 2046,
+      "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/CONFIG.json",
+      "sha256": "97b2f6d47d70472bee4df999fd01a2b84ebc0ce23b1f659c1dfa292a1798ee90"
+    },
+    {
+      "bytes": 512,
+      "path": "research_loop/workers/post_reboot_c2_p7_20260919/c2_session_1789831723944764223/parent/STARTED.json",
+      "sha256": "13c64989025802572eb9db283bba46d81fe7ddbbe0166971ce5eecf64a5fca84"
+    },
+    {
+      "bytes": 6136,
+      "path": "research_loop/workers/replication_sprint_20260919/parenting/c2_refinement/COMBINED_ADDENDUM.md",
+      "sha256": "14515a0a0306a40846540c647d565e17885a93b64d7a0f0b4472f36c21a1402f"
+    },
+    {
+      "bytes": 2882,
+      "path": "research_loop/workers/replication_sprint_20260919/operations/C2_REFINEMENT_MEASUREMENT_PLAN.md",
+      "sha256": "2b7e70e1e6cae4e2b642bdc690fa2dd3b3ad66ca3e90a265c18236aa003af9f1"
+    },
+    {
+      "bytes": 594,
+      "path": "research_loop/workers/replication_sprint_20260919/operations/C2_REFINEMENT_NATIVE_PREFLIGHT_1454.json",
+      "sha256": "bde3e40567d921d10d60373ea70712db5e7434f17c6faf344839898a7c41d1cd"
+    },
+    {
+      "bytes": 1495,
+      "path": "research_loop/workers/replication_sprint_20260919/operations/C2_HANDOFF_BOUNDARY_WAIT2/ONE_EXECUTION_RESULT.json",
+      "sha256": "d10cf5a6193805a8110c8217d132c5a5df91e6f39b9a95fe1ebdfcc795e93b8e"
+    }
+  ],
+  "started_is_delivery": false
+}

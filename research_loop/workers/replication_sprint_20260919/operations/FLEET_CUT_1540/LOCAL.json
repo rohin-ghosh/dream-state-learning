@@ -1,0 +1,690 @@
+{
+  "collectors": {
+    "caption_hourly": {
+      "collected_utc": "2026-09-19T15:01:05.418365+00:00",
+      "current_15_to_16_UTC_window_complete": false,
+      "cut_semantics": "ACT origins and admissions strictly before cut; immutable score outcomes observed at recovery, not certified completed by cut.",
+      "cut_utc": "2026-09-19T15:01:04.064981+00:00",
+      "errors": [],
+      "last_success_receipt": {
+        "bytes": 708,
+        "file_sha256": "c52d35cad4614fccc765aa0cde5b6d4cc17c573508c374f10d75f643c67d43a8",
+        "mtime_utc": "2026-09-19T15:01:05.429076+00:00",
+        "path": "research_loop/workers/post_reboot_services_20260919/COLLECTOR_LAST_SUCCESS.json"
+      },
+      "report_receipt": {
+        "bytes": 67614,
+        "file_sha256": "860857a6963acd50bf9e472f90a5780d493dd04eb97a8a684bd8b327fc25a5f8",
+        "mtime_utc": "2026-09-19T15:01:05.426076+00:00",
+        "path": "research_loop/workers/post_reboot_services_20260919/cuts/20260919T150104Z.json"
+      },
+      "selected_players": [
+        {
+          "epoch_sha256": "ad88b0a2486b747bbe8c0652d1ca926d8b1863d432772f602fc8ebc337ec4fe2",
+          "hour_container_type": "dict",
+          "latest_hour": null,
+          "player": "base"
+        },
+        {
+          "epoch_sha256": "ed1a839acbd761b3cf1befdc08e6587af8325db6c4667df4937caccc21a9c1d0",
+          "hour_container_type": "dict",
+          "latest_hour": null,
+          "player": "p3"
+        }
+      ],
+      "success": true
+    },
+    "correction_hourly": {
+      "current_15_to_16_UTC_window_complete": false,
+      "last_cut_utc": "2026-09-19T15:00:45.349372+00:00",
+      "next_cut_utc": "2026-09-19T16:00:00+00:00",
+      "partial_fleet": true,
+      "process": {
+        "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+        "command_sha256": "a7980c8ce3c85453d63a86886eb436ccd059262a323d2e3d5dd07e348dd7dff4",
+        "expected_start_ticks": "687734",
+        "identity_matches": true,
+        "pid": 298357,
+        "present": true,
+        "start_ticks": "687734",
+        "start_utc": "2026-09-19T00:45:22.340000+00:00",
+        "state": "S"
+      },
+      "report_receipt": {
+        "bytes": 217092,
+        "file_sha256": "d5b7ca898ae338ee35f3948875564830d3bcda7fc2e4e1a68558ee3e1ac57de1",
+        "mtime_utc": "2026-09-19T15:00:45.405932+00:00",
+        "path": "research_loop/workers/post_recovery_correction_hourly_20260918/public/CURRENT.json"
+      },
+      "rows": [
+        {
+          "ACT_parent_exposure": {
+            "ACTs_with_exact_parent_text": null,
+            "actual_ACTs": null,
+            "interpretation": null
+          },
+          "actual_committed_ACTs": null,
+          "current_window_caught_up": null,
+          "head_index": null,
+          "label": "P7",
+          "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED",
+          "through_index": null,
+          "window_evidence": null
+        },
+        {
+          "ACT_parent_exposure": {
+            "ACTs_with_exact_parent_text": 2,
+            "actual_ACTs": 2,
+            "interpretation": "Exposure only. Parent inputs are not automatically classified as corrections; retention is not uptake."
+          },
+          "actual_committed_ACTs": 2,
+          "current_window_caught_up": false,
+          "head_index": 11473,
+          "label": "GAME1_P3",
+          "status": "ACTUAL_BOUNDED_COLLECTION_COMPLETE",
+          "through_index": 11374,
+          "window_evidence": "private/epochs/GAME1_P3/7c4a61fd8eb5f3da554afac25cc57b187966ef21914878143a4864084b60b9de/cuts/20260919T150034.116129Z/EVIDENCE.json"
+        },
+        {
+          "ACT_parent_exposure": {
+            "ACTs_with_exact_parent_text": null,
+            "actual_ACTs": null,
+            "interpretation": null
+          },
+          "actual_committed_ACTs": null,
+          "current_window_caught_up": null,
+          "head_index": null,
+          "label": "R232_SIBLING_LEARNER",
+          "status": "CURRENT_BINDING_UNRESOLVED_NOT_COLLECTED",
+          "through_index": null,
+          "window_evidence": null
+        },
+        {
+          "ACT_parent_exposure": {
+            "ACTs_with_exact_parent_text": 0,
+            "actual_ACTs": 4,
+            "interpretation": "Exposure only. Parent inputs are not automatically classified as corrections; retention is not uptake."
+          },
+          "actual_committed_ACTs": 4,
+          "current_window_caught_up": false,
+          "head_index": 5730,
+          "label": "R232_SIBLING_FROZEN",
+          "status": "ACTUAL_BOUNDED_COLLECTION_COMPLETE",
+          "through_index": 5626,
+          "window_evidence": "private/epochs/R232_SIBLING_FROZEN/fed58dada3a73e3d1b365bc976542729259db3aa934ca942109dbcffe3d8da7c/cuts/20260919T150045.336459Z/EVIDENCE.json"
+        }
+      ],
+      "service_receipt": {
+        "bytes": 1773,
+        "file_sha256": "c914392fe820ae93bf89e4425000b238585de2bcac52bbd977ab65f423e29f95",
+        "mtime_utc": "2026-09-19T15:00:45.410932+00:00",
+        "path": "research_loop/workers/post_recovery_correction_hourly_20260918/public/SERVICE.json"
+      }
+    }
+  },
+  "every_sleep_enrollment": {
+    "backlog_dispatcher_started": false,
+    "capture_and_evaluations": "separate_actual_receipts",
+    "enrolled": 1976,
+    "latest_observed_utc": "2026-09-19T15:42:33.517466+00:00",
+    "latest_receipt": {
+      "bytes": 20219,
+      "file_sha256": "e88411b22a1a2cf01a409997e7c93852c2d9eb9ef5820c69665f3f46596bde20",
+      "mtime_utc": "2026-09-19T15:42:33.517356+00:00",
+      "path": "research_loop/workers/post_reboot_services_20260919/observer_recovery/runs/1789779728873833849/LATEST.json"
+    },
+    "new_evaluations": 0,
+    "process": {
+      "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+      "command_sha256": "398e1fb14d5ce6b1eae36ade220e4fd512052d5d33ef87f481f98f53215d98ae",
+      "expected_start_ticks": "788324",
+      "identity_matches": true,
+      "pid": 343342,
+      "present": true,
+      "start_ticks": "788324",
+      "start_utc": "2026-09-19T01:02:08.240000+00:00",
+      "state": "S"
+    },
+    "run_receipt": {
+      "bytes": 1101,
+      "file_sha256": "53050e0837d189ccb4d52df2d26aa7a0d51159b67e9e97547282dc096f94b414",
+      "mtime_utc": "2026-09-19T01:02:08.901876+00:00",
+      "path": "research_loop/workers/post_reboot_services_20260919/observer_recovery/RUN_LATEST.json"
+    },
+    "scope": "CPU_ENROLLMENT_ONLY_NOT_COMPLETED_PROBES"
+  },
+  "excluded_direct_remote_nodes": [
+    "node2",
+    "node3"
+  ],
+  "excluded_life": "C2",
+  "files_read": 29,
+  "finished_utc": "2026-09-19T15:42:59.498312+00:00",
+  "local_metadata_bytes_read": 2980570,
+  "maximum_file_bytes_read": 1670147,
+  "native_signals": 0,
+  "observed_utc": "2026-09-19T15:42:53.937706+00:00",
+  "parents": {
+    "P3": {
+      "latest_published_in_12_result_window": {
+        "publication": {
+          "id": "032a6ddce8cd48ca808e5351aabb16bc",
+          "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/inbox/032a6ddce8cd48ca808e5351aabb16bc.json",
+          "sha256": "6c096db525cc067c200b6cf727eb207111a3cf316f508afb4ad612e4c2f99404"
+        },
+        "receipt": {
+          "bytes": 1889,
+          "file_sha256": "14bc457d7361b16141f917a0e0f96d153ecbb5eea76bf4b915853e28554df7e8",
+          "mtime_utc": "2026-09-19T15:41:30.306871+00:00",
+          "path": "research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent3/turns/parent_000000000553/RESULT.json"
+        },
+        "status": "PUBLISHED"
+      },
+      "latest_result": {
+        "publication": {
+          "id": "032a6ddce8cd48ca808e5351aabb16bc",
+          "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical3/life/stream/inbox/032a6ddce8cd48ca808e5351aabb16bc.json",
+          "sha256": "6c096db525cc067c200b6cf727eb207111a3cf316f508afb4ad612e4c2f99404"
+        },
+        "receipt": {
+          "bytes": 1889,
+          "file_sha256": "14bc457d7361b16141f917a0e0f96d153ecbb5eea76bf4b915853e28554df7e8",
+          "mtime_utc": "2026-09-19T15:41:30.306871+00:00",
+          "path": "research_loop/workers/rohin174_parenting_20260917/node4/R195_FLEET/r210_parent3/turns/parent_000000000553/RESULT.json"
+        },
+        "status": "PUBLISHED"
+      },
+      "process": {
+        "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+        "command_sha256": "1d20e06e866b2e292f5e7b7b6c2ecdcb09e7270a9450874e87c634a7c190f431",
+        "expected_start_ticks": "795156",
+        "identity_matches": true,
+        "pid": 346649,
+        "present": true,
+        "start_ticks": "795156",
+        "start_utc": "2026-09-19T01:03:16.560000+00:00",
+        "state": "S"
+      },
+      "provider_activity": {
+        "metadata": {
+          "attempt": "parent_000000000553",
+          "observed_utc": "2026-09-19T15:41:29.323225+00:00",
+          "phase": "PROVIDER_RESPONSE_RECEIVED",
+          "publication_verified": false
+        },
+        "receipt": {
+          "bytes": 649,
+          "file_sha256": "34047de80ca91cee51db3d5df57775dcdb7e8edf14d3eebc43754420422b3f7d",
+          "mtime_utc": "2026-09-19T15:41:29.322864+00:00",
+          "path": "research_loop/workers/post_reboot_p3_parent_20260919/PROVIDER_ACTIVITY.json"
+        }
+      },
+      "result_files_read": 12
+    },
+    "P7": {
+      "latest_poll": {
+        "publications": 283,
+        "receipt": {
+          "bytes": 1778,
+          "file_sha256": "7ca22ab2c562bb4f8c070f6d88d2ce1d25383a750857e6f21b3d15a759cd6b96",
+          "mtime_utc": "2026-09-19T15:42:49.769481+00:00",
+          "path": "research_loop/workers/post_reboot_c2_p7_20260919/p7/POLL_1789832569756004752.json"
+        },
+        "reference": {
+          "path": "/localhome/local-rohing/orch_r201_node4_20260918/node4/R195_FLEET/SCALE_physical7/r225_parent/cursor/36c4289e1756418bb0c304a2603feeaf.json",
+          "sha256": "d9a5d6f540db0a12987e22847b3178b376fe7cd7a026829b667fac6e057c7e6f"
+        },
+        "reply_reference": null
+      },
+      "latest_publications": [],
+      "process": {
+        "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+        "command_sha256": "11a61f08a842225782aeaa51dba1e8b9e7205d5e9f9beab65b2c06d8a52b7e62",
+        "expected_start_ticks": "854895",
+        "identity_matches": true,
+        "pid": 378291,
+        "present": true,
+        "start_ticks": "854895",
+        "start_utc": "2026-09-19T01:13:13.950000+00:00",
+        "state": "S"
+      }
+    },
+    "frozen": {
+      "delivery_counts": {
+        "act": 0,
+        "inbox": 24,
+        "published": 24,
+        "render": 24
+      },
+      "health": "BLOCKED_PROVIDER",
+      "latest_error_log": {
+        "auth_error": false,
+        "error_type": "HTTPError",
+        "http_401": false,
+        "http_429": false,
+        "provider_probe_performed": false,
+        "raw_error_exported": false,
+        "receipt": {
+          "bytes": 597,
+          "file_sha256": "a285b1359176bb397235a3bf96c6008e0eb0848e5a2ea1c7983af6cb4698aafe",
+          "mtime_utc": "2026-09-19T05:08:31.926627+00:00",
+          "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/ERROR_1789794511927258838.json"
+        }
+      },
+      "latest_inbox_in_state": {
+        "causal_improvement_claim": false,
+        "exact_text_and_source_bound": null,
+        "inbox": {
+          "index": 4378,
+          "sha256": "b9f3464cbaacc12f4e4a717a700c3596e6dadea0b9bf0a92a4a6a24d6903ed38"
+        },
+        "publication": {
+          "id": "e56c8444d25246f98979f443479666ab",
+          "path": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/raw/stream/inbox/e56c8444d25246f98979f443479666ab.json",
+          "sha256": "dfc451c4f597bf7c283296405429df4b1c17ce8ebef768eaf42ba1816934dbeb"
+        },
+        "render": {
+          "index": 4388,
+          "sha256": "64c4415a057a770102fd7d08ee7082c2218425b420ef2044d9fba82ccc6d7a8b",
+          "started_unix": 1789794254.964019
+        }
+      },
+      "latest_publication_in_state": {
+        "causal_improvement_claim": false,
+        "exact_text_and_source_bound": null,
+        "inbox": {
+          "index": 4378,
+          "sha256": "b9f3464cbaacc12f4e4a717a700c3596e6dadea0b9bf0a92a4a6a24d6903ed38"
+        },
+        "publication": {
+          "id": "e56c8444d25246f98979f443479666ab",
+          "path": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/raw/stream/inbox/e56c8444d25246f98979f443479666ab.json",
+          "sha256": "dfc451c4f597bf7c283296405429df4b1c17ce8ebef768eaf42ba1816934dbeb"
+        },
+        "render": {
+          "index": 4388,
+          "sha256": "64c4415a057a770102fd7d08ee7082c2218425b420ef2044d9fba82ccc6d7a8b",
+          "started_unix": 1789794254.964019
+        }
+      },
+      "latest_render_in_state": {
+        "causal_improvement_claim": false,
+        "exact_text_and_source_bound": null,
+        "inbox": {
+          "index": 4378,
+          "sha256": "b9f3464cbaacc12f4e4a717a700c3596e6dadea0b9bf0a92a4a6a24d6903ed38"
+        },
+        "publication": {
+          "id": "e56c8444d25246f98979f443479666ab",
+          "path": "/localhome/local-rohing/orch_r232_curriculum_frozen_20260918/raw/stream/inbox/e56c8444d25246f98979f443479666ab.json",
+          "sha256": "dfc451c4f597bf7c283296405429df4b1c17ce8ebef768eaf42ba1816934dbeb"
+        },
+        "render": {
+          "index": 4388,
+          "sha256": "64c4415a057a770102fd7d08ee7082c2218425b420ef2044d9fba82ccc6d7a8b",
+          "started_unix": 1789794254.964019
+        }
+      },
+      "new_publications": 24,
+      "next_index": 5812,
+      "process": {
+        "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+        "command_sha256": "533a4cac6eb0fb52ce617d8ca5d782d1b9fad0b0e5fa3b4c6970a154ef76362d",
+        "expected_start_ticks": "792480",
+        "identity_matches": true,
+        "pid": 345405,
+        "present": true,
+        "start_ticks": "792480",
+        "start_utc": "2026-09-19T01:02:49.800000+00:00",
+        "state": "S"
+      },
+      "provider_blocked": {
+        "attempt": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/turn_000134_1789794506916730728",
+        "explicit_429": false,
+        "outcome": "AMBIGUOUS_OR_UNVALIDATED_NO_REDISPATCH",
+        "rejected_429_attempts": 0,
+        "retry_permitted": false,
+        "retry_seconds": null
+      },
+      "state_receipt": {
+        "bytes": 1670147,
+        "file_sha256": "c009de19d41b165efcf5b59bff0269cffc89bb4ef94d944c4e2c28245bb2ec77",
+        "mtime_utc": "2026-09-19T15:42:51.520494+00:00",
+        "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/STATE.json"
+      },
+      "status_observed_utc": "2026-09-19T15:42:51.521188+00:00",
+      "status_receipt": {
+        "bytes": 3207,
+        "file_sha256": "b356a34898cfa5be05f937b215cbb1b9bba8bc5eb49c51b64d411b0cec90d5cd",
+        "mtime_utc": "2026-09-19T15:42:51.520494+00:00",
+        "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/frozen/STATUS.json"
+      }
+    },
+    "learner": {
+      "delivery_counts": {
+        "act": 25,
+        "inbox": 25,
+        "published": 25,
+        "render": 25
+      },
+      "health": "BLOCKED_PROVIDER",
+      "latest_act_in_state": {
+        "act": {
+          "finished_unix": 1789793993.2476063,
+          "stage": {
+            "index": 8167,
+            "sha256": "4433c9251e1459cb2c92a90c2ec88e6dbd24649765a44ecbde35579030af927a"
+          },
+          "started_unix": 1789793975.2281945
+        },
+        "causal_improvement_claim": false,
+        "exact_text_and_source_bound": null,
+        "inbox": {
+          "index": 8099,
+          "sha256": "362570183b41e99023927ea3223ece0cb10be3f8f1ce7a1da7ddf23e0c3303ef"
+        },
+        "publication": {
+          "id": "3d350707f1044b66b93ec5ce0dd2743c",
+          "path": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/raw/stream/inbox/3d350707f1044b66b93ec5ce0dd2743c.json",
+          "sha256": "53fc2faca8370c62a996d9606906067cf4a7043614c3a864e827241693193fe8"
+        },
+        "render": {
+          "index": 8157,
+          "sha256": "0996a54b2d9290133278e63faf85b1b5feba6694cff050ef88260aea1e694590",
+          "started_unix": 1789793929.3733425
+        }
+      },
+      "latest_delivery_proof": {
+        "metadata": {
+          "act": {
+            "finished_unix": 1789793993.2476063,
+            "stage": {
+              "index": 8167,
+              "sha256": "4433c9251e1459cb2c92a90c2ec88e6dbd24649765a44ecbde35579030af927a"
+            },
+            "started_unix": 1789793975.2281945
+          },
+          "causal_improvement_claim": false,
+          "exact_text_and_source_bound": true,
+          "first_render": {
+            "index": 8157,
+            "sha256": "0996a54b2d9290133278e63faf85b1b5feba6694cff050ef88260aea1e694590",
+            "started_unix": 1789793929.3733425
+          },
+          "inbox": {
+            "index": 8099,
+            "sha256": "362570183b41e99023927ea3223ece0cb10be3f8f1ce7a1da7ddf23e0c3303ef"
+          },
+          "publication": {
+            "id": "3d350707f1044b66b93ec5ce0dd2743c",
+            "path": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/raw/stream/inbox/3d350707f1044b66b93ec5ce0dd2743c.json",
+            "sha256": "53fc2faca8370c62a996d9606906067cf4a7043614c3a864e827241693193fe8"
+          }
+        },
+        "receipt": {
+          "bytes": 4855,
+          "file_sha256": "1f83eb63d536708d3178fc17aa4c2c12929baf9d684bf95b9b3e90ba33a2b24c",
+          "mtime_utc": "2026-09-19T05:00:06.738956+00:00",
+          "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/learner/DELIVERY_3d350707f1044b66b93ec5ce0dd2743c.json"
+        }
+      },
+      "latest_error_log": {
+        "auth_error": false,
+        "error_type": "HTTPError",
+        "http_401": false,
+        "http_429": false,
+        "provider_probe_performed": false,
+        "raw_error_exported": false,
+        "receipt": {
+          "bytes": 598,
+          "file_sha256": "3ae3a6bec8e77d7096ca084d5ec0850380dfdc41d1c9cf1ca5b99f481f58b65e",
+          "mtime_utc": "2026-09-19T05:00:08.091966+00:00",
+          "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/learner/ERROR_1789794008093409149.json"
+        }
+      },
+      "latest_inbox_in_state": {
+        "act": {
+          "finished_unix": 1789793993.2476063,
+          "stage": {
+            "index": 8167,
+            "sha256": "4433c9251e1459cb2c92a90c2ec88e6dbd24649765a44ecbde35579030af927a"
+          },
+          "started_unix": 1789793975.2281945
+        },
+        "causal_improvement_claim": false,
+        "exact_text_and_source_bound": null,
+        "inbox": {
+          "index": 8099,
+          "sha256": "362570183b41e99023927ea3223ece0cb10be3f8f1ce7a1da7ddf23e0c3303ef"
+        },
+        "publication": {
+          "id": "3d350707f1044b66b93ec5ce0dd2743c",
+          "path": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/raw/stream/inbox/3d350707f1044b66b93ec5ce0dd2743c.json",
+          "sha256": "53fc2faca8370c62a996d9606906067cf4a7043614c3a864e827241693193fe8"
+        },
+        "render": {
+          "index": 8157,
+          "sha256": "0996a54b2d9290133278e63faf85b1b5feba6694cff050ef88260aea1e694590",
+          "started_unix": 1789793929.3733425
+        }
+      },
+      "latest_publication_in_state": {
+        "act": {
+          "finished_unix": 1789793993.2476063,
+          "stage": {
+            "index": 8167,
+            "sha256": "4433c9251e1459cb2c92a90c2ec88e6dbd24649765a44ecbde35579030af927a"
+          },
+          "started_unix": 1789793975.2281945
+        },
+        "causal_improvement_claim": false,
+        "exact_text_and_source_bound": null,
+        "inbox": {
+          "index": 8099,
+          "sha256": "362570183b41e99023927ea3223ece0cb10be3f8f1ce7a1da7ddf23e0c3303ef"
+        },
+        "publication": {
+          "id": "3d350707f1044b66b93ec5ce0dd2743c",
+          "path": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/raw/stream/inbox/3d350707f1044b66b93ec5ce0dd2743c.json",
+          "sha256": "53fc2faca8370c62a996d9606906067cf4a7043614c3a864e827241693193fe8"
+        },
+        "render": {
+          "index": 8157,
+          "sha256": "0996a54b2d9290133278e63faf85b1b5feba6694cff050ef88260aea1e694590",
+          "started_unix": 1789793929.3733425
+        }
+      },
+      "latest_render_in_state": {
+        "act": {
+          "finished_unix": 1789793993.2476063,
+          "stage": {
+            "index": 8167,
+            "sha256": "4433c9251e1459cb2c92a90c2ec88e6dbd24649765a44ecbde35579030af927a"
+          },
+          "started_unix": 1789793975.2281945
+        },
+        "causal_improvement_claim": false,
+        "exact_text_and_source_bound": null,
+        "inbox": {
+          "index": 8099,
+          "sha256": "362570183b41e99023927ea3223ece0cb10be3f8f1ce7a1da7ddf23e0c3303ef"
+        },
+        "publication": {
+          "id": "3d350707f1044b66b93ec5ce0dd2743c",
+          "path": "/localhome/local-rohing/orch_r231_curriculum_birth_20260918/raw/stream/inbox/3d350707f1044b66b93ec5ce0dd2743c.json",
+          "sha256": "53fc2faca8370c62a996d9606906067cf4a7043614c3a864e827241693193fe8"
+        },
+        "render": {
+          "index": 8157,
+          "sha256": "0996a54b2d9290133278e63faf85b1b5feba6694cff050ef88260aea1e694590",
+          "started_unix": 1789793929.3733425
+        }
+      },
+      "new_publications": 25,
+      "next_index": 12511,
+      "process": {
+        "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+        "command_sha256": "ee0d080c0f7c5a10a07f90dce8be636d951b9ed934d46698bb347b488fe78fe5",
+        "expected_start_ticks": "792480",
+        "identity_matches": true,
+        "pid": 345404,
+        "present": true,
+        "start_ticks": "792480",
+        "start_utc": "2026-09-19T01:02:49.800000+00:00",
+        "state": "S"
+      },
+      "provider_blocked": {
+        "attempt": "/data/home/rohing/dream-state-orch/research_loop/workers/post_reboot_pair_parents_20260919/private/learner/turn_000104_1789794006756564934",
+        "explicit_429": false,
+        "outcome": "AMBIGUOUS_OR_UNVALIDATED_NO_REDISPATCH",
+        "rejected_429_attempts": 0,
+        "retry_permitted": false,
+        "retry_seconds": null
+      },
+      "state_receipt": {
+        "bytes": 864039,
+        "file_sha256": "0fbe79f18bb2f27634b23a80a751b3c085a40c05a0adc4c89b11c71f1af3d1b9",
+        "mtime_utc": "2026-09-19T15:42:51.030490+00:00",
+        "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/learner/STATE.json"
+      },
+      "status_observed_utc": "2026-09-19T15:42:51.031914+00:00",
+      "status_receipt": {
+        "bytes": 3224,
+        "file_sha256": "22d2f63d3cea81d11d00daddd890a5d816bed9e07b0ddd1b753fe56f63a76af2",
+        "mtime_utc": "2026-09-19T15:42:51.031490+00:00",
+        "path": "research_loop/workers/post_reboot_pair_parents_20260919/private/learner/STATUS.json"
+      }
+    }
+  },
+  "provider_calls": 0,
+  "read_only": true,
+  "remote_writes": 0,
+  "schema": "BOUNDED_FLEET_LOCAL_SERVICES_V1",
+  "secrets_read": false,
+  "services": {
+    "caption-collector": {
+      "processes": [
+        {
+          "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+          "command_sha256": "bb786d932ddf62712332bf315b64ecdaa98383d4bdb6f1baf6bf9689f580f5a8",
+          "expected_start_ticks": "717211",
+          "identity_matches": true,
+          "pid": 311631,
+          "present": true,
+          "start_ticks": "717211",
+          "start_utc": "2026-09-19T00:50:17.110000+00:00",
+          "state": "S"
+        }
+      ],
+      "supervisor_status": "RUNNING_ADOPTED_NO_SIGNALS"
+    },
+    "correction-observer": {
+      "processes": [
+        {
+          "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+          "command_sha256": "a7980c8ce3c85453d63a86886eb436ccd059262a323d2e3d5dd07e348dd7dff4",
+          "expected_start_ticks": "687734",
+          "identity_matches": true,
+          "pid": 298357,
+          "present": true,
+          "start_ticks": "687734",
+          "start_utc": "2026-09-19T00:45:22.340000+00:00",
+          "state": "S"
+        }
+      ],
+      "supervisor_status": "RUNNING_ADOPTED_NO_SIGNALS"
+    },
+    "every-sleep-queue": {
+      "processes": [
+        {
+          "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+          "command_sha256": "51c646318fb621e74067c402a013fc42778092effd4e4a0c1111a63971f8db08",
+          "expected_start_ticks": "788315",
+          "identity_matches": true,
+          "pid": 343304,
+          "present": true,
+          "start_ticks": "788315",
+          "start_utc": "2026-09-19T01:02:08.150000+00:00",
+          "state": "S"
+        }
+      ],
+      "supervisor_status": "RUNNING_ADOPTED_NO_SIGNALS"
+    },
+    "p3-parent": {
+      "processes": [],
+      "supervisor_status": "EXISTING_SINGLETON_LOCK_HELD_NO_LAUNCH"
+    },
+    "p7-parent": {
+      "processes": [
+        {
+          "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+          "command_sha256": "11a61f08a842225782aeaa51dba1e8b9e7205d5e9f9beab65b2c06d8a52b7e62",
+          "expected_start_ticks": "854895",
+          "identity_matches": true,
+          "pid": 378291,
+          "present": true,
+          "start_ticks": "854895",
+          "start_utc": "2026-09-19T01:13:13.950000+00:00",
+          "state": "S"
+        }
+      ],
+      "supervisor_status": "RUNNING_ADOPTED_NO_SIGNALS"
+    },
+    "pair-curriculum-frozen": {
+      "processes": [
+        {
+          "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+          "command_sha256": "533a4cac6eb0fb52ce617d8ca5d782d1b9fad0b0e5fa3b4c6970a154ef76362d",
+          "expected_start_ticks": "792480",
+          "identity_matches": true,
+          "pid": 345405,
+          "present": true,
+          "start_ticks": "792480",
+          "start_utc": "2026-09-19T01:02:49.800000+00:00",
+          "state": "S"
+        }
+      ],
+      "supervisor_status": "RUNNING_ADOPTED_NO_SIGNALS"
+    },
+    "pair-curriculum-learner": {
+      "processes": [
+        {
+          "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+          "command_sha256": "ee0d080c0f7c5a10a07f90dce8be636d951b9ed934d46698bb347b488fe78fe5",
+          "expected_start_ticks": "792480",
+          "identity_matches": true,
+          "pid": 345404,
+          "present": true,
+          "start_ticks": "792480",
+          "start_utc": "2026-09-19T01:02:49.800000+00:00",
+          "state": "S"
+        }
+      ],
+      "supervisor_status": "RUNNING_ADOPTED_NO_SIGNALS"
+    },
+    "probe-daemon": {
+      "processes": [],
+      "supervisor_status": "DISABLED_AWAITING_OWNER_ARGV"
+    }
+  },
+  "supervisor": {
+    "observed_utc": "2026-09-19T15:42:54.121849+00:00",
+    "process": {
+      "boot_id": "80d71f45-6f0c-4479-b0e5-77a9611c793e",
+      "command_sha256": "844a7dc7c1a8118f4cdca0197fc7f5822935a62869b243db7bbce7f8ed9aab5b",
+      "expected_start_ticks": "891869",
+      "identity_matches": true,
+      "pid": 399392,
+      "present": true,
+      "start_ticks": "891869",
+      "start_utc": "2026-09-19T01:19:23.690000+00:00",
+      "state": "S"
+    },
+    "receipt": {
+      "bytes": 4171,
+      "file_sha256": "e62beddff59a8fca93eca43c5e996b80bc6d5390120362b5197707cb0a311686",
+      "mtime_utc": "2026-09-19T15:42:54.121514+00:00",
+      "path": "research_loop/workers/post_reboot_services_20260919/SUPERVISOR_HEARTBEAT.json"
+    }
+  }
+}

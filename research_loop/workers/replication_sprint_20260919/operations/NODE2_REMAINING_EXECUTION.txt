@@ -1,0 +1,18 @@
+{"batch_complete": 1, "of": 103, "owner_available_bytes": 0}
+{"batch_complete": 2, "of": 103, "owner_available_bytes": 0}
+{"batch_complete": 3, "of": 103, "owner_available_bytes": 0}
+{"batch_complete": 4, "of": 103, "owner_available_bytes": 0}
+{"batch_complete": 5, "of": 103, "owner_available_bytes": 12218368}
+{"batch_complete": 6, "of": 103, "owner_available_bytes": 58486784}
+{"batch_complete": 7, "of": 103, "owner_available_bytes": 103600128}
+{"batch_complete": 8, "of": 103, "owner_available_bytes": 147968000}
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_remaining/run_remaining.py", line 180, in <module>
+    main()
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_remaining/run_remaining.py", line 176, in main
+    run(args.binding)
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_remaining/run_remaining.py", line 143, in run
+    frozen.require(status == 0 and last is not None
+  File "/data/home/rohing/dream-state-orch/research_loop/workers/replication_sprint_20260919/evidence/node2_recovery/storage/coalescence_locked/transport_canary.py", line 65, in require
+    raise ValueError(message)
+ValueError: batch_failed_or_completion_not_durable_no_retry_no_further_batches
