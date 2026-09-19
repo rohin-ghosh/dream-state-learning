@@ -1,5 +1,50 @@
 # Node 3 preserved-state recovery — September 19, 2026
 
+## Final observed15:22:33 UTC — MathB alive; parent candidate frozen, assignment closed
+
+PID2890010/start53597510 remains sole original GPU2 compute process,unchanged
+guard and September24 18:00UTC wall. No EXIT/OUTER failure;head9750 UPDATE.
+Latest verified REQUEST9697→RESPONSE9698→COMMITTED9699→ACT9701 is unverified
+language output,not math success. Owner available32,723,247,104 bytes.
+`MATH_B_FINAL_HEALTH_20260919T152233Z.json` is the fresh health/ACT receipt.
+
+Recovery COMPLETE9607/LOADED9609 and full48-update replay remain proven.
+Parent NOT restored:original node publisher/VM provider are absent;its exact
+VM private ledger directory is absent. MathB turn0032 stays unknown,counted/
+reserved;no authenticated result,no retry. Original recovering mode permits
+partial liveness truthfully. Original classroom auth is unestablished;no pair401
+or C2 fallback.23-file candidate frozen at15:23:50UTC,16CPU testsPASS,actual
+receiving proof15:14:18. ManifestSHA43aac5d06a8eec8b20d1531d403598db3926458a407e5b8a75bc4e574a0588a4.
+
+Other seven lives remain unrecovered by this assignment;their table below is
+the earlier read-only state,not a new per-life health cut. No additional native
+launch,provider call,parent launch,signal,registry change,commit or push.
+Main handoff:`TO_MAIN.md` and `parent_candidate_20260919/README.md`.
+
+## Update15:08:57 UTC — actual MathB recovery and first ACT chain VERIFIED
+
+COMPLETE9607→LEARN9608→LOADED9609. First ACT:
+REQUEST9620→RESPONSE9621→COMMITTED9622→R184_ACT9624. Outcome is unverified
+language prose,not a verified math finding. No rows/history lost;48 updates
+recomputed from durable9740 and newly saved9788. No lost resident RNG claim.
+Receipt:`MATH_B_V3_VERIFICATION_20260919T150857Z.json`.
+
+| Life | Original GPU | Native status | Parent / remaining issue |
+| --- | ---: | --- | --- |
+| MathB | 2 | ALIVE;PID2890010,start53597510;ACT9624 verified | Unbound;separate CPU candidate only |
+| MathA | 1 | DOWN;head9466 | Missing RESPONSE;partial intent preserved |
+| MathC | 4 | DOWN;head8976 | Pending sleep;partial intent preserved |
+| Caption observation | 0 | DOWN;head10397 | Pending sleep;partial intent preserved |
+| Caption perspective | 3 | DOWN;head10856 | Pending sleep;partial intent preserved |
+| Caption revision | 5 | DOWN;head10085 | Pending sleep;partial intent preserved |
+| Caption selfderive | 6 | DOWN;head9411 | Pending sleep;partial intent preserved |
+| Caption unparented-named | 7 | DOWN;head10156 | Pending sleep;partial intent preserved |
+
+Every ceiling remains1790272800 (September24 18:00UTC). No other native launch
+or signal. Original parent recovering mode already supports partial liveness;
+default all7 check remains. Exact MathB rebind and preserved pending-provider
+ledger are now being examined in a separate CPU-only subdirectory.
+
 ## Update15:06:36 UTC — MathB recovered and LOADED; ACT pending
 
 Recovery COMPLETE9607/LEARN9608 and LOADED9609 are verified,including new saved

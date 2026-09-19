@@ -1,0 +1,107 @@
+{
+  "credential_inheritance": {
+    "C2_scope_not_accessed": true,
+    "key_values_read_or_logged": false,
+    "mechanism": "existing original VM launcher environment NVIDIA_API_KEY, no node credential transfer",
+    "new_provider_identity": false,
+    "original_scope_currently_authenticated": false,
+    "pair401_reported_by_main": true,
+    "pair_scope_not_reused": true,
+    "provider_source": "rohin233_focus_node3_20260918/model_parent.py::serve/generate -> gpu.orch_route_parent_campaign_providers.py::strong"
+  },
+  "cumulative_usage": {
+    "input_tokens": 487752,
+    "output_tokens": 300696,
+    "total_tokens": 788448
+  },
+  "decision": "FREEZE_CPU_CANDIDATE_NO_PARENT_LAUNCH_NO_AUTH_FALLBACK",
+  "generic_supervisor": {
+    "command_sha256": "844a7dc7c1a8118f4cdca0197fc7f5822935a62869b243db7bbce7f8ed9aab5b",
+    "environment_not_read": true,
+    "pid": 399392,
+    "start_ticks": "891869",
+    "state": "S"
+  },
+  "missing_directory_not_evidence_of_no_dispatch": true,
+  "native_signals": 0,
+  "original_launch_artifact_locator": [
+    {
+      "evidence_type": "function_call_output",
+      "exact_private_argument": "/tmp/r233-node3-model-parent-20260918",
+      "line": 6272,
+      "line_sha256": "d0e04f534e39d86ab1fe0dee60402c2cbd41859428ffe0064fbb9b9c7ce79eda",
+      "observed_timestamp": "2026-09-18T17:50:16.590Z",
+      "path": "/data/home/rohing/.codex/sessions/2026/09/17/rollout-2026-09-17T20-03-59-01a0b278-89d8-7623-8efd-ec051485b882.jsonl",
+      "raw_tool_output_not_republished": true
+    }
+  ],
+  "original_private_paths": [
+    {
+      "exists": false,
+      "path": "/tmp/r233-node3-model-parent-20260918"
+    },
+    {
+      "exists": false,
+      "path": "/tmp/r233-node3-model-parent-20260918/STARTED_3057541.json"
+    },
+    {
+      "exists": false,
+      "path": "/tmp/r233-node3-model-parent-20260918/requests/bfcfa905da08d97323ab95c3c4482ebd36559109bc1b4929aaf6a23b955b6d16"
+    },
+    {
+      "exists": false,
+      "path": "/data/home/rohing/vm_tmp_archive/r233-node3-model-parent-20260918"
+    }
+  ],
+  "original_vm_provider_pid_exists": false,
+  "parent_launches": 0,
+  "pending": [
+    {
+      "directory": "/localhome/local-rohing/orch_r205_node3_20260918/r233_classroom_handoff_v1/live/r213_math_b_fork/turn_0032",
+      "dispatch_state": "UNKNOWN_NOT_A_NEW_BUDGET",
+      "life": "r213_math_b_fork",
+      "request_sha256": "bfcfa905da08d97323ab95c3c4482ebd36559109bc1b4929aaf6a23b955b6d16",
+      "reserved": true,
+      "retry_allowed": false
+    }
+  ],
+  "pending_node_files": {
+    "r213_math_b_fork/turn_0032/PROVIDER_REQUEST.json": "bfcfa905da08d97323ab95c3c4482ebd36559109bc1b4929aaf6a23b955b6d16"
+  },
+  "provider_calls": 0,
+  "provider_retries": 0,
+  "read_only": true,
+  "receiving_cpu": {
+    "path": "research_loop/workers/replication_sprint_20260919/node3_recovery/parent_candidate_20260919/RECEIVING_CPU.json",
+    "sha256": "137aa4983d404e9d75eeac1ec48c2de3f962aad83602075297816162ff91fd08",
+    "utc": "2026-09-19T15:14:18.852925+00:00"
+  },
+  "registration": {
+    "math_parent_changes": 0,
+    "math_target_present": false,
+    "parented_lives": [
+      "r213_r226_caption_observation_fork",
+      "r213_r226_caption_perspective_fork",
+      "r213_r226_caption_revision_fork",
+      "r213_r226_caption_selfderive_fork",
+      "r213_r226_caption_unparented_fork"
+    ],
+    "path": "research_loop/workers/post_reboot_services_20260919/services.d/node3-parents.json",
+    "sha256": "7622cbd961ac06930d5f2c76e1f8e45428fe2c57521f1923482bf804b30ac71e"
+  },
+  "registry_changes": 0,
+  "status": "NO_SURVIVING_CLASSROOM_CUSTODY_PENDING_TURN_UNKNOWN_RESERVED",
+  "supervisor_node3_parent_status": {
+    "rows": [
+      {
+        "matches": [],
+        "name": "node3-parents",
+        "status": "RESTART_BACKOFF"
+      }
+    ],
+    "utc": "2026-09-19T15:23:05.357580+00:00"
+  },
+  "unknown_turn_counted_reserved": true,
+  "usage_complete": false,
+  "utc": "2026-09-19T15:23:13.796400+00:00"
+}
